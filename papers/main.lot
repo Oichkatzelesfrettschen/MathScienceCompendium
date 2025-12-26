@@ -1,0 +1,53 @@
+\babel@toc {english}{}\relax 
+\addvspace {10\p@ }
+\contentsline {table}{\numberline {1.1}{\ignorespaces Dimensional verification of exceptional and extended Lie algebras}}{6}{table.1.1}%
+\contentsline {table}{\numberline {1.2}{\ignorespaces Physical applications and evidence status}}{6}{table.1.2}%
+\addvspace {10\p@ }
+\contentsline {table}{\numberline {2.1}{\ignorespaces Algebraic properties lost through Cayley-Dickson doubling. Green indicates property retained, red indicates property lost.}}{12}{table.2.1}%
+\contentsline {table}{\numberline {2.2}{\ignorespaces Computational verification of Cayley-Dickson algebras. Zero divisors detected via exhaustive basis element multiplication tests.}}{13}{table.2.2}%
+\contentsline {table}{\numberline {2.3}{\ignorespaces Quaternion multiplication table. Note non-commutativity: $ij = k \neq -k = ji$.}}{15}{table.2.3}%
+\addvspace {10\p@ }
+\contentsline {table}{\numberline {3.1}{\ignorespaces First few coefficients of the j-invariant q-expansion.}}{20}{table.3.1}%
+\contentsline {table}{\numberline {3.2}{\ignorespaces Ramanujan tau function values verified computationally.}}{23}{table.3.2}%
+\addvspace {10\p@ }
+\contentsline {table}{\numberline {4.1}{\ignorespaces Fractal dimensions: theoretical values vs. computational results using box-counting method. Errors are within numerical precision limits.}}{29}{table.4.1}%
+\addvspace {10\p@ }
+\contentsline {table}{\numberline {5.1}{\ignorespaces Planck force in different quantum gravity frameworks}}{45}{table.5.1}%
+\addvspace {10\p@ }
+\contentsline {table}{\numberline {6.1}{\ignorespaces Algebraic Taxonomy: Classification of turbulence regimes via modular selection rules.}}{52}{table.6.1}%
+\addvspace {10\p@ }
+\contentsline {table}{\numberline {7.1}{\ignorespaces Computational framework module architecture}}{58}{table.7.1}%
+\contentsline {table}{\numberline {7.2}{\ignorespaces Property verification across Cayley-Dickson sequence. Comm. = Commutative; Assoc. = Associative; Alt. = Alternative; Zero Div. = Has zero divisors.}}{60}{table.7.2}%
+\contentsline {table}{\numberline {7.3}{\ignorespaces Quaternion multiplication table (verified computationally)}}{60}{table.7.3}%
+\contentsline {table}{\numberline {7.4}{\ignorespaces E$_8$ computational verification results}}{62}{table.7.4}%
+\contentsline {table}{\numberline {7.5}{\ignorespaces Fractal dimension verification: theoretical vs. computational}}{63}{table.7.5}%
+\contentsline {table}{\numberline {7.6}{\ignorespaces Fractal dimensions of strange attractors}}{64}{table.7.6}%
+\contentsline {table}{\numberline {7.7}{\ignorespaces E$_8$ lattice verification}}{65}{table.7.7}%
+\contentsline {table}{\numberline {7.8}{\ignorespaces j-invariant q-expansion verification (first 6 coefficients)}}{66}{table.7.8}%
+\contentsline {table}{\numberline {7.9}{\ignorespaces Computational complexity and typical execution times}}{68}{table.7.9}%
+\contentsline {table}{\numberline {7.10}{\ignorespaces Comprehensive claim verification summary}}{69}{table.7.10}%
+\contentsline {table}{\numberline {7.11}{\ignorespaces Claims rejected or requiring correction}}{69}{table.7.11}%
+\contentsline {table}{\numberline {7.12}{\ignorespaces Comparison of Scenario A theoretical predictions vs. experimental results}}{70}{table.7.12}%
+\addvspace {10\p@ }
+\contentsline {table}{\numberline {8.1}{\ignorespaces Historical examples of successful quantitative predictions}}{74}{table.8.1}%
+\contentsline {table}{\numberline {8.2}{\ignorespaces Alpha Framework prediction assessment}}{75}{table.8.2}%
+\contentsline {table}{\numberline {8.3}{\ignorespaces Genesis Framework prediction assessment}}{75}{table.8.3}%
+\contentsline {table}{\numberline {8.4}{\ignorespaces Pais Superforce prediction assessment}}{75}{table.8.4}%
+\contentsline {table}{\numberline {8.5}{\ignorespaces Tourmaline framework predictions}}{76}{table.8.5}%
+\contentsline {table}{\numberline {8.6}{\ignorespaces Tourmaline material predictions vs. known properties}}{78}{table.8.6}%
+\contentsline {table}{\numberline {8.7}{\ignorespaces Current experimental capabilities and scales}}{78}{table.8.7}%
+\contentsline {table}{\numberline {8.8}{\ignorespaces Testability assessment of framework predictions}}{79}{table.8.8}%
+\contentsline {table}{\numberline {8.9}{\ignorespaces Weakly falsifiable claims with potential loopholes}}{79}{table.8.9}%
+\contentsline {table}{\numberline {8.10}{\ignorespaces Comparison of predictions: frameworks vs. established physics}}{81}{table.8.10}%
+\contentsline {table}{\numberline {8.11}{\ignorespaces Prediction quality assessment. *Planck force is dimensional analysis, already known. **Material properties were already known.}}{84}{table.8.11}%
+\contentsline {table}{\numberline {8.12}{\ignorespaces Comparison with string theory}}{85}{table.8.12}%
+\addvspace {10\p@ }
+\contentsline {table}{\numberline {9.1}{\ignorespaces Validation status classification system}}{91}{table.9.1}%
+\contentsline {table}{\numberline {9.2}{\ignorespaces Property degradation in Cayley-Dickson sequence}}{92}{table.9.2}%
+\contentsline {table}{\numberline {9.3}{\ignorespaces Validation of Cartan matrix determinants and Sugawara consistency for critical turbulence.}}{93}{table.9.3}%
+\contentsline {table}{\numberline {9.4}{\ignorespaces Computational validation results}}{97}{table.9.4}%
+\addvspace {10\p@ }
+\contentsline {table}{\numberline {10.1}{\ignorespaces Problem classification dimensions}}{102}{table.10.1}%
+\contentsline {table}{\numberline {10.2}{\ignorespaces Problem prioritization matrix. Diff = Difficulty (L=Low, M=Medium, H=High, VH=Very High, E=Extreme); Imp = Importance (L=Low, M=Medium, H=High, F=Fundamental, C=Critical); Tract = Tractability (VL=Very Low, L=Low, M=Medium, H=High, VH=Very High)}}{122}{table.10.2}%
+\addvspace {10\p@ }
+\addvspace {10\p@ }

@@ -1,0 +1,48 @@
+% ==============================================================================
+% Appendix: Computational Infrastructure and Visualization
+% ==============================================================================
+
+\chapter{Computational Infrastructure and Visualization}
+\label{app:computational}
+
+\section{Interactive Algebraic Explorer}
+
+To facilitate the exploration of high-dimensional exceptional structures, we have developed a high-performance interactive visualization suite. This tool bridges abstract representation theory with intuitive geometric intuition.
+
+\subsection{Architecture}
+
+The explorer is implemented as a standalone WebGL application integrated into the compendium's build process. It utilizes the following technologies:
+
+\begin{itemize}
+    \item \textbf{Three.js}: A high-level WebGL wrapper for GPU-accelerated 3D rendering.
+    \item \textbf{Vue.js 3}: A progressive JavaScript framework for reactive UI and state management.
+    \item \textbf{Scikit-learn (PCA)}: Utilized during the build phase to project high-dimensional root systems into the 3D visual space while preserving maximal variance.
+    \item \textbf{Tailwind CSS}: Provides a responsive, modern design system for the control panels.
+\end{itemize}
+
+\subsection{Features}
+
+\begin{enumerate}
+    \item \textbf{Multi-Algebra Selection}: Real-time switching between E$_4$--E$_{11}$, F$_4$, and D$_5$ root systems.
+    \item \textbf{Layered Interactivity}:
+    \begin{itemize}
+        \item \textbf{Root Layer}: Visualizes the discrete vectors of the algebra.
+        \item \textbf{Weight/Connection Layer}: Displays nearest-neighbor relationships and lattice connectivity.
+        \item \textbf{Clifford Mapping}: Overlays the mapping to Clifford basis elements via color-coded spectral signatures.
+    \end{itemize}
+    \item \textbf{Metadata Tooltips}: Hovering over any root provides its exact coordinates in the high-dimensional space and its corresponding Cayley-Dickson bit-pattern.
+\end{enumerate}
+
+\subsection{Access}
+
+The explorer is generated as \texttt{figures/lie\_algebras\_explorer.html} during the \texttt{make figures} build step. It is optimized for cross-browser compatibility and adheres to WCAG 2.1 AA accessibility standards for screen-reader and keyboard navigation in the UI overlay.
+
+\section{Simulation Engine}
+
+The physical simulations (Scenario A) are executed using a JAX-accelerated Lattice Boltzmann (LBM) engine.
+
+\begin{itemize}
+    \item \textbf{Hardware Offload}: Automated detection and utilization of CUDA-capable GPUs (e.g., NVIDIA RTX 4070 Ti).
+    \item \textbf{Numerical Stability}: Implementation of order-7 exponential filters ($\mathcal{F}_7$) following Hou and Li conventions.
+    \item \textbf{Data Pipeline}: High-resolution snapshots are persisted in Apache Parquet format for efficient retrieval and post-processing.
+\end{itemize}

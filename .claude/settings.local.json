@@ -1,0 +1,10 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(./venv/bin/python src/quantum_lattice_boltzmann.py)",
+      "Bash(./venv/bin/python quantum_lbm_stable_demo.py)"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}

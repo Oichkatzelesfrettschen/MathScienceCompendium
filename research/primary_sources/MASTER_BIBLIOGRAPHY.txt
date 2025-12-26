@@ -1,0 +1,395 @@
+================================================================================
+MASTER BIBLIOGRAPHY - Mathematical Physics Compendium
+================================================================================
+
+PROJECT: MathScienceCompendium
+COMPILED FROM: 10 PDF source documents
+DATE: October 1, 2025
+LOCATION: /home/eirikr/MathScienceCompendium/research/primary_sources/
+
+NOTE: This bibliography aggregates all cited references from analyzed PDFs.
+Some entries are incomplete due to PDF extraction limitations.
+
+================================================================================
+FUNDAMENTAL PHYSICS - UNIFICATION AND GRAVITY
+================================================================================
+
+[FP-1] Armas, J.
+       "Conversations on Quantum Gravity"
+       Cambridge University Press, 2021
+       SOURCE: Pais SUPERFORCE
+
+[FP-2] Schrodinger, E.
+       "Space-Time Structure"
+       Cambridge University Press, 1950
+       SOURCE: Pais SUPERFORCE
+
+[FP-3] Huang, K.
+       "A Superfluid Universe"
+       World Scientific Press, 2017
+       SOURCE: Pais SUPERFORCE
+
+[FP-4] Georgi, H. & Glashow, S.L.
+       Phys. Rev. Lett. 32, 438-441 (1974)
+       "Grand Unified Theories"
+       SOURCE: Pais SUPERFORCE
+
+[FP-5] Fritzsch, H. & Minkowski, P.
+       Ann. Phys. 93, 193-266 (1975)
+       "Unified Interactions of Leptons and Hadrons"
+       SOURCE: Pais SUPERFORCE
+
+[FP-6] Bertolini, S., Di Luzio, L., and Malinsky, M.
+       Phys. Rev. D85, 095014 (2012)
+       arXiv:1202.0807[hep-ph]
+       SOURCE: Pais SUPERFORCE
+
+[FP-7] Murayama, H. & Pierce, A.
+       Phys. Rev. D65, 055009 (2002)
+       hep-ph/0108104
+       "Not Even Decoupling Can Save Minimal Supersymmetric SU(5)"
+       SOURCE: Pais SUPERFORCE
+
+================================================================================
+QUANTUM MECHANICS AND STATISTICAL PHYSICS
+================================================================================
+
+[QM-1] Kittel, C.
+       "Introduction to Solid State Physics"
+       8th edition, John Wiley & Sons, Inc., 2005
+       SOURCE: Zero-point vibration (1111.4064v2)
+
+[QM-2] Bardeen, J., Cooper, L.N., and Schrieffer, J.R.
+       Phys. Rev. 106, 162 (1957); 108, 1175 (1957)
+       "Theory of Superconductivity"
+       SOURCE: Zero-point vibration (1111.4064v2)
+
+[QM-3] Debye, P.
+       Ann. d. Phys. 348 (1): 49 (1913)
+       "On the Theory of Specific Heats"
+       SOURCE: Zero-point vibration (1111.4064v2)
+
+================================================================================
+ZERO-POINT ENERGY AND CASIMIR EFFECT
+================================================================================
+
+[ZPE-1] Casimir, H.G.B.
+        Proc. Con. Ned. Akad. van Wetensch B51, 793 (1948)
+        "On the Attraction Between Two Perfectly Conducting Plates"
+        SOURCE: Zero-point vibration (1111.4064v2)
+
+[ZPE-2] Lamoreaux, S.K.
+        Phys. Rev. Lett. 78, 5 (1997)
+        "Demonstration of the Casimir Force in the 0.6 to 6 um Range"
+        SOURCE: Zero-point vibration (1111.4064v2)
+
+[ZPE-3] Mohideen, U. & Roy, A.
+        Phys. Rev. Lett. 81, 4549 (1998)
+        "Precision Measurement of the Casimir Force from 0.1 to 0.9 um"
+        SOURCE: Zero-point vibration (1111.4064v2)
+
+[ZPE-4] Bressi, G., Carugno, G., Onofrio, R., and Ruoso, G.
+        Phys. Rev. Lett. 88, 041804 (2002)
+        "Measurement of the Casimir Force between Parallel Metallic Surfaces"
+        SOURCE: Zero-point vibration (1111.4064v2)
+
+[ZPE-5] Jaffe, R.L.
+        Phys. Rev. D 72, 021301(R) (2005)
+        "The Casimir Effect and the Quantum Vacuum"
+        SOURCE: Zero-point vibration (1111.4064v2)
+
+================================================================================
+QUANTUM PHENOMENA IN MATERIALS
+================================================================================
+
+[QP-1] Lee, K.C., et al.
+       Science 334, 1253 (2011)
+       "Entangling Macroscopic Diamonds at Room Temperature"
+       SOURCE: Zero-point vibration (1111.4064v2)
+
+[QP-2] Kresch, M., Lucas, M., Delaire, O., Lin, J.Y.Y., and Fultz, B.
+       Phys. Rev. B 77, 024301 (2008)
+       "Phonons in Aluminum at High Temperatures Studied by Inelastic Neutron Scattering"
+       SOURCE: Zero-point vibration (1111.4064v2)
+
+================================================================================
+COMPUTATIONAL METHODS - DFT AND PHONONS
+================================================================================
+
+[CM-1] Baroni, S., de Gironcoli, S., Dal Corso, A., and Giannozzi, P.
+       Rev. Mod. Phys. 73, 515 (2001)
+       "Phonons and Related Crystal Properties from Density-Functional
+       Perturbation Theory"
+       SOURCE: Zero-point vibration (1111.4064v2)
+
+[CM-2] Perdew, J.P. & Zunger, A.
+       Phys. Rev. B 23, 5048 (1981)
+       "Self-Interaction Correction to Density-Functional Approximations
+       for Many-Electron Systems"
+       SOURCE: Zero-point vibration (1111.4064v2)
+
+[CM-3] Monkhorst, H.J. & Pack, J.D.
+       Phys. Rev. B 13, 5188 (1976)
+       "Special Points for Brillouin-Zone Integrations"
+       SOURCE: Zero-point vibration (1111.4064v2)
+
+================================================================================
+PATENTS AND ENGINEERING APPLICATIONS
+================================================================================
+
+[PAT-1] Pais, Salvatore C.
+        United States Patent US 10,144,532 B2
+        "Craft using an inertial mass reduction device"
+        December 4, 2018
+        SOURCE: Brandenburg commentary
+
+================================================================================
+HIGH-ENERGY PHYSICS - PAIR PRODUCTION AND QED
+================================================================================
+
+[HEP-1] Schwinger mechanism
+        Intensity requirement: > 10^29 W/cm^2
+        Spontaneous pair creation from vacuum
+        SOURCE: Positron production paper (094101)
+        NOTE: Specific citation not extracted
+
+[HEP-2] Breit-Wheeler mechanism
+        Intensity requirement: ~ 10^24 W/cm^2
+        Avalanche-type discharge pair production
+        SOURCE: Positron production paper (094101)
+        NOTE: Specific citation not extracted
+
+[HEP-3] Bethe-Heitler process
+        Three-step pair production via Bremsstrahlung
+        SOURCE: Positron production paper (094101)
+        NOTE: Specific citation not extracted (ref 17)
+
+================================================================================
+COMPUTATIONAL CODES AND SIMULATION TOOLS
+================================================================================
+
+[CODE-1] Chicago PIC Code
+         Particle-in-cell simulation code
+         Used for laser-plasma interaction and transport simulations
+         SOURCE: Positron production paper (094101)
+         NOTE: Reference 21 in original paper
+
+[CODE-2] HYDRA Hydrodynamic Code
+         Used for preplasma profile calculations
+         SOURCE: Positron production paper (094101)
+         NOTE: Reference 25 in original paper
+
+================================================================================
+EXPERIMENTAL FACILITIES AND TECHNIQUES
+================================================================================
+
+[EXP-1] OMEGA EP Laser Facility
+        Laboratory For Laser Energetics, Rochester, NY
+        Wavelength: 1.053 um, Energy: 500 J, Pulse: ~700 fs
+        SOURCE: Positron production paper (094101)
+
+[EXP-2] Dorrer et al., OMEGA EP prepulse characterization
+        Prepulse profile measurements on OMEGA EP
+        SOURCE: Positron production paper (094101)
+        NOTE: Reference 24, specific citation not extracted
+
+[EXP-3] X-ray Fluorescence Spectrometry
+        Instrument: Philips PW2404
+        Used for chemical composition analysis of tourmaline samples
+        SOURCE: Tourmaline electrical properties (978-3-319-48210-1_10)
+
+================================================================================
+MATERIALS CHARACTERIZATION - TOURMALINE
+================================================================================
+
+[MAT-1] Schmidt records
+        Historical observations of tourmaline electrical behavior
+        Dutch discovery of dust attraction when heated
+        SOURCE: Tourmaline electrical properties (978-3-319-48210-1_10)
+
+[MAT-2] Kubo (1992)
+        Experimental confirmation of tourmaline spontaneous polarity
+        SOURCE: Tourmaline electrical properties (978-3-319-48210-1_10)
+        NOTE: Full citation not extracted
+
+[MAT-3] Tourmaline classification references
+        References 2 and 3 in electrical properties paper
+        Classification schemes for dravite vs. elbaite
+        SOURCE: Tourmaline electrical properties (978-3-319-48210-1_10)
+        NOTE: Full citations not extracted
+
+[MAT-4] Tourmaline environmental applications reference
+        Reference 1 in electrical properties paper
+        Applications in infrared radiation, negative ion release,
+        water activation
+        SOURCE: Tourmaline electrical properties (978-3-319-48210-1_10)
+        NOTE: Full citation not extracted
+
+================================================================================
+GRAVITOELECTROMAGNETIC (GEM) THEORY
+================================================================================
+
+[GEM-1] Puthoff's gravity theory
+        Mentioned in Brandenburg commentary
+        Agreement with Pais and GEM approaches
+        SOURCE: Brandenburg commentary
+        NOTE: Specific citation not provided
+
+[GEM-2] GEM Theory formulation
+        Gravitoelectromagnetic field equations
+        Vacuum Bernoulli Equation derivation
+        SOURCE: Brandenburg commentary
+        NOTE: No specific citations provided (presentation format)
+
+================================================================================
+HISTORICAL REFERENCES
+================================================================================
+
+[HIST-1] Nikola Tesla
+         "Inventor of the Poynting Vector Vortex"
+         Historical context for EM-gravity interaction concepts
+         SOURCE: Brandenburg commentary
+
+================================================================================
+BOOK CHAPTERS AND EDITED VOLUMES
+================================================================================
+
+[BOOK-1] Ikhmayies, S.J., Li, B., Carpenter, J.S., Hwang, J.Y.,
+         Monteiro, S.N., Li, J., Firrao, D., Zhang, M., Peng, Z.,
+         Escobedo-Diaz, J.P., and Bai, C. (Editors)
+         "Characterization of Minerals, Metals, and Materials 2016"
+         TMS (The Minerals, Metals & Materials Society), 2016
+         Chapter: "Electrical Effect and Influence Factors of Tourmaline"
+         Authors: Qi Lu, Bowen Li, Feng Bai
+         ISBN: 978-3-319-48210-1 (Chapter 10)
+         SOURCE: Tourmaline electrical properties
+
+================================================================================
+INCOMPLETE CITATIONS REQUIRING FURTHER INVESTIGATION
+================================================================================
+
+The following references were mentioned but not fully extracted from PDFs:
+
+FROM ZERO-POINT VIBRATION PAPER (1111.4064v2):
+  - Reference 7: Phonon formalism (page 107-108 context)
+  - Reference 9: Debye-Waller factor definition
+  - Reference 10: X-ray diffraction techniques
+  - Reference 11: (Not extracted)
+  - Reference 13: (Not extracted)
+  - Reference 17: (Not extracted)
+  - Reference 19: (Not extracted)
+
+FROM POSITRON PRODUCTION PAPER (094101):
+  - References 1-20: Various aspects of pair production physics
+  - References 4, 10-16: Previous pair production experiments
+  - References 18-19: Structured target electron enhancement
+  - Reference 20: Bremsstrahlung enhancement
+  - References 26-27: Multi-stage simulation approach
+
+FROM TOURMALINE FRAMEWORK DOCUMENTS:
+  - Comprehensive theoretical references not provided (independent research)
+  - Numerical simulation references not specified
+  - Experimental validation protocol references not cited
+
+NOTE: For complete citations, consult original PDF documents in:
+/home/eirikr/MathScienceCompendium/source_materials/pdfs/
+
+================================================================================
+CITATION STATISTICS
+================================================================================
+
+Total Extracted Citations: 29 complete entries + 1 patent
+Incomplete Citations: ~40+ additional references mentioned
+Primary Sources: 10 documents analyzed
+
+Distribution by Category:
+  - Fundamental Physics: 7 entries
+  - Quantum Mechanics: 3 entries
+  - Zero-Point Energy: 5 entries
+  - Quantum Materials: 2 entries
+  - Computational Methods: 3 entries
+  - High-Energy Physics: 3 entries (incomplete)
+  - Experimental: 3 entries
+  - Materials (Tourmaline): 4 entries
+  - Books/Chapters: 1 entry
+  - Patents: 1 entry
+  - Historical: 1 entry
+  - Codes: 2 entries
+
+Journal Distribution:
+  - Physical Review (all variants): 13 citations
+  - Science: 1 citation
+  - Annalen der Physik: 1 citation
+  - Reviews of Modern Physics: 1 citation
+  - Book publishers: 4 (Cambridge, Wiley, World Scientific, TMS)
+
+Time Distribution:
+  - Pre-1950: 1 citation (Debye 1913, Casimir 1948)
+  - 1950-1980: 4 citations
+  - 1981-2000: 5 citations
+  - 2001-2010: 4 citations
+  - 2011-2020: 3 citations
+  - 2021+: 1 citation
+
+================================================================================
+RECOMMENDED ADDITIONAL SOURCES
+================================================================================
+
+Based on gaps in current bibliography, recommended additions:
+
+FRACTIONAL CALCULUS:
+  - Podlubny, I., "Fractional Differential Equations" (1999)
+  - Kilbas, A.A., et al., "Theory and Applications of Fractional
+    Differential Equations" (2006)
+
+HYPERCOMPLEX ALGEBRA:
+  - Baez, J.C., "The Octonions", Bull. Amer. Math. Soc. 39, 145-205 (2002)
+  - Conway, J.H. & Smith, D.A., "On Quaternions and Octonions" (2003)
+
+QUANTUM FOAM:
+  - Wheeler, J.A., "Geons, Black Holes, and Quantum Foam" (1998)
+  - Carlip, S., "Quantum Gravity: A Progress Report" (2001)
+
+NONLINEAR OPTICS:
+  - Boyd, R.W., "Nonlinear Optics" (3rd ed., 2008)
+  - Shen, Y.R., "The Principles of Nonlinear Optics" (1984)
+
+PHONON PHYSICS:
+  - Ziman, J.M., "Electrons and Phonons" (1960)
+  - Maris, H.J. & Tamura, S., "Propagation of acoustic phonons" (2011)
+
+PIEZOELECTRICITY:
+  - Nye, J.F., "Physical Properties of Crystals" (1985)
+  - Cady, W.G., "Piezoelectricity" (1964)
+
+GEM THEORY:
+  - Mashhoon, B., "Gravitoelectromagnetism: A Brief Review" (2008)
+  - Ciufolini, I. & Wheeler, J.A., "Gravitation and Inertia" (1995)
+
+================================================================================
+BIBLIOGRAPHY MAINTENANCE NOTES
+================================================================================
+
+LAST UPDATED: October 1, 2025
+MAINTAINER: E.J. Hinngaart / Claude Code Analysis
+LOCATION: /home/eirikr/MathScienceCompendium/research/primary_sources/
+
+TO UPDATE THIS BIBLIOGRAPHY:
+1. Extract text from new PDFs using pdftotext
+2. Search for reference sections using:
+   grep -n "References\|REFERENCES\|^\[1\]" extracted_file.txt
+3. Parse citations and add to appropriate category
+4. Update citation statistics
+5. Maintain chronological and categorical organization
+
+CITATION FORMAT CONVENTIONS:
+- Author(s): Last name, First initial(s)
+- Journal articles: Journal Vol, Page (Year)
+- Books: "Title", Publisher, Year
+- arXiv: Include arXiv identifier
+- Patents: Include patent number and date
+- SOURCE: Document where citation was found
+
+================================================================================
+END OF MASTER BIBLIOGRAPHY
+================================================================================

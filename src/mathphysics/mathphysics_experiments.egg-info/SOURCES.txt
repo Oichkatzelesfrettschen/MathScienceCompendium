@@ -1,0 +1,10 @@
+README.md
+setup.py
+src/mathphysics_experiments.egg-info/PKG-INFO
+src/mathphysics_experiments.egg-info/SOURCES.txt
+src/mathphysics_experiments.egg-info/dependency_links.txt
+src/mathphysics_experiments.egg-info/entry_points.txt
+src/mathphysics_experiments.egg-info/requires.txt
+src/mathphysics_experiments.egg-info/top_level.txt
+tests/test_all.py
+tests/test_quantum_modules.py

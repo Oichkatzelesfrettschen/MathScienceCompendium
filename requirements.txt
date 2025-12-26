@@ -1,0 +1,6 @@
+
+# Specialized Algebraic-Topological Infrastructure
+liesym>=0.8.1
+gudhi>=3.11.0
+jaxlie>=1.5.0
+giotto-tda>=0.1.4

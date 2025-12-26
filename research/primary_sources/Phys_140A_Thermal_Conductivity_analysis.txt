@@ -1,0 +1,199 @@
+================================================================================
+ANALYSIS: Lecture 14 - Thermal Conductivity (Phys-140A)
+================================================================================
+
+TITLE: Lecture 14: Thermal conductivity
+
+AUTHORS: Not specified (Physics 140A course material)
+
+PUBLICATION: Lecture notes
+
+DATE: Not specified
+
+TYPE: Educational/Course Material
+
+================================================================================
+ABSTRACT/SUMMARY:
+================================================================================
+
+This lecture covers thermal conductivity in solids from the perspective of
+phonon transport. It begins with a review of phonons as particles, comparing
+classical molecular gases to phonon gases. The lecture develops the theory of
+thermal conductivity coefficient and its dependence on heat capacity,
+particle velocity, and mean free path.
+
+Key concept: Thermal conductivity K = (1/3) C v l, where C is heat capacity
+per unit volume, v is average particle velocity, and l is mean free path.
+
+================================================================================
+KEY MATHEMATICAL CLAIMS:
+================================================================================
+
+1. THERMAL CONDUCTIVITY DEFINITION:
+   j_U = -K (dT/dx)
+   where:
+   - j_U = energy transmitted across unit area per unit time
+   - K = thermal conductivity coefficient
+   - dT/dx = temperature gradient
+   - Negative sign: heat flows from hot to cold
+
+2. THERMAL CONDUCTIVITY COEFFICIENT:
+   K = (1/3) C v l
+   where:
+   - C = heat capacity (constant volume, per unit volume)
+   - v = average particle velocity
+   - l = mean free path between collisions
+
+3. PHONON OCCUPATION NUMBER (BOSE-EINSTEIN):
+   <n> = 1 / (exp(h-bar*omega/(k_B*T)) - 1)
+   Limits:
+   - Small T: <n> ~ exp(-h-bar*omega/(k_B*T)) (exponential suppression)
+   - Large T: <n> ~ k_B*T/(h-bar*omega) (classical limit)
+
+4. PHONON DISPERSION (ACOUSTIC BRANCH NEAR k=0):
+   omega ~ v_s * k
+   where v_s = speed of sound, k = crystal momentum
+
+5. INTERNAL ENERGY:
+   Classical gas (N particles): U = 3 N k_B T
+   Phonon gas: U = sum over (K,p) of <n_(K,p)> * h-bar*omega_(K,p)
+            = sum over (K,p) of (h-bar*omega_(K,p))/(exp(h-bar*omega/(k_B*T))-1)
+
+6. ENERGY TRANSPORT PER PARTICLE:
+   Delta_U = C * Delta_T
+   where C is heat capacity, Delta_T is temperature difference
+
+================================================================================
+KEY PHYSICAL CLAIMS:
+================================================================================
+
+1. PHONONS AS PARTICLE GAS:
+   - Can treat quantized lattice vibrations as particle gas
+   - Analogous to classical molecular gas but with key differences
+
+2. PHONON GAS VS CLASSICAL GAS DIFFERENCES:
+   - Number: Classical gas fixed, phonon population temperature-dependent
+   - Energy-momentum: Classical KE=p^2/(2m), phonons omega~v_s*k
+   - Collisions: Both conserve energy; phonon momentum conserved modulo
+     reciprocal lattice vector G
+   - Particle number: Conserved in classical gas, NOT conserved for phonons
+
+3. HEAT FLOW IS INCOHERENT:
+   - Temperature changes associated with entropy changes
+   - Not ballistic process, involves many collisions
+   - Diffusive transport mechanism
+
+4. TEMPERATURE DETERMINES PHONON POPULATION:
+   - Higher temperature -> higher occupation of phonon modes
+   - Modes with energy < or comparable to temperature preferentially occupied
+
+5. REAL-WORLD THERMAL CONDUCTIVITY:
+   - Large pan on small burner: slow edge heating (finite thermal conductivity)
+   - Different materials at same temperature feel different (marble cooler
+     than wood due to higher thermal conductivity)
+   - Electronics cooling: high thermal conductivity materials draw heat from
+     processor
+
+6. PHONON SCATTERING MECHANISMS:
+   - Phonon-phonon collisions
+   - Surface scattering at crystal boundaries
+   - Impurity scattering
+
+================================================================================
+METHODOLOGY:
+================================================================================
+
+1. PEDAGOGICAL APPROACH:
+   - Comparison table: classical gas vs. phonon gas
+   - Limiting case analysis (small T, large T)
+   - Real-world examples for intuition building
+
+2. THEORETICAL DEVELOPMENT:
+   - Particle-like treatment of phonons
+   - Statistical mechanics (Bose-Einstein distribution)
+   - Kinetic theory of gases applied to phonons
+
+3. CONCEPTUAL TOOLS:
+   - Mean free path concept
+   - Heat capacity connection
+   - Temperature gradient driving force
+
+================================================================================
+RESULTS/KEY INSIGHTS:
+================================================================================
+
+1. THERMAL CONDUCTIVITY FORMULA:
+   K = (1/3) C v l provides simple physical picture
+
+2. THREE FACTORS CONTROL K:
+   - Heat capacity C (energy storage per temperature change)
+   - Velocity v (transport speed)
+   - Mean free path l (distance between scattering events)
+
+3. PHONON POPULATION LIMITS:
+   - Low T: exponentially suppressed occupation
+   - High T: classical behavior (equipartition)
+
+4. MOMENTUM CONSERVATION SUBTLETY:
+   - Phonon momentum conserved modulo reciprocal lattice vector
+   - Allows Umklapp processes (momentum non-conserving in real space)
+
+5. PARTICLE NUMBER NON-CONSERVATION:
+   - Phonons can be created/destroyed
+   - Distinguishes phonon gas from classical molecular gas
+
+================================================================================
+RELEVANCE TO COMPENDIUM:
+================================================================================
+
+FUNDAMENTAL PHONON PHYSICS:
+- Phonon gas properties
+- Bose-Einstein statistics
+- Acoustic phonon dispersion relations
+
+CONNECTIONS TO OTHER DOCUMENTS:
+- Zero-point vibration paper (1111.4064v2): phonon dynamics at low T
+- Tourmaline papers: thermal conductivity of crystalline materials
+- Quantum lattice dynamics framework
+
+THERMAL PHYSICS:
+- Heat capacity theory
+- Energy transport mechanisms
+- Temperature-dependent phenomena
+
+MATERIAL SCIENCE:
+- Thermal management in materials
+- Electronics cooling applications
+- Material property engineering
+
+STATISTICAL MECHANICS:
+- Canonical ensemble
+- Bose-Einstein distribution
+- Quantum statistics
+
+THEORETICAL FRAMEWORKS:
+- Kinetic theory extension to quantum particles
+- Mean free path formalism
+- Scattering theory basics
+
+EXPERIMENTAL CONNECTIONS:
+- Measurable quantity (thermal conductivity)
+- Temperature-dependent measurements
+- Material characterization technique
+
+ENGINEERING APPLICATIONS:
+- Thermal management design
+- Material selection for heat transfer
+- Electronics thermal engineering
+
+QUANTUM-CLASSICAL TRANSITION:
+- High temperature classical limit
+- Low temperature quantum effects
+- Crossover behavior
+
+EDUCATIONAL VALUE:
+- Clear pedagogical development
+- Comparison/contrast teaching method
+- Real-world application grounding
+
+================================================================================

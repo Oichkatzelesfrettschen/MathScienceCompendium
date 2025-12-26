@@ -1,0 +1,64 @@
+{
+  "parameters": {
+    "nx": 32,
+    "ny": 32,
+    "tau": 1.5,
+    "reynolds": 1.0,
+    "timesteps": 50,
+    "num_harmonics": 3,
+    "harmonic_amplitude": 0.0001
+  },
+  "conservation": {
+    "mass_error": 1220.3412830068928,
+    "energy_change": 7659032.801870829,
+    "initial_mass": 1024.3198730028591,
+    "final_mass": 1251044.1479027695
+  },
+  "snapshots": [
+    {
+      "step": 10,
+      "density_mean": 2.0301537725359204,
+      "density_std": 0.5318567341552629,
+      "velocity_max": 0.17320508071922597,
+      "mass": 2078.8774630767825,
+      "energy": 29.09274529535081,
+      "coherence_mean": 0.9944093571215261
+    },
+    {
+      "step": 20,
+      "density_mean": 9.990801583109656,
+      "density_std": 2.319752328112821,
+      "velocity_max": 0.1732050807190135,
+      "mass": 10230.580821104288,
+      "energy": 144.01620922081636,
+      "coherence_mean": 0.9924224762763474
+    },
+    {
+      "step": 30,
+      "density_mean": 49.207353137433685,
+      "density_std": 10.814703914795784,
+      "velocity_max": 0.1732050807189591,
+      "mass": 50388.329612732094,
+      "energy": 704.711289659732,
+      "coherence_mean": 0.9904395653208975
+    },
+    {
+      "step": 40,
+      "density_mean": 244.84788675300877,
+      "density_std": 50.61158635837195,
+      "velocity_max": 0.17320508071916668,
+      "mass": 250724.23603508098,
+      "energy": 3522.367448415151,
+      "coherence_mean": 0.9884606163231331
+    },
+    {
+      "step": 50,
+      "density_mean": 1221.7228006862983,
+      "density_std": 241.45550884716334,
+      "velocity_max": 0.17320508071927165,
+      "mass": 1251044.1479027695,
+      "energy": 17635.138281116364,
+      "coherence_mean": 0.9864856213668598
+    }
+  ]
+}

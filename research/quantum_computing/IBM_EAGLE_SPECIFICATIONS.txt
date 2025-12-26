@@ -1,0 +1,265 @@
+================================================================================
+IBM EAGLE 127-QUBIT QUANTUM PROCESSOR - TECHNICAL SPECIFICATIONS
+================================================================================
+Sources: IBM Quantum Blog, Wikipedia, verified October 19, 2025
+================================================================================
+
+PROCESSOR OVERVIEW
+================================================================================
+
+NAME: IBM Eagle
+ANNOUNCEMENT DATE: November 16, 2021
+SIGNIFICANCE: First IBM quantum processor >100 qubits
+SCALE: Beyond classical simulation capabilities
+
+QUBIT COUNT: 127 fixed-frequency transmon qubits
+
+================================================================================
+IBM_KYIV SYSTEM
+================================================================================
+
+SYSTEM NAME: ibm_kyiv
+PROCESSOR TYPE: Eagle r3 (revision 3)
+QUBITS: 127
+ARCHITECTURE: Heavy hexagon topology
+
+CONNECTIVITY:
+- Total CX connections: 288
+- Each qubit connected to 2-3 neighbors
+- Heavy hexagon pattern optimizes for error rates
+
+BASIS GATES:
+- CX: Controlled-NOT (two-qubit gate)
+- ID: Identity
+- RZ: Rotation around Z-axis
+- SX: √X gate
+- X: Pauli-X (bit flip)
+
+================================================================================
+PERFORMANCE METRICS
+================================================================================
+
+TWO-QUBIT GATE FIDELITY: 97.93% (error rate: 2.07%)
+READOUT FIDELITY: 98.58% (error rate: 1.42%)
+
+COHERENCE TIMES:
+- T1 (relaxation): 70-110 microseconds
+- T2 (dephasing): Record T2 = 160 microseconds (exceptional)
+
+GATE TIMES:
+- Single-qubit gates: ~35 ns
+- Two-qubit CX gates: ~500 ns
+
+================================================================================
+ARCHITECTURE DETAILS
+================================================================================
+
+QUBIT TYPE: Superconducting transmon qubits
+FREQUENCY: Fixed-frequency (not tunable)
+
+3D INTEGRATION:
+- Multiple physical levels for wiring
+- Reduces qubit crosstalk
+- Enables higher qubit density
+- Microwave circuit components on separate layers
+
+TOPOLOGY: Heavy Hexagon
+- Optimized for error mitigation
+- Reduces required SWAP operations
+- Balances connectivity vs. coherence
+
+CRYOGENIC OPERATION:
+- Operating temperature: ~15 millikelvin
+- Dilution refrigerator system
+- Magnetic shielding
+
+================================================================================
+QUANTUM VOLUME AND PERFORMANCE
+================================================================================
+
+IBM has demonstrated "Quantum Utility" with Eagle processors:
+- Quantum volume improvements
+- Error mitigation techniques
+- Circuit optimization strategies
+
+CIRCUIT DEPTH:
+- Practical depth varies with error mitigation
+- Demonstrated utility in specific problem classes
+
+================================================================================
+E7/E8 MAPPING CONSIDERATIONS
+================================================================================
+
+127 QUBITS ↔ E7 MAPPING:
+
+Option 1: Direct State Mapping
+- Each qubit represents one of 127 states
+- 126 states for E7 roots + 1 for zero vector
+- Simple but uses all qubits
+
+Option 2: Index Encoding
+- Use 7 qubits to index 128 states (127 used)
+- Remaining ~120 qubits for:
+  * Ancillas for error correction
+  * Oracle implementation
+  * State verification
+  * Grover diffusion operators
+
+Option 3: Amplitude Encoding
+- Encode root coordinates as amplitudes
+- Requires quantum state tomography
+- More complex but uses fewer qubits
+
+PRACTICAL CONSTRAINTS:
+- Heavy hexagon topology limits circuit design
+- Need to optimize for qubit connectivity
+- Error mitigation essential for >100 gate depth
+- Measurement correlations due to readout crosstalk
+
+================================================================================
+INTEGRATION WITH QISKIT
+================================================================================
+
+RUNTIME ACCESS:
+from qiskit_ibm_runtime import QiskitRuntimeService
+
+service = QiskitRuntimeService()
+backend = service.backend("ibm_kyiv")
+
+SIMULATOR (for testing):
+from qiskit.providers.fake_provider import FakeKyiv
+
+fake_backend = FakeKyiv()
+
+TRANSPILATION:
+from qiskit import transpile
+
+# Optimize circuit for Kyiv topology
+transpiled_circuit = transpile(
+    circuit,
+    backend=backend,
+    optimization_level=3
+)
+
+================================================================================
+E8 ROOT SYSTEM ENCODING STRATEGY
+================================================================================
+
+E8: 240 roots → Beyond single Eagle processor
+Options:
+1. Use 2 Eagle processors (254 qubits total)
+2. Use index encoding: log₂(240) ≈ 8 qubits
+3. Wait for IBM Condor (1,121 qubits) or Heron successors
+
+CURRENT (2025) IBM PROCESSORS:
+- Eagle: 127 qubits (2021)
+- Osprey: 433 qubits (2022)
+- Condor: 1,121 qubits (2023)
+- Heron: 133 qubits (2023, improved quality)
+
+FOR E7 WORK: Eagle (ibm_kyiv) is ideal match
+FOR E8 WORK: Consider Osprey or index encoding on Eagle
+
+================================================================================
+ERROR MITIGATION STRATEGIES
+================================================================================
+
+ZERO-NOISE EXTRAPOLATION:
+- Run circuits at different noise levels
+- Extrapolate to zero noise
+
+PROBABILISTIC ERROR CANCELLATION:
+- Inverse noise channels
+- Quasi-probability distributions
+
+MEASUREMENT ERROR MITIGATION:
+- Calibration matrices
+- Correct readout errors
+
+DYNAMICAL DECOUPLING:
+- Insert identity-equivalent pulse sequences
+- Reduce dephasing during idle times
+
+================================================================================
+EXPERIMENTAL WORKFLOW FOR E7 PROJECT
+================================================================================
+
+1. DESIGN PHASE:
+   - Create quantum circuit for E7 root encoding
+   - Implement oracle for root validation
+   - Design Grover/amplitude amplification
+
+2. SIMULATION PHASE:
+   - Test with Qiskit Aer simulator
+   - Test with FakeKyiv (noise model)
+   - Validate against classical E7 computations
+
+3. TRANSPILATION:
+   - Optimize for heavy hexagon topology
+   - Minimize circuit depth
+   - Route for Kyiv connectivity
+
+4. EXECUTION:
+   - Submit to ibm_kyiv via IBM Quantum Platform
+   - Use error mitigation
+   - Collect measurement results
+
+5. ANALYSIS:
+   - Decode bitstrings to root vectors
+   - Validate against known E7 structure
+   - Statistical analysis of fidelity
+
+================================================================================
+COST AND ACCESS
+================================================================================
+
+IBM QUANTUM PLATFORM:
+- Open Plan: Free access to select systems
+- Premium Plan: Dedicated access, priority queue
+- Pay-as-you-go: Per-second pricing
+
+EDUCATIONAL ACCESS:
+- Available for research and education
+- Check IBM Quantum Educators program
+
+SIMULATION:
+- Free via Qiskit Aer
+- FakeKyiv for noise modeling (no quantum runtime needed)
+
+================================================================================
+REFERENCES
+================================================================================
+
+[1] IBM Quantum Blog. "IBM Quantum breaks the 100‑qubit processor barrier"
+    https://www.ibm.com/quantum/blog/127-qubit-quantum-processor-eagle
+
+[2] IBM Newsroom. "IBM Unveils Breakthrough 127-Qubit Quantum Processor"
+    November 16, 2021
+
+[3] Wikipedia. "IBM Eagle"
+    https://en.wikipedia.org/wiki/IBM_Eagle
+
+[4] IBM Quantum Documentation - ibm_kyiv specifications
+    https://quantum.ibm.com/services/resources?system=ibm_kyiv
+
+[5] Qiskit IBM Runtime Documentation - FakeKyiv
+    https://docs.quantum.ibm.com/api/qiskit-ibm-runtime/fake-provider-fake-kyiv
+
+================================================================================
+TIMELINE AND CONTEXT
+================================================================================
+
+2019: IBM Quantum System One (20-50 qubits)
+2021: Eagle breakthrough (127 qubits)
+2022: Osprey (433 qubits)
+2023: Condor (1,121 qubits), Heron (133 qubits, improved)
+2024-2025: Focus on utility demonstration, error correction
+
+CURRENT STATUS (Oct 2025):
+- ibm_kyiv remains active in IBM Quantum fleet
+- Part of open access systems for researchers
+- Used for benchmarking and algorithm development
+
+================================================================================
+END OF IBM EAGLE SPECIFICATIONS
+================================================================================

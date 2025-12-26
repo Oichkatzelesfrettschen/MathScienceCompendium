@@ -1,0 +1,2 @@
+[console_scripts]
+mathphysics-exp = src.main:main

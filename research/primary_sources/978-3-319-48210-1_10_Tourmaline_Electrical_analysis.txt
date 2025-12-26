@@ -1,0 +1,243 @@
+================================================================================
+ANALYSIS: Electrical Effect and Influence Factors of Tourmaline
+================================================================================
+
+TITLE: Electrical Effect and Influence Factors of Tourmaline
+
+AUTHORS: Qi Lu, Bowen Li, Feng Bai
+
+AFFILIATIONS:
+- China University of Geosciences, Beijing, 100083, China
+- Michigan Technological University, Houghton, MI 49931, U.S.A
+
+PUBLICATION: Characterization of Minerals, Metals, and Materials 2016
+Edited by: S.J. Ikhmayies et al., TMS (The Minerals, Metals & Materials Society)
+
+DATE: 2016
+
+BOOK CHAPTER: 978-3-319-48210-1_10 (ISBN identifier in filename)
+
+KEYWORDS: Tourmaline, Piezoelectricity, Dielectricity, Pyroelectric property
+
+================================================================================
+ABSTRACT/SUMMARY:
+================================================================================
+
+Tourmaline is a crystalline boron silicate mineral with special electrical
+and optical behaviors. This study evaluated electrical performances of
+crystalline tourmaline samples from various deposit sites in China. Results
+show that piezoelectric constants depend on crystalline direction, mineral
+species, and specialty elements in the crystal. Dravite has higher
+piezoelectric constant than elbaite. Dielectric tests show tourmaline is a
+low dielectric constant material (4-10 x 10^-12 pf/cm). Dielectric constant
+along C axis is higher than other directions. Pyroelectric property is
+proportional to dielectric properties and negatively correlated to ferric
+oxide ratio at room temperature.
+
+================================================================================
+KEY MATHEMATICAL CLAIMS:
+================================================================================
+
+1. PIEZOELECTRIC RELATIONSHIP:
+   P = d * T
+   where:
+   - P = electric polarization
+   - d = piezoelectric modulus (piezoelectric strain coefficient)
+   - T = applied stress
+   - Units of d: N^-1 * C (Coulomb/Newton)
+
+2. CRYSTAL STRUCTURE:
+   - Trigonal system
+   - Symmetry class: L33P
+   - Space group: R3m
+   - Necessary condition for piezoelectric effect
+
+3. DIELECTRIC CONSTANT RANGE:
+   - Low dielectric constant material
+   - Range: 4 x 10^-12 pf/cm to 10 x 10^-12 pf/cm
+   - Anisotropic: C axis > other directions
+
+4. SAMPLE COMPOSITIONS (weight %):
+   HN-1 (Henan - Elbaite):
+   - SiO2: 43.64%, Al2O3 (implied), Fe2O3: 0.031%, MnO: 0.43%
+
+   YN-1 (Yunnan - Elbaite):
+   - SiO2: 44.16%, Fe2O3: 1.68%, FeO: 1.75%, MgO: 0.029%
+
+   HB-1 (Hebei - Dravite):
+   - SiO2: 38.40%, Fe2O3: 6.31%, MgO: 10.08%
+
+5. PIEZOELECTRIC CONSTANT HIERARCHY:
+   Dravite (HB-1) > Elbaite (HN-1, YN-1)
+
+================================================================================
+KEY PHYSICAL CLAIMS:
+================================================================================
+
+1. POLAR STRUCTURE PROPERTIES:
+   - Tourmaline has spontaneous polarity (Kubo, 1992)
+   - Can attract dusts when heated, discharge powder when cooled (Dutch
+     historical observation, Schmidt records)
+
+2. PIEZOELECTRIC EFFECT CONDITIONS:
+   - Requires polar crystal structure
+   - Even small external pressure produces effect due to low crystalline
+     symmetry
+   - Non-conductive at room temperature
+   - Uneven charge distribution under pressure
+
+3. STRESS RESPONSE:
+   - Any stress type produces electric dipole:
+     * Tensile stress
+     * Compressive stress
+     * Shear stress
+
+4. SPECIES-DEPENDENT PROPERTIES:
+   - Dravite (Mg-rich): higher piezoelectric constant
+   - Elbaite (Li-rich): lower piezoelectric constant
+   - Variation results from element type in crystal structure
+
+5. PYROELECTRIC CORRELATIONS:
+   - Proportional to dielectric properties at room temperature
+   - Negatively correlated to Fe2O3 ratio
+   - Temperature-dependent behavior
+
+6. ENVIRONMENTAL APPLICATIONS:
+   - Infrared radiation
+   - Release of negative ions
+   - Adsorption and water activation
+   - Important for environmental protection
+
+================================================================================
+METHODOLOGY:
+================================================================================
+
+1. SAMPLE SELECTION:
+   - Three locations in China:
+     * Nanyang (Henan province) - HN-1
+     * Gaoligong mountain (Yunnan province) - YN-1
+     * Fuping (Hebei province) - HB-1
+   - Pure single crystals selected
+
+2. CHEMICAL ANALYSIS:
+   - X-ray fluorescence spectrometry (Philips PW2404)
+   - Determined major and trace element compositions
+
+3. CLASSIFICATION:
+   - Based on chemical composition
+   - HB-1: Dravite (high Mg content)
+   - HN-1, YN-1: Elbaite (low Fe, varied MgO)
+
+4. ELECTRICAL PROPERTY MEASUREMENTS:
+   - Piezoelectric constant measurements (directional)
+   - Dielectric property tests
+   - Pyroelectric property evaluation
+
+5. CORRELATION ANALYSIS:
+   - Piezoelectric constant vs. species
+   - Pyroelectric vs. dielectric properties
+   - Pyroelectric vs. Fe2O3 content
+
+================================================================================
+RESULTS:
+================================================================================
+
+1. CHEMICAL COMPOSITION VARIABILITY:
+   - Significant differences between deposit sites
+   - HB-1: highest MgO (10.08%), Fe2O3 (6.31%)
+   - HN-1: lowest Fe (0.031%), highest F (4.09%)
+   - YN-1: intermediate composition
+
+2. PIEZOELECTRIC CONSTANT FINDINGS:
+   - Fixed crystalline direction measurement
+   - Dravite > Elbaite in piezoelectric response
+   - Element type determines variation
+
+3. DIELECTRIC CHARACTERISTICS:
+   - Low dielectric constant material
+   - Anisotropic behavior (C axis higher)
+   - Range: 4-10 x 10^-12 pf/cm
+
+4. PYROELECTRIC BEHAVIOR:
+   - Room temperature measurements
+   - Positive correlation: dielectric properties
+   - Negative correlation: Fe2O3 ratio
+
+5. SPECIES CLASSIFICATION:
+   - Successfully categorized samples
+   - Dravite vs. Elbaite distinction clear from composition
+
+================================================================================
+BIBLIOGRAPHY (Extracted):
+================================================================================
+
+[1] (Water activation and environmental applications - not fully extracted)
+
+[2] (Tourmaline classification reference - not fully extracted)
+
+[3] (Tourmaline classification reference - not fully extracted)
+
+[4] Piezoelectric relationship P = d * T (general physics reference)
+
+Historical References:
+- Schmidt records (Dutch observations of tourmaline heating/cooling effects)
+- Kubo (1992) - confirmed spontaneous polarity through experiment
+
+================================================================================
+RELEVANCE TO COMPENDIUM:
+================================================================================
+
+MATERIAL CHARACTERIZATION:
+- Detailed chemical composition of natural tourmaline samples
+- Species-dependent electrical properties
+- Anisotropic behavior quantification
+
+CONNECTIONS TO OTHER DOCUMENTS:
+- Direct relevance to Tourmaline.pdf (comprehensive quantum framework)
+- Experimental validation for theoretical models
+- Piezoelectric properties connect to energy harvesting concepts
+- Dielectric properties relevant to Pais Superforce engineering (mu, epsilon)
+
+PIEZOELECTRIC APPLICATIONS:
+- Energy harvesting from mechanical stress
+- Sensor applications
+- Actuator technology
+- Connection to vacuum engineering via field manipulation
+
+PYROELECTRIC APPLICATIONS:
+- Thermal energy conversion
+- Temperature sensing
+- Infrared detection
+- Biological applications (thermal interaction)
+
+CRYSTAL PHYSICS:
+- Polar structure mechanics
+- Symmetry requirements for piezoelectricity
+- Anisotropic electrical response
+- Compositional effects on properties
+
+ENVIRONMENTAL TECHNOLOGY:
+- Negative ion generation
+- Water activation
+- Air purification
+- Environmental protection applications
+
+EXPERIMENTAL TECHNIQUES:
+- X-ray fluorescence spectrometry
+- Electrical property measurement methods
+- Crystal orientation analysis
+- Composition-property correlation studies
+
+THEORETICAL IMPLICATIONS:
+- Element substitution effects on electrical properties
+- Structure-property relationships
+- Anisotropic tensor properties
+- Temperature-dependent behavior
+
+PRACTICAL ENGINEERING:
+- Material selection criteria
+- Deposit site evaluation
+- Quality control via composition analysis
+- Application-specific tourmaline selection
+
+================================================================================
