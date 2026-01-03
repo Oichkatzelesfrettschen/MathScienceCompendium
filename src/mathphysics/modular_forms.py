@@ -1,16 +1,27 @@
 """Modular Forms and Affine Characters.
 
 Provides Dedekind Eta, Jacobi Theta, and Eisenstein series for computing
-characters of affine Lie algebra representations. Optimized via JAX.
+characters of affine Lie algebra representations. Optimized via JAX when available.
 """
 
 from __future__ import annotations
 
 from typing import TYPE_CHECKING
 
-import jax.numpy as jnp
 import numpy as np
-from jax import jit
+
+try:
+    import jax.numpy as jnp
+    from jax import jit
+
+    HAS_JAX = True
+except ImportError:
+    jnp = np  # Fallback to numpy
+    HAS_JAX = False
+
+    def jit(func):  # noqa: ARG001
+        """Dummy jit decorator when JAX is not available."""
+        return lambda f: f
 
 
 if TYPE_CHECKING:

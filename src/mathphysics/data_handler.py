@@ -9,8 +9,16 @@ from typing import Any
 
 import numpy as np
 import pandas as pd
-import pyarrow as pa
-import pyarrow.parquet as pq
+
+try:
+    import pyarrow as pa
+    import pyarrow.parquet as pq
+
+    HAS_PYARROW = True
+except ImportError:
+    pa = None  # type: ignore
+    pq = None  # type: ignore
+    HAS_PYARROW = False
 
 
 try:
@@ -25,7 +33,17 @@ class DataHandler:
 
     @staticmethod
     def save_to_parquet(data_dict: dict[str, Any], filename: str) -> None:
-        """Save a dictionary of arrays to a Parquet file as a single snapshot row."""
+        """Save a dictionary of arrays to a Parquet file as a single snapshot row.
+
+        Raises:
+            ImportError: If pyarrow is not installed
+        """
+        if not HAS_PYARROW:
+            raise ImportError(
+                "pyarrow is required for parquet operations. "
+                "Install with: pip install pyarrow"
+            )
+
         processed_data = {
             k: [
                 v.tolist()

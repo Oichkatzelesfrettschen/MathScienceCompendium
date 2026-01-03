@@ -8,9 +8,20 @@ from __future__ import annotations
 
 from typing import Any
 
-import jax.numpy as jnp
 import numpy as np
-from jax import jit
+
+try:
+    import jax.numpy as jnp
+    from jax import jit
+
+    HAS_JAX = True
+except ImportError:
+    jnp = np  # Fallback to numpy
+    HAS_JAX = False
+
+    def jit(func):  # noqa: ARG001
+        """Dummy jit decorator when JAX is not available."""
+        return lambda f: f
 
 from ..algebra import JordanAlgebra
 from .cayley_dickson import Octonion
