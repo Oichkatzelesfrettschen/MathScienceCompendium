@@ -5,23 +5,57 @@ optimized for SM89 compute.
 """
 
 from ..algebras.roots import (
-    E4RootSystem, E5RootSystem, E6RootSystem, E7RootSystem, E8RootSystem,
-    E9RootSystem, E10RootSystem, E11RootSystem, ExceptionalLieAlgebras,
-    LieAlgebraCalculator, E7Properties
+    E4RootSystem,
+    E5RootSystem,
+    E6RootSystem,
+    E7Properties,
+    E7RootSystem,
+    E8RootSystem,
+    E9RootSystem,
+    E10RootSystem,
+    E11RootSystem,
+    ExceptionalLieAlgebras,
+    LieAlgebraCalculator,
 )
-from .jordan import AlbertAlgebraElement
-from .clifford import Multivector, CliffordEngine
 from .cayley_dickson import (
-    Real, Complex, Quaternion, Octonion, Sedenion, Pathion,
-    Chingon, Rouxion, Polyxon, run_comprehensive_validation
+    Chingon,
+    Complex,
+    Octonion,
+    Pathion,
+    Polyxon,
+    Quaternion,
+    Real,
+    Rouxion,
+    Sedenion,
+    run_comprehensive_validation,
 )
+from .clifford import CliffordEngine, Multivector
+from .jordan import AlbertAlgebraElement
+
 
 __all__ = [
-    "E4RootSystem", "E5RootSystem", "E6RootSystem", "E7RootSystem", "E8RootSystem",
-    "E9RootSystem", "E10RootSystem", "E11RootSystem", "ExceptionalLieAlgebras",
-    "LieAlgebraCalculator", "E7Properties",
     "AlbertAlgebraElement",
-    "Multivector", "CliffordEngine",
-    "Real", "Complex", "Quaternion", "Octonion", "Sedenion", "Pathion",
-    "Chingon", "Rouxion", "Polyxon", "run_comprehensive_validation"
+    "Chingon",
+    "CliffordEngine",
+    "Complex",
+    "E4RootSystem",
+    "E5RootSystem",
+    "E6RootSystem",
+    "E7Properties",
+    "E7RootSystem",
+    "E8RootSystem",
+    "E9RootSystem",
+    "E10RootSystem",
+    "E11RootSystem",
+    "ExceptionalLieAlgebras",
+    "LieAlgebraCalculator",
+    "Multivector",
+    "Octonion",
+    "Pathion",
+    "Polyxon",
+    "Quaternion",
+    "Real",
+    "Rouxion",
+    "Sedenion",
+    "run_comprehensive_validation",
 ]

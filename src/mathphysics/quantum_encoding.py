@@ -14,20 +14,20 @@ Date: October 2025
 """
 
 from __future__ import annotations
-from typing import List, Tuple, Dict, Any, Optional
-import numpy as np
-from math import log2, ceil, sqrt
+
 from dataclasses import dataclass
+from math import ceil, log2, sqrt
+from typing import Any
+
+import numpy as np
 
 # Qiskit imports
 from qiskit import QuantumCircuit, QuantumRegister
-from qiskit.circuit.library import StatePreparation
+from qiskit.circuit.library import MCXGate, StatePreparation
 from qiskit.quantum_info import Statevector
-from qiskit.circuit.library import MCXGate
 
 # Local imports
-from .algebras.roots import E7RootSystem
-from .algebras.roots import E8RootSystem
+from .algebras.roots import E7RootSystem, E8RootSystem
 
 
 @dataclass
@@ -44,7 +44,7 @@ class EncodingConfig:
 
     def validate(self) -> None:
         """Validate configuration parameters."""
-        valid_types = {'index', 'amplitude', 'binary', 'qrom', 'hybrid'}
+        valid_types = {"index", "amplitude", "binary", "qrom", "hybrid"}
         if self.encoding_type not in valid_types:
             raise ValueError(f"Invalid encoding type: {self.encoding_type}")
         if self.num_qubits < 1 or self.num_qubits > 127:
@@ -79,7 +79,7 @@ class QuantumEncoder:
     @staticmethod
     def int_to_binary_string(value: int, num_bits: int) -> str:
         """Convert integer to binary string with fixed width."""
-        return format(value, f'0{num_bits}b')
+        return format(value, f"0{num_bits}b")
 
     def encode_state_vector(self, vector: np.ndarray) -> Statevector:
         """Encode a classical vector as quantum state vector."""
@@ -104,7 +104,7 @@ class QuantumEncoder:
 class IndexEncoder(QuantumEncoder):
     """Index-based encoding for root systems."""
 
-    def encode_root_index(self, index: int, num_qubits: Optional[int] = None) -> QuantumCircuit:
+    def encode_root_index(self, index: int, num_qubits: int | None = None) -> QuantumCircuit:
         """Encode root index as computational basis state |index>.
 
         Args:
@@ -122,7 +122,7 @@ class IndexEncoder(QuantumEncoder):
         # Convert index to binary and apply X gates
         binary_str = self.int_to_binary_string(index, num_qubits)
         for i, bit in enumerate(reversed(binary_str)):
-            if bit == '1':
+            if bit == "1":
                 qc.x(i)
 
         return qc
@@ -166,8 +166,9 @@ class IndexEncoder(QuantumEncoder):
 
         return qc
 
-    def decode_measurement(self, counts: Dict[str, int],
-                          root_system: str = 'E7') -> Dict[int, float]:
+    def decode_measurement(
+        self, counts: dict[str, int], root_system: str = "E7"
+    ) -> dict[int, float]:
         """Decode measurement results to root indices.
 
         Args:
@@ -178,7 +179,7 @@ class IndexEncoder(QuantumEncoder):
             Dictionary mapping root indices to probabilities
         """
         total_shots = sum(counts.values())
-        max_index = 126 if root_system == 'E7' else 239
+        max_index = 126 if root_system == "E7" else 239
 
         index_probs = {}
         for bitstring, count in counts.items():
@@ -225,7 +226,7 @@ class AmplitudeEncoder(QuantumEncoder):
 
         return qc
 
-    def encode_e7_superposition(self, roots: Optional[np.ndarray] = None) -> QuantumCircuit:
+    def encode_e7_superposition(self, roots: np.ndarray | None = None) -> QuantumCircuit:
         """Create superposition of all E7 root amplitudes.
 
         Args:
@@ -260,7 +261,7 @@ class AmplitudeEncoder(QuantumEncoder):
 
         return qc
 
-    def encode_e8_superposition(self, roots: Optional[np.ndarray] = None) -> QuantumCircuit:
+    def encode_e8_superposition(self, roots: np.ndarray | None = None) -> QuantumCircuit:
         """Create superposition of all E8 root amplitudes.
 
         Args:
@@ -307,31 +308,31 @@ class BinaryEncoder(QuantumEncoder):
         """Convert float value to fixed-point binary string."""
         val = np.clip(value, -1.0, 1.0)
         n_bits = self.config.precision_bits
-        
+
         if signed:
             # Standard signed fixed point: 1 bit sign, n-1 bits magnitude
-            sign_bit = '1' if val < 0 else '0'
+            sign_bit = "1" if val < 0 else "0"
             # Use 2^(n-1) for scaling to match standard binary fractions
-            scaled = int(abs(val) * (2**(n_bits-1)))
-            scaled = min(scaled, 2**(n_bits-1) - 1)
-            return sign_bit + format(scaled, f'0{n_bits-1}b')
+            scaled = int(abs(val) * (2 ** (n_bits - 1)))
+            scaled = min(scaled, 2 ** (n_bits - 1) - 1)
+            return sign_bit + format(scaled, f"0{n_bits - 1}b")
         else:
             # Map [-1, 1] to [0, 1] and scale by 2^n
             mag = (val + 1.0) / 2.0
             scaled = int(mag * (2**n_bits))
             scaled = min(scaled, 2**n_bits - 1)
-            return format(scaled, f'0{n_bits}b')
+            return format(scaled, f"0{n_bits}b")
 
     def binary_to_float(self, binary: str, signed: bool = True) -> float:
         """Convert binary string back to float."""
         n_bits = len(binary)
         if signed:
-            sign = -1.0 if binary[0] == '1' else 1.0
+            sign = -1.0 if binary[0] == "1" else 1.0
             mag_bits = binary[1:]
             if not mag_bits:
                 return 0.0
             scaled = int(mag_bits, 2)
-            return sign * (scaled / (2**(n_bits-1)))
+            return sign * (scaled / (2 ** (n_bits - 1)))
         else:
             scaled = int(binary, 2)
             return 2.0 * (scaled / (2**n_bits)) - 1.0
@@ -356,7 +357,7 @@ class BinaryEncoder(QuantumEncoder):
 
             # Apply X gates for 1s in binary representation
             for j, bit in enumerate(reversed(binary_str)):
-                if bit == '1':
+                if bit == "1":
                     qubit_idx = i * self.precision + j
                     qc.x(qubit_idx)
 
@@ -394,8 +395,8 @@ class BinaryEncoder(QuantumEncoder):
         n_data_qubits = 8 * self.precision
         n_ancilla = 1  # For oracle output
 
-        qr_data = QuantumRegister(n_data_qubits, 'data')
-        qr_anc = QuantumRegister(n_ancilla, 'oracle')
+        qr_data = QuantumRegister(n_data_qubits, "data")
+        qr_anc = QuantumRegister(n_ancilla, "oracle")
         qc = QuantumCircuit(qr_data, qr_anc, name="E7_Binary_Oracle")
 
         # Oracle checks:
@@ -421,8 +422,9 @@ class QROMEncoder(QuantumEncoder):
         self.select_register_size = 0
         self.data_register_size = 0
 
-    def build_qrom_circuit(self, data: List[np.ndarray],
-                          labels: Optional[List[str]] = None) -> QuantumCircuit:
+    def build_qrom_circuit(
+        self, data: list[np.ndarray], labels: list[str] | None = None
+    ) -> QuantumCircuit:
         """Build QROM circuit for accessing stored data.
 
         Args:
@@ -440,10 +442,10 @@ class QROMEncoder(QuantumEncoder):
         n_data = self.required_qubits(data_size) * self.config.precision_bits
 
         # Create registers
-        qr_select = QuantumRegister(n_select, 'select')
-        qr_data = QuantumRegister(n_data, 'data')
+        qr_select = QuantumRegister(n_select, "select")
+        qr_data = QuantumRegister(n_data, "data")
         if self.config.use_ancilla:
-            qr_anc = QuantumRegister(1, 'ancilla')
+            qr_anc = QuantumRegister(1, "ancilla")
             qc = QuantumCircuit(qr_select, qr_data, qr_anc, name="QROM")
         else:
             qc = QuantumCircuit(qr_select, qr_data, name="QROM")
@@ -458,16 +460,18 @@ class QROMEncoder(QuantumEncoder):
             control_state = self.int_to_binary_string(i, n_select)
 
             # Encode vector data when select register matches i
-            self._add_controlled_data_load(qc, qr_select, qr_data,
-                                          control_state, vector)
+            self._add_controlled_data_load(qc, qr_select, qr_data, control_state, vector)
 
         return qc
 
-    def _add_controlled_data_load(self, qc: QuantumCircuit,
-                                  qr_select: QuantumRegister,
-                                  qr_data: QuantumRegister,
-                                  control_state: str,
-                                  data_vector: np.ndarray) -> None:
+    def _add_controlled_data_load(
+        self,
+        qc: QuantumCircuit,
+        qr_select: QuantumRegister,
+        qr_data: QuantumRegister,
+        control_state: str,
+        data_vector: np.ndarray,
+    ) -> None:
         """Add controlled data loading operation.
 
         Args:
@@ -480,7 +484,7 @@ class QROMEncoder(QuantumEncoder):
         # Create control pattern
         control_qubits = []
         for i, bit in enumerate(reversed(control_state)):
-            if bit == '1':
+            if bit == "1":
                 control_qubits.append(qr_select[i])
 
         # Load data when control matches
@@ -496,7 +500,7 @@ class QROMEncoder(QuantumEncoder):
                         else:
                             # Multi-controlled X gate
                             mcx = MCXGate(len(control_qubits))
-                            qc.append(mcx, control_qubits + [qr_data[j]])
+                            qc.append(mcx, [*control_qubits, qr_data[j]])
 
     def build_e7_qrom(self) -> QuantumCircuit:
         """Build QROM circuit for E7 root system.
@@ -507,8 +511,7 @@ class QROMEncoder(QuantumEncoder):
         e7 = E7RootSystem()
         roots = e7.get_127_state_system()
 
-        return self.build_qrom_circuit(roots.tolist(),
-                                      labels=[f"E7_root_{i}" for i in range(127)])
+        return self.build_qrom_circuit(roots.tolist(), labels=[f"E7_root_{i}" for i in range(127)])
 
     def build_e8_qrom(self) -> QuantumCircuit:
         """Build QROM circuit for E8 root system.
@@ -519,8 +522,7 @@ class QROMEncoder(QuantumEncoder):
         e8 = E8RootSystem()
         roots = e8.generate_roots()
 
-        return self.build_qrom_circuit(roots.tolist(),
-                                      labels=[f"E8_root_{i}" for i in range(240)])
+        return self.build_qrom_circuit(roots.tolist(), labels=[f"E8_root_{i}" for i in range(240)])
 
 
 class HybridEncoder(QuantumEncoder):
@@ -534,8 +536,7 @@ class HybridEncoder(QuantumEncoder):
         self.binary_encoder = BinaryEncoder(config)
         self.qrom_encoder = QROMEncoder(config)
 
-    def encode_hierarchical(self, roots: np.ndarray,
-                           levels: int = 2) -> QuantumCircuit:
+    def encode_hierarchical(self, roots: np.ndarray, levels: int = 2) -> QuantumCircuit:
         """Hierarchical encoding using multiple levels.
 
         Args:
@@ -555,12 +556,15 @@ class HybridEncoder(QuantumEncoder):
 
         total_qubits = n_index_qubits + n_amp_qubits
 
-        qr = QuantumRegister(total_qubits, 'hybrid')
+        qr = QuantumRegister(total_qubits, "hybrid")
         qc = QuantumCircuit(qr, name="Hierarchical_Encoding")
 
         # Create superposition over root indices
-        index_circuit = self.index_encoder.encode_e7_indices() if n_roots == 127 \
-                       else self.index_encoder.encode_e8_indices()
+        index_circuit = (
+            self.index_encoder.encode_e7_indices()
+            if n_roots == 127
+            else self.index_encoder.encode_e8_indices()
+        )
 
         qc.append(index_circuit, qr[:n_index_qubits])
 
@@ -572,8 +576,7 @@ class HybridEncoder(QuantumEncoder):
 
         return qc
 
-    def optimize_encoding(self, roots: np.ndarray,
-                         target_fidelity: float = 0.99) -> Dict[str, Any]:
+    def optimize_encoding(self, roots: np.ndarray, target_fidelity: float = 0.99) -> dict[str, Any]:
         """Optimize encoding scheme for given root system.
 
         Args:
@@ -586,49 +589,50 @@ class HybridEncoder(QuantumEncoder):
         results = {}
 
         # Test different encoding schemes
-        schemes = ['index', 'amplitude', 'binary', 'qrom']
+        schemes = ["index", "amplitude", "binary", "qrom"]
 
         for scheme in schemes:
-            if scheme == 'index':
+            if scheme == "index":
                 n_qubits = self.required_qubits(len(roots))
                 depth_estimate = n_qubits  # Simple estimate
 
-            elif scheme == 'amplitude':
+            elif scheme == "amplitude":
                 n_qubits = self.required_qubits(len(roots.flatten()))
                 depth_estimate = 2 * n_qubits  # State prep overhead
 
-            elif scheme == 'binary':
+            elif scheme == "binary":
                 n_qubits = len(roots[0]) * self.config.precision_bits
                 depth_estimate = n_qubits
 
-            elif scheme == 'qrom':
+            elif scheme == "qrom":
                 n_select = self.required_qubits(len(roots))
                 n_data = len(roots[0]) * self.config.precision_bits
                 n_qubits = n_select + n_data
                 depth_estimate = n_select * n_data  # Rough estimate
 
             results[scheme] = {
-                'qubits': n_qubits,
-                'depth_estimate': depth_estimate,
-                'suitable_for_hardware': n_qubits <= 127
+                "qubits": n_qubits,
+                "depth_estimate": depth_estimate,
+                "suitable_for_hardware": n_qubits <= 127,
             }
 
         # Recommend best scheme
-        best_scheme = min(results.keys(),
-                         key=lambda s: results[s]['qubits'] * results[s]['depth_estimate'])
+        best_scheme = min(
+            results.keys(), key=lambda s: results[s]["qubits"] * results[s]["depth_estimate"]
+        )
 
         return {
-            'schemes': results,
-            'recommended': best_scheme,
-            'reasoning': f"Minimizes qubit-depth product for target fidelity {target_fidelity}"
+            "schemes": results,
+            "recommended": best_scheme,
+            "reasoning": f"Minimizes qubit-depth product for target fidelity {target_fidelity}",
         }
 
 
 class E8LatticeEncoder(QuantumEncoder):
     """Encodes E8 lattice points into quantum states."""
-    
+
     def __init__(self, n_qubits: int = 8) -> None:
-        config = EncodingConfig(encoding_type='index', num_qubits=n_qubits)
+        config = EncodingConfig(encoding_type="index", num_qubits=n_qubits)
         super().__init__(config)
         self.root_system = E8RootSystem()
 
@@ -642,13 +646,14 @@ class E8LatticeEncoder(QuantumEncoder):
         """Prepare uniform superposition over all E8 roots."""
         return IndexEncoder(self.config).encode_e8_indices()
 
+
 class EncodingValidator:
     """Validate quantum encodings against classical data."""
 
     @staticmethod
-    def validate_statevector(quantum_state: Statevector,
-                            classical_data: np.ndarray,
-                            tolerance: float = 1e-6) -> Tuple[bool, float]:
+    def validate_statevector(
+        quantum_state: Statevector, classical_data: np.ndarray, tolerance: float = 1e-6
+    ) -> tuple[bool, float]:
         """Validate quantum state against classical data.
 
         Args:
@@ -670,20 +675,20 @@ class EncodingValidator:
         quantum_dim = len(quantum_state)
         if len(classical_normalized) < quantum_dim:
             padded = np.zeros(quantum_dim, dtype=complex)
-            padded[:len(classical_normalized)] = classical_normalized
+            padded[: len(classical_normalized)] = classical_normalized
             classical_normalized = padded
 
         # Calculate fidelity
-        fidelity = abs(np.vdot(quantum_state.data, classical_normalized))**2
+        fidelity = abs(np.vdot(quantum_state.data, classical_normalized)) ** 2
 
         is_valid = fidelity > (1 - tolerance)
 
         return is_valid, fidelity
 
     @staticmethod
-    def validate_encoding_scheme(encoder: QuantumEncoder,
-                                test_data: np.ndarray,
-                                samples: int = 10) -> Dict[str, Any]:
+    def validate_encoding_scheme(
+        encoder: QuantumEncoder, test_data: np.ndarray, samples: int = 10
+    ) -> dict[str, Any]:
         """Validate encoding scheme with test data.
 
         Args:
@@ -695,11 +700,11 @@ class EncodingValidator:
             Validation results dictionary
         """
         results = {
-            'tested_samples': min(samples, len(test_data)),
-            'successes': 0,
-            'failures': 0,
-            'average_fidelity': 0.0,
-            'errors': []
+            "tested_samples": min(samples, len(test_data)),
+            "successes": 0,
+            "failures": 0,
+            "average_fidelity": 0.0,
+            "errors": [],
         }
 
         total_fidelity = 0.0
@@ -718,6 +723,7 @@ class EncodingValidator:
 
                 # Get statevector from circuit
                 from qiskit.quantum_info import Statevector
+
                 state = Statevector.from_instruction(qc)
 
                 # Validate
@@ -726,19 +732,19 @@ class EncodingValidator:
                 )
 
                 if is_valid:
-                    results['successes'] += 1
+                    results["successes"] += 1
                 else:
-                    results['failures'] += 1
-                    results['errors'].append(f"Sample {i}: fidelity {fidelity:.6f}")
+                    results["failures"] += 1
+                    results["errors"].append(f"Sample {i}: fidelity {fidelity:.6f}")
 
                 total_fidelity += fidelity
 
             except Exception as e:
-                results['failures'] += 1
-                results['errors'].append(f"Sample {i}: {str(e)}")
+                results["failures"] += 1
+                results["errors"].append(f"Sample {i}: {e!s}")
 
-        if results['tested_samples'] > 0:
-            results['average_fidelity'] = total_fidelity / results['tested_samples']
+        if results["tested_samples"] > 0:
+            results["average_fidelity"] = total_fidelity / results["tested_samples"]
 
         return results
 
@@ -752,11 +758,11 @@ def demonstrate_encodings():
 
     # Configure encoders
     config = EncodingConfig(
-        encoding_type='hybrid',
+        encoding_type="hybrid",
         num_qubits=7,
         precision_bits=4,
         error_tolerance=1e-6,
-        optimization_level=2
+        optimization_level=2,
     )
 
     # Initialize encoders
@@ -836,7 +842,7 @@ def demonstrate_encodings():
     optimization = hybrid_enc.optimize_encoding(e7_roots)
 
     print("Encoding Scheme Analysis for E7:")
-    for scheme, metrics in optimization['schemes'].items():
+    for scheme, metrics in optimization["schemes"].items():
         print(f"  {scheme.upper()}:")
         print(f"    Qubits: {metrics['qubits']}")
         print(f"    Depth estimate: {metrics['depth_estimate']}")
@@ -860,7 +866,7 @@ def demonstrate_encodings():
     print(f"  Failures: {validation['failures']}")
     print(f"  Average fidelity: {validation['average_fidelity']:.6f}")
 
-    if validation['errors']:
+    if validation["errors"]:
         print(f"  Errors: {validation['errors'][:2]}")  # Show first 2 errors
 
     print()

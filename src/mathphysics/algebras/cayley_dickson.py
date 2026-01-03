@@ -13,12 +13,18 @@ The construction recursively doubles dimensions:
 """
 
 from __future__ import annotations
-from typing import Union, Tuple, List, Dict, Any, Optional
-import numpy as np
-from dataclasses import dataclass
+
 import json
-from pathlib import Path
+from dataclasses import dataclass
+from typing import TYPE_CHECKING, Any
+
+import numpy as np
+
 from ..config import Config
+
+
+if TYPE_CHECKING:
+    from pathlib import Path
 
 
 @dataclass
@@ -33,7 +39,7 @@ class AlgebraicProperties:
     has_zero_divisors: bool
     name: str
 
-    def to_dict(self) -> Dict[str, Any]:
+    def to_dict(self) -> dict[str, Any]:
         """Convert properties to dictionary."""
         return {
             "name": self.name,
@@ -42,14 +48,14 @@ class AlgebraicProperties:
             "is_associative": self.is_associative,
             "is_alternative": self.is_alternative,
             "is_division_algebra": self.is_division_algebra,
-            "has_zero_divisors": self.has_zero_divisors
+            "has_zero_divisors": self.has_zero_divisors,
         }
 
 
 class CayleyDickson:
     """Base class for Cayley-Dickson algebras."""
 
-    def __init__(self, coefficients: Union[np.ndarray, List[float], float]) -> None:
+    def __init__(self, coefficients: np.ndarray | list[float] | float) -> None:
         """Initialize a Cayley-Dickson number.
 
         Args:
@@ -60,15 +66,14 @@ class CayleyDickson:
             self.coeffs[0] = float(coefficients)
         elif isinstance(coefficients, list):
             self.coeffs = np.zeros(self._dimension())
-            for i, c in enumerate(coefficients[:self._dimension()]):
+            for i, c in enumerate(coefficients[: self._dimension()]):
                 self.coeffs[i] = float(c)
         else:
             self.coeffs = np.array(coefficients, dtype=np.float64)
             if len(self.coeffs) < self._dimension():
-                self.coeffs = np.pad(self.coeffs,
-                                    (0, self._dimension() - len(self.coeffs)))
+                self.coeffs = np.pad(self.coeffs, (0, self._dimension() - len(self.coeffs)))
             elif len(self.coeffs) > self._dimension():
-                self.coeffs = self.coeffs[:self._dimension()]
+                self.coeffs = self.coeffs[: self._dimension()]
 
     def _dimension(self) -> int:
         """Return the dimension of this algebra."""
@@ -94,11 +99,11 @@ class CayleyDickson:
                         parts.append(f"{coeff:.4f}{basis_names[i]}")
         return "".join(parts) if parts else "0"
 
-    def _basis_names(self) -> List[str]:
+    def _basis_names(self) -> list[str]:
         """Return basis element names."""
         raise NotImplementedError
 
-    def __add__(self, other: Union[CayleyDickson, float]) -> CayleyDickson:
+    def __add__(self, other: CayleyDickson | float) -> CayleyDickson:
         """Addition."""
         if isinstance(other, (int, float)):
             result = self.coeffs.copy()
@@ -109,11 +114,11 @@ class CayleyDickson:
         else:
             raise TypeError(f"Cannot add {type(self)} and {type(other)}")
 
-    def __radd__(self, other: Union[CayleyDickson, float]) -> CayleyDickson:
+    def __radd__(self, other: CayleyDickson | float) -> CayleyDickson:
         """Right addition."""
         return self.__add__(other)
 
-    def __sub__(self, other: Union[CayleyDickson, float]) -> CayleyDickson:
+    def __sub__(self, other: CayleyDickson | float) -> CayleyDickson:
         """Subtraction."""
         if isinstance(other, (int, float)):
             result = self.coeffs.copy()
@@ -124,7 +129,7 @@ class CayleyDickson:
         else:
             raise TypeError(f"Cannot subtract {type(other)} from {type(self)}")
 
-    def __rsub__(self, other: Union[CayleyDickson, float]) -> CayleyDickson:
+    def __rsub__(self, other: CayleyDickson | float) -> CayleyDickson:
         """Right subtraction."""
         if isinstance(other, (int, float)):
             result = -self.coeffs
@@ -137,18 +142,18 @@ class CayleyDickson:
         """Negation."""
         return self.__class__(-self.coeffs)
 
-    def __mul__(self, other: Union[CayleyDickson, float]) -> CayleyDickson:
+    def __mul__(self, other: CayleyDickson | float) -> CayleyDickson:
         """Multiplication (must be overridden for each algebra)."""
         raise NotImplementedError
 
-    def __rmul__(self, other: Union[CayleyDickson, float]) -> CayleyDickson:
+    def __rmul__(self, other: CayleyDickson | float) -> CayleyDickson:
         """Right multiplication."""
         if isinstance(other, (int, float)):
             return self.__class__(other * self.coeffs)
         else:
             raise TypeError(f"Cannot multiply {type(other)} and {type(self)}")
 
-    def __truediv__(self, other: Union[CayleyDickson, float]) -> CayleyDickson:
+    def __truediv__(self, other: CayleyDickson | float) -> CayleyDickson:
         """Division."""
         if isinstance(other, (int, float)):
             if abs(other) < 1e-10:
@@ -167,7 +172,7 @@ class CayleyDickson:
 
     def norm_squared(self) -> float:
         """Squared norm."""
-        return np.sum(self.coeffs ** 2)
+        return np.sum(self.coeffs**2)
 
     def norm(self) -> float:
         """Euclidean norm."""
@@ -216,10 +221,10 @@ class Real(CayleyDickson):
     def _dimension_static(cls) -> int:
         return 1
 
-    def _basis_names(self) -> List[str]:
+    def _basis_names(self) -> list[str]:
         return [""]
 
-    def __mul__(self, other: Union[Real, float]) -> Real:
+    def __mul__(self, other: Real | float) -> Real:
         """Real multiplication."""
         if isinstance(other, (int, float)):
             return Real(self.coeffs[0] * other)
@@ -238,7 +243,7 @@ class Real(CayleyDickson):
             is_alternative=True,
             is_division_algebra=True,
             has_zero_divisors=False,
-            name="Real"
+            name="Real",
         )
 
 
@@ -252,17 +257,17 @@ class Complex(CayleyDickson):
     def _dimension_static(cls) -> int:
         return 2
 
-    def _basis_names(self) -> List[str]:
+    def _basis_names(self) -> list[str]:
         return ["", "i"]
 
-    def __mul__(self, other: Union[Complex, float]) -> Complex:
+    def __mul__(self, other: Complex | float) -> Complex:
         """Complex multiplication: (a+bi)(c+di) = (ac-bd) + (ad+bc)i."""
         if isinstance(other, (int, float)):
             return Complex(self.coeffs * other)
         elif isinstance(other, Complex):
             a, b = self.coeffs[0], self.coeffs[1]
             c, d = other.coeffs[0], other.coeffs[1]
-            return Complex([a*c - b*d, a*d + b*c])
+            return Complex([a * c - b * d, a * d + b * c])
         else:
             raise TypeError(f"Cannot multiply Complex and {type(other)}")
 
@@ -290,7 +295,7 @@ class Complex(CayleyDickson):
             is_alternative=True,
             is_division_algebra=True,
             has_zero_divisors=False,
-            name="Complex"
+            name="Complex",
         )
 
 
@@ -304,10 +309,10 @@ class Quaternion(CayleyDickson):
     def _dimension_static(cls) -> int:
         return 4
 
-    def _basis_names(self) -> List[str]:
+    def _basis_names(self) -> list[str]:
         return ["", "i", "j", "k"]
 
-    def __mul__(self, other: Union[Quaternion, float]) -> Quaternion:
+    def __mul__(self, other: Quaternion | float) -> Quaternion:
         """Quaternion multiplication using Hamilton's rules:
         i^2 = j^2 = k^2 = ijk = -1
         ij = k, jk = i, ki = j
@@ -322,16 +327,16 @@ class Quaternion(CayleyDickson):
             result = np.zeros(4)
 
             # Real part: a0*b0 - a1*b1 - a2*b2 - a3*b3
-            result[0] = a[0]*b[0] - a[1]*b[1] - a[2]*b[2] - a[3]*b[3]
+            result[0] = a[0] * b[0] - a[1] * b[1] - a[2] * b[2] - a[3] * b[3]
 
             # i component: a0*b1 + a1*b0 + a2*b3 - a3*b2
-            result[1] = a[0]*b[1] + a[1]*b[0] + a[2]*b[3] - a[3]*b[2]
+            result[1] = a[0] * b[1] + a[1] * b[0] + a[2] * b[3] - a[3] * b[2]
 
             # j component: a0*b2 - a1*b3 + a2*b0 + a3*b1
-            result[2] = a[0]*b[2] - a[1]*b[3] + a[2]*b[0] + a[3]*b[1]
+            result[2] = a[0] * b[2] - a[1] * b[3] + a[2] * b[0] + a[3] * b[1]
 
             # k component: a0*b3 + a1*b2 - a2*b1 + a3*b0
-            result[3] = a[0]*b[3] + a[1]*b[2] - a[2]*b[1] + a[3]*b[0]
+            result[3] = a[0] * b[3] + a[1] * b[2] - a[2] * b[1] + a[3] * b[0]
 
             return Quaternion(result)
         else:
@@ -352,11 +357,13 @@ class Quaternion(CayleyDickson):
         q = self.normalized()
         w, x, y, z = q.coeffs
 
-        return np.array([
-            [1-2*(y*y+z*z), 2*(x*y-w*z), 2*(x*z+w*y)],
-            [2*(x*y+w*z), 1-2*(x*x+z*z), 2*(y*z-w*x)],
-            [2*(x*z-w*y), 2*(y*z+w*x), 1-2*(x*x+y*y)]
-        ])
+        return np.array(
+            [
+                [1 - 2 * (y * y + z * z), 2 * (x * y - w * z), 2 * (x * z + w * y)],
+                [2 * (x * y + w * z), 1 - 2 * (x * x + z * z), 2 * (y * z - w * x)],
+                [2 * (x * z - w * y), 2 * (y * z + w * x), 1 - 2 * (x * x + y * y)],
+            ]
+        )
 
     @classmethod
     def from_axis_angle(cls, axis: np.ndarray, angle: float) -> Quaternion:
@@ -379,7 +386,7 @@ class Quaternion(CayleyDickson):
             is_alternative=True,
             is_division_algebra=True,
             has_zero_divisors=False,
-            name="Quaternion"
+            name="Quaternion",
         )
 
 
@@ -393,10 +400,10 @@ class Octonion(CayleyDickson):
     def _dimension_static(cls) -> int:
         return 8
 
-    def _basis_names(self) -> List[str]:
+    def _basis_names(self) -> list[str]:
         return ["", "e1", "e2", "e3", "e4", "e5", "e6", "e7"]
 
-    def __mul__(self, other: Union[Octonion, float]) -> Octonion:
+    def __mul__(self, other: Octonion | float) -> Octonion:
         """Octonion multiplication using Cayley-Dickson construction."""
         if isinstance(other, (int, float)):
             return Octonion(self.coeffs * other)
@@ -445,23 +452,25 @@ class Octonion(CayleyDickson):
             is_alternative=True,  # Octonions are alternative
             is_division_algebra=True,
             has_zero_divisors=False,
-            name="Octonion"
+            name="Octonion",
         )
 
     @staticmethod
     def multiplication_table() -> np.ndarray:
         """Generate the multiplication table for octonion basis elements."""
         # Fano plane-based multiplication table
-        table = np.array([
-            [ 1,  2,  3,  4,  5,  6,  7,  8],  # e0 (identity)
-            [ 2, -1,  4, -3,  6, -5, -8,  7],  # e1
-            [ 3, -4, -1,  2,  7,  8, -5, -6],  # e2
-            [ 4,  3, -2, -1,  8, -7,  6, -5],  # e3
-            [ 5, -6, -7, -8, -1,  2,  3,  4],  # e4
-            [ 6,  5, -8,  7, -2, -1, -4,  3],  # e5
-            [ 7,  8,  5, -6, -3,  4, -1, -2],  # e6
-            [ 8, -7,  6,  5, -4, -3,  2, -1],  # e7
-        ])
+        table = np.array(
+            [
+                [1, 2, 3, 4, 5, 6, 7, 8],  # e0 (identity)
+                [2, -1, 4, -3, 6, -5, -8, 7],  # e1
+                [3, -4, -1, 2, 7, 8, -5, -6],  # e2
+                [4, 3, -2, -1, 8, -7, 6, -5],  # e3
+                [5, -6, -7, -8, -1, 2, 3, 4],  # e4
+                [6, 5, -8, 7, -2, -1, -4, 3],  # e5
+                [7, 8, 5, -6, -3, 4, -1, -2],  # e6
+                [8, -7, 6, 5, -4, -3, 2, -1],  # e7
+            ]
+        )
         return table
 
 
@@ -475,13 +484,13 @@ class Sedenion(CayleyDickson):
     def _dimension_static(cls) -> int:
         return 16
 
-    def _basis_names(self) -> List[str]:
+    def _basis_names(self) -> list[str]:
         names = [""]
         for i in range(1, 16):
             names.append(f"e{i}")
         return names
 
-    def __mul__(self, other: Union[Sedenion, float]) -> Sedenion:
+    def __mul__(self, other: Sedenion | float) -> Sedenion:
         """Sedenion multiplication using Cayley-Dickson construction."""
         if isinstance(other, (int, float)):
             return Sedenion(self.coeffs * other)
@@ -518,7 +527,7 @@ class Sedenion(CayleyDickson):
         return product.norm_squared() < 1e-10
 
     @staticmethod
-    def find_zero_divisors(trials: int = 100) -> List[Tuple[Sedenion, Sedenion]]:
+    def find_zero_divisors(trials: int = 100) -> list[tuple[Sedenion, Sedenion]]:
         """Find examples of zero divisors in sedenions."""
         zero_divisors = []
         for _ in range(trials):
@@ -547,7 +556,7 @@ class Sedenion(CayleyDickson):
             is_alternative=False,  # Lost at sedenions
             is_division_algebra=False,  # Has zero divisors
             has_zero_divisors=True,
-            name="Sedenion"
+            name="Sedenion",
         )
 
 
@@ -561,13 +570,13 @@ class Pathion(CayleyDickson):
     def _dimension_static(cls) -> int:
         return 32
 
-    def _basis_names(self) -> List[str]:
+    def _basis_names(self) -> list[str]:
         names = [""]
         for i in range(1, 32):
             names.append(f"f{i}")
         return names
 
-    def __mul__(self, other: Union[Pathion, float]) -> Pathion:
+    def __mul__(self, other: Pathion | float) -> Pathion:
         """Pathion multiplication using Cayley-Dickson construction."""
         if isinstance(other, (int, float)):
             return Pathion(self.coeffs * other)
@@ -603,29 +612,45 @@ class Pathion(CayleyDickson):
             is_associative=False,
             is_alternative=False,
             is_division_algebra=False,
-            has_zero_divisors=True
+            has_zero_divisors=True,
         )
+
 
 class Chingon(Pathion):
     """256-dimensional Cayley-Dickson algebra."""
+
     @classmethod
-    def _dimension_static(cls) -> int: return 256
+    def _dimension_static(cls) -> int:
+        return 256
+
     @classmethod
-    def _basis_names(cls) -> List[str]: return ["e" + str(i) for i in range(256)]
+    def _basis_names(cls) -> list[str]:
+        return ["e" + str(i) for i in range(256)]
+
 
 class Rouxion(Chingon):
     """512-dimensional Cayley-Dickson algebra."""
+
     @classmethod
-    def _dimension_static(cls) -> int: return 512
+    def _dimension_static(cls) -> int:
+        return 512
+
     @classmethod
-    def _basis_names(cls) -> List[str]: return ["e" + str(i) for i in range(512)]
+    def _basis_names(cls) -> list[str]:
+        return ["e" + str(i) for i in range(512)]
+
 
 class Polyxon(Rouxion):
     """1024-dimensional Cayley-Dickson algebra."""
+
     @classmethod
-    def _dimension_static(cls) -> int: return 1024
+    def _dimension_static(cls) -> int:
+        return 1024
+
     @classmethod
-    def _basis_names(cls) -> List[str]: return ["e" + str(i) for i in range(1024)]
+    def _basis_names(cls) -> list[str]:
+        return ["e" + str(i) for i in range(1024)]
+
 
 class CayleyDicksonValidator:
     """Validator for Cayley-Dickson algebra properties."""
@@ -646,7 +671,9 @@ class CayleyDicksonValidator:
                 return False
         return True
 
-    def verify_associativity(self, trials: int = 100, tolerance: float = 1e-10) -> Tuple[bool, float]:
+    def verify_associativity(
+        self, trials: int = 100, tolerance: float = 1e-10
+    ) -> tuple[bool, float]:
         """Verify associativity: (ab)c = a(bc)."""
         max_error = 0.0
         for _ in range(trials):
@@ -662,7 +689,9 @@ class CayleyDicksonValidator:
 
         return max_error < tolerance, max_error
 
-    def verify_commutativity(self, trials: int = 100, tolerance: float = 1e-10) -> Tuple[bool, float]:
+    def verify_commutativity(
+        self, trials: int = 100, tolerance: float = 1e-10
+    ) -> tuple[bool, float]:
         """Verify commutativity: ab = ba."""
         max_error = 0.0
         for _ in range(trials):
@@ -677,7 +706,9 @@ class CayleyDicksonValidator:
 
         return max_error < tolerance, max_error
 
-    def verify_alternativity(self, trials: int = 100, tolerance: float = 1e-10) -> Tuple[bool, float]:
+    def verify_alternativity(
+        self, trials: int = 100, tolerance: float = 1e-10
+    ) -> tuple[bool, float]:
         """Verify alternativity: (aa)b = a(ab) and (ab)b = a(bb)."""
         max_error = 0.0
         for _ in range(trials):
@@ -698,7 +729,9 @@ class CayleyDicksonValidator:
 
         return max_error < tolerance, max_error
 
-    def verify_norm_multiplicativity(self, trials: int = 100, tolerance: float = 1e-10) -> Tuple[bool, float]:
+    def verify_norm_multiplicativity(
+        self, trials: int = 100, tolerance: float = 1e-10
+    ) -> tuple[bool, float]:
         """Verify norm multiplicativity: |ab| = |a||b|."""
         max_relative_error = 0.0
         for _ in range(trials):
@@ -714,7 +747,7 @@ class CayleyDicksonValidator:
 
         return max_relative_error < tolerance, max_relative_error
 
-    def find_zero_divisors(self, trials: int = 1000) -> List[Tuple[Any, Any]]:
+    def find_zero_divisors(self, trials: int = 1000) -> list[tuple[Any, Any]]:
         """Search for zero divisors."""
         zero_divisors = []
 
@@ -750,15 +783,12 @@ class CayleyDicksonValidator:
 
         return table
 
-    def verify_all_properties(self) -> Dict[str, Any]:
+    def verify_all_properties(self) -> dict[str, Any]:
         """Run all verification tests."""
         print(f"\nVerifying properties of {self.name} (dimension {self.dimension})")
         print("=" * 60)
 
-        results = {
-            "algebra": self.name,
-            "dimension": self.dimension
-        }
+        results = {"algebra": self.name, "dimension": self.dimension}
 
         # Closure
         print("Testing closure...", end=" ")
@@ -803,7 +833,7 @@ class CayleyDicksonValidator:
         return results
 
 
-def run_comprehensive_validation(output_dir: Optional[Path] = None) -> Dict[str, Any]:
+def run_comprehensive_validation(output_dir: Path | None = None) -> dict[str, Any]:
     """Run validation on all implemented algebras."""
     if output_dir is None:
         output_dir = Config.RESULTS_DIR
@@ -816,7 +846,7 @@ def run_comprehensive_validation(output_dir: Optional[Path] = None) -> Dict[str,
         (Quaternion, "Quaternion"),
         (Octonion, "Octonion"),
         (Sedenion, "Sedenion"),
-        (Pathion, "Pathion")
+        (Pathion, "Pathion"),
     ]
 
     all_results = {}
@@ -827,34 +857,40 @@ def run_comprehensive_validation(output_dir: Optional[Path] = None) -> Dict[str,
         all_results[name] = results
 
         # Save individual results
-        with open(output_dir / f"cayley_dickson_{name.lower()}_validation.json", 'w') as f:
+        with open(output_dir / f"cayley_dickson_{name.lower()}_validation.json", "w") as f:
             json.dump(results, f, indent=2)
 
     # Save combined results
-    with open(output_dir / "cayley_dickson_all_validation.json", 'w') as f:
+    with open(output_dir / "cayley_dickson_all_validation.json", "w") as f:
         json.dump(all_results, f, indent=2)
 
     # Create summary table
     print("\n" + "=" * 80)
     print("SUMMARY OF CAYLEY-DICKSON ALGEBRA PROPERTIES")
     print("=" * 80)
-    print(f"{'Algebra':<12} {'Dim':<4} {'Comm':<5} {'Assoc':<6} {'Alt':<4} {'Div':<4} {'Zero Div':<8}")
+    print(
+        f"{'Algebra':<12} {'Dim':<4} {'Comm':<5} {'Assoc':<6} {'Alt':<4} {'Div':<4} {'Zero Div':<8}"
+    )
     print("-" * 80)
 
     for name in ["Real", "Complex", "Quaternion", "Octonion", "Sedenion", "Pathion"]:
         r = all_results[name]
-        print(f"{name:<12} {r['dimension']:<4} "
-              f"{'Y' if r.get('commutative', False) else 'N':<5} "
-              f"{'Y' if r.get('associative', False) else 'N':<6} "
-              f"{'Y' if r.get('alternative', False) else 'N':<4} "
-              f"{'Y' if r.get('norm_multiplicative', False) else 'N':<4} "
-              f"{'Y' if r.get('has_zero_divisors', False) else 'N':<8}")
+        print(
+            f"{name:<12} {r['dimension']:<4} "
+            f"{'Y' if r.get('commutative', False) else 'N':<5} "
+            f"{'Y' if r.get('associative', False) else 'N':<6} "
+            f"{'Y' if r.get('alternative', False) else 'N':<4} "
+            f"{'Y' if r.get('norm_multiplicative', False) else 'N':<4} "
+            f"{'Y' if r.get('has_zero_divisors', False) else 'N':<8}"
+        )
 
     return all_results
 
-def analyze_algebra_properties(output_dir: Optional[Path] = None) -> Dict[str, Any]:
+
+def analyze_algebra_properties(output_dir: Path | None = None) -> dict[str, Any]:
     """Production entry point for analyzing algebra properties."""
     return run_comprehensive_validation(output_dir)
+
 
 def demonstrate_examples():
     """Demonstrate usage of Cayley-Dickson algebras."""

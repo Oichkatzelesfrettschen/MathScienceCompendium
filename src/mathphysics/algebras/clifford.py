@@ -6,32 +6,37 @@ Optimized for NVIDIA SM89 (RTX 4070 Ti).
 """
 
 from __future__ import annotations
-import numpy as np
-import jax.numpy as jnp
-import jax
+
 from functools import partial
-from typing import Tuple, Dict, Union, Any
+from typing import Any
+
+import jax
+import jax.numpy as jnp
+import numpy as np
+
 from ..algebra import CliffordAlgebra
+
 
 class CliffordEngine:
     """Singleton engine to manage JIT-compiled GA tables."""
+
     _instance = None
-    
-    def __init__(self, signature: Tuple[int, int, int]) -> None:
+
+    def __init__(self, signature: tuple[int, int, int]) -> None:
         self.signature = signature
-        self.size = 2**(sum(signature))
+        self.size = 2 ** (sum(signature))
         self.mt_idx, self.mt_sign = self._precompute_multiplication_table()
-        
+
         # Move tables to GPU
         self.mt_idx = jnp.array(self.mt_idx)
         self.mt_sign = jnp.array(self.mt_sign)
 
     def _precompute_multiplication_table(self):
         p, q, r = self.signature
-        size = 2**(p + q + r)
+        size = 2 ** (p + q + r)
         mt_idx = np.zeros((size, size), dtype=np.int32)
         mt_sign = np.zeros((size, size), dtype=np.float32)
-        
+
         for i in range(size):
             for j in range(size):
                 res_idx = i ^ j
@@ -39,7 +44,7 @@ class CliffordEngine:
                 # Standard GA sign logic
                 for bit in range(p + q + r):
                     if (j >> bit) & 1:
-                        if bin(i >> (bit + 1)).count('1') % 2:
+                        if bin(i >> (bit + 1)).count("1") % 2:
                             res_sign *= -1.0
                         if (i >> bit) & 1:
                             if bit < p:
@@ -57,29 +62,30 @@ class CliffordEngine:
         """Geometric product via JIT-compiled tensor mapping."""
         # a_coeffs: (size,), b_coeffs: (size,)
         # res[k] = sum(a[i] * b[j] * mt_sign[i,j]) where mt_idx[i,j] == k
-        
+
         # 1. Compute all pairwise products: (size, size)
         terms = a_coeffs[:, None] * b_coeffs[None, :] * self.mt_sign
-        
+
         # 2. Vectorized aggregation into result vector
         # We flatten the (size, size) arrays and use segment_sum or scatter_add
         res = jnp.zeros(self.size)
         res = res.at[self.mt_idx.ravel()].add(terms.ravel())
         return res
 
+
 class Multivector(CliffordAlgebra):
     """Production-grade Multivector utilizing JIT-accelerated kernels."""
-    
-    _engines: Dict[Tuple[int, int, int], CliffordEngine] = {}
 
-    def __init__(self, coeffs: Union[np.ndarray, jnp.ndarray], signature: Tuple[int, int, int]) -> None:
+    _engines: dict[tuple[int, int, int], CliffordEngine] = {}
+
+    def __init__(self, coeffs: np.ndarray | jnp.ndarray, signature: tuple[int, int, int]) -> None:
         if signature not in Multivector._engines:
             Multivector._engines[signature] = CliffordEngine(signature)
         self.engine = Multivector._engines[signature]
-        
+
         self.coeffs = jnp.array(coeffs) if not isinstance(coeffs, jnp.ndarray) else coeffs
         self.signature = signature
-        self.n_dims = int(round(np.log2(self.coeffs.shape[0])))
+        self.n_dims = round(np.log2(self.coeffs.shape[0]))
 
     def geometric_product(self, other: Multivector) -> Multivector:
         res_coeffs = self.engine.gp(self.coeffs, other.coeffs)

@@ -1,25 +1,30 @@
 """Quantum Lattice Boltzmann Method with E7/E8 Harmonic Scaffolds.
 
-Module for D2Q9 LBM simulation with quantum-inspired modifications and 
+Module for D2Q9 LBM simulation with quantum-inspired modifications and
 E7/E8 harmonic patterns.
 """
 
 from __future__ import annotations
-from typing import Dict, Any, Optional
-import numpy as np
+
+import warnings
 from dataclasses import dataclass
 from enum import Enum
-import warnings
+from typing import Any
+
+import numpy as np
+
 
 # Import core modules
 try:
     from .algebras.roots import E7RootSystem
+
     HAS_E7 = True
 except ImportError:
     HAS_E7 = False
 
 try:
     from .genesis_harmonics import GenesisHarmonics
+
     HAS_GENESIS = True
 except ImportError:
     HAS_GENESIS = False
@@ -33,16 +38,18 @@ CS2 = CS * CS
 CS4 = CS2 * CS2
 
 # D2Q9 Velocity Directions
-VELOCITIES = np.array([
-    [0, 0], [1, 0], [0, 1], [-1, 0], [0, -1], [1, 1], [-1, 1], [-1, -1], [1, -1]
-], dtype=np.float64)
+VELOCITIES = np.array(
+    [[0, 0], [1, 0], [0, 1], [-1, 0], [0, -1], [1, 1], [-1, 1], [-1, -1], [1, -1]], dtype=np.float64
+)
 
 # D2Q9 Weights
-WEIGHTS = np.array([
-    4./9, 1./9, 1./9, 1./9, 1./9, 1./36, 1./36, 1./36, 1./36
-], dtype=np.float64)
+WEIGHTS = np.array(
+    [4.0 / 9, 1.0 / 9, 1.0 / 9, 1.0 / 9, 1.0 / 9, 1.0 / 36, 1.0 / 36, 1.0 / 36, 1.0 / 36],
+    dtype=np.float64,
+)
 
 OPPOSITE = np.array([0, 3, 4, 1, 2, 7, 8, 5, 6], dtype=np.int32)
+
 
 class BoundaryType(Enum):
     PERIODIC = "periodic"
@@ -50,9 +57,11 @@ class BoundaryType(Enum):
     SYMMETRY_PRESERVING = "symmetry_preserving"
     OPEN = "open"
 
+
 @dataclass
 class LBMParameters:
     """Parameters for Lattice Boltzmann simulation."""
+
     nx: int = 128
     ny: int = 128
     tau: float = 0.8
@@ -76,9 +85,11 @@ class LBMParameters:
         if self.tau <= 0.5:
             raise ValueError(f"Relaxation time tau={self.tau} must be > 0.5")
 
+
 @dataclass
 class LBMState:
     """State variables for LBM simulation."""
+
     f: np.ndarray
     f_eq: np.ndarray
     density: np.ndarray
@@ -112,8 +123,10 @@ class LBMState:
         self.total_mass = np.sum(self.density)
         self.total_energy = np.sum(self.energy)
 
+
 class QuantumLatticeBoltzmann:
     """Quantum-enhanced D2Q9 Lattice Boltzmann simulation."""
+
     def __init__(self, params: LBMParameters) -> None:
         self.params = params
         self.state = None
@@ -131,18 +144,18 @@ class QuantumLatticeBoltzmann:
                     num_layers=self.params.num_harmonics,
                     base_frequency=1e12,
                     fractal_alpha=1.5,
-                    zpe_beta=self.params.zpe_coupling
+                    zpe_beta=self.params.zpe_coupling,
                 )
             if HAS_E7:
                 self.e7_system = E7RootSystem()
                 self.e7_system.generate_roots()
             self._generate_e8_roots()
         except Exception as e:
-            warnings.warn(f"Module initialization failed: {e}")
+            warnings.warn(f"Module initialization failed: {e}", stacklevel=2)
 
     def _generate_e8_roots(self):
         roots = []
-        for positions in [(i, j) for i in range(8) for j in range(i+1, 8)]:
+        for positions in [(i, j) for i in range(8) for j in range(i + 1, 8)]:
             for signs in [(1, 1), (1, -1), (-1, 1), (-1, -1)]:
                 if sum([s < 0 for s in signs]) % 2 == 0:
                     vec = np.zeros(8)
@@ -153,11 +166,16 @@ class QuantumLatticeBoltzmann:
     def _initialize_state(self):
         nx, ny = self.params.nx, self.params.ny
         self.state = LBMState(
-            f=np.zeros((nx, ny, 9)), f_eq=np.zeros((nx, ny, 9)),
-            density=np.ones((nx, ny)), velocity=np.zeros((nx, ny, 2)),
-            pressure=np.ones((nx, ny)) * CS2, coherence=np.ones((nx, ny)),
-            zpe_field=np.ones((nx, ny)), vorticity=np.zeros((nx, ny)),
-            energy=np.zeros((nx, ny)), harmonic_coefficients=np.zeros(self.params.num_harmonics)
+            f=np.zeros((nx, ny, 9)),
+            f_eq=np.zeros((nx, ny, 9)),
+            density=np.ones((nx, ny)),
+            velocity=np.zeros((nx, ny, 2)),
+            pressure=np.ones((nx, ny)) * CS2,
+            coherence=np.ones((nx, ny)),
+            zpe_field=np.ones((nx, ny)),
+            vorticity=np.zeros((nx, ny)),
+            energy=np.zeros((nx, ny)),
+            harmonic_coefficients=np.zeros(self.params.num_harmonics),
         )
         self._initialize_harmonic_scaffold()
         self._compute_equilibrium()
@@ -166,18 +184,20 @@ class QuantumLatticeBoltzmann:
 
     def _initialize_harmonic_scaffold(self):
         nx, ny = self.params.nx, self.params.ny
-        x, y = np.linspace(0, 2*np.pi, nx), np.linspace(0, 2*np.pi, ny)
-        X, Y = np.meshgrid(x, y, indexing='ij')
+        x, y = np.linspace(0, 2 * np.pi, nx), np.linspace(0, 2 * np.pi, ny)
+        X, Y = np.meshgrid(x, y, indexing="ij")
         self.state.density[:] = 1.0
         if self.e7_system and self.e7_system._roots is not None:
-            for i, root in enumerate(self.e7_system._roots[:self.params.num_harmonics]):
-                omega_x, omega_y = np.abs(root[0]) * (i+1), np.abs(root[1]) * (i+1)
-                amplitude = self.params.harmonic_amplitude * (PHI_INV ** (i/10)) / (i+1)
+            for i, root in enumerate(self.e7_system._roots[: self.params.num_harmonics]):
+                omega_x, omega_y = np.abs(root[0]) * (i + 1), np.abs(root[1]) * (i + 1)
+                amplitude = self.params.harmonic_amplitude * (PHI_INV ** (i / 10)) / (i + 1)
                 self.state.density += amplitude * np.sin(omega_x * X) * np.cos(omega_y * Y)
         else:
             for n in range(min(self.params.num_harmonics, 10)):
-                omega = (n+1) * PHI
-                self.state.density += self.params.harmonic_amplitude * (PHI_INV ** n) * np.sin(omega * X)
+                omega = (n + 1) * PHI
+                self.state.density += (
+                    self.params.harmonic_amplitude * (PHI_INV**n) * np.sin(omega * X)
+                )
         self._initialize_quantum_fields()
 
     def _initialize_quantum_fields(self):
@@ -189,7 +209,9 @@ class QuantumLatticeBoltzmann:
         usq = np.sum(u**2, axis=2)
         for i in range(9):
             cu = VELOCITIES[i, 0] * u[..., 0] + VELOCITIES[i, 1] * u[..., 1]
-            self.state.f_eq[..., i] = WEIGHTS[i] * rho * (1 + 3*cu/CS2 + 4.5*cu**2/CS4 - 1.5*usq/CS2)
+            self.state.f_eq[..., i] = (
+                WEIGHTS[i] * rho * (1 + 3 * cu / CS2 + 4.5 * cu**2 / CS4 - 1.5 * usq / CS2)
+            )
 
     def step(self):
         self._compute_equilibrium()
@@ -198,16 +220,20 @@ class QuantumLatticeBoltzmann:
             self.state.f[..., i] -= (self.state.f[..., i] - self.state.f_eq[..., i]) / tau
         f_temp = self.state.f.copy()
         for i in range(9):
-            self.state.f[:, :, i] = np.roll(np.roll(f_temp[:, :, i], int(VELOCITIES[i, 0]), axis=0), int(VELOCITIES[i, 1]), axis=1)
+            self.state.f[:, :, i] = np.roll(
+                np.roll(f_temp[:, :, i], int(VELOCITIES[i, 0]), axis=0),
+                int(VELOCITIES[i, 1]),
+                axis=1,
+            )
         self.state.update_macroscopic()
         self.state.iteration += 1
 
-    def run_simulation(self, timesteps: Optional[int] = None) -> LBMState:
+    def run_simulation(self, timesteps: int | None = None) -> LBMState:
         """Run the simulation for a given number of timesteps."""
         steps = timesteps if timesteps is not None else self.params.timesteps
         for _ in range(steps):
             self.step()
         return self.state
 
-    def validate_conservation(self) -> Dict[str, Any]:
+    def validate_conservation(self) -> dict[str, Any]:
         return {"mass_conserved": True}

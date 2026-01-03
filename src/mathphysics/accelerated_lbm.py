@@ -7,9 +7,12 @@ Target Architecture: SM89 (CUDA 12)
 """
 
 from __future__ import annotations
+
 import jax
 import jax.numpy as jnp
-from .quantum_lattice_boltzmann import LBMParameters, WEIGHTS, VELOCITIES, OPPOSITE
+
+from .quantum_lattice_boltzmann import OPPOSITE, VELOCITIES, WEIGHTS, LBMParameters
+
 
 class AcceleratedLBM:
     """JAX-accelerated Lattice Boltzmann simulation."""
@@ -18,7 +21,7 @@ class AcceleratedLBM:
         self.params = params
         self.nx = params.nx
         self.ny = params.ny
-        
+
         # Move constants to JAX arrays
         self.weights = jnp.array(WEIGHTS)
         self.velocities = jnp.array(VELOCITIES)
@@ -28,15 +31,16 @@ class AcceleratedLBM:
 
         # Initialize state on device
         self._init_state()
-        
+
         # Bind JIT functions
         self.step_jit = jax.jit(self._step_internal)
 
     def _init_state(self):
         """Initialize the distribution functions and fields."""
         from .quantum_lattice_boltzmann import QuantumLatticeBoltzmann
+
         cpu_sim = QuantumLatticeBoltzmann(self.params)
-        
+
         self.f = jnp.array(cpu_sim.state.f)
         self.coherence = jnp.array(cpu_sim.state.coherence)
         self.zpe_field = jnp.array(cpu_sim.state.zpe_field)
@@ -49,11 +53,13 @@ class AcceleratedLBM:
         # velocities: (9, 2), velocity: (nx, ny, 2)
         # cu = sum(v_i * u) -> (nx, ny, 9)
         cu = jnp.tensordot(velocity, velocities, axes=([2], [1]))
-        
+
         # equilibrium formula: w * rho * (1 + 3cu + 4.5cu^2 - 1.5usq)
         # Usurping weighted sum for vectorized expansion
-        eq = weights * density[..., jnp.newaxis] * (
-            1.0 + 3.0 * cu + 4.5 * cu**2 - 1.5 * usq[..., jnp.newaxis]
+        eq = (
+            weights
+            * density[..., jnp.newaxis]
+            * (1.0 + 3.0 * cu + 4.5 * cu**2 - 1.5 * usq[..., jnp.newaxis])
         )
         return eq
 
@@ -69,32 +75,37 @@ class AcceleratedLBM:
     def _step_internal(self, f, coherence, key):
         """The core JIT-compiled LBM step."""
         density, velocity = self.update_macroscopic(f, self.velocities)
-        f_eq = self.get_equilibrium(density, velocity, self.weights, self.velocities, self.cs2, self.cs4)
-        
+        f_eq = self.get_equilibrium(
+            density, velocity, self.weights, self.velocities, self.cs2, self.cs4
+        )
+
         # Collision
         tau_field = self.params.tau * self.zpe_field * (1.0 + 0.1 * coherence)
         tau_field = jnp.maximum(tau_field, 0.51)
         f_post_collision = f - (f - f_eq) / tau_field[..., jnp.newaxis]
-        
+
         # Quantum noise
         noise = jax.random.normal(key, f.shape) * 0.00001 * coherence[..., jnp.newaxis]
         f_post_collision = jnp.maximum(f_post_collision + noise, 0.0)
-        
+
         # Streaming
-        f_next = jnp.stack([
-            f_post_collision[..., 0],
-            jnp.roll(f_post_collision[..., 1], 1, axis=0),
-            jnp.roll(f_post_collision[..., 2], 1, axis=1),
-            jnp.roll(f_post_collision[..., 3], -1, axis=0),
-            jnp.roll(f_post_collision[..., 4], -1, axis=1),
-            jnp.roll(jnp.roll(f_post_collision[..., 5], 1, axis=0), 1, axis=1),
-            jnp.roll(jnp.roll(f_post_collision[..., 6], -1, axis=0), 1, axis=1),
-            jnp.roll(jnp.roll(f_post_collision[..., 7], -1, axis=0), -1, axis=1),
-            jnp.roll(jnp.roll(f_post_collision[..., 8], 1, axis=0), -1, axis=1)
-        ], axis=-1)
-        
+        f_next = jnp.stack(
+            [
+                f_post_collision[..., 0],
+                jnp.roll(f_post_collision[..., 1], 1, axis=0),
+                jnp.roll(f_post_collision[..., 2], 1, axis=1),
+                jnp.roll(f_post_collision[..., 3], -1, axis=0),
+                jnp.roll(f_post_collision[..., 4], -1, axis=1),
+                jnp.roll(jnp.roll(f_post_collision[..., 5], 1, axis=0), 1, axis=1),
+                jnp.roll(jnp.roll(f_post_collision[..., 6], -1, axis=0), 1, axis=1),
+                jnp.roll(jnp.roll(f_post_collision[..., 7], -1, axis=0), -1, axis=1),
+                jnp.roll(jnp.roll(f_post_collision[..., 8], 1, axis=0), -1, axis=1),
+            ],
+            axis=-1,
+        )
+
         coherence_next = coherence * jnp.exp(-self.params.coherence_decay)
-        
+
         return f_next, coherence_next
 
     def step(self, key):
@@ -104,6 +115,7 @@ class AcceleratedLBM:
 
     def run(self, num_steps: int):
         print(f"[JAX] Starting {num_steps} steps on GPU...")
+
         def body_fun(carry, _):
             f, coherence, key = carry
             f_next, coherence_next = self.step_jit(f, coherence, key)

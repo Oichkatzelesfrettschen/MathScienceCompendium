@@ -23,7 +23,7 @@ HTML_TEMPLATE = """
 <body>
     <div id="app" class="relative w-full h-screen">
         <div ref="canvasContainer" class="w-full h-full"></div>
-        
+
         <div class="ui-overlay flex flex-col justify-between p-6">
             <!-- Header -->
             <div class="flex justify-between items-start">
@@ -31,11 +31,11 @@ HTML_TEMPLATE = """
                     <h1 class="text-2xl font-bold neon-glow">Exceptional Algebra Explorer</h1>
                     <p class="text-sm opacity-70">Unified Mapping: Lie ↔ Clifford ↔ Cayley-Dickson</p>
                 </div>
-                
+
                 <div class="ui-panel space-y-4 max-w-xs">
                     <div class="text-sm font-semibold uppercase tracking-wider opacity-50">Algebra System</div>
                     <div class="grid grid-cols-3 gap-2">
-                        <button v-for="sys in systems" :key="sys.name" 
+                        <button v-for="sys in systems" :key="sys.name"
                                 @click="selectSystem(sys)"
                                 :class="['px-2 py-1 text-xs border border-gray-600 rounded transition-all', currentSystem.name === sys.name ? 'btn-active neon-border' : 'hover:border-cyan-400']">
                             {{ sys.name }}
@@ -84,7 +84,7 @@ HTML_TEMPLATE = """
         </div>
 
         <!-- Detail Tooltip -->
-        <div v-if="hoveredNode" 
+        <div v-if="hoveredNode"
              :style="{ top: tooltipPos.y + 'px', left: tooltipPos.x + 'px' }"
              class="fixed pointer-events-none ui-panel py-2 px-3 text-xs neon-border transform -translate-x-1/2 -translate-y-full mb-4">
             <div class="font-bold text-cyan-400 mb-1">Root α_{{ hoveredNode.index + 1 }}</div>
@@ -154,7 +154,7 @@ HTML_TEMPLATE = """
 
                     sys.roots3d.forEach((root, i) => {
                         positions.push(root[0], root[1], root[2]);
-                        
+
                         // Color based on norm or index
                         const color = new THREE.Color();
                         if (layers.clifford) {
@@ -173,7 +173,7 @@ HTML_TEMPLATE = """
 
                     geometry.setAttribute('position', new THREE.Float32BufferAttribute(positions, 3));
                     geometry.setAttribute('color', new THREE.Float32BufferAttribute(colors, 3));
-                    
+
                     const material = new THREE.PointsMaterial({
                         size: 0.15,
                         vertexColors: true,
@@ -193,7 +193,7 @@ HTML_TEMPLATE = """
                         // Simple lattice connections (nearest neighbors)
                         for (let i = 0; i < sys.roots3d.length; i++) {
                             for (let j = i + 1; j < sys.roots3d.length; j++) {
-                                const d2 = Math.pow(sys.roots3d[i][0]-sys.roots3d[j][0], 2) + 
+                                const d2 = Math.pow(sys.roots3d[i][0]-sys.roots3d[j][0], 2) +
                                            Math.pow(sys.roots3d[i][1]-sys.roots3d[j][1], 2) +
                                            Math.pow(sys.roots3d[i][2]-sys.roots3d[j][2], 2);
                                 if (d2 < 2.5) { // Threshold for neighbor
@@ -222,11 +222,11 @@ HTML_TEMPLATE = """
                 const animate = () => {
                     requestAnimationFrame(animate);
                     controls.update();
-                    
+
                     // Auto-rotation
                     if (pointCloud) pointCloud.rotation.y += 0.001;
                     if (lineSegments) lineSegments.rotation.y += 0.001;
-                    
+
                     renderer.render(scene, camera);
                 };
 
@@ -242,18 +242,18 @@ HTML_TEMPLATE = """
                 const onMouseMove = (event) => {
                     tooltipPos.x = event.clientX;
                     tooltipPos.y = event.clientY;
-                    
+
                     if (!pointCloud) return;
-                    
+
                     const raycaster = new THREE.Raycaster();
                     const mouse = new THREE.Vector2();
                     mouse.x = (event.clientX / window.innerWidth) * 2 - 1;
                     mouse.y = -(event.clientY / window.innerHeight) * 2 + 1;
-                    
+
                     raycaster.setFromCamera(mouse, camera);
                     raycaster.params.Points.threshold = 0.1;
                     const intersects = raycaster.intersectObject(pointCloud);
-                    
+
                     if (intersects.length > 0) {
                         const idx = intersects[0].index;
                         hoveredNode.value = {

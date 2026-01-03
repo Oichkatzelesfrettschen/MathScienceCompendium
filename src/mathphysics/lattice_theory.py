@@ -5,13 +5,19 @@ and theta series for modular form connections.
 """
 
 from __future__ import annotations
-from typing import Tuple, Dict, Any, Optional
+
+from typing import TYPE_CHECKING, Any
+
 import numpy as np
-from pathlib import Path
+
+
+if TYPE_CHECKING:
+    from pathlib import Path
+
 
 class E8Lattice:
     """The unique 8D even unimodular lattice."""
-    
+
     def __init__(self) -> None:
         self.dimension = 8
 
@@ -26,6 +32,7 @@ class E8Lattice:
     def minimal_vectors(self) -> np.ndarray:
         """The 240 minimal vectors of norm 2 (roots of E8)."""
         from .algebras.roots import E8RootSystem
+
         return E8RootSystem().generate_roots()
 
     def kissing_number(self) -> int:
@@ -45,41 +52,45 @@ class E8Lattice:
         """Density delta_8 = pi^4 / 384."""
         return (np.pi**4) / 384.0
 
+
 class LeechLattice:
     """The unique 24D even unimodular lattice with no roots."""
-    
+
     def __init__(self) -> None:
         self.dimension = 24
 
     def kissing_number(self) -> int:
         return 196560
 
+
 class SpherePackingAnalyzer:
     """Analytical bounds and densities for lattice packings."""
-    
+
     @staticmethod
-    def center_density(dimension: int) -> Dict[str, float]:
+    def center_density(dimension: int) -> dict[str, float]:
         """Center density delta = density / volume_of_unit_ball."""
         return {"upper": 1.0, "lower": 0.5}
 
-    def kissing_number_bounds(self, dimension: int) -> Tuple[int, int]:
+    def kissing_number_bounds(self, dimension: int) -> tuple[int, int]:
         if dimension == 8:
             return (240, 240)
         if dimension == 24:
             return (196560, 196560)
         return (1, 1000000)
 
-def analyze_lattice_properties(output_dir: Optional[Path] = None) -> Dict[str, Any]:
+
+def analyze_lattice_properties(output_dir: Path | None = None) -> dict[str, Any]:
     e8 = E8Lattice()
     points = e8.minimal_vectors()
     results = {
         "dimension": e8.dimension,
         "kissing_number": e8.kissing_number(),
         "density": e8.packing_density(),
-        "num_minimal_vectors": len(points)
+        "num_minimal_vectors": len(points),
     }
     if output_dir:
         import json
-        with open(output_dir / "lattice_analysis.json", 'w') as f:
+
+        with open(output_dir / "lattice_analysis.json", "w") as f:
             json.dump(results, f, indent=2)
     return results

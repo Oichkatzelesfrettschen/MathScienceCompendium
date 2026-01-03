@@ -26,14 +26,17 @@ Date: October 2025
 """
 
 from __future__ import annotations
-from typing import List, Tuple, Dict, Any, Optional, Union, FrozenSet
-from dataclasses import dataclass
-import numpy as np
-from collections import defaultdict
-from pathlib import Path
 
 # GF(2) arithmetic
 import sys
+from collections import defaultdict
+from dataclasses import dataclass
+from pathlib import Path
+from typing import Any
+
+import numpy as np
+
+
 sys.path.append(str(Path(__file__).parent))
 from .algebras.roots import E7RootSystem
 
@@ -61,7 +64,7 @@ class GF2Vector:
     Represents elements of F_2^n with binary arithmetic.
     """
 
-    def __init__(self, components: Union[List[int], np.ndarray, int]) -> None:
+    def __init__(self, components: list[int] | np.ndarray | int) -> None:
         """Initialize GF(2) vector.
 
         Args:
@@ -69,11 +72,11 @@ class GF2Vector:
         """
         if isinstance(components, int):
             # Convert integer to binary vector
-            self.components = np.array([int(b) for b in format(components, 'b')], dtype=int)
+            self.components = np.array([int(b) for b in format(components, "b")], dtype=int)
         else:
             self.components = np.array(components, dtype=int) % 2
 
-    def __add__(self, other: 'GF2Vector') -> 'GF2Vector':
+    def __add__(self, other: GF2Vector) -> GF2Vector:
         """Addition in GF(2) (XOR)."""
         # Pad to same length
         max_len = max(len(self.components), len(other.components))
@@ -81,11 +84,11 @@ class GF2Vector:
         b = np.pad(other.components, (max_len - len(other.components), 0))
         return GF2Vector((a + b) % 2)
 
-    def __mul__(self, scalar: int) -> 'GF2Vector':
+    def __mul__(self, scalar: int) -> GF2Vector:
         """Scalar multiplication in GF(2)."""
         return GF2Vector((self.components * (scalar % 2)) % 2)
 
-    def dot(self, other: 'GF2Vector') -> int:
+    def dot(self, other: GF2Vector) -> int:
         """Dot product in GF(2)."""
         min_len = min(len(self.components), len(other.components))
         return int(np.sum(self.components[:min_len] * other.components[:min_len]) % 2)
@@ -94,14 +97,14 @@ class GF2Vector:
         """Check if vector is zero."""
         return np.all(self.components == 0)
 
-    def to_tuple(self) -> Tuple[int, ...]:
+    def to_tuple(self) -> tuple[int, ...]:
         """Convert to tuple for hashing."""
         return tuple(self.components)
 
     def __hash__(self) -> int:
         return hash(self.to_tuple())
 
-    def __eq__(self, other: 'GF2Vector') -> bool:
+    def __eq__(self, other: GF2Vector) -> bool:
         return np.array_equal(self.components, other.components)
 
     def __repr__(self) -> str:
@@ -141,7 +144,7 @@ class ProjectivePoint:
     def __hash__(self) -> int:
         return hash(self.canonical)
 
-    def __eq__(self, other: 'ProjectivePoint') -> bool:
+    def __eq__(self, other: ProjectivePoint) -> bool:
         return self.canonical == other.canonical
 
     def __repr__(self) -> str:
@@ -167,7 +170,7 @@ class ProjectiveLine:
             raise ValueError("Points must be distinct to define a line")
 
         self.points = frozenset([point1, point2])
-        self._all_points: Optional[FrozenSet[ProjectivePoint]] = None
+        self._all_points: frozenset[ProjectivePoint] | None = None
 
     def contains(self, point: ProjectivePoint, dimension: int = 6) -> bool:
         """Check if point lies on this line.
@@ -183,7 +186,7 @@ class ProjectiveLine:
         # {p1, p2, p1+p2} (3 points total)
         p1, p2 = list(self.points)
 
-        if point == p1 or point == p2:
+        if point in (p1, p2):
             return True
 
         # Check if point = p1 + p2
@@ -194,7 +197,7 @@ class ProjectiveLine:
 
         return False
 
-    def get_all_points(self, dimension: int = 6) -> FrozenSet[ProjectivePoint]:
+    def get_all_points(self, dimension: int = 6) -> frozenset[ProjectivePoint]:
         """Get all points on this line.
 
         In PG(n,2), every line has exactly 3 points.
@@ -221,7 +224,7 @@ class ProjectiveLine:
     def __hash__(self) -> int:
         return hash(self.points)
 
-    def __eq__(self, other: 'ProjectiveLine') -> bool:
+    def __eq__(self, other: ProjectiveLine) -> bool:
         return self.points == other.points
 
     def __repr__(self) -> str:
@@ -246,11 +249,11 @@ class ProjectiveSpace:
         """
         self.dimension = dimension
         self.ambient_dim = dimension + 1  # Ambient vector space dimension
-        self._points: Optional[List[ProjectivePoint]] = None
-        self._lines: Optional[List[ProjectiveLine]] = None
-        self._point_index: Dict[ProjectivePoint, int] = {}
+        self._points: list[ProjectivePoint] | None = None
+        self._lines: list[ProjectiveLine] | None = None
+        self._point_index: dict[ProjectivePoint, int] = {}
 
-    def generate_points(self) -> List[ProjectivePoint]:
+    def generate_points(self) -> list[ProjectivePoint]:
         """Generate all points in PG(n, 2).
 
         Returns:
@@ -263,7 +266,7 @@ class ProjectiveSpace:
         # All non-zero vectors in GF(2)^(n+1)
         for i in range(1, 2**self.ambient_dim):
             # Convert integer to binary vector
-            binary = format(i, f'0{self.ambient_dim}b')
+            binary = format(i, f"0{self.ambient_dim}b")
             vector = GF2Vector([int(b) for b in binary])
             point = ProjectivePoint(vector)
             points.append(point)
@@ -277,9 +280,9 @@ class ProjectiveSpace:
 
         Formula: 2^(n+1) - 1
         """
-        return 2**(self.dimension + 1) - 1
+        return 2 ** (self.dimension + 1) - 1
 
-    def generate_lines(self) -> List[ProjectiveLine]:
+    def generate_lines(self) -> list[ProjectiveLine]:
         """Generate all lines in PG(n, 2).
 
         Returns:
@@ -298,11 +301,11 @@ class ProjectiveSpace:
                 pair = tuple(sorted((i, j)))
                 if pair in covered_pairs:
                     continue
-                
+
                 # New line
                 line = ProjectiveLine(points[i], points[j])
                 lines.append(line)
-                
+
                 # In PG(n,2), every line has 3 points. Find the 3rd point.
                 # p1, p2, p1+p2 are the three points.
                 all_pts_on_line = line.get_all_points(self.dimension)
@@ -310,7 +313,7 @@ class ProjectiveSpace:
                 for p in all_pts_on_line:
                     if p in self._point_index:
                         indices_on_line.append(self._point_index[p])
-                
+
                 # Mark all pairs on this line as covered
                 for k in range(len(indices_on_line)):
                     for ll in range(k + 1, len(indices_on_line)):
@@ -324,7 +327,7 @@ class ProjectiveSpace:
 
         Formula: (2^(n+1) - 1)(2^n - 1) / 3
         """
-        num_pts = 2**(self.dimension + 1) - 1
+        num_pts = 2 ** (self.dimension + 1) - 1
         return num_pts * (2**self.dimension - 1) // 3
 
     def incidence_matrix(self) -> np.ndarray:
@@ -360,19 +363,19 @@ class ProjectiveSpace:
             return self._point_index[point]
         return -1
 
-    def properties(self) -> Dict[str, Any]:
+    def properties(self) -> dict[str, Any]:
         """Get geometric properties of projective space.
 
         Returns:
             Dictionary of properties
         """
         return {
-            'dimension': self.dimension,
-            'num_points': self.num_points(),
-            'num_lines': self.num_lines(),
-            'points_per_line': 3,  # Always 3 in PG(n,2)
-            'field': 'GF(2)',
-            'automorphism_group': f'GL({self.dimension+1}, 2)'
+            "dimension": self.dimension,
+            "num_points": self.num_points(),
+            "num_lines": self.num_lines(),
+            "points_per_line": 3,  # Always 3 in PG(n,2)
+            "field": "GF(2)",
+            "automorphism_group": f"GL({self.dimension + 1}, 2)",
         }
 
 
@@ -394,7 +397,7 @@ class FanoPlane:
         self.points = self.pg.generate_points()
         self.lines = self._construct_fano_lines()
 
-    def _construct_fano_lines(self) -> List[List[int]]:
+    def _construct_fano_lines(self) -> list[list[int]]:
         """Construct the 7 lines of the Fano plane.
 
         Returns:
@@ -450,7 +453,7 @@ class FanoPlane:
 
         return True
 
-    def dual_plane(self) -> 'FanoPlane':
+    def dual_plane(self) -> FanoPlane:
         """Construct dual Fano plane (points <-> lines).
 
         Returns:
@@ -485,10 +488,10 @@ class PG62_E7Connection:
         self.e7 = E7RootSystem()
         self.pg_points = self.pg.generate_points()
         self.e7_roots = self.e7.get_127_state_system()
-        self._pg_to_e7_map: Dict[int, int] = {}
-        self._e7_to_pg_map: Dict[int, int] = {}
+        self._pg_to_e7_map: dict[int, int] = {}
+        self._e7_to_pg_map: dict[int, int] = {}
 
-    def build_correspondence(self) -> Dict[int, Dict[str, Any]]:
+    def build_correspondence(self) -> dict[int, dict[str, Any]]:
         """Build explicit correspondence between PG(6,2) points and E7 roots.
 
         Returns:
@@ -505,15 +508,15 @@ class PG62_E7Connection:
             e7_root = self.e7_roots[i] if i < len(self.e7_roots) else None
 
             correspondence[i] = {
-                'pg_point': list(pg_point.coordinates()) if pg_point else None,
-                'e7_root': list(e7_root) if e7_root is not None else None,
-                'pg_index': i,
-                'e7_index': i
+                "pg_point": list(pg_point.coordinates()) if pg_point else None,
+                "e7_root": list(e7_root) if e7_root is not None else None,
+                "pg_index": i,
+                "e7_index": i,
             }
 
         return correspondence
 
-    def geometric_interpretation(self, e7_root_index: int) -> Dict[str, Any]:
+    def geometric_interpretation(self, e7_root_index: int) -> dict[str, Any]:
         """Provide geometric interpretation of E7 root via PG(6,2).
 
         Args:
@@ -529,42 +532,42 @@ class PG62_E7Connection:
         pg_index = self._e7_to_pg_map.get(e7_root_index, e7_root_index)
 
         interpretation = {
-            'e7_root': list(root),
-            'root_type': self.e7.classify_root(root) if not np.allclose(root, 0) else 'zero',
-            'root_squared_norm': float(np.sum(root**2)),
-            'pg_point_index': pg_index
+            "e7_root": list(root),
+            "root_type": self.e7.classify_root(root) if not np.allclose(root, 0) else "zero",
+            "root_squared_norm": float(np.sum(root**2)),
+            "pg_point_index": pg_index,
         }
 
         if pg_index < len(self.pg_points):
             pg_point = self.pg_points[pg_index]
-            interpretation['pg_coordinates'] = list(pg_point.coordinates())
+            interpretation["pg_coordinates"] = list(pg_point.coordinates())
 
         return interpretation
 
-    def analyze_structure(self) -> Dict[str, Any]:
+    def analyze_structure(self) -> dict[str, Any]:
         """Analyze the PG(6,2)-E7 structural connection.
 
         Returns:
             Analysis results
         """
         analysis = {
-            'pg62_points': len(self.pg_points),
-            'e7_states': len(self.e7_roots),
-            'correspondence_size': len(self._pg_to_e7_map),
-            'perfect_match': len(self.pg_points) == len(self.e7_roots)
+            "pg62_points": len(self.pg_points),
+            "e7_states": len(self.e7_roots),
+            "correspondence_size": len(self._pg_to_e7_map),
+            "perfect_match": len(self.pg_points) == len(self.e7_roots),
         }
 
         # E7 properties
         e7_stats = self.e7.get_statistics()
-        analysis['e7_properties'] = {
-            'total_roots': e7_stats['total_roots'],
-            'positive_roots': e7_stats['positive_roots'],
-            'rank': e7_stats['rank'],
-            'dimension': e7_stats['dimension']
+        analysis["e7_properties"] = {
+            "total_roots": e7_stats["total_roots"],
+            "positive_roots": e7_stats["positive_roots"],
+            "rank": e7_stats["rank"],
+            "dimension": e7_stats["dimension"],
         }
 
         # PG(6,2) properties
-        analysis['pg62_properties'] = self.pg.properties()
+        analysis["pg62_properties"] = self.pg.properties()
 
         return analysis
 
@@ -619,7 +622,7 @@ def demonstrate_projective_geometry():
     print()
 
     print("E7 Properties:")
-    e7_props = analysis['e7_properties']
+    e7_props = analysis["e7_properties"]
     for key, value in e7_props.items():
         if isinstance(value, int) and value > 1000:
             print(f"  {key}: {value:,}")

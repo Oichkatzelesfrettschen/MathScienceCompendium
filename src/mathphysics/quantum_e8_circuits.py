@@ -16,18 +16,20 @@ Date: October 2025
 """
 
 from __future__ import annotations
-from typing import List, Dict, Any, Optional, Set
-import numpy as np
-from math import sqrt, pi, ceil
-from dataclasses import dataclass
+
 from collections import defaultdict
+from dataclasses import dataclass
+from math import ceil, pi, sqrt
+from typing import Any
+
+import numpy as np
 
 # Qiskit imports
-from qiskit import QuantumCircuit, transpile, QuantumRegister, ClassicalRegister
+from qiskit import ClassicalRegister, QuantumCircuit, QuantumRegister, transpile
 from qiskit.circuit import ParameterVector
-from qiskit.circuit.library import (
-    MCXGate, StatePreparation, EfficientSU2
-)
+from qiskit.circuit.library import EfficientSU2, MCXGate, StatePreparation
+
+
 try:
     from qiskit_ibm_runtime.fake_provider import FakeKyiv, FakeWashington
 except ImportError:
@@ -36,12 +38,15 @@ except ImportError:
     except ImportError:
         # Fallback for Qiskit 1.0+
         from qiskit.providers.fake_provider import GenericBackendV2 as FakeWashington
-        FakeKyiv = FakeWashington
-from qiskit.circuit.library.basis_change import QFT
 
+        FakeKyiv = FakeWashington
 # Local imports
 import sys
 from pathlib import Path
+
+from qiskit.circuit.library.basis_change import QFT
+
+
 sys.path.append(str(Path(__file__).parent))
 from .algebras.roots import E8RootSystem
 
@@ -51,12 +56,12 @@ class E8CircuitConfig:
     """Configuration for E8 quantum circuits."""
 
     num_iterations: int = 4  # Grover iterations
-    oracle_type: str = 'algebraic'  # 'geometric', 'algebraic', 'hybrid'
+    oracle_type: str = "algebraic"  # 'geometric', 'algebraic', 'hybrid'
     use_ancilla: bool = True
     optimization_level: int = 3
     error_mitigation: bool = True
-    measurement_basis: str = 'computational'
-    hardware_backend: str = 'FakeWashington'  # 127-qubit backend
+    measurement_basis: str = "computational"
+    hardware_backend: str = "FakeWashington"  # 127-qubit backend
     coupling_aware: bool = True
     max_circuit_depth: int = 2000
     decomposition_depth: int = 2
@@ -67,7 +72,7 @@ class E8CircuitConfig:
         """Validate configuration parameters."""
         if self.num_iterations < 1 or self.num_iterations > 100:
             raise ValueError(f"Invalid iterations: {self.num_iterations}")
-        valid_oracles = {'geometric', 'algebraic', 'hybrid', 'parametric'}
+        valid_oracles = {"geometric", "algebraic", "hybrid", "parametric"}
         if self.oracle_type not in valid_oracles:
             raise ValueError(f"Invalid oracle type: {self.oracle_type}")
         if self.approximation_degree < 0 or self.approximation_degree > 1:
@@ -110,7 +115,7 @@ class E8RootStructure:
         non_zero = root[np.abs(root) > 1e-10]
         return len(non_zero) == 2 and np.allclose(np.abs(non_zero), 1.0)
 
-    def get_root_neighbors(self, root_index: int, max_distance: int = 1) -> Set[int]:
+    def get_root_neighbors(self, root_index: int, max_distance: int = 1) -> set[int]:
         """Get neighboring roots within specified distance.
 
         Args:
@@ -152,24 +157,24 @@ class E8RootStructure:
         # Encode sign pattern (8 bits)
         for component in root:
             if abs(component) < 1e-10:
-                pattern.append('0')
+                pattern.append("0")
             elif component > 0:
-                pattern.append('1')
+                pattern.append("1")
             else:
-                pattern.append('0')
+                pattern.append("0")
 
         # Encode magnitude pattern (8 bits)
         for component in root:
             if abs(component) < 0.4:  # Near 0
-                pattern.append('0')
+                pattern.append("0")
             elif abs(component) < 0.6:  # Near 0.5
-                pattern.append('1')
+                pattern.append("1")
             else:  # Near 1
-                pattern.append('1')
+                pattern.append("1")
 
-        return ''.join(pattern)
+        return "".join(pattern)
 
-    def get_weyl_orbit(self, root_index: int) -> Set[int]:
+    def get_weyl_orbit(self, root_index: int) -> set[int]:
         """Get Weyl group orbit of a root.
 
         Args:
@@ -187,7 +192,10 @@ class E8RootStructure:
         # Apply Weyl reflections
         for simple_root in self.simple_roots:
             # Weyl reflection: w_α(v) = v - 2*(v·α)/(α·α) * α
-            reflected = root - 2 * np.dot(root, simple_root) / np.dot(simple_root, simple_root) * simple_root
+            reflected = (
+                root
+                - 2 * np.dot(root, simple_root) / np.dot(simple_root, simple_root) * simple_root
+            )
 
             # Find index of reflected root
             reflected_tuple = tuple(np.round(reflected, 6))
@@ -221,7 +229,7 @@ class E8OracleBuilder:
         n_qubits = 8
         # Force no ancilla for standard 8-qubit oracle tests
 
-        qr = QuantumRegister(n_qubits, 'state')
+        qr = QuantumRegister(n_qubits, "state")
         qc = QuantumCircuit(qr, name="E8_Algebraic_Oracle")
 
         # Mark valid E8 root indices (0-239)
@@ -235,7 +243,7 @@ class E8OracleBuilder:
 
         return qc
 
-    def _optimize_marking_sequence(self, indices: Set[int]) -> List[List[int]]:
+    def _optimize_marking_sequence(self, indices: set[int]) -> list[list[int]]:
         """Optimize marking sequence using Gray code.
 
         Args:
@@ -254,7 +262,7 @@ class E8OracleBuilder:
 
             # Find states differing by one bit
             for other in list(remaining):
-                if bin(current ^ other).count('1') == 1:
+                if bin(current ^ other).count("1") == 1:
                     group.append(other)
                     remaining.remove(other)
 
@@ -262,8 +270,9 @@ class E8OracleBuilder:
 
         return groups
 
-    def _mark_state_group(self, qc: QuantumCircuit, qr: QuantumRegister,
-                          state_group: List[int]) -> None:
+    def _mark_state_group(
+        self, qc: QuantumCircuit, qr: QuantumRegister, state_group: list[int]
+    ) -> None:
         """Mark a group of states efficiently.
 
         Args:
@@ -276,11 +285,11 @@ class E8OracleBuilder:
 
         # Use multi-controlled phase for marking
         for state_idx in state_group:
-            control_pattern = format(state_idx, '08b')[::-1]
+            control_pattern = format(state_idx, "08b")[::-1]
 
             # Apply X gates for 0s in pattern
             for i, bit in enumerate(control_pattern):
-                if bit == '0':
+                if bit == "0":
                     qc.x(qr[i])
 
             # Multi-controlled Z
@@ -291,7 +300,7 @@ class E8OracleBuilder:
 
             # Restore X gates
             for i, bit in enumerate(control_pattern):
-                if bit == '0':
+                if bit == "0":
                     qc.x(qr[i])
 
     def build_geometric_oracle(self, check_orthogonality: bool = True) -> QuantumCircuit:
@@ -304,7 +313,7 @@ class E8OracleBuilder:
             QuantumCircuit implementing geometric oracle
         """
         n_qubits = 8
-        qr = QuantumRegister(n_qubits, 'state')
+        qr = QuantumRegister(n_qubits, "state")
         qc = QuantumCircuit(qr, name="E8_Geometric_Oracle")
 
         # Check geometric constraints
@@ -329,8 +338,7 @@ class E8OracleBuilder:
 
         return qc
 
-    def _mark_single_state(self, qc: QuantumCircuit, qr: QuantumRegister,
-                           state_idx: int) -> None:
+    def _mark_single_state(self, qc: QuantumCircuit, qr: QuantumRegister, state_idx: int) -> None:
         """Mark a single state with phase flip.
 
         Args:
@@ -338,12 +346,12 @@ class E8OracleBuilder:
             qr: Quantum register
             state_idx: State index to mark
         """
-        control_pattern = format(state_idx, f'0{len(qr)}b')[::-1]
+        control_pattern = format(state_idx, f"0{len(qr)}b")[::-1]
 
         # Apply X gates for 0s
         x_positions = []
         for i, bit in enumerate(control_pattern):
-            if bit == '0':
+            if bit == "0":
                 qc.x(qr[i])
                 x_positions.append(i)
 
@@ -352,7 +360,7 @@ class E8OracleBuilder:
             # Use decomposed MCZ for efficiency
             qc.h(qr[-1])
             mcx = MCXGate(len(qr) - 1)
-            qc.append(mcx, list(qr[:-1]) + [qr[-1]])
+            qc.append(mcx, [*list(qr[:-1]), qr[-1]])
             qc.h(qr[-1])
         else:
             qc.cz(qr[0], qr[-1])
@@ -361,8 +369,7 @@ class E8OracleBuilder:
         for i in x_positions:
             qc.x(qr[i])
 
-    def _add_orthogonality_check(self, qc: QuantumCircuit,
-                                 qr: QuantumRegister) -> None:
+    def _add_orthogonality_check(self, qc: QuantumCircuit, qr: QuantumRegister) -> None:
         """Add orthogonality constraints for E8 roots.
 
         Args:
@@ -387,7 +394,7 @@ class E8OracleBuilder:
             QuantumCircuit marking Weyl orbit
         """
         n_qubits = 8
-        qr = QuantumRegister(n_qubits, 'state')
+        qr = QuantumRegister(n_qubits, "state")
         qc = QuantumCircuit(qr, name=f"E8_Weyl_Oracle_{root_index}")
 
         # Get Weyl orbit
@@ -410,9 +417,9 @@ class E8OracleBuilder:
             Parametric quantum circuit
         """
         n_qubits = 8
-        params = ParameterVector('theta', num_params)
+        params = ParameterVector("theta", num_params)
 
-        qr = QuantumRegister(n_qubits, 'state')
+        qr = QuantumRegister(n_qubits, "state")
         qc = QuantumCircuit(qr, name="E8_Parametric_Oracle")
 
         # Layer 1: Parametric rotations
@@ -456,7 +463,7 @@ class E8GroverSearch:
         Returns:
             Diffusion operator circuit
         """
-        qr = QuantumRegister(self.n_qubits, 'q')
+        qr = QuantumRegister(self.n_qubits, "q")
         qc = QuantumCircuit(qr, name="E8_Diffusion")
 
         # Standard diffusion: 2|s><s| - I
@@ -467,7 +474,7 @@ class E8GroverSearch:
         qc.h(qr[-1])
         if self.n_qubits > 2:
             mcx = MCXGate(self.n_qubits - 1)
-            qc.append(mcx, list(qr[:-1]) + [qr[-1]])
+            qc.append(mcx, [*list(qr[:-1]), qr[-1]])
         else:
             qc.cx(qr[0], qr[1])
         qc.h(qr[-1])
@@ -489,7 +496,7 @@ class E8GroverSearch:
         n_total = 256  # 2^8 total states
         if num_marked <= 0:
             return 1
-        
+
         if num_marked >= n_total:
             return 1
 
@@ -501,7 +508,7 @@ class E8GroverSearch:
         # Bound by configuration maximum, but ensure at least 1
         return max(1, min(optimal, self.config.num_iterations))
 
-    def build_grover_circuit(self, num_marked: Optional[int] = None) -> QuantumCircuit:
+    def build_grover_circuit(self, num_marked: int | None = None) -> QuantumCircuit:
         """Build complete Grover search circuit for E8.
 
         Args:
@@ -516,8 +523,8 @@ class E8GroverSearch:
         iterations = self.calculate_optimal_iterations(num_marked)
 
         # Create circuit
-        qr = QuantumRegister(self.n_qubits, 'q')
-        cr = ClassicalRegister(self.n_qubits, 'c')
+        qr = QuantumRegister(self.n_qubits, "q")
+        cr = ClassicalRegister(self.n_qubits, "c")
         qc = QuantumCircuit(qr, cr, name=f"E8_Grover_{iterations}_iter")
 
         # Initial superposition
@@ -548,8 +555,8 @@ class E8GroverSearch:
         Returns:
             Fixed-point Grover circuit
         """
-        qr = QuantumRegister(self.n_qubits, 'q')
-        cr = ClassicalRegister(self.n_qubits, 'c')
+        qr = QuantumRegister(self.n_qubits, "q")
+        cr = ClassicalRegister(self.n_qubits, "c")
         qc = QuantumCircuit(qr, cr, name="E8_FixedPoint_Grover")
 
         # Initial superposition
@@ -612,8 +619,7 @@ class E8StatePreparation:
 
         return qc
 
-    def _approximate_state_prep(self, amplitudes: np.ndarray,
-                                n_qubits: int) -> QuantumCircuit:
+    def _approximate_state_prep(self, amplitudes: np.ndarray, n_qubits: int) -> QuantumCircuit:
         """Approximate state preparation using variational circuit.
 
         Args:
@@ -626,7 +632,7 @@ class E8StatePreparation:
         qc = QuantumCircuit(n_qubits, name="E8_Approx_StatePrep")
 
         # Use EfficientSU2 variational form
-        var_form = EfficientSU2(n_qubits, reps=2, entanglement='linear')
+        var_form = EfficientSU2(n_qubits, reps=2, entanglement="linear")
 
         # For demonstration, use fixed parameters
         # In practice, these would be optimized
@@ -637,7 +643,7 @@ class E8StatePreparation:
 
         return qc
 
-    def prepare_root_type_superposition(self, root_type: str = 'Type1') -> QuantumCircuit:
+    def prepare_root_type_superposition(self, root_type: str = "Type1") -> QuantumCircuit:
         """Prepare superposition over specific root type.
 
         Args:
@@ -650,7 +656,7 @@ class E8StatePreparation:
         qc = QuantumCircuit(n_qubits, name=f"E8_{root_type}_Superposition")
 
         # Get indices for root type
-        if root_type == 'Type1':
+        if root_type == "Type1":
             indices = self.root_structure.type1_indices
         else:
             indices = self.root_structure.type2_indices
@@ -740,7 +746,7 @@ class E8MeasurementAnalysis:
         """Initialize measurement analyzer."""
         self.root_structure = E8RootStructure()
 
-    def decode_measurement(self, counts: Dict[str, int]) -> Dict[str, Any]:
+    def decode_measurement(self, counts: dict[str, int]) -> dict[str, Any]:
         """Decode measurement results to E8 root information.
 
         Args:
@@ -751,24 +757,24 @@ class E8MeasurementAnalysis:
         """
         total_shots = sum(counts.values())
         results = {
-            'total_shots': total_shots,
-            'measured_roots': {},
-            'type1_probability': 0.0,
-            'type2_probability': 0.0,
-            'invalid_probability': 0.0,
-            'root_distribution': defaultdict(int)
+            "total_shots": total_shots,
+            "measured_roots": {},
+            "type1_probability": 0.0,
+            "type2_probability": 0.0,
+            "invalid_probability": 0.0,
+            "root_distribution": defaultdict(int),
         }
 
         for bitstring, count in counts.items():
             # Remove spaces from bitstring (occurring with multiple registers)
             clean_bits = bitstring.replace(" ", "")
-            
+
             # Convert to index
             try:
                 index = int(clean_bits[::-1], 2)
             except ValueError:
                 # Handle unexpected bitstring formats
-                results['invalid_probability'] += count / total_shots
+                results["invalid_probability"] += count / total_shots
                 continue
             probability = count / total_shots
 
@@ -778,28 +784,28 @@ class E8MeasurementAnalysis:
 
                 # Classify
                 if index in self.root_structure.type1_indices:
-                    results['type1_probability'] += probability
-                    root_type = 'Type1'
+                    results["type1_probability"] += probability
+                    root_type = "Type1"
                 else:
-                    results['type2_probability'] += probability
-                    root_type = 'Type2'
+                    results["type2_probability"] += probability
+                    root_type = "Type2"
 
-                results['measured_roots'][index] = {
-                    'root': root.tolist(),
-                    'type': root_type,
-                    'probability': probability,
-                    'counts': count
+                results["measured_roots"][index] = {
+                    "root": root.tolist(),
+                    "type": root_type,
+                    "probability": probability,
+                    "counts": count,
                 }
 
                 # Track distribution
-                results['root_distribution'][root_type] += count
+                results["root_distribution"][root_type] += count
             else:
                 # Invalid state
-                results['invalid_probability'] += probability
+                results["invalid_probability"] += probability
 
         return results
 
-    def analyze_correlations(self, counts: Dict[str, int]) -> Dict[str, float]:
+    def analyze_correlations(self, counts: dict[str, int]) -> dict[str, float]:
         """Analyze correlations between measured qubits.
 
         Args:
@@ -838,11 +844,11 @@ class E8MeasurementAnalysis:
 
                     expectation += prob * z_i * z_j
 
-                correlations[f'Z{i}_Z{j}'] = expectation
+                correlations[f"Z{i}_Z{j}"] = expectation
 
         return correlations
 
-    def extract_algebraic_invariants(self, counts: Dict[str, int]) -> Dict[str, Any]:
+    def extract_algebraic_invariants(self, counts: dict[str, int]) -> dict[str, Any]:
         """Extract E8 algebraic invariants from measurements.
 
         Args:
@@ -854,33 +860,33 @@ class E8MeasurementAnalysis:
         decoded = self.decode_measurement(counts)
 
         invariants = {
-            'measured_root_count': len(decoded['measured_roots']),
-            'type_ratio': 0.0,
-            'average_root_norm': 0.0,
-            'weyl_orbit_sizes': []
+            "measured_root_count": len(decoded["measured_roots"]),
+            "type_ratio": 0.0,
+            "average_root_norm": 0.0,
+            "weyl_orbit_sizes": [],
         }
 
         # Type ratio (should be 112:128 for E8)
-        if decoded['type2_probability'] > 0:
-            invariants['type_ratio'] = decoded['type1_probability'] / decoded['type2_probability']
+        if decoded["type2_probability"] > 0:
+            invariants["type_ratio"] = decoded["type1_probability"] / decoded["type2_probability"]
 
         # Average root norm (should be sqrt(2))
         total_norm = 0.0
         count = 0
 
-        for root_info in decoded['measured_roots'].values():
-            root = np.array(root_info['root'])
+        for root_info in decoded["measured_roots"].values():
+            root = np.array(root_info["root"])
             total_norm += np.linalg.norm(root)
             count += 1
 
         if count > 0:
-            invariants['average_root_norm'] = total_norm / count
+            invariants["average_root_norm"] = total_norm / count
 
         # Sample Weyl orbit sizes
-        sampled_roots = list(decoded['measured_roots'].keys())[:5]
+        sampled_roots = list(decoded["measured_roots"].keys())[:5]
         for root_idx in sampled_roots:
             orbit = self.root_structure.get_weyl_orbit(root_idx)
-            invariants['weyl_orbit_sizes'].append(len(orbit))
+            invariants["weyl_orbit_sizes"].append(len(orbit))
 
         return invariants
 
@@ -892,25 +898,25 @@ class E8HardwareOptimization:
         """Initialize hardware optimizer."""
         self.config = config
         self.backend = self._get_backend()
-        self.coupling_map = getattr(self.backend, 'coupling_map', None)
+        self.coupling_map = getattr(self.backend, "coupling_map", None)
 
     def _get_backend(self) -> Any:
         """Get hardware backend."""
         from qiskit.providers.fake_provider import GenericBackendV2
+
         return GenericBackendV2(num_qubits=27)
 
     def optimize_for_hardware(self, circuit: QuantumCircuit) -> QuantumCircuit:
         """Apply hardware-specific optimizations."""
         # Standard transpilation
         transpiled = transpile(
-            circuit,
-            backend=self.backend,
-            optimization_level=self.config.optimization_level
+            circuit, backend=self.backend, optimization_level=self.config.optimization_level
         )
         return transpiled
 
-    def partition_for_limited_connectivity(self, circuit: QuantumCircuit,
-                                          max_qubits: int = 127) -> List[QuantumCircuit]:
+    def partition_for_limited_connectivity(
+        self, circuit: QuantumCircuit, max_qubits: int = 127
+    ) -> list[QuantumCircuit]:
         """Partition circuit for limited qubit connectivity.
 
         Args:
@@ -936,10 +942,9 @@ class E8HardwareOptimization:
             end_qubit = min((i + 1) * chunk_size, circuit.num_qubits)
 
             # Create sub-circuit
-            sub_qr = QuantumRegister(end_qubit - start_qubit, f'q_{i}')
-            sub_cr = ClassicalRegister(end_qubit - start_qubit, f'c_{i}')
-            sub_circuit = QuantumCircuit(sub_qr, sub_cr,
-                                        name=f"{circuit.name}_part{i}")
+            sub_qr = QuantumRegister(end_qubit - start_qubit, f"q_{i}")
+            sub_cr = ClassicalRegister(end_qubit - start_qubit, f"c_{i}")
+            sub_circuit = QuantumCircuit(sub_qr, sub_cr, name=f"{circuit.name}_part{i}")
 
             # Copy relevant operations
             # This is simplified - full implementation would handle gate mapping
@@ -978,7 +983,7 @@ class E8HardwareOptimization:
         fidelity *= (1 - measurement_error) ** circuit.num_clbits
 
         # Depth penalty
-        depth_factor = 0.999 ** depth
+        depth_factor = 0.999**depth
         fidelity *= depth_factor
 
         return max(0.0, min(1.0, fidelity))
@@ -987,7 +992,7 @@ class E8HardwareOptimization:
 class E8QuantumAlgorithms:
     """Implementation of quantum algorithms for E8 Lie algebras."""
 
-    def __init__(self, config: Optional[E8CircuitConfig] = None) -> None:
+    def __init__(self, config: E8CircuitConfig | None = None) -> None:
         """Initialize E8 quantum algorithms."""
         self.config = config or E8CircuitConfig()
         self.root_structure = E8RootStructure()
@@ -1005,9 +1010,9 @@ class E8QuantumAlgorithms:
         n_qubits = 8
         n_precision = 3  # Precision for counting
 
-        qr_state = QuantumRegister(n_qubits, 'state')
-        qr_precision = QuantumRegister(n_precision, 'precision')
-        cr = ClassicalRegister(n_precision, 'count')
+        qr_state = QuantumRegister(n_qubits, "state")
+        qr_precision = QuantumRegister(n_precision, "precision")
+        cr = ClassicalRegister(n_precision, "count")
 
         qc = QuantumCircuit(qr_state, qr_precision, cr, name="E8_Root_Counting")
 
@@ -1025,13 +1030,13 @@ class E8QuantumAlgorithms:
             oracle.h(range(8))
             oracle.z(0)
             oracle.h(range(8))
-            
+
         controlled_oracle = oracle.to_gate().control(1)
 
         # 3. Apply controlled operations
         for i in range(n_precision):
             for _ in range(2**i):
-                qc.append(controlled_oracle, [qr_precision[i]] + list(qr_state))
+                qc.append(controlled_oracle, [qr_precision[i], *list(qr_state)])
 
         # Inverse QFT on precision register
         qft_inv = QFT(n_precision, inverse=True)
@@ -1049,9 +1054,9 @@ class E8QuantumAlgorithms:
             Classification circuit
         """
         n_qubits = 8
-        qr = QuantumRegister(n_qubits, 'root')
-        cr_type = ClassicalRegister(1, 'type')
-        cr_index = ClassicalRegister(n_qubits, 'index')
+        qr = QuantumRegister(n_qubits, "root")
+        cr_type = ClassicalRegister(1, "type")
+        cr_index = ClassicalRegister(n_qubits, "index")
 
         qc = QuantumCircuit(qr, cr_type, cr_index, name="E8_Root_Classification")
 
@@ -1065,7 +1070,7 @@ class E8QuantumAlgorithms:
 
         # Simplified classification based on Hamming weight
         # Count number of |1> states
-        ancilla = QuantumRegister(1, 'anc')
+        ancilla = QuantumRegister(1, "anc")
         qc.add_register(ancilla)
 
         # Compute parity for classification
@@ -1090,7 +1095,7 @@ class E8QuantumAlgorithms:
             Time evolution circuit
         """
         n_qubits = 8
-        qr = QuantumRegister(n_qubits, 'state')
+        qr = QuantumRegister(n_qubits, "state")
         qc = QuantumCircuit(qr, name=f"E8_Cartan_Evolution_t={time}")
 
         # Prepare initial state
@@ -1105,7 +1110,7 @@ class E8QuantumAlgorithms:
         n_trotter_steps = 10
         dt = time / n_trotter_steps
 
-        for step in range(n_trotter_steps):
+        for _step in range(n_trotter_steps):
             # Apply diagonal evolution
             for i in range(min(n_qubits, len(cartan))):
                 # Simplified: use diagonal elements
@@ -1129,17 +1134,14 @@ class E8QuantumAlgorithms:
             Dynkin diagram circuit
         """
         n_qubits = 8
-        qr = QuantumRegister(n_qubits, 'node')
+        qr = QuantumRegister(n_qubits, "node")
         qc = QuantumCircuit(qr, name="E8_Dynkin_Diagram")
 
         # E8 Dynkin diagram connections
         # 1-2-3-4-5-6-7
         #     |
         #     8
-        connections = [
-            (0, 1), (1, 2), (2, 3), (3, 4),
-            (4, 5), (5, 6), (2, 7)
-        ]
+        connections = [(0, 1), (1, 2), (2, 3), (3, 4), (4, 5), (5, 6), (2, 7)]
 
         # Initialize nodes
         qc.h(qr)
@@ -1163,8 +1165,8 @@ class E8QuantumAlgorithms:
             Symmetry test circuit
         """
         n_qubits = 8
-        qr = QuantumRegister(n_qubits, 'state')
-        cr = ClassicalRegister(n_qubits, 'result')
+        qr = QuantumRegister(n_qubits, "state")
+        cr = ClassicalRegister(n_qubits, "result")
         qc = QuantumCircuit(qr, cr, name="E8_Symmetry_Test")
 
         # Prepare E8 state
@@ -1206,10 +1208,10 @@ def demonstrate_e8_circuits():
     # Configure
     config = E8CircuitConfig(
         num_iterations=3,
-        oracle_type='algebraic',
+        oracle_type="algebraic",
         use_ancilla=True,
         optimization_level=2,
-        use_approximation=True
+        use_approximation=True,
     )
 
     algorithms = E8QuantumAlgorithms(config)
@@ -1276,7 +1278,7 @@ def demonstrate_e8_circuits():
     print()
 
     # Type-specific
-    type1_prep = state_prep.prepare_root_type_superposition('Type1')
+    type1_prep = state_prep.prepare_root_type_superposition("Type1")
     print("Type 1 Superposition (112 roots):")
     print(f"  Circuit depth: {type1_prep.depth()}")
     print()
@@ -1325,11 +1327,11 @@ def demonstrate_e8_circuits():
 
     # Simulate measurement
     sample_counts = {
-        '00000000': 100,  # Index 0
-        '00000001': 95,   # Index 1
-        '11110000': 87,   # Index 240 (invalid)
-        '01010101': 82,   # Index 85
-        '10101010': 78,   # Index 170
+        "00000000": 100,  # Index 0
+        "00000001": 95,  # Index 1
+        "11110000": 87,  # Index 240 (invalid)
+        "01010101": 82,  # Index 85
+        "10101010": 78,  # Index 170
     }
 
     analyzer = E8MeasurementAnalysis()
