@@ -19,9 +19,11 @@ except ImportError:
     jnp = np  # Fallback to numpy
     HAS_JAX = False
 
-    def jit(func):  # noqa: ARG001
+    def jit(func=None, **kwargs):  # noqa: ARG001
         """Dummy jit decorator when JAX is not available."""
-        return lambda f: f
+        if func is None:
+            return lambda f: f
+        return func
 
 from ..algebra import JordanAlgebra
 from .cayley_dickson import Octonion
