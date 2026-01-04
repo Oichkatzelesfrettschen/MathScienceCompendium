@@ -72,7 +72,7 @@ def generate_explorer_data() -> list[dict[str, Any]]:
             try:
                 cartan = sys.compute_cartan_matrix()
                 det = float(np.linalg.det(cartan))
-            except:
+            except (AttributeError, ValueError, np.linalg.LinAlgError):
                 det = 0.0
 
             # Get root types and mappings

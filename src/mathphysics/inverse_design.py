@@ -6,11 +6,14 @@ optimizing spectral weights to target specific flow topologies.
 
 from __future__ import annotations
 
-from typing import Any
+from typing import TYPE_CHECKING, Any
 
 import jax
 import jax.numpy as jnp
 
+
+if TYPE_CHECKING:
+    import numpy as np
 
 try:
     import jaxlie

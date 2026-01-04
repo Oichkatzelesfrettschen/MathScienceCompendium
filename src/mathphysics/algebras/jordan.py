@@ -10,6 +10,7 @@ from typing import Any
 
 import numpy as np
 
+
 try:
     import jax.numpy as jnp
     from jax import jit

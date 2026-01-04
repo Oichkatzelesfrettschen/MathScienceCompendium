@@ -5,6 +5,7 @@ from __future__ import annotations
 import importlib
 from typing import Any
 
+
 # Track available optional dependencies
 HAS_JAX = False
 HAS_QISKIT = False
@@ -15,8 +16,8 @@ HAS_PLOTLY = False
 
 # Try importing JAX
 try:
-    import jax  # noqa: F401
-    import jax.numpy as jnp  # noqa: F401
+    import jax
+    import jax.numpy as jnp
 
     HAS_JAX = True
 except ImportError:
@@ -25,7 +26,7 @@ except ImportError:
 
 # Try importing Qiskit
 try:
-    import qiskit  # noqa: F401
+    import qiskit
 
     HAS_QISKIT = True
 except ImportError:
@@ -33,7 +34,7 @@ except ImportError:
 
 # Try importing liesym
 try:
-    import liesym  # noqa: F401
+    import liesym
 
     HAS_LIESYM = True
 except ImportError:
@@ -41,7 +42,7 @@ except ImportError:
 
 # Try importing gudhi
 try:
-    import gudhi  # noqa: F401
+    import gudhi
 
     HAS_GUDHI = True
 except ImportError:
@@ -49,7 +50,7 @@ except ImportError:
 
 # Try importing jaxlie
 try:
-    import jaxlie  # noqa: F401
+    import jaxlie
 
     HAS_JAXLIE = True
 except ImportError:
@@ -57,7 +58,7 @@ except ImportError:
 
 # Try importing plotly
 try:
-    import plotly  # noqa: F401
+    import plotly
 
     HAS_PLOTLY = True
 except ImportError:
@@ -116,12 +117,12 @@ def safe_import(module_name: str) -> Any | None:
 
 
 __all__ = [
-    "HAS_JAX",
-    "HAS_QISKIT",
-    "HAS_LIESYM",
     "HAS_GUDHI",
+    "HAS_JAX",
     "HAS_JAXLIE",
+    "HAS_LIESYM",
     "HAS_PLOTLY",
+    "HAS_QISKIT",
     "require_dependency",
     "safe_import",
 ]
