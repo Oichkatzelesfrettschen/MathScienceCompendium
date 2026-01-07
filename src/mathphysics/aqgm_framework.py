@@ -346,7 +346,6 @@ class ModularAutomorphismGroup:
 
         # Modular operator related to density matrix
         # Delta^{it} generates modular flow
-        _eigenvalues, _eigenvectors = eig(rho)
 
         # Construct Delta from eigenvalues
         # Delta = sum lambda_i |e_i><e_i|
