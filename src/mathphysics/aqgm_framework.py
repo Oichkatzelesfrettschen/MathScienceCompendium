@@ -27,27 +27,30 @@ Date: October 2025
 """
 
 from __future__ import annotations
-from typing import Dict, Any, Optional, Union
-from dataclasses import dataclass
-from abc import ABC, abstractmethod
-import numpy as np
-from scipy.linalg import expm, logm, eig, eigvals
-import networkx as nx
+
 import json
-from pathlib import Path
 
 # Import Lie algebra systems
 import sys
+from abc import ABC, abstractmethod
+from dataclasses import dataclass
+from pathlib import Path
+from typing import Any
+
+import networkx as nx
+import numpy as np
+from scipy.linalg import eig, eigvals, expm, logm
+
+
 sys.path.append(str(Path(__file__).parent))
-from .algebras.roots import E7RootSystem
-from .algebras.roots import E8RootSystem
+from .algebras.roots import E7RootSystem, E8RootSystem
 
 
 @dataclass
 class AQGMConfig:
     """Configuration for AQGM framework."""
 
-    algebra_type: str = 'E7'  # 'E7', 'E8', 'custom'
+    algebra_type: str = "E7"  # 'E7', 'E8', 'custom'
     graph_vertices: int = 127  # Number of graph vertices (127 for E7)
     modular_theory: bool = True  # Use Tomita-Takesaki modular theory
     non_commutative: bool = True  # Enable non-commutative geometry
@@ -57,7 +60,7 @@ class AQGMConfig:
 
     def validate(self) -> None:
         """Validate configuration."""
-        valid_algebras = {'E7', 'E8', 'custom'}
+        valid_algebras = {"E7", "E8", "custom"}
         if self.algebra_type not in valid_algebras:
             raise ValueError(f"Invalid algebra type: {self.algebra_type}")
         if self.graph_vertices < 1:
@@ -90,7 +93,7 @@ class AlgebraicGraph:
         """Add edge to graph with optional weight."""
         self.graph.add_edge(source, target, weight=weight)
 
-    def add_edges_from_root_system(self, root_system: Union[E7RootSystem, E8RootSystem]) -> None:
+    def add_edges_from_root_system(self, root_system: E7RootSystem | E8RootSystem) -> None:
         """Construct graph from Lie algebra root system.
 
         Args:
@@ -119,7 +122,7 @@ class AlgebraicGraph:
         """Label a vertex with an operator name."""
         self._operator_labels[vertex] = operator_name
 
-    def get_operator_label(self, vertex: int) -> Optional[str]:
+    def get_operator_label(self, vertex: int) -> str | None:
         """Get operator label for vertex."""
         return self._operator_labels.get(vertex)
 
@@ -131,15 +134,17 @@ class AlgebraicGraph:
         """Get Laplacian matrix of graph."""
         return nx.laplacian_matrix(self.graph).toarray()
 
-    def connectivity_structure(self) -> Dict[str, Any]:
+    def connectivity_structure(self) -> dict[str, Any]:
         """Analyze graph connectivity structure."""
         return {
-            'num_vertices': self.n_vertices,
-            'num_edges': self.graph.number_of_edges(),
-            'density': nx.density(self.graph),
-            'is_connected': nx.is_connected(self.graph) if not self.directed else nx.is_weakly_connected(self.graph),
-            'diameter': nx.diameter(self.graph) if nx.is_connected(self.graph) else float('inf'),
-            'clustering_coefficient': nx.average_clustering(self.graph)
+            "num_vertices": self.n_vertices,
+            "num_edges": self.graph.number_of_edges(),
+            "density": nx.density(self.graph),
+            "is_connected": nx.is_connected(self.graph)
+            if not self.directed
+            else nx.is_weakly_connected(self.graph),
+            "diameter": nx.diameter(self.graph) if nx.is_connected(self.graph) else float("inf"),
+            "clustering_coefficient": nx.average_clustering(self.graph),
         }
 
 
@@ -219,7 +224,7 @@ class QuantumGeometricOperator:
         """
         self.graph = graph
         self.algebra = algebra
-        self._operator_matrix: Optional[np.ndarray] = None
+        self._operator_matrix: np.ndarray | None = None
 
     def build_position_operator(self, vertex: int) -> np.ndarray:
         """Build position operator for given vertex.
@@ -255,7 +260,7 @@ class QuantumGeometricOperator:
         self._operator_matrix = operator
         return operator
 
-    def build_hamiltonian(self, potential: Optional[np.ndarray] = None) -> np.ndarray:
+    def build_hamiltonian(self, potential: np.ndarray | None = None) -> np.ndarray:
         """Build Hamiltonian operator.
 
         H = T + V, where T is kinetic (momentum) and V is potential.
@@ -278,13 +283,15 @@ class QuantumGeometricOperator:
         self._operator_matrix = hamiltonian
         return hamiltonian
 
-    def commutator(self, other: 'QuantumGeometricOperator') -> np.ndarray:
+    def commutator(self, other: QuantumGeometricOperator) -> np.ndarray:
         """Compute commutator with another operator."""
         if self._operator_matrix is None or other._operator_matrix is None:
             raise ValueError("Operators must be built before commutator")
 
-        return (self._operator_matrix @ other._operator_matrix -
-                other._operator_matrix @ self._operator_matrix)
+        return (
+            self._operator_matrix @ other._operator_matrix
+            - other._operator_matrix @ self._operator_matrix
+        )
 
     def expectation_value(self, state: np.ndarray) -> complex:
         """Compute expectation value in given state.
@@ -317,8 +324,8 @@ class ModularAutomorphismGroup:
         """
         self.algebra = algebra
         self.reference_state = state
-        self._modular_operator: Optional[np.ndarray] = None
-        self._modular_conjugation: Optional[np.ndarray] = None
+        self._modular_operator: np.ndarray | None = None
+        self._modular_conjugation: np.ndarray | None = None
 
     def compute_modular_operator(self) -> np.ndarray:
         """Compute Tomita operator Delta.
@@ -339,7 +346,6 @@ class ModularAutomorphismGroup:
 
         # Modular operator related to density matrix
         # Delta^{it} generates modular flow
-        eigenvalues, eigenvectors = eig(rho)
 
         # Construct Delta from eigenvalues
         # Delta = sum lambda_i |e_i><e_i|
@@ -370,8 +376,13 @@ class ModularAutomorphismGroup:
 
         return evolved
 
-    def kms_condition(self, operator_a: np.ndarray, operator_b: np.ndarray,
-                     beta: float = 1.0, tolerance: float = 1e-8) -> bool:
+    def kms_condition(
+        self,
+        operator_a: np.ndarray,
+        operator_b: np.ndarray,
+        beta: float = 1.0,
+        tolerance: float = 1e-8,
+    ) -> bool:
         """Check KMS (Kubo-Martin-Schwinger) condition.
 
         The KMS condition characterizes thermal equilibrium:
@@ -420,7 +431,7 @@ class SpectralTriple:
         """
         self.algebra = MatrixStarAlgebra(algebra_dim)
         self.hilbert_dim = hilbert_dim
-        self.dirac_operator: Optional[np.ndarray] = None
+        self.dirac_operator: np.ndarray | None = None
 
     def construct_dirac_operator(self, graph: AlgebraicGraph) -> np.ndarray:
         """Construct Dirac operator from graph structure.
@@ -470,7 +481,7 @@ class SpectralTriple:
 
         # Apply cutoff function f(x) = exp(-x^2)
         scaled_eigenvalues = eigenvalues / cutoff
-        cutoff_values = np.exp(-scaled_eigenvalues**2)
+        cutoff_values = np.exp(-(scaled_eigenvalues**2))
 
         # Spectral action
         action = np.real(np.sum(cutoff_values))
@@ -517,7 +528,7 @@ class SpectralTriple:
         trace_t_dt = self.heat_kernel_trace(time + dt)
 
         # Numerical derivative
-        dlog_trace = (np.log(trace_t_dt) - np.log(trace_t))
+        dlog_trace = np.log(trace_t_dt) - np.log(trace_t)
         dlog_t = np.log(time + dt) - np.log(time)
 
         spec_dim = -2 * dlog_trace / dlog_t
@@ -549,14 +560,14 @@ class AQGMFramework:
         # Initialize components
         self.graph = AlgebraicGraph(config.graph_vertices)
         self.algebra = MatrixStarAlgebra(config.graph_vertices)
-        self.spectral_triple: Optional[SpectralTriple] = None
-        self.modular_group: Optional[ModularAutomorphismGroup] = None
+        self.spectral_triple: SpectralTriple | None = None
+        self.modular_group: ModularAutomorphismGroup | None = None
 
         # Lie algebra integration
-        if config.algebra_type == 'E7':
+        if config.algebra_type == "E7":
             self.root_system = E7RootSystem()
             self.graph.add_edges_from_root_system(self.root_system)
-        elif config.algebra_type == 'E8':
+        elif config.algebra_type == "E8":
             self.root_system = E8RootSystem()
             self.graph.add_edges_from_root_system(self.root_system)
         else:
@@ -569,8 +580,7 @@ class AQGMFramework:
             Configured spectral triple
         """
         triple = SpectralTriple(
-            algebra_dim=self.config.graph_vertices,
-            hilbert_dim=self.config.graph_vertices
+            algebra_dim=self.config.graph_vertices, hilbert_dim=self.config.graph_vertices
         )
 
         # Construct Dirac operator from graph
@@ -579,7 +589,9 @@ class AQGMFramework:
         self.spectral_triple = triple
         return triple
 
-    def initialize_modular_theory(self, reference_state: Optional[np.ndarray] = None) -> ModularAutomorphismGroup:
+    def initialize_modular_theory(
+        self, reference_state: np.ndarray | None = None
+    ) -> ModularAutomorphismGroup:
         """Initialize modular automorphism group.
 
         Args:
@@ -609,17 +621,17 @@ class AQGMFramework:
         """
         operator = QuantumGeometricOperator(self.graph, self.algebra)
 
-        if observable_type == 'position':
+        if observable_type == "position":
             # Position at first vertex
             return operator.build_position_operator(0)
-        elif observable_type == 'momentum':
+        elif observable_type == "momentum":
             return operator.build_momentum_operator()
-        elif observable_type == 'hamiltonian':
+        elif observable_type == "hamiltonian":
             return operator.build_hamiltonian()
         else:
             raise ValueError(f"Unknown observable type: {observable_type}")
 
-    def analyze_spectral_properties(self) -> Dict[str, Any]:
+    def analyze_spectral_properties(self) -> dict[str, Any]:
         """Analyze spectral properties of the geometry.
 
         Returns:
@@ -629,28 +641,32 @@ class AQGMFramework:
             self.initialize_spectral_geometry()
 
         properties = {
-            'spectral_action': self.spectral_triple.spectral_action(self.config.planck_scale),
-            'heat_kernel_trace': self.spectral_triple.heat_kernel_trace(1.0),
-            'spectral_dimension': self.spectral_triple.spectral_dimension(0.1)
+            "spectral_action": self.spectral_triple.spectral_action(self.config.planck_scale),
+            "heat_kernel_trace": self.spectral_triple.heat_kernel_trace(1.0),
+            "spectral_dimension": self.spectral_triple.spectral_dimension(0.1),
         }
 
         # Graph properties
         graph_props = self.graph.connectivity_structure()
-        properties.update({'graph_' + k: v for k, v in graph_props.items()})
+        properties.update({"graph_" + k: v for k, v in graph_props.items()})
 
         # Dirac spectrum
         if self.spectral_triple.dirac_operator is not None:
             eigenvalues = eigvals(self.spectral_triple.dirac_operator)
-            properties['dirac_spectrum'] = {
-                'eigenvalues': eigenvalues.tolist() if len(eigenvalues) <= 20 else eigenvalues[:20].tolist(),
-                'min_eigenvalue': float(np.min(np.abs(eigenvalues))),
-                'max_eigenvalue': float(np.max(np.abs(eigenvalues))),
-                'spectral_gap': float(np.min(np.abs(eigenvalues[eigenvalues != 0]))) if any(eigenvalues != 0) else 0.0
+            properties["dirac_spectrum"] = {
+                "eigenvalues": eigenvalues.tolist()
+                if len(eigenvalues) <= 20
+                else eigenvalues[:20].tolist(),
+                "min_eigenvalue": float(np.min(np.abs(eigenvalues))),
+                "max_eigenvalue": float(np.max(np.abs(eigenvalues))),
+                "spectral_gap": float(np.min(np.abs(eigenvalues[eigenvalues != 0])))
+                if any(eigenvalues != 0)
+                else 0.0,
             }
 
         return properties
 
-    def test_modular_flow_properties(self, test_operators: int = 5) -> Dict[str, Any]:
+    def test_modular_flow_properties(self, test_operators: int = 5) -> dict[str, Any]:
         """Test modular flow and KMS properties.
 
         Args:
@@ -662,11 +678,7 @@ class AQGMFramework:
         if self.modular_group is None:
             self.initialize_modular_theory()
 
-        results = {
-            'kms_satisfied': [],
-            'flow_hermiticity': [],
-            'flow_norm_preservation': []
-        }
+        results = {"kms_satisfied": [], "flow_hermiticity": [], "flow_norm_preservation": []}
 
         n = self.config.graph_vertices
 
@@ -680,7 +692,7 @@ class AQGMFramework:
 
             # Test KMS condition
             kms = self.modular_group.kms_condition(A, B)
-            results['kms_satisfied'].append(kms)
+            results["kms_satisfied"].append(kms)
 
             # Test flow properties
             t = 1.0
@@ -688,19 +700,19 @@ class AQGMFramework:
 
             # Hermiticity preservation
             is_hermitian = np.allclose(A_evolved, A_evolved.conj().T)
-            results['flow_hermiticity'].append(is_hermitian)
+            results["flow_hermiticity"].append(is_hermitian)
 
             # Norm preservation (approximately)
             norm_before = np.linalg.norm(A)
             norm_after = np.linalg.norm(A_evolved)
             norm_preserved = abs(norm_before - norm_after) < 0.1
-            results['flow_norm_preservation'].append(norm_preserved)
+            results["flow_norm_preservation"].append(norm_preserved)
 
         # Summarize
         summary = {
-            'kms_pass_rate': np.mean(results['kms_satisfied']),
-            'hermiticity_pass_rate': np.mean(results['flow_hermiticity']),
-            'norm_preservation_rate': np.mean(results['flow_norm_preservation'])
+            "kms_pass_rate": np.mean(results["kms_satisfied"]),
+            "hermiticity_pass_rate": np.mean(results["flow_hermiticity"]),
+            "norm_preservation_rate": np.mean(results["flow_norm_preservation"]),
         }
 
         return summary
@@ -712,16 +724,16 @@ class AQGMFramework:
             filepath: Output file path
         """
         export_data = {
-            'config': {
-                'algebra_type': self.config.algebra_type,
-                'graph_vertices': self.config.graph_vertices,
-                'spectral_dimension': self.config.spectral_dimension
+            "config": {
+                "algebra_type": self.config.algebra_type,
+                "graph_vertices": self.config.graph_vertices,
+                "spectral_dimension": self.config.spectral_dimension,
             },
-            'spectral_properties': self.analyze_spectral_properties(),
-            'graph_structure': self.graph.connectivity_structure()
+            "spectral_properties": self.analyze_spectral_properties(),
+            "graph_structure": self.graph.connectivity_structure(),
         }
 
-        with open(filepath, 'w') as f:
+        with open(filepath, "w") as f:
             json.dump(export_data, f, indent=2)
 
 
@@ -734,10 +746,7 @@ def demonstrate_aqgm():
 
     # Configure for E7
     config = AQGMConfig(
-        algebra_type='E7',
-        graph_vertices=127,
-        modular_theory=True,
-        spectral_dimension=4
+        algebra_type="E7", graph_vertices=127, modular_theory=True, spectral_dimension=4
     )
 
     print("1. INITIALIZATION")
@@ -769,8 +778,8 @@ def demonstrate_aqgm():
     print(f"  Heat kernel trace: {spectral_props['heat_kernel_trace']:.4f}")
     print(f"  Spectral dimension: {spectral_props['spectral_dimension']:.4f}")
 
-    if 'dirac_spectrum' in spectral_props:
-        dirac_spec = spectral_props['dirac_spectrum']
+    if "dirac_spectrum" in spectral_props:
+        dirac_spec = spectral_props["dirac_spectrum"]
         print(f"  Dirac spectral gap: {dirac_spec['spectral_gap']:.6f}")
         print(f"  Max Dirac eigenvalue: {dirac_spec['max_eigenvalue']:.4f}")
     print()
@@ -790,17 +799,17 @@ def demonstrate_aqgm():
     print("-" * 40)
 
     # Position operator
-    position = framework.compute_quantum_observable('position')
+    position = framework.compute_quantum_observable("position")
     print(f"  Position operator dimension: {position.shape}")
     print(f"  Position norm: {np.linalg.norm(position):.4f}")
 
     # Momentum operator
-    momentum = framework.compute_quantum_observable('momentum')
+    momentum = framework.compute_quantum_observable("momentum")
     print(f"  Momentum operator dimension: {momentum.shape}")
     print(f"  Momentum is anti-hermitian: {np.allclose(momentum, -momentum.conj().T)}")
 
     # Hamiltonian
-    hamiltonian = framework.compute_quantum_observable('hamiltonian')
+    hamiltonian = framework.compute_quantum_observable("hamiltonian")
     print(f"  Hamiltonian dimension: {hamiltonian.shape}")
     print(f"  Hamiltonian is hermitian: {np.allclose(hamiltonian, hamiltonian.conj().T)}")
 
@@ -811,7 +820,7 @@ def demonstrate_aqgm():
 
     print("6. E7 INTEGRATION")
     print("-" * 40)
-    if hasattr(framework, 'root_system') and framework.root_system:
+    if hasattr(framework, "root_system") and framework.root_system:
         stats = framework.root_system.get_statistics()
         print(f"  E7 roots: {stats['total_roots']}")
         print(f"  E7 rank: {stats['rank']}")

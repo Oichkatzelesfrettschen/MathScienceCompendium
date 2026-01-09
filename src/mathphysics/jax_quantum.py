@@ -5,15 +5,16 @@ using JAX JIT and vectorization.
 """
 
 from __future__ import annotations
+
+from functools import partial
+
 import jax.numpy as jnp
 from jax import jit
-from functools import partial
-from typing import Tuple, Any
-import numpy as np # For log2 outside of JIT
+
 
 class JAXQuantumSimulator:
     """Simulates quantum state evolution using JAX backend."""
-    
+
     def __init__(self, n_qubits: int) -> None:
         self.n_qubits = n_qubits
         self.state_dim = 2**n_qubits
@@ -32,7 +33,9 @@ class JAXQuantumSimulator:
     def apply_oracle(self, state: jnp.ndarray, marking_mask: jnp.ndarray) -> jnp.ndarray:
         return state * (1 - 2 * marking_mask)
 
-    def run_grover_iteration(self, current_state: jnp.ndarray, marking_mask: jnp.ndarray) -> jnp.ndarray:
+    def run_grover_iteration(
+        self, current_state: jnp.ndarray, marking_mask: jnp.ndarray
+    ) -> jnp.ndarray:
         s = self.apply_oracle(current_state, marking_mask)
         for i in range(self.n_qubits):
             s = self.apply_h(s, i)

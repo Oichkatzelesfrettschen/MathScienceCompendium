@@ -5,17 +5,35 @@ JAX operations for GPU offload.
 """
 
 from __future__ import annotations
-from typing import List, Any, Union
+
+from typing import Any
+
 import numpy as np
-import jax.numpy as jnp
-from jax import jit
+
+
+try:
+    import jax.numpy as jnp
+    from jax import jit
+
+    HAS_JAX = True
+except ImportError:
+    jnp = np  # Fallback to numpy
+    HAS_JAX = False
+
+    def jit(func=None, **kwargs):  # noqa: ARG001
+        """Dummy jit decorator when JAX is not available."""
+        if func is None:
+            return lambda f: f
+        return func
+
 from ..algebra import JordanAlgebra
 from .cayley_dickson import Octonion
 
+
 class AlbertAlgebraElement(JordanAlgebra):
     """Offloads h3(O) computations to GPU via JAX."""
-    
-    def __init__(self, data: Union[jnp.ndarray, np.ndarray, List]) -> None:
+
+    def __init__(self, data: jnp.ndarray | np.ndarray | list) -> None:
         """Initialize with a (3, 3, 8) tensor representing 3x3 Octonions."""
         if isinstance(data, list):
             # Check if it's a list of Octonions
@@ -31,7 +49,7 @@ class AlbertAlgebraElement(JordanAlgebra):
             self.data = jnp.array(data) if not isinstance(data, jnp.ndarray) else data
 
     @staticmethod
-    def from_octonions(matrix: List[List[Octonion]]) -> AlbertAlgebraElement:
+    def from_octonions(matrix: list[list[Octonion]]) -> AlbertAlgebraElement:
         # Convert List[List[Octonion]] to (3, 3, 8) tensor
         flat_data = np.zeros((3, 3, 8))
         for i in range(3):

@@ -16,22 +16,26 @@ Date: October 2025
 """
 
 from __future__ import annotations
-from typing import List, Dict, Any, Optional, Callable
-import numpy as np
-from math import sqrt, pi, asin, floor
+
 from dataclasses import dataclass
+from math import asin, floor, pi, sqrt
+from typing import Any, Callable
+
+import numpy as np
 
 # Qiskit imports
-from qiskit import QuantumCircuit, transpile, QuantumRegister, ClassicalRegister
+from qiskit import ClassicalRegister, QuantumCircuit, QuantumRegister, transpile
+
+
 try:
     from qiskit import execute
 except ImportError:
     # execute was removed in Qiskit 1.0, use backend.run
     execute = None
 from qiskit.circuit import ParameterVector
-from qiskit.circuit.library import (
-    MCXGate, QFT, StatePreparation
-)
+from qiskit.circuit.library import QFT, MCXGate, StatePreparation
+
+
 try:
     from qiskit_ibm_runtime.fake_provider import FakeKyiv, FakeWashington
 except ImportError:
@@ -39,11 +43,14 @@ except ImportError:
         from qiskit.providers.fake_provider import FakeKyiv, FakeWashington
     except ImportError:
         from qiskit.providers.fake_provider import GenericBackendV2 as FakeWashington
+
         FakeKyiv = FakeWashington
 
 # Local imports
 import sys
 from pathlib import Path
+
+
 sys.path.append(str(Path(__file__).parent))
 from .algebras.roots import E7RootSystem
 
@@ -53,12 +60,12 @@ class E7CircuitConfig:
     """Configuration for E7 quantum circuits."""
 
     num_iterations: int = 3  # Grover iterations
-    oracle_type: str = 'geometric'  # 'geometric', 'algebraic', 'hybrid'
+    oracle_type: str = "geometric"  # 'geometric', 'algebraic', 'hybrid'
     use_ancilla: bool = True
     optimization_level: int = 2
     error_mitigation: bool = True
-    measurement_basis: str = 'computational'  # 'computational', 'bell', 'custom'
-    hardware_backend: str = 'FakeKyiv'  # 127-qubit backend
+    measurement_basis: str = "computational"  # 'computational', 'bell', 'custom'
+    hardware_backend: str = "FakeKyiv"  # 127-qubit backend
     coupling_aware: bool = True
     max_circuit_depth: int = 1000
 
@@ -66,7 +73,7 @@ class E7CircuitConfig:
         """Validate configuration parameters."""
         if self.num_iterations < 1:
             raise ValueError("Number of iterations must be positive")
-        if self.oracle_type not in ['geometric', 'algebraic', 'hybrid']:
+        if self.oracle_type not in ["geometric", "algebraic", "hybrid"]:
             raise ValueError(f"Invalid oracle type: {self.oracle_type}")
         if self.optimization_level not in [0, 1, 2, 3]:
             raise ValueError("Optimization level must be 0, 1, 2, or 3")
@@ -99,9 +106,9 @@ class E7OracleBuilder:
         n_index = 7  # 2^7 = 128 states (127 E7 + 1 padding)
         n_ancilla = 1 if self.config.use_ancilla else 0
 
-        qr_index = QuantumRegister(n_index, 'index')
+        qr_index = QuantumRegister(n_index, "index")
         if n_ancilla > 0:
-            qr_anc = QuantumRegister(n_ancilla, 'oracle')
+            qr_anc = QuantumRegister(n_ancilla, "oracle")
             qc = QuantumCircuit(qr_index, qr_anc, name="E7_Geometric_Oracle")
         else:
             qc = QuantumCircuit(qr_index, name="E7_Geometric_Oracle")
@@ -112,12 +119,12 @@ class E7OracleBuilder:
         # Mark valid E7 states
         for idx in valid_indices:
             # Create multi-controlled X gate for this index
-            control_state = format(idx, '07b')[::-1]
+            control_state = format(idx, "07b")[::-1]
 
             # Build control list
             control_list = []
             for i, bit in enumerate(control_state):
-                if bit == '0':
+                if bit == "0":
                     qc.x(qr_index[i])
                 control_list.append(qr_index[i])
 
@@ -126,7 +133,7 @@ class E7OracleBuilder:
                 # Use ancilla for cleaner oracle
                 if len(control_list) > 1:
                     mcx = MCXGate(len(control_list))
-                    qc.append(mcx, control_list + [qr_anc[0]])
+                    qc.append(mcx, [*control_list, qr_anc[0]])
                 else:
                     qc.cx(control_list[0], qr_anc[0])
 
@@ -134,19 +141,18 @@ class E7OracleBuilder:
 
                 # Uncompute
                 if len(control_list) > 1:
-                    qc.append(mcx, control_list + [qr_anc[0]])
+                    qc.append(mcx, [*control_list, qr_anc[0]])
                 else:
                     qc.cx(control_list[0], qr_anc[0])
+            # Direct phase flip without ancilla
+            elif len(control_list) > 1:
+                qc.mcp(pi, control_list[:-1], control_list[-1])
             else:
-                # Direct phase flip without ancilla
-                if len(control_list) > 1:
-                    qc.mcp(pi, control_list[:-1], control_list[-1])
-                else:
-                    qc.z(control_list[0])
+                qc.z(control_list[0])
 
             # Restore qubits
             for i, bit in enumerate(control_state):
-                if bit == '0':
+                if bit == "0":
                     qc.x(qr_index[i])
 
         return qc
@@ -160,7 +166,7 @@ class E7OracleBuilder:
             QuantumCircuit implementing algebraic oracle
         """
         n_qubits = 7
-        qr = QuantumRegister(n_qubits, 'state')
+        qr = QuantumRegister(n_qubits, "state")
         qc = QuantumCircuit(qr, name="E7_Algebraic_Oracle")
 
         # Use Cartan matrix properties for validation
@@ -179,7 +185,7 @@ class E7OracleBuilder:
 
         return qc
 
-    def build_hybrid_oracle(self, marking_function: Optional[Callable] = None) -> QuantumCircuit:
+    def build_hybrid_oracle(self, marking_function: Callable | None = None) -> QuantumCircuit:
         """Build hybrid oracle combining geometric and algebraic checks.
 
         Args:
@@ -191,13 +197,13 @@ class E7OracleBuilder:
         n_qubits = 7
         n_ancilla = 2  # One for geometric, one for algebraic
 
-        qr_state = QuantumRegister(n_qubits, 'state')
-        qr_anc = QuantumRegister(n_ancilla, 'anc')
+        qr_state = QuantumRegister(n_qubits, "state")
+        qr_anc = QuantumRegister(n_ancilla, "anc")
         qc = QuantumCircuit(qr_state, qr_anc, name="E7_Hybrid_Oracle")
 
         # Layer 1: Geometric checks
         geometric = self.build_geometric_oracle()
-        qc.append(geometric, qr_state[:] + [qr_anc[0]])
+        qc.append(geometric, [*qr_state[:], qr_anc[0]])
 
         qc.barrier()
 
@@ -216,9 +222,9 @@ class E7OracleBuilder:
             for i in range(2**n_qubits):
                 if marking_function(i):
                     # Mark this state
-                    control_state = format(i, f'0{n_qubits}b')[::-1]
+                    control_state = format(i, f"0{n_qubits}b")[::-1]
                     for j, bit in enumerate(control_state):
-                        if bit == '0':
+                        if bit == "0":
                             qc.x(qr_state[j])
 
                     # Multi-controlled Z
@@ -229,7 +235,7 @@ class E7OracleBuilder:
 
                     # Restore
                     for j, bit in enumerate(control_state):
-                        if bit == '0':
+                        if bit == "0":
                             qc.x(qr_state[j])
 
         return qc
@@ -244,9 +250,9 @@ class E7OracleBuilder:
             QuantumCircuit with parameters
         """
         n_qubits = 7
-        params = ParameterVector('theta', num_params)
+        params = ParameterVector("theta", num_params)
 
-        qr = QuantumRegister(n_qubits, 'state')
+        qr = QuantumRegister(n_qubits, "state")
         qc = QuantumCircuit(qr, name="E7_Parametric_Oracle")
 
         # Add parametric rotations
@@ -288,7 +294,7 @@ class E7GroverOperator:
         if self.config.use_ancilla and n > 7:
             n = 7  # Use only index qubits for diffusion
 
-        qr = QuantumRegister(n, 'q')
+        qr = QuantumRegister(n, "q")
         qc = QuantumCircuit(qr, name="Diffusion")
 
         # Apply Hadamard gates
@@ -302,7 +308,7 @@ class E7GroverOperator:
             qc.h(qr[-1])
             if n > 2:
                 mcx = MCXGate(n - 1)
-                qc.append(mcx, list(qr[:-1]) + [qr[-1]])
+                qc.append(mcx, [*list(qr[:-1]), qr[-1]])
             else:
                 qc.cx(qr[0], qr[1])
             qc.h(qr[-1])
@@ -316,7 +322,7 @@ class E7GroverOperator:
 
         return qc
 
-    def build_grover_circuit(self, initial_state: Optional[QuantumCircuit] = None) -> QuantumCircuit:
+    def build_grover_circuit(self, initial_state: QuantumCircuit | None = None) -> QuantumCircuit:
         """Build complete Grover search circuit.
 
         Args:
@@ -338,11 +344,11 @@ class E7GroverOperator:
         n_qubits = 7
         n_ancilla = 1 if self.config.use_ancilla else 0
 
-        qr = QuantumRegister(n_qubits, 'q')
-        cr = ClassicalRegister(n_qubits, 'c')
+        qr = QuantumRegister(n_qubits, "q")
+        cr = ClassicalRegister(n_qubits, "c")
 
         if n_ancilla > 0:
-            qr_anc = QuantumRegister(n_ancilla, 'anc')
+            qr_anc = QuantumRegister(n_ancilla, "anc")
             qc = QuantumCircuit(qr, qr_anc, cr, name=f"E7_Grover_{iterations}_iter")
         else:
             qc = QuantumCircuit(qr, cr, name=f"E7_Grover_{iterations}_iter")
@@ -392,7 +398,7 @@ class E7GroverOperator:
 
         # Probability amplitude after k iterations
         amplitude = np.sin((2 * iterations + 1) * theta)
-        probability = amplitude ** 2
+        probability = amplitude**2
 
         return probability
 
@@ -484,7 +490,7 @@ class E7StatePreparation:
 
         return qc
 
-    def prepare_weighted_superposition(self, weights: Optional[np.ndarray] = None) -> QuantumCircuit:
+    def prepare_weighted_superposition(self, weights: np.ndarray | None = None) -> QuantumCircuit:
         """Prepare weighted superposition based on root properties.
 
         Args:
@@ -543,12 +549,12 @@ class E7StatePreparation:
 class E7MeasurementDecoder:
     """Decode quantum measurements to E7 root information."""
 
-    def __init__(self, e7_system: Optional[E7RootSystem] = None) -> None:
+    def __init__(self, e7_system: E7RootSystem | None = None) -> None:
         """Initialize measurement decoder."""
         self.e7_system = e7_system or E7RootSystem()
         self.roots = self.e7_system.generate_roots(include_zero=True)
 
-    def decode_index_measurement(self, counts: Dict[str, int]) -> Dict[str, Any]:
+    def decode_index_measurement(self, counts: dict[str, int]) -> dict[str, Any]:
         """Decode index-encoded measurement results.
 
         Args:
@@ -559,11 +565,11 @@ class E7MeasurementDecoder:
         """
         total_shots = sum(counts.values())
         results = {
-            'total_shots': total_shots,
-            'measured_roots': {},
-            'type1_probability': 0.0,
-            'type2_probability': 0.0,
-            'zero_probability': 0.0
+            "total_shots": total_shots,
+            "measured_roots": {},
+            "type1_probability": 0.0,
+            "type2_probability": 0.0,
+            "zero_probability": 0.0,
         }
 
         for bitstring, count in counts.items():
@@ -577,27 +583,27 @@ class E7MeasurementDecoder:
 
                 # Classify root
                 if index == 126 and np.allclose(root, 0):
-                    results['zero_probability'] += probability
+                    results["zero_probability"] += probability
                     root_type = "zero"
                 else:
                     root_type = self.e7_system.classify_root(root)
                     if root_type.startswith("Type 1"):
-                        results['type1_probability'] += probability
+                        results["type1_probability"] += probability
                         root_type = "Type 1"
                     else:
-                        results['type2_probability'] += probability
+                        results["type2_probability"] += probability
                         root_type = "Type 2"
 
-                results['measured_roots'][index] = {
-                    'root': root.tolist(),
-                    'type': root_type,
-                    'probability': probability,
-                    'counts': count
+                results["measured_roots"][index] = {
+                    "root": root.tolist(),
+                    "type": root_type,
+                    "probability": probability,
+                    "counts": count,
                 }
 
         return results
 
-    def extract_top_roots(self, counts: Dict[str, int], top_k: int = 10) -> List[Dict[str, Any]]:
+    def extract_top_roots(self, counts: dict[str, int], top_k: int = 10) -> list[dict[str, Any]]:
         """Extract top-k most measured roots.
 
         Args:
@@ -608,28 +614,28 @@ class E7MeasurementDecoder:
             List of top root information
         """
         decoded = self.decode_index_measurement(counts)
-        measured_roots = decoded['measured_roots']
+        measured_roots = decoded["measured_roots"]
 
         # Sort by probability
         sorted_roots = sorted(
-            measured_roots.items(),
-            key=lambda x: x[1]['probability'],
-            reverse=True
+            measured_roots.items(), key=lambda x: x[1]["probability"], reverse=True
         )
 
         top_roots = []
         for idx, root_info in sorted_roots[:top_k]:
-            top_roots.append({
-                'index': idx,
-                'root': root_info['root'],
-                'type': root_info['type'],
-                'probability': root_info['probability'],
-                'squared_length': np.sum(np.array(root_info['root'])**2)
-            })
+            top_roots.append(
+                {
+                    "index": idx,
+                    "root": root_info["root"],
+                    "type": root_info["type"],
+                    "probability": root_info["probability"],
+                    "squared_length": np.sum(np.array(root_info["root"]) ** 2),
+                }
+            )
 
         return top_roots
 
-    def validate_measurement_results(self, counts: Dict[str, int]) -> Dict[str, Any]:
+    def validate_measurement_results(self, counts: dict[str, int]) -> dict[str, Any]:
         """Validate that measured states are valid E7 roots.
 
         Args:
@@ -639,31 +645,31 @@ class E7MeasurementDecoder:
             Validation results
         """
         validation = {
-            'valid_roots': 0,
-            'invalid_states': 0,
-            'total_states': len(counts),
-            'validity_rate': 0.0,
-            'invalid_indices': []
+            "valid_roots": 0,
+            "invalid_states": 0,
+            "total_states": len(counts),
+            "validity_rate": 0.0,
+            "invalid_indices": [],
         }
 
-        for bitstring in counts.keys():
+        for bitstring in counts:
             index = int(bitstring[::-1], 2)
 
             if index < 127:
                 # Check if corresponding root is valid
                 root = self.roots[index]
                 if self.e7_system.is_valid_root(root) or (index == 126 and np.allclose(root, 0)):
-                    validation['valid_roots'] += 1
+                    validation["valid_roots"] += 1
                 else:
-                    validation['invalid_states'] += 1
-                    validation['invalid_indices'].append(index)
+                    validation["invalid_states"] += 1
+                    validation["invalid_indices"].append(index)
             else:
                 # Index out of E7 range
-                validation['invalid_states'] += 1
-                validation['invalid_indices'].append(index)
+                validation["invalid_states"] += 1
+                validation["invalid_indices"].append(index)
 
-        if validation['total_states'] > 0:
-            validation['validity_rate'] = validation['valid_roots'] / validation['total_states']
+        if validation["total_states"] > 0:
+            validation["validity_rate"] = validation["valid_roots"] / validation["total_states"]
 
         return validation
 
@@ -676,24 +682,23 @@ class E7CircuitOptimizer:
         self.config = config
         self.backend = self._get_backend()
         # GenericBackendV2 has coupling_map directly or None
-        self.coupling_map = getattr(self.backend, 'coupling_map', None)
+        self.coupling_map = getattr(self.backend, "coupling_map", None)
 
     def _get_backend(self) -> Any:
         """Get hardware backend for optimization."""
         from qiskit.providers.fake_provider import GenericBackendV2
+
         return GenericBackendV2(num_qubits=27)
 
     def optimize_circuit(self, circuit: QuantumCircuit) -> QuantumCircuit:
         """Perform hardware-aware optimization."""
         # Transpile for specific backend
         optimized = transpile(
-            circuit,
-            backend=self.backend,
-            optimization_level=self.config.optimization_level
+            circuit, backend=self.backend, optimization_level=self.config.optimization_level
         )
         return optimized
 
-    def analyze_circuit_metrics(self, circuit: QuantumCircuit) -> Dict[str, Any]:
+    def analyze_circuit_metrics(self, circuit: QuantumCircuit) -> dict[str, Any]:
         """Analyze circuit metrics for hardware compatibility.
 
         Args:
@@ -703,31 +708,30 @@ class E7CircuitOptimizer:
             Circuit metrics dictionary
         """
         metrics = {
-            'num_qubits': circuit.num_qubits,
-            'depth': circuit.depth(),
-            'size': circuit.size(),
-            'num_parameters': circuit.num_parameters,
-            'operations': {}
+            "num_qubits": circuit.num_qubits,
+            "depth": circuit.depth(),
+            "size": circuit.size(),
+            "num_parameters": circuit.num_parameters,
+            "operations": {},
         }
 
         # Count operation types
         for instruction in circuit.data:
             op_name = instruction.operation.name
-            if op_name in metrics['operations']:
-                metrics['operations'][op_name] += 1
+            if op_name in metrics["operations"]:
+                metrics["operations"][op_name] += 1
             else:
-                metrics['operations'][op_name] = 1
+                metrics["operations"][op_name] = 1
 
         # Calculate two-qubit gate count
-        two_qubit_gates = ['cx', 'cy', 'cz', 'swap', 'iswap', 'dcx', 'ch', 'crx', 'cry', 'crz']
-        metrics['two_qubit_count'] = sum(
-            metrics['operations'].get(gate, 0) for gate in two_qubit_gates
+        two_qubit_gates = ["cx", "cy", "cz", "swap", "iswap", "dcx", "ch", "crx", "cry", "crz"]
+        metrics["two_qubit_count"] = sum(
+            metrics["operations"].get(gate, 0) for gate in two_qubit_gates
         )
 
         # Hardware compatibility check
-        metrics['hardware_compatible'] = (
-            metrics['num_qubits'] <= 127 and
-            metrics['depth'] <= self.config.max_circuit_depth
+        metrics["hardware_compatible"] = (
+            metrics["num_qubits"] <= 127 and metrics["depth"] <= self.config.max_circuit_depth
         )
 
         return metrics
@@ -745,11 +749,7 @@ class E7CircuitOptimizer:
         basis_gates = self.backend.configuration().basis_gates
 
         # Transpile to basis gates
-        decomposed = transpile(
-            circuit,
-            basis_gates=basis_gates,
-            optimization_level=1
-        )
+        decomposed = transpile(circuit, basis_gates=basis_gates, optimization_level=1)
 
         return decomposed
 
@@ -757,7 +757,7 @@ class E7CircuitOptimizer:
 class E7QuantumAlgorithms:
     """Implementation of quantum algorithms for E7 Lie algebras."""
 
-    def __init__(self, config: Optional[E7CircuitConfig] = None) -> None:
+    def __init__(self, config: E7CircuitConfig | None = None) -> None:
         """Initialize E7 quantum algorithms."""
         self.config = config or E7CircuitConfig()
         self.e7_system = E7RootSystem()
@@ -766,7 +766,7 @@ class E7QuantumAlgorithms:
         self.state_prep = E7StatePreparation(self.config)
         self.decoder = E7MeasurementDecoder()
 
-    def root_search_algorithm(self, target_type: str = 'Type1') -> QuantumCircuit:
+    def root_search_algorithm(self, target_type: str = "Type1") -> QuantumCircuit:
         """Quantum algorithm to search for specific root types.
 
         Args:
@@ -776,20 +776,14 @@ class E7QuantumAlgorithms:
             Quantum circuit for root search
         """
         # Build appropriate oracle
-        if target_type == 'Type1':
+        if target_type == "Type1":
             # Oracle marking Type 1 roots
             def marking_function(idx):
-                return (
-                            idx < 126 and
-                            self.e7_system.classify_root(idx).startswith("Type 1")
-                        )
-        elif target_type == 'Type2':
+                return idx < 126 and self.e7_system.classify_root(idx).startswith("Type 1")
+        elif target_type == "Type2":
             # Oracle marking Type 2 roots
             def marking_function(idx):
-                return (
-                            idx < 126 and
-                            self.e7_system.classify_root(idx).startswith("Type 2")
-                        )
+                return idx < 126 and self.e7_system.classify_root(idx).startswith("Type 2")
         else:
             # Mark all valid roots
             def marking_function(idx):
@@ -811,13 +805,13 @@ class E7QuantumAlgorithms:
     def root_validation_algorithm(self) -> QuantumCircuit:
         """Build the E7 root validation circuit."""
         n_qubits = 7
-        qr = QuantumRegister(n_qubits, 'root')
-        cr = ClassicalRegister(1, 'valid')
+        qr = QuantumRegister(n_qubits, "root")
+        cr = ClassicalRegister(1, "valid")
         qc = QuantumCircuit(qr, cr, name="E7_Root_Validation")
 
         # Use algebraic oracle for validation (strictly 7 qubits)
         oracle = self.oracle_builder.build_algebraic_oracle()
-        
+
         # Ensure oracle matches register size
         if oracle.num_qubits != n_qubits:
             # Rebuild without ancilla if necessary
@@ -847,9 +841,9 @@ class E7QuantumAlgorithms:
         n_precision = 4  # Precision qubits
         n_state = 3  # Simplified state register
 
-        qr_precision = QuantumRegister(n_precision, 'precision')
-        qr_state = QuantumRegister(n_state, 'state')
-        cr = ClassicalRegister(n_precision, 'eigenvalue')
+        qr_precision = QuantumRegister(n_precision, "precision")
+        qr_state = QuantumRegister(n_state, "state")
+        cr = ClassicalRegister(n_precision, "eigenvalue")
 
         qc = QuantumCircuit(qr_precision, qr_state, cr, name="E7_Cartan_QPE")
 
@@ -883,7 +877,7 @@ class E7QuantumAlgorithms:
             Quantum circuit for Weyl group action
         """
         n_qubits = 7
-        qr = QuantumRegister(n_qubits, 'root')
+        qr = QuantumRegister(n_qubits, "root")
         qc = QuantumCircuit(qr, name="E7_Weyl_Action")
 
         # Prepare initial root state
@@ -913,10 +907,7 @@ def demonstrate_e7_circuits():
 
     # Configure
     config = E7CircuitConfig(
-        num_iterations=2,
-        oracle_type='geometric',
-        use_ancilla=True,
-        optimization_level=2
+        num_iterations=2, oracle_type="geometric", use_ancilla=True, optimization_level=2
     )
 
     # Initialize components
@@ -926,7 +917,7 @@ def demonstrate_e7_circuits():
     print("-" * 40)
 
     # Type 1 root search
-    type1_circuit = algorithms.root_search_algorithm('Type1')
+    type1_circuit = algorithms.root_search_algorithm("Type1")
     print("Type 1 Root Search Circuit:")
     print(f"  Qubits: {type1_circuit.num_qubits}")
     print(f"  Depth: {type1_circuit.depth()}")
@@ -987,7 +978,7 @@ def demonstrate_e7_circuits():
     prob = grover.calculate_success_probability()
     print("Grover Success Probability:")
     print(f"  After {config.num_iterations} iterations: {prob:.4f}")
-    print(f"  Amplification factor: {prob / (126/127):.2f}x")
+    print(f"  Amplification factor: {prob / (126 / 127):.2f}x")
     print()
 
     print("5. MEASUREMENT DECODING")
@@ -995,11 +986,11 @@ def demonstrate_e7_circuits():
 
     # Simulate measurement results
     sample_counts = {
-        '0000000': 50,   # Index 0
-        '0000001': 45,   # Index 1 (reversed)
-        '1111110': 40,   # Index 126 (zero vector)
-        '0101010': 35,   # Index 42
-        '1010101': 30,   # Index 85
+        "0000000": 50,  # Index 0
+        "0000001": 45,  # Index 1 (reversed)
+        "1111110": 40,  # Index 126 (zero vector)
+        "0101010": 35,  # Index 42
+        "1010101": 30,  # Index 85
     }
 
     decoder = E7MeasurementDecoder()
@@ -1016,8 +1007,10 @@ def demonstrate_e7_circuits():
     top_roots = decoder.extract_top_roots(sample_counts, top_k=3)
     print("Top 3 Measured Roots:")
     for i, root_info in enumerate(top_roots, 1):
-        print(f"  {i}. Index {root_info['index']}: {root_info['type']}, "
-              f"P={root_info['probability']:.3f}")
+        print(
+            f"  {i}. Index {root_info['index']}: {root_info['type']}, "
+            f"P={root_info['probability']:.3f}"
+        )
     print()
 
     print("6. HARDWARE OPTIMIZATION")
@@ -1037,7 +1030,7 @@ def demonstrate_e7_circuits():
     print("Optimized Circuit:")
     print(f"  Depth: {optimized.depth()}")
     print(f"  Gates: {optimized.size()}")
-    print(f"  Depth reduction: {(1 - optimized.depth()/test_circuit.depth())*100:.1f}%")
+    print(f"  Depth reduction: {(1 - optimized.depth() / test_circuit.depth()) * 100:.1f}%")
     print()
 
     print("7. ADVANCED ALGORITHMS")

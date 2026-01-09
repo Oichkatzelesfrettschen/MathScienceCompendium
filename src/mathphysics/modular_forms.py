@@ -1,19 +1,39 @@
 """Modular Forms and Affine Characters.
 
 Provides Dedekind Eta, Jacobi Theta, and Eisenstein series for computing
-characters of affine Lie algebra representations. Optimized via JAX.
+characters of affine Lie algebra representations. Optimized via JAX when available.
 """
 
 from __future__ import annotations
+
+from typing import TYPE_CHECKING
+
 import numpy as np
-import jax.numpy as jnp
-from jax import jit
-from typing import Dict, Optional
-from pathlib import Path
+
+
+try:
+    import jax.numpy as jnp
+    from jax import jit
+
+    HAS_JAX = True
+except ImportError:
+    jnp = np  # Fallback to numpy
+    HAS_JAX = False
+
+    def jit(func=None, **kwargs):  # noqa: ARG001
+        """Dummy jit decorator when JAX is not available."""
+        if func is None:
+            return lambda f: f
+        return func
+
+
+if TYPE_CHECKING:
+    from pathlib import Path
+
 
 class ModularForms:
     """Engine for modular forms and series computation."""
-    
+
     @staticmethod
     def tau_to_q(tau: complex) -> complex:
         """Convert half-period ratio tau to nome q = exp(2*pi*i*tau)."""
@@ -77,8 +97,8 @@ class ModularForms:
         else:
             q = tau_or_q
         k = np.arange(-num_terms, num_terms + 1)
-        res = np.sum(((-1.0)**k) * (q**(k * (3*k - 1) / 2.0)))
-        return (q**(1.0/24.0)) * res
+        res = np.sum(((-1.0) ** k) * (q ** (k * (3 * k - 1) / 2.0)))
+        return (q ** (1.0 / 24.0)) * res
 
     @staticmethod
     def modular_discriminant(tau: complex, num_terms: int = 100) -> complex:
@@ -92,37 +112,43 @@ class ModularForms:
     def jacobi_theta(z: complex, q: complex, n_terms: int = 50) -> complex:
         """Jacobi Theta function theta_3(z, q)."""
         n = jnp.arange(-n_terms, n_terms + 1)
-        return jnp.sum((q**(n**2)) * jnp.exp(2j * n * z))
+        return jnp.sum((q ** (n**2)) * jnp.exp(2j * n * z))
+
 
 class AffineCharacterAnalyzer:
     """Character formulas for affine Lie algebras."""
+
     def __init__(self, algebra_name: str, rank: int) -> None:
         self.algebra_name = algebra_name
         self.rank = rank
-        
+
     def vacuum_character(self, q: complex) -> complex:
         """Character ch(V_k) = 1 / eta(q)^rank."""
         eta_val = ModularForms.dedekind_eta(q)
         return 1.0 / (eta_val**self.rank)
 
+
 class MonstrousMoonshine:
     """Links the Monster group to modular forms."""
+
     @staticmethod
     def monster_order() -> int:
         return 808017424794512875886459904961710757005754368000000000
-    
+
     @staticmethod
     def monster_group_order() -> int:
         """Alias for monster_order required by tests."""
         return MonstrousMoonshine.monster_order()
-    
+
     @staticmethod
     def q_expansion_j(tau: complex, n_terms: int = 10) -> complex:
         """The j-function q-expansion."""
         return ModularForms.j_invariant(tau, n_terms)
 
+
 class EllipticCurves:
     """Analytic properties of elliptic curves."""
+
     @staticmethod
     def weierstrass_invariants(tau: complex, num_terms: int = 100) -> tuple[complex, complex]:
         """Compute g2 and g3 invariants from tau."""
@@ -133,21 +159,23 @@ class EllipticCurves:
         return g2, g3
 
     @staticmethod
-    def compute_invariants(g2: float, g3: float) -> Dict[str, float]:
-        delta = g2**3 - 27*g3**2
+    def compute_invariants(g2: float, g3: float) -> dict[str, float]:
+        delta = g2**3 - 27 * g3**2
         j = 1728 * (g2**3) / (delta if abs(delta) > 1e-10 else 1e-10)
         return {"discriminant": delta, "j_invariant": j}
 
-def analyze_modular_forms(output_dir: Optional[Path] = None):
+
+def analyze_modular_forms(output_dir: Path | None = None):
     """Production analysis of modular forms and j-invariant."""
     q = 0.1 + 0.1j
     results = {
         "e4": str(ModularForms.eisenstein_e4(q)),
         "j_inv": str(ModularForms.klein_j_q_expansion(1)[0]),
-        "eta": str(ModularForms.dedekind_eta(q))
+        "eta": str(ModularForms.dedekind_eta(q)),
     }
     if output_dir:
         import json
-        with open(output_dir / "modular_analysis.json", 'w') as f:
+
+        with open(output_dir / "modular_analysis.json", "w") as f:
             json.dump(results, f, indent=2)
     return results
