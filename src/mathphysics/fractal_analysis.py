@@ -780,8 +780,6 @@ def analyze_fractal_dimensions(output_dir: Path | None = None) -> dict[str, Any]
     results = {"cantor_dim": res.dimension, "r_squared": res.r_squared}
 
     if output_dir:
-        import json
-
         with open(output_dir / "fractal_analysis.json", "w") as f:
             json.dump(results, f, indent=2)
 

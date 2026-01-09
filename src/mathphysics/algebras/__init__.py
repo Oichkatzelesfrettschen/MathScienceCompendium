@@ -35,17 +35,19 @@ from .cayley_dickson import (
 _optional_exports = []
 
 try:
-    from .clifford import CliffordEngine, Multivector
+    from .clifford import CliffordEngine, Multivector  # noqa: F401
 
     _optional_exports.extend(["CliffordEngine", "Multivector"])
 except ImportError:
+    # Clifford algebra requires JAX - skip if not available
     pass
 
 try:
-    from .jordan import AlbertAlgebraElement
+    from .jordan import AlbertAlgebraElement  # noqa: F401
 
     _optional_exports.append("AlbertAlgebraElement")
 except ImportError:
+    # Jordan algebra requires JAX - skip if not available
     pass
 
 

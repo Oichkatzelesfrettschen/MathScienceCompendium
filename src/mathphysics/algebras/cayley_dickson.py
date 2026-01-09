@@ -112,7 +112,7 @@ class CayleyDickson:
         elif isinstance(other, self.__class__):
             return self.__class__(self.coeffs + other.coeffs)
         else:
-            raise TypeError(f"Cannot add {type(self)} and {type(other)}")
+            return NotImplemented
 
     def __radd__(self, other: CayleyDickson | float) -> CayleyDickson:
         """Right addition."""
@@ -127,7 +127,7 @@ class CayleyDickson:
         elif isinstance(other, self.__class__):
             return self.__class__(self.coeffs - other.coeffs)
         else:
-            raise TypeError(f"Cannot subtract {type(other)} from {type(self)}")
+            raise ArithmeticError(f"Cannot subtract {type(other)} from {type(self)}")
 
     def __rsub__(self, other: CayleyDickson | float) -> CayleyDickson:
         """Right subtraction."""
@@ -136,7 +136,7 @@ class CayleyDickson:
             result[0] += other
             return self.__class__(result)
         else:
-            raise TypeError(f"Cannot subtract {type(self)} from {type(other)}")
+            return NotImplemented
 
     def __neg__(self) -> CayleyDickson:
         """Negation."""
@@ -151,7 +151,7 @@ class CayleyDickson:
         if isinstance(other, (int, float)):
             return self.__class__(other * self.coeffs)
         else:
-            raise TypeError(f"Cannot multiply {type(other)} and {type(self)}")
+            return NotImplemented
 
     def __truediv__(self, other: CayleyDickson | float) -> CayleyDickson:
         """Division."""
@@ -162,7 +162,7 @@ class CayleyDickson:
         elif isinstance(other, self.__class__):
             return self * other.inverse()
         else:
-            raise TypeError(f"Cannot divide {type(self)} by {type(other)}")
+            return NotImplemented
 
     def conjugate(self) -> CayleyDickson:
         """Complex conjugate."""
@@ -231,7 +231,7 @@ class Real(CayleyDickson):
         elif isinstance(other, Real):
             return Real(self.coeffs[0] * other.coeffs[0])
         else:
-            raise TypeError(f"Cannot multiply Real and {type(other)}")
+            return NotImplemented
 
     @staticmethod
     def properties() -> AlgebraicProperties:
@@ -269,7 +269,7 @@ class Complex(CayleyDickson):
             c, d = other.coeffs[0], other.coeffs[1]
             return Complex([a * c - b * d, a * d + b * c])
         else:
-            raise TypeError(f"Cannot multiply Complex and {type(other)}")
+            return NotImplemented
 
     @property
     def real(self) -> float:
@@ -340,7 +340,7 @@ class Quaternion(CayleyDickson):
 
             return Quaternion(result)
         else:
-            raise TypeError(f"Cannot multiply Quaternion and {type(other)}")
+            return NotImplemented
 
     @property
     def scalar(self) -> float:
@@ -431,7 +431,7 @@ class Octonion(CayleyDickson):
 
             return Octonion(result)
         else:
-            raise TypeError(f"Cannot multiply Octonion and {type(other)}")
+            return NotImplemented
 
     def associator(self, y: Octonion, z: Octonion) -> Octonion:
         """Associator [x,y,z] = (xy)z - x(yz)."""
@@ -517,7 +517,7 @@ class Sedenion(CayleyDickson):
 
             return Sedenion(result)
         else:
-            raise TypeError(f"Cannot multiply Sedenion and {type(other)}")
+            return NotImplemented
 
     def has_zero_divisor_with(self, other: Sedenion) -> bool:
         """Check if multiplication with other gives zero despite both being non-zero."""
@@ -601,7 +601,7 @@ class Pathion(CayleyDickson):
 
             return Pathion(result)
         else:
-            raise TypeError(f"Cannot multiply Pathion and {type(other)}")
+            return NotImplemented
 
     @staticmethod
     def properties() -> AlgebraicProperties:
