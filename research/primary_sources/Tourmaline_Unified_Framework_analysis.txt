@@ -227,7 +227,7 @@ CONNECTIONS TO OTHER DOCUMENTS:
 - Superframework documents: ZPE coupling mechanisms
 - Zero-point vibration (1111.4064v2): quantum lattice dynamics foundation
 - Thermal conductivity lecture: phonon transport theory
-- Pais Superforce: electromagnetic property engineering (mu, epsilon)
+- Unified Metaprinciple Field: electromagnetic property engineering (mu, epsilon)
 
 QUANTUM PHYSICS:
 - Lattice quantum mechanics

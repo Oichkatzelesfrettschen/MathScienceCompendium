@@ -12,8 +12,8 @@ PDF RESEARCH PAPERS (11 files, ~9.8MB)
     Topic: Planck Force as fundamental unification force
     Key Concepts: Superforce = c^4/G, quantum gravity, macroscopic quantum phenomena
 
-[2] Comment on the Pais Superforce Theory.pdf (2.9M)
-    Topic: Critical analysis/commentary on Pais Superforce
+[2] Comment on the Unified Metaprinciple Field Theory.pdf (2.9M)
+    Topic: Critical analysis/commentary on Unified Metaprinciple Field
 
 [3] Phys-140A-lecture-14v3.pdf (550K)
     Topic: Physics lecture notes
@@ -79,11 +79,11 @@ FRAMEWORK TEXT DOCUMENTS (8 files, ~5.5MB, 200,916 lines total)
 
 [3] Alpha003.02_Aether_Chrystalline_Fluidic_Framework.txt (3,765 lines, 154K)
     STATUS: DRAFT v.ALPHA003.02
-    SCOPE: Crystalline/fluidic aether framework
+    SCOPE: Crystalline/fluidic Scalar Field Theory
 
 [4] math5GenesisFrameworkUnveiled.txt (2,222 lines, 116K)
     STATUS: Exposition/explanation document
-    SCOPE: "Genesis Framework" - unified theory
+    SCOPE: "Unified Model" - unified theory
     KEY CONCEPTS:
     - Superforce as meta-principle
     - String Theory integration with fractal dynamics
@@ -95,7 +95,7 @@ FRAMEWORK TEXT DOCUMENTS (8 files, ~5.5MB, 200,916 lines total)
     STYLE: More philosophical/explanatory than technical
 
 [5] math4GenesisFramework.txt (1,562 lines, 90K)
-    STATUS: Foundation document for Genesis Framework
+    STATUS: Foundation document for Unified Model
 
 [6] Æether-Crystalline Framework .txt (1,096 lines, 54K)
     STATUS: Short framework document
@@ -104,7 +104,7 @@ FRAMEWORK TEXT DOCUMENTS (8 files, ~5.5MB, 200,916 lines total)
     STATUS: Brief draft/outline
 
 [8] draft reply to pais.txt (96 lines, 6.4K)
-    STATUS: Response to Pais Superforce paper
+    STATUS: Response to Unified Metaprinciple Field paper
 
 ======================================================================
 IDENTIFIED CORE THEMES & INTERCONNECTIONS
@@ -112,7 +112,7 @@ IDENTIFIED CORE THEMES & INTERCONNECTIONS
 
 THEME 1: SUPERFORCE CONCEPT
 - Pais: Superforce = Planck Force = c^4/G
-- Genesis Framework: Superforce as meta-principle unifying forces
+- Unified Model: Superforce as meta-principle unifying forces
 - Connection to quantum gravity
 
 THEME 2: EXCEPTIONAL MATHEMATICAL STRUCTURES

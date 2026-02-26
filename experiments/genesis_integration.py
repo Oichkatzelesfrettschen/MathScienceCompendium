@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Genesis Framework Integration Example.
+"""Unified Model Integration Example.
 
 This script demonstrates the complete integration of the Genesis Harmonics
 module with E7/E8 root systems, material responses, and visualization.
@@ -18,7 +18,7 @@ def create_comprehensive_visualization():
     """Create a comprehensive visualization of Genesis Harmonics."""
 
     print("\n" + "="*70)
-    print("GENESIS FRAMEWORK - COMPREHENSIVE INTEGRATION")
+    print("Unified Model - COMPREHENSIVE INTEGRATION")
     print("="*70)
 
     # Initialize both E7 and E8 systems
@@ -192,7 +192,7 @@ def create_comprehensive_visualization():
     ax10.legend()
 
     # Add main title
-    fig.suptitle('Genesis Framework Harmonics - Complete Integration',
+    fig.suptitle('Unified Model Harmonics - Complete Integration',
                 fontsize=14, fontweight='bold', y=0.995)
 
     # Save figure
@@ -257,10 +257,10 @@ def analyze_root_harmonic_coupling():
 
 
 def demonstrate_advanced_features():
-    """Demonstrate advanced Genesis Framework features."""
+    """Demonstrate advanced Unified Model features."""
 
     print("\n" + "="*70)
-    print("ADVANCED GENESIS FRAMEWORK FEATURES")
+    print("ADVANCED Unified Model FEATURES")
     print("="*70)
 
     genesis = GenesisHarmonics(

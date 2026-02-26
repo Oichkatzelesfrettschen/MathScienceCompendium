@@ -117,7 +117,7 @@ The compendium represents a coherent research program on vacuum/zero-point
 energy engineering with material-based implementations.
 
 THEORETICAL PROGRESSION:
-Pais Superforce (c^4/G) -> Brandenburg GEM -> Superframework (ZPE dynamics)
+Unified Metaprinciple Field (c^4/G) -> Brandenburg GEM -> Superframework (ZPE dynamics)
 -> Tourmaline implementation (specific engineering parameters)
 
 READINESS LEVELS:

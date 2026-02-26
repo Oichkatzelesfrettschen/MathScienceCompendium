@@ -131,14 +131,14 @@ LATEX COMPENDIUM:
 FRAMEWORK ASSESSMENT
 ===============================================================================
 
-PAIS SUPERFORCE (2023)
+Unified Metaprinciple Field (2023)
   Status: PARTIALLY VALID
   + Planck force dimensional analysis correct
   + Appears in Einstein field equations
   - Insufficient for quantum gravity
   - Lacks rigorous formulation
 
-ALPHA AETHER FRAMEWORK (ALPHA001.06)
+ALPHA Scalar Field Theory (ALPHA001.06)
   Status: MIX OF VALID & SPECULATIVE
   + E_8 mathematics correct
   + Some valid mathematical structures
@@ -147,7 +147,7 @@ ALPHA AETHER FRAMEWORK (ALPHA001.06)
   - Convergence proofs incomplete
   - Physical applications overstated
 
-GENESIS FRAMEWORK
+Unified Model
   Status: PHILOSOPHICALLY INTERESTING, LACKS RIGOR
   + Fractal concepts established
   + Creative synthesis

@@ -196,7 +196,7 @@ CONNECTIONS TO OTHER DOCUMENTS:
 - Direct relevance to Tourmaline.pdf (comprehensive quantum framework)
 - Experimental validation for theoretical models
 - Piezoelectric properties connect to energy harvesting concepts
-- Dielectric properties relevant to Pais Superforce engineering (mu, epsilon)
+- Dielectric properties relevant to Unified Metaprinciple Field engineering (mu, epsilon)
 
 PIEZOELECTRIC APPLICATIONS:
 - Energy harvesting from mechanical stress

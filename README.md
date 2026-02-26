@@ -230,14 +230,14 @@ make experiments-test
    - Fermat's Last Theorem → Modular Forms → E₈
    - Spectral triples, M⁸-H duality
 
-3. **Genesis Framework** documents
+3. **Unified Model** documents
    - Superforce as meta-principle
    - Fractal string theory
    - Recursive SUSY, origami dimensions
 
 ### Research Papers (11 PDFs)
 
-- **Pais (2023)**: SUPERFORCE theory (c⁴/G)
+- **Pais (2023)**: Unified Metaprinciple Theory (c⁴/G)
 - **Brandenburg (2024)**: Critical comment on Pais
 - **arXiv papers**: Octonions, E₈, zero-point energy
 - **Tourmaline series**: Engineering implementations
@@ -348,10 +348,10 @@ The frameworks mix **valid advanced mathematics** with **speculative physics ext
 ## Citations
 
 This work synthesizes and validates materials from:
-- Pais, S.C. (2023). SUPERFORCE theory
-- Brandenburg, J.E. (2024). Comment on Pais Superforce
-- Alpha Aether Framework (ALPHA001.06)
-- Genesis Framework documents
+- Pais, S.C. (2023). Unified Metaprinciple Theory
+- Brandenburg, J.E. (2024). Comment on Unified Metaprinciple Field
+- Alpha Scalar Field Theory (ALPHA001.06)
+- Unified Model documents
 
 Primary sources include:
 - Kac, V.G. (1990). Infinite-dimensional Lie algebras

@@ -17,38 +17,38 @@ FUNDAMENTAL PHYSICS - UNIFICATION AND GRAVITY
 [FP-1] Armas, J.
        "Conversations on Quantum Gravity"
        Cambridge University Press, 2021
-       SOURCE: Pais SUPERFORCE
+       SOURCE: Unified Metaprinciple Field
 
 [FP-2] Schrodinger, E.
        "Space-Time Structure"
        Cambridge University Press, 1950
-       SOURCE: Pais SUPERFORCE
+       SOURCE: Unified Metaprinciple Field
 
 [FP-3] Huang, K.
        "A Superfluid Universe"
        World Scientific Press, 2017
-       SOURCE: Pais SUPERFORCE
+       SOURCE: Unified Metaprinciple Field
 
 [FP-4] Georgi, H. & Glashow, S.L.
        Phys. Rev. Lett. 32, 438-441 (1974)
        "Grand Unified Theories"
-       SOURCE: Pais SUPERFORCE
+       SOURCE: Unified Metaprinciple Field
 
 [FP-5] Fritzsch, H. & Minkowski, P.
        Ann. Phys. 93, 193-266 (1975)
        "Unified Interactions of Leptons and Hadrons"
-       SOURCE: Pais SUPERFORCE
+       SOURCE: Unified Metaprinciple Field
 
 [FP-6] Bertolini, S., Di Luzio, L., and Malinsky, M.
        Phys. Rev. D85, 095014 (2012)
        arXiv:1202.0807[hep-ph]
-       SOURCE: Pais SUPERFORCE
+       SOURCE: Unified Metaprinciple Field
 
 [FP-7] Murayama, H. & Pierce, A.
        Phys. Rev. D65, 055009 (2002)
        hep-ph/0108104
        "Not Even Decoupling Can Save Minimal Supersymmetric SU(5)"
-       SOURCE: Pais SUPERFORCE
+       SOURCE: Unified Metaprinciple Field
 
 ================================================================================
 QUANTUM MECHANICS AND STATISTICAL PHYSICS
