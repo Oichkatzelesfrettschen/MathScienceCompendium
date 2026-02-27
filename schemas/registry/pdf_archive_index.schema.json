@@ -1,0 +1,28 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://mathsciencecompendium.local/schemas/registry/pdf_archive_index.schema.json",
+  "title": "PdfArchiveIndexRegistry",
+  "type": "object",
+  "required": ["destination_root", "dry_run", "pdf_count", "items"],
+  "properties": {
+    "destination_root": { "type": "string", "minLength": 1 },
+    "dry_run": { "type": "boolean" },
+    "pdf_count": { "type": "integer", "minimum": 0 },
+    "items": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["source_relpath", "destination_relpath", "action", "sha256", "bytes"],
+        "properties": {
+          "source_relpath": { "type": "string", "minLength": 1, "pattern": "\\.pdf$" },
+          "destination_relpath": { "type": "string", "minLength": 1, "pattern": "\\.pdf$" },
+          "action": { "type": "string", "enum": ["copied", "kept_existing", "would_copy"] },
+          "sha256": { "type": "string", "pattern": "^[a-f0-9]{64}$" },
+          "bytes": { "type": "integer", "minimum": 0 }
+        },
+        "additionalProperties": false
+      }
+    }
+  },
+  "additionalProperties": false
+}

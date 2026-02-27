@@ -5,7 +5,7 @@ MASTER BIBLIOGRAPHY - Mathematical Physics Compendium
 PROJECT: MathScienceCompendium
 COMPILED FROM: 10 PDF source documents
 DATE: October 1, 2025
-LOCATION: /home/eirikr/MathScienceCompendium/research/primary_sources/
+LOCATION: ./research/primary_sources/
 
 NOTE: This bibliography aggregates all cited references from analyzed PDFs.
 Some entries are incomplete due to PDF extraction limitations.
@@ -292,7 +292,7 @@ FROM TOURMALINE FRAMEWORK DOCUMENTS:
   - Experimental validation protocol references not cited
 
 NOTE: For complete citations, consult original PDF documents in:
-/home/eirikr/MathScienceCompendium/source_materials/pdfs/
+./source_materials/pdfs/
 
 ================================================================================
 CITATION STATISTICS
@@ -372,7 +372,7 @@ BIBLIOGRAPHY MAINTENANCE NOTES
 
 LAST UPDATED: October 1, 2025
 MAINTAINER: E.J. Hinngaart / Claude Code Analysis
-LOCATION: /home/eirikr/MathScienceCompendium/research/primary_sources/
+LOCATION: ./research/primary_sources/
 
 TO UPDATE THIS BIBLIOGRAPHY:
 1. Extract text from new PDFs using pdftotext

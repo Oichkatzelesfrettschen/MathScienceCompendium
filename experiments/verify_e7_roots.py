@@ -8,6 +8,7 @@ Bourbaki conventions as used in SageMath and standard references.
 
 import numpy as np
 
+
 def is_valid_e7_root(v):
     """Check if v is a valid E7 root."""
     # E7 roots must be either:
@@ -29,6 +30,7 @@ def is_valid_e7_root(v):
                 return True
     return False
 
+
 def compute_cartan_matrix(simple_roots):
     """Compute the Cartan matrix from simple roots."""
     n = len(simple_roots)
@@ -43,6 +45,7 @@ def compute_cartan_matrix(simple_roots):
 
     return cartan
 
+
 # Standard E7 simple roots (Bourbaki convention)
 # These are in an 8-dimensional embedding where E7 is embedded as
 # vectors perpendicular to a fixed vector in E8
@@ -51,56 +54,80 @@ def compute_cartan_matrix(simple_roots):
 # These are the standard choice that gives det(Cartan) = 2
 
 # Set 1: Following E8 embedding with perpendicularity constraint
-alpha1 = np.array([0.5, -0.5, -0.5, -0.5, -0.5, -0.5, -0.5, -0.5])  # Half-integer root (6 negatives - even)
-alpha2 = np.array([1.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0])        # Sum != 0, not valid
-alpha3 = np.array([-1.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0])       # Integer root
-alpha4 = np.array([0.0, -1.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0])       # Integer root
-alpha5 = np.array([0.0, 0.0, -1.0, 1.0, 0.0, 0.0, 0.0, 0.0])       # Integer root
-alpha6 = np.array([0.0, 0.0, 0.0, -1.0, 1.0, 0.0, 0.0, 0.0])       # Integer root
-alpha7 = np.array([0.0, 0.0, 0.0, 0.0, -1.0, 1.0, 0.0, 0.0])       # Integer root
+alpha1 = np.array(
+    [0.5, -0.5, -0.5, -0.5, -0.5, -0.5, -0.5, -0.5]
+)  # Half-integer root (6 negatives - even)
+alpha2 = np.array([1.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0])  # Sum != 0, not valid
+alpha3 = np.array([-1.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0])  # Integer root
+alpha4 = np.array([0.0, -1.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0])  # Integer root
+alpha5 = np.array([0.0, 0.0, -1.0, 1.0, 0.0, 0.0, 0.0, 0.0])  # Integer root
+alpha6 = np.array([0.0, 0.0, 0.0, -1.0, 1.0, 0.0, 0.0, 0.0])  # Integer root
+alpha7 = np.array([0.0, 0.0, 0.0, 0.0, -1.0, 1.0, 0.0, 0.0])  # Integer root
 
 # Set 2: Standard E7 roots from literature (correct version)
 # These satisfy the E7 constraint that alpha1 + alpha2 = 0 in first two coordinates
-alt_alpha1 = np.array([0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, 0.5])  # Half-integer (4 negatives - even)
-alt_alpha2 = np.array([0.0, 0.0, 1.0, -1.0, 0.0, 0.0, 0.0, 0.0])     # Integer root
-alt_alpha3 = np.array([0.0, 0.0, -1.0, 0.0, 1.0, 0.0, 0.0, 0.0])     # Sum != 0, not valid
-alt_alpha4 = np.array([0.0, 0.0, 0.0, 1.0, -1.0, 0.0, 0.0, 0.0])     # Integer root
-alt_alpha5 = np.array([0.0, 0.0, 0.0, 0.0, 1.0, -1.0, 0.0, 0.0])     # Integer root
-alt_alpha6 = np.array([0.0, 0.0, 0.0, 0.0, 0.0, 1.0, -1.0, 0.0])     # Integer root
-alt_alpha7 = np.array([0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1.0, -1.0])     # Integer root
+alt_alpha1 = np.array(
+    [0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, 0.5]
+)  # Half-integer (4 negatives - even)
+alt_alpha2 = np.array([0.0, 0.0, 1.0, -1.0, 0.0, 0.0, 0.0, 0.0])  # Integer root
+alt_alpha3 = np.array([0.0, 0.0, -1.0, 0.0, 1.0, 0.0, 0.0, 0.0])  # Sum != 0, not valid
+alt_alpha4 = np.array([0.0, 0.0, 0.0, 1.0, -1.0, 0.0, 0.0, 0.0])  # Integer root
+alt_alpha5 = np.array([0.0, 0.0, 0.0, 0.0, 1.0, -1.0, 0.0, 0.0])  # Integer root
+alt_alpha6 = np.array([0.0, 0.0, 0.0, 0.0, 0.0, 1.0, -1.0, 0.0])  # Integer root
+alt_alpha7 = np.array([0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1.0, -1.0])  # Integer root
 
 # Set 3: Correct standard E7 simple roots (following Bourbaki)
 # These are the actual standard simple roots that work
-std_alpha1 = np.array([0.5, -0.5, -0.5, -0.5, -0.5, -0.5, -0.5, -0.5])  # Half-integer (7 negatives - odd, need even!)
-std_alpha2 = np.array([0.0, 1.0, -1.0, 0.0, 0.0, 0.0, 0.0, 0.0])        # Integer root
-std_alpha3 = np.array([0.0, -1.0, 0.0, 1.0, 0.0, 0.0, 0.0, 0.0])        # Integer root
-std_alpha4 = np.array([0.0, 0.0, 1.0, -1.0, 0.0, 0.0, 0.0, 0.0])        # Integer root
-std_alpha5 = np.array([0.0, 0.0, 0.0, 1.0, -1.0, 0.0, 0.0, 0.0])        # Integer root
-std_alpha6 = np.array([0.0, 0.0, 0.0, 0.0, 1.0, -1.0, 0.0, 0.0])        # Integer root
-std_alpha7 = np.array([0.0, 0.0, 0.0, 0.0, 0.0, 1.0, -1.0, 0.0])        # Integer root
+std_alpha1 = np.array(
+    [0.5, -0.5, -0.5, -0.5, -0.5, -0.5, -0.5, -0.5]
+)  # Half-integer (7 negatives - odd, need even!)
+std_alpha2 = np.array([0.0, 1.0, -1.0, 0.0, 0.0, 0.0, 0.0, 0.0])  # Integer root
+std_alpha3 = np.array([0.0, -1.0, 0.0, 1.0, 0.0, 0.0, 0.0, 0.0])  # Integer root
+std_alpha4 = np.array([0.0, 0.0, 1.0, -1.0, 0.0, 0.0, 0.0, 0.0])  # Integer root
+std_alpha5 = np.array([0.0, 0.0, 0.0, 1.0, -1.0, 0.0, 0.0, 0.0])  # Integer root
+std_alpha6 = np.array([0.0, 0.0, 0.0, 0.0, 1.0, -1.0, 0.0, 0.0])  # Integer root
+std_alpha7 = np.array([0.0, 0.0, 0.0, 0.0, 0.0, 1.0, -1.0, 0.0])  # Integer root
 
 # Set 4: Corrected standard E7 roots (proper half-integer with even negatives)
 # Following the E7 Dynkin diagram structure where node 1 connects to node 3
-correct_alpha1 = np.array([0.0, 1.0, -1.0, 0.0, 0.0, 0.0, 0.0, 0.0])     # Integer root
-correct_alpha2 = np.array([0.0, 0.0, 1.0, -1.0, 0.0, 0.0, 0.0, 0.0])     # Integer root
-correct_alpha3 = np.array([0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, 0.5])  # Half-integer (4 negatives - even!)
-correct_alpha4 = np.array([0.0, 0.0, 0.0, 1.0, -1.0, 0.0, 0.0, 0.0])     # Integer root
-correct_alpha5 = np.array([0.0, 0.0, 0.0, 0.0, 1.0, -1.0, 0.0, 0.0])     # Integer root
-correct_alpha6 = np.array([0.0, 0.0, 0.0, 0.0, 0.0, 1.0, -1.0, 0.0])     # Integer root
-correct_alpha7 = np.array([0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1.0, -1.0])     # Integer root
+correct_alpha1 = np.array([0.0, 1.0, -1.0, 0.0, 0.0, 0.0, 0.0, 0.0])  # Integer root
+correct_alpha2 = np.array([0.0, 0.0, 1.0, -1.0, 0.0, 0.0, 0.0, 0.0])  # Integer root
+correct_alpha3 = np.array(
+    [0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, 0.5]
+)  # Half-integer (4 negatives - even!)
+correct_alpha4 = np.array([0.0, 0.0, 0.0, 1.0, -1.0, 0.0, 0.0, 0.0])  # Integer root
+correct_alpha5 = np.array([0.0, 0.0, 0.0, 0.0, 1.0, -1.0, 0.0, 0.0])  # Integer root
+correct_alpha6 = np.array([0.0, 0.0, 0.0, 0.0, 0.0, 1.0, -1.0, 0.0])  # Integer root
+correct_alpha7 = np.array([0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1.0, -1.0])  # Integer root
 
 # Try all sets
 print("=" * 60)
 print("E7 SIMPLE ROOTS VERIFICATION")
 print("=" * 60)
 
-for name, roots in [("Set 1 (E8 embedding)", [alpha1, alpha2, alpha3, alpha4, alpha5, alpha6, alpha7]),
-                     ("Set 2 (Literature variant)", [alt_alpha1, alt_alpha2, alt_alpha3, alt_alpha4,
-                                                     alt_alpha5, alt_alpha6, alt_alpha7]),
-                     ("Set 3 (Bourbaki attempt)", [std_alpha1, std_alpha2, std_alpha3, std_alpha4,
-                                                   std_alpha5, std_alpha6, std_alpha7]),
-                     ("Set 4 (Corrected)", [correct_alpha1, correct_alpha2, correct_alpha3, correct_alpha4,
-                                           correct_alpha5, correct_alpha6, correct_alpha7])]:
+for name, roots in [
+    ("Set 1 (E8 embedding)", [alpha1, alpha2, alpha3, alpha4, alpha5, alpha6, alpha7]),
+    (
+        "Set 2 (Literature variant)",
+        [alt_alpha1, alt_alpha2, alt_alpha3, alt_alpha4, alt_alpha5, alt_alpha6, alt_alpha7],
+    ),
+    (
+        "Set 3 (Bourbaki attempt)",
+        [std_alpha1, std_alpha2, std_alpha3, std_alpha4, std_alpha5, std_alpha6, std_alpha7],
+    ),
+    (
+        "Set 4 (Corrected)",
+        [
+            correct_alpha1,
+            correct_alpha2,
+            correct_alpha3,
+            correct_alpha4,
+            correct_alpha5,
+            correct_alpha6,
+            correct_alpha7,
+        ],
+    ),
+]:
     print(f"\n{name}:")
     print("-" * 40)
 

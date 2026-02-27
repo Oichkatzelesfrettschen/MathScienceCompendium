@@ -20,7 +20,7 @@ except ImportError:
     jnp = np  # Fallback to numpy
     HAS_JAX = False
 
-    def jit(func=None, **kwargs):  # noqa: ARG001
+    def jit(func=None, **_kwargs):
         """Dummy jit decorator when JAX is not available."""
         if func is None:
             return lambda f: f
@@ -174,8 +174,8 @@ def analyze_modular_forms(output_dir: Path | None = None):
         "eta": str(ModularForms.dedekind_eta(q)),
     }
     if output_dir:
-        import json
+        import json  # noqa: PLC0415
 
-        with open(output_dir / "modular_analysis.json", "w") as f:
+        with (output_dir / "modular_analysis.json").open("w") as f:
             json.dump(results, f, indent=2)
     return results

@@ -56,7 +56,7 @@ class UnifiedSimulation:
     def save_results(self, results: dict[str, Any], filename: str) -> None:
         """Persist simulation results to disk."""
         path = self.config.RESULTS_DIR / filename
-        with open(path, "w") as f:
+        with path.open("w") as f:
             json.dump(results, f, indent=2)
         print(f"Results saved to {path}")
 

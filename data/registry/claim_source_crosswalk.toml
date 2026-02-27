@@ -1,0 +1,82 @@
+generated_by = "manual_seed_v1"
+generated_at_utc = "2026-02-12T00:00:00+00:00"
+description = "Chapter-level claims to external source IDs crosswalk for reproducibility and evidence tracing."
+
+[coverage_policy]
+min_claims_per_chapter = 1
+min_unique_sources_per_chapter = 2
+required_chapter_group_prefixes = [
+  "papers/sections/vol2_",
+  "papers/sections/vol3_",
+  "papers/sections/vol4_",
+]
+min_claims_per_group = 2
+min_unique_sources_per_group = 2
+
+[[claims]]
+claim_id = "superforce_planck_force_unification"
+chapter_relpath = "papers/sections/vol2_ch5_superforce.tex"
+claim_anchor = "Superforce defined as c^4/G and used as unification scaffold."
+source_ids = ["pais_superforce_2023", "brandenburg_comment_superforce"]
+status = "tracked"
+
+[[claims]]
+claim_id = "superforce_quantum_gravity_linkage"
+chapter_relpath = "papers/sections/vol2_ch7_quantum_gravity.tex"
+claim_anchor = "Superforce relationships to quantum gravity phenomenology."
+source_ids = ["pais_superforce_2023", "doi_10_1063_5_0038222"]
+status = "tracked"
+
+[[claims]]
+claim_id = "zero_point_vibration_material_basis"
+chapter_relpath = "papers/sections/vol2_ch7_quantum_gravity.tex"
+claim_anchor = "Zero-point vibration and crystal-scale evidence path."
+source_ids = ["arxiv_1111_4064v2", "phys_140a_lecture_14v3"]
+status = "tracked"
+
+[[claims]]
+claim_id = "tourmaline_material_response_evidence"
+chapter_relpath = "papers/sections/vol4_ch13_future.tex"
+claim_anchor = "Tourmaline electrical/thermal properties supporting implementation claims."
+source_ids = ["springer_978_3_319_48210_1_ch10", "tourmaline"]
+status = "tracked"
+
+[[claims]]
+claim_id = "tourmaline_superframework_integration"
+chapter_relpath = "papers/sections/vol4_ch13_future.tex"
+claim_anchor = "Integration of Superframework dynamics with tourmaline implementation."
+source_ids = ["tourmaline_addendum", "superframework_expansion", "superframework_foam_octonions"]
+status = "tracked"
+
+[[claims]]
+claim_id = "high_intensity_target_positron_pathway"
+chapter_relpath = "papers/sections/vol3_ch9_experiments.tex"
+claim_anchor = "Structured-target high-intensity experimental evidence lane."
+source_ids = ["doi_10_1063_5_0038222"]
+status = "tracked"
+
+[[claims]]
+claim_id = "computational_validation_falsification_lane"
+chapter_relpath = "papers/sections/vol3_ch9_experiments.tex"
+claim_anchor = "Computational verification is used to validate predictions and falsify incorrect claims."
+source_ids = ["doi_10_1063_5_0038222", "phys_140a_lecture_14v3"]
+status = "tracked"
+
+[[claims]]
+claim_id = "superframework_fractional_dynamics_claims"
+chapter_relpath = "papers/sections/vol2_ch6_string_theory.tex"
+claim_anchor = "Fractional and hypercomplex coupling proposals in framework documents."
+source_ids = ["superframework_expansion", "superframework_foam_octonions"]
+status = "tracked"
+
+[[claims]]
+claim_id = "future_program_reference_lane"
+chapter_relpath = "papers/sections/vol4_ch13_future.tex"
+claim_anchor = "Future work trajectories that depend on externally sourced manuscript evidence."
+source_ids = [
+  "pais_superforce_2023",
+  "brandenburg_comment_superforce",
+  "arxiv_1111_4064v2",
+  "springer_978_3_319_48210_1_ch10",
+]
+status = "tracked"

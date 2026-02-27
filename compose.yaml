@@ -1,0 +1,16 @@
+services:
+  test:
+    build: .
+    environment:
+      - PYTHONHASHSEED=0
+      - PYTHONPATH=src
+      - XLA_PYTHON_CLIENT_PREALLOCATE=false
+    command: ["python", "-m", "pytest", "tests", "-q", "--cov=src", "--cov-report=term"]
+
+  lint:
+    build: .
+    command: ["ruff", "check", "src/"]
+
+  benchmark:
+    build: .
+    command: ["python", "benchmarks/benchmark_lbm.py"]

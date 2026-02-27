@@ -88,7 +88,7 @@ class E7OracleBuilder:
         self.e7_system = E7RootSystem()
         self._oracle_cache = {}
 
-    def build_geometric_oracle(self, precision_bits: int = 4) -> QuantumCircuit:
+    def build_geometric_oracle(self, _precision_bits: int = 4) -> QuantumCircuit:
         """Build geometric oracle checking E7 root properties.
 
         The oracle marks states that satisfy:
@@ -686,7 +686,7 @@ class E7CircuitOptimizer:
 
     def _get_backend(self) -> Any:
         """Get hardware backend for optimization."""
-        from qiskit.providers.fake_provider import GenericBackendV2
+        from qiskit.providers.fake_provider import GenericBackendV2  # noqa: PLC0415
 
         return GenericBackendV2(num_qubits=27)
 

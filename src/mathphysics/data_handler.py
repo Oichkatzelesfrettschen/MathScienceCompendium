@@ -22,11 +22,8 @@ except ImportError:
     HAS_PYARROW = False
 
 
-try:
-    import jax.numpy as jnp
-except ImportError:
-    jnp = np
 from .config import Config
+from .optional_deps import HAS_JAX
 
 
 class DataHandler:
@@ -41,16 +38,18 @@ class DataHandler:
         """
         if not HAS_PYARROW:
             raise ImportError(
-                "pyarrow is required for parquet operations. "
-                "Install with: pip install pyarrow"
+                "pyarrow is required for parquet operations. Install with: pip install pyarrow"
             )
 
+        if HAS_JAX:
+            import jax.numpy as jnp  # noqa: PLC0415
+
+            _array_types: tuple[type, ...] = (np.ndarray, jnp.ndarray)
+        else:
+            _array_types = (np.ndarray,)
+
         processed_data = {
-            k: [
-                v.tolist()
-                if isinstance(v, (np.ndarray, jnp.ndarray if "jnp" in globals() else np.ndarray))
-                else v
-            ]
+            k: [v.tolist() if isinstance(v, _array_types) else v]
             for k, v in data_dict.items()
         }
 

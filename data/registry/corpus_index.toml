@@ -1,0 +1,380 @@
+generated_by = "scripts/normalize_txt_to_json.py"
+generated_at_utc = "2026-02-12T07:47:48.190216+00:00"
+
+[[documents]]
+id = "project_summary"
+source_relpath = "PROJECT_SUMMARY.txt"
+normalized_relpath = "data/normalized/corpus/project_summary.json"
+category = "PROJECT_SUMMARY.txt"
+sha256 = "475e5f054d3438ba3a1135191a1e0a515bfdbbc14f73d11b58dc35c4a352cb80"
+line_count = 297
+size_bytes = 12313
+
+[[documents]]
+id = "docs__catalog"
+source_relpath = "docs/CATALOG.txt"
+normalized_relpath = "data/normalized/corpus/docs__catalog.json"
+category = "docs"
+sha256 = "31760f0c088c0611f167ab4fce29ef4cb9a578d9ce2d723b215878b70b18b114"
+line_count = 232
+size_bytes = 8568
+
+[[documents]]
+id = "experiments__requirements"
+source_relpath = "experiments/requirements.txt"
+normalized_relpath = "data/normalized/corpus/experiments__requirements.json"
+category = "experiments"
+sha256 = "117ee543fd8bf291b840c6a363996c0fbc267c1de140c21bd363b6d8d05bcc30"
+line_count = 19
+size_bytes = 316
+
+[[documents]]
+id = "requirements"
+source_relpath = "requirements.txt"
+normalized_relpath = "data/normalized/corpus/requirements.json"
+category = "requirements.txt"
+sha256 = "66605260b165e9cbdca304fc5f6f35dc1e23876d5a283786147d05c2db5b92c5"
+line_count = 7
+size_bytes = 112
+
+[[documents]]
+id = "research__e7_e8_integration__e7_root_system_facts"
+source_relpath = "research/e7_e8_integration/E7_ROOT_SYSTEM_FACTS.txt"
+normalized_relpath = "data/normalized/corpus/research__e7_e8_integration__e7_root_system_facts.json"
+category = "research"
+sha256 = "21d2fa712a9930cafbe2e64ec5f8462d9ff99b2959e3ead9cdec21a25a5953a5"
+line_count = 162
+size_bytes = 6208
+
+[[documents]]
+id = "research__fact_checks__alpha001_analysis"
+source_relpath = "research/fact_checks/Alpha001_Analysis.txt"
+normalized_relpath = "data/normalized/corpus/research__fact_checks__alpha001_analysis.json"
+category = "research"
+sha256 = "1fc243acabe76d41d9d3ea7aaf81cbb707b7e159bf76ed975bad4dfc397efaf5"
+line_count = 2217
+size_bytes = 75898
+
+[[documents]]
+id = "research__fact_checks__maximal_extraction_complete_analysis"
+source_relpath = "research/fact_checks/Maximal_Extraction_Complete_Analysis.txt"
+normalized_relpath = "data/normalized/corpus/research__fact_checks__maximal_extraction_complete_analysis.json"
+category = "research"
+sha256 = "c5e0f5ada182844a60983e0ed25fca8cdbeb30aeaf97bb36d226670212ae6c2d"
+line_count = 1416
+size_bytes = 49269
+
+[[documents]]
+id = "research__fact_checks__mathematical_validation_report"
+source_relpath = "research/fact_checks/mathematical_validation_report.txt"
+normalized_relpath = "data/normalized/corpus/research__fact_checks__mathematical_validation_report.json"
+category = "research"
+sha256 = "9ead5bd1da9aeea9b15913757fb526b663055e87d51d076f8b67c2ddd57525a6"
+line_count = 258
+size_bytes = 11160
+
+[[documents]]
+id = "research__kac_moody_deep_analysis"
+source_relpath = "research/kac_moody_deep_analysis.txt"
+normalized_relpath = "data/normalized/corpus/research__kac_moody_deep_analysis.json"
+category = "research"
+sha256 = "1bb7813664de929f6b9aa911f80adbdce4cb226d6294fdf61b26fd1ae7d1152c"
+line_count = 1653
+size_bytes = 62973
+
+[[documents]]
+id = "research__maximal_extraction_analysis"
+source_relpath = "research/maximal_extraction_analysis.txt"
+normalized_relpath = "data/normalized/corpus/research__maximal_extraction_analysis.json"
+category = "research"
+sha256 = "de7688352f67d64a4fa45faa017996cd7669f7fe73fef0eb660906e343441ae1"
+line_count = 1056
+size_bytes = 41460
+
+[[documents]]
+id = "research__primary_sources__094101_positron_production_analysis"
+source_relpath = "research/primary_sources/094101_Positron_Production_analysis.txt"
+normalized_relpath = "data/normalized/corpus/research__primary_sources__094101_positron_production_analysis.json"
+category = "research"
+sha256 = "118c31499e3a5e9b01191688b099a23cfe3a8c7c87a8fa2c532d5161c112b425"
+line_count = 224
+size_bytes = 9123
+
+[[documents]]
+id = "research__primary_sources__1111_4064v2_zeropoint_vibration_analysis"
+source_relpath = "research/primary_sources/1111.4064v2_ZeroPoint_Vibration_analysis.txt"
+normalized_relpath = "data/normalized/corpus/research__primary_sources__1111_4064v2_zeropoint_vibration_analysis.json"
+category = "research"
+sha256 = "2f2dfb362aba8c10297429e389d504178acccb81f0e921cd22d89e4f360b766b"
+line_count = 281
+size_bytes = 10017
+
+[[documents]]
+id = "research__primary_sources__978-3-319-48210-1_10_tourmaline_electrical_analysis"
+source_relpath = "research/primary_sources/978-3-319-48210-1_10_Tourmaline_Electrical_analysis.txt"
+normalized_relpath = "data/normalized/corpus/research__primary_sources__978-3-319-48210-1_10_tourmaline_electrical_analysis.json"
+category = "research"
+sha256 = "33424567c7a1eec2afddc48dbe0d6ea4c3f7fd4953441867c956c15ca43c9385"
+line_count = 244
+size_bytes = 8494
+
+[[documents]]
+id = "research__primary_sources__comment_pais_superforce_brandenburg_analysis"
+source_relpath = "research/primary_sources/Comment_Pais_Superforce_Brandenburg_analysis.txt"
+normalized_relpath = "data/normalized/corpus/research__primary_sources__comment_pais_superforce_brandenburg_analysis.json"
+category = "research"
+sha256 = "19aa32769276adb2c67c234603c9feffc85912cfb3b0220ba594000b93f09bb5"
+line_count = 195
+size_bytes = 7576
+
+[[documents]]
+id = "research__primary_sources__master_bibliography"
+source_relpath = "research/primary_sources/MASTER_BIBLIOGRAPHY.txt"
+normalized_relpath = "data/normalized/corpus/research__primary_sources__master_bibliography.json"
+category = "research"
+sha256 = "b7cd3832bcc32e58a50e14ba2c2a0571b93a3c27f94a79efd3a6dbbfd90ef8e8"
+line_count = 396
+size_bytes = 15539
+
+[[documents]]
+id = "research__primary_sources__pdf_summary"
+source_relpath = "research/primary_sources/PDF_SUMMARY.txt"
+normalized_relpath = "data/normalized/corpus/research__primary_sources__pdf_summary.json"
+category = "research"
+sha256 = "b8acb1e616c440d965f149094f6a06beff225df5c5dd5ebaf02a343ec1aacd9b"
+line_count = 482
+size_bytes = 22059
+
+[[documents]]
+id = "research__primary_sources__phys_140a_thermal_conductivity_analysis"
+source_relpath = "research/primary_sources/Phys_140A_Thermal_Conductivity_analysis.txt"
+normalized_relpath = "data/normalized/corpus/research__primary_sources__phys_140a_thermal_conductivity_analysis.json"
+category = "research"
+sha256 = "3c0eef4bd90f4077ad3b3a6c3c5bd7312074eebc7da18ec9f0c20e913e01639d"
+line_count = 200
+size_bytes = 7027
+
+[[documents]]
+id = "research__primary_sources__readme"
+source_relpath = "research/primary_sources/README.txt"
+normalized_relpath = "data/normalized/corpus/research__primary_sources__readme.json"
+category = "research"
+sha256 = "de01b5002ec5d4604de32558161b812147078184ff9e1ada51a42488cf1058eb"
+line_count = 217
+size_bytes = 7877
+
+[[documents]]
+id = "research__primary_sources__superforce_s_c_pais_2023_analysis"
+source_relpath = "research/primary_sources/SUPERFORCE_S.C.Pais_2023_analysis.txt"
+normalized_relpath = "data/normalized/corpus/research__primary_sources__superforce_s_c_pais_2023_analysis.json"
+category = "research"
+sha256 = "3ffbcfbeb7eec6d1d494fef3f758532aa2882ace137d560604cd4fa49ff43bbd"
+line_count = 185
+size_bytes = 7375
+
+[[documents]]
+id = "research__primary_sources__superframework_expansion_analysis"
+source_relpath = "research/primary_sources/Superframework_Expansion_analysis.txt"
+normalized_relpath = "data/normalized/corpus/research__primary_sources__superframework_expansion_analysis.json"
+category = "research"
+sha256 = "98d0d4c67c9e523593c3c6a3115775b29d93d277dbadd2187360a42d4884ba01"
+line_count = 231
+size_bytes = 8484
+
+[[documents]]
+id = "research__primary_sources__superframework_foam_octonions_analysis"
+source_relpath = "research/primary_sources/Superframework_Foam_Octonions_analysis.txt"
+normalized_relpath = "data/normalized/corpus/research__primary_sources__superframework_foam_octonions_analysis.json"
+category = "research"
+sha256 = "45913152fffbd9b3bec2e9f1da72819d60a32935938a68222af09eee12c3485b"
+line_count = 217
+size_bytes = 7399
+
+[[documents]]
+id = "research__primary_sources__tourmaline_addendum_superframework_analysis"
+source_relpath = "research/primary_sources/Tourmaline_Addendum_SUPERFRAMEWORK_analysis.txt"
+normalized_relpath = "data/normalized/corpus/research__primary_sources__tourmaline_addendum_superframework_analysis.json"
+category = "research"
+sha256 = "719aab09eb778c59f4aede97b599343ca810d03184d01f2cf6116bc581877904"
+line_count = 274
+size_bytes = 9418
+
+[[documents]]
+id = "research__primary_sources__tourmaline_unified_framework_analysis"
+source_relpath = "research/primary_sources/Tourmaline_Unified_Framework_analysis.txt"
+normalized_relpath = "data/normalized/corpus/research__primary_sources__tourmaline_unified_framework_analysis.json"
+category = "research"
+sha256 = "8817bff9be2265e794f1fda24e1469962094fbccd316314e27c7135f20a4ea8b"
+line_count = 290
+size_bytes = 10001
+
+[[documents]]
+id = "research__quantum_computing__ibm_eagle_specifications"
+source_relpath = "research/quantum_computing/IBM_EAGLE_SPECIFICATIONS.txt"
+normalized_relpath = "data/normalized/corpus/research__quantum_computing__ibm_eagle_specifications.json"
+category = "research"
+sha256 = "06c3a2fb2c668e13476dd53cb566a33d4faaf07c1f1d6c32b811d27d1250b247"
+line_count = 266
+size_bytes = 8545
+
+[[documents]]
+id = "source_materials__frameworks__alpha001_06_draft_aether_framework"
+source_relpath = "source_materials/frameworks/Alpha001.06_DRAFT_Aether_Framework.txt"
+normalized_relpath = "data/normalized/corpus/source_materials__frameworks__alpha001_06_draft_aether_framework.json"
+category = "source_materials"
+sha256 = "e75fb9a8f979d6452f04cc073e7603215f240b6d6cd813ca4a5a41b6e713202f"
+line_count = 165868
+size_bytes = 4589579
+
+[[documents]]
+id = "source_materials__frameworks__alpha003_02_aether_chrystalline_fluidic_framework"
+source_relpath = "source_materials/frameworks/Alpha003.02_Aether_Chrystalline_Fluidic_Framework.txt"
+normalized_relpath = "data/normalized/corpus/source_materials__frameworks__alpha003_02_aether_chrystalline_fluidic_framework.json"
+category = "source_materials"
+sha256 = "a93c439612fc23c6336d236aaad9af6a28fd5c0701198f2ef92ed976ff535bc8"
+line_count = 3766
+size_bytes = 156970
+
+[[documents]]
+id = "source_materials__frameworks__math_spell_draft"
+source_relpath = "source_materials/frameworks/Math_Spell_Draft.txt"
+normalized_relpath = "data/normalized/corpus/source_materials__frameworks__math_spell_draft.json"
+category = "source_materials"
+sha256 = "16a9fc3010ae3798a2b79160f5fbe49016d59175ea990cd8ebadf60b8216e387"
+line_count = 101
+size_bytes = 4781
+
+[[documents]]
+id = "source_materials__frameworks__maximal_extraction_set1_set2"
+source_relpath = "source_materials/frameworks/Maximal_Extraction_SET1_SET2.txt"
+normalized_relpath = "data/normalized/corpus/source_materials__frameworks__maximal_extraction_set1_set2.json"
+category = "source_materials"
+sha256 = "916b10e79d551d2c6216de533c5a46f584bcdaf0b074de6116e39194ccd37866"
+line_count = 26209
+size_bytes = 691591
+
+[[documents]]
+id = "source_materials__frameworks__draft_reply_to_pais"
+source_relpath = "source_materials/frameworks/draft reply to pais.txt"
+normalized_relpath = "data/normalized/corpus/source_materials__frameworks__draft_reply_to_pais.json"
+category = "source_materials"
+sha256 = "c10176cc0c72fe84aad7668a6f5158351b4636cd83913c0767020f392d14cac8"
+line_count = 97
+size_bytes = 6553
+
+[[documents]]
+id = "source_materials__frameworks__math4genesisframework"
+source_relpath = "source_materials/frameworks/math4GenesisFramework.txt"
+normalized_relpath = "data/normalized/corpus/source_materials__frameworks__math4genesisframework.json"
+category = "source_materials"
+sha256 = "f5f7e7613920d9a496be31449c725e6945609956b0fb1a85abe6a2387721260c"
+line_count = 1563
+size_bytes = 91793
+
+[[documents]]
+id = "source_materials__frameworks__math5genesisframeworkunveiled"
+source_relpath = "source_materials/frameworks/math5GenesisFrameworkUnveiled.txt"
+normalized_relpath = "data/normalized/corpus/source_materials__frameworks__math5genesisframeworkunveiled.json"
+category = "source_materials"
+sha256 = "8ba01a4e7d68b8c9cee28029f02f7c16a652a9d672eca9689b6772d94ac774dc"
+line_count = 2223
+size_bytes = 118119
+
+[[documents]]
+id = "source_materials__frameworks__æether-crystalline_framework_"
+source_relpath = "source_materials/frameworks/Æether-Crystalline Framework .txt"
+normalized_relpath = "data/normalized/corpus/source_materials__frameworks__æether-crystalline_framework_.json"
+category = "source_materials"
+sha256 = "b51cb1cb03fa1505ab0cdd6e46c154597da81c87f332e50f7b15ca17595320c8"
+line_count = 1097
+size_bytes = 54680
+
+[[documents]]
+id = "source_materials__pdfs__extracted__094101_1_accepted_manuscript"
+source_relpath = "source_materials/pdfs/extracted/094101_1_accepted_manuscript.txt"
+normalized_relpath = "data/normalized/corpus/source_materials__pdfs__extracted__094101_1_accepted_manuscript.json"
+category = "source_materials"
+sha256 = "5291cfe28182a95c694d0b34461fa25a035cab2ac71201486aae4d7e0c5839c7"
+line_count = 481
+size_bytes = 28275
+
+[[documents]]
+id = "source_materials__pdfs__extracted__1111_4064v2"
+source_relpath = "source_materials/pdfs/extracted/1111.4064v2.txt"
+normalized_relpath = "data/normalized/corpus/source_materials__pdfs__extracted__1111_4064v2.json"
+category = "source_materials"
+sha256 = "ce45a9c17d4513f9f2aa34bad76f013803eeb651743d50bfdde58f8f52b908e5"
+line_count = 1001
+size_bytes = 24099
+
+[[documents]]
+id = "source_materials__pdfs__extracted__978-3-319-48210-1_10"
+source_relpath = "source_materials/pdfs/extracted/978-3-319-48210-1_10.txt"
+normalized_relpath = "data/normalized/corpus/source_materials__pdfs__extracted__978-3-319-48210-1_10.json"
+category = "source_materials"
+sha256 = "bd97448e307da6c3c3be3705ea996504d05674fd57c52aa5f6f3fc8afe195abb"
+line_count = 130
+size_bytes = 5006
+
+[[documents]]
+id = "source_materials__pdfs__extracted__comment_on_the_pais_superforce_theory"
+source_relpath = "source_materials/pdfs/extracted/Comment_on_the_Pais_Superforce_Theory.txt"
+normalized_relpath = "data/normalized/corpus/source_materials__pdfs__extracted__comment_on_the_pais_superforce_theory.json"
+category = "source_materials"
+sha256 = "92cc9bbac8cf63766f5d49ea300b44ec40e763953f10b356f8403206dd6af627"
+line_count = 156
+size_bytes = 2325
+
+[[documents]]
+id = "source_materials__pdfs__extracted__phys-140a-lecture-14v3"
+source_relpath = "source_materials/pdfs/extracted/Phys-140A-lecture-14v3.txt"
+normalized_relpath = "data/normalized/corpus/source_materials__pdfs__extracted__phys-140a-lecture-14v3.json"
+category = "source_materials"
+sha256 = "6190c4635ad0f4fbc0046b34d69bf300d6467dd20976fcd1da909eaff1adb5ba"
+line_count = 412
+size_bytes = 16399
+
+[[documents]]
+id = "source_materials__pdfs__extracted__superforce---s_c_pais---2023"
+source_relpath = "source_materials/pdfs/extracted/SUPERFORCE---S.C.Pais---2023.txt"
+normalized_relpath = "data/normalized/corpus/source_materials__pdfs__extracted__superforce---s_c_pais---2023.json"
+category = "source_materials"
+sha256 = "48742a8ac31ea609cf3214c90aee844792e328dcfafcad79efdcf195f503c610"
+line_count = 122
+size_bytes = 8540
+
+[[documents]]
+id = "source_materials__pdfs__extracted__superframework-foam-octonions"
+source_relpath = "source_materials/pdfs/extracted/Superframework-Foam-Octonions.txt"
+normalized_relpath = "data/normalized/corpus/source_materials__pdfs__extracted__superframework-foam-octonions.json"
+category = "source_materials"
+sha256 = "5c7e7284298a18eab382fcea7819a8d066521964086552ffffd93912ff8461a3"
+line_count = 621
+size_bytes = 11994
+
+[[documents]]
+id = "source_materials__pdfs__extracted__superframework_expansion"
+source_relpath = "source_materials/pdfs/extracted/Superframework_Expansion.txt"
+normalized_relpath = "data/normalized/corpus/source_materials__pdfs__extracted__superframework_expansion.json"
+category = "source_materials"
+sha256 = "934499f298526d4d308bb7c1d2a44cff2e398f09c165db8ab12c9db7ca1f8230"
+line_count = 872
+size_bytes = 26790
+
+[[documents]]
+id = "source_materials__pdfs__extracted__tourmaline"
+source_relpath = "source_materials/pdfs/extracted/Tourmaline.txt"
+normalized_relpath = "data/normalized/corpus/source_materials__pdfs__extracted__tourmaline.json"
+category = "source_materials"
+sha256 = "51a27733ff8f3cf8294a801d37d2bdae168a4360ddddd57959870b003e84d214"
+line_count = 1099
+size_bytes = 34492
+
+[[documents]]
+id = "source_materials__pdfs__extracted__tourmaline_addendum"
+source_relpath = "source_materials/pdfs/extracted/Tourmaline_Addendum.txt"
+normalized_relpath = "data/normalized/corpus/source_materials__pdfs__extracted__tourmaline_addendum.json"
+category = "source_materials"
+sha256 = "e5647221b34b20c8d0d2c71318b9ed0529cc8ed5817b46521e7b61e624021c81"
+line_count = 121
+size_bytes = 3240

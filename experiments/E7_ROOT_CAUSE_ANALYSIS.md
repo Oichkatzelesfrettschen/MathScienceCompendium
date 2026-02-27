@@ -12,7 +12,7 @@
 
 ### 1. Original Implementation Issue
 
-**Location**: `/home/eirikr/Github_n_projects/MathScienceCompendium/experiments/src/e7_root_system.py`
+**Location**: `./experiments/src/e7_root_system.py`
 
 **Original Code (Lines 157-177)**:
 ```python

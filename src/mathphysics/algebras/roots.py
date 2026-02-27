@@ -139,7 +139,7 @@ class BaseRootSystem(LieAlgebra):
         cartan = self.compute_cartan_matrix()
         rank = self.properties.rank
         for i in range(rank):
-            G.add_node(i, label=f"α_{i + 1}")
+            G.add_node(i, label=f"\u03b1_{i + 1}")
         for i in range(rank):
             for j in range(i + 1, rank):
                 if cartan[i, j] < 0:

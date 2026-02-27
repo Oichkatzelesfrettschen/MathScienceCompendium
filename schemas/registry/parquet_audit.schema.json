@@ -1,0 +1,65 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://mathsciencecompendium.local/schemas/registry/parquet_audit.schema.json",
+  "title": "ParquetAuditRegistry",
+  "type": "object",
+  "required": ["generated_by", "generated_at_utc", "parquet_count", "records"],
+  "properties": {
+    "generated_by": { "type": "string", "minLength": 1 },
+    "generated_at_utc": { "type": "string", "format": "date-time" },
+    "parquet_count": { "type": "integer", "minimum": 0 },
+    "records": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["relpath", "size_bytes", "sha256", "schema_available"],
+        "properties": {
+          "relpath": { "type": "string", "minLength": 1, "pattern": "\\.parquet$" },
+          "size_bytes": { "type": "integer", "minimum": 0 },
+          "sha256": { "type": "string", "pattern": "^[a-f0-9]{64}$" },
+          "schema_available": { "type": "boolean" },
+          "reason": { "type": "string", "minLength": 1 },
+          "num_row_groups": { "type": "integer", "minimum": 0 },
+          "num_rows": { "type": ["integer", "null"], "minimum": 0 },
+          "num_columns": { "type": "integer", "minimum": 0 },
+          "fields": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": ["name", "type"],
+              "properties": {
+                "name": { "type": "string", "minLength": 1 },
+                "type": { "type": "string", "minLength": 1 }
+              },
+              "additionalProperties": false
+            }
+          }
+        },
+        "allOf": [
+          {
+            "if": {
+              "properties": {
+                "schema_available": { "const": false }
+              }
+            },
+            "then": {
+              "required": ["reason"]
+            }
+          },
+          {
+            "if": {
+              "properties": {
+                "schema_available": { "const": true }
+              }
+            },
+            "then": {
+              "required": ["num_row_groups", "num_rows", "num_columns", "fields"]
+            }
+          }
+        ],
+        "additionalProperties": false
+      }
+    }
+  },
+  "additionalProperties": false
+}

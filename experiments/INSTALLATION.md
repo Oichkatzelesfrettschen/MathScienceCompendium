@@ -1,259 +1,129 @@
 # Installation Guide
 
-## Quick Start
+## Prerequisites
 
-### 1. Navigate to Project Directory
+| Tool | Minimum Version | Notes |
+|------|----------------|-------|
+| Python | 3.9 | 3.11 recommended; tested on 3.9-3.12 |
+| pip | 23.0 | `python3 -m pip install --upgrade pip` |
+| pdflatex | any | For `make papers`; install via texlive |
+| bibtex | any | Included with texlive |
+| pdftotext | any | `poppler-utils` package |
+| ripgrep (rg) | any | Optional; used in `make lint-latex` |
+
+Check tools with:
 
 ```bash
-cd /home/eirikr/MathScienceCompendium/experiments
+make check-deps
 ```
 
-### 2. Install Dependencies
+## Canonical Setup (Repository Root)
+
+Run these commands from the repository root:
 
 ```bash
-# Using Make (recommended)
+python3 -m venv venv
+./venv/bin/python -m pip install --upgrade pip
+./venv/bin/pip install -e ".[dev,lint]"
+```
+
+Or use the Makefile shortcut:
+
+```bash
 make install
-
-# Or manually
-pip3 install -r requirements.txt
-pip3 install -e .
 ```
 
-### 3. Verify Installation
+## Quick Validation
 
 ```bash
-# Run quick validation
-python3 -c "import sys; sys.path.insert(0, 'src'); \
-from cayley_dickson import Complex; \
-z = Complex([3, 4]); \
-print(f'Norm test: {z.norm():.4f} (expected 5.0)'); \
-print('Installation successful!')"
+PYTHONPATH=src ./venv/bin/python -c "from mathphysics.algebras.cayley_dickson import Complex; z = Complex([3,4]); print(z.norm())"
 ```
 
-## Running Experiments
-
-### Option 1: Using Make
+Expected output includes `5.0`.
 
 ```bash
-# Run all experiments
-make run-all
-
-# Run specific modules
-make run-cayley
-make run-fractals
-make run-e8
-make run-lattice
-make run-modular
-
-# Generate visualizations
-make visualize
-
-# Run tests
 make test
 ```
 
-### Option 2: Direct Python
+Expected: 500+ tests pass, 0 failures.
+
+## Optional Dependencies
+
+These are not required for the core framework but unlock additional features:
 
 ```bash
-# Run all experiments
-python3 src/main.py --all
+# JAX/XLA acceleration (GPU/TPU) -- unlocks accelerated LBM and loop algebras
+./venv/bin/pip install jax jaxlib
 
-# Run specific module
-python3 src/main.py --module cayley
-python3 src/main.py --module fractals
-python3 src/main.py --module e8
-python3 src/main.py --module lattice
-python3 src/main.py --module modular
+# Qiskit -- unlocks quantum circuit modules (E7/E8 oracles, encoding)
+./venv/bin/pip install qiskit qiskit-aer
 
-# Generate visualizations only
-python3 src/main.py --visualize
+# GUDHI -- unlocks topological data analysis (persistent homology)
+./venv/bin/pip install gudhi
 ```
 
-### Option 3: Individual Modules
+Without optional dependencies, tests for those modules are automatically skipped.
+
+## Experiment Execution
+
+From repository root:
 
 ```bash
-# Cayley-Dickson algebras
-cd src && python3 cayley_dickson.py
-
-# Fractal analysis
-cd src && python3 fractal_analysis.py
-
-# E_8 Lie algebra
-cd src && python3 lie_algebras.py
-
-# Lattice theory
-cd src && python3 lattice_theory.py
-
-# Modular forms
-cd src && python3 modular_forms.py
-
-# Visualizations
-cd src && python3 visualization.py
+make benchmark         # NumPy vs JAX LBM performance comparison
+make run-highres       # High-resolution JAX simulation (requires JAX)
+make run-unified       # Unified cross-domain simulation
+make run-jordan        # E11 Jordan algebra trace analysis
+make run-clifford      # Clifford algebra rotation demo
 ```
 
-## Testing
+## LaTeX Paper Build
+
+Requires `pdflatex` and `bibtex`:
 
 ```bash
-# Quick test
-make test
-
-# Verbose output
-make test-verbose
-
-# Coverage report
-make test-coverage
-
-# Or directly with pytest
-cd tests && python3 test_all.py
+make figures   # Generate PNG figures and interactive HTML explorers
+make papers    # Compile LaTeX into papers/main.pdf (4 passes)
 ```
 
-## Using Jupyter Notebooks
+## Reproducibility Pipeline
 
 ```bash
-# Install Jupyter (if not already installed)
-pip3 install jupyter
-
-# Launch notebook server
-jupyter notebook notebooks/
-
-# Open: 01_cayley_dickson_demo.ipynb
+make normalize-corpus    # Convert .txt corpus to JSON
+make build-registries    # Build TOML artifact/experiment indexes
+make parquet-audit       # Audit parquet simulation snapshots
+make verify-offline      # Validate provenance and registry schemas
+make repro-refresh       # Run all of the above in sequence
 ```
+
+## Optional: External Source Fetch
+
+This step requires network access and is separate from the test suite:
+
+```bash
+make fetch-external     # Fetch PDFs from sources.toml manifest
+make fetch-arxiv        # Batch-download arXiv papers (rate-limited)
+make verify-checksums   # Verify SHA-256 of all cached PDFs
+make fetch-all          # fetch-external + fetch-arxiv
+```
+
+PDF artifacts are cached under `source_materials/pdfs/`.
 
 ## Troubleshooting
 
-### Missing Dependencies
+**"ruff not installed"**: Run `make install` to provision the venv, or check that
+`./venv/bin/ruff` exists.
 
-If you get import errors:
+**"No module named 'jax'"**: JAX is optional. Install with `pip install jax jaxlib`
+or ignore the 2-3 skipped tests.
 
-```bash
-# Reinstall all dependencies
-pip3 install --force-reinstall -r requirements.txt
-```
+**"No module named 'qiskit'"**: Qiskit is optional. The quantum circuit test files
+are excluded from collection when qiskit is absent (`tests/conftest.py`).
 
-### Numba Not Available
+**JSON serialization error (`np.bool_`)**: Means a numpy boolean reached `json.dump`
+without conversion. Use `_NumpyEncoder` from `algebras/cayley_dickson.py`.
 
-Numba is optional for performance. If not installed:
+**LaTeX compilation fails ("undefined reference")**: Run `bibtex main` between
+the two `pdflatex` passes. `make papers` does this automatically.
 
-```bash
-pip3 install numba
-```
-
-Or the code will fall back to pure Python (slower but functional).
-
-### Matplotlib Display Issues
-
-If visualizations don't display:
-
-```bash
-# Install backend
-pip3 install pillow tk
-```
-
-### Permission Errors
-
-If you get permission errors during installation:
-
-```bash
-# Install for user only
-pip3 install --user -r requirements.txt
-pip3 install --user -e .
-```
-
-## Verification
-
-### Quick Functionality Check
-
-```bash
-# Test all major components
-python3 << 'EOF'
-import sys
-sys.path.insert(0, 'src')
-
-# Test imports
-from cayley_dickson import Quaternion
-from fractal_analysis import FractalGenerator
-from lie_algebras import E8RootSystem
-from lattice_theory import E8Lattice
-from modular_forms import ModularForms
-
-# Test Quaternion
-q = Quaternion([1,0,0,0])
-i = Quaternion([0,1,0,0])
-j = Quaternion([0,0,1,0])
-k = i * j
-assert k.coeffs[3] == 1.0, "Quaternion multiplication failed"
-print("Quaternions: OK")
-
-# Test E_8
-e8 = E8RootSystem()
-roots = e8.generate_roots()
-assert len(roots) == 240, "E_8 root count incorrect"
-print("E_8 Lie algebra: OK")
-
-# Test Lattice
-lattice = E8Lattice()
-kissing = lattice.kissing_number()
-assert kissing == 240, "E_8 kissing number incorrect"
-print("E_8 Lattice: OK")
-
-# Test Modular Forms
-j_coeffs = ModularForms.klein_j_q_expansion(num_coeffs=3)
-assert j_coeffs[1] == 744, "j-invariant coefficient incorrect"
-print("Modular Forms: OK")
-
-print("\nAll components verified successfully!")
-EOF
-```
-
-## Performance Optimization
-
-For faster execution:
-
-```bash
-# Install optional performance libraries
-pip3 install numba
-pip3 install scikit-learn
-
-# Use PyPy for pure Python speedup (experimental)
-# pypy3 -m pip install -r requirements.txt
-```
-
-## Clean Up
-
-```bash
-# Remove generated files
-make clean
-
-# Remove results
-make clean-results
-
-# Complete reset
-make clean && make clean-results
-```
-
-## Next Steps
-
-After successful installation:
-
-1. Read the main README.md for project overview
-2. Run `make run-all` to generate complete results
-3. Explore Jupyter notebooks in `notebooks/`
-4. Check generated results in `results/`
-5. View figures in `results/figures/`
-
-## System Requirements
-
-- **Python**: 3.9 or higher
-- **RAM**: 4GB minimum, 8GB recommended
-- **Disk Space**: 500MB for dependencies, 100MB for results
-- **OS**: Linux, macOS, Windows (WSL)
-
-## Support
-
-If you encounter issues:
-
-1. Check INSTALLATION.md (this file)
-2. Review README.md for project details
-3. Examine error messages carefully
-4. Verify all dependencies are installed
-5. Try running individual modules to isolate issues
+**XLA GPU pre-allocation (OOM)**: Set `XLA_PYTHON_CLIENT_PREALLOCATE=false`
+(already set in the Makefile JAX targets).

@@ -70,7 +70,7 @@ class SL2Affine(AffineLieAlgebra):
     """Affine sl(2, C) Kac-Moody algebra."""
 
     def __init__(self, level: float = 1.0) -> None:
-        # sl(2) is A1
+        # sl(2) is A1  # noqa: ERA001
         props = LieAlgebraProperties("A1", 3, 1, 2, 1, 2)
 
         class A1Roots(BaseRootSystem):

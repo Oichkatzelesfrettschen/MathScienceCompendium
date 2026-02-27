@@ -87,7 +87,7 @@ HTML_TEMPLATE = """
         <div v-if="hoveredNode"
              :style="{ top: tooltipPos.y + 'px', left: tooltipPos.x + 'px' }"
              class="fixed pointer-events-none ui-panel py-2 px-3 text-xs neon-border transform -translate-x-1/2 -translate-y-full mb-4">
-            <div class="font-bold text-cyan-400 mb-1">Root α_{{ hoveredNode.index + 1 }}</div>
+            <div class="font-bold text-cyan-400 mb-1">Root \u03b1_{{ hoveredNode.index + 1 }}</div>
             <div class="text-pink-400 mb-1">{{ hoveredNode.type }}</div>
             <div class="opacity-80">Coords: [{{ hoveredNode.coords.map(c => c.toFixed(2)).join(', ') }}]</div>
             <div class="mt-1 pt-1 border-t border-gray-800">

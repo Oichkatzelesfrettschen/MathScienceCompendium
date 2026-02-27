@@ -5,10 +5,14 @@ import unittest
 
 # Import modules to test
 from mathphysics.quantum_e8_circuits import (
-    E8CircuitConfig, E8RootStructure, E8OracleBuilder,
-    E8StatePreparation, E8MeasurementAnalysis,
-    E8QuantumAlgorithms
+    E8CircuitConfig,
+    E8RootStructure,
+    E8OracleBuilder,
+    E8StatePreparation,
+    E8MeasurementAnalysis,
+    E8QuantumAlgorithms,
 )
+
 
 class TestE8QuantumCircuits(unittest.TestCase):
     """Test E8 quantum circuit module."""
@@ -35,7 +39,7 @@ class TestE8QuantumCircuits(unittest.TestCase):
         prep = E8StatePreparation(self.config)
         qc = prep.prepare_uniform_superposition()
         self.assertIsNotNone(qc)
-        
+
         # sv = Statevector.from_instruction(qc) # Might be slow
         self.assertEqual(qc.num_qubits, 8)
 

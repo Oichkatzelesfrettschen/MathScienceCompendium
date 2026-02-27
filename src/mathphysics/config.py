@@ -48,10 +48,10 @@ class Config:
     def get_jax_backend():
         """Get the active JAX backend using modern jax.extend API."""
         try:
-            import jax.extend
+            import jax.extend  # noqa: PLC0415
 
             return jax.extend.backend.get_backend()
         except (ImportError, AttributeError):
-            import jax.lib.xla_bridge as xb
+            import jax.lib.xla_bridge as xb  # noqa: PLC0415
 
             return xb.get_backend()

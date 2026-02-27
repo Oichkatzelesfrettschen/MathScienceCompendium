@@ -25,7 +25,7 @@ class UnifiedSimulation:
     """
 
     def __init__(self, nx: int = 128, ny: int = 128) -> None:
-        from .quantum_lattice_boltzmann import LBMParameters
+        from .quantum_lattice_boltzmann import LBMParameters  # noqa: PLC0415
 
         self.params = LBMParameters(nx=nx, ny=ny)
         self.lbm = AcceleratedLBM(self.params)

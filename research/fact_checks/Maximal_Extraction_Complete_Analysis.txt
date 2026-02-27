@@ -3,7 +3,7 @@ COMPREHENSIVE ANALYTICAL REPORT
 Maximal Extraction SET1_SET2 Framework Analysis
 ================================================================================
 
-Document: /home/eirikr/MathScienceCompendium/source_materials/frameworks/
+Document: ./source_materials/frameworks/
          Maximal_Extraction_SET1_SET2.txt
 Total Lines: 26,208
 Analysis Date: 2025-10-01

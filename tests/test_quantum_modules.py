@@ -12,13 +12,12 @@ import unittest
 import warnings
 
 # Import modules to test
-from mathphysics.quantum_encoding import (
-    EncodingConfig, IndexEncoder
-)
+from mathphysics.quantum_encoding import EncodingConfig, IndexEncoder
 
 # Qiskit imports for testing
 
-warnings.filterwarnings('ignore')
+warnings.filterwarnings("ignore")
+
 
 class TestQuantumEncoding(unittest.TestCase):
     """Test quantum encoding module."""

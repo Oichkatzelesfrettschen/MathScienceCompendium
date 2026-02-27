@@ -1147,7 +1147,7 @@ established physics theories.
 9.1 EXISTING IMPLEMENTATION: E_8
 ---------------------------------
 
-FILE: /home/eirikr/MathScienceCompendium/experiments/src/lie_algebras.py
+FILE: ./src/mathphysics/algebras/roots.py
 
 CURRENT CAPABILITIES:
   - E_8 root system generation (240 roots)

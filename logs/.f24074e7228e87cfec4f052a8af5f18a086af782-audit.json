@@ -3,11 +3,11 @@
         "days": true,
         "amount": 14
     },
-    "auditLog": "/home/eirikr/Research/Physics/MathScienceCompendium/logs/.f24074e7228e87cfec4f052a8af5f18a086af782-audit.json",
+    "auditLog": "./logs/.f24074e7228e87cfec4f052a8af5f18a086af782-audit.json",
     "files": [
         {
             "date": 1766553116211,
-            "name": "/home/eirikr/Research/Physics/MathScienceCompendium/logs/mcp-puppeteer-2025-12-23.log",
+            "name": "./logs/mcp-puppeteer-2025-12-23.log",
             "hash": "86a5cc76deca50da517d3de40f152e426d915a1f550c43cdc169ff5db4834c7b"
         }
     ],

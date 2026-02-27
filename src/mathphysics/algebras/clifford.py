@@ -8,7 +8,7 @@ Optimized for NVIDIA SM89 (RTX 4070 Ti).
 from __future__ import annotations
 
 from functools import partial
-from typing import Any
+from typing import Any, ClassVar
 
 import jax
 import jax.numpy as jnp
@@ -76,7 +76,7 @@ class CliffordEngine:
 class Multivector(CliffordAlgebra):
     """Production-grade Multivector utilizing JIT-accelerated kernels."""
 
-    _engines: dict[tuple[int, int, int], CliffordEngine] = {}
+    _engines: ClassVar[dict[tuple[int, int, int], CliffordEngine]] = {}
 
     def __init__(self, coeffs: np.ndarray | jnp.ndarray, signature: tuple[int, int, int]) -> None:
         if signature not in Multivector._engines:

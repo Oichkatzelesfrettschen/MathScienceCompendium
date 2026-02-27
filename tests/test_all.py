@@ -5,9 +5,16 @@ import numpy as np
 
 # Add src to path
 
-from mathphysics.algebras.cayley_dickson import (Real, Complex, Quaternion, Octonion, Sedenion, Pathion,
-                             CayleyDicksonValidator)
-from mathphysics.fractal_analysis import (FractalGenerator, FractalDimensionCalculator)
+from mathphysics.algebras.cayley_dickson import (
+    Real,
+    Complex,
+    Quaternion,
+    Octonion,
+    Sedenion,
+    Pathion,
+    CayleyDicksonValidator,
+)
+from mathphysics.fractal_analysis import FractalGenerator, FractalDimensionCalculator
 from mathphysics.algebras.roots import E8RootSystem, ExceptionalLieAlgebras, LieAlgebraCalculator
 from mathphysics.lattice_theory import E8Lattice, LeechLattice, SpherePackingAnalyzer
 from mathphysics.modular_forms import ModularForms, MonstrousMoonshine, EllipticCurves
@@ -279,7 +286,7 @@ class TestLatticeTheory:
         density = e8.packing_density()
 
         # Should be π^4/384
-        expected = np.pi ** 4 / 384
+        expected = np.pi**4 / 384
         assert abs(density - expected) < 1e-10
 
     def test_leech_kissing_number(self):

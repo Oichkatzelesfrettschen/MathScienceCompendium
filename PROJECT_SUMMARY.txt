@@ -2,7 +2,7 @@
 MATHEMATICAL PHYSICS COMPENDIUM - PROJECT COMPLETION SUMMARY
 ===============================================================================
 Project Created: October 1, 2025
-Location: /home/eirikr/MathScienceCompendium/
+Location: ./
 ===============================================================================
 
 MISSION ACCOMPLISHED: Complete synthesis, analysis, and validation of
@@ -203,7 +203,7 @@ KEY DOCUMENTS:
   Makefile                                     # Build automation
 
 SOURCE MATERIALS:
-  source_materials/pdfs/                       # 11 research papers
+  source_materials/pdfs/                       # PDF cache (populate via scripts/fetch_external_sources.py)
   source_materials/frameworks/                 # 8 framework documents
 
 RESEARCH:

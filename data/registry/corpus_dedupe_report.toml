@@ -1,0 +1,9 @@
+generated_by = "scripts/corpus_dedupe_report.py"
+generated_at_utc = "2026-02-12T07:47:48.235979+00:00"
+registry_relpath = "data/registry/corpus_index.toml"
+documents_total = 42
+exact_duplicate_groups = 0
+exact_duplicate_documents = 0
+hash_mismatch_count = 0
+status = "clean"
+reconciliation_actions = ["Excluded generated *.egg-info/*.txt files from normalization.", "Excluded generated data/external/fetch_traces/*.txt files from normalization.", "Removed stale normalized JSON files that no longer map to corpus index entries."]

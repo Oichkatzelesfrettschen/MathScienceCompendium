@@ -1,0 +1,247 @@
+# External source manifest
+# Network downloads are driven from this file by scripts/fetch_external_sources.py.
+
+manifest_version = 1
+
+[[sources]]
+id = "pais_superforce_2023"
+filename = "SUPERFORCE---S.C.Pais---2023.pdf"
+target_relpath = "source_materials/pdfs/SUPERFORCE---S.C.Pais---2023.pdf"
+extract_text_relpath = "source_materials/pdfs/extracted/SUPERFORCE---S.C.Pais---2023.txt"
+urls = [
+  "https://raw.githubusercontent.com/ConsciousEnergy/Super-Force-Analysis/afbde0996d58bde0dbc7dbcf254810b3c289db31/SUPERFORCE%20---S.C.Pais---2023.pdf",
+  "https://raw.githubusercontent.com/Oichkatzelesfrettschen/PhysicsForge/ff44918bcac62917cfc1dd6a8a6f0e847b43e14f/source_materials/pdfs/SUPERFORCE%20---S.C.Pais---2023.pdf",
+]
+notes = "Primary Pais Superforce paper. Repository URLs are commit-pinned for reproducibility."
+
+[[sources]]
+id = "brandenburg_comment_superforce"
+filename = "Comment_on_the_Pais_Superforce_Theory.pdf"
+target_relpath = "source_materials/pdfs/Comment_on_the_Pais_Superforce_Theory.pdf"
+extract_text_relpath = "source_materials/pdfs/extracted/Comment_on_the_Pais_Superforce_Theory.txt"
+urls = [
+  "https://raw.githubusercontent.com/Oichkatzelesfrettschen/PhysicsForge/ff44918bcac62917cfc1dd6a8a6f0e847b43e14f/source_materials/pdfs/Comment%20on%20the%20Pais%20Superforce%20Theory.pdf",
+  "https://www.scribd.com/document/719834452/Comment-on-the-Pais-Superforce-Theory",
+]
+notes = "Commentary paper referenced in CATALOG. PhysicsForge raw PDF is primary fetch target with Scribd as source trace."
+
+[[sources]]
+id = "phys_140a_lecture_14v3"
+filename = "Phys-140A-lecture-14v3.pdf"
+target_relpath = "source_materials/pdfs/Phys-140A-lecture-14v3.pdf"
+extract_text_relpath = "source_materials/pdfs/extracted/Phys-140A-lecture-14v3.txt"
+urls = [
+  "https://ps.uci.edu/~cyu/p140A/LectureNotes/lecture-14v3.pdf",
+  "https://raw.githubusercontent.com/Oichkatzelesfrettschen/PhysicsForge/ff44918bcac62917cfc1dd6a8a6f0e847b43e14f/source_materials/pdfs/Phys-140A-lecture-14v3.pdf",
+]
+notes = "Lecture notes source. Prefer university-hosted canonical URL with owner-maintained mirror fallback."
+
+[[sources]]
+id = "arxiv_1111_4064v2"
+filename = "1111.4064v2.pdf"
+target_relpath = "source_materials/pdfs/1111.4064v2.pdf"
+extract_text_relpath = "source_materials/pdfs/extracted/1111.4064v2.txt"
+urls = ["https://arxiv.org/pdf/1111.4064v2.pdf"]
+notes = "Zero-point vibration paper identified in primary_sources docs."
+
+[[sources]]
+id = "doi_10_1063_5_0038222"
+filename = "094101_1_accepted_manuscript.pdf"
+target_relpath = "source_materials/pdfs/094101_1_accepted_manuscript.pdf"
+extract_text_relpath = "source_materials/pdfs/extracted/094101_1_accepted_manuscript.txt"
+urls = [
+  "https://doi.org/10.1063/5.0038222",
+  "https://raw.githubusercontent.com/Oichkatzelesfrettschen/PhysicsForge/ff44918bcac62917cfc1dd6a8a6f0e847b43e14f/source_materials/pdfs/094101_1_accepted_manuscript.pdf",
+]
+notes = "Accepted manuscript entry from source catalog. DOI remains canonical bibliographic source; mirror supports offline cache fill."
+
+[[sources]]
+id = "springer_978_3_319_48210_1_ch10"
+filename = "978-3-319-48210-1_10.pdf"
+target_relpath = "source_materials/pdfs/978-3-319-48210-1_10.pdf"
+extract_text_relpath = "source_materials/pdfs/extracted/978-3-319-48210-1_10.txt"
+urls = [
+  "https://link.springer.com/content/pdf/10.1007/978-3-319-48210-1_10.pdf",
+  "https://link.springer.com/chapter/10.1007/978-3-319-48210-1_10",
+  "https://raw.githubusercontent.com/Oichkatzelesfrettschen/PhysicsForge/ff44918bcac62917cfc1dd6a8a6f0e847b43e14f/source_materials/pdfs/978-3-319-48210-1_10.pdf",
+]
+notes = "Book chapter source. Prefer Springer publisher URL; repository mirror retained for reproducible offline rebuilds."
+
+[[sources]]
+id = "superframework_expansion"
+filename = "Superframework_Expansion.pdf"
+target_relpath = "source_materials/pdfs/Superframework_Expansion.pdf"
+extract_text_relpath = "source_materials/pdfs/extracted/Superframework_Expansion.txt"
+urls = [
+  "https://raw.githubusercontent.com/Oichkatzelesfrettschen/PhysicsForge/ff44918bcac62917cfc1dd6a8a6f0e847b43e14f/source_materials/pdfs/Superframework_Expansion.pdf",
+]
+notes = "Framework document in CATALOG. Owner-maintained raw mirror used as authoritative fetch URL for reproducibility."
+
+[[sources]]
+id = "superframework_foam_octonions"
+filename = "Superframework-Foam-Octonions.pdf"
+target_relpath = "source_materials/pdfs/Superframework-Foam-Octonions.pdf"
+extract_text_relpath = "source_materials/pdfs/extracted/Superframework-Foam-Octonions.txt"
+urls = [
+  "https://raw.githubusercontent.com/Oichkatzelesfrettschen/PhysicsForge/ff44918bcac62917cfc1dd6a8a6f0e847b43e14f/source_materials/pdfs/Superframework-Foam-Octonions.pdf",
+]
+notes = "Framework document in CATALOG. Owner-maintained raw mirror used as authoritative fetch URL for reproducibility."
+
+[[sources]]
+id = "tourmaline"
+filename = "Tourmaline.pdf"
+target_relpath = "source_materials/pdfs/Tourmaline.pdf"
+extract_text_relpath = "source_materials/pdfs/extracted/Tourmaline.txt"
+urls = [
+  "https://raw.githubusercontent.com/Oichkatzelesfrettschen/PhysicsForge/ff44918bcac62917cfc1dd6a8a6f0e847b43e14f/source_materials/pdfs/Tourmaline.pdf",
+]
+notes = "Framework document in CATALOG. Owner-maintained raw mirror used as authoritative fetch URL for reproducibility."
+
+[[sources]]
+id = "tourmaline_addendum"
+filename = "Tourmaline_Addendum.pdf"
+target_relpath = "source_materials/pdfs/Tourmaline_Addendum.pdf"
+extract_text_relpath = "source_materials/pdfs/extracted/Tourmaline_Addendum.txt"
+urls = [
+  "https://raw.githubusercontent.com/Oichkatzelesfrettschen/PhysicsForge/ff44918bcac62917cfc1dd6a8a6f0e847b43e14f/source_materials/pdfs/Tourmaline_Addendum.pdf",
+]
+notes = "Addendum framework document in CATALOG. Owner-maintained raw mirror used as authoritative fetch URL for reproducibility."
+
+# ==============================================================================
+# arXiv papers referenced in bibliography (added Phase 6)
+# ==============================================================================
+
+[[sources]]
+id = "arxiv_hull_townsend_9410167"
+arxiv_id = "hep-th/9410167"
+filename = "hep-th_9410167.pdf"
+target_relpath = "source_materials/pdfs/hep-th_9410167.pdf"
+extract_text_relpath = "source_materials/pdfs/extracted/hep-th_9410167.txt"
+urls = ["https://arxiv.org/pdf/hep-th/9410167"]
+notes = "Hull-Townsend U-duality paper (Nuclear Physics B 438, 1995)."
+
+[[sources]]
+id = "arxiv_damour_e10_0207267"
+arxiv_id = "hep-th/0207267"
+filename = "hep-th_0207267.pdf"
+target_relpath = "source_materials/pdfs/hep-th_0207267.pdf"
+extract_text_relpath = "source_materials/pdfs/extracted/hep-th_0207267.txt"
+urls = ["https://arxiv.org/pdf/hep-th/0207267"]
+notes = "Damour-Henneaux-Nicolai E10 paper (PRL 89, 2002)."
+
+[[sources]]
+id = "arxiv_west_e11_0104081"
+arxiv_id = "hep-th/0104081"
+filename = "hep-th_0104081.pdf"
+target_relpath = "source_materials/pdfs/hep-th_0104081.pdf"
+extract_text_relpath = "source_materials/pdfs/extracted/hep-th_0104081.txt"
+urls = ["https://arxiv.org/pdf/hep-th/0104081"]
+notes = "West E11 conjecture paper (CQG 18, 2001)."
+
+[[sources]]
+id = "arxiv_rovelli_smolin_9411005"
+arxiv_id = "gr-qc/9411005"
+filename = "gr-qc_9411005.pdf"
+target_relpath = "source_materials/pdfs/gr-qc_9411005.pdf"
+extract_text_relpath = "source_materials/pdfs/extracted/gr-qc_9411005.txt"
+urls = ["https://arxiv.org/pdf/gr-qc/9411005"]
+notes = "Rovelli-Smolin discreteness of area and volume (NP-B 442, 1995)."
+
+[[sources]]
+id = "arxiv_ashtekar_lewandowski_9602046"
+arxiv_id = "gr-qc/9602046"
+filename = "gr-qc_9602046.pdf"
+target_relpath = "source_materials/pdfs/gr-qc_9602046.pdf"
+extract_text_relpath = "source_materials/pdfs/extracted/gr-qc_9602046.txt"
+urls = ["https://arxiv.org/pdf/gr-qc/9602046"]
+notes = "Ashtekar-Lewandowski quantum geometry I (CQG 14, 1997)."
+
+[[sources]]
+id = "arxiv_reuter_9605030"
+arxiv_id = "hep-th/9605030"
+filename = "hep-th_9605030.pdf"
+target_relpath = "source_materials/pdfs/hep-th_9605030.pdf"
+extract_text_relpath = "source_materials/pdfs/extracted/hep-th_9605030.txt"
+urls = ["https://arxiv.org/pdf/hep-th/9605030"]
+notes = "Reuter asymptotic safety nonperturbative gravity (PRD 57, 1998)."
+
+[[sources]]
+id = "arxiv_sorkin_gr_qc_0309009"
+arxiv_id = "gr-qc/0309009"
+filename = "gr-qc_0309009.pdf"
+target_relpath = "source_materials/pdfs/gr-qc_0309009.pdf"
+extract_text_relpath = "source_materials/pdfs/extracted/gr-qc_0309009.txt"
+urls = ["https://arxiv.org/pdf/gr-qc/0309009"]
+notes = "Sorkin causal sets discrete gravity."
+
+[[sources]]
+id = "arxiv_ferrara_kallosh_9602136"
+arxiv_id = "hep-th/9602136"
+filename = "hep-th_9602136.pdf"
+target_relpath = "source_materials/pdfs/hep-th_9602136.pdf"
+extract_text_relpath = "source_materials/pdfs/extracted/hep-th_9602136.txt"
+urls = ["https://arxiv.org/pdf/hep-th/9602136"]
+notes = "Ferrara-Kallosh N=2 extremal black holes (PRD 54, 1996)."
+
+[[sources]]
+id = "arxiv_duff_ferrara_quant_ph_0609227"
+arxiv_id = "quant-ph/0609227"
+filename = "quant-ph_0609227.pdf"
+target_relpath = "source_materials/pdfs/quant-ph_0609227.pdf"
+extract_text_relpath = "source_materials/pdfs/extracted/quant-ph_0609227.txt"
+urls = ["https://arxiv.org/pdf/quant-ph/0609227"]
+notes = "Duff-Ferrara E7 and tripartite entanglement (PRD 76, 2007)."
+
+[[sources]]
+id = "arxiv_ambjorn_1203_3591"
+arxiv_id = "1203.3591"
+filename = "arxiv_1203.3591.pdf"
+target_relpath = "source_materials/pdfs/arxiv_1203.3591.pdf"
+extract_text_relpath = "source_materials/pdfs/extracted/arxiv_1203.3591.txt"
+urls = ["https://arxiv.org/pdf/1203.3591"]
+notes = "Ambjorn et al CDT nonperturbative quantum gravity (Physics Reports 519, 2012)."
+
+[[sources]]
+id = "arxiv_carlip_gr_qc_0108040"
+arxiv_id = "gr-qc/0108040"
+filename = "gr-qc_0108040.pdf"
+target_relpath = "source_materials/pdfs/gr-qc_0108040.pdf"
+extract_text_relpath = "source_materials/pdfs/extracted/gr-qc_0108040.txt"
+urls = ["https://arxiv.org/pdf/gr-qc/0108040"]
+notes = "Carlip quantum gravity progress report (RPP 64, 2001)."
+
+[[sources]]
+id = "arxiv_bertolini_1202_0807"
+arxiv_id = "1202.0807"
+filename = "arxiv_1202.0807.pdf"
+target_relpath = "source_materials/pdfs/arxiv_1202.0807.pdf"
+extract_text_relpath = "source_materials/pdfs/extracted/arxiv_1202.0807.txt"
+urls = ["https://arxiv.org/pdf/1202.0807"]
+notes = "Bertolini et al SO(10) proton stability (PRD 85, 2012)."
+
+[[sources]]
+id = "arxiv_jaffe_hep_th_0503158"
+arxiv_id = "hep-th/0503158"
+filename = "hep-th_0503158.pdf"
+target_relpath = "source_materials/pdfs/hep-th_0503158.pdf"
+extract_text_relpath = "source_materials/pdfs/extracted/hep-th_0503158.txt"
+urls = ["https://arxiv.org/pdf/hep-th/0503158"]
+notes = "Jaffe Casimir effect and quantum vacuum (PRD 72, 2005)."
+
+[[sources]]
+id = "arxiv_distler_0905_2658"
+arxiv_id = "0905.2658"
+filename = "arxiv_0905.2658.pdf"
+target_relpath = "source_materials/pdfs/arxiv_0905.2658.pdf"
+extract_text_relpath = "source_materials/pdfs/extracted/arxiv_0905.2658.txt"
+urls = ["https://arxiv.org/pdf/0905.2658"]
+notes = "Distler-Garibaldi reality check on Lisi E8 theory (CMP 298, 2010)."
+
+[[sources]]
+id = "arxiv_mashhoon_gr_qc_0311030"
+arxiv_id = "gr-qc/0311030"
+filename = "gr-qc_0311030.pdf"
+target_relpath = "source_materials/pdfs/gr-qc_0311030.pdf"
+extract_text_relpath = "source_materials/pdfs/extracted/gr-qc_0311030.txt"
+urls = ["https://arxiv.org/pdf/gr-qc/0311030"]
+notes = "Mashhoon gravitoelectromagnetism brief review."

@@ -26,12 +26,12 @@ class InvariantAnalyzer:
 
     @staticmethod
     def molien_series(
-        group_order: int, character_table: list[dict[str, Any]]
+        _group_order: int, _character_table: list[dict[str, Any]]
     ) -> Callable[[complex], complex]:
         """Compute the Molien series for a finite group representation."""
 
         # M(t) = (1/|G|) * sum_{g in G} 1 / det(I - t*g)
-        def placeholder(t: complex) -> complex:
+        def placeholder(_t: complex) -> complex:
             return 0j
 
         return placeholder

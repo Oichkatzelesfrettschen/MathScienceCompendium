@@ -1,0 +1,130 @@
+Characterization of Minerals, Metals, and Materials 2016
+Edited by: Shadia Jamil Ikhmayies, Bowen Li, John S. Carpenter, Jiann-Yang Hwang, Sergio Neves Monteiro, Jian Li,
+Donato Firrao, Mingming Zhang, Zhiwei Peng, Juan P. Escobedo-Diaz, and Chenguang Bai
+TMS (The Minerals, Metals & Materials Society), 2016
+
+ELECTRICAL EFFECT AND INFLUENCE FACTORS OF TOURMALINE
+Qi Lu 1, Bowen Li 2, Feng Bai 1
+2
+
+1
+China University of Geosciences, Beijing, 100083, China
+Michigan Technological University, Houghton, MI 49931, U.S.A
+
+Keywords: Tourmaline, Piezoelectricity, Dielectricity, Pyroelectric property
+Abstract
+Tourmaline is a crystalline boron silicate mineral with special electrical and optical behaviors. In
+this study, electrical performances of crystalline tourmaline samples from various deposit sites in
+China were evaluated. The results show that the piezoelectric constants of tourmalines, in a fixed
+crystalline direction, depend on their mineral species and the specialty elements in the crystal.
+The piezoelectric constant of dravite is higher than that of elbaite. The variety of piezoelectricity
+is resulted from the element type in crystal structure. Dielectric properties tests show that
+tourmaline is a low dielectric constant material and the dielectric constant is from 4×10-12pf/cm
+to 10×10-12pf/cm. The dielectric constant along C axis is higher than that in any other directions.
+Under room temperature, pyroelectric property of a crystal is proportional to the dielectric
+properties, and negatively correlated to the ferric oxide ratio.
+Introduction
+Tourmaline has piezoelectric and pyroelectric property because of its polar structure. The special
+electrical properties of tourmaline have been found for a long time. According to Schmidt
+records, Dutch found that tourmaline can attract dusts when it was heated and discharge powder
+when it was cooled down. A Japanese researcher, Kubo confirmed the tourmaline with
+spontaneous polarity through an experiment in 1992. It can be used in many areas, such as
+infrared radiation, release of negative ions, adsorption and activating water [1]. Thus it becomes
+one of the most important materials in environmental protection. In order to improve its
+performance, the electrical properties of tourmaline were investigated in this study.
+Experimental Procedure
+1. Characteristics of Tourmaline Samples
+Tourmaline samples used in the experiment were obtained from Nanyang (Henan province, HN),
+Gaoligong mountain (Yunnan province, YN) and Fuping (Hebei province, HB) in China.
+Samples of HN-1, YN-1, and HB-1 stand for the pure single crystals from Henan, Yunnan, and
+Hebei respectively. The chemical composition of samples was analyzed by X-ray fluorescence
+spectrometry (Instrument Philips PW2404).
+The results in Table I show that the main compositions in the samples are SiO2 and Al2O3 while
+containing a small amount of MnO and Na2O. In addition, HN-1 contains only trace amounts of
+Fe and Fe2O3 (0.031%). The iron content of YN-1 is less than that in HB-1, which contains the
+
+83
+
+highest MgO content. These characteristics indicated that these samples belong to different
+categories of tourmalines. According to the classification of tourmaline, HB-1 is dravite, while
+HN-1 and YN-1 are classified as elbaite [2] [3].
+Table I Chemical Components of Samples
+Samples
+SiO2
+TiO2
+Fe2O3
+FeO
+MnO
+MgO
+CaO
+Na2O
+K2O
+P2O5
+F
+loss
+total
+
+HN-1
+43.64
+0.031
+0.43
+0.72
+2.17
+0.04
+0.05
+4.09
+4.70
+98.601
+
+YN-1
+44.16
+0.011
+1.68
+1.75
+0.14
+0.029
+0.47
+2.55
+0.15
+0.16
+5.97
+99.34
+
+HB-1
+38.40
+0.99
+6.31
+10.08
+0.66
+2.13
+0.12
+0.01
+10.02
+99.40
+
+2. Piezoelectric Effect of Tourmalines
+2.1 Conditions for the Generation of Piezoelectric Effect
+Many crystal minerals such as tourmaline have polar structure. Under the action of pressure,
+electric charges can be produced due to crystal deformation. This phenomenon is called the
+piezoelectric effect. Variety of the piezoelectric effect depends on the external pressure and the
+polarization of the crystal minerals.
+Structure of tourmaline belongs to trigonal system, with a symmetry class of L33P and space
+group of R3m. This is a necessary factor for producing piezoelectric effect. Under room
+temperature, tourmaline is not conductive. The electric charges of the crystal surface will be
+distributed unevenly when it is placed under external pressure. Even a small external pressure, it
+can show piezoelectric effect because of its low crystalline symmetry.
+Any stress (tensile stress, compressive stress, or shear stress) applied to this kind of material can
+produce electric dipole. If the material is placed between two metals, the applied stress T and
+electric polarization P have a relationship as follows [4]:
+P =d T
+
+1
+
+Here, d is a constant, which is called piezoelectric modulus (Or piezoelectric strain coefficient),
+and its unit is N-1·C (Coulomb / Newton). It represents the intensity of the electrodes produced
+by the unit stress.
+2.2 Piezoelectric Properties of Different Species of Tourmalines
+
+84
+
+

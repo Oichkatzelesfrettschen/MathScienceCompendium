@@ -6,14 +6,14 @@ L-functions and Modular Forms Database (LMFDB).
 
 from __future__ import annotations
 
-from typing import Any
+from typing import Any, ClassVar
 
 
 class LMFDBBridge:
     """Verifies internal invariants against database standards."""
 
     # Standard data from LMFDB for exceptional groups
-    REFERENCE_DATA = {
+    REFERENCE_DATA: ClassVar[dict[str, dict]] = {
         "E8": {"degrees": [2, 8, 12, 14, 18, 20, 24, 30], "order": 696729600},
         "F4": {"degrees": [2, 6, 8, 12], "order": 1152},
         "G2": {"degrees": [2, 6], "order": 12},

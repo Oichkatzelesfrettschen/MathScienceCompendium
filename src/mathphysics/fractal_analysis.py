@@ -30,7 +30,7 @@ except ImportError:
     HAS_NUMBA = False
 
     # Define dummy decorators
-    def jit(func=None, **kwargs):
+    def jit(func=None, **_kwargs):
         if func is None:
             return lambda f: f
         return func
@@ -615,7 +615,7 @@ class FractalDimensionCalculator:
 
             # Count points in each box
             if grid_points.shape[1] == 2:
-                boxes, counts = np.unique(
+                _boxes, counts = np.unique(
                     grid_points[:, 0] * grid_size + grid_points[:, 1], return_counts=True
                 )
             elif grid_points.shape[1] == 3:
@@ -702,7 +702,7 @@ class SelfSimilarityAnalyzer:
                 translated = scaled + translation
 
                 # Find nearest neighbors
-                from scipy.spatial import KDTree
+                from scipy.spatial import KDTree  # noqa: PLC0415
 
                 tree = KDTree(centered)
                 distances, _ = tree.query(translated)
@@ -745,7 +745,7 @@ class SelfSimilarityAnalyzer:
             masses = np.array(masses)
 
             if len(masses) > 0 and np.mean(masses) > 0:
-                # Lacunarity = variance/mean^2 + 1
+                # Lacunarity = variance/mean^2 + 1  # noqa: ERA001
                 lac = np.var(masses) / (np.mean(masses) ** 2) + 1
                 lacunarities.append(lac)
             else:
@@ -780,7 +780,7 @@ def analyze_fractal_dimensions(output_dir: Path | None = None) -> dict[str, Any]
     results = {"cantor_dim": res.dimension, "r_squared": res.r_squared}
 
     if output_dir:
-        with open(output_dir / "fractal_analysis.json", "w") as f:
+        with (output_dir / "fractal_analysis.json").open("w") as f:
             json.dump(results, f, indent=2)
 
     return results
@@ -873,7 +873,7 @@ def run_dimension_analysis(output_dir: Path | None = None) -> None:
         print("Insufficient boundary points found")
 
     # Save results
-    with open(output_dir / "fractal_dimensions.json", "w") as f:
+    with (output_dir / "fractal_dimensions.json").open("w") as f:
         json.dump(results, f, indent=2)
 
     # Create summary table

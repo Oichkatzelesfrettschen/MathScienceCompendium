@@ -1,0 +1,392 @@
+generated_by = "scripts/build_registries.py"
+generated_at_utc = "2026-02-12T07:47:48.314880+00:00"
+
+[[artifacts]]
+kind = "figure"
+relpath = "figures/e11_cartan_pca.png"
+sha256 = "e96d3d27f2c8e31ef0f1440de2dd7c1aa6edc9a73573d82a59bfaca5af95ef60"
+size_bytes = 192633
+
+[[artifacts]]
+kind = "figure"
+relpath = "figures/e7_root_projection_figure_b.png"
+sha256 = "7ace9d7d203b3626b7a00372ebbeb1c46700dc6b685eecaba9bc3e5ac37feb5d"
+size_bytes = 386653
+
+[[artifacts]]
+kind = "interactive_artifact"
+relpath = "figures/e8_exceptional_interactive.html"
+sha256 = "6a38b6f375f4d365a73faa9543cb4bdc9a3b2ab7da2d7497febc5065d3aa7f4b"
+size_bytes = 4859091
+
+[[artifacts]]
+kind = "figure"
+relpath = "figures/e8_voronoi_grating.png"
+sha256 = "ad3d3e44f2fbb3d027b7d97d316d86397b7a641de5fc0c98ff99bfc11d526915"
+size_bytes = 103530
+
+[[artifacts]]
+kind = "interactive_artifact"
+relpath = "figures/lie_algebras_explorer.html"
+sha256 = "777c940d3d9434bc6cc88c7761479f96a98fc8d76d303dd3fd9ec8f63f2b2f94"
+size_bytes = 97943
+
+[[artifacts]]
+kind = "figure"
+relpath = "figures/vorticity_homology_barcode.png"
+sha256 = "68a80467dad2da1c047ab5df217fc889f581e4bafd90917b92749106d54bcc1f"
+size_bytes = 133952
+
+[[artifacts]]
+kind = "figure"
+relpath = "figures/vorticity_map_highres.png"
+sha256 = "6ec7edc6799132033ba0fee31f1ff1c85e1db56dfb869e2ef71f6877f0d21d45"
+size_bytes = 1007975
+
+[[artifacts]]
+kind = "figure"
+relpath = "figures/vorticity_psd_highres.png"
+sha256 = "d2d64c95d84ad638b8ef5b4d780101598927f68636e53e5958af4d6604ff219f"
+size_bytes = 2888658
+
+[[artifacts]]
+kind = "figure"
+relpath = "experiments/figures/genesis_harmonics_integration.png"
+sha256 = "858ac3e2be580c2722b1054a6e14d09743d1cc42c5ce2559730ae7680552d74c"
+size_bytes = 348224
+
+[[artifacts]]
+kind = "result_snapshot"
+relpath = "results/highres_lbm_000100.parquet"
+sha256 = "c7aeba862ffdee014df92d4be10549abd341d12dde8835fbebecd28ece7616c0"
+size_bytes = 5323874
+
+[[artifacts]]
+kind = "result_snapshot"
+relpath = "results/highres_lbm_000200.parquet"
+sha256 = "d647fddda11403a961620ac3e240789516809f9c0c4d302771675d38c2b58c49"
+size_bytes = 5309107
+
+[[artifacts]]
+kind = "result_snapshot"
+relpath = "results/highres_lbm_000300.parquet"
+sha256 = "6be05778380a3f86ea2af4ef3ef230702b3e78c02e9fdacc54121c7eaf313407"
+size_bytes = 5361841
+
+[[artifacts]]
+kind = "result_snapshot"
+relpath = "results/highres_lbm_000400.parquet"
+sha256 = "693336f6c9cd285b102f52703993e1e7fee8c700fbadf16befadea8b45298157"
+size_bytes = 5330979
+
+[[artifacts]]
+kind = "result_snapshot"
+relpath = "results/highres_lbm_000500.parquet"
+sha256 = "a06fa7253f6bc11cbd40961dbbc7268a2de572edf8247577d77564c358e80af9"
+size_bytes = 5287332
+
+[[artifacts]]
+kind = "result_snapshot"
+relpath = "results/unified_experiment.parquet"
+sha256 = "bda210577502ef4f6886553014d9cc27eefc10d4ff7a10d97292d023423a1ddf"
+size_bytes = 2260
+
+[[artifacts]]
+kind = "artifact"
+relpath = "papers/main-blx.bib"
+sha256 = "af5d6fbb5017b1d9afd9539298a0ceb59c7f352f1f07becb22dc94aae6644eda"
+size_bytes = 342
+
+[[artifacts]]
+kind = "artifact"
+relpath = "papers/main.aux"
+sha256 = "2edc5a3533b766f0a27a67b1e687b86abc2ec3558d0cedb2d3a63c640f8c3223"
+size_bytes = 82179
+
+[[artifacts]]
+kind = "artifact"
+relpath = "papers/main.bbl"
+sha256 = "3ef1d2c56e574282af0a63554f2c453bf7ddaf85d251a3d62404620f82f12321"
+size_bytes = 16170
+
+[[artifacts]]
+kind = "artifact"
+relpath = "papers/main.blg"
+sha256 = "badb7f9750b6e1ed277a4d7519f5c42b2ed25fbc5a670a2d8e075ce5048db83d"
+size_bytes = 2932
+
+[[artifacts]]
+kind = "artifact"
+relpath = "papers/main.lof"
+sha256 = "9d6e2abedc1c81329cd7d0cdd51b9ab8228e0a6a92c620dd4158fd4516ec1b25"
+size_bytes = 2964
+
+[[artifacts]]
+kind = "artifact"
+relpath = "papers/main.lot"
+sha256 = "7180b1547ed29f21d6e42f6f0de373ce65cce7580ed6ff134224e84b095ce498"
+size_bytes = 5800
+
+[[artifacts]]
+kind = "paper_or_source_pdf"
+relpath = "papers/main.pdf"
+sha256 = "8f576a5923f2b5d100a6c7a4610733fcafde5e4d043ae444a8dd17b6819fd323"
+size_bytes = 4248863
+
+[[artifacts]]
+kind = "artifact"
+relpath = "papers/main.run.xml"
+sha256 = "1c5a1606064e6b82f71dd5c32015439dd20af662449a0a9e66ef708e3bf5d5b9"
+size_bytes = 2528
+
+[[artifacts]]
+kind = "artifact"
+relpath = "papers/main.tex"
+sha256 = "9d2d9d56ce39bd31bbf44ba2cda9820f2ff8b506c317ee17a862b30376795a9e"
+size_bytes = 8461
+
+[[artifacts]]
+kind = "artifact"
+relpath = "papers/main.toc"
+sha256 = "e477b1465570fc8888ffbc60d386bdaa4274640e7b2071315b54b344c8340572"
+size_bytes = 37024
+
+[[artifacts]]
+kind = "artifact"
+relpath = "papers/references.bib"
+sha256 = "aa163ea93ff48562648905a067d22ee63fd3ed555b6215f40a6f0dcd83dbc9e6"
+size_bytes = 8066
+
+[[artifacts]]
+kind = "artifact"
+relpath = "papers/sections/appendix_computational.tex"
+sha256 = "675fcb782092f81855d396bee58d3c88d2976eb6b7c28175f537b66f013dabe2"
+size_bytes = 2877
+
+[[artifacts]]
+kind = "artifact"
+relpath = "papers/sections/appendix_data.tex"
+sha256 = "040425c95449b116f1387c3f685b8282e5c66aa331d5148750a1457f830a3e30"
+size_bytes = 1368
+
+[[artifacts]]
+kind = "artifact"
+relpath = "papers/sections/vol1_ch1_lie_algebras.tex"
+sha256 = "b273cee5dff8745441ab070564a2fc7663b1914191785a03b0339336773e1b17"
+size_bytes = 11688
+
+[[artifacts]]
+kind = "artifact"
+relpath = "papers/sections/vol1_ch2_cayley_dickson.tex"
+sha256 = "e39706c9aaf2872c364693ac585b5a72d90bddc5c2db77de422e75d0590a574f"
+size_bytes = 19036
+
+[[artifacts]]
+kind = "artifact"
+relpath = "papers/sections/vol1_ch3_modular_forms.tex"
+sha256 = "2dcdd12c3c6aed49e99c57fdbb5d2406508a9e3aaa8952d10f2b1fb0c70dbac3"
+size_bytes = 17379
+
+[[artifacts]]
+kind = "artifact"
+relpath = "papers/sections/vol1_ch4_fractal_geometry.tex"
+sha256 = "f6f1ccf701d7bf31357f1746c791c326adbb04dd7dfaccdbbc24ed65433196ad"
+size_bytes = 19871
+
+[[artifacts]]
+kind = "artifact"
+relpath = "papers/sections/vol2_ch5_e7_lie_algebra.tex"
+sha256 = "76b598a7f698488e0361442148d0d6cad0ff2e82fc9c2c21640439c036a0821e"
+size_bytes = 20298
+
+[[artifacts]]
+kind = "artifact"
+relpath = "papers/sections/vol2_ch5_superforce.tex"
+sha256 = "e1f024a70dffd2a42271f977f0a3d968c63f8f566097b2a143aade9e2ba5208e"
+size_bytes = 13108
+
+[[artifacts]]
+kind = "artifact"
+relpath = "papers/sections/vol2_ch6_quantum_encoding.tex"
+sha256 = "bb43221a7c2221bcf79b54bd1650031c549b6134b87caab19ec9328e0868b128"
+size_bytes = 28088
+
+[[artifacts]]
+kind = "artifact"
+relpath = "papers/sections/vol2_ch6_string_theory.tex"
+sha256 = "389f42287e11e5ced808fb263edbe2dfcdfc237e6c55f2a2000a3de47f8c675f"
+size_bytes = 1504
+
+[[artifacts]]
+kind = "artifact"
+relpath = "papers/sections/vol2_ch7_quantum_gravity.tex"
+sha256 = "c3b6dfa00584ef15e05b87c6af0225bf3c48afc6d8574b17ca39c6b7ebe91afb"
+size_bytes = 1396
+
+[[artifacts]]
+kind = "artifact"
+relpath = "papers/sections/vol3_ch10_predictions.tex"
+sha256 = "17e2910f2731b6f9ae25ac18127689c88cf0ed0240886493297bd92c9f4790d4"
+size_bytes = 31078
+
+[[artifacts]]
+kind = "artifact"
+relpath = "papers/sections/vol3_ch8_physical_regime.tex"
+sha256 = "2bf84389babfeff1af4a1473ee73a0a222d0fdaafc794e53b8284114156bb25d"
+size_bytes = 11997
+
+[[artifacts]]
+kind = "artifact"
+relpath = "papers/sections/vol3_ch9_experiments.tex"
+sha256 = "4832deb83c8db10f9ad5f2857dbe4534f4ff4e1e73f2d98401ce98883b08bd27"
+size_bytes = 31898
+
+[[artifacts]]
+kind = "artifact"
+relpath = "papers/sections/vol4_ch11_validation.tex"
+sha256 = "1966970d8d5583a1cfb6833a9fd4686f663a8456b1a7604284a587cfe4ef25fc"
+size_bytes = 18436
+
+[[artifacts]]
+kind = "artifact"
+relpath = "papers/sections/vol4_ch12_unresolved.tex"
+sha256 = "a0b52a9d50573121bd595e444c43b553d7db7327bf69949ceb65f9ec9f0194cf"
+size_bytes = 41416
+
+[[artifacts]]
+kind = "artifact"
+relpath = "papers/sections/vol4_ch13_future.tex"
+sha256 = "be10cce5ff980bd02d94d9b5f08797d624f92e667d0dc0dc3d22047a1c0fa50d"
+size_bytes = 74561
+
+[[artifacts]]
+kind = "paper_or_source_pdf"
+relpath = "source_materials/pdfs/094101_1_accepted_manuscript.pdf"
+sha256 = "8ec8b02db96d399d3d510973b9d523560cda0d1564030f5300f38229ec54fc5e"
+size_bytes = 4300635
+
+[[artifacts]]
+kind = "paper_or_source_pdf"
+relpath = "source_materials/pdfs/1111.4064v2.pdf"
+sha256 = "96257d6e694f74eb65ba99e87a40e7003745e85abccd2356c918c56ed5eede05"
+size_bytes = 678640
+
+[[artifacts]]
+kind = "paper_or_source_pdf"
+relpath = "source_materials/pdfs/978-3-319-48210-1_10.pdf"
+sha256 = "3f4cb6db41b894b29bd9eb658d2d629c814e6553316847cfaa75398c1ce8faeb"
+size_bytes = 61579
+
+[[artifacts]]
+kind = "paper_or_source_pdf"
+relpath = "source_materials/pdfs/Comment_on_the_Pais_Superforce_Theory.pdf"
+sha256 = "ca32b85da9dc732509ea4560184c160e2e503f56bea861c7a05542040f9e9b75"
+size_bytes = 2975994
+
+[[artifacts]]
+kind = "paper_or_source_pdf"
+relpath = "source_materials/pdfs/Phys-140A-lecture-14v3.pdf"
+sha256 = "3f789aedd14872d1a56c24ce62f293dac7dc6e3a6bcaa9f60b18afaf5684c859"
+size_bytes = 562639
+
+[[artifacts]]
+kind = "artifact"
+relpath = "source_materials/pdfs/README.md"
+sha256 = "433416f7b49987b0e06df505a86444cfeee8162c2ffeaf3a83c623bc60ccc4d7"
+size_bytes = 532
+
+[[artifacts]]
+kind = "paper_or_source_pdf"
+relpath = "source_materials/pdfs/SUPERFORCE---S.C.Pais---2023.pdf"
+sha256 = "8ea4fecbd504b2dfa73941f856befe5bee23b1ebffa8a6a8bbd19e185a675176"
+size_bytes = 238900
+
+[[artifacts]]
+kind = "paper_or_source_pdf"
+relpath = "source_materials/pdfs/Superframework-Foam-Octonions.pdf"
+sha256 = "571c445f4d8ac3a85efc955806783efc8f2bda7d94547056823e4e7a47e0fea8"
+size_bytes = 589691
+
+[[artifacts]]
+kind = "paper_or_source_pdf"
+relpath = "source_materials/pdfs/Superframework_Expansion.pdf"
+sha256 = "8732128532cccd5f22b1f333735f444aa2268b72097020256f072a08a2024297"
+size_bytes = 213767
+
+[[artifacts]]
+kind = "paper_or_source_pdf"
+relpath = "source_materials/pdfs/Tourmaline.pdf"
+sha256 = "11dfbf3969c24812b66f30a1dcf33c4685f4125bb82dc4b5e25ba05498870fdf"
+size_bytes = 251872
+
+[[artifacts]]
+kind = "paper_or_source_pdf"
+relpath = "source_materials/pdfs/Tourmaline_Addendum.pdf"
+sha256 = "04b077226a4047d29a9dbbb40331eda24445240a9accf518728c0597fc34550b"
+size_bytes = 132341
+
+[[artifacts]]
+kind = "artifact"
+relpath = "source_materials/pdfs/extracted/094101_1_accepted_manuscript.txt"
+sha256 = "5291cfe28182a95c694d0b34461fa25a035cab2ac71201486aae4d7e0c5839c7"
+size_bytes = 28275
+
+[[artifacts]]
+kind = "artifact"
+relpath = "source_materials/pdfs/extracted/1111.4064v2.txt"
+sha256 = "ce45a9c17d4513f9f2aa34bad76f013803eeb651743d50bfdde58f8f52b908e5"
+size_bytes = 24099
+
+[[artifacts]]
+kind = "artifact"
+relpath = "source_materials/pdfs/extracted/978-3-319-48210-1_10.txt"
+sha256 = "bd97448e307da6c3c3be3705ea996504d05674fd57c52aa5f6f3fc8afe195abb"
+size_bytes = 5006
+
+[[artifacts]]
+kind = "artifact"
+relpath = "source_materials/pdfs/extracted/Comment_on_the_Pais_Superforce_Theory.txt"
+sha256 = "92cc9bbac8cf63766f5d49ea300b44ec40e763953f10b356f8403206dd6af627"
+size_bytes = 2325
+
+[[artifacts]]
+kind = "artifact"
+relpath = "source_materials/pdfs/extracted/Phys-140A-lecture-14v3.txt"
+sha256 = "6190c4635ad0f4fbc0046b34d69bf300d6467dd20976fcd1da909eaff1adb5ba"
+size_bytes = 16399
+
+[[artifacts]]
+kind = "artifact"
+relpath = "source_materials/pdfs/extracted/README.md"
+sha256 = "bb6724842aff12230d1796b2789a4f185c7d2a7d774ae56bf46ba39e73e32306"
+size_bytes = 246
+
+[[artifacts]]
+kind = "artifact"
+relpath = "source_materials/pdfs/extracted/SUPERFORCE---S.C.Pais---2023.txt"
+sha256 = "48742a8ac31ea609cf3214c90aee844792e328dcfafcad79efdcf195f503c610"
+size_bytes = 8540
+
+[[artifacts]]
+kind = "artifact"
+relpath = "source_materials/pdfs/extracted/Superframework-Foam-Octonions.txt"
+sha256 = "5c7e7284298a18eab382fcea7819a8d066521964086552ffffd93912ff8461a3"
+size_bytes = 11994
+
+[[artifacts]]
+kind = "artifact"
+relpath = "source_materials/pdfs/extracted/Superframework_Expansion.txt"
+sha256 = "934499f298526d4d308bb7c1d2a44cff2e398f09c165db8ab12c9db7ca1f8230"
+size_bytes = 26790
+
+[[artifacts]]
+kind = "artifact"
+relpath = "source_materials/pdfs/extracted/Tourmaline.txt"
+sha256 = "51a27733ff8f3cf8294a801d37d2bdae168a4360ddddd57959870b003e84d214"
+size_bytes = 34492
+
+[[artifacts]]
+kind = "artifact"
+relpath = "source_materials/pdfs/extracted/Tourmaline_Addendum.txt"
+sha256 = "e5647221b34b20c8d0d2c71318b9ed0529cc8ed5817b46521e7b61e624021c81"
+size_bytes = 3240

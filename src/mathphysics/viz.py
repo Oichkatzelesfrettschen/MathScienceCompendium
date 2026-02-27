@@ -102,7 +102,7 @@ class Visualizer:
             linewidth=0.5,
         )
 
-        label = "Harmonic Weight" if weights is not None else "Root Norm ||α||"
+        label = "Harmonic Weight" if weights is not None else "Root Norm ||\u03b1||"
         plt.colorbar(scatter, label=label)
         ax.set_title(title, pad=20)
         ax.set_xlabel("Principal Component 1")
@@ -127,7 +127,7 @@ class Visualizer:
 
         if y_err is not None:
             ax.fill_between(
-                x, y - y_err, y + y_err, color=self.colors[0], alpha=0.2, label="1σ Confidence"
+                x, y - y_err, y + y_err, color=self.colors[0], alpha=0.2, label="1\u03c3 Confidence"
             )
             ax.errorbar(x, y, yerr=y_err, fmt="none", ecolor=self.colors[0], alpha=0.5, capsize=3)
 
@@ -171,8 +171,8 @@ class Visualizer:
     def plot_interactive_roots(self, roots: np.ndarray, name: str = "roots"):
         """Generate high-resolution interactive HTML plot."""
         try:
-            import pandas as pd
-            import plotly.express as px
+            import pandas as pd  # noqa: PLC0415
+            import plotly.express as px  # noqa: PLC0415
 
             pca = PCA(n_components=3)
             r3d = pca.fit_transform(roots)
@@ -197,7 +197,7 @@ class Visualizer:
 
     def plot_voronoi_2d(self, points: np.ndarray, title: str = "Voronoi Tesselation") -> plt.Figure:
         """Plot 2D Voronoi diagram of projected roots/lattice points."""
-        from scipy.spatial import Voronoi, voronoi_plot_2d
+        from scipy.spatial import Voronoi, voronoi_plot_2d  # noqa: PLC0415
 
         pca = PCA(n_components=2)
         pts_2d = pca.fit_transform(points)
@@ -234,7 +234,7 @@ class Visualizer:
         ax.set_xlabel("Scale (ε)")
         ax.set_ylabel("Feature Index")
         # Custom legend for dimensions
-        from matplotlib.lines import Line2D
+        from matplotlib.lines import Line2D  # noqa: PLC0415
 
         legend_elements = [
             Line2D([0], [0], color=self.colors[0], lw=2, label="H0 (Components)"),
@@ -255,7 +255,7 @@ def create_all_plots():
     viz = Visualizer()
 
     # 1. Roots
-    from .algebras.roots import E8RootSystem
+    from .algebras.roots import E8RootSystem  # noqa: PLC0415
 
     e8 = E8RootSystem()
     fig = viz.plot_roots_2d(e8.generate_roots(), "E8 Root System (240 Roots)")

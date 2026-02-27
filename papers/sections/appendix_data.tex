@@ -1,2 +1,347 @@
-% Chapter stub for appendix_data.tex
-% To be developed
+% ==============================================================================
+% Appendix B: Data Inventory, Provenance, and Reproduction Notes
+% ==============================================================================
+
+\chapter{Data Inventory, Provenance, and Reproduction Notes}
+\label{app:data_inventory}
+
+This appendix documents every data artifact used in the compendium:
+where each file lives, how it was generated, its SHA-256 digest (as of
+last \texttt{make repro-refresh}), and the commands needed to reproduce it
+from scratch.  The canonical provenance record is
+\texttt{data/external/PROVENANCE.json}, which is regenerated automatically
+by \texttt{make fetch-all}.
+
+% ==============================================================================
+\section{Repository Data Zones}
+\label{app:data_zones}
+% ==============================================================================
+
+\begin{table}[ht]
+\centering
+\begin{tabular}{p{5.5cm}p{8cm}}
+\toprule
+\textbf{Path} & \textbf{Contents and Purpose} \\
+\midrule
+\texttt{source\_materials/frameworks/} &
+    Raw framework text corpus (8 documents, $> 200$k lines).
+    Do not edit; read-only input for corpus analysis. \\
+\texttt{source\_materials/pdfs/} &
+    Cached PDF source documents.
+    Populated by \texttt{make fetch-all}. \\
+\texttt{source\_materials/pdfs/extracted/} &
+    Plain-text extractions from cached PDFs (via \texttt{pdftotext}). \\
+\texttt{data/external/} &
+    Download manifest (\texttt{sources.toml}) and provenance log
+    (\texttt{PROVENANCE.json}). \\
+\texttt{data/normalized/} &
+    Machine-normalized JSON corpus records (one per framework document). \\
+\texttt{data/registry/} &
+    Generated TOML indexes: simulation registry, figure registry. \\
+\texttt{results/} &
+    Simulation result snapshots (Parquet format). \\
+\texttt{figures/} &
+    Generated figure files (PNG, PDF, SVG) and interactive HTML. \\
+\texttt{schemas/} &
+    JSON Schema definitions for corpus, provenance, and artifact records. \\
+\bottomrule
+\end{tabular}
+\caption{Repository data zones and their purposes.}
+\label{tab:data_zones}
+\end{table}
+
+% ==============================================================================
+\section{Source PDF Inventory}
+\label{app:pdf_inventory}
+% ==============================================================================
+
+Table~\ref{tab:pdf_inventory} lists every PDF source document tracked in
+\texttt{data/external/sources.toml} with SHA-256 digests from
+\texttt{PROVENANCE.json} (generated 2026-02-12).
+
+\begin{longtable}{p{4cm}p{2.2cm}p{6.5cm}}
+\toprule
+\textbf{Source ID} & \textbf{Size} & \textbf{SHA-256 (first 16 hex)} \\
+\midrule
+\endhead
+\texttt{pais\_superforce\_2023} &
+    233~KB &
+    \texttt{8ea4fecbd504b2df}\ldots \\
+\texttt{brandenburg\_comment\_superforce} &
+    2.8~MB &
+    \texttt{ca32b85da9dc7325}\ldots \\
+\texttt{phys\_140a\_lecture\_14v3} &
+    --- &
+    Not yet downloaded \\
+\texttt{arxiv\_1111\_4064v2} &
+    663~KB &
+    \texttt{96257d6e694f74eb}\ldots \\
+\texttt{doi\_10\_1063\_5\_0038222} &
+    4.1~MB &
+    \texttt{8ec8b02db96d399d}\ldots \\
+\texttt{springer\_978-3-319-48210-1\_ch10} &
+    --- &
+    Not yet downloaded \\
+\texttt{superframework\_expansion} &
+    --- &
+    Not yet downloaded \\
+\texttt{superframework\_foam\_octonions} &
+    --- &
+    Not yet downloaded \\
+\texttt{tourmaline} &
+    --- &
+    Not yet downloaded \\
+\texttt{tourmaline\_addendum} &
+    --- &
+    Not yet downloaded \\
+\bottomrule
+\caption{PDF source inventory with SHA-256 digests (truncated).
+    Full digests in \texttt{data/external/PROVENANCE.json}.}
+\label{tab:pdf_inventory}
+\end{longtable}
+
+\begin{verbatim}
+# Re-fetch all PDFs and update PROVENANCE.json:
+make fetch-all
+
+# Verify all cached PDFs against recorded SHA-256:
+make verify-checksums
+\end{verbatim}
+
+% ==============================================================================
+\section{Schema Definitions}
+\label{app:schemas}
+% ==============================================================================
+
+Three JSON Schema files govern data structure validation:
+
+\begin{enumerate}
+    \item \textbf{\texttt{schemas/corpus\_document.schema.json}}:
+          Validates each entry in \texttt{data/normalized/}.
+          Required fields: \texttt{id}, \texttt{title}, \texttt{source\_path},
+          \texttt{word\_count}, \texttt{sections}.
+    \item \textbf{\texttt{schemas/provenance\_record.schema.json}}:
+          Validates each entry in \texttt{PROVENANCE.json}.
+          Required fields: \texttt{id}, \texttt{sha256}, \texttt{size\_bytes},
+          \texttt{fetched\_at\_utc}, \texttt{source\_url}, \texttt{status}.
+    \item \textbf{\texttt{schemas/artifact\_entry.schema.json}}:
+          Validates figure and result registry entries.
+          Required fields: \texttt{artifact\_id}, \texttt{path},
+          \texttt{generated\_by}, \texttt{sha256}, \texttt{timestamp}.
+\end{enumerate}
+
+Schema validation is run by \texttt{make verify-offline}:
+\begin{verbatim}
+python -m jsonschema -i data/external/PROVENANCE.json \
+    schemas/provenance_record.schema.json
+\end{verbatim}
+
+% ==============================================================================
+\section{Generated Figures Inventory}
+\label{app:figures_inventory}
+% ==============================================================================
+
+\begin{longtable}{p{5.5cm}p{2cm}p{5.5cm}}
+\toprule
+\textbf{File} & \textbf{Format} & \textbf{Generating Command} \\
+\midrule
+\endhead
+\texttt{figures/lie\_algebras\_explorer.html} &
+    HTML & \texttt{make figures} via
+    \texttt{generate\_interactive\_explorer.py} \\
+\texttt{figures/e7\_root\_system.png} &
+    PNG (300~dpi) & \texttt{make figures} via \texttt{viz.plot\_root\_system()} \\
+\texttt{figures/e8\_root\_system.png} &
+    PNG (300~dpi) & \texttt{make figures} \\
+\texttt{figures/e8\_exceptional\_interactive.html} &
+    HTML & \texttt{make figures} via \texttt{generate\_interactive\_explorer.py} \\
+\texttt{figures/dynkin\_e7.pdf} &
+    PDF (TikZ) & \texttt{make papers} \\
+\texttt{figures/dynkin\_e8.pdf} &
+    PDF (TikZ) & \texttt{make papers} \\
+\texttt{figures/lbm\_vorticity.png} &
+    PNG (300~dpi) & \texttt{make highres} via simulation run \\
+\texttt{figures/rhines\_spectrum.png} &
+    PNG (300~dpi) & \texttt{make highres} \\
+\texttt{figures/fractal\_hausdorff.png} &
+    PNG (300~dpi) & \texttt{make figures} via \texttt{fractal\_analysis.py} \\
+\texttt{figures/modular\_j\_invariant.png} &
+    PNG (300~dpi) & \texttt{make figures} via \texttt{modular\_forms.py} \\
+\bottomrule
+\caption{Generated figures, their formats, and the commands that produce them.}
+\label{tab:figures_inventory}
+\end{longtable}
+
+% ==============================================================================
+\section{Simulation Results Inventory}
+\label{app:results_inventory}
+% ==============================================================================
+
+Simulation outputs are stored as Apache Parquet files under
+\texttt{results/}.  Each file is registered in
+\texttt{data/registry/simulation\_registry.toml} with:
+
+\begin{itemize}
+    \item \texttt{run\_id}: UUID of the simulation run,
+    \item \texttt{scenario}: \texttt{"A"} (E7 forcing), \texttt{"B"}
+          (E8 forcing), or \texttt{"C"} (comparison),
+    \item \texttt{grid}: e.g., \texttt{"256x256"} or \texttt{"512x512"},
+    \item \texttt{steps}: number of LBM steps,
+    \item \texttt{sha256}: SHA-256 of the Parquet file,
+    \item \texttt{generated\_at}: ISO-8601 timestamp,
+    \item \texttt{git\_commit}: commit hash of the code that generated it.
+\end{itemize}
+
+\begin{verbatim}
+# View simulation registry:
+cat data/registry/simulation_registry.toml
+
+# Re-run a specific scenario:
+python -m mathphysics.main --scenario A --grid 256 --steps 1000
+\end{verbatim}
+
+% ==============================================================================
+\section{Provenance Requirements}
+\label{app:provenance}
+% ==============================================================================
+
+Every external artifact must record:
+\begin{enumerate}
+    \item \textbf{Source URL}: canonical fetch location (arXiv, DOI, or
+          commit-pinned mirror),
+    \item \textbf{Retrieval timestamp}: ISO-8601 UTC,
+    \item \textbf{File size}: bytes,
+    \item \textbf{SHA-256 digest}: full 64-hex-character hash,
+    \item \textbf{Local cache path}: relative to repository root.
+\end{enumerate}
+
+The \texttt{scripts/fetch\_external\_sources.py} script enforces these
+requirements for all entries in \texttt{sources.toml}.
+
+% ==============================================================================
+\section{Reproducibility Recipes}
+\label{app:repro_recipes}
+% ==============================================================================
+
+\subsection{Full Clean Rebuild}
+
+Starting from a fresh clone, reproduce all artifacts:
+
+\begin{verbatim}
+# 1. Install Python dependencies (pinned versions):
+pip install -r requirements-lock.txt
+
+# 2. Fetch all external PDFs:
+make fetch-all
+
+# 3. Extract text from PDFs:
+make extract-text
+
+# 4. Run all analysis modules:
+make run-all
+
+# 5. Generate all figures and explorer:
+make figures
+
+# 6. Compile the LaTeX document:
+make papers
+
+# 7. Verify checksums:
+make verify-checksums
+\end{verbatim}
+
+\subsection{Docker-Based Reproducibility}
+
+A fully reproducible environment is available via Docker:
+\begin{verbatim}
+# Build the image (Python + TeX Live + pdftotext):
+docker compose build
+
+# Run the full pipeline:
+docker compose run --rm build make cleanbuild
+
+# Run tests only:
+docker compose run --rm test make test
+\end{verbatim}
+
+The \texttt{Dockerfile} pins Python, TeX Live, and system package versions;
+see \texttt{Dockerfile} and \texttt{compose.yaml} in the repository root.
+
+\subsection{Offline Verification}
+
+To verify integrity of all cached artifacts without network access:
+\begin{verbatim}
+make verify-offline
+\end{verbatim}
+
+This checks:
+\begin{enumerate}
+    \item SHA-256 of all PDFs in \texttt{source\_materials/pdfs/} against
+          \texttt{PROVENANCE.json},
+    \item SHA-256 of all Parquet files in \texttt{results/} against
+          \texttt{simulation\_registry.toml},
+    \item JSON Schema validity of all normalized corpus records,
+    \item That all \verb|\cite{}| keys in LaTeX source have entries in
+          \texttt{references.bib}.
+\end{enumerate}
+
+% ==============================================================================
+\section{Corpus Text Extraction}
+\label{app:corpus_extraction}
+% ==============================================================================
+
+PDF text is extracted using \texttt{pdftotext} (poppler-utils):
+\begin{verbatim}
+pdftotext -layout source_materials/pdfs/INPUTFILE.pdf \
+    source_materials/pdfs/extracted/INPUTFILE.txt
+\end{verbatim}
+
+Extracted text files are then processed by the analysis pipeline and
+stored as JSON corpus records in \texttt{data/normalized/}.
+
+\subsection{Extraction Quality}
+
+Known extraction issues:
+\begin{itemize}
+    \item Mathematical symbols may be garbled (use source PDFs for
+          formula verification),
+    \item Multi-column layouts may merge lines incorrectly (use
+          \texttt{-raw} flag as fallback),
+    \item Scanned PDFs (no embedded text) require OCR; not currently
+          in the pipeline.
+\end{itemize}
+
+% ==============================================================================
+\section{Environment and Dependency Pinning}
+\label{app:deps}
+% ==============================================================================
+
+\begin{table}[ht]
+\centering
+\begin{tabular}{lcc}
+\toprule
+\textbf{Component} & \textbf{Minimum Version} & \textbf{Purpose} \\
+\midrule
+Python & 3.11 & All modules \\
+NumPy & 1.26 & Array operations \\
+SciPy & 1.12 & Spectral analysis \\
+Matplotlib & 3.8 & Figure generation \\
+Pandas & 2.1 & DataFrame operations \\
+PyArrow & 14.0 & Parquet I/O \\
+JAX & 0.4.25 & GPU-accelerated LBM \\
+Qiskit & 1.0 & Quantum circuits \\
+Scikit-learn & 1.4 & PCA for explorer \\
+pdflatex (TeX Live) & 2024 & Paper compilation \\
+bibtex & 0.99 & Bibliography \\
+pdftotext (poppler) & 23.0 & Text extraction \\
+\bottomrule
+\end{tabular}
+\caption{Key dependencies with minimum versions for reproducibility.}
+\label{tab:dependencies}
+\end{table}
+
+Pinned versions are in \texttt{requirements-lock.txt} (generated by
+\texttt{pip-compile pyproject.toml}).  Update with:
+\begin{verbatim}
+pip-compile --upgrade pyproject.toml -o requirements-lock.txt
+\end{verbatim}

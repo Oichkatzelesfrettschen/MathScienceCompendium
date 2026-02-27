@@ -4,12 +4,9 @@ from __future__ import annotations
 import unittest
 
 # Import modules to test
-from mathphysics.quantum_e8_circuits import (
-    E8QuantumAlgorithms
-)
-from mathphysics.quantum_simulation import (
-    UnifiedSimulation
-)
+from mathphysics.quantum_e8_circuits import E8QuantumAlgorithms
+from mathphysics.quantum_simulation import UnifiedSimulation
+
 
 class TestIntegration(unittest.TestCase):
     """Test full integration loop."""

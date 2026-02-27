@@ -1,0 +1,86 @@
+generated_by = "scripts/build_registries.py"
+generated_at_utc = "2026-02-12T07:47:48.315030+00:00"
+
+[[experiments]]
+kind = "result_snapshot"
+relpath = "results/highres_lbm_000100.parquet"
+sha256 = "c7aeba862ffdee014df92d4be10549abd341d12dde8835fbebecd28ece7616c0"
+size_bytes = 5323874
+
+[[experiments]]
+kind = "result_snapshot"
+relpath = "results/highres_lbm_000200.parquet"
+sha256 = "d647fddda11403a961620ac3e240789516809f9c0c4d302771675d38c2b58c49"
+size_bytes = 5309107
+
+[[experiments]]
+kind = "result_snapshot"
+relpath = "results/highres_lbm_000300.parquet"
+sha256 = "6be05778380a3f86ea2af4ef3ef230702b3e78c02e9fdacc54121c7eaf313407"
+size_bytes = 5361841
+
+[[experiments]]
+kind = "result_snapshot"
+relpath = "results/highres_lbm_000400.parquet"
+sha256 = "693336f6c9cd285b102f52703993e1e7fee8c700fbadf16befadea8b45298157"
+size_bytes = 5330979
+
+[[experiments]]
+kind = "result_snapshot"
+relpath = "results/highres_lbm_000500.parquet"
+sha256 = "a06fa7253f6bc11cbd40961dbbc7268a2de572edf8247577d77564c358e80af9"
+size_bytes = 5287332
+
+[[experiments]]
+kind = "result_snapshot"
+relpath = "results/unified_experiment.parquet"
+sha256 = "bda210577502ef4f6886553014d9cc27eefc10d4ff7a10d97292d023423a1ddf"
+size_bytes = 2260
+
+[[experiments]]
+kind = "experiment_json"
+relpath = "experiments/quantum_lbm_results.json"
+sha256 = "e87ac2f6ad58668e14d421de24d35c89be7af05afc724a5e39ef23e1e9845cda"
+size_bytes = 5646639
+
+[[experiments]]
+kind = "experiment_json"
+relpath = "experiments/quantum_lbm_stable_results.json"
+sha256 = "7494710c2a0b9b5068418af63954259aff52cbdbba9275eba42a476ec3e05400"
+size_bytes = 1710
+
+[[experiments]]
+kind = "experiment_json"
+relpath = "experiments/results/cayley_dickson_real_validation.json"
+sha256 = "6a47e7dd41f0354d9b00d96023ef8bc8b4c44ddbdae02eefe799d1b8dcb8a9e8"
+size_bytes = 77
+
+[[experiments]]
+kind = "experiment_json"
+relpath = "experiments/results/e8_analysis.json"
+sha256 = "9759bfc1010db16167934e5cb038cf0a39a187af7d68fbe4a2471aca45f18c46"
+size_bytes = 2292
+
+[[experiments]]
+kind = "experiment_json"
+relpath = "experiments/results/fractal_dimensions.json"
+sha256 = "eee9db0f0c0f8392e18a5659f5d9bdf266523fe9a9cc6d8134eaffe8662c838c"
+size_bytes = 7665
+
+[[experiments]]
+kind = "experiment_json"
+relpath = "experiments/results/modular_forms_analysis.json"
+sha256 = "f465f6f99069e6fcabb1c3c68ccd3575d5c1d10f0c01c8484b6f56b65c2d76e4"
+size_bytes = 3190
+
+[[experiments]]
+kind = "experiment_json"
+relpath = "experiments/data/genesis_advanced_analysis.json"
+sha256 = "d3f99ed396e1b9c8acf15e3276b9eba6dc51af9a5faa24dd4ccb4390c598f35c"
+size_bytes = 62923
+
+[[experiments]]
+kind = "experiment_json"
+relpath = "experiments/data/genesis_harmonics_e7.json"
+sha256 = "63c56b1cf79e1e0d4d84afd9f6db2125e6b8a80da109cdb3b4426409377c0696"
+size_bytes = 62872

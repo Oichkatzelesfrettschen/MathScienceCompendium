@@ -14,40 +14,54 @@
 \addvspace {10\p@ }
 \contentsline {table}{\numberline {5.1}{\ignorespaces Planck force in different quantum gravity frameworks}}{45}{table.5.1}%
 \addvspace {10\p@ }
-\contentsline {table}{\numberline {6.1}{\ignorespaces Algebraic Taxonomy: Classification of turbulence regimes via modular selection rules.}}{52}{table.6.1}%
+\contentsline {table}{\numberline {6.1}{\ignorespaces Kac--Moody extension hierarchy of $\ensuremath {E_{8}}$, with physics evidence status.}}{52}{table.6.1}%
+\contentsline {table}{\numberline {6.2}{Claim-by-claim status table for string theory integration.}}{54}{table.6.2}%
 \addvspace {10\p@ }
-\contentsline {table}{\numberline {7.1}{\ignorespaces Computational framework module architecture}}{58}{table.7.1}%
-\contentsline {table}{\numberline {7.2}{\ignorespaces Property verification across Cayley-Dickson sequence. Comm. = Commutative; Assoc. = Associative; Alt. = Alternative; Zero Div. = Has zero divisors.}}{60}{table.7.2}%
-\contentsline {table}{\numberline {7.3}{\ignorespaces Quaternion multiplication table (verified computationally)}}{60}{table.7.3}%
-\contentsline {table}{\numberline {7.4}{\ignorespaces E$_8$ computational verification results}}{62}{table.7.4}%
-\contentsline {table}{\numberline {7.5}{\ignorespaces Fractal dimension verification: theoretical vs. computational}}{63}{table.7.5}%
-\contentsline {table}{\numberline {7.6}{\ignorespaces Fractal dimensions of strange attractors}}{64}{table.7.6}%
-\contentsline {table}{\numberline {7.7}{\ignorespaces E$_8$ lattice verification}}{65}{table.7.7}%
-\contentsline {table}{\numberline {7.8}{\ignorespaces j-invariant q-expansion verification (first 6 coefficients)}}{66}{table.7.8}%
-\contentsline {table}{\numberline {7.9}{\ignorespaces Computational complexity and typical execution times}}{68}{table.7.9}%
-\contentsline {table}{\numberline {7.10}{\ignorespaces Comprehensive claim verification summary}}{69}{table.7.10}%
-\contentsline {table}{\numberline {7.11}{\ignorespaces Claims rejected or requiring correction}}{69}{table.7.11}%
-\contentsline {table}{\numberline {7.12}{\ignorespaces Comparison of Scenario A theoretical predictions vs. experimental results}}{70}{table.7.12}%
+\contentsline {table}{\numberline {7.1}{\ignorespaces Planck-scale quantities and their dimensions.}}{63}{table.7.1}%
+\contentsline {table}{\numberline {7.2}{\ignorespaces Evidence taxonomy for quantum-gravity claims.}}{64}{table.7.2}%
+\contentsline {table}{\numberline {7.3}{Falsification criteria for quantum-gravity claims.}}{64}{table.7.3}%
 \addvspace {10\p@ }
-\contentsline {table}{\numberline {8.1}{\ignorespaces Historical examples of successful quantitative predictions}}{74}{table.8.1}%
-\contentsline {table}{\numberline {8.2}{\ignorespaces Alpha Framework prediction assessment}}{75}{table.8.2}%
-\contentsline {table}{\numberline {8.3}{\ignorespaces Genesis Framework prediction assessment}}{75}{table.8.3}%
-\contentsline {table}{\numberline {8.4}{\ignorespaces Pais Superforce prediction assessment}}{75}{table.8.4}%
-\contentsline {table}{\numberline {8.5}{\ignorespaces Tourmaline framework predictions}}{76}{table.8.5}%
-\contentsline {table}{\numberline {8.6}{\ignorespaces Tourmaline material predictions vs. known properties}}{78}{table.8.6}%
-\contentsline {table}{\numberline {8.7}{\ignorespaces Current experimental capabilities and scales}}{78}{table.8.7}%
-\contentsline {table}{\numberline {8.8}{\ignorespaces Testability assessment of framework predictions}}{79}{table.8.8}%
-\contentsline {table}{\numberline {8.9}{\ignorespaces Weakly falsifiable claims with potential loopholes}}{79}{table.8.9}%
-\contentsline {table}{\numberline {8.10}{\ignorespaces Comparison of predictions: frameworks vs. established physics}}{81}{table.8.10}%
-\contentsline {table}{\numberline {8.11}{\ignorespaces Prediction quality assessment. *Planck force is dimensional analysis, already known. **Material properties were already known.}}{84}{table.8.11}%
-\contentsline {table}{\numberline {8.12}{\ignorespaces Comparison with string theory}}{85}{table.8.12}%
+\contentsline {table}{\numberline {8.1}{\ignorespaces Algebraic Taxonomy: Classification of turbulence regimes via modular selection rules.}}{72}{table.8.1}%
 \addvspace {10\p@ }
-\contentsline {table}{\numberline {9.1}{\ignorespaces Validation status classification system}}{91}{table.9.1}%
-\contentsline {table}{\numberline {9.2}{\ignorespaces Property degradation in Cayley-Dickson sequence}}{92}{table.9.2}%
-\contentsline {table}{\numberline {9.3}{\ignorespaces Validation of Cartan matrix determinants and Sugawara consistency for critical turbulence.}}{93}{table.9.3}%
-\contentsline {table}{\numberline {9.4}{\ignorespaces Computational validation results}}{97}{table.9.4}%
+\contentsline {table}{\numberline {9.1}{\ignorespaces Computational framework module architecture}}{78}{table.9.1}%
+\contentsline {table}{\numberline {9.2}{\ignorespaces Property verification across Cayley-Dickson sequence. Comm. = Commutative; Assoc. = Associative; Alt. = Alternative; Zero Div. = Has zero divisors.}}{80}{table.9.2}%
+\contentsline {table}{\numberline {9.3}{\ignorespaces Quaternion multiplication table (verified computationally)}}{80}{table.9.3}%
+\contentsline {table}{\numberline {9.4}{\ignorespaces E$_8$ computational verification results}}{82}{table.9.4}%
+\contentsline {table}{\numberline {9.5}{\ignorespaces Fractal dimension verification: theoretical vs. computational}}{83}{table.9.5}%
+\contentsline {table}{\numberline {9.6}{\ignorespaces Fractal dimensions of strange attractors}}{84}{table.9.6}%
+\contentsline {table}{\numberline {9.7}{\ignorespaces E$_8$ lattice verification}}{85}{table.9.7}%
+\contentsline {table}{\numberline {9.8}{\ignorespaces j-invariant q-expansion verification (first 6 coefficients)}}{86}{table.9.8}%
+\contentsline {table}{\numberline {9.9}{\ignorespaces Computational complexity and typical execution times}}{88}{table.9.9}%
+\contentsline {table}{\numberline {9.10}{\ignorespaces Comprehensive claim verification summary}}{89}{table.9.10}%
+\contentsline {table}{\numberline {9.11}{\ignorespaces Claims rejected or requiring correction}}{89}{table.9.11}%
+\contentsline {table}{\numberline {9.12}{\ignorespaces Comparison of Scenario A theoretical predictions vs. experimental results}}{90}{table.9.12}%
 \addvspace {10\p@ }
-\contentsline {table}{\numberline {10.1}{\ignorespaces Problem classification dimensions}}{102}{table.10.1}%
-\contentsline {table}{\numberline {10.2}{\ignorespaces Problem prioritization matrix. Diff = Difficulty (L=Low, M=Medium, H=High, VH=Very High, E=Extreme); Imp = Importance (L=Low, M=Medium, H=High, F=Fundamental, C=Critical); Tract = Tractability (VL=Very Low, L=Low, M=Medium, H=High, VH=Very High)}}{122}{table.10.2}%
+\contentsline {table}{\numberline {10.1}{\ignorespaces Historical examples of successful quantitative predictions}}{94}{table.10.1}%
+\contentsline {table}{\numberline {10.2}{\ignorespaces Alpha Framework prediction assessment}}{95}{table.10.2}%
+\contentsline {table}{\numberline {10.3}{\ignorespaces Genesis Framework prediction assessment}}{95}{table.10.3}%
+\contentsline {table}{\numberline {10.4}{\ignorespaces Pais Superforce prediction assessment}}{95}{table.10.4}%
+\contentsline {table}{\numberline {10.5}{\ignorespaces Tourmaline framework predictions}}{96}{table.10.5}%
+\contentsline {table}{\numberline {10.6}{\ignorespaces Tourmaline material predictions vs. known properties}}{98}{table.10.6}%
+\contentsline {table}{\numberline {10.7}{\ignorespaces Current experimental capabilities and scales}}{98}{table.10.7}%
+\contentsline {table}{\numberline {10.8}{\ignorespaces Testability assessment of framework predictions}}{99}{table.10.8}%
+\contentsline {table}{\numberline {10.9}{\ignorespaces Weakly falsifiable claims with potential loopholes}}{99}{table.10.9}%
+\contentsline {table}{\numberline {10.10}{\ignorespaces Comparison of predictions: frameworks vs. established physics}}{101}{table.10.10}%
+\contentsline {table}{\numberline {10.11}{\ignorespaces Prediction quality assessment. *Planck force is dimensional analysis, already known. **Material properties were already known.}}{104}{table.10.11}%
+\contentsline {table}{\numberline {10.12}{\ignorespaces Comparison with string theory}}{105}{table.10.12}%
+\addvspace {10\p@ }
+\contentsline {table}{\numberline {11.1}{\ignorespaces Validation status classification system}}{111}{table.11.1}%
+\contentsline {table}{\numberline {11.2}{\ignorespaces Property degradation in Cayley-Dickson sequence}}{112}{table.11.2}%
+\contentsline {table}{\numberline {11.3}{\ignorespaces Validation of Cartan matrix determinants and Sugawara consistency for critical turbulence.}}{113}{table.11.3}%
+\contentsline {table}{\numberline {11.4}{\ignorespaces Computational validation results}}{117}{table.11.4}%
+\addvspace {10\p@ }
+\contentsline {table}{\numberline {12.1}{\ignorespaces Problem classification dimensions}}{122}{table.12.1}%
+\contentsline {table}{\numberline {12.2}{\ignorespaces Problem prioritization matrix. Diff = Difficulty (L=Low, M=Medium, H=High, VH=Very High, E=Extreme); Imp = Importance (L=Low, M=Medium, H=High, F=Fundamental, C=Critical); Tract = Tractability (VL=Very Low, L=Low, M=Medium, H=High, VH=Very High)}}{142}{table.12.2}%
 \addvspace {10\p@ }
 \addvspace {10\p@ }
+\contentsline {table}{\numberline {1}{Module catalog for \texttt {src/mathphysics/}.}}{193}{table.Alph0.1}%
+\contentsline {table}{\numberline {2}{\ignorespaces Hardware requirements and expected runtimes for key computational tasks.}}{195}{table.Alph0.2}%
+\addvspace {10\p@ }
+\contentsline {table}{\numberline {3}{\ignorespaces Repository data zones and their purposes.}}{199}{table.Alph0.3}%
+\contentsline {table}{\numberline {4}{PDF source inventory with SHA-256 digests (truncated). Full digests in \texttt {data/external/PROVENANCE.json}.}}{200}{table.Alph0.4}%
+\contentsline {table}{\numberline {5}{Generated figures, their formats, and the commands that produce them.}}{201}{table.Alph0.5}%
+\contentsline {table}{\numberline {6}{\ignorespaces Key dependencies with minimum versions for reproducibility.}}{204}{table.Alph0.6}%

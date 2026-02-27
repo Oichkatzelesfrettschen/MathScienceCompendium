@@ -27,52 +27,52 @@ classifiers = [
 ]
 
 dependencies = [
-    "numpy>=1.24.0",
-    "scipy>=1.11.0",
-    "matplotlib>=3.7.0",
-    "sympy>=1.12",
-    "numba>=0.58.0",
-    "pillow>=10.0.0",
-    "networkx>=3.1",
-    "pandas>=2.0.0",
-    "seaborn>=0.12.0",
-    "scikit-learn>=1.3.0",
+    "numpy>=1.24.0,<3.0",
+    "scipy>=1.11.0,<2.0",
+    "matplotlib>=3.7.0,<4.0",
+    "sympy>=1.12,<2.0",
+    "numba>=0.58.0,<1.0",
+    "pillow>=10.0.0,<12.0",
+    "networkx>=3.1,<4.0",
+    "pandas>=2.0.0,<3.0",
+    "seaborn>=0.12.0,<1.0",
+    "scikit-learn>=1.3.0,<2.0",
 ]
 
 [project.optional-dependencies]
 dev = [
-    "pytest>=7.4.0",
-    "pytest-cov>=4.1.0",
-    "pytest-xdist>=3.3.0",
-    "pytest-timeout>=2.1.0",
-    "coverage[toml]>=7.3.0",
-    "hypothesis>=6.88.0",
+    "pytest>=7.4.0,<9.0",
+    "pytest-cov>=4.1.0,<7.0",
+    "pytest-xdist>=3.3.0,<4.0",
+    "pytest-timeout>=2.1.0,<3.0",
+    "coverage[toml]>=7.3.0,<8.0",
+    "hypothesis>=6.88.0,<7.0",
 ]
 lint = [
-    "ruff>=0.1.0",
-    "mypy>=1.5.0",
-    "pylint>=3.0.0",
-    "bandit[toml]>=1.7.5",
-    "black>=23.9.0",
-    "isort>=5.12.0",
+    "ruff>=0.1.0,<1.0",
+    "mypy>=1.5.0,<2.0",
+    "pylint>=3.0.0,<4.0",
+    "bandit[toml]>=1.7.5,<2.0",
+    "black>=23.9.0,<26.0",
+    "isort>=5.12.0,<6.0",
 ]
 viz = [
-    "plotly>=5.15.0",
-    "seaborn>=0.12.0",
-    "jupyter>=1.0.0",
-    "ipykernel>=6.25.0",
+    "plotly>=5.15.0,<7.0",
+    "seaborn>=0.12.0,<1.0",
+    "jupyter>=1.0.0,<3.0",
+    "ipykernel>=6.25.0,<8.0",
 ]
 quantum = [
-    "qiskit>=1.0.0",
-    "qiskit-aer>=0.13.0",
-    "qiskit-ibm-runtime>=0.15.0",
-    "qiskit-experiments>=0.5.0",
+    "qiskit>=1.0.0,<2.0",
+    "qiskit-aer>=0.13.0,<1.0",
+    "qiskit-ibm-runtime>=0.15.0,<1.0",
+    "qiskit-experiments>=0.5.0,<1.0",
 ]
 topology = [
-    "liesym>=0.8.1",
-    "gudhi>=3.11.0",
-    "jaxlie>=1.5.0",
-    "giotto-tda>=0.1.4",
+    "liesym>=0.8.1,<1.0",
+    "gudhi>=3.11.0,<4.0",
+    "jaxlie>=1.5.0,<2.0",
+    "giotto-tda>=0.1.4,<1.0",
 ]
 all = [
     "mathphysics-compendium[dev,lint,viz,quantum,topology]",
@@ -238,6 +238,12 @@ omit = [
     "*/__pycache__/*",
     "*/site-packages/*",
     "*/experiments/*",
+    # Qiskit-dependent modules: only testable when qiskit is installed.
+    # Excluded so coverage reflects what is actually runnable in CI.
+    "*/mathphysics/quantum_e7_circuits.py",
+    "*/mathphysics/quantum_e8_circuits.py",
+    "*/mathphysics/quantum_encoding.py",
+    "*/mathphysics/quantum_simulation.py",
 ]
 
 [tool.coverage.report]

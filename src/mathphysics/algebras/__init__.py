@@ -51,5 +51,27 @@ except ImportError:
     pass
 
 
-__all__ = ["Chingon", "Complex", "E4RootSystem", "E5RootSystem", "E6RootSystem", "E7Properties", "E7RootSystem", "E8RootSystem", "E9RootSystem", "E10RootSystem", "E11RootSystem", "ExceptionalLieAlgebras", "LieAlgebraCalculator", "Octonion", "Pathion", "Polyxon", "Quaternion", "Real", "Rouxion", "Sedenion", "run_comprehensive_validation", *_optional_exports]
-
+__all__ = [
+    "Chingon",
+    "Complex",
+    "E4RootSystem",
+    "E5RootSystem",
+    "E6RootSystem",
+    "E7Properties",
+    "E7RootSystem",
+    "E8RootSystem",
+    "E9RootSystem",
+    "E10RootSystem",
+    "E11RootSystem",
+    "ExceptionalLieAlgebras",
+    "LieAlgebraCalculator",
+    "Octonion",
+    "Pathion",
+    "Polyxon",
+    "Quaternion",
+    "Real",
+    "Rouxion",
+    "Sedenion",
+    "run_comprehensive_validation",
+]
+__all__.extend(_optional_exports)

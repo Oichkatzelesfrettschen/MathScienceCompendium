@@ -5,25 +5,19 @@ A comprehensive Python framework for computational experiments validating mathem
 ## Project Structure
 
 ```
-experiments/
-├── src/                          # Source code
-│   ├── cayley_dickson.py        # Cayley-Dickson algebra system (R, C, H, O, S, P)
-│   ├── fractal_analysis.py      # Fractal dimension calculators
-│   ├── lie_algebras.py          # E_8 and exceptional Lie algebras
-│   ├── lattice_theory.py        # E_8 and Leech lattice theory
-│   ├── modular_forms.py         # Modular forms and moonshine
-│   ├── visualization.py         # Publication-quality visualizations
-│   └── main.py                  # Main entry point
-├── tests/                       # Comprehensive unit tests
-│   └── test_all.py             # Full test suite
-├── notebooks/                   # Jupyter demonstration notebooks
-│   └── 01_cayley_dickson_demo.ipynb
-├── results/                     # Generated results and figures
-│   └── figures/                # Visualizations
-├── requirements.txt            # Python dependencies
-├── setup.py                    # Package installation
-└── Makefile                    # Build automation
+MathScienceCompendium/
+├── src/mathphysics/              # Canonical package source
+├── experiments/                  # Experiment scripts, notebooks, reports, result JSON
+├── tests/                        # Root test suite
+├── results/                      # Parquet simulation outputs
+├── figures/                      # Generated static/interactive figures
+├── papers/                       # LaTeX compendium
+└── Makefile                      # Root build orchestration
 ```
+
+Notes:
+- Legacy references to `experiments/src` in older reports are historical.
+- The canonical Python package path is `src/mathphysics`.
 
 ## Features
 
@@ -161,15 +155,15 @@ All figures saved at 300 DPI for publication.
 ### Quick Start
 
 ```bash
-# Clone or navigate to the experiments directory
-cd /home/eirikr/MathScienceCompendium/experiments
+# From repository root
+python3 -m venv venv
+./venv/bin/python -m pip install --upgrade pip
+./venv/bin/pip install -e ".[dev,lint]"
 
-# Install dependencies
-make install
-
-# Or manually:
-pip install -r requirements.txt
-pip install -e .
+# Run core experiment workflow
+make benchmark
+make run-highres
+make run-unified
 ```
 
 ## Usage
@@ -177,32 +171,23 @@ pip install -e .
 ### Command Line Interface
 
 ```bash
-# Run all experiments
-make run-all
+# Execute benchmark and production simulations
+make benchmark
+make run-highres
+make run-unified
 
-# Run individual modules
-make run-cayley      # Cayley-Dickson algebras
-make run-fractals    # Fractal analysis
-make run-e8          # E_8 Lie algebra
-make run-lattice     # Lattice theory
-make run-modular     # Modular forms
-
-# Generate visualizations
-make visualize
-
-# Run tests
-make test
-make test-coverage
+# Regenerate reproducibility metadata
+make repro-refresh
 ```
 
 ### Python API
 
 ```python
-from cayley_dickson import Quaternion, Octonion
-from fractal_analysis import FractalGenerator, FractalDimensionCalculator
-from lie_algebras import E8RootSystem
-from lattice_theory import E8Lattice
-from modular_forms import ModularForms
+from mathphysics.algebras.cayley_dickson import Quaternion
+from mathphysics.fractal_analysis import FractalGenerator, FractalDimensionCalculator
+from mathphysics.algebras.roots import E8RootSystem
+from mathphysics.lattice_theory import E8Lattice
+from mathphysics.modular_forms import ModularForms
 
 # Quaternion rotation
 axis = [0, 0, 1]

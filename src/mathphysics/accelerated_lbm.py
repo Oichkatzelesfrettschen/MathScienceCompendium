@@ -37,7 +37,7 @@ class AcceleratedLBM:
 
     def _init_state(self):
         """Initialize the distribution functions and fields."""
-        from .quantum_lattice_boltzmann import QuantumLatticeBoltzmann
+        from .quantum_lattice_boltzmann import QuantumLatticeBoltzmann  # noqa: PLC0415
 
         cpu_sim = QuantumLatticeBoltzmann(self.params)
 
@@ -47,7 +47,7 @@ class AcceleratedLBM:
         self.iteration = 0
 
     @staticmethod
-    def get_equilibrium(density, velocity, weights, velocities, cs2, cs4):
+    def get_equilibrium(density, velocity, weights, velocities, _cs2, _cs4):
         usq = jnp.sum(velocity**2, axis=-1)
         # Reshape for broadcasting
         # velocities: (9, 2), velocity: (nx, ny, 2)

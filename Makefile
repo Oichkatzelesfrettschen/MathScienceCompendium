@@ -17,7 +17,7 @@ BENCH_DIR = benchmarks
 RESULTS_DIR = results
 FIGURES_DIR = figures
 
-.PHONY: all clean help install test lint check-types benchmark run-highres run-unified run-jordan run-clifford docs papers cleanbuild lint-latex figures
+.PHONY: all clean help install test lint check-types benchmark run-highres run-unified run-jordan run-clifford docs papers cleanbuild lint-latex figures fetch-external sync-super-force-analysis normalize-corpus corpus-dedupe build-registries docs-index claim-coverage validate-external-provenance validate-registry-schemas parquet-audit verify-offline repro-refresh archive-pdfs notebooks fetch-arxiv resolve-dois fetch-all verify-checksums check-deps
 
 # Default target
 all: lint check-types test benchmark figures papers
@@ -69,6 +69,41 @@ viz-explorer:
 	else echo "Please open $(FIGURES_DIR)/lie_algebras_explorer.html in your browser"; fi
 
 # ==============================================================================
+# Development Quality Gates
+# ==============================================================================
+
+install:
+	@echo "[SETUP] Creating virtual environment and installing package..."
+	python3 -m venv venv
+	./venv/bin/python -m pip install --upgrade pip
+	./venv/bin/pip install -e ".[dev,lint]"
+
+lint:
+	@echo "[LINT] Running ruff checks..."
+	@if [ -x "$(RUFF)" ]; then $(RUFF) check src tests benchmarks experiments; else echo "ruff not installed in ./venv; run make install"; fi
+
+check-types:
+	@echo "[TYPE] Running mypy..."
+	@if [ -x "$(MYPY)" ]; then $(MYPY) src/mathphysics --ignore-missing-imports --no-error-summary; else echo "mypy not installed in ./venv; run make install"; fi
+
+test:
+	@echo "[TEST] Running pytest..."
+	@if [ -x "$(PYTEST)" ]; then PYTHONHASHSEED=0 PYTHONPATH=src $(PYTEST) tests -q; else echo "pytest not installed in ./venv; run make install"; fi
+
+notebooks:
+	@echo "[NOTEBOOKS] Executing all Jupyter notebooks..."
+	@if [ -x "./venv/bin/jupyter" ]; then \
+	  for nb in experiments/notebooks/0*.ipynb; do \
+	    echo "[NOTEBOOK] $$nb"; \
+	    ./venv/bin/jupyter nbconvert --to notebook --execute --inplace "$$nb"; \
+	  done; \
+	else echo "jupyter not installed in ./venv; run: pip install jupyter nbconvert"; fi
+
+lint-latex:
+	@echo "[LATEX] Checking for unresolved stub markers..."
+	@! rg -n "(Chapter stub|To be developed)" papers/sections || (echo "Found unresolved LaTeX stubs." && exit 1)
+
+# ==============================================================================
 # Documentation
 # ==============================================================================
 
@@ -77,6 +112,93 @@ docs:
 	mkdir -p docs/sphinx
 	sphinx-apidoc -o docs/sphinx/source $(SRC_DIR)
 	cd docs/sphinx && $(SPHINX) -b html source build/html
+
+# ==============================================================================
+# Offline Reproducibility Pipeline
+# ==============================================================================
+
+fetch-external:
+	@echo "[DATA] Fetching external sources from manifest..."
+	python3 scripts/fetch_external_sources.py --manifest data/external/sources.toml --extract-text || true
+
+fetch-arxiv:
+	@echo "[DATA] Batch downloading arXiv papers (rate-limited)..."
+	python3 scripts/fetch_arxiv.py
+
+resolve-dois:
+	@echo "[DATA] Resolving DOIs to download URLs..."
+	python3 scripts/resolve_dois.py
+
+fetch-all: fetch-external fetch-arxiv
+	@echo "[DATA] All sources fetched."
+
+verify-checksums:
+	@echo "[VERIFY] Verifying SHA-256 checksums of cached PDFs..."
+	python3 scripts/verify_checksums.py
+
+check-deps:
+	@echo "[CHECK] Verifying required external tools..."
+	@command -v pdftotext > /dev/null && echo "  pdftotext: OK" || echo "  pdftotext: MISSING (install poppler-utils)"
+	@command -v pdflatex > /dev/null && echo "  pdflatex:  OK" || echo "  pdflatex:  MISSING (install texlive)"
+	@command -v bibtex   > /dev/null && echo "  bibtex:    OK" || echo "  bibtex:    MISSING (install texlive)"
+	@command -v rg       > /dev/null && echo "  ripgrep:   OK" || echo "  ripgrep:   MISSING (install ripgrep)"
+	@python3 --version 2>&1 | sed 's/^/  python3:  /'
+
+sync-super-force-analysis:
+	@echo "[DATA] Syncing curated assets from Super-Force-Analysis..."
+	python3 scripts/sync_super_force_analysis_assets.py
+
+normalize-corpus:
+	@echo "[DATA] Normalizing text corpus to JSON..."
+	python3 scripts/normalize_txt_to_json.py
+
+corpus-dedupe:
+	@echo "[DATA] Generating corpus dedupe report..."
+	python3 scripts/corpus_dedupe_report.py
+
+build-registries:
+	@echo "[DATA] Building artifact and experiment registries..."
+	python3 scripts/build_registries.py
+
+docs-index:
+	@echo "[DOCS] Building documentation index registries..."
+	python3 scripts/build_docs_index.py
+
+claim-coverage:
+	@echo "[DATA] Building claim coverage report..."
+	python3 scripts/build_claim_coverage_report.py
+
+validate-external-provenance:
+	@echo "[VERIFY] Validating external provenance JSON files against schemas..."
+	python3 scripts/validate_external_provenance_schemas.py
+
+validate-registry-schemas:
+	@echo "[VERIFY] Validating registry TOML/JSON files against schemas..."
+	python3 scripts/validate_registry_schemas.py
+
+parquet-audit:
+	@echo "[DATA] Auditing parquet artifacts..."
+	python3 scripts/parquet_audit.py
+
+verify-offline:
+	@echo "[VERIFY] Running offline integrity checks..."
+	python3 scripts/validate_external_provenance_schemas.py
+	python3 scripts/validate_registry_schemas.py
+	python3 scripts/verify_offline_integrity.py
+
+repro-refresh:
+	@$(MAKE) normalize-corpus
+	@$(MAKE) corpus-dedupe
+	@$(MAKE) build-registries
+	@$(MAKE) docs-index
+	@$(MAKE) claim-coverage
+	@$(MAKE) parquet-audit
+	@$(MAKE) verify-offline
+	@echo "[SUCCESS] Offline reproducibility indexes refreshed."
+
+archive-pdfs:
+	@echo "[DATA] Archiving repository PDFs to ~/Documents/MathScienceCompendium/pdfs..."
+	python3 scripts/archive_pdfs_to_documents.py
 
 # ==============================================================================
 # Full Pipeline
@@ -123,6 +245,8 @@ clean:
 	rm -rf build/ dist/ *.egg-info .pytest_cache .mypy_cache .coverage docs/sphinx/build
 
 clean-all: clean
+	@echo "[CLEAN-ALL] Archiving PDFs before cleanup..."
+	python3 scripts/archive_pdfs_to_documents.py
 	@echo "[CLEAN-ALL] Removing generated data and PDFs..."
 	rm -f papers/main.pdf
 	rm -rf $(RESULTS_DIR)/*
@@ -142,6 +266,21 @@ help:
 	@echo "  make check-types  - Run mypy static type checking"
 	@echo "  make test         - Run full test suite with coverage"
 	@echo "  make cleanbuild   - Full clean, install, QA, and PDF build"
+	@echo ""
+	@echo "REPRODUCIBILITY:"
+	@echo "  make fetch-external   - Fetch/cache external sources and provenance"
+	@echo "  make sync-super-force-analysis - Sync curated Super-Force-Analysis text/code assets"
+	@echo "  make normalize-corpus - Convert .txt corpus files to JSON records"
+	@echo "  make corpus-dedupe    - Emit focused dedupe report for normalized corpus"
+	@echo "  make build-registries - Build TOML indexes for artifacts and experiments"
+	@echo "  make docs-index       - Build docs registry and docs index markdown"
+	@echo "  make claim-coverage   - Build claim/source coverage report from crosswalk policy"
+	@echo "  make validate-external-provenance - Validate data/external provenance JSON against schemas"
+	@echo "  make validate-registry-schemas - Validate data/registry/*.toml and selected *.json against schemas"
+	@echo "  make parquet-audit    - Audit parquet files and emit JSON summary"
+	@echo "  make verify-offline   - Run offline integrity checks"
+	@echo "  make repro-refresh    - Run normalize + registries + audit + verification"
+	@echo "  make archive-pdfs     - Copy all repo PDFs to ~/Documents before cleanup"
 	@echo ""
 	@echo "EXECUTION:"
 	@echo "  make benchmark    - Compare NumPy vs JAX performance"

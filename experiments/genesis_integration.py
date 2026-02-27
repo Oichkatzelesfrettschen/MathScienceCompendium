@@ -9,34 +9,31 @@ import numpy as np
 import matplotlib.pyplot as plt
 from matplotlib.gridspec import GridSpec
 from pathlib import Path
-from src.genesis_harmonics import (
-    GenesisHarmonics, MaterialType, MATERIALS, PHI
-)
+import sys
+
+REPO_ROOT = Path(__file__).resolve().parent.parent
+SRC_ROOT = REPO_ROOT / "src"
+if str(SRC_ROOT) not in sys.path:
+    sys.path.insert(0, str(SRC_ROOT))
+
+from mathphysics.genesis_harmonics import GenesisHarmonics, MaterialType, MATERIALS, PHI
 
 
 def create_comprehensive_visualization():
     """Create a comprehensive visualization of Genesis Harmonics."""
 
-    print("\n" + "="*70)
+    print("\n" + "=" * 70)
     print("Unified Model - COMPREHENSIVE INTEGRATION")
-    print("="*70)
+    print("=" * 70)
 
     # Initialize both E7 and E8 systems
     print("\nInitializing Genesis systems...")
     genesis_e7 = GenesisHarmonics(
-        num_layers=127,
-        base_frequency=1e12,
-        fractal_alpha=PHI,
-        zpe_beta=0.01,
-        use_e8=False
+        num_layers=127, base_frequency=1e12, fractal_alpha=PHI, zpe_beta=0.01, use_e8=False
     )
 
     genesis_e8 = GenesisHarmonics(
-        num_layers=240,
-        base_frequency=1e12,
-        fractal_alpha=PHI,
-        zpe_beta=0.01,
-        use_e8=True
+        num_layers=240, base_frequency=1e12, fractal_alpha=PHI, zpe_beta=0.01, use_e8=True
     )
 
     # Create figure with GridSpec for complex layout
@@ -49,31 +46,31 @@ def create_comprehensive_visualization():
     # E7 Spectrum
     ax1 = fig.add_subplot(gs[0, 0])
     spectrum_e7 = genesis_e7.spectral_analysis()
-    ax1.semilogy(spectrum_e7['frequencies'], 'b-', linewidth=1.5, label='E7')
-    ax1.set_xlabel('Layer Index')
-    ax1.set_ylabel('Frequency (Hz)')
-    ax1.set_title('E7 Frequency Spectrum (127 layers)')
+    ax1.semilogy(spectrum_e7["frequencies"], "b-", linewidth=1.5, label="E7")
+    ax1.set_xlabel("Layer Index")
+    ax1.set_ylabel("Frequency (Hz)")
+    ax1.set_title("E7 Frequency Spectrum (127 layers)")
     ax1.grid(True, alpha=0.3)
     ax1.legend()
 
     # E8 Spectrum
     ax2 = fig.add_subplot(gs[0, 1])
     spectrum_e8 = genesis_e8.spectral_analysis()
-    ax2.semilogy(spectrum_e8['frequencies'][:127], 'b-', linewidth=1.5, label='E8 (first 127)')
-    ax2.semilogy(spectrum_e8['frequencies'][127:], 'r-', linewidth=1.5, label='E8 (extended)')
-    ax2.set_xlabel('Layer Index')
-    ax2.set_ylabel('Frequency (Hz)')
-    ax2.set_title('E8 Frequency Spectrum (240 layers)')
+    ax2.semilogy(spectrum_e8["frequencies"][:127], "b-", linewidth=1.5, label="E8 (first 127)")
+    ax2.semilogy(spectrum_e8["frequencies"][127:], "r-", linewidth=1.5, label="E8 (extended)")
+    ax2.set_xlabel("Layer Index")
+    ax2.set_ylabel("Frequency (Hz)")
+    ax2.set_title("E8 Frequency Spectrum (240 layers)")
     ax2.grid(True, alpha=0.3)
     ax2.legend()
 
     # Power spectrum comparison
     ax3 = fig.add_subplot(gs[0, 2])
-    ax3.semilogy(spectrum_e7['power_spectrum'], 'g-', linewidth=1.5, label='E7', alpha=0.7)
-    ax3.semilogy(spectrum_e8['power_spectrum'][:127], 'm-', linewidth=1.5, label='E8', alpha=0.7)
-    ax3.set_xlabel('Layer Index')
-    ax3.set_ylabel('Power')
-    ax3.set_title('Power Spectrum Comparison')
+    ax3.semilogy(spectrum_e7["power_spectrum"], "g-", linewidth=1.5, label="E7", alpha=0.7)
+    ax3.semilogy(spectrum_e8["power_spectrum"][:127], "m-", linewidth=1.5, label="E8", alpha=0.7)
+    ax3.set_xlabel("Layer Index")
+    ax3.set_ylabel("Power")
+    ax3.set_title("Power Spectrum Comparison")
     ax3.grid(True, alpha=0.3)
     ax3.legend()
 
@@ -91,21 +88,21 @@ def create_comprehensive_visualization():
         field_e8.append(np.abs(genesis_e8.genesis_superforce(pos, 0.0)[0]))
 
     ax4 = fig.add_subplot(gs[1, :2])
-    ax4.plot(x_points * 1e6, field_e7, 'b-', linewidth=2, label='E7 Field')
-    ax4.plot(x_points * 1e6, field_e8, 'r-', linewidth=2, label='E8 Field', alpha=0.7)
-    ax4.set_xlabel('Position (micrometers)')
-    ax4.set_ylabel('Field Magnitude')
-    ax4.set_title('Genesis Superforce Spatial Distribution')
+    ax4.plot(x_points * 1e6, field_e7, "b-", linewidth=2, label="E7 Field")
+    ax4.plot(x_points * 1e6, field_e8, "r-", linewidth=2, label="E8 Field", alpha=0.7)
+    ax4.set_xlabel("Position (micrometers)")
+    ax4.set_ylabel("Field Magnitude")
+    ax4.set_title("Genesis Superforce Spatial Distribution")
     ax4.grid(True, alpha=0.3)
     ax4.legend()
 
     # Coupling matrix heatmap
     ax5 = fig.add_subplot(gs[1, 2])
     coupling = genesis_e7.get_coupling_matrix()[:50, :50]  # Show subset
-    im = ax5.imshow(coupling, cmap='RdBu_r', aspect='auto', vmin=-2, vmax=2)
-    ax5.set_xlabel('Layer j')
-    ax5.set_ylabel('Layer i')
-    ax5.set_title('Coupling Matrix (50x50 subset)')
+    im = ax5.imshow(coupling, cmap="RdBu_r", aspect="auto", vmin=-2, vmax=2)
+    ax5.set_xlabel("Layer j")
+    ax5.set_ylabel("Layer i")
+    ax5.set_title("Coupling Matrix (50x50 subset)")
     plt.colorbar(im, ax=ax5, fraction=0.046)
 
     # ========== ROW 3: Material Responses ==========
@@ -125,20 +122,21 @@ def create_comprehensive_visualization():
 
         ax6.loglog(frequencies, responses, linewidth=2, label=mat_type.value.upper())
 
-    ax6.set_xlabel('Frequency (Hz)')
-    ax6.set_ylabel('Response Magnitude')
-    ax6.set_title('Material Frequency Response')
-    ax6.grid(True, alpha=0.3, which='both')
+    ax6.set_xlabel("Frequency (Hz)")
+    ax6.set_ylabel("Response Magnitude")
+    ax6.set_title("Material Frequency Response")
+    ax6.grid(True, alpha=0.3, which="both")
     ax6.legend()
 
     # ZPE coherence evolution
     ax7 = fig.add_subplot(gs[2, 2])
     evolution = genesis_e7.evolve_system(dt=1e-15, steps=50)
-    ax7.plot(np.array(evolution['time_points']) * 1e15, evolution['zpe_coherence'],
-             'g-', linewidth=2)
-    ax7.set_xlabel('Time (femtoseconds)')
-    ax7.set_ylabel('ZPE Coherence')
-    ax7.set_title('ZPE Field Coherence Evolution')
+    ax7.plot(
+        np.array(evolution["time_points"]) * 1e15, evolution["zpe_coherence"], "g-", linewidth=2
+    )
+    ax7.set_xlabel("Time (femtoseconds)")
+    ax7.set_ylabel("ZPE Coherence")
+    ax7.set_title("ZPE Field Coherence Evolution")
     ax7.grid(True, alpha=0.3)
 
     # ========== ROW 4: Time Evolution ==========
@@ -146,60 +144,67 @@ def create_comprehensive_visualization():
 
     # Energy evolution
     ax8 = fig.add_subplot(gs[3, 0])
-    ax8.semilogy(np.array(evolution['time_points']) * 1e15,
-                 evolution['total_energy'], 'b-', linewidth=2)
-    ax8.set_xlabel('Time (femtoseconds)')
-    ax8.set_ylabel('Total Energy')
-    ax8.set_title('System Energy Evolution')
+    ax8.semilogy(
+        np.array(evolution["time_points"]) * 1e15, evolution["total_energy"], "b-", linewidth=2
+    )
+    ax8.set_xlabel("Time (femtoseconds)")
+    ax8.set_ylabel("Total Energy")
+    ax8.set_title("System Energy Evolution")
     ax8.grid(True, alpha=0.3)
 
     # Layer amplitude evolution
     ax9 = fig.add_subplot(gs[3, 1])
     # Show evolution of first 10 layers
-    time_fs = np.array(evolution['time_points']) * 1e15
+    time_fs = np.array(evolution["time_points"]) * 1e15
     for i in range(10):
-        layer_amps = [amps[i] for amps in evolution['layer_amplitudes']]
-        ax9.plot(time_fs, layer_amps, linewidth=1.5, alpha=0.7,
-                label=f'Layer {i}' if i < 3 else None)
+        layer_amps = [amps[i] for amps in evolution["layer_amplitudes"]]
+        ax9.plot(
+            time_fs, layer_amps, linewidth=1.5, alpha=0.7, label=f"Layer {i}" if i < 3 else None
+        )
 
-    ax9.set_xlabel('Time (femtoseconds)')
-    ax9.set_ylabel('Amplitude')
-    ax9.set_title('Harmonic Layer Evolution')
+    ax9.set_xlabel("Time (femtoseconds)")
+    ax9.set_ylabel("Amplitude")
+    ax9.set_title("Harmonic Layer Evolution")
     ax9.grid(True, alpha=0.3)
-    ax9.legend(loc='upper right')
+    ax9.legend(loc="upper right")
 
     # Material response over time
     ax10 = fig.add_subplot(gs[3, 2])
     mat_time_responses = {mat: [] for mat in MaterialType}
 
-    for t in evolution['time_points']:
-        if t in evolution['material_responses']:
+    for t in evolution["time_points"]:
+        if t in evolution["material_responses"]:
             for mat in MaterialType:
-                mat_time_responses[mat].append(
-                    evolution['material_responses'][t][mat.value]
-                )
+                mat_time_responses[mat].append(evolution["material_responses"][t][mat.value])
 
     for mat in MaterialType:
         if mat_time_responses[mat]:
-            ax10.plot(time_fs[:len(mat_time_responses[mat])],
-                     mat_time_responses[mat],
-                     linewidth=2, label=mat.value.upper())
+            ax10.plot(
+                time_fs[: len(mat_time_responses[mat])],
+                mat_time_responses[mat],
+                linewidth=2,
+                label=mat.value.upper(),
+            )
 
-    ax10.set_xlabel('Time (femtoseconds)')
-    ax10.set_ylabel('Response')
-    ax10.set_title('Material Response Evolution')
+    ax10.set_xlabel("Time (femtoseconds)")
+    ax10.set_ylabel("Response")
+    ax10.set_title("Material Response Evolution")
     ax10.grid(True, alpha=0.3)
     ax10.legend()
 
     # Add main title
-    fig.suptitle('Unified Model Harmonics - Complete Integration',
-                fontsize=14, fontweight='bold', y=0.995)
+    fig.suptitle(
+        "Unified Model Harmonics - Complete Integration",
+        fontsize=14,
+        fontweight="bold",
+        y=0.995,
+    )
 
     # Save figure
-    output_path = Path("/home/eirikr/Github_n_projects/MathScienceCompendium/experiments/figures")
-    output_path.mkdir(exist_ok=True)
+    output_path = REPO_ROOT / "experiments" / "figures"
+    output_path.mkdir(parents=True, exist_ok=True)
     fig_path = output_path / "genesis_harmonics_integration.png"
-    plt.savefig(fig_path, dpi=150, bbox_inches='tight')
+    plt.savefig(fig_path, dpi=150, bbox_inches="tight")
     print(f"\n5. Visualization saved to: {fig_path}")
 
     plt.close()
@@ -210,9 +215,9 @@ def create_comprehensive_visualization():
 def analyze_root_harmonic_coupling():
     """Analyze the coupling between root systems and harmonics."""
 
-    print("\n" + "="*70)
+    print("\n" + "=" * 70)
     print("ROOT SYSTEM - HARMONIC COUPLING ANALYSIS")
-    print("="*70)
+    print("=" * 70)
 
     genesis = GenesisHarmonics(num_layers=127, use_e8=False)
 
@@ -245,13 +250,15 @@ def analyze_root_harmonic_coupling():
         # Find peaks in eigenmode
         peaks = np.where(np.abs(eigenvec) > 0.1 * np.max(np.abs(eigenvec)))[0]
 
-        print(f"   Mode {i+1}: eigenvalue = {eigenval:.4f}, peaks at layers {peaks[:5].tolist()}")
+        print(f"   Mode {i + 1}: eigenvalue = {eigenval:.4f}, peaks at layers {peaks[:5].tolist()}")
 
     # Analyze fractal structure
     print("\n4. Fractal Scaling Analysis:")
     for layer in genesis.layers[:10]:
-        print(f"   Layer {layer.index}: beta = {layer.fractal_coefficient:.4f}, "
-              f"freq = {layer.frequency:.2e} Hz")
+        print(
+            f"   Layer {layer.index}: beta = {layer.fractal_coefficient:.4f}, "
+            f"freq = {layer.frequency:.2e} Hz"
+        )
 
     return coupling, eigenvalues, eigenvectors
 
@@ -259,15 +266,15 @@ def analyze_root_harmonic_coupling():
 def demonstrate_advanced_features():
     """Demonstrate advanced Unified Model features."""
 
-    print("\n" + "="*70)
+    print("\n" + "=" * 70)
     print("ADVANCED Unified Model FEATURES")
-    print("="*70)
+    print("=" * 70)
 
     genesis = GenesisHarmonics(
         num_layers=50,  # Smaller for demonstration
         base_frequency=1e12,
         fractal_alpha=PHI,
-        zpe_beta=0.01
+        zpe_beta=0.01,
     )
 
     # 1. Fractional dimensional analysis
@@ -283,7 +290,7 @@ def demonstrate_advanced_features():
     # Find maximum response dimension
     max_idx = np.argmax(field_strengths)
     print(f"   Optimal dimension: {dimensions[max_idx]:.3f}")
-    print(f"   Field variation: {np.std(field_strengths)/np.mean(field_strengths)*100:.2f}%")
+    print(f"   Field variation: {np.std(field_strengths) / np.mean(field_strengths) * 100:.2f}%")
 
     # 2. Modular symmetry effects
     print("\n2. Modular Symmetry Analysis:")
@@ -323,8 +330,8 @@ def demonstrate_advanced_features():
     # 5. Export comprehensive data
     print("\n5. Exporting comprehensive analysis data...")
 
-    data_path = Path("/home/eirikr/Github_n_projects/MathScienceCompendium/experiments/data")
-    data_path.mkdir(exist_ok=True)
+    data_path = REPO_ROOT / "experiments" / "data"
+    data_path.mkdir(parents=True, exist_ok=True)
 
     genesis.export_data(data_path / "genesis_advanced_analysis.json")
     print(f"   Data exported to: {data_path / 'genesis_advanced_analysis.json'}")
@@ -335,10 +342,10 @@ def demonstrate_advanced_features():
 def main():
     """Main execution function."""
 
-    print("\n" + "="*80)
-    print(" "*20 + "GENESIS HARMONICS FRAMEWORK")
-    print(" "*15 + "Complete Integration Demonstration")
-    print("="*80)
+    print("\n" + "=" * 80)
+    print(" " * 20 + "GENESIS HARMONICS FRAMEWORK")
+    print(" " * 15 + "Complete Integration Demonstration")
+    print("=" * 80)
 
     # Run comprehensive visualization
     genesis_e7, genesis_e8 = create_comprehensive_visualization()
@@ -350,9 +357,9 @@ def main():
     genesis_advanced = demonstrate_advanced_features()
 
     # Final summary
-    print("\n" + "="*80)
+    print("\n" + "=" * 80)
     print("INTEGRATION SUMMARY")
-    print("="*80)
+    print("=" * 80)
 
     print("\nKey Achievements:")
     print("1. Successfully integrated E7 (127) and E8 (240) root systems")
@@ -363,7 +370,9 @@ def main():
 
     print("\nPhysical Insights:")
     print(f"- Golden ratio scaling (phi = {PHI:.6f}) governs harmonic structure")
-    print(f"- E7/E8 symmetries map to {genesis_e7.num_layers}/{genesis_e8.num_layers} harmonic layers")
+    print(
+        f"- E7/E8 symmetries map to {genesis_e7.num_layers}/{genesis_e8.num_layers} harmonic layers"
+    )
     print(f"- Material responses peak in THz range (10^12 Hz)")
     print(f"- ZPE coherence stabilizes around {0.15:.2f}")
 
@@ -373,9 +382,9 @@ def main():
     print("- Fractal antenna design")
     print("- Quantum coherence optimization")
 
-    print("\n" + "="*80)
+    print("\n" + "=" * 80)
     print("Genesis Harmonics Framework - Ready for Integration")
-    print("="*80 + "\n")
+    print("=" * 80 + "\n")
 
     return genesis_e7, genesis_e8, coupling
 

@@ -21,8 +21,8 @@ This comprehensive compendium presents a systematic analysis, fact-checking, and
 ```
 MathScienceCompendium/
 ├── source_materials/          # Original research materials
-│   ├── pdfs/                 # 11 research papers (9.8MB)
-│   │   └── extracted/        # Extracted text from PDFs
+│   ├── pdfs/                 # Manifest-driven PDF cache (populate via scripts)
+│   │   └── extracted/        # Extracted text from cached PDFs
 │   └── frameworks/           # 8 framework documents (200k+ lines)
 │
 ├── research/                  # Analysis and fact-checking
@@ -53,7 +53,7 @@ MathScienceCompendium/
 │   └── sections/             # Individual chapters
 │       ├── vol1_ch1_lie_algebras.tex      # [DONE] Complete
 │       ├── vol4_ch11_validation.tex       # [DONE] Complete
-│       └── ...               # Other chapters (stubs)
+│       └── ...               # Other chapters (draft skeletons)
 │
 ├── docs/                      # Documentation
 │   └── CATALOG.txt           # Complete materials catalog
@@ -91,6 +91,11 @@ make validation-report    # Mathematical fact-checking
 make alpha-analysis       # Alpha Framework analysis
 make pdf-summary          # PDF research summary
 make bibliography         # Master bibliography
+```
+
+### Refresh Offline Reproducibility Indexes
+```bash
+make repro-refresh        # Normalize corpus + registries + parquet audit + offline verify
 ```
 
 ---
@@ -243,6 +248,7 @@ make experiments-test
 - **Tourmaline series**: Engineering implementations
 
 See `docs/CATALOG.txt` for complete listing.
+See `docs/REPO_HARMONIZATION_PLAN.md` for the offline-first restructuring plan.
 
 ---
 
@@ -275,7 +281,8 @@ make tree              # Directory structure
 **Cleaning**
 ```bash
 make clean      # Remove build artifacts
-make clean-all  # Deep clean (includes PDFs)
+make archive-pdfs  # Copy repo PDFs to ~/Documents/MathScienceCompendium/pdfs
+make clean-all     # Deep clean (archives PDFs before removing generated paper PDF)
 ```
 
 ---

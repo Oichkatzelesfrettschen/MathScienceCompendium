@@ -1,2 +1,610 @@
-% Chapter stub for vol2_ch6_string_theory.tex
-% To be developed
+% ==============================================================================
+% Volume II, Chapter 6: String Theory Integration Pathways
+% ==============================================================================
+
+\chapter{String Theory Integration Pathways}
+\label{ch:string_theory_integration}
+\index{String theory}
+\index{Compactification}
+
+\section{Introduction}
+
+This chapter maps the exceptional algebraic structures developed in preceding chapters
+onto established string-theoretic constructions.  The goal is not to advocate for any
+particular framework but to define precise \emph{integration contracts}: conditions
+under which algebraic objects ($\EE{7}$, $\EE{8}$, and their Kac--Moody extensions)
+appear naturally in string and M-theory, together with the testable consequences that
+follow.
+
+\subsection{Scope and Conventions}
+
+Throughout this chapter we distinguish three evidence tiers:
+\begin{enumerate}
+    \item \textbf{Established mathematics}: proven theorems about Lie algebras and
+          lattices (no physical interpretation required).
+    \item \textbf{Peer-reviewed physics}: results published in journals with
+          well-defined derivation chains (e.g., anomaly cancellation, compactification
+          spectra).
+    \item \textbf{Conjectural}: proposals supported by partial evidence or pattern
+          extrapolation (clearly labelled).
+\end{enumerate}
+
+We use the notation $\EE{n}$ for exceptional Lie algebras ($n \le 8$) and
+$\EE{n}^{(1)}$ or $\EE{n}^{++}$ for Kac--Moody extensions, following
+Kac~\cite{kac1990infinite}.  Compactification manifolds are denoted $K$, with
+$\dim_\RR(K) = d$.
+
+% ==============================================================================
+\section{Heterotic String Theory and the $\EE{8}\times\EE{8}$ Gauge Group}
+\label{sec:heterotic}
+% ==============================================================================
+
+\subsection{Anomaly Cancellation and Gauge Group Selection}
+
+The heterotic string is a closed-string theory whose left-movers carry
+26-dimensional bosonic-string structure and whose right-movers carry
+10-dimensional superstring structure.  Consistency requires cancellation of
+gauge and gravitational anomalies in 10 dimensions.
+
+\begin{theorem}[Green--Schwarz Anomaly Cancellation {\cite{green2012superstring}}]
+\label{thm:anomaly_cancel}
+In ten-dimensional $\mathcal{N}=1$ supergravity coupled to super-Yang--Mills
+theory, all gauge, gravitational, and mixed anomalies cancel if and only if
+the gauge group $G$ satisfies:
+\begin{equation}
+\label{eq:anomaly_condition}
+\operatorname{tr}_{\mathrm{adj}}(F^2) = 30\,\operatorname{tr}_{\mathrm{fund}}(F^2),
+\quad
+\dim(G) = 496.
+\end{equation}
+The only solutions are:
+\begin{equation}
+G = \EE{8}\times\EE{8}, \qquad G = \SO{32}.
+\end{equation}
+\end{theorem}
+
+\begin{proof}[Sketch]
+Anomaly cancellation reduces to a cohomological identity on the 12-form
+anomaly polynomial $I_{12}$.  The Green--Schwarz mechanism modifies the
+Bianchi identity for the $B$-field, $dH = \alpha'(\operatorname{tr} R^2
+- \operatorname{tr} F^2)$, absorbing the anomaly provided
+$\dim(G) = 496$ and the quartic Casimir factorises.  Both
+$\EE{8}\times\EE{8}$ ($\dim = 248+248 = 496$) and $\SO{32}$
+($\dim = 496$) satisfy these constraints.  Full details
+in~\cite{green2012superstring}, Chapter~13.
+\end{proof}
+
+\begin{remark}
+The $\EE{8}\times\EE{8}$ heterotic string is preferred for phenomenological
+model-building because $\EE{8}$ admits a chain of subgroups
+$\EE{8} \supset \EE{6} \supset \SU{5} \supset \SU{3}\times\SU{2}\times U(1)$
+that naturally accommodates the Standard Model gauge group.
+\end{remark}
+
+\subsection{The $\EE{8}$ Root Lattice in 10D}
+
+\begin{definition}[$\EE{8}$ Lattice]
+\label{def:e8_lattice}
+The $\EE{8}$ root lattice $\Gamma_8 \subset \RR^8$ is the unique even,
+self-dual, unimodular lattice of rank~8:
+\begin{equation}
+\Gamma_8 = \left\{ x \in \ZZ^8 \cup (\ZZ + \tfrac{1}{2})^8 \;\middle|\;
+\sum_{i=1}^8 x_i \in 2\ZZ \right\}.
+\end{equation}
+It achieves optimal sphere packing in $\RR^8$ with 240 nearest
+neighbours~\cite{cohn2017sphere}.
+\end{definition}
+
+The 16 extra left-moving bosonic degrees of freedom of the heterotic string
+are compactified on the self-dual lattice $\Gamma_8 \oplus \Gamma_8$ (for
+$\EE{8}\times\EE{8}$) or $\Gamma_{16}$ (for $\SO{32}$).  Modular invariance
+of the one-loop partition function demands self-duality of the compactification
+lattice, which singles out precisely these two choices in 16~dimensions.
+
+% ==============================================================================
+\section{Calabi--Yau Compactification and $\EE{6}$ Phenomenology}
+\label{sec:calabi_yau}
+% ==============================================================================
+
+\subsection{Reduction from 10D to 4D}
+
+To obtain a four-dimensional effective theory preserving $\mathcal{N}=1$
+supersymmetry, six of the ten spacetime dimensions are compactified on a
+Calabi--Yau threefold $K$:
+\begin{equation}
+\label{eq:10d_to_4d}
+M^{10} = M^{3,1} \times K, \qquad \dim_\CC(K) = 3, \qquad
+\operatorname{Hol}(K) = \SU{3}.
+\end{equation}
+
+\begin{theorem}[Candelas--Horowitz--Strominger--Witten {\cite{candelas1985vacuum}}]
+\label{thm:chsw}
+Compactification of the $\EE{8}\times\EE{8}$ heterotic string on a Calabi--Yau
+threefold $K$ with the ``standard embedding'' (identifying the spin connection
+with an $\SU{3}$ subgroup of the first $\EE{8}$) yields:
+\begin{enumerate}
+    \item A four-dimensional $\mathcal{N}=1$ supergravity theory,
+    \item Gauge group breaking $\EE{8} \to \EE{6}$,
+    \item Number of chiral generations $N_{\mathrm{gen}}
+          = \tfrac{1}{2}|\chi(K)|$, where $\chi$ is the Euler characteristic,
+    \item Moduli space parametrised by $h^{1,1}(K)$ K\"ahler moduli and
+          $h^{2,1}(K)$ complex structure moduli.
+\end{enumerate}
+\end{theorem}
+
+\begin{factcheck}{CALABI--YAU COMPACTIFICATION}
+\textbf{Verified:}
+\begin{itemize}
+    \item $\EE{8} \to \EE{6}$ via standard embedding:
+          \textcolor{validcolor}{ESTABLISHED}~\cite{candelas1985vacuum}
+    \item Generation formula $N_{\mathrm{gen}} = \tfrac{1}{2}|\chi(K)|$:
+          \textcolor{validcolor}{PROVEN}
+    \item $\mathcal{N}=1$ SUSY preservation by $\SU{3}$ holonomy:
+          \textcolor{validcolor}{PROVEN}
+\end{itemize}
+
+\textbf{Open:}
+\begin{itemize}
+    \item Selection of the ``correct'' Calabi--Yau among $\sim 10^{500}$
+          candidates: \textcolor{orange}{LANDSCAPE PROBLEM}
+    \item Moduli stabilisation (all moduli must be massive):
+          \textcolor{orange}{ACTIVE RESEARCH}
+\end{itemize}
+\end{factcheck}
+
+\subsection{The $\EE{6}$ Gauge Theory}
+
+The resulting $\EE{6}$ grand unified theory contains the Standard Model via:
+\begin{equation}
+\label{eq:e6_breaking}
+\EE{6} \supset \SO{10} \supset \SU{5} \supset
+\SU{3}_C \times \SU{2}_L \times U(1)_Y.
+\end{equation}
+
+Each generation of fermions fits into the fundamental \textbf{27} representation
+of $\EE{6}$:
+\begin{equation}
+\mathbf{27} = \mathbf{16} \oplus \mathbf{10} \oplus \mathbf{1}
+\quad (\text{under } \SO{10}),
+\end{equation}
+where $\mathbf{16}$ contains one full Standard Model generation (including a
+right-handed neutrino) and $\mathbf{10} \oplus \mathbf{1}$ provide exotic states
+that must be made heavy by further symmetry breaking.
+
+\subsection{Connection to the $\EE{7}$ Framework}
+
+The $\EE{7}$ algebra studied in Chapter~\ref{ch:e7_lie_algebra} enters the
+compactification story through:
+\begin{enumerate}
+    \item \textbf{$\mathcal{N}=2$ compactifications}: On $K3 \times T^2$, the
+          $\EE{8}\times\EE{8}$ heterotic string yields $\mathcal{N}=2$ SUGRA
+          with scalar manifold $\EE{7(7)}/\SU{8}$
+          (Theorem~\ref{thm:e7_sugra} in Chapter~\ref{ch:e7_lie_algebra}).
+    \item \textbf{Black hole charges}: The 56-dimensional representation of
+          $\EE{7}$ classifies electric and magnetic charges of
+          $\mathcal{N}=8$ black holes (Proposition~\ref{prop:bh_entropy_e7}).
+    \item \textbf{Moduli duality}: T-duality on the $T^6$-compactified
+          heterotic string contains $\EE{7}(\ZZ)$ as a discrete subgroup
+          of the U-duality group.
+\end{enumerate}
+
+% ==============================================================================
+\section{String Dualities and the Exceptional Series}
+\label{sec:dualities}
+% ==============================================================================
+
+\subsection{T-Duality}
+
+\begin{definition}[T-Duality]
+\label{def:t_duality}
+T-duality is an exact equivalence between string theories compactified on
+circles of radii $R$ and $\alpha'/R$:
+\begin{equation}
+\text{Type IIA on } S^1(R) \;\longleftrightarrow\;
+\text{Type IIB on } S^1(\alpha'/R).
+\end{equation}
+For compactification on $T^d$, the T-duality group is $O(d,d;\ZZ)$.
+\end{definition}
+
+\subsection{S-Duality}
+
+\begin{definition}[S-Duality]
+\label{def:s_duality}
+S-duality is a conjectured non-perturbative equivalence exchanging strong
+and weak coupling:
+\begin{equation}
+g_s \;\longleftrightarrow\; 1/g_s.
+\end{equation}
+For Type~IIB, the S-duality group is $\SL(2,\ZZ)$.
+\end{definition}
+
+\subsection{U-Duality and the $\EE{n}$ Sequence}
+
+The combination of T- and S-duality into a unified \emph{U-duality} group
+produces the exceptional series~\cite{hull1995unity}:
+
+\begin{theorem}[Hull--Townsend U-Duality {\cite{hull1995unity}}]
+\label{thm:u_duality}
+M-theory compactified on $T^d$ has a discrete U-duality group
+$\EE{d}(\ZZ)$ acting on the moduli space, for $d = 1, \ldots, 8$:
+\begin{equation}
+\label{eq:u_duality_table}
+\begin{array}{c|cccccccc}
+d & 1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 \\
+\hline
+\EE{d}(\ZZ) & \ZZ_2 & \SL(2,\ZZ) & \SL(3,\ZZ)\times\SL(2,\ZZ) &
+\SL(5,\ZZ) & \SO{5,5}(\ZZ) & \EE{6}(\ZZ) & \EE{7}(\ZZ) & \EE{8}(\ZZ)
+\end{array}
+\end{equation}
+\end{theorem}
+
+\begin{remark}
+The appearance of $\EE{7}(\ZZ)$ for $d=7$ and $\EE{8}(\ZZ)$ for $d=8$
+connects the algebraic structures of Chapters~\ref{ch:e7_lie_algebra}
+and~\ref{ch:e7_lie_algebra} directly to non-perturbative string theory.
+These are not merely convenient mathematical tools but exact symmetries
+of the quantum theory.
+\end{remark}
+
+% ==============================================================================
+\section{Kac--Moody Extensions: $\EE{9}$, $\EE{10}$, $\EE{11}$}
+\label{sec:kac_moody}
+% ==============================================================================
+
+The U-duality pattern of Theorem~\ref{thm:u_duality} suggests continuing the
+exceptional series beyond finite-dimensional Lie algebras into infinite-dimensional
+Kac--Moody algebras.  This extension is mathematically well-defined but physically
+conjectural.
+
+\subsection{$\EE{9}$: Affine Extension}
+
+\begin{definition}[$\EE{9} = \EE{8}^{(1)}$]
+\label{def:e9}
+The affine Kac--Moody algebra $\EE{9}$ is constructed by appending one node
+to the $\EE{8}$ Dynkin diagram, corresponding to the negative of the highest
+root $\theta$ of $\EE{8}$ shifted by the null root $\delta$:
+\begin{equation}
+\alpha_0 = -\theta + \delta.
+\end{equation}
+The extended Cartan matrix $A_{\EE{9}}$ is $9 \times 9$ with
+$\det(A_{\EE{9}}) = 0$, confirming affine type~\cite{kac1990infinite}.
+\end{definition}
+
+\begin{proposition}[$\EE{9}$ Root Structure]
+\label{prop:e9_roots}
+The roots of $\EE{8}^{(1)}$ decompose as:
+\begin{equation}
+\Phi(\EE{9}) = \{\alpha + n\delta \mid \alpha \in \Phi(\EE{8}),\; n \in \ZZ\}
+\cup \{n\delta \mid n \in \ZZ \setminus \{0\}\},
+\end{equation}
+where imaginary roots $n\delta$ have multiplicity $\dim(\EE{8}) = 248$.
+\end{proposition}
+
+\begin{factcheck}{$\EE{9}$ STATUS}
+\textbf{Verified:}
+\begin{itemize}
+    \item Affine Kac--Moody structure: \textcolor{validcolor}{RIGOROUS}
+    \item WZW model at level~1 with $c = 8k/(k+30)$:
+          \textcolor{validcolor}{ESTABLISHED}
+    \item Appearance in 2D CFT current algebras: \textcolor{validcolor}{PROVEN}
+\end{itemize}
+
+\textbf{Speculative:}
+\begin{itemize}
+    \item U-duality interpretation for M-theory on $T^9$:
+          \textcolor{orange}{EXTRAPOLATION}
+\end{itemize}
+\end{factcheck}
+
+\subsection{$\EE{10}$: Hyperbolic Extension}
+
+\begin{definition}[$\EE{10}$]
+\label{def:e10}
+$\EE{10}$ is the unique rank-10 hyperbolic Kac--Moody algebra obtained by
+further extending $\EE{9}$.  Its Cartan matrix $A_{\EE{10}}$ satisfies
+$\det(A_{\EE{10}}) < 0$ with all proper principal minors non-negative.
+The associated bilinear form has Lorentzian signature $(1,9)$.
+\end{definition}
+
+The physical relevance of $\EE{10}$ arises through cosmological billiards:
+
+\begin{theorem}[Damour--Henneaux--Nicolai Cosmological Billiards
+    {\cite{damour2002e10}}]
+\label{thm:cosmological_billiards}
+Near a spacelike cosmological singularity, the dynamics of 11-dimensional
+supergravity reduces asymptotically to geodesic motion in the fundamental
+domain of $W(\EE{10})$ in hyperbolic space $\mathbb{H}^9$:
+\begin{enumerate}
+    \item Kasner epochs (power-law scaling phases) correspond to free-flight
+          segments,
+    \item BKL-type transitions correspond to reflections off billiard walls
+          encoded by simple roots of $\EE{10}$,
+    \item The Weyl group $W(\EE{10})$ encodes all allowed Kasner transitions.
+\end{enumerate}
+\end{theorem}
+
+\begin{factcheck}{$\EE{10}$ COSMOLOGICAL BILLIARDS}
+\textbf{Verified:}
+\begin{itemize}
+    \item Billiard dynamics for 11D SUGRA near singularities:
+          \textcolor{validcolor}{PROVEN}~\cite{damour2002e10}
+    \item Hyperbolic Weyl group structure:
+          \textcolor{validcolor}{RIGOROUS}
+    \item Numerical confirmation of billiard dynamics:
+          \textcolor{validcolor}{VERIFIED}
+\end{itemize}
+
+\textbf{Limitations:}
+\begin{itemize}
+    \item Valid only near singularities ($t \to 0$):
+          \textcolor{orange}{ASYMPTOTIC}
+    \item Full M-theory symmetry status: \textcolor{orange}{UNKNOWN}
+    \item Observable consequences: \textcolor{orange}{NONE CURRENTLY}
+\end{itemize}
+\end{factcheck}
+
+\subsection{$\EE{11}$: Very Extended (Lorentzian) Algebra}
+
+\begin{definition}[$\EE{11}$]
+\label{def:e11}
+$\EE{11}$ is the Lorentzian Kac--Moody algebra of rank~11 obtained by
+appending a third node beyond $\EE{8}$.  Unlike $\EE{10}$, it is
+\emph{not} hyperbolic: some proper principal minors of $A_{\EE{11}}$ are
+negative.
+\end{definition}
+
+\begin{theorem}[West's $\EE{11}$ Conjecture {\cite{west2001e11}}]
+\label{thm:e11_conjecture}
+\textbf{Conjecture.} The symmetries of M-theory are encoded in the
+Kac--Moody algebra $\EE{11}$.  Specifically:
+\begin{enumerate}
+    \item The massless field content of 11D supergravity corresponds to
+          generators of $\EE{11}$ at low levels in a graded decomposition,
+    \item Brane charges correspond to specific representations of $\EE{11}$,
+    \item All known dualities arise as Weyl reflections in $\EE{11}$.
+\end{enumerate}
+\end{theorem}
+
+\begin{factcheck}{$\EE{11}$ CONJECTURE STATUS}
+\textbf{Evidence for:}
+\begin{itemize}
+    \item Low-level decomposition reproduces 11D SUGRA fields:
+          \textcolor{validcolor}{VERIFIED}~\cite{west2001e11}
+    \item Brane charges match: \textcolor{validcolor}{PARTIALLY VERIFIED}
+    \item Contains all $\EE{n}$ ($n \le 10$) as subalgebras:
+          \textcolor{validcolor}{MATHEMATICAL FACT}
+\end{itemize}
+
+\textbf{Against / Open:}
+\begin{itemize}
+    \item Full mathematical proof: \textcolor{red}{ABSENT}
+    \item No experimental predictions: \textcolor{red}{UNTESTABLE}
+    \item Higher-level content interpretation unclear:
+          \textcolor{orange}{OPEN}
+    \item Community status (2025): \textcolor{orange}{INTERESTING BUT
+          UNPROVEN}
+\end{itemize}
+\end{factcheck}
+
+\subsection{Critical Assessment: Kac--Moody Extensions}
+
+\begin{table}[ht]
+\centering
+\begin{tabular}{lccccc}
+\toprule
+Algebra & Type & Rank & $\det(A)$ & Physics Status & Evidence \\
+\midrule
+$\EE{8}$  & Finite      & 8  & $1$  & Heterotic gauge group
+    & \textcolor{validcolor}{Proven} \\
+$\EE{9}$  & Affine      & 9  & $0$  & 2D CFT / WZW models
+    & \textcolor{validcolor}{Established} \\
+$\EE{10}$ & Hyperbolic  & 10 & $<0$ & Cosmological billiards
+    & \textcolor{validcolor}{Asymptotic} \\
+$\EE{11}$ & Lorentzian  & 11 & $<0$ & M-theory conjecture
+    & \textcolor{orange}{Conjectural} \\
+\bottomrule
+\end{tabular}
+\caption{Kac--Moody extension hierarchy of $\EE{8}$, with physics evidence status.}
+\label{tab:kac_moody_hierarchy}
+\end{table}
+
+\begin{frameworkclaim}{Kac--Moody Extension Hierarchy}
+Some unified-field frameworks (e.g., Alpha001) reference $\EE{9}$, $\EE{10}$,
+$\EE{11}$ as though their physical roles are established facts.
+
+\textbf{Critical distinction:}  $\EE{9}$, $\EE{10}$, $\EE{11}$ are
+\emph{not} ``exceptional Lie algebras'' in the classification-theoretic
+sense.  The term ``exceptional'' applies only to the five
+finite-dimensional cases $G_2, F_4, \EE{6}, \EE{7}, \EE{8}$.  The
+Kac--Moody extensions are infinite-dimensional algebras with $\EE{8}$ as
+their finite core.  Conflating established $\EE{8}$ results with
+conjectural $\EE{11}$ physics is a category error.
+\end{frameworkclaim}
+
+% ==============================================================================
+\section{M-Theory and Eleven-Dimensional Supergravity}
+\label{sec:m_theory}
+% ==============================================================================
+
+\subsection{11D Supergravity}
+
+The low-energy limit of M-theory is 11-dimensional supergravity, the unique
+maximally supersymmetric theory of gravity in the highest possible
+dimension~\cite{cremmer1978}:
+
+\begin{theorem}[Cremmer--Julia--Scherk]
+\label{thm:11d_sugra}
+There exists a unique supergravity theory in 11 dimensions with field content:
+\begin{itemize}
+    \item Graviton $g_{MN}$: $\binom{11}{2} - 11 = 44$ on-shell degrees,
+    \item Gravitino $\Psi_M$: 128 on-shell fermionic degrees,
+    \item Three-form potential $C_{MNP}$: 84 on-shell degrees.
+\end{itemize}
+Total bosonic degrees: $44 + 84 = 128 = $ total fermionic degrees
+($\checkmark$ SUSY matching).
+\end{theorem}
+
+\subsection{Dimensional Reduction to 4D}
+
+Compactification of 11D SUGRA on $T^7$ yields maximal $\mathcal{N}=8$
+supergravity in 4D with the scalar manifold from
+Theorem~\ref{thm:e7_sugra}:
+\begin{equation}
+\mathcal{M}_{\mathrm{scalar}} = \frac{\EE{7(7)}}{\SU{8}},
+\qquad \dim_\RR(\mathcal{M}) = 133 - 63 = 70.
+\end{equation}
+The 70 scalar fields parametrise the 70-dimensional coset.  The discrete
+U-duality group $\EE{7}(\ZZ)$ acts on the charge lattice.
+
+% ==============================================================================
+\section{Testable Consequences and Validation Plan}
+\label{sec:testable}
+% ==============================================================================
+
+\subsection{Claim Status Table}
+
+\begin{longtable}{p{4cm}p{3cm}p{2cm}p{4cm}}
+\toprule
+\textbf{Claim} & \textbf{Origin} & \textbf{Status} & \textbf{Evidence / Reference} \\
+\midrule
+\endhead
+$\EE{8}\times\EE{8}$ anomaly cancellation &
+    Green--Schwarz (1984) &
+    \textcolor{validcolor}{Proven} &
+    \cite{green2012superstring}, Ch.~13 \\
+CY compactification $\to$ $\EE{6}$ GUT &
+    CHSW (1985) &
+    \textcolor{validcolor}{Proven} &
+    \cite{candelas1985vacuum} \\
+U-duality $\EE{d}(\ZZ)$ for $d \le 8$ &
+    Hull--Townsend (1995) &
+    \textcolor{validcolor}{Established} &
+    \cite{hull1995unity} \\
+$\EE{7(7)}/\SU{8}$ scalar manifold &
+    Cremmer--Julia (1978) &
+    \textcolor{validcolor}{Proven} &
+    \cite{cremmer1978} \\
+$\EE{8}$ lattice optimal packing &
+    Viazovska (2016) &
+    \textcolor{validcolor}{Proven} &
+    \cite{cohn2017sphere} \\
+$\EE{10}$ cosmological billiards &
+    Damour et al. (2002) &
+    \textcolor{validcolor}{Asymptotic} &
+    \cite{damour2002e10} \\
+$\EE{11}$ as M-theory symmetry &
+    West (2001) &
+    \textcolor{orange}{Conjecture} &
+    \cite{west2001e11} \\
+Landscape selection of CY &
+    --- &
+    \textcolor{red}{Open} &
+    No selection principle known \\
+Moduli stabilisation &
+    KKLT (2003) &
+    \textcolor{orange}{Partial} &
+    Mechanism proposed, not unique \\
+\bottomrule
+\caption{Claim-by-claim status table for string theory integration.}
+\label{tab:claim_status}
+\end{longtable}
+
+\subsection{Computational Validation Points}
+
+The following claims can be checked against the computational infrastructure
+in this compendium:
+\begin{enumerate}
+    \item \textbf{$\EE{7}$ root system properties}:
+          Verified in \texttt{experiments/src/e7\_lie\_algebra.py}
+          and Chapter~\ref{ch:e7_lie_algebra}.
+    \item \textbf{$\EE{8}$ lattice optimality}: Verified via kissing
+          number computation ($=240$) in the algebraic modules
+          (see Appendix~\ref{app:computational}).
+    \item \textbf{Cartan matrix determinants}: $\det(A_{\EE{7}}) = 2$,
+          $\det(A_{\EE{8}}) = 1$ verified computationally.
+    \item \textbf{Dimension and representation counts}: $\dim(\EE{7}) = 133$,
+          $\dim(\EE{8}) = 248$, fundamental representation dimensions,
+          all confirmed against classification tables.
+    \item \textbf{Weyl group orders}: $|W(\EE{7})| = 2{,}903{,}040$,
+          $|W(\EE{8})| = 696{,}729{,}600$ verified computationally.
+\end{enumerate}
+
+\subsection{Falsification Criteria}
+
+For claims beyond established mathematics, concrete falsification conditions
+include:
+\begin{enumerate}
+    \item \textbf{$\EE{6}$ GUT predictions}: Proton decay rate
+          $\tau_p \sim 10^{34\text{--}36}$~years in the
+          $p \to e^+ \pi^0$ channel.  Observation of proton decay at a
+          rate significantly different, or non-observation beyond
+          $\tau_p > 10^{37}$~years, would constrain $\EE{6}$ unification.
+    \item \textbf{SUSY partners}: $\mathcal{N}=1$ SUSY from CY
+          compactification predicts superpartners.  Continued absence at
+          LHC energies ($\sqrt{s} \sim 14$~TeV) does not disprove
+          string theory but constrains the SUSY-breaking scale.
+    \item \textbf{Moduli}: Light moduli fields would produce long-range
+          fifth forces.  Precision gravitational experiments set upper
+          bounds on moduli couplings.
+    \item \textbf{Cosmological billiards}: Mixmaster-type oscillations
+          near the big bang singularity are a prediction of $\EE{10}$
+          dynamics; numerical relativity simulations can test the
+          billiard approximation.
+\end{enumerate}
+
+% ==============================================================================
+\section{Open Problems}
+\label{sec:string_open}
+% ==============================================================================
+
+\begin{openproblem}{OP-6.1}{Landscape Selection}
+No known physical principle selects a unique Calabi--Yau manifold from the
+estimated $\sim 10^{500}$ topologically distinct candidates.  Resolution of
+this problem is prerequisite for making specific low-energy predictions from
+string compactification.
+\end{openproblem}
+
+\begin{openproblem}{OP-6.2}{Moduli Stabilisation}
+All geometric moduli of the internal manifold must acquire masses larger
+than current experimental bounds.  The KKLT mechanism and its variants
+provide frameworks for stabilisation, but uniqueness and de Sitter uplift
+remain controversial.
+\end{openproblem}
+
+\begin{openproblem}{OP-6.3}{$\EE{11}$ Full Proof}
+West's $\EE{11}$ conjecture requires a complete mathematical proof
+that all M-theory dualities arise from $\EE{11}$ Weyl reflections and
+that the full non-perturbative dynamics is encoded in the algebra.  As of
+2025, this remains open.
+\end{openproblem}
+
+\begin{openproblem}{OP-6.4}{Experimental Testability}
+String theory at the Planck scale ($\sim 10^{19}$~GeV) remains beyond
+direct experimental access.  Identifying compactification-independent
+predictions is a central challenge.
+\end{openproblem}
+
+% ==============================================================================
+\section{Conclusions}
+\label{sec:string_conclusions}
+% ==============================================================================
+
+The algebraic structures of this compendium connect to string theory through
+well-defined mathematical pathways:
+\begin{enumerate}
+    \item $\EE{8}$ enters through anomaly cancellation and the heterotic
+          gauge group (established).
+    \item $\EE{7}$ enters through U-duality, the $\mathcal{N}=8$ scalar
+          manifold, and black hole charge classification (established).
+    \item $\EE{6}$ enters through Calabi--Yau compactification and GUT
+          phenomenology (established, with landscape caveats).
+    \item Kac--Moody extensions $\EE{9}$, $\EE{10}$, $\EE{11}$ provide
+          compelling mathematical patterns but lack experimental
+          confirmation of their proposed physical roles.
+\end{enumerate}
+
+The integration contract is clear: use the finite exceptional algebras
+($\EE{6}$, $\EE{7}$, $\EE{8}$) with confidence as established mathematical
+and physical structures, while treating Kac--Moody extensions as
+well-motivated conjectures requiring further theoretical and (if possible)
+observational support.

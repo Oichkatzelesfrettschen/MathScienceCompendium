@@ -4,12 +4,13 @@
 import numpy as np
 import sys
 
+
 def verify_e7_simple_roots():
     """Verify the E7 simple roots and Cartan matrix."""
 
-    print("="*80)
+    print("=" * 80)
     print("E7 CARTAN MATRIX VERIFICATION")
-    print("="*80)
+    print("=" * 80)
     print()
 
     # Standard E7 simple roots (Bourbaki convention)
@@ -18,30 +19,32 @@ def verify_e7_simple_roots():
     #   α₁ — α₃ — α₄ — α₅ — α₆ — α₇
     #        |
     #       α₂
-    simple_roots = np.array([
-        [0.5, -0.5, -0.5, -0.5, -0.5, -0.5, 0.5, 0.5],   # α₁
-        [0.0, 0.0, 1.0, -1.0, 0.0, 0.0, 0.0, 0.0],       # α₂
-        [0.0, 0.0, -1.0, 0.0, 1.0, 0.0, 0.0, 0.0],       # α₃
-        [0.0, 0.0, 0.0, 1.0, -1.0, 0.0, 0.0, 0.0],       # α₄
-        [0.0, 0.0, 0.0, 0.0, 1.0, -1.0, 0.0, 0.0],       # α₅
-        [0.0, 0.0, 0.0, 0.0, 0.0, 1.0, -1.0, 0.0],       # α₆
-        [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1.0, -1.0]        # α₇
-    ])
+    simple_roots = np.array(
+        [
+            [0.5, -0.5, -0.5, -0.5, -0.5, -0.5, 0.5, 0.5],  # α₁
+            [0.0, 0.0, 1.0, -1.0, 0.0, 0.0, 0.0, 0.0],  # α₂
+            [0.0, 0.0, -1.0, 0.0, 1.0, 0.0, 0.0, 0.0],  # α₃
+            [0.0, 0.0, 0.0, 1.0, -1.0, 0.0, 0.0, 0.0],  # α₄
+            [0.0, 0.0, 0.0, 0.0, 1.0, -1.0, 0.0, 0.0],  # α₅
+            [0.0, 0.0, 0.0, 0.0, 0.0, 1.0, -1.0, 0.0],  # α₆
+            [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1.0, -1.0],  # α₇
+        ]
+    )
 
     # Verification 1: All roots sum to zero
     print("1. Checking if all simple roots sum to zero:")
     for i, root in enumerate(simple_roots):
         root_sum = np.sum(root)
-        print(f"   α{i+1} sum = {root_sum:.10f}")
-        assert abs(root_sum) < 1e-10, f"Root α{i+1} does not sum to zero!"
+        print(f"   α{i + 1} sum = {root_sum:.10f}")
+        assert abs(root_sum) < 1e-10, f"Root α{i + 1} does not sum to zero!"
     print("   [DONE] All simple roots sum to zero\n")
 
     # Verification 2: All roots have squared length 2
     print("2. Checking squared lengths of simple roots:")
     for i, root in enumerate(simple_roots):
         squared_length = np.sum(root**2)
-        print(f"   ||α{i+1}||² = {squared_length:.10f}")
-        assert abs(squared_length - 2.0) < 1e-10, f"Root α{i+1} has incorrect length!"
+        print(f"   ||α{i + 1}||² = {squared_length:.10f}")
+        assert abs(squared_length - 2.0) < 1e-10, f"Root α{i + 1} has incorrect length!"
     print("   [DONE] All simple roots have squared length 2\n")
 
     # Verification 3: Compute Cartan matrix
@@ -68,8 +71,8 @@ def verify_e7_simple_roots():
     # Diagonal elements should be 2
     print("   a) Diagonal elements (should all be 2):")
     for i in range(n):
-        print(f"      A[{i},{i}] = {cartan[i,i]:.1f}")
-        assert abs(cartan[i,i] - 2.0) < 1e-10, f"Diagonal element A[{i},{i}] is not 2!"
+        print(f"      A[{i},{i}] = {cartan[i, i]:.1f}")
+        assert abs(cartan[i, i] - 2.0) < 1e-10, f"Diagonal element A[{i},{i}] is not 2!"
     print("      [DONE] All diagonal elements equal 2\n")
 
     # Off-diagonal elements should be 0 or -1
@@ -77,10 +80,12 @@ def verify_e7_simple_roots():
     for i in range(n):
         for j in range(n):
             if i != j:
-                val = cartan[i,j]
+                val = cartan[i, j]
                 if abs(val) > 1e-10:  # Non-zero
                     print(f"      A[{i},{j}] = {val:.1f}")
-                    assert abs(val + 1.0) < 1e-10, f"Off-diagonal element A[{i},{j}] = {val} is not 0 or -1!"
+                    assert abs(val + 1.0) < 1e-10, (
+                        f"Off-diagonal element A[{i},{j}] = {val} is not 0 or -1!"
+                    )
     print("      [DONE] All off-diagonal elements are 0 or -1\n")
 
     # Check E7 Dynkin diagram structure
@@ -94,12 +99,12 @@ def verify_e7_simple_roots():
 
     connections = []
     for i in range(n):
-        for j in range(i+1, n):
-            if abs(cartan[i,j] + 1.0) < 1e-10:
-                connections.append((i+1, j+1))
-                print(f"      α{i+1} — α{j+1}")
+        for j in range(i + 1, n):
+            if abs(cartan[i, j] + 1.0) < 1e-10:
+                connections.append((i + 1, j + 1))
+                print(f"      α{i + 1} — α{j + 1}")
 
-    expected_connections = [(1,3), (2,4), (3,4), (4,5), (5,6), (6,7)]
+    expected_connections = [(1, 3), (2, 4), (3, 4), (4, 5), (5, 6), (6, 7)]
     print(f"\n      Expected connections: {expected_connections}")
     print(f"      Actual connections: {connections}")
 
@@ -122,9 +127,9 @@ def verify_e7_simple_roots():
         print("   The Dynkin diagram structure is correct, but we need")
         print("   different simple roots from the E7 root system.\n")
 
-    print("\n" + "="*80)
+    print("\n" + "=" * 80)
     print("ANALYSIS SUMMARY")
-    print("="*80)
+    print("=" * 80)
 
     if abs(det - 1.0) > 1e-10:
         print("\nPROBLEM IDENTIFIED:")
@@ -134,20 +139,31 @@ def verify_e7_simple_roots():
         print("  different selection of simple roots from the E7 root system.")
 
         # Try alternative simple roots
-        print("\n" + "="*80)
+        print("\n" + "=" * 80)
         print("TRYING ALTERNATIVE E7 SIMPLE ROOTS")
-        print("="*80)
+        print("=" * 80)
 
         # Alternative set based on standard E8 restriction
-        alt_simple_roots = np.array([
-            [1.0, -1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0],       # α₁
-            [0.0, 1.0, -1.0, 0.0, 0.0, 0.0, 0.0, 0.0],       # α₂
-            [0.0, 0.0, 1.0, -1.0, 0.0, 0.0, 0.0, 0.0],       # α₃
-            [0.0, 0.0, 0.0, 1.0, -1.0, 0.0, 0.0, 0.0],       # α₄
-            [0.0, 0.0, 0.0, 0.0, 1.0, -1.0, 0.0, 0.0],       # α₅
-            [0.0, 0.0, 0.0, 0.0, 0.0, 1.0, -1.0, 0.0],       # α₆
-            [-0.5, -0.5, -0.5, -0.5, -0.5, -0.5, -0.5, -0.5] # α₇ (incorrect - doesn't sum to 0!)
-        ])
+        alt_simple_roots = np.array(
+            [
+                [1.0, -1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0],  # α₁
+                [0.0, 1.0, -1.0, 0.0, 0.0, 0.0, 0.0, 0.0],  # α₂
+                [0.0, 0.0, 1.0, -1.0, 0.0, 0.0, 0.0, 0.0],  # α₃
+                [0.0, 0.0, 0.0, 1.0, -1.0, 0.0, 0.0, 0.0],  # α₄
+                [0.0, 0.0, 0.0, 0.0, 1.0, -1.0, 0.0, 0.0],  # α₅
+                [0.0, 0.0, 0.0, 0.0, 0.0, 1.0, -1.0, 0.0],  # α₆
+                [
+                    -0.5,
+                    -0.5,
+                    -0.5,
+                    -0.5,
+                    -0.5,
+                    -0.5,
+                    -0.5,
+                    -0.5,
+                ],  # α₇ (incorrect - doesn't sum to 0!)
+            ]
+        )
 
         # Fix α₇ to sum to zero
         alt_simple_roots[6] = [0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5]
@@ -168,11 +184,12 @@ def verify_e7_simple_roots():
             print("[DONE] SUCCESS! This set gives determinant 1!\n")
             print("CORRECT SIMPLE ROOTS:")
             for i, root in enumerate(alt_simple_roots):
-                print(f"  α{i+1} = {root}")
+                print(f"  α{i + 1} = {root}")
         else:
             print(f"[FAILED] Still incorrect: det = {alt_det}")
 
     return cartan, det
+
 
 if __name__ == "__main__":
     cartan, det = verify_e7_simple_roots()

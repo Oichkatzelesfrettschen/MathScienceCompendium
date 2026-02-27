@@ -27,6 +27,19 @@ if TYPE_CHECKING:
     from pathlib import Path
 
 
+class _NumpyEncoder(json.JSONEncoder):
+    """JSON encoder that converts numpy scalars to Python natives."""
+
+    def default(self, o: Any) -> Any:
+        if isinstance(o, np.bool_):
+            return bool(o)
+        if isinstance(o, np.integer):
+            return int(o)
+        if isinstance(o, np.floating):
+            return float(o)
+        return super().default(o)
+
+
 @dataclass
 class AlgebraicProperties:
     """Properties of a Cayley-Dickson algebra."""
@@ -321,7 +334,7 @@ class Quaternion(CayleyDickson):
         if isinstance(other, (int, float)):
             return Quaternion(self.coeffs * other)
         elif isinstance(other, Quaternion):
-            # (a0 + a1i + a2j + a3k)(b0 + b1i + b2j + b3k)
+            # (a0 + a1i + a2j + a3k)(b0 + b1i + b2j + b3k)  # noqa: ERA001
             a = self.coeffs
             b = other.coeffs
             result = np.zeros(4)
@@ -857,12 +870,12 @@ def run_comprehensive_validation(output_dir: Path | None = None) -> dict[str, An
         all_results[name] = results
 
         # Save individual results
-        with open(output_dir / f"cayley_dickson_{name.lower()}_validation.json", "w") as f:
-            json.dump(results, f, indent=2)
+        with (output_dir / f"cayley_dickson_{name.lower()}_validation.json").open("w") as f:
+            json.dump(results, f, indent=2, cls=_NumpyEncoder)
 
     # Save combined results
-    with open(output_dir / "cayley_dickson_all_validation.json", "w") as f:
-        json.dump(all_results, f, indent=2)
+    with (output_dir / "cayley_dickson_all_validation.json").open("w") as f:
+        json.dump(all_results, f, indent=2, cls=_NumpyEncoder)
 
     # Create summary table
     print("\n" + "=" * 80)

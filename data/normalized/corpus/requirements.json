@@ -1,0 +1,11 @@
+{
+  "category": "requirements.txt",
+  "content": "\n# Specialized Algebraic-Topological Infrastructure\nliesym>=0.8.1\ngudhi>=3.11.0\njaxlie>=1.5.0\ngiotto-tda>=0.1.4\n",
+  "generated_at_utc": "2026-02-12T07:47:48.133736+00:00",
+  "id": "requirements",
+  "line_count": 7,
+  "sha256": "66605260b165e9cbdca304fc5f6f35dc1e23876d5a283786147d05c2db5b92c5",
+  "size_bytes": 112,
+  "source_relpath": "requirements.txt",
+  "title": "# Specialized Algebraic-Topological Infrastructure"
+}

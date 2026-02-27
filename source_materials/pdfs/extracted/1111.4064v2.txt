@@ -1,0 +1,1001 @@
+Characterization of Zero-point Vibration in One-Component Crystals
+Yong Yang1, 2* and Yoshiyuki Kawazoe2
+1. Water South Street, Cheng Xiang, Xing Bin Qu, Lai Bin, Guang Xi 546101, China
+2. Institute for Materials Research, Tohoku University, Sendai 980-8577, Japan
+
+We study the magnitude of zero-point vibration in one-component crystals. For the crystals
+whose constituent atoms share the same bonding geometry, we prove the existence of a
+characteristic temperature, T0, at which the magnitude of zero-point vibrations equals to that of
+the excited vibrations. Within the Debye model T0 is found to be ~1/3 of the Debye temperature.
+The results are demonstrated in realistic systems.
+PACS numbers: 63.20.-e, 63.20.dk, 63.10.+a
+
+* Present address: National Institute for Materials Science, Tsukuba, Japan.
+E-mail: yyangtaoism@gmail.com
+
+1
+
+Introduction – Zero-point vibration (and the related zero-point energy) is one of the most
+remarkable effects predicted by quantum theory. A famous example is the ground state of the
+quantum harmonic oscillator, one of the few exactly solvable theoretical models for the
+Schrödinger equation. On the experimental side, one fact supporting the existence of zero-point
+vibration is the non-freezing behavior of liquid helium at ambient pressure when the temperature
+approaches the absolute zero (0 K). Another phenomenon serving as the evidence of zero-point
+energy is the Casimir effect [1], which predicts the existence of a weak force between two
+parallel metallic plates, and is confirmed by experiments in recent decades [2-4], though there is
+still some debate on the explanation of the origin of the force as zero-point energy in vacuum [5].
+Generally, it is a common sense that quantum phenomena such as zero-point vibration are
+significant mainly in physical systems operating at cryogenic temperatures near the absolute zero.
+More recently, however, one optical experiment has reported room-temperature quantum
+entanglement in the atomic vibrations of two macroscopically separated diamond crystals, in
+which the atomic vibration at ground state, i.e., the zero-point vibration plays a key role [6]. This
+experiment indicates a way for detecting room-temperature quantum phenomena at diamondbased systems. Then, the problem is, in addition to diamond, what other systems may be the
+potential candidates for the playground of measuring macroscopic quantum phenomena at
+temperatures well above 0 K? Or, for a given system, how to measure the role of zero-point
+vibration in the total atomic vibrations at the temperature of interest?
+In this work, we attempt to provide a generalized approach for characterizing the magnitude
+of zero-point vibration in one-component crystals (consisting of one type of atoms) as a function
+of temperature. Given that the bonding geometry of each atom is identical, we can show the
+existence of a characteristic temperature, T0, at which the atomic zero-point vibration and the
+2
+
+excited vibrations are of the same magnitude. Below T0, zero-point vibration plays a dominant
+role. Within the Debye model, we are able to establish a simple relation that T0 ~ 1/3 θD, with θD
+being the Debye temperature. Calculations based on first-principles show that, for the materials
+with a high Debye temperature, the zero-point vibration is important not only at low
+temperatures, but also at the room temperature. The physical conclusions of this paper derive
+from some mathematical results will be stated in the form of two theorems. The proofs for the
+theorems will be given in the appendix.
+General Formalism – We consider a one-component crystal consisting of N primitive cells.
+For the jth atom in the primitive cell, within the harmonic approximation, the displacement from
+its equilibrium position can be expressed as follows [7]:
+
+u ( j)   (
+q,s
+
+2 Nmq , s
+
+1
+2
+
+) eq ,s ( j )(aq ,s eiqR  aq,s eiqR )   uq ,s ( j ) ,
+
+(1)
+
+q ,s
+
+where the number of atoms per primitive cell is r, and j = 1, …, r.  is the reduced Planck
+constant; m is the mass of each atom; q is the wave vector in reciprocal space and R is the
+translational lattice vector denoting the position of the atom. The vibrational mode of the sth (s =
+1, 2, .., 3r) phonon branch with a wave number q (= q ) and a frequency q , s is denoted by (q, s)
+hereafter; eq , s ( j ) is the phonon polarization vector. aq, s and aq , s are respectively the creation
+and annihilation operator for phonons. Obviously, uq , s ( j ) represents the contribution from each
+mode (q, s). Instead of u ( j ) , the quantity can be measured experimentally is the mean square
+2
+
+displacement (MSD), u ( j ) . At the eigenstate n of vibrational mode (q, s), the MSD is
+
+n uq ,s ( j )  uq ,s ( j ) n  un2 ( j )
+
+q,s
+
+2
+1
+ (n  )(
+) eq ,s ( j ) .
+2 Nmq ,s
+
+3
+
+The total MSD u 2 ( j ) for each atom is contributed from all the vibrational modes and can
+be measured by the Debye-Waller factor (DWF) [8, 9] defined in X-ray diffraction [10]. In a
+canonical ensemble, the probability of finding the system at the eigenstate n of mode (q, s) is
+1
+wn (q, s)  exp[ En (q, s)] / Z , where En (q, s)  (n  ) q ,s , Z   exp[ En (q, s)] , and
+2
+n
+
+  1 /( k BT ) . k B is the Boltzmann constant and T is temperature. The weight factor is calculated
+to be wn (q, s)  (1  e
+
+  q ,s
+
+)e
+
+  n q ,s
+
+. The MSD contributed from mode (q, s) is then a weighted
+
+sum of all the eigenstates:
+
+u 2 ( j)
+
+q,s
+
+  wn (q, s) un2 ( j )
+n
+
+2
+1
+  wn (q, s)(n  )(
+) eq ,s ( j ) ,
+2 Nmq ,s
+n
+
+q ,s
+
+(2)
+
+for the jth atom in the primitive cell. Consequently, the total MSD is given by summing over all
+the vibrational modes:
+
+u2 ( j)   u 2 ( j)
+q,s
+
+q,s
+
+.
+
+(3)
+
+The total MSD can be decomposed into two terms: u 2 ( j )  u 2 ( j )  u 2 ( j )
+0
+
+u 2 ( j)
+
+0
+
+is solely from the zero-point vibrational state 0 and u 2 ( j )
+
+vibrational
+
+u 2 ( j)
+
+T
+
+states
+
+n
+
+( n  1).
+
+  wn (q, s) un2 ( j )
+q , s n 1
+
+q,s
+
+the sum of another two terms:
+
+That
+
+is,
+
+u 2 ( j)
+
+0
+
+T
+
+, where
+
+from all the excited
+
+  w0 (q, s) u02 ( j )
+q,s
+
+T
+
+q,s
+
+,
+
+and
+
+. For a mode (q, s), the MSD in Eq. (2) can also be written as
+
+u 2 ( j)
+
+q,s
+
+
+
+4
+
+1
+( n  wn (q, s)    wn (q, s)) . Using
+Nmq , s n
+n 2
+
+ w (q, s)  1 , the term is reduced to: u ( j)
+2
+
+n
+
+n
+
+q,s
+
+
+
+1
+1
+1
+(  q ,s
+ )
+(n  ) ,
+Nmq ,s e
+Nmq ,s
+2
+1 2
+
+where n is just the average number of phonons at temperature T from the Bose-Einstein
+statistics.
+For a macroscopic crystal in which the number of primitive cells N is large enough, the values
+of wave number q can be viewed as continuous, and summation in the q-space can be replaced
+by an integral:
+u 2 ( j)   u 2 ( j)
+q,s
+
+q,s
+
+
+
+m
+
+0
+
+e ( j )
+
+2
+
+2
+
+1
+1
+( 
+ )G( )d ,
+Nm e  1 2
+
+2
+
+(4)
+
+2
+
+where the term eq , s ( j ) in Eq. (2) is replace by e ( j ) , because eq , s ( j ) is the same for the
+m
+
+same frequency ω. The vibrational density of states (VDOS) G( ) satisfies  G( )d  3Nr ,
+0
+
+with r the number of atoms per primitive cell, and ωm the maximum of frequency.
+For a one-component crystal, if the bonding geometry of each constituent atom is identical
+2
+
+(referred as geometric condition hereafter), it follows that the term eq , s ( j ) 
+
+1
+(Proved in the
+r
+
+Lemma of Appendix A.), and despite the difference by a phase factor, the magnitude of
+vibrations for each atom is the same. Consequently, the notations for the total MSD, and the
+MSD from zero-point vibration and the excited vibrations can be simplified as u 2 , u 2 , and
+0
+
+u2
+
+T
+
+, respectively. Moreover, the vibrations of each atom are described by the same VDOS,
+
+which is g ()  G() / ( Nr ) , where r = 1 for crystals with monoatomic basis and r ≥ 2 for
+crystals with multiatomic basis. The corresponding MSD quantities are as follows:
+
+5
+
+u2  
+
+m
+
+0
+
+u2
+
+u2
+
+where 
+
+m
+
+0
+
+T
+
+
+
+m
+
+0
+
+0
+
+
+
+1
+1
+( 
+ ) g ( )d ,
+m e  1 2
+
+m
+
+2m
+
+0
+
+(1  e   ) g ( )d ,
+
+1
+
+ (1  e   )e   (n  2 ) m g ()d ,
+
+
+ n
+
+(5)
+
+(6)
+
+(7)
+
+n 1
+
+g ( )d  3 .
+
+From the expressions (see also in Appendix A.), it is found that u 2
+with temperature T while u 2
+
+and u 2
+
+T
+
+0
+
+decreases monotonically
+
+show opposite behavior. Moreover, under the
+
+geometric condition, we can state the following:
+Theorem 1. – (Proved in Appendix A.) There exists a characteristic temperature, T0, at which
+the magnitude of zero-point vibration is equal to that of the sum of excited vibrations, i.e.,
+
+u2
+
+0
+
+ u2
+
+T
+
+. Below T0, u 2
+
+0
+
+ u2
+
+T
+
+.
+
+Theorem 2. – (Proved in Appendix B.) Within the Debye model, there is simple relation that
+T0   D /  , where  D is the Debye temperature, and   2.99345...
+
+Realistic Applications – We go on to demonstrate the two theorems mentioned above in two
+realistic systems that satisfy the geometric condition: aluminum (Al) and diamond, whose
+primitive cell contains one and two atoms, respectively. The VDOS for each atom, g ( ) , is
+computed by using the program Quantum ESPRESSO [11], which is based on density
+functional perturbation theory (DFPT) [12]. The wave function of valence electrons is expanded
+
+6
+
+using a plane wave basis set with a kinetic energy cut-off of 20 Ry for Al and 27 Ry for diamond.
+The ion-electron interactions are described by the von Barth-Car pseudopotentials [13], and the
+exchange-correlation energies are described using the Perdew-Zunger functional [14]. For the
+calculation of electronic wave function, the Brillouin zone is sampled using a 20×20×20
+
+
+Monkhorst-Pack k-mesh [15]. A 16×16×16 uniform q -point grid is used for the calculation of
+
+
+dynamical matrices, which are then diagonalized to get the eigenfrequency  (q ) ( q : wave
+
+vector). The dynamical matrices of denser q -grids can be obtained by using interpolation
+method.
+Figure 1 shows the calculated VDOS of Al (Fig. 1(a)) and diamond (Fig. 1(b)), whose
+features compare well with experimental measurements (Al) [16] or previous theoretical works
+(diamond) [17]. The maximum frequency is m  2π × 1.016 × 1013 rad/s (wave number:
+
+ m  338.9 cm-1) for Al, and m  2π × 3.990 × 1013 rad/s ( m  1331 cm-1) for diamond. The
+corresponding VDOS from the Debye model ( g ( )   2 ) for Al and diamond are shown along
+with the DFPT ones, where the Debye frequency D  kB D / , and  D  428 K for Al [18] and
+
+ D  2230 K for diamond [18]. It is clear that the Debye VDOS matches well with that of the
+DFPT method at the low frequency part.
+The MSD quantities are shown in Figs. 1(c)-(d), for calculations using the VDOS from DFPT
+method and the Debye model. As expected above,
+increasing temperature while the terms u 2 and u 2
+
+T
+
+u2
+
+0
+
+decreases monotonically with
+
+show opposite behavior. Using the DFPT
+
+VDOS, the characteristic temperature T0 is determined to be ~ 148 K and ~ 687 K for Al and
+diamond, respectively. Within the Debye model, the value of T0 turns out to be ~ 143 K for Al
+
+7
+
+and ~ 745 K for diamond. It can be easily checked that the relation T0   D / 2.99345 stated in
+theorem 2 is well satisfied for the T0 obtained using the Debye VDOS. The calculated total MSD
+at T = 4.2 K, 77 K, and 293 K, are listed in Table I for both systems, with comparison to that
+from the literature [10]. One finds satisfactory agreement, despite the systematic deviation
+between the DFPT and Debye data lines, which is due to the different VDOS employed in
+calculation.
+The values of T0 imply that, the magnitude of zero-point vibration of both Al and diamond is
+not negligible even at room temperature. Indeed, at T = 298 K, the ratio  (T )  u 2
+
+0
+
+/ u 2 from
+
+DFPT is ~ 20.6% for Al and ~ 86.5% for diamond. Considering the fact that thermal expansion
+is caused by the anharmonic motions of atoms [18], and the small thermal expansion coefficients
+of both Al (~ 23 × 10-6/K) and diamond (~ 1 × 10-6/K) [17, 19], the anharmonic contribution to
+the total MSD is negligible at room temperature and below. Therefore, the results regarding the
+contribution of zero-point vibration to total MSD should preserve, and for diamond zero-point
+vibration plays a dominant role at room temperature. This is consistent with the recent
+experimental work on diamond-based system [6].
+We have also performed calculations on a number of other elements whose crystals satisfy
+the geometric condition mentioned above. The corresponding values of T0 for Be, Ti, Ta, and Pb
+are given in Table II, along with that of Al. It is clear that relation T0   D / 2.99345 holds
+precisely. From Fig. 1, in spite of the notable difference in the VDOS at the high frequency part,
+the values of T0 don`t differ significantly between DFPT and Debye model. Therefore, the exact
+result T0   D / 2.99345 derived within the Debye model, is a good approximation for
+characterizing the magnitude of zero-point vibration in one-component crystals that satisfy the
+8
+
+geometric condition, which is true for the crystals of most (if not all) elements in the periodic
+table. As a result, one can expect that, besides diamond, for the crystals of other elements with a
+high Debye temperature, such as beryllium (θD = 1440 K) [18], T0 will also be a high value.
+Zero-point vibration in such systems will play a dominant role even at the room temperature. On
+the other hand, for most conventional superconducting elements whose superconductivity is
+mediated by electron-phonon interaction, e.g., the ones listed in Table II, the values of T0 are
+well above the superconducting transition temperature Tc. As seen in Table II,
+
+ (Tc )  u 2 0 / u 2  1 for all the elements enumerated there, which demonstrates that zero-point
+vibration of atoms plays a major role in conventional superconductivity. Indeed, in the timetested BCS theory, only zero-point vibration is considered in the calculation of matrix elements
+for the electron-phonon interaction [20]. Though this scheme is intuitively reasonable, our work
+provides a solid theoretical justification for such approximation.
+Concluding Remarks – In summary, the magnitude of atomic zero-point vibration as well as
+excited vibrations in one-component crystals is characterized theoretically. For crystals whose
+constituent atoms have the same bonding geometry, there exists a characteristic temperature T0,
+at which the mean square displacement (MSD) of zero-point and excited vibrations has equal
+magnitude. Below T0 the zero-point vibration is dominant over the excited vibrations. Within the
+Debye model, we obtain a simple relation between T0 and the Debye temperature. The results
+can be briefly summarized in two theorems, which are further demonstrated in realistic systems
+by numerical simulations. In the case of Al and diamond, it is found that zero-point vibration
+plays a nontrivial role at relatively elevated temperatures. The role of zero-point vibration in the
+conventional superconductivity is discussed. Possible directions for the future research include
+extension of the present work to low-dimensional systems, such as nanotube (one-dimensional)
+9
+
+and graphene (two-dimensional), and to the more complex systems whose constituent atoms
+have different bonding geometries.
+
+Acknowledgements: The authors would like to express their sincere thanks to the crew of
+Center for Computational Materials Science of the Institute for Materials Research, Tohoku
+University, for their continuous support of the SR11000 supercomputing facilities.
+
+APPENDIX A
+To prove theorem 1, we first establish the following:
+Lemma. – For a one-component crystal, if all the atoms share the same bonding geometry
+(geometric condition), then the square of modulus of each polarization vector is identical, that is:
+2
+1
+eq , s ( j )  ,
+r
+
+(A.1)
+
+where r is number of atoms per primitive cell, and j = 1, …, r.
+Proof. – Atomic vibrations of a crystal can be studied within the primitive cell, by using the
+translational geometry. The vibrational properties are completely determined by the dynamical
+matrix D(q )  ( D (
+
+q
+
+))3r3r , where α, β = x, y, z, and q is the wave vector, j and j` denote the
+j, j`
+
+atoms in the primitive cell.
+2
+
+a) If r = 1, then j = 1. The polarization vectors satisfy eq,s ( j )  eq,s ` ( j )   s ,s ` , eq , s ( j ) 
+
+10
+
+1
+1, s
+r
+
+= 1, 2, 3. The dimension of dynamical matrix is (3×3).
+b) If r ≥ 2, the dynamical matrix is a (3r×3r) Hermitian matrix, which can be partitioned into r2
+(3×3) blocks. The same bonding geometry implies, the partial derivatives of potential
+energy V with respect to atomic displacement u, (
+
+ nV
+)0 , are identical for each atom
+ui u j uk
+
+to arbitrary high order n, where the subscript 0 denotes the equilibrium position. The matrix
+elements of D(q ) are obtained by the Fourier transform of the force constants (
+
+ 2V
+)0 .
+ui u j
+
+As a result, the diagonal blocks of the partitioned matrix D are identical:
+( D1,1 )33  ( D2,2 )33  ...  ( Dr ,r )33 . The off-diagonal blocks are complex conjugate of each
+
+other: ( Di , j )33  ( D*j ,i )33 . For any two atoms j and j`, the corresponding matrix elements in
+the algebra equations that respectively determine the polarization vectors eq , s ( j ) and
+
+eq , s ( j`) obey the following: D (
+
+q
+j, j
+
+)  D (
+
+q
+
+q
+q
+*
+) , D (
+)  D
+(
+) . Consequently,
+j`, j`
+j, j`
+j`, j
+2
+
+2
+
+eq , s ( j ) and eq , s ( j`) will differ by only a phase factor, and eq ,s ( j )  eq ,s ( j`) . Using the
+r
+
+orthonormality  eq , s ( j )  1 , one has eq ,s ( j )  eq ,s ( j `) 
+2
+
+2
+
+j 1
+
+2
+
+1
+. Hence the lemma.
+r
+
+Proof of the theorem. – Under the geometric condition, it follows from Lemma that the MSD
+quantities for each atom can be expressed using uniform expressions as given by Eqs. (5)-(7) in
+the text. As demonstrated by numerous experiments, the VDOS g(ω) of a crystal takes a
+parabolic form (Debye model) g ( )  A 2 at the low frequency region. From Eqs. (5)-(7), it
+follows that the frequency point ω = 0 is a removable singularity. This is true due to the finite
+size of realistic systems. Under long wavelength limit, the frequency is   2πvs/λ, where vs is
+
+11
+
+the speed of sound wave. The wavelength satisfies   L , with L the dimension of an
+experimental sample. Hence, ω ≥ 2πvs/L ≡ ω0, which is minimum frequency. The VDOS g(ω) =
+0 for ω ≤ ω0. The integration interval for Eqs. (5)-(7) can be reduced to ω ∈ [ω0, ωm].
+
+1
+Let x     /( k BT ) , the summation  (1  e   )e  n  (n  ) in Eq. (7) turns out to
+2
+n 1
+
+be
+
+3e x  1
+ fT ( x) . The expressions of
+2e x (e x  1)
+
+u2
+
+
+
+0
+
+m
+
+0
+
+f 0 ( x)
+
+m
+
+g ( )d , u 2
+
+T
+
+
+
+m
+
+0
+
+fT ( x )
+
+m
+
+u2
+
+0
+
+u2
+
+and
+
+can be rewritten as
+
+T
+
+g ( )d , with f 0 ( x)  (1  e  x ) / 2 . u 2
+
+is a continuous, monotonically decreasing function of temperature T while u 2
+The lower limit of both u 2
+point at which u 2
+
+x0   /( k BT0 )  ln(
+
+0
+
+ u2
+
+0
+
+T
+
+and u 2
+
+T
+
+T
+
+0
+
+is the opposite.
+
+is zero. Therefore, there should exit one temperature
+
+. Indeed, for each  , f 0 ( x)  fT ( x) determines a root that is
+
+5  17
+)  1.518 . Because of the contrary monotonic behavior between
+2
+
+f 0 ( x) and f T (x) with x, f 0 ( x)  fT ( x) holds for x  x0 while f 0 ( x)  fT ( x) is true for x  x0 .
+
+The same relation applies to the integrals that give u 2
+
+u2
+
+T
+
+0
+
+ u2
+
+m
+x0 kB
+
+T
+
+always holds when T 
+
+ T2 . Since u 2
+
+0
+
+and u 2
+
+T
+
+0
+x0 k B
+
+0
+
+ T1 , while u 2
+
+and u 2
+
+0
+
+ u2
+
+T
+
+T
+
+. One can show that
+
+is always true when
+
+are continuous and monotonic, the temperature T0 belongs
+
+to the region T1  T0  T2 . This is independent of the form of g ( ) .
+
+12
+
+APPENDIX B
+Within the Debye model the VDOS g ( )  A 2 , the two terms are as follows:
+
+u2
+
+u2
+
+0
+
+0
+
+
+
+A(kBT )2 D /T 1
+x
+0 2 (1  e ) xdx , and
+m
+
+ u2
+
+T
+
+u2
+
+T
+
+
+
+A(kBT )2 D /T (3e x  1)
+0 2e x (e x  1) xdx . The equality
+m
+
+defines the characteristic temperature T0 as
+
+D / T
+
+
+
+0
+
+x
+ D / T (3e  1)
+1
+xdx .
+(1  e  x ) xdx  
+0
+2e x (e x  1)
+2
+
+(B. 1)
+
+It is clear that T0 is solely determined by the Debye temperature θD. Our numerical calculation
+shows that, when the ratio ζ = θD/T = 2.99345, the difference between the left side and right side
+integral is less than 5×10-5. Therefore, we have
+
+T0 
+
+D
+D
+.
+
+
+2.99345
+
+13
+
+(B. 2)
+
+Reference:
+[1] H. G. B. Casimir, Proc. Con. Ned. Akad. van Wetensch B51, 793 (1948).
+[2] S. K. Lamoreaux, Phys. Rev. Lett. 78, 5 (1997).
+[3] U. Mohideen and A. Roy, Phys. Rev. Lett. 81, 4549 (1998).
+[4] G. Bressi, G. Carugno, R. Onofrio, and G. Ruoso, Phys. Rev. Lett. 88, 041804 (2002).
+[5] R. L. Jaffe, Phys. Rev. D 72, 021301(R) (2005).
+[6] K. C. Lee, et al., Science 334, 1253 (2011).
+[7] Z. Z. Li (李正中), Solid State Theory, 2nd Edition, Higher Education Press, Beijing, China,
+2002.
+[8] P. Debye, Ann. d. Phys. 348 (1): 49 (1913).
+[9] I. Waller, Zeitschrift für Physik A Hadrons and Nuclei (Berlin / Heidelberg: Springer) 17, 398
+(1923).
+[10] Jens Als-Nielsen and Des McMorrow, Elements of Modern X-ray Physics, 2nd edition, John
+Wiley & Sons, Inc. 2011.
+[11] http://www.quantum-espresso.org/.
+[12] S. Baroni, S. de Gironcoli, A. Dal Corso, and P. Giannozzi, Rev. Mod. Phys.73, 515 (2001).
+[13] U. von Barth and R. Car (unpublished); for a brief description of this method, see A. Dal
+Corso, S. Baroni, R. Resta, and S. de Gironcoli, Phys. Rev. B 47, 3588 (1993).
+[14] J. P. Perdew and A. Zunger, Phys. Rev. B 23, 5048 (1981).
+14
+
+[15] H. J. Monkhorst and J. D. Pack, Phys. Rev. B 13, 5188 (1976).
+[16] M. Kresch, M. Lucas, O. Delaire, J. Y. Y. Lin, and B. Fultz, Phys. Rev. B 77, 024301 (2008).
+[17] P. Pavone, K. Karch, O. Schütt, D. Strauch, W. Windl, P. Giannozzi, S. Baroni, Phys. Rev.
+B 48, 3156 (1993).
+[18] C. Kittel, Introduction to Solid State Physics, 8th edition, John Wiley & Sons, Inc. 2005.
+[19] http://en.wikipedia.org/wiki/Thermal_expansion;
+http://www.engineeringtoolbox.com/linear-expansion-coefficients-d_95.html.
+[20] J. Bardeen, L. N. Cooper, and J. R. Schrieffer, Phys. Rev. 106, 162 (1957); 108, 1175 (1957).
+
+15
+
+Table I. Calculated total MSD u 2 of Al and diamond at different temperatures, by using DFPT
+and Debye VDOS.
+
+Al
+T (K)
+a
+
+77
+
+293
+
+4.2
+
+77
+
+293
+
+DFPT (Å2)
+
+0.0096 0.0113 0.0268
+
+0.0048 0.0048 0.0053
+
+b
+
+Debye (Å2)
+
+0.0095 0.0114 0.0274
+
+0.0041 0.0041 0.0045
+
+Debye (Å2)
+
+0.0095 0.0114 0.0274
+
+0.0042 0.0042 0.0046
+
+c
+
+a
+
+4.2
+
+Diamond
+
+Present work.
+
+b
+
+Present work.
+
+c
+
+The MSD is deduced by using the relation DWF =
+
+8 2 2
+u for an isotropic crystal, where the DWF data are
+3
+
+from Reference [10].
+
+16
+
+Table II. The Debye temperature (D), characteristic temperature (T0) of zero-point vibration, and
+superconducting transition temperature (Tc) of a number of elements. The quantity
+
+ (T )  u 2 0 / u 2 . The data of D (low temperature limit) and Tc are from Ref. [18]. The unit for
+temperatures is K.
+
+Element
+
+D
+
+T0
+
+Tc
+
+ (Tc)
+
+D/T0
+
+Be
+
+1440
+
+481.06
+
+0.026
+
+1.000
+
+2.993
+
+Al
+
+428
+
+142.98
+
+1.140
+
+1.000
+
+2.993
+
+Ti
+
+420
+
+140.31
+
+0.39
+
+1.000
+
+2.993
+
+Ta
+
+240
+
+80.18
+
+4.483
+
+0.997
+
+2.993
+
+Pb
+
+105
+
+35.08
+
+7.193
+
+0.961
+
+2.993
+
+17
+
+FIG. 1 (color online) Panels (a)-(b): Vibrational density of states (g(ω)) of Al and diamond,
+calculated from the density functional perturbation theory (DFPT) and from the Debye model
+(dash lines). Panels (c)-(d): Calculated atomic mean square displacement (MSD) in Al and
+diamond, as a function of temperature, by using the g(ω) of DFPT (solid lines) and the Debye
+model (dash lines).
+
+18
+
+

@@ -43,5 +43,15 @@ except ImportError:
     genesis_harmonics = None  # type: ignore
 
 
-__all__ = ["cayley_dickson", "config", "data_handler", "fractal_analysis", "lattice_theory", "modular_forms", "optional_deps", "roots", "viz", *_optional_modules]
-
+__all__ = [
+    "cayley_dickson",
+    "config",
+    "data_handler",
+    "fractal_analysis",
+    "lattice_theory",
+    "modular_forms",
+    "optional_deps",
+    "roots",
+    "viz",
+]
+__all__.extend(_optional_modules)

@@ -151,7 +151,7 @@ def build_explorer_site():
     html_content = HTML_TEMPLATE.replace("{data_placeholder}", json_data)
 
     output_path = Config.FIGURES_DIR / "lie_algebras_explorer.html"
-    with open(output_path, "w") as f:
+    with output_path.open("w") as f:
         f.write(html_content)
 
     print(f"[EXPLORER] Site generated: {output_path}")

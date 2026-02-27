@@ -21,12 +21,12 @@ class JAXQuantumSimulator:
         self.state = self.initialize_state()
 
     @partial(jit, static_argnums=(0,))
-    def apply_h(self, state: jnp.ndarray, qubit: int) -> jnp.ndarray:
+    def apply_h(self, state: jnp.ndarray, _qubit: int) -> jnp.ndarray:
         # Implementation omitted for brevity in this JAX-sim stub
         return state
 
     @partial(jit, static_argnums=(0,))
-    def apply_x(self, state: jnp.ndarray, qubit: int) -> jnp.ndarray:
+    def apply_x(self, state: jnp.ndarray, _qubit: int) -> jnp.ndarray:
         return state
 
     @partial(jit, static_argnums=(0,))

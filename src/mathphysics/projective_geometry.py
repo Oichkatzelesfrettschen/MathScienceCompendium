@@ -172,7 +172,7 @@ class ProjectiveLine:
         self.points = frozenset([point1, point2])
         self._all_points: frozenset[ProjectivePoint] | None = None
 
-    def contains(self, point: ProjectivePoint, dimension: int = 6) -> bool:
+    def contains(self, point: ProjectivePoint, _dimension: int = 6) -> bool:
         """Check if point lies on this line.
 
         Args:
@@ -197,7 +197,7 @@ class ProjectiveLine:
 
         return False
 
-    def get_all_points(self, dimension: int = 6) -> frozenset[ProjectivePoint]:
+    def get_all_points(self, _dimension: int = 6) -> frozenset[ProjectivePoint]:
         """Get all points on this line.
 
         In PG(n,2), every line has exactly 3 points.

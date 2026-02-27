@@ -191,7 +191,7 @@ class E8RootStructure:
 
         # Apply Weyl reflections
         for simple_root in self.simple_roots:
-            # Weyl reflection: w_α(v) = v - 2*(v·α)/(α·α) * α
+            # Weyl reflection: w_a(v) = v - 2*(v.a)/(a.a) * a
             reflected = (
                 root
                 - 2 * np.dot(root, simple_root) / np.dot(simple_root, simple_root) * simple_root
@@ -619,7 +619,7 @@ class E8StatePreparation:
 
         return qc
 
-    def _approximate_state_prep(self, amplitudes: np.ndarray, n_qubits: int) -> QuantumCircuit:
+    def _approximate_state_prep(self, _amplitudes: np.ndarray, n_qubits: int) -> QuantumCircuit:
         """Approximate state preparation using variational circuit.
 
         Args:
@@ -902,7 +902,7 @@ class E8HardwareOptimization:
 
     def _get_backend(self) -> Any:
         """Get hardware backend."""
-        from qiskit.providers.fake_provider import GenericBackendV2
+        from qiskit.providers.fake_provider import GenericBackendV2  # noqa: PLC0415
 
         return GenericBackendV2(num_qubits=27)
 

@@ -1,0 +1,58 @@
+{
+  "asset_count": 7,
+  "assets": [
+    {
+      "local_relpath": "data/external/super_force_analysis/LICENSE.upstream.md",
+      "sha256": "3357d40cd632393bcfe383a18fdba02f9bb2cfa871b1436a940905669171fb20",
+      "size_bytes": 11924,
+      "source_url": "https://raw.githubusercontent.com/ConsciousEnergy/Super-Force-Analysis/afbde0996d58bde0dbc7dbcf254810b3c289db31/LICENSE.md",
+      "upstream_path": "LICENSE.md"
+    },
+    {
+      "local_relpath": "data/external/super_force_analysis/README.upstream.md",
+      "sha256": "d3079a75531ffaad9c0310e69c08ef1079637a0a1ea1e9b711c69730ef5e3b19",
+      "size_bytes": 5616,
+      "source_url": "https://raw.githubusercontent.com/ConsciousEnergy/Super-Force-Analysis/afbde0996d58bde0dbc7dbcf254810b3c289db31/README.md",
+      "upstream_path": "README.md"
+    },
+    {
+      "local_relpath": "data/external/super_force_analysis/Dimensional_Analysis_Results.md",
+      "sha256": "5abf9f7f6dae26ad075ac4b658d5648e1f978fd92dcd0174160396e93485febf",
+      "size_bytes": 1770,
+      "source_url": "https://raw.githubusercontent.com/ConsciousEnergy/Super-Force-Analysis/afbde0996d58bde0dbc7dbcf254810b3c289db31/Dimensional_Analysis_Results.md",
+      "upstream_path": "Dimensional_Analysis_Results.md"
+    },
+    {
+      "local_relpath": "data/external/super_force_analysis/Experimental_Designs.md",
+      "sha256": "2dce837a7606c09727b5da1daed77fcd9dd3227b8dbfbecdd7f0cf2b28c1724e",
+      "size_bytes": 5157,
+      "source_url": "https://raw.githubusercontent.com/ConsciousEnergy/Super-Force-Analysis/afbde0996d58bde0dbc7dbcf254810b3c289db31/Experimental_Designs.md",
+      "upstream_path": "Experimental_Designs.md"
+    },
+    {
+      "local_relpath": "data/external/super_force_analysis/Literature_Review.md",
+      "sha256": "8b266deb0d3def79d9ed17b51e9992592504dbd2c3deadc99b9175668a4dde02",
+      "size_bytes": 7086,
+      "source_url": "https://raw.githubusercontent.com/ConsciousEnergy/Super-Force-Analysis/afbde0996d58bde0dbc7dbcf254810b3c289db31/Literature_Review.md",
+      "upstream_path": "Literature_Review.md"
+    },
+    {
+      "local_relpath": "data/external/super_force_analysis/Super_Force_Dimensional_Analysis.py",
+      "sha256": "6e488feafb0f93bbcb11b89650dfec8de9cf436fa7c85593c70ced17ee737649",
+      "size_bytes": 3818,
+      "source_url": "https://raw.githubusercontent.com/ConsciousEnergy/Super-Force-Analysis/afbde0996d58bde0dbc7dbcf254810b3c289db31/Super_Force_Dimensional_Analysis.py",
+      "upstream_path": "Super_Force_Dimensional_Analysis.py"
+    },
+    {
+      "local_relpath": "data/external/super_force_analysis/Simulations_and_Modeling.md",
+      "sha256": "4803ccf0b4a2f60a37002951beddb0cda05d6975a274b472c0a8d8c98371d9e7",
+      "size_bytes": 2801,
+      "source_url": "https://raw.githubusercontent.com/ConsciousEnergy/Super-Force-Analysis/afbde0996d58bde0dbc7dbcf254810b3c289db31/Simulations_%26_Modeling",
+      "upstream_path": "Simulations_&_Modeling"
+    }
+  ],
+  "generated_at_utc": "2026-02-12T06:21:36.128060+00:00",
+  "generated_by": "scripts/sync_super_force_analysis_assets.py",
+  "upstream_ref": "afbde0996d58bde0dbc7dbcf254810b3c289db31",
+  "upstream_repo": "ConsciousEnergy/Super-Force-Analysis"
+}

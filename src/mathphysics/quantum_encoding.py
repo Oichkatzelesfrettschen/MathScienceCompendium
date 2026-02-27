@@ -423,7 +423,7 @@ class QROMEncoder(QuantumEncoder):
         self.data_register_size = 0
 
     def build_qrom_circuit(
-        self, data: list[np.ndarray], labels: list[str] | None = None
+        self, data: list[np.ndarray], _labels: list[str] | None = None
     ) -> QuantumCircuit:
         """Build QROM circuit for accessing stored data.
 
@@ -492,15 +492,13 @@ class QROMEncoder(QuantumEncoder):
         if control_qubits:
             # Apply controlled operations to load data
             for j, value in enumerate(data_vector):
-                if abs(value) > self.config.error_tolerance:
-                    # Simplified: just mark non-zero positions
-                    if j < len(qr_data):
-                        if len(control_qubits) == 1:
-                            qc.cx(control_qubits[0], qr_data[j])
-                        else:
-                            # Multi-controlled X gate
-                            mcx = MCXGate(len(control_qubits))
-                            qc.append(mcx, [*control_qubits, qr_data[j]])
+                if abs(value) > self.config.error_tolerance and j < len(qr_data):
+                    if len(control_qubits) == 1:
+                        qc.cx(control_qubits[0], qr_data[j])
+                    else:
+                        # Multi-controlled X gate
+                        mcx = MCXGate(len(control_qubits))
+                        qc.append(mcx, [*control_qubits, qr_data[j]])
 
     def build_e7_qrom(self) -> QuantumCircuit:
         """Build QROM circuit for E7 root system.
@@ -536,7 +534,7 @@ class HybridEncoder(QuantumEncoder):
         self.binary_encoder = BinaryEncoder(config)
         self.qrom_encoder = QROMEncoder(config)
 
-    def encode_hierarchical(self, roots: np.ndarray, levels: int = 2) -> QuantumCircuit:
+    def encode_hierarchical(self, roots: np.ndarray, _levels: int = 2) -> QuantumCircuit:
         """Hierarchical encoding using multiple levels.
 
         Args:
@@ -722,7 +720,7 @@ class EncodingValidator:
                     qc = AmplitudeEncoder(encoder.config).encode_root_amplitudes(root)
 
                 # Get statevector from circuit
-                from qiskit.quantum_info import Statevector
+                from qiskit.quantum_info import Statevector  # noqa: PLC0415
 
                 state = Statevector.from_instruction(qc)
 

@@ -1,0 +1,111 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://mathsciencecompendium.local/schemas/registry/claim_coverage_report.schema.json",
+  "title": "ClaimCoverageReportRegistry",
+  "type": "object",
+  "required": [
+    "generated_by",
+    "generated_at_utc",
+    "crosswalk_relpath",
+    "sources_manifest_relpath",
+    "claims_total",
+    "chapters_with_claims",
+    "groups_tracked",
+    "unique_sources_total",
+    "overall_status"
+  ],
+  "properties": {
+    "generated_by": { "type": "string", "minLength": 1 },
+    "generated_at_utc": { "type": "string", "format": "date-time" },
+    "crosswalk_relpath": { "type": "string", "minLength": 1 },
+    "sources_manifest_relpath": { "type": "string", "minLength": 1 },
+    "claims_total": { "type": "integer", "minimum": 0 },
+    "chapters_with_claims": { "type": "integer", "minimum": 0 },
+    "groups_tracked": { "type": "integer", "minimum": 0 },
+    "unique_sources_total": { "type": "integer", "minimum": 0 },
+    "overall_status": { "type": "string", "enum": ["pass", "fail"] },
+    "coverage_policy": {
+      "type": "object",
+      "required": [
+        "min_claims_per_chapter",
+        "min_unique_sources_per_chapter",
+        "min_claims_per_group",
+        "min_unique_sources_per_group",
+        "required_chapter_group_prefixes"
+      ],
+      "properties": {
+        "min_claims_per_chapter": { "type": "integer", "minimum": 1 },
+        "min_unique_sources_per_chapter": { "type": "integer", "minimum": 1 },
+        "min_claims_per_group": { "type": "integer", "minimum": 1 },
+        "min_unique_sources_per_group": { "type": "integer", "minimum": 1 },
+        "required_chapter_group_prefixes": {
+          "type": "array",
+          "minItems": 1,
+          "items": { "type": "string", "minLength": 1 }
+        }
+      },
+      "additionalProperties": false
+    },
+    "unknown_source_id_count": { "type": "integer", "minimum": 0 },
+    "unknown_source_ids": {
+      "type": "array",
+      "items": { "type": "string", "minLength": 1 }
+    },
+    "chapter_coverage": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "chapter_relpath",
+          "claims_count",
+          "unique_sources_count",
+          "claim_ids",
+          "source_ids",
+          "status"
+        ],
+        "properties": {
+          "chapter_relpath": { "type": "string", "minLength": 1 },
+          "claims_count": { "type": "integer", "minimum": 0 },
+          "unique_sources_count": { "type": "integer", "minimum": 0 },
+          "claim_ids": {
+            "type": "array",
+            "items": { "type": "string", "minLength": 1 }
+          },
+          "source_ids": {
+            "type": "array",
+            "items": { "type": "string", "minLength": 1 }
+          },
+          "status": { "type": "string", "enum": ["pass", "fail"] }
+        },
+        "additionalProperties": false
+      }
+    },
+    "group_coverage": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "group_prefix",
+          "chapters_covered",
+          "claims_count",
+          "unique_sources_count",
+          "source_ids",
+          "status"
+        ],
+        "properties": {
+          "group_prefix": { "type": "string", "minLength": 1 },
+          "chapters_covered": { "type": "integer", "minimum": 0 },
+          "claims_count": { "type": "integer", "minimum": 0 },
+          "unique_sources_count": { "type": "integer", "minimum": 0 },
+          "source_ids": {
+            "type": "array",
+            "items": { "type": "string", "minLength": 1 }
+          },
+          "status": { "type": "string", "enum": ["pass", "fail"] }
+        },
+        "additionalProperties": false
+      }
+    }
+  },
+  "additionalProperties": false
+}

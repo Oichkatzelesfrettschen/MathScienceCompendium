@@ -368,7 +368,7 @@ class ModularAutomorphismGroup:
         if self._modular_operator is None:
             self.compute_modular_operator()
 
-        # Delta^{it}
+        # Delta^{it}  # noqa: ERA001
         delta_it = expm(1j * time * logm(self._modular_operator))
 
         # Conjugation
@@ -503,7 +503,7 @@ class SpectralTriple:
         # D^2
         d_squared = self.dirac_operator @ self.dirac_operator
 
-        # exp(-tD^2)
+        # exp(-tD^2)  # noqa: ERA001
         heat_kernel = expm(-time * d_squared)
 
         # Trace
@@ -733,7 +733,7 @@ class AQGMFramework:
             "graph_structure": self.graph.connectivity_structure(),
         }
 
-        with open(filepath, "w") as f:
+        with Path(filepath).open("w") as f:
             json.dump(export_data, f, indent=2)
 
 

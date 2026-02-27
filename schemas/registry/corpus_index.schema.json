@@ -1,0 +1,37 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://mathsciencecompendium.local/schemas/registry/corpus_index.schema.json",
+  "title": "CorpusIndexRegistry",
+  "type": "object",
+  "required": ["generated_by", "generated_at_utc", "documents"],
+  "properties": {
+    "generated_by": { "type": "string", "minLength": 1 },
+    "generated_at_utc": { "type": "string", "format": "date-time" },
+    "documents": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "source_relpath",
+          "normalized_relpath",
+          "category",
+          "sha256",
+          "line_count",
+          "size_bytes"
+        ],
+        "properties": {
+          "id": { "type": "string", "minLength": 1 },
+          "source_relpath": { "type": "string", "minLength": 1 },
+          "normalized_relpath": { "type": "string", "minLength": 1 },
+          "category": { "type": "string", "minLength": 1 },
+          "sha256": { "type": "string", "pattern": "^[a-f0-9]{64}$" },
+          "line_count": { "type": "integer", "minimum": 0 },
+          "size_bytes": { "type": "integer", "minimum": 0 }
+        },
+        "additionalProperties": false
+      }
+    }
+  },
+  "additionalProperties": false
+}

@@ -11,11 +11,18 @@ import numpy as np
 import json
 from pathlib import Path
 import sys
-sys.path.append('/home/eirikr/Github_n_projects/MathScienceCompendium/experiments')
 
-from src.quantum_lattice_boltzmann import (
-    QuantumLatticeBoltzmann, LBMParameters, BoundaryType
+REPO_ROOT = Path(__file__).resolve().parent.parent
+SRC_ROOT = REPO_ROOT / "src"
+if str(SRC_ROOT) not in sys.path:
+    sys.path.insert(0, str(SRC_ROOT))
+
+from mathphysics.quantum_lattice_boltzmann import (
+    QuantumLatticeBoltzmann,
+    LBMParameters,
+    BoundaryType,
 )
+
 
 def run_stable_demo():
     """Run a numerically stable quantum LBM demonstration."""
@@ -30,27 +37,22 @@ def run_stable_demo():
         # Grid parameters
         nx=32,
         ny=32,
-
         # Physical parameters (very conservative)
         tau=1.5,  # High relaxation time for stability
         reynolds=1.0,  # Very low Reynolds number
-
         # Quantum parameters (minimal coupling)
         zpe_coupling=0.0001,  # Minimal ZPE coupling
         coherence_decay=0.0001,  # Slow coherence decay
         quantum_tau_modulation=False,  # Disabled for stability
-
         # Harmonic parameters (gentle initialization)
         num_harmonics=3,  # Just first 3 E7 harmonics
         harmonic_amplitude=0.0001,  # Tiny perturbations
         golden_ratio_scaling=True,
-
         # Simulation parameters
         timesteps=50,
         snapshot_interval=10,
-
         # Boundary conditions
-        boundary_type=BoundaryType.PERIODIC
+        boundary_type=BoundaryType.PERIODIC,
     )
 
     print("\nSimulation Parameters:")
@@ -73,7 +75,9 @@ def run_stable_demo():
     print(f"  Density - std: {np.std(sim.state.density):.8f}")
     print(f"  Density - min: {np.min(sim.state.density):.6f}")
     print(f"  Density - max: {np.max(sim.state.density):.6f}")
-    print(f"  Velocity magnitude - mean: {np.mean(np.sqrt(np.sum(sim.state.velocity**2, axis=2))):.8f}")
+    print(
+        f"  Velocity magnitude - mean: {np.mean(np.sqrt(np.sum(sim.state.velocity**2, axis=2))):.8f}"
+    )
     print(f"  Coherence - mean: {np.mean(sim.state.coherence):.6f}")
     print(f"  ZPE field - mean: {np.mean(sim.state.zpe_field):.6f}")
 
@@ -96,22 +100,28 @@ def run_stable_demo():
             mass_error = abs(sim.state.total_mass - initial_mass) / initial_mass
             energy_ratio = sim.state.total_energy / (initial_energy + 1e-10)
 
-            print(f"Step {step+1:3d}: "
-                  f"Mass error: {mass_error:.2e}, "
-                  f"Energy ratio: {energy_ratio:.2e}, "
-                  f"Max |u|: {np.max(np.sqrt(np.sum(sim.state.velocity**2, axis=2))):.4f}")
+            print(
+                f"Step {step + 1:3d}: "
+                f"Mass error: {mass_error:.2e}, "
+                f"Energy ratio: {energy_ratio:.2e}, "
+                f"Max |u|: {np.max(np.sqrt(np.sum(sim.state.velocity**2, axis=2))):.4f}"
+            )
 
             # Save snapshot
             if (step + 1) % params.snapshot_interval == 0:
-                snapshots.append({
-                    'step': step + 1,
-                    'density_mean': float(np.mean(sim.state.density)),
-                    'density_std': float(np.std(sim.state.density)),
-                    'velocity_max': float(np.max(np.sqrt(np.sum(sim.state.velocity**2, axis=2)))),
-                    'mass': float(sim.state.total_mass),
-                    'energy': float(sim.state.total_energy),
-                    'coherence_mean': float(np.mean(sim.state.coherence))
-                })
+                snapshots.append(
+                    {
+                        "step": step + 1,
+                        "density_mean": float(np.mean(sim.state.density)),
+                        "density_std": float(np.std(sim.state.density)),
+                        "velocity_max": float(
+                            np.max(np.sqrt(np.sum(sim.state.velocity**2, axis=2)))
+                        ),
+                        "mass": float(sim.state.total_mass),
+                        "energy": float(sim.state.total_energy),
+                        "coherence_mean": float(np.mean(sim.state.coherence)),
+                    }
+                )
 
     # Final analysis
     print("\n" + "-" * 70)
@@ -119,7 +129,9 @@ def run_stable_demo():
     print("-" * 70)
     print(f"  Density - mean: {np.mean(sim.state.density):.6f}")
     print(f"  Density - std: {np.std(sim.state.density):.8f}")
-    print(f"  Velocity magnitude - max: {np.max(np.sqrt(np.sum(sim.state.velocity**2, axis=2))):.6f}")
+    print(
+        f"  Velocity magnitude - max: {np.max(np.sqrt(np.sum(sim.state.velocity**2, axis=2))):.6f}"
+    )
     print(f"  Coherence - mean: {np.mean(sim.state.coherence):.6f}")
 
     # Conservation analysis
@@ -157,26 +169,26 @@ def run_stable_demo():
 
     # Export results
     output_data = {
-        'parameters': {
-            'nx': params.nx,
-            'ny': params.ny,
-            'tau': params.tau,
-            'reynolds': params.reynolds,
-            'timesteps': params.timesteps,
-            'num_harmonics': params.num_harmonics,
-            'harmonic_amplitude': params.harmonic_amplitude
+        "parameters": {
+            "nx": params.nx,
+            "ny": params.ny,
+            "tau": params.tau,
+            "reynolds": params.reynolds,
+            "timesteps": params.timesteps,
+            "num_harmonics": params.num_harmonics,
+            "harmonic_amplitude": params.harmonic_amplitude,
         },
-        'conservation': {
-            'mass_error': mass_error,
-            'energy_change': energy_change,
-            'initial_mass': initial_mass,
-            'final_mass': final_mass
+        "conservation": {
+            "mass_error": mass_error,
+            "energy_change": energy_change,
+            "initial_mass": initial_mass,
+            "final_mass": final_mass,
         },
-        'snapshots': snapshots
+        "snapshots": snapshots,
     }
 
-    output_file = Path('quantum_lbm_stable_results.json')
-    with open(output_file, 'w') as f:
+    output_file = REPO_ROOT / "experiments" / "quantum_lbm_stable_results.json"
+    with output_file.open("w", encoding="utf-8") as f:
         json.dump(output_data, f, indent=2)
 
     print(f"\nResults saved to: {output_file}")
@@ -224,4 +236,5 @@ if __name__ == "__main__":
     except Exception as e:
         print(f"\nError occurred: {e}")
         import traceback
+
         traceback.print_exc()

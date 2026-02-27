@@ -9,19 +9,22 @@
 \contentsline {figure}{\numberline {4.1}{\ignorespaces Box-counting dimension via log-log plot. The slope of the fitted line gives the fractal dimension. Blue points are data, red line is linear regression.}}{34}{figure.4.1}%
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {6.1}{\ignorespaces 2D PSD showing anisotropic spectral condensation. The energy is arrested at the Rhines scale $k_\beta \approx 4$, forming the "Spine" of the physical regime.}}{53}{figure.6.1}%
-\contentsline {figure}{\numberline {6.2}{\ignorespaces Figure B: E$_7$ Root System Projection. The roots are color-coded by their "weight" (amplitude decay) used in the simulation. This algebraic lattice dictates the physical anisotropy observed in Figure \ref {fig:psd_spine}.}}{54}{figure.6.2}%
-\addvspace {10\p@ }
-\contentsline {figure}{\numberline {7.1}{\ignorespaces Quaternion multiplication structure showing non-commutativity}}{60}{figure.7.1}%
-\contentsline {figure}{\numberline {7.2}{\ignorespaces E$_8$ Dynkin diagram with 8 nodes and characteristic branching at node 4}}{63}{figure.7.2}%
-\contentsline {figure}{\numberline {7.3}{\ignorespaces 2D projection showing two shells of E$_8$ roots}}{63}{figure.7.3}%
-\contentsline {figure}{\numberline {7.4}{\ignorespaces Cantor set construction showing self-similarity}}{64}{figure.7.4}%
-\contentsline {figure}{\numberline {7.5}{\ignorespaces E$_8$ lattice 2D projection showing shell structure}}{66}{figure.7.5}%
-\contentsline {figure}{\numberline {7.6}{\ignorespaces Fundamental domain of $SL(2,\mathbb {Z})$ for modular forms}}{67}{figure.7.6}%
 \addvspace {10\p@ }
 \addvspace {10\p@ }
+\contentsline {figure}{\numberline {8.1}{\ignorespaces 2D PSD showing anisotropic spectral condensation. The energy is arrested at the Rhines scale $k_\beta \approx 4$, forming the "Spine" of the physical regime.}}{73}{figure.8.1}%
+\contentsline {figure}{\numberline {8.2}{\ignorespaces Figure B: E$_7$ Root System Projection. The roots are color-coded by their "weight" (amplitude decay) used in the simulation. This algebraic lattice dictates the physical anisotropy observed in Figure \ref {fig:psd_spine}.}}{74}{figure.8.2}%
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {9.1}{\ignorespaces Quaternion multiplication structure showing non-commutativity}}{80}{figure.9.1}%
+\contentsline {figure}{\numberline {9.2}{\ignorespaces E$_8$ Dynkin diagram with 8 nodes and characteristic branching at node 4}}{83}{figure.9.2}%
+\contentsline {figure}{\numberline {9.3}{\ignorespaces 2D projection showing two shells of E$_8$ roots}}{83}{figure.9.3}%
+\contentsline {figure}{\numberline {9.4}{\ignorespaces Cantor set construction showing self-similarity}}{84}{figure.9.4}%
+\contentsline {figure}{\numberline {9.5}{\ignorespaces E$_8$ lattice 2D projection showing shell structure}}{86}{figure.9.5}%
+\contentsline {figure}{\numberline {9.6}{\ignorespaces Fundamental domain of $SL(2,\mathbb {Z})$ for modular forms}}{87}{figure.9.6}%
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {11.1}{\ignorespaces Simulated Persistence Barcode for Scenario A. The long-lived $H_1$ bars correspond to the stable zonal loops (jets) predicted by the $E_7$ symmetry breaking rule.}}{163}{figure.11.1}%
-\contentsline {figure}{\numberline {11.2}{\ignorespaces Voronoi Tesselation of the $E_8$ root system (projected). The geometric gaps in the partition represent the "spectral forbidden zones" that arrest the turbulent cascade.}}{164}{figure.11.2}%
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {13.1}{\ignorespaces Simulated Persistence Barcode for Scenario A. The long-lived $H_1$ bars correspond to the stable zonal loops (jets) predicted by the $E_7$ symmetry breaking rule.}}{183}{figure.13.1}%
+\contentsline {figure}{\numberline {13.2}{\ignorespaces Voronoi Tesselation of the $E_8$ root system (projected). The geometric gaps in the partition represent the "spectral forbidden zones" that arrest the turbulent cascade.}}{184}{figure.13.2}%
+\addvspace {10\p@ }
 \addvspace {10\p@ }

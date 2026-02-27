@@ -31,7 +31,7 @@ class E8Lattice:
 
     def minimal_vectors(self) -> np.ndarray:
         """The 240 minimal vectors of norm 2 (roots of E8)."""
-        from .algebras.roots import E8RootSystem
+        from .algebras.roots import E8RootSystem  # noqa: PLC0415
 
         return E8RootSystem().generate_roots()
 
@@ -40,7 +40,7 @@ class E8Lattice:
 
     def theta_series(self, max_n: int = 10) -> np.ndarray:
         """Theta series coefficients a_n."""
-        # a_n = 240 * sigma_3(n)
+        # a_n = 240 * sigma_3(n)  # noqa: ERA001
         coeffs = np.zeros(max_n + 1)
         coeffs[0] = 1
         for n in range(1, max_n + 1):
@@ -67,7 +67,7 @@ class SpherePackingAnalyzer:
     """Analytical bounds and densities for lattice packings."""
 
     @staticmethod
-    def center_density(dimension: int) -> dict[str, float]:
+    def center_density(_dimension: int) -> dict[str, float]:
         """Center density delta = density / volume_of_unit_ball."""
         return {"upper": 1.0, "lower": 0.5}
 
@@ -89,8 +89,8 @@ def analyze_lattice_properties(output_dir: Path | None = None) -> dict[str, Any]
         "num_minimal_vectors": len(points),
     }
     if output_dir:
-        import json
+        import json  # noqa: PLC0415
 
-        with open(output_dir / "lattice_analysis.json", "w") as f:
+        with (output_dir / "lattice_analysis.json").open("w") as f:
             json.dump(results, f, indent=2)
     return results

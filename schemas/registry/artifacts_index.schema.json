@@ -1,0 +1,26 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://mathsciencecompendium.local/schemas/registry/artifacts_index.schema.json",
+  "title": "ArtifactsIndexRegistry",
+  "type": "object",
+  "required": ["generated_by", "generated_at_utc", "artifacts"],
+  "properties": {
+    "generated_by": { "type": "string", "minLength": 1 },
+    "generated_at_utc": { "type": "string", "format": "date-time" },
+    "artifacts": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["kind", "relpath", "sha256", "size_bytes"],
+        "properties": {
+          "kind": { "type": "string", "minLength": 1 },
+          "relpath": { "type": "string", "minLength": 1 },
+          "sha256": { "type": "string", "pattern": "^[a-f0-9]{64}$" },
+          "size_bytes": { "type": "integer", "minimum": 0 }
+        },
+        "additionalProperties": false
+      }
+    }
+  },
+  "additionalProperties": false
+}

@@ -1,0 +1,116 @@
+{
+  "generated_at_utc": "2026-02-12T06:17:12.339873+00:00",
+  "manifest": "data/external/sources.toml",
+  "results": [
+    {
+      "extract_text_relpath": "source_materials/pdfs/extracted/1111.4064v2.txt",
+      "fetched_at_utc": "2026-02-12T06:17:07.407333+00:00",
+      "id": "arxiv_1111_4064v2",
+      "notes": "Zero-point vibration paper identified in primary_sources docs.",
+      "sha256": "96257d6e694f74eb65ba99e87a40e7003745e85abccd2356c918c56ed5eede05",
+      "size_bytes": 678640,
+      "source_url": "https://arxiv.org/pdf/1111.4064v2.pdf",
+      "status": "downloaded",
+      "target_relpath": "source_materials/pdfs/1111.4064v2.pdf"
+    },
+    {
+      "extract_text_relpath": "source_materials/pdfs/extracted/Comment_on_the_Pais_Superforce_Theory.txt",
+      "fetched_at_utc": "2026-02-12T06:17:06.264923+00:00",
+      "id": "brandenburg_comment_superforce",
+      "notes": "Commentary paper referenced in CATALOG. PhysicsForge raw PDF is primary fetch target with Scribd as source trace.",
+      "sha256": "ca32b85da9dc732509ea4560184c160e2e503f56bea861c7a05542040f9e9b75",
+      "size_bytes": 2975994,
+      "source_url": "https://raw.githubusercontent.com/Oichkatzelesfrettschen/PhysicsForge/ff44918bcac62917cfc1dd6a8a6f0e847b43e14f/source_materials/pdfs/Comment%20on%20the%20Pais%20Superforce%20Theory.pdf",
+      "status": "downloaded",
+      "target_relpath": "source_materials/pdfs/Comment_on_the_Pais_Superforce_Theory.pdf"
+    },
+    {
+      "extract_text_relpath": "source_materials/pdfs/extracted/094101_1_accepted_manuscript.txt",
+      "fetched_at_utc": "2026-02-12T06:17:07.665803+00:00",
+      "id": "doi_10_1063_5_0038222",
+      "notes": "Accepted manuscript entry from source catalog. DOI remains canonical bibliographic source; mirror supports offline cache fill.",
+      "sha256": "8ec8b02db96d399d3d510973b9d523560cda0d1564030f5300f38229ec54fc5e",
+      "size_bytes": 4300635,
+      "source_url": "https://raw.githubusercontent.com/Oichkatzelesfrettschen/PhysicsForge/ff44918bcac62917cfc1dd6a8a6f0e847b43e14f/source_materials/pdfs/094101_1_accepted_manuscript.pdf",
+      "status": "downloaded",
+      "target_relpath": "source_materials/pdfs/094101_1_accepted_manuscript.pdf"
+    },
+    {
+      "extract_text_relpath": "source_materials/pdfs/extracted/SUPERFORCE---S.C.Pais---2023.txt",
+      "fetched_at_utc": "2026-02-12T06:17:06.144980+00:00",
+      "id": "pais_superforce_2023",
+      "notes": "Primary Pais Superforce paper. Repository URLs are commit-pinned for reproducibility.",
+      "sha256": "8ea4fecbd504b2dfa73941f856befe5bee23b1ebffa8a6a8bbd19e185a675176",
+      "size_bytes": 238900,
+      "source_url": "https://raw.githubusercontent.com/ConsciousEnergy/Super-Force-Analysis/afbde0996d58bde0dbc7dbcf254810b3c289db31/SUPERFORCE%20---S.C.Pais---2023.pdf",
+      "status": "downloaded",
+      "target_relpath": "source_materials/pdfs/SUPERFORCE---S.C.Pais---2023.pdf"
+    },
+    {
+      "extract_text_relpath": "source_materials/pdfs/extracted/Phys-140A-lecture-14v3.txt",
+      "fetched_at_utc": "2026-02-12T06:17:06.525701+00:00",
+      "id": "phys_140a_lecture_14v3",
+      "notes": "Lecture notes source. Prefer university-hosted canonical URL with owner-maintained mirror fallback.",
+      "sha256": "3f789aedd14872d1a56c24ce62f293dac7dc6e3a6bcaa9f60b18afaf5684c859",
+      "size_bytes": 562639,
+      "source_url": "https://raw.githubusercontent.com/Oichkatzelesfrettschen/PhysicsForge/ff44918bcac62917cfc1dd6a8a6f0e847b43e14f/source_materials/pdfs/Phys-140A-lecture-14v3.pdf",
+      "status": "downloaded",
+      "target_relpath": "source_materials/pdfs/Phys-140A-lecture-14v3.pdf"
+    },
+    {
+      "extract_text_relpath": "source_materials/pdfs/extracted/978-3-319-48210-1_10.txt",
+      "fetched_at_utc": "2026-02-12T06:17:08.246153+00:00",
+      "id": "springer_978_3_319_48210_1_ch10",
+      "notes": "Book chapter source. Prefer Springer publisher URL; repository mirror retained for reproducible offline rebuilds.",
+      "sha256": "3f4cb6db41b894b29bd9eb658d2d629c814e6553316847cfaa75398c1ce8faeb",
+      "size_bytes": 61579,
+      "source_url": "https://raw.githubusercontent.com/Oichkatzelesfrettschen/PhysicsForge/ff44918bcac62917cfc1dd6a8a6f0e847b43e14f/source_materials/pdfs/978-3-319-48210-1_10.pdf",
+      "status": "downloaded",
+      "target_relpath": "source_materials/pdfs/978-3-319-48210-1_10.pdf"
+    },
+    {
+      "extract_text_relpath": "source_materials/pdfs/extracted/Superframework_Expansion.txt",
+      "fetched_at_utc": "2026-02-12T06:17:11.802545+00:00",
+      "id": "superframework_expansion",
+      "notes": "Framework document in CATALOG. Owner-maintained raw mirror used as authoritative fetch URL for reproducibility.",
+      "sha256": "8732128532cccd5f22b1f333735f444aa2268b72097020256f072a08a2024297",
+      "size_bytes": 213767,
+      "source_url": "https://raw.githubusercontent.com/Oichkatzelesfrettschen/PhysicsForge/ff44918bcac62917cfc1dd6a8a6f0e847b43e14f/source_materials/pdfs/Superframework_Expansion.pdf",
+      "status": "downloaded",
+      "target_relpath": "source_materials/pdfs/Superframework_Expansion.pdf"
+    },
+    {
+      "extract_text_relpath": "source_materials/pdfs/extracted/Superframework-Foam-Octonions.txt",
+      "fetched_at_utc": "2026-02-12T06:17:11.929357+00:00",
+      "id": "superframework_foam_octonions",
+      "notes": "Framework document in CATALOG. Owner-maintained raw mirror used as authoritative fetch URL for reproducibility.",
+      "sha256": "571c445f4d8ac3a85efc955806783efc8f2bda7d94547056823e4e7a47e0fea8",
+      "size_bytes": 589691,
+      "source_url": "https://raw.githubusercontent.com/Oichkatzelesfrettschen/PhysicsForge/ff44918bcac62917cfc1dd6a8a6f0e847b43e14f/source_materials/pdfs/Superframework-Foam-Octonions.pdf",
+      "status": "downloaded",
+      "target_relpath": "source_materials/pdfs/Superframework-Foam-Octonions.pdf"
+    },
+    {
+      "extract_text_relpath": "source_materials/pdfs/extracted/Tourmaline.txt",
+      "fetched_at_utc": "2026-02-12T06:17:12.129075+00:00",
+      "id": "tourmaline",
+      "notes": "Framework document in CATALOG. Owner-maintained raw mirror used as authoritative fetch URL for reproducibility.",
+      "sha256": "11dfbf3969c24812b66f30a1dcf33c4685f4125bb82dc4b5e25ba05498870fdf",
+      "size_bytes": 251872,
+      "source_url": "https://raw.githubusercontent.com/Oichkatzelesfrettschen/PhysicsForge/ff44918bcac62917cfc1dd6a8a6f0e847b43e14f/source_materials/pdfs/Tourmaline.pdf",
+      "status": "downloaded",
+      "target_relpath": "source_materials/pdfs/Tourmaline.pdf"
+    },
+    {
+      "extract_text_relpath": "source_materials/pdfs/extracted/Tourmaline_Addendum.txt",
+      "fetched_at_utc": "2026-02-12T06:17:12.257552+00:00",
+      "id": "tourmaline_addendum",
+      "notes": "Addendum framework document in CATALOG. Owner-maintained raw mirror used as authoritative fetch URL for reproducibility.",
+      "sha256": "04b077226a4047d29a9dbbb40331eda24445240a9accf518728c0597fc34550b",
+      "size_bytes": 132341,
+      "source_url": "https://raw.githubusercontent.com/Oichkatzelesfrettschen/PhysicsForge/ff44918bcac62917cfc1dd6a8a6f0e847b43e14f/source_materials/pdfs/Tourmaline_Addendum.pdf",
+      "status": "downloaded",
+      "target_relpath": "source_materials/pdfs/Tourmaline_Addendum.pdf"
+    }
+  ]
+}

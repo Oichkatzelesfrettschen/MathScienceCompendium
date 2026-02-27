@@ -8,7 +8,7 @@ The project has undergone a complete architectural and computational transformat
 ### 1. Structural Harmonization
 - **Unified Package**: Consolidated all experimental code into a canonical `src/mathphysics` package.
 - **Import Realignment**: Converted nearly 60 absolute imports to robust relative paths, ensuring package portability.
-- **Dynamic Path Resolution**: Eliminated hardcoded `/home/eirikr/...` paths, replacing them with a centralized `Config` module.
+- **Dynamic Path Resolution**: Eliminated hardcoded `~/...` paths, replacing them with a centralized `Config` module.
 - **Standardized Environment**: Reestablished a functional virtual environment with the full modern dependency stack (JAX, CUDA 12, Qiskit, etc.).
 
 ### 2. Computational Acceleration (JAX/CUDA 12)

@@ -1,0 +1,481 @@
+S. Jiang,1, a) A. Link,1 D. Canning,2 J. A. Fooks,3 P. A. Kempler,4 S. Kerr,1 J. Kim,5 M. Krieger,2 N. S. Lewis,6
+R. Wallace,1 G. J. Williams,1 S. Yalamanchili,6 and H. Chen1
+1)
+
+Lawrence Livermore National Laboratory, Livermore, California 94550, USA
+Laboratory For Laser Energetics, Rochester, New York 14623, USA
+General Atomics, San Diego, California 92121, USA
+4)
+California Institute of Technology, Pasadena, California 91125, USA
+5)
+Center for Energy Research, University of California San Diego, San Diego, California 92093,
+USA
+6)
+California Institute of Technology, Pasadena, California 92093, USA
+
+2)
+
+3)
+
+(Dated: 5 February 2021)
+
+We report a target design which produced a substantial gain in relativistic electron-positron pair production
+using high-intensity lasers and targets with large-scale micro-structures on their surface. Comparing to
+an unstructured target, a selected Si microwire array target yielded a near 100% increase in the laser-topositron conversion efficiency and produced a 10 MeV increase in the average emitted positron energy under
+nominally the same experimental conditions. We had established a multi-scale particle-in-cell simulation
+scheme to simulate both the laser absorption and the subsequent pair productions in a thick metal target.
+The experimental results are supported by the simulations demonstrating the performance increase is due to
+a higher conversion efficiency of laser energy into electrons with kinetic energies greater than 10 MeV due to
+enhanced direct laser acceleration of electrons enabled by the microwire array.
+Producing a high-density, relativistic electron-positron
+pair plasma in the laboratory could significantly deepen
+the understanding of exotic astrophysical objects such
+as pulsars and quasars, but is extremely challenging1–5 .
+With the advances in high intensity laser technology, several methods for pair production have been either demonstrated or proposed, with different mechanisms dominating the physics in different regimes of laser intensity.
+For example, the Schwinger mechanism6 requires an extremely high intensity, above ∼1029 W/cm2 , for spontaneous pair creation from vacuum, whereas the BreitWheeler (BW) mechanism7 requires about 1024 W/cm2
+for avalanche-type discharge8,9 . These intensities are far
+beyond the capability of state-of-the-art lasers (up to
+1022 W/cm2 ).
+An alternative method is to inject laser produced highenergy electrons into high-Z target materials4,10–16 , with
+the electrostatic field of the nucleus involved in the pair
+production process releasing the constraint on the laser
+electric field intensity. If a thick converter target is used,
+positrons are mainly produced through the 3-step BetheHeitler (BH) process17 . First, relativistic electrons are
+generated through a laser plasma interaction (LPI) at the
+front side of the target. These electrons then transport
+through the high-Z material and produce high-energy
+photons via Bremsstrahlung radiation. Propagation of
+the high-energy photons in the field of nucleus then creates electron-positron pairs. The key step is to transfer
+laser energy into enough high-energy (10s of MeV) electrons, for which, only a moderate intensity laser (∼ 1020
+W/cm2 ) is needed. Experiments using this type of setup
+have produced up to 1012 pairs/shot, which is the highest
+
+a) Electronic mail: jiang8@llnl.gov
+
+yield reported to date by use of lasers.
+
+29 November 2024 02:28:26
+
+This is the author’s peer reviewed, accepted manuscript. However, the online version of record will be different from this version once it has been copyedited and typeset.
+PLEASE CITE THIS ARTICLE AS DOI: 10.1063/5.0038222
+
+Enhancing Positron Production using Front Surface Target Structures
+
+FIG. 1. (a) Schematic diagram of the experimental setup.
+(b) Scanning electron microscope (SEM) image of the preoptimized target structure 1. (c) SEM image of the unoptimized structure 2.
+
+A key to higher positron yield is the production of
+hotter electrons. Substantial enhancement in electron
+energies can be obtained by manipulating the laserplasma interaction using a structured target18,19 . Specifically, highly-ordered silicon microwire arrays facing the
+laser pulse enable guiding the relativistic electron beam
+along the structured surface and moreover facilitate a
+direct laser acceleration mechanism. Such an electron
+beam can then create a substantial enhancement in the
+Bremstrahlung radiation produced by a high-Z convertor target20 . The Bremsstrahlung x-rays further interact with atomic nuclei and create more electron-positron
+pairs.
+
+We demonstrate herein experimentally a substantial
+enhancement in both the yield and the energy of generated positrons using target structures, which suggests
+an efficient and inexpensive approach to improvement of
+positron sources. Particle-in-cell (PIC) simulations with
+the code Chicago21 have been used to explain the experimental results and have allowed a direct simulation
+of the LPI effects on the positron yield. Moreover, the
+simulation is in good qualitative agreement with the experimental data.
+A schematic diagram of the experimental setup is
+shown in Figure 1(a). The structured target was irradiated with the OMEGA EP laser pulse, with a wavelength
+of 1.053 µm, an energy of 500 J, and a pulse length of approximately 700 fs. 80% of the laser energy was enclosed
+in a 35 µm diameter focal spot as is derived from an
+on-shot wavefront and far-field measurement. The peak
+intensity was estimated to be 4.5×1020 W/cm2 according
+to the measured fluence map. Prior to the experiment,
+the structure geometry (spacing and length) was optimized through PIC simulations of the hot electron temperature. This geometry, which we call structure 1, is an
+array of silicon microwires with 3 µm diameter, 13 µm
+length and 15 µm center-to-center transverse distance.
+For reference, we have also shot flat targets as well as
+another type of unoptimized structure (structure 2) that
+showed detrimental effects on electron energies in simulations. Structure 2 had 3 µm diameter, 100 µm length
+and 7 µm center-to-center distance. The microwires in
+the latter target had much longer lengths than the laser
+depth-of-focus, and much smaller space in between them
+than the laser focal spot size, so they tend to break the
+laser pulse during its propagation, resulting in a poor
+laser intensity at the critical density surface. Consequently they led to a low-energy electron spectrum.
+Figure 1(b) and (c) show scanning electron microscope
+images of both target structures used in the experiment.
+The Si microwire arrays 100 µm in height (structure 2)
+were first grown on a Si < 111 > wafer by the vaporliquid-solid growth method22 , whereas the shorter microwire arrays (structure 1) were etched from Si < 100 >
+wafers via Deep Reactive Ion Etching23 . The microwires
+were then embeded in a ∼30 µm thick polydimethylsiloxane layer and peeled off of the substrate. This thin polydimethylsiloxane layer was then glued to a 1mm thick
+Au backing layer. In this case, the high-energy electrons generated and guided by the surface structures
+would transport through a thick high-Z material (Au)
+and induce pair production. The transverse size of the
+Au block used in the experiment was also 1mm. The
+laser was directed at normal incidence onto the target
+and the microwire arrays were oriented along the laser
+direction. This configuration has been shown in previous work to yield the highest enhancement of electron
+energy18,19 . The positron spectra were measured by an
+electron/positron spectrometer on the back side of the
+target along the laser direction (which was also the target normal direction).
+
+FIG. 2. Experimentally measured spectra for (a) positrons
+and (b) electrons. Different colors indicate the results from
+different targets under the same laser conditions.
+
+The experimental positron and electron spectra for
+3 different types of targets are shown in Figure 2(a)
+and (b). Target structure 1 generated about 50% more
+positrons than the regular flat target, and its laser to
+positron conversion efficiency increased by ∼97% compared to the flat substrate. The spectrum peak also
+shifted from ∼50 MeV for the flat target to ∼60 MeV
+for structure 1. Structure 2 showed fewer as well as
+much lower-energy positrons, in accord with expectations
+as the length and spacing of the microwires encumber
+the laser focusing. The electron spectrum from structure 2 also showed the same trend, in agreement with
+the positron measurements. However, the electron spectra from flat and from structure 1 were mutually similar,
+with both having an electron temperature of about 21
+MeV.
+Multiple simulations to model the entire process were
+performed to elucidate why the measured positron spectrum from structure 1 is obviously superior while its electron spectrum is similar to that from flat target. The
+simulations used the same laser conditions and target geometries as the experiment. We fitted the measured laser
+fluence map with two Gaussian functions to maintain the
+intensity distribution of the experiment. The OMEGA
+EP laser had a substantial prepulse that could affect the
+conversion efficiency from the laser to fast electrons, and
+would therefore affect the yield and energy of positrons.
+The facility has an on-shot prepulse measurment from 3
+
+29 November 2024 02:28:26
+
+This is the author’s peer reviewed, accepted manuscript. However, the online version of record will be different from this version once it has been copyedited and typeset.
+PLEASE CITE THIS ARTICLE AS DOI: 10.1063/5.0038222
+
+2
+
+FIG. 3. (a) Initial ion density for 2D Cartesian LPI simulations. (b) Schematic diagram of simulation setups. We have injected
+the fast electrons derived from LPI simulation to the following transport simulation after converting the electron source from
+Cartesian to cylindrical geometry. (c) Electron spectra inside the target from 2D Cartesian LPI simulations (dashed curves,
+right y axis) and spectra of injected electron source for 2D cylindrical transport simulations (solid curves, left y axis). (d) Blue
+curve (right y axis) shows the probability of one positron generated by one 0◦ , monoenergetic electron transporting through a
+1mm thick, 1mm diameter Au target, without considering any field effects. The black and red curves (with respect to the left
+y axis) show injection electron spectra multiplied by the positron generation probability as a function of energy.
+
+ns to 1 ns prior to the main laser pulse. For the prepulse within 1 ns, we assumed a similar profile to that
+measured by Dorrer et al. on OMEGA EP24 . The total
+energy of the prepulse was about 3.5 mJ. Hydrodynamic
+simulations with the code HYDRA25 were used to calculate the preplasma profile, as is shown in Figure 3(a).
+The preplasma scale length between relativistic critical
+density and critical density is about 2 µm and the scale
+length below critical density is 10 µm.
+Full 3D PIC simulations to model all physics processes
+are impractical with current supercomputers. We instead
+adopted a two-stage approach that has been demonstrated on other targets26,27 to simulate LPI and transport processes separately. Both stages were performed
+with the code Chicago21 . The overall simulation process
+is illustrated in Figure 3(b). First a 2D Cartesian geometry was used to simulate the LPI process, with only
+x and z dimensions modeled in space. However, the velocity was 3D as all 3 components vx , vy and vz were
+updated at each time step. We could not use a cylindrical geometry because the laser was linearly polarized in
+the x direction. The electrons were measured at a plane
+that was 5 µm inside the target. The energy, direction,
+position and time of each electron macroparticle have all
+
+been recorded. We then processed the laser-generated
+electrons to get their distribution as a function of energy, angle, transverse distance, and time. At this point,
+we assumed a rotational symmetry along the laser propagation axis for both space and velocity, and converted
+the distribution to cylindrical coordinates. The transport
+simulation was performed in a 2D cylindrical geometry.
+When hot electrons leave the target, they would create a
+strong sheath field on the back side. It is critical to model
+the sheath field properly to obtain the correct yield and
+spectrum. The cylindrical geometry is required to accurately model the 1/r2 fall-off of the E field, whereas the
+2D Cartesian geometry would result in a 1/r fall-off. The
+hot electrons were then re-sampled according to its distribution and injected into a 1mm thick, 1mm diameter Au
+target in a 2D cylindrical geometry. Positron generation
+and transport was then simulated both inside and behind
+the Au target. To compare with the experimental results,
+statistics of escaped electrons and positrons were performed at another extraction plane that was 2mm from
+the backside of the target.
+The electron spectra generated from the LPI simulations are shown in Figure 3(c). The dashed curves are the
+raw distributions derived in Cartesian coordinates and
+
+29 November 2024 02:28:26
+
+This is the author’s peer reviewed, accepted manuscript. However, the online version of record will be different from this version once it has been copyedited and typeset.
+PLEASE CITE THIS ARTICLE AS DOI: 10.1063/5.0038222
+
+3
+
+the solid curves are converted distributions in cylindrical
+coordinates. Note that the 2D Cartesian simulation has
+a virtual dimension in y axis so the electron spectrum
+has a different unit, corresponding to the right y aixs in
+Figure 3(c). The electron temperatures Te for different
+portions of the spectra are also labeled in the plot. After conversion, the temperature for higher-energy-range
+electrons is maintained at around 20 MeV, which is quite
+close to the experimentally measured temperature of 21
+MeV. Lower energy electrons have a wider angular distribution and thus tend to be more easily affected by the
+conversion. Te decreased by about 3MeV for electrons
+within 25 − 70 MeV. Comparing structure 1 (red) to flat
+(black), the main difference appears at energies above 25
+MeV, as structure 1 tends to produce about an order of
+magnitude more electrons within this energy range.
+To evaluate the positron yield by different electron
+spectra, in Figure 3(d) we have plotted f (E)·Pe+ (E),
+where f (E) is the spectrum of injected electrons (solid
+curves in Figure 3(c)), and Pe+ (E) is the probability
+that one positron could be generated and exit from the
+1mm thick, 1mm diameter Au target as one incident electron with energy E is normally injected. Pe+ (E) (blue
+curve) was obtained using a Monte Carlo code MCNP28
+and the field effects have been ignored. Note that we
+cannot directly compare the positron yield from MCNP
+to the experimental result as the escaped positron yield
+and spectra is also largely affected by the self-generated
+field. MCNP only provides an estimation of the positron
+production capability of different energy electrons. The
+positron production probability grows sharply with energy for incident electrons below ∼30 MeV and gradually
+saturates at high energies. The black and red solid curves
+indicate the calculated f (E)·Pe+ (E) for flat and structured targets, respectively. Both curves peak at about
+15 MeV. However, electrons within 25 − 150 MeV from
+structure 1 contributed to a great extent to the positron
+yield, whereas for the flat target most of the positrons
+are generated by lower energy electrons. Overall, the injection spectrum from structure 1 produced about 30%
+more positrons than the flat target. Note that this estimation does not consider any field or electron reflux
+effects that in reality play an important role.
+The Monte Carlo simulation only provides an intuitive view of the pair production capability of LPI electrons. Understanding the energy difference in the measured positron spectra requires closer evaluation of the
+transport PIC simulations that involve the sheath field.
+The comparison of modeled and experimentally measured positron spectra at target normal (laser direction)
+is shown in Figure 4(a). The simulated spectra agree
+qualitatively with the experimental data. In Figure 4(b),
+the dark solid curves show the simulated spectra of escaped electrons at 0◦ whereas for comparison the light
+solid curves in the background show the corresponding
+experimental spectra. Both spectra have a relatively
+good overlap within the energy range between 40 MeV
+and 110 MeV. At lower energy, the mismatch is expected
+
+FIG. 4. (a) Positron spectra at 0◦ from simulations. (b)
+Electron spectra at 0◦ (solid lines, with unit MeV−1 sr−1 on
+the left y axis) and overall electron spectra (dashed lines,
+with unit MeV−1 on the right y axis). Note that the two
+different spectra plotted have mutually different units. We
+have also plotted corresponding experimental spectra at 0◦ in
+the background for comparison.
+
+because the experimentally measured spectra include
+electrons that are generated at much later times than
+those covered by the simulation. The simulated spectra
+showed less particles at high energies. However, according to Figure 3(d), electrons above 110 MeV would make
+a negligible contribution to the positron yield. These
+high energy electrons have a small impact on the sheath
+field as well because their total charge is low. Therefore,
+the simulated positron and electron spectra indicate that
+the injected electron source from LPI simulation models
+the experimental condition reasonably well. For both the
+flat and the structure 1 target, the electron spectra measured at the target normal direction are mutually quite
+similar, whereas the positron spectra are obviously different, in accord with experimental observations. In Figure
+4(b) we have also plotted the total electron spectrum
+(in MeV−1 ) as the dashed black and red curves. Unlike
+the spectra at 0◦ , the total spectrum from structure 1
+clearly shows more high energy electrons, which explains
+the large discrepancy in the positron spectra, as forward
+going positrons are generated by all electrons, not just
+by the forward going ones.
+There are two acceleration mechanisms that are reponsible for the highest energy electrons, including the loop-
+
+29 November 2024 02:28:26
+
+This is the author’s peer reviewed, accepted manuscript. However, the online version of record will be different from this version once it has been copyedited and typeset.
+PLEASE CITE THIS ARTICLE AS DOI: 10.1063/5.0038222
+
+4
+
+injected direct acceleration29 which is associated with
+any targets having moderate scale length preplasma, and
+the structure-guided direct laser acceleration which occurs only with the structured target18,19 . We have also
+found strong Weibel instabilities30 near the critical density surface for both target types which largely widens the
+electron divergence. This effect was dominating so that
+the usual collimating effect associated with the front surface micro-wires described in previous work18,19 did not
+show up in the electron spectrum measured at at 0◦ .
+
+of the sheath field. The images at r = 0 indicate that
+passes of electrons gradually build up the sheath field on
+the target backside. Comparing the integrated voltage
+for flat and structured targets, both the voltage at r =
+0 and the average voltage for the structured target are
+about 10 MV higher than that for flat target, which is
+consistent with the measured energy difference between
+their positron peaks.
+The two-stage PIC simulation reproduced the experimental results, suggesting its potential for further target
+structure optimization to control the yield and energy of
+positrons and other secondary particles, such as ions that
+are also greatly influenced by the sheath field. Optimal
+target parameters will vary substantially with laser pulse
+length, intensity, focal spot size, and the amount of prepulse. As we have shown, for a given laser condition, the
+structures can be optimized by performing 2D Cartesian
+LPI simulations and converting the electron distributions
+to cylindrical coordinates. After the conversion, the hot
+electron temperature and the laser-to-electron conversion
+efficiency can both be realistic metrics for estimating the
+positron yield. We plan to probe a broader parameter
+space in future work.
+In summary, front surface target structures have
+been shown experimentally to substantially enhance the
+positron yield and energy, constitiuting a cost-effective
+approach to use laser-generated positron sources for laboratory astrophysics applications. The follow-up simulations explain the entire process of how the laser-plasma
+interaction that is manipulated by the target structure
+affects the yield and energy of positrons. The agreement between the simulated and experimental spectra
+indicates the possibility of further target optimization
+using two-stage PIC simulations.
+
+ACKNOWLEDGMENTS
+FIG. 5. (a1), (b1) Sheath field Ez at r = 0 as a function
+of time and longitudinal position z. (a2), (b2) corresponding voltage calculated by integrating Ez over z. (a3), (b3)
+Average Ez over the back surface of the target. (a4), (b4)
+corresponding voltage by integrating the average Ez . Here
+column (a) is for flat target and column (b) is for optimally
+structured target.
+
+The energy of positrons is largely determined by the
+sheath field on the back side of the target. Figure 5
+shows the evolution of the sheath field Ez as a function
+of the longitudinal position z and time t. Column (a) are
+the results from the flat target and column (b) are from
+structure 1. Images (a1),(b1) and (a3),(b3) show the Ez
+field at r=0 and average Ez field over the 1 mm diameter
+disk respectively, whereas (a2), (b2) and (a4), (b4) are
+the corresponding voltages V calculatedR by integrating
+z
+Ez over the longitudinal distance z. V = zo Ez dz, where
+z0 = 1 mm indicates the back surface of the target. These
+plots allow for an estimate of the accelerating capability
+
+We thank the OMEGA EP team for laser operation and technical support. This work was performed
+under the auspices of the U.S. DOE by LLNL under
+Contract DEAC5207NA27344, and funded by LDRD
+(#17ERD010). The fabrication of Si microwire arrays was supported through the Office of Science of
+the U.S. Department of Energy under Award No.
+DE- SC0004993. Additional support for this work
+was provided by the Lockheed Martin Corporation
+(Award 4103810021). We thank the staff at the Kavli
+Nanoscience Institute at Caltech for their technical assistance with fabrication.
+
+DATA AVAILABILITY
+
+The data that support the findings of this study are
+available from the corresponding author upon reasonable
+request.
+
+29 November 2024 02:28:26
+
+This is the author’s peer reviewed, accepted manuscript. However, the online version of record will be different from this version once it has been copyedited and typeset.
+PLEASE CITE THIS ARTICLE AS DOI: 10.1063/5.0038222
+
+5
+
+1 T. Piran, Rev. Mod. Phys. 76, 1143 (2005).
+2 H. Chen, D. D. Meyerhofer, S. C. Wilks, R. Cauble, F. Dollar,
+
+K. Falk, G. Gregori, A. Hazi, E. I. Moses, C. D. Murphy, et al.,
+High Energy Density Physics 7, 225 (2011).
+3 E. Liang, T. Clarke, A. Henderson, W. Fu, W. Lo, D. Taylor,
+P. Chaguine, S. Zhou, Y. Hua, X. Cen, et al., Sci. Report 5,
+13968 (2015).
+4 G. Sarri, K. Poder, J. M. Cole, W. Schumaker, A. D. Piazza,
+B. Reville, T. Dzelzainis, D. Doria, L. A. Gizzi, G. Grittani,
+et al., Nat. Comm. 6, 6747 (2015).
+5 M. Stoneking, T. S. Pedersen, P. Helander, E. V. Stenson, U. Hergenhahn, H. Saitoh, J. Horn-Stanja, J. R. Danielson, and C. M.
+Surko, “A new frontier in laboratory physics: electron-positron
+plasmas,” To be published.
+6 J. Schwinger, Phys. Rev. 82, 664 (1951).
+7 G. Breit and J. A. Wheeler, Phys. Rev. 46, 1087 (1934).
+8 A. R. Bell and J. G. Kirk, Phys. Rev. Lett. 101, 200403 (2008).
+9 C. P. Ridgers, C. S. Brady, R. Duclous, J. G. Kirk, K. Bennett,
+T. D. Arber, A. P. L. Robinson, and A. R. Bell, Phys. Rev. Lett.
+165006, 108 (2012).
+10 G. Sarri, W. Schumaker, A. D. Piazza, M. Vargas, B. Dromey,
+M. E. Dieckmann, V. Chvykov, A. Maksimchuk, V. Yanovsky,
+Z. H. He, et al., Phys. Rev. Lett. 110, 255002 (2003).
+11 H. Chen, S. C. Wilks, D. D. Meyerhofer, J. Bonlie, C. D. Chen,
+S. N. Chen, C. Courtois, L. Elberson, G. Gregori, W. Kruer,
+et al., Phys. Rev. Lett. 105, 015003 (2010).
+12 H. Chen, G. Fiksel, D. Barnak, P.-Y. Chang, R. F. Heeter,
+A. Link, and D. D. Meyerhofer, Phys. Plasmas 21, 040703
+(2014).
+13 H. Chen, F. Fiuza, A. Link, A. Hazi, M. Hill, D. Hoarty, S. James,
+S. Kerr, D. D. Meyerhofer, J. Myatt, et al., Phys. Rev. Lett. 114,
+215001 (2015).
+14 T. Xu, B. Shen, J. Xu, S. Li, Y. Yu, J. Li, X. Lu, C. Wang,
+X. Wang, X. Liang, et al., Phys. Plasmas 23, 033109 (2016).
+15 G. J. Williams, D. Barnak, G. Fiksel, A. Hazi, S. Kerr,
+C. Krauland, A. Link, M. J.-E. Manuel, S. R. Nagel, J. Park,
+et al., Phys. Plasmas 23, 123109 (2016).
+16 Y. Yan, Y. Wu, J. Chen, M. Yu, K. Dong, and Y. Gu, Plasma
+Phys. Control. Fusion 59, 045015 (2017).
+
+17 H. Bethe and W. Heitler, Proc. Royal Soc. of London A 146, 83
+
+(1934).
+18 S. Jiang, L. Ji, H. Audesirk, K. George, J. Snyder, A. Krygier,
+
+P. Poole, C. Willis, R. Daskalova, E. Chowdhury, et al., Phys.
+Rev. Lett. 116, 085002 (2016).
+and
+R. R. Freeman, Phys. Rev. E 89, 013106 (2014).
+20 S. Jiang, A. G. Krygier, D. W. Schumacher, K. U. Akli, and
+R. R. Freeman, Eur. Phys. J. D 68, 283 (2014).
+21 C. Thoma, D. R. Welch, R. E. Clark, D. V. Rose, and I. E.
+Golovkin, Phys. Plasmas 24, 062707 (2017).
+22 E. L. Warren, H. A. Atwater, and N. S. Lewis, J. Phys. Chem.
+C 118, 747 (2014).
+23 M. Henry, C. Welch, and A. Scherer, J. Vac. Sc. Technol. A 27,
+1211 (2009).
+24 C. Dorrer, A. Consentino, D. Irwin, J. Qiao, and J. D. Zuegel,
+J. Opt. 17, 094007 (2015).
+25 M. M. Marinak, G. D. Kerbel, N. A. Gentile, O. Jones, D. Munro,
+S. Pollaine, T. R. Dittrich, and S. W. Haan., Phys. Plasmas 8
+(2001).
+26 T. Bartal, M. E. Foord, C. Bellei, M. H. Key, K. A. Flippo,
+S. A. Gaillard, D. T. Offermann, P. K. Patel, L. C. Jarrott, D. P.
+Higginson, et al., nature phys. 8, 139 (2011).
+27 H. Sawada, D. P. Higginson, A. Link, T. Ma, S. C. Wilks, H. S.
+McLean, F. Perez, P. K. Patel, and F. N. Beg, Phys. Plasmas
+19, 103108 (2012).
+28 Los Alamos Scientific Laboratory. Group X-6. MCNP : a General Monte Carlo Code for Neutron and Photon Transport. Los
+Alamos, N.M. : [Springfield, Va.] :Dept. of Energy, Los Alamos
+Scientific Laboratory ; [for sale by the National Technical Information Service], 1979.
+29 A. G. Krygier, D. W. Schumacher, and R. R. Freeman, Phys.
+Plasmas 21, 023112 (2014).
+30 Y. Sentoku, K. Mima, S. Kojima, and H. Ruhl, Phys. Plasmas
+7, 689 (2000).
+19 S. Jiang, A. G. Krygier, D. W. Schumacher, K. U. Akli,
+
+29 November 2024 02:28:26
+
+This is the author’s peer reviewed, accepted manuscript. However, the online version of record will be different from this version once it has been copyedited and typeset.
+PLEASE CITE THIS ARTICLE AS DOI: 10.1063/5.0038222
+
+6
+
+This is the author’s peer reviewed, accepted manuscript. However, the online version of record will be different from this version once it has been copyedited and typeset.
+PLEASE CITE THIS ARTICLE AS DOI: 10.1063/5.0038222
+
+29 November 2024 02:28:26
+
+This is the author’s peer reviewed, accepted manuscript. However, the online version of record will be different from this version once it has been copyedited and typeset.
+PLEASE CITE THIS ARTICLE AS DOI: 10.1063/5.0038222
+
+29 November 2024 02:28:26
+
+This is the author’s peer reviewed, accepted manuscript. However, the online version of record will be different from this version once it has been copyedited and typeset.
+PLEASE CITE THIS ARTICLE AS DOI: 10.1063/5.0038222
+
+29 November 2024 02:28:26
+
+This is the author’s peer reviewed, accepted manuscript. However, the online version of record will be different from this version once it has been copyedited and typeset.
+PLEASE CITE THIS ARTICLE AS DOI: 10.1063/5.0038222
+
+29 November 2024 02:28:26
+
+This is the author’s peer reviewed, accepted manuscript. However, the online version of record will be different from this version once it has been copyedited and typeset.
+PLEASE CITE THIS ARTICLE AS DOI: 10.1063/5.0038222
+
+29 November 2024 02:28:26
+
+

@@ -45,7 +45,7 @@ class LiesymBridge:
                 print(f"[LIESYM] Root generation failed: {e}")
 
         # Fallback to internal BaseRootSystem logic
-        from .roots import E6RootSystem, E7RootSystem, E8RootSystem, F4RootSystem
+        from .roots import E6RootSystem, E7RootSystem, E8RootSystem, F4RootSystem  # noqa: PLC0415
 
         mapping = {"E8": E8RootSystem, "E7": E7RootSystem, "E6": E6RootSystem, "F4": F4RootSystem}
         key = f"{algebra_type}{rank}" if algebra_type == "E" else algebra_type

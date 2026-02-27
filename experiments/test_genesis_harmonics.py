@@ -5,20 +5,14 @@ import numpy as np
 import matplotlib.pyplot as plt
 from pathlib import Path
 import json
-from src.genesis_harmonics import (
-    GenesisHarmonics,
-    MaterialType,
-    MATERIALS,
-    PHI,
-    HarmonicLayer
-)
+from src.genesis_harmonics import GenesisHarmonics, MaterialType, MATERIALS, PHI, HarmonicLayer
 
 
 def test_harmonic_layers():
     """Test harmonic layer generation and properties."""
-    print("\n" + "="*60)
+    print("\n" + "=" * 60)
     print("TESTING HARMONIC LAYERS")
-    print("="*60)
+    print("=" * 60)
 
     # Create a single layer
     layer = HarmonicLayer(
@@ -29,7 +23,7 @@ def test_harmonic_layers():
         fractal_coefficient=0.1,
         zpe_envelope=1.0,
         e7_root_index=0,
-        e8_root_index=0
+        e8_root_index=0,
     )
 
     print("\n1. Initial layer properties:")
@@ -44,14 +38,16 @@ def test_harmonic_layers():
     print(f"\n2. Harmonic oscillation:")
     print(f"   Max value: {np.max(values):.4f}")
     print(f"   Min value: {np.min(values):.4f}")
-    print(f"   RMS value: {np.sqrt(np.mean(np.array(values)**2)):.4f}")
+    print(f"   RMS value: {np.sqrt(np.mean(np.array(values) ** 2)):.4f}")
 
     # Test evolution
     initial_amplitude = layer.amplitude
     layer.evolve(dt=1e-15)  # 1 femtosecond
 
     print(f"\n3. Evolution test (1 fs):")
-    print(f"   Amplitude decay: {(initial_amplitude - layer.amplitude)/initial_amplitude * 100:.2f}%")
+    print(
+        f"   Amplitude decay: {(initial_amplitude - layer.amplitude) / initial_amplitude * 100:.2f}%"
+    )
     print(f"   Phase advance: {layer.phase:.4f} radians")
 
     return True
@@ -59,15 +55,12 @@ def test_harmonic_layers():
 
 def test_genesis_superforce():
     """Test Genesis Superforce Operator."""
-    print("\n" + "="*60)
+    print("\n" + "=" * 60)
     print("TESTING GENESIS SUPERFORCE OPERATOR")
-    print("="*60)
+    print("=" * 60)
 
     genesis = GenesisHarmonics(
-        num_layers=127,
-        base_frequency=1e12,
-        fractal_alpha=1.618,
-        zpe_beta=0.01
+        num_layers=127, base_frequency=1e12, fractal_alpha=1.618, zpe_beta=0.01
     )
 
     # Test at different positions
@@ -75,13 +68,13 @@ def test_genesis_superforce():
         np.array([0, 0, 0]),
         np.array([1e-6, 0, 0]),
         np.array([0, 1e-6, 1e-6]),
-        np.array([1e-5, 1e-5, 1e-5])
+        np.array([1e-5, 1e-5, 1e-5]),
     ]
 
     print("\n1. Spatial field distribution:")
     for i, pos in enumerate(positions):
         field = genesis.genesis_superforce(pos, t=0.0, dimension=3.0)
-        print(f"   Position {i+1}: {pos*1e6} micrometers")
+        print(f"   Position {i + 1}: {pos * 1e6} micrometers")
         print(f"   Field magnitude: {np.abs(field[0]):.4e}")
         print(f"   Field phase: {np.angle(field[0]):.4f} radians")
 
@@ -108,9 +101,9 @@ def test_genesis_superforce():
 
 def test_material_responses():
     """Test material response functions."""
-    print("\n" + "="*60)
+    print("\n" + "=" * 60)
     print("TESTING MATERIAL RESPONSES")
-    print("="*60)
+    print("=" * 60)
 
     genesis = GenesisHarmonics()
 
@@ -153,15 +146,12 @@ def test_material_responses():
 
 def test_e7_e8_integration():
     """Test E7/E8 root system integration."""
-    print("\n" + "="*60)
+    print("\n" + "=" * 60)
     print("TESTING E7/E8 ROOT SYSTEM INTEGRATION")
-    print("="*60)
+    print("=" * 60)
 
     # Test E7 system
-    genesis_e7 = GenesisHarmonics(
-        num_layers=127,
-        use_e8=False
-    )
+    genesis_e7 = GenesisHarmonics(num_layers=127, use_e8=False)
 
     print("\n1. E7 Integration (127 layers):")
     print(f"   Number of layers: {genesis_e7.num_layers}")
@@ -174,13 +164,12 @@ def test_e7_e8_integration():
 
     # Eigenvalue analysis
     eigenvalues_e7 = np.linalg.eigvals(coupling_e7)
-    print(f"   Eigenvalue range: [{np.min(np.real(eigenvalues_e7)):.4f}, {np.max(np.real(eigenvalues_e7)):.4f}]")
+    print(
+        f"   Eigenvalue range: [{np.min(np.real(eigenvalues_e7)):.4f}, {np.max(np.real(eigenvalues_e7)):.4f}]"
+    )
 
     # Test E8 system
-    genesis_e8 = GenesisHarmonics(
-        num_layers=240,
-        use_e8=True
-    )
+    genesis_e8 = GenesisHarmonics(num_layers=240, use_e8=True)
 
     print("\n2. E8 Integration (240 layers):")
     print(f"   Number of layers: {genesis_e8.num_layers}")
@@ -188,7 +177,9 @@ def test_e7_e8_integration():
     print(f"   Coupling matrix shape: {coupling_e8.shape}")
 
     eigenvalues_e8 = np.linalg.eigvals(coupling_e8)
-    print(f"   Eigenvalue range: [{np.min(np.real(eigenvalues_e8)):.4f}, {np.max(np.real(eigenvalues_e8)):.4f}]")
+    print(
+        f"   Eigenvalue range: [{np.min(np.real(eigenvalues_e8)):.4f}, {np.max(np.real(eigenvalues_e8)):.4f}]"
+    )
 
     # Compare spectral properties
     spectrum_e7 = genesis_e7.spectral_analysis()
@@ -197,22 +188,24 @@ def test_e7_e8_integration():
     print("\n3. Spectral comparison:")
     print(f"   E7 total power: {np.sum(spectrum_e7['power_spectrum']):.2e}")
     print(f"   E8 total power: {np.sum(spectrum_e8['power_spectrum']):.2e}")
-    print(f"   Power ratio (E8/E7): {np.sum(spectrum_e8['power_spectrum'])/np.sum(spectrum_e7['power_spectrum']):.4f}")
+    print(
+        f"   Power ratio (E8/E7): {np.sum(spectrum_e8['power_spectrum']) / np.sum(spectrum_e7['power_spectrum']):.4f}"
+    )
 
     return True
 
 
 def test_time_evolution():
     """Test time evolution and stability."""
-    print("\n" + "="*60)
+    print("\n" + "=" * 60)
     print("TESTING TIME EVOLUTION")
-    print("="*60)
+    print("=" * 60)
 
     genesis = GenesisHarmonics(
         num_layers=50,  # Reduced for faster testing
         base_frequency=1e12,
         fractal_alpha=1.618,
-        zpe_beta=0.01
+        zpe_beta=0.01,
     )
 
     # Short-term evolution
@@ -222,8 +215,8 @@ def test_time_evolution():
 
     results_short = genesis.evolve_system(dt, steps)
 
-    initial_energy = results_short['total_energy'][0]
-    final_energy = results_short['total_energy'][-1]
+    initial_energy = results_short["total_energy"][0]
+    final_energy = results_short["total_energy"][-1]
     energy_change = (final_energy - initial_energy) / initial_energy * 100
 
     print(f"   Energy change: {energy_change:.2f}%")
@@ -234,14 +227,14 @@ def test_time_evolution():
     print("\n2. Material response evolution:")
     for mat_type in MaterialType:
         mat_responses = []
-        for t in results_short['time_points']:
-            if t in results_short['material_responses']:
-                mat_responses.append(
-                    results_short['material_responses'][t][mat_type.value]
-                )
+        for t in results_short["time_points"]:
+            if t in results_short["material_responses"]:
+                mat_responses.append(results_short["material_responses"][t][mat_type.value])
 
         if mat_responses:
-            print(f"   {mat_type.value}: {np.mean(mat_responses):.2e} +/- {np.std(mat_responses):.2e}")
+            print(
+                f"   {mat_type.value}: {np.mean(mat_responses):.2e} +/- {np.std(mat_responses):.2e}"
+            )
 
     # Longer evolution test
     print("\n3. Long-term stability (1 ps):")
@@ -250,22 +243,21 @@ def test_time_evolution():
 
     print(f"   Initial energy: {results_long['total_energy'][0]:.2e}")
     print(f"   Final energy: {results_long['total_energy'][-1]:.2e}")
-    print(f"   Energy conservation: {(results_long['total_energy'][-1]/results_long['total_energy'][0]):.4f}")
+    print(
+        f"   Energy conservation: {(results_long['total_energy'][-1] / results_long['total_energy'][0]):.4f}"
+    )
 
     return True
 
 
 def test_data_export_import():
     """Test data export and import functionality."""
-    print("\n" + "="*60)
+    print("\n" + "=" * 60)
     print("TESTING DATA EXPORT/IMPORT")
-    print("="*60)
+    print("=" * 60)
 
     # Create and evolve system
-    genesis = GenesisHarmonics(
-        num_layers=30,
-        base_frequency=5e11
-    )
+    genesis = GenesisHarmonics(num_layers=30, base_frequency=5e11)
 
     # Evolve for some steps
     genesis.evolve_system(dt=1e-15, steps=10)
@@ -278,7 +270,7 @@ def test_data_export_import():
 
     # Check file exists and load
     if export_path.exists():
-        with open(export_path, 'r') as f:
+        with open(export_path, "r") as f:
             data = json.load(f)
 
         print(f"\n2. Exported data structure:")
@@ -302,13 +294,13 @@ def test_data_export_import():
 
 def test_visualization_data():
     """Test visualization data generation."""
-    print("\n" + "="*60)
+    print("\n" + "=" * 60)
     print("TESTING VISUALIZATION DATA")
-    print("="*60)
+    print("=" * 60)
 
     genesis = GenesisHarmonics(
         num_layers=20,  # Small for speed
-        base_frequency=1e12
+        base_frequency=1e12,
     )
 
     viz_data = genesis.visualize_data()
@@ -317,22 +309,24 @@ def test_visualization_data():
     print(f"   Time evolution points: {len(viz_data['time_evolution']['times'])}")
     print(f"   Spatial field points: {len(viz_data['spatial_distribution']['x_positions'])}")
     print(f"   Material types: {list(viz_data['material_responses'].keys())}")
-    print(f"   Coupling matrix size: {len(viz_data['coupling_matrix'])}x{len(viz_data['coupling_matrix'][0])}")
+    print(
+        f"   Coupling matrix size: {len(viz_data['coupling_matrix'])}x{len(viz_data['coupling_matrix'][0])}"
+    )
 
     # Check data ranges
     print("\n2. Data ranges:")
-    field_mag = viz_data['spatial_distribution']['field_magnitude']
+    field_mag = viz_data["spatial_distribution"]["field_magnitude"]
     print(f"   Field magnitude: [{np.min(field_mag):.2e}, {np.max(field_mag):.2e}]")
 
-    energies = viz_data['time_evolution']['total_energy']
+    energies = viz_data["time_evolution"]["total_energy"]
     print(f"   Total energy: [{np.min(energies):.2e}, {np.max(energies):.2e}]")
 
-    coherence = viz_data['time_evolution']['zpe_coherence']
+    coherence = viz_data["time_evolution"]["zpe_coherence"]
     print(f"   ZPE coherence: [{np.min(coherence):.4f}, {np.max(coherence):.4f}]")
 
     # Check spectral data
     print("\n3. Spectral data:")
-    freqs = viz_data['spectral_data']['frequencies']
+    freqs = viz_data["spectral_data"]["frequencies"]
     print(f"   Frequency range: {freqs[0]:.2e} - {freqs[-1]:.2e} Hz")
     print(f"   Number of spectral points: {len(freqs)}")
 
@@ -341,9 +335,9 @@ def test_visualization_data():
 
 def run_all_tests():
     """Run all validation tests."""
-    print("\n" + "="*70)
+    print("\n" + "=" * 70)
     print("GENESIS HARMONICS - COMPREHENSIVE VALIDATION SUITE")
-    print("="*70)
+    print("=" * 70)
 
     tests = [
         ("Harmonic Layers", test_harmonic_layers),
@@ -352,7 +346,7 @@ def run_all_tests():
         ("E7/E8 Integration", test_e7_e8_integration),
         ("Time Evolution", test_time_evolution),
         ("Data Export/Import", test_data_export_import),
-        ("Visualization Data", test_visualization_data)
+        ("Visualization Data", test_visualization_data),
     ]
 
     results = []
@@ -366,9 +360,9 @@ def run_all_tests():
             print(f"\n[ERROR] {name}: {str(e)[:50]}")
 
     # Summary
-    print("\n" + "="*70)
+    print("\n" + "=" * 70)
     print("TEST SUMMARY")
-    print("="*70)
+    print("=" * 70)
 
     passed = sum(1 for _, status in results if status == "PASSED")
     total = len(results)
@@ -378,7 +372,7 @@ def run_all_tests():
         print(f"   {name:20s}: {status_str}")
 
     print(f"\nTotal: {passed}/{total} tests passed")
-    print("="*70)
+    print("=" * 70)
 
     return passed == total
 
@@ -402,38 +396,38 @@ if __name__ == "__main__":
 
     # Frequency spectrum
     plt.subplot(2, 2, 1)
-    plt.semilogy(spectrum['frequencies'], 'b-')
-    plt.xlabel('Layer Index')
-    plt.ylabel('Frequency (Hz)')
-    plt.title('Harmonic Layer Frequencies')
+    plt.semilogy(spectrum["frequencies"], "b-")
+    plt.xlabel("Layer Index")
+    plt.ylabel("Frequency (Hz)")
+    plt.title("Harmonic Layer Frequencies")
     plt.grid(True, alpha=0.3)
 
     # Amplitudes
     plt.subplot(2, 2, 2)
-    plt.plot(spectrum['amplitudes'], 'r-')
-    plt.xlabel('Layer Index')
-    plt.ylabel('Amplitude')
-    plt.title('Initial Amplitudes')
+    plt.plot(spectrum["amplitudes"], "r-")
+    plt.xlabel("Layer Index")
+    plt.ylabel("Amplitude")
+    plt.title("Initial Amplitudes")
     plt.grid(True, alpha=0.3)
 
     # ZPE weights
     plt.subplot(2, 2, 3)
-    plt.plot(spectrum['zpe_weights'], 'g-')
-    plt.xlabel('Layer Index')
-    plt.ylabel('ZPE Weight')
-    plt.title('ZPE Stability Envelopes')
+    plt.plot(spectrum["zpe_weights"], "g-")
+    plt.xlabel("Layer Index")
+    plt.ylabel("ZPE Weight")
+    plt.title("ZPE Stability Envelopes")
     plt.grid(True, alpha=0.3)
 
     # Power spectrum
     plt.subplot(2, 2, 4)
-    plt.semilogy(spectrum['power_spectrum'], 'm-')
-    plt.xlabel('Layer Index')
-    plt.ylabel('Power')
-    plt.title('Power Spectrum')
+    plt.semilogy(spectrum["power_spectrum"], "m-")
+    plt.xlabel("Layer Index")
+    plt.ylabel("Power")
+    plt.title("Power Spectrum")
     plt.grid(True, alpha=0.3)
 
     plt.tight_layout()
-    plt.savefig('/tmp/genesis_harmonics_test.png', dpi=100)
+    plt.savefig("/tmp/genesis_harmonics_test.png", dpi=100)
     print("Plot saved to: /tmp/genesis_harmonics_test.png")
     plt.close()
 

@@ -72,6 +72,6 @@ class GenesisHarmonics:
 
     def calculate_zpe_envelope(self, frequencies: np.ndarray) -> np.ndarray:
         """Calculate the zero-point energy envelope for a given spectrum."""
-        # E = 0.5 * h_bar * omega
+        # E = 0.5 * h_bar * omega  # noqa: ERA001
         h_bar = 1.054e-34
         return 0.5 * h_bar * frequencies * np.exp(-frequencies / (10 * self.base_frequency))

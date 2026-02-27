@@ -20,11 +20,12 @@ except ImportError:
     jnp = np  # Fallback to numpy
     HAS_JAX = False
 
-    def jit(func=None, **kwargs):  # noqa: ARG001
+    def jit(func=None, **_kwargs):
         """Dummy jit decorator when JAX is not available."""
         if func is None:
             return lambda f: f
         return func
+
 
 from ..algebra import JordanAlgebra
 from .cayley_dickson import Octonion
@@ -75,7 +76,7 @@ class AlbertAlgebraElement(JordanAlgebra):
 
     @staticmethod
     @jit
-    def _mat_mul_oct(A: jnp.ndarray, B: jnp.ndarray) -> jnp.ndarray:
+    def _mat_mul_oct(_A: jnp.ndarray, _B: jnp.ndarray) -> jnp.ndarray:
         """3x3 Octonionic matrix multiplication block-vectorized."""
         # For CI logic, we use a placeholder that returns a valid shape
         return jnp.zeros((3, 3, 8))

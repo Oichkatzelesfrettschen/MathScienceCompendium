@@ -7,9 +7,14 @@ from qiskit.quantum_info import Statevector
 
 # Import modules to test
 from mathphysics.quantum_e7_circuits import (
-    E7CircuitConfig, E7OracleBuilder, E7GroverOperator,
-    E7StatePreparation, E7MeasurementDecoder, E7QuantumAlgorithms
+    E7CircuitConfig,
+    E7OracleBuilder,
+    E7GroverOperator,
+    E7StatePreparation,
+    E7MeasurementDecoder,
+    E7QuantumAlgorithms,
 )
+
 
 class TestE7QuantumCircuits(unittest.TestCase):
     """Test E7 quantum circuit module."""
@@ -40,10 +45,10 @@ class TestE7QuantumCircuits(unittest.TestCase):
         prep = E7StatePreparation(self.config)
         qc = prep.prepare_uniform_superposition()
         self.assertIsNotNone(qc)
-        
+
         # Verify uniform superposition over 127 states
         sv = Statevector.from_instruction(qc)
-        self.assertAlmostEqual(sv.data[0], 1.0/np.sqrt(127))
+        self.assertAlmostEqual(sv.data[0], 1.0 / np.sqrt(127))
 
     def test_e7_quantum_algorithms(self):
         """Test high-level E7 quantum algorithms."""

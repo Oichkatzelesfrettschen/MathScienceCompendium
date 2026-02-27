@@ -3,7 +3,7 @@ MASTER SUMMARY: Mathematical Physics Compendium - PDF Source Materials Analysis
 ================================================================================
 
 PROJECT: MathScienceCompendium
-LOCATION: /home/eirikr/MathScienceCompendium/
+LOCATION: ./
 DATE: October 1, 2025
 TOTAL DOCUMENTS ANALYZED: 10 PDFs (11 files - one duplicate)
 
@@ -475,7 +475,7 @@ zero-point vibration studies in high-Debye temperature materials.
 END OF MASTER SUMMARY
 ================================================================================
 Generated: October 1, 2025
-Location: /home/eirikr/MathScienceCompendium/research/primary_sources/
+Location: ./research/primary_sources/
 Total Analysis Files: 11 (10 individual + 1 master summary)
 Total Pages Analyzed: ~280 pages (estimated from line counts)
 ================================================================================

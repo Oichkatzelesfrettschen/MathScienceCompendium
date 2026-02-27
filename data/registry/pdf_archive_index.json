@@ -1,0 +1,21 @@
+{
+  "destination_root": "~/Documents/MathScienceCompendium/pdfs",
+  "dry_run": false,
+  "items": [
+    {
+      "action": "kept_existing",
+      "bytes": 4248863,
+      "destination_relpath": "papers/main.pdf",
+      "sha256": "8f576a5923f2b5d100a6c7a4610733fcafde5e4d043ae444a8dd17b6819fd323",
+      "source_relpath": "papers/main.pdf"
+    },
+    {
+      "action": "kept_existing",
+      "bytes": 678640,
+      "destination_relpath": "source_materials/pdfs/1111.4064v2.pdf",
+      "sha256": "96257d6e694f74eb65ba99e87a40e7003745e85abccd2356c918c56ed5eede05",
+      "source_relpath": "source_materials/pdfs/1111.4064v2.pdf"
+    }
+  ],
+  "pdf_count": 2
+}

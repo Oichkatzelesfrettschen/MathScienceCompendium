@@ -1,2 +1,641 @@
-% Chapter stub for vol2_ch7_quantum_gravity.tex
-% To be developed
+% ==============================================================================
+% Volume II, Chapter 7: Quantum Gravity Interfaces and Constraints
+% ==============================================================================
+
+\chapter{Quantum Gravity Interfaces and Constraints}
+\label{ch:quantum_gravity_interfaces}
+\index{Quantum gravity}
+\index{Loop quantum gravity}
+\index{Causal sets}
+
+\section{Introduction}
+
+This chapter specifies how quantum-gravity claims are evaluated in this
+compendium.  Rather than advocating for a single approach, we define
+\emph{interfaces}: the mathematical and dimensional conditions under which
+algebraic symmetry structures (Chapters~\ref{ch:e7_lie_algebra}
+and~\ref{ch:string_theory_integration}) connect to candidate theories of
+quantum gravity.
+
+Every candidate relation must satisfy three requirements:
+\begin{enumerate}
+    \item \textbf{Dimensional consistency}: all terms carry correct physical
+          dimensions in natural units ($\hbar = c = 1$) with explicit
+          Planck-scale factors.
+    \item \textbf{Evidence classification}: each claim is tagged by the
+          evidence taxonomy of Section~\ref{sec:evidence_taxonomy}.
+    \item \textbf{Falsifiability}: concrete criteria that would refute the
+          claim, with references to reproducible scripts or data.
+\end{enumerate}
+
+\subsection{Conventions}
+
+We use natural units throughout, restoring $G$, $\hbar$, $c$ only where
+dimensional analysis demands explicit factors.  The Planck units are:
+\begin{align}
+\label{eq:planck_units}
+\ell_{\mathrm{Pl}} &= \sqrt{\frac{\hbar G}{c^3}}
+    \approx 1.616 \times 10^{-35}\;\text{m}, \\
+t_{\mathrm{Pl}} &= \frac{\ell_{\mathrm{Pl}}}{c}
+    \approx 5.391 \times 10^{-44}\;\text{s}, \\
+m_{\mathrm{Pl}} &= \sqrt{\frac{\hbar c}{G}}
+    \approx 2.176 \times 10^{-8}\;\text{kg}, \\
+\planckforce &= \frac{c^4}{G}
+    \approx 1.210 \times 10^{44}\;\text{N}.
+\end{align}
+
+% ==============================================================================
+\section{Loop Quantum Gravity}
+\label{sec:lqg}
+% ==============================================================================
+
+\subsection{Ashtekar Variables}
+
+Loop quantum gravity (LQG) reformulates general relativity as a
+background-independent gauge theory using Ashtekar's
+connection variables~\cite{ashtekar1986new, rovelli2004quantum}.
+
+\begin{definition}[Ashtekar Connection]
+\label{def:ashtekar}
+The Ashtekar--Barbero connection on a spatial slice $\Sigma$ is:
+\begin{equation}
+A_a^i = \Gamma_a^i + \gamma\, K_a^i,
+\end{equation}
+where $\Gamma_a^i$ is the spin connection compatible with the densitised
+triad $E^a_i$, $K_a^i$ is the extrinsic curvature, and
+$\gamma \in \RR \setminus \{0\}$ is the Barbero--Immirzi parameter.
+
+The conjugate pair $(A_a^i, E^a_i)$ satisfies the Poisson bracket:
+\begin{equation}
+\{A_a^i(x),\, E^b_j(y)\} = 8\pi G \gamma\, \delta_a^b \delta^i_j\,
+\delta^{(3)}(x - y).
+\end{equation}
+\end{definition}
+
+\begin{remark}
+The Barbero--Immirzi parameter $\gamma$ is a free parameter of the
+quantisation.  Its value can be fixed by requiring consistency with the
+Bekenstein--Hawking entropy formula for black holes, yielding
+$\gamma \approx 0.2375$ (see Section~\ref{sec:area_quantisation}).
+\end{remark}
+
+\subsection{Spin Networks}
+
+\begin{definition}[Spin Network]
+\label{def:spin_network}
+A spin network $|\Gamma, \{j_e\}, \{i_n\}\rangle$ is a labelled graph
+where:
+\begin{itemize}
+    \item $\Gamma$ is an oriented graph embedded in $\Sigma$,
+    \item each edge $e$ carries a spin label $j_e \in \{0, \tfrac{1}{2},
+          1, \tfrac{3}{2}, \ldots\}$ (irreducible representation of
+          $\SU{2}$),
+    \item each node $n$ carries an intertwiner $i_n$ (invariant tensor
+          coupling the representations meeting at $n$).
+\end{itemize}
+Spin networks form an orthonormal basis for the kinematical Hilbert space
+$\mathcal{H}_{\mathrm{kin}}$ of LQG.
+\end{definition}
+
+\begin{theorem}[Spin Network Basis {\cite{rovelli2004quantum}}]
+\label{thm:spin_network_basis}
+The set of all spin networks (up to graph equivalence) forms a complete
+orthonormal basis for $\mathcal{H}_{\mathrm{kin}}$:
+\begin{equation}
+\langle \Gamma, j_e, i_n | \Gamma', j'_{e'}, i'_{n'} \rangle
+= \delta_{\Gamma\Gamma'}\, \prod_e \delta_{j_e j'_e}\, \prod_n
+\delta_{i_n i'_n}.
+\end{equation}
+\end{theorem}
+
+\subsection{Area Quantisation}
+\label{sec:area_quantisation}
+
+The central physical prediction of LQG is the discrete spectrum of
+geometric operators.
+
+\begin{theorem}[Area Spectrum {\cite{rovelli1995discreteness,
+    ashtekar1997quantum}}]
+\label{thm:area_spectrum}
+The area operator $\hat{A}(\mathcal{S})$ for a surface $\mathcal{S}$
+intersecting spin network edges has discrete eigenvalues:
+\begin{equation}
+\label{eq:area_spectrum}
+A(\mathcal{S}) = 8\pi \gamma\, \ell_{\mathrm{Pl}}^2
+\sum_{p \in \mathcal{S} \cap \Gamma}
+\sqrt{j_p(j_p + 1)},
+\end{equation}
+where $j_p$ is the spin label of the edge puncturing $\mathcal{S}$ at
+point $p$.
+\end{theorem}
+
+\begin{proposition}[Area Gap]
+\label{prop:area_gap}
+The smallest non-zero eigenvalue (area gap) is:
+\begin{equation}
+A_{\min} = 4\pi\sqrt{3}\, \gamma\, \ell_{\mathrm{Pl}}^2
+\approx 2.613 \times 10^{-70}\;\text{m}^2
+\quad (\text{for } \gamma \approx 0.2375).
+\end{equation}
+This gap implies space is fundamentally discrete at the Planck scale.
+\end{proposition}
+
+\begin{factcheck}{LQG AREA QUANTISATION}
+\textbf{Verified:}
+\begin{itemize}
+    \item Discrete area spectrum derivation:
+          \textcolor{validcolor}{MATHEMATICALLY RIGOROUS}
+    \item $\SU{2}$ representation theory underlying spin labels:
+          \textcolor{validcolor}{ESTABLISHED}
+    \item Black hole entropy matching (for specific $\gamma$):
+          \textcolor{validcolor}{CALCULATED}~\cite{ashtekar1997quantum}
+\end{itemize}
+
+\textbf{Open:}
+\begin{itemize}
+    \item Direct experimental test of area quantisation:
+          \textcolor{red}{BEYOND CURRENT TECHNOLOGY}
+    \item Semiclassical limit recovery:
+          \textcolor{orange}{PARTIALLY ESTABLISHED}
+    \item Uniqueness of $\gamma$ fixing:
+          \textcolor{orange}{DEBATED}
+\end{itemize}
+\end{factcheck}
+
+\subsection{Volume Quantisation}
+
+\begin{theorem}[Volume Spectrum]
+\label{thm:volume_spectrum}
+The volume operator $\hat{V}(\mathcal{R})$ for a region $\mathcal{R}$
+has a discrete spectrum depending on the intertwiners at nodes within
+$\mathcal{R}$:
+\begin{equation}
+V(\mathcal{R}) = \ell_{\mathrm{Pl}}^3 \sum_{n \in \mathcal{R} \cap \Gamma}
+v_n(j_{e_1}, \ldots, j_{e_k}, i_n),
+\end{equation}
+where $v_n$ depends on the specific intertwiner structure at node $n$.
+\end{theorem}
+
+\subsection{Connection to Exceptional Algebras}
+
+LQG uses $\SU{2}$ as its gauge group (from the Ashtekar formulation).
+Connections to the exceptional algebras of this compendium arise through:
+\begin{enumerate}
+    \item \textbf{Extended gauge groups}: Generalisations of LQG to
+          larger gauge groups $G$ replace $\SU{2}$ spin labels with
+          representations of $G$.  For $G = \EE{8}$, the fundamental
+          representation is 248-dimensional.
+    \item \textbf{Symmetry-reduced models}: In loop quantum cosmology
+          (LQC), the bounce dynamics can be expressed in terms of
+          algebraic structures compatible with the $\EE{7}$ framework
+          of Chapter~\ref{ch:e7_lie_algebra}.
+    \item \textbf{Black hole entropy}: The $\EE{7}$ quartic invariant
+          $I_4(p,q)$ from Proposition~\ref{prop:bh_entropy_e7}
+          governs extremal black hole entropy in $\mathcal{N}=8$ SUGRA;
+          LQG provides an independent counting of microstates.
+\end{enumerate}
+
+% ==============================================================================
+\section{Causal Set Theory}
+\label{sec:causal_sets}
+% ==============================================================================
+
+\subsection{Foundations}
+
+Causal set theory proposes that spacetime is fundamentally a discrete
+partial order~\cite{sorkin2003causal}.
+
+\begin{definition}[Causal Set]
+\label{def:causal_set}
+A causal set $(\mathcal{C}, \preceq)$ is a locally finite partial order:
+\begin{enumerate}
+    \item \textbf{Reflexivity}: $x \preceq x$ for all $x \in \mathcal{C}$,
+    \item \textbf{Antisymmetry}: $x \preceq y$ and $y \preceq x$ implies
+          $x = y$,
+    \item \textbf{Transitivity}: $x \preceq y$ and $y \preceq z$ implies
+          $x \preceq z$,
+    \item \textbf{Local finiteness}: for all $x, z \in \mathcal{C}$,
+          the set $\{y \mid x \preceq y \preceq z\}$ is finite.
+\end{enumerate}
+\end{definition}
+
+\begin{theorem}[Hauptvermutung of Causal Sets {\cite{sorkin2003causal}}]
+\label{thm:hauptvermutung}
+\textbf{Conjecture.} A causal set that faithfully embeds into a Lorentzian
+manifold $(\mathcal{M}, g)$ determines $(\mathcal{M}, g)$ up to conformal
+factor, and the conformal factor is recovered from the number-volume
+correspondence:
+\begin{equation}
+\text{Number of elements} \propto \text{Spacetime volume}
+\quad \Longrightarrow \quad
+n = \rho\, V, \quad \rho \sim \ell_{\mathrm{Pl}}^{-4}.
+\end{equation}
+\end{theorem}
+
+\subsection{Sorkin's Cosmological Prediction}
+
+\begin{proposition}[Cosmological Constant from Causal Sets
+    {\cite{sorkin2003causal}}]
+\label{prop:cc_causal_sets}
+The causal set framework predicts a cosmological constant of order:
+\begin{equation}
+\Lambda \sim \frac{1}{\sqrt{N}}\, \ell_{\mathrm{Pl}}^{-2},
+\end{equation}
+where $N$ is the number of elements in the causal set to the past of the
+current epoch.  For $N \sim 10^{240}$ (corresponding to the current Hubble
+volume):
+\begin{equation}
+\Lambda \sim 10^{-120}\, \ell_{\mathrm{Pl}}^{-2}
+\sim 10^{-52}\;\text{m}^{-2},
+\end{equation}
+which is the correct order of magnitude for the observed cosmological
+constant.
+\end{proposition}
+
+\begin{factcheck}{CAUSAL SET COSMOLOGICAL CONSTANT}
+\textbf{Status:}
+\begin{itemize}
+    \item Order-of-magnitude prediction:
+          \textcolor{validcolor}{CORRECT}~\cite{sorkin2003causal}
+    \item Predicted before precise measurement (1990):
+          \textcolor{validcolor}{GENUINE PREDICTION}
+    \item Precise numerical match: \textcolor{orange}{ORDER OF MAGNITUDE ONLY}
+    \item Dynamical mechanism: \textcolor{orange}{INCOMPLETE}
+\end{itemize}
+\end{factcheck}
+
+% ==============================================================================
+\section{Asymptotic Safety}
+\label{sec:asymptotic_safety}
+% ==============================================================================
+
+\subsection{The Reuter Fixed Point}
+
+Asymptotic safety proposes that gravity is non-perturbatively
+renormalisable due to a non-trivial ultraviolet fixed point of the
+gravitational renormalisation group
+flow~\cite{reuter1998nonperturbative}.
+
+\begin{definition}[Asymptotic Safety]
+\label{def:asymptotic_safety}
+A quantum field theory is \emph{asymptotically safe} if its
+renormalisation group flow possesses a non-Gaussian UV fixed point
+$g_*$ with a finite-dimensional critical surface $\mathcal{S}_{\mathrm{UV}}$:
+\begin{equation}
+\beta_i(g_*) = 0, \qquad
+\dim(\mathcal{S}_{\mathrm{UV}}) < \infty.
+\end{equation}
+Trajectories on $\mathcal{S}_{\mathrm{UV}}$ define fundamental
+(non-perturbative) theories of gravity.
+\end{definition}
+
+\begin{theorem}[Reuter Fixed Point {\cite{reuter1998nonperturbative}}]
+\label{thm:reuter_fp}
+Using the functional renormalisation group equation (Wetterink equation)
+for the Einstein--Hilbert truncation:
+\begin{equation}
+\Gamma_k[g] = \frac{1}{16\pi G_k} \int d^4x\, \sqrt{g}\,
+(-R + 2\Lambda_k),
+\end{equation}
+there exists a non-Gaussian fixed point $(g_*, \lambda_*)$ with:
+\begin{equation}
+g_* = G_* k^2 \approx 0.71, \qquad
+\lambda_* = \Lambda_* / k^2 \approx 0.19,
+\end{equation}
+and two relevant directions (dimensionality of the UV critical surface
+$= 2$).
+\end{theorem}
+
+\begin{factcheck}{ASYMPTOTIC SAFETY}
+\textbf{Verified:}
+\begin{itemize}
+    \item Non-Gaussian fixed point in Einstein--Hilbert truncation:
+          \textcolor{validcolor}{ESTABLISHED}~\cite{reuter1998nonperturbative}
+    \item Persistence under extended truncations ($R^2$, $R_{\mu\nu}^2$):
+          \textcolor{validcolor}{VERIFIED}
+    \item Two relevant directions consistent across truncations:
+          \textcolor{validcolor}{ROBUST}
+\end{itemize}
+
+\textbf{Open:}
+\begin{itemize}
+    \item Proof of fixed point existence beyond truncation:
+          \textcolor{red}{ABSENT}
+    \item Convergence of truncation scheme: \textcolor{orange}{DEBATED}
+    \item Compatibility with unitarity: \textcolor{orange}{UNDER STUDY}
+\end{itemize}
+\end{factcheck}
+
+% ==============================================================================
+\section{Dynamical Triangulations}
+\label{sec:cdt}
+% ==============================================================================
+
+Causal dynamical triangulations (CDT) provide a non-perturbative lattice
+approach to quantum gravity~\cite{ambjorn2012nonperturbative}.
+
+\begin{definition}[CDT Path Integral]
+\label{def:cdt}
+The CDT partition function sums over causal triangulations $\mathcal{T}$
+of spacetime:
+\begin{equation}
+Z = \sum_{\mathcal{T} \in \mathcal{T}_{\mathrm{causal}}}
+\frac{1}{C(\mathcal{T})}\, e^{i S_{\mathrm{Regge}}[\mathcal{T}]},
+\end{equation}
+where $S_{\mathrm{Regge}}$ is the Regge action on the triangulation and
+$C(\mathcal{T})$ is the symmetry factor.  Causality is enforced by
+requiring a global foliation into spatial slices.
+\end{definition}
+
+\begin{theorem}[CDT Phase Structure {\cite{ambjorn2012nonperturbative}}]
+\label{thm:cdt_phases}
+CDT in 4D exhibits a phase diagram with three phases:
+\begin{enumerate}
+    \item \textbf{Phase A} (branched polymer): spectral dimension
+          $d_s \approx 2$,
+    \item \textbf{Phase B} (crumpled): $d_s \to \infty$ (collapsed geometry),
+    \item \textbf{Phase C} (de Sitter): $d_s \approx 4$ at large scales,
+          $d_s \approx 2$ at short scales.
+\end{enumerate}
+Phase C reproduces a de~Sitter-like universe with dynamical dimensional
+reduction at the Planck scale.
+\end{theorem}
+
+\begin{remark}
+The dimensional reduction $d_s: 4 \to 2$ at short distances is a
+feature shared by multiple quantum gravity approaches (LQG, asymptotic
+safety, CDT), suggesting it may be a universal quantum-gravitational
+phenomenon.
+\end{remark}
+
+% ==============================================================================
+\section{Dimensional Analysis and Scaling Checks}
+\label{sec:dimensional_analysis}
+% ==============================================================================
+
+\subsection{Planck Scale as Natural Boundary}
+
+All quantum gravity approaches share the Planck scale as their natural
+regime.  The following dimensional relations constrain any viable theory:
+
+\begin{proposition}[Planck Force Bound]
+\label{prop:planck_force}
+The maximum gravitational force between two Planck-mass objects separated
+by a Planck length equals the Planck force:
+\begin{equation}
+\planckforce = \frac{c^4}{G} = \frac{m_{\mathrm{Pl}} c^2}
+{\ell_{\mathrm{Pl}}} \approx 1.21 \times 10^{44}\;\text{N}.
+\end{equation}
+\end{proposition}
+
+\begin{lemma}[Dimensional Consistency Check]
+\label{lem:dimensional_check}
+For any candidate quantum-gravitational relation $F = f(G, \hbar, c,
+\Lambda, \ldots)$, verify:
+\begin{enumerate}
+    \item $[F]$ has correct SI dimensions,
+    \item In natural units ($\hbar = c = 1$), only powers of $G$
+          (dimension $[\text{length}]^2$) and $\Lambda$ (dimension
+          $[\text{length}]^{-2}$) remain,
+    \item Numerical coefficients are order unity unless a symmetry
+          factor or large-$N$ expansion provides justification.
+\end{enumerate}
+\end{lemma}
+
+\subsection{Scaling Relations}
+
+\begin{table}[ht]
+\centering
+\begin{tabular}{lcccc}
+\toprule
+\textbf{Quantity} & \textbf{Expression} & \textbf{SI Value} &
+\textbf{Dimensions} & \textbf{Natural Units} \\
+\midrule
+Planck length & $\sqrt{\hbar G/c^3}$ & $1.616 \times 10^{-35}$~m &
+    $[L]$ & $1$ \\
+Planck time & $\ell_{\mathrm{Pl}}/c$ & $5.391 \times 10^{-44}$~s &
+    $[T]$ & $1$ \\
+Planck mass & $\sqrt{\hbar c/G}$ & $2.176 \times 10^{-8}$~kg &
+    $[M]$ & $1$ \\
+Planck energy & $m_{\mathrm{Pl}} c^2$ & $1.956 \times 10^{9}$~J &
+    $[E]$ & $1$ \\
+Planck force & $c^4/G$ & $1.210 \times 10^{44}$~N &
+    $[MLT^{-2}]$ & $1/G$ \\
+Planck density & $c^5/(\hbar G^2)$ & $5.155 \times 10^{96}$~kg/m$^3$ &
+    $[ML^{-3}]$ & $1$ \\
+\bottomrule
+\end{tabular}
+\caption{Planck-scale quantities and their dimensions.}
+\label{tab:planck_quantities}
+\end{table}
+
+\subsection{Superforce Dimensional Check}
+
+The ``Superforce'' $\superforce = c^4/G$ proposed in framework
+documents~\cite{pais2023superforce} is dimensionally identical to
+the Planck force $\planckforce$.
+
+\begin{factcheck}{SUPERFORCE DIMENSIONAL STATUS}
+\textbf{Verified:}
+\begin{itemize}
+    \item $[c^4/G] = [\text{force}]$:
+          \textcolor{validcolor}{DIMENSIONALLY CORRECT}
+    \item Numerical value $\approx 1.21 \times 10^{44}$~N:
+          \textcolor{validcolor}{CORRECT}
+\end{itemize}
+
+\textbf{Critical:}
+\begin{itemize}
+    \item Physical interpretation as ``fundamental unifying force'':
+          \textcolor{red}{NOT ESTABLISHED}
+    \item Predictive content beyond dimensional analysis:
+          \textcolor{red}{ABSENT}
+    \item The quantity $c^4/G$ appears naturally in GR as the
+          proportionality constant in the Einstein field equations;
+          calling it a ``Superforce'' adds no physical content.
+\end{itemize}
+\end{factcheck}
+
+% ==============================================================================
+\section{Evidence Taxonomy}
+\label{sec:evidence_taxonomy}
+% ==============================================================================
+
+Every claim in this compendium involving quantum gravity should be tagged
+with one of the following evidence classes:
+
+\begin{definition}[Evidence Classification]
+\label{def:evidence_classes}
+\begin{description}
+    \item[Class A -- Mathematical Identity:]
+        Proven theorem or algebraic identity with rigorous proof.
+        Does not require physical interpretation.
+        \emph{Example}: $\dim(\EE{7}) = 133$.
+
+    \item[Class B -- Numerical Verification:]
+        Computationally confirmed to stated precision with documented
+        algorithm, seeds, and hardware.
+        \emph{Example}: Cartan matrix determinant verified by
+        \texttt{experiments/src/e7\_lie\_algebra.py}.
+
+    \item[Class C -- Peer-Reviewed Physics:]
+        Published in refereed journals with a clear derivation chain
+        from accepted axioms.
+        \emph{Example}: Area spectrum of LQG~\cite{rovelli1995discreteness}.
+
+    \item[Class D -- Literature-Backed Conjecture:]
+        Proposed in peer-reviewed literature, supported by partial evidence,
+        but lacking complete proof.
+        \emph{Example}: West's $\EE{11}$ conjecture~\cite{west2001e11}.
+
+    \item[Class E -- Unresolved Hypothesis:]
+        Proposed in non-peer-reviewed sources or internal framework
+        documents, without independent verification.
+        \emph{Example}: Superforce as fundamental unifying
+        force~\cite{pais2023superforce}.
+\end{description}
+\end{definition}
+
+\begin{table}[ht]
+\centering
+\begin{tabular}{lccc}
+\toprule
+\textbf{Evidence Class} & \textbf{Proof Required} &
+\textbf{Reproducible} & \textbf{Peer Review} \\
+\midrule
+A: Mathematical Identity & Rigorous & N/A & Standard \\
+B: Numerical Verification & Computational & Yes (seeds) & Code review \\
+C: Peer-Reviewed Physics & Derivation chain & Published & Yes \\
+D: Literature Conjecture & Partial & Varies & Yes \\
+E: Unresolved Hypothesis & None & Often not & No \\
+\bottomrule
+\end{tabular}
+\caption{Evidence taxonomy for quantum-gravity claims.}
+\label{tab:evidence_taxonomy}
+\end{table}
+
+% ==============================================================================
+\section{Validation and Falsifiability}
+\label{sec:qg_validation}
+% ==============================================================================
+
+\subsection{Concrete Falsification Criteria}
+
+\begin{longtable}{p{3.5cm}p{2.5cm}p{3cm}p{3.5cm}}
+\toprule
+\textbf{Claim} & \textbf{Evidence Class} & \textbf{Falsification} &
+\textbf{Current Status} \\
+\midrule
+\endhead
+Area quantisation (LQG) &
+    C &
+    Detection of continuous area spectrum &
+    \textcolor{orange}{Untestable at current $E$} \\
+$\Lambda \sim N^{-1/2}$ (causal sets) &
+    D &
+    Precise $\Lambda$ deviating by $> 10\times$ &
+    \textcolor{validcolor}{Order-of-magnitude OK} \\
+Reuter fixed point (AS) &
+    C (truncated) &
+    Non-existence in exact theory &
+    \textcolor{orange}{Truncation-dependent} \\
+Spectral dimension $4 \to 2$ (CDT) &
+    B &
+    Absence in refined simulations &
+    \textcolor{validcolor}{Robust across codes} \\
+$\EE{10}$ billiards &
+    C &
+    Billiard deviation in numerical GR &
+    \textcolor{validcolor}{Verified asymptotically} \\
+$\EE{11}$ M-theory symmetry &
+    D &
+    Counterexample at higher levels &
+    \textcolor{orange}{Conjectural} \\
+Superforce $= c^4/G$ as fundamental &
+    E &
+    Any prediction distinguishing it from $\planckforce$ &
+    \textcolor{red}{No unique prediction} \\
+\bottomrule
+\caption{Falsification criteria for quantum-gravity claims.}
+\label{tab:qg_falsification}
+\end{longtable}
+
+\subsection{Computational Verification Points}
+
+Results from this compendium's code that bear on quantum gravity claims:
+\begin{enumerate}
+    \item \textbf{Planck unit consistency}: All dimensional relations in
+          Table~\ref{tab:planck_quantities} verified by
+          \texttt{src/mathphysics/unified\_physics.py}.
+    \item \textbf{$\EE{7}$ quartic invariant}: $I_4(p,q)$ computation
+          for black hole entropy verified against
+          Ferrara--Kallosh~\cite{ferrara1997}.
+    \item \textbf{Cartan matrix spectra}: Eigenvalues and determinants
+          for $\EE{6}$, $\EE{7}$, $\EE{8}$ verified computationally.
+    \item \textbf{Weyl group orders}: Cross-checked against classification
+          tables (Table~\ref{tab:e_series_comparison} in
+          Chapter~\ref{ch:e7_lie_algebra}).
+\end{enumerate}
+
+% ==============================================================================
+\section{Open Problems}
+\label{sec:qg_open}
+% ==============================================================================
+
+\begin{openproblem}{OP-7.1}{Semiclassical Limit of LQG}
+A complete derivation of smooth spacetime from spin-network dynamics in
+the large-spin limit remains an open problem.  Coherent state methods
+provide partial results but a rigorous proof of classical GR recovery is
+absent.
+\end{openproblem}
+
+\begin{openproblem}{OP-7.2}{Truncation Convergence in Asymptotic Safety}
+The functional renormalisation group results rely on truncations of
+theory space.  Convergence of the truncation scheme (i.e., stability of
+the fixed point under inclusion of higher-order operators) has not been
+proven, though numerical evidence is encouraging.
+\end{openproblem}
+
+\begin{openproblem}{OP-7.3}{Experimental Signatures}
+Direct tests of Planck-scale discreteness are currently beyond
+experimental reach.  Indirect signatures (modified dispersion relations,
+quantum-gravity-induced decoherence, gravitational wave echoes) provide
+potential avenues but face sensitivity gaps of many orders of magnitude.
+\end{openproblem}
+
+\begin{openproblem}{OP-7.4}{Unification of Approaches}
+LQG, causal sets, asymptotic safety, and CDT share the prediction of
+short-distance dimensional reduction ($d_s \to 2$).  Whether this points
+to an underlying unified framework is unknown.
+\end{openproblem}
+
+% ==============================================================================
+\section{Conclusions}
+\label{sec:qg_conclusions}
+% ==============================================================================
+
+The quantum-gravity landscape provides multiple mathematically rigorous
+frameworks, each with specific connections to the algebraic structures of
+this compendium:
+\begin{enumerate}
+    \item \textbf{LQG}: Uses $\SU{2}$ gauge theory; connects to
+          exceptional algebras through extended gauge groups and black
+          hole entropy (area quantisation is Class~C evidence).
+    \item \textbf{Causal sets}: Predicts $\Lambda$ at the correct order
+          of magnitude (Class~D); the discrete structure parallels the
+          finite geometry PG$(6,2)$ of Chapter~\ref{ch:e7_lie_algebra}.
+    \item \textbf{Asymptotic safety}: Non-Gaussian UV fixed point
+          (Class~C in truncation); implications for the running of
+          Newton's constant at Planck energies.
+    \item \textbf{CDT}: Lattice approach confirming spectral dimension
+          $4 \to 2$ (Class~B); numerical evidence strongest among
+          approaches.
+    \item \textbf{String/M-theory}: Via $\EE{10}$ billiards (Class~C
+          asymptotically) and $\EE{11}$ conjecture (Class~D); connects
+          directly to Chapter~\ref{ch:string_theory_integration}.
+\end{enumerate}
+
+The evidence taxonomy of Definition~\ref{def:evidence_classes} should
+be applied to every claim in subsequent volumes.  Claims of Class~E
+(unresolved hypothesis) require explicit disclaimers and should not be
+presented as established physics.

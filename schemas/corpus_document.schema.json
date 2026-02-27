@@ -1,0 +1,32 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://mathsciencecompendium.local/schemas/corpus_document.schema.json",
+  "title": "CorpusDocument",
+  "type": "object",
+  "required": [
+    "id",
+    "source_relpath",
+    "category",
+    "title",
+    "generated_at_utc",
+    "sha256",
+    "size_bytes",
+    "line_count",
+    "content"
+  ],
+  "properties": {
+    "id": { "type": "string", "minLength": 1 },
+    "source_relpath": { "type": "string", "minLength": 1 },
+    "category": { "type": "string", "minLength": 1 },
+    "title": { "type": "string" },
+    "generated_at_utc": { "type": "string", "format": "date-time" },
+    "sha256": {
+      "type": "string",
+      "pattern": "^[a-f0-9]{64}$"
+    },
+    "size_bytes": { "type": "integer", "minimum": 0 },
+    "line_count": { "type": "integer", "minimum": 0 },
+    "content": { "type": "string" }
+  },
+  "additionalProperties": false
+}

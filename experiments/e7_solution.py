@@ -12,6 +12,7 @@ This file contains the CORRECT E7 simple roots that:
 
 import numpy as np
 
+
 def print_solution():
     """Print the correct E7 simple roots solution."""
 
@@ -23,13 +24,13 @@ def print_solution():
     # The correct E7 simple roots in 8-dimensional embedding
     # These satisfy all requirements and give det(Cartan) = 2
     alpha = [
-        np.array([0.0, 1.0, -1.0, 0.0, 0.0, 0.0, 0.0, 0.0]),     # alpha1
-        np.array([0.0, 0.0, 1.0, -1.0, 0.0, 0.0, 0.0, 0.0]),     # alpha2
+        np.array([0.0, 1.0, -1.0, 0.0, 0.0, 0.0, 0.0, 0.0]),  # alpha1
+        np.array([0.0, 0.0, 1.0, -1.0, 0.0, 0.0, 0.0, 0.0]),  # alpha2
         np.array([0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, 0.5]),  # alpha3
-        np.array([0.0, 0.0, 0.0, 1.0, -1.0, 0.0, 0.0, 0.0]),     # alpha4
-        np.array([0.0, 0.0, 0.0, 0.0, 1.0, -1.0, 0.0, 0.0]),     # alpha5
-        np.array([0.0, 0.0, 0.0, 0.0, 0.0, 1.0, -1.0, 0.0]),     # alpha6
-        np.array([0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1.0, -1.0])      # alpha7
+        np.array([0.0, 0.0, 0.0, 1.0, -1.0, 0.0, 0.0, 0.0]),  # alpha4
+        np.array([0.0, 0.0, 0.0, 0.0, 1.0, -1.0, 0.0, 0.0]),  # alpha5
+        np.array([0.0, 0.0, 0.0, 0.0, 0.0, 1.0, -1.0, 0.0]),  # alpha6
+        np.array([0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1.0, -1.0]),  # alpha7
     ]
 
     print("CORRECT E7 SIMPLE ROOTS:")
@@ -148,6 +149,7 @@ specific connectivity of the E7 Dynkin diagram. The Cartan matrix
 element A_13 = 1 corresponds to alpha1 and alpha3 being connected
 in the Dynkin diagram with a negative inner product.
 """)
+
 
 if __name__ == "__main__":
     print_solution()

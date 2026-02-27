@@ -2,7 +2,7 @@
 
 **Date:** October 19, 2025
 **Project:** E7/E8 Lie Algebras, Quantum Computing, and Mathematical Physics Integration
-**Location:** `/home/eirikr/Github_n_projects/MathScienceCompendium/experiments`
+**Location:** `./experiments`
 
 ---
 
@@ -497,7 +497,7 @@ scikit-learn >= 1.3.0  # For PCA visualization
 
 ### Installation:
 ```bash
-cd /home/eirikr/Github_n_projects/MathScienceCompendium/experiments
+cd ./experiments
 python3 -m venv venv
 source venv/bin/activate
 pip install -r requirements.txt
@@ -751,6 +751,6 @@ The system provides a solid foundation for advanced research in:
 ---
 
 *Report generated: October 19, 2025*
-*System location: `/home/eirikr/Github_n_projects/MathScienceCompendium/experiments`*
+*System location: `./experiments`*
 *Python version: 3.13*
 *Platform: Debian (WSL2 on Windows 11)*

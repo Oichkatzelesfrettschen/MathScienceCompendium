@@ -1,0 +1,69 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://mathsciencecompendium.local/schemas/external/provenance_lane.schema.json",
+  "title": "ExternalLaneProvenance",
+  "oneOf": [
+    {
+      "type": "object",
+      "required": ["generated_at_utc", "manifest", "results"],
+      "properties": {
+        "generated_at_utc": { "type": "string", "format": "date-time" },
+        "manifest": { "type": "string", "minLength": 1 },
+        "results": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["id", "target_relpath", "status", "fetched_at_utc", "notes"],
+            "properties": {
+              "id": { "type": "string", "minLength": 1 },
+              "target_relpath": { "type": "string", "minLength": 1 },
+              "status": { "type": "string", "minLength": 1 },
+              "source_url": { "type": ["string", "null"] },
+              "size_bytes": { "type": ["integer", "null"], "minimum": 0 },
+              "sha256": { "type": ["string", "null"], "pattern": "^([a-f0-9]{64})?$" },
+              "extract_text_relpath": { "type": ["string", "null"] },
+              "fetched_at_utc": { "type": "string", "format": "date-time" },
+              "notes": { "type": "string" }
+            },
+            "additionalProperties": false
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    {
+      "type": "object",
+      "required": [
+        "generated_by",
+        "generated_at_utc",
+        "upstream_repo",
+        "upstream_ref",
+        "asset_count",
+        "assets"
+      ],
+      "properties": {
+        "generated_by": { "type": "string", "minLength": 1 },
+        "generated_at_utc": { "type": "string", "format": "date-time" },
+        "upstream_repo": { "type": "string", "minLength": 1 },
+        "upstream_ref": { "type": "string", "minLength": 1 },
+        "asset_count": { "type": "integer", "minimum": 0 },
+        "assets": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["upstream_path", "local_relpath", "source_url", "sha256", "size_bytes"],
+            "properties": {
+              "upstream_path": { "type": "string", "minLength": 1 },
+              "local_relpath": { "type": "string", "minLength": 1 },
+              "source_url": { "type": "string", "minLength": 1 },
+              "sha256": { "type": "string", "pattern": "^[a-f0-9]{64}$" },
+              "size_bytes": { "type": "integer", "minimum": 1 }
+            },
+            "additionalProperties": false
+          }
+        }
+      },
+      "additionalProperties": false
+    }
+  ]
+}
