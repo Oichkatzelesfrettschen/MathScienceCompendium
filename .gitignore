@@ -3,7 +3,19 @@
 # ==============================================================================
 
 # ------------------------------------------------------------------------------
-# Python
+# Local environment
+# ------------------------------------------------------------------------------
+.env
+.venv/
+venv/
+ENV/
+env/
+env.bak/
+venv.bak/
+experiments/venv/
+
+# ------------------------------------------------------------------------------
+# Python build artifacts
 # ------------------------------------------------------------------------------
 __pycache__/
 *.py[cod]
@@ -11,8 +23,9 @@ __pycache__/
 *.so
 .Python
 build/
-develop-eggs/
 dist/
+site/
+develop-eggs/
 downloads/
 eggs/
 .eggs/
@@ -24,6 +37,7 @@ var/
 wheels/
 share/python-wheels/
 *.egg-info/
+pip-wheel-metadata/
 .installed.cfg
 *.egg
 MANIFEST
@@ -31,18 +45,30 @@ MANIFEST
 *.spec
 pip-log.txt
 pip-delete-this-directory.txt
+experiments/src/mathphysics_experiments.egg-info/
 
-# Virtual environments
-.env
-.venv/
-venv/
-ENV/
-env/
-env.bak/
-venv.bak/
-experiments/venv/
+# ------------------------------------------------------------------------------
+# Generated output
+# ------------------------------------------------------------------------------
+results/
+logs/
+*.parquet
+papers/main.aux
+papers/main.bbl
+papers/main.bcf
+papers/main.blg
+papers/main.lof
+papers/main.log
+papers/main.lot
+papers/main.out
+papers/main.pdf
+papers/main.run.xml
+papers/main.toc
+papers/main-blx.bib
 
-# Testing/Coverage
+# ------------------------------------------------------------------------------
+# Test and cache directories
+# ------------------------------------------------------------------------------
 .pytest_cache/
 .tox/
 .nox/
@@ -55,20 +81,16 @@ coverage.xml
 *.py,cover
 .hypothesis/
 htmlcov/
-
-# Type checking / Linting
 .mypy_cache/
 .dmypy.json
 dmypy.json
 .ruff_cache/
 .pyre/
 .pytype/
-
-# Jupyter
 .ipynb_checkpoints/
 
 # ------------------------------------------------------------------------------
-# LaTeX
+# Documentation and LaTeX scratch files
 # ------------------------------------------------------------------------------
 *.aux
 *.bbl
@@ -103,17 +125,7 @@ dmypy.json
 texput.log
 
 # ------------------------------------------------------------------------------
-# macOS
-# ------------------------------------------------------------------------------
-.DS_Store
-.AppleDouble
-.LSOverride
-._*
-.Spotlight-V100
-.Trashes
-
-# ------------------------------------------------------------------------------
-# IDE / Editors
+# Editor and OS files
 # ------------------------------------------------------------------------------
 .idea/
 .vscode/
@@ -124,9 +136,15 @@ texput.log
 *~
 .netrwhist
 tags
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+.Spotlight-V100
+.Trashes
 
 # ------------------------------------------------------------------------------
-# General
+# General temporary files
 # ------------------------------------------------------------------------------
 *.tmp
 *.temp
@@ -134,7 +152,14 @@ tags
 *.backup
 
 # ------------------------------------------------------------------------------
-# Project-Specific
-# ------------------------------------------------------------------------------
 # Local configuration
+# ------------------------------------------------------------------------------
 .claude/settings.local.json
+
+# ------------------------------------------------------------------------------
+# Temporary duplicate source-material downloads
+# ------------------------------------------------------------------------------
+source_materials/pdfs/Comment on the Pais Superforce Theory.pdf
+source_materials/pdfs/SUPERFORCE ---S.C.Pais---2023-1.pdf
+source_materials/pdfs/SUPERFORCE ---S.C.Pais---2023.pdf
+source_materials/pdfs/extracted/SUPERFORCE ---S.C.Pais---2023.txt
