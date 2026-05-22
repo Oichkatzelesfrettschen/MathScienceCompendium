@@ -6,15 +6,17 @@ and performs deep analysis of harmonic interactions.
 
 import os
 import time
+
 import jax
 import jax.numpy as jnp
+import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
-from mathphysics.quantum_lattice_boltzmann import LBMParameters
+
 from mathphysics.accelerated_lbm import AcceleratedLBM
-from mathphysics.data_handler import DataHandler
 from mathphysics.config import Config
-import matplotlib.pyplot as plt
+from mathphysics.data_handler import DataHandler
+from mathphysics.quantum_lattice_boltzmann import LBMParameters
 
 
 def run_high_res_experiment():

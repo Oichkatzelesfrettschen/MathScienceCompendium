@@ -1,10 +1,12 @@
 """Benchmark comparing NumPy vs JAX implementation of LBM."""
 
 import time
-import numpy as np
+
 import jax
-from mathphysics.quantum_lattice_boltzmann import QuantumLatticeBoltzmann, LBMParameters
+import numpy as np
+
 from mathphysics.accelerated_lbm import AcceleratedLBM
+from mathphysics.quantum_lattice_boltzmann import LBMParameters, QuantumLatticeBoltzmann
 
 
 def benchmark():

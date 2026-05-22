@@ -1,16 +1,17 @@
 """Unit tests for E8 quantum circuits."""
 
 from __future__ import annotations
+
 import unittest
 
 # Import modules to test
 from mathphysics.quantum_e8_circuits import (
     E8CircuitConfig,
-    E8RootStructure,
-    E8OracleBuilder,
-    E8StatePreparation,
     E8MeasurementAnalysis,
+    E8OracleBuilder,
     E8QuantumAlgorithms,
+    E8RootStructure,
+    E8StatePreparation,
 )
 
 

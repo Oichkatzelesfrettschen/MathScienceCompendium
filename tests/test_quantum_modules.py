@@ -8,11 +8,13 @@ Date: October 2025
 """
 
 from __future__ import annotations
+
 import unittest
 import warnings
 
 # Import modules to test
 from mathphysics.quantum_encoding import EncodingConfig, IndexEncoder
+
 
 # Qiskit imports for testing
 

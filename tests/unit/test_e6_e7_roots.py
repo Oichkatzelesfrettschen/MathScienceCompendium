@@ -1,6 +1,7 @@
 """Unit tests for E6 and E7 root systems."""
 
 import unittest
+
 import numpy as np
 from src.mathphysics.algebras.roots import E6RootSystem, E7RootSystem
 

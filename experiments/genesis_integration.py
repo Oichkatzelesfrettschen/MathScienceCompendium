@@ -5,18 +5,20 @@ This script demonstrates the complete integration of the Genesis Harmonics
 module with E7/E8 root systems, material responses, and visualization.
 """
 
-import numpy as np
-import matplotlib.pyplot as plt
-from matplotlib.gridspec import GridSpec
-from pathlib import Path
 import sys
+from pathlib import Path
+
+import matplotlib.pyplot as plt
+import numpy as np
+from matplotlib.gridspec import GridSpec
+
 
 REPO_ROOT = Path(__file__).resolve().parent.parent
 SRC_ROOT = REPO_ROOT / "src"
 if str(SRC_ROOT) not in sys.path:
     sys.path.insert(0, str(SRC_ROOT))
 
-from mathphysics.genesis_harmonics import GenesisHarmonics, MaterialType, MATERIALS, PHI
+from mathphysics.genesis_harmonics import MATERIALS, PHI, GenesisHarmonics, MaterialType
 
 
 def create_comprehensive_visualization():

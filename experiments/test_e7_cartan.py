@@ -1,8 +1,9 @@
 #!/usr/bin/env python3
 """Test script to verify E7 Cartan matrix computation and simple roots."""
 
-import numpy as np
 import sys
+
+import numpy as np
 
 
 def verify_e7_simple_roots():

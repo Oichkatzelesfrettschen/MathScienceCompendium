@@ -1,18 +1,20 @@
 """Unit tests for E7 quantum circuits."""
 
 from __future__ import annotations
+
 import unittest
+
 import numpy as np
 from qiskit.quantum_info import Statevector
 
 # Import modules to test
 from mathphysics.quantum_e7_circuits import (
     E7CircuitConfig,
-    E7OracleBuilder,
     E7GroverOperator,
-    E7StatePreparation,
     E7MeasurementDecoder,
+    E7OracleBuilder,
     E7QuantumAlgorithms,
+    E7StatePreparation,
 )
 
 

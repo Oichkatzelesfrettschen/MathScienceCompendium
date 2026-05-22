@@ -1,23 +1,22 @@
 """Comprehensive test suite for all modules."""
 
-import pytest
 import numpy as np
+import pytest
 
 # Add src to path
-
 from mathphysics.algebras.cayley_dickson import (
-    Real,
-    Complex,
-    Quaternion,
-    Octonion,
-    Sedenion,
-    Pathion,
     CayleyDicksonValidator,
+    Complex,
+    Octonion,
+    Pathion,
+    Quaternion,
+    Real,
+    Sedenion,
 )
-from mathphysics.fractal_analysis import FractalGenerator, FractalDimensionCalculator
 from mathphysics.algebras.roots import E8RootSystem, ExceptionalLieAlgebras, LieAlgebraCalculator
+from mathphysics.fractal_analysis import FractalDimensionCalculator, FractalGenerator
 from mathphysics.lattice_theory import E8Lattice, LeechLattice, SpherePackingAnalyzer
-from mathphysics.modular_forms import ModularForms, MonstrousMoonshine, EllipticCurves
+from mathphysics.modular_forms import EllipticCurves, ModularForms, MonstrousMoonshine
 
 
 class TestCayleyDickson:

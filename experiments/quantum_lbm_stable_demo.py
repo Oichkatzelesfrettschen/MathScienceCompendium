@@ -7,10 +7,12 @@ with carefully tuned parameters to ensure numerical stability while still
 demonstrating the key features.
 """
 
-import numpy as np
 import json
-from pathlib import Path
 import sys
+from pathlib import Path
+
+import numpy as np
+
 
 REPO_ROOT = Path(__file__).resolve().parent.parent
 SRC_ROOT = REPO_ROOT / "src"
@@ -18,9 +20,9 @@ if str(SRC_ROOT) not in sys.path:
     sys.path.insert(0, str(SRC_ROOT))
 
 from mathphysics.quantum_lattice_boltzmann import (
-    QuantumLatticeBoltzmann,
-    LBMParameters,
     BoundaryType,
+    LBMParameters,
+    QuantumLatticeBoltzmann,
 )
 
 
