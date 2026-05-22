@@ -1,6 +1,7 @@
 """Integration tests for algebraic-quantum framework."""
 
 from __future__ import annotations
+
 import unittest
 
 # Import modules to test

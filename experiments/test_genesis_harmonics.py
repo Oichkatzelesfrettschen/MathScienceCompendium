@@ -1,11 +1,13 @@
 #!/usr/bin/env python3
 """Comprehensive test and validation of Genesis Harmonics module."""
 
-import numpy as np
-import matplotlib.pyplot as plt
-from pathlib import Path
 import json
-from src.genesis_harmonics import GenesisHarmonics, MaterialType, MATERIALS, PHI, HarmonicLayer
+from pathlib import Path
+
+import matplotlib.pyplot as plt
+import numpy as np
+
+from src.genesis_harmonics import MATERIALS, PHI, GenesisHarmonics, HarmonicLayer, MaterialType
 
 
 def test_harmonic_layers():
@@ -270,7 +272,7 @@ def test_data_export_import():
 
     # Check file exists and load
     if export_path.exists():
-        with open(export_path, "r") as f:
+        with open(export_path) as f:
             data = json.load(f)
 
         print(f"\n2. Exported data structure:")

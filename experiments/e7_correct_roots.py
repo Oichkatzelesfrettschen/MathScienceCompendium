@@ -3,6 +3,7 @@
 
 import numpy as np
 
+
 print("=" * 80)
 print("E7 SIMPLE ROOTS DERIVATION")
 print("=" * 80)

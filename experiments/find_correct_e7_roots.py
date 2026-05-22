@@ -1,8 +1,9 @@
 #!/usr/bin/env python3
 """Find the correct E7 simple roots that give determinant 1."""
 
-import numpy as np
 from itertools import combinations
+
+import numpy as np
 
 
 def test_simple_roots(roots, name="Test"):
