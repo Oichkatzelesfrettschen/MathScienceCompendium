@@ -46,6 +46,8 @@ def test_gate_results_retain_structural_counterexamples():
         results["external_fourier_quotient_map"]["metrics"]["maximum_rejected_exact_triad_count"]
         == 0
     )
+    assert results["e7_root_quotient_charge"]["metrics"]["maximum_basis_residual"] == 0.0
+    assert results["e7_root_quotient_charge"]["metrics"]["maximum_integrality_error"] == 0.0
     assert results["e9_e10_e11_classification"]["metrics"]["E9"]["determinant"] == 0
     assert (
         results["higher_cayley_dickson_physical_mapping"]["metrics"]["present_experimental_fields"]

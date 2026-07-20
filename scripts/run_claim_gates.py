@@ -13,6 +13,7 @@ from typing import Any, Callable, cast
 
 import networkx as nx
 import numpy as np
+from sympy import Matrix
 
 
 REPO_ROOT = Path(__file__).resolve().parent.parent
@@ -187,12 +188,27 @@ def check_e7_root_quotient() -> CheckResult:
     root_system = E7RootSystem()
     simple_roots = root_system.generate_simple_roots()
     generated_roots = root_system.generate_roots()
+    scaled_simple_root_matrix = Matrix(np.rint(2.0 * simple_roots.T).astype(np.int64).tolist())
     maximum_residual = 0.0
     maximum_integrality_error = 0.0
     for root in generated_roots:
-        coefficients, _, _, _ = np.linalg.lstsq(simple_roots.T, root, rcond=None)
-        residual = float(np.linalg.norm(simple_roots.T @ coefficients - root))
-        integrality_error = float(np.max(np.abs(coefficients - np.rint(coefficients))))
+        scaled_root = Matrix(np.rint(2.0 * root).astype(np.int64).tolist())
+        try:
+            coefficients, free_parameters = scaled_simple_root_matrix.gauss_jordan_solve(
+                scaled_root
+            )
+        except ValueError:
+            maximum_residual = 1.0
+            continue
+        if free_parameters.rows != 0:
+            maximum_residual = 1.0
+            continue
+        reconstruction_error = scaled_simple_root_matrix * coefficients - scaled_root
+        residual = max((abs(float(value)) for value in reconstruction_error), default=0.0)
+        integrality_error = max(
+            (abs(float(value) - round(float(value))) for value in coefficients),
+            default=0.0,
+        )
         maximum_residual = max(maximum_residual, residual)
         maximum_integrality_error = max(maximum_integrality_error, integrality_error)
     passed = maximum_residual < 1e-9 and maximum_integrality_error < 1e-9
