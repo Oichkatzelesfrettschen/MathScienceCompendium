@@ -48,6 +48,20 @@ This repository is organized for deterministic offline checks and regeneration.
 
 ## Regeneration Commands
 
+Run `make repro-refresh` for the platform-independent corpus, registry, audit,
+and integrity refresh used by CI. The native PDF text-quality audit is a
+separate evidence-generation lane because Poppler extraction can differ across
+platform builds:
+
+- `make pdf-text-quality-audit`
+- `make document-decomposition-index`
+
+Both PDF evidence targets fail fast unless `pdfinfo` and `pdftotext` are
+available. Review and commit their regenerated ledgers from the same declared
+Poppler toolchain; do not use cross-platform byte equality as a quality test.
+
+The underlying commands are:
+
 - `python3 scripts/fetch_external_sources.py --manifest data/external/sources.toml --extract-text`
 - `python3 scripts/sync_super_force_analysis_assets.py`
 - `python3 scripts/normalize_txt_to_json.py`
@@ -121,7 +135,9 @@ The `reproducibility` GitHub Actions job uploads machine-readable review artifac
 
 ## Known Optional Dependencies
 
-- `pdftotext` for PDF text extraction.
 - `pyarrow` for parquet schema introspection.
 
-The pipeline still runs without these dependencies, but metadata detail is reduced.
+`pdftotext` and `pdfinfo` are required by `make pdf-text-quality-audit` and
+`make document-decomposition-index`, but not by `make repro-refresh` or
+`make verify-offline`. The parquet audit still runs without `pyarrow`, but its
+schema metadata is reduced.

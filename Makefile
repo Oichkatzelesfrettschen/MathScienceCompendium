@@ -17,7 +17,7 @@ BENCH_DIR = benchmarks
 RESULTS_DIR = results
 FIGURES_DIR = figures
 
-.PHONY: all clean help install test lint check-types benchmark run-highres run-unified run-jordan run-clifford docs papers cleanbuild lint-latex figures paper-evidence-artifacts fetch-external sync-super-force-analysis normalize-corpus framework-decomposition framework-overlap corpus-dedupe build-registries docs-index claim-coverage critique-evidence validate-external-provenance validate-registry-schemas parquet-audit evidence-audits document-ocr-mineru document-ocr-tesseract document-ocr-generate document-decomposition-index verify-offline repro-refresh check-repro-deps archive-pdfs notebooks fetch-arxiv resolve-dois fetch-all verify-checksums check-deps
+.PHONY: all clean help install test lint check-types benchmark run-highres run-unified run-jordan run-clifford docs papers cleanbuild lint-latex figures paper-evidence-artifacts fetch-external sync-super-force-analysis normalize-corpus framework-decomposition framework-overlap corpus-dedupe build-registries docs-index claim-coverage critique-evidence validate-external-provenance validate-registry-schemas parquet-audit evidence-audits pdf-text-quality-audit document-ocr-mineru document-ocr-tesseract document-ocr-generate document-decomposition-index verify-offline repro-refresh check-pdf-deps archive-pdfs notebooks fetch-arxiv resolve-dois fetch-all verify-checksums check-deps
 
 # Default target
 all: lint check-types test benchmark figures papers
@@ -228,8 +228,11 @@ evidence-audits:
 	PYTHONPATH=src python3 experiments/quantum_lbm_stable_demo.py
 	PYTHONPATH=src python3 scripts/analyze_retained_lbm.py --figure-root figures
 	PYTHONPATH=src python3 scripts/audit_lbm_root_order.py
-	python3 scripts/audit_pdf_text_quality.py
 	python3 scripts/parquet_audit.py
+
+pdf-text-quality-audit: check-pdf-deps
+	@echo "[DATA] Auditing native PDF text with the local Poppler build..."
+	python3 scripts/audit_pdf_text_quality.py
 
 document-ocr-mineru:
 	@echo "[OCR] Building the pinned MinerU CUDA image..."
@@ -248,7 +251,7 @@ document-ocr-tesseract:
 document-ocr-generate: document-ocr-mineru document-ocr-tesseract
 	@echo "[OCR] MinerU and Tesseract outputs generated."
 
-document-decomposition-index:
+document-decomposition-index: check-pdf-deps
 	@echo "[DATA] Indexing completed MinerU document decompositions..."
 	python3 scripts/index_document_decomposition.py
 	python3 scripts/compare_pdf_ocr_outputs.py
@@ -259,12 +262,12 @@ verify-offline:
 	python3 scripts/validate_registry_schemas.py
 	python3 scripts/verify_offline_integrity.py
 
-check-repro-deps:
-	@echo "[CHECK] Verifying reproducibility system dependencies..."
+check-pdf-deps:
+	@echo "[CHECK] Verifying PDF evidence system dependencies..."
 	@command -v pdfinfo > /dev/null || { echo "pdfinfo is required; install poppler-utils" >&2; exit 1; }
 	@command -v pdftotext > /dev/null || { echo "pdftotext is required; install poppler-utils" >&2; exit 1; }
 
-repro-refresh: check-repro-deps
+repro-refresh:
 	@$(MAKE) normalize-corpus
 	@$(MAKE) framework-decomposition
 	@$(MAKE) framework-overlap
@@ -362,7 +365,8 @@ help:
 	@echo "  make validate-external-provenance - Validate data/external provenance JSON against schemas"
 	@echo "  make validate-registry-schemas - Validate data/registry/*.toml and selected *.json against schemas"
 	@echo "  make parquet-audit    - Audit parquet files and emit JSON summary"
-	@echo "  make evidence-audits  - Regenerate core, LBM, root-order, PDF, and parquet audits"
+	@echo "  make evidence-audits  - Regenerate core, LBM, root-order, and parquet audits"
+	@echo "  make pdf-text-quality-audit - Regenerate the local Poppler text-quality audit"
 	@echo "  make document-ocr-generate - Generate pinned MinerU and Tesseract OCR outputs"
 	@echo "  make document-decomposition-index - Index completed MinerU and Tesseract outputs"
 	@echo "  make verify-offline   - Run offline integrity checks"

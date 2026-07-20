@@ -15,7 +15,7 @@ Total documents indexed: `67`
 - `docs/ARCHITECTURE.md`: Architecture (lines: 172, bytes: 7644)
 - `docs/CATALOG.txt`: MATH SCIENCE COMPENDIUM - SOURCE MATERIALS CATALOG (lines: 232, bytes: 8595)
 - `docs/HARDWARE_ACCELERATION_ROADMAP.md`: Hardware Acceleration Roadmap: Scaling to E11 and Beyond (lines: 34, bytes: 2042)
-- `docs/OFFLINE_REPRODUCIBILITY.md`: Offline Reproducibility Guide (lines: 128, bytes: 7505)
+- `docs/OFFLINE_REPRODUCIBILITY.md`: Offline Reproducibility Guide (lines: 144, bytes: 8217)
 - `docs/QUICK_START.md`: Quick Start (5 minutes) (lines: 86, bytes: 2042)
 - `docs/REPO_HARMONIZATION_PLAN.md`: Repository Harmonization Plan (lines: 236, bytes: 9959)
 - `docs/framework/AETHER_REVISION_RECONCILIATION.md`: Aether Revision Reconciliation (lines: 84, bytes: 5327)
