@@ -164,6 +164,88 @@ def check_live_digest(
         )
 
 
+def check_retained_digest(
+    errors: list[str],
+    field_path: str,
+    relpath: object,
+    expected_sha256: object,
+) -> None:
+    """Validate a local OCR artifact when present and constrain absent retained paths."""
+    relpath_text = str(relpath)
+    live_path = REPO_ROOT / relpath_text
+    if live_path.is_file():
+        check_live_digest(errors, field_path, relpath_text, expected_sha256)
+    elif not relpath_text.startswith("build/document_ocr/"):
+        errors.append(f"{field_path}: missing repository file {relpath!r}")
+
+
+def validate_decomposition_manifest_contract(
+    decomposition: dict[str, Any],
+    run_manifest: dict[str, Any],
+) -> list[str]:
+    """Cross-check the committed decomposition summary against the retained MinerU ledger."""
+    errors: list[str] = []
+    engine_fields = (
+        "name",
+        "version",
+        "backend",
+        "effort",
+        "mode",
+        "formula",
+        "table",
+        "image_analysis",
+    )
+    manifest_engine = run_manifest.get("engine", {})
+    decomposition_engine = decomposition.get("engine", {})
+    if isinstance(manifest_engine, dict) and isinstance(decomposition_engine, dict):
+        for field in engine_fields:
+            if decomposition_engine.get(field) != manifest_engine.get(field):
+                errors.append(f"$.engine.{field}: MinerU run manifest mismatch")
+
+    manifest_sources = {
+        str(source.get("source_relpath")): source
+        for source in run_manifest.get("sources", [])
+        if isinstance(source, dict) and source.get("status") in {"complete", "generated"}
+    }
+    decomposition_documents = {
+        str(document.get("source_relpath")): document
+        for document in decomposition.get("documents", [])
+        if isinstance(document, dict)
+    }
+    if set(decomposition_documents) != set(manifest_sources):
+        missing = sorted(set(manifest_sources) - set(decomposition_documents))
+        extra = sorted(set(decomposition_documents) - set(manifest_sources))
+        errors.append(f"$.documents: MinerU source mismatch missing={missing}, extra={extra}")
+
+    role_fields = {
+        "markdown": ("markdown_relpath", "markdown_sha256", "markdown_bytes"),
+        "content_list": ("content_list_relpath", "content_list_sha256", None),
+    }
+    for source_relpath, document in decomposition_documents.items():
+        source = manifest_sources.get(source_relpath)
+        if source is None:
+            continue
+        if document.get("source_sha256") != source.get("source_sha256"):
+            errors.append(f"$.documents[{source_relpath}].source_sha256: manifest mismatch")
+        outputs = {
+            str(output.get("role")): output
+            for output in source.get("outputs", [])
+            if isinstance(output, dict)
+        }
+        for role, (relpath_field, sha256_field, size_field) in role_fields.items():
+            output = outputs.get(role)
+            if output is None:
+                errors.append(f"$.documents[{source_relpath}].{role}: missing manifest output")
+                continue
+            if document.get(relpath_field) != output.get("relpath"):
+                errors.append(f"$.documents[{source_relpath}].{relpath_field}: manifest mismatch")
+            if document.get(sha256_field) != output.get("sha256"):
+                errors.append(f"$.documents[{source_relpath}].{sha256_field}: manifest mismatch")
+            if size_field is not None and document.get(size_field) != output.get("size_bytes"):
+                errors.append(f"$.documents[{source_relpath}].{size_field}: manifest mismatch")
+    return errors
+
+
 def type_matches(value: Any, expected: str) -> bool:
     if expected == "object":
         matches = isinstance(value, dict)
@@ -338,7 +420,7 @@ def semantic_checks(registry_name: str, payload: dict[str, Any]) -> list[str]:
                         if role in output_roles:
                             errors.append(f"{output_prefix}.role: duplicate role {role!r}")
                         output_roles.add(role)
-                        check_live_digest(
+                        check_retained_digest(
                             errors,
                             f"{output_prefix}.sha256",
                             output.get("relpath"),
@@ -386,7 +468,7 @@ def semantic_checks(registry_name: str, payload: dict[str, Any]) -> list[str]:
                     document.get("source_relpath"),
                     document.get("source_sha256"),
                 )
-                check_live_digest(
+                check_retained_digest(
                     errors,
                     f"{prefix}.manifest_sha256",
                     document.get("manifest_relpath"),
@@ -465,7 +547,7 @@ def semantic_checks(registry_name: str, payload: dict[str, Any]) -> list[str]:
             )
         tesseract = payload.get("tesseract", {})
         if isinstance(tesseract, dict):
-            check_live_digest(
+            check_retained_digest(
                 errors,
                 "$.tesseract.manifest_sha256",
                 tesseract.get("manifest_relpath"),
@@ -516,6 +598,11 @@ def semantic_checks(registry_name: str, payload: dict[str, Any]) -> list[str]:
                 run_manifest.get("relpath"),
                 run_manifest.get("sha256"),
             )
+            run_manifest_path = REPO_ROOT / str(run_manifest.get("relpath"))
+            if run_manifest_path.is_file():
+                errors.extend(
+                    validate_decomposition_manifest_contract(payload, load_json(run_manifest_path))
+                )
         documents = payload.get("documents", [])
         seen_source_paths: set[str] = set()
         if isinstance(documents, list):
@@ -533,13 +620,13 @@ def semantic_checks(registry_name: str, payload: dict[str, Any]) -> list[str]:
                     source_relpath,
                     document.get("source_sha256"),
                 )
-                check_live_digest(
+                check_retained_digest(
                     errors,
                     f"{prefix}.markdown_sha256",
                     document.get("markdown_relpath"),
                     document.get("markdown_sha256"),
                 )
-                check_live_digest(
+                check_retained_digest(
                     errors,
                     f"{prefix}.content_list_sha256",
                     document.get("content_list_relpath"),

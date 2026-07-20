@@ -270,7 +270,6 @@ repro-refresh: check-repro-deps
 	@$(MAKE) framework-overlap
 	@$(MAKE) corpus-dedupe
 	@$(MAKE) evidence-audits
-	@$(MAKE) document-decomposition-index
 	@$(MAKE) critique-evidence
 	@$(MAKE) build-registries
 	@$(MAKE) docs-index
