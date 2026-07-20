@@ -293,6 +293,20 @@ negative result creates a new claim identifier rather than erasing the failure.
 The machine-readable authority for current statuses is
 `data/registry/unified_framework_claims.json`.
 
+## Package and synthesis reconciliation
+
+The repository has one implementation package: `src/mathphysics`. Experiment
+scripts consume that package; they do not carry independent copies of algebra,
+geometry, quantum, or simulation modules. This prevents a formatting or feature
+branch from silently restoring older mathematics under `experiments/src`.
+
+Earlier four-tier synthesis language is absorbed into the five evidence layers
+above. Established mathematics belongs in defined objects, developing research
+belongs in typed bridges or bounded computation, speculative physics belongs in
+physical hypotheses with admission gates, and problematic claims belong in
+excluded or historical ideation. The mapping preserves the useful hierarchy
+while replacing rhetorical labels with executable admission rules.
+
 Revision-specific conflicts and merge decisions are preserved in
 `docs/framework/AETHER_REVISION_RECONCILIATION.md` and
 `docs/framework/GENESIS_REVISION_RECONCILIATION.md`.

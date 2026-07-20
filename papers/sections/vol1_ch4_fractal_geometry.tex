@@ -112,7 +112,7 @@ where $\underline{\dim}_B$ and $\overline{\dim}_B$ are lower and upper box dimen
 
 \subsection{Computational Verification}
 
-Results from \texttt{experiments/src/fractal\_analysis.py}:
+Results from \texttt{src/mathphysics/fractal\_analysis.py}:
 
 \begin{table}[h]
 \centering
@@ -132,7 +132,7 @@ Henon Map & 1.26 & 1.2482 & 0.0118 \\
 \end{table}
 
 \begin{factcheck}{VERIFIED: FRACTIONAL DIMENSIONS}
-Computational verification confirms that fractal sets have well-defined non-integer dimensions. The box-counting algorithm produces results consistent with theoretical predictions for self-similar fractals. Implementation in \texttt{experiments/src/fractal\_analysis.py} validates the mathematical framework \cite{falconer2004fractal}.
+The box-counting implementation produces estimates for declared finite-resolution inputs. Agreement on self-similar fixtures tests the implementation but does not replace a dimension proof. See \texttt{src/mathphysics/fractal\_analysis.py} and \cite{falconer2004fractal}.
 \end{factcheck}
 
 \section{Physical Applications of Fractals}
@@ -359,7 +359,7 @@ The Mandelbrot set $M = \{c \in \mathbb{C} : z_{n+1} = z_n^2 + c \text{ remains 
     \dim_H(\partial M) = 2 \quad \text{(conjectured)}
 \end{equation}
 
-Computational results from \texttt{experiments/src/fractal\_analysis.py} give $\dim_B(\partial M) \approx 1.998$, consistent with the conjecture.
+The finite-resolution estimator in \texttt{src/mathphysics/fractal\_analysis.py} gives $\dim_B(\partial M) \approx 1.998$ for the declared sampling procedure; this does not prove the conjectured limiting value.
 
 \subsection{Visualization}
 

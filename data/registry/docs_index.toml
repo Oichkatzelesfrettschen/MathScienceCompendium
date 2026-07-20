@@ -1,5 +1,5 @@
 generated_by = "scripts/build_docs_index.py"
-generated_at_utc = "2026-07-20T09:10:16.885697+00:00"
+generated_at_utc = "2026-07-20T09:22:46.283774+00:00"
 documents_total = 67
 
 [[documents]]
@@ -34,9 +34,9 @@ id = "docs_offline_reproducibility_md"
 relpath = "docs/OFFLINE_REPRODUCIBILITY.md"
 category = "docs/root"
 title = "Offline Reproducibility Guide"
-sha256 = "c4cad054712ade2cc887b14d96caf4c36a6c2ac1bc083ee940c4e3078cc5d022"
-line_count = 127
-size_bytes = 7453
+sha256 = "79494acd871795a1cda6471c8b8c23cf3a90d4345fe5949c6cca6e58ddf877a3"
+line_count = 128
+size_bytes = 7505
 
 [[documents]]
 id = "docs_quick_start_md"
@@ -124,9 +124,9 @@ id = "docs_framework__unified_evidence_framework_md"
 relpath = "docs/framework/UNIFIED_EVIDENCE_FRAMEWORK.md"
 category = "docs/root"
 title = "Unified Evidence-Bounded Mathematical Physics Framework"
-sha256 = "48f144ed711a1a0730ddcc6c45ef4d422c6580361e8da7dd6b4dcee3cfc57f30"
-line_count = 299
-size_bytes = 14022
+sha256 = "e439bba865f81736d3ecdf48e40e2c6d026d0f8e4c507c4ba686e1e84a3ea6e4"
+line_count = 313
+size_bytes = 14831
 
 [[documents]]
 id = "docs_reports__architectural_analysis_report_md"
@@ -150,10 +150,10 @@ size_bytes = 10946
 id = "docs_reports__comprehensive_integration_report_md"
 relpath = "docs/reports/COMPREHENSIVE_INTEGRATION_REPORT.md"
 category = "docs/root"
-title = "Mathematical Physics Compendium - Comprehensive Integration Report"
-sha256 = "9a10794f98fedc1b2f30ebc11f8cb0f93889ec445f251d09f381653db35f2430"
-line_count = 750
-size_bytes = 19487
+title = "Evidence-Bounded Integration Report"
+sha256 = "4ac746ad91eeb8356ca0da0ce949378bee12e51390bf5a767ea5c6088bd56d4a"
+line_count = 85
+size_bytes = 4822
 
 [[documents]]
 id = "docs_reports__final_synthesis_report_md"
@@ -295,45 +295,45 @@ id = "papers_vol1_ch1_lie_algebras_tex"
 relpath = "papers/sections/vol1_ch1_lie_algebras.tex"
 category = "papers/sections"
 title = "Exceptional Lie Algebras and Their Extensions"
-sha256 = "8b00edf5b53f8477003824a1917a3b9e6888f4ecdcac9f61d4057086fb53d3c2"
+sha256 = "157d0fc8353cc8dd58e40ad6f191d34264b7bfe3c9cbc0baad2e91c880c027b5"
 line_count = 279
-size_bytes = 11691
+size_bytes = 11679
 
 [[documents]]
 id = "papers_vol1_ch2_cayley_dickson_tex"
 relpath = "papers/sections/vol1_ch2_cayley_dickson.tex"
 category = "papers/sections"
 title = "Cayley-Dickson Construction and Division Algebras"
-sha256 = "d9f93d959101d2fa889f32ea4f356dacbb7377203a7446a8072d06a833058d56"
+sha256 = "4a746156e3f4cc93b0a12265b4bdbfde32f5e55d7c0a9436fd48303207b51e6b"
 line_count = 387
-size_bytes = 19039
+size_bytes = 19030
 
 [[documents]]
 id = "papers_vol1_ch3_modular_forms_tex"
 relpath = "papers/sections/vol1_ch3_modular_forms.tex"
 category = "papers/sections"
 title = "Modular Forms and Monstrous Moonshine"
-sha256 = "2dcdd12c3c6aed49e99c57fdbb5d2406508a9e3aaa8952d10f2b1fb0c70dbac3"
+sha256 = "338a194dfcee0f2fc3a6f9601018b0ed50c41a7f79b11eccd0e35bb63dc49c7f"
 line_count = 435
-size_bytes = 17379
+size_bytes = 17367
 
 [[documents]]
 id = "papers_vol1_ch4_fractal_geometry_tex"
 relpath = "papers/sections/vol1_ch4_fractal_geometry.tex"
 category = "papers/sections"
 title = "Fractal Geometry and Non-Integer Dimensions"
-sha256 = "f6f1ccf701d7bf31357f1746c791c326adbb04dd7dfaccdbbc24ed65433196ad"
+sha256 = "5e9c84c19870f5e87ce07ae29d7bbb686011f7ecb9e4b53bab4d4c9d070b2837"
 line_count = 483
-size_bytes = 19871
+size_bytes = 19872
 
 [[documents]]
 id = "papers_vol2_ch5_e7_lie_algebra_tex"
 relpath = "papers/sections/vol2_ch5_e7_lie_algebra.tex"
 category = "papers/sections"
 title = "The E$_7$ Lie Algebra and 127-Point Correspondences"
-sha256 = "76b598a7f698488e0361442148d0d6cad0ff2e82fc9c2c21640439c036a0821e"
+sha256 = "54d77a97867f13ba6edb744763d8f063bcbda56fbb333a4fa3e33f4d38046b5b"
 line_count = 570
-size_bytes = 20298
+size_bytes = 20296
 
 [[documents]]
 id = "papers_vol2_ch5_superforce_tex"
@@ -358,18 +358,18 @@ id = "papers_vol2_ch6_string_theory_tex"
 relpath = "papers/sections/vol2_ch6_string_theory.tex"
 category = "papers/sections"
 title = "String Theory Integration Pathways"
-sha256 = "1f5ce85c5c0b5b32c7974b041d168b23108b8db65d4553fb99a6efadefcb00e6"
+sha256 = "477644851ad2c2f233a3837c7f77e7b2717e2eea16967773bd37585b0846344b"
 line_count = 611
-size_bytes = 24844
+size_bytes = 24843
 
 [[documents]]
 id = "papers_vol2_ch7_quantum_gravity_tex"
 relpath = "papers/sections/vol2_ch7_quantum_gravity.tex"
 category = "papers/sections"
 title = "Quantum Gravity Interfaces and Constraints"
-sha256 = "84be3e8fd33687c690a19e9f80a767da7c81d6f095c24519d68e68c2acfc52c9"
+sha256 = "cf526001946b77ecab8fb704db6dca2da7ca8b509078b317c3036a93b5379f42"
 line_count = 642
-size_bytes = 25053
+size_bytes = 25051
 
 [[documents]]
 id = "papers_vol3_ch10_predictions_tex"
@@ -394,18 +394,18 @@ id = "papers_vol3_ch9_experiments_tex"
 relpath = "papers/sections/vol3_ch9_experiments.tex"
 category = "papers/sections"
 title = "Computational Experiments and Validation Results"
-sha256 = "4832deb83c8db10f9ad5f2857dbe4534f4ff4e1e73f2d98401ce98883b08bd27"
+sha256 = "4b2b66413480605320b5627e5814f7e955ab5f9d66c5f36b54b07a98a13124d9"
 line_count = 837
-size_bytes = 31898
+size_bytes = 31739
 
 [[documents]]
 id = "papers_vol4_ch11_validation_tex"
 relpath = "papers/sections/vol4_ch11_validation.tex"
 category = "papers/sections"
 title = "Critical Validation and Fact-Checking"
-sha256 = "09c13c1e552a9cf3a1447d25916a3cabf25fc506081dec58eed725746399f408"
+sha256 = "43e3a05ae2b7603b574e6f9ff1b3643a75788e0f0e18081302a0414af6d20ff5"
 line_count = 421
-size_bytes = 18447
+size_bytes = 18461
 
 [[documents]]
 id = "papers_vol4_ch12_unresolved_tex"
@@ -421,9 +421,9 @@ id = "papers_vol4_ch13_future_tex"
 relpath = "papers/sections/vol4_ch13_future.tex"
 category = "papers/sections"
 title = "Future Research Directions"
-sha256 = "be10cce5ff980bd02d94d9b5f08797d624f92e667d0dc0dc3d22047a1c0fa50d"
+sha256 = "8b29ba4ecab3613b317db39f1ab522e5a673430b87ce3f2d9743ceecd877c8e9"
 line_count = 2154
-size_bytes = 74561
+size_bytes = 74558
 
 [[documents]]
 id = "research_e7_e8_integration__e7_root_system_facts_txt"

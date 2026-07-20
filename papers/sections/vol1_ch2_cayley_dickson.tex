@@ -119,7 +119,7 @@ Explicit zero divisors in $\mathbb{S}$ include:
 \begin{equation}
     (e_3 + e_{10})(e_6 - e_{15}) = 0
 \end{equation}
-where both factors are non-zero elements. Computational verification from \texttt{experiments/src/cayley\_dickson.py} confirms this and identifies additional zero divisor pairs.
+where both factors are non-zero elements. The exact witness in \texttt{src/mathphysics/algebras/cayley\_dickson.py} checks this identity without relying on random search.
 \end{example}
 
 \begin{factcheck}{VERIFIED: SEDENIONS HAVE ZERO DIVISORS}
@@ -188,7 +188,7 @@ The framework claims operations in 2048 dimensions, corresponding to the Cayley-
 
 \subsection{Computational Verification}
 
-Results from \texttt{experiments/src/cayley\_dickson.py} verify the theoretical predictions:
+Results from \texttt{src/mathphysics/algebras/cayley\_dickson.py} exercise the declared algebraic properties:
 
 \begin{table}[h]
 \centering
@@ -380,7 +380,7 @@ For rigorous framework development:
 
     \item \textbf{Accurate Terminology}: Distinguish "mathematically possible" from "physically viable"
 
-    \item \textbf{Computational Validation}: Use implementations in \texttt{experiments/src/cayley\_dickson.py} to verify that proposed operations are actually computable and meaningful
+    \item \textbf{Computational Check}: Use \texttt{src/mathphysics/algebras/cayley\_dickson.py} to test proposed operations against explicit identities and witnesses
 \end{itemize}
 
 The Cayley-Dickson construction is a beautiful mathematical edifice that reveals profound truths about algebraic structure. However, physical applications require algebraic properties (no zero divisors, compositional norm) that exist only through dimension 8. Claims of physical relevance for 2048D algebras require extraordinary justification given the mathematical pathologies that emerge beyond octonions.

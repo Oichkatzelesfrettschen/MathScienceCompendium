@@ -242,3 +242,18 @@ def test_tracked_latex_intermediate_classification() -> None:
         "papers/main.bbl",
         "papers/main.run.xml",
     ]
+
+
+def test_shadow_experiment_package_is_rejected(tmp_path: Path, monkeypatch) -> None:
+    monkeypatch.setattr(verify_offline_integrity, "REPO_ROOT", tmp_path)
+    assert verify_offline_integrity.check_no_shadow_experiment_package() == []
+
+    shadow_root = tmp_path / "experiments" / "src"
+    shadow_root.mkdir(parents=True)
+    (shadow_root / "duplicate.py").write_text("VALUE = 1\n", encoding="ascii")
+    failures = verify_offline_integrity.check_no_shadow_experiment_package()
+
+    assert failures == [
+        "shadow experiment package must be reconciled into src/mathphysics: "
+        "experiments/src/duplicate.py"
+    ]

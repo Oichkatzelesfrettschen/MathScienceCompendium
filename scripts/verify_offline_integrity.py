@@ -43,6 +43,10 @@ STUB_FILES = [
     "papers/sections/appendix_data.tex",
 ]
 
+SHADOW_EXPERIMENT_PATHS = [
+    "experiments/setup.py",
+]
+
 LATEX_INTERMEDIATE_SUFFIXES = {
     ".aux",
     ".bbl",
@@ -86,6 +90,21 @@ def check_no_tracked_latex_intermediates() -> list[str]:
     return [
         f"tracked LaTeX intermediate must be removed from Git: {path}"
         for path in tracked_intermediates
+    ]
+
+
+def check_no_shadow_experiment_package() -> list[str]:
+    """Keep experiments on the canonical src/mathphysics implementation."""
+    shadow_sources = sorted(
+        path.relative_to(REPO_ROOT).as_posix()
+        for path in (REPO_ROOT / "experiments" / "src").rglob("*.py")
+    )
+    return [
+        f"shadow experiment package must be reconciled into src/mathphysics: {path}"
+        for path in [
+            *(path for path in SHADOW_EXPERIMENT_PATHS if (REPO_ROOT / path).exists()),
+            *shadow_sources,
+        ]
     ]
 
 
@@ -651,6 +670,7 @@ def check_docs_index() -> list[str]:
 def main() -> int:
     checks = [
         check_no_tracked_latex_intermediates,
+        check_no_shadow_experiment_package,
         check_no_absolute_local_paths,
         check_stub_files_resolved,
         check_corpus_registry,

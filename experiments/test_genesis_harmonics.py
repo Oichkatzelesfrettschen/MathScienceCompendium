@@ -7,7 +7,12 @@ from pathlib import Path
 import matplotlib.pyplot as plt
 import numpy as np
 
-from src.genesis_harmonics import MATERIALS, GenesisHarmonics, HarmonicLayer, MaterialType
+from mathphysics.genesis_harmonics import (
+    MATERIALS,
+    GenesisHarmonics,
+    HarmonicLayer,
+    MaterialType,
+)
 
 
 def test_harmonic_layers():

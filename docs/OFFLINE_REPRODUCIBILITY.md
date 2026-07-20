@@ -85,6 +85,7 @@ This repository is organized for deterministic offline checks and regeneration.
 - schema validation for `data/registry/*.toml` and selected `data/registry/*.json` against `schemas/registry/*.schema.json`;
 - optional archive index JSON validity when present.
 - no tracked LaTeX build intermediates under `papers/`.
+- no shadow Python package under `experiments/src`.
 
 ## Notes About PDFs
 

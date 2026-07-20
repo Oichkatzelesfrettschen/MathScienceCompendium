@@ -16,7 +16,7 @@ MathScienceCompendium/
 ```
 
 Notes:
-- Legacy references to `experiments/src` in older reports are historical.
+- Legacy `experiments/src` copies are removed; all scripts use `src/mathphysics`.
 - The canonical Python package path is `src/mathphysics`.
 
 ## Features

@@ -9,7 +9,7 @@ Successfully developed comprehensive quantum computing simulation modules for th
 ### 1. Core Modules Implemented
 
 #### quantum_encoding.py (766 lines)
-**Location:** `./experiments/src/quantum_encoding.py`
+**Location:** `src/mathphysics/quantum_encoding.py`
 
 **Key Features:**
 - **Index Encoding:** Maps root indices to computational basis states using log₂(N) qubits
@@ -30,7 +30,7 @@ Successfully developed comprehensive quantum computing simulation modules for th
 - `EncodingValidator`: Validation and fidelity testing
 
 #### quantum_e7_circuits.py (1072 lines)
-**Location:** `./experiments/src/quantum_e7_circuits.py`
+**Location:** `src/mathphysics/quantum_e7_circuits.py`
 
 **Key Features:**
 - **E7 Oracle Circuits:** Geometric, algebraic, and hybrid oracles for root validation
@@ -55,7 +55,7 @@ Successfully developed comprehensive quantum computing simulation modules for th
 - Weyl group action simulation
 
 #### quantum_e8_circuits.py (1189 lines)
-**Location:** `./experiments/src/quantum_e8_circuits.py`
+**Location:** `src/mathphysics/quantum_e8_circuits.py`
 
 **Key Features:**
 - **E8 Root Structure Analysis:** Complete mapping of 240 roots with type classification
@@ -82,7 +82,7 @@ Successfully developed comprehensive quantum computing simulation modules for th
 - Exceptional symmetry testing
 
 #### quantum_simulation.py (1044 lines)
-**Location:** `./experiments/src/quantum_simulation.py`
+**Location:** `src/mathphysics/quantum_simulation.py`
 
 **Key Features:**
 - **Unified Simulation Framework:** Integrated interface for E7/E8 circuits
