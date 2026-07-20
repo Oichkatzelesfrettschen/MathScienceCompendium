@@ -5,7 +5,11 @@ from __future__ import annotations
 import json
 from typing import TYPE_CHECKING
 
-import tomllib
+
+try:
+    import tomllib
+except ModuleNotFoundError:
+    import tomli as tomllib
 from scripts.analyze_framework_overlap import extract_blocks, normalize_block
 from scripts.decompose_framework_documents import REPO_ROOT
 from scripts.run_mineru_manifest import expected_outputs, outputs_complete

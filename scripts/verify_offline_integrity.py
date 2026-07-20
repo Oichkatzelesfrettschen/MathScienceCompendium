@@ -11,7 +11,11 @@ from collections import defaultdict
 from pathlib import Path
 from typing import TYPE_CHECKING
 
-import tomllib
+
+try:
+    import tomllib
+except ModuleNotFoundError:
+    import tomli as tomllib
 
 
 if TYPE_CHECKING:

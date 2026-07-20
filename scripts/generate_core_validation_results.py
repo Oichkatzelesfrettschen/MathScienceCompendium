@@ -85,6 +85,8 @@ def build_e8_validation() -> dict[str, Any]:
         np.round(np.sum(roots * roots, axis=1), decimals=12),
         return_counts=True,
     )
+    if squared_norms.shape != squared_norm_counts.shape:
+        raise RuntimeError("NumPy returned misaligned E8 norm values and counts")
     root_tuples = {tuple(root.tolist()) for root in roots}
     opposite_closed = all(tuple((-root).tolist()) in root_tuples for root in roots)
 
@@ -98,7 +100,7 @@ def build_e8_validation() -> dict[str, Any]:
         "dimension_from_rank_and_roots": int(simple_roots.shape[0] + roots.shape[0]),
         "squared_root_norm_multiplicities": {
             f"{float(squared_norm):.12g}": int(count)
-            for squared_norm, count in zip(squared_norms, squared_norm_counts, strict=True)
+            for squared_norm, count in zip(squared_norms, squared_norm_counts)
         },
         "opposite_root_closure": opposite_closed,
         "simple_roots": simple_roots.tolist(),

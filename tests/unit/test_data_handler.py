@@ -11,7 +11,9 @@ from mathphysics.data_handler import SimulationDataHandler
 class TestDataHandler(unittest.TestCase):
     def setUp(self) -> None:
         self.original_results_directory = Config.RESULTS_DIR
-        self.temporary_directory = self.enterContext(tempfile.TemporaryDirectory())
+        temporary_directory_context = tempfile.TemporaryDirectory()
+        self.addCleanup(temporary_directory_context.cleanup)
+        self.temporary_directory = temporary_directory_context.name
         Config.RESULTS_DIR = self.temporary_directory
         self.handler = SimulationDataHandler()
         self.test_prefix = "test_state_unit"

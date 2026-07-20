@@ -17,7 +17,7 @@ BENCH_DIR = benchmarks
 RESULTS_DIR = results
 FIGURES_DIR = figures
 
-.PHONY: all clean help install test lint check-types benchmark run-highres run-unified run-jordan run-clifford docs papers cleanbuild lint-latex figures paper-evidence-artifacts fetch-external sync-super-force-analysis normalize-corpus framework-decomposition framework-overlap corpus-dedupe build-registries docs-index claim-coverage critique-evidence validate-external-provenance validate-registry-schemas parquet-audit evidence-audits document-ocr-mineru document-ocr-tesseract document-ocr-generate document-decomposition-index verify-offline repro-refresh archive-pdfs notebooks fetch-arxiv resolve-dois fetch-all verify-checksums check-deps
+.PHONY: all clean help install test lint check-types benchmark run-highres run-unified run-jordan run-clifford docs papers cleanbuild lint-latex figures paper-evidence-artifacts fetch-external sync-super-force-analysis normalize-corpus framework-decomposition framework-overlap corpus-dedupe build-registries docs-index claim-coverage critique-evidence validate-external-provenance validate-registry-schemas parquet-audit evidence-audits document-ocr-mineru document-ocr-tesseract document-ocr-generate document-decomposition-index verify-offline repro-refresh check-repro-deps archive-pdfs notebooks fetch-arxiv resolve-dois fetch-all verify-checksums check-deps
 
 # Default target
 all: lint check-types test benchmark figures papers
@@ -259,7 +259,12 @@ verify-offline:
 	python3 scripts/validate_registry_schemas.py
 	python3 scripts/verify_offline_integrity.py
 
-repro-refresh:
+check-repro-deps:
+	@echo "[CHECK] Verifying reproducibility system dependencies..."
+	@command -v pdfinfo > /dev/null || { echo "pdfinfo is required; install poppler-utils" >&2; exit 1; }
+	@command -v pdftotext > /dev/null || { echo "pdftotext is required; install poppler-utils" >&2; exit 1; }
+
+repro-refresh: check-repro-deps
 	@$(MAKE) normalize-corpus
 	@$(MAKE) framework-decomposition
 	@$(MAKE) framework-overlap
