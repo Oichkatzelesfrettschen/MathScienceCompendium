@@ -1,0 +1,155 @@
+\chapter{Reproducibility and Artifact Inventory}
+\label{app:reproducibility}
+
+\section{Build the manuscript}
+
+From the repository root, run:
+
+\begin{verbatim}
+make papers
+\end{verbatim}
+
+The clean-checkout sequence is:
+
+\begin{verbatim}
+make document-ocr-generate
+make document-decomposition-index
+\end{verbatim}
+
+OCR outputs remain generated local caches under \path{build/document_ocr/}.
+The retained run manifest records the container image ID, pinned base image,
+exact commands, modes, and output roots. The decomposition registry records the
+hashes needed to compare a regenerated cache with the reviewed run.
+
+The paper build uses the checked-in bibliography and regenerates the
+registry-driven evidence figures and result tables. The broader scientific and
+interactive figure suite remains a separate target because it requires the full
+Python environment and may alter unrelated generated artifacts.
+
+\section{Decompose the source documents}
+
+The source corpus contains 37 PDFs and 986 pages. Embedded text is retained as
+one evidence layer, not assumed to be correct. The page-level audit routes
+sparse pages for OCR:
+
+\begin{verbatim}
+python3 scripts/audit_pdf_text_quality.py
+\end{verbatim}
+
+Formula- and layout-aware extraction uses the pinned MinerU 3.4.4 CUDA image in
+high-effort hybrid mode:
+
+\begin{verbatim}
+docker compose -f tools/document_ocr/compose.yaml build mineru
+docker compose -f tools/document_ocr/compose.yaml run --rm mineru \
+  'mineru -p /workspace/source_materials/pdfs \
+    -o /workspace/build/document_ocr/mineru_corpus \
+    -b hybrid-engine --effort high -m auto \
+    --formula true --table true --image-analysis true'
+\end{verbatim}
+
+Tesseract 5 is an independent fallback, not the primary parser:
+
+\begin{verbatim}
+python3 scripts/run_tesseract_pdf_ocr.py \
+  source_materials/pdfs/Comment_on_the_Pais_Superforce_Theory.pdf
+\end{verbatim}
+
+On the sparse 13-page Superforce commentary, MinerU recovers structured
+headings, display mathematics, reading order, diagrams, and image regions.
+Tesseract recovers useful prose but degrades several equations. Native text,
+MinerU, and Tesseract outputs remain separate so later review can trace which
+representation supports a quotation or formula.
+
+\section{Run the repository quality gates}
+
+The relevant commands are:
+
+\begin{verbatim}
+make papers
+make test
+make lint
+make verify-offline
+\end{verbatim}
+
+\texttt{make lint-latex} checks generated critique evidence, unresolved stubs,
+and ASCII source hygiene. \texttt{make papers} additionally rebuilds the PDF
+and fails on unresolved references, duplicate labels, margin overflow,
+malformed bibliography entries, and build warnings. Python and registry gates
+remain separate so a missing optional runtime cannot masquerade as success.
+
+\section{Evidence-bearing artifacts}
+
+\begin{table}[htbp]
+  \centering
+  \small
+  \caption{Primary repository evidence surfaces used in this review.}
+  \label{tab:evidence-surfaces}
+  \begin{tabularx}{\textwidth}{p{0.34\textwidth}X}
+    \toprule
+    Path & Role \\
+    \midrule
+    \path{source_materials/pdfs/} & Retained source documents. \\
+    \path{papers/references.bib} & Bibliographic metadata used by this manuscript. \\
+    \path{src/mathphysics/} & Reusable mathematical and numerical implementations. \\
+    \path{experiments/} & Drivers and retained experiment outputs. \\
+    \path{results/} & Parquet simulation snapshots. \\
+    \path{data/registry/artifacts_index.toml} & Generated artifact identities and digests. \\
+    \path{data/registry/experiments_index.toml} & Generated experiment-output inventory. \\
+    \path{data/registry/parquet_audit.json} & Schema-inspection status for retained snapshots. \\
+    \path{data/registry/lbm_evidence_audit.json} & Generated conservation, velocity, zonal, and anisotropy diagnostics. \\
+    \path{data/registry/lbm_root_order_audit.json} & Controlled sensitivity of the root-indexed initializer to ordering. \\
+    \path{data/registry/critique_evidence_ledger.json} & Canonical status, falsification attempt, verdict, and evidence paths for all 21 critiques. \\
+    \path{data/registry/pdf_text_quality_audit.json} & Page-level embedded-text quality and OCR routing. \\
+    \path{data/registry/document_decomposition_audit.json} & MinerU output hashes and artifact counts for all 37 PDFs and 986 pages. \\
+    \path{data/registry/document_ocr_run_manifest.json} & MinerU container identity, exact modes and commands, and Tesseract manifest identity. \\
+    \path{data/registry/pdf_ocr_comparison.json} & Native, MinerU, and Tesseract comparison for the sparsest document. \\
+    \path{data/registry/pdf_ocr_visual_review.json} & Retained page-level equation, layout, diagram, and prose comparison rubric. \\
+    \path{data/registry/claim_source_crosswalk.toml} & Source lineage for selected claims. \\
+    \bottomrule
+  \end{tabularx}
+\end{table}
+
+\section{Artifact validity rules}
+
+An artifact enters a scientific argument only if it passes all applicable
+checks:
+
+\begin{enumerate}
+  \item the file parses according to its declared format;
+  \item its schema includes units, parameters, and version or commit identity;
+  \item its digest matches the generated registry;
+  \item the producing command is recorded and succeeds from a clean environment;
+  \item prerequisite invariants, including conservation or normalization, pass;
+  \item the analysis method and selection rules are specified before the result;
+  \item the claimed inference does not exceed what the artifact measures.
+\end{enumerate}
+
+Checksums satisfy only the third item. A registry should not label an artifact
+scientifically valid merely because it exists and hashes reproducibly.
+
+\section{Current limitations and blockers}
+
+At the time of this review, serialization, CPU mass conservation, deterministic
+root enumeration, Cartan construction, Albert multiplication, PDF
+decomposition, and Parquet schema inspection have been repaired. The structural
+Fourier map and matched beta-plane questions have executable negative results.
+The remaining scientific blockers are:
+
+\begin{itemize}
+  \item the historical high-resolution LBM driver has no beta-plane parameter
+    or term and remains evidence only for its own nearly isotropic trajectory;
+  \item the homomorphic Fourier-to-$P/Q$ mechanism is closed negatively; any
+    nonhomomorphic replacement requires a new derivation and claim identifier;
+  \item the high-resolution states lack a complete retained parameter and
+    software-version manifest;
+  \item the reported four-jet and $-5/3$ conclusions have no traceable analysis;
+    and
+  \item the short decaying beta-plane runs do not admit persistent jets; and
+  \item scalar gravity, ZPE harvesting, time-crystal amplification, and
+    tourmaline novelty lack the raw measurements required by their operational
+    admission packages.
+\end{itemize}
+
+These blockers are evidence, not housekeeping. They determine which claims the
+manuscript can honestly make.

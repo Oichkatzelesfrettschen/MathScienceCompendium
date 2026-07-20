@@ -1,23 +1,23 @@
 generated_by = "scripts/normalize_txt_to_json.py"
-generated_at_utc = "2026-02-12T07:47:48.190216+00:00"
+generated_at_utc = "2026-07-20T08:59:33.837329+00:00"
 
 [[documents]]
 id = "project_summary"
 source_relpath = "PROJECT_SUMMARY.txt"
 normalized_relpath = "data/normalized/corpus/project_summary.json"
 category = "PROJECT_SUMMARY.txt"
-sha256 = "475e5f054d3438ba3a1135191a1e0a515bfdbbc14f73d11b58dc35c4a352cb80"
+sha256 = "968c5836d15adbebf18bb3431653a8df1fb33d2c9f7b460d6b384770280df55b"
 line_count = 297
-size_bytes = 12313
+size_bytes = 12324
 
 [[documents]]
 id = "docs__catalog"
 source_relpath = "docs/CATALOG.txt"
 normalized_relpath = "data/normalized/corpus/docs__catalog.json"
 category = "docs"
-sha256 = "31760f0c088c0611f167ab4fce29ef4cb9a578d9ce2d723b215878b70b18b114"
+sha256 = "94d379d7fea2efe7436a20fee6b7f90d78a0ce1203e9fd151d6fd44135d7ffff"
 line_count = 232
-size_bytes = 8568
+size_bytes = 8595
 
 [[documents]]
 id = "experiments__requirements"
@@ -27,6 +27,15 @@ category = "experiments"
 sha256 = "117ee543fd8bf291b840c6a363996c0fbc267c1de140c21bd363b6d8d05bcc30"
 line_count = 19
 size_bytes = 316
+
+[[documents]]
+id = "requirements-lock"
+source_relpath = "requirements-lock.txt"
+normalized_relpath = "data/normalized/corpus/requirements-lock.json"
+category = "requirements-lock.txt"
+sha256 = "89f9a02b7c8c3171c77fb8cb249db349f207a5cf32f5c3fbd423785a24af5c94"
+line_count = 27
+size_bytes = 404
 
 [[documents]]
 id = "requirements"
@@ -51,27 +60,27 @@ id = "research__fact_checks__alpha001_analysis"
 source_relpath = "research/fact_checks/Alpha001_Analysis.txt"
 normalized_relpath = "data/normalized/corpus/research__fact_checks__alpha001_analysis.json"
 category = "research"
-sha256 = "1fc243acabe76d41d9d3ea7aaf81cbb707b7e159bf76ed975bad4dfc397efaf5"
+sha256 = "df67a9436359881e1bb660a6971482eb72c4ac349b8b5d1fb4c23253ff071e3f"
 line_count = 2217
-size_bytes = 75898
+size_bytes = 75947
 
 [[documents]]
 id = "research__fact_checks__maximal_extraction_complete_analysis"
 source_relpath = "research/fact_checks/Maximal_Extraction_Complete_Analysis.txt"
 normalized_relpath = "data/normalized/corpus/research__fact_checks__maximal_extraction_complete_analysis.json"
 category = "research"
-sha256 = "c5e0f5ada182844a60983e0ed25fca8cdbeb30aeaf97bb36d226670212ae6c2d"
+sha256 = "b8cffcd92b1fef6f2c3432e4d453b537141fe782babbfff0c1af053ca9979361"
 line_count = 1416
-size_bytes = 49269
+size_bytes = 49354
 
 [[documents]]
 id = "research__fact_checks__mathematical_validation_report"
 source_relpath = "research/fact_checks/mathematical_validation_report.txt"
 normalized_relpath = "data/normalized/corpus/research__fact_checks__mathematical_validation_report.json"
 category = "research"
-sha256 = "9ead5bd1da9aeea9b15913757fb526b663055e87d51d076f8b67c2ddd57525a6"
-line_count = 258
-size_bytes = 11160
+sha256 = "071f110b3bac50c6deb4d2fe8a22379df3317b2a3b25416370b2fd2c84f7eb69"
+line_count = 260
+size_bytes = 11206
 
 [[documents]]
 id = "research__kac_moody_deep_analysis"
@@ -87,18 +96,18 @@ id = "research__maximal_extraction_analysis"
 source_relpath = "research/maximal_extraction_analysis.txt"
 normalized_relpath = "data/normalized/corpus/research__maximal_extraction_analysis.json"
 category = "research"
-sha256 = "de7688352f67d64a4fa45faa017996cd7669f7fe73fef0eb660906e343441ae1"
+sha256 = "e957287dfec0a60ff09e4280c4e5bd6eca44ce7c29a3393af1361babe35275c7"
 line_count = 1056
-size_bytes = 41460
+size_bytes = 41446
 
 [[documents]]
 id = "research__primary_sources__094101_positron_production_analysis"
 source_relpath = "research/primary_sources/094101_Positron_Production_analysis.txt"
 normalized_relpath = "data/normalized/corpus/research__primary_sources__094101_positron_production_analysis.json"
 category = "research"
-sha256 = "118c31499e3a5e9b01191688b099a23cfe3a8c7c87a8fa2c532d5161c112b425"
+sha256 = "c6691c048f5c887981eb243914c2ad286637bce7aacb068c97295c6b38a0ade3"
 line_count = 224
-size_bytes = 9123
+size_bytes = 9135
 
 [[documents]]
 id = "research__primary_sources__1111_4064v2_zeropoint_vibration_analysis"
@@ -114,36 +123,36 @@ id = "research__primary_sources__978-3-319-48210-1_10_tourmaline_electrical_anal
 source_relpath = "research/primary_sources/978-3-319-48210-1_10_Tourmaline_Electrical_analysis.txt"
 normalized_relpath = "data/normalized/corpus/research__primary_sources__978-3-319-48210-1_10_tourmaline_electrical_analysis.json"
 category = "research"
-sha256 = "33424567c7a1eec2afddc48dbe0d6ea4c3f7fd4953441867c956c15ca43c9385"
+sha256 = "671bfd2db00b5f677441ae9ff988b6331bac6ed6fc4ce84d2f561cea569ba8c2"
 line_count = 244
-size_bytes = 8494
+size_bytes = 8506
 
 [[documents]]
 id = "research__primary_sources__comment_pais_superforce_brandenburg_analysis"
 source_relpath = "research/primary_sources/Comment_Pais_Superforce_Brandenburg_analysis.txt"
 normalized_relpath = "data/normalized/corpus/research__primary_sources__comment_pais_superforce_brandenburg_analysis.json"
 category = "research"
-sha256 = "19aa32769276adb2c67c234603c9feffc85912cfb3b0220ba594000b93f09bb5"
+sha256 = "fa2a960a479465f47d065942e14f6e66a72523b48f39ac509bcc58228f6d79ff"
 line_count = 195
-size_bytes = 7576
+size_bytes = 7635
 
 [[documents]]
 id = "research__primary_sources__master_bibliography"
 source_relpath = "research/primary_sources/MASTER_BIBLIOGRAPHY.txt"
 normalized_relpath = "data/normalized/corpus/research__primary_sources__master_bibliography.json"
 category = "research"
-sha256 = "b7cd3832bcc32e58a50e14ba2c2a0571b93a3c27f94a79efd3a6dbbfd90ef8e8"
+sha256 = "f4de0d4b7e3d05f07e107b081cd57d63662027541e23d5c97afec83c7cdc6634"
 line_count = 396
-size_bytes = 15539
+size_bytes = 15623
 
 [[documents]]
 id = "research__primary_sources__pdf_summary"
 source_relpath = "research/primary_sources/PDF_SUMMARY.txt"
 normalized_relpath = "data/normalized/corpus/research__primary_sources__pdf_summary.json"
 category = "research"
-sha256 = "b8acb1e616c440d965f149094f6a06beff225df5c5dd5ebaf02a343ec1aacd9b"
+sha256 = "03b48e1ab3220643221a6c6612713b335735dca191b6d87c08441de7de362b16"
 line_count = 482
-size_bytes = 22059
+size_bytes = 22119
 
 [[documents]]
 id = "research__primary_sources__phys_140a_thermal_conductivity_analysis"
@@ -159,9 +168,9 @@ id = "research__primary_sources__readme"
 source_relpath = "research/primary_sources/README.txt"
 normalized_relpath = "data/normalized/corpus/research__primary_sources__readme.json"
 category = "research"
-sha256 = "de01b5002ec5d4604de32558161b812147078184ff9e1ada51a42488cf1058eb"
+sha256 = "fb453c3de7fe6b42e66dbf818228a719b4ffa5e88dce4d6a9100f4229a8913b2"
 line_count = 217
-size_bytes = 7877
+size_bytes = 7889
 
 [[documents]]
 id = "research__primary_sources__superforce_s_c_pais_2023_analysis"
@@ -177,9 +186,9 @@ id = "research__primary_sources__superframework_expansion_analysis"
 source_relpath = "research/primary_sources/Superframework_Expansion_analysis.txt"
 normalized_relpath = "data/normalized/corpus/research__primary_sources__superframework_expansion_analysis.json"
 category = "research"
-sha256 = "98d0d4c67c9e523593c3c6a3115775b29d93d277dbadd2187360a42d4884ba01"
+sha256 = "2e4e4c6dbfc9505bde5a737d6320116efca7476a8e40fdd31be6c0b44b700285"
 line_count = 231
-size_bytes = 8484
+size_bytes = 8496
 
 [[documents]]
 id = "research__primary_sources__superframework_foam_octonions_analysis"
@@ -204,9 +213,9 @@ id = "research__primary_sources__tourmaline_unified_framework_analysis"
 source_relpath = "research/primary_sources/Tourmaline_Unified_Framework_analysis.txt"
 normalized_relpath = "data/normalized/corpus/research__primary_sources__tourmaline_unified_framework_analysis.json"
 category = "research"
-sha256 = "8817bff9be2265e794f1fda24e1469962094fbccd316314e27c7135f20a4ea8b"
+sha256 = "ccbc51d0c6c9f9576c96289dafee2671e6dd89a531c3d8cb3da910e09968c98d"
 line_count = 290
-size_bytes = 10001
+size_bytes = 10013
 
 [[documents]]
 id = "research__quantum_computing__ibm_eagle_specifications"
@@ -222,9 +231,9 @@ id = "source_materials__frameworks__alpha001_06_draft_aether_framework"
 source_relpath = "source_materials/frameworks/Alpha001.06_DRAFT_Aether_Framework.txt"
 normalized_relpath = "data/normalized/corpus/source_materials__frameworks__alpha001_06_draft_aether_framework.json"
 category = "source_materials"
-sha256 = "e75fb9a8f979d6452f04cc073e7603215f240b6d6cd813ca4a5a41b6e713202f"
+sha256 = "7f159b044b976fa7ac298360d282c0a480679cecf5e1a040b6c999ee5b26bbe6"
 line_count = 165868
-size_bytes = 4589579
+size_bytes = 4590519
 
 [[documents]]
 id = "source_materials__frameworks__alpha003_02_aether_chrystalline_fluidic_framework"
@@ -249,41 +258,41 @@ id = "source_materials__frameworks__maximal_extraction_set1_set2"
 source_relpath = "source_materials/frameworks/Maximal_Extraction_SET1_SET2.txt"
 normalized_relpath = "data/normalized/corpus/source_materials__frameworks__maximal_extraction_set1_set2.json"
 category = "source_materials"
-sha256 = "916b10e79d551d2c6216de533c5a46f584bcdaf0b074de6116e39194ccd37866"
+sha256 = "97bcf9c1823360aa8e73664e1e84802cd273d57eae6a6302ca8eccbdfb699dee"
 line_count = 26209
-size_bytes = 691591
+size_bytes = 691706
 
 [[documents]]
 id = "source_materials__frameworks__draft_reply_to_pais"
 source_relpath = "source_materials/frameworks/draft reply to pais.txt"
 normalized_relpath = "data/normalized/corpus/source_materials__frameworks__draft_reply_to_pais.json"
 category = "source_materials"
-sha256 = "c10176cc0c72fe84aad7668a6f5158351b4636cd83913c0767020f392d14cac8"
+sha256 = "4a27d87cdff9f1f902c4754dd18dd3bf4500ac8cea57d6d41d8b5ff26266d5fe"
 line_count = 97
-size_bytes = 6553
+size_bytes = 6608
 
 [[documents]]
 id = "source_materials__frameworks__math4genesisframework"
 source_relpath = "source_materials/frameworks/math4GenesisFramework.txt"
 normalized_relpath = "data/normalized/corpus/source_materials__frameworks__math4genesisframework.json"
 category = "source_materials"
-sha256 = "f5f7e7613920d9a496be31449c725e6945609956b0fb1a85abe6a2387721260c"
+sha256 = "9fd585c5c58e6352f5eaf436f6a0e084e231c581abb4f92dc61c1c24537aa729"
 line_count = 1563
-size_bytes = 91793
+size_bytes = 91824
 
 [[documents]]
 id = "source_materials__frameworks__math5genesisframeworkunveiled"
 source_relpath = "source_materials/frameworks/math5GenesisFrameworkUnveiled.txt"
 normalized_relpath = "data/normalized/corpus/source_materials__frameworks__math5genesisframeworkunveiled.json"
 category = "source_materials"
-sha256 = "8ba01a4e7d68b8c9cee28029f02f7c16a652a9d672eca9689b6772d94ac774dc"
+sha256 = "721358f66d26b144b015aa24930770464e3ce6fbd2360339ee2dc1593fdc84c5"
 line_count = 2223
-size_bytes = 118119
+size_bytes = 117995
 
 [[documents]]
-id = "source_materials__frameworks__æether-crystalline_framework_"
-source_relpath = "source_materials/frameworks/Æether-Crystalline Framework .txt"
-normalized_relpath = "data/normalized/corpus/source_materials__frameworks__æether-crystalline_framework_.json"
+id = "source_materials__frameworks__\u00e6ether-crystalline_framework_"
+source_relpath = "source_materials/frameworks/\u00c6ether-Crystalline Framework .txt"
+normalized_relpath = "data/normalized/corpus/source_materials__frameworks__\u00e6ether-crystalline_framework_.json"
 category = "source_materials"
 sha256 = "b51cb1cb03fa1505ab0cdd6e46c154597da81c87f332e50f7b15ca17595320c8"
 line_count = 1097
@@ -378,3 +387,246 @@ category = "source_materials"
 sha256 = "e5647221b34b20c8d0d2c71318b9ed0529cc8ed5817b46521e7b61e624021c81"
 line_count = 121
 size_bytes = 3240
+
+[[documents]]
+id = "source_materials__pdfs__extracted__arxiv_0905_2658"
+source_relpath = "source_materials/pdfs/extracted/arxiv_0905.2658.txt"
+normalized_relpath = "data/normalized/corpus/source_materials__pdfs__extracted__arxiv_0905_2658.json"
+category = "source_materials"
+sha256 = "939c1ddb644664272e173617064546fbaab803c590231e677c90dbe34a6e37b3"
+line_count = 1050
+size_bytes = 55014
+
+[[documents]]
+id = "source_materials__pdfs__extracted__arxiv_1105_4714"
+source_relpath = "source_materials/pdfs/extracted/arxiv_1105.4714.txt"
+normalized_relpath = "data/normalized/corpus/source_materials__pdfs__extracted__arxiv_1105_4714.json"
+category = "source_materials"
+sha256 = "14325f8a4b21e54127bfd00a10275811041e1508e0065af16b8459ca3b28d947"
+line_count = 627
+size_bytes = 26753
+
+[[documents]]
+id = "source_materials__pdfs__extracted__arxiv_1202_0807"
+source_relpath = "source_materials/pdfs/extracted/arxiv_1202.0807.txt"
+normalized_relpath = "data/normalized/corpus/source_materials__pdfs__extracted__arxiv_1202_0807.json"
+category = "source_materials"
+sha256 = "f3d6f802385974c5317aab13196592b51ca00b55d88c2f10cc8616030b18c622"
+line_count = 3211
+size_bytes = 92584
+
+[[documents]]
+id = "source_materials__pdfs__extracted__arxiv_1203_3591"
+source_relpath = "source_materials/pdfs/extracted/arxiv_1203.3591.txt"
+normalized_relpath = "data/normalized/corpus/source_materials__pdfs__extracted__arxiv_1203_3591.json"
+category = "source_materials"
+sha256 = "5f6a32d328dce9c6be8e980337113af32b39e7a2b5603d0ee16bc1c62a8004e8"
+line_count = 9442
+size_bytes = 351685
+
+[[documents]]
+id = "source_materials__pdfs__extracted__arxiv_1208_5399"
+source_relpath = "source_materials/pdfs/extracted/arxiv_1208.5399.txt"
+normalized_relpath = "data/normalized/corpus/source_materials__pdfs__extracted__arxiv_1208_5399.json"
+category = "source_materials"
+sha256 = "03a1ac591b74bb25c487dbee4bc2f20b762ff9b0bbcb569b9687b0ddc7eaebb2"
+line_count = 2967
+size_bytes = 107917
+
+[[documents]]
+id = "source_materials__pdfs__extracted__arxiv_1410_2143"
+source_relpath = "source_materials/pdfs/extracted/arxiv_1410.2143.txt"
+normalized_relpath = "data/normalized/corpus/source_materials__pdfs__extracted__arxiv_1410_2143.json"
+category = "source_materials"
+sha256 = "474e1bdaca9400a89fe3641633b8e9d9cb60bf1c853ac2897b0730380106e44f"
+line_count = 574
+size_bytes = 25183
+
+[[documents]]
+id = "source_materials__pdfs__extracted__arxiv_1411_6571"
+source_relpath = "source_materials/pdfs/extracted/arxiv_1411.6571.txt"
+normalized_relpath = "data/normalized/corpus/source_materials__pdfs__extracted__arxiv_1411_6571.json"
+category = "source_materials"
+sha256 = "ea7442ef5f7d1ad712da2d01779b40dde77b99ef294a945fae7c68ff013e97a2"
+line_count = 5093
+size_bytes = 179366
+
+[[documents]]
+id = "source_materials__pdfs__extracted__arxiv_1603_08001"
+source_relpath = "source_materials/pdfs/extracted/arxiv_1603.08001.txt"
+normalized_relpath = "data/normalized/corpus/source_materials__pdfs__extracted__arxiv_1603_08001.json"
+category = "source_materials"
+sha256 = "72dbe39ec3dfb1619fcac836a321658c4c20e484d0c56079257ff3975f1f9f5f"
+line_count = 1128
+size_bytes = 39302
+
+[[documents]]
+id = "source_materials__pdfs__extracted__arxiv_1609_08684"
+source_relpath = "source_materials/pdfs/extracted/arxiv_1609.08684.txt"
+normalized_relpath = "data/normalized/corpus/source_materials__pdfs__extracted__arxiv_1609_08684.json"
+category = "source_materials"
+sha256 = "66f8640602c1632808c5e1927668590a74e51ecac6d8b51a33de3d6f97968301"
+line_count = 1626
+size_bytes = 37776
+
+[[documents]]
+id = "source_materials__pdfs__extracted__arxiv_2505_11747"
+source_relpath = "source_materials/pdfs/extracted/arxiv_2505.11747.txt"
+normalized_relpath = "data/normalized/corpus/source_materials__pdfs__extracted__arxiv_2505_11747.json"
+category = "source_materials"
+sha256 = "9aae866a3bb52940bb8db4ffa0fe2b9f7787ba4f385c2b795dbbe3e0ff3adc19"
+line_count = 2384
+size_bytes = 89165
+
+[[documents]]
+id = "source_materials__pdfs__extracted__arxiv_2605_27211"
+source_relpath = "source_materials/pdfs/extracted/arxiv_2605.27211.txt"
+normalized_relpath = "data/normalized/corpus/source_materials__pdfs__extracted__arxiv_2605_27211.json"
+category = "source_materials"
+sha256 = "31446d9e78f4cb86bba2e7a814e8cbddf8f95dd80f6c687ccc6f02a1383448b5"
+line_count = 2291
+size_bytes = 128708
+
+[[documents]]
+id = "source_materials__pdfs__extracted__borcherds_monstrous_moonshine_1992"
+source_relpath = "source_materials/pdfs/extracted/borcherds_monstrous_moonshine_1992.txt"
+normalized_relpath = "data/normalized/corpus/source_materials__pdfs__extracted__borcherds_monstrous_moonshine_1992.json"
+category = "source_materials"
+sha256 = "81d0e02e9ab605d607c513ff0d3493af90f2b386126af150520c4372450a8f87"
+line_count = 2513
+size_bytes = 122471
+
+[[documents]]
+id = "source_materials__pdfs__extracted__gr-qc_0108040"
+source_relpath = "source_materials/pdfs/extracted/gr-qc_0108040.txt"
+normalized_relpath = "data/normalized/corpus/source_materials__pdfs__extracted__gr-qc_0108040.json"
+category = "source_materials"
+sha256 = "0adf283d4a69897f3ae94f967741f1f8c7e2c24bc01d87a4092f56186822d34f"
+line_count = 3659
+size_bytes = 197029
+
+[[documents]]
+id = "source_materials__pdfs__extracted__gr-qc_0309009"
+source_relpath = "source_materials/pdfs/extracted/gr-qc_0309009.txt"
+normalized_relpath = "data/normalized/corpus/source_materials__pdfs__extracted__gr-qc_0309009.json"
+category = "source_materials"
+sha256 = "0a0f48f8944d183a0c3d15f620d0b2e3ed74a49cb2448641f35542ca423c644b"
+line_count = 974
+size_bytes = 62102
+
+[[documents]]
+id = "source_materials__pdfs__extracted__gr-qc_0311030"
+source_relpath = "source_materials/pdfs/extracted/gr-qc_0311030.txt"
+normalized_relpath = "data/normalized/corpus/source_materials__pdfs__extracted__gr-qc_0311030.json"
+category = "source_materials"
+sha256 = "1a7e03cf1fa23222750c0eb81bd7aa0cec3ad6cbfd2c6533c31afb35315cb9ab"
+line_count = 862
+size_bytes = 33598
+
+[[documents]]
+id = "source_materials__pdfs__extracted__gr-qc_9411005"
+source_relpath = "source_materials/pdfs/extracted/gr-qc_9411005.txt"
+normalized_relpath = "data/normalized/corpus/source_materials__pdfs__extracted__gr-qc_9411005.json"
+category = "source_materials"
+sha256 = "a4528aa3542e7baf5c36756961635cb9ae4fcf16510710c181b00c23d3d5eb30"
+line_count = 1992
+size_bytes = 70007
+
+[[documents]]
+id = "source_materials__pdfs__extracted__gr-qc_9602046"
+source_relpath = "source_materials/pdfs/extracted/gr-qc_9602046.txt"
+normalized_relpath = "data/normalized/corpus/source_materials__pdfs__extracted__gr-qc_9602046.json"
+category = "source_materials"
+sha256 = "1e8a1438e2d8bc168aac67e283add550d670f60e9c9677b8bd615cb3631e30b6"
+line_count = 1892
+size_bytes = 95401
+
+[[documents]]
+id = "source_materials__pdfs__extracted__hep-th_0104081"
+source_relpath = "source_materials/pdfs/extracted/hep-th_0104081.txt"
+normalized_relpath = "data/normalized/corpus/source_materials__pdfs__extracted__hep-th_0104081.json"
+category = "source_materials"
+sha256 = "d0af2054087032093e3eb70a7b6cbd8f69012570161882b00154d6a81c639364"
+line_count = 1229
+size_bytes = 59385
+
+[[documents]]
+id = "source_materials__pdfs__extracted__hep-th_0207267"
+source_relpath = "source_materials/pdfs/extracted/hep-th_0207267.txt"
+normalized_relpath = "data/normalized/corpus/source_materials__pdfs__extracted__hep-th_0207267.json"
+category = "source_materials"
+sha256 = "4b4bb66eebc67939ea1472e2774ebd93ba4a20693ffd45d50b2c0613098d18bf"
+line_count = 487
+size_bytes = 21471
+
+[[documents]]
+id = "source_materials__pdfs__extracted__hep-th_0503158"
+source_relpath = "source_materials/pdfs/extracted/hep-th_0503158.txt"
+normalized_relpath = "data/normalized/corpus/source_materials__pdfs__extracted__hep-th_0503158.json"
+category = "source_materials"
+sha256 = "79d13721c3fa0e0258e52ea883e1338c53e684bc074907d944acbefcb14fb0a1"
+line_count = 416
+size_bytes = 21760
+
+[[documents]]
+id = "source_materials__pdfs__extracted__hep-th_9410167"
+source_relpath = "source_materials/pdfs/extracted/hep-th_9410167.txt"
+normalized_relpath = "data/normalized/corpus/source_materials__pdfs__extracted__hep-th_9410167.json"
+category = "source_materials"
+sha256 = "cad75d7b63a7ecc95f9f54973b40631ad14ba1474794d82631e04e16e4313aa4"
+line_count = 1686
+size_bytes = 92302
+
+[[documents]]
+id = "source_materials__pdfs__extracted__hep-th_9602136"
+source_relpath = "source_materials/pdfs/extracted/hep-th_9602136.txt"
+normalized_relpath = "data/normalized/corpus/source_materials__pdfs__extracted__hep-th_9602136.json"
+category = "source_materials"
+sha256 = "9f4bc9693aa922325a3f0d67f1cf27f204f7fcc2dc9da8b8e8c4a93e5bdaaa04"
+line_count = 1635
+size_bytes = 45254
+
+[[documents]]
+id = "source_materials__pdfs__extracted__hep-th_9605030"
+source_relpath = "source_materials/pdfs/extracted/hep-th_9605030.txt"
+normalized_relpath = "data/normalized/corpus/source_materials__pdfs__extracted__hep-th_9605030.json"
+category = "source_materials"
+sha256 = "6089add46f87ad5685e54fd5c77eff518c7150bc6208d4c0e340b388496c9ed1"
+line_count = 2828
+size_bytes = 62582
+
+[[documents]]
+id = "source_materials__pdfs__extracted__hep-th_9606001"
+source_relpath = "source_materials/pdfs/extracted/hep-th_9606001.txt"
+normalized_relpath = "data/normalized/corpus/source_materials__pdfs__extracted__hep-th_9606001.json"
+category = "source_materials"
+sha256 = "01e5575b0331b51497fec1fc70577da8a6e980d4e7de08a5871376a3f75a245a"
+line_count = 1845
+size_bytes = 42607
+
+[[documents]]
+id = "source_materials__pdfs__extracted__math_0105155"
+source_relpath = "source_materials/pdfs/extracted/math_0105155.txt"
+normalized_relpath = "data/normalized/corpus/source_materials__pdfs__extracted__math_0105155.json"
+category = "source_materials"
+sha256 = "2af31ea785cfdde15ea62adbd4c5fe6787fe4c71997f61fd6f4ad85936e90abf"
+line_count = 3477
+size_bytes = 161257
+
+[[documents]]
+id = "source_materials__pdfs__extracted__math_0512517"
+source_relpath = "source_materials/pdfs/extracted/math_0512517.txt"
+normalized_relpath = "data/normalized/corpus/source_materials__pdfs__extracted__math_0512517.json"
+category = "source_materials"
+sha256 = "9a6d703cc1508a62bbab8ae980f68b33c9310478403c167bbf30cd4791ad3f9c"
+line_count = 1182
+size_bytes = 36036
+
+[[documents]]
+id = "source_materials__pdfs__extracted__quant-ph_0609227"
+source_relpath = "source_materials/pdfs/extracted/quant-ph_0609227.txt"
+normalized_relpath = "data/normalized/corpus/source_materials__pdfs__extracted__quant-ph_0609227.json"
+category = "source_materials"
+sha256 = "e635419a2f849b6794e3cafaa30238ae19ebc959cb98a0c967c5a1bed6ecaa7d"
+line_count = 967
+size_bytes = 28584

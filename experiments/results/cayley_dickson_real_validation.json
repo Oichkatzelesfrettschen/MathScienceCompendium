@@ -1,5 +1,20 @@
 {
-  "algebra": "Real",
-  "dimension": 1,
-  "closure": true,
-  "associative": 
+  "generator": "scripts/generate_core_validation_results.py",
+  "method": "implemented property checks with numpy seed 0",
+  "result": {
+    "algebra": "Real",
+    "alternative": true,
+    "alternativity_error": 1.7763568394002505e-15,
+    "associative": true,
+    "associativity_error": 2.220446049250313e-16,
+    "closure": true,
+    "commutative": true,
+    "commutativity_error": 0.0,
+    "dimension": 1,
+    "has_zero_divisors": false,
+    "norm_error": 0.0,
+    "norm_multiplicative": true,
+    "zero_divisor_count": 0
+  },
+  "schema_version": 1
+}

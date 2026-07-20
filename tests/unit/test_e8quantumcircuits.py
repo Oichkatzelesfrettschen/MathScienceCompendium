@@ -41,7 +41,6 @@ class TestE8QuantumCircuits(unittest.TestCase):
         qc = prep.prepare_uniform_superposition()
         self.assertIsNotNone(qc)
 
-        # sv = Statevector.from_instruction(qc) # Might be slow
         self.assertEqual(qc.num_qubits, 8)
 
     def test_e8_quantum_algorithms(self):

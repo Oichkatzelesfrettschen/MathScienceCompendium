@@ -21,8 +21,8 @@ try:
 
     HAS_JAX = True
 except ImportError:
-    jax = None  # type: ignore
-    jnp = None  # type: ignore
+    jax = None
+    jnp = None
 
 # Try importing Qiskit
 try:
@@ -30,7 +30,7 @@ try:
 
     HAS_QISKIT = True
 except ImportError:
-    qiskit = None  # type: ignore
+    qiskit = None
 
 # Try importing liesym
 try:
@@ -38,7 +38,7 @@ try:
 
     HAS_LIESYM = True
 except ImportError:
-    liesym = None  # type: ignore
+    liesym = None
 
 # Try importing gudhi
 try:
@@ -46,7 +46,7 @@ try:
 
     HAS_GUDHI = True
 except ImportError:
-    gudhi = None  # type: ignore
+    gudhi = None
 
 # Try importing jaxlie
 try:
@@ -54,7 +54,7 @@ try:
 
     HAS_JAXLIE = True
 except ImportError:
-    jaxlie = None  # type: ignore
+    jaxlie = None
 
 # Try importing plotly
 try:
@@ -62,7 +62,7 @@ try:
 
     HAS_PLOTLY = True
 except ImportError:
-    plotly = None  # type: ignore
+    plotly = None
 
 
 def require_dependency(dep_name: str) -> None:

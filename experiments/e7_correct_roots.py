@@ -17,16 +17,16 @@ print()
 e7_simple_roots = np.array(
     [
         # Six roots of the form e_i - e_{i+1}
-        [1.0, -1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0],  # α₁ = e₁ - e₂
-        [0.0, 1.0, -1.0, 0.0, 0.0, 0.0, 0.0, 0.0],  # α₂ = e₂ - e₃
-        [0.0, 0.0, 1.0, -1.0, 0.0, 0.0, 0.0, 0.0],  # α₃ = e₃ - e₄
-        [0.0, 0.0, 0.0, 1.0, -1.0, 0.0, 0.0, 0.0],  # α₄ = e₄ - e₅
-        [0.0, 0.0, 0.0, 0.0, 1.0, -1.0, 0.0, 0.0],  # α₅ = e₅ - e₆
-        [0.0, 0.0, 0.0, 0.0, 0.0, 1.0, -1.0, 0.0],  # α₆ = e₆ - e₇
+        [1.0, -1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0],  # alpha_1 = e_1 - e_2
+        [0.0, 1.0, -1.0, 0.0, 0.0, 0.0, 0.0, 0.0],  # alpha_2 = e_2 - e_3
+        [0.0, 0.0, 1.0, -1.0, 0.0, 0.0, 0.0, 0.0],  # alpha_3 = e_3 - e_4
+        [0.0, 0.0, 0.0, 1.0, -1.0, 0.0, 0.0, 0.0],  # alpha_4 = e_4 - e_5
+        [0.0, 0.0, 0.0, 0.0, 1.0, -1.0, 0.0, 0.0],  # alpha_5 = e_5 - e_6
+        [0.0, 0.0, 0.0, 0.0, 0.0, 1.0, -1.0, 0.0],  # alpha_6 = e_6 - e_7
         # One special root (half-integer coordinates)
         # This must sum to 0 and have squared length 2
         # Standard choice: (-1/2, -1/2, -1/2, -1/2, 1/2, 1/2, 1/2, 1/2)
-        [-0.5, -0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5],  # α₇
+        [-0.5, -0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5],  # alpha_7
     ]
 )
 
@@ -38,14 +38,14 @@ all_valid = True
 for i, root in enumerate(e7_simple_roots):
     root_sum = np.sum(root)
     squared_length = np.sum(root**2)
-    print(f"α{i + 1} = {root}")
-    print(f"     Sum: {root_sum:.6f}, ||α||² = {squared_length:.6f}")
+    print(f"alpha{i + 1} = {root}")
+    print(f"     Sum: {root_sum:.6f}, ||alpha||^2 = {squared_length:.6f}")
 
     if abs(root_sum) > 1e-10:
-        print(f"     ERROR: Root doesn't sum to 0!")
+        print("     ERROR: Root doesn't sum to 0!")
         all_valid = False
     if abs(squared_length - 2.0) > 1e-10:
-        print(f"     ERROR: Root doesn't have squared length 2!")
+        print("     ERROR: Root doesn't have squared length 2!")
         all_valid = False
 
 print()
@@ -77,12 +77,12 @@ if all_valid:
         for j in range(i + 1, n):
             if abs(cartan[i, j] + 1.0) < 1e-10:
                 connections.append((i + 1, j + 1))
-                print(f"  α{i + 1} — α{j + 1}")
+                print(f"  alpha{i + 1} -- alpha{j + 1}")
 
     # Expected E7 Dynkin diagram:
-    #   α₁ — α₂ — α₃ — α₄ — α₅ — α₆
+    #   alpha_1 -- alpha_2 -- alpha_3 -- alpha_4 -- alpha_5 -- alpha_6
     #                   |
-    #                  α₇
+    #                  alpha_7
     # Connections: (1,2), (2,3), (3,4), (4,5), (4,7), (5,6)
 
     expected = [(1, 2), (2, 3), (3, 4), (4, 5), (4, 7), (5, 6)]
@@ -99,27 +99,27 @@ print()
 
 # The CORRECT E7 simple roots for the proper Dynkin diagram:
 # E7 Dynkin diagram:
-#   α₁ — α₃ — α₄ — α₅ — α₆ — α₇
+#   alpha_1 -- alpha_3 -- alpha_4 -- alpha_5 -- alpha_6 -- alpha_7
 #        |
-#       α₂
+#       alpha_2
 
 # We need to reorder/modify to get the correct branching
 e7_correct = np.array(
     [
-        # α₁ connects only to α₃
-        [-0.5, -0.5, -0.5, -0.5, -0.5, 0.5, 0.5, 0.5],  # α₁
-        # α₂ connects only to α₃ (branch)
-        [1.0, 1.0, 0.0, 0.0, 0.0, 0.0, -1.0, -1.0],  # α₂
-        # α₃ connects to α₁, α₂, α₄ (central node)
-        [0.0, -1.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0],  # α₃
-        # α₄ connects to α₃, α₅
-        [0.0, 0.0, -1.0, 1.0, 0.0, 0.0, 0.0, 0.0],  # α₄
-        # α₅ connects to α₄, α₆
-        [0.0, 0.0, 0.0, -1.0, 1.0, 0.0, 0.0, 0.0],  # α₅
-        # α₆ connects to α₅, α₇
-        [0.0, 0.0, 0.0, 0.0, -1.0, 1.0, 0.0, 0.0],  # α₆
-        # α₇ connects only to α₆
-        [0.0, 0.0, 0.0, 0.0, 0.0, -1.0, 1.0, 0.0],  # α₇
+        # alpha_1 connects only to alpha_3
+        [-0.5, -0.5, -0.5, -0.5, -0.5, 0.5, 0.5, 0.5],  # alpha_1
+        # alpha_2 connects only to alpha_3 (branch)
+        [1.0, 1.0, 0.0, 0.0, 0.0, 0.0, -1.0, -1.0],  # alpha_2
+        # alpha_3 connects to alpha_1, alpha_2, alpha_4 (central node)
+        [0.0, -1.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0],  # alpha_3
+        # alpha_4 connects to alpha_3, alpha_5
+        [0.0, 0.0, -1.0, 1.0, 0.0, 0.0, 0.0, 0.0],  # alpha_4
+        # alpha_5 connects to alpha_4, alpha_6
+        [0.0, 0.0, 0.0, -1.0, 1.0, 0.0, 0.0, 0.0],  # alpha_5
+        # alpha_6 connects to alpha_5, alpha_7
+        [0.0, 0.0, 0.0, 0.0, -1.0, 1.0, 0.0, 0.0],  # alpha_6
+        # alpha_7 connects only to alpha_6
+        [0.0, 0.0, 0.0, 0.0, 0.0, -1.0, 1.0, 0.0],  # alpha_7
     ]
 )
 
@@ -131,14 +131,14 @@ all_valid = True
 for i, root in enumerate(e7_correct):
     root_sum = np.sum(root)
     squared_length = np.sum(root**2)
-    print(f"α{i + 1} = {root}")
-    print(f"     Sum: {root_sum:.6f}, ||α||² = {squared_length:.6f}")
+    print(f"alpha{i + 1} = {root}")
+    print(f"     Sum: {root_sum:.6f}, ||alpha||^2 = {squared_length:.6f}")
 
     if abs(root_sum) > 1e-10:
-        print(f"     ERROR: Root doesn't sum to 0!")
+        print("     ERROR: Root doesn't sum to 0!")
         all_valid = False
     if abs(squared_length - 2.0) > 1e-10:
-        print(f"     ERROR: Root doesn't have squared length 2!")
+        print("     ERROR: Root doesn't have squared length 2!")
         all_valid = False
 
 print()
@@ -165,7 +165,7 @@ if all_valid:
         print("=" * 80)
         print("\nThe correct E7 simple roots are:")
         for i, root in enumerate(e7_correct):
-            print(f"  α{i + 1} = {root}")
+            print(f"  alpha{i + 1} = {root}")
     else:
         print(f"[FAILED] PROBLEM: Determinant = {det}, expected 1")
 
@@ -176,12 +176,12 @@ if all_valid:
         for j in range(i + 1, n):
             if abs(cartan[i, j] + 1.0) < 1e-10:
                 connections.append((i + 1, j + 1))
-                print(f"  α{i + 1} — α{j + 1}")
+                print(f"  alpha{i + 1} -- alpha{j + 1}")
 
     print("\nExpected E7 Dynkin diagram:")
-    print("  α₁ — α₃ — α₄ — α₅ — α₆ — α₇")
+    print("  alpha_1 -- alpha_3 -- alpha_4 -- alpha_5 -- alpha_6 -- alpha_7")
     print("       |")
-    print("      α₂")
+    print("      alpha_2")
 
     expected = [(1, 3), (2, 3), (3, 4), (4, 5), (5, 6), (6, 7)]
     print(f"\nExpected connections: {expected}")

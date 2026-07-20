@@ -1,0 +1,967 @@
+Imperial/TP/2006/mjd/5
+CERN-PH-TH/2006-194
+hep-th/0609227
+
+E7 and the tripartite entanglement of seven qubits
+
+arXiv:quant-ph/0609227v4 9 Oct 2007
+
+M. J. Duff 1† and S. Ferrara2‡
+†
+
+The Blackett Laboratory, Imperial College London,
+Prince Consort Road, London SW7 2AZ
+and
+‡
+Physics Department,Theory Unit, CERN, CH1211, Geneva23, Switzerland
+ABSTRACT
+In quantum information theory, it is well known that the tripartite entanglement of three
+qubits is described by the group [SL(2, C)]3 and that the entanglement measure is given by
+Cayley’s hyperdeterminant. This has provided an analogy with certain N = 2 supersymmetric black holes in string theory, whose entropy is also given by the hyperdeterminant.
+In this paper, we extend the analogy to N = 8. We propose that a particular tripartite
+entanglement of seven qubits, encoded in the Fano plane, is described by the exceptional
+group E7 (C) and that the entanglement measure is given by Cartan’s quartic E7 invariant.
+
+1
+2
+
+m.duff@imperial.ac.uk
+Sergio.Ferrara@cern.ch
+
+1
+
+Cayley’s hyperdeterminant, black holes and qubits
+
+In 1845 Cayley [1] generalized the determinant of a 2×2 matrix aAB to the hyperdeterminant
+of a 2 × 2 × 2 hypermatrix aABD
+1
+Det a = − ǫA1 A2 ǫB1 B2 ǫD1 D4 ǫA3 A4 ǫB3 B4 ǫD2 D3 aA1 B1 D1 aA2 B2 D2 aA3 B3 D3 aA4 B4 D4
+2
+= a2000 a2111 + a2001 a2110 + a2010 a2101 + a2100 a2011
+−2(a000 a001 a110 a111 + a000 a010 a101 a111
++a000 a100 a011 a111 + a001 a010 a101 a110
++a001 a100 a011 a110 + a010 a100 a011 a101 )
++4(a000 a011 a101 a110 + a001 a010 a100 a111 )
+
+(1.1)
+
+The hyperdeterminant vanishes iff the following system of equations in six unknowns pA , q B , r D
+has a nontrivial solution, not allowing any of the pairs to be both zero:
+aABD pA q B = 0
+aABD pA r D = 0
+aABD q B r D = 0
+
+(1.2)
+
+For our purposes, the important properties of the hyperdeterminant are that it is a quartic
+invariant under [SL(2)]3 and under a triality that interchanges A, B and D. These properties
+are valid whether the aABD are complex, real or integer.
+The hyperdeterminant makes it appearance in quantum information theory [2]. Let
+the three qubit system ABD (Alice, Bob and Daisy) be in a pure state |Ψi, and let the
+components of |Ψi in the standard basis be aABD :
+|Ψi = aABD |ABDi
+
+(1.3)
+
+Then the three way entanglement of the three qubits A, B and D is given by the 3-tangle
+[3]
+τ3 (ABD) = 4|Det aABD |.
+(1.4)
+However, one of us recently found another physical application of this hyperdeterminant
+[4] by associating the eight components of aABD with the four electric and four magnetic
+charges of the STU black hole in four-dimensional string theory [5] and showing that its
+entropy [6] is given by
+q
+S = π |Det aABD |.
+(1.5)
+As far as we can tell [4], the appearance of the Cayley hyperdeterminant in these two different contexts of stringy black hole entropy (where the aABD are integers and the symmetry
+is [SL(2, Z)]3 ) and three-qubit quantum entanglement (where the aABD are complex numbers and the symmetry is [SL(2, C]3 ) is a purely mathematical coincidence. Nevertheless,
+
+2
+
+it has already provided fascinating new insights [7, 8] into the connections between strings,
+black holes, and quantum information3 .
+The black holes described by Cayley’s hyperdeterminant are those of N = 2 supergravity
+coupled to three vector multiplets, where the symmetry is [SL(2, Z)]3 . One might therefore
+ask whether the black hole/information theory correspondence could be generalized. There
+are three generalizations we might consider:
+1) N = 2 supergravity coupled to l vector multiplets where the symmetry is SL(2, Z) ×
+SO(l − 1, 2, Z) and the black holes carry charges belonging to the (2, l + 1) representation
+(l + 1 electric plus l + 1 magnetic).
+2) N = 4 supergravity coupled to m vector multiplets where the symmetry is SL(2, Z) ×
+SO(6, m, Z) where the black holes carry charges belonging to the (2, 6 + m) representation
+(m + 6 electric plus m + 6 magnetic).
+3) N = 8 supergravity where the symmetry is the non-compact exceptional group
+E7(7) (Z) and the black holes carry charges belonging to the fundamental 56-dimensional
+representation (28 electric plus 28 magnetic).
+In all three case there exit quartic invariants akin to Cayley’s hyperdeterminant whose
+square root yields the corresponding black hole entropy. If there is to be a quantum information theoretic interpretation, however, it cannot just be random entanglement of more
+qubits, because the general n qubit entanglement is described by the group [SL(2, C)]n ,
+which, even after replacing Z by C, differs from the above symmetries (except when n = 3,
+which correspond to case (1) above with l = 3, the case we already know.).
+In this paper we focus on the N = 8 case and, noting that
+E7(7) (Z) ⊃ [SL(2, Z)]7
+
+(1.6)
+
+E7 (C) ⊃ [SL(2, C)]7 ,
+
+(1.7)
+
+and
+we show that the corresponding system in quantum information theory is that of seven
+qubits (Alice, Bob, Charlie, Daisy, Emma, Fred and George). However, the larger symmetry
+requires that they undergo at most tripartite entanglement of a very specific kind. The
+entanglement measure will be given by the quartic Cartan E7 (C) invariant [11, 12, 13,
+14]. The entanglement may be represented by the Fano plane [10] which also provides the
+multiplication table of the octonions4 .
+The N = 4 case (2) with m = 6 is a subsector of the N = 8 case (3) and can be shown
+also to correspond to particular tripartite entanglement of seven qubits. The familiar N = 2
+case with l = 3 is also a subsector, but with three qubits.
+
+3
+
+A third application [9], not considered in this paper, is the Nambu-Goto string whose action is also given
+p
+|Det aABD | in spacetime signature (2, 2).
+4
+We are grateful to Murat Gunaydin for pointing out the connection between our entanglement diagram,
+Figure 1, and the multiplication table of the octonions. This result was announced by one of us (MJD) at
+the Supergravity at 30 Conference, Paris, 19/10/06.
+by
+
+3
+
+2
+
+Decomposition of E7(7)
+
+Consider the decomposition of the fundamental 56-dimensional representation of E7(7) under
+its maximal subgroup
+E7(7) ⊃ SL(2)A × SO(6, 6)
+Further decomposing SO(6, 6),
+
+56 → (2, 12) + (1, 32)
+
+(2.1)
+
+SL(2)A × SO(6, 6) ⊃ SL(2)A × SL(2)B × SL(2)D × SO(4, 4)
+(2, 12) + (1, 32) → (2, 2, 2, 1)
+
++(2, 1, 1, 8v ) + (1, 2, 1, 8s) + (1, 1, 2, 8c)
+
+(2.2)
+
+Further decomposing SO(4, 4),
+SL(2)A × SL(2)B × SL(2)D × SO(4, 4) ⊃ SL(2)A × SL(2)B × SL(2)D
+×SO(2, 2) × SO(2, 2)
+
+(2, 2, 2, 1) + (2, 1, 1, 8v ) + (1, 2, 1, 8s) + (1, 1, 2, 8c) →
+(2, 2, 2, 1, 1) + (2, 1, 1, 4, 1) + (2, 1, 1, 1, 4)
+
++(1, 2, 1, 2, 2) + (1, 2, 1, 2, 2) + (1, 1, 2, 2, 2) + (1, 1, 2, 2, 2)
+
+(2.3)
+
+Finally, further decomposing each SO(2, 2)
+SL(2)A × SL(2)B × SL(2)D × SO(2, 2) × SO(2, 2) ⊃
+
+SL(2)A × SL(2)B × SL(2)D × SL(2)C × SL(2)G × SL(2)F × SL(2)E
+(2, 2, 2, 1, 1) + (2, 1, 1, 4, 1) + (2, 1, 1, 1, 4)
+
++(1, 2, 1, 2, 2) + (1, 2, 1, 2, 2) + (1, 1, 2, 2, 2) + (1, 1, 2, 2, 2) →
+(2, 2, 2, 1, 1, 1, 1) + (2, 1, 1, 2, 2, 1, 1) + (2, 1, 1, 1, 1, 2, 2)+
+
+(1, 2, 1, 2, 1, 1, 2) + (1, 2, 1, 1, 2, 2, 1) + (1, 1, 2, 2, 1, 2, 1) + (1, 1, 2, 1, 2, 1, 2)
+In summary,
+E7(7) ⊃ SL(2)A × SL(2)B × SL(2)C × SL(2)D × SL(2)E × SL(2)F × SL(2)G
+
+(2.4)
+
+and the 56 decomposes as
+
+56 →
+
+(2, 2, 1, 2, 1, 1, 1)
++(1, 2, 2, 1, 2, 1, 1)
++(1, 1, 2, 2, 1, 2, 1)
++(1, 1, 1, 2, 2, 1, 2)
++(2, 1, 1, 1, 2, 2, 1)
++(1, 2, 1, 1, 1, 2, 2)
++(2, 1, 2, 1, 1, 1, 2)
+
+(2.5)
+
+An analogous decomposition holds for
+E7 (C) ⊃ [SL(2, C)]7 .
+4
+
+(2.6)
+
+3
+
+Tripartite entanglement of 7 qubits
+
+We have seen that in the case of three qubits, the tripartite entanglement is described by
+[SL(2, C)]3 and that the entanglement measure is given by Cayley’s hyperdeterminant. Now
+we consider seven qubits (Alice, Bob, Charlie, Daisy, Emma, Fred and George) but where
+Alice has tripartite entanglement not only with Bob/Daisy but also with Emma/Fred and
+also with George/Charlie, and similarly for the other six individuals. So, in fact, each person
+has tripartite entanglement with each of the remaining three couples:
+|Ψi =
+aABD |ABDi
++bBCE |BCEi
++cCDF |CDF i
++dDEG |DEGi
++eEF A |EF Ai
++fF GB |F GBi
++gGAC |GACi
+
+(3.1)
+
+Note that:
+1) Any pair of states has an individual in common
+2) Each individual is excluded from four out of the seven states
+3) Two given individuals are excluded from two out of the seven states
+4) Three given individuals are never excluded
+The entanglement may be represented by a heptagon with vertices A,B,C,D,E,F,G and
+seven triangles ABD, BCE, CDF, DEG, EFA, FGB, and GAC. See Figure 1. Alternatively,
+we can use the Fano plane. See Figure 2. The Fano plane corresponds to the multiplication
+table of the octonions as may be seen from the description of the state |Ψi given in Table 1.
+Each of the seven states transforms as a (2, 2, 2) under three of the SL(2)’s and are singlets
+under the remaining four. Note that from (2.2) we see that the A-B-D triality of section 1
+is linked with the 8v − 8s − 8c triality of the SO(4, 4). Individually, therefore, the tripartite
+entanglement of each of the seven states is given by Cayley’s hyperdeterminant. Taken
+together however, we see from (2.5) that they transform as a complex 56 of E7 (C). Their
+tripartite entanglement must be is given by an expression that is quartic in the coefficients
+a, b, c, d, e, f, g and invariant under E7 (C). The unique possibility is the Cartan invariant I4 ,
+and so the 3-tangle is given by
+τ3 (ABCDEF G) = 4|I4 |
+If the wave-function (3.1) is normalized, then 0 ≤ τ3 (ABCDEF G) ≤ 1.
+
+5
+
+(3.2)
+
+E
+
+D
+
+C
+
+F
+
+G
+
+B
+
+A
+
+Figure 1: The E7 entanglement diagram. Each of the seven vertices A,B,C,D,E,F,G represents a qubit and each of the seven triangles ABD, BCE, CDF, DEG, EFA, FGB, GAC
+describes a tripartite entanglement.
+
+4
+
+Cartan’s E7(7) invariant
+
+The Cremmer-Julia [12] form of the Cartan E7(7) invariant may be written as
+I4 = Tr(Z Z̄)2 − 14 (Tr Z Z̄)2 + 4(Pf Z + Pf Z̄ ) ,
+
+(4.1)
+
+and the Cartan form [11] may be written as
+
+Here
+
+I4 = −Tr( x y)2 + 41 (Tr x y)2 − 4(Pf x + Pf y ) .
+
+(4.2)
+
+1
+ZAB = − √ (xab + iyab )(Γab )AB
+4 2
+
+(4.3)
+
+and
+
+√
+
+2
+ZAB (ΓAB )ab
+(4.4)
+4
+The matrices of the SO(8) algebra are (Γab )AB where (a b) are the 8 vector indices and (A, B)
+are the 8 spinor indices. The (Γab )AB matrices can be considered also as (ΓAB )ab matrices due
+to equivalence of the vector and spinor representations of the SO(8) Lie algebra. The exact
+relation between the Cartan invariant in (4.2) and Cremmer-Julia invariant [12] in (4.1) was
+established in [15, 16]. The quartic invariant I4 of E7(7) is also related to the octonionic
+Jordan algebra J3O [14].
+In the stringy black hole context, ZAB is the central charge matrix and (x, y) are the
+quantized charges of the black hole (28 electric and 28 magnetic). The relation between the
+entropy of stringy black holes and the Cartan-Cremmer-Julia E7(7) invariant was established
+ab
+
+x + iyab = −
+
+6
+
+C
+
+B
+
+G
+D
+
+E
+
+A
+
+F
+
+Figure 2: The Fano plane has seven points, representing the seven qubits, and seven lines
+(the circle counts as a line) with three points on every line, representing the tripartite
+entanglement, and three lines through every point.
+in [13]. The central charge matrix ZAB can be brought to the canonical basis for the skewsymmetric matrix using an SU(8) transformation:
+z1
+ 0
+
+Zab = 
+ 0
+0
+
+
+0
+z2
+0
+0
+
+0
+0
+z3
+0
+
+0
+
+
+0
+0 1
+
+⊗
+0
+−1 0
+z4
+
+
+(4.5)
+
+where zi = ρi eiϕi are complex. In this way the number of entries is reduced from 56 to 8. In a
+systematic treatment in [17], the meaning of these parameters was clarified. From 4 complex
+values of zi = ρi eiϕi one can remove 3 phases by an SU(8) rotation, but the overall phase
+cannot be removed; it is related to an extra parameter in the class of black hole solutions
+[18, 19]. In this basis, the quartic invariant takes the form [13]
+I4 =
+
+X
+i
+
+|zi |4 − 2
+
+X
+i<j
+
+|zi |2 |zj |2 + 4(z1 z2 z3 z4 + z̄1 z̄2 z̄3 z̄4 )
+
+= (ρ1 + ρ2 + ρ3 + ρ4 )(ρ1 + ρ2 − ρ3 − ρ4 )(ρ1 − ρ2 + ρ3 − ρ4 )(ρ1 − ρ2 − ρ3 + ρ4 )
++8ρ1 ρ2 ρ3 ρ4 (cos ϕ − 1)
+
+(4.6)
+
+Therefore a 5-parameter solution is called a generating solution for other black holes in N=8
+supergravity/M-theory. The expression for their entropy is always given by
+q
+
+S = π |I4 |
+
+(4.7)
+
+for some subset of 5 of the 8 parameters mentioned above. Recently a new class of solutions
+was discovered, describing black rings. The maximal number of parameters for the known
+7
+
+A
+A
+
+B
+
+C
+
+D
+
+E
+
+F
+
+D G -B F -E -C
+
+B -D
+
+E
+
+A -C G -F
+
+C -G -E
+
+F
+
+D B -A -F
+
+B -D A
+G C -E
+
+E -F C -B -G
+
+A D
+
+F E -G D -C -A
+G C
+
+G
+
+B
+
+F -A E -D -B
+
+Table 1: The entanglement of the state |Ψi coincides with the multiplication table of the
+octonions.
+
+solutions is 7. The entropy of black ring solutions found so far was identified in [20, 21] with
+the expression (4.7) for a subset of 7 out of 8 parameters mentioned above.
+Kallosh and Linde have shown that I4 depending on 4 complex eigenvalues can be represented as Cayley’s hyperdeterminant of a hypermatrix aABD . To see this, we that in x, y
+basis only the SO(8) symmetry is manifest, which means that every term in (4.2) is invariant
+only under SO(8) symmetry. However, it was proved in [11] and [12] that the sum of all
+terms in (4.2) is invariant under the full SU(8) symmetry, which acts as follows
+δ(xab ± iyab ) = (2Λ[a [c δ b] d] ± iΣabcd )(xcd ∓ iycd) .
+
+(4.8)
+
+The total number of parameters is 63, where 28 are from the manifest SO(8) and 35 from the
+antisymmetric self-dual Σabcd = ∗ Σabcd . Thus one can use the SU(8) transformation of the
+complex matrix xab + iyab and bring it to the canonical form with some complex eigenvalues
+λI , I = 1, 2, 3, 4. The value of the quartic invariant (4.2) will not change.
+
+
+
+
+0 λ1
+0
+0
+0
+0
+0
+0
+
+0
+0
+0
+0
+0
+0 
+
+ −λ1 0
+
+
+
+ 0
+0
+0
+λ
+0
+0
+0
+0
+2
+
+
+
+ 0
+0
+−λ
+0
+0
+0
+0
+0
+
+
+2
+
+(xab + iyab )can = 
+ 0
+0
+0
+0
+0 λ3
+0
+0 
+
+
+ 0
+0
+0
+0 −λ3 0
+0
+0 
+
+
+
+
+0
+0
+0
+0
+0
+0 λ4 
+ 0
+0
+0
+0
+0
+0
+0 −λ4 0
+
+(4.9)
+
+The relation between the complex coefficients λI , the parameters xij and ykl , the matrix
+aABD and the black hole charges pi and qk [4] is given by the following dictionary:
+λ1 = x12 + iy12 = a111 + ia000 = −q0 − ip0
+8
+
+λ2 = x34 + iy34 = a001 + ia110 = −p1 + iq1
+λ3 = x56 + iy56 = a010 + ia101 = −p2 + iq2
+λ4 = x78 + iy78 = a100 + ia011 = p3 − iq3
+
+(4.10)
+
+If we now write the quartic E7(7) Cartan invariant in the canonical basis (xij , yij ), i, j =
+1, ..., 8:
+I4
+
+= −(x12 y12 + x34 y34 + x56 y56 + x78 y78 )2 − 4(x12 x34 x56 x78 + y12 y34 y56 y78 )
++4(x12 x34 y12 y34 + x12 x56 y12 y56 + x34 x56 y34 y56 + x12 x78 y12 y78 + x34 x78 y34 y78
++x56 x78 y56 y78 ) .
+(4.11)
+
+then it may now be compared to Cayley’s hyperdeterminant (1.1). We find
+I4 = −Det a
+
+(4.12)
+
+The above discussion of E7(7) also applies, mutatis mutandis, to E7 (C).
+
+5
+
+Decomposition of I4
+
+To understand better the entanglement we note that, as a result of (2.5), Cartan’s invariant
+contains not one Cayley hyperdeterminant but seven! It may be written as the sum of seven
+terms each of which is invariant under [SL(2)]3 plus cross terms. To see this, denote a 2 in
+one of the seven entries in (2.5) by A, B, C, D, E, F, G. So we may rewrite (2.5) as
+56 = (ABD) + (BCE) + (CDF ) + (DEG) + (EF A) + (F GB) + (GAC)
+
+(5.1)
+
+or symbolically
+56 = a + b + c + d + e + f + g
+
+(5.2)
+
+Then I4 is the singlet in 56 × 56 × 56 × 56:
+
+J4 ∼ a4 + b4 + c4 + d4 + e4 + f 4 + g 4 +
+
+2[a2 b2 + b2 c2 + c2 d2 + d2 e2 + e2 f 2 + f 2 g 2 + g 2 a2 +
+a2 c2 + b2 d2 + c2 e2 + d2 f 2 + e2 g 2 + f 2 a2 + g 2 b2 +
+a2 d2 + b2 e2 + c2 f 2 + d2 g 2 + e2 a2 + f 2 b2 + g 2 c2 ]
++8[bcdf + cdeg + def a + ef gb + f gac + gabd + abce]
+
+(5.3)
+
+where products like
+a4 = (ABD)(ABD)(ABD)(ABD)
+= ǫA1 A2 ǫB1 B2 ǫD1 D4 ǫA3 A4 ǫB3 B4 ǫD2 D3 aA1 B1 D1 aA2 B2 D2 aA3 B3 D3 aA4 B4 D4
+
+(5.4)
+
+exclude four individuals (here Charlie, Emma, Fred and George), products like
+a2 f 2 = (ABD)(ABD)(F GB)(F GB)
+= ǫA1 A2 ǫB1 B2 ǫD1 D4 ǫF3 F4 ǫG3 G4 ǫD2 B3 aA1 B1 D1 aA2 B2 D2 fF3 G3 B3 fF4 G4 B4
+
+(5.5)
+
+exclude two individuals (here Charlie and Emma), and products like
+abce = (ABD)(BCE)(CDF )(EF A)
+= ǫA1 A4 ǫB1 B2 ǫC2 C3 ǫD1 D3 ǫE2 E4 ǫF3 F4 aA1 B1 D1 bB2 C2 E2 cC3 D3 F3 eE4 F4 A4
+exclude one individual (here George).
+9
+
+(5.6)
+
+6
+
+The black hole analogy
+
+In the STU stringy black hole context [4, 5, 6, 7] the aABC are integers (corresponding to
+quantized charges) and hence the symmetry group is [SL(2, Z)]3 rather than [SL(2, C)]3 .
+However, as discussed by Levay [8], there is a branch of quantum information theory which
+concerns itself with real qubits, called rebits, for which the aABC are real. (One difference
+remains, however: one may normalize the wave function, whereas for black holes there is no
+such restriction on the charges aABC .) It turns out that there are three reality classes which
+can be characterized by the hyperdeterminant
+1) Det a < 0
+2) Det a = 0
+3) Det a > 0
+
+(6.1)
+
+Case (1) corresponds to the non-separable or GHZ class [23], for example,
+1
+|Ψi = (−|000i + |011i + |101i + |110i)
+2
+
+(6.2)
+
+Case (2) corresponds to the separable (A-B-C, A-BC, B-CA, C-AB) and W classes, for
+example
+1
+|Ψi = √ (|100i + |010i + |001i)
+(6.3)
+3
+In the string/supergravity interpretation [4], cases (1) and (2) were shown to correspond to
+BPS black holes, for which half of the supersymmetry is preserved. Case (1) has non-zero
+horizon area and entropy (“large” black holes), and case (2) to vanishing horizon area and
+entropy (“small” black holes), at least at the semi-classical level. However, small black holes
+may acquire a non-zero entropy through higher order quantum effects. This entropy also has
+a quantum information interpretation involving bipartite entanglement of the three qubits
+[7].
+Case (3) is also GHZ, for example the above GHZ state (6.2) with a sign flip
+1
+|Ψi = (|000i + |011i + |101i + |110i)
+2
+
+(6.4)
+
+In the string/supergravity interpretation, case (3) corresponds to non-BPS black holes [7].
+With four non-zero charges (q0 , p1 , p2 , p3 ) in (4.10), for example, an extreme but non-BPS
+black hole [24] may be obtained by flipping the sign [25] of one of the charges. The canonical
+GHZ state
+1
+1
+|Ψi = √ |111i + √ |000i
+(6.5)
+2
+2
+also belongs to case (3).
+In the N = 8 theory, “large” and “small” black holes are classified by the sign of I4 :
+1) I4 > 0
+2) I4 = 0
+10
+
+3) I4 < 0
+
+(6.6)
+
+Once again, non-zero I4 corresponds to large black holes, which are BPS for I4 > 0 and
+non-BPS for I4 < 0, and vanishing I4 to small black holes. However, in contrast to N = 2,
+case (1) requires that only 1/8 of the supersymmetry is preserved, while we may have 1/8,
+1/4 or 1/2 for case (2).
+It is worth noting that the charge orbits corresponding to non-zero I4 are associated with
+the following cosets:
+E7(7)
+(6.7)
+E6(2)
+and
+
+E7(7)
+E6(6)
+
+(6.8)
+
+The large black hole solutions can be found [26] by solving the N = 8 classical attractor
+equations [22] when at the attractor value the ZAB matrix, in normal form, becomes
+Zǫ
+ 0
+
+ZAB = 
+ 0
+0
+
+0
+0
+0
+0
+
+0
+0
+0
+0
+
+0
+0 
+
+
+0 
+0
+
+ǫ
+ 0
+
+ZAB = eiπ/4 |Z| 
+ 0
+0
+
+0
+ǫ
+0
+0
+
+0
+0
+ǫ
+0
+
+
+
+
+
+(6.9)
+
+for positive I4 and
+
+
+0
+0 
+
+
+0 
+ǫ
+
+
+(6.10)
+
+for negative I4 . These values exhibit the maximal compact symmetries SU(6) × SU(2) and
+USp(8) for the positive and negative I4 , respectively.
+If the phase in (4.6) vanishes (which is the case if the configuration preserves at least 1/4
+supersymmetry [17]), I4 becomes
+I4 = λ 1 λ 2 λ 3 λ 4 ,
+(6.11)
+where we have defined λi by
+λ1 = ρ1 + ρ2 + ρ3 + ρ4
+λ2 = ρ1 + ρ2 − ρ3 − ρ4
+λ3 = ρ1 − ρ2 + ρ3 − ρ4
+λ4 = ρ1 − ρ2 − ρ3 + ρ4
+
+(6.12)
+
+and we order the λi so that λ1 ≥ λ2 ≥ λ3 ≥ |λ4 |. The charge orbits for the small black holes
+depend on the number of unbroken supersymmetries or the number of vanishing eigenvalues.
+The orbit is [14, 17, 27]
+E7(7)
+(6.13)
+H1,2,3
+where
+H1 = F4(4) ×T26
+
+λ1 , λ2 , λ3 6= 0, λ4 = 0 (1/8 BP S)
+11
+
+H2 = SO(5, 6) ×(T32 × T1 )
+H3 = E6(6) ×T27
+
+λ1 , λ2 6= 0, λ3 , λ4 = 0 (1/4 BP S)
+λ1 6= 0, λ2 , λ3 , λ4 = 0 (1/2 BP S)
+
+(6.14)
+
+For N = 8, as for N = 2, the large black holes correspond to the two classes of GHZ-type
+(entangled) states and small black holes to the separable or W class.
+
+7
+
+Subsectors
+
+Having understood the analogy between N = 8 black holes and the tripartite entanglement
+of 7 qubits using E7(7) , we may now find the analogy in the N = 4 case using SL(2)×SO(6, 6)
+and the N = 2 case using SL(2) × SO(2, 2).
+For N = 4, as may be seen from (2.2), we still have an [SL(2)]7 subgroup but now there
+are only 24 states
+|Ψi = aABD |ABDi + eEF A |EF Ai + gGAC |GACi
+
+(7.1)
+
+So only Alice talks to all the others. This is described by just those three lines passing
+through A in the Fano plane. Then the equations analagous to (5.1) and (5.2) are
+(2, 12) = (ABD) + (EF A) + (GAC) = a + e + g
+
+(7.2)
+
+and the corresponding quartic invariant, I4 , reduces to the singlet in (2, 12)×(2, 12)×(2, 12)×
+(2, 12).
+I4 ∼ a4 + e4 + g 4 + 2[e2 g 2 + g 2 a2 + a2 e2 ]
+(7.3)
+If we identify the 24 numbers (aABD , eEF A , gGAC ) with (P µ , Qν ) with µ, ν = 0, . . . 11, this
+becomes [5, 18, 19]
+I4 = P 2 Q2 − (P.Q)2
+(7.4)
+
+which is manifestly invarinant under SL(2) × SO(6, 6).
+For N = 2, as may be seen from (2.2), we only an [SL(2)]3 subgroup and there are only
+8 states
+|Ψi = aABD |ABDi
+(7.5)
+This is described by just the ABD line in the Fano plane. This is simply the usual tripartite
+entanglement, for which
+(2, 2, 2) = (ABD) = a
+(7.6)
+and the corresponding quartic invariant
+I4 ∼ a4
+
+(7.7)
+
+I4 = −Deta
+
+(7.8)
+
+is just Cayley’s hyperdeterminant
+
+12
+
+8
+
+Conclusions
+
+We note that the 56-dimensional Hilbert space given in (2.5) and (3.1) is not a subspace of
+the usual 27 -dimensional seven-qubit Hilbert space given by (2, 2, 2, 2, 2, 2, 2), but rather a
+direct sum of seven 23 -dimensional three-qubit Hilbert spaces (2, 2, 2). This is however, a
+subspace of the 37 -dimensional seven-qutrit Hilbert space given by (3, 3, 3, 3, 3, 3, 3). Under
+[SL(3)]7 → [SL(2)]7
+
+(8.1)
+
+we have the decomposition
+(3, 3, 3, 3, 3, 3, 3) →
+1 term like (2, 2, 2, 2, 2, 2, 2)
+7 terms like (2, 2, 2, 2, 2, 2, 1)
+21 terms like (2, 2, 2, 2, 2, 1, 1)
+35 terms like (2, 2, 2, 2, 1, 1, 1)
+35 terms like (2, 2, 2, 1, 1, 1, 1)
+21 terms like (2, 2, 1, 1, 1, 1, 1)
+7 terms like (2, 1, 1, 1, 1, 1, 1)
+1 term like (1, 1, 1, 1, 1, 1, 1)
+
+(8.2)
+
+which contains
+(2, 2, 1, 2, 1, 1, 1)
++(1, 2, 2, 1, 2, 1, 1)
++ (1, 1, 1, 2, 2, 1, 2)
++(2, 1, 1, 1, 2, 2, 1)
++(1, 2, 1, 1, 1, 2, 2)
++(2, 1, 2, 1, 1, 1, 2)
+
+(8.3)
+
+So the Fano plane entanglement we have described fits within conventional quantum information theory.
+The Fano plane also finds application in switching networks that can connect any phone
+to any other phone. It is the 3-switching network for 7 numbers. However there also exists a
+4-switching network for 13 numbers, a 5-switching network for 21 numbers, and generally an
+(n + 1)-switching network for (n2 + n + 1) numbers corresponding to the projective planes of
+order n [28]. It would be worthwhile pursuing the corresponding quantum bit entanglements.
+Exceptional groups, such as E7(7) , have featured in supergravity, string theory, M-theory
+and other speculative attempts at unification of the fundamental forces. However, it is
+unusual to find an exceptional group appearing in the context of qubit entanglement. It
+would be interesting to see whether it can be subject to experimental test.
+
+13
+
+9
+
+Acknowledgement
+
+Help with the diagrams from Laura Andrianopoli is gratefully acknowledged.
+This work was supported in part by the National Science Foundation under grant number
+PHY-0245337 and PHY-0555605. Any opinions, findings and conclusions or recommendations expressed in this material are those of the authors and do not necessarily reflect the
+views of the National Science Foundation. The work of S.F. has been supported in part
+by the European Community Human Potential Program under contract MRTN-CT-2004005104 Constituents, fundamental forces and symmetries of the universe, in association with
+INFN Frascati National Laboratories and by the D.O.E grant DE-FG03-91ER40662, Task C.
+The work of MJD is supported in part by PPARC under rolling grant PPA/G/O/2002/00474,
+PP/D50744X/1.
+
+10
+
+Note added
+
+Just before the submission of version 2 of this paper to the arXiv, an interesting paper by
+Levay [29] appeared, which also describes the entanglement in terms of the Fano plane.
+
+References
+[1] A. Cayley, “On the theory of linear transformations,” Camb. Math. J. 4 193-209,1845.
+[2] A. Miyake and M. Wadati, “Multipartite entanglement and hyperdeterminants,”
+[arXiv:quant-ph/0212146].
+[3] V. Coffman, J. Kundu and W. Wooters, “Distributed entanglement,” Phys. Rev. A61
+(2000) 52306, [arXiv:quant-ph/9907047].
+[4] M. J. Duff, “String triality, black hole entropy and Cayley’s hyperdeterminant,”
+arXiv:hep-th/0601134.
+[5] M. J. Duff, J. T. Liu and J. Rahmfeld, “Four-dimensional string-string-string triality,”
+Nucl. Phys. B 459, 125 (1996) [arXiv:hep-th/9508094].
+[6] K. Behrndt, R. Kallosh, J. Rahmfeld, M. Shmakova and W. K. Wong, “STU black holes
+and string triality,” Phys. Rev. D 54, 6293 (1996) [arXiv:hep-th/9608059].
+[7] R. Kallosh and A. Linde, “Strings, black holes, and quantum information,” arXiv:hepth/0602061.
+[8] P. Levay, “Stringy black holes and the geometry of entanglement,” Phys. Rev. D 74,
+024030 (2006) [arXiv:hep-th/0603136].
+[9] M. J. Duff, “Hidden symmetries of the Nambu-Goto action,” arXiv:hep-th/0602160.
+[10] F. Klein, “Zur Theorie der Liniencomplexe des ersten und zweiten Grades”, Math. Ann.
+2, 198-226, 1870.
+14
+
+[11] E. Cartan, “Oeuvres completes”, (Editions du Centre National de la Recherche Scientifique, Paris, 1984).
+[12] E. Cremmer and B. Julia, “The SO(8) Supergravity,” Nucl. Phys. B 159, 141 (1979).
+[13] R. Kallosh and B. Kol, “E(7) Symmetric Area of the Black Hole Horizon,” Phys. Rev.
+D 53, 5344 (1996) [arXiv:hep-th/9602014].
+[14] S. Ferrara and M. Gunaydin, “Orbits of exceptional groups, duality and BPS states in
+string theory,” Int. J. Mod. Phys. A 13, 2075 (1998) [arXiv:hep-th/9708025].
+[15] V. Balasubramanian, F. Larsen and R. G. Leigh, “Branes at angles and black holes,”
+Phys. Rev. D 57, 3509 (1998) [arXiv:hep-th/9704143];
+[16] M. Gunaydin, K. Koepsell and H. Nicolai, “Conformal and quasiconformal realizations of exceptional Lie groups,” Commun. Math. Phys. 221, 57 (2001) [arXiv:hepth/0008063].
+[17] S. Ferrara and J. M. Maldacena, “Branes, central charges and U-duality invariant BPS
+conditions,” Class. Quant. Grav. 15, 749 (1998) [arXiv:hep-th/9706097].
+[18] M. Cvetic and D. Youm, “All the Static Spherically Symmetric Black Holes of Heterotic
+String on a Six Torus,” Nucl. Phys. B 472, 249 (1996) [arXiv:hep-th/9512127].
+[19] M. Cvetic and A. A. Tseytlin, “Solitonic strings and BPS saturated dyonic black holes,”
+Phys. Rev. D 53, 5619 (1996) [Erratum-ibid. D 55, 3907 (1997)] [arXiv:hep-th/9512031].
+[20] I. Bena and P. Kraus, “Microscopic description of black rings in AdS/CFT,” JHEP
+0412, 070 (2004) [arXiv:hep-th/0408186]
+[21] I. Bena, P. Kraus and N. P. Warner, “Black rings in Taub-NUT,” Phys. Rev. D 72,
+084019 (2005) [arXiv:hep-th/0504142].
+[22] S. Ferrara, R. Kallosh and A. Strominger, “N=2 extremal black holes,” Phys. Rev. D
+52, 5412 (1995) [arXiv:hep-th/9508072].
+[23] D. M. Greenberger, M. Horne and A. Zeilinger, in Bell’s Theorem, Quantum Theory
+and Conceptions of the Universe, ed. M. Kafatos (Kluwer, Dordrecht, 1989)
+[24] M. J. Duff and J. Rahmfeld, “Massive string states as extreme black holes,” Phys. Lett.
+B 345, 441 (1995) [arXiv:hep-th/9406105].
+[25] M. J. Duff and J. Rahmfeld, “Bound States of Black Holes and Other P-branes,” Nucl.
+Phys. B 481, 332 (1996) [arXiv:hep-th/9605085].
+[26] S. Ferrara and R. Kallosh, “On N = 8 attractors,” Phys. Rev. D 73, 125005 (2006)
+[arXiv:hep-th/0603247].
+[27] H. Lu, C. N. Pope and K. S. Stelle, “Multiplet structures of BPS solitons,” Class. Quant.
+Grav. 15, 537 (1998) [arXiv:hep-th/9708109].
+15
+
+[28] E. Pegg Jr, “The Fano Plane”, MAA online,
+http://www.maa.org/editorial/mathgames/mathgames 05 30 06.html
+[29] P. Levay, “Strings, black holes, the tripartite entanglement of seven qubits and the Fano
+plane,” arXiv:hep-th/0610314.
+
+16
+
+

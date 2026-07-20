@@ -1,0 +1,69 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://mathsciencecompendium.local/schemas/registry/document_ocr_run_manifest.schema.json",
+  "title": "DocumentOCRRunManifest",
+  "type": "object",
+  "required": ["schema_version", "recorded_at_utc", "mineru", "tesseract"],
+  "properties": {
+    "schema_version": { "type": "integer", "enum": [1] },
+    "recorded_at_utc": { "type": "string", "format": "date-time" },
+    "mineru": {
+      "type": "object",
+      "required": ["name", "version", "backend", "effort", "formula", "table", "image_analysis", "container", "full_corpus", "forced_ocr_sample"],
+      "properties": {
+        "name": { "type": "string", "minLength": 1 },
+        "version": { "type": "string", "minLength": 1 },
+        "backend": { "type": "string", "minLength": 1 },
+        "effort": { "type": "string", "minLength": 1 },
+        "formula": { "type": "boolean" },
+        "table": { "type": "boolean" },
+        "image_analysis": { "type": "boolean" },
+        "container": {
+          "type": "object",
+          "required": ["image", "image_id", "base_image", "dockerfile_relpath", "dockerfile_sha256", "compose_relpath", "compose_sha256"],
+          "properties": {
+            "image": { "type": "string", "minLength": 1 },
+            "image_id": { "type": "string", "pattern": "^sha256:[a-f0-9]{64}$" },
+            "base_image": { "type": "string", "minLength": 1 },
+            "dockerfile_relpath": { "type": "string", "minLength": 1 },
+            "dockerfile_sha256": { "type": "string", "pattern": "^[a-f0-9]{64}$" },
+            "compose_relpath": { "type": "string", "minLength": 1 },
+            "compose_sha256": { "type": "string", "pattern": "^[a-f0-9]{64}$" }
+          },
+          "additionalProperties": false
+        },
+        "full_corpus": { "$ref": "#/$defs/mineru_run" },
+        "forced_ocr_sample": { "$ref": "#/$defs/mineru_run" }
+      },
+      "additionalProperties": false
+    },
+    "tesseract": {
+      "type": "object",
+      "required": ["engine_version", "dpi", "page_segmentation_mode", "input_relpath", "manifest_relpath", "manifest_sha256", "command"],
+      "properties": {
+        "engine_version": { "type": "string", "minLength": 1 },
+        "dpi": { "type": "integer", "minimum": 1 },
+        "page_segmentation_mode": { "type": "integer", "minimum": 0 },
+        "input_relpath": { "type": "string", "minLength": 1 },
+        "manifest_relpath": { "type": "string", "minLength": 1 },
+        "manifest_sha256": { "type": "string", "pattern": "^[a-f0-9]{64}$" },
+        "command": { "type": "string", "minLength": 1 }
+      },
+      "additionalProperties": false
+    }
+  },
+  "$defs": {
+    "mineru_run": {
+      "type": "object",
+      "required": ["mode", "input_relpath", "output_relpath", "command"],
+      "properties": {
+        "mode": { "type": "string", "enum": ["auto", "ocr"] },
+        "input_relpath": { "type": "string", "minLength": 1 },
+        "output_relpath": { "type": "string", "minLength": 1 },
+        "command": { "type": "string", "minLength": 1 }
+      },
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": false
+}

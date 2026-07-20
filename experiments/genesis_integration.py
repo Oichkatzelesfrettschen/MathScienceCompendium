@@ -18,7 +18,12 @@ SRC_ROOT = REPO_ROOT / "src"
 if str(SRC_ROOT) not in sys.path:
     sys.path.insert(0, str(SRC_ROOT))
 
-from mathphysics.genesis_harmonics import MATERIALS, PHI, GenesisHarmonics, MaterialType
+from mathphysics.genesis_harmonics import (  # noqa: E402
+    MATERIALS,
+    PHI,
+    GenesisHarmonics,
+    MaterialType,
+)
 
 
 def create_comprehensive_visualization():
@@ -353,10 +358,10 @@ def main():
     genesis_e7, genesis_e8 = create_comprehensive_visualization()
 
     # Analyze root-harmonic coupling
-    coupling, eigenvalues, eigenvectors = analyze_root_harmonic_coupling()
+    coupling, _eigenvalues, _eigenvectors = analyze_root_harmonic_coupling()
 
     # Demonstrate advanced features
-    genesis_advanced = demonstrate_advanced_features()
+    demonstrate_advanced_features()
 
     # Final summary
     print("\n" + "=" * 80)
@@ -375,7 +380,7 @@ def main():
     print(
         f"- E7/E8 symmetries map to {genesis_e7.num_layers}/{genesis_e8.num_layers} harmonic layers"
     )
-    print(f"- Material responses peak in THz range (10^12 Hz)")
+    print("- Material responses peak in THz range (10^12 Hz)")
     print(f"- ZPE coherence stabilizes around {0.15:.2f}")
 
     print("\nApplications:")

@@ -23,7 +23,7 @@ Covered surfaces:
 from __future__ import annotations
 
 import json
-from pathlib import Path
+from typing import TYPE_CHECKING
 
 import pytest
 
@@ -37,8 +37,15 @@ qiskit = pytest.importorskip("qiskit", reason="Qiskit required for quantum_simul
 
 
 # Re-import with Qiskit confirmed present
-from mathphysics.quantum_simulation import UnifiedSimulation, run_production_simulation  # noqa: E402
 from mathphysics.config import Config  # noqa: E402
+from mathphysics.quantum_simulation import (  # noqa: E402
+    UnifiedSimulation,
+    run_production_simulation,
+)
+
+
+if TYPE_CHECKING:
+    from pathlib import Path
 
 
 # ---------------------------------------------------------------------------
@@ -201,7 +208,6 @@ def test_save_results_uses_results_dir(tmp_path: Path):
 
 def test_run_production_simulation_does_not_raise(tmp_path: Path):
     """run_production_simulation writes to Config.RESULTS_DIR; redirect via env."""
-    import os  # noqa: PLC0415
 
     original = Config.RESULTS_DIR
     try:

@@ -19,15 +19,13 @@ def is_valid_e7_root(v):
     if all(x == int(x) for x in v):
         # Integer root: exactly two non-zero entries that are +-1
         non_zeros = [x for x in v if x != 0]
-        if len(non_zeros) == 2:
-            if all(abs(x) == 1 for x in non_zeros) and sum(non_zeros) == 0:
-                return True
-    else:
-        # Half-integer root: all entries are +-0.5
-        if all(abs(x) == 0.5 for x in v):
-            negatives = sum(1 for x in v if x < 0)
-            if negatives % 2 == 0 and abs(sum(v)) < 1e-10:
-                return True
+        if len(non_zeros) == 2 and all(abs(x) == 1 for x in non_zeros) and sum(non_zeros) == 0:
+            return True
+    # Half-integer root: all entries are +-0.5
+    elif all(abs(x) == 0.5 for x in v):
+        negatives = sum(1 for x in v if x < 0)
+        if negatives % 2 == 0 and abs(sum(v)) < 1e-10:
+            return True
     return False
 
 
@@ -38,10 +36,10 @@ def compute_cartan_matrix(simple_roots):
 
     for i in range(n):
         for j in range(n):
-            # A_ij = 2 * (alpha_i . alpha_j) / (alpha_j . alpha_j)
+            # The Cartan entry is twice the root inner-product ratio.
             dot_ij = np.dot(simple_roots[i], simple_roots[j])
             dot_jj = np.dot(simple_roots[j], simple_roots[j])
-            cartan[i, j] = int(round(2 * dot_ij / dot_jj))
+            cartan[i, j] = round(2 * dot_ij / dot_jj)
 
     return cartan
 

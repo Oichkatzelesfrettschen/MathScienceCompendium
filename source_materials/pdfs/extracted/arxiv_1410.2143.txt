@@ -1,0 +1,574 @@
+Absence of Quantum Time Crystals
+Haruki Watanabe1, ∗ and Masaki Oshikawa2, †
+1
+
+Department of Physics, University of California, Berkeley, California 94720, USA
+Institute for Solid State Physics, University of Tokyo, Kashiwa 277-8581, Japan
+
+arXiv:1410.2143v3 [cond-mat.stat-mech] 18 Jun 2015
+
+2
+
+In analogy with crystalline solids around us, Wilczek recently proposed the idea of “time crystals”
+as phases that spontaneously break the continuous time translation into a discrete subgroup. The
+proposal stimulated further studies and vigorous debates whether it can be realized in a physical
+system. However, a precise definition of the time crystal is needed to resolve the issue. Here we first
+present a definition of time crystals based on the time-dependent correlation functions of the order
+parameter. We then prove a no-go theorem that rules out the possibility of time crystals defined as
+such, in the ground state or in the canonical ensemble of a general Hamiltonian, which consists of
+not-too-long-range interactions.
+
+Recently, Wilczek proposed a fascinating new concept
+of time crystals, which spontaneously break the continuous time translation symmetry, in analogy with ordinary
+crystals which break the continuous spatial translation
+symmetry [1–3]. Li et al. soon followed with a concrete
+proposal for an experimental realization and observation
+of a (space-)time crystal, using trapped ions in a ring
+threaded by an Aharonov-Bohm flux [4–6]. While the
+proposal of time crystals was quite bold, it is, on the
+other hand, rather natural from the viewpoint of relativity: since we live in the Lorentz invariant space-time, why
+don’t we have time crystals if there are ordinary crystals
+with a long-range order in spatial directions?
+However, the very existence, even as a matter of principle, of time crystals is rather controversial. For example,
+Bruno [7] and Nozières [8] discussed some difficulties in
+realizing time crystals. However, since their arguments
+were not fully general, several new realizations of time
+crystals, which avoid these no-go arguments, were proposed [9, 10].
+In fact, a part of the confusion can be attributed to
+the lack of a precise mathematical definition of time crystals. Here, we first propose a definition of time crystals
+in the equilibrium, which is a natural generalization of
+that of ordinary crystals and can be formulated precisely
+also for time crystals. We then prove generally the absence of time crystals defined as such, in the equilibrium
+with respect to an arbitrary Hamiltonian which consists
+of not-too-long-range interactions. We present two theorems: one applies only to the ground state, and the other
+applies to the equilibrium with an arbitrary temperature.
+Naively, time crystals would be defined in terms of
+the expectation value hÔ(t)i of an observable Ô(t). If
+hÔ(t)i exhibits a periodic time dependence, the system
+may be regarded as a time crystal. However, the very
+definition of eigenstates Ĥ|ni = En |ni immediately implies that the expectation value of any Heisenberg operator Ô(t) ≡ eiĤt Ô(0)e−iĤt in the Gibbs equilibrium
+ensemble is time independent. To see this, recall that
+the expectation value hX̂i is defined as hX̂i ≡ h0|X̂|0i
+at zero temperature T = 0 and hX̂i ≡ tr(X̂e−β Ĥ )/Z =
+
+/Z at a finite temperature T = β −1 >
+0, where |0i is the ground state and Z ≡ tr[e−β Ĥ ] is the
+partition function. Clearly, hn|Ô(t)|ni is time independent since two factors of e±iEn t cancel against each other
+and hence hÔ(t)i is time independent.
+Yet it is too early to reject the idea of time crystals just from this observation, since a similar argument would preclude ordinary (spatial) crystals. One
+might naively define crystals from a spatially modulating expectation value of the density operator ρ̂(~x) =
+ˆ
+ˆ
+~
+~
+e−iP ·~x ρ̂(~0)eiP ·~x . The unique ground state of the Hamiltonian in a finite box is nevertheless symmetric and
+ˆ
+hence P~ |0i = 0, implying that hρ̂(~x)i is constant over
+space at T = 0. Likewise, at a finite temperature,
+ˆ
+ˆ
+~
+~
+hρ̂(~x)i ≡ tr(e−iP ·~x ρ̂(~0)eiP ·~x e−β Ĥ )/Z cannot depend on
+ˆ
+position since P~ and Ĥ commute. More generally, the
+equilibrium expectation value of any order parameter
+vanishes in a finite-size system, since the Gibbs ensemble
+is always symmetric. This, of course, does not rule out
+the possibility of spontaneous symmetry breaking.
+A convenient and frequently used prescription to detect a spontaneous symmetry breaking is to apply a
+symmetry-breaking field. For example, in the case of
+antiferromagnets on a cubic lattice, we apply a staggered
+~ = h cos(Q
+~ · R)
+~ [Q
+~ ≡ (π/a)(1, . . . , 1)]
+magnetic field hs (R)
+P
+z
+~
+by adding a term − R~ hs (R)ŝR~ to the Hamiltonian,
+~ are lattice sites and ŝz is the spin on the site R.
+~
+where R’s
+~
+R
+One computes the expectation value of the macroscopic
+order parameter, which is the staggered magnetization
+in the case of an antiferromagnet, under the symmetry
+breaking field and then take the limit V → ∞ and h → 0
+in this order. The non-vanishing expectation value of the
+macroscopic order parameter, in this order of limits, is
+often regarded as a definition of spontaneous symmetry
+breaking (SSB). In the case of crystals, we apply a poP
+~ x) with a periodic position
+tential v(~x) = h G
+~ vG
+~ cos(G·~
+dependence. Here, ~
+G’s are the reciprocal lattice of the
+postulated crystalline order.
+This prescription is quite useful but unfortunately is
+not straightforwardly applicable to time crystals. The
+P
+
+n hn|X̂|nie
+
+−βEn
+
+2
+symmetry-breaking field for time crystals has to have
+a periodic time dependence. In the presence of such a
+field, the “energy” becomes ambiguous and is defined
+only modulo the frequency of the periodic field, making
+it difficult to select states or to take statistical ensembles
+based on energy eigenvalues. Therefore an alternative
+definition of time crystals is called for, and indeed we
+will propose a definition of time crystals which is applicable to very general Hamiltonians.
+Time-dependent long-range order. —In order to circumvent the problem in defining time crystals using a
+time-dependent symmetry-breaking field, here we define
+time crystals based on the long-range behavior of correlation functions. In fact, all conventional symmetry
+breakings can be defined in terms of correlation functions, without introducing any symmetry-breaking field.
+That is, we say the system has a long-range order (LRO)
+if the equal-time correlation function of the local order
+parameter φ̂(~x, t) satisfies
+0
+
+2
+
+lim hφ̂(~x, 0)φ̂(~x , 0)i → σ 6= 0
+
+V →∞
+
+(1)
+
+for |~x − ~x0 | much greater than any microscopic scales.
+One can Requivalently use the integrated order parameter Φ̂ ≡ V dd x φ̂(~x, 0), for which the long-range order
+is defined as limV →∞ hΦ̂2 i/V 2 = σ 2 6= 0. For example, in P
+the case of the quantum
+transverse Ising model
+P
+Ĥ = − h~r,~r0 i σr~z σr~z0 −Γ r~ σr~x , the local order parameter
+φ̂(~r, t) is identified with σr~z or its coarse-graining. It has
+been proven quite generally that the LRO σ 6= 0 guarantees the corresponding SSB, namely a non-vanishing
+expectation value of the order parameter in the limit of
+the zero symmetry-breaking field taken after the limit
+V → ∞ [11, 12]. While the reverse is not proved in general, it is expected to hold in many systems of interest.
+A crystalline order can also be defined by the correlation function. Namely, if the long-range correlation approaches to a periodic function
+lim hφ̂(~x, 0)φ̂(~x0 , 0)i → f (~x − ~x0 )
+
+V →∞
+
+(2)
+
+for sufficiently large |~x − ~x0 |, the system exhibits
+a spontaneous crystalline order [13].
+Equivalently,
+2
+limV →∞ hΦ̂G
+= fG
+6= 0 signals a den~ Φ̂−G
+~ i/V
+~
+sity wave order with wavevector ~
+G, where Φ̂G
+=
+~
+R d
+−i ~
+G·~
+x
+d x φ̂(~x, 0)e
+. Note again that hφ̂(~x, 0)i itself is
+V
+a constant over space in the Gibbs ensemble, which is
+symmetric. For instance, we set φ̂ = ρ̂ for ordinary crystals and φ̂ = ŝα for spin-density waves. In terms of the
+LRO, one can therefore characterize crystals using only
+the symmetric ground state or ensemble, which itself does
+not have a finite expectation value of the order parameter [14].
+Let us now define time crystals, in an analogous manner to the characterization of ordinary crystals in terms
+
+(a)
+
+x
+
+(b)
+
+?
+x2
+
+AB flux
+
+<ρ(x1,t1)ρ(x2,t2)>
+
+x1, x2 : fixed
+
+x1
+
+t1 - t2
+
+FIG. 1. Time-dependent correlation. (a) Wigner crystal of
+ions in a ring threaded by an Aharonov-Bohm flux, as proposed in Ref. [4] as a possible realization of a time crystal.
+(b) Illustration of the time dependent correlation function,
+should the time crystal is indeed realized as a spontaneous
+rotation of the density wave (crystal) in the ground state, as
+proposed. The density-density correlation function between
+(x1 , t1 ) and (x2 , t2 ) must exhibit an oscillatory behavior as a
+function of t1 − t2 for fixed x1 and x2 .
+
+of the spatial LRO. Generalizing Eqs. (1) and (2), we
+could say the system is a time crystal if the correlation
+function limV →∞ hφ̂(~x, t)φ̂(0, 0)i → f (t) is non-vanishing
+for large enough |~x| and exhibits a nontrivial periodic oscillation in time t (i.e., is not just a constant over time).
+In terms of the integrated order parameter defined above,
+the condition reads
+lim heiĤt Φ̂e−iĤt Φ̂i/V 2 = f (t).
+
+V →∞
+
+(3)
+
+When f is a periodic function of both space and time,
+we call it a space-time crystal, in which case we have
+−iĤt
+2
+lim heiĤt Φ̂G
+Φ̂−G
+~e
+~ i/V = fG
+~ (t),
+
+V →∞
+
+(4)
+
+where fG
+x). For ex~ (t) is the Fourier component of f (t, ~
+ample, Li et al. [4] investigated a Wigner crystal in a
+ring threaded by a Aharonov-Bohm flux and predicted
+its spontaneous rotation, which would be a realization
+of space-time crystal. If this were indeed the case, the
+density at (x1 , t1 ) and (x2 , t2 ) would be correlated as illustrated in Fig. 1.
+One might think that we could define time crystals
+based on the time dependence of equal-position correlation functions. Should we adopt this definition, however,
+rather trivial systems would qualify as time crystals. For
+example, consider a two-level system Ĥ = −Ω0 σz /2 at
+T = 0 and set φ̂(t) ≡ σx (t) = eiĤt σx e−iĤt = σx cos Ω0 t+
+σy sin Ω0 t. The correlation function h0|φ̂(t)φ̂(0)|0i of the
+ground state |0i = (1, 0)T exhibits a periodic time dependence e−iΩ0 t . The same applies to the equal-position correlation function in independent two-level systems spread
+over the space. Clearly we do not want to classify such
+a trivial, uncorrelated system as a time crystal. “Crystal” should be reserved for systems exhibit correlated,
+coherent behaviors, which are captured by long-distance
+correlation functions, be it an ordinary crystal or a time
+crystal.
+
+3
+Absence of long-range time order at T = 0. —We now
+prove quite generally that time crystals defined above are
+not possible in ground states. More precisely, we show
+t
+1
+h0|Âe−i(Ĥ−E0 )t B̂|0i − h0|ÂB̂|0i ≤ C ,
+V2
+V
+
+(5)
+
+where E0 is the ground-state energy.
+R Equation (5) holds
+for any Hermitian operators Â = V dd x â(~x) and B̂ =
+R d
+d x b̂(~x), where â(~x) and b̂(~x) are local operators that
+V
+act only near ~x. The constant C may depend on Â, B̂,
+and Ĥ but not on t or V . Once we prove Eq. (5), we can
+immediately see that f (t) in Eq. (3) is time independent,
+by setting Â = B̂ = Φ̂(0) and taking the limit V → ∞
+for t = o(V ). We can also apply Eq. (5) to space-time
+crystals characterized by f (t, ~x). Although Φ̂G
+~ may not
+be Hermitian, one can always decompose it to the sum
+of two Hermitian operators. Applying Eq. (5) for each of
+them, one can see all fG
+x), are time
+~ (t)’s, and hence f (t, ~
+independent.
+To show Eq. (5), we use the trick to represent the
+change in time by an integral:
+h0|Âe−i(Ĥ−E0 )t B̂|0i − h0|ÂB̂|0i
+Z t
+d
+=
+ds h0|Âe−i(Ĥ−E0 )s B̂|0i
+ds
+0
+Z t
+≤
+ds h0|Â(Ĥ − E0 )e−i(Ĥ−E0 )s B̂|0i .
+
+k[eiĤt a(~x)e−iĤt , b(~y )]k ≤ min{C1 , C2 e−µ(|~x−~y|−vt) },
+(8)
+where constants C1,2 , µ, and v may depend on â, b̂, and
+Ĥ. This bound is valid only for a local Hamiltonian.
+The physical meaning of Eq. (8) is that there exists an
+upper bound on the velocity at which information can
+propagate in quantum systems.
+To prove the time independence of f (t) in Eq. (3) and
+fG
+~ (t) in Eq. (4), let us introduce a new correlation function defined by the commutation relation
+
+
+gAB (t) ≡ eiĤt Âe−iĤt , B̂ /V 2
+Z
+
+
+=
+dd x eiĤt â(~x)e−iĤt , b̂(~0) /V.
+(9)
+V
+
+(6)
+
+0
+
+The integrand can be bounded by the Schwarz inequality
+as
+h0|Â(Ĥ − E0 )1/2 e−i(Ĥ−E0 )s (Ĥ − E0 )1/2 B̂|0i
+q
+≤ h0|Â(Ĥ − E0 )Â|0ih0|B̂(Ĥ − E0 )B̂|0i
+q
+1
+h0|[Â, [Ĥ, Â]]|0ih0|[B̂, [Ĥ, B̂]]|0i.
+=
+2
+
+to CtV −(α/d) , where d is the spatial dimension of the system. When α ≥ d, Eq. (5) holds without any change. In
+both cases, as long as α > 0, f (t) remains time independent in the limit V → ∞ for a fixed finite t.
+Absence of long-range time order at a finite T . —The
+argument presented above cannot directly be extended to
+excited eigenstates |ni, because (Ĥ − E0 )1/2 in Eq. (6)
+would then be replaced by (Ĥ − En )1/2 but the latter
+is not well defined. Instead, here we employ the LiebRobinson bound [17] to discuss finite temperatures.
+The result of Lieb and Robinson is that [17]
+
+(7)
+
+Each of Ĥ, Â, and B̂ involves a spatial integration and
+introduces a factor of V , while each commutation relation reduces a factor of V , assuming that the equaltime commutation relation of any two operators φ̂1 (~x, t)
+and φ̂2 (~x0 , t) can be nonzero only near ~x = ~x0 . Hence,
+k[Â, [Ĥ, Â]]k is at most of the order of V 3−2 = V [15, 16].
+The same is true for k[B̂, [Ĥ, B̂]]k. Therefore, combining
+Eqs. (6) and (7), we get the desired Eq. (5).
+In this estimate of k[Â, [Ĥ, Â]]k, we assumed the locality of the Hamiltonian, i.e., Ĥ is an integral of Hamiltonian density ĥ(~x), which contain only local terms. It is
+easy to see that the same conclusion holds even when
+there are interactions among distant points, provided
+that the interaction decays exponentially as a function
+of the distance. One can further relax this assumption
+to power-law decaying interactions r−α (α > 0). When
+0 < α < d, k[Â, [Ĥ, Â]]k can be order of V 2−(α/d) and the
+right-hand side of Eq. (5) should be accordingly modified
+
+The Lieb-Robinson bound (8) tells us that |gAB (t)| ≤
+[C3 + C4 (vt)d ]/V for some constants C3,4 that do not
+depend on t or V . Hence, as long as t = o(V 1/d ),
+|gAB (t)| → 0 as V → ∞.
+On the other hand, we have gAB (t) = fAB (t) −
+fBA (−t), where fAB (t) ≡ P
+eiĤt Âe−iĤt B̂ /V 2 . By inserting the complete set 1 = n |nihn|, it can be readily
+shown that
+Z ∞
+fAB (t) =
+dω ρAB (ω)e−iωt ,
+(10)
+−∞
+Z ∞
+gAB (t) =
+dω (1 − e−βω )ρAB (ω)e−iωt , (11)
+−∞
+
+where ρAB (ω) is defined by
+X hm|Â|nihn|B̂|mie−βEm
+ZV 2
+
+n,m
+
+δ(ω − En + Em ).
+
+(12)
+
+Since limV →∞ gAB (t) = 0 for any given real value of t,
+(1 − Re−βω ) limV →∞ ρAB (ω) = 0. Combined by the sum
+rule dω ρAB (ω) = fAB (0) = hÂB̂i/V 2 , we find
+lim ρAB (ω) = δ(ω) lim hÂB̂i/V 2 .
+
+V →∞
+
+V →∞
+
+(13)
+
+Therefore, fAB (t), as a function of finite t in the thermodynamic limit V → ∞, can be at most a finite constant
+that does not depend on time. Thus (space-)time crystals
+do not exist at a finite temperature either.
+
+4
+Grand-canonical ensemble. —Let us discuss systems
+with variable number of particles. The equilibrium of
+those systems can be described by a grand-canonical ensemble. It is given by the Boltzmann-Gibbs distribution
+with respect to Ĥ = Ĥ −µN̂ , where µ is the chemical potential determined by the property of the particle reservoir. Namely, the expectation value of an observable X̂
+is given by hX̂iµ ≡ tr(X̂e−β Ĥ )/Zµ , where Zµ ≡ tr e−β Ĥ .
+Although the statistical weight is given in terms of Ĥ, the
+time evolution of the Heisenberg operator Ψ̂(t) is still defined by Ĥ, i.e., Ψ̂(t) ≡ eiĤt Ψ̂(0)e−iĤt . This mismatch
+can produce some trivial time dependence as we shall see
+now. If we define Ψ̂µ (t) ≡ ei(Ĥ−µN̂ )t Ψ̂(0)e−i(Ĥ−µN̂ )t and
+assume [N̂ , Ψ̂(0)] = −q Ψ̂(0) with q a real number that
+represents the U(1) charge of Ψ, then Ψ̂(t) = Ψ̂µ (t)e−iqµt .
+Therefore, even if fµ = limV →∞ [hΨ̂µ (t)Ψ̂†µ (0)iµ /V 2 ]
+is time independent as we proved above, f (t) =
+limV →∞ [hΨ̂(t)Ψ̂† (0)iµ /V 2 ] has a trivial time dependence
+f (t) = fµ e−iqµt . This is consistent with the well-known
+fact that the order parameter of a Bose-Einstein condensate has the trivial time dependence [18] as hψ̂(~x, t)i =
+ψ0 e−iµt . This type of time dependence has been discussed [19] also in the context of time crystals [20, 21].
+However, Volovik pointed out that this kind of time dependence cannot be measured as long as the particle
+number is exactly conserved [22]. Indeed, the overall
+phase of condensate cannot be measured unless one couples the condensate to another one. We will discuss this
+phenomenon in the following section.
+Spontaneous oscillation of non-equilibrium states. —
+In order to extract the time-dependence of the condensate order parameter, the system has to be attached to
+another system to allow change of the number of particles. As a simplest setup, we may prepare two condensates with different chemical potentials µ1 , µ2 and
+measure their time-dependent interference pattern ∝
+e−i(µ1 −µ2 )t in terms of the current between the condensates, or equivalently the change of the number of particles in each condensate. This is nothing but the ac
+Josephson effect. In fact, in Ref. [9], a proposal of time
+crystal based on this effect was made.
+However, in order to observe the ac Josephson effect,
+the initial state simply must not be in the equilibrium.
+In order to see this, it is helpful to use the mapping of
+the ac Josephson effect in two coupled condensates to
+a quantum spin in a magnetic field. For simplicity, let
+us consider condensates of bosons without any internal
+degree of freedom, and suppose there is only one singleparticle state in each condensate. Then the system can be
+described by the two set of bosonic annihilation/creation
+operators, a, a† and b, b† . The effective Hamiltonian of
+the system, in the limit of zero coupling between the
+two condensates, is given as H = µ1 a† a + µ2 b† b =
+†
+†
+b
+2
++ µ1 +µ
+N , where N = a† a + b† b is the
+(µ1 − µ2 ) a a−b
+2
+2
+total number of particles in the coupled system. Let us
+
+assume that the coupling to the outside environment is
+negligible in the timescale we are interested. N is then
+exactly conserved and can be regarded as a constant. As
+a consequence, the second term in the Hamiltonian proportional to N can be ignored.
+With N being exactly conserved, this system of coupled condensates can be mapped to a quantum spin
+model by identifying the bosons as Schwinger bosons.
+The Hamiltonian now reads H = BS z + const., where
+B = µ1 − µ2 and S z is the z-component of the quantum spin with the spin quantum number S = (N − 1)/2.
+Similarly, the current operator between the two condensates is given by J ∝ −i(a† b − b† a) = 2S y . The ac
+Josephson effect, in the quantum spin language, is just a
+Larmor precession about the magnetic field. The oscillatory behavior of the current in the ac Josephson effect
+just corresponds to the oscillation of the exctation value
+of S y in the Larmor precession.
+In order to observe the Larmor precession, the initial state must have a non-vanishing expectation value of
+the transverse component (S x or S y ). This excludes the
+ground state, in which the spin is fully polarized along the
+magnetic field in z direction, as well as thermodynamic
+equilibrium at arbitrary temperature. In Ref. [9] it was
+argued that, by taking the limit of weak coupling, the
+dissipation can be made arbitrarily small. While this is
+certainly true, the lack of dissipation does not mean that
+the system is in an equilibrium, as it is clear by considering the spin Larmor precession in a magnetic field. Our
+result, which is valid for equilibrium, of course does not
+exclude such spontaneous oscillations of non-equilibrium
+quantum states. The latter, however, are well known
+and should not be called time crystals without a further
+justification.
+Discussion. —In this Letter, we proposed a definition
+of time crystals and proved their absence in the equilibrium. The present result brings back the question: why
+there is no time crystal, even though there surely exist
+crystals with a spatial long-range order? We should recall that Lorentz invariance does not mean the complete
+equivalence between space and time: the time direction
+is still distinguished by the different sign of the metric.
+This leads to a fundamental difference in the spectrum:
+while the eigenvalues of the Hamiltonian (the generator of
+translation in time direction) is bounded from below, the
+eigenvalues of the momentum (the generator of translation in a spatial direction) is unbounded. Moreover, the
+equilibrium is determined by the Hamiltonian and the
+system is generally not Lorentz invariant in the thermodynamic equilibrium. Therefore, as far as the equilibrium
+as defined in standard statistical mechanics is concerned,
+it is not surprising to find a fundamental difference between space and time.
+HW wishes to thank Ashvin Vishwanath for his useful
+and important suggestions. The authors are very grateful
+to Hal Tasaki and Tohru Koma for helping us improving
+
+5
+the presentation. In particular, the proof for T = 0 presented in this paper is an improved version due to Tohru
+Koma, after discussion with Hal Tasaki. The work of
+MO was supported by the “Topological Quantum Phenomena” (No. 25103706) Grant-in Aid for Scientific Research on Innovative Areas from the Ministry of Education, Culture, Sports, Science and Technology (MEXT)
+of Japan. HW appreciates the financial support from the
+Honjo International Scholarship Foundation.
+
+∗
+
+hwatanabe@berkeley.edu
+oshikawa@issp.u-tokyo.ac.jp
+[1] F. Wilczek, Quantum Time Crystals, Phys. Rev. Lett.,
+109, 160401 (2012).
+[2] P. Bruno, Comment on “Quantum Time Crystals.”,
+Phys. Rev. Lett., 110, 118901 (2013).
+[3] F. Wilczek, Wilczek Reply, Phys. Rev. Lett., 110, 118902
+(2013).
+[4] T. Li, Z.-X. Gong, Z.-Q. Yin, H. T. Quan, X. Yin,
+P. Zhang, L.-M. Duan, and X. Zhang, Space-Time Crystals of Trapped Ions, Phys. Rev. Lett., 109, 163001
+(2012).
+[5] P. Bruno, Comment on “Space-Time Crystals of Trapped
+Ions.”, Phys. Rev. Lett., 111, 029301 (2013).
+[6] T. Li, Z.-X. Gong, Z.-Q. Yin, H. T. Quan, X. Yin,
+P. Zhang, L.-M. Duan, and X. Zhang, Reply to
+Comment on “Space-Time Crystals of Trapped Ions.”,
+arXiv:1212.6959.
+[7] P. Bruno, Impossibility of Spontaneously Rotating Time
+Crystals: A No-Go Theorem, Phys. Rev. Lett., 111,
+070402 (2013).
+[8] P. Nozières, Time crystals: Can diamagnetic currents
+drive a charge density wave into rotation?, Europhys.
+Lett. 103, 57008 (2013).
+†
+
+[9] F. Wilczek, Superfluidity and Space-Time Translation
+Symmetry Breaking, Phys. Rev. Lett., 111, 250402
+(2013).
+[10] R. Yoshii, S. Takada, S. Tsuchiya, G. Marmorini,
+H. Hayakawa, M. Nitta, Time crystal phase in a superconducting ring, arXiv:1404.3519.
+[11] T. Kaplan, P. Horsch, and W. von der Linden, Order
+Parameter in Quantum Antiferromagnets J. Phys. Soc.
+Jpn. 58, 3894 (1989)
+[12] T. Koma and H. Tasaki, Symmetry Breaking in Heisenberg Antiferromagnets Comm. Math. Phys. 158, 191
+(1993).
+[13] X.-G. Wen, Quantum Field Theory of Many-body Systems (Oxford Univ. Press, New York, ed. 2, 2004).
+[14] R. Griffiths, Spontaneous Magnetization in Idealized Ferromagnets, Phys. Rev. 152 (1966) pp. 240–246.
+[15] T. Koma and H. Tasaki, Symmetry Breaking and FiniteSize Effects in Quantum Many-Body Systems J. Stat.
+Phys. 76 (1994) pp. 745–803.
+[16] P. Horsch and W. von der Linden, Spin-correlations and
+low lying excited states of the spin-1/2 Heisenberg antiferromagnet on a square lattice, Z. Phys. B 72, 181
+(1988).
+[17] E. H. Lieb and D. W. Robinson, The finite group velocity
+of quantum spin systems, Comm. Math. Phys. 251, 28
+(1972).
+[18] C. Pethick and H. Smith, Bose-Einstein Condensation in
+Dilute Gases (Cambridge University Press, Cambridge,
+England, ed. 2, 2008).
+[19] A. Nicolis and F. Piazza, Spontaneous symmetry probing,
+J. High Energy Phys. 06, 025 (2012).
+[20] E. Castillo, B. Koch, and G. Palma, On the dynamics of
+fluctuations in time crystals, arXiv:1410.2261.
+[21] M. Thies, Semiclassical time crystal in the chiral GrossNeveu model, arXiv:1411.4236.
+[22] G. Volovik, On the Broken Time Translation Symmetry in Macroscopic Systems: Precessing States and OffDiagonal Long-Range Order, JETP Lett. 98, 491 (2013).
+
+

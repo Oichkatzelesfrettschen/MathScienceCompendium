@@ -4,18 +4,16 @@ Runs high-resolution accelerated simulations, saves data to Parquet,
 and performs deep analysis of harmonic interactions.
 """
 
-import os
 import time
 
 import jax
-import jax.numpy as jnp
 import matplotlib.pyplot as plt
 import numpy as np
-import pandas as pd
 
 from mathphysics.accelerated_lbm import AcceleratedLBM
 from mathphysics.config import Config
 from mathphysics.data_handler import DataHandler
+from mathphysics.diagnostics import calculate_vorticity
 from mathphysics.quantum_lattice_boltzmann import LBMParameters
 
 
@@ -58,20 +56,17 @@ def run_high_res_experiment():
     # 4. Final Analysis: Vorticity Spectral Power
     # Compute vorticity from final velocity
     u = np.array(velocity)
-    dvx_dy = np.gradient(u[..., 0], axis=0)
-    dvy_dx = np.gradient(u[..., 1], axis=1)
-    vorticity = dvy_dx - dvx_dy
+    vorticity = calculate_vorticity(u)
 
     # FFT Analysis
     vort_fft = np.fft.fft2(vorticity)
     psd = np.abs(vort_fft) ** 2
-    freqs = np.fft.fftfreq(nx)
 
     # Save PSD plot
     plt.figure(figsize=(10, 6))
     plt.imshow(np.log10(np.fft.fftshift(psd) + 1e-10))
     plt.colorbar(label="log10(PSD)")
-    plt.title(f"Vorticity Power Spectral Density (E7 Harmonics)")
+    plt.title("Vorticity Power Spectral Density (E7 Harmonics)")
 
     fig_path = Config.get_figure_path("vorticity_psd_highres.png")
     plt.savefig(fig_path)

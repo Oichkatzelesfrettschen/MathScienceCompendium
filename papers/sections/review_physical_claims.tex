@@ -1,0 +1,205 @@
+\chapter{Audit of the Physical Claims}
+\label{ch:physical-claims}
+
+\section{Planck force and force unification}
+
+The quantity
+
+\begin{equation}
+  F_{\mathrm{P}} = \frac{c^4}{G}
+\end{equation}
+
+has dimensions of force. It can also be written as the Planck energy divided by
+the Planck length. These are algebraic identities among constants and derived
+units \citep{planck1899natural}.
+
+\begin{evidence}{Source claim}
+The reviewed Superforce manuscript interprets this scale as a force of
+unification \citep{pais2023superforce}. The repository reproduces the
+dimensional cancellation and the value of the scale.
+\end{evidence}
+
+\begin{evidence}{Assessment: unsupported extrapolation}
+Dimensional agreement is necessary for an equation but does not derive an
+interaction. A force-unification claim requires a field content, symmetry,
+couplings, renormalization behavior, and predictions that differ from general
+relativity and the Standard Model. None follows from $c^4/G$ alone. Substituting
+Planck units into Newtonian or Coulomb force laws selects a scale; it does not
+show that distinct gauge interactions become the same mechanism.
+\end{evidence}
+
+The absence of $\hbar$ from $c^4/G$ also has no independent physical content:
+$\hbar$ cancels in the ratio of two Planck units. The cancellation cannot, by
+itself, establish a macroscopic quantum effect.
+
+\section{Root-lattice charges and fluid triads}
+
+The earlier manuscript proposed that Fourier modes inherit a class in the
+discriminant group $P/Q$ and that triad closure conserves those classes. The
+proposal fails at its first stated map. If the forcing vectors are roots, then
+they lie in the root lattice $Q$ and every root represents the zero class in
+$P/Q$. The proposed nontrivial parity charge therefore does not arise from the
+root set as written.
+
+A nontrivial construction would need, at minimum:
+
+\begin{enumerate}
+  \item a homomorphism from the physical Fourier lattice to $P/Q$;
+  \item a reason physical modes occupy nonzero weight-lattice cosets;
+  \item a forcing or interaction operator that enforces the proposed charge;
+  \item a count of admitted and rejected triads under that operator; and
+  \item a control forcing with matched spectrum, power, and anisotropy but no
+    quotient structure.
+\end{enumerate}
+
+\begin{evidence}{Assessment: mechanism not implemented}
+The repository contains prose describing a modular filter, but the simulation
+step contains no $P/Q$ labels and no triad-admission test. The discriminant-group
+argument cannot explain a numerical result until that missing map and operator
+exist.
+\end{evidence}
+
+\section{The beta-plane interpretation}
+
+The Rhines scale follows from competition between turbulent advection and
+Rossby-wave dynamics on a beta plane \citep{rhines1975waves,vallis1993generation}.
+A beta-plane simulation therefore needs a beta-dependent term in its dynamical
+equations, not merely a spectrum that can be assigned a preferred wavenumber
+after the run.
+
+The checked-in LBM parameter object has no beta parameter. Its CPU step performs
+equilibrium evaluation, BGK collision, streaming, and macroscopic update. The
+accelerated step adds a spatially varying relaxation time and random noise, but
+no beta-plane body force or potential-vorticity gradient. The high-resolution
+driver sets grid size, time steps, relaxation time, and harmonic amplitude.
+It does not configure beta.
+
+The implementation selects the first $N$ roots and weights their absolute first
+two coordinates by enumeration index. Root generation now uses a deterministic
+lexicographic order, removing a reproducibility defect. Determinism does not
+make the construction Weyl invariant. The retained order audit finds that
+reversal is exactly invariant because lexicographic reversal pairs opposite
+roots with equal absolute coordinates, while a one-place cyclic shift changes
+the initialized perturbation by 0.131 in relative $L^2$. Any observed
+anisotropy remains confounded with this ordering choice, projection, and index
+weighting until a symmetry-invariant map and matched controls remove those
+alternatives.
+
+The earlier diagnostic
+
+\begin{equation}
+  \beta_{\mathrm{inferred}} = U_{\star} k_{\mathrm{jet}}^2
+\end{equation}
+
+is useful only after a beta-plane model and an independently defined velocity
+scale exist. Choosing or reconstructing $U_{\star}$ from the same output and
+then declaring agreement with an asserted beta is circular.
+
+The retained final high-resolution snapshot also contradicts the published
+numbers in the superseded assembly. A direct read of the step-500 snapshot gives
+a mean speed near $6.92\times10^{-3}$, a maximum speed near
+$1.10\times10^{-2}$, and dominant zonal-mean Fourier mode 17. The zonal-mean
+RMS is only $8.75\times10^{-6}$, or $1.22\times10^{-3}$ of total velocity RMS,
+and the vorticity spectral second-moment ratio is 0.992. Thus the selected peak
+mode is not evidence of a strong zonal state. The earlier text used
+$U\approx0.6$ and mode 4. The run driver does not compute a jet count, spectral
+slope, or uncertainty interval, so those earlier values have no traceable
+analysis path.
+
+\begin{table}[htbp]
+  \centering
+  \caption{Requirements for a defensible beta-plane comparison.}
+  \label{tab:beta-requirements}
+  \begin{tabularx}{\textwidth}{>{\raggedright\arraybackslash\bfseries}p{0.28\textwidth}YY}
+    \toprule
+    Requirement & Repository state & Consequence \\
+    \midrule
+    Beta-dependent dynamics & Absent from the retained LBM steps & The run is not a beta-plane experiment. \\
+    Independent input beta & No beta field in the parameter object & Input-output agreement cannot be tested. \\
+    Prespecified jet diagnostic & Not retained with uncertainty or mode-selection rule & Jet count is post hoc. \\
+    Matched controls & No isotropic or spectrum-matched ablation & Algebraic causation is unidentified. \\
+    Conservation check & JAX drift is $5.60\times10^{-6}$ at step 500; the repaired CPU regression is conservative & Catastrophic growth does not describe the high-resolution run. \\
+    \bottomrule
+  \end{tabularx}
+\end{table}
+
+\section{Affine algebras and conformal invariance}
+
+For an affine Lie algebra at level $k$, the Sugawara construction produces a
+Virasoro action under specified representation-theoretic conditions. For
+affine $E_8$ at level one, the central charge is
+
+\begin{equation}
+  c = \frac{k\,\dim E_8}{k+h^{\vee}} = \frac{248}{31}=8.
+\end{equation}
+
+This is a statement about a current algebra and its conformal field theory. It
+does not imply that a fluid forced with a pattern labelled $E_8$ inherits that
+Virasoro representation. Two-dimensional turbulence can display conformal
+statistics in appropriate regimes \citep{bernard2006conformal}, but similarity
+of vocabulary is not a derivation.
+
+\begin{evidence}{Assessment: category error}
+Persistent homology can summarize geometry in data. It cannot prove that a
+fluid field carries a Sugawara stress tensor. The latter requires an explicit
+current algebra, operator products or equivalent observables, and Ward-identity
+tests.
+\end{evidence}
+
+\section{Imaginary roots and evanescent waves}
+
+An imaginary root of an indefinite Kac--Moody algebra is defined by the root
+space bilinear form. It is not an imaginary spatial wavenumber. Identifying the
+two square roots without a map between the bilinear forms conflates algebraic
+classification with a dispersion relation. The repository supplies no such
+map, so the proposed \enquote{evanescent threshold} and \enquote{superforce
+limit} are unsupported.
+
+\section{Gravitoelectromagnetism}
+
+Gravitoelectromagnetism is a controlled analogy inside general relativity, not
+a direct coupling between electromagnetic and gravitational fields. In the
+linear perturbation construction, a Minkowski background is perturbed by
+$h_{\mu\nu}$, the trace-reversed perturbation obeys a sourced wave equation
+after a transverse gauge condition is imposed, and the gravitoelectric and
+gravitomagnetic fields are defined from the resulting potentials
+\citep{mashhoon2008gravitoelectromagnetism}. The Lorentz-like test-body form is
+therefore conditional on the weak-field expansion, the stated gauge and source
+definitions, and the retained velocity order.
+
+The analogy does not create a new electromagnetic--gravitational coupling,
+does not replace the nonlinear Einstein equations, and does not establish a
+propulsion mechanism. A stronger claim requires a covariant action with the
+proposed interaction, consistent source and test-body variables, recovery of
+the general-relativistic limit, and a controlled prediction that ordinary
+electromagnetic coupling, vibration, and thermal drift do not explain.
+
+\section{Materials and zero-point-energy claims}
+
+The repository retains manuscripts concerning tourmaline, vibrations, and
+zero-point-energy interpretations. The corpus includes conventional empirical
+material data, including tourmaline electrical and thermal measurements, and
+standard first-principles calculations of zero-point vibration. This evidence
+falsifies an absolute claim that the source collection is wholly nonempirical.
+It does not test the proposed enhancement, excess-energy effect, or new
+coupling. Those claims require calibrated raw measurements, a complete energy
+balance, blinded controls, uncertainty budgets, and independent replication.
+The checked-in corpus contains no such discriminating evidence.
+
+The experimental-admission registry converts that boundary into operational
+packages. Measurable proposals receive observables, matched controls, complete
+energy channels, acceptance criteria, and rejection criteria. Undefined
+analogies receive no pretend observable and remain excluded.
+
+\begin{table}[htbp]
+  \centering
+  \caption{Operational content of the physical-claim admission packages.}
+  \label{tab:experimental-admission-packages}
+  \small
+  \begin{tabularx}{\textwidth}{>{\raggedright\arraybackslash}p{0.43\textwidth}Yrrrr}
+    \toprule
+    Claim & Outcome & Obs. & Ctrls. & Channels & Missing \\
+    \midrule
+    \input{generated/review_admission_rows.tex}
+  \end{tabularx}
+\end{table}

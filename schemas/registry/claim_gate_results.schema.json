@@ -1,0 +1,40 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://mathsciencecompendium.local/schemas/registry/claim_gate_results.schema.json",
+  "title": "ClaimGateResults",
+  "type": "object",
+  "required": ["schema_version", "generator", "claim_count", "gate_count", "passed_count", "failed_count", "all_gates_passed", "results"],
+  "properties": {
+    "schema_version": {"const": 1},
+    "generator": {"const": "scripts/run_claim_gates.py"},
+    "claim_count": {"const": 23},
+    "gate_count": {"const": 23},
+    "passed_count": {"type": "integer", "minimum": 0, "maximum": 23},
+    "failed_count": {"type": "integer", "minimum": 0, "maximum": 23},
+    "all_gates_passed": {"type": "boolean"},
+    "results": {
+      "type": "array",
+      "minItems": 23,
+      "maxItems": 23,
+      "items": {
+        "type": "object",
+        "required": ["claim_id", "checker", "gate_kind", "expected_claim_status", "actual_claim_status", "expected_gate_outcome", "actual_gate_outcome", "passed", "missing_evidence_paths", "summary", "metrics"],
+        "properties": {
+          "claim_id": {"type": "string", "pattern": "^[a-z0-9_]+$"},
+          "checker": {"type": "string", "pattern": "^[a-z0-9_]+$"},
+          "gate_kind": {"type": "string", "minLength": 1},
+          "expected_claim_status": {"type": "string", "minLength": 1},
+          "actual_claim_status": {"type": "string", "minLength": 1},
+          "expected_gate_outcome": {"type": "string", "minLength": 1},
+          "actual_gate_outcome": {"type": "string", "minLength": 1},
+          "passed": {"type": "boolean"},
+          "missing_evidence_paths": {"type": "array", "items": {"type": "string"}},
+          "summary": {"type": "string", "minLength": 1},
+          "metrics": {"type": "object"}
+        },
+        "additionalProperties": false
+      }
+    }
+  },
+  "additionalProperties": false
+}

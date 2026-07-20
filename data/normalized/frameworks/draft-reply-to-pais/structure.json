@@ -1,0 +1,28 @@
+{
+  "code_fences": [],
+  "document_id": "draft-reply-to-pais",
+  "formula_candidates": [
+    {
+      "ascii_text": "nabla^2phi - partial^2phi/partialt^2 + V'(phi) = -rho,",
+      "source_line": 34,
+      "source_line_sha256": "3ee712123131c59aa2f77d136f48d3ae08a56ccfdfbbec0b91fe94ce519ce922",
+      "source_text": "\u2207\u00b2\u03c6 - \u2202\u00b2\u03c6/\u2202t\u00b2 + V'(\u03c6) = -\u03c1,"
+    },
+    {
+      "ascii_text": "E_{\\text{ZPE}} = \\int rho_{\\text{vac}} phi \\, dx^3,",
+      "source_line": 41,
+      "source_line_sha256": "e44aa8c3a23de9ca8d3c8905388362fefc590eef7ccc425ec33f0e108f777207",
+      "source_text": "E_{\\text{ZPE}} = \\int \u03c1_{\\text{vac}} \u03c6 \\, dx\u00b3,"
+    },
+    {
+      "ascii_text": "L_{\\text{int}} = g phi \\sin(omegat),",
+      "source_line": 48,
+      "source_line_sha256": "826bd333f24663fc2ee814fac21fa9bb60e0e00a7c95fdb6ac1687bb3d514b48",
+      "source_text": "L_{\\text{int}} = g \u03c6 \\sin(\u03c9t),"
+    }
+  ],
+  "schema_version": 1,
+  "source_relpath": "source_materials/frameworks/draft reply to pais.txt",
+  "source_sha256": "4a27d87cdff9f1f902c4754dd18dd3bf4500ac8cea57d6d41d8b5ff26266d5fe",
+  "table_row_candidates": []
+}

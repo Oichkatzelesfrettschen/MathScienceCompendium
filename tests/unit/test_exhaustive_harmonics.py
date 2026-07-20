@@ -16,13 +16,12 @@ Covers:
 from __future__ import annotations
 
 import numpy as np
-import pytest
 
 from mathphysics.genesis_harmonics import (
     GenesisHarmonics,
-    MaterialProperties,
     MaterialType,
 )
+from mathphysics.topology_bridge import TopologyBridge
 
 
 # ---------------------------------------------------------------------------
@@ -255,18 +254,16 @@ def test_material_properties_response_function_callable():
 def test_material_properties_quartz_higher_freqs_than_tourmaline():
     gh_t = GenesisHarmonics(material=MaterialType.TOURMALINE)
     gh_q = GenesisHarmonics(material=MaterialType.QUARTZ)
-    assert gh_q.material_properties.resonance_frequencies[0] > (
-        gh_t.material_properties.resonance_frequencies[0]
+    assert (
+        gh_q.material_properties.resonance_frequencies[0]
+        > (gh_t.material_properties.resonance_frequencies[0])
     )
 
 
 # ---------------------------------------------------------------------------
-# TopologyBridge (topology_bridge.py)
+# TopologyBridge behavior
 # ---------------------------------------------------------------------------
-# topology_bridge.py has no dedicated test file; coverage lives here.
-
-
-from mathphysics.topology_bridge import TopologyBridge  # noqa: E402
+# These tests keep the topology fallback beside the harmonics integration checks.
 
 
 def test_topology_bridge_calculate_persistence_returns_array():
@@ -312,6 +309,7 @@ def test_topology_bridge_fallback_persistence_without_gudhi():
     # The fallback path (no gudhi) returns a fixed 3-row array.
     # We test the fallback by patching HAS_GUDHI in the topology_bridge module.
     from unittest.mock import patch  # noqa: PLC0415
+
     import mathphysics.topology_bridge as tb  # noqa: PLC0415
 
     with patch.object(tb, "HAS_GUDHI", False):
@@ -322,6 +320,7 @@ def test_topology_bridge_fallback_persistence_without_gudhi():
 
 def test_topology_bridge_fallback_betti_numbers_without_gudhi():
     from unittest.mock import patch  # noqa: PLC0415
+
     import mathphysics.topology_bridge as tb  # noqa: PLC0415
 
     with patch.object(tb, "HAS_GUDHI", False):

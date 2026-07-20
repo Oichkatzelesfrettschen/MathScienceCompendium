@@ -1,0 +1,87 @@
+{
+  "albert_implementation": {
+    "commutativity_residual_maximum_absolute": 0.0,
+    "coordinate_dimension": 27,
+    "identity_residual_maximum_absolute": 0.0,
+    "inputs_are_hermitian": true,
+    "jordan_identity_residual_maximum_absolute": 2.384185791015625e-07,
+    "nonzero_product_norm": 2.2384519577026367
+  },
+  "albert_ladder": [
+    {
+      "dimension": 52,
+      "group": "F4",
+      "role": "automorphism group of the Albert algebra h3(O)",
+      "status": "established"
+    },
+    {
+      "dimension": 78,
+      "group": "E6(-26)",
+      "role": "determinant-preserving reduced structure group of h3(O)",
+      "status": "established"
+    },
+    {
+      "dimension": 133,
+      "group": "E7(-25)",
+      "role": "conformal/Freudenthal symmetry built from h3(O), not its automorphism group",
+      "status": "established"
+    },
+    {
+      "dimension": 133,
+      "group": "E7 as Aut(J3(S))",
+      "role": "source-framework claim",
+      "status": "rejected"
+    }
+  ],
+  "dimension_identities": {
+    "albert_dimension": 27,
+    "e6_dimension_from_f4_plus_traceless_albert": 78,
+    "e7_dimension_from_f4_plus_three_albert_copies": 133
+  },
+  "generator": "scripts/audit_exceptional_group_scope.py",
+  "kac_moody_extensions": [
+    {
+      "determinant": 0,
+      "name": "E9",
+      "negative_eigenvalue_count": 0,
+      "null_eigenvalue_count": 1,
+      "rank": 9
+    },
+    {
+      "determinant": -1,
+      "name": "E10",
+      "negative_eigenvalue_count": 1,
+      "null_eigenvalue_count": 0,
+      "rank": 10
+    },
+    {
+      "determinant": -2,
+      "name": "E11",
+      "negative_eigenvalue_count": 1,
+      "null_eigenvalue_count": 0,
+      "rank": 11
+    }
+  ],
+  "moonshine_scope": {
+    "established": "Monster graded traces on the moonshine module are specific genus-zero modular functions proved using the monster Lie algebra.",
+    "monster_order": 808017424794512875886459904961710757005754368000000000,
+    "physical_stability_claim_status": "rejected",
+    "rejection_criterion": "Reject generic stability claims until a Monster representation, state space, evolution operator, invariant, and matched control are defined.",
+    "repository_implementation": "The code stores the Monster order and evaluates j; it defines no Monster representation, graded module, physical state action, or stability operator."
+  },
+  "schema_version": 1,
+  "source_evidence": [
+    {
+      "relpath": "source_materials/pdfs/math_0105155.pdf",
+      "sha256": "f8087fb91b10cdbee2157e8eec8c33ac6b918b0de2c8c1fd16b4d8183f0868cc"
+    },
+    {
+      "relpath": "source_materials/pdfs/borcherds_monstrous_moonshine_1992.pdf",
+      "sha256": "dee2cb9c3121cf1bf8bddce952d952e0f478a39e497df8946e220e9ceffab501"
+    },
+    {
+      "relpath": "source_materials/pdfs/arxiv_1411.6571.pdf",
+      "sha256": "80566abbbc2f0fd4c36851c38d6fd9348452f636b62234e0d339e2d180fde82f"
+    }
+  ]
+}

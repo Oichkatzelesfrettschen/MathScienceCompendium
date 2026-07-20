@@ -25,14 +25,14 @@ import pytest
 # The LBM types live in quantum_lattice_boltzmann and do NOT need JAX.
 # We test them independently of unified_physics.py to keep tests fast.
 from mathphysics.quantum_lattice_boltzmann import (
+    CS2,
+    PHI,
+    VELOCITIES,
+    WEIGHTS,
     BoundaryType,
     LBMParameters,
     LBMState,
     QuantumLatticeBoltzmann,
-    VELOCITIES,
-    WEIGHTS,
-    CS2,
-    PHI,
 )
 
 
@@ -118,14 +118,12 @@ def test_lbm_parameters_custom_grid():
 
 
 def test_lbm_parameters_viscosity_computed_from_tau():
-    # viscosity = CS2 * (tau - 0.5)
     params = LBMParameters(tau=0.8)
     expected_viscosity = CS2 * (0.8 - 0.5)
     assert abs(params.viscosity - expected_viscosity) < 1e-12
 
 
 def test_lbm_parameters_tau_computed_from_viscosity():
-    # tau = viscosity / CS2 + 0.5
     vis = 0.1
     params = LBMParameters(viscosity=vis)
     expected_tau = vis / CS2 + 0.5
@@ -133,9 +131,8 @@ def test_lbm_parameters_tau_computed_from_viscosity():
 
 
 def test_lbm_parameters_invalid_tau_raises():
-    # tau <= 0.5 is non-physical
     with pytest.raises(ValueError, match="tau"):
-        LBMParameters(viscosity=0.0)  # tau = 0.0/CS2 + 0.5 = 0.5, raises
+        LBMParameters(viscosity=0.0)
 
 
 def test_lbm_parameters_very_small_tau_raises():
@@ -222,6 +219,53 @@ def test_qlbm_validate_conservation_mass_key():
     assert "mass_conserved" in result
 
 
+def test_qlbm_equilibrium_sums_to_density_for_nonzero_velocity():
+    params = LBMParameters(nx=8, ny=8, harmonic_amplitude=0.0)
+    lbm = QuantumLatticeBoltzmann(params)
+    lbm.state.velocity[..., 0] = 0.1
+    lbm.state.velocity[..., 1] = 0.05
+    lbm._compute_equilibrium()
+    np.testing.assert_allclose(
+        np.sum(lbm.state.f_eq, axis=2),
+        lbm.state.density,
+        rtol=1e-12,
+        atol=1e-12,
+    )
+
+
+def test_qlbm_periodic_steps_conserve_mass():
+    params = LBMParameters(
+        nx=16,
+        ny=16,
+        tau=1.5,
+        harmonic_amplitude=1e-4,
+        num_harmonics=3,
+        boundary_type=BoundaryType.PERIODIC,
+    )
+    lbm = QuantumLatticeBoltzmann(params)
+    lbm.run_simulation(timesteps=50)
+    result = lbm.validate_conservation(relative_tolerance=1e-10)
+    assert result["mass_conserved"]
+    assert result["relative_mass_error"] <= 1e-10
+
+
+def test_qlbm_conservation_validator_measures_injected_mass():
+    params = LBMParameters(nx=8, ny=8, harmonic_amplitude=0.0)
+    lbm = QuantumLatticeBoltzmann(params)
+    lbm.state.f[..., 0] += 0.01
+    lbm.state.update_macroscopic()
+    result = lbm.validate_conservation(relative_tolerance=1e-6)
+    assert not result["mass_conserved"]
+    assert result["relative_mass_error"] > 1e-6
+
+
+def test_qlbm_conservation_validator_rejects_nonpositive_tolerance():
+    params = LBMParameters(nx=8, ny=8)
+    lbm = QuantumLatticeBoltzmann(params)
+    with pytest.raises(ValueError, match="positive"):
+        lbm.validate_conservation(relative_tolerance=0.0)
+
+
 # ---------------------------------------------------------------------------
 # LBMState.update_macroscopic
 # ---------------------------------------------------------------------------
@@ -257,7 +301,7 @@ def test_lbm_state_update_macroscopic_energy_non_negative():
 
 def test_unified_physics_importable_with_jax():
     """Check that unified_physics imports cleanly when JAX is available."""
-    jax = pytest.importorskip("jax", reason="JAX required for unified_physics")
+    pytest.importorskip("jax", reason="JAX required for unified_physics")
     try:
         import mathphysics.unified_physics  # noqa: F401, PLC0415
     except Exception as exc:
@@ -265,7 +309,7 @@ def test_unified_physics_importable_with_jax():
 
 
 def test_unified_physics_run_e11_analysis_returns_matrix():
-    jax = pytest.importorskip("jax", reason="JAX required")
+    pytest.importorskip("jax", reason="JAX required")
     try:
         from mathphysics.unified_physics import run_e11_analysis  # noqa: PLC0415
     except Exception as exc:

@@ -1,0 +1,46 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "generator",
+    "normalization",
+    "source_registry_relpath",
+    "source_registry_sha256",
+    "document_count",
+    "documents",
+    "duplicate_group_count",
+    "cross_document_duplicate_group_count",
+    "duplicate_groups",
+    "pairwise_overlap"
+  ],
+  "properties": {
+    "schema_version": {"const": 1},
+    "generator": {"type": "string", "minLength": 1},
+    "normalization": {"type": "object"},
+    "source_registry_relpath": {"type": "string", "minLength": 1},
+    "source_registry_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "document_count": {"type": "integer", "minimum": 1},
+    "documents": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "title",
+          "source_relpath",
+          "source_sha256",
+          "eligible_block_occurrences",
+          "unique_block_hashes",
+          "duplicate_occurrences_within_document",
+          "unique_heading_hashes"
+        ]
+      }
+    },
+    "duplicate_group_count": {"type": "integer", "minimum": 0},
+    "cross_document_duplicate_group_count": {"type": "integer", "minimum": 0},
+    "duplicate_groups": {"type": "array"},
+    "pairwise_overlap": {"type": "array"}
+  },
+  "additionalProperties": false
+}

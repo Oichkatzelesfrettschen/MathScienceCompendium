@@ -17,13 +17,12 @@ try:
 
     HAS_PYARROW = True
 except ImportError:
-    pa = None  # type: ignore
-    pq = None  # type: ignore
+    pa = None
+    pq = None
     HAS_PYARROW = False
 
 
 from .config import Config
-from .optional_deps import HAS_JAX
 
 
 class DataHandler:
@@ -41,16 +40,9 @@ class DataHandler:
                 "pyarrow is required for parquet operations. Install with: pip install pyarrow"
             )
 
-        if HAS_JAX:
-            import jax.numpy as jnp  # noqa: PLC0415
-
-            _array_types: tuple[type, ...] = (np.ndarray, jnp.ndarray)
-        else:
-            _array_types = (np.ndarray,)
-
         processed_data = {
-            k: [v.tolist() if isinstance(v, _array_types) else v]
-            for k, v in data_dict.items()
+            key: [value.tolist() if hasattr(value, "tolist") else value]
+            for key, value in data_dict.items()
         }
 
         df = pd.DataFrame(processed_data)

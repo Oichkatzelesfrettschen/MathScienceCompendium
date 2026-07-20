@@ -1,0 +1,18 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://mathsciencecompendium.local/schemas/registry/exceptional_group_scope_audit.schema.json",
+  "title": "ExceptionalGroupScopeAudit",
+  "type": "object",
+  "required": ["schema_version", "generator", "source_evidence", "albert_ladder", "dimension_identities", "albert_implementation", "kac_moody_extensions", "moonshine_scope"],
+  "properties": {
+    "schema_version": {"const": 1},
+    "generator": {"const": "scripts/audit_exceptional_group_scope.py"},
+    "source_evidence": {"type": "array", "minItems": 3, "items": {"type": "object", "required": ["relpath", "sha256"], "properties": {"relpath": {"type": "string"}, "sha256": {"type": "string", "pattern": "^[a-f0-9]{64}$"}}, "additionalProperties": false}},
+    "albert_ladder": {"type": "array", "minItems": 4, "maxItems": 4, "items": {"type": "object"}},
+    "dimension_identities": {"type": "object"},
+    "albert_implementation": {"type": "object"},
+    "kac_moody_extensions": {"type": "array", "minItems": 3, "maxItems": 3, "items": {"type": "object"}},
+    "moonshine_scope": {"type": "object"}
+  },
+  "additionalProperties": false
+}

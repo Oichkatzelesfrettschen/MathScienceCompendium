@@ -1,7 +1,6 @@
 from __future__ import annotations
 
 import numpy as np
-import pytest
 
 from mathphysics.modular_forms import (
     AffineCharacterAnalyzer,
@@ -136,8 +135,7 @@ def test_ramanujan_tau_known_values():
 
 
 def test_klein_j_q_expansion_first_coefficient():
-    # j = q^{-1} + 744 + 196884*q + ...
-    # klein_j_q_expansion returns the non-negative part; index 0 is 1 (coefficient of q^0 after the pole)
+    # The routine retains the non-negative series after separating the pole.
     coeffs = ModularForms.klein_j_q_expansion(num_coeffs=6)
     assert coeffs[0] == 1
 
@@ -217,7 +215,7 @@ def test_j_invariant_large_imaginary_part_near_zero():
 
 def test_monstrous_moonshine_order_is_large_integer():
     order = MonstrousMoonshine.monster_order()
-    assert order > 10 ** 50
+    assert order > 10**50
 
 
 def test_monster_group_order_alias():
@@ -246,7 +244,7 @@ def test_weierstrass_invariants_g2_proportional_to_e4():
     tau = 2j
     g2, _ = EllipticCurves.weierstrass_invariants(tau, num_terms=20)
     e4 = ModularForms.eisenstein_series_E4(tau, num_terms=20)
-    # g2 = 60 * E4
+    # The implemented normalization makes g2 sixty times E4.
     np.testing.assert_allclose(abs(g2), abs(60 * e4), rtol=1e-10)
 
 
@@ -259,7 +257,7 @@ def test_compute_invariants_returns_dict():
 def test_compute_invariants_discriminant_formula():
     g2, g3 = 4.0, 4.0
     result = EllipticCurves.compute_invariants(g2, g3)
-    expected_delta = g2 ** 3 - 27 * g3 ** 2
+    expected_delta = g2**3 - 27 * g3**2
     assert abs(result["discriminant"] - expected_delta) < 1e-10
 
 

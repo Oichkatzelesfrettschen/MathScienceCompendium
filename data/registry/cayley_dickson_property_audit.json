@@ -1,0 +1,198 @@
+{
+  "algebras": [
+    {
+      "dimension": 1,
+      "name": "Real",
+      "properties": {
+        "dimension": 1,
+        "has_zero_divisors": false,
+        "is_alternative": true,
+        "is_associative": true,
+        "is_commutative": true,
+        "is_division_algebra": true,
+        "is_flexible": true,
+        "is_power_associative": true,
+        "name": "Real",
+        "norm_is_multiplicative": true
+      },
+      "witnesses": {
+        "associator_maximum_absolute": 0.0,
+        "commutator_maximum_absolute": 0.0,
+        "flexibility_residual_maximum_absolute": 0.0,
+        "left_alternative_residual_maximum_absolute": 0.0,
+        "norm_composition_absolute_residual": 0.0,
+        "quadratic_identity_residual_maximum_absolute": 0.0,
+        "right_alternative_residual_maximum_absolute": 0.0,
+        "zero_divisor": null
+      }
+    },
+    {
+      "dimension": 2,
+      "name": "Complex",
+      "properties": {
+        "dimension": 2,
+        "has_zero_divisors": false,
+        "is_alternative": true,
+        "is_associative": true,
+        "is_commutative": true,
+        "is_division_algebra": true,
+        "is_flexible": true,
+        "is_power_associative": true,
+        "name": "Complex",
+        "norm_is_multiplicative": true
+      },
+      "witnesses": {
+        "associator_maximum_absolute": 0.0,
+        "commutator_maximum_absolute": 0.0,
+        "flexibility_residual_maximum_absolute": 0.0,
+        "left_alternative_residual_maximum_absolute": 0.0,
+        "norm_composition_absolute_residual": 0.0,
+        "quadratic_identity_residual_maximum_absolute": 0.0,
+        "right_alternative_residual_maximum_absolute": 0.0,
+        "zero_divisor": null
+      }
+    },
+    {
+      "dimension": 4,
+      "name": "Quaternion",
+      "properties": {
+        "dimension": 4,
+        "has_zero_divisors": false,
+        "is_alternative": true,
+        "is_associative": true,
+        "is_commutative": false,
+        "is_division_algebra": true,
+        "is_flexible": true,
+        "is_power_associative": true,
+        "name": "Quaternion",
+        "norm_is_multiplicative": true
+      },
+      "witnesses": {
+        "associator_maximum_absolute": 0.0,
+        "commutator_maximum_absolute": 2.0,
+        "flexibility_residual_maximum_absolute": 0.0,
+        "left_alternative_residual_maximum_absolute": 0.0,
+        "norm_composition_absolute_residual": 0.0,
+        "quadratic_identity_residual_maximum_absolute": 0.0,
+        "right_alternative_residual_maximum_absolute": 0.0,
+        "zero_divisor": null
+      }
+    },
+    {
+      "dimension": 8,
+      "name": "Octonion",
+      "properties": {
+        "dimension": 8,
+        "has_zero_divisors": false,
+        "is_alternative": true,
+        "is_associative": false,
+        "is_commutative": false,
+        "is_division_algebra": true,
+        "is_flexible": true,
+        "is_power_associative": true,
+        "name": "Octonion",
+        "norm_is_multiplicative": true
+      },
+      "witnesses": {
+        "associator_maximum_absolute": 2.0,
+        "commutator_maximum_absolute": 2.0,
+        "flexibility_residual_maximum_absolute": 0.0,
+        "left_alternative_residual_maximum_absolute": 0.0,
+        "norm_composition_absolute_residual": 0.0,
+        "quadratic_identity_residual_maximum_absolute": 0.0,
+        "right_alternative_residual_maximum_absolute": 0.0,
+        "zero_divisor": null
+      }
+    },
+    {
+      "dimension": 16,
+      "name": "Sedenion",
+      "properties": {
+        "dimension": 16,
+        "has_zero_divisors": true,
+        "is_alternative": false,
+        "is_associative": false,
+        "is_commutative": false,
+        "is_division_algebra": false,
+        "is_flexible": true,
+        "is_power_associative": true,
+        "name": "Sedenion",
+        "norm_is_multiplicative": false
+      },
+      "witnesses": {
+        "associator_maximum_absolute": 2.0,
+        "commutator_maximum_absolute": 2.0,
+        "flexibility_residual_maximum_absolute": 0.0,
+        "left_alternative_residual_maximum_absolute": 60.0,
+        "norm_composition_absolute_residual": 596.0,
+        "quadratic_identity_residual_maximum_absolute": 0.0,
+        "right_alternative_residual_maximum_absolute": 60.0,
+        "zero_divisor": {
+          "left_nonzero_indices": {
+            "10": 1.0,
+            "3": 1.0
+          },
+          "left_norm_squared": 2.0,
+          "product_norm_squared": 0.0,
+          "right_nonzero_indices": {
+            "15": -1.0,
+            "6": 1.0
+          },
+          "right_norm_squared": 2.0
+        }
+      }
+    },
+    {
+      "dimension": 32,
+      "name": "Pathion",
+      "properties": {
+        "dimension": 32,
+        "has_zero_divisors": true,
+        "is_alternative": false,
+        "is_associative": false,
+        "is_commutative": false,
+        "is_division_algebra": false,
+        "is_flexible": true,
+        "is_power_associative": true,
+        "name": "Pathion",
+        "norm_is_multiplicative": false
+      },
+      "witnesses": {
+        "associator_maximum_absolute": 2.0,
+        "commutator_maximum_absolute": 2.0,
+        "flexibility_residual_maximum_absolute": 0.0,
+        "left_alternative_residual_maximum_absolute": 274.0,
+        "norm_composition_absolute_residual": 400.0,
+        "quadratic_identity_residual_maximum_absolute": 0.0,
+        "right_alternative_residual_maximum_absolute": 274.0,
+        "zero_divisor": {
+          "left_nonzero_indices": {
+            "10": 1.0,
+            "3": 1.0
+          },
+          "left_norm_squared": 2.0,
+          "product_norm_squared": 0.0,
+          "right_nonzero_indices": {
+            "15": -1.0,
+            "6": 1.0
+          },
+          "right_norm_squared": 2.0
+        }
+      }
+    }
+  ],
+  "construction": "standard real Cayley-Dickson algebras with negative doubling parameter",
+  "generator": "scripts/audit_cayley_dickson_properties.py",
+  "interpretation": "The source theorems establish universal properties. Executable residuals guard the implementation and provide counterexamples for properties that fail.",
+  "schema_version": 1,
+  "source_evidence": [
+    {
+      "relpath": "source_materials/pdfs/math_0105155.pdf",
+      "scope": "R, C, H, O division, associativity, alternativity, and norm-composition boundary"
+    },
+    {
+      "relpath": "source_materials/pdfs/math_0512517.pdf",
+      "scope": "higher algebras are flexible, nonalternative, non-normed, and have zero divisors"
+    }
+  ]
+}

@@ -6,7 +6,13 @@ calculations, with a fallback to native NumPy implementation.
 
 from __future__ import annotations
 
+from typing import TYPE_CHECKING
+
 import numpy as np
+
+
+if TYPE_CHECKING:
+    from collections.abc import Callable
 
 
 try:
@@ -45,10 +51,21 @@ class LiesymBridge:
                 print(f"[LIESYM] Root generation failed: {e}")
 
         # Fallback to internal BaseRootSystem logic
-        from .roots import E6RootSystem, E7RootSystem, E8RootSystem, F4RootSystem  # noqa: PLC0415
+        from .roots import (  # noqa: PLC0415
+            BaseRootSystem,
+            E6RootSystem,
+            E7RootSystem,
+            E8RootSystem,
+            F4RootSystem,
+        )
 
-        mapping = {"E8": E8RootSystem, "E7": E7RootSystem, "E6": E6RootSystem, "F4": F4RootSystem}
-        key = f"{algebra_type}{rank}" if algebra_type == "E" else algebra_type
+        mapping: dict[str, Callable[[], BaseRootSystem]] = {
+            "E8": E8RootSystem,
+            "E7": E7RootSystem,
+            "E6": E6RootSystem,
+            "F4": F4RootSystem,
+        }
+        key = f"{algebra_type}{rank}"
         if key in mapping:
             return mapping[key]().generate_roots()
 
@@ -61,11 +78,27 @@ class LiesymBridge:
             try:
                 if algebra_type == "E":
                     g = ls.E(rank)
+                elif algebra_type == "F" and rank == 4:
+                    g = ls.F4()
+                elif algebra_type == "G" and rank == 2:
+                    g = ls.G2()
+                else:
+                    raise ValueError(f"Liesym orbit is unsupported for {algebra_type}{rank}")
                 # orbit method takes a weight vector
                 orbit = g.orbit(root.tolist())
                 return [np.array(p) for p in orbit]
             except Exception as e:
                 print(f"[LIESYM] Orbit calculation failed: {e}")
 
-        # Fallback to manual reflection loop
-        # (Implementation as before)
+        roots = LiesymBridge.get_roots(algebra_type, rank)
+        if not any(np.allclose(root, candidate) for candidate in roots):
+            raise ValueError("The supplied vector is not a root of the requested algebra")
+        target_norm = float(np.dot(root, root))
+        orbit = [
+            candidate
+            for candidate in roots
+            if np.isclose(float(np.dot(candidate, candidate)), target_norm)
+        ]
+        if not orbit:
+            raise ValueError(f"No Weyl orbit found for {algebra_type}{rank} root")
+        return orbit

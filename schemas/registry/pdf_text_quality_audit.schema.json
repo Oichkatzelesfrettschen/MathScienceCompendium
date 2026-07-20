@@ -1,0 +1,57 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://mathsciencecompendium.local/schemas/registry/pdf_text_quality_audit.schema.json",
+  "title": "PDFTextQualityAudit",
+  "type": "object",
+  "required": ["schema_version", "generator", "policy", "document_count", "page_count", "documents"],
+  "properties": {
+    "schema_version": { "type": "integer", "enum": [1] },
+    "generator": { "type": "string", "minLength": 1 },
+    "policy": {
+      "type": "object",
+      "required": ["minimum_nonspace_characters_per_page", "replacement_character_limit", "purpose"],
+      "properties": {
+        "minimum_nonspace_characters_per_page": { "type": "integer", "minimum": 0 },
+        "replacement_character_limit": { "type": "integer", "minimum": 0 },
+        "purpose": { "type": "string", "minLength": 1 }
+      },
+      "additionalProperties": false
+    },
+    "document_count": { "type": "integer", "minimum": 0 },
+    "page_count": { "type": "integer", "minimum": 0 },
+    "documents": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["source_relpath", "source_sha256", "size_bytes", "page_count", "native_nonspace_characters", "classification", "pages_recommended_for_ocr", "pages"],
+        "properties": {
+          "source_relpath": { "type": "string", "pattern": "\\.pdf$" },
+          "source_sha256": { "type": "string", "pattern": "^[a-f0-9]{64}$" },
+          "size_bytes": { "type": "integer", "minimum": 0 },
+          "page_count": { "type": "integer", "minimum": 1 },
+          "native_nonspace_characters": { "type": "integer", "minimum": 0 },
+          "classification": { "type": "string", "enum": ["native_text_complete", "native_text_mixed", "native_text_sparse"] },
+          "pages_recommended_for_ocr": { "type": "array", "items": { "type": "integer", "minimum": 1 } },
+          "pages": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": ["page", "nonspace_characters", "word_count", "replacement_characters", "ocr_recommended", "text_sha256"],
+              "properties": {
+                "page": { "type": "integer", "minimum": 1 },
+                "nonspace_characters": { "type": "integer", "minimum": 0 },
+                "word_count": { "type": "integer", "minimum": 0 },
+                "replacement_characters": { "type": "integer", "minimum": 0 },
+                "ocr_recommended": { "type": "boolean" },
+                "text_sha256": { "type": "string", "pattern": "^[a-f0-9]{64}$" }
+              },
+              "additionalProperties": false
+            }
+          }
+        },
+        "additionalProperties": false
+      }
+    }
+  },
+  "additionalProperties": false
+}

@@ -1,0 +1,45 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://mathsciencecompendium.local/schemas/registry/lbm_root_order_audit.schema.json",
+  "title": "LBMRootOrderAudit",
+  "$defs": {
+    "comparison": {
+      "type": "object",
+      "required": ["reference_order_sha256", "comparison_order_sha256", "relative_perturbation_l2_difference", "maximum_absolute_density_difference", "reference_density_minimum", "reference_density_maximum", "comparison_density_minimum", "comparison_density_maximum"],
+      "properties": {
+        "reference_order_sha256": { "type": "string", "pattern": "^[a-f0-9]{64}$" },
+        "comparison_order_sha256": { "type": "string", "pattern": "^[a-f0-9]{64}$" },
+        "relative_perturbation_l2_difference": { "type": ["number", "null"], "minimum": 0 },
+        "maximum_absolute_density_difference": { "type": "number", "minimum": 0 },
+        "reference_density_minimum": { "type": "number" },
+        "reference_density_maximum": { "type": "number" },
+        "comparison_density_minimum": { "type": "number" },
+        "comparison_density_maximum": { "type": "number" }
+      },
+      "additionalProperties": false
+    }
+  },
+  "type": "object",
+  "required": ["schema_version", "generator", "root_order", "root_count", "grid_shape", "requested_harmonic_count", "effective_harmonic_count", "harmonic_amplitude", "interpretation", "comparisons"],
+  "properties": {
+    "schema_version": { "type": "integer", "enum": [1] },
+    "generator": { "type": "string", "minLength": 1 },
+    "root_order": { "type": "string", "minLength": 1 },
+    "root_count": { "type": "integer", "minimum": 1 },
+    "grid_shape": { "type": "array", "minItems": 2, "maxItems": 2, "items": { "type": "integer", "minimum": 1 } },
+    "requested_harmonic_count": { "type": "integer", "minimum": 1 },
+    "effective_harmonic_count": { "type": "integer", "minimum": 1 },
+    "harmonic_amplitude": { "type": "number", "minimum": 0 },
+    "interpretation": { "type": "string", "minLength": 1 },
+    "comparisons": {
+      "type": "object",
+      "required": ["reverse_order", "cyclic_shift_by_one"],
+      "properties": {
+        "reverse_order": { "$ref": "#/$defs/comparison" },
+        "cyclic_shift_by_one": { "$ref": "#/$defs/comparison" }
+      },
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": false
+}

@@ -17,15 +17,13 @@ Covers:
 
 from __future__ import annotations
 
-import json
-
 import numpy as np
 import pytest
 
 from mathphysics.aqgm_framework import (
+    AlgebraicGraph,
     AQGMConfig,
     AQGMFramework,
-    AlgebraicGraph,
     MatrixStarAlgebra,
     ModularAutomorphismGroup,
     QuantumGeometricOperator,
@@ -153,8 +151,14 @@ def test_algebraic_graph_get_unlabeled_operator_returns_none():
 def test_algebraic_graph_connectivity_structure_keys():
     g = make_small_graph(4)
     cs = g.connectivity_structure()
-    for key in ("num_vertices", "num_edges", "density", "is_connected",
-                "diameter", "clustering_coefficient"):
+    for key in (
+        "num_vertices",
+        "num_edges",
+        "density",
+        "is_connected",
+        "diameter",
+        "clustering_coefficient",
+    ):
         assert key in cs
 
 
@@ -186,9 +190,9 @@ def test_algebraic_graph_num_edges():
 
 def test_matrix_star_algebra_multiply_identity():
     alg = make_small_algebra(3)
-    I = np.eye(3, dtype=complex)
+    identity_matrix = np.eye(3, dtype=complex)
     A = np.random.randn(3, 3) + 1j * np.random.randn(3, 3)
-    np.testing.assert_allclose(alg.multiply(A, I), A, atol=1e-12)
+    np.testing.assert_allclose(alg.multiply(A, identity_matrix), A, atol=1e-12)
 
 
 def test_matrix_star_algebra_star_is_hermitian_conjugate():
@@ -206,8 +210,8 @@ def test_matrix_star_algebra_norm_positive():
 
 def test_matrix_star_algebra_norm_identity_is_one():
     alg = make_small_algebra(3)
-    I = np.eye(3, dtype=complex)
-    assert abs(alg.norm(I) - 1.0) < 1e-10
+    identity_matrix = np.eye(3, dtype=complex)
+    assert abs(alg.norm(identity_matrix) - 1.0) < 1e-10
 
 
 def test_matrix_star_algebra_commutator_antisymmetric():

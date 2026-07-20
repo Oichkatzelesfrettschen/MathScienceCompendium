@@ -1,0 +1,4199 @@
+{
+  "code_fences": [],
+  "document_id": "maximal-extraction-set1-set2",
+  "formula_candidates": [
+    {
+      "ascii_text": "-\tExplore connections between Jordan algebras,  F_4 , and  J_3(\\mathbb{O}) .",
+      "source_line": 20,
+      "source_line_sha256": "da8a7a0293bc5d0fe4de8ac57f12c076e8fc5688dfa7e9287adae22719615912",
+      "source_text": "\u2022\tExplore connections between Jordan algebras,  F_4 , and  J_3(\\mathbb{O}) ."
+    },
+    {
+      "ascii_text": "2.\tRecursive constructions: From  \\mathbb{R}  to pathions, embedding fractal symmetries and holographic dualities.",
+      "source_line": 27,
+      "source_line_sha256": "494ea1040d47541dca1cd94e2268fe468b618417e8649715641273e21da84e76",
+      "source_text": "2.\tRecursive constructions: From  \\mathbb{R}  to pathions, embedding fractal symmetries and holographic dualities."
+    },
+    {
+      "ascii_text": "Lie algebras serve as the algebraic backbone of continuous symmetry. Defined as a vector space over a field  \\mathbb{K}  equipped with a bilinear Lie bracket  [\\cdot, \\cdot] , they encapsulate the infinitesimal symmetries of Lie groups.",
+      "source_line": 31,
+      "source_line_sha256": "25c5115c485fceca5f4490da24ec7ba5c4ce3d1f9a3b36ced8e12a6cb4edec43",
+      "source_text": "Lie algebras serve as the algebraic backbone of continuous symmetry. Defined as a vector space over a field  \\mathbb{K}  equipped with a bilinear Lie bracket  [\\cdot, \\cdot] , they encapsulate the infinitesimal symmetries of Lie groups."
+    },
+    {
+      "ascii_text": "-\tAntisymmetry:  [X, Y] = -[Y, X] .",
+      "source_line": 33,
+      "source_line_sha256": "025272033add19e06479e1f2242dd4f1f611c0ae1dd30d1baf6e9d2a48ba7699",
+      "source_text": "\u2022\tAntisymmetry:  [X, Y] = -[Y, X] ."
+    },
+    {
+      "ascii_text": "-\tJacobi Identity:  [X, [Y, Z]] + [Y, [Z, X]] + [Z, [X, Y]] = 0 .",
+      "source_line": 34,
+      "source_line_sha256": "60a2654eca01622adbf6296788a1a1ec835945f94294d567d39aaed71f78c6cd",
+      "source_text": "\u2022\tJacobi Identity:  [X, [Y, Z]] + [Y, [Z, X]] + [Z, [X, Y]] = 0 ."
+    },
+    {
+      "ascii_text": "-\t \\mathfrak{sl}(2, \\mathbb{C}) : The Lie algebra of traceless  2 \\times 2  matrices.",
+      "source_line": 37,
+      "source_line_sha256": "52ef32728079b82008270fb03fe55cfb09431d1aa6e686b532fa8d2f06f070fe",
+      "source_text": "\u2022\t \\mathfrak{sl}(2, \\mathbb{C}) : The Lie algebra of traceless  2 \\times 2  matrices."
+    },
+    {
+      "ascii_text": "-\t \\mathfrak{so}(3) : The Lie algebra of rotations in  \\mathbb{R}^3 .",
+      "source_line": 38,
+      "source_line_sha256": "6900bd820a7f2ececccecae1b965fc1e3302456de64a3392a186d8f49231a0f1",
+      "source_text": "\u2022\t \\mathfrak{so}(3) : The Lie algebra of rotations in  \\mathbb{R}^3 ."
+    },
+    {
+      "ascii_text": "-\t F_4  governs the symmetries of the Jordan algebra  J_3(\\mathbb{O}) , formed from  3 \\times 3  Hermitian matrices over  \\mathbb{O} .",
+      "source_line": 54,
+      "source_line_sha256": "806d97e81ad883fff7e5aacd864cb4a34baa4d63061f272766385940beed2236",
+      "source_text": "\u2022\t F_4  governs the symmetries of the Jordan algebra  J_3(\\mathbb{O}) , formed from  3 \\times 3  Hermitian matrices over  \\mathbb{O} ."
+    },
+    {
+      "ascii_text": "-\t E_6 : Symmetry of  J_3(\\mathbb{O})  with  \\mathbb{C} -structure.",
+      "source_line": 58,
+      "source_line_sha256": "853938f9898b883ff554d4e2fd736071fe21cf27eaae57a5135d6bbb34f6978c",
+      "source_text": "\u2022\t E_6 : Symmetry of  J_3(\\mathbb{O})  with  \\mathbb{C} -structure."
+    },
+    {
+      "ascii_text": "-\t E_7 : Encodes  \\mathbb{H} -extended symmetries.",
+      "source_line": 59,
+      "source_line_sha256": "f18cf42c3c58fcce1a714b6410741717f175c5c908d042fa62dc253c154fe0c1",
+      "source_text": "\u2022\t E_7 : Encodes  \\mathbb{H} -extended symmetries."
+    },
+    {
+      "ascii_text": "-\tRepresentations of  \\mathfrak{sl}(2, \\mathbb{C})  underpin modular forms, linking Lie algebras to FLT.",
+      "source_line": 72,
+      "source_line_sha256": "31872c071661a7c23d61be5801066b76144ac3331b75d9bd39cbfce21a3b9c56",
+      "source_text": "\u2022\tRepresentations of  \\mathfrak{sl}(2, \\mathbb{C})  underpin modular forms, linking Lie algebras to FLT."
+    },
+    {
+      "ascii_text": "-\t F_4 : Automorphisms of the Albert algebra  J_3(\\mathbb{O}) .",
+      "source_line": 105,
+      "source_line_sha256": "3908a2b3f7d4f9e5eed5eaec9b6f4636817b0ca71542d73f56fa70a529c27bf6",
+      "source_text": "\u2022\t F_4 : Automorphisms of the Albert algebra  J_3(\\mathbb{O}) ."
+    },
+    {
+      "ascii_text": "1.\tAlbert Algebra  J_3(\\mathbb{O}) :",
+      "source_line": 129,
+      "source_line_sha256": "d9cfce1866d1cbe54600e10a108598023864221a0099ea96eb24bcde6ca63019",
+      "source_text": "1.\tAlbert Algebra  J_3(\\mathbb{O}) :"
+    },
+    {
+      "ascii_text": "-\t J_3(\\mathbb{O})  symmetries propagate through higher exceptional groups.",
+      "source_line": 133,
+      "source_line_sha256": "74c24dafbc589ca64d24a902f7c2277ff25c84d5f57bc7a75beda46e5b362c5a",
+      "source_text": "\u2022\t J_3(\\mathbb{O})  symmetries propagate through higher exceptional groups."
+    },
+    {
+      "ascii_text": "The Cayley-Dickson construction provides a recursive framework to generate higher-dimensional algebras from simpler ones. Beginning with the real numbers ( \\mathbb{R} ), this construction successively produces complex numbers ( \\mathbb{C} ), quaternions ( \\mathbb{H} ), octonions ( \\mathbb{O} ), and beyond, introducing new dimensions while progressively losing algebraic properties such as commutativity and associativity.",
+      "source_line": 148,
+      "source_line_sha256": "409a6dcddbc5eab537825c22427ba14d89829260d8dbf7b6613f5fd5aeb3bee8",
+      "source_text": "The Cayley-Dickson construction provides a recursive framework to generate higher-dimensional algebras from simpler ones. Beginning with the real numbers ( \\mathbb{R} ), this construction successively produces complex numbers ( \\mathbb{C} ), quaternions ( \\mathbb{H} ), octonions ( \\mathbb{O} ), and beyond, introducing new dimensions while progressively losing algebraic properties such as commutativity and associativity."
+    },
+    {
+      "ascii_text": "\\mathbb{R} \\xrightarrow{2D} \\mathbb{C} \\xrightarrow{4D} \\mathbb{H} \\xrightarrow{8D} \\mathbb{O} \\xrightarrow{16D} \\mathbb{S} \\xrightarrow{32D} \\mathbb{P} \\xrightarrow{\\dots} 2^n\\text{D}.",
+      "source_line": 152,
+      "source_line_sha256": "da659aced3fb3a2c969c5b7699b6641d5fff532077a3ea0c6ad3f4e4a63918dc",
+      "source_text": "\\mathbb{R} \\xrightarrow{2D} \\mathbb{C} \\xrightarrow{4D} \\mathbb{H} \\xrightarrow{8D} \\mathbb{O} \\xrightarrow{16D} \\mathbb{S} \\xrightarrow{32D} \\mathbb{P} \\xrightarrow{\\dots} 2^n\\text{D}."
+    },
+    {
+      "ascii_text": "-\t J_3(\\mathbb{O}) , the Jordan algebra of  3 \\times 3  Hermitian octonionic matrices, has symmetry group  F_4 , extending to  E_6, E_7,  and  E_8 .",
+      "source_line": 165,
+      "source_line_sha256": "47372a8403803b7e685fe2191270463fff0d22eaf5c9435d1d15216bfcaf8966",
+      "source_text": "\u2022\t J_3(\\mathbb{O}) , the Jordan algebra of  3 \\times 3  Hermitian octonionic matrices, has symmetry group  F_4 , extending to  E_6, E_7,  and  E_8 ."
+    },
+    {
+      "ascii_text": "\\mathbb{R}^8 \\xrightarrow{\\text{Embed}} \\text{E_8 lattice} \\xrightarrow{\\text{Fractal Project}} \\text{Lower-Dimensional Representations}.",
+      "source_line": 255,
+      "source_line_sha256": "16d1fb865a00ebf8066ce79768ce23deddc93742e28e0a1146170475bc5edd55",
+      "source_text": "\\mathbb{R}^8 \\xrightarrow{\\text{Embed}} \\text{E\u2088 lattice} \\xrightarrow{\\text{Fractal Project}} \\text{Lower-Dimensional Representations}."
+    },
+    {
+      "ascii_text": "where  q = e^{2\\pi i \\tau}  and  \\tau  is the modular parameter.",
+      "source_line": 277,
+      "source_line_sha256": "86cb7b731ccce13efa34e5805f92afa761c0e4c883e45d767a8c3ffbbaf5c9b2",
+      "source_text": "where  q = e^{2\\pi i \\tau}  and  \\tau  is the modular parameter."
+    },
+    {
+      "ascii_text": "-\tSymmetry under  SL(2, \\mathbb{Z})  transformations connects spectral triples to modular forms.",
+      "source_line": 279,
+      "source_line_sha256": "c58e6d39ed03ad0f8c84d269c6ee32eef539f4abcbe78a863a3483a4643fc5aa",
+      "source_text": "\u2022\tSymmetry under  SL(2, \\mathbb{Z})  transformations connects spectral triples to modular forms."
+    },
+    {
+      "ascii_text": "-\tExample: Fractal embedding of  J_3(\\mathbb{O}) , where fractal elements preserve triality symmetry.",
+      "source_line": 295,
+      "source_line_sha256": "af01d30b5c5703ef51a216b8c306918d563ac7bc9141780bf9285e143068d7c6",
+      "source_text": "\u2022\tExample: Fractal embedding of  J_3(\\mathbb{O}) , where fractal elements preserve triality symmetry."
+    },
+    {
+      "ascii_text": "The Monster Group  \\mathbb{M} , the largest sporadic simple group, has deep connections to modular forms, string theory, and high-dimensional symmetry structures. It resides at the intersection of algebra, geometry, and theoretical physics, forming a \"cosmic organ\" of symmetry with 196,883-dimensional representations and intricate links to the  E_8  lattice, moonshine theory, and recursive Cayley-Dickson structures.",
+      "source_line": 308,
+      "source_line_sha256": "b13c134f1a4dd66d33776c5623542eb7f896226570e0b8282ef7d1c017dc2cd0",
+      "source_text": "The Monster Group  \\mathbb{M} , the largest sporadic simple group, has deep connections to modular forms, string theory, and high-dimensional symmetry structures. It resides at the intersection of algebra, geometry, and theoretical physics, forming a \u201ccosmic organ\u201d of symmetry with 196,883-dimensional representations and intricate links to the  E_8  lattice, moonshine theory, and recursive Cayley-Dickson structures."
+    },
+    {
+      "ascii_text": "-\tRecursive symmetries in  \\mathbb{M}  reflect fractal extensions in Cayley-Dickson algebras.",
+      "source_line": 320,
+      "source_line_sha256": "db8ecb24a234632aad523065c83a33cbbd6ce7921f6698972ec932f9a66db58b",
+      "source_text": "\u2022\tRecursive symmetries in  \\mathbb{M}  reflect fractal extensions in Cayley-Dickson algebras."
+    },
+    {
+      "ascii_text": "-\tModular forms in  \\mathbb{M}  influence spectral actions.",
+      "source_line": 324,
+      "source_line_sha256": "71f54286191fe2b87187fd0c9be3be43a584a82cb14734087590b9e1d8ffb1d2",
+      "source_text": "\u2022\tModular forms in  \\mathbb{M}  influence spectral actions."
+    },
+    {
+      "ascii_text": "The Monster Group  \\mathbb{M}  not only interacts with the  E_8  lattice and finite-dimensional exceptional groups but also exhibits deeper links to affine symmetries, including  E_9  (affine  E_8 ) and  E_{10}  (hyperbolic extension). These connections reveal powerful recursive and holographic structures.",
+      "source_line": 326,
+      "source_line_sha256": "da1babfca4744d62b393bbdeca131faa1182aa5c250a82c179c95b810c505c0a",
+      "source_text": "The Monster Group  \\mathbb{M}  not only interacts with the  E_8  lattice and finite-dimensional exceptional groups but also exhibits deeper links to affine symmetries, including  E_9  (affine  E_8 ) and  E_{10}  (hyperbolic extension). These connections reveal powerful recursive and holographic structures."
+    },
+    {
+      "ascii_text": "-\t E_9 's infinite-dimensional root lattice is compactified on modular tori that preserve  \\mathbb{M} 's symmetry.",
+      "source_line": 330,
+      "source_line_sha256": "f530b166effdbe8a68f9ab23a54d625b82a67bba9134a4ab0de6a70079eaa6a7",
+      "source_text": "\u2022\t E_9 \u2019s infinite-dimensional root lattice is compactified on modular tori that preserve  \\mathbb{M} \u2019s symmetry."
+    },
+    {
+      "ascii_text": "-\tModular forms tie  \\mathbb{M} 's representations to  E_{10} 's infinite towers of symmetry:",
+      "source_line": 334,
+      "source_line_sha256": "bcd11470b1cecd86085ea8e3b73639ecb381305fdba9a2488ca13dea26909a86",
+      "source_text": "\u2022\tModular forms tie  \\mathbb{M} \u2019s representations to  E_{10} \u2019s infinite towers of symmetry:"
+    },
+    {
+      "ascii_text": "-\tTheorem Statement: a^n + b^n = c^n has no solutions for n > 2, a, b, c \\in \\mathbb{N}.",
+      "source_line": 342,
+      "source_line_sha256": "e1b1aacf975cca03469e6b0d8d929fb59013dced3b26c209aa9c69a5873d23a4",
+      "source_text": "\u2022\tTheorem Statement: a^n + b^n = c^n has no solutions for n > 2, a, b, c \\in \\mathbb{N}."
+    },
+    {
+      "ascii_text": "-\tForm: y^2 = x^3 + ax + b with discriminant \\Delta \\neq 0 for nonsingular curves.",
+      "source_line": 346,
+      "source_line_sha256": "77ffb7f5a9c46075b47a6d8e3863dfcb0b4e6824aebc522eca377796df511e30",
+      "source_text": "\u2022\tForm: y^2 = x^3 + ax + b with discriminant \\Delta \\neq 0 for nonsingular curves."
+    },
+    {
+      "ascii_text": "1.\tUse modular arithmetic properties in \\mathbb{Z}/N\\mathbb{Z}.",
+      "source_line": 351,
+      "source_line_sha256": "07b7ea6ae694cdb4bcbac12b621125c07d1211db7946740a30ada93590548c2c",
+      "source_text": "1.\tUse modular arithmetic properties in \\mathbb{Z}/N\\mathbb{Z}."
+    },
+    {
+      "ascii_text": "-\tLie algebra: A vector space \\mathfrak{g} over \\mathbb{R} or \\mathbb{C} with a bilinear map [ \\cdot, \\cdot ]: \\mathfrak{g} \\times \\mathfrak{g} \\to \\mathfrak{g} satisfying:",
+      "source_line": 357,
+      "source_line_sha256": "2b473b664da02dead6118c56c22cdfa3121e6cf86ed11a047c6cc1d48648844d",
+      "source_text": "\u2022\tLie algebra: A vector space \\mathfrak{g} over \\mathbb{R} or \\mathbb{C} with a bilinear map [ \\cdot, \\cdot ]: \\mathfrak{g} \\times \\mathfrak{g} \\to \\mathfrak{g} satisfying:"
+    },
+    {
+      "ascii_text": "1.\tAntisymmetry: [X, Y] = -[Y, X].",
+      "source_line": 358,
+      "source_line_sha256": "3440ab2c48efaff553faa05ff7edcca61ccb6a806374d2caa35bbbc0387fb9be",
+      "source_text": "1.\tAntisymmetry: [X, Y] = -[Y, X]."
+    },
+    {
+      "ascii_text": "2.\tJacobi Identity: [X, [Y, Z]] + [Y, [Z, X]] + [Z, [X, Y]] = 0.",
+      "source_line": 359,
+      "source_line_sha256": "65264b0f6fe8fa332a3686957993766284ba89ae5818454235dda8db52871de4",
+      "source_text": "2.\tJacobi Identity: [X, [Y, Z]] + [Y, [Z, X]] + [Z, [X, Y]] = 0."
+    },
+    {
+      "ascii_text": "-\tA 27-dimensional Jordan algebra J_3(\\mathbb{O}) constructed from Hermitian matrices over octonions:",
+      "source_line": 376,
+      "source_line_sha256": "25ee49d60e90476d1cad056e2a89199b38c56aa531009de307f2149f7d4e4df8",
+      "source_text": "\u2022\tA 27-dimensional Jordan algebra J_3(\\mathbb{O}) constructed from Hermitian matrices over octonions:"
+    },
+    {
+      "ascii_text": "-\tJ_3(\\mathbb{S}): Linked to E_7.",
+      "source_line": 380,
+      "source_line_sha256": "77f678b46bbb092db24ce8c90ca529d7e977344693ccb82d432a1679aca293f7",
+      "source_text": "\u2022\tJ_3(\\mathbb{S}): Linked to E_7."
+    },
+    {
+      "ascii_text": "-\tJ_3(\\mathbb{P}): Linked to E_8.",
+      "source_line": 381,
+      "source_line_sha256": "e57b57957444ada53c2cf2c9b200c4d0c6dc5edcbd4afd625934b474bf78970e",
+      "source_text": "\u2022\tJ_3(\\mathbb{P}): Linked to E_8."
+    },
+    {
+      "ascii_text": "-\tE_6: Automorphism group of J_3(\\mathbb{O}).",
+      "source_line": 397,
+      "source_line_sha256": "7b74e53d8ecbe23ff3daff99f28e4c753e2054b79c65bdc139acbee6dbdc2c61",
+      "source_text": "\u2022\tE_6: Automorphism group of J_3(\\mathbb{O})."
+    },
+    {
+      "ascii_text": "-\tE_7: Automorphism group of J_3(\\mathbb{S}).",
+      "source_line": 398,
+      "source_line_sha256": "0d93b2c644347a259c8e92501bb9d9ee7cfd632671ab8db88247abaadf62d474",
+      "source_text": "\u2022\tE_7: Automorphism group of J_3(\\mathbb{S})."
+    },
+    {
+      "ascii_text": "-\tChoose A = \\mathbb{R}, \\mathbb{C}, \\mathbb{H}, \\mathbb{O}.",
+      "source_line": 413,
+      "source_line_sha256": "4c9af1608a22890a0801d934c680984e2eac164f0d1d376560e0ac9507249a24",
+      "source_text": "\u2022\tChoose A = \\mathbb{R}, \\mathbb{C}, \\mathbb{H}, \\mathbb{O}."
+    },
+    {
+      "ascii_text": "-\t\\mathbb{R} \\to \\mathfrak{so}(3),",
+      "source_line": 415,
+      "source_line_sha256": "85a62705927d2b5c5b344e16af2359e2bf8070b8098c1ba231aeb49a82b60a4f",
+      "source_text": "\u2022\t\\mathbb{R} \\to \\mathfrak{so}(3),"
+    },
+    {
+      "ascii_text": "-\t\\mathbb{C} \\to \\mathfrak{su}(3),",
+      "source_line": 416,
+      "source_line_sha256": "d43951b6e1d88727640f91666172a0d81750062b4d6993db96140c75f1cd3d0f",
+      "source_text": "\u2022\t\\mathbb{C} \\to \\mathfrak{su}(3),"
+    },
+    {
+      "ascii_text": "-\t\\mathbb{H} \\to \\mathfrak{sp}(6),",
+      "source_line": 417,
+      "source_line_sha256": "3308b83a6667478d37654380132523fd2d515a7e21b8470049338ed426a7bf28",
+      "source_text": "\u2022\t\\mathbb{H} \\to \\mathfrak{sp}(6),"
+    },
+    {
+      "ascii_text": "-\t\\mathbb{O} \\to F_4.",
+      "source_line": 418,
+      "source_line_sha256": "f00fee753ce8aa03fd37163dfbabc38ae7227bd5b4530bcafc7931facb30b785",
+      "source_text": "\u2022\t\\mathbb{O} \\to F_4."
+    },
+    {
+      "ascii_text": "-\tFor A = \\mathbb{O}, B = \\mathbb{C}, the magic square produces E_6.",
+      "source_line": 420,
+      "source_line_sha256": "a5d22d516f95352351946a01dbb195f7970b352b9b2484e72ff0292d23c3f05d",
+      "source_text": "\u2022\tFor A = \\mathbb{O}, B = \\mathbb{C}, the magic square produces E_6."
+    },
+    {
+      "ascii_text": "-\tFor A = \\mathbb{O}, B = \\mathbb{H}, it produces E_7.",
+      "source_line": 421,
+      "source_line_sha256": "4a5888f594b61395b7e51a785e95f64ed56f8e62f45df8409f9362dc3c379105",
+      "source_text": "\u2022\tFor A = \\mathbb{O}, B = \\mathbb{H}, it produces E_7."
+    },
+    {
+      "ascii_text": "-\tThe E_7 algebra acts naturally on the Freudenthal triple system associated with J_3(\\mathbb{O}).",
+      "source_line": 425,
+      "source_line_sha256": "e6c081c390a401f3a4f543c9f6d09cab86883c2809d1d9e1175e2b68ca2c02ce",
+      "source_text": "\u2022\tThe E_7 algebra acts naturally on the Freudenthal triple system associated with J_3(\\mathbb{O})."
+    },
+    {
+      "ascii_text": "-\tCo-unit \\epsilon: A \\to \\mathbb{C},",
+      "source_line": 436,
+      "source_line_sha256": "97dcff1021b524cca9f5584b00672a7fc9e2194e0f22ae96fb3b223deddc30dc",
+      "source_text": "\u2022\tCo-unit \\epsilon: A \\to \\mathbb{C},"
+    },
+    {
+      "ascii_text": "-\tConstruct FTS over sedenions ( \\mathbb{S} ) and beyond:",
+      "source_line": 443,
+      "source_line_sha256": "2ac12ad0da2594c2ded035df3891bf1a40e99970b9c7cd3fb21dcdc3c6178ab3",
+      "source_text": "\u2022\tConstruct FTS over sedenions ( \\mathbb{S} ) and beyond:"
+    },
+    {
+      "ascii_text": "-\tDefine spaces (V, q, \\mathbb{S}) where projection onto \\mathbb{S} allows recursive symmetries for division algebra derivatives.",
+      "source_line": 448,
+      "source_line_sha256": "844fbc12ee722a9d298563c55a5518609a921cd122b13e193d490e909388c14b",
+      "source_text": "\u2022\tDefine spaces (V, q, \\mathbb{S}) where projection onto \\mathbb{S} allows recursive symmetries for division algebra derivatives."
+    },
+    {
+      "ascii_text": "for  i = 8, 9, 10, 11 , where  \\mathcal{L}{E_i}  is the Lagrangian density associated with each exceptional Lie algebra.",
+      "source_line": 502,
+      "source_line_sha256": "c1f7b21ac16b74327adaeca06613f8c44a6f8f37e714a23f125cc53edf8910a1",
+      "source_text": "for  i = 8, 9, 10, 11 , where  \\mathcal{L}{E_i}  is the Lagrangian density associated with each exceptional Lie algebra."
+    },
+    {
+      "ascii_text": "K_{\\text{Cayley-Dickson-damping}}^{(n)}(x) = \\frac{K_{\\text{hypercomplex}}^{(n)}(x)}{\\eta_n},",
+      "source_line": 554,
+      "source_line_sha256": "936c117506cc0305d42a63e9f82155a16da59d420a84b57bc4fab9263a9cd9bf",
+      "source_text": "K_{\\text{Cayley-Dickson-damping}}^{(n)}(x) = \\frac{K_{\\text{hypercomplex}}^{(n)}(x)}{\\eta_n},"
+    },
+    {
+      "ascii_text": "K_{\\text{modular-symmetry}}(x) = \\sum_{m=1}^M \\exp\\left(2\\pi i \\frac{m x}{n}\\right),",
+      "source_line": 558,
+      "source_line_sha256": "3f62e57864a23a689eba23f8cf4603d7b10befec71851dde50da7f2bbbadc52c",
+      "source_text": "K_{\\text{modular-symmetry}}(x) = \\sum_{m=1}^M \\exp\\left(2\\pi i \\frac{m x}{n}\\right),"
+    },
+    {
+      "ascii_text": "K_{\\text{modular-fractal-harmonics}}(x, t) = K_{\\text{modular-symmetry}}(x) \\cdot K_{\\text{recursive-fractal}}(x, t).",
+      "source_line": 564,
+      "source_line_sha256": "f53c607fcd2f0162ac1089e9a866542ff05a04c8c37e819a60facf187882f9fe",
+      "source_text": "K_{\\text{modular-fractal-harmonics}}(x, t) = K_{\\text{modular-symmetry}}(x) \\cdot K_{\\text{recursive-fractal}}(x, t)."
+    },
+    {
+      "ascii_text": "\\mathcal{F}M = K{\\text{origami-folding}}(x, t) \\cdot K_{\\text{recursive-fractal}}(x, t) \\cdot K_{\\text{modular-symmetry}}(x).",
+      "source_line": 567,
+      "source_line_sha256": "5d01ed9a58d23b826de44264f2a516618987b89418982c6ffd681bbd6eca11f3",
+      "source_text": "\\mathcal{F}M = K{\\text{origami-folding}}(x, t) \\cdot K_{\\text{recursive-fractal}}(x, t) \\cdot K_{\\text{modular-symmetry}}(x)."
+    },
+    {
+      "ascii_text": "K_{\\text{fractal-lattice-hybrid}}(x, y, z, t) = K_{\\text{fractal-fractal}}(x, t) \\cdot K_{E_8}(y, z).",
+      "source_line": 583,
+      "source_line_sha256": "b6cd65e21e54191d8e14fe5108d2ac60b97c286e6aeb54c23b68c6e350351627",
+      "source_text": "K_{\\text{fractal-lattice-hybrid}}(x, y, z, t) = K_{\\text{fractal-fractal}}(x, t) \\cdot K_{E_8}(y, z)."
+    },
+    {
+      "ascii_text": "-\t \\mathcal{F}_M^{\\text{extended}} : Merged Fold-Merge Operator encompassing all kernel categories.",
+      "source_line": 588,
+      "source_line_sha256": "ca39e66ad30754a474931c63c81f7003bb4622686efa14230dbaf187fc14e486",
+      "source_text": "\u2022\t \\mathcal{F}_M^{\\text{extended}} : Merged Fold-Merge Operator encompassing all kernel categories."
+    },
+    {
+      "ascii_text": "-\t \\mathcal{M}_n(x) : Monster Group modular invariants ensuring symmetry and stability.",
+      "source_line": 589,
+      "source_line_sha256": "bb6dda3fa7b11a439f9d96f5e8d5ab199867ec73e5f70ae4bb7ecd4069e136e8",
+      "source_text": "\u2022\t \\mathcal{M}_n(x) : Monster Group modular invariants ensuring symmetry and stability."
+    },
+    {
+      "ascii_text": "4.\t \\mathcal{M}_n(x) :",
+      "source_line": 593,
+      "source_line_sha256": "9067eb6a46dce6ec4a10f8af13376fb7ccb15acd9ee2ceb561348b01f997b01c",
+      "source_text": "4.\t \\mathcal{M}_n(x) :"
+    },
+    {
+      "ascii_text": "-\tConnection: Modular forms and elliptic curves, crucial to Fermat's Last Theorem, rely heavily on the symmetry properties of groups like  SL(2, \\mathbb{Z}) .",
+      "source_line": 613,
+      "source_line_sha256": "bb95aa02a155a81b00c4d767cb14f6202a79b3b90f9539bcacbadfdf4f2dc9d3",
+      "source_text": "\u2022\tConnection: Modular forms and elliptic curves, crucial to Fermat\u2019s Last Theorem, rely heavily on the symmetry properties of groups like  SL(2, \\mathbb{Z}) ."
+    },
+    {
+      "ascii_text": "where a, b \\in \\mathbb{Q}. They are central in algebraic geometry and have deep connections to number theory.",
+      "source_line": 615,
+      "source_line_sha256": "870461cdb754f4837a56b086c9d925da3cabb3883f856ef83b9e5a448e163452",
+      "source_text": "where a, b \\in \\mathbb{Q}. They are central in algebraic geometry and have deep connections to number theory."
+    },
+    {
+      "ascii_text": "-\tModular Forms: These are complex analytic functions defined on the upper half-plane and exhibit symmetry under the action of a modular group  SL(2, \\mathbb{Z}) . A key example is:",
+      "source_line": 616,
+      "source_line_sha256": "0f8365ed4c945567dc417a8a03bdbf0451b9f3aef0804046f7e072ee91b9455e",
+      "source_text": "\u2022\tModular Forms: These are complex analytic functions defined on the upper half-plane and exhibit symmetry under the action of a modular group  SL(2, \\mathbb{Z}) . A key example is:"
+    },
+    {
+      "ascii_text": "-\tConnection: Andrew Wiles's proof of Fermat's Last Theorem relies on the Taniyama-Shimura-Weil conjecture, which asserts that every elliptic curve over  \\mathbb{Q}  is modular. Wiles showed this equivalence for semistable elliptic curves, proving Fermat's Last Theorem.",
+      "source_line": 618,
+      "source_line_sha256": "bc8b892f473280e957f6451ca283830fe638f81c9b6e3dde5aa3dd6a85e87d65",
+      "source_text": "\u2022\tConnection: Andrew Wiles\u2019s proof of Fermat\u2019s Last Theorem relies on the Taniyama-Shimura-Weil conjecture, which asserts that every elliptic curve over  \\mathbb{Q}  is modular. Wiles showed this equivalence for semistable elliptic curves, proving Fermat\u2019s Last Theorem."
+    },
+    {
+      "ascii_text": "-\tThe modular group  SL(2, \\mathbb{Z}) , which consists of 2x2 integer matrices with determinant 1, plays a key role in defining modular forms.",
+      "source_line": 621,
+      "source_line_sha256": "2cd77af82660752c8b45b240b37966a96c54c16c85b8bb643f83194effa19efb",
+      "source_text": "\u2022\tThe modular group  SL(2, \\mathbb{Z}) , which consists of 2x2 integer matrices with determinant 1, plays a key role in defining modular forms."
+    },
+    {
+      "ascii_text": "-\tThe structure of Lie groups, particularly  SL(2, \\mathbb{C}) , can be described by its corresponding Lie algebra.",
+      "source_line": 624,
+      "source_line_sha256": "f2aebd960a9fa5d8912c26d66e94989cabe39059f4c3d0a3406e87cabe2c312b",
+      "source_text": "\u2022\tThe structure of Lie groups, particularly  SL(2, \\mathbb{C}) , can be described by its corresponding Lie algebra."
+    },
+    {
+      "ascii_text": "-\tThese are subgroups of  SL(2, \\mathbb{Z})  defined by modular congruence relations:",
+      "source_line": 635,
+      "source_line_sha256": "a9f5ebdea6963fd6ecf6c3e2cce45d67a0d3863545f37414c54cdf6382e9df02",
+      "source_text": "\u2022\tThese are subgroups of  SL(2, \\mathbb{Z})  defined by modular congruence relations:"
+    },
+    {
+      "ascii_text": "-\tModular forms exhibit symmetry under  SL(2, \\mathbb{Z}) , encoding deep arithmetic patterns, such as those in elliptic curves.",
+      "source_line": 642,
+      "source_line_sha256": "b2a12b1f446f631b6c33bb8fad83748f926ba2ab21031720d91ce3232a92281b",
+      "source_text": "\u2022\tModular forms exhibit symmetry under  SL(2, \\mathbb{Z}) , encoding deep arithmetic patterns, such as those in elliptic curves."
+    },
+    {
+      "ascii_text": "Lie algebras encode infinitesimal symmetries of Lie groups. For  SL(2, \\mathbb{Z})  and modular forms, Lie algebras provide tools for studying transformations and symmetry.",
+      "source_line": 644,
+      "source_line_sha256": "522ce924f50c4576f0b062c1aaf14b134ea343bf8b2d070cc76bff1cec01a99f",
+      "source_text": "Lie algebras encode infinitesimal symmetries of Lie groups. For  SL(2, \\mathbb{Z})  and modular forms, Lie algebras provide tools for studying transformations and symmetry."
+    },
+    {
+      "ascii_text": "-\tThe Lie algebra  \\mathfrak{sl}(2, \\mathbb{R})  consists of  2 \\times 2  real matrices with trace 0:",
+      "source_line": 648,
+      "source_line_sha256": "4e24a238363f73c9832a92e2033e536593eaf8f0f0766acf8a0b51d0f424fa0e",
+      "source_text": "\u2022\tThe Lie algebra  \\mathfrak{sl}(2, \\mathbb{R})  consists of  2 \\times 2  real matrices with trace 0:"
+    },
+    {
+      "ascii_text": "-\tModular transformations act on  \\mathcal{H}  via  SL(2, \\mathbb{R}) . The Lie algebra  \\mathfrak{sl}(2, \\mathbb{R})  describes their infinitesimal actions.",
+      "source_line": 651,
+      "source_line_sha256": "2d4b0b2095ffa7a1bdc464b49607d7c8069ca67542e104f8dd3e65fdef3b0bd0",
+      "source_text": "\u2022\tModular transformations act on  \\mathcal{H}  via  SL(2, \\mathbb{R}) . The Lie algebra  \\mathfrak{sl}(2, \\mathbb{R})  describes their infinitesimal actions."
+    },
+    {
+      "ascii_text": "-\tExample: Derivatives of modular forms are studied using the algebraic structure of  \\mathfrak{sl}(2, \\mathbb{R}) .",
+      "source_line": 652,
+      "source_line_sha256": "6cdeba762e0b59ee421c42eddda952809785f61f1fc9ace0424eb37d85ace684",
+      "source_text": "\u2022\tExample: Derivatives of modular forms are studied using the algebraic structure of  \\mathfrak{sl}(2, \\mathbb{R}) ."
+    },
+    {
+      "ascii_text": "The Lie algebra  \\mathfrak{sl}(2, \\mathbb{R})  consists of  2 \\times 2  real matrices with trace 0:",
+      "source_line": 660,
+      "source_line_sha256": "f04c44243b77b679c28e4c23b2a41013834c37eb0807693e2053e508a076fe14",
+      "source_text": "The Lie algebra  \\mathfrak{sl}(2, \\mathbb{R})  consists of  2 \\times 2  real matrices with trace 0:"
+    },
+    {
+      "ascii_text": "-\tThe weight  k  of a modular form corresponds to an action of  \\mathfrak{sl}(2, \\mathbb{R})  on a vector space of functions.",
+      "source_line": 663,
+      "source_line_sha256": "1d6815ffdd8d20d6eb3f2cf6613234a7c0c45370c66a03f100d5feb35684b3dd",
+      "source_text": "\u2022\tThe weight  k  of a modular form corresponds to an action of  \\mathfrak{sl}(2, \\mathbb{R})  on a vector space of functions."
+    },
+    {
+      "ascii_text": "The modular group  SL(2, \\mathbb{Z})  acts on the upper half-plane  \\mathcal{H} . Its Lie algebra  \\mathfrak{sl}(2, \\mathbb{R})  governs the infinitesimal transformations.",
+      "source_line": 665,
+      "source_line_sha256": "a6e39a75875da4d99aa94d98b85fa568aabb30389dcc0a88524532d21677dbdd",
+      "source_text": "The modular group  SL(2, \\mathbb{Z})  acts on the upper half-plane  \\mathcal{H} . Its Lie algebra  \\mathfrak{sl}(2, \\mathbb{R})  governs the infinitesimal transformations."
+    },
+    {
+      "ascii_text": "The Lie algebra  \\mathfrak{sl}(2, \\mathbb{R})  acts via differential operators:",
+      "source_line": 667,
+      "source_line_sha256": "204b2f643adf4c4238567d29dcbb616f0e118e065e08d18ac32cb79257eebff5",
+      "source_text": "The Lie algebra  \\mathfrak{sl}(2, \\mathbb{R})  acts via differential operators:"
+    },
+    {
+      "ascii_text": "Let  f(z)  be a modular form of weight  k . The Lie algebra  \\mathfrak{sl}(2, \\mathbb{R})  acts on  f(z)  via differential operators.",
+      "source_line": 674,
+      "source_line_sha256": "f1da1c506fc2930d35373391c8db13cd65d11a05fd91d5c05ca972ace20e86a0",
+      "source_text": "Let  f(z)  be a modular form of weight  k . The Lie algebra  \\mathfrak{sl}(2, \\mathbb{R})  acts on  f(z)  via differential operators."
+    },
+    {
+      "ascii_text": "2.\tHigher Torsion Representations: The Galois action on 3-torsion points links elliptic curves to modular forms through  GL_2(\\mathbb{Z}/n\\mathbb{Z}) .",
+      "source_line": 679,
+      "source_line_sha256": "8b57e55a84422d47a126da5a259ec3a5a2a37bd559a2e683f7a9e9b248f145e7",
+      "source_text": "2.\tHigher Torsion Representations: The Galois action on 3-torsion points links elliptic curves to modular forms through  GL_2(\\mathbb{Z}/n\\mathbb{Z}) ."
+    },
+    {
+      "ascii_text": "3.\tLie Algebra Operators: Infinitesimal operators in  \\mathfrak{sl}(2, \\mathbb{R})  map modular forms between weights, revealing deep symmetries.",
+      "source_line": 680,
+      "source_line_sha256": "10f7fcda999c04b19edad86c319bc02e0c61fc392e0c15df513e86800c322280",
+      "source_text": "3.\tLie Algebra Operators: Infinitesimal operators in  \\mathfrak{sl}(2, \\mathbb{R})  map modular forms between weights, revealing deep symmetries."
+    },
+    {
+      "ascii_text": "-\t \\mathcal{A}  is an algebra (real, complex, quaternion, or octonion),",
+      "source_line": 694,
+      "source_line_sha256": "9b9e7e72fd32bf27506d98a6cc8ec0421ede4ec557a49b9d17df89952a0d5dd4",
+      "source_text": "\u2022\t \\mathcal{A}  is an algebra (real, complex, quaternion, or octonion),"
+    },
+    {
+      "ascii_text": "-\t \\mathcal{J}  is a Jordan algebra.",
+      "source_line": 695,
+      "source_line_sha256": "b8bf09c43cc2111200c608574f1cb8617d1e77f629e739280dbca4ca90f9607e",
+      "source_text": "\u2022\t \\mathcal{J}  is a Jordan algebra."
+    },
+    {
+      "ascii_text": "The sedenions ( \\mathbb{S} ) are a 16-dimensional Cayley-Dickson algebra. Although they lose alternativity, they retain norm preservation:",
+      "source_line": 732,
+      "source_line_sha256": "07b1bce7a72ef1000de97d3fe568271bddf81698da5fccd3f9088c4950e1d1a7",
+      "source_text": "The sedenions ( \\mathbb{S} ) are a 16-dimensional Cayley-Dickson algebra. Although they lose alternativity, they retain norm preservation:"
+    },
+    {
+      "ascii_text": "Pathions ( \\mathbb{P} ) are a 32-dimensional Cayley-Dickson algebra, losing power-associativity but retaining quadratic form structures.",
+      "source_line": 734,
+      "source_line_sha256": "5463c13148f0aaa2245daf55a9f8ab17f027dcc64a2e591f1f979e62c75d269f",
+      "source_text": "Pathions ( \\mathbb{P} ) are a 32-dimensional Cayley-Dickson algebra, losing power-associativity but retaining quadratic form structures."
+    },
+    {
+      "ascii_text": "-\tFor  \\mathcal{A} = \\mathbb{P} , possible generalizations link to:",
+      "source_line": 735,
+      "source_line_sha256": "64ac01a9a7d37a74b95c1cb306cd355f0a90c09cd40d351962f1552cfb6a6934",
+      "source_text": "\u2022\tFor  \\mathcal{A} = \\mathbb{P} , possible generalizations link to:"
+    },
+    {
+      "ascii_text": "Pathions ( \\mathbb{P} ) are the 32-dimensional Cayley-Dickson algebra. Their multiplication is defined as:",
+      "source_line": 760,
+      "source_line_sha256": "195e443edbd3e7c6fffdec94f6499892018b32c429e2fdc4a353947d0b6f23bf",
+      "source_text": "Pathions ( \\mathbb{P} ) are the 32-dimensional Cayley-Dickson algebra. Their multiplication is defined as:"
+    },
+    {
+      "ascii_text": "1.\tReal Numbers ( \\mathbb{R} ):",
+      "source_line": 799,
+      "source_line_sha256": "87e76ee0df51cbd24283e72d608ffaac876da98dcf15a1399ecba2c4f80f276c",
+      "source_text": "1.\tReal Numbers ( \\mathbb{R} ):"
+    },
+    {
+      "ascii_text": "2.\tComplex Numbers ( \\mathbb{C} ):",
+      "source_line": 801,
+      "source_line_sha256": "3ecc844be33bc611319f2efd5a5b0f08e440a2ec6fd6314a6ac4b2d93d4dfbc9",
+      "source_text": "2.\tComplex Numbers ( \\mathbb{C} ):"
+    },
+    {
+      "ascii_text": "-\tAssociative, commutative, introduces  i^2 = -1 .",
+      "source_line": 802,
+      "source_line_sha256": "9f539c846abc895442a9f1eebc6179a1506dfd5a2ee796a3ebd2c1484a274fa2",
+      "source_text": "\u2022\tAssociative, commutative, introduces  i^2 = -1 ."
+    },
+    {
+      "ascii_text": "3.\tQuaternions ( \\mathbb{H} ):",
+      "source_line": 803,
+      "source_line_sha256": "5db5fa684037ae8916820c5024df0af153350c2958c4d11f86aca60f4eb35213",
+      "source_text": "3.\tQuaternions ( \\mathbb{H} ):"
+    },
+    {
+      "ascii_text": "4.\tOctonions ( \\mathbb{O} ):",
+      "source_line": 805,
+      "source_line_sha256": "e4303c009bc0526e18a5fc3f71f35b1b210f43c17b6feeda5bdd6bb5894f9eec",
+      "source_text": "4.\tOctonions ( \\mathbb{O} ):"
+    },
+    {
+      "ascii_text": "5.\tSedenions ( \\mathbb{S} ):",
+      "source_line": 807,
+      "source_line_sha256": "17a178654d749fb66e5276b6d1c21118303b61846592aaed2f251f744bedd300",
+      "source_text": "5.\tSedenions ( \\mathbb{S} ):"
+    },
+    {
+      "ascii_text": "Pathions ( \\mathbb{P} ) are 32-dimensional algebras defined recursively through the Cayley-Dickson process. They lose associativity and alternativity but maintain norm preservation.",
+      "source_line": 831,
+      "source_line_sha256": "53f47776f46c5eff134a8e4a755129c3e82db0b9aedc686f8151c0f424095d2b",
+      "source_text": "Pathions ( \\mathbb{P} ) are 32-dimensional algebras defined recursively through the Cayley-Dickson process. They lose associativity and alternativity but maintain norm preservation."
+    },
+    {
+      "ascii_text": "Let  \\mathcal{F}(n)  represent a fractal-like mathematical structure at recursion level  n . Define:",
+      "source_line": 839,
+      "source_line_sha256": "e1aa0b9ab14a19b11cfb77e782fc9eefd16df8ff52ea492deb7a84eb8070f44a",
+      "source_text": "Let  \\mathcal{F}(n)  represent a fractal-like mathematical structure at recursion level  n . Define:"
+    },
+    {
+      "ascii_text": "1.\tBase Case ( n = 1 ):",
+      "source_line": 840,
+      "source_line_sha256": "1b5fcef045fde2c511349d6c3bc0d1d9247b8009b976248cc38b26ef35c2b333",
+      "source_text": "1.\tBase Case ( n = 1 ):"
+    },
+    {
+      "ascii_text": "-\tNumber systems:  \\mathcal{F}(1) = \\{ \\mathbb{R}, \\mathbb{C}, \\mathbb{H}, \\mathbb{O} \\} .",
+      "source_line": 841,
+      "source_line_sha256": "21a5eb7c1c1a9026c31b002ff9703bdb1e92a9c270febc7da93dfb85b09125be",
+      "source_text": "\u2022\tNumber systems:  \\mathcal{F}(1) = \\{ \\mathbb{R}, \\mathbb{C}, \\mathbb{H}, \\mathbb{O} \\} ."
+    },
+    {
+      "ascii_text": "-\t \\mathcal{F}(n+1) = \\mathcal{F}(n) \\times \\mathcal{F}(n) , generating:",
+      "source_line": 843,
+      "source_line_sha256": "70201c622ebeff68e41596333f0e67de4dc270fcdd57675c7591528a031c9a56",
+      "source_text": "\u2022\t \\mathcal{F}(n+1) = \\mathcal{F}(n) \\times \\mathcal{F}(n) , generating:"
+    },
+    {
+      "ascii_text": "-\tSedenions ( \\mathbb{S} ) for  n=5 ,",
+      "source_line": 844,
+      "source_line_sha256": "cb3bf6651b5897eeb26d390b59cc1f0aa7620847419f2ddcb57b694b4c882bcb",
+      "source_text": "\u2022\tSedenions ( \\mathbb{S} ) for  n=5 ,"
+    },
+    {
+      "ascii_text": "-\tPathions ( \\mathbb{P} ) for  n=6 ,",
+      "source_line": 845,
+      "source_line_sha256": "454448e7666fe7c9d5763deceefe3c6b06ccb5321fd6ae906ad02a20013d2ee7",
+      "source_text": "\u2022\tPathions ( \\mathbb{P} ) for  n=6 ,"
+    },
+    {
+      "ascii_text": "-\tHigher structures ( \\mathbb{Q}_n ) for  n > 6 .",
+      "source_line": 846,
+      "source_line_sha256": "c9c16ed730dedb443bd7a0c55ea4a494cb7f4126d778471e0e0f216a0c1d22b9",
+      "source_text": "\u2022\tHigher structures ( \\mathbb{Q}_n ) for  n > 6 ."
+    },
+    {
+      "ascii_text": "The Albert algebra  J_3(\\mathbb{O})  is a 27-dimensional Jordan algebra defined by  3 \\times 3  Hermitian matrices over octonions:",
+      "source_line": 882,
+      "source_line_sha256": "895ecfdbd1b6702eb759a394898312f3b5c629adf7f6f4eb5dd40260eeb566dc",
+      "source_text": "The Albert algebra  J_3(\\mathbb{O})  is a 27-dimensional Jordan algebra defined by  3 \\times 3  Hermitian matrices over octonions:"
+    },
+    {
+      "ascii_text": "1.\tSedenions ( \\mathbb{S} , 16D):",
+      "source_line": 895,
+      "source_line_sha256": "acaa859ac3b87895db45439474d1ef393d4abb7dd45d734cb41c879c78a90c98",
+      "source_text": "1.\tSedenions ( \\mathbb{S} , 16D):"
+    },
+    {
+      "ascii_text": "2.\tPathions ( \\mathbb{P} , 32D):",
+      "source_line": 897,
+      "source_line_sha256": "2def6da4f984986f237b2bb5f34b4010c25e0cf0c09969f5521ac9d095e65d5b",
+      "source_text": "2.\tPathions ( \\mathbb{P} , 32D):"
+    },
+    {
+      "ascii_text": "-\t \\mathbb{Q}_{64} : 64D recursive algebras.",
+      "source_line": 906,
+      "source_line_sha256": "b1f1f17f54a3aa946fdad7b17986cd39fcdf994370dab255d3f577cf87e2759b",
+      "source_text": "\u2022\t \\mathbb{Q}_{64} : 64D recursive algebras."
+    },
+    {
+      "ascii_text": "-\t \\mathbb{Q}_{256} : 256D structures link to  \\mathrm{Spin}(64) .",
+      "source_line": 907,
+      "source_line_sha256": "6710c91641e45ed982746791d73162e7873dd88436a7b095d26d78466a7f38d5",
+      "source_text": "\u2022\t \\mathbb{Q}_{256} : 256D structures link to  \\mathrm{Spin}(64) ."
+    },
+    {
+      "ascii_text": "-\tJordan algebras ( J_3(\\mathbb{O}), J_3(\\mathbb{S}), J_3(\\mathbb{P}) ).",
+      "source_line": 910,
+      "source_line_sha256": "0174695afa8586264b1ba0cd248a198e376f4771538394943719783e4fc163e6",
+      "source_text": "\u2022\tJordan algebras ( J_3(\\mathbb{O}), J_3(\\mathbb{S}), J_3(\\mathbb{P}) )."
+    },
+    {
+      "ascii_text": "-\tReal ( \\mathbb{R} ), Complex ( \\mathbb{C} ), Quaternion ( \\mathbb{H} ), Octonion ( \\mathbb{O} ).",
+      "source_line": 918,
+      "source_line_sha256": "8d30dc6aa55ca1073195fbf9bd365582204ab8909254c97c44bfaa9bd962040f",
+      "source_text": "\u2022\tReal ( \\mathbb{R} ), Complex ( \\mathbb{C} ), Quaternion ( \\mathbb{H} ), Octonion ( \\mathbb{O} )."
+    },
+    {
+      "ascii_text": "-\tExtensions: Sedenions ( \\mathbb{S} ), Pathions ( \\mathbb{P} ), and higher Cayley-Dickson algebras ( 64D, 256D, \\dots ).",
+      "source_line": 919,
+      "source_line_sha256": "b8a1c25318da11937ff76c2a6229b059db6847ba4296e70432cc3b1d5b3df9bd",
+      "source_text": "\u2022\tExtensions: Sedenions ( \\mathbb{S} ), Pathions ( \\mathbb{P} ), and higher Cayley-Dickson algebras ( 64D, 256D, \\dots )."
+    },
+    {
+      "ascii_text": "-\t p -adic numbers ( \\mathbb{Q}_p ), surreal numbers, Dickson numbers, and golden ratio links.",
+      "source_line": 920,
+      "source_line_sha256": "72d4c2e031cef7be6eb59e80e0351a537ed84080d1b20954b5039cc18bd3a121",
+      "source_text": "\u2022\t p -adic numbers ( \\mathbb{Q}_p ), surreal numbers, Dickson numbers, and golden ratio links."
+    },
+    {
+      "ascii_text": "-\tJordan Algebras:  J_3(\\mathbb{O}) ,  J_3(\\mathbb{S}) ,  J_3(\\mathbb{P}) , recursive extensions to infinite-dimensional tensor networks.",
+      "source_line": 924,
+      "source_line_sha256": "cf84f77fe19e347c70b7e4206f1793f724e60fbe8d982dc0fdf779c51ac10237",
+      "source_text": "\u2022\tJordan Algebras:  J_3(\\mathbb{O}) ,  J_3(\\mathbb{S}) ,  J_3(\\mathbb{P}) , recursive extensions to infinite-dimensional tensor networks."
+    },
+    {
+      "ascii_text": "-\t l_2(a, b) = [a, b] , standard Lie algebra.",
+      "source_line": 942,
+      "source_line_sha256": "585fcca3bf8b887c2741e18d3859cc282c53e51e70be19f35f4fd08f05f27c79",
+      "source_text": "\u2022\t l_2(a, b) = [a, b] , standard Lie algebra."
+    },
+    {
+      "ascii_text": "-\t l_3(a, b, c) = l_2(l_2(a, b), c) - l_2(a, l_2(b, c)) , higher associator.",
+      "source_line": 943,
+      "source_line_sha256": "bc1c1e574a835bcd1b83ca797874ee1c70956fbd84fff9c80702640a3c56680a",
+      "source_text": "\u2022\t l_3(a, b, c) = l_2(l_2(a, b), c) - l_2(a, l_2(b, c)) , higher associator."
+    },
+    {
+      "ascii_text": "-\tQuaternions ( \\mathbb{H} ) -> Basis for 4D geometry.",
+      "source_line": 951,
+      "source_line_sha256": "c94276f952e6646776399743695ec060b1301098dfa79a16e84f764015101c29",
+      "source_text": "\u2022\tQuaternions ( \\mathbb{H} ) \u2192 Basis for 4D geometry."
+    },
+    {
+      "ascii_text": "-\tOctonions ( \\mathbb{O} ) -> Connect to exceptional Lie algebras ( F_4, E_6 ).",
+      "source_line": 952,
+      "source_line_sha256": "1ce20dfa7dead79ac26685ae9ae79054ce3a7af4385055e6bca5b63fb201677f",
+      "source_text": "\u2022\tOctonions ( \\mathbb{O} ) \u2192 Connect to exceptional Lie algebras ( F_4, E_6 )."
+    },
+    {
+      "ascii_text": "-\tSedenions ( \\mathbb{S} ) -> Higher Cayley-Dickson (16D), introducing non-alternativity.",
+      "source_line": 953,
+      "source_line_sha256": "8f1d0a894d1b794f4de8cb696905c55aef279e675af8cd4093945db17b7cc351",
+      "source_text": "\u2022\tSedenions ( \\mathbb{S} ) \u2192 Higher Cayley-Dickson (16D), introducing non-alternativity."
+    },
+    {
+      "ascii_text": "-\tPathions ( \\mathbb{P} ) -> Fractal Cayley-Dickson extension to 32D and beyond.",
+      "source_line": 954,
+      "source_line_sha256": "eebe573177a64f38761f4af0ae08501cfe68f0b5d6772d8fa6720745dc15fcdf",
+      "source_text": "\u2022\tPathions ( \\mathbb{P} ) \u2192 Fractal Cayley-Dickson extension to 32D and beyond."
+    },
+    {
+      "ascii_text": "-\tNumber Systems:  \\mathbb{R}, \\mathbb{C}, \\mathbb{H}, \\mathbb{O}, \\mathbb{S}, \\mathbb{P}, \\mathbb{Q}_p , surreal numbers, and extensions (e.g., 256-nions).",
+      "source_line": 1141,
+      "source_line_sha256": "bacf9346f8ef7242cff34df3658aa3596f616d4cf525416f6f2573c9068aba84",
+      "source_text": "\u2022\tNumber Systems:  \\mathbb{R}, \\mathbb{C}, \\mathbb{H}, \\mathbb{O}, \\mathbb{S}, \\mathbb{P}, \\mathbb{Q}_p , surreal numbers, and extensions (e.g., 256-nions)."
+    },
+    {
+      "ascii_text": "-\tJordan Algebras ( J_3(\\mathbb{O}), J_3(\\mathbb{S}), J_3(\\mathbb{P}) ).",
+      "source_line": 1144,
+      "source_line_sha256": "3565903460cf2a39373c1009af2b743c9b54d6959905541f7f10c2501a775e65",
+      "source_text": "\u2022\tJordan Algebras ( J_3(\\mathbb{O}), J_3(\\mathbb{S}), J_3(\\mathbb{P}) )."
+    },
+    {
+      "ascii_text": "-\tWheel Algebra (handling  \\frac{x}{0} = \\omega ).",
+      "source_line": 1146,
+      "source_line_sha256": "45f64938c42e829fb25e1538a4e5c9484d35edd8fad94287d128357a35033f5b",
+      "source_text": "\u2022\tWheel Algebra (handling  \\frac{x}{0} = \\omega )."
+    },
+    {
+      "ascii_text": "-\t \\mathbb{R}, \\mathbb{C}, \\mathbb{H}, \\mathbb{O}, \\mathbb{S}, \\mathbb{P}  recursively extend through Cayley-Dickson.",
+      "source_line": 1169,
+      "source_line_sha256": "c5b8d1d6ba3d164e1f2f4f6fca0c2b316ccbbd5c4850886c630a6623f0af9623",
+      "source_text": "\u2022\t \\mathbb{R}, \\mathbb{C}, \\mathbb{H}, \\mathbb{O}, \\mathbb{S}, \\mathbb{P}  recursively extend through Cayley-Dickson."
+    },
+    {
+      "ascii_text": "-\tSpecial systems:  \\mathbb{Q}_p, \\mathbb{F}_p[[t]], \\text{surreals} .",
+      "source_line": 1170,
+      "source_line_sha256": "0efbcf68167528d0ba015a100f6b4498dbaf5c309434809f8f9321a7d9d71fd2",
+      "source_text": "\u2022\tSpecial systems:  \\mathbb{Q}_p, \\mathbb{F}_p[[t]], \\text{surreals} ."
+    },
+    {
+      "ascii_text": "-\tWheel Algebra: Handles undefined cases ( \\frac{x}{0} = \\omega ).",
+      "source_line": 1175,
+      "source_line_sha256": "5e08780f1815f01561b5acc5193a6db354ae2ef3f6fc476e4ff1264a0690e088",
+      "source_text": "\u2022\tWheel Algebra: Handles undefined cases ( \\frac{x}{0} = \\omega )."
+    },
+    {
+      "ascii_text": "-\tNumber systems ( \\mathbb{R}, \\mathbb{C}, \\mathbb{H}, \\mathbb{O}, \\mathbb{S}, \\mathbb{P}, \\mathbb{Q}_p ).",
+      "source_line": 1195,
+      "source_line_sha256": "66c1314a9763d50575e750f58a072e1d4400b762e7a365d3a55eebac874bd744",
+      "source_text": "\u2022\tNumber systems ( \\mathbb{R}, \\mathbb{C}, \\mathbb{H}, \\mathbb{O}, \\mathbb{S}, \\mathbb{P}, \\mathbb{Q}_p )."
+    },
+    {
+      "ascii_text": "-\t J_3(\\mathbb{O}) \\to E_6 ,  J_3(\\mathbb{S}) \\to E_7 ,  J_3(\\mathbb{P}) \\to E_8 .",
+      "source_line": 1209,
+      "source_line_sha256": "9f3bc3e6ceb09d717c45a6914b270f5d3ee1ddf0833deec4a07a953b2a31d3c9",
+      "source_text": "\u2022\t J_3(\\mathbb{O}) \\to E_6 ,  J_3(\\mathbb{S}) \\to E_7 ,  J_3(\\mathbb{P}) \\to E_8 ."
+    },
+    {
+      "ascii_text": "-\tQuaternionic ( \\mathbb{H} ), octonionic ( \\mathbb{O} ), and pathionic ( \\mathbb{P} ) manifolds.",
+      "source_line": 1226,
+      "source_line_sha256": "145babd592281d9599530e862c3aa3d4cc10e5f14370386d78c90076a92508a1",
+      "source_text": "\u2022\tQuaternionic ( \\mathbb{H} ), octonionic ( \\mathbb{O} ), and pathionic ( \\mathbb{P} ) manifolds."
+    },
+    {
+      "ascii_text": "-\tPerfectoid and Berkovich spaces unify  \\mathbb{Q}_p -geometry with derived categories.",
+      "source_line": 1232,
+      "source_line_sha256": "5d6e3a61620585ee2120fc48935f3250cb70c1817def049cd5d6a90ae08e6359",
+      "source_text": "\u2022\tPerfectoid and Berkovich spaces unify  \\mathbb{Q}_p -geometry with derived categories."
+    },
+    {
+      "ascii_text": "-\t 256 -nions represent the next layer of hypercomplex systems, recursively linked to  \\mathbb{P}_{256} .",
+      "source_line": 1245,
+      "source_line_sha256": "ebcd877c79ea39ce63c3cab75ea04a43855749883a298b3284ef24add691b7db",
+      "source_text": "\u2022\t 256 -nions represent the next layer of hypercomplex systems, recursively linked to  \\mathbb{P}_{256} ."
+    },
+    {
+      "ascii_text": "where \\theta is the folding angle, and \\mathcal{G} integrates fractal corrections.",
+      "source_line": 1345,
+      "source_line_sha256": "5a0843b505938d8cb57306ad8254afe63c0f599c8f20c84ee4edbaca1f3fd50d",
+      "source_text": "where \\theta is the folding angle, and \\mathcal{G} integrates fractal corrections."
+    },
+    {
+      "ascii_text": "-\tUse fractal time evolution equations (\\frac{d^\\alpha x}{dt^\\alpha}) to track dynamic changes.",
+      "source_line": 1528,
+      "source_line_sha256": "07886cf69c21082df95a0bd1a3f8af518ff78d736d44ac79afb57510d377a932",
+      "source_text": "\u2022\tUse fractal time evolution equations (\\frac{d^\\alpha x}{dt^\\alpha}) to track dynamic changes."
+    },
+    {
+      "ascii_text": "def modular_symmetry(z, a=1, b=0, c=0, d=1):",
+      "source_line": 1560,
+      "source_line_sha256": "b029c4edcf2c0eb18c8ef971518459823f46997f88c9930924e32dd0980128ff",
+      "source_text": "def modular_symmetry(z, a=1, b=0, c=0, d=1):"
+    },
+    {
+      "ascii_text": "return (a * z + b) / (c * z + d) if c * z + d != 0 else None",
+      "source_line": 1561,
+      "source_line_sha256": "e7dd3a40abb95dcd46ba36fdb2665aee38c25549d5e33bfb313644fda2f09f2b",
+      "source_text": "return (a * z + b) / (c * z + d) if c * z + d != 0 else None"
+    },
+    {
+      "ascii_text": "plt.figure(figsize=(10, 6))",
+      "source_line": 1563,
+      "source_line_sha256": "76c4226382016853eed399d84eeec321fc45b61407955226c4c998e688ed6bea",
+      "source_text": "plt.figure(figsize=(10, 6))"
+    },
+    {
+      "ascii_text": "plt.plot(layers, harmonics, label=\"Fractal Harmonics\", marker='o')",
+      "source_line": 1564,
+      "source_line_sha256": "ca0273d3dd27160cea9765bc12974404b803830898922c2f0ab79d7b131ebdbd",
+      "source_text": "plt.plot(layers, harmonics, label=\"Fractal Harmonics\", marker='o')"
+    },
+    {
+      "ascii_text": "plt.plot(layers, modular_values, label=\"Modular Symmetry\", marker='x')",
+      "source_line": 1565,
+      "source_line_sha256": "a4e9d04e315c94875ec191a487c1751f6ee5e1e94d1d15183f7702d202250f94",
+      "source_text": "plt.plot(layers, modular_values, label=\"Modular Symmetry\", marker='x')"
+    },
+    {
+      "ascii_text": "-\tH(t) = H_0 \\cdot \\sin(\\omega t + \\phi)",
+      "source_line": 1621,
+      "source_line_sha256": "397c714f4cceea10c676f4fc5b88a61b66a1ce8abe7834aa918b26967e48aef4",
+      "source_text": "\u2022\tH(t) = H_0 \\cdot \\sin(\\omega t + \\phi)"
+    },
+    {
+      "ascii_text": "-\tZPE(t) = ZPE_0 \\cdot (1 + \\delta \\sin(\\omega t))",
+      "source_line": 1622,
+      "source_line_sha256": "2244fbbeef097b2608d526f401198254c612a6f8b581e1366d8be3f12d0f652b",
+      "source_text": "\u2022\tZPE(t) = ZPE_0 \\cdot (1 + \\delta \\sin(\\omega t))"
+    },
+    {
+      "ascii_text": "Start from \\mathbb{R} to generate complex numbers \\mathbb{C}, quaternions \\mathbb{H}, octonions \\mathbb{O}, and further sedenions \\mathbb{S}. Each step doubles the dimension and introduces new complexities (non-commutativity, non-associativity):",
+      "source_line": 1690,
+      "source_line_sha256": "05bdb059d7ac90379e2f3316b8c32d939e55752ee1ada663c3aeed807a933be4",
+      "source_text": "Start from \\mathbb{R} to generate complex numbers \\mathbb{C}, quaternions \\mathbb{H}, octonions \\mathbb{O}, and further sedenions \\mathbb{S}. Each step doubles the dimension and introduces new complexities (non-commutativity, non-associativity):"
+    },
+    {
+      "ascii_text": "Incorporate modular forms associated with the Monster group \\mathbb{M}. By embedding modular arithmetic into lattice expansions, fractal sets gain arithmetic constraints that enforce stable scaling laws.",
+      "source_line": 1692,
+      "source_line_sha256": "4162a49ca616b63436c9cfe9aaa3f983f9b48a9c7256795f5c1196dc7f40f8d2",
+      "source_text": "Incorporate modular forms associated with the Monster group \\mathbb{M}. By embedding modular arithmetic into lattice expansions, fractal sets gain arithmetic constraints that enforce stable scaling laws."
+    },
+    {
+      "ascii_text": "Operators introduced here--lattice (\\mathcal{L}), fractal-harmonic (\\mathcal{F}_H), time-dynamics (\\mathcal{T}_t), combined (\\mathcal{C}), foldmerge (\\mathcal{F}_M), strongly-coupled cross-link (\\mathcal{S}_C), and quantum-gravitational conduct (\\mathcal{QG}_C)--form the engine of Genesis.",
+      "source_line": 1699,
+      "source_line_sha256": "9a7dc82a83bb38eabdf0216ca7f39c5947b67883d07de50a42492dcfc366649d",
+      "source_text": "Operators introduced here\u2014lattice (\\mathcal{L}), fractal-harmonic (\\mathcal{F}_H), time-dynamics (\\mathcal{T}_t), combined (\\mathcal{C}), foldmerge (\\mathcal{F}_M), strongly-coupled cross-link (\\mathcal{S}_C), and quantum-gravitational conduct (\\mathcal{QG}_C)\u2014form the engine of Genesis."
+    },
+    {
+      "ascii_text": "4.1 Lattice Operator (\\mathcal{L})",
+      "source_line": 1701,
+      "source_line_sha256": "c380b8f23d794a788a0f0611fd268b2a3dd3f87a2ebfcb37e8e17a525239509a",
+      "source_text": "4.1 Lattice Operator (\\mathcal{L})"
+    },
+    {
+      "ascii_text": "Incorporating E_8 maximizes symmetry. The presence of E_8 ensures that fractal embeddings and scalar-ZPE couplings do not break fundamental symmetries. Let \\{X_i\\}{i=1}^{248} be E_8 generators with structure constants f{ijk}.",
+      "source_line": 1703,
+      "source_line_sha256": "86d6e01553a6718972481aaa40148f8031dae58430f7d358185cb853fc739965",
+      "source_text": "Incorporating E_8 maximizes symmetry. The presence of E_8 ensures that fractal embeddings and scalar-ZPE couplings do not break fundamental symmetries. Let \\{X_i\\}{i=1}^{248} be E_8 generators with structure constants f{ijk}."
+    },
+    {
+      "ascii_text": "Combine E_8 with Leech lattice embeddings. Show that summations over these lattices yield integrals with finite volumes in negative/fractional dimensions. Zeta-regularization ensures that \\int \\Lambda_{E8}(r) dr remains finite.",
+      "source_line": 1715,
+      "source_line_sha256": "90bb8cca7a7582963982ca641b2b40f3e32ba291db8455a7099d68d589557978",
+      "source_text": "Combine E_8 with Leech lattice embeddings. Show that summations over these lattices yield integrals with finite volumes in negative/fractional dimensions. Zeta-regularization ensures that \\int \\Lambda_{E8}(r) dr remains finite."
+    },
+    {
+      "ascii_text": "-\tTime-Crystal Lasers: Employ ultrafast lasers (10-100 fs) and high-repetition rates (~80 MHz) in nonlinear media (tourmaline or doped metamaterials) to detect stable harmonic oscillations predicted by \\mathcal{F}_H.",
+      "source_line": 1728,
+      "source_line_sha256": "015f6e29ddb77d3d98917acba4467cfd1e7ee49e779a54330c50ac3368c152e8",
+      "source_text": "\u2022\tTime-Crystal Lasers: Employ ultrafast lasers (10\u2013100 fs) and high-repetition rates (~80 MHz) in nonlinear media (tourmaline or doped metamaterials) to detect stable harmonic oscillations predicted by \\mathcal{F}_H."
+    },
+    {
+      "ascii_text": "-\tQuantum Computing: Enhanced error correction and coherence times through fractal-lattice memory fields and \\mathcal{QG}_C-stabilized quantum states.",
+      "source_line": 1737,
+      "source_line_sha256": "0822bc56d4572e58ed42876b238a0ba43edd2d7a6b133478c91a55bb304a96d5",
+      "source_text": "\u2022\tQuantum Computing: Enhanced error correction and coherence times through fractal-lattice memory fields and \\mathcal{QG}_C-stabilized quantum states."
+    },
+    {
+      "ascii_text": "-\tLaser specs: wavelength \\lambda=800\\text{ nm}, pulse width \\approx 50\\text{ fs}.",
+      "source_line": 1792,
+      "source_line_sha256": "9a0a2da5e6262a85f08fce110e782c7bba45cfb69a50e21eeea77e754579752b",
+      "source_text": "\u2022\tLaser specs: wavelength \\lambda=800\\text{ nm}, pulse width \\approx 50\\text{ fs}."
+    },
+    {
+      "ascii_text": "-\tMeasure fringe shifts and match with theoretical phase predictions from \\mathcal{F}_H.",
+      "source_line": 1795,
+      "source_line_sha256": "f949dc4c0c31083ce15afda03078011dc1f95eb9a45c6d42f600695722582138",
+      "source_text": "\u2022\tMeasure fringe shifts and match with theoretical phase predictions from \\mathcal{F}_H."
+    },
+    {
+      "ascii_text": "-\t\\mathcal{F}_M: FoldMerge operator (product of kernels).",
+      "source_line": 1812,
+      "source_line_sha256": "98d010f971f448a35d3103a9399743d881d7c5627ce346838a39d3a725418adc",
+      "source_text": "\u2022\t\\mathcal{F}_M: FoldMerge operator (product of kernels)."
+    },
+    {
+      "ascii_text": "-\t\\mathcal{QG}_C: Quantum-Gravitational Conduct operator.",
+      "source_line": 1813,
+      "source_line_sha256": "5fdeba9d04f10aa52970f4247d82ab6b3d4777dddbd726a6534e0f71803930e5",
+      "source_text": "\u2022\t\\mathcal{QG}_C: Quantum-Gravitational Conduct operator."
+    },
+    {
+      "ascii_text": "-\t\\mathcal{T}_t: Time evolution operator.",
+      "source_line": 1816,
+      "source_line_sha256": "2c762a05b70d547bac03ada81ec623f1158c4ec9367c1985443e3ae6a205084d",
+      "source_text": "\u2022\t\\mathcal{T}_t: Time evolution operator."
+    },
+    {
+      "ascii_text": "-\tUnified Model: Develops the Quantum-Gravitational Conduct Operator (\\mathcal{QG}_C), which explicitly merges quantum Hamiltonians with gravitational curvature tensors and cosmological terms, offering a direct mechanism to couple quantum and gravitational phenomena within the unified framework.",
+      "source_line": 1857,
+      "source_line_sha256": "64208ee02205e23ee08b851c09470c3722af55570dff3e18e56ec4f7f8ba8b41",
+      "source_text": "\u2022\tUnified Model: Develops the Quantum-Gravitational Conduct Operator (\\mathcal{QG}_C), which explicitly merges quantum Hamiltonians with gravitational curvature tensors and cosmological terms, offering a direct mechanism to couple quantum and gravitational phenomena within the unified framework."
+    },
+    {
+      "ascii_text": "-\tThe development of operators such as the FoldMerge Operator (\\mathcal{F}_M) and Strongly-Coupled Cross-Link Operator (\\mathcal{S}_C) provides a sophisticated algebraic structure that manages non-associativity and ensures the boundedness and convergence of the framework's mathematical constructs.",
+      "source_line": 1867,
+      "source_line_sha256": "d2a12ae6018f4d0c639fb930764268882cac524709f49374bff0e169f0baff94",
+      "source_text": "\u2022\tThe development of operators such as the FoldMerge Operator (\\mathcal{F}_M) and Strongly-Coupled Cross-Link Operator (\\mathcal{S}_C) provides a sophisticated algebraic structure that manages non-associativity and ensures the boundedness and convergence of the framework\u2019s mathematical constructs."
+    },
+    {
+      "ascii_text": "Operator Framework\tUnified force carrier concept\tAdvanced operator algebra with FoldMerge (\\mathcal{F}_M), Strongly-Coupled Cross-Link (\\mathcal{S}_C), Quantum-Gravitational Conduct (\\mathcal{QG}_C) operators",
+      "source_line": 1880,
+      "source_line_sha256": "d4145ad05a4b72924dc45071f53b951a562d2106251b5addd21206f2ea4e9f39",
+      "source_text": "Operator Framework\tUnified force carrier concept\tAdvanced operator algebra with FoldMerge (\\mathcal{F}_M), Strongly-Coupled Cross-Link (\\mathcal{S}_C), Quantum-Gravitational Conduct (\\mathcal{QG}_C) operators"
+    },
+    {
+      "ascii_text": "Due to the product structure of \\mathcal{F}_M, each  K -factor commutes with \\mathcal{QG}_C only under specific symmetry conditions.",
+      "source_line": 1896,
+      "source_line_sha256": "f5cdfa99daf983b64270bff37b827dbdd683b6f4c651c5df8e71653ba3a23ac8",
+      "source_text": "Due to the product structure of \\mathcal{F}_M, each  K -factor commutes with \\mathcal{QG}_C only under specific symmetry conditions."
+    },
+    {
+      "ascii_text": "Given that  \\mathcal{F}_M  incorporates E_8 and Monster symmetries, and  \\mathcal{QG}_C  aligns with these symmetries, many commutators  [ K, \\mathcal{QG}_C ]  vanish or yield bounded operators.",
+      "source_line": 1898,
+      "source_line_sha256": "562577949d362a3fe39d1375fc5534d34bfe4b8a34f76a75dcbd062b7b2b7786",
+      "source_text": "Given that  \\mathcal{F}_M  incorporates E\u2088 and Monster symmetries, and  \\mathcal{QG}_C  aligns with these symmetries, many commutators  [ K, \\mathcal{QG}_C ]  vanish or yield bounded operators."
+    },
+    {
+      "ascii_text": "-\tDefine a lattice grid in  \\mathbb{R}^{d_{\\text{frac}}} , where  d_{\\text{frac}}  is a non-integer.",
+      "source_line": 1907,
+      "source_line_sha256": "18045367a566f1b7cc489fe5d5bd3f3e9e37cca867cd8f8b1f6eaf192201c03f",
+      "source_text": "\u2022\tDefine a lattice grid in  \\mathbb{R}^{d_{\\text{frac}}} , where  d_{\\text{frac}}  is a non-integer."
+    },
+    {
+      "ascii_text": "-\tInitialize  f_i(x, t=0)  based on the desired initial conditions, ensuring consistency with fractal and hypercomplex symmetries.",
+      "source_line": 1910,
+      "source_line_sha256": "490aa7178592dc18dc953552adad5b7031a9cde7fedd97d77fd77ceb0348d69c",
+      "source_text": "\u2022\tInitialize  f_i(x, t=0)  based on the desired initial conditions, ensuring consistency with fractal and hypercomplex symmetries."
+    },
+    {
+      "ascii_text": "-\tMonitor convergence criteria based on  \\mathcal{F}_M  and  \\mathcal{S}_C  operator stability.",
+      "source_line": 1919,
+      "source_line_sha256": "e84267528439609206a7f8a3ae068e2edfe0c572dc89e908e9b10f2015f5a7a2",
+      "source_text": "\u2022\tMonitor convergence criteria based on  \\mathcal{F}_M  and  \\mathcal{S}_C  operator stability."
+    },
+    {
+      "ascii_text": "grid_size = (100, 100, 100)  # Adjust for dimensional embedding",
+      "source_line": 1924,
+      "source_line_sha256": "8d921ab77505a48adf78e8eb619deff3b06899e13fe991553a8d4c3a424f3612",
+      "source_text": "grid_size = (100, 100, 100)  # Adjust for dimensional embedding"
+    },
+    {
+      "ascii_text": "f = cp.zeros(grid_size + (26,), dtype=cp.float32)  # 26 primary directions",
+      "source_line": 1925,
+      "source_line_sha256": "865c3d21bee01ca304a7ef6018798899d8cc0b0c0fc5cff8ddd578bd3092863c",
+      "source_text": "f = cp.zeros(grid_size + (26,), dtype=cp.float32)  # 26 primary directions"
+    },
+    {
+      "ascii_text": "\\phi\tGolden ratio  \\frac{1+\\sqrt{5}}{2}",
+      "source_line": 2006,
+      "source_line_sha256": "e7a9c13940c102eedabea8faa227459efa667a894c9203774f8f2f9662bb0360",
+      "source_text": "\\phi\tGolden ratio  \\frac{1+\\sqrt{5}}{2}"
+    },
+    {
+      "ascii_text": "\\mathcal{F}_M\tFoldMerge operator",
+      "source_line": 2010,
+      "source_line_sha256": "61ba824ff632e0291a3afee5917d4d3923dff73dfca93a587c129d278d61df43",
+      "source_text": "\\mathcal{F}_M\tFoldMerge operator"
+    },
+    {
+      "ascii_text": "\\mathcal{S}_C\tStrongly-Coupled Cross-Link operator",
+      "source_line": 2011,
+      "source_line_sha256": "c81fc24ca8083e7af82e3584d5b5e85969a4039041d73c24b68d42569f67175b",
+      "source_text": "\\mathcal{S}_C\tStrongly-Coupled Cross-Link operator"
+    },
+    {
+      "ascii_text": "\\mathcal{QG}_C\tQuantum-Gravitational Conduct operator",
+      "source_line": 2012,
+      "source_line_sha256": "0ee9e44c856f709363cb578973f532676fe9c82a085a427b2b10a5dab9148650",
+      "source_text": "\\mathcal{QG}_C\tQuantum-Gravitational Conduct operator"
+    },
+    {
+      "ascii_text": "\\mathcal{T}_t\tTime evolution operator",
+      "source_line": 2015,
+      "source_line_sha256": "b273970a8d681a87dd9f4fe9acc3fdd235660f84cbc7a3273ff86648dcd63bbd",
+      "source_text": "\\mathcal{T}_t\tTime evolution operator"
+    },
+    {
+      "ascii_text": "\\mathcal{H}^{d_{\\text{frac}}} \tHausdorff measure for fractional dimensions",
+      "source_line": 2019,
+      "source_line_sha256": "33b9c2a0d133d5152d14eb92180294131e2da971a0b34d83363a5f11db674a50",
+      "source_text": "\\mathcal{H}^{d_{\\text{frac}}} \tHausdorff measure for fractional dimensions"
+    },
+    {
+      "ascii_text": "\\mathcal{O} \tOrigami fold operator",
+      "source_line": 2020,
+      "source_line_sha256": "d67e0c1fcb308a013e7f6e6cf953aeed8ddefbc3e8cfba924db80ecaa54ec9d3",
+      "source_text": "\\mathcal{O} \tOrigami fold operator"
+    },
+    {
+      "ascii_text": "\\mathcal{C} \tCombined operator",
+      "source_line": 2023,
+      "source_line_sha256": "cdfd74b41383227b626565fe9f257446c4eccfe1b0c040183af306e163815fbe",
+      "source_text": "\\mathcal{C} \tCombined operator"
+    },
+    {
+      "ascii_text": "\\mathcal{F}_H \tFractal-Harmonic Transform operator",
+      "source_line": 2024,
+      "source_line_sha256": "5abdfdd67ee156c2fbb0ca2ba6bc3fe98a4e99fa941185bc4c9ad25fea7d8ccb",
+      "source_text": "\\mathcal{F}_H \tFractal-Harmonic Transform operator"
+    },
+    {
+      "ascii_text": "\\mathcal{L} \tLattice operator",
+      "source_line": 2025,
+      "source_line_sha256": "1894609b76efd9c53285ecd7ad956e540c690131f302825004a23de464871083",
+      "source_text": "\\mathcal{L} \tLattice operator"
+    },
+    {
+      "ascii_text": "\\mathcal{H}_{\\text{quantum}} \tQuantum Hamiltonian operator",
+      "source_line": 2027,
+      "source_line_sha256": "4dd95f32537a88c07a0a675e94a77d88291daaa34d36da4cfc466ccace96f0e5",
+      "source_text": "\\mathcal{H}_{\\text{quantum}} \tQuantum Hamiltonian operator"
+    },
+    {
+      "ascii_text": "-\tRepresent  \\mathcal{S}_C  in the basis provided by E_8 lattice vectors.",
+      "source_line": 2038,
+      "source_line_sha256": "5bec403f3f8a558ef1cc0abb76cab15ebdfd82c1dea220619c43d684930c687c",
+      "source_text": "\u2022\tRepresent  \\mathcal{S}_C  in the basis provided by E\u2088 lattice vectors."
+    },
+    {
+      "ascii_text": "-\tExpress  \\mathcal{S}_C  as a matrix  S  with entries derived from kernel products.",
+      "source_line": 2039,
+      "source_line_sha256": "d17184a223ef036b55680a9245fb481acf728d623f2c110bba40b17b013e9a18",
+      "source_text": "\u2022\tExpress  \\mathcal{S}_C  as a matrix  S  with entries derived from kernel products."
+    },
+    {
+      "ascii_text": "-\tIdentify the minimal polynomial  p(\\lambda)  such that  p(S) = 0 .",
+      "source_line": 2041,
+      "source_line_sha256": "15e7c7c69945dc795a53b48d26c79895b29e1a9cc8f3ad163ac67d03dd4f947e",
+      "source_text": "\u2022\tIdentify the minimal polynomial  p(\\lambda)  such that  p(S) = 0 ."
+    },
+    {
+      "ascii_text": "-\tDemonstrate that  \\mathcal{S}_C  satisfies:",
+      "source_line": 2048,
+      "source_line_sha256": "8066f6bd775105bfb2c436f717072b11f739accf759fe64575de215781051c30",
+      "source_text": "\u2022\tDemonstrate that  \\mathcal{S}_C  satisfies:"
+    },
+    {
+      "ascii_text": "= 2",
+      "source_line": 2263,
+      "source_line_sha256": "fb37e8dbe3cd8f84b0792ef636d2368185132620f9ae704ecbc297f031e8a772",
+      "source_text": "= 2"
+    },
+    {
+      "ascii_text": "= 3",
+      "source_line": 2318,
+      "source_line_sha256": "8f5f67319a33fddd1e19d9fdad6cdd7da5dc9152f78921afd93b8870b7f34134",
+      "source_text": "= 3"
+    },
+    {
+      "ascii_text": "= 4",
+      "source_line": 2345,
+      "source_line_sha256": "d48b04a8b720a7d3d0c73db96cebd5ba84c44ed8473ae71bbc3b6f680dca0b25",
+      "source_text": "= 4"
+    },
+    {
+      "ascii_text": "=",
+      "source_line": 2404,
+      "source_line_sha256": "0ce63afc1e92ee82744300a778e523b9f42a53fe99201bd39fb8e2de82965297",
+      "source_text": "="
+    },
+    {
+      "ascii_text": ") = source(",
+      "source_line": 2448,
+      "source_line_sha256": "5067d68e6ed0cdf9632d7f53f3817457bc98700630f305a3b16912deb479ccec",
+      "source_text": ") = source("
+    },
+    {
+      "ascii_text": "= 3",
+      "source_line": 2691,
+      "source_line_sha256": "8f5f67319a33fddd1e19d9fdad6cdd7da5dc9152f78921afd93b8870b7f34134",
+      "source_text": "= 3"
+    },
+    {
+      "ascii_text": "=",
+      "source_line": 2797,
+      "source_line_sha256": "0ce63afc1e92ee82744300a778e523b9f42a53fe99201bd39fb8e2de82965297",
+      "source_text": "="
+    },
+    {
+      "ascii_text": ") =",
+      "source_line": 2846,
+      "source_line_sha256": "173db06fd9b457af898f6637867ac8fef1f114a278a8fc003c03f0ebe63ec946",
+      "source_text": ") ="
+    },
+    {
+      "ascii_text": ") =",
+      "source_line": 2855,
+      "source_line_sha256": "173db06fd9b457af898f6637867ac8fef1f114a278a8fc003c03f0ebe63ec946",
+      "source_text": ") ="
+    },
+    {
+      "ascii_text": "edu/viewdoc/summary?doi=10.1.1.50.3718",
+      "source_line": 3195,
+      "source_line_sha256": "91d8d1142df7062c13ea1965bc2e7150e68ea6605c354d81f699e0f94f2022f6",
+      "source_text": "edu/viewdoc/summary?doi=10.1.1.50.3718"
+    },
+    {
+      "ascii_text": "= 1",
+      "source_line": 3212,
+      "source_line_sha256": "7243ba18b5a5a270e061397d8bfbf2cef09951916e489ce4934b297085dbd328",
+      "source_text": "= 1"
+    },
+    {
+      "ascii_text": "=",
+      "source_line": 3364,
+      "source_line_sha256": "0ce63afc1e92ee82744300a778e523b9f42a53fe99201bd39fb8e2de82965297",
+      "source_text": "="
+    },
+    {
+      "ascii_text": "=",
+      "source_line": 3370,
+      "source_line_sha256": "0ce63afc1e92ee82744300a778e523b9f42a53fe99201bd39fb8e2de82965297",
+      "source_text": "="
+    },
+    {
+      "ascii_text": "= 0",
+      "source_line": 3415,
+      "source_line_sha256": "8a600bb53115c44bee3a56323b3af58d27aaec0b138e7868e381108ee1149cb0",
+      "source_text": "= 0"
+    },
+    {
+      "ascii_text": "=",
+      "source_line": 3451,
+      "source_line_sha256": "0ce63afc1e92ee82744300a778e523b9f42a53fe99201bd39fb8e2de82965297",
+      "source_text": "="
+    },
+    {
+      "ascii_text": ") =",
+      "source_line": 3687,
+      "source_line_sha256": "173db06fd9b457af898f6637867ac8fef1f114a278a8fc003c03f0ebe63ec946",
+      "source_text": ") ="
+    },
+    {
+      "ascii_text": ") =",
+      "source_line": 3708,
+      "source_line_sha256": "173db06fd9b457af898f6637867ac8fef1f114a278a8fc003c03f0ebe63ec946",
+      "source_text": ") ="
+    },
+    {
+      "ascii_text": "= 0",
+      "source_line": 3741,
+      "source_line_sha256": "8a600bb53115c44bee3a56323b3af58d27aaec0b138e7868e381108ee1149cb0",
+      "source_text": "= 0"
+    },
+    {
+      "ascii_text": "d =dt",
+      "source_line": 3746,
+      "source_line_sha256": "129b7a87fbdccba74eeac80800f1827e106315fc05fb58ae303bc652fce6a3d2",
+      "source_text": "d =dt"
+    },
+    {
+      "ascii_text": ") =",
+      "source_line": 3803,
+      "source_line_sha256": "173db06fd9b457af898f6637867ac8fef1f114a278a8fc003c03f0ebe63ec946",
+      "source_text": ") ="
+    },
+    {
+      "ascii_text": "=",
+      "source_line": 3811,
+      "source_line_sha256": "0ce63afc1e92ee82744300a778e523b9f42a53fe99201bd39fb8e2de82965297",
+      "source_text": "="
+    },
+    {
+      "ascii_text": ") = exp(",
+      "source_line": 3836,
+      "source_line_sha256": "4d94d851d5cdfadd0e9e9c23f8a3d34dd6ed4bb5fe654ca2244c1ad0e9a73684",
+      "source_text": ") = exp("
+    },
+    {
+      "ascii_text": "=",
+      "source_line": 3843,
+      "source_line_sha256": "0ce63afc1e92ee82744300a778e523b9f42a53fe99201bd39fb8e2de82965297",
+      "source_text": "="
+    },
+    {
+      "ascii_text": "= 0",
+      "source_line": 4065,
+      "source_line_sha256": "8a600bb53115c44bee3a56323b3af58d27aaec0b138e7868e381108ee1149cb0",
+      "source_text": "= 0"
+    },
+    {
+      "ascii_text": "=",
+      "source_line": 4068,
+      "source_line_sha256": "0ce63afc1e92ee82744300a778e523b9f42a53fe99201bd39fb8e2de82965297",
+      "source_text": "="
+    },
+    {
+      "ascii_text": "=",
+      "source_line": 4074,
+      "source_line_sha256": "0ce63afc1e92ee82744300a778e523b9f42a53fe99201bd39fb8e2de82965297",
+      "source_text": "="
+    },
+    {
+      "ascii_text": "A=c",
+      "source_line": 4187,
+      "source_line_sha256": "bbcb6ac0df9e9b22353ad195475dab7494f31cc45fe3ac9f77cf9391a63e5dd5",
+      "source_text": "A=c"
+    },
+    {
+      "ascii_text": "A=c",
+      "source_line": 4197,
+      "source_line_sha256": "bbcb6ac0df9e9b22353ad195475dab7494f31cc45fe3ac9f77cf9391a63e5dd5",
+      "source_text": "A=c"
+    },
+    {
+      "ascii_text": ") = (",
+      "source_line": 4799,
+      "source_line_sha256": "97d157217af30442e995f04890e561dd4203bd8d1b22761d90afb2da721ee76c",
+      "source_text": ") = ("
+    },
+    {
+      "ascii_text": "=",
+      "source_line": 4827,
+      "source_line_sha256": "0ce63afc1e92ee82744300a778e523b9f42a53fe99201bd39fb8e2de82965297",
+      "source_text": "="
+    },
+    {
+      "ascii_text": "=",
+      "source_line": 4835,
+      "source_line_sha256": "0ce63afc1e92ee82744300a778e523b9f42a53fe99201bd39fb8e2de82965297",
+      "source_text": "="
+    },
+    {
+      "ascii_text": "=",
+      "source_line": 4844,
+      "source_line_sha256": "0ce63afc1e92ee82744300a778e523b9f42a53fe99201bd39fb8e2de82965297",
+      "source_text": "="
+    },
+    {
+      "ascii_text": "=",
+      "source_line": 4853,
+      "source_line_sha256": "0ce63afc1e92ee82744300a778e523b9f42a53fe99201bd39fb8e2de82965297",
+      "source_text": "="
+    },
+    {
+      "ascii_text": "=",
+      "source_line": 4861,
+      "source_line_sha256": "0ce63afc1e92ee82744300a778e523b9f42a53fe99201bd39fb8e2de82965297",
+      "source_text": "="
+    },
+    {
+      "ascii_text": "=",
+      "source_line": 4871,
+      "source_line_sha256": "0ce63afc1e92ee82744300a778e523b9f42a53fe99201bd39fb8e2de82965297",
+      "source_text": "="
+    },
+    {
+      "ascii_text": "=",
+      "source_line": 4886,
+      "source_line_sha256": "0ce63afc1e92ee82744300a778e523b9f42a53fe99201bd39fb8e2de82965297",
+      "source_text": "="
+    },
+    {
+      "ascii_text": "=",
+      "source_line": 4896,
+      "source_line_sha256": "0ce63afc1e92ee82744300a778e523b9f42a53fe99201bd39fb8e2de82965297",
+      "source_text": "="
+    },
+    {
+      "ascii_text": "=",
+      "source_line": 4907,
+      "source_line_sha256": "0ce63afc1e92ee82744300a778e523b9f42a53fe99201bd39fb8e2de82965297",
+      "source_text": "="
+    },
+    {
+      "ascii_text": "=",
+      "source_line": 4917,
+      "source_line_sha256": "0ce63afc1e92ee82744300a778e523b9f42a53fe99201bd39fb8e2de82965297",
+      "source_text": "="
+    },
+    {
+      "ascii_text": "= 8",
+      "source_line": 4982,
+      "source_line_sha256": "c071ed7a056cef6c9310e9ce55e1f570702ce4198718112432fb083fa5085783",
+      "source_text": "= 8"
+    },
+    {
+      "ascii_text": "= (",
+      "source_line": 5050,
+      "source_line_sha256": "3ba5cc1a62b52f2d165abe7be401b3a720f789fade784229560a182278b98e7b",
+      "source_text": "= ("
+    },
+    {
+      "ascii_text": "=",
+      "source_line": 5071,
+      "source_line_sha256": "0ce63afc1e92ee82744300a778e523b9f42a53fe99201bd39fb8e2de82965297",
+      "source_text": "="
+    },
+    {
+      "ascii_text": "=",
+      "source_line": 5073,
+      "source_line_sha256": "0ce63afc1e92ee82744300a778e523b9f42a53fe99201bd39fb8e2de82965297",
+      "source_text": "="
+    },
+    {
+      "ascii_text": "= 0 mo d",
+      "source_line": 5083,
+      "source_line_sha256": "975d76a31f80954d77fb1587063bc0dfb9dbd75d86a6141a34152bb9b662f3e1",
+      "source_text": "= 0 mo d"
+    },
+    {
+      "ascii_text": "=",
+      "source_line": 5099,
+      "source_line_sha256": "0ce63afc1e92ee82744300a778e523b9f42a53fe99201bd39fb8e2de82965297",
+      "source_text": "="
+    },
+    {
+      "ascii_text": "= 0",
+      "source_line": 5132,
+      "source_line_sha256": "8a600bb53115c44bee3a56323b3af58d27aaec0b138e7868e381108ee1149cb0",
+      "source_text": "= 0"
+    },
+    {
+      "ascii_text": "=",
+      "source_line": 5163,
+      "source_line_sha256": "0ce63afc1e92ee82744300a778e523b9f42a53fe99201bd39fb8e2de82965297",
+      "source_text": "="
+    },
+    {
+      "ascii_text": "= 8",
+      "source_line": 5167,
+      "source_line_sha256": "c071ed7a056cef6c9310e9ce55e1f570702ce4198718112432fb083fa5085783",
+      "source_text": "= 8"
+    },
+    {
+      "ascii_text": "= 1",
+      "source_line": 5465,
+      "source_line_sha256": "7243ba18b5a5a270e061397d8bfbf2cef09951916e489ce4934b297085dbd328",
+      "source_text": "= 1"
+    },
+    {
+      "ascii_text": "= 1",
+      "source_line": 5474,
+      "source_line_sha256": "7243ba18b5a5a270e061397d8bfbf2cef09951916e489ce4934b297085dbd328",
+      "source_text": "= 1"
+    },
+    {
+      "ascii_text": "= 1",
+      "source_line": 5481,
+      "source_line_sha256": "7243ba18b5a5a270e061397d8bfbf2cef09951916e489ce4934b297085dbd328",
+      "source_text": "= 1"
+    },
+    {
+      "ascii_text": "^ =",
+      "source_line": 5507,
+      "source_line_sha256": "db2e4356ba27fd361db5af0cae7d128cd4f32ee827e6da04893a3dd2b4228996",
+      "source_text": "\u02c7 ="
+    },
+    {
+      "ascii_text": "= 1",
+      "source_line": 5514,
+      "source_line_sha256": "7243ba18b5a5a270e061397d8bfbf2cef09951916e489ce4934b297085dbd328",
+      "source_text": "= 1"
+    },
+    {
+      "ascii_text": "= 5",
+      "source_line": 5661,
+      "source_line_sha256": "4b0f61c7b84a33978ac513ea51160c30326a0036dbd13828cb844e99c5527e1a",
+      "source_text": "= 5"
+    },
+    {
+      "ascii_text": "^ =n",
+      "source_line": 5704,
+      "source_line_sha256": "23f6f325dedafed6d99206d779e6b8353c1a1dc08e906258067810ef8a0f55f5",
+      "source_text": "\u02c7 =n"
+    },
+    {
+      "ascii_text": "^ =n",
+      "source_line": 5712,
+      "source_line_sha256": "23f6f325dedafed6d99206d779e6b8353c1a1dc08e906258067810ef8a0f55f5",
+      "source_text": "\u02c7 =n"
+    },
+    {
+      "ascii_text": "= 3",
+      "source_line": 5718,
+      "source_line_sha256": "8f5f67319a33fddd1e19d9fdad6cdd7da5dc9152f78921afd93b8870b7f34134",
+      "source_text": "= 3"
+    },
+    {
+      "ascii_text": "= 5",
+      "source_line": 5824,
+      "source_line_sha256": "4b0f61c7b84a33978ac513ea51160c30326a0036dbd13828cb844e99c5527e1a",
+      "source_text": "= 5"
+    },
+    {
+      "ascii_text": "=",
+      "source_line": 5869,
+      "source_line_sha256": "0ce63afc1e92ee82744300a778e523b9f42a53fe99201bd39fb8e2de82965297",
+      "source_text": "="
+    },
+    {
+      "ascii_text": "] =",
+      "source_line": 6007,
+      "source_line_sha256": "04a960b61601f8132880a52d3f1f4c252a08429e2742714fe881425ac5768603",
+      "source_text": "] ="
+    },
+    {
+      "ascii_text": "= 0",
+      "source_line": 6026,
+      "source_line_sha256": "8a600bb53115c44bee3a56323b3af58d27aaec0b138e7868e381108ee1149cb0",
+      "source_text": "= 0"
+    },
+    {
+      "ascii_text": "] = 0",
+      "source_line": 6031,
+      "source_line_sha256": "0a5941b2448dfe86aa52682c621dc9e3b97315fc1668a978802fb31847f9405d",
+      "source_text": "] = 0"
+    },
+    {
+      "ascii_text": "] =",
+      "source_line": 6041,
+      "source_line_sha256": "04a960b61601f8132880a52d3f1f4c252a08429e2742714fe881425ac5768603",
+      "source_text": "] ="
+    },
+    {
+      "ascii_text": "= [",
+      "source_line": 6054,
+      "source_line_sha256": "a94cd338b9e4c66e37be10d4404179716ea19df3afa2cc0c4fa44b65bfba8d48",
+      "source_text": "= ["
+    },
+    {
+      "ascii_text": "] = 0",
+      "source_line": 6061,
+      "source_line_sha256": "0a5941b2448dfe86aa52682c621dc9e3b97315fc1668a978802fb31847f9405d",
+      "source_text": "] = 0"
+    },
+    {
+      "ascii_text": ") = 1",
+      "source_line": 6102,
+      "source_line_sha256": "8bef92c4f6c49817af7a85def5717aabd9c9b50793aae555db12a20365805073",
+      "source_text": ") = 1"
+    },
+    {
+      "ascii_text": "= 2",
+      "source_line": 6203,
+      "source_line_sha256": "fb37e8dbe3cd8f84b0792ef636d2368185132620f9ae704ecbc297f031e8a772",
+      "source_text": "= 2"
+    },
+    {
+      "ascii_text": "= 5",
+      "source_line": 6399,
+      "source_line_sha256": "4b0f61c7b84a33978ac513ea51160c30326a0036dbd13828cb844e99c5527e1a",
+      "source_text": "= 5"
+    },
+    {
+      "ascii_text": "=",
+      "source_line": 6467,
+      "source_line_sha256": "0ce63afc1e92ee82744300a778e523b9f42a53fe99201bd39fb8e2de82965297",
+      "source_text": "="
+    },
+    {
+      "ascii_text": "] =",
+      "source_line": 6541,
+      "source_line_sha256": "04a960b61601f8132880a52d3f1f4c252a08429e2742714fe881425ac5768603",
+      "source_text": "] ="
+    },
+    {
+      "ascii_text": ")) = (",
+      "source_line": 6863,
+      "source_line_sha256": "48fee9e8b9db224a5ded178c0784df75deb4f6461bb5dbe454fa5b841f42878c",
+      "source_text": ")) = ("
+    },
+    {
+      "ascii_text": "= 0",
+      "source_line": 7188,
+      "source_line_sha256": "8a600bb53115c44bee3a56323b3af58d27aaec0b138e7868e381108ee1149cb0",
+      "source_text": "= 0"
+    },
+    {
+      "ascii_text": "=",
+      "source_line": 7262,
+      "source_line_sha256": "0ce63afc1e92ee82744300a778e523b9f42a53fe99201bd39fb8e2de82965297",
+      "source_text": "="
+    },
+    {
+      "ascii_text": "= (",
+      "source_line": 7312,
+      "source_line_sha256": "3ba5cc1a62b52f2d165abe7be401b3a720f789fade784229560a182278b98e7b",
+      "source_text": "= ("
+    },
+    {
+      "ascii_text": "= 2",
+      "source_line": 7415,
+      "source_line_sha256": "fb37e8dbe3cd8f84b0792ef636d2368185132620f9ae704ecbc297f031e8a772",
+      "source_text": "= 2"
+    },
+    {
+      "ascii_text": "=",
+      "source_line": 7483,
+      "source_line_sha256": "0ce63afc1e92ee82744300a778e523b9f42a53fe99201bd39fb8e2de82965297",
+      "source_text": "="
+    },
+    {
+      "ascii_text": "=",
+      "source_line": 7540,
+      "source_line_sha256": "0ce63afc1e92ee82744300a778e523b9f42a53fe99201bd39fb8e2de82965297",
+      "source_text": "="
+    },
+    {
+      "ascii_text": "=",
+      "source_line": 7575,
+      "source_line_sha256": "0ce63afc1e92ee82744300a778e523b9f42a53fe99201bd39fb8e2de82965297",
+      "source_text": "="
+    },
+    {
+      "ascii_text": "=",
+      "source_line": 7679,
+      "source_line_sha256": "0ce63afc1e92ee82744300a778e523b9f42a53fe99201bd39fb8e2de82965297",
+      "source_text": "="
+    },
+    {
+      "ascii_text": "=0",
+      "source_line": 7683,
+      "source_line_sha256": "ab65b7706e9bf546bf7fbbc9d3c87d5ef3f81ff1d7d13c70c8f91748a5a2c2d5",
+      "source_text": "=0"
+    },
+    {
+      "ascii_text": "G=H",
+      "source_line": 7699,
+      "source_line_sha256": "2f700d220f4f5e35cec03c8d4052496ee736b33c21c98c9185a44bb7c612ee95",
+      "source_text": "G=H"
+    },
+    {
+      "ascii_text": "= 808017424794512875886459904961710757005754368000000000",
+      "source_line": 7744,
+      "source_line_sha256": "4cda11b4b6e44df543d3b21863111672bc3764a40e7ee13d8fa3df83201dd833",
+      "source_text": "= 808017424794512875886459904961710757005754368000000000"
+    },
+    {
+      "ascii_text": "=",
+      "source_line": 7804,
+      "source_line_sha256": "0ce63afc1e92ee82744300a778e523b9f42a53fe99201bd39fb8e2de82965297",
+      "source_text": "="
+    },
+    {
+      "ascii_text": "=",
+      "source_line": 7813,
+      "source_line_sha256": "0ce63afc1e92ee82744300a778e523b9f42a53fe99201bd39fb8e2de82965297",
+      "source_text": "="
+    },
+    {
+      "ascii_text": "=",
+      "source_line": 7855,
+      "source_line_sha256": "0ce63afc1e92ee82744300a778e523b9f42a53fe99201bd39fb8e2de82965297",
+      "source_text": "="
+    },
+    {
+      "ascii_text": "=",
+      "source_line": 7881,
+      "source_line_sha256": "0ce63afc1e92ee82744300a778e523b9f42a53fe99201bd39fb8e2de82965297",
+      "source_text": "="
+    },
+    {
+      "ascii_text": "H =",
+      "source_line": 7891,
+      "source_line_sha256": "9f205d955a72ba5d5e40cbbd16824f705bfa40bc4d62ef1a049b37758cbb5b7c",
+      "source_text": "H ="
+    },
+    {
+      "ascii_text": ") =",
+      "source_line": 7926,
+      "source_line_sha256": "173db06fd9b457af898f6637867ac8fef1f114a278a8fc003c03f0ebe63ec946",
+      "source_text": ") ="
+    },
+    {
+      "ascii_text": "= exp(2",
+      "source_line": 7939,
+      "source_line_sha256": "a1b623122e6066298c36fe73c7f08311a8c5eaaa49e2b4101b53a2a6fd5e341a",
+      "source_text": "= exp(2"
+    },
+    {
+      "ascii_text": ") =",
+      "source_line": 7963,
+      "source_line_sha256": "173db06fd9b457af898f6637867ac8fef1f114a278a8fc003c03f0ebe63ec946",
+      "source_text": ") ="
+    },
+    {
+      "ascii_text": "=1",
+      "source_line": 7970,
+      "source_line_sha256": "981f935b748e6033839bbf43d2ec3d1f003699ac8a4f836f72cf533dfb581b39",
+      "source_text": "=1"
+    },
+    {
+      "ascii_text": ") =",
+      "source_line": 7995,
+      "source_line_sha256": "173db06fd9b457af898f6637867ac8fef1f114a278a8fc003c03f0ebe63ec946",
+      "source_text": ") ="
+    },
+    {
+      "ascii_text": "=",
+      "source_line": 8004,
+      "source_line_sha256": "0ce63afc1e92ee82744300a778e523b9f42a53fe99201bd39fb8e2de82965297",
+      "source_text": "="
+    },
+    {
+      "ascii_text": ") =",
+      "source_line": 8018,
+      "source_line_sha256": "173db06fd9b457af898f6637867ac8fef1f114a278a8fc003c03f0ebe63ec946",
+      "source_text": ") ="
+    },
+    {
+      "ascii_text": "= 0",
+      "source_line": 8095,
+      "source_line_sha256": "8a600bb53115c44bee3a56323b3af58d27aaec0b138e7868e381108ee1149cb0",
+      "source_text": "= 0"
+    },
+    {
+      "ascii_text": "=",
+      "source_line": 8916,
+      "source_line_sha256": "0ce63afc1e92ee82744300a778e523b9f42a53fe99201bd39fb8e2de82965297",
+      "source_text": "="
+    },
+    {
+      "ascii_text": "=",
+      "source_line": 8918,
+      "source_line_sha256": "0ce63afc1e92ee82744300a778e523b9f42a53fe99201bd39fb8e2de82965297",
+      "source_text": "="
+    },
+    {
+      "ascii_text": "=",
+      "source_line": 8938,
+      "source_line_sha256": "0ce63afc1e92ee82744300a778e523b9f42a53fe99201bd39fb8e2de82965297",
+      "source_text": "="
+    },
+    {
+      "ascii_text": "=",
+      "source_line": 9096,
+      "source_line_sha256": "0ce63afc1e92ee82744300a778e523b9f42a53fe99201bd39fb8e2de82965297",
+      "source_text": "="
+    },
+    {
+      "ascii_text": "=",
+      "source_line": 9110,
+      "source_line_sha256": "0ce63afc1e92ee82744300a778e523b9f42a53fe99201bd39fb8e2de82965297",
+      "source_text": "="
+    },
+    {
+      "ascii_text": "=",
+      "source_line": 9223,
+      "source_line_sha256": "0ce63afc1e92ee82744300a778e523b9f42a53fe99201bd39fb8e2de82965297",
+      "source_text": "="
+    },
+    {
+      "ascii_text": "=",
+      "source_line": 9225,
+      "source_line_sha256": "0ce63afc1e92ee82744300a778e523b9f42a53fe99201bd39fb8e2de82965297",
+      "source_text": "="
+    },
+    {
+      "ascii_text": "=",
+      "source_line": 9227,
+      "source_line_sha256": "0ce63afc1e92ee82744300a778e523b9f42a53fe99201bd39fb8e2de82965297",
+      "source_text": "="
+    },
+    {
+      "ascii_text": "=",
+      "source_line": 9229,
+      "source_line_sha256": "0ce63afc1e92ee82744300a778e523b9f42a53fe99201bd39fb8e2de82965297",
+      "source_text": "="
+    },
+    {
+      "ascii_text": "=",
+      "source_line": 9293,
+      "source_line_sha256": "0ce63afc1e92ee82744300a778e523b9f42a53fe99201bd39fb8e2de82965297",
+      "source_text": "="
+    },
+    {
+      "ascii_text": "= 0",
+      "source_line": 9338,
+      "source_line_sha256": "8a600bb53115c44bee3a56323b3af58d27aaec0b138e7868e381108ee1149cb0",
+      "source_text": "= 0"
+    },
+    {
+      "ascii_text": "=",
+      "source_line": 9723,
+      "source_line_sha256": "0ce63afc1e92ee82744300a778e523b9f42a53fe99201bd39fb8e2de82965297",
+      "source_text": "="
+    },
+    {
+      "ascii_text": "=",
+      "source_line": 9751,
+      "source_line_sha256": "0ce63afc1e92ee82744300a778e523b9f42a53fe99201bd39fb8e2de82965297",
+      "source_text": "="
+    },
+    {
+      "ascii_text": "=",
+      "source_line": 9794,
+      "source_line_sha256": "0ce63afc1e92ee82744300a778e523b9f42a53fe99201bd39fb8e2de82965297",
+      "source_text": "="
+    },
+    {
+      "ascii_text": "=",
+      "source_line": 9800,
+      "source_line_sha256": "0ce63afc1e92ee82744300a778e523b9f42a53fe99201bd39fb8e2de82965297",
+      "source_text": "="
+    },
+    {
+      "ascii_text": "=",
+      "source_line": 10127,
+      "source_line_sha256": "0ce63afc1e92ee82744300a778e523b9f42a53fe99201bd39fb8e2de82965297",
+      "source_text": "="
+    },
+    {
+      "ascii_text": "=",
+      "source_line": 10156,
+      "source_line_sha256": "0ce63afc1e92ee82744300a778e523b9f42a53fe99201bd39fb8e2de82965297",
+      "source_text": "="
+    },
+    {
+      "ascii_text": "=",
+      "source_line": 10160,
+      "source_line_sha256": "0ce63afc1e92ee82744300a778e523b9f42a53fe99201bd39fb8e2de82965297",
+      "source_text": "="
+    },
+    {
+      "ascii_text": "=",
+      "source_line": 10269,
+      "source_line_sha256": "0ce63afc1e92ee82744300a778e523b9f42a53fe99201bd39fb8e2de82965297",
+      "source_text": "="
+    },
+    {
+      "ascii_text": ") =",
+      "source_line": 10279,
+      "source_line_sha256": "173db06fd9b457af898f6637867ac8fef1f114a278a8fc003c03f0ebe63ec946",
+      "source_text": ") ="
+    },
+    {
+      "ascii_text": ") =",
+      "source_line": 10434,
+      "source_line_sha256": "173db06fd9b457af898f6637867ac8fef1f114a278a8fc003c03f0ebe63ec946",
+      "source_text": ") ="
+    },
+    {
+      "ascii_text": "1 = 1",
+      "source_line": 10704,
+      "source_line_sha256": "c8095a3ca44202e720e0174003cfe99c6efa1ed20e1363e27992bcc2e62f0b32",
+      "source_text": "1 = 1"
+    },
+    {
+      "ascii_text": "=",
+      "source_line": 10706,
+      "source_line_sha256": "0ce63afc1e92ee82744300a778e523b9f42a53fe99201bd39fb8e2de82965297",
+      "source_text": "="
+    },
+    {
+      "ascii_text": ") =",
+      "source_line": 10744,
+      "source_line_sha256": "173db06fd9b457af898f6637867ac8fef1f114a278a8fc003c03f0ebe63ec946",
+      "source_text": ") ="
+    },
+    {
+      "ascii_text": "= 1",
+      "source_line": 10761,
+      "source_line_sha256": "7243ba18b5a5a270e061397d8bfbf2cef09951916e489ce4934b297085dbd328",
+      "source_text": "= 1"
+    },
+    {
+      "ascii_text": "= 1",
+      "source_line": 10765,
+      "source_line_sha256": "7243ba18b5a5a270e061397d8bfbf2cef09951916e489ce4934b297085dbd328",
+      "source_text": "= 1"
+    },
+    {
+      "ascii_text": "=",
+      "source_line": 10859,
+      "source_line_sha256": "0ce63afc1e92ee82744300a778e523b9f42a53fe99201bd39fb8e2de82965297",
+      "source_text": "="
+    },
+    {
+      "ascii_text": "= 0",
+      "source_line": 10898,
+      "source_line_sha256": "8a600bb53115c44bee3a56323b3af58d27aaec0b138e7868e381108ee1149cb0",
+      "source_text": "= 0"
+    },
+    {
+      "ascii_text": "= 0",
+      "source_line": 10944,
+      "source_line_sha256": "8a600bb53115c44bee3a56323b3af58d27aaec0b138e7868e381108ee1149cb0",
+      "source_text": "= 0"
+    },
+    {
+      "ascii_text": "= 1",
+      "source_line": 10946,
+      "source_line_sha256": "7243ba18b5a5a270e061397d8bfbf2cef09951916e489ce4934b297085dbd328",
+      "source_text": "= 1"
+    },
+    {
+      "ascii_text": "= 2",
+      "source_line": 10948,
+      "source_line_sha256": "fb37e8dbe3cd8f84b0792ef636d2368185132620f9ae704ecbc297f031e8a772",
+      "source_text": "= 2"
+    },
+    {
+      "ascii_text": "= 0",
+      "source_line": 10950,
+      "source_line_sha256": "8a600bb53115c44bee3a56323b3af58d27aaec0b138e7868e381108ee1149cb0",
+      "source_text": "= 0"
+    },
+    {
+      "ascii_text": "= 1",
+      "source_line": 10955,
+      "source_line_sha256": "7243ba18b5a5a270e061397d8bfbf2cef09951916e489ce4934b297085dbd328",
+      "source_text": "= 1"
+    },
+    {
+      "ascii_text": "= 2",
+      "source_line": 10962,
+      "source_line_sha256": "fb37e8dbe3cd8f84b0792ef636d2368185132620f9ae704ecbc297f031e8a772",
+      "source_text": "= 2"
+    },
+    {
+      "ascii_text": "= 3",
+      "source_line": 10971,
+      "source_line_sha256": "8f5f67319a33fddd1e19d9fdad6cdd7da5dc9152f78921afd93b8870b7f34134",
+      "source_text": "= 3"
+    },
+    {
+      "ascii_text": "= 4",
+      "source_line": 10980,
+      "source_line_sha256": "d48b04a8b720a7d3d0c73db96cebd5ba84c44ed8473ae71bbc3b6f680dca0b25",
+      "source_text": "= 4"
+    },
+    {
+      "ascii_text": "= 5",
+      "source_line": 10987,
+      "source_line_sha256": "4b0f61c7b84a33978ac513ea51160c30326a0036dbd13828cb844e99c5527e1a",
+      "source_text": "= 5"
+    },
+    {
+      "ascii_text": "=",
+      "source_line": 11159,
+      "source_line_sha256": "0ce63afc1e92ee82744300a778e523b9f42a53fe99201bd39fb8e2de82965297",
+      "source_text": "="
+    },
+    {
+      "ascii_text": ") =",
+      "source_line": 11169,
+      "source_line_sha256": "173db06fd9b457af898f6637867ac8fef1f114a278a8fc003c03f0ebe63ec946",
+      "source_text": ") ="
+    },
+    {
+      "ascii_text": "=",
+      "source_line": 11426,
+      "source_line_sha256": "0ce63afc1e92ee82744300a778e523b9f42a53fe99201bd39fb8e2de82965297",
+      "source_text": "="
+    },
+    {
+      "ascii_text": "=",
+      "source_line": 11437,
+      "source_line_sha256": "0ce63afc1e92ee82744300a778e523b9f42a53fe99201bd39fb8e2de82965297",
+      "source_text": "="
+    },
+    {
+      "ascii_text": "=",
+      "source_line": 11650,
+      "source_line_sha256": "0ce63afc1e92ee82744300a778e523b9f42a53fe99201bd39fb8e2de82965297",
+      "source_text": "="
+    },
+    {
+      "ascii_text": "=",
+      "source_line": 11681,
+      "source_line_sha256": "0ce63afc1e92ee82744300a778e523b9f42a53fe99201bd39fb8e2de82965297",
+      "source_text": "="
+    },
+    {
+      "ascii_text": "=",
+      "source_line": 11800,
+      "source_line_sha256": "0ce63afc1e92ee82744300a778e523b9f42a53fe99201bd39fb8e2de82965297",
+      "source_text": "="
+    },
+    {
+      "ascii_text": ") =",
+      "source_line": 12122,
+      "source_line_sha256": "173db06fd9b457af898f6637867ac8fef1f114a278a8fc003c03f0ebe63ec946",
+      "source_text": ") ="
+    },
+    {
+      "ascii_text": "= 1",
+      "source_line": 12184,
+      "source_line_sha256": "7243ba18b5a5a270e061397d8bfbf2cef09951916e489ce4934b297085dbd328",
+      "source_text": "= 1"
+    },
+    {
+      "ascii_text": "=",
+      "source_line": 12189,
+      "source_line_sha256": "0ce63afc1e92ee82744300a778e523b9f42a53fe99201bd39fb8e2de82965297",
+      "source_text": "="
+    },
+    {
+      "ascii_text": "0 =",
+      "source_line": 12210,
+      "source_line_sha256": "816972ece77e554d855bbd8443f104d046c028548f1d37ee1c200b2431441623",
+      "source_text": "0 ="
+    },
+    {
+      "ascii_text": "1 =",
+      "source_line": 12212,
+      "source_line_sha256": "cf3907f1e8fe94ad1d4f79e5aae5a084d7aae805213a9bf910f893502dbb2f0b",
+      "source_text": "1 ="
+    },
+    {
+      "ascii_text": "2 =",
+      "source_line": 12216,
+      "source_line_sha256": "70951b9b012a75e4d27a667e489f4bfa03318f8874e306e885ba9ca9a83b3633",
+      "source_text": "2 ="
+    },
+    {
+      "ascii_text": "3 =",
+      "source_line": 12222,
+      "source_line_sha256": "7d6691f16ab061aa580cac6ffb6b873e91b4f0b9f0fa1c096e11ccaff6a30d1d",
+      "source_text": "3 ="
+    },
+    {
+      "ascii_text": "(1) = 1",
+      "source_line": 12278,
+      "source_line_sha256": "6c81b35664942ca9119443ec009284f54812b7abd8b85c88beed5ef7f3120de9",
+      "source_text": "(1) = 1"
+    },
+    {
+      "ascii_text": ") =",
+      "source_line": 12283,
+      "source_line_sha256": "173db06fd9b457af898f6637867ac8fef1f114a278a8fc003c03f0ebe63ec946",
+      "source_text": ") ="
+    },
+    {
+      "ascii_text": "=",
+      "source_line": 12394,
+      "source_line_sha256": "0ce63afc1e92ee82744300a778e523b9f42a53fe99201bd39fb8e2de82965297",
+      "source_text": "="
+    },
+    {
+      "ascii_text": "=",
+      "source_line": 12422,
+      "source_line_sha256": "0ce63afc1e92ee82744300a778e523b9f42a53fe99201bd39fb8e2de82965297",
+      "source_text": "="
+    },
+    {
+      "ascii_text": ") =",
+      "source_line": 12453,
+      "source_line_sha256": "173db06fd9b457af898f6637867ac8fef1f114a278a8fc003c03f0ebe63ec946",
+      "source_text": ") ="
+    },
+    {
+      "ascii_text": "(1) = 1",
+      "source_line": 12464,
+      "source_line_sha256": "6c81b35664942ca9119443ec009284f54812b7abd8b85c88beed5ef7f3120de9",
+      "source_text": "(1) = 1"
+    },
+    {
+      "ascii_text": "=",
+      "source_line": 12503,
+      "source_line_sha256": "0ce63afc1e92ee82744300a778e523b9f42a53fe99201bd39fb8e2de82965297",
+      "source_text": "="
+    },
+    {
+      "ascii_text": ") =",
+      "source_line": 12517,
+      "source_line_sha256": "173db06fd9b457af898f6637867ac8fef1f114a278a8fc003c03f0ebe63ec946",
+      "source_text": ") ="
+    },
+    {
+      "ascii_text": ") = Hom (",
+      "source_line": 12634,
+      "source_line_sha256": "9e003ac174afc8df38e1562755e0a528500d229214364fb363f16a4c348d632e",
+      "source_text": ") = Hom ("
+    },
+    {
+      "ascii_text": "=",
+      "source_line": 12758,
+      "source_line_sha256": "0ce63afc1e92ee82744300a778e523b9f42a53fe99201bd39fb8e2de82965297",
+      "source_text": "="
+    },
+    {
+      "ascii_text": "=",
+      "source_line": 12759,
+      "source_line_sha256": "0ce63afc1e92ee82744300a778e523b9f42a53fe99201bd39fb8e2de82965297",
+      "source_text": "="
+    },
+    {
+      "ascii_text": ") =",
+      "source_line": 13061,
+      "source_line_sha256": "173db06fd9b457af898f6637867ac8fef1f114a278a8fc003c03f0ebe63ec946",
+      "source_text": ") ="
+    },
+    {
+      "ascii_text": ") =",
+      "source_line": 13074,
+      "source_line_sha256": "173db06fd9b457af898f6637867ac8fef1f114a278a8fc003c03f0ebe63ec946",
+      "source_text": ") ="
+    },
+    {
+      "ascii_text": "=",
+      "source_line": 13226,
+      "source_line_sha256": "0ce63afc1e92ee82744300a778e523b9f42a53fe99201bd39fb8e2de82965297",
+      "source_text": "="
+    },
+    {
+      "ascii_text": "2 = 60",
+      "source_line": 13227,
+      "source_line_sha256": "437e52ba443007bd1eea9b3b7712c773aedc69fb99ec2d142338da4112350179",
+      "source_text": "2 = 60"
+    },
+    {
+      "ascii_text": "12 = 60",
+      "source_line": 13239,
+      "source_line_sha256": "e1f35f6c3966315180e3d98758c574365889f10c90a0c496151b9699bf36b249",
+      "source_text": "12 = 60"
+    },
+    {
+      "ascii_text": "=Z",
+      "source_line": 13376,
+      "source_line_sha256": "0af573f99002d3506f44a2d9ea8fedd2d063d8b31e7470a7c98597cf41a1eecc",
+      "source_text": "=Z"
+    },
+    {
+      "ascii_text": "= 5",
+      "source_line": 13512,
+      "source_line_sha256": "4b0f61c7b84a33978ac513ea51160c30326a0036dbd13828cb844e99c5527e1a",
+      "source_text": "= 5"
+    },
+    {
+      "ascii_text": "= 5",
+      "source_line": 13538,
+      "source_line_sha256": "4b0f61c7b84a33978ac513ea51160c30326a0036dbd13828cb844e99c5527e1a",
+      "source_text": "= 5"
+    },
+    {
+      "ascii_text": "= 5",
+      "source_line": 13564,
+      "source_line_sha256": "4b0f61c7b84a33978ac513ea51160c30326a0036dbd13828cb844e99c5527e1a",
+      "source_text": "= 5"
+    },
+    {
+      "ascii_text": "5) =",
+      "source_line": 13568,
+      "source_line_sha256": "de57d3a5881f0aac5c03c8e9110e8bb6d0e2b1c3b9c47fcf960de5dda21c4182",
+      "source_text": "5) ="
+    },
+    {
+      "ascii_text": "=",
+      "source_line": 13708,
+      "source_line_sha256": "0ce63afc1e92ee82744300a778e523b9f42a53fe99201bd39fb8e2de82965297",
+      "source_text": "="
+    },
+    {
+      "ascii_text": "=",
+      "source_line": 13791,
+      "source_line_sha256": "0ce63afc1e92ee82744300a778e523b9f42a53fe99201bd39fb8e2de82965297",
+      "source_text": "="
+    },
+    {
+      "ascii_text": "=",
+      "source_line": 13946,
+      "source_line_sha256": "0ce63afc1e92ee82744300a778e523b9f42a53fe99201bd39fb8e2de82965297",
+      "source_text": "="
+    },
+    {
+      "ascii_text": "=",
+      "source_line": 13952,
+      "source_line_sha256": "0ce63afc1e92ee82744300a778e523b9f42a53fe99201bd39fb8e2de82965297",
+      "source_text": "="
+    },
+    {
+      "ascii_text": "=",
+      "source_line": 14296,
+      "source_line_sha256": "0ce63afc1e92ee82744300a778e523b9f42a53fe99201bd39fb8e2de82965297",
+      "source_text": "="
+    },
+    {
+      "ascii_text": "=",
+      "source_line": 14322,
+      "source_line_sha256": "0ce63afc1e92ee82744300a778e523b9f42a53fe99201bd39fb8e2de82965297",
+      "source_text": "="
+    },
+    {
+      "ascii_text": "=",
+      "source_line": 14326,
+      "source_line_sha256": "0ce63afc1e92ee82744300a778e523b9f42a53fe99201bd39fb8e2de82965297",
+      "source_text": "="
+    },
+    {
+      "ascii_text": "=",
+      "source_line": 14441,
+      "source_line_sha256": "0ce63afc1e92ee82744300a778e523b9f42a53fe99201bd39fb8e2de82965297",
+      "source_text": "="
+    },
+    {
+      "ascii_text": "=",
+      "source_line": 14473,
+      "source_line_sha256": "0ce63afc1e92ee82744300a778e523b9f42a53fe99201bd39fb8e2de82965297",
+      "source_text": "="
+    },
+    {
+      "ascii_text": "=",
+      "source_line": 14477,
+      "source_line_sha256": "0ce63afc1e92ee82744300a778e523b9f42a53fe99201bd39fb8e2de82965297",
+      "source_text": "="
+    },
+    {
+      "ascii_text": "=",
+      "source_line": 14559,
+      "source_line_sha256": "0ce63afc1e92ee82744300a778e523b9f42a53fe99201bd39fb8e2de82965297",
+      "source_text": "="
+    },
+    {
+      "ascii_text": "=",
+      "source_line": 14589,
+      "source_line_sha256": "0ce63afc1e92ee82744300a778e523b9f42a53fe99201bd39fb8e2de82965297",
+      "source_text": "="
+    },
+    {
+      "ascii_text": "=",
+      "source_line": 14595,
+      "source_line_sha256": "0ce63afc1e92ee82744300a778e523b9f42a53fe99201bd39fb8e2de82965297",
+      "source_text": "="
+    },
+    {
+      "ascii_text": ") = (",
+      "source_line": 14608,
+      "source_line_sha256": "97d157217af30442e995f04890e561dd4203bd8d1b22761d90afb2da721ee76c",
+      "source_text": ") = ("
+    },
+    {
+      "ascii_text": ") =",
+      "source_line": 14832,
+      "source_line_sha256": "173db06fd9b457af898f6637867ac8fef1f114a278a8fc003c03f0ebe63ec946",
+      "source_text": ") ="
+    },
+    {
+      "ascii_text": ") =",
+      "source_line": 14852,
+      "source_line_sha256": "173db06fd9b457af898f6637867ac8fef1f114a278a8fc003c03f0ebe63ec946",
+      "source_text": ") ="
+    },
+    {
+      "ascii_text": ") = (",
+      "source_line": 14907,
+      "source_line_sha256": "97d157217af30442e995f04890e561dd4203bd8d1b22761d90afb2da721ee76c",
+      "source_text": ") = ("
+    },
+    {
+      "ascii_text": ") =",
+      "source_line": 14922,
+      "source_line_sha256": "173db06fd9b457af898f6637867ac8fef1f114a278a8fc003c03f0ebe63ec946",
+      "source_text": ") ="
+    },
+    {
+      "ascii_text": ") =",
+      "source_line": 14936,
+      "source_line_sha256": "173db06fd9b457af898f6637867ac8fef1f114a278a8fc003c03f0ebe63ec946",
+      "source_text": ") ="
+    },
+    {
+      "ascii_text": ") = 0",
+      "source_line": 15006,
+      "source_line_sha256": "2e700cd2fcc463fd0e91d2136cb402b175869ccdbda11f816cd171063aacbb5e",
+      "source_text": ") = 0"
+    },
+    {
+      "ascii_text": ") = 0",
+      "source_line": 15016,
+      "source_line_sha256": "2e700cd2fcc463fd0e91d2136cb402b175869ccdbda11f816cd171063aacbb5e",
+      "source_text": ") = 0"
+    },
+    {
+      "ascii_text": ") = 0",
+      "source_line": 15028,
+      "source_line_sha256": "2e700cd2fcc463fd0e91d2136cb402b175869ccdbda11f816cd171063aacbb5e",
+      "source_text": ") = 0"
+    },
+    {
+      "ascii_text": ") = 0",
+      "source_line": 15058,
+      "source_line_sha256": "2e700cd2fcc463fd0e91d2136cb402b175869ccdbda11f816cd171063aacbb5e",
+      "source_text": ") = 0"
+    },
+    {
+      "ascii_text": ") =",
+      "source_line": 15079,
+      "source_line_sha256": "173db06fd9b457af898f6637867ac8fef1f114a278a8fc003c03f0ebe63ec946",
+      "source_text": ") ="
+    },
+    {
+      "ascii_text": ") =",
+      "source_line": 15101,
+      "source_line_sha256": "173db06fd9b457af898f6637867ac8fef1f114a278a8fc003c03f0ebe63ec946",
+      "source_text": ") ="
+    },
+    {
+      "ascii_text": ") = 0",
+      "source_line": 15164,
+      "source_line_sha256": "2e700cd2fcc463fd0e91d2136cb402b175869ccdbda11f816cd171063aacbb5e",
+      "source_text": ") = 0"
+    },
+    {
+      "ascii_text": ") =",
+      "source_line": 15288,
+      "source_line_sha256": "173db06fd9b457af898f6637867ac8fef1f114a278a8fc003c03f0ebe63ec946",
+      "source_text": ") ="
+    },
+    {
+      "ascii_text": "= 8",
+      "source_line": 15649,
+      "source_line_sha256": "c071ed7a056cef6c9310e9ce55e1f570702ce4198718112432fb083fa5085783",
+      "source_text": "= 8"
+    },
+    {
+      "ascii_text": ") = (",
+      "source_line": 15735,
+      "source_line_sha256": "97d157217af30442e995f04890e561dd4203bd8d1b22761d90afb2da721ee76c",
+      "source_text": ") = ("
+    },
+    {
+      "ascii_text": ") = (",
+      "source_line": 15750,
+      "source_line_sha256": "97d157217af30442e995f04890e561dd4203bd8d1b22761d90afb2da721ee76c",
+      "source_text": ") = ("
+    },
+    {
+      "ascii_text": "=",
+      "source_line": 15804,
+      "source_line_sha256": "0ce63afc1e92ee82744300a778e523b9f42a53fe99201bd39fb8e2de82965297",
+      "source_text": "="
+    },
+    {
+      "ascii_text": "=",
+      "source_line": 16061,
+      "source_line_sha256": "0ce63afc1e92ee82744300a778e523b9f42a53fe99201bd39fb8e2de82965297",
+      "source_text": "="
+    },
+    {
+      "ascii_text": "= 1",
+      "source_line": 16142,
+      "source_line_sha256": "7243ba18b5a5a270e061397d8bfbf2cef09951916e489ce4934b297085dbd328",
+      "source_text": "= 1"
+    },
+    {
+      "ascii_text": "1 =",
+      "source_line": 16144,
+      "source_line_sha256": "cf3907f1e8fe94ad1d4f79e5aae5a084d7aae805213a9bf910f893502dbb2f0b",
+      "source_text": "1 ="
+    },
+    {
+      "ascii_text": "= 1",
+      "source_line": 16200,
+      "source_line_sha256": "7243ba18b5a5a270e061397d8bfbf2cef09951916e489ce4934b297085dbd328",
+      "source_text": "= 1"
+    },
+    {
+      "ascii_text": "1 =",
+      "source_line": 16202,
+      "source_line_sha256": "cf3907f1e8fe94ad1d4f79e5aae5a084d7aae805213a9bf910f893502dbb2f0b",
+      "source_text": "1 ="
+    },
+    {
+      "ascii_text": "=",
+      "source_line": 16284,
+      "source_line_sha256": "0ce63afc1e92ee82744300a778e523b9f42a53fe99201bd39fb8e2de82965297",
+      "source_text": "="
+    },
+    {
+      "ascii_text": "=",
+      "source_line": 16335,
+      "source_line_sha256": "0ce63afc1e92ee82744300a778e523b9f42a53fe99201bd39fb8e2de82965297",
+      "source_text": "="
+    },
+    {
+      "ascii_text": "=",
+      "source_line": 16454,
+      "source_line_sha256": "0ce63afc1e92ee82744300a778e523b9f42a53fe99201bd39fb8e2de82965297",
+      "source_text": "="
+    },
+    {
+      "ascii_text": "=",
+      "source_line": 16463,
+      "source_line_sha256": "0ce63afc1e92ee82744300a778e523b9f42a53fe99201bd39fb8e2de82965297",
+      "source_text": "="
+    },
+    {
+      "ascii_text": "= 1",
+      "source_line": 16476,
+      "source_line_sha256": "7243ba18b5a5a270e061397d8bfbf2cef09951916e489ce4934b297085dbd328",
+      "source_text": "= 1"
+    },
+    {
+      "ascii_text": "==",
+      "source_line": 16483,
+      "source_line_sha256": "1358a7a8073787e12d9c658b52f156f99ecb431619a7aec975a49e50e6dde2d8",
+      "source_text": "=="
+    },
+    {
+      "ascii_text": "=",
+      "source_line": 16495,
+      "source_line_sha256": "0ce63afc1e92ee82744300a778e523b9f42a53fe99201bd39fb8e2de82965297",
+      "source_text": "="
+    },
+    {
+      "ascii_text": "=",
+      "source_line": 16499,
+      "source_line_sha256": "0ce63afc1e92ee82744300a778e523b9f42a53fe99201bd39fb8e2de82965297",
+      "source_text": "="
+    },
+    {
+      "ascii_text": "=",
+      "source_line": 16519,
+      "source_line_sha256": "0ce63afc1e92ee82744300a778e523b9f42a53fe99201bd39fb8e2de82965297",
+      "source_text": "="
+    },
+    {
+      "ascii_text": "=",
+      "source_line": 16999,
+      "source_line_sha256": "0ce63afc1e92ee82744300a778e523b9f42a53fe99201bd39fb8e2de82965297",
+      "source_text": "="
+    },
+    {
+      "ascii_text": "=",
+      "source_line": 17000,
+      "source_line_sha256": "0ce63afc1e92ee82744300a778e523b9f42a53fe99201bd39fb8e2de82965297",
+      "source_text": "="
+    },
+    {
+      "ascii_text": "=",
+      "source_line": 17106,
+      "source_line_sha256": "0ce63afc1e92ee82744300a778e523b9f42a53fe99201bd39fb8e2de82965297",
+      "source_text": "="
+    },
+    {
+      "ascii_text": "=",
+      "source_line": 17112,
+      "source_line_sha256": "0ce63afc1e92ee82744300a778e523b9f42a53fe99201bd39fb8e2de82965297",
+      "source_text": "="
+    },
+    {
+      "ascii_text": "= 0",
+      "source_line": 17217,
+      "source_line_sha256": "8a600bb53115c44bee3a56323b3af58d27aaec0b138e7868e381108ee1149cb0",
+      "source_text": "= 0"
+    },
+    {
+      "ascii_text": "=",
+      "source_line": 17793,
+      "source_line_sha256": "0ce63afc1e92ee82744300a778e523b9f42a53fe99201bd39fb8e2de82965297",
+      "source_text": "="
+    },
+    {
+      "ascii_text": "A=",
+      "source_line": 17794,
+      "source_line_sha256": "1818a33ca2fd567d4b379c87976569d552851672c9d2447e19e6253773615f33",
+      "source_text": "A="
+    },
+    {
+      "ascii_text": "=G",
+      "source_line": 17838,
+      "source_line_sha256": "4c4caa94b7cacc2d4fd98faed876d515cb7a4d13e6e058da7027b794811df653",
+      "source_text": "=G"
+    },
+    {
+      "ascii_text": "=G",
+      "source_line": 17841,
+      "source_line_sha256": "4c4caa94b7cacc2d4fd98faed876d515cb7a4d13e6e058da7027b794811df653",
+      "source_text": "=G"
+    },
+    {
+      "ascii_text": "G=G",
+      "source_line": 18090,
+      "source_line_sha256": "da363c088a2d0258ec3323515b8e2eaa784716d2febf499af58092698c6ab4e9",
+      "source_text": "G=G"
+    },
+    {
+      "ascii_text": "= 3",
+      "source_line": 18231,
+      "source_line_sha256": "8f5f67319a33fddd1e19d9fdad6cdd7da5dc9152f78921afd93b8870b7f34134",
+      "source_text": "= 3"
+    },
+    {
+      "ascii_text": "=",
+      "source_line": 18247,
+      "source_line_sha256": "0ce63afc1e92ee82744300a778e523b9f42a53fe99201bd39fb8e2de82965297",
+      "source_text": "="
+    },
+    {
+      "ascii_text": "] =",
+      "source_line": 18267,
+      "source_line_sha256": "04a960b61601f8132880a52d3f1f4c252a08429e2742714fe881425ac5768603",
+      "source_text": "] ="
+    },
+    {
+      "ascii_text": "] =",
+      "source_line": 18276,
+      "source_line_sha256": "04a960b61601f8132880a52d3f1f4c252a08429e2742714fe881425ac5768603",
+      "source_text": "] ="
+    },
+    {
+      "ascii_text": "] =",
+      "source_line": 18285,
+      "source_line_sha256": "04a960b61601f8132880a52d3f1f4c252a08429e2742714fe881425ac5768603",
+      "source_text": "] ="
+    },
+    {
+      "ascii_text": "] = 0",
+      "source_line": 18323,
+      "source_line_sha256": "0a5941b2448dfe86aa52682c621dc9e3b97315fc1668a978802fb31847f9405d",
+      "source_text": "] = 0"
+    },
+    {
+      "ascii_text": "=",
+      "source_line": 18621,
+      "source_line_sha256": "0ce63afc1e92ee82744300a778e523b9f42a53fe99201bd39fb8e2de82965297",
+      "source_text": "="
+    },
+    {
+      "ascii_text": "=",
+      "source_line": 18643,
+      "source_line_sha256": "0ce63afc1e92ee82744300a778e523b9f42a53fe99201bd39fb8e2de82965297",
+      "source_text": "="
+    },
+    {
+      "ascii_text": "n=",
+      "source_line": 18665,
+      "source_line_sha256": "949124d400f5374249fc2893e75cfef01a692cf9fedcf4ca563abff1cfe7ea8e",
+      "source_text": "n="
+    },
+    {
+      "ascii_text": "=",
+      "source_line": 18669,
+      "source_line_sha256": "0ce63afc1e92ee82744300a778e523b9f42a53fe99201bd39fb8e2de82965297",
+      "source_text": "="
+    },
+    {
+      "ascii_text": "= 8",
+      "source_line": 18769,
+      "source_line_sha256": "c071ed7a056cef6c9310e9ce55e1f570702ce4198718112432fb083fa5085783",
+      "source_text": "= 8"
+    },
+    {
+      "ascii_text": "=",
+      "source_line": 18809,
+      "source_line_sha256": "0ce63afc1e92ee82744300a778e523b9f42a53fe99201bd39fb8e2de82965297",
+      "source_text": "="
+    },
+    {
+      "ascii_text": "=",
+      "source_line": 18985,
+      "source_line_sha256": "0ce63afc1e92ee82744300a778e523b9f42a53fe99201bd39fb8e2de82965297",
+      "source_text": "="
+    },
+    {
+      "ascii_text": "=",
+      "source_line": 18988,
+      "source_line_sha256": "0ce63afc1e92ee82744300a778e523b9f42a53fe99201bd39fb8e2de82965297",
+      "source_text": "="
+    },
+    {
+      "ascii_text": "=",
+      "source_line": 18993,
+      "source_line_sha256": "0ce63afc1e92ee82744300a778e523b9f42a53fe99201bd39fb8e2de82965297",
+      "source_text": "="
+    },
+    {
+      "ascii_text": "=",
+      "source_line": 18996,
+      "source_line_sha256": "0ce63afc1e92ee82744300a778e523b9f42a53fe99201bd39fb8e2de82965297",
+      "source_text": "="
+    },
+    {
+      "ascii_text": "=",
+      "source_line": 19002,
+      "source_line_sha256": "0ce63afc1e92ee82744300a778e523b9f42a53fe99201bd39fb8e2de82965297",
+      "source_text": "="
+    },
+    {
+      "ascii_text": "=",
+      "source_line": 19005,
+      "source_line_sha256": "0ce63afc1e92ee82744300a778e523b9f42a53fe99201bd39fb8e2de82965297",
+      "source_text": "="
+    },
+    {
+      "ascii_text": "=",
+      "source_line": 19012,
+      "source_line_sha256": "0ce63afc1e92ee82744300a778e523b9f42a53fe99201bd39fb8e2de82965297",
+      "source_text": "="
+    },
+    {
+      "ascii_text": "=",
+      "source_line": 19015,
+      "source_line_sha256": "0ce63afc1e92ee82744300a778e523b9f42a53fe99201bd39fb8e2de82965297",
+      "source_text": "="
+    },
+    {
+      "ascii_text": "(4) =",
+      "source_line": 19060,
+      "source_line_sha256": "22d1ed6de909aaf8b4b56af283374847a06c84913d88e3c1512ec12ae5b2b1f2",
+      "source_text": "(4) ="
+    },
+    {
+      "ascii_text": "(6) =",
+      "source_line": 19075,
+      "source_line_sha256": "8d5c745c40c401188d986f7262ff03b3d471d07e952619d0ed81bb3dbccc164a",
+      "source_text": "(6) ="
+    },
+    {
+      "ascii_text": "=",
+      "source_line": 19090,
+      "source_line_sha256": "0ce63afc1e92ee82744300a778e523b9f42a53fe99201bd39fb8e2de82965297",
+      "source_text": "="
+    },
+    {
+      "ascii_text": "=",
+      "source_line": 19098,
+      "source_line_sha256": "0ce63afc1e92ee82744300a778e523b9f42a53fe99201bd39fb8e2de82965297",
+      "source_text": "="
+    },
+    {
+      "ascii_text": "^ =",
+      "source_line": 19104,
+      "source_line_sha256": "db2e4356ba27fd361db5af0cae7d128cd4f32ee827e6da04893a3dd2b4228996",
+      "source_text": "\u02c7 ="
+    },
+    {
+      "ascii_text": "=",
+      "source_line": 19117,
+      "source_line_sha256": "0ce63afc1e92ee82744300a778e523b9f42a53fe99201bd39fb8e2de82965297",
+      "source_text": "="
+    },
+    {
+      "ascii_text": "=",
+      "source_line": 19127,
+      "source_line_sha256": "0ce63afc1e92ee82744300a778e523b9f42a53fe99201bd39fb8e2de82965297",
+      "source_text": "="
+    },
+    {
+      "ascii_text": ") =",
+      "source_line": 19234,
+      "source_line_sha256": "173db06fd9b457af898f6637867ac8fef1f114a278a8fc003c03f0ebe63ec946",
+      "source_text": ") ="
+    },
+    {
+      "ascii_text": ") =",
+      "source_line": 19238,
+      "source_line_sha256": "173db06fd9b457af898f6637867ac8fef1f114a278a8fc003c03f0ebe63ec946",
+      "source_text": ") ="
+    },
+    {
+      "ascii_text": ") =",
+      "source_line": 19242,
+      "source_line_sha256": "173db06fd9b457af898f6637867ac8fef1f114a278a8fc003c03f0ebe63ec946",
+      "source_text": ") ="
+    },
+    {
+      "ascii_text": ") =",
+      "source_line": 19254,
+      "source_line_sha256": "173db06fd9b457af898f6637867ac8fef1f114a278a8fc003c03f0ebe63ec946",
+      "source_text": ") ="
+    },
+    {
+      "ascii_text": ") =",
+      "source_line": 19272,
+      "source_line_sha256": "173db06fd9b457af898f6637867ac8fef1f114a278a8fc003c03f0ebe63ec946",
+      "source_text": ") ="
+    },
+    {
+      "ascii_text": ") =",
+      "source_line": 19290,
+      "source_line_sha256": "173db06fd9b457af898f6637867ac8fef1f114a278a8fc003c03f0ebe63ec946",
+      "source_text": ") ="
+    },
+    {
+      "ascii_text": ") =",
+      "source_line": 19314,
+      "source_line_sha256": "173db06fd9b457af898f6637867ac8fef1f114a278a8fc003c03f0ebe63ec946",
+      "source_text": ") ="
+    },
+    {
+      "ascii_text": ") =",
+      "source_line": 19335,
+      "source_line_sha256": "173db06fd9b457af898f6637867ac8fef1f114a278a8fc003c03f0ebe63ec946",
+      "source_text": ") ="
+    },
+    {
+      "ascii_text": ") =",
+      "source_line": 19353,
+      "source_line_sha256": "173db06fd9b457af898f6637867ac8fef1f114a278a8fc003c03f0ebe63ec946",
+      "source_text": ") ="
+    },
+    {
+      "ascii_text": "=",
+      "source_line": 19386,
+      "source_line_sha256": "0ce63afc1e92ee82744300a778e523b9f42a53fe99201bd39fb8e2de82965297",
+      "source_text": "="
+    },
+    {
+      "ascii_text": "= Spin(8)",
+      "source_line": 19529,
+      "source_line_sha256": "e89f087948daa151f8e8aaeefef4443096950b1d0d9bede586ec70288c1d989f",
+      "source_text": "= Spin(8)"
+    },
+    {
+      "ascii_text": "28 = 28 + 0 + 0 + 0 + 0 + 0 + 0",
+      "source_line": 19531,
+      "source_line_sha256": "93cdb7cd8b2857444d053748c59e2f3018cc1491cefba93e1be2be4504bde154",
+      "source_text": "28 = 28 + 0 + 0 + 0 + 0 + 0 + 0"
+    },
+    {
+      "ascii_text": "52 = 28 + 8 + 8 + 8 + 0 + 0 + 0",
+      "source_line": 19536,
+      "source_line_sha256": "52014883ae7216af02d2507d80fddeef53dbcf8e3cca563c9c0bcc0684c39a9f",
+      "source_text": "52 = 28 + 8 + 8 + 8 + 0 + 0 + 0"
+    },
+    {
+      "ascii_text": "78 = 28 + 16 + 16 + 16 + 1 + 0 + 1",
+      "source_line": 19546,
+      "source_line_sha256": "fe74006183da1c04a258308228e30532febdc5ecb984b57a4dce2a672920756d",
+      "source_text": "78 = 28 + 16 + 16 + 16 + 1 + 0 + 1"
+    },
+    {
+      "ascii_text": "133 = 28 + 32 + 32 + 32 + 3 + 3 + 3",
+      "source_line": 19556,
+      "source_line_sha256": "38db01b1c8cc9f672e09f6ce22545ee27c91493fede896de5198539d28a153e9",
+      "source_text": "133 = 28 + 32 + 32 + 32 + 3 + 3 + 3"
+    },
+    {
+      "ascii_text": "248 = 28 + 64 + 64 + 64 + 7 + 14 + 7",
+      "source_line": 19566,
+      "source_line_sha256": "c782868e26f2032bc42b2df5faff9e4c4a36180a5b2cb82bc03e26560f0fa267",
+      "source_text": "248 = 28 + 64 + 64 + 64 + 7 + 14 + 7"
+    },
+    {
+      "ascii_text": "28 =",
+      "source_line": 19573,
+      "source_line_sha256": "208224bdcf04e5b22a159dca6c7b40088b23337e66290f98944d83f16288e622",
+      "source_text": "28 ="
+    },
+    {
+      "ascii_text": "=",
+      "source_line": 19731,
+      "source_line_sha256": "0ce63afc1e92ee82744300a778e523b9f42a53fe99201bd39fb8e2de82965297",
+      "source_text": "="
+    },
+    {
+      "ascii_text": "1 =",
+      "source_line": 19735,
+      "source_line_sha256": "cf3907f1e8fe94ad1d4f79e5aae5a084d7aae805213a9bf910f893502dbb2f0b",
+      "source_text": "1 ="
+    },
+    {
+      "ascii_text": "=",
+      "source_line": 19745,
+      "source_line_sha256": "0ce63afc1e92ee82744300a778e523b9f42a53fe99201bd39fb8e2de82965297",
+      "source_text": "="
+    },
+    {
+      "ascii_text": "=",
+      "source_line": 19755,
+      "source_line_sha256": "0ce63afc1e92ee82744300a778e523b9f42a53fe99201bd39fb8e2de82965297",
+      "source_text": "="
+    },
+    {
+      "ascii_text": "=",
+      "source_line": 19762,
+      "source_line_sha256": "0ce63afc1e92ee82744300a778e523b9f42a53fe99201bd39fb8e2de82965297",
+      "source_text": "="
+    },
+    {
+      "ascii_text": "=",
+      "source_line": 19778,
+      "source_line_sha256": "0ce63afc1e92ee82744300a778e523b9f42a53fe99201bd39fb8e2de82965297",
+      "source_text": "="
+    },
+    {
+      "ascii_text": "=",
+      "source_line": 19854,
+      "source_line_sha256": "0ce63afc1e92ee82744300a778e523b9f42a53fe99201bd39fb8e2de82965297",
+      "source_text": "="
+    },
+    {
+      "ascii_text": "=",
+      "source_line": 19865,
+      "source_line_sha256": "0ce63afc1e92ee82744300a778e523b9f42a53fe99201bd39fb8e2de82965297",
+      "source_text": "="
+    },
+    {
+      "ascii_text": "=",
+      "source_line": 19974,
+      "source_line_sha256": "0ce63afc1e92ee82744300a778e523b9f42a53fe99201bd39fb8e2de82965297",
+      "source_text": "="
+    },
+    {
+      "ascii_text": "=",
+      "source_line": 20013,
+      "source_line_sha256": "0ce63afc1e92ee82744300a778e523b9f42a53fe99201bd39fb8e2de82965297",
+      "source_text": "="
+    },
+    {
+      "ascii_text": "= 3",
+      "source_line": 20089,
+      "source_line_sha256": "8f5f67319a33fddd1e19d9fdad6cdd7da5dc9152f78921afd93b8870b7f34134",
+      "source_text": "= 3"
+    },
+    {
+      "ascii_text": "= 70",
+      "source_line": 20311,
+      "source_line_sha256": "20de0bc2b54a62bf981b9664cb7ebff927289047306e8c991a056ecd830d865e",
+      "source_text": "= 70"
+    },
+    {
+      "ascii_text": "= 0",
+      "source_line": 20335,
+      "source_line_sha256": "8a600bb53115c44bee3a56323b3af58d27aaec0b138e7868e381108ee1149cb0",
+      "source_text": "= 0"
+    },
+    {
+      "ascii_text": "= 1",
+      "source_line": 20340,
+      "source_line_sha256": "7243ba18b5a5a270e061397d8bfbf2cef09951916e489ce4934b297085dbd328",
+      "source_text": "= 1"
+    },
+    {
+      "ascii_text": "= 3",
+      "source_line": 20345,
+      "source_line_sha256": "8f5f67319a33fddd1e19d9fdad6cdd7da5dc9152f78921afd93b8870b7f34134",
+      "source_text": "= 3"
+    },
+    {
+      "ascii_text": "= 2",
+      "source_line": 20351,
+      "source_line_sha256": "fb37e8dbe3cd8f84b0792ef636d2368185132620f9ae704ecbc297f031e8a772",
+      "source_text": "= 2"
+    },
+    {
+      "ascii_text": "=",
+      "source_line": 20369,
+      "source_line_sha256": "0ce63afc1e92ee82744300a778e523b9f42a53fe99201bd39fb8e2de82965297",
+      "source_text": "="
+    },
+    {
+      "ascii_text": "=",
+      "source_line": 20373,
+      "source_line_sha256": "0ce63afc1e92ee82744300a778e523b9f42a53fe99201bd39fb8e2de82965297",
+      "source_text": "="
+    },
+    {
+      "ascii_text": "=",
+      "source_line": 20377,
+      "source_line_sha256": "0ce63afc1e92ee82744300a778e523b9f42a53fe99201bd39fb8e2de82965297",
+      "source_text": "="
+    },
+    {
+      "ascii_text": "=",
+      "source_line": 20487,
+      "source_line_sha256": "0ce63afc1e92ee82744300a778e523b9f42a53fe99201bd39fb8e2de82965297",
+      "source_text": "="
+    },
+    {
+      "ascii_text": "=",
+      "source_line": 20491,
+      "source_line_sha256": "0ce63afc1e92ee82744300a778e523b9f42a53fe99201bd39fb8e2de82965297",
+      "source_text": "="
+    },
+    {
+      "ascii_text": "=",
+      "source_line": 20720,
+      "source_line_sha256": "0ce63afc1e92ee82744300a778e523b9f42a53fe99201bd39fb8e2de82965297",
+      "source_text": "="
+    },
+    {
+      "ascii_text": "=",
+      "source_line": 20726,
+      "source_line_sha256": "0ce63afc1e92ee82744300a778e523b9f42a53fe99201bd39fb8e2de82965297",
+      "source_text": "="
+    },
+    {
+      "ascii_text": "=",
+      "source_line": 20735,
+      "source_line_sha256": "0ce63afc1e92ee82744300a778e523b9f42a53fe99201bd39fb8e2de82965297",
+      "source_text": "="
+    },
+    {
+      "ascii_text": "=",
+      "source_line": 20741,
+      "source_line_sha256": "0ce63afc1e92ee82744300a778e523b9f42a53fe99201bd39fb8e2de82965297",
+      "source_text": "="
+    },
+    {
+      "ascii_text": "=",
+      "source_line": 20800,
+      "source_line_sha256": "0ce63afc1e92ee82744300a778e523b9f42a53fe99201bd39fb8e2de82965297",
+      "source_text": "="
+    },
+    {
+      "ascii_text": ") =",
+      "source_line": 20958,
+      "source_line_sha256": "173db06fd9b457af898f6637867ac8fef1f114a278a8fc003c03f0ebe63ec946",
+      "source_text": ") ="
+    },
+    {
+      "ascii_text": "=",
+      "source_line": 21009,
+      "source_line_sha256": "0ce63afc1e92ee82744300a778e523b9f42a53fe99201bd39fb8e2de82965297",
+      "source_text": "="
+    },
+    {
+      "ascii_text": "=",
+      "source_line": 21128,
+      "source_line_sha256": "0ce63afc1e92ee82744300a778e523b9f42a53fe99201bd39fb8e2de82965297",
+      "source_text": "="
+    },
+    {
+      "ascii_text": ") =",
+      "source_line": 21269,
+      "source_line_sha256": "173db06fd9b457af898f6637867ac8fef1f114a278a8fc003c03f0ebe63ec946",
+      "source_text": ") ="
+    },
+    {
+      "ascii_text": "= (70",
+      "source_line": 21321,
+      "source_line_sha256": "53818b63f1f3265d1709b32032a589505cca27cdb0556377508b6c0637f65c5b",
+      "source_text": "= (70"
+    },
+    {
+      "ascii_text": "= 0",
+      "source_line": 21338,
+      "source_line_sha256": "8a600bb53115c44bee3a56323b3af58d27aaec0b138e7868e381108ee1149cb0",
+      "source_text": "= 0"
+    },
+    {
+      "ascii_text": "= 0",
+      "source_line": 21353,
+      "source_line_sha256": "8a600bb53115c44bee3a56323b3af58d27aaec0b138e7868e381108ee1149cb0",
+      "source_text": "= 0"
+    },
+    {
+      "ascii_text": "S =T",
+      "source_line": 21359,
+      "source_line_sha256": "620726ee3e9fc0be7513bb7266e5ec5c23342c4dfca6bc88e2299b6f46f78ddd",
+      "source_text": "S =T"
+    },
+    {
+      "ascii_text": "=",
+      "source_line": 21454,
+      "source_line_sha256": "0ce63afc1e92ee82744300a778e523b9f42a53fe99201bd39fb8e2de82965297",
+      "source_text": "="
+    },
+    {
+      "ascii_text": "=",
+      "source_line": 21466,
+      "source_line_sha256": "0ce63afc1e92ee82744300a778e523b9f42a53fe99201bd39fb8e2de82965297",
+      "source_text": "="
+    },
+    {
+      "ascii_text": "=",
+      "source_line": 21483,
+      "source_line_sha256": "0ce63afc1e92ee82744300a778e523b9f42a53fe99201bd39fb8e2de82965297",
+      "source_text": "="
+    },
+    {
+      "ascii_text": "= (70",
+      "source_line": 21492,
+      "source_line_sha256": "53818b63f1f3265d1709b32032a589505cca27cdb0556377508b6c0637f65c5b",
+      "source_text": "= (70"
+    },
+    {
+      "ascii_text": "= 0",
+      "source_line": 21509,
+      "source_line_sha256": "8a600bb53115c44bee3a56323b3af58d27aaec0b138e7868e381108ee1149cb0",
+      "source_text": "= 0"
+    },
+    {
+      "ascii_text": "= 2",
+      "source_line": 21569,
+      "source_line_sha256": "fb37e8dbe3cd8f84b0792ef636d2368185132620f9ae704ecbc297f031e8a772",
+      "source_text": "= 2"
+    },
+    {
+      "ascii_text": "=",
+      "source_line": 21574,
+      "source_line_sha256": "0ce63afc1e92ee82744300a778e523b9f42a53fe99201bd39fb8e2de82965297",
+      "source_text": "="
+    },
+    {
+      "ascii_text": "^ in=N",
+      "source_line": 21700,
+      "source_line_sha256": "2375b4b5a7e8743ecc6790f3106fb4af621cc0b24efc7dcac4ef202d28aa4f2d",
+      "source_text": "\u02c7 in=N"
+    },
+    {
+      "ascii_text": "^ i=N",
+      "source_line": 21712,
+      "source_line_sha256": "b3bc31cfbd0dc453f6769dac90cac0a97fe7009159eceacbc27beffd6fe14d28",
+      "source_text": "\u02c7 i=N"
+    },
+    {
+      "ascii_text": "^ i=N",
+      "source_line": 21717,
+      "source_line_sha256": "b3bc31cfbd0dc453f6769dac90cac0a97fe7009159eceacbc27beffd6fe14d28",
+      "source_text": "\u02c7 i=N"
+    },
+    {
+      "ascii_text": ") =",
+      "source_line": 21740,
+      "source_line_sha256": "173db06fd9b457af898f6637867ac8fef1f114a278a8fc003c03f0ebe63ec946",
+      "source_text": ") ="
+    },
+    {
+      "ascii_text": "=N",
+      "source_line": 21753,
+      "source_line_sha256": "bb842b5d89c444464c1bc2e77107900524b6773456f2b670021c55f9330121ef",
+      "source_text": "=N"
+    },
+    {
+      "ascii_text": "= 1",
+      "source_line": 21800,
+      "source_line_sha256": "7243ba18b5a5a270e061397d8bfbf2cef09951916e489ce4934b297085dbd328",
+      "source_text": "= 1"
+    },
+    {
+      "ascii_text": ") = e xp(",
+      "source_line": 21813,
+      "source_line_sha256": "70803a639da75301beb42566f7ac3351cf2f0ea92b0cc86157e2436d5518f0f3",
+      "source_text": ") = e xp("
+    },
+    {
+      "ascii_text": ") =",
+      "source_line": 21822,
+      "source_line_sha256": "173db06fd9b457af898f6637867ac8fef1f114a278a8fc003c03f0ebe63ec946",
+      "source_text": ") ="
+    },
+    {
+      "ascii_text": "=",
+      "source_line": 21880,
+      "source_line_sha256": "0ce63afc1e92ee82744300a778e523b9f42a53fe99201bd39fb8e2de82965297",
+      "source_text": "="
+    },
+    {
+      "ascii_text": "A=",
+      "source_line": 21881,
+      "source_line_sha256": "1818a33ca2fd567d4b379c87976569d552851672c9d2447e19e6253773615f33",
+      "source_text": "A="
+    },
+    {
+      "ascii_text": "=",
+      "source_line": 21890,
+      "source_line_sha256": "0ce63afc1e92ee82744300a778e523b9f42a53fe99201bd39fb8e2de82965297",
+      "source_text": "="
+    },
+    {
+      "ascii_text": "=",
+      "source_line": 21892,
+      "source_line_sha256": "0ce63afc1e92ee82744300a778e523b9f42a53fe99201bd39fb8e2de82965297",
+      "source_text": "="
+    },
+    {
+      "ascii_text": "= 1",
+      "source_line": 21894,
+      "source_line_sha256": "7243ba18b5a5a270e061397d8bfbf2cef09951916e489ce4934b297085dbd328",
+      "source_text": "= 1"
+    },
+    {
+      "ascii_text": "=",
+      "source_line": 21903,
+      "source_line_sha256": "0ce63afc1e92ee82744300a778e523b9f42a53fe99201bd39fb8e2de82965297",
+      "source_text": "="
+    },
+    {
+      "ascii_text": "=",
+      "source_line": 21911,
+      "source_line_sha256": "0ce63afc1e92ee82744300a778e523b9f42a53fe99201bd39fb8e2de82965297",
+      "source_text": "="
+    },
+    {
+      "ascii_text": "A=",
+      "source_line": 21919,
+      "source_line_sha256": "1818a33ca2fd567d4b379c87976569d552851672c9d2447e19e6253773615f33",
+      "source_text": "A="
+    },
+    {
+      "ascii_text": "=",
+      "source_line": 21936,
+      "source_line_sha256": "0ce63afc1e92ee82744300a778e523b9f42a53fe99201bd39fb8e2de82965297",
+      "source_text": "="
+    },
+    {
+      "ascii_text": "A=",
+      "source_line": 21937,
+      "source_line_sha256": "1818a33ca2fd567d4b379c87976569d552851672c9d2447e19e6253773615f33",
+      "source_text": "A="
+    },
+    {
+      "ascii_text": "=",
+      "source_line": 21944,
+      "source_line_sha256": "0ce63afc1e92ee82744300a778e523b9f42a53fe99201bd39fb8e2de82965297",
+      "source_text": "="
+    },
+    {
+      "ascii_text": "A=",
+      "source_line": 21945,
+      "source_line_sha256": "1818a33ca2fd567d4b379c87976569d552851672c9d2447e19e6253773615f33",
+      "source_text": "A="
+    },
+    {
+      "ascii_text": "Hawking's formula S = A/4. If the loop representation is really any good, this should",
+      "source_line": 21972,
+      "source_line_sha256": "f07dd078600310ca70f7e7b3f53d054c97c09c739c5888c17bef2d7556277025",
+      "source_text": "Hawking's formula S = A/4. If the loop representation is really any good, this should"
+    },
+    {
+      "ascii_text": "=",
+      "source_line": 21984,
+      "source_line_sha256": "0ce63afc1e92ee82744300a778e523b9f42a53fe99201bd39fb8e2de82965297",
+      "source_text": "="
+    },
+    {
+      "ascii_text": "=",
+      "source_line": 21999,
+      "source_line_sha256": "0ce63afc1e92ee82744300a778e523b9f42a53fe99201bd39fb8e2de82965297",
+      "source_text": "="
+    },
+    {
+      "ascii_text": "= 0",
+      "source_line": 22048,
+      "source_line_sha256": "8a600bb53115c44bee3a56323b3af58d27aaec0b138e7868e381108ee1149cb0",
+      "source_text": "= 0"
+    },
+    {
+      "ascii_text": "=",
+      "source_line": 22051,
+      "source_line_sha256": "0ce63afc1e92ee82744300a778e523b9f42a53fe99201bd39fb8e2de82965297",
+      "source_text": "="
+    },
+    {
+      "ascii_text": "=",
+      "source_line": 22057,
+      "source_line_sha256": "0ce63afc1e92ee82744300a778e523b9f42a53fe99201bd39fb8e2de82965297",
+      "source_text": "="
+    },
+    {
+      "ascii_text": "= 0",
+      "source_line": 22539,
+      "source_line_sha256": "8a600bb53115c44bee3a56323b3af58d27aaec0b138e7868e381108ee1149cb0",
+      "source_text": "= 0"
+    },
+    {
+      "ascii_text": "=",
+      "source_line": 22542,
+      "source_line_sha256": "0ce63afc1e92ee82744300a778e523b9f42a53fe99201bd39fb8e2de82965297",
+      "source_text": "="
+    },
+    {
+      "ascii_text": "=",
+      "source_line": 22548,
+      "source_line_sha256": "0ce63afc1e92ee82744300a778e523b9f42a53fe99201bd39fb8e2de82965297",
+      "source_text": "="
+    },
+    {
+      "ascii_text": "= 1",
+      "source_line": 22655,
+      "source_line_sha256": "7243ba18b5a5a270e061397d8bfbf2cef09951916e489ce4934b297085dbd328",
+      "source_text": "= 1"
+    },
+    {
+      "ascii_text": "=",
+      "source_line": 23046,
+      "source_line_sha256": "0ce63afc1e92ee82744300a778e523b9f42a53fe99201bd39fb8e2de82965297",
+      "source_text": "="
+    },
+    {
+      "ascii_text": "=",
+      "source_line": 23081,
+      "source_line_sha256": "0ce63afc1e92ee82744300a778e523b9f42a53fe99201bd39fb8e2de82965297",
+      "source_text": "="
+    },
+    {
+      "ascii_text": "=",
+      "source_line": 23153,
+      "source_line_sha256": "0ce63afc1e92ee82744300a778e523b9f42a53fe99201bd39fb8e2de82965297",
+      "source_text": "="
+    },
+    {
+      "ascii_text": "=",
+      "source_line": 23158,
+      "source_line_sha256": "0ce63afc1e92ee82744300a778e523b9f42a53fe99201bd39fb8e2de82965297",
+      "source_text": "="
+    },
+    {
+      "ascii_text": "=",
+      "source_line": 23192,
+      "source_line_sha256": "0ce63afc1e92ee82744300a778e523b9f42a53fe99201bd39fb8e2de82965297",
+      "source_text": "="
+    },
+    {
+      "ascii_text": "=",
+      "source_line": 23201,
+      "source_line_sha256": "0ce63afc1e92ee82744300a778e523b9f42a53fe99201bd39fb8e2de82965297",
+      "source_text": "="
+    },
+    {
+      "ascii_text": "=",
+      "source_line": 23205,
+      "source_line_sha256": "0ce63afc1e92ee82744300a778e523b9f42a53fe99201bd39fb8e2de82965297",
+      "source_text": "="
+    },
+    {
+      "ascii_text": "=",
+      "source_line": 23209,
+      "source_line_sha256": "0ce63afc1e92ee82744300a778e523b9f42a53fe99201bd39fb8e2de82965297",
+      "source_text": "="
+    },
+    {
+      "ascii_text": "=",
+      "source_line": 23213,
+      "source_line_sha256": "0ce63afc1e92ee82744300a778e523b9f42a53fe99201bd39fb8e2de82965297",
+      "source_text": "="
+    },
+    {
+      "ascii_text": "9 + 17 = 17 + 9",
+      "source_line": 23221,
+      "source_line_sha256": "e42d5eeef7e3501a8dcdbe2db7de49f84be21034ee379353defcc20099516464",
+      "source_text": "9 + 17 = 17 + 9"
+    },
+    {
+      "ascii_text": "9 + 17 = 17 + 9",
+      "source_line": 23225,
+      "source_line_sha256": "e42d5eeef7e3501a8dcdbe2db7de49f84be21034ee379353defcc20099516464",
+      "source_text": "9 + 17 = 17 + 9"
+    },
+    {
+      "ascii_text": "=",
+      "source_line": 23245,
+      "source_line_sha256": "0ce63afc1e92ee82744300a778e523b9f42a53fe99201bd39fb8e2de82965297",
+      "source_text": "="
+    },
+    {
+      "ascii_text": "=",
+      "source_line": 23255,
+      "source_line_sha256": "0ce63afc1e92ee82744300a778e523b9f42a53fe99201bd39fb8e2de82965297",
+      "source_text": "="
+    },
+    {
+      "ascii_text": "=",
+      "source_line": 23286,
+      "source_line_sha256": "0ce63afc1e92ee82744300a778e523b9f42a53fe99201bd39fb8e2de82965297",
+      "source_text": "="
+    },
+    {
+      "ascii_text": "=",
+      "source_line": 23299,
+      "source_line_sha256": "0ce63afc1e92ee82744300a778e523b9f42a53fe99201bd39fb8e2de82965297",
+      "source_text": "="
+    },
+    {
+      "ascii_text": "=",
+      "source_line": 23495,
+      "source_line_sha256": "0ce63afc1e92ee82744300a778e523b9f42a53fe99201bd39fb8e2de82965297",
+      "source_text": "="
+    },
+    {
+      "ascii_text": "=",
+      "source_line": 23498,
+      "source_line_sha256": "be14ab036551d18a27ef49a0c0515a88bc555f36a8d49a7bc8e23bf4b366902f",
+      "source_text": "="
+    },
+    {
+      "ascii_text": "=",
+      "source_line": 23505,
+      "source_line_sha256": "be14ab036551d18a27ef49a0c0515a88bc555f36a8d49a7bc8e23bf4b366902f",
+      "source_text": "="
+    },
+    {
+      "ascii_text": "= current [",
+      "source_line": 23513,
+      "source_line_sha256": "4e65bc9ea543ca87b94c7121d076e3b26a59afaba7291463a106639c7a4e1036",
+      "source_text": "= current ["
+    },
+    {
+      "ascii_text": "=",
+      "source_line": 23519,
+      "source_line_sha256": "be14ab036551d18a27ef49a0c0515a88bc555f36a8d49a7bc8e23bf4b366902f",
+      "source_text": "="
+    },
+    {
+      "ascii_text": "=",
+      "source_line": 23525,
+      "source_line_sha256": "be14ab036551d18a27ef49a0c0515a88bc555f36a8d49a7bc8e23bf4b366902f",
+      "source_text": "="
+    },
+    {
+      "ascii_text": "=",
+      "source_line": 23531,
+      "source_line_sha256": "be14ab036551d18a27ef49a0c0515a88bc555f36a8d49a7bc8e23bf4b366902f",
+      "source_text": "="
+    },
+    {
+      "ascii_text": "=",
+      "source_line": 23542,
+      "source_line_sha256": "be14ab036551d18a27ef49a0c0515a88bc555f36a8d49a7bc8e23bf4b366902f",
+      "source_text": "="
+    },
+    {
+      "ascii_text": "=",
+      "source_line": 23560,
+      "source_line_sha256": "0ce63afc1e92ee82744300a778e523b9f42a53fe99201bd39fb8e2de82965297",
+      "source_text": "="
+    },
+    {
+      "ascii_text": "=",
+      "source_line": 23570,
+      "source_line_sha256": "be14ab036551d18a27ef49a0c0515a88bc555f36a8d49a7bc8e23bf4b366902f",
+      "source_text": "="
+    },
+    {
+      "ascii_text": "=",
+      "source_line": 23579,
+      "source_line_sha256": "0ce63afc1e92ee82744300a778e523b9f42a53fe99201bd39fb8e2de82965297",
+      "source_text": "="
+    },
+    {
+      "ascii_text": "=",
+      "source_line": 23582,
+      "source_line_sha256": "0d1eda7a9cea45cb686f0642f2b516f804d7ff127fcf863f031219f1f077ac80",
+      "source_text": "="
+    },
+    {
+      "ascii_text": "=",
+      "source_line": 23607,
+      "source_line_sha256": "0ce63afc1e92ee82744300a778e523b9f42a53fe99201bd39fb8e2de82965297",
+      "source_text": "="
+    },
+    {
+      "ascii_text": "=",
+      "source_line": 23610,
+      "source_line_sha256": "0ce63afc1e92ee82744300a778e523b9f42a53fe99201bd39fb8e2de82965297",
+      "source_text": "="
+    },
+    {
+      "ascii_text": "=",
+      "source_line": 23612,
+      "source_line_sha256": "0ce63afc1e92ee82744300a778e523b9f42a53fe99201bd39fb8e2de82965297",
+      "source_text": "="
+    },
+    {
+      "ascii_text": "=",
+      "source_line": 23613,
+      "source_line_sha256": "0ce63afc1e92ee82744300a778e523b9f42a53fe99201bd39fb8e2de82965297",
+      "source_text": "="
+    },
+    {
+      "ascii_text": "=",
+      "source_line": 23636,
+      "source_line_sha256": "be14ab036551d18a27ef49a0c0515a88bc555f36a8d49a7bc8e23bf4b366902f",
+      "source_text": "="
+    },
+    {
+      "ascii_text": "=",
+      "source_line": 23644,
+      "source_line_sha256": "0ce63afc1e92ee82744300a778e523b9f42a53fe99201bd39fb8e2de82965297",
+      "source_text": "="
+    },
+    {
+      "ascii_text": "=",
+      "source_line": 23647,
+      "source_line_sha256": "be14ab036551d18a27ef49a0c0515a88bc555f36a8d49a7bc8e23bf4b366902f",
+      "source_text": "="
+    },
+    {
+      "ascii_text": "= electric flux density vector [",
+      "source_line": 23655,
+      "source_line_sha256": "3b1b6cd817524821f2ae4a125ebd204feaf1a12517d448d02ddde6cdedd5ba65",
+      "source_text": "= electric flux density vector ["
+    },
+    {
+      "ascii_text": "=",
+      "source_line": 23664,
+      "source_line_sha256": "0ce63afc1e92ee82744300a778e523b9f42a53fe99201bd39fb8e2de82965297",
+      "source_text": "="
+    },
+    {
+      "ascii_text": "=",
+      "source_line": 23673,
+      "source_line_sha256": "0ce63afc1e92ee82744300a778e523b9f42a53fe99201bd39fb8e2de82965297",
+      "source_text": "="
+    },
+    {
+      "ascii_text": "= resistance [",
+      "source_line": 23677,
+      "source_line_sha256": "e18b170f12c97099c0671c27646643905386e4277001777cd86431bf705e6140",
+      "source_text": "= resistance ["
+    },
+    {
+      "ascii_text": "= capacitance [",
+      "source_line": 23682,
+      "source_line_sha256": "d90f99805efc6ea374e16e92fa968cf81acb73e5726ca9b1fcc6b8c237eb955b",
+      "source_text": "= capacitance ["
+    },
+    {
+      "ascii_text": "=",
+      "source_line": 23687,
+      "source_line_sha256": "be14ab036551d18a27ef49a0c0515a88bc555f36a8d49a7bc8e23bf4b366902f",
+      "source_text": "="
+    },
+    {
+      "ascii_text": "=",
+      "source_line": 23691,
+      "source_line_sha256": "be14ab036551d18a27ef49a0c0515a88bc555f36a8d49a7bc8e23bf4b366902f",
+      "source_text": "="
+    },
+    {
+      "ascii_text": "=",
+      "source_line": 23708,
+      "source_line_sha256": "0ce63afc1e92ee82744300a778e523b9f42a53fe99201bd39fb8e2de82965297",
+      "source_text": "="
+    },
+    {
+      "ascii_text": "=",
+      "source_line": 23709,
+      "source_line_sha256": "0ce63afc1e92ee82744300a778e523b9f42a53fe99201bd39fb8e2de82965297",
+      "source_text": "="
+    },
+    {
+      "ascii_text": "=",
+      "source_line": 23720,
+      "source_line_sha256": "0ce63afc1e92ee82744300a778e523b9f42a53fe99201bd39fb8e2de82965297",
+      "source_text": "="
+    },
+    {
+      "ascii_text": "= resistance [",
+      "source_line": 23732,
+      "source_line_sha256": "e18b170f12c97099c0671c27646643905386e4277001777cd86431bf705e6140",
+      "source_text": "= resistance ["
+    },
+    {
+      "ascii_text": "= current [",
+      "source_line": 23737,
+      "source_line_sha256": "4e65bc9ea543ca87b94c7121d076e3b26a59afaba7291463a106639c7a4e1036",
+      "source_text": "= current ["
+    },
+    {
+      "ascii_text": "=",
+      "source_line": 23742,
+      "source_line_sha256": "be14ab036551d18a27ef49a0c0515a88bc555f36a8d49a7bc8e23bf4b366902f",
+      "source_text": "="
+    },
+    {
+      "ascii_text": "=",
+      "source_line": 23749,
+      "source_line_sha256": "be14ab036551d18a27ef49a0c0515a88bc555f36a8d49a7bc8e23bf4b366902f",
+      "source_text": "="
+    },
+    {
+      "ascii_text": "=",
+      "source_line": 23777,
+      "source_line_sha256": "be14ab036551d18a27ef49a0c0515a88bc555f36a8d49a7bc8e23bf4b366902f",
+      "source_text": "="
+    },
+    {
+      "ascii_text": "= conductance [",
+      "source_line": 23783,
+      "source_line_sha256": "acddcf0dc969010b6e908b8bc66366c64934ec75499e470e33d62fd9cf058a11",
+      "source_text": "= conductance ["
+    },
+    {
+      "ascii_text": "=",
+      "source_line": 23789,
+      "source_line_sha256": "be14ab036551d18a27ef49a0c0515a88bc555f36a8d49a7bc8e23bf4b366902f",
+      "source_text": "="
+    },
+    {
+      "ascii_text": "=",
+      "source_line": 23800,
+      "source_line_sha256": "be14ab036551d18a27ef49a0c0515a88bc555f36a8d49a7bc8e23bf4b366902f",
+      "source_text": "="
+    },
+    {
+      "ascii_text": "=",
+      "source_line": 23813,
+      "source_line_sha256": "be14ab036551d18a27ef49a0c0515a88bc555f36a8d49a7bc8e23bf4b366902f",
+      "source_text": "="
+    },
+    {
+      "ascii_text": "=",
+      "source_line": 23884,
+      "source_line_sha256": "0ce63afc1e92ee82744300a778e523b9f42a53fe99201bd39fb8e2de82965297",
+      "source_text": "="
+    },
+    {
+      "ascii_text": "=",
+      "source_line": 23930,
+      "source_line_sha256": "0ce63afc1e92ee82744300a778e523b9f42a53fe99201bd39fb8e2de82965297",
+      "source_text": "="
+    },
+    {
+      "ascii_text": "=",
+      "source_line": 23939,
+      "source_line_sha256": "0ce63afc1e92ee82744300a778e523b9f42a53fe99201bd39fb8e2de82965297",
+      "source_text": "="
+    },
+    {
+      "ascii_text": "=",
+      "source_line": 23947,
+      "source_line_sha256": "0ce63afc1e92ee82744300a778e523b9f42a53fe99201bd39fb8e2de82965297",
+      "source_text": "="
+    },
+    {
+      "ascii_text": "=++",
+      "source_line": 24033,
+      "source_line_sha256": "1f7609ac30939da97bb5472b0871800f8e6e83066448c13d16fd76f3d63039df",
+      "source_text": "=++"
+    },
+    {
+      "ascii_text": "=",
+      "source_line": 24052,
+      "source_line_sha256": "0ce63afc1e92ee82744300a778e523b9f42a53fe99201bd39fb8e2de82965297",
+      "source_text": "="
+    },
+    {
+      "ascii_text": "=",
+      "source_line": 24075,
+      "source_line_sha256": "0ce63afc1e92ee82744300a778e523b9f42a53fe99201bd39fb8e2de82965297",
+      "source_text": "="
+    },
+    {
+      "ascii_text": "=",
+      "source_line": 24123,
+      "source_line_sha256": "0ce63afc1e92ee82744300a778e523b9f42a53fe99201bd39fb8e2de82965297",
+      "source_text": "="
+    },
+    {
+      "ascii_text": "=",
+      "source_line": 24129,
+      "source_line_sha256": "0ce63afc1e92ee82744300a778e523b9f42a53fe99201bd39fb8e2de82965297",
+      "source_text": "="
+    },
+    {
+      "ascii_text": "=",
+      "source_line": 24150,
+      "source_line_sha256": "0ce63afc1e92ee82744300a778e523b9f42a53fe99201bd39fb8e2de82965297",
+      "source_text": "="
+    },
+    {
+      "ascii_text": "=",
+      "source_line": 24190,
+      "source_line_sha256": "0ce63afc1e92ee82744300a778e523b9f42a53fe99201bd39fb8e2de82965297",
+      "source_text": "="
+    },
+    {
+      "ascii_text": "=",
+      "source_line": 24215,
+      "source_line_sha256": "0ce63afc1e92ee82744300a778e523b9f42a53fe99201bd39fb8e2de82965297",
+      "source_text": "="
+    },
+    {
+      "ascii_text": "=",
+      "source_line": 24227,
+      "source_line_sha256": "0ce63afc1e92ee82744300a778e523b9f42a53fe99201bd39fb8e2de82965297",
+      "source_text": "="
+    },
+    {
+      "ascii_text": "=N",
+      "source_line": 24296,
+      "source_line_sha256": "a9de70a0cda1df89ef967d5255a4423f45eece511c48aaa54ddff270aabaf90a",
+      "source_text": "=\u00d1"
+    },
+    {
+      "ascii_text": "=++",
+      "source_line": 24298,
+      "source_line_sha256": "1f7609ac30939da97bb5472b0871800f8e6e83066448c13d16fd76f3d63039df",
+      "source_text": "=++"
+    },
+    {
+      "ascii_text": "=r",
+      "source_line": 24299,
+      "source_line_sha256": "d795d348cf191b7e9bdc6984619860b36c48c83d90ac12d60e129043eb113e46",
+      "source_text": "=r"
+    },
+    {
+      "ascii_text": "=",
+      "source_line": 24304,
+      "source_line_sha256": "0d1eda7a9cea45cb686f0642f2b516f804d7ff127fcf863f031219f1f077ac80",
+      "source_text": "="
+    },
+    {
+      "ascii_text": "=",
+      "source_line": 24309,
+      "source_line_sha256": "0ce63afc1e92ee82744300a778e523b9f42a53fe99201bd39fb8e2de82965297",
+      "source_text": "="
+    },
+    {
+      "ascii_text": "= source charge density",
+      "source_line": 24320,
+      "source_line_sha256": "a3af70ffe9c8292b44202cfca168db36dfb430570d03bdedaa8a520d0b7828cd",
+      "source_text": "= source charge density"
+    },
+    {
+      "ascii_text": "=",
+      "source_line": 24357,
+      "source_line_sha256": "0ce63afc1e92ee82744300a778e523b9f42a53fe99201bd39fb8e2de82965297",
+      "source_text": "="
+    },
+    {
+      "ascii_text": "=",
+      "source_line": 24386,
+      "source_line_sha256": "0ce63afc1e92ee82744300a778e523b9f42a53fe99201bd39fb8e2de82965297",
+      "source_text": "="
+    },
+    {
+      "ascii_text": "=",
+      "source_line": 24414,
+      "source_line_sha256": "0ce63afc1e92ee82744300a778e523b9f42a53fe99201bd39fb8e2de82965297",
+      "source_text": "="
+    },
+    {
+      "ascii_text": "=N",
+      "source_line": 24477,
+      "source_line_sha256": "a9de70a0cda1df89ef967d5255a4423f45eece511c48aaa54ddff270aabaf90a",
+      "source_text": "=\u00d1"
+    },
+    {
+      "ascii_text": " =",
+      "source_line": 24478,
+      "source_line_sha256": "dd30a8a14364bdde0ce364d765e2abd4e7d4cd93849e369d16002e6c1909cb17",
+      "source_text": "\u00b4="
+    },
+    {
+      "ascii_text": "=N",
+      "source_line": 24532,
+      "source_line_sha256": "a9de70a0cda1df89ef967d5255a4423f45eece511c48aaa54ddff270aabaf90a",
+      "source_text": "=\u00d1"
+    },
+    {
+      "ascii_text": " =",
+      "source_line": 24533,
+      "source_line_sha256": "dd30a8a14364bdde0ce364d765e2abd4e7d4cd93849e369d16002e6c1909cb17",
+      "source_text": "\u00b4="
+    },
+    {
+      "ascii_text": "=N",
+      "source_line": 24600,
+      "source_line_sha256": "a9de70a0cda1df89ef967d5255a4423f45eece511c48aaa54ddff270aabaf90a",
+      "source_text": "=\u00d1"
+    },
+    {
+      "ascii_text": "=",
+      "source_line": 24602,
+      "source_line_sha256": "0ce63afc1e92ee82744300a778e523b9f42a53fe99201bd39fb8e2de82965297",
+      "source_text": "="
+    },
+    {
+      "ascii_text": "=",
+      "source_line": 24642,
+      "source_line_sha256": "0ce63afc1e92ee82744300a778e523b9f42a53fe99201bd39fb8e2de82965297",
+      "source_text": "="
+    },
+    {
+      "ascii_text": "=",
+      "source_line": 24651,
+      "source_line_sha256": "0ce63afc1e92ee82744300a778e523b9f42a53fe99201bd39fb8e2de82965297",
+      "source_text": "="
+    },
+    {
+      "ascii_text": "=",
+      "source_line": 24690,
+      "source_line_sha256": "0ce63afc1e92ee82744300a778e523b9f42a53fe99201bd39fb8e2de82965297",
+      "source_text": "="
+    },
+    {
+      "ascii_text": "=",
+      "source_line": 24695,
+      "source_line_sha256": "0ce63afc1e92ee82744300a778e523b9f42a53fe99201bd39fb8e2de82965297",
+      "source_text": "="
+    },
+    {
+      "ascii_text": "=",
+      "source_line": 24717,
+      "source_line_sha256": "0ce63afc1e92ee82744300a778e523b9f42a53fe99201bd39fb8e2de82965297",
+      "source_text": "="
+    },
+    {
+      "ascii_text": "=",
+      "source_line": 24727,
+      "source_line_sha256": "0ce63afc1e92ee82744300a778e523b9f42a53fe99201bd39fb8e2de82965297",
+      "source_text": "="
+    },
+    {
+      "ascii_text": "=",
+      "source_line": 24735,
+      "source_line_sha256": "0ce63afc1e92ee82744300a778e523b9f42a53fe99201bd39fb8e2de82965297",
+      "source_text": "="
+    },
+    {
+      "ascii_text": "=",
+      "source_line": 24749,
+      "source_line_sha256": "0ce63afc1e92ee82744300a778e523b9f42a53fe99201bd39fb8e2de82965297",
+      "source_text": "="
+    },
+    {
+      "ascii_text": "=",
+      "source_line": 24752,
+      "source_line_sha256": "0ce63afc1e92ee82744300a778e523b9f42a53fe99201bd39fb8e2de82965297",
+      "source_text": "="
+    },
+    {
+      "ascii_text": "=",
+      "source_line": 24811,
+      "source_line_sha256": "0ce63afc1e92ee82744300a778e523b9f42a53fe99201bd39fb8e2de82965297",
+      "source_text": "="
+    },
+    {
+      "ascii_text": "=",
+      "source_line": 24826,
+      "source_line_sha256": "0ce63afc1e92ee82744300a778e523b9f42a53fe99201bd39fb8e2de82965297",
+      "source_text": "="
+    },
+    {
+      "ascii_text": "=",
+      "source_line": 24892,
+      "source_line_sha256": "0ce63afc1e92ee82744300a778e523b9f42a53fe99201bd39fb8e2de82965297",
+      "source_text": "="
+    },
+    {
+      "ascii_text": "=",
+      "source_line": 24898,
+      "source_line_sha256": "0ce63afc1e92ee82744300a778e523b9f42a53fe99201bd39fb8e2de82965297",
+      "source_text": "="
+    },
+    {
+      "ascii_text": "=",
+      "source_line": 24925,
+      "source_line_sha256": "0ce63afc1e92ee82744300a778e523b9f42a53fe99201bd39fb8e2de82965297",
+      "source_text": "="
+    },
+    {
+      "ascii_text": "=",
+      "source_line": 24951,
+      "source_line_sha256": "0ce63afc1e92ee82744300a778e523b9f42a53fe99201bd39fb8e2de82965297",
+      "source_text": "="
+    },
+    {
+      "ascii_text": "=",
+      "source_line": 24957,
+      "source_line_sha256": "0ce63afc1e92ee82744300a778e523b9f42a53fe99201bd39fb8e2de82965297",
+      "source_text": "="
+    },
+    {
+      "ascii_text": "=",
+      "source_line": 24964,
+      "source_line_sha256": "0ce63afc1e92ee82744300a778e523b9f42a53fe99201bd39fb8e2de82965297",
+      "source_text": "="
+    },
+    {
+      "ascii_text": "=",
+      "source_line": 24968,
+      "source_line_sha256": "0ce63afc1e92ee82744300a778e523b9f42a53fe99201bd39fb8e2de82965297",
+      "source_text": "="
+    },
+    {
+      "ascii_text": " =",
+      "source_line": 24974,
+      "source_line_sha256": "dd30a8a14364bdde0ce364d765e2abd4e7d4cd93849e369d16002e6c1909cb17",
+      "source_text": "\u00b4="
+    },
+    {
+      "ascii_text": "=-",
+      "source_line": 24979,
+      "source_line_sha256": "795aee90a8d1c4c4c9a29d29e01e00fd7d669b8c37031b284d9a1a022d830b39",
+      "source_text": "=-"
+    },
+    {
+      "ascii_text": "=",
+      "source_line": 24997,
+      "source_line_sha256": "0ce63afc1e92ee82744300a778e523b9f42a53fe99201bd39fb8e2de82965297",
+      "source_text": "="
+    },
+    {
+      "ascii_text": " =",
+      "source_line": 25010,
+      "source_line_sha256": "dd30a8a14364bdde0ce364d765e2abd4e7d4cd93849e369d16002e6c1909cb17",
+      "source_text": "\u00b4="
+    },
+    {
+      "ascii_text": "=++",
+      "source_line": 25042,
+      "source_line_sha256": "1f7609ac30939da97bb5472b0871800f8e6e83066448c13d16fd76f3d63039df",
+      "source_text": "=++"
+    },
+    {
+      "ascii_text": "=",
+      "source_line": 25057,
+      "source_line_sha256": "0ce63afc1e92ee82744300a778e523b9f42a53fe99201bd39fb8e2de82965297",
+      "source_text": "="
+    },
+    {
+      "ascii_text": "=",
+      "source_line": 25147,
+      "source_line_sha256": "0ce63afc1e92ee82744300a778e523b9f42a53fe99201bd39fb8e2de82965297",
+      "source_text": "="
+    },
+    {
+      "ascii_text": "=",
+      "source_line": 25159,
+      "source_line_sha256": "0ce63afc1e92ee82744300a778e523b9f42a53fe99201bd39fb8e2de82965297",
+      "source_text": "="
+    },
+    {
+      "ascii_text": "=",
+      "source_line": 25168,
+      "source_line_sha256": "0ce63afc1e92ee82744300a778e523b9f42a53fe99201bd39fb8e2de82965297",
+      "source_text": "="
+    },
+    {
+      "ascii_text": "=",
+      "source_line": 25177,
+      "source_line_sha256": "0ce63afc1e92ee82744300a778e523b9f42a53fe99201bd39fb8e2de82965297",
+      "source_text": "="
+    },
+    {
+      "ascii_text": "f=",
+      "source_line": 25186,
+      "source_line_sha256": "734ec2a264f9ae200739d0b3ed95edb28fd5d2daccf3541d191ebdae17c0d8d0",
+      "source_text": "f="
+    },
+    {
+      "ascii_text": "=",
+      "source_line": 25193,
+      "source_line_sha256": "0ce63afc1e92ee82744300a778e523b9f42a53fe99201bd39fb8e2de82965297",
+      "source_text": "="
+    },
+    {
+      "ascii_text": "=",
+      "source_line": 25197,
+      "source_line_sha256": "0ce63afc1e92ee82744300a778e523b9f42a53fe99201bd39fb8e2de82965297",
+      "source_text": "="
+    },
+    {
+      "ascii_text": "=++",
+      "source_line": 25214,
+      "source_line_sha256": "1f7609ac30939da97bb5472b0871800f8e6e83066448c13d16fd76f3d63039df",
+      "source_text": "=++"
+    },
+    {
+      "ascii_text": "=",
+      "source_line": 25218,
+      "source_line_sha256": "0ce63afc1e92ee82744300a778e523b9f42a53fe99201bd39fb8e2de82965297",
+      "source_text": "="
+    },
+    {
+      "ascii_text": "=",
+      "source_line": 25229,
+      "source_line_sha256": "0ce63afc1e92ee82744300a778e523b9f42a53fe99201bd39fb8e2de82965297",
+      "source_text": "="
+    },
+    {
+      "ascii_text": "=",
+      "source_line": 25234,
+      "source_line_sha256": "0ce63afc1e92ee82744300a778e523b9f42a53fe99201bd39fb8e2de82965297",
+      "source_text": "="
+    },
+    {
+      "ascii_text": "=",
+      "source_line": 25246,
+      "source_line_sha256": "0ce63afc1e92ee82744300a778e523b9f42a53fe99201bd39fb8e2de82965297",
+      "source_text": "="
+    },
+    {
+      "ascii_text": "=",
+      "source_line": 25252,
+      "source_line_sha256": "0ce63afc1e92ee82744300a778e523b9f42a53fe99201bd39fb8e2de82965297",
+      "source_text": "="
+    },
+    {
+      "ascii_text": "=",
+      "source_line": 25256,
+      "source_line_sha256": "0ce63afc1e92ee82744300a778e523b9f42a53fe99201bd39fb8e2de82965297",
+      "source_text": "="
+    },
+    {
+      "ascii_text": "=",
+      "source_line": 25272,
+      "source_line_sha256": "0ce63afc1e92ee82744300a778e523b9f42a53fe99201bd39fb8e2de82965297",
+      "source_text": "="
+    },
+    {
+      "ascii_text": "=",
+      "source_line": 25288,
+      "source_line_sha256": "0ce63afc1e92ee82744300a778e523b9f42a53fe99201bd39fb8e2de82965297",
+      "source_text": "="
+    },
+    {
+      "ascii_text": "=",
+      "source_line": 25304,
+      "source_line_sha256": "0ce63afc1e92ee82744300a778e523b9f42a53fe99201bd39fb8e2de82965297",
+      "source_text": "="
+    },
+    {
+      "ascii_text": "=",
+      "source_line": 25323,
+      "source_line_sha256": "0ce63afc1e92ee82744300a778e523b9f42a53fe99201bd39fb8e2de82965297",
+      "source_text": "="
+    },
+    {
+      "ascii_text": "=",
+      "source_line": 25341,
+      "source_line_sha256": "0ce63afc1e92ee82744300a778e523b9f42a53fe99201bd39fb8e2de82965297",
+      "source_text": "="
+    },
+    {
+      "ascii_text": "=",
+      "source_line": 25354,
+      "source_line_sha256": "0ce63afc1e92ee82744300a778e523b9f42a53fe99201bd39fb8e2de82965297",
+      "source_text": "="
+    },
+    {
+      "ascii_text": "f=",
+      "source_line": 25363,
+      "source_line_sha256": "734ec2a264f9ae200739d0b3ed95edb28fd5d2daccf3541d191ebdae17c0d8d0",
+      "source_text": "f="
+    },
+    {
+      "ascii_text": "=++",
+      "source_line": 25382,
+      "source_line_sha256": "1f7609ac30939da97bb5472b0871800f8e6e83066448c13d16fd76f3d63039df",
+      "source_text": "=++"
+    },
+    {
+      "ascii_text": "=",
+      "source_line": 25387,
+      "source_line_sha256": "0ce63afc1e92ee82744300a778e523b9f42a53fe99201bd39fb8e2de82965297",
+      "source_text": "="
+    },
+    {
+      "ascii_text": "=",
+      "source_line": 25404,
+      "source_line_sha256": "0ce63afc1e92ee82744300a778e523b9f42a53fe99201bd39fb8e2de82965297",
+      "source_text": "="
+    },
+    {
+      "ascii_text": "=",
+      "source_line": 25413,
+      "source_line_sha256": "0ce63afc1e92ee82744300a778e523b9f42a53fe99201bd39fb8e2de82965297",
+      "source_text": "="
+    },
+    {
+      "ascii_text": "=",
+      "source_line": 25430,
+      "source_line_sha256": "0ce63afc1e92ee82744300a778e523b9f42a53fe99201bd39fb8e2de82965297",
+      "source_text": "="
+    },
+    {
+      "ascii_text": "=",
+      "source_line": 25439,
+      "source_line_sha256": "0ce63afc1e92ee82744300a778e523b9f42a53fe99201bd39fb8e2de82965297",
+      "source_text": "="
+    },
+    {
+      "ascii_text": "=",
+      "source_line": 25451,
+      "source_line_sha256": "0ce63afc1e92ee82744300a778e523b9f42a53fe99201bd39fb8e2de82965297",
+      "source_text": "="
+    },
+    {
+      "ascii_text": "=",
+      "source_line": 25490,
+      "source_line_sha256": "0ce63afc1e92ee82744300a778e523b9f42a53fe99201bd39fb8e2de82965297",
+      "source_text": "="
+    },
+    {
+      "ascii_text": "= the force exerted",
+      "source_line": 25502,
+      "source_line_sha256": "0cd66ab213dd20ef3ccc3e87ff137248b3ccd36d1ff04b14ee5a48c0fd6beaa1",
+      "source_text": "= the force exerted"
+    },
+    {
+      "ascii_text": "= permeability constant 4",
+      "source_line": 25518,
+      "source_line_sha256": "aae1a625c9eb652b47a07f7f8d27ab17e24c8d1da51e922cb164d3641081d53d",
+      "source_text": "= permeability constant 4"
+    },
+    {
+      "ascii_text": "= current [A]",
+      "source_line": 25530,
+      "source_line_sha256": "60a50875a61fbaf5b620805b6ee0ebf2287941732e7f1f9a7ea1d4dc22c63eea",
+      "source_text": "= current [A]"
+    },
+    {
+      "ascii_text": "= distance b",
+      "source_line": 25533,
+      "source_line_sha256": "7f64ee008c9782497ac5696b7c58edbbfbc36b6e917f7f3ddbe7d997aca138be",
+      "source_text": "= distance b"
+    },
+    {
+      "ascii_text": "=",
+      "source_line": 25573,
+      "source_line_sha256": "0ce63afc1e92ee82744300a778e523b9f42a53fe99201bd39fb8e2de82965297",
+      "source_text": "="
+    },
+    {
+      "ascii_text": "=",
+      "source_line": 25586,
+      "source_line_sha256": "0ce63afc1e92ee82744300a778e523b9f42a53fe99201bd39fb8e2de82965297",
+      "source_text": "="
+    },
+    {
+      "ascii_text": "=",
+      "source_line": 25614,
+      "source_line_sha256": "0ce63afc1e92ee82744300a778e523b9f42a53fe99201bd39fb8e2de82965297",
+      "source_text": "="
+    },
+    {
+      "ascii_text": "= magnetic field vector",
+      "source_line": 25618,
+      "source_line_sha256": "3419bf84b3b97c0bc39ad0f2ee31f0801ad49be45b61fccb3a8d94c16a9b9257",
+      "source_text": "= magnetic field vector"
+    },
+    {
+      "ascii_text": "= permeability constant",
+      "source_line": 25627,
+      "source_line_sha256": "5d158d0b4c1ebb56182afe6a962ea646dffd3f04acfd150db38e5787878b1a95",
+      "source_text": "= permeability constant"
+    },
+    {
+      "ascii_text": "= current element [",
+      "source_line": 25643,
+      "source_line_sha256": "73639a8c36d500c8c7e4269079ea0d81c089548a0cc7a64db819bf901f68e116",
+      "source_text": "= current element ["
+    },
+    {
+      "ascii_text": "= unit vector pointing",
+      "source_line": 25649,
+      "source_line_sha256": "67fad38699bab4105100e1ad5796415aa2781709c479913bca54f48ad6cf14c9",
+      "source_text": "= unit vector pointing"
+    },
+    {
+      "ascii_text": "= distance between the",
+      "source_line": 25656,
+      "source_line_sha256": "66a819547a7f2fa4bb8a9150477e1909c64b6ae9a7e9d805da490a56bd54fbbd",
+      "source_text": "= distance between the"
+    },
+    {
+      "ascii_text": "=",
+      "source_line": 25707,
+      "source_line_sha256": "0ce63afc1e92ee82744300a778e523b9f42a53fe99201bd39fb8e2de82965297",
+      "source_text": "="
+    },
+    {
+      "ascii_text": "=",
+      "source_line": 25709,
+      "source_line_sha256": "0ce63afc1e92ee82744300a778e523b9f42a53fe99201bd39fb8e2de82965297",
+      "source_text": "="
+    },
+    {
+      "ascii_text": "= magnetic field vector, equal to",
+      "source_line": 25718,
+      "source_line_sha256": "ba60ecea2315dcddbb7ffdc66f492c9260bbdba860c8bab2adaaaaf65a44212e",
+      "source_text": "= magnetic field vector, equal to"
+    },
+    {
+      "ascii_text": "= permeability constant 4",
+      "source_line": 25729,
+      "source_line_sha256": "aae1a625c9eb652b47a07f7f8d27ab17e24c8d1da51e922cb164d3641081d53d",
+      "source_text": "= permeability constant 4"
+    },
+    {
+      "ascii_text": "= an increment of the line which",
+      "source_line": 25742,
+      "source_line_sha256": "2a51ee2660c1498ced7bac0af90db8d0f9bb1db1caead7dff37d80240edd2b56",
+      "source_text": "= an increment of the line which"
+    },
+    {
+      "ascii_text": "=",
+      "source_line": 25751,
+      "source_line_sha256": "be14ab036551d18a27ef49a0c0515a88bc555f36a8d49a7bc8e23bf4b366902f",
+      "source_text": "="
+    },
+    {
+      "ascii_text": "=",
+      "source_line": 25759,
+      "source_line_sha256": "0ce63afc1e92ee82744300a778e523b9f42a53fe99201bd39fb8e2de82965297",
+      "source_text": "="
+    },
+    {
+      "ascii_text": "= an increment of surface [",
+      "source_line": 25764,
+      "source_line_sha256": "af1ad210a4076214cf1dbbaf92a18ec02b2cde2bb07078fa3579b7f80e4e8d66",
+      "source_text": "= an increment of surface ["
+    },
+    {
+      "ascii_text": "=f",
+      "source_line": 25794,
+      "source_line_sha256": "2dbf2fb9f89c1a332f5eba4cfeaec48295fdca5346237944bb13a1dbb45a8450",
+      "source_text": "=f"
+    },
+    {
+      "ascii_text": "= magnetic field vector [",
+      "source_line": 25800,
+      "source_line_sha256": "2da30f3353bc6f1778cfd84350d0647dec78060c278e1abbb39628347d501c28",
+      "source_text": "= magnetic field vector ["
+    },
+    {
+      "ascii_text": "= permeability constant 4",
+      "source_line": 25807,
+      "source_line_sha256": "aae1a625c9eb652b47a07f7f8d27ab17e24c8d1da51e922cb164d3641081d53d",
+      "source_text": "= permeability constant 4"
+    },
+    {
+      "ascii_text": "= current [",
+      "source_line": 25818,
+      "source_line_sha256": "5c5fb0f4ef646236a917615e9293fad4af47fa61565eb56a6b8afab4cc667f40",
+      "source_text": "= current ["
+    },
+    {
+      "ascii_text": "= perpendicular distance from the",
+      "source_line": 25823,
+      "source_line_sha256": "4dc30a6d9acbccb45901b34a3ea0021eaaed687d8a44de5f6827e402896b07ca",
+      "source_text": "= perpendicular distance from the"
+    },
+    {
+      "ascii_text": "=f",
+      "source_line": 25850,
+      "source_line_sha256": "2dbf2fb9f89c1a332f5eba4cfeaec48295fdca5346237944bb13a1dbb45a8450",
+      "source_text": "=f"
+    },
+    {
+      "ascii_text": "= magnetic field vector [",
+      "source_line": 25860,
+      "source_line_sha256": "2da30f3353bc6f1778cfd84350d0647dec78060c278e1abbb39628347d501c28",
+      "source_text": "= magnetic field vector ["
+    },
+    {
+      "ascii_text": "= permeability constant",
+      "source_line": 25867,
+      "source_line_sha256": "5d158d0b4c1ebb56182afe6a962ea646dffd3f04acfd150db38e5787878b1a95",
+      "source_text": "= permeability constant"
+    },
+    {
+      "ascii_text": "= current [",
+      "source_line": 25879,
+      "source_line_sha256": "5c5fb0f4ef646236a917615e9293fad4af47fa61565eb56a6b8afab4cc667f40",
+      "source_text": "= current ["
+    },
+    {
+      "ascii_text": "= half the length of the",
+      "source_line": 25885,
+      "source_line_sha256": "e1b430297bdf71033c5ef327bdca4563123af3fd46571ef517e733d588c0b419",
+      "source_text": "= half the length of the"
+    },
+    {
+      "ascii_text": "= perpendicular distance",
+      "source_line": 25891,
+      "source_line_sha256": "d7b71a145f28bce01553f1272ccd6ebbb5d30b7810327fe0a6282520ece84541",
+      "source_text": "= perpendicular distance"
+    },
+    {
+      "ascii_text": "=",
+      "source_line": 25917,
+      "source_line_sha256": "0ce63afc1e92ee82744300a778e523b9f42a53fe99201bd39fb8e2de82965297",
+      "source_text": "="
+    },
+    {
+      "ascii_text": "= magnetic field [",
+      "source_line": 25921,
+      "source_line_sha256": "5100cc362cf4c715deb9f29b10f157e44ce529010b483530e72428bb9b19fe5d",
+      "source_text": "= magnetic field ["
+    },
+    {
+      "ascii_text": "= permeability const. 4",
+      "source_line": 25928,
+      "source_line_sha256": "93479c45a0584e63500c1b3ef4446d9b04a829713eddd72986a790b5ffbb27ba",
+      "source_text": "= permeability const. 4"
+    },
+    {
+      "ascii_text": "= number of turns of the coil",
+      "source_line": 25938,
+      "source_line_sha256": "f60c5673a15fffce274657f4d14e1a5b875ab849c726e8cbee06112b25ad1cd2",
+      "source_text": "= number of turns of the coil"
+    },
+    {
+      "ascii_text": "= current [",
+      "source_line": 25942,
+      "source_line_sha256": "5c5fb0f4ef646236a917615e9293fad4af47fa61565eb56a6b8afab4cc667f40",
+      "source_text": "= current ["
+    },
+    {
+      "ascii_text": "= radius [",
+      "source_line": 25947,
+      "source_line_sha256": "56131384c1f96647e710425d838e8678744bd6ec7819f737d34c79337aac6801",
+      "source_text": "= radius ["
+    },
+    {
+      "ascii_text": "=",
+      "source_line": 25988,
+      "source_line_sha256": "0ce63afc1e92ee82744300a778e523b9f42a53fe99201bd39fb8e2de82965297",
+      "source_text": "="
+    },
+    {
+      "ascii_text": "= magnetic field [",
+      "source_line": 26032,
+      "source_line_sha256": "5100cc362cf4c715deb9f29b10f157e44ce529010b483530e72428bb9b19fe5d",
+      "source_text": "= magnetic field ["
+    },
+    {
+      "ascii_text": "= permeability constant",
+      "source_line": 26039,
+      "source_line_sha256": "5d158d0b4c1ebb56182afe6a962ea646dffd3f04acfd150db38e5787878b1a95",
+      "source_text": "= permeability constant"
+    },
+    {
+      "ascii_text": "= number of turn",
+      "source_line": 26050,
+      "source_line_sha256": "f013b9e7e8cbc895a09c567570cd41f73ffe078bb77687984ad9a033e4a61750",
+      "source_text": "= number of turn"
+    },
+    {
+      "ascii_text": "= current [",
+      "source_line": 26055,
+      "source_line_sha256": "5c5fb0f4ef646236a917615e9293fad4af47fa61565eb56a6b8afab4cc667f40",
+      "source_text": "= current ["
+    },
+    {
+      "ascii_text": "= length of the solenoid [",
+      "source_line": 26061,
+      "source_line_sha256": "23ba054e06357041f3c3919b85fd269af0d5c70c2477b2b52d06770d6bdffa2b",
+      "source_text": "= length of the solenoid ["
+    },
+    {
+      "ascii_text": "= distance from center of",
+      "source_line": 26067,
+      "source_line_sha256": "c429a9104da1a0e6feadd8a270cdd817e3d248a0876f00a1198b0931481c9497",
+      "source_text": "= distance from center of"
+    },
+    {
+      "ascii_text": "= coil radius [",
+      "source_line": 26073,
+      "source_line_sha256": "d4df8be4201788dceea7bbf1431174ee8e0df891a628bba5c0f7b6a541896cec",
+      "source_text": "= coil radius ["
+    },
+    {
+      "ascii_text": "=",
+      "source_line": 26124,
+      "source_line_sha256": "0ce63afc1e92ee82744300a778e523b9f42a53fe99201bd39fb8e2de82965297",
+      "source_text": "="
+    },
+    {
+      "ascii_text": "= magnetic field [",
+      "source_line": 26132,
+      "source_line_sha256": "5100cc362cf4c715deb9f29b10f157e44ce529010b483530e72428bb9b19fe5d",
+      "source_text": "= magnetic field ["
+    },
+    {
+      "ascii_text": "= magnetic field vector [",
+      "source_line": 26137,
+      "source_line_sha256": "2da30f3353bc6f1778cfd84350d0647dec78060c278e1abbb39628347d501c28",
+      "source_text": "= magnetic field vector ["
+    },
+    {
+      "ascii_text": "= permeability const. 4",
+      "source_line": 26144,
+      "source_line_sha256": "93479c45a0584e63500c1b3ef4446d9b04a829713eddd72986a790b5ffbb27ba",
+      "source_text": "= permeability const. 4"
+    },
+    {
+      "ascii_text": "= magnetization [",
+      "source_line": 26154,
+      "source_line_sha256": "99d4a67584c44650435481c08ad2f61a47d2a6ff084f31cf1d7ef555da5ae44a",
+      "source_text": "= magnetization ["
+    },
+    {
+      "ascii_text": "=",
+      "source_line": 26159,
+      "source_line_sha256": "be14ab036551d18a27ef49a0c0515a88bc555f36a8d49a7bc8e23bf4b366902f",
+      "source_text": "="
+    },
+    {
+      "ascii_text": "=",
+      "source_line": 26167,
+      "source_line_sha256": "0ce63afc1e92ee82744300a778e523b9f42a53fe99201bd39fb8e2de82965297",
+      "source_text": "="
+    },
+    {
+      "ascii_text": "= electric flux density vector",
+      "source_line": 26170,
+      "source_line_sha256": "77a17c78ac561ff5f575e265ed8c6affddbca89d8ae574158dab33267e0925cb",
+      "source_text": "= electric flux density vector"
+    },
+    {
+      "ascii_text": "] =",
+      "source_line": 26204,
+      "source_line_sha256": "04a960b61601f8132880a52d3f1f4c252a08429e2742714fe881425ac5768603",
+      "source_text": "] ="
+    }
+  ],
+  "schema_version": 1,
+  "source_relpath": "source_materials/frameworks/Maximal_Extraction_SET1_SET2.txt",
+  "source_sha256": "97bcf9c1823360aa8e73664e1e84802cd273d57eae6a6302ca8eccbdfb699dee",
+  "table_row_candidates": [
+    {
+      "ascii_text": "For each step in Cayley-Dickson, define involutions \\overline{x} and ensure the associator (x,y,z) is bounded. Given \\|x\\|,\\|y\\|,\\|z\\|\\leq M, |(x,y,z)|\\leq C M^3, a constant C. This ensures scaling relations keep non-associative anomalies finite.",
+      "source_line": 1742,
+      "source_line_sha256": "87711e7095c926ba36dc37c39bb917a7e1c239c1b21c5e0fc00072240f6ec4cc",
+      "source_text": "For each step in Cayley-Dickson, define involutions \\overline{x} and ensure the associator (x,y,z) is bounded. Given \\|x\\|,\\|y\\|,\\|z\\|\\leq M, |(x,y,z)|\\leq C M^3, a constant C. This ensures scaling relations keep non-associative anomalies finite."
+    },
+    {
+      "ascii_text": "-\tImpose  |\\lambda_i| < 1  by normalizing kernel coefficients and introducing damping factors.",
+      "source_line": 2045,
+      "source_line_sha256": "3517ca7ce019639d0fd007a33427a88438952a6a45b39f7332e954d53ce4fd5c",
+      "source_text": "\u2022\tImpose  |\\lambda_i| < 1  by normalizing kernel coefficients and introducing damping factors."
+    }
+  ]
+}

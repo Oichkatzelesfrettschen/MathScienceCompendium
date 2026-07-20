@@ -12,6 +12,7 @@ import plotly.graph_objects as go
 from sklearn.decomposition import PCA
 
 from mathphysics.algebras.roots import (
+    BaseRootSystem,
     E4RootSystem,
     E5RootSystem,
     E6RootSystem,
@@ -25,7 +26,7 @@ from mathphysics.config import Config
 def generate_explorer_dashboard():
     print("[EXPLORER] Generating multi-algebra root dashboard...")
 
-    systems = {
+    systems: dict[str, BaseRootSystem] = {
         "E4 (A4)": E4RootSystem(),
         "E5 (D5)": E5RootSystem(),
         "F4": F4RootSystem(),

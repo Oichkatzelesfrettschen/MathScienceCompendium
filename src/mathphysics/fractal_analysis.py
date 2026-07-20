@@ -627,9 +627,9 @@ class FractalDimensionCalculator:
                 )
             else:
                 # General case
-                unique_boxes = {}
+                unique_boxes: dict[tuple[int, ...], int] = {}
                 for point in grid_points:
-                    key = tuple(point)
+                    key = tuple(int(value) for value in point)
                     unique_boxes[key] = unique_boxes.get(key, 0) + 1
                 counts = np.array(list(unique_boxes.values()))
 
@@ -786,7 +786,7 @@ def analyze_fractal_dimensions(output_dir: Path | None = None) -> dict[str, Any]
     return results
 
 
-def run_dimension_analysis(output_dir: Path | None = None) -> None:
+def run_dimension_analysis(output_dir: Path | None = None) -> dict[str, Any]:
     """Analyze dimensions of well-known fractals."""
     if output_dir is None:
         output_dir = Config.RESULTS_DIR

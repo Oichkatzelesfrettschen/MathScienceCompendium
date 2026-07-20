@@ -17,7 +17,7 @@ BENCH_DIR = benchmarks
 RESULTS_DIR = results
 FIGURES_DIR = figures
 
-.PHONY: all clean help install test lint check-types benchmark run-highres run-unified run-jordan run-clifford docs papers cleanbuild lint-latex figures fetch-external sync-super-force-analysis normalize-corpus corpus-dedupe build-registries docs-index claim-coverage validate-external-provenance validate-registry-schemas parquet-audit verify-offline repro-refresh archive-pdfs notebooks fetch-arxiv resolve-dois fetch-all verify-checksums check-deps
+.PHONY: all clean help install test lint check-types benchmark run-highres run-unified run-jordan run-clifford docs papers cleanbuild lint-latex figures paper-evidence-artifacts fetch-external sync-super-force-analysis normalize-corpus framework-decomposition framework-overlap corpus-dedupe build-registries docs-index claim-coverage critique-evidence validate-external-provenance validate-registry-schemas parquet-audit evidence-audits document-ocr-mineru document-ocr-tesseract document-ocr-generate document-decomposition-index verify-offline repro-refresh archive-pdfs notebooks fetch-arxiv resolve-dois fetch-all verify-checksums check-deps
 
 # Default target
 all: lint check-types test benchmark figures papers
@@ -37,6 +37,11 @@ figures:
 	PYTHONPATH=src $(PYTHON) src/mathphysics/generate_interactive_explorer.py
 	@echo "[VIZ] Generating geometric and topological anchor diagrams..."
 	PYTHONPATH=src $(PYTHON) src/mathphysics/generate_anchor_diagrams.py
+	@$(MAKE) paper-evidence-artifacts
+
+paper-evidence-artifacts:
+	@echo "[VIZ] Generating registry-driven paper evidence artifacts..."
+	python3 scripts/generate_paper_evidence_artifacts.py
 
 run-highres:
 	@echo "[EXPERIMENT] Running high-resolution JAX-accelerated LBM..."
@@ -80,15 +85,36 @@ install:
 
 lint:
 	@echo "[LINT] Running ruff checks..."
-	@if [ -x "$(RUFF)" ]; then $(RUFF) check src tests benchmarks experiments; else echo "ruff not installed in ./venv; run make install"; fi
+	@if [ -x "$(RUFF)" ]; then \
+	  $(RUFF) check src tests benchmarks experiments; \
+	elif command -v ruff > /dev/null; then \
+	  ruff check src tests benchmarks experiments; \
+	else \
+	  echo "ruff is required; run make install" >&2; \
+	  exit 1; \
+	fi
 
 check-types:
 	@echo "[TYPE] Running mypy..."
-	@if [ -x "$(MYPY)" ]; then $(MYPY) src/mathphysics --ignore-missing-imports --no-error-summary; else echo "mypy not installed in ./venv; run make install"; fi
+	@if [ -x "$(MYPY)" ]; then \
+	  $(MYPY) src/mathphysics --ignore-missing-imports --no-error-summary; \
+	elif command -v mypy > /dev/null; then \
+	  mypy src/mathphysics --ignore-missing-imports --no-error-summary; \
+	else \
+	  echo "mypy is required; run make install" >&2; \
+	  exit 1; \
+	fi
 
 test:
 	@echo "[TEST] Running pytest..."
-	@if [ -x "$(PYTEST)" ]; then PYTHONHASHSEED=0 PYTHONPATH=src $(PYTEST) tests -q; else echo "pytest not installed in ./venv; run make install"; fi
+	@if [ -x "$(PYTEST)" ]; then \
+	  PYTHONHASHSEED=0 PYTHONPATH=src $(PYTEST) tests -q; \
+	elif command -v pytest > /dev/null; then \
+	  PYTHONHASHSEED=0 PYTHONPATH=src pytest tests -q; \
+	else \
+	  echo "pytest is required; run make install" >&2; \
+	  exit 1; \
+	fi
 
 notebooks:
 	@echo "[NOTEBOOKS] Executing all Jupyter notebooks..."
@@ -97,11 +123,15 @@ notebooks:
 	    echo "[NOTEBOOK] $$nb"; \
 	    ./venv/bin/jupyter nbconvert --to notebook --execute --inplace "$$nb"; \
 	  done; \
-	else echo "jupyter not installed in ./venv; run: pip install jupyter nbconvert"; fi
+	else \
+	  echo "jupyter and nbconvert are required; run make install" >&2; \
+	  exit 1; \
+	fi
 
-lint-latex:
-	@echo "[LATEX] Checking for unresolved stub markers..."
-	@! rg -n "(Chapter stub|To be developed)" papers/sections || (echo "Found unresolved LaTeX stubs." && exit 1)
+lint-latex: critique-evidence paper-evidence-artifacts
+	@echo "[LATEX] Checking publication sources..."
+	@! rg -n "(Chapter stub|To be developed)" papers/main.tex papers/sections/review_*.tex papers/generated/*.tex || (echo "Found unresolved LaTeX stubs." && exit 1)
+	@! rg --pcre2 -n "[^\\x00-\\x7F]" papers/main.tex papers/sections/review_*.tex papers/generated/*.tex || (echo "Found non-ASCII text in publication sources." && exit 1)
 
 # ==============================================================================
 # Documentation
@@ -152,6 +182,14 @@ normalize-corpus:
 	@echo "[DATA] Normalizing text corpus to JSON..."
 	python3 scripts/normalize_txt_to_json.py
 
+framework-decomposition:
+	@echo "[DATA] Decomposing retained framework documents into traceable Markdown..."
+	python3 scripts/decompose_framework_documents.py
+
+framework-overlap:
+	@echo "[DATA] Auditing exact normalized overlap across framework documents..."
+	python3 scripts/analyze_framework_overlap.py
+
 corpus-dedupe:
 	@echo "[DATA] Generating corpus dedupe report..."
 	python3 scripts/corpus_dedupe_report.py
@@ -168,6 +206,10 @@ claim-coverage:
 	@echo "[DATA] Building claim coverage report..."
 	python3 scripts/build_claim_coverage_report.py
 
+critique-evidence:
+	@echo "[DATA] Generating critique table from the evidence ledger..."
+	python3 scripts/generate_critique_evidence_table.py
+
 validate-external-provenance:
 	@echo "[VERIFY] Validating external provenance JSON files against schemas..."
 	python3 scripts/validate_external_provenance_schemas.py
@@ -180,6 +222,37 @@ parquet-audit:
 	@echo "[DATA] Auditing parquet artifacts..."
 	python3 scripts/parquet_audit.py
 
+evidence-audits:
+	@echo "[DATA] Regenerating computational evidence audits..."
+	PYTHONPATH=src python3 scripts/generate_core_validation_results.py
+	PYTHONPATH=src python3 experiments/quantum_lbm_stable_demo.py
+	PYTHONPATH=src python3 scripts/analyze_retained_lbm.py --figure-root figures
+	PYTHONPATH=src python3 scripts/audit_lbm_root_order.py
+	python3 scripts/audit_pdf_text_quality.py
+	python3 scripts/parquet_audit.py
+
+document-ocr-mineru:
+	@echo "[OCR] Building the pinned MinerU CUDA image..."
+	docker compose -f tools/document_ocr/compose.yaml build mineru
+	@echo "[OCR] Decomposing manifest PDFs sequentially in automatic mode..."
+	python3 scripts/run_mineru_manifest.py
+	@echo "[OCR] Running forced OCR on the sparse comparison document..."
+	docker compose -f tools/document_ocr/compose.yaml run --rm mineru 'mineru -p /workspace/source_materials/pdfs/Comment_on_the_Pais_Superforce_Theory.pdf -o /workspace/build/document_ocr/mineru -b hybrid-engine --effort high -m ocr --formula true --table true --image-analysis true'
+
+document-ocr-tesseract:
+	@echo "[OCR] Running the independent Tesseract comparison..."
+	python3 scripts/run_tesseract_pdf_ocr.py source_materials/pdfs/Comment_on_the_Pais_Superforce_Theory.pdf --dpi 400 --page-segmentation-mode 1
+	@echo "[OCR] Running Tesseract only on pages routed by the text-quality audit..."
+	python3 scripts/run_tesseract_fallbacks.py
+
+document-ocr-generate: document-ocr-mineru document-ocr-tesseract
+	@echo "[OCR] MinerU and Tesseract outputs generated."
+
+document-decomposition-index:
+	@echo "[DATA] Indexing completed MinerU document decompositions..."
+	python3 scripts/index_document_decomposition.py
+	python3 scripts/compare_pdf_ocr_outputs.py
+
 verify-offline:
 	@echo "[VERIFY] Running offline integrity checks..."
 	python3 scripts/validate_external_provenance_schemas.py
@@ -188,11 +261,15 @@ verify-offline:
 
 repro-refresh:
 	@$(MAKE) normalize-corpus
+	@$(MAKE) framework-decomposition
+	@$(MAKE) framework-overlap
 	@$(MAKE) corpus-dedupe
+	@$(MAKE) evidence-audits
+	@$(MAKE) document-decomposition-index
+	@$(MAKE) critique-evidence
 	@$(MAKE) build-registries
 	@$(MAKE) docs-index
 	@$(MAKE) claim-coverage
-	@$(MAKE) parquet-audit
 	@$(MAKE) verify-offline
 	@echo "[SUCCESS] Offline reproducibility indexes refreshed."
 
@@ -211,12 +288,12 @@ cleanbuild: clean-all install lint check-types lint-latex run-highres run-unifie
 # LaTeX Paper Build
 # ==============================================================================
 
-papers: figures
-	@echo "[BUILD] Building LaTeX compendium (halt-on-error)..."
-	cd papers && pdflatex -interaction=nonstopmode -halt-on-error main.tex
-	cd papers && bibtex main
-	cd papers && pdflatex -interaction=nonstopmode -halt-on-error main.tex
-	cd papers && pdflatex -interaction=nonstopmode -halt-on-error main.tex
+papers: lint-latex
+	@echo "[BUILD] Building critical review (halt-on-error)..."
+	cd papers && latexmk -pdf -gg -interaction=nonstopmode -halt-on-error main.tex
+	@! rg -n "(LaTeX Warning|Package .* Warning|pdfTeX warning|Overfull \\\\hbox|Overfull \\\\vbox|Underfull \\\\hbox|Underfull \\\\vbox)" papers/main.log || (echo "LaTeX emitted publication-blocking warnings." && exit 1)
+	@! rg -n "Warning--" papers/main.blg || (echo "BibTeX emitted publication-blocking warnings." && exit 1)
+	@$(MAKE) build-registries
 	@echo "PDF generated: papers/main.pdf"
 
 # ==============================================================================
@@ -262,22 +339,28 @@ help:
 	@echo ""
 	@echo "DEVELOPMENT:"
 	@echo "  make install      - Provision virtual environment and dependencies"
-	@echo "  make lint         - Run ruff linter (with auto-fix)"
+	@echo "  make lint         - Run ruff linter"
 	@echo "  make check-types  - Run mypy static type checking"
-	@echo "  make test         - Run full test suite with coverage"
+	@echo "  make test         - Run full test suite"
 	@echo "  make cleanbuild   - Full clean, install, QA, and PDF build"
 	@echo ""
 	@echo "REPRODUCIBILITY:"
 	@echo "  make fetch-external   - Fetch/cache external sources and provenance"
 	@echo "  make sync-super-force-analysis - Sync curated Super-Force-Analysis text/code assets"
 	@echo "  make normalize-corpus - Convert .txt corpus files to JSON records"
+	@echo "  make framework-decomposition - Chunk framework sources into traceable Markdown"
+	@echo "  make framework-overlap - Audit exact normalized overlap across framework drafts"
 	@echo "  make corpus-dedupe    - Emit focused dedupe report for normalized corpus"
 	@echo "  make build-registries - Build TOML indexes for artifacts and experiments"
 	@echo "  make docs-index       - Build docs registry and docs index markdown"
 	@echo "  make claim-coverage   - Build claim/source coverage report from crosswalk policy"
+	@echo "  make critique-evidence - Generate the paper critique table from its evidence ledger"
 	@echo "  make validate-external-provenance - Validate data/external provenance JSON against schemas"
 	@echo "  make validate-registry-schemas - Validate data/registry/*.toml and selected *.json against schemas"
 	@echo "  make parquet-audit    - Audit parquet files and emit JSON summary"
+	@echo "  make evidence-audits  - Regenerate core, LBM, root-order, PDF, and parquet audits"
+	@echo "  make document-ocr-generate - Generate pinned MinerU and Tesseract OCR outputs"
+	@echo "  make document-decomposition-index - Index completed MinerU and Tesseract outputs"
 	@echo "  make verify-offline   - Run offline integrity checks"
 	@echo "  make repro-refresh    - Run normalize + registries + audit + verification"
 	@echo "  make archive-pdfs     - Copy all repo PDFs to ~/Documents before cleanup"

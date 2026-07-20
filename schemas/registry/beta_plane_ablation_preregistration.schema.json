@@ -1,0 +1,19 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://mathsciencecompendium.local/schemas/registry/beta_plane_ablation_preregistration.schema.json",
+  "title": "BetaPlaneAblationPreregistration",
+  "type": "object",
+  "required": ["schema_version", "title", "model", "fixed_parameters", "refinement_matrix", "arms", "primary_metrics", "acceptance_criteria", "rejection_criteria"],
+  "properties": {
+    "schema_version": {"const": 1},
+    "title": {"type": "string", "minLength": 1},
+    "model": {"type": "object", "required": ["equation", "diagnostic_relations", "domain", "spatial_method", "time_method"], "additionalProperties": false, "properties": {"equation": {"type": "string"}, "diagnostic_relations": {"type": "array", "minItems": 3, "items": {"type": "string"}}, "domain": {"type": "string"}, "spatial_method": {"type": "string"}, "time_method": {"type": "string"}}},
+    "fixed_parameters": {"type": "object", "required": ["beta", "linear_drag", "viscosity", "initial_wavenumber_minimum", "initial_wavenumber_maximum", "initial_energy", "duration"], "additionalProperties": false, "properties": {"beta": {"type": "number"}, "linear_drag": {"type": "number", "minimum": 0}, "viscosity": {"type": "number", "minimum": 0}, "initial_wavenumber_minimum": {"type": "number", "exclusiveMinimum": 0}, "initial_wavenumber_maximum": {"type": "number", "exclusiveMinimum": 0}, "initial_energy": {"type": "number", "exclusiveMinimum": 0}, "duration": {"type": "number", "exclusiveMinimum": 0}}},
+    "refinement_matrix": {"type": "object", "required": ["seeds", "grid_sizes", "time_steps"], "additionalProperties": false, "properties": {"seeds": {"type": "array", "minItems": 3, "items": {"type": "integer"}}, "grid_sizes": {"type": "array", "minItems": 2, "items": {"type": "integer", "minimum": 8}}, "time_steps": {"type": "array", "minItems": 2, "items": {"type": "number", "exclusiveMinimum": 0}}}},
+    "arms": {"type": "array", "minItems": 3, "maxItems": 3, "items": {"type": "object", "required": ["id", "beta", "filter", "purpose"], "additionalProperties": false, "properties": {"id": {"type": "string", "pattern": "^[a-z0-9_]+$"}, "beta": {"type": "number"}, "filter": {"enum": ["identity", "e7_pq_homomorphism"]}, "purpose": {"type": "string", "minLength": 1}}}},
+    "primary_metrics": {"type": "array", "minItems": 1, "items": {"type": "string", "minLength": 1}},
+    "acceptance_criteria": {"type": "array", "minItems": 1, "items": {"type": "string", "minLength": 1}},
+    "rejection_criteria": {"type": "array", "minItems": 1, "items": {"type": "string", "minLength": 1}}
+  },
+  "additionalProperties": false
+}

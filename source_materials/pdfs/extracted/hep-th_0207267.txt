@@ -1,0 +1,487 @@
+E10 and a “small tension expansion” of M Theory
+T. Damour
+Institut des Hautes Etudes Scientifiques, 35 route de Chartres, F-91440 Bures-sur-Yvette, France
+
+M. Henneaux
+Physique Théorique et Mathématique, Université Libre de Bruxelles, C.P.231, B-1050 Bruxelles, Belgium
+
+H. Nicolai
+
+arXiv:hep-th/0207267v1 30 Jul 2002
+
+Max-Planck-Institut für Gravitationsphysik, Mühlenberg 1, D–14476 Golm, Germany
+(October 23, 2018)
+A formal “small tension” expansion of D = 11 supergravity near a spacelike singularity is shown to
+be equivalent, at least up to 30th order in height, to a null geodesic motion in the infinite dimensional
+coset space E10 /K(E10 ), where K(E10 ) is the maximal compact subgroup of the hyperbolic KacMoody group E10 (R). For the proof we make use of a novel decomposition of E10 into irreducible
+representations of its SL(10, R) subgroup. We explicitly show how to identify the first four rungs of
+the E10 coset fields with the values of geometric quantities constructed from D = 11 supergravity
+fields and their spatial gradients taken at some comoving spatial point.
+04.65.+e 04.50.+h 11.10.Kk 11.15.-q
+
+The consideration of limits where some (possibly dimensionful) parameter is taken to be small is often a
+way of revealing the hidden symmetry structure of physical theories. In [1], it was argued that the small tension
+limit Ts → 0 of string theory gives rise to an infinite number of relations between string scattering amplitudes, indicating the presence of an enormous symmetry. In this
+Letter, we shall consider the bosonic sector of M Theory, and more specifically its low energy limit, D = 11
+supergravity [2], in a limit which can likewise be (intuitively) thought of as a small tension limit Tb → 0,
+where Tb := c4 (32πGN )−1 is the bulk tension governing
+the propagation of small excitations (e.g. gravitational
+waves) in the ten-dimensional spatial geometry. Indeed,
+taking RTb → 0 in the linearized Einstein-Hilbert
+action
+
+S = 12 dT d10 x ρb (∂T hij )2 − Tb (∂x hij )2 is equivalent
+to taking
+the limit of vanishing velocity of propagation
+p
+c = Tb /ρb ; alternatively, it may be viewed as a strong
+coupling limit (GN → ∞) [3]. Physically, this limit is
+realized near a spacelike singularity, where the different
+spatial points become causally disconnected as the horizon scale ℓH ∼ cT becomes smaller than their spacelike
+separation (T being the proper time), provided the time
+derivatives of the fields dominate their spatial gradients.
+As shown recently [4,5], this is indeed the case for the
+massless bosonic sector of D = 11 supergravity. Furthermore, as Tb → 0, the metric exhibits the chaotic oscillations originally discovered by Belinskii, Khalatnikov and
+Lifshitz (BKL) for the generic cosmological solution to
+Einstein’s equations in four dimensions [6]. The oscillatory evolution of the metric at each spatial point can be
+asymptotically described as a relativistic billiard taking
+place in the fundamental Weyl chamber of some indefinite Kac-Moody (KM) algebra [4,5]. Chaos occurs when
+this KM algebra is hyperbolic, in particular for E10 [7].
+
+In this Letter we extend these tantalizing results much
+beyond the leading order by relating a BKL-type expansion to an algebraic expansion in the height of the positive
+roots of the Lie algebra of E10 . We show how to map, up
+to height 30, geometrical objects of M theory onto coordinates in the infinite-dimensional coset space E10 /K(E10 ),
+where K(E10 ) is the maximal compact subgroup of the
+canonical real form of E10 . Under this correspondence,
+the time evolution of the geometric M Theory data at
+each spatial point is mapped, up to height 30, onto some
+(constrained) null geodesic motion of E10 /K(E10 ). Our
+results underline the potential importance of E10 , whose
+appearance in the reduction of D = 11 supergravity to
+one dimension had been conjectured already long ago by
+B. Julia [8], as a candidate symmetry underlying M theory (see also [9], and [10] where E11 was proposed as a
+fundamental symmetry of M Theory).
+Introducing a zero-shift slicing (N i = 0) of the elevendimensional spacetime, and a time-independent spatial
+zehnbein θa (x) ≡ E a i (x)dxi , the metric and four form
+F = dA become
+ds2 = −N 2 (dx0 )2 + Gab θa θb
+(1)
+1
+1
+F = F0abc dx0 ∧θa ∧θb ∧θc + Fabcd θa ∧θb ∧θc ∧θd
+3!
+4!
+We choose
+the time coordinate x0 so that the lapse
+√
+N = G, with G
+Gab (note that x0 is not the
+R := det
+0
+proper time T = N dx ; rather, x0 → ∞ as T → 0). In
+this frame the complete evolution equations of D = 11
+supergravity read
+
+1
+GF αβγδ Fαβγδ δba
+∂0 Gac ∂0 Gcb = 61 GF aβγδ Fbβγδ − 72
+∂0 GF
+1
+
+0abc
+
+
+
+−2GRa b (Γ, C)
+1 abca1 a2 a3 b1 b2 b3 b4
+F0a1 a2 a3 Fb1 b2 b3 b4
+= 144
+ε
+
++ 32 GF de[ab C c] de − GC e de F dabc − ∂d GF dabc
+
+∂0 Fabcd = 6F0e[ab C e cd] + 4∂[a F0bcd]
+
+The “symmetric” projection vsym := 12 (v + v T ) eliminates the component of v corresponding to a displacement “along k”, thereby defining an evolution on the
+coset space E10 /K(E10 ). h.|.i is the standard invariant
+bilinear form on the KM algebra [11]. We note the existence of transcendental KM invariants [12] that might
+be added to (4) to represent non-perturbative effects.
+Because no closed form construction exists for the raising operators Eα,s , nor their invariant scalar products
+α 0
+hEα,s |Eβ,t i = Ns,t
+δα+β , we have devised a recursive approach based on the decomposition of E10 into irreducible
+representations of its SL(10, R) subgroup. Let α1 , . . . , α9
+be the nine simple roots of A9 ≡ sl(10) corresponding to
+the horizontal line in the E10 Dynkin diagram, and α0
+the “exceptional” root connected to α3 . Its dual CSA element h0 enlarges A9 to the Lie algebra of GL(10). Any
+positive root of E10 can be written as
+
+
+
+(2)
+
+where a, b ∈ {1, . . . , 10} and α, β ∈ {0, 1, . . . , 10}, and
+Rab (Γ, C) denotes the spatial Ricci tensor; the (frame)
+connection components are given by 2Gad Γd bc = Cabc +
+Cbca −Ccab +∂b Gca +∂c Gab −∂a Gbc with C a bc ≡ Gad Cdbc
+being the structure coefficients of the zehnbein dθa =
+1 a
+b c
+i
+2 C bc θ ∧θ . The frame derivative is ∂a ≡ E a (x)∂i (with
+a
+i
+a
+E i E b = δb ). To determine the solution at any given
+spatial point x requires knowledge of an infinite tower of
+spatial gradients: one should thus augment (2) by evolution equations for ∂a Gbc , ∂a F0bcd , ∂a Fbcde , etc., which in
+turn would involve higher and higher spatial gradients.
+The geodesic Lagrangian on E10 /K(E10 ) is defined by
+generalizing the standard Lagrangian on a finite dimensional coset space G/K, where K is a maximal compact
+subgroup of the Lie group G. All the elements entering
+the construction of L have natural generalizations to the
+case where G is the group obtained by exponentiation of
+a hyperbolic KM algebra. We refer readers to [11] for
+basic definitions and results of the theory of KM algebras, and here only recall that a KM algebra g ≡ g(A)
+is generally defined by means of a Cartan matrix A and
+a set of generators {ei , fi , hi } and relations (ChevalleySerre presentation), where i, j = 1, . . . , r ≡ rank g(A).
+The elements {hi } span the Cartan subalgebra (CSA) h,
+while the ei and fi generate an infinite tower of raising and lowering operators, respectively. The “maximal compact” subalgebra k is defined as the subalgebra of g(A) left invariant under the Chevalley involution
+ω(hi ) = −hi , ω(ei ) = −fi , ω(fi ) = −ei . In other words,
+T
+k is spanned by the “antisymmetric” elements Eα,s −Eα,s
+,
+T
+where Eα,s ≡ −ω(Eα,s ) is the “transpose” of some multiple commutator Eα,s of the ei ’s associated with the
+root α (i.e. [h, Eα,s ] = α(h)Eα,s for h ∈ h). Here
+s = 1, . . . mult(α) labels the different elements of g(A)
+having the same root α.
+The σ-model is formulated in terms of a one-parameter
+dependent group element V = V(t) ∈ E10 and its Lie algebra valued derivative
+v(t) :=
+
+dV −1
+V (t) ∈ e10 ≡ Lie E10
+dt
+
+α = ℓα0 +
+
+j=1
+
+−1
+
+hvsym (t)|vsym (t)i
+
+mj αj
+
+(ℓ, mj ≥ 0)
+
+(5)
+
+We call ℓ ≡ ℓ(α) the “level” of the root α. This definition differs from the usual one, where the (affine) level is
+identified with m9 and thus counts the number of appearances of the over-extended root α9 in α [13,14]. Hence,
+our decomposition corresponds to a slicing (or “grading”)
+of the forward lightcone in the root lattice by spacelike
+hyperplanes, with only finitely many roots in each slice,
+as opposed to the lightlike slicing for the E9 representations (involving not only infinitely many roots but also
+infinitely many affine representations for m9 ≥ 2 [13,14]).
+The adjoint action of the A9 subalgebra leaves the
+level ℓ(α) invariant. The set of generators corresponding to a given level ℓ can therefore be decomposed into
+a (finite) number of irreducible representations of A9 .
+The multiplicity of α as a root of E10 is thus equal to
+the sum of its multiplicities as a weight occurring in the
+SL(10, R) representations. Each irreducible representation of A9 can be characterized by its highest weight Λ,
+or equivalently by its Dynkin labels (p1 , . . . , p9 ) where
+pk (Λ) := (αk , Λ) ≥ 0 is the number of columns with
+k boxes in the associated Young tableau. For instance,
+the Dynkin labels (001000000) correspond to a Young
+tableau consisting of one column with three boxes, i.e.
+the antisymmetric tensor with three indices. The Dynkin
+labels are related to the 9-tuple of integers (m1 , . . . , m9 )
+appearing in (5) (for the highest weight Λ ≡ −α) by
+
+(3)
+
+In physical terms, V can be thought of as a vast extension
+of the vielbein of general relativity (an “∞-bein”), and
+E10 and K(E10 ) as infinite dimensional generalizations
+of the GL(d, R) and localR Lorentz symmetries of general
+relativity. The action is dtL with
+L := n(t)
+
+9
+X
+
+S i3 ℓ −
+
+9
+X
+j=1
+
+S ij pj = mi ≥ 0
+
+(6)
+
+where S ij is the inverse Cartan matrix of A9 . This relation strongly constrains the representations that can appear at level ℓ, because the entries of S ij are all positive,
+and the 9-tuples (p1 , . . . , p9 ) and (m1 , . . . , m9 ) must both
+consist of non-negative integers. In addition to satisfying
+
+(4)
+
+with a “lapse” function n(t) (not to be confused with
+N ), whose variation gives rise to the Hamiltonian constraint ensuring that the trajectory is a null geodesic.
+2
+
+where g ab = ea c eb c with ea b ≡ (exp h)a b , and all “contravariant indices” have been raised by g ab . The “covariant” time derivatives are defined by (with ∂A ≡ Ȧ)
+
+the Diophantine equations (6), the highest weights must
+be roots of E10 , which implies the inequality
+Λ2 = α2 =
+
+9
+X
+i,j=1
+
+1 2
+pi S ij pj − 10
+ℓ ≤2
+
+(7)
+
+DAa1 a2 a3 := ∂Aa1 a2 a3
+DAa1 ...a6 := ∂Aa1 ...a6 + 10A[a1 a2 a3 ∂Aa4 a5 a6 ]
+DAa1 |a2 ...a9 := ∂Aa1 |a2 ...a9 + 42Aha1 a2 a3 ∂Aa4 ...a9 i
+
+All representations occurring at level ℓ + 1 are contained
+in the product of the level-ℓ representations with the
+ℓ = 1 representation. Imposing the Diophantine inequalities (6), (7) allows one to discard many representations
+appearing in this product. The problem of finding a completely explicit and manageable representation of E10 in
+terms of an infinite tower of A9 representations is thereby
+reduced to the problem of determining the outer multiplicities of the surviving A9 representations, namely the
+number of times each representation appears at a given
+level ℓ. The Dynkin labels (all appearing with outer multiplicity one) for the first six levels of E10 are
+ℓ=1
+ℓ=2
+
+:
+:
+
+(001000000)
+(000001000)
+
+ℓ=3
+ℓ=4
+
+:
+:
+
+(100000010)
+(001000001) , (200000000)
+
+ℓ=5
+ℓ=6
+
+:
+:
+
+(000001001) , (100100000)
+(100000011) , (010001000) ,
+(100000100) , (000000010)
+
+(10)
+
+−42∂Aha1a2 a3 Aa4 ...a9 i + 280Aha1 a2 a3 Aa4 a5 a6 ∂Aa7 a8 a9 i
+Here antisymmetrization [. . .], and projection on the
+ℓ = 3 representation h. . .i, are normalized with strength
+one (e.g. [[. . .]] = [. . .]). Modulo field redefinitions, all
+numerical coefficients in (9) and (10) are uniquely fixed
+by the structure of E10 . Our expressions are reminiscent
+of similar algebraic constructions in [15] and [10]. However, this is the first time that an algorithmic scheme
+based on a Lagrangian in terms of the invariant bilinear
+form on the hyperbolic KM algebra has been proposed
+and worked out to low orders. Likewise, the general formulas (6) and (7), and the higher level representations in
+(8) have not been exhibited before.
+The Lagrangian (4) is invariant under a nonlinear realization of E10 such that V(t) → kg (t)V(t)g with g ∈ E10 ;
+the compensating “rotation” kg (t) being, in general, required to restore the “triangular gauge”. When g belongs
+to the nilpotent subgroup generated by the E abc , etc.,
+this symmetry reduces to the rather obvious “shift” symmetries of (9) and no compensating rotation is needed.
+The latter are, however, required for the transformations
+generated by Fabc = (E abc )T , etc. The associated infinite number of conserved (Noether) charges are formally
+given by J = M−1 ∂M, where M ≡ V T V. This can be
+formally solved in closed form as
+
+(8)
+
+The level ℓ ≤ 4 representations can be easily determined
+by comparison with the decomposition of E8 under its
+A7 subalgebra (see [15,16]) and use of the Jacobi identity, which eliminates the representations (000000001) at
+level three and (010000000) at level four. By use of a
+computer and the E10 root multiplicities listed in [14,17],
+the calculation can be carried much further [18].
+From (8) we can now directly read off the GL(10)
+tensors making up the low level elements of E10 . At
+level zero, we have the GL(10) generators K a b obeying
+[K a b , K c d ] = K a d δbc − K c b δda . The e10 elements at levels
+ℓ = 1, 2, 3 are the GL(10) tensors E a1 a2 a3 , E a1 ...a6 and
+E a0 |a1 ...a8 with the symmetries implied by the Dynkin
+labels (for the first three levels these representions occur
+for all En , see [19,10]). The σ-model associates to these
+generators a corresponding tower of “fields” (depending
+only on the “time” t): a zehnbein ha b (t) at level zero,
+a three form Aabc (t) at level one, a six-form Aa1 ...a6 (t)
+at level two, a Young-tensor Aa0 |a1 ...a8 (t) at level 3, etc.
+Writing the generic E10 group element in Borel (triangular) gauge as V(t) = exp Xh (t) · exp XA (t) with Xh (t) =
+1
+1
+Aabc E abc + 6!
+Aa1 ...a6 E a1 ...a6 +
+ha b K b a and XA (t) = 3!
+1
+a0 |a1 ...a8
++ . . ., and using the E10 commuta9! Aa0 |a1 ...a8 E
+tion relations in GL(10) form together with the bilinear
+form for E10 , we find up to third order in level
+
+M(t) = M(0) · exp(tJ)
+
+(11)
+
+The compatibility between (11) (indicative of the integrability of (9)) and the chaotic behavior of gab (t) near a
+spacelike singularity will be discussed elsewhere.
+The main result that we report in this letter is the
+following: there exists a map between geometrical quantities constructed at a given spatial point x from the supergravity fields Gµν (x0 , x) and Aµνρ (x0 , x) and the oneparameter-dependent quantities gab (t), Aabc (t), . . . entering the coset Lagrangian (9), under which the supergravity equations of motion (2) become equivalent, up
+to 30th order in height, to the Euler-Lagrange equations of (9).
+In
+√ the gauge (1) this map is defined by
+R
+t = x0 ≡ dT / G and
+gab (t) = Gab (t, x)
+DAa1 a2 a3 (t) = F0a1 a2 a3 (t, x)
+
+1 a1 ...a6 b1 b2 b3 b4
+Fb1 b2 b3 b4 (t, x)
+ε
+DAa1 ...a6 (t) = − 4!
+
+1
+nL = 14 (g ac g bd − g ab g cd )ġab ġcd + 21 3!
+DAa1 a2 a3 DAa1 a2 a3
+
+(12)
+
+
+b
+1
+1
+C c b2 ]c (x)
++ 21 6!
+DAa1 ...a6 DAa1 ...a6 + 21 9!
+DAa0 |a1 ...a8 DAa0 |a1 ...a8 (9) DAb|a1 ...a8 (t) = 32 εa1 ...a8 b1 b2 C b b1 b2 (x) + 92 δ[b
+1
+3
+
+P
+The expansion in height ht(α) ≡ ℓ+ mj , which controls
+the iterative validity of this equivalence, is as follows: the
+Hamiltonian constraint of the coset model (9) contains an
+
+infinite series of exponential coefficients exp − 2α(β) ,
+where α runs over all positive roots of E10 , and where
+β a ≡ −ha a parametrize the CSA of E10 . Previous work
+has shown that, near a spacelike singularity (t → ∞),
+the dynamics of the supergravity fields and of truncated
+versions of the E10 coset fields is asymptotically dominated by the (hyperbolic) Toda model defined by keeping only the exponentials involving the simple roots of
+E10 . Higher roots introduce smaller and smaller corrections as t increases. The “small tension expansion” of
+the equations of motion is then technically defined as
+a formal BKL-like expansion that corresponds to such
+an expansion in decreasing exponentials of the Hamiltonian constraint. On the supergravity side, this expansion
+amounts to an expansion in gradients of the fields in appropriate frames. Level one corresponds to the simplest
+one-dimensional reduction of (2), obtained by assuming
+that both Gµν and Aλµν depend only on time [4]; levels 2
+and 3 correspond to configurations of Gµν and Aλµν with
+a more general, but still very restricted x-dependence, so
+that e.g. the frame derivatives of the electromagnetic
+field in (2) drop out [20]. When neglecting terms corresponding to ht(α) ≥ 30, the map (12) provides a perfect
+match between the supergravity evolution equations (2)
+and the E10 coset ones, as well as between the associated
+Hamiltonian constraints. (In fact, the matching extends
+to all real roots of level ≤ 3.)
+It is natural to view our map as embedded in a hierarchical sequence of maps involving more and more spatial
+gradients of the basic supergravity fields. Our BKL-like
+expansion would then be a way of revealing step by step
+a hidden hyperbolic symmetry, implying the existence of
+a huge non-local symmetry of Einstein’s theory and its
+generalizations. Although the validity of this conjecture
+remains to be established, we can at least show that there
+is “enough room” in E10 for all the spatial gradients.
+Namely, the search for affine roots (with m9 = 0) in (6)
+and (7) reveals three infinite sets of admissible A9 Dynkin
+labels (00100000n), (00000100n) and (10000001n) with
+highest weights obeying Λ2 = 2, at levels ℓ = 3n+1, 3n+2
+and 3n + 3, respectively. These correspond to three infinite towers of e10 elements
+Ea1 ...an b1 b2 b3 , Ea1 ...an b1 ...b6 , Ea1 ...an b0 |b1 ...b8
+
+E10 Lie algebra elements (13) to the higher order spatial gradients ∂ a1 · · · ∂ an Ab1 b2 b3 , ∂ a1 · · · ∂ an Ab1 ...b6 and
+∂ a1 · · · ∂ an Ab0 |b1 ...b8 or to some of their non-local equivalents. Of course, the elements (13) generate only a tiny
+subspace of e10 , suggesting the existence of further M theoretic degrees of freedom and corrections beyond D = 11
+supergravity. Finally, we note that our approach based
+on a height expansion can be extended to other physically
+relevant KM algebras, such as BE10 [5,22] and AEn [7].
+We thank A. Feingold, T. Fischbacher and V. Kac for
+informative discussions.
+
+[1] D. Gross, Phys. Rev. Lett. 60, 1229 (1988)
+[2] E. Cremmer, B. Julia and J. Scherk, Phys. Lett. B76,
+409 (1978).
+[3] C. J. Isham, Proc. Roy. Soc. Lond. A 351, 209 (1976); C.
+Teitelboim, in: General Relativity and Gravitation, vol
+1, A. Held ed., Plenum Press, 1980.
+[4] T. Damour and M. Henneaux, Phys. Rev. Lett. 85, 920
+(2000); Phys. Lett. B488, 108 (2000)
+[5] T. Damour and M. Henneaux, Phys. Rev. Lett. 86, 4749
+(2001)
+[6] V.A. Belinskii, I.M. Khalatnikov and E.M. Lifshitz, Adv.
+Phys. 19, 525 (1970); Adv. Phys. 31, 639 (1982).
+[7] T. Damour, M. Henneaux, B. Julia and H. Nicolai, Phys.
+Lett. B509, 323 (2001)
+[8] B. Julia, in: Lectures in Applied Mathematics, Vol. 21,
+AMS-SIAM, p.335, 1985; preprint LPTENS 80/16.
+[9] S. Mizoguchi, Nucl. Phys. B528, 238 (1998)
+[10] P.C. West, Class. Quant. Grav. 18 (2001) 4443
+[11] V.G. Kac, Infinite Dimensional Lie Algebras, 3rd edn.,
+Cambridge University Press, 1990
+[12] D. Peterson and V.G. Kac, Proc. Nat. Acad.Sci. USA 80,
+1778 (1983)
+[13] A.J. Feingold and I.B. Frenkel, Math. Ann. 263, 87
+(1983)
+[14] V.G. Kac, R.V. Moody and M. Wakimoto, in: Differential Geometric Methods in Theoretical Physics,
+NATO Advanced Research Workshop, eds. K. Bleuler
+and M. Werner, (Kluwer, 1988).
+[15] E. Cremmer, B. Julia, H. Lu, and C. N. Pope, Nucl. Phys.
+B523, 73 (1998); Nucl. Phys. B535, 242 (1998)
+[16] K. Koepsell, H. Nicolai, and H. Samtleben, Class. Quant.
+Grav. 17, 3689 (2000).
+[17] O. Bärwald, R.W. Gebert and H. Nicolai, Nucl. Phys.
+B510, 721 (1998)
+[18] T. Fischbacher, work in progress.
+[19] N.A. Obers, B. Pioline and E. Rabinovici, Nucl. Phys.
+B525, 163 (1998)
+[20] J. Demaret, J.L. Hanquin, M. Henneaux and P. Spindel,
+Nucl. Phys. B252, 538 (1985)
+[21] P. Breitenlohner and D. Maison, Ann. Inst. Poincaré 46
+215 (1987); H. Nicolai, Phys. Lett. 194, 402 (1987).
+[22] E. Cremmer, B. Julia, H. Lu and C. N. Pope, arXiv:hepth/9909099.
+
+(13)
+
+which are symmetric in the lower indices and all appear with outer multiplicity one (together with three
+transposed towers). Restricting the indices to ai =
+1 and bi ∈ {2, ..., 10} and using the decomposition
+248 → 80 + 84 + 84 of E8 under its SL(9) subgroup
+one easily recovers the affine subalgebra E9 ⊂ E10 .
+The appearance of higher order dual potentials (à la
+Geroch) in the E9 -based linear system for D = 2 supergravity [21] indeed suggests that we associate the
+4
+
+

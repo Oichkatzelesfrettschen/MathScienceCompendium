@@ -29,6 +29,10 @@ class TestE6E7Roots(unittest.TestCase):
         cartan = e7.compute_cartan_matrix()
         det = np.linalg.det(cartan)
         self.assertAlmostEqual(det, 2.0)
+        off_diagonal = cartan.copy()
+        np.fill_diagonal(off_diagonal, 0.0)
+        self.assertTrue(np.all(off_diagonal <= 0.0))
+        self.assertTrue(np.all(np.linalg.eigvalsh(cartan) > 0.0))
 
         # Verify rank
         self.assertEqual(e7.properties.rank, 7)

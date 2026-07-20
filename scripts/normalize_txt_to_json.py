@@ -15,6 +15,7 @@ REGISTRY = REPO_ROOT / "data" / "registry" / "corpus_index.toml"
 
 EXCLUDED_PREFIXES = {
     ".git/",
+    "build/",
     "data/normalized/",
     "data/external/fetch_traces/",
     "venv/",
@@ -65,16 +66,18 @@ def should_include(relpath: str) -> bool:
 
 def to_toml(entries: list[dict[str, str | int]]) -> str:
     lines: list[str] = []
-    lines.append("generated_by = \"scripts/normalize_txt_to_json.py\"")
-    lines.append(f"generated_at_utc = \"{now_utc_iso()}\"")
+    lines.append('generated_by = "scripts/normalize_txt_to_json.py"')
+    lines.append(f'generated_at_utc = "{now_utc_iso()}"')
     lines.append("")
     for entry in entries:
         lines.append("[[documents]]")
-        lines.append(f"id = \"{entry['id']}\"")
-        lines.append(f"source_relpath = \"{entry['source_relpath']}\"")
-        lines.append(f"normalized_relpath = \"{entry['normalized_relpath']}\"")
-        lines.append(f"category = \"{entry['category']}\"")
-        lines.append(f"sha256 = \"{entry['sha256']}\"")
+        lines.append(f"id = {json.dumps(entry['id'], ensure_ascii=True)}")
+        lines.append(f"source_relpath = {json.dumps(entry['source_relpath'], ensure_ascii=True)}")
+        lines.append(
+            f"normalized_relpath = {json.dumps(entry['normalized_relpath'], ensure_ascii=True)}"
+        )
+        lines.append(f"category = {json.dumps(entry['category'], ensure_ascii=True)}")
+        lines.append(f"sha256 = {json.dumps(entry['sha256'], ensure_ascii=True)}")
         lines.append(f"line_count = {entry['line_count']}")
         lines.append(f"size_bytes = {entry['size_bytes']}")
         lines.append("")

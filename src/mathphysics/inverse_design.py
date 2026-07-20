@@ -6,6 +6,7 @@ optimizing spectral weights to target specific flow topologies.
 
 from __future__ import annotations
 
+from collections.abc import Callable  # noqa: TC003
 from typing import TYPE_CHECKING, Any
 
 import jax
@@ -56,13 +57,20 @@ class InverseDesignOptimizer:
     def __init__(self, target_vorticity: jnp.ndarray) -> None:
         self.target = target_vorticity
 
-    def loss_function(self, weights: jnp.ndarray, simulation_func: callable) -> float:
+    def loss_function(
+        self,
+        weights: jnp.ndarray,
+        simulation_func: Callable[[jnp.ndarray], jnp.ndarray],
+    ) -> jnp.ndarray:
         """Calculate MSE between simulated and target vorticity."""
         sim_vorticity = simulation_func(weights)
         return jnp.mean((sim_vorticity - self.target) ** 2)
 
     def optimize(
-        self, initial_weights: jnp.ndarray, simulation_func: callable, steps: int = 50
+        self,
+        initial_weights: jnp.ndarray,
+        simulation_func: Callable[[jnp.ndarray], jnp.ndarray],
+        steps: int = 50,
     ) -> jnp.ndarray:
         """Optimize weights via gradient descent."""
         grad_func = jax.grad(self.loss_function)

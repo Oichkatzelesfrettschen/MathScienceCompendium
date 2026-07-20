@@ -50,7 +50,7 @@ class E8Lattice:
 
     def packing_density(self) -> float:
         """Density delta_8 = pi^4 / 384."""
-        return (np.pi**4) / 384.0
+        return float((np.pi**4) / 384.0)
 
 
 class LeechLattice:

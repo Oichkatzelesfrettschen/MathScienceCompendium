@@ -1,0 +1,38 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://mathsciencecompendium.local/schemas/registry/experimental_admission_packages.schema.json",
+  "title": "ExperimentalAdmissionPackages",
+  "type": "object",
+  "required": ["schema_version", "description", "packages"],
+  "properties": {
+    "schema_version": {"const": 1},
+    "description": {"type": "string", "minLength": 1},
+    "packages": {
+      "type": "array",
+      "minItems": 6,
+      "maxItems": 6,
+      "items": {
+        "type": "object",
+        "required": ["claim_id", "package_kind", "current_outcome", "measurable", "admission_ready", "established_baseline", "mechanism_under_test", "source_ids", "observables", "controls", "energy_accounting", "acceptance_criteria", "rejection_criteria", "missing_required_evidence"],
+        "properties": {
+          "claim_id": {"type": "string", "pattern": "^[a-z0-9_]+$"},
+          "package_kind": {"enum": ["field_theory_model", "closed_cycle_energy_accounting", "driven_phase_energy_accounting", "materials_experiment", "measurability_exclusion"]},
+          "current_outcome": {"enum": ["bounded", "rejected", "excluded"]},
+          "measurable": {"type": "boolean"},
+          "admission_ready": {"type": "boolean"},
+          "established_baseline": {"type": "string", "minLength": 1},
+          "mechanism_under_test": {"type": "string", "minLength": 1},
+          "source_ids": {"type": "array", "items": {"type": "string", "minLength": 1}, "uniqueItems": true},
+          "observables": {"type": "array", "items": {"type": "object", "required": ["name", "unit", "measurement"], "additionalProperties": false, "properties": {"name": {"type": "string", "pattern": "^[a-z0-9_]+$"}, "unit": {"type": "string", "minLength": 1}, "measurement": {"type": "string", "minLength": 1}}}},
+          "controls": {"type": "array", "items": {"type": "string", "minLength": 1}},
+          "energy_accounting": {"type": "object", "required": ["required", "cycle_boundary", "closure_equation", "channels"], "additionalProperties": false, "properties": {"required": {"type": "boolean"}, "cycle_boundary": {"type": "string", "minLength": 1}, "closure_equation": {"type": "string", "minLength": 1}, "channels": {"type": "array", "items": {"type": "object", "required": ["name", "direction", "measurement_status"], "additionalProperties": false, "properties": {"name": {"type": "string", "pattern": "^[a-z0-9_]+$"}, "direction": {"enum": ["input", "output", "stored", "input_or_output"]}, "measurement_status": {"enum": ["measured", "unmeasured", "undefined"]}}}}}},
+          "acceptance_criteria": {"type": "array", "minItems": 1, "items": {"type": "string", "minLength": 1}},
+          "rejection_criteria": {"type": "array", "minItems": 1, "items": {"type": "string", "minLength": 1}},
+          "missing_required_evidence": {"type": "array", "minItems": 1, "items": {"type": "string", "minLength": 1}}
+        },
+        "additionalProperties": false
+      }
+    }
+  },
+  "additionalProperties": false
+}

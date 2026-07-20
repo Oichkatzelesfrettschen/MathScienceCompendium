@@ -2,11 +2,7 @@
 
 from __future__ import annotations
 
-import sys
-from pathlib import Path
 from unittest.mock import patch
-
-import pytest
 
 from mathphysics.main import main, run_experiments
 
@@ -47,9 +43,9 @@ def test_main_module_e8(capsys):
     """main() --module e8 prints algebra catalog."""
     with patch("sys.argv", ["mathphysics", "--module", "e8"]):
         main()
-    captured = capsys.readouterr()
+    capsys.readouterr()
     # Should print something from ExceptionalLieAlgebras.get_all()
-    assert captured.out != "" or True  # permissive -- just verify no exception
+    assert True  # permissive -- just verify no exception
 
 
 def test_main_module_lattice(tmp_path):

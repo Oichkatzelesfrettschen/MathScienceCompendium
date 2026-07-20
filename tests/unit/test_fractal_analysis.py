@@ -19,8 +19,7 @@ Covers:
 
 from __future__ import annotations
 
-import json
-from pathlib import Path
+from typing import TYPE_CHECKING
 
 import numpy as np
 import pytest
@@ -32,6 +31,10 @@ from mathphysics.fractal_analysis import (
     SelfSimilarityAnalyzer,
     analyze_fractal_dimensions,
 )
+
+
+if TYPE_CHECKING:
+    from pathlib import Path
 
 
 # ---------------------------------------------------------------------------
@@ -85,8 +88,16 @@ def test_fractal_dimension_result_to_dict_keys():
         metadata={"num_points": 200},
     )
     d = result.to_dict()
-    for key in ("method", "dimension", "error", "r_squared", "scales", "measures",
-                "confidence_interval", "metadata"):
+    for key in (
+        "method",
+        "dimension",
+        "error",
+        "r_squared",
+        "scales",
+        "measures",
+        "confidence_interval",
+        "metadata",
+    ):
         assert key in d, f"Key '{key}' missing from to_dict() output"
 
 

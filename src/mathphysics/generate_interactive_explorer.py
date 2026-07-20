@@ -13,6 +13,7 @@ import numpy as np
 from sklearn.decomposition import PCA
 
 from mathphysics.algebras.roots import (
+    BaseRootSystem,
     E4RootSystem,
     E5RootSystem,
     E6RootSystem,
@@ -22,6 +23,7 @@ from mathphysics.algebras.roots import (
     E10RootSystem,
     E11RootSystem,
     F4RootSystem,
+    KacMoodyAlgebra,
 )
 from mathphysics.config import Config
 from mathphysics.interactive_explorer_template import HTML_TEMPLATE
@@ -29,7 +31,7 @@ from mathphysics.interactive_explorer_template import HTML_TEMPLATE
 
 def generate_explorer_data() -> list[dict[str, Any]]:
     """Generate all root system data for the interactive explorer."""
-    systems = [
+    systems: list[BaseRootSystem | KacMoodyAlgebra] = [
         E4RootSystem(),
         E5RootSystem(),  # D5
         F4RootSystem(),
@@ -44,22 +46,21 @@ def generate_explorer_data() -> list[dict[str, Any]]:
     data = []
     pca = PCA(n_components=3)
 
-    for sys in systems:
-        # Get name and handle different class structures
-        if hasattr(sys, "properties"):
-            sys_name = sys.properties.name
-            sys_rank = sys.properties.rank
+    for system in systems:
+        if isinstance(system, BaseRootSystem):
+            system_name = system.properties.name
+            system_rank = system.properties.rank
         else:
-            sys_name = sys.name
-            sys_rank = sys.rank
+            system_name = system.name
+            system_rank = system.rank
 
-        print(f"[EXPLORER] Processing {sys_name}...")
+        print(f"[EXPLORER] Processing {system_name}...")
 
         # Handle finite vs Kac-Moody
-        if hasattr(sys, "generate_roots"):
-            roots = sys.generate_roots()
-            if sys_name == "E7":
-                roots = sys.generate_roots(include_zero=False)
+        if isinstance(system, BaseRootSystem):
+            roots = system.generate_roots()
+            if isinstance(system, E7RootSystem):
+                roots = system.generate_roots(include_zero=False)
 
             # Perform PCA to 3D
             if len(roots) > 3:
@@ -70,7 +71,7 @@ def generate_explorer_data() -> list[dict[str, Any]]:
 
             # Get Cartan matrix and determinant
             try:
-                cartan = sys.compute_cartan_matrix()
+                cartan = system.compute_cartan_matrix()
                 det = float(np.linalg.det(cartan))
             except (AttributeError, ValueError, np.linalg.LinAlgError):
                 det = 0.0
@@ -92,9 +93,9 @@ def generate_explorer_data() -> list[dict[str, Any]]:
 
             data.append(
                 {
-                    "name": sys_name,
-                    "rank": sys_rank,
-                    "dim": sys.properties.dimension,
+                    "name": system_name,
+                    "rank": system_rank,
+                    "dim": system.properties.dimension,
                     "roots": roots.tolist(),
                     "roots3d": roots_3d.tolist(),
                     "det": round(det, 2),
@@ -103,7 +104,7 @@ def generate_explorer_data() -> list[dict[str, Any]]:
                 }
             )
         # Handle Kac-Moody (E9-E11) - generate a finite subset of roots
-        elif sys_name == "E9":
+        elif isinstance(system, E9RootSystem):
             e8 = E8RootSystem()
             e8_roots = e8.generate_roots()
             # Create shells for n = -1, 0, 1
@@ -119,7 +120,7 @@ def generate_explorer_data() -> list[dict[str, Any]]:
 
             data.append(
                 {
-                    "name": sys_name,
+                    "name": system_name,
                     "rank": 9,
                     "dim": "Infinite",
                     "roots": roots.tolist()[:240],  # Sample for tooltip
@@ -131,8 +132,8 @@ def generate_explorer_data() -> list[dict[str, Any]]:
             # E10, E11 placeholders - empty for now or generate small sample
             data.append(
                 {
-                    "name": sys_name,
-                    "rank": sys_rank,
+                    "name": system_name,
+                    "rank": system_rank,
                     "dim": "Infinite",
                     "roots": [],
                     "roots3d": [],
@@ -143,7 +144,7 @@ def generate_explorer_data() -> list[dict[str, Any]]:
     return data
 
 
-def build_explorer_site():
+def build_explorer_site() -> None:
     """Assemble the HTML template with data and save to figures."""
     data = generate_explorer_data()
     json_data = json.dumps(data)

@@ -22,6 +22,7 @@ from __future__ import annotations
 import numpy as np
 import pytest
 
+
 jax = pytest.importorskip("jax")
 jnp = pytest.importorskip("jax.numpy")
 
@@ -102,14 +103,10 @@ def test_alb_coherence_shape(albm):
 
 
 def test_alb_weights_jax_array(albm):
-    import jax.numpy as jnp
-
     assert isinstance(albm.weights, jnp.ndarray)
 
 
 def test_alb_velocities_jax_array(albm):
-    import jax.numpy as jnp
-
     assert isinstance(albm.velocities, jnp.ndarray)
 
 
@@ -127,12 +124,12 @@ def test_alb_cs2_value(albm):
 
 
 def test_update_macroscopic_density_shape(albm):
-    density, velocity = AcceleratedLBM.update_macroscopic(albm.f, albm.velocities)
+    density, _velocity = AcceleratedLBM.update_macroscopic(albm.f, albm.velocities)
     assert density.shape == (NX, NY)
 
 
 def test_update_macroscopic_velocity_shape(albm):
-    density, velocity = AcceleratedLBM.update_macroscopic(albm.f, albm.velocities)
+    _density, velocity = AcceleratedLBM.update_macroscopic(albm.f, albm.velocities)
     assert velocity.shape == (NX, NY, 2)
 
 
@@ -166,9 +163,7 @@ def test_get_equilibrium_sums_to_density(albm):
     )
     # Sum over directions should equal density
     f_eq_sum = jnp.sum(f_eq, axis=-1)
-    np.testing.assert_allclose(
-        np.array(f_eq_sum), np.array(density), rtol=1e-5
-    )
+    np.testing.assert_allclose(np.array(f_eq_sum), np.array(density), rtol=1e-5)
 
 
 # ---------------------------------------------------------------------------
@@ -197,7 +192,7 @@ def test_step_f_shape_preserved(albm):
 
 def test_step_multiple_times(albm):
     key = jax.random.PRNGKey(3)
-    for i in range(3):
+    for _i in range(3):
         key, subkey = jax.random.split(key)
         albm.step(subkey)
     assert albm.iteration == 3

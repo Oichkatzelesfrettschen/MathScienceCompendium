@@ -1,0 +1,245 @@
+{
+  "schema_version": 1,
+  "generator": "manual_claim_audit_v1",
+  "description": "Machine-readable falsification record for every critique reported in the active paper.",
+  "claims": [
+    {
+      "id": "planck_force_unification",
+      "critique": "The value c to the fourth divided by G proves force unification",
+      "falsification_attempt": "Search the retained sources for field content, a common gauge structure, derived couplings, or a distinguishing prediction. The corpus supplies dimensional identities and interpretations but no such derivation.",
+      "status": "survives",
+      "verdict": "The identity defines a force scale, not a unification mechanism.",
+      "evidence_paths": [
+        "source_materials/pdfs/SUPERFORCE---S.C.Pais---2023.pdf",
+        "source_materials/pdfs/Comment_on_the_Pais_Superforce_Theory.pdf"
+      ]
+    },
+    {
+      "id": "hbar_cancellation",
+      "critique": "Cancellation of hbar is independent physical evidence",
+      "falsification_attempt": "Expand Planck energy divided by Planck length. The cancellation is an algebraic consequence of the selected derived units.",
+      "status": "survives",
+      "verdict": "No independent macroscopic quantum effect follows from the cancellation.",
+      "evidence_paths": [
+        "source_materials/pdfs/SUPERFORCE---S.C.Pais---2023.pdf",
+        "papers/sections/review_physical_claims.tex"
+      ]
+    },
+    {
+      "id": "e7_root_quotient_charge",
+      "critique": "E7 roots carry nontrivial P/Q parity",
+      "falsification_attempt": "Classify all 126 generated roots. Every root belongs to the root lattice Q and therefore represents the zero coset.",
+      "status": "survives",
+      "verdict": "The stated root-class map is trivial.",
+      "evidence_paths": [
+        "src/mathphysics/algebras/roots.py",
+        "experiments/results/e8_analysis.json"
+      ]
+    },
+    {
+      "id": "external_fourier_quotient_map",
+      "critique": "No nontrivial Fourier-to-P/Q map can exist",
+      "falsification_attempt": "Enumerate every homomorphism from Z^2 to the E7 quotient P/Q isomorphic to Z/2 and impose square-lattice D4 symmetry. The unique nontrivial invariant map is h(kx,ky)=(kx+ky) mod 2.",
+      "status": "falsified",
+      "verdict": "A nontrivial symmetry-compatible map exists, but homomorphism additivity admits every exact triad and therefore supplies no nontrivial triad filter.",
+      "evidence_paths": [
+        "src/mathphysics/algebras/roots.py",
+        "src/mathphysics/fourier_quotient.py",
+        "data/registry/fourier_quotient_audit.json"
+      ]
+    },
+    {
+      "id": "modular_triad_filter",
+      "critique": "A modular triad filter drives the simulation",
+      "falsification_attempt": "Search the CPU, JAX, notebook, and high-resolution driver paths for quotient labels and a triad-admission predicate. Neither exists.",
+      "status": "survives",
+      "verdict": "The proposed operator is absent from the implemented dynamics.",
+      "evidence_paths": [
+        "src/mathphysics/quantum_lattice_boltzmann.py",
+        "src/mathphysics/accelerated_lbm.py",
+        "experiments/notebooks/06_turbulence_lbm.ipynb"
+      ]
+    },
+    {
+      "id": "beta_plane_dynamics",
+      "critique": "The retained dynamics implement a beta plane",
+      "falsification_attempt": "Trace every parameter into collision, forcing, and streaming. The notebook computes a beta value, but beta does not enter the evolution.",
+      "status": "survives",
+      "verdict": "Arithmetic after the run is not beta-dependent dynamics.",
+      "evidence_paths": [
+        "src/mathphysics/quantum_lattice_boltzmann.py",
+        "src/mathphysics/accelerated_lbm.py",
+        "experiments/run_exhaustive_experiments.py"
+      ]
+    },
+    {
+      "id": "root_enumeration_determinism",
+      "critique": "Root enumeration is nondeterministic",
+      "falsification_attempt": "Repeat generation across hash seeds and inspect the set-to-array boundary. The tested float tuples were stable, but set iteration was an unstated dependency; the generator now sorts lexicographically.",
+      "status": "repaired",
+      "verdict": "Enumeration is deterministic, while physical invariance under ordering remains unproved.",
+      "evidence_paths": [
+        "src/mathphysics/algebras/roots.py",
+        "tests/unit/test_roots.py"
+      ]
+    },
+    {
+      "id": "root_order_physical_relevance",
+      "critique": "Root order is physically irrelevant",
+      "falsification_attempt": "Compare the canonical density scaffold with controlled permutations. Reversal is exactly invariant because opposite roots share absolute coordinates, while a one-place cyclic shift changes the perturbation by 0.131 in relative L2.",
+      "status": "falsified",
+      "verdict": "One symmetry-related permutation is harmless, but index weighting remains load-bearing.",
+      "evidence_paths": [
+        "data/registry/lbm_root_order_audit.json",
+        "scripts/audit_lbm_root_order.py"
+      ]
+    },
+    {
+      "id": "high_resolution_mass_growth",
+      "critique": "The high-resolution run has catastrophic mass growth",
+      "falsification_attempt": "Read all retained Parquet states. Relative drift reaches only 5.60e-6 at step 500.",
+      "status": "narrowed",
+      "verdict": "Catastrophic growth belonged to the separate historical CPU demonstration.",
+      "evidence_paths": [
+        "data/registry/lbm_evidence_audit.json",
+        "results/highres_lbm_000500.parquet"
+      ]
+    },
+    {
+      "id": "cpu_mass_conservation",
+      "critique": "The historical CPU demonstration conserves mass",
+      "falsification_attempt": "Sum the historical D2Q9 equilibrium at nonzero velocity. Its coefficients applied the sound-speed factors twice, producing density times one plus nine times speed squared.",
+      "status": "repaired",
+      "verdict": "The historical critique survives, and the current equation and validator now pass conservation tests.",
+      "evidence_paths": [
+        "src/mathphysics/quantum_lattice_boltzmann.py",
+        "experiments/quantum_lbm_stable_results.json",
+        "tests/unit/test_unified_physics.py"
+      ]
+    },
+    {
+      "id": "four_zonal_jets",
+      "critique": "The retained run supports four zonal jets",
+      "falsification_attempt": "Measure the final state with a fixed diagnostic. Mode 17 dominates the small zonal-mean profile, which is only 1.22e-3 of total velocity RMS; the vorticity moment ratio is 0.992.",
+      "status": "survives",
+      "verdict": "A peak index alone does not establish a strong zonal regime.",
+      "evidence_paths": [
+        "data/registry/lbm_evidence_audit.json",
+        "scripts/analyze_retained_lbm.py"
+      ]
+    },
+    {
+      "id": "rhines_independence",
+      "critique": "The reported Rhines comparison is independent",
+      "falsification_attempt": "Trace beta_eff in the notebook. It is reconstructed from the observed velocity and peak wavenumber used in the comparison.",
+      "status": "survives",
+      "verdict": "The reported agreement is circular.",
+      "evidence_paths": [
+        "experiments/notebooks/06_turbulence_lbm.ipynb",
+        "papers/sections/review_physical_claims.tex"
+      ]
+    },
+    {
+      "id": "sugawara_fluid_transfer",
+      "critique": "Affine symmetry transfers to the fluid through the E8 label",
+      "falsification_attempt": "Search for currents, operator products, a stress tensor, and Ward tests. The repository supplies none.",
+      "status": "survives",
+      "verdict": "The Sugawara result does not transfer to the fluid model by naming.",
+      "evidence_paths": [
+        "src/mathphysics/algebras/loop_algebras.py",
+        "papers/sections/review_physical_claims.tex"
+      ]
+    },
+    {
+      "id": "imaginary_root_evanescence",
+      "critique": "Imaginary algebraic roots are evanescent spatial modes",
+      "falsification_attempt": "Search for a dimensional map between the Kac-Moody bilinear form and a spatial dispersion relation. None is defined.",
+      "status": "survives",
+      "verdict": "The identification conflates different quadratic forms.",
+      "evidence_paths": [
+        "src/mathphysics/algebras/roots.py",
+        "papers/sections/review_physical_claims.tex"
+      ]
+    },
+    {
+      "id": "materials_corpus_wholly_nonempirical",
+      "critique": "The corpus contains no empirical materials evidence",
+      "falsification_attempt": "Inspect the tourmaline and zero-point-vibration sources. They include ordinary electrical and thermal measurements and standard lattice-vibration calculations.",
+      "status": "falsified",
+      "verdict": "Relevant conventional evidence is present.",
+      "evidence_paths": [
+        "source_materials/pdfs/978-3-319-48210-1_10.pdf",
+        "source_materials/pdfs/1111.4064v2.pdf"
+      ]
+    },
+    {
+      "id": "novel_tourmaline_effect",
+      "critique": "The corpus supports novel tourmaline or excess-energy effects",
+      "falsification_attempt": "Search for calibrated raw data, complete energy balances, blinded controls, and independent replication of the proposed enhancement.",
+      "status": "survives",
+      "verdict": "Conventional evidence does not test the novel coupling.",
+      "evidence_paths": [
+        "source_materials/pdfs/Tourmaline.pdf",
+        "source_materials/pdfs/Tourmaline_Addendum.pdf"
+      ]
+    },
+    {
+      "id": "malformed_json_artifacts",
+      "critique": "Two indexed JSON artifacts are unusable",
+      "falsification_attempt": "Parse the historical files, identify truncation, and rerun deterministic generators with schema-valid output and invariant tests.",
+      "status": "repaired",
+      "verdict": "The historical critique survives; the current artifacts are parseable and regenerated.",
+      "evidence_paths": [
+        "experiments/results/cayley_dickson_real_validation.json",
+        "experiments/results/e8_analysis.json",
+        "scripts/generate_core_validation_results.py"
+      ]
+    },
+    {
+      "id": "registry_scientific_validity",
+      "critique": "Registry inclusion establishes scientific validity",
+      "falsification_attempt": "Compare identity checks with parsing, schema, conservation, and model gates. Registry identity is necessary but not sufficient.",
+      "status": "survives",
+      "verdict": "A digest establishes byte identity, not scientific validity.",
+      "evidence_paths": [
+        "scripts/build_registries.py",
+        "scripts/verify_offline_integrity.py",
+        "scripts/validate_registry_schemas.py"
+      ]
+    },
+    {
+      "id": "fractal_convergence",
+      "critique": "The retained fractal dimensions are converged",
+      "falsification_attempt": "Compare retained estimates with exact controls and inspect scale-window stability. Multiple estimates disagree and no refinement study closes the gap.",
+      "status": "survives",
+      "verdict": "The values are finite-resolution diagnostics.",
+      "evidence_paths": [
+        "experiments/results/fractal_dimensions.json",
+        "src/mathphysics/fractal_analysis.py"
+      ]
+    },
+    {
+      "id": "layered_harmonics_e7_effect",
+      "critique": "Layered harmonics measure an E7 physical effect",
+      "falsification_attempt": "Trace the retained schedule to a physical observable or discriminating control. It is a parameter construction without such a link.",
+      "status": "survives",
+      "verdict": "The artifact records a chosen construction rather than a measured E7 effect.",
+      "evidence_paths": [
+        "experiments/data/genesis_harmonics_e7.json",
+        "experiments/genesis_integration.py"
+      ]
+    },
+    {
+      "id": "uniquely_smallest_ablation",
+      "critique": "A matched dynamical ablation is the uniquely smallest next test",
+      "falsification_attempt": "Separate zero-cost structural checks from dynamical experiments. Exhaustive triad inventory can reject the proposed filter before any simulation.",
+      "status": "falsified",
+      "verdict": "The exhaustive audit closes the homomorphic filter before dynamics; a beta-plane run now serves as a negative matched control rather than a rescue test.",
+      "evidence_paths": [
+        "EXPERIMENTS_PORTFOLIO_SHORTLIST.md",
+        "papers/sections/review_computational_evidence.tex",
+        "data/registry/fourier_quotient_audit.json"
+      ]
+    }
+  ]
+}

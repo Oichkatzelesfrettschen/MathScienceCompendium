@@ -1,5 +1,7 @@
 from __future__ import annotations
 
+from collections import Counter, defaultdict
+
 import numpy as np
 import pytest
 
@@ -282,8 +284,6 @@ def test_fano_plane_is_self_dual():
 
 def test_fano_plane_every_point_on_three_lines():
     fano = FanoPlane()
-    from collections import Counter
-
     point_count = Counter()
     for line in fano.lines:
         for p in line:
@@ -294,8 +294,6 @@ def test_fano_plane_every_point_on_three_lines():
 
 def test_fano_plane_any_two_points_on_exactly_one_line():
     fano = FanoPlane()
-    from collections import defaultdict
-
     membership = defaultdict(set)
     for i, line in enumerate(fano.lines):
         for p in line:
@@ -324,7 +322,7 @@ def test_pg_config_invalid_dimension():
 
 def test_pg_config_invalid_field():
     cfg = PGConfig(field_characteristic=3)
-    with pytest.raises(ValueError, match="GF.2."):
+    with pytest.raises(ValueError, match=r"GF.2."):
         cfg.validate()
 
 
@@ -340,5 +338,5 @@ def test_pg62_num_points():
 
 def test_pg62_num_lines_formula():
     pg = ProjectiveSpace(dimension=6)
-    expected = (2 ** 7 - 1) * (2 ** 6 - 1) // 3
+    expected = (2**7 - 1) * (2**6 - 1) // 3
     assert pg.num_lines() == expected

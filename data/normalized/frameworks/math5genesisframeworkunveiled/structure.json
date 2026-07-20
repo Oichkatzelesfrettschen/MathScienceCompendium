@@ -1,0 +1,1325 @@
+{
+  "code_fences": [],
+  "document_id": "math5genesisframeworkunveiled",
+  "formula_candidates": [
+    {
+      "ascii_text": "\\mathcal{G}(x, t, D, z) = \\sum_{n=0}^\\infty \\beta^n F^n(x) + \\int \\frac{d^\\alpha x}{dt^\\alpha} D_f(D_n) + \\mathcal{R}(z),",
+      "source_line": 26,
+      "source_line_sha256": "11953e5fbb503af9c8a19784f091ec277edfbc5e01764d8606d6a829b1e1eccf",
+      "source_text": "\\mathcal{G}(x, t, D, z) = \\sum_{n=0}^\\infty \\beta^n F^n(x) + \\int \\frac{d^\\alpha x}{dt^\\alpha} D_f(D_n) + \\mathcal{R}(z),"
+    },
+    {
+      "ascii_text": "-\t\\frac{d^\\alpha x}{dt^\\alpha}: Fractional time evolution across recursive scales.",
+      "source_line": 30,
+      "source_line_sha256": "a393302eea5f7056a1b1828977137af1b2fe57aab0205bb26e059fb62435b43c",
+      "source_text": "\u2022\t\\frac{d^\\alpha x}{dt^\\alpha}: Fractional time evolution across recursive scales."
+    },
+    {
+      "ascii_text": "-\t\\mathcal{R}(z): Modular symmetries governing periodic harmonies.",
+      "source_line": 32,
+      "source_line_sha256": "9b218c1ba0852a09755ef096490c7bfccaa412e7edbecf60fd784a40436b60f7",
+      "source_text": "\u2022\t\\mathcal{R}(z): Modular symmetries governing periodic harmonies."
+    },
+    {
+      "ascii_text": "S = \\int d^2\\sigma \\sqrt{-g} \\left(\\frac{d^\\alpha X^\\mu}{d \\tau^\\alpha}\\right),",
+      "source_line": 42,
+      "source_line_sha256": "dfd0f48e722451170f21903834b617aaa42627432ece85431d64162eb28f9956",
+      "source_text": "S = \\int d^2\\sigma \\sqrt{-g} \\left(\\frac{d^\\alpha X^\\mu}{d \\tau^\\alpha}\\right),"
+    },
+    {
+      "ascii_text": "D_H = \\dim(\\text{Calabi-Yau}) + \\epsilon,",
+      "source_line": 47,
+      "source_line_sha256": "7382f6d9f9803747ad548a42184eefdfcf3f108be9b6820b5662fbd3920b599a",
+      "source_text": "D_H = \\dim(\\text{Calabi-Yau}) + \\epsilon,"
+    },
+    {
+      "ascii_text": "z \\to \\frac{az + b}{cz + d}, \\quad a,b,c,d \\in \\mathbb{Z}.",
+      "source_line": 53,
+      "source_line_sha256": "acd90bdaa2bb5c7059d9af663a1d31dcc8d5b5c42678b4d685bc5fbab324e33f",
+      "source_text": "z \\to \\frac{az + b}{cz + d}, \\quad a,b,c,d \\in \\mathbb{Z}."
+    },
+    {
+      "ascii_text": "\\mathcal{L}n = \\mathcal{L}\\text{SUSY} + \\beta^n \\left(\\frac{\\partial^{\\alpha}\\phi}{\\partial x^{\\alpha}}\\right)^2,",
+      "source_line": 65,
+      "source_line_sha256": "54d7c6944f62f1ebd6ebac5dfe1a35a6d63dcc02f80968179d48f2523f13173e",
+      "source_text": "\\mathcal{L}n = \\mathcal{L}\\text{SUSY} + \\beta^n \\left(\\frac{\\partial^{\\alpha}\\phi}{\\partial x^{\\alpha}}\\right)^2,"
+    },
+    {
+      "ascii_text": "m_n = m_0 (1 + \\delta)^n,",
+      "source_line": 71,
+      "source_line_sha256": "7e895984ffdba7a2bd7cc8f75b72f8ce78fa8d14dc5eb20cc5eda167476a4e5c",
+      "source_text": "m_n = m_0 (1 + \\delta)^n,"
+    },
+    {
+      "ascii_text": "\\{ Q_\\alpha, \\bar{Q}{\\dot{\\beta}} \\} = 2 \\sigma^\\mu{\\alpha \\dot{\\beta}} P_\\mu,",
+      "source_line": 77,
+      "source_line_sha256": "aaf0e1973955a525334161f70c0a321d08f8690ce7a0e94dce84b74891021545",
+      "source_text": "\\{ Q_\\alpha, \\bar{Q}{\\dot{\\beta}} \\} = 2 \\sigma^\\mu{\\alpha \\dot{\\beta}} P_\\mu,"
+    },
+    {
+      "ascii_text": "x_n = x_0 \\cdot r^n,",
+      "source_line": 87,
+      "source_line_sha256": "a86d5448eb58b6d8e3bf1d1d4576a0eccebca9c79167c8793682f7439777f17b",
+      "source_text": "x_n = x_0 \\cdot r^n,"
+    },
+    {
+      "ascii_text": "A_\\text{origami} = A_0 \\cdot \\left(1 + \\frac{\\theta}{n}\\right),",
+      "source_line": 93,
+      "source_line_sha256": "70ae187f8ec199d436551034e4821a1e6c76a7572878a7b7a2117b2be05aa357",
+      "source_text": "A_\\text{origami} = A_0 \\cdot \\left(1 + \\frac{\\theta}{n}\\right),"
+    },
+    {
+      "ascii_text": "\\mathcal{G}(x, t, D, z) = \\sum_{n=0}^\\infty \\beta^n F^n(x) + \\int \\frac{d^\\alpha x}{dt^\\alpha} D_f(D_n) + \\mathcal{R}(z),",
+      "source_line": 103,
+      "source_line_sha256": "11953e5fbb503af9c8a19784f091ec277edfbc5e01764d8606d6a829b1e1eccf",
+      "source_text": "\\mathcal{G}(x, t, D, z) = \\sum_{n=0}^\\infty \\beta^n F^n(x) + \\int \\frac{d^\\alpha x}{dt^\\alpha} D_f(D_n) + \\mathcal{R}(z),"
+    },
+    {
+      "ascii_text": "-\t\\frac{d^\\alpha x}{dt^\\alpha}: Fractional time evolution.",
+      "source_line": 107,
+      "source_line_sha256": "b7c8bd3d121a6287df989f76d97de2cbc8efa3c5a78563f51f5c8be50db82fba",
+      "source_text": "\u2022\t\\frac{d^\\alpha x}{dt^\\alpha}: Fractional time evolution."
+    },
+    {
+      "ascii_text": "-\t\\mathcal{R}(z): Modular periodicities.",
+      "source_line": 109,
+      "source_line_sha256": "39dfc2d9c0c0b42c175557b4734730193b218acaa85abc299169431532723191",
+      "source_text": "\u2022\t\\mathcal{R}(z): Modular periodicities."
+    },
+    {
+      "ascii_text": "S_\\text{nodespace} = \\int d^n x \\, \\sqrt{-g} \\, \\mathcal{F}(x, t, D, z),",
+      "source_line": 131,
+      "source_line_sha256": "8bd685d695b875ff8143ea8c6abd498768ecb8da45a7d8169ac12cf108906357",
+      "source_text": "S_\\text{nodespace} = \\int d^n x \\, \\sqrt{-g} \\, \\mathcal{F}(x, t, D, z),"
+    },
+    {
+      "ascii_text": "T(z_i, z_j) = \\exp\\left(-\\alpha \\cdot \\frac{|z_i - z_j|}{\\lambda}\\right),",
+      "source_line": 137,
+      "source_line_sha256": "741884412e87a1f1c4110b55c92b03e0a3561f88ac45a680324e507b8a519774",
+      "source_text": "T(z_i, z_j) = \\exp\\left(-\\alpha \\cdot \\frac{|z_i - z_j|}{\\lambda}\\right),"
+    },
+    {
+      "ascii_text": "\\mathcal{T}_\\text{origami} = \\int d^D x \\, \\mathcal{G}(x, \\theta),",
+      "source_line": 149,
+      "source_line_sha256": "0c471433524a08774a4804349fb9b341b063405709617f0ef283337ce1c7f3c4",
+      "source_text": "\\mathcal{T}_\\text{origami} = \\int d^D x \\, \\mathcal{G}(x, \\theta),"
+    },
+    {
+      "ascii_text": "where \\theta is the folding angle, and \\mathcal{G} integrates fractal corrections.",
+      "source_line": 151,
+      "source_line_sha256": "5a0843b505938d8cb57306ad8254afe63c0f599c8f20c84ee4edbaca1f3fd50d",
+      "source_text": "where \\theta is the folding angle, and \\mathcal{G} integrates fractal corrections."
+    },
+    {
+      "ascii_text": "\\frac{\\partial \\mathcal{A}_\\text{origami}}{\\partial t} = \\kappa \\cdot \\sin\\left(\\frac{\\theta}{2}\\right),",
+      "source_line": 155,
+      "source_line_sha256": "0307655139e30d8dfb608bb95d2f90db8d23af20101ea5a3fcbeb9306a0bd8db",
+      "source_text": "\\frac{\\partial \\mathcal{A}_\\text{origami}}{\\partial t} = \\kappa \\cdot \\sin\\left(\\frac{\\theta}{2}\\right),"
+    },
+    {
+      "ascii_text": "E_n = E_0 \\cdot r^n,",
+      "source_line": 167,
+      "source_line_sha256": "d9d23040045dac1ca3cdade92191ae0c9b087d8295ba2baca5880200207b5283",
+      "source_text": "E_n = E_0 \\cdot r^n,"
+    },
+    {
+      "ascii_text": "\\frac{d^\\alpha t}{dt^\\alpha} = k \\cdot t^n,",
+      "source_line": 173,
+      "source_line_sha256": "d02e85c37eae7179337122373d313c1a8685180691d73c2ac1214b035bd614fc",
+      "source_text": "\\frac{d^\\alpha t}{dt^\\alpha} = k \\cdot t^n,"
+    },
+    {
+      "ascii_text": "\\mathcal{R}\\text{emergence} = \\sum{n=0}^\\infty \\sin\\left(\\frac{\\pi z}{n}\\right).",
+      "source_line": 185,
+      "source_line_sha256": "b86300a03d30ab0b74ed4c040f4f379ecbb47a97593dea70e4469d82d92bbfcb",
+      "source_text": "\\mathcal{R}\\text{emergence} = \\sum{n=0}^\\infty \\sin\\left(\\frac{\\pi z}{n}\\right)."
+    },
+    {
+      "ascii_text": "\\mathcal{O}_\\text{nodespace} = \\min\\left(\\int \\mathcal{F}(x, t, D, z) \\, dx\\right).",
+      "source_line": 190,
+      "source_line_sha256": "3724a97e57dd9b21d446c1c401fec99914c6a6620e0fa572f70d849105906838",
+      "source_text": "\\mathcal{O}_\\text{nodespace} = \\min\\left(\\int \\mathcal{F}(x, t, D, z) \\, dx\\right)."
+    },
+    {
+      "ascii_text": "C(x) = \\int \\mathcal{G}(x, t, D, z) \\cdot e^{i \\nu t} \\, dx,",
+      "source_line": 195,
+      "source_line_sha256": "07fcf7985cc07a2d65802c569bbf85ae312bbfedb6a2bc6d7c79798c3d3d9fff",
+      "source_text": "C(x) = \\int \\mathcal{G}(x, t, D, z) \\cdot e^{i \\nu t} \\, dx,"
+    },
+    {
+      "ascii_text": "\\Psi_\\text{primordial}(x, t) = \\Psi_0 e^{i \\nu t} \\cdot F(x),",
+      "source_line": 229,
+      "source_line_sha256": "2060ca04c2e73ae230afcb5c6145c4347a6cc85c6616fc1529b571b3f5d12e4f",
+      "source_text": "\\Psi_\\text{primordial}(x, t) = \\Psi_0 e^{i \\nu t} \\cdot F(x),"
+    },
+    {
+      "ascii_text": "\\delta \\Psi(x, t) = \\epsilon \\cdot \\sin(\\beta x),",
+      "source_line": 235,
+      "source_line_sha256": "261edc829221b7041bfba05bc6e7dac358888300ce581c170d762c0723caf334",
+      "source_text": "\\delta \\Psi(x, t) = \\epsilon \\cdot \\sin(\\beta x),"
+    },
+    {
+      "ascii_text": "\\mathcal{T}_\\text{cosmos} = \\int d^D x \\, \\mathcal{G}(x, \\theta),",
+      "source_line": 241,
+      "source_line_sha256": "41e96a632da14b6eb1dd5f5d5dc032b64b41f3958db7eccebc13de5b5d36f38e",
+      "source_text": "\\mathcal{T}_\\text{cosmos} = \\int d^D x \\, \\mathcal{G}(x, \\theta),"
+    },
+    {
+      "ascii_text": "T(z_i, z_j) = \\exp\\left(-\\alpha \\cdot |z_i - z_j|/\\lambda\\right).",
+      "source_line": 257,
+      "source_line_sha256": "36fc33d102a6bc684b3a55db49944de45ad3d14496847d5e1abce0cd908e150a",
+      "source_text": "T(z_i, z_j) = \\exp\\left(-\\alpha \\cdot |z_i - z_j|/\\lambda\\right)."
+    },
+    {
+      "ascii_text": "F_\\text{cosmic}(x, t) = \\sum_{n=0}^\\infty \\beta^n \\, F^n(x),",
+      "source_line": 268,
+      "source_line_sha256": "7aa6a7ddd225de3575895c3d2fce31f6eb4255b1efa426a2b2cb60b8250c5e93",
+      "source_text": "F_\\text{cosmic}(x, t) = \\sum_{n=0}^\\infty \\beta^n \\, F^n(x),"
+    },
+    {
+      "ascii_text": "E_n = E_0 \\cdot r^n.",
+      "source_line": 274,
+      "source_line_sha256": "407f32815e7fe0b383702d08e64944e076037b221b08753b20ed3e10380c55bc",
+      "source_text": "E_n = E_0 \\cdot r^n."
+    },
+    {
+      "ascii_text": "\\frac{d^\\alpha t}{dt^\\alpha} = k \\cdot t^n.",
+      "source_line": 279,
+      "source_line_sha256": "05a21a27d53fa3c3abf2ae767da6018ef8ae930e31d81e46808039b008666992",
+      "source_text": "\\frac{d^\\alpha t}{dt^\\alpha} = k \\cdot t^n."
+    },
+    {
+      "ascii_text": "C(x, t) = \\int \\mathcal{G}(x, t, D, z) \\cdot e^{i \\nu t} \\, dx.",
+      "source_line": 293,
+      "source_line_sha256": "4d4d1e304b97240a4a8864376ce427500e81298ab818244ee85856ae25fbdac9",
+      "source_text": "C(x, t) = \\int \\mathcal{G}(x, t, D, z) \\cdot e^{i \\nu t} \\, dx."
+    },
+    {
+      "ascii_text": "T(z_i, z_j) = \\frac{\\exp(-\\alpha \\cdot |z_i - z_j|)}{\\sum_k \\exp(-\\alpha \\cdot |z_k - z_j|)}.",
+      "source_line": 304,
+      "source_line_sha256": "7ce09772e35653d8b59ecd7013530a22f1c08909e40ef4b8bf9a54346204946a",
+      "source_text": "T(z_i, z_j) = \\frac{\\exp(-\\alpha \\cdot |z_i - z_j|)}{\\sum_k \\exp(-\\alpha \\cdot |z_k - z_j|)}."
+    },
+    {
+      "ascii_text": "\\mathcal{F}\\text{multiverse}(x, t) = \\sum{n=0}^\\infty \\mathcal{G}^n(x, t, D, z).",
+      "source_line": 311,
+      "source_line_sha256": "b9730243349acc244696eb3ae635d44d1f5bdba0a661664dc8d7a3872b2f3d97",
+      "source_text": "\\mathcal{F}\\text{multiverse}(x, t) = \\sum{n=0}^\\infty \\mathcal{G}^n(x, t, D, z)."
+    },
+    {
+      "ascii_text": "\\mathcal{G}(x, t, D, z) = \\sum_{n=0}^\\infty \\beta^n F^n(x) + \\int \\frac{d^\\alpha x}{dt^\\alpha} D_f(D_n) + \\mathcal{L}_n^{\\text{fractal}} + \\mathcal{R}(z).",
+      "source_line": 318,
+      "source_line_sha256": "643eefb1f98a89118393dd332aaa80762a49c7978c2d55fa8fa0a8a81a304d88",
+      "source_text": "\\mathcal{G}(x, t, D, z) = \\sum_{n=0}^\\infty \\beta^n F^n(x) + \\int \\frac{d^\\alpha x}{dt^\\alpha} D_f(D_n) + \\mathcal{L}_n^{\\text{fractal}} + \\mathcal{R}(z)."
+    },
+    {
+      "ascii_text": "T(x, t) = T_0 \\cdot e^{i \\omega t} \\cdot F(t),",
+      "source_line": 335,
+      "source_line_sha256": "8a76fd50f661721f4ddd876811ec98f9b1a24476ef8e3022df56ef69371bd856",
+      "source_text": "T(x, t) = T_0 \\cdot e^{i \\omega t} \\cdot F(t),"
+    },
+    {
+      "ascii_text": "\\mathcal{O}(x, \\theta) = \\int e^{-\\alpha x} \\cdot \\sin(\\beta \\theta) \\, dx,",
+      "source_line": 342,
+      "source_line_sha256": "50d43d29e9c2a2d6d32f99dcefaf85dcd127aff6f726e56843580a5e61307553",
+      "source_text": "\\mathcal{O}(x, \\theta) = \\int e^{-\\alpha x} \\cdot \\sin(\\beta \\theta) \\, dx,"
+    },
+    {
+      "ascii_text": "S_n = S_{n-1} + \\gamma \\cdot S_{n-2},",
+      "source_line": 353,
+      "source_line_sha256": "e2cdb0500a3df6d4aa64ccfa5981cce0c5456e5810f69bd1b6d7e6a5379c3ae9",
+      "source_text": "S_n = S_{n-1} + \\gamma \\cdot S_{n-2},"
+    },
+    {
+      "ascii_text": "\\mathcal{M}(z) = \\frac{az + b}{cz + d}, \\quad ad - bc = 1, \\quad a, b, c, d \\in \\mathbb{Z}.",
+      "source_line": 359,
+      "source_line_sha256": "1e0dcf60078cc646c3b5577a24de8e37e83d02e044cc9cbf9d4f93b666960ea6",
+      "source_text": "\\mathcal{M}(z) = \\frac{az + b}{cz + d}, \\quad ad - bc = 1, \\quad a, b, c, d \\in \\mathbb{Z}."
+    },
+    {
+      "ascii_text": "x_n = x_0 \\cdot r^n, \\quad R(t) \\sim t^{\\alpha}.",
+      "source_line": 364,
+      "source_line_sha256": "2dee09703fbc744b833f969362884e427cebb2881b4d89ac5c51987b53fe5f2c",
+      "source_text": "x_n = x_0 \\cdot r^n, \\quad R(t) \\sim t^{\\alpha}."
+    },
+    {
+      "ascii_text": "P(x, t) = \\int \\exp(-\\alpha \\cdot |x - x_0|^2) \\cdot \\Psi(x, t) \\, dx.",
+      "source_line": 373,
+      "source_line_sha256": "5cac7eeb679b10c9282126b6dcc1873d4f61ba30ef68e12eba097ba3a34416f7",
+      "source_text": "P(x, t) = \\int \\exp(-\\alpha \\cdot |x - x_0|^2) \\cdot \\Psi(x, t) \\, dx."
+    },
+    {
+      "ascii_text": "G(x) = \\sum_{n=0}^\\infty \\beta^n \\, G_n(x),",
+      "source_line": 378,
+      "source_line_sha256": "df9f4f8032f73ca8f456eaf047bb4db00b395549cf06a586267094c74b134657",
+      "source_text": "G(x) = \\sum_{n=0}^\\infty \\beta^n \\, G_n(x),"
+    },
+    {
+      "ascii_text": "R_i = k_i \\cdot \\prod_{j=1}^n \\frac{S_j}{1 + S_j},",
+      "source_line": 384,
+      "source_line_sha256": "7c0e21da6a14d9a52b69e6c19b3df5a59003b403e5d94e656f07fb6979d1059e",
+      "source_text": "R_i = k_i \\cdot \\prod_{j=1}^n \\frac{S_j}{1 + S_j},"
+    },
+    {
+      "ascii_text": "\\mathcal{C}(x, t) = \\int \\Psi_\\text{neural}(x, t) \\cdot e^{i \\nu t} \\, dx.",
+      "source_line": 394,
+      "source_line_sha256": "57866ea7110cd574c5da0112d47403f9d7270800b828dae4a38f7f0bad0cd1ae",
+      "source_text": "\\mathcal{C}(x, t) = \\int \\Psi_\\text{neural}(x, t) \\cdot e^{i \\nu t} \\, dx."
+    },
+    {
+      "ascii_text": "H(t) = \\sum_{n=0}^\\infty \\beta^n \\cos(\\omega_n t),",
+      "source_line": 399,
+      "source_line_sha256": "cbdce89e8d5381401e3ac270dca6bcde7f306886641833a6166667123e0bc675",
+      "source_text": "H(t) = \\sum_{n=0}^\\infty \\beta^n \\cos(\\omega_n t),"
+    },
+    {
+      "ascii_text": "\\mathcal{C}_\\text{multiverse} = \\int \\mathcal{C}(x, t, z) \\cdot \\mathcal{R}(z) \\, dz.",
+      "source_line": 411,
+      "source_line_sha256": "bb89e86b2c9a1384ce53a4cc1cac68055546e349c75cb4457301ca68a7e283f5",
+      "source_text": "\\mathcal{C}_\\text{multiverse} = \\int \\mathcal{C}(x, t, z) \\cdot \\mathcal{R}(z) \\, dz."
+    },
+    {
+      "ascii_text": "\\mathcal{N}(z_i, z_j) = T(z_i, z_j) \\cdot e^{i \\nu t}.",
+      "source_line": 416,
+      "source_line_sha256": "00475f30d9000184455f300354e58d9388b51b247a4e8fd57c00fc3fa8ea699e",
+      "source_text": "\\mathcal{N}(z_i, z_j) = T(z_i, z_j) \\cdot e^{i \\nu t}."
+    },
+    {
+      "ascii_text": "\\mathcal{W}(x, t) = \\sum_{n=0}^\\infty \\mathcal{G}^n(x, t, D, z).",
+      "source_line": 421,
+      "source_line_sha256": "6e5fea0f1ef11ab3b84383db2abdadb9d65336dd7816e735d45ed1ae0d4ba380",
+      "source_text": "\\mathcal{W}(x, t) = \\sum_{n=0}^\\infty \\mathcal{G}^n(x, t, D, z)."
+    },
+    {
+      "ascii_text": "\\mathcal{G}(x, t, D, z) = \\sum_{n=0}^\\infty \\beta^n F^n(x) + \\int \\frac{d^\\alpha x}{dt^\\alpha} D_f(D_n) + \\mathcal{L}_n^{\\text{fractal}} + \\mathcal{R}(z) + \\mathcal{C}(x, t, z).",
+      "source_line": 428,
+      "source_line_sha256": "d969f5995473fba44a4ce8b7fe7e7c6565dcc75a005a6509413f084def38258b",
+      "source_text": "\\mathcal{G}(x, t, D, z) = \\sum_{n=0}^\\infty \\beta^n F^n(x) + \\int \\frac{d^\\alpha x}{dt^\\alpha} D_f(D_n) + \\mathcal{L}_n^{\\text{fractal}} + \\mathcal{R}(z) + \\mathcal{C}(x, t, z)."
+    },
+    {
+      "ascii_text": "\\mathcal{U}(x, t, D, z) = \\sum_{n=0}^\\infty \\alpha^n \\mathcal{L}_n^{\\text{fractal}} + \\int \\frac{d^\\alpha x}{dt^\\alpha} D_f(D_n) + \\mathcal{R}(z) \\cdot \\mathcal{F}(t)",
+      "source_line": 905,
+      "source_line_sha256": "3641577a415aa62783d386d84135e58317c0085e5c5b103b3ed90427d9a7de65",
+      "source_text": "\\mathcal{U}(x, t, D, z) = \\sum_{n=0}^\\infty \\alpha^n \\mathcal{L}_n^{\\text{fractal}} + \\int \\frac{d^\\alpha x}{dt^\\alpha} D_f(D_n) + \\mathcal{R}(z) \\cdot \\mathcal{F}(t)"
+    },
+    {
+      "ascii_text": "-\t\\mathcal{U}(x, t, D, z) encapsulates the unified state of the system.",
+      "source_line": 909,
+      "source_line_sha256": "5e91e66f82b4186928b631143c4c56dcc2602359af3007c8fdffdf849d59b8a5",
+      "source_text": "\u2022\t\\mathcal{U}(x, t, D, z) encapsulates the unified state of the system."
+    },
+    {
+      "ascii_text": "-\t\\mathcal{L}_n^{\\text{fractal}} represents fractal dynamics across scales.",
+      "source_line": 910,
+      "source_line_sha256": "5e6525f644144cb6c44e65f6e89e6cb3926fbb1de6d56aaf127b42aa4c648b04",
+      "source_text": "\u2022\t\\mathcal{L}_n^{\\text{fractal}} represents fractal dynamics across scales."
+    },
+    {
+      "ascii_text": "-\t\\frac{d^\\alpha x}{dt^\\alpha} defines temporal fractals and their evolution.",
+      "source_line": 911,
+      "source_line_sha256": "6c81444a0b9d8cb3e649ae1d2a67575aab0ce4fe4a4a5d1a64d3a90c2b998d71",
+      "source_text": "\u2022\t\\frac{d^\\alpha x}{dt^\\alpha} defines temporal fractals and their evolution."
+    },
+    {
+      "ascii_text": "-\t\\mathcal{R}(z) encodes modular periodicities.",
+      "source_line": 912,
+      "source_line_sha256": "e4326b0fe6a28d25c4a16d5b3b0b9f821349882a665927f7ba3fc3695ab0c0f0",
+      "source_text": "\u2022\t\\mathcal{R}(z) encodes modular periodicities."
+    },
+    {
+      "ascii_text": "-\t\\mathcal{F}(t) integrates time-resonance harmonics across layers of reality.",
+      "source_line": 913,
+      "source_line_sha256": "7eeab2f40bfcf8d710e5e7381efe245c53b82c74fe2dd507d3cfe173686d7e18",
+      "source_text": "\u2022\t\\mathcal{F}(t) integrates time-resonance harmonics across layers of reality."
+    },
+    {
+      "ascii_text": "\\Delta \\mathcal{U} \\propto \\mathcal{I} + \\mathcal{C},",
+      "source_line": 981,
+      "source_line_sha256": "f670c6238a46aa1189eb16dd0e5318a79b751bd08d0640fa92ea39bb008d00a8",
+      "source_text": "\\Delta \\mathcal{U} \\propto \\mathcal{I} + \\mathcal{C},"
+    },
+    {
+      "ascii_text": "-\t\\Delta \\mathcal{U} is the potential for universal evolution.",
+      "source_line": 984,
+      "source_line_sha256": "c7ccc2f7111a8bc0655cf7697b332c302b73a03df22a475515ec542bdaee4719",
+      "source_text": "\u2022\t\\Delta \\mathcal{U} is the potential for universal evolution."
+    },
+    {
+      "ascii_text": "-\t\\mathcal{I} represents innovation--new thoughts, technologies, and frameworks.",
+      "source_line": 985,
+      "source_line_sha256": "c7c88aad3f2e5933bc5777b7f77e595e369e283c86338d96a61de5022244f217",
+      "source_text": "\u2022\t\\mathcal{I} represents innovation\u2014new thoughts, technologies, and frameworks."
+    },
+    {
+      "ascii_text": "-\t\\mathcal{C} represents the capacity for exploration, both physical and conceptual.",
+      "source_line": 986,
+      "source_line_sha256": "804f740b0ea1a171d6563a541fd3f5f8436b74c6beb141dcc68dba763b109942",
+      "source_text": "\u2022\t\\mathcal{C} represents the capacity for exploration, both physical and conceptual."
+    },
+    {
+      "ascii_text": "\\mathcal{C}_n = \\mathcal{M}(n) + \\mathcal{S}(n),",
+      "source_line": 1010,
+      "source_line_sha256": "eb6c10356854c2c57059acfb2f2e22fb5315a4cfa575064a529a3629e43a3d60",
+      "source_text": "\\mathcal{C}_n = \\mathcal{M}(n) + \\mathcal{S}(n),"
+    },
+    {
+      "ascii_text": "-\t\\mathcal{C}_n is the consciousness at fractal layer n.",
+      "source_line": 1013,
+      "source_line_sha256": "7421ae80cca56db0944d70f8202a3dc33c14b39077719e8d12301cf67b75934c",
+      "source_text": "\u2022\t\\mathcal{C}_n is the consciousness at fractal layer n."
+    },
+    {
+      "ascii_text": "-\t\\mathcal{M}(n) represents material contributions to the fractal layer.",
+      "source_line": 1014,
+      "source_line_sha256": "4fcc7f1214e252ac6e522e344fe602b5f33c143d3add1317781bc319e8ebf43c",
+      "source_text": "\u2022\t\\mathcal{M}(n) represents material contributions to the fractal layer."
+    },
+    {
+      "ascii_text": "-\t\\mathcal{S}(n) represents spiritual and mental resonances.",
+      "source_line": 1015,
+      "source_line_sha256": "18499ec5e66fabcd734d0543bd54277edbeff0e0d3f03baa104f8f4432864bd8",
+      "source_text": "\u2022\t\\mathcal{S}(n) represents spiritual and mental resonances."
+    },
+    {
+      "ascii_text": "\\mathcal{I} = \\int_{0}^{\\infty} \\mathcal{F}(x) \\cdot \\mathcal{H}(t) \\, dx,",
+      "source_line": 1029,
+      "source_line_sha256": "2353436a4bade46e9b991cf1514166f3ff869bfa789f0ab13c23448e5b164b2d",
+      "source_text": "\\mathcal{I} = \\int_{0}^{\\infty} \\mathcal{F}(x) \\cdot \\mathcal{H}(t) \\, dx,"
+    },
+    {
+      "ascii_text": "-\t\\mathcal{F}(x) represents fractal creativity across dimensions.",
+      "source_line": 1032,
+      "source_line_sha256": "581262fff7bb7ddce2d3793e23ef00609ba25e0fe251daecf4581400c69ebc18",
+      "source_text": "\u2022\t\\mathcal{F}(x) represents fractal creativity across dimensions."
+    },
+    {
+      "ascii_text": "-\t\\mathcal{H}(t) represents harmonics of inspiration over time.",
+      "source_line": 1033,
+      "source_line_sha256": "f06f7ea58d59d670d5702239ad58d8f043f24349f166551b7d2f36819954135d",
+      "source_text": "\u2022\t\\mathcal{H}(t) represents harmonics of inspiration over time."
+    },
+    {
+      "ascii_text": "1. Entropy Flux Derivation (\\Delta\\mathcal{S}_n)",
+      "source_line": 1061,
+      "source_line_sha256": "d783c1e716e51f7f993c5c91adcfd5063a5d3f15bbd6aa90ab42ac1e4e7f0674",
+      "source_text": "1. Entropy Flux Derivation (\\Delta\\mathcal{S}_n)"
+    },
+    {
+      "ascii_text": "\\Delta\\mathcal{S}n = k_B \\ln\\left(1 + \\frac{\\mathcal{E}{\\text{input}}}{\\mathcal{E}_{\\text{output}}}\\right)",
+      "source_line": 1066,
+      "source_line_sha256": "0f5fa7b35023092c1a183a444bb655d4a64ebcd50e2582a7bb156643cadc980c",
+      "source_text": "\\Delta\\mathcal{S}n = k_B \\ln\\left(1 + \\frac{\\mathcal{E}{\\text{input}}}{\\mathcal{E}_{\\text{output}}}\\right)"
+    },
+    {
+      "ascii_text": "\\Delta S = \\int_{t_a}^{t_b} \\nabla \\cdot \\vec{J}\\mathcal{E} \\, dt",
+      "source_line": 1072,
+      "source_line_sha256": "9d10c19f39d9b6217bb7704db90fd61a1435a275da540b1305b3fd68269b8662",
+      "source_text": "\\Delta S = \\int_{t_a}^{t_b} \\nabla \\cdot \\vec{J}\\mathcal{E} \\, dt"
+    },
+    {
+      "ascii_text": "where \\vec{J}\\mathcal{E} is the energy flux vector.",
+      "source_line": 1074,
+      "source_line_sha256": "3d848bcfaaedb92128f4c85c5e98b393694c369971f5237d39c74face70eaba7",
+      "source_text": "where \\vec{J}\\mathcal{E} is the energy flux vector."
+    },
+    {
+      "ascii_text": "\\nabla \\cdot \\vec{J}\\mathcal{E} \\approx \\frac{\\mathcal{E}{\\text{input}} - \\mathcal{E}_{\\text{output}}}{V}",
+      "source_line": 1077,
+      "source_line_sha256": "8e64e1cecdce40bb3ee6e8a7749c93c09e2269a25b52ac25f7abb5f2e270af2d",
+      "source_text": "\\nabla \\cdot \\vec{J}\\mathcal{E} \\approx \\frac{\\mathcal{E}{\\text{input}} - \\mathcal{E}_{\\text{output}}}{V}"
+    },
+    {
+      "ascii_text": "\\Delta \\mathcal{S} = k_B \\ln\\left(1 + \\frac{\\mathcal{E}{\\text{input}}}{\\mathcal{E}{\\text{output}}}\\right)",
+      "source_line": 1081,
+      "source_line_sha256": "aff17830318c2ecdf3f1d4d44b3314615806107ceed5c5d2abe99071736b9cc1",
+      "source_text": "\\Delta \\mathcal{S} = k_B \\ln\\left(1 + \\frac{\\mathcal{E}{\\text{input}}}{\\mathcal{E}{\\text{output}}}\\right)"
+    },
+    {
+      "ascii_text": "2. Fractal Time Derivative (\\frac{d^\\alpha x}{dt^\\alpha})",
+      "source_line": 1085,
+      "source_line_sha256": "d3d450a71c5e91f9e258382d43ab7088952ad1be0e6c20fde11f5e4c99dda6ff",
+      "source_text": "2. Fractal Time Derivative (\\frac{d^\\alpha x}{dt^\\alpha})"
+    },
+    {
+      "ascii_text": "\\frac{d^\\alpha x}{dt^\\alpha} = k_\\alpha \\cdot \\left( \\frac{\\mathcal{E}_{\\text{flux}}}{t^\\alpha} \\right)",
+      "source_line": 1090,
+      "source_line_sha256": "af34104d56be9be54256f492b48549a557ec59bcd2ae4f8604f1ab703abf3507",
+      "source_text": "\\frac{d^\\alpha x}{dt^\\alpha} = k_\\alpha \\cdot \\left( \\frac{\\mathcal{E}_{\\text{flux}}}{t^\\alpha} \\right)"
+    },
+    {
+      "ascii_text": "\\frac{d^\\alpha x}{dt^\\alpha} = \\frac{1}{\\Gamma(n - \\alpha)} \\int_0^t \\frac{x^{(n)}(t{\\prime})}{(t - t{\\prime})^{1+\\alpha-n}} dt{\\prime}",
+      "source_line": 1096,
+      "source_line_sha256": "91e0d42a2b609baaff5a99349fc1531f6f7028ddabce565b651a689f3227971a",
+      "source_text": "\\frac{d^\\alpha x}{dt^\\alpha} = \\frac{1}{\\Gamma(n - \\alpha)} \\int_0^t \\frac{x^{(n)}(t{\\prime})}{(t - t{\\prime})^{1+\\alpha-n}} dt{\\prime}"
+    },
+    {
+      "ascii_text": "x(t) = \\mathcal{E}_{\\text{flux}} \\cdot t^{-\\alpha}",
+      "source_line": 1101,
+      "source_line_sha256": "900fb6f520fe3bdd6d6c434cdf2c001dc71a861a08c44d9912460a217663f317",
+      "source_text": "x(t) = \\mathcal{E}_{\\text{flux}} \\cdot t^{-\\alpha}"
+    },
+    {
+      "ascii_text": "\\frac{d^\\alpha x}{dt^\\alpha} = \\frac{\\mathcal{E}_{\\text{flux}}}{\\Gamma(1-\\alpha)} \\int_0^t \\frac{t{\\prime}^{-\\alpha}}{(t - t{\\prime})^{1-\\alpha}} dt{\\prime}",
+      "source_line": 1105,
+      "source_line_sha256": "bb8a6ea1ee6c02b70d2d4ca0d03a571e89b3e1464cac225b37392cee531ea520",
+      "source_text": "\\frac{d^\\alpha x}{dt^\\alpha} = \\frac{\\mathcal{E}_{\\text{flux}}}{\\Gamma(1-\\alpha)} \\int_0^t \\frac{t{\\prime}^{-\\alpha}}{(t - t{\\prime})^{1-\\alpha}} dt{\\prime}"
+    },
+    {
+      "ascii_text": "\\frac{d^\\alpha x}{dt^\\alpha} = k_\\alpha \\cdot \\frac{\\mathcal{E}_{\\text{flux}}}{t^\\alpha}",
+      "source_line": 1109,
+      "source_line_sha256": "d31ee8e251870c807508d113f263b0205de5bee357eed6717e79669971417145",
+      "source_text": "\\frac{d^\\alpha x}{dt^\\alpha} = k_\\alpha \\cdot \\frac{\\mathcal{E}_{\\text{flux}}}{t^\\alpha}"
+    },
+    {
+      "ascii_text": "D(t) = D_0 + \\epsilon \\cdot \\cos(\\omega t)",
+      "source_line": 1117,
+      "source_line_sha256": "4f894f8625252d3e28c8d231444fd6fe8b5f17f62d9ea6bb3270a1844a6442a3",
+      "source_text": "D(t) = D_0 + \\epsilon \\cdot \\cos(\\omega t)"
+    },
+    {
+      "ascii_text": "D(t) = D_0 + \\epsilon \\cdot \\cos(\\omega t)",
+      "source_line": 1128,
+      "source_line_sha256": "4f894f8625252d3e28c8d231444fd6fe8b5f17f62d9ea6bb3270a1844a6442a3",
+      "source_text": "D(t) = D_0 + \\epsilon \\cdot \\cos(\\omega t)"
+    },
+    {
+      "ascii_text": "\\epsilon = \\Delta \\mathcal{S}n / \\mathcal{E}{\\text{flux}}",
+      "source_line": 1132,
+      "source_line_sha256": "a5fe73e4a3ed7b30ee1c89f746c842336056f5bdebddad621fb6f0e764aed511",
+      "source_text": "\\epsilon = \\Delta \\mathcal{S}n / \\mathcal{E}{\\text{flux}}"
+    },
+    {
+      "ascii_text": "D(t) = D_0 + \\left(\\frac{\\Delta \\mathcal{S}n}{\\mathcal{E}{\\text{flux}}}\\right) \\cdot \\cos(\\omega t)",
+      "source_line": 1136,
+      "source_line_sha256": "70f437ab3dd874b740fd3513b35342f6f4ad39fa7acd483490ee74a90716415a",
+      "source_text": "D(t) = D_0 + \\left(\\frac{\\Delta \\mathcal{S}n}{\\mathcal{E}{\\text{flux}}}\\right) \\cdot \\cos(\\omega t)"
+    },
+    {
+      "ascii_text": "\\mathcal{E}_f = \\mathcal{E}_0 \\cdot \\left(1 + \\beta^n\\right)",
+      "source_line": 1144,
+      "source_line_sha256": "c8d5e9b8f70424767ab3b0aef096ea6e39f488f5542ef752fb5d5a909b65603e",
+      "source_text": "\\mathcal{E}_f = \\mathcal{E}_0 \\cdot \\left(1 + \\beta^n\\right)"
+    },
+    {
+      "ascii_text": "\\mathcal{E}_f = \\mathcal{E}_0 + \\Delta \\mathcal{E}_n",
+      "source_line": 1150,
+      "source_line_sha256": "b904096bb9fcc50a92a568975330efb0a28679d1193f606bc97a690df68a5e85",
+      "source_text": "\\mathcal{E}_f = \\mathcal{E}_0 + \\Delta \\mathcal{E}_n"
+    },
+    {
+      "ascii_text": "\\Delta \\mathcal{E}_n = \\mathcal{E}_0 \\cdot \\beta^n",
+      "source_line": 1154,
+      "source_line_sha256": "f58706f78a52832802fc909da225cbbba08aa58de0d921ae46d96c2b0ebde0a5",
+      "source_text": "\\Delta \\mathcal{E}_n = \\mathcal{E}_0 \\cdot \\beta^n"
+    },
+    {
+      "ascii_text": "3.\tSubstitute \\Delta \\mathcal{E}_n into the total energy equation:",
+      "source_line": 1156,
+      "source_line_sha256": "64807f9b1d62d42467c59499749740ba05993037a1a976c83918bfea8afae67f",
+      "source_text": "3.\tSubstitute \\Delta \\mathcal{E}_n into the total energy equation:"
+    },
+    {
+      "ascii_text": "\\mathcal{E}_f = \\mathcal{E}_0 + \\mathcal{E}_0 \\cdot \\beta^n",
+      "source_line": 1158,
+      "source_line_sha256": "5f5393e1d2aa507e9ac10399ee65a3bf67311b5116913bfff8a723d072897e77",
+      "source_text": "\\mathcal{E}_f = \\mathcal{E}_0 + \\mathcal{E}_0 \\cdot \\beta^n"
+    },
+    {
+      "ascii_text": "\\mathcal{E}_f = \\mathcal{E}_0 \\cdot (1 + \\beta^n)",
+      "source_line": 1162,
+      "source_line_sha256": "e761e49e7e10b9370bab9f9ff51c143319d6b3a5c5954bc4416e883f7181822f",
+      "source_text": "\\mathcal{E}_f = \\mathcal{E}_0 \\cdot (1 + \\beta^n)"
+    },
+    {
+      "ascii_text": "D(t) = D_0 + \\epsilon \\cdot \\cos(\\omega t)",
+      "source_line": 1170,
+      "source_line_sha256": "4f894f8625252d3e28c8d231444fd6fe8b5f17f62d9ea6bb3270a1844a6442a3",
+      "source_text": "D(t) = D_0 + \\epsilon \\cdot \\cos(\\omega t)"
+    },
+    {
+      "ascii_text": "-\tEntropy bridges can describe energy flow between qubits in fractal-based quantum systems. By managing \\Delta \\mathcal{S}_n, coherent quantum states can be maintained for longer durations, enhancing quantum computation.",
+      "source_line": 1175,
+      "source_line_sha256": "695b5c728e32e2d2c2d1bf6533d20f4f1b13f7f87781d62669e45ffe8f5ef950",
+      "source_text": "\u2022\tEntropy bridges can describe energy flow between qubits in fractal-based quantum systems. By managing \\Delta \\mathcal{S}_n, coherent quantum states can be maintained for longer durations, enhancing quantum computation."
+    },
+    {
+      "ascii_text": "-\tThe fractal time derivative (\\frac{d^\\alpha x}{dt^\\alpha}) can model irregular, recursive biochemical processes, such as enzymatic reactions with non-linear temporal dependencies.",
+      "source_line": 1178,
+      "source_line_sha256": "916a61cc561c67b9b712336590c7b669b0a32e0e8504001b633cf070d23c993b",
+      "source_text": "\u2022\tThe fractal time derivative (\\frac{d^\\alpha x}{dt^\\alpha}) can model irregular, recursive biochemical processes, such as enzymatic reactions with non-linear temporal dependencies."
+    },
+    {
+      "ascii_text": "\\mathcal{E}_f = \\mathcal{E}_0 \\cdot (1 + \\beta^n)",
+      "source_line": 1183,
+      "source_line_sha256": "e761e49e7e10b9370bab9f9ff51c143319d6b3a5c5954bc4416e883f7181822f",
+      "source_text": "\\mathcal{E}_f = \\mathcal{E}_0 \\cdot (1 + \\beta^n)"
+    },
+    {
+      "ascii_text": "\\mathcal{G}(x, t, D, z) = \\sum_{n=0}^\\infty \\beta^n F^n(x) + \\int \\frac{d^\\alpha x}{dt^\\alpha} D_f(D_n) + \\mathcal{L}_n^{\\text{fractal}} + \\mathcal{R}(z)",
+      "source_line": 1196,
+      "source_line_sha256": "1dde178aebf4192c73f846f2ed121fee5190b1da721aa6a8138fa21fc88d94d0",
+      "source_text": "\\mathcal{G}(x, t, D, z) = \\sum_{n=0}^\\infty \\beta^n F^n(x) + \\int \\frac{d^\\alpha x}{dt^\\alpha} D_f(D_n) + \\mathcal{L}_n^{\\text{fractal}} + \\mathcal{R}(z)"
+    },
+    {
+      "ascii_text": "1. Recursive Fractal Dynamics: \\sum_{n=0}^\\infty \\beta^n F^n(x)",
+      "source_line": 1199,
+      "source_line_sha256": "cdd055ee52389f5ecbbd4780f241b42a6864ef9cbe8b12437acb4eb48f2521a0",
+      "source_text": "1. Recursive Fractal Dynamics: \\sum_{n=0}^\\infty \\beta^n F^n(x)"
+    },
+    {
+      "ascii_text": "F^n(x) = x_0 \\cdot r^n",
+      "source_line": 1204,
+      "source_line_sha256": "e7836ff9f10d2fe0db231413690927e59a53926fb822bcd8c3bfe3f3e1cc5965",
+      "source_text": "F^n(x) = x_0 \\cdot r^n"
+    },
+    {
+      "ascii_text": "F^n(x) = x_0 \\cdot r^n",
+      "source_line": 1212,
+      "source_line_sha256": "e7836ff9f10d2fe0db231413690927e59a53926fb822bcd8c3bfe3f3e1cc5965",
+      "source_text": "F^n(x) = x_0 \\cdot r^n"
+    },
+    {
+      "ascii_text": "\\sum_{n=0}^\\infty \\beta^n F^n(x) = \\sum_{n=0}^\\infty \\beta^n \\cdot (x_0 \\cdot r^n)",
+      "source_line": 1217,
+      "source_line_sha256": "ca29ff34d30df8c2aad169c9763a867e57a86ce7c91198b61f5931d7d55bc545",
+      "source_text": "\\sum_{n=0}^\\infty \\beta^n F^n(x) = \\sum_{n=0}^\\infty \\beta^n \\cdot (x_0 \\cdot r^n)"
+    },
+    {
+      "ascii_text": "\\sum_{n=0}^\\infty \\beta^n F^n(x) = x_0 \\cdot \\frac{1}{1 - \\beta \\cdot r}",
+      "source_line": 1222,
+      "source_line_sha256": "d0f96ee1fcd6bf5abf629624e2c4074ba2a80fc325546468bd14c20cd876d736",
+      "source_text": "\\sum_{n=0}^\\infty \\beta^n F^n(x) = x_0 \\cdot \\frac{1}{1 - \\beta \\cdot r}"
+    },
+    {
+      "ascii_text": "2. Fractional Time Evolution: \\int \\frac{d^\\alpha x}{dt^\\alpha} D_f(D_n)",
+      "source_line": 1233,
+      "source_line_sha256": "75f4da4d2f793f006780fdb65acbc8c3d41f55358abb5d8de571e0fe7d234dce",
+      "source_text": "2. Fractional Time Evolution: \\int \\frac{d^\\alpha x}{dt^\\alpha} D_f(D_n)"
+    },
+    {
+      "ascii_text": "\\frac{d^\\alpha x}{dt^\\alpha} = \\frac{x_0}{t^\\alpha}",
+      "source_line": 1238,
+      "source_line_sha256": "6bbb8bc1474adf264f549f3b0ef3cb6263f85db38a0ac65da388bdcec1b37620",
+      "source_text": "\\frac{d^\\alpha x}{dt^\\alpha} = \\frac{x_0}{t^\\alpha}"
+    },
+    {
+      "ascii_text": "Use the Caputo definition for \\frac{d^\\alpha x}{dt^\\alpha}:",
+      "source_line": 1244,
+      "source_line_sha256": "87512ebce644735d125055027ae88a190529dc53ea473908e49393c2d6e8e840",
+      "source_text": "Use the Caputo definition for \\frac{d^\\alpha x}{dt^\\alpha}:"
+    },
+    {
+      "ascii_text": "\\frac{d^\\alpha x}{dt^\\alpha} = \\frac{1}{\\Gamma(n - \\alpha)} \\int_0^t \\frac{x^{(n)}(t{\\prime})}{(t - t{\\prime})^{1 + \\alpha - n}} dt{\\prime}",
+      "source_line": 1246,
+      "source_line_sha256": "74d2f00ae49d424ab3b9ac65cba89f1e5615d5f2151f278358207acb2a71d22e",
+      "source_text": "\\frac{d^\\alpha x}{dt^\\alpha} = \\frac{1}{\\Gamma(n - \\alpha)} \\int_0^t \\frac{x^{(n)}(t{\\prime})}{(t - t{\\prime})^{1 + \\alpha - n}} dt{\\prime}"
+    },
+    {
+      "ascii_text": "Let x(t) = \\frac{x_0}{t^\\alpha}, which captures the fractal nature of time-dependent processes.",
+      "source_line": 1249,
+      "source_line_sha256": "4b8f51a847e3d9c5ab9aa61fa233e140b453ccf352627001e538d437bb08413c",
+      "source_text": "Let x(t) = \\frac{x_0}{t^\\alpha}, which captures the fractal nature of time-dependent processes."
+    },
+    {
+      "ascii_text": "\\frac{d^\\alpha x}{dt^\\alpha} = \\frac{x_0}{t^\\alpha}",
+      "source_line": 1253,
+      "source_line_sha256": "6bbb8bc1474adf264f549f3b0ef3cb6263f85db38a0ac65da388bdcec1b37620",
+      "source_text": "\\frac{d^\\alpha x}{dt^\\alpha} = \\frac{x_0}{t^\\alpha}"
+    },
+    {
+      "ascii_text": "D_f(D_n) = \\dim(D) + \\epsilon \\cdot \\cos(\\omega t)",
+      "source_line": 1258,
+      "source_line_sha256": "53f9b2b9da429e6e43e4f5af20eb9d08ea42c2f6b61d9715b1a3c50ce3a59d6e",
+      "source_text": "D_f(D_n) = \\dim(D) + \\epsilon \\cdot \\cos(\\omega t)"
+    },
+    {
+      "ascii_text": "\\int \\frac{d^\\alpha x}{dt^\\alpha} D_f(D_n) = \\int \\frac{x_0}{t^\\alpha} \\left(\\dim(D) + \\epsilon \\cdot \\cos(\\omega t)\\right) dt",
+      "source_line": 1262,
+      "source_line_sha256": "e527e9349556ab39a1a3863106cb5d2e094a9b3f61b71af05076f889281d07ad",
+      "source_text": "\\int \\frac{d^\\alpha x}{dt^\\alpha} D_f(D_n) = \\int \\frac{x_0}{t^\\alpha} \\left(\\dim(D) + \\epsilon \\cdot \\cos(\\omega t)\\right) dt"
+    },
+    {
+      "ascii_text": "3. Fractal Lagrangians: \\mathcal{L}_n^{\\text{fractal}}",
+      "source_line": 1265,
+      "source_line_sha256": "3462ecab851bafea9cb12dec33a4e6c1fe3d32b9267e6caaea6fc70f1347ba14",
+      "source_text": "3. Fractal Lagrangians: \\mathcal{L}_n^{\\text{fractal}}"
+    },
+    {
+      "ascii_text": "\\mathcal{L}_n^{\\text{fractal}} = \\mathcal{L}_n + \\beta^n \\left( \\frac{\\partial^\\alpha \\phi}{\\partial x^\\alpha} \\right)^2",
+      "source_line": 1270,
+      "source_line_sha256": "e72584b0b48aea481f197a8162d05a6e4fda2f6a950bddf8397afcf344e82464",
+      "source_text": "\\mathcal{L}_n^{\\text{fractal}} = \\mathcal{L}_n + \\beta^n \\left( \\frac{\\partial^\\alpha \\phi}{\\partial x^\\alpha} \\right)^2"
+    },
+    {
+      "ascii_text": "\\mathcal{L}n = \\frac{1}{2} \\partial\\mu \\phi \\partial^\\mu \\phi - V(\\phi)",
+      "source_line": 1276,
+      "source_line_sha256": "6c0132e955d0325109b1e0fa6857ce10aaaf936cddfa479e73008bc0953d1dcc",
+      "source_text": "\\mathcal{L}n = \\frac{1}{2} \\partial\\mu \\phi \\partial^\\mu \\phi - V(\\phi)"
+    },
+    {
+      "ascii_text": "\\mathcal{L}_n^{\\text{fractal}} = \\mathcal{L}_n + \\beta^n \\left( \\frac{\\partial^\\alpha \\phi}{\\partial x^\\alpha} \\right)^2",
+      "source_line": 1281,
+      "source_line_sha256": "e72584b0b48aea481f197a8162d05a6e4fda2f6a950bddf8397afcf344e82464",
+      "source_text": "\\mathcal{L}_n^{\\text{fractal}} = \\mathcal{L}_n + \\beta^n \\left( \\frac{\\partial^\\alpha \\phi}{\\partial x^\\alpha} \\right)^2"
+    },
+    {
+      "ascii_text": "4. Modular Symmetries: \\mathcal{R}(z)",
+      "source_line": 1287,
+      "source_line_sha256": "4442f85985f25452798475223f54ee16409da09393d8721e64b7f062ce4f68f8",
+      "source_text": "4. Modular Symmetries: \\mathcal{R}(z)"
+    },
+    {
+      "ascii_text": "\\mathcal{R}(z) = z \\to \\frac{az + b}{cz + d}, \\quad ad - bc = 1, \\quad a,b,c,d \\in \\mathbb{Z}",
+      "source_line": 1292,
+      "source_line_sha256": "eb9d8c01f15e44d1e7f8a6e1f97fa32eca3e9ec43ab4d771077fabef803ad041",
+      "source_text": "\\mathcal{R}(z) = z \\to \\frac{az + b}{cz + d}, \\quad ad - bc = 1, \\quad a,b,c,d \\in \\mathbb{Z}"
+    },
+    {
+      "ascii_text": "z \\to \\frac{az + b}{cz + d}",
+      "source_line": 1299,
+      "source_line_sha256": "0bb06c09e0c963d4f778ded1b399570470a814f4192dde177def8574eff42895",
+      "source_text": "z \\to \\frac{az + b}{cz + d}"
+    },
+    {
+      "ascii_text": "z = z_0 + \\epsilon \\cdot \\cos(\\omega t)",
+      "source_line": 1304,
+      "source_line_sha256": "fda14a0e50707cfbb231ba8b9b9f51860ae260580d6c4614ed5c4900a5a92aa2",
+      "source_text": "z = z_0 + \\epsilon \\cdot \\cos(\\omega t)"
+    },
+    {
+      "ascii_text": "\\mathcal{R}(z) = \\sum_{n=0}^\\infty \\beta^n \\frac{(az_n + b)}{(cz_n + d)}",
+      "source_line": 1309,
+      "source_line_sha256": "aec8868b59ee72d96458db04a9e6d336f67df87cdeb75edbc07c9c3af6ed29eb",
+      "source_text": "\\mathcal{R}(z) = \\sum_{n=0}^\\infty \\beta^n \\frac{(az_n + b)}{(cz_n + d)}"
+    },
+    {
+      "ascii_text": "The Exodus Equation, denoted as  \\mathcal{E}(x, t, D, z, \\Lambda) , builds upon the Unified Model, embedding:",
+      "source_line": 1331,
+      "source_line_sha256": "7b60bd08dd8b93b9465fb1386ba2284a7d809c5ac386bfaac5180c2ae2b6fb63",
+      "source_text": "The Exodus Equation, denoted as  \\mathcal{E}(x, t, D, z, \\Lambda) , builds upon the Unified Model, embedding:"
+    },
+    {
+      "ascii_text": "\\mathcal{E}(x, t, D, z, \\Lambda) = \\int_{0}^{\\infty} \\left[ \\sum_{n=0}^\\infty \\beta^n \\mathcal{L}n(x, t) \\cdot \\mathcal{R}(z, \\Lambda) \\right] dt + \\int{V} \\nabla \\cdot \\vec{J}(\\mathcal{F}, \\rho) \\, dV + \\Phi_{\\text{nodes}}(t, D, z),",
+      "source_line": 1342,
+      "source_line_sha256": "42aaabf5e97050892e7e437f4f963c22b05e073333d5eee13fa66e5361ea26fd",
+      "source_text": "\\mathcal{E}(x, t, D, z, \\Lambda) = \\int_{0}^{\\infty} \\left[ \\sum_{n=0}^\\infty \\beta^n \\mathcal{L}n(x, t) \\cdot \\mathcal{R}(z, \\Lambda) \\right] dt + \\int{V} \\nabla \\cdot \\vec{J}(\\mathcal{F}, \\rho) \\, dV + \\Phi_{\\text{nodes}}(t, D, z),"
+    },
+    {
+      "ascii_text": "-\t \\mathcal{L}_n(x, t) : Recursive fractal Lagrangians, evolving with time  t  and position  x .",
+      "source_line": 1347,
+      "source_line_sha256": "6ca205dde014e1cfb48f86f363e7b4d77664fe3e3a385b678d044371d7b239fc",
+      "source_text": "\u2022\t \\mathcal{L}_n(x, t) : Recursive fractal Lagrangians, evolving with time  t  and position  x ."
+    },
+    {
+      "ascii_text": "-\t \\mathcal{R}(z, \\Lambda) : Modular symmetries modulated by coupling constants  \\Lambda  (dimensional scaling and harmonization).",
+      "source_line": 1348,
+      "source_line_sha256": "e75b2f95ffd6b1a50e9debc5748a514b8a6a48800810b9da239e99986d88ac2a",
+      "source_text": "\u2022\t \\mathcal{R}(z, \\Lambda) : Modular symmetries modulated by coupling constants  \\Lambda  (dimensional scaling and harmonization)."
+    },
+    {
+      "ascii_text": "-\t \\vec{J}(\\mathcal{F}, \\rho) : Current density of energy and information ( \\mathcal{F} ) propagating through the nodespaces, driven by charge  \\rho .",
+      "source_line": 1349,
+      "source_line_sha256": "1098c16e8d1d61a3be552610a6e280859b4fb1af19beca58353a933674b06236",
+      "source_text": "\u2022\t \\vec{J}(\\mathcal{F}, \\rho) : Current density of energy and information ( \\mathcal{F} ) propagating through the nodespaces, driven by charge  \\rho ."
+    },
+    {
+      "ascii_text": "-\t \\int_V : Volume integral over nodespaces, accommodating multi-dimensional geometry.",
+      "source_line": 1353,
+      "source_line_sha256": "e4fd7656c501e4885ad611d1992d47b8dbdbab754844870cd7c4f43ab8ee4043",
+      "source_text": "\u2022\t \\int_V : Volume integral over nodespaces, accommodating multi-dimensional geometry."
+    },
+    {
+      "ascii_text": "D(t) = \\sum_{n} D_f^{(n)} + D_n^{\\text{negative}}(t),",
+      "source_line": 1359,
+      "source_line_sha256": "419500a2a3090b3b501607d39dde6765869f424320d007de3aabbfbbc06087a0",
+      "source_text": "D(t) = \\sum_{n} D_f^{(n)} + D_n^{\\text{negative}}(t),"
+    },
+    {
+      "ascii_text": "\\mathcal{F}_n(t) = \\mathcal{F}_0 \\cdot (1 + \\beta)^n e^{-\\alpha t},",
+      "source_line": 1365,
+      "source_line_sha256": "3d485d07f0c3fda501f2ad3e31aa72ded20ed36ebdb88a47e4cf1623f33c913c",
+      "source_text": "\\mathcal{F}_n(t) = \\mathcal{F}_0 \\cdot (1 + \\beta)^n e^{-\\alpha t},"
+    },
+    {
+      "ascii_text": "z \\to \\frac{az + b}{cz + d}, \\quad \\det(A) = 1, \\quad A \\in SL(2, \\mathbb{Z}).",
+      "source_line": 1371,
+      "source_line_sha256": "56e2df4ba56ff8cc35cc79006c37762593467a1b75d595c268f128d6d134b2f5",
+      "source_text": "z \\to \\frac{az + b}{cz + d}, \\quad \\det(A) = 1, \\quad A \\in SL(2, \\mathbb{Z})."
+    },
+    {
+      "ascii_text": "\\Phi_{\\text{nodes}}(t, D, z) = \\int_0^\\infty \\frac{e^{-\\kappa t}}{(1 + \\gamma D^2)^{1/2}} \\, dt,",
+      "source_line": 1377,
+      "source_line_sha256": "3c7cc75e631077535d83905df35b6cb87cbe79741eb00323bd37034cb4899c6b",
+      "source_text": "\\Phi_{\\text{nodes}}(t, D, z) = \\int_0^\\infty \\frac{e^{-\\kappa t}}{(1 + \\gamma D^2)^{1/2}} \\, dt,"
+    },
+    {
+      "ascii_text": "\\mathcal{E}(x, t, D, z, \\Lambda) = \\int \\nabla \\cdot \\vec{J}(\\mathcal{F}, \\rho) \\, dV + \\Phi_{\\text{nodes}}(t, D, z).",
+      "source_line": 1431,
+      "source_line_sha256": "8379b45b658fcc944de3bf655926f69355ab9bc9099fd8f83dd0cb277230808f",
+      "source_text": "\\mathcal{E}(x, t, D, z, \\Lambda) = \\int \\nabla \\cdot \\vec{J}(\\mathcal{F}, \\rho) \\, dV + \\Phi_{\\text{nodes}}(t, D, z)."
+    },
+    {
+      "ascii_text": "\\Delta_D = \\int_0^\\infty \\frac{d^\\alpha x}{dt^\\alpha} D_f(D_n) e^{-\\kappa t} \\, dt,",
+      "source_line": 1461,
+      "source_line_sha256": "b096f49f6ffd97325cfbe5dc999c150942d9fe881b32064aaaac8423146a489c",
+      "source_text": "\\Delta_D = \\int_0^\\infty \\frac{d^\\alpha x}{dt^\\alpha} D_f(D_n) e^{-\\kappa t} \\, dt,"
+    },
+    {
+      "ascii_text": "\\mathcal{F}(t) = \\sum_{n=0}^\\infty \\frac{\\beta^n}{(1 + \\gamma D^2)^n} \\cos(\\omega t),",
+      "source_line": 1471,
+      "source_line_sha256": "9d9f8ba6909729133bcd14e2c15ce44a11a811b9d580b778e959a57ca3dd9167",
+      "source_text": "\\mathcal{F}(t) = \\sum_{n=0}^\\infty \\frac{\\beta^n}{(1 + \\gamma D^2)^n} \\cos(\\omega t),"
+    },
+    {
+      "ascii_text": "\\Psi(t) = \\prod_{z} \\mathcal{R}(z, \\Lambda) \\cdot e^{i \\phi(t)},",
+      "source_line": 1481,
+      "source_line_sha256": "10e079184353c3ed734daf3bb18b7b5801730f41a0cdf824e971802a9ae6e3e9",
+      "source_text": "\\Psi(t) = \\prod_{z} \\mathcal{R}(z, \\Lambda) \\cdot e^{i \\phi(t)},"
+    },
+    {
+      "ascii_text": "-\t \\mathcal{R}(z, \\Lambda)  reflects modular symmetries.",
+      "source_line": 1484,
+      "source_line_sha256": "c35cdf5831fbfef38562b4674e2a198dbbd88859aee5eec4a2a40a453dc4121d",
+      "source_text": "\u2022\t \\mathcal{R}(z, \\Lambda)  reflects modular symmetries."
+    },
+    {
+      "ascii_text": "\\mathcal{Z}{\\text{eff}}(t, \\chi^{(n)}) = \\int_0^\\infty e^{-\\kappa t} \\cdot \\cos(\\omega t) \\cdot \\chi^{(n)}{\\text{eff}}(D, z, T) \\, dt,",
+      "source_line": 1510,
+      "source_line_sha256": "58f72ece6b828aa90d0a6bdf5f14b01bf7c2199f4771f678640b57e7f66bad75",
+      "source_text": "\\mathcal{Z}{\\text{eff}}(t, \\chi^{(n)}) = \\int_0^\\infty e^{-\\kappa t} \\cdot \\cos(\\omega t) \\cdot \\chi^{(n)}{\\text{eff}}(D, z, T) \\, dt,"
+    },
+    {
+      "ascii_text": "I_{\\text{harmonic}}(n, \\eta_{\\text{layered}}) = I_0 \\cdot \\left( \\frac{\\sin(n\\phi)}{n} \\right)^2 \\cdot \\eta_{\\text{layered}}(z),",
+      "source_line": 1519,
+      "source_line_sha256": "7be494513e5b41e6c89602e5710d3da64a21782ced3cbcb92b04c48d03e7f729",
+      "source_text": "I_{\\text{harmonic}}(n, \\eta_{\\text{layered}}) = I_0 \\cdot \\left( \\frac{\\sin(n\\phi)}{n} \\right)^2 \\cdot \\eta_{\\text{layered}}(z),"
+    },
+    {
+      "ascii_text": "\\Delta_{\\text{fractal}}(D, z, t) = \\sum_{n=0}^\\infty \\beta^n \\cdot \\mathcal{R}(z) \\cdot e^{i\\phi(t)},",
+      "source_line": 1528,
+      "source_line_sha256": "23594539b96534c3afe163ec6d2cc5404a7317fb9faba374202901daf354efca",
+      "source_text": "\\Delta_{\\text{fractal}}(D, z, t) = \\sum_{n=0}^\\infty \\beta^n \\cdot \\mathcal{R}(z) \\cdot e^{i\\phi(t)},"
+    },
+    {
+      "ascii_text": "-\t \\mathcal{R}(z)  captures modular transformations.",
+      "source_line": 1531,
+      "source_line_sha256": "275731b8dbf7d77c6f427d7c6ba8599de108de09c4ef94ac1e5db0661e26aab6",
+      "source_text": "\u2022\t \\mathcal{R}(z)  captures modular transformations."
+    },
+    {
+      "ascii_text": "-\tThe Exodus Equation's terms D_f(D_n) and \\mathcal{R}(z) provide the basis for exploring higher-dimensional nodespaces. Practical applications include:",
+      "source_line": 1554,
+      "source_line_sha256": "011b8f96ca928314ec863a3901949c29b02fe26853f75fcae2e364abc56e6485",
+      "source_text": "\u2022\tThe Exodus Equation\u2019s terms D_f(D_n) and \\mathcal{R}(z) provide the basis for exploring higher-dimensional nodespaces. Practical applications include:"
+    },
+    {
+      "ascii_text": "-\tUse fractal time evolution equations (\\frac{d^\\alpha x}{dt^\\alpha}) to track dynamic changes.",
+      "source_line": 1607,
+      "source_line_sha256": "07886cf69c21082df95a0bd1a3f8af518ff78d736d44ac79afb57510d377a932",
+      "source_text": "\u2022\tUse fractal time evolution equations (\\frac{d^\\alpha x}{dt^\\alpha}) to track dynamic changes."
+    },
+    {
+      "ascii_text": "I_n = I_0 \\cdot (1 + \\beta)^n,",
+      "source_line": 1619,
+      "source_line_sha256": "089f04d2b770508e69cc0d94cc9dbbb80fea0c8367cdeadc009a22c5703d8065",
+      "source_text": "I_n = I_0 \\cdot (1 + \\beta)^n,"
+    },
+    {
+      "ascii_text": "V(x, t) = \\sum_{n=0}^\\infty \\frac{\\eta_n}{(x^2 + t^2)^{\\frac{n}{2}}}.",
+      "source_line": 1624,
+      "source_line_sha256": "2e8e802fe8d0497fe6aaabae37b91cdf140f338555917e5b4e56ad0a512e2d95",
+      "source_text": "V(x, t) = \\sum_{n=0}^\\infty \\frac{\\eta_n}{(x^2 + t^2)^{\\frac{n}{2}}}."
+    },
+    {
+      "ascii_text": "\\chi(z, t) = \\int_0^t \\mathcal{R}(z) \\cdot e^{i\\omega t} dt.",
+      "source_line": 1628,
+      "source_line_sha256": "10fac4df1ce4cca8dbe48392d9c924120a2910e447cd40761e9fede1ff52c716",
+      "source_text": "\\chi(z, t) = \\int_0^t \\mathcal{R}(z) \\cdot e^{i\\omega t} dt."
+    },
+    {
+      "ascii_text": "usage = psutil.virtual_memory()",
+      "source_line": 1714,
+      "source_line_sha256": "779371e57e3085a102e8e50066f5bbc08f07c94f5b6bbc3437d5516ce3b5e643",
+      "source_text": "usage = psutil.virtual_memory()"
+    },
+    {
+      "ascii_text": "cpu_usage = psutil.cpu_percent(interval=1, percpu=True)",
+      "source_line": 1716,
+      "source_line_sha256": "8aed952fe070e3091820f090203674ac72ee14b7b8fec6c8a5a350ce5f815982",
+      "source_text": "cpu_usage = psutil.cpu_percent(interval=1, percpu=True)"
+    },
+    {
+      "ascii_text": "constants = {",
+      "source_line": 1722,
+      "source_line_sha256": "3975537adf73cdcbf73c1ef1c366cd5170089a4c2e3d785193cc9ac81151e70b",
+      "source_text": "constants = {"
+    },
+    {
+      "ascii_text": "def fractal_harmonic(n, scaling_factor=0.8):",
+      "source_line": 1732,
+      "source_line_sha256": "fff6ce0c76d18f8d2d66fbdfdbd986307970f13b0ca7cace49334be52e4703a9",
+      "source_text": "def fractal_harmonic(n, scaling_factor=0.8):"
+    },
+    {
+      "ascii_text": "def modular_symmetry(z, a=1, b=0, c=0, d=1):",
+      "source_line": 1736,
+      "source_line_sha256": "b029c4edcf2c0eb18c8ef971518459823f46997f88c9930924e32dd0980128ff",
+      "source_text": "def modular_symmetry(z, a=1, b=0, c=0, d=1):"
+    },
+    {
+      "ascii_text": "return (a * z + b) / (c * z + d) if c * z + d != 0 else None",
+      "source_line": 1737,
+      "source_line_sha256": "e7dd3a40abb95dcd46ba36fdb2665aee38c25549d5e33bfb313644fda2f09f2b",
+      "source_text": "return (a * z + b) / (c * z + d) if c * z + d != 0 else None"
+    },
+    {
+      "ascii_text": "def simulate_fractal_dynamics(layers=10):",
+      "source_line": 1740,
+      "source_line_sha256": "c83cb1f2fd399f113b8676fd7a5c8780045eae63c0b36719d2f221327c092831",
+      "source_text": "def simulate_fractal_dynamics(layers=10):"
+    },
+    {
+      "ascii_text": "constants = initialize_constants()",
+      "source_line": 1741,
+      "source_line_sha256": "4cc7426304965ad0e1ba1724edbb0b729283842f636f5d21553a529456cd337d",
+      "source_text": "constants = initialize_constants()"
+    },
+    {
+      "ascii_text": "results = []",
+      "source_line": 1742,
+      "source_line_sha256": "70b8d90f962e8d78d3201a0ec3fa5b9a40254e1f9f4cb4acdaf650a6c5bbaa79",
+      "source_text": "results = []"
+    },
+    {
+      "ascii_text": "harmonic_value = fractal_harmonic(n, scaling_factor=constants['zpe_scaling'])",
+      "source_line": 1745,
+      "source_line_sha256": "3c72dc410407bef169d130e72aa0caa0855f2caeb9e42678251eba61c03da10d",
+      "source_text": "harmonic_value = fractal_harmonic(n, scaling_factor=constants['zpe_scaling'])"
+    },
+    {
+      "ascii_text": "modular_value = modular_symmetry(harmonic_value)",
+      "source_line": 1746,
+      "source_line_sha256": "d80e85cc40b9d1dd59a917600461cdfd3c79b9404949f9d444fc7a3b7f095238",
+      "source_text": "modular_value = modular_symmetry(harmonic_value)"
+    },
+    {
+      "ascii_text": "if n % 5 == 0:",
+      "source_line": 1750,
+      "source_line_sha256": "b6ed25b2d6afbc79ae54ab9aec2d44090518412d9e2ab95904763e96621811d1",
+      "source_text": "if n % 5 == 0:"
+    },
+    {
+      "ascii_text": "layers = [x[0] for x in results]",
+      "source_line": 1756,
+      "source_line_sha256": "a0fb410674851b882d75a65f723acfbfd0f2999a8ad76b48514789eaaa23fb38",
+      "source_text": "layers = [x[0] for x in results]"
+    },
+    {
+      "ascii_text": "harmonics = [x[1] for x in results]",
+      "source_line": 1757,
+      "source_line_sha256": "3e563495f16d025169b2337f0e92d43b88d18cbfaa12b0a189833770e46da07f",
+      "source_text": "harmonics = [x[1] for x in results]"
+    },
+    {
+      "ascii_text": "modular_values = [x[2] for x in results]",
+      "source_line": 1758,
+      "source_line_sha256": "3475c8a2baac6cf921ea7f7f76ddecef0e31a54ae636891c818d8a165c8ed4ec",
+      "source_text": "modular_values = [x[2] for x in results]"
+    },
+    {
+      "ascii_text": "plt.figure(figsize=(10, 6))",
+      "source_line": 1760,
+      "source_line_sha256": "76c4226382016853eed399d84eeec321fc45b61407955226c4c998e688ed6bea",
+      "source_text": "plt.figure(figsize=(10, 6))"
+    },
+    {
+      "ascii_text": "plt.plot(layers, harmonics, label=\"Fractal Harmonics\", marker='o')",
+      "source_line": 1761,
+      "source_line_sha256": "ca0273d3dd27160cea9765bc12974404b803830898922c2f0ab79d7b131ebdbd",
+      "source_text": "plt.plot(layers, harmonics, label=\"Fractal Harmonics\", marker='o')"
+    },
+    {
+      "ascii_text": "plt.plot(layers, modular_values, label=\"Modular Symmetry\", marker='x')",
+      "source_line": 1762,
+      "source_line_sha256": "a4e9d04e315c94875ec191a487c1751f6ee5e1e94d1d15183f7702d202250f94",
+      "source_text": "plt.plot(layers, modular_values, label=\"Modular Symmetry\", marker='x')"
+    },
+    {
+      "ascii_text": "if __name__ == \"__main__\":",
+      "source_line": 1771,
+      "source_line_sha256": "f486ff5cf9363b4429336803b2c960e73da8c47fa0c6f67658d14b323cd22d34",
+      "source_text": "if __name__ == \"__main__\":"
+    },
+    {
+      "ascii_text": "results = simulate_fractal_dynamics(layers=20)",
+      "source_line": 1772,
+      "source_line_sha256": "4bc8293a08752e18067cd7da59d9514f8de27e69fcb1adf61b97b22e6416402a",
+      "source_text": "results = simulate_fractal_dynamics(layers=20)"
+    },
+    {
+      "ascii_text": "results = []",
+      "source_line": 1850,
+      "source_line_sha256": "70b8d90f962e8d78d3201a0ec3fa5b9a40254e1f9f4cb4acdaf650a6c5bbaa79",
+      "source_text": "results = []"
+    },
+    {
+      "ascii_text": "end = min(start + chunk_size, layers)",
+      "source_line": 1852,
+      "source_line_sha256": "4eb9bc53a510da2c78b8c91a3dbae062388a8f632c0d8fe925e2f1469afb6841",
+      "source_text": "end = min(start + chunk_size, layers)"
+    },
+    {
+      "ascii_text": "chunk_results = simulate_fractal_dynamics_chunk(start, end)",
+      "source_line": 1853,
+      "source_line_sha256": "e1284d9892f7efd2c4b8f6973832fd7eec03fb6e10e05917c3bc3b073c76163b",
+      "source_text": "chunk_results = simulate_fractal_dynamics_chunk(start, end)"
+    },
+    {
+      "ascii_text": "constants = initialize_constants()",
+      "source_line": 1865,
+      "source_line_sha256": "4cc7426304965ad0e1ba1724edbb0b729283842f636f5d21553a529456cd337d",
+      "source_text": "constants = initialize_constants()"
+    },
+    {
+      "ascii_text": "chunk_results = []",
+      "source_line": 1866,
+      "source_line_sha256": "c9f58673c030a51e0385ac9b7db48397abe5bbb2c53ce85efd931979f356d849",
+      "source_text": "chunk_results = []"
+    },
+    {
+      "ascii_text": "harmonic_value = fractal_harmonic(n, scaling_factor=constants['zpe_scaling'])",
+      "source_line": 1869,
+      "source_line_sha256": "3c72dc410407bef169d130e72aa0caa0855f2caeb9e42678251eba61c03da10d",
+      "source_text": "harmonic_value = fractal_harmonic(n, scaling_factor=constants['zpe_scaling'])"
+    },
+    {
+      "ascii_text": "modular_value = modular_symmetry(harmonic_value)",
+      "source_line": 1870,
+      "source_line_sha256": "d80e85cc40b9d1dd59a917600461cdfd3c79b9404949f9d444fc7a3b7f095238",
+      "source_text": "modular_value = modular_symmetry(harmonic_value)"
+    },
+    {
+      "ascii_text": "results = chunked_simulation(layers, chunk_size)",
+      "source_line": 1883,
+      "source_line_sha256": "bf6e04efeddbc0f877a78430e700ac0243653df05d391838ded645acf6d610c0",
+      "source_text": "results = chunked_simulation(layers, chunk_size)"
+    },
+    {
+      "ascii_text": "chunk_size = max(chunk_size // 2, 1)",
+      "source_line": 1886,
+      "source_line_sha256": "5ed03bac805d441e603c896535d775c0ca7ef724bbc56746955ce42e6ff20d57",
+      "source_text": "chunk_size = max(chunk_size // 2, 1)"
+    },
+    {
+      "ascii_text": "if __name__ == \"__main__\":",
+      "source_line": 1894,
+      "source_line_sha256": "f486ff5cf9363b4429336803b2c960e73da8c47fa0c6f67658d14b323cd22d34",
+      "source_text": "if __name__ == \"__main__\":"
+    },
+    {
+      "ascii_text": "layers = 1000   # Total layers to simulate",
+      "source_line": 1895,
+      "source_line_sha256": "246c02321bb9007183cd5fa93adfdde15e720fc802990e3635d50143e88db8a5",
+      "source_text": "layers = 1000   # Total layers to simulate"
+    },
+    {
+      "ascii_text": "chunk_size = 50 # Initial chunk size",
+      "source_line": 1896,
+      "source_line_sha256": "7c7a555fecb787e7a8585fb6038745a6206e34ed324b15fc27a1ee210c5f52a0",
+      "source_text": "chunk_size = 50 # Initial chunk size"
+    },
+    {
+      "ascii_text": "results = safe_simulation(layers, chunk_size)",
+      "source_line": 1899,
+      "source_line_sha256": "2c933eebdb3aab5178dea090f717934cf1783431a1b324887752b3056a488e63",
+      "source_text": "results = safe_simulation(layers, chunk_size)"
+    },
+    {
+      "ascii_text": "-\tH(t) = H_0 \\cdot \\sin(\\omega t + \\phi)",
+      "source_line": 1928,
+      "source_line_sha256": "397c714f4cceea10c676f4fc5b88a61b66a1ce8abe7834aa918b26967e48aef4",
+      "source_text": "\u2022\tH(t) = H_0 \\cdot \\sin(\\omega t + \\phi)"
+    },
+    {
+      "ascii_text": "-\tZPE(t) = ZPE_0 \\cdot (1 + \\delta \\sin(\\omega t))",
+      "source_line": 1929,
+      "source_line_sha256": "2244fbbeef097b2608d526f401198254c612a6f8b581e1366d8be3f12d0f652b",
+      "source_text": "\u2022\tZPE(t) = ZPE_0 \\cdot (1 + \\delta \\sin(\\omega t))"
+    },
+    {
+      "ascii_text": "time_steps = 1000  # Number of time points",
+      "source_line": 1944,
+      "source_line_sha256": "b7fc190527ea35fe90c22281f902c7271474a87abb3d996f7e1cd2f67d08ec0f",
+      "source_text": "time_steps = 1000  # Number of time points"
+    },
+    {
+      "ascii_text": "time_interval = np.linspace(0, 10, time_steps)  # Time range",
+      "source_line": 1945,
+      "source_line_sha256": "61fe05296b4b56ac211a4303b00ffc05d416590750af4c493513257ac1f494e2",
+      "source_text": "time_interval = np.linspace(0, 10, time_steps)  # Time range"
+    },
+    {
+      "ascii_text": "H0 = 1.0  # Base harmonic amplitude",
+      "source_line": 1946,
+      "source_line_sha256": "83fdf462ebba10662c3eb295550ef1d250bc7505e041d060e022ce8bf0894a76",
+      "source_text": "H0 = 1.0  # Base harmonic amplitude"
+    },
+    {
+      "ascii_text": "omega = 2 * np.pi  # Frequency of oscillation",
+      "source_line": 1947,
+      "source_line_sha256": "1ba910bd807f4789394cab0946c2ed8be88249de2aed5e4abc06f10b1fd9c32d",
+      "source_text": "omega = 2 * np.pi  # Frequency of oscillation"
+    },
+    {
+      "ascii_text": "phi = 0.5  # Phase shift",
+      "source_line": 1948,
+      "source_line_sha256": "9a6fa2282fd8c8afb871654030fc3e87448f7798960b657f36fcba52777608b4",
+      "source_text": "phi = 0.5  # Phase shift"
+    },
+    {
+      "ascii_text": "ZPE0 = 0.8  # Base Zero Point Energy flux",
+      "source_line": 1949,
+      "source_line_sha256": "7fac33ab3fae316658fc00da1b2b76f479eb117d197e2a09ac85c5cda80db30b",
+      "source_text": "ZPE0 = 0.8  # Base Zero Point Energy flux"
+    },
+    {
+      "ascii_text": "delta = 0.1  # Variability factor",
+      "source_line": 1950,
+      "source_line_sha256": "fcc5ef58cb958d7ce69b3c091c247021d95608686b1817b19191a07a7976c28a",
+      "source_text": "delta = 0.1  # Variability factor"
+    },
+    {
+      "ascii_text": "harmonic_values = harmonic_amplitude(time_interval)",
+      "source_line": 1960,
+      "source_line_sha256": "32763b12f722f8512d8280f08e4fb1182280212762fbe66edeb50c0657c86b9f",
+      "source_text": "harmonic_values = harmonic_amplitude(time_interval)"
+    },
+    {
+      "ascii_text": "zpe_values = zpe_flux(time_interval)",
+      "source_line": 1961,
+      "source_line_sha256": "4263430f48935607ab539e3e33c5d0b3b2fa44860202706051a040e42e696918",
+      "source_text": "zpe_values = zpe_flux(time_interval)"
+    },
+    {
+      "ascii_text": "plt.figure(figsize=(10, 5))",
+      "source_line": 1964,
+      "source_line_sha256": "632ad004eaeee139e500a414d44e04a5cde11fbbc945e041db9cd46ba7adc8f0",
+      "source_text": "plt.figure(figsize=(10, 5))"
+    },
+    {
+      "ascii_text": "plt.plot(time_interval, harmonic_values, label='Harmonic Amplitude')",
+      "source_line": 1965,
+      "source_line_sha256": "1924a63dfb42ddcd4d5a41545c218fefdb99e622440d8f68994dca36b80b3c9c",
+      "source_text": "plt.plot(time_interval, harmonic_values, label='Harmonic Amplitude')"
+    },
+    {
+      "ascii_text": "plt.plot(time_interval, zpe_values, label='ZPE Flux', linestyle='--')",
+      "source_line": 1966,
+      "source_line_sha256": "cdf291f06ab2753a00d84ed1b15b12222f8e69092e354443106aa495c5f1a37f",
+      "source_text": "plt.plot(time_interval, zpe_values, label='ZPE Flux', linestyle='--')"
+    },
+    {
+      "ascii_text": "\\frac{dA}{dt} = -\\alpha A + \\beta \\cdot Z - \\delta A^3 + \\xi(t),",
+      "source_line": 1999,
+      "source_line_sha256": "95cf29d7f9f80d9bc9ae95bc0585cae63bb0032c91da701bdb68416391e9aeb8",
+      "source_text": "\\frac{dA}{dt} = -\\alpha A + \\beta \\cdot Z - \\delta A^3 + \\xi(t),"
+    },
+    {
+      "ascii_text": "\\frac{dZ}{dt} = -\\gamma Z + \\kappa \\cdot A \\cdot \\cos(Z + \\phi) + \\zeta(t),",
+      "source_line": 2002,
+      "source_line_sha256": "3a7152d7f06dcb7105e3578358af5da72ebafaecef29b91d0f077ad7186c355e",
+      "source_text": "\\frac{dZ}{dt} = -\\gamma Z + \\kappa \\cdot A \\cdot \\cos(Z + \\phi) + \\zeta(t),"
+    },
+    {
+      "ascii_text": "alpha, beta, gamma, delta = 0.2, 0.5, 0.1, 0.01",
+      "source_line": 2021,
+      "source_line_sha256": "139264739ae6f5aeea5139361c757b797b794d4ccba592031935b1b09873aa70",
+      "source_text": "alpha, beta, gamma, delta = 0.2, 0.5, 0.1, 0.01"
+    },
+    {
+      "ascii_text": "kappa, phi = 1.0, np.pi / 6  # Phase shift",
+      "source_line": 2022,
+      "source_line_sha256": "d8c642fc8f1094b51883f05565bf2de83e8deaea1705bed31c7ff7423fa1c5f8",
+      "source_text": "kappa, phi = 1.0, np.pi / 6  # Phase shift"
+    },
+    {
+      "ascii_text": "noise_amp = 0.05  # Noise amplitude",
+      "source_line": 2023,
+      "source_line_sha256": "baa523ee77c462cf0536a32b91767f77b6052db9d8b8f2a4c93f9ec1915ed3c8",
+      "source_text": "noise_amp = 0.05  # Noise amplitude"
+    },
+    {
+      "ascii_text": "dt = 0.01",
+      "source_line": 2024,
+      "source_line_sha256": "d9eb3db19cf276ae42f65f6f48e1d883feade2994e10735642815eabc46a9c16",
+      "source_text": "dt = 0.01"
+    },
+    {
+      "ascii_text": "time = np.arange(0, 50, dt)",
+      "source_line": 2025,
+      "source_line_sha256": "d5cccef860dedc6387d15ac066c1adb677808484ce0e069a818f580af839047f",
+      "source_text": "time = np.arange(0, 50, dt)"
+    },
+    {
+      "ascii_text": "A = np.zeros_like(time)",
+      "source_line": 2028,
+      "source_line_sha256": "25bbd248e4ed33ea07da0415b94a8382ebfdaca960829a2513168abffdef34da",
+      "source_text": "A = np.zeros_like(time)"
+    },
+    {
+      "ascii_text": "Z = np.zeros_like(time)",
+      "source_line": 2029,
+      "source_line_sha256": "ef5418c7003b162f99b0974328bf9afc414bf79c3f9ced021d0a0350bc375013",
+      "source_text": "Z = np.zeros_like(time)"
+    },
+    {
+      "ascii_text": "A[0], Z[0] = 1.0, 0.5  # Initial conditions",
+      "source_line": 2030,
+      "source_line_sha256": "fa4c6c4bb3d37a6b6df5f19f146ad6fd163fddd3c7f3a8cef78474e447a6966d",
+      "source_text": "A[0], Z[0] = 1.0, 0.5  # Initial conditions"
+    },
+    {
+      "ascii_text": "noise_A = noise_amp * np.random.normal()",
+      "source_line": 2034,
+      "source_line_sha256": "1414dd5b925ab727c91f8158e774d351a1a2f618748135a3bccb7b69b71f534e",
+      "source_text": "noise_A = noise_amp * np.random.normal()"
+    },
+    {
+      "ascii_text": "noise_Z = noise_amp * np.random.normal()",
+      "source_line": 2035,
+      "source_line_sha256": "b24b464b1aca548f62d82eaddb99920e3481de77cf3e62cedd0ba4dbd07b3fa1",
+      "source_text": "noise_Z = noise_amp * np.random.normal()"
+    },
+    {
+      "ascii_text": "dA_dt = -alpha * A[t-1] + beta * Z[t-1] - delta * A[t-1]**3 + noise_A",
+      "source_line": 2037,
+      "source_line_sha256": "0c516a5a7784e0fe217ed58695c31c6082bff07f9b9aaea9e14b0c2f5804cca9",
+      "source_text": "dA_dt = -alpha * A[t-1] + beta * Z[t-1] - delta * A[t-1]**3 + noise_A"
+    },
+    {
+      "ascii_text": "dZ_dt = -gamma * Z[t-1] + kappa * A[t-1] * np.cos(Z[t-1] + phi) + noise_Z",
+      "source_line": 2038,
+      "source_line_sha256": "4e2dfb694cb821a599773985058ea6bd151673676beee33c6ea610620946a40a",
+      "source_text": "dZ_dt = -gamma * Z[t-1] + kappa * A[t-1] * np.cos(Z[t-1] + phi) + noise_Z"
+    },
+    {
+      "ascii_text": "A[t] = A[t-1] + dA_dt * dt",
+      "source_line": 2040,
+      "source_line_sha256": "9a2be56eec007bbcf8c7168bf5a701c46ca86873c2606c935c366251d42f7894",
+      "source_text": "A[t] = A[t-1] + dA_dt * dt"
+    },
+    {
+      "ascii_text": "Z[t] = Z[t-1] + dZ_dt * dt",
+      "source_line": 2041,
+      "source_line_sha256": "720ffe24e20046da1faf41fd4a37475ff987a09d173c62500bc2bfa306ecbd20",
+      "source_text": "Z[t] = Z[t-1] + dZ_dt * dt"
+    },
+    {
+      "ascii_text": "plt.figure(figsize=(12, 6))",
+      "source_line": 2044,
+      "source_line_sha256": "9f14ba47a0539d49497eb5f96dcf906abdbac1eeb41354182e0859af8cc51d33",
+      "source_text": "plt.figure(figsize=(12, 6))"
+    },
+    {
+      "ascii_text": "plt.plot(time, A, label='Harmonic Amplitude (A)', color='blue')",
+      "source_line": 2045,
+      "source_line_sha256": "1327e9e9c968fd2f4ba84924ea60a422b0797a1ab4a8c2eed2bcd017c7d093ba",
+      "source_text": "plt.plot(time, A, label='Harmonic Amplitude (A)', color='blue')"
+    },
+    {
+      "ascii_text": "plt.plot(time, Z, label='ZPE Flux (Z)', color='orange', alpha=0.7)",
+      "source_line": 2046,
+      "source_line_sha256": "cdf191909135f3e3419c4aaf4dc058802a499bd07bd6950c5f99e7183d95d5bc",
+      "source_text": "plt.plot(time, Z, label='ZPE Flux (Z)', color='orange', alpha=0.7)"
+    },
+    {
+      "ascii_text": "E_{\\text{pulse}}(t) = E_0 \\exp\\left(-\\frac{t^2}{2\\sigma^2}\\right) \\cos(\\omega_0 t),",
+      "source_line": 2090,
+      "source_line_sha256": "c2616f6c6f9f5292666910c0d57b7710b52ca61d313ab511e437753a49e0a163",
+      "source_text": "E_{\\text{pulse}}(t) = E_0 \\exp\\left(-\\frac{t^2}{2\\sigma^2}\\right) \\cos(\\omega_0 t),"
+    },
+    {
+      "ascii_text": "\\mathcal{L}{\\text{QCD}} = -\\frac{1}{4} G{\\mu\\nu}^a G^{\\mu\\nu}a + \\bar{\\psi}(i\\gamma^\\mu D\\mu - m)\\psi,",
+      "source_line": 2102,
+      "source_line_sha256": "f7c02ff5abff3817027274d6cc55322df6c0e4197d2ec6909e7c8d379e4cf4ef",
+      "source_text": "\\mathcal{L}{\\text{QCD}} = -\\frac{1}{4} G{\\mu\\nu}^a G^{\\mu\\nu}a + \\bar{\\psi}(i\\gamma^\\mu D\\mu - m)\\psi,"
+    },
+    {
+      "ascii_text": "\\Phi(t) = \\Phi_0 e^{-\\lambda t} + \\kappa \\mathcal{Z}(t) + \\mu \\mathcal{Q}(t),",
+      "source_line": 2109,
+      "source_line_sha256": "b43d75c9e2f8cf244835e7c50486bca724e194e73b5cf601754709edf92d9985",
+      "source_text": "\\Phi(t) = \\Phi_0 e^{-\\lambda t} + \\kappa \\mathcal{Z}(t) + \\mu \\mathcal{Q}(t),"
+    },
+    {
+      "ascii_text": "where \\mathcal{Q}(t) represents QCD contributions.",
+      "source_line": 2111,
+      "source_line_sha256": "4e47ccbb0480041aee4e530de4226b1a424bd696cb7e70eed5fb4e0b84829751",
+      "source_text": "where \\mathcal{Q}(t) represents QCD contributions."
+    },
+    {
+      "ascii_text": "\\chi^{(n)}_{\\text{eff}} = \\chi^{(n)} \\cdot S(\\lambda, T)",
+      "source_line": 2182,
+      "source_line_sha256": "1e1ac6be7c014638a77dc3b276958e98096cc4dfe91d24229f4d11ccc98fbd71",
+      "source_text": "\\chi^{(n)}_{\\text{eff}} = \\chi^{(n)} \\cdot S(\\lambda, T)"
+    },
+    {
+      "ascii_text": "\\Delta k_n = k_{\\omega} - n \\cdot k_{\\text{harmonic}} - \\delta n",
+      "source_line": 2188,
+      "source_line_sha256": "20412bb7ea6e37e16fb2cd7862379400889fd4fe0d1ccf9303d8441c946925a5",
+      "source_text": "\\Delta k_n = k_{\\omega} - n \\cdot k_{\\text{harmonic}} - \\delta n"
+    },
+    {
+      "ascii_text": "\\eta_n = \\frac{P_{\\text{harmonic}}}{P_{\\text{input}}} = \\left(\\frac{\\omega^n \\cdot |\\chi^{(n)}_{\\text{eff}}|^2}{\\Delta k_n^2 + \\gamma^2}\\right) \\cdot \\exp(-\\alpha_n \\cdot L)",
+      "source_line": 2194,
+      "source_line_sha256": "5e593be72c0b560082a4a3942f437530acb71338a077f5fe97c75010108f5b79",
+      "source_text": "\\eta_n = \\frac{P_{\\text{harmonic}}}{P_{\\text{input}}} = \\left(\\frac{\\omega^n \\cdot |\\chi^{(n)}_{\\text{eff}}|^2}{\\Delta k_n^2 + \\gamma^2}\\right) \\cdot \\exp(-\\alpha_n \\cdot L)"
+    },
+    {
+      "ascii_text": "\\chi^{(n+1)}{\\text{eff}} = \\chi^{(n)}{\\text{eff}} + \\Delta \\chi^{(n)}",
+      "source_line": 2200,
+      "source_line_sha256": "a5602820b0e0b82ed2d134897fe94e24addace919fbcff8f59167ce5deb3eaa7",
+      "source_text": "\\chi^{(n+1)}{\\text{eff}} = \\chi^{(n)}{\\text{eff}} + \\Delta \\chi^{(n)}"
+    }
+  ],
+  "schema_version": 1,
+  "source_relpath": "source_materials/frameworks/math5GenesisFrameworkUnveiled.txt",
+  "source_sha256": "721358f66d26b144b015aa24930770464e3ce6fbd2360339ee2dc1593fdc84c5",
+  "table_row_candidates": [
+    {
+      "ascii_text": "T(z_i, z_j) = \\exp\\left(-\\alpha \\cdot \\frac{|z_i - z_j|}{\\lambda}\\right),",
+      "source_line": 137,
+      "source_line_sha256": "741884412e87a1f1c4110b55c92b03e0a3561f88ac45a680324e507b8a519774",
+      "source_text": "T(z_i, z_j) = \\exp\\left(-\\alpha \\cdot \\frac{|z_i - z_j|}{\\lambda}\\right),"
+    },
+    {
+      "ascii_text": "T(z_i, z_j) = \\exp\\left(-\\alpha \\cdot |z_i - z_j|/\\lambda\\right).",
+      "source_line": 257,
+      "source_line_sha256": "36fc33d102a6bc684b3a55db49944de45ad3d14496847d5e1abce0cd908e150a",
+      "source_text": "T(z_i, z_j) = \\exp\\left(-\\alpha \\cdot |z_i - z_j|/\\lambda\\right)."
+    },
+    {
+      "ascii_text": "T(z_i, z_j) = \\frac{\\exp(-\\alpha \\cdot |z_i - z_j|)}{\\sum_k \\exp(-\\alpha \\cdot |z_k - z_j|)}.",
+      "source_line": 304,
+      "source_line_sha256": "7ce09772e35653d8b59ecd7013530a22f1c08909e40ef4b8bf9a54346204946a",
+      "source_text": "T(z_i, z_j) = \\frac{\\exp(-\\alpha \\cdot |z_i - z_j|)}{\\sum_k \\exp(-\\alpha \\cdot |z_k - z_j|)}."
+    },
+    {
+      "ascii_text": "P(x, t) = \\int \\exp(-\\alpha \\cdot |x - x_0|^2) \\cdot \\Psi(x, t) \\, dx.",
+      "source_line": 373,
+      "source_line_sha256": "5cac7eeb679b10c9282126b6dcc1873d4f61ba30ef68e12eba097ba3a34416f7",
+      "source_text": "P(x, t) = \\int \\exp(-\\alpha \\cdot |x - x_0|^2) \\cdot \\Psi(x, t) \\, dx."
+    },
+    {
+      "ascii_text": "Assuming |\\beta \\cdot r| < 1 for convergence:",
+      "source_line": 1220,
+      "source_line_sha256": "5c47a4cb4de2f6f48031a12e4482642b61bc899236bacb30d2d11ee77912607a",
+      "source_text": "Assuming |\\beta \\cdot r| < 1 for convergence:"
+    },
+    {
+      "ascii_text": "\\eta_n = \\frac{P_{\\text{harmonic}}}{P_{\\text{input}}} = \\left(\\frac{\\omega^n \\cdot |\\chi^{(n)}_{\\text{eff}}|^2}{\\Delta k_n^2 + \\gamma^2}\\right) \\cdot \\exp(-\\alpha_n \\cdot L)",
+      "source_line": 2194,
+      "source_line_sha256": "5e593be72c0b560082a4a3942f437530acb71338a077f5fe97c75010108f5b79",
+      "source_text": "\\eta_n = \\frac{P_{\\text{harmonic}}}{P_{\\text{input}}} = \\left(\\frac{\\omega^n \\cdot |\\chi^{(n)}_{\\text{eff}}|^2}{\\Delta k_n^2 + \\gamma^2}\\right) \\cdot \\exp(-\\alpha_n \\cdot L)"
+    }
+  ]
+}

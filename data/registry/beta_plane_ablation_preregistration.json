@@ -1,0 +1,67 @@
+{
+  "schema_version": 1,
+  "title": "Barotropic beta-plane and homomorphic quotient-filter negative-control ablation",
+  "model": {
+    "equation": "d(zeta)/dt + J(psi,zeta) + beta*d(psi)/dx = -drag*zeta + viscosity*laplacian(zeta)",
+    "diagnostic_relations": ["zeta=laplacian(psi)", "u=-d(psi)/dy", "v=d(psi)/dx"],
+    "domain": "doubly periodic square [0,2*pi)^2",
+    "spatial_method": "Fourier pseudospectral with two-thirds dealiasing",
+    "time_method": "classical fourth-order Runge-Kutta"
+  },
+  "fixed_parameters": {
+    "beta": 5.0,
+    "linear_drag": 0.02,
+    "viscosity": 0.0005,
+    "initial_wavenumber_minimum": 4.0,
+    "initial_wavenumber_maximum": 6.0,
+    "initial_energy": 0.01,
+    "duration": 0.5
+  },
+  "refinement_matrix": {
+    "seeds": [11, 29, 47],
+    "grid_sizes": [24, 32],
+    "time_steps": [0.01, 0.005]
+  },
+  "arms": [
+    {
+      "id": "f_plane_identity",
+      "beta": 0.0,
+      "filter": "identity",
+      "purpose": "Prove that the beta-dependent term changes the trajectory."
+    },
+    {
+      "id": "beta_plane_identity",
+      "beta": 5.0,
+      "filter": "identity",
+      "purpose": "Reference beta-plane evolution."
+    },
+    {
+      "id": "beta_plane_e7_quotient",
+      "beta": 5.0,
+      "filter": "e7_pq_homomorphism",
+      "purpose": "Negative control for the homomorphic filter that admits every exact triad."
+    }
+  ],
+  "primary_metrics": [
+    "vorticity_l2_difference_between_beta_and_f_plane",
+    "maximum_vorticity_difference_between_quotient_and_identity",
+    "zonal_kinetic_energy_fraction",
+    "spectral_zonal_energy_fraction",
+    "jet_count_at_preregistered_prominence",
+    "kinetic_energy",
+    "enstrophy",
+    "energy_budget_residual",
+    "enstrophy_budget_residual"
+  ],
+  "acceptance_criteria": [
+    "Every run remains finite and satisfies energy and enstrophy budget residuals below 1e-6 absolute.",
+    "At every matched configuration the beta-plane and f-plane vorticity fields differ by more than 1e-6 in relative L2 norm.",
+    "At every matched configuration the quotient-filter and identity fields agree within 1e-12 maximum absolute error.",
+    "Halving the time step changes final energy, enstrophy, and zonal energy fraction by less than 2 percent at fixed grid and seed."
+  ],
+  "rejection_criteria": [
+    "Reject the implementation if beta does not alter the evolution or if the quotient negative control changes it.",
+    "Reject any jet claim unless zonal energy exceeds 10 percent, jet prominence exceeds 5 percent of zonal RMS speed, and the count persists over the final 20 percent of samples.",
+    "Reject convergence claims when the preregistered refinement threshold fails; report the values as finite-resolution diagnostics."
+  ]
+}

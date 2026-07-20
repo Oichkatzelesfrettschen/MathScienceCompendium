@@ -1,0 +1,40 @@
+{
+  "code_fences": [],
+  "document_id": "math-spell-draft",
+  "formula_candidates": [
+    {
+      "ascii_text": "\\mathcal{F}n(x, y) = \\prod{i=1}^{n} \\sin(i \\cdot \\phi x) + \\cos(i \\cdot \\phi y)",
+      "source_line": 12,
+      "source_line_sha256": "867c56db414e710a398b7ffbfaaccf13e9a5675581d621e1ed38c07e2b675bb0",
+      "source_text": "\\mathcal{F}n(x, y) = \\prod{i=1}^{n} \\sin(i \\cdot \\phi x) + \\cos(i \\cdot \\phi y)"
+    },
+    {
+      "ascii_text": "\\mathcal{T}{\\text{sym}} = \\int{\\mathcal{M}} \\mathbb{T}_{ij} \\cdot \\omega^{ij} \\, d^n x",
+      "source_line": 19,
+      "source_line_sha256": "068af8afc971d81d54a2f4a2400183ab6a9357802f6e6912e995a637d22d9173",
+      "source_text": "\\mathcal{T}{\\text{sym}} = \\int{\\mathcal{M}} \\mathbb{T}_{ij} \\cdot \\omega^{ij} \\, d^n x"
+    },
+    {
+      "ascii_text": "\\mathcal{U} = \\lim_{n \\to \\infty} \\bigoplus_{k=1}^n \\mathcal{F}_k(x, y, z) \\otimes \\mathcal{T}_k(x, y, z)",
+      "source_line": 80,
+      "source_line_sha256": "19a9da8addb1fd794b45976fb5a09599fe7853c8bfd0d4b1d69e7204c3d2d34f",
+      "source_text": "\\mathcal{U} = \\lim_{n \\to \\infty} \\bigoplus_{k=1}^n \\mathcal{F}_k(x, y, z) \\otimes \\mathcal{T}_k(x, y, z)"
+    },
+    {
+      "ascii_text": "\\mathcal{G}(x, y, z) = \\prod_{n=1}^\\infty \\frac{\\sin(n \\phi x)}{\\cos(n \\phi y)} \\cdot e^{i n z}",
+      "source_line": 84,
+      "source_line_sha256": "2e5bce40cf8b0956a268f3cb143f2c12a2c0ff789bc3c86897ea7e9b518da3d7",
+      "source_text": "\\mathcal{G}(x, y, z) = \\prod_{n=1}^\\infty \\frac{\\sin(n \\phi x)}{\\cos(n \\phi y)} \\cdot e^{i n z}"
+    },
+    {
+      "ascii_text": "\\mathcal{O}_{\\text{self}} = \\mathcal{M}(x, y, z) + \\mathcal{N}(-x, -y, -z)",
+      "source_line": 88,
+      "source_line_sha256": "f425d52133f04410b400573bd95698d3e2ae6e9861d7af8fea4df89cb7f3ffb8",
+      "source_text": "\\mathcal{O}_{\\text{self}} = \\mathcal{M}(x, y, z) + \\mathcal{N}(-x, -y, -z)"
+    }
+  ],
+  "schema_version": 1,
+  "source_relpath": "source_materials/frameworks/Math_Spell_Draft.txt",
+  "source_sha256": "16a9fc3010ae3798a2b79160f5fbe49016d59175ea990cd8ebadf60b8216e387",
+  "table_row_candidates": []
+}

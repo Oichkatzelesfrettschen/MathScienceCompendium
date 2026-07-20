@@ -1,0 +1,862 @@
+arXiv:gr-qc/0311030v2 17 Apr 2008
+
+Chapter 1
+
+Gravitoelectromagnetism:
+A Brief Review
+Bahram Mashhoon
+Department of Physics and Astronomy
+University of Missouri-Columbia
+Columbia, Missouri 65211, USA
+Abstract. The main theoretical aspects of gravitoelectromagnetism (“GEM”) are
+presented. Two basic approaches to this subject are described and the role of the
+gravitational Larmor theorem is emphasized. Some of the consequences of GEM are
+briefly mentioned.
+
+1.1
+
+Introduction
+
+The analogy between gravitation and electromagnetism has a long history. The
+similarity between Newton’s law of gravitation and Coulomb’s law of electricity
+naturally led to a gravitoelectric description of Newtonian gravitation. Moreover,
+on the basis of advances in electrodynamics in the second half of the nineteenth
+century, Holzmüller [1] and Tisserand [2] postulated that the gravitational force
+exerted by the Sun on the planets of the solar system had an additional “magnetic”
+component. This extra force led to the precession of the planetary orbits; therefore,
+it could be adjusted in order to account for the excess perihelion precession of
+Mercury. Decades later, however, Einstein’s general relativity provided a beautiful
+explanation of the excess motion of Mercury’s perihelion in terms of a relativistic
+gravitoelectric correction to the Newtonian gravitational potential of the Sun [3].
+Furthermore, general relativity, which is a field theory of gravitation, contains a
+gravitomagnetic field due to mass current [4]. Indeed, to bring together Newtonian
+gravitation and Lorentz invariance in a consistent field-theoretic framework, the
+introduction of a gravitomagnetic field is unavoidable.
+1
+
+2
+
+CHAPTER 1. GRAVITOELECTROMAGNETISM:
+
+A BRIEF REVIEW
+
+According to general relativity, the proper rotation of the Sun produces a gravitomagnetic field and the influence of this field on planetary orbits was first considered
+by de Sitter [5] and later in a more general form by Lense and Thirring [4]. The
+gravitomagnetic contribution to the excess motion of Mercury’s perihelion turns out
+to be much smaller and in the opposite sense compared to the main gravitoelectric
+motion; in fact, it turns out that the Lense-Thirring precession of planetary orbits
+is too small to be measurable at present. On the other hand, evidence for the gravitomagnetic field of the Earth has been offered by Ciufolini by studying the motion
+of laser-ranged satellites LAGEOS and LAGEOS II [6]. The precise measurement
+of this field via superconducting gyroscopes in a drag-free satellite in polar orbit
+about the Earth is one of the aims of NASA’s GP-B [7].
+Within the framework of general relativity, gravitoelectromagnetism (“GEM”)
+has been discussed by a number of authors [3, 8]; a more extensive list of references is
+provided in [9]. The purpose of this review is to present the two principal approaches
+to GEM and briefly describe some of their consequences.
+
+1.2
+
+Linear Perturbation Approach to GEM
+
+We are interested in the general linear solution of the gravitational field equations [3].
+It is assumed that a global background inertial frame with coordinates xµ = (ct, x)
+and Minkowski metric ηµν is perturbed due to the presence of gravitating sources
+such that gµν = ηµν + hµν (x). It proves useful to define the trace-reversed amplitude
+h̄µν = hµν − 12 ηµν h, where h = η µν hµν is the trace of hµν . To linear order in the
+perturbation, Einstein’s field equations
+1
+8πG
+Rµν − gµν R = 4 Tµν
+2
+c
+take the form
+✷h̄µν = −
+
+16πG
+Tµν
+c4
+
+(1.1)
+
+(1.2)
+
+after imposing the transverse gauge condition h̄µν,ν = 0. The general solution of
+(1.2) is a superposition of a particular solution together with the general solution of
+the wave equation; however, we are only interested in the special retarded solution
+of (1.2) given by
+Z
+Tµν (ct − |x − x′ |, x′ ) 3 ′
+4G
+d x.
+(1.3)
+h̄µν = 4
+c
+|x − x′ |
+Let us define the matter density ρ and matter current j = ρv via T 00 = ρc2 and
+T 0i = cj i , respectively. Moreover, it is useful to define the GEM potentials Φ and A
+in terms of ρ and j as h̄00 = 4Φ/c2 and h̄0i = −2Ai /c2 , respectively. Assuming that
+the source consists of a finite distribution of slowly moving matter with |v| << c,
+Tij ∼ ρvi vj + pδij , where p is the pressure, and (1.3) imply that h̄ij = O(c−4 ).
+
+1.2. LINEAR PERTURBATION APPROACH TO GEM
+
+3
+
+All terms of O(c−4 ) will be neglected in this analysis. Under these conditions, the
+spacetime metric has the GEM form
+
+
+
+
+Φ
+4
+Φ
+2
+2
+2
+(1.4)
+ds = −c 1 − 2 2 dt − (A · dx)dt + 1 + 2 2 δij dxi dxj .
+c
+c
+c
+In the Newtonian limit, Φ reduces to the Newtonian gravitational potential, while
+A = O(c−1 ). If the source distribution is confined around the origin of spatial
+coordinates, then far from the source
+Φ∼
+
+GM
+,
+r
+
+A∼
+
+GJ×x
+,
+c r3
+
+(1.5)
+
+where r = |x| and M and J are the mass and angular momentum of the source,
+respectively. Moreover, the transverse gauge condition reduces to
+
+
+1
+1 ∂Φ
++∇·
+A = 0.
+(1.6)
+c ∂t
+2
+We define the GEM fields via
+1 ∂
+E = −∇Φ −
+c ∂t
+
+
+
+
+1
+A ,
+2
+
+B = ∇ × A,
+
+(1.7)
+
+in direct analogy with electromagnetism. It follows from these definitions that the
+GEM fields have dimensions of acceleration and
+
+
+
+
+1
+1 ∂ 1
+B , ∇·
+B = 0.
+(1.8)
+∇×E=−
+c ∂t 2
+2
+Furthermore, (1.2) implies that
+∇ · E = 4πGρ,
+
+∇×
+
+
+
+
+1
+1 ∂
+4πG
+B =
+E+
+j.
+2
+c ∂t
+c
+
+(1.9)
+
+The GEM field equations (1.8) and (1.9) contain the continuity equation ∇ · j +
+∂ρ/∂t = 0, as expected.
+For a complete GEM theory, we need an analogue of the Lorentz force law. The
+Lagrangian for the motion of a test particle of mass m, L = −mcds/dt, can be
+written to linear order in Φ and A as
+
+
+1
+
+v2
+v2 2
+2m
+2
++ mγ 1 + 2 Φ −
+L = −mc 1 − 2
+γv · A,
+(1.10)
+c
+c
+c
+where γ is the Lorentz factor. The equation of motion, dp/dt = F, where p = γmv
+is the kinetic momentum, takes a simple familiar form if ∂A/∂t = 0 and F is
+expressed to lowest order in v/c, Φ and A; then,
+F = −mE − 2m
+
+v
+× B.
+c
+
+(1.11)
+
+4
+
+CHAPTER 1. GRAVITOELECTROMAGNETISM:
+
+A BRIEF REVIEW
+
+The canonical momentum of the particle is given in this case by p + (−2m/c)A.
+Let us now discuss the gauge freedom of the GEM potentials. Under a coordinate
+′
+transformation xµ → x µ = xµ − ǫµ , hµν → h′µν = hµν + ǫµ,ν + ǫν,µ to linear order in
+ǫµ . Therefore,
+h̄′µν = h̄µν + ǫµ,ν + ǫν,µ − ηµν ǫα,α .
+(1.12)
+Under this transformation, the Riemann tensor remains invariant, but the connection changes. We must restrict ǫµ in such a way that those elements of the connection
+defining GEM fields also remain invariant. The new metric perturbation satisfies
+the transverse gauge condition as well, provided ✷ǫµ = 0. Therefore, let ǫ0 = O(c−3 )
+and ǫi = O(c−4 ); then, (1.12) implies that
+Φ′ = Φ −
+
+1∂
+Ψ,
+c ∂t
+
+1 ′ 1
+A = A + ∇Ψ,
+2
+2
+
+(1.13)
+
+where Ψ = c2 ǫ0 /4 and ✷Ψ = 0. Under the GEM gauge transformation (1.13), the
+GEM fields are invariant in close analogy with electrodynamics.
+It is important to discuss the stress-energy tensor for GEM in the context of
+our approximation scheme. For the sake of simplicity we set c = G = 1 in what
+follows, unless specified otherwise. The Landau-Lifshitz pseudotensor tµν can be
+employed to determine the local stress-energy content of the GEM fields. The general gauge-dependent result is somewhat complicated and is given in [10]; however,
+for a stationary configuration (i.e. ∂Φ/∂t = 0 and ∂A/∂t = 0), one finds
+X
+7
+A(i,j) A(i,j) ,
+4πGt00 = − E 2 +
+2
+
+(1.14)
+
+i,j
+
+4πGt0i = 2(E × B)i ,
+ 
+
+
+1
+1
+2
+2
+4πGtij = Ei Ej − δij E + Bi Bj + δij B .
+2
+2
+
+(1.15)
+(1.16)
+
+There is some similarity between these and the corresponding relations in classical
+electrodynamics. In particular, the GEM Poynting vector is given by
+S =−
+
+c
+E × B.
+2πG
+
+(1.17)
+
+For instance, gravitational energy circulates around a stationary source of mass m
+and angular momentum J = Jẑ with a flow velocity
+vg = k
+
+J
+sin θ φ̂
+Mr
+
+(1.18)
+
+in the same sense as the rotation of the mass. Here we employ spherical polar coordinates and k = 4/7. The flow given by (1.18) is divergence-free and the corresponding
+circulation is independent of the radial distance r and is given by 2πk(J/M ) sin2 θ.
+
+1.3. GRAVITATIONAL LARMOR THEOREM
+
+1.3
+
+5
+
+Gravitational Larmor Theorem
+
+There is a certain degree of arbitrariness in the definitions of the GEM potentials and
+fields that leads to extraneous numerical factors as compared to electrodynamics. To
+develop GEM in a way that would provide the closest possible connection with the
+standard formulas of electrodynamics, we have adopted a convention that, among
+other things, provides a clear statement of the gravitational Larmor theorem. We
+assume that a test particle of inertial mass m has gravitoelectric charge qE = −m
+and gravitomagnetic charge qB = −2m. For a source that is a rotating body of mass
+M , the corresponding charges are positive, QE = M and QB = 2M , respectively,
+in order to preserve the attractive nature of gravity. Moreover, the ratio of the
+gravitomagnetic charge to the gravitoelectric charge is always 2, since linearized
+gravity is a spin-2 field. This is consistent with the fact that for a spin-1 field such
+as in Maxwell’s theory, the corresponding ratio is always unity.
+The Larmor theorem originally established a basic local equivalence between
+magnetism and rotation [11]. In fact, the electromagnetic force on a test particle
+of mass m and charge q in the linear approximation is the same as the inertial
+force experienced by the free particle with respect to an accelerated system of reference with translational acceleration aL = −qE E/m and frequency of rotation
+ΩL = qB B/(2mc). In electromagnetism qE = qB = q and for all particles with the
+same charge-to-mass ratio q/m, the electromagnetic field can be replaced by the
+same accelerated system. This circumstance takes on a universal character in the
+case of gravity since the gravitational charge-to-mass ratio is the same for all particles according to the principle of equivalence of gravitational and inertial masses.
+The universality of the gravitational interaction thus leads to a geometric theory
+of gravitation, i.e. general relativity. An analogous approach to electrodynamics
+is impossible due to the fact that q/m for different particles can, for instance, be
+positive, negative or zero.
+To develop a gravitational analogue of Larmor’s theorem, we recall from the
+previous section that in the linear approximation of general relativity, the exterior
+gravity of a rotating source can be described in terms of GEM fields. In a sufficiently
+small neighborhood of the exterior region, the GEM fields may be considered locally
+uniform. These fields may then be locally replaced by an accelerated system in
+Minkowski spacetime. To this end, let us imagine an accelerated observer following
+a worldline xµ0 (τ ). Here τ is the observer’s proper time and uµ = dxµ0 /dτ and
+Aµ = duµ /dτ are its velocity and acceleration vectors, respectively. Let λµ(α) be the
+orthonormal tetrad frame of the observer such that λµ(0) = uµ and
+dλµ(α)
+dτ
+
+= φαβ λµ(β) ,
+
+(1.19)
+
+where φαβ (τ ) is the antisymmetric acceleration tensor of the observer. In analogy
+with the Faraday tensor, φαβ consists of an“electric” part φ0i = ai and a “magnetic”
+
+6
+
+CHAPTER 1. GRAVITOELECTROMAGNETISM:
+
+A BRIEF REVIEW
+
+part φij = ǫijk Ωk . Here a and Ω are spacetime scalars that represent respectively
+the translational acceleration, ai = aµ λµ(i) , and the rotational frequency of the local
+spatial frame with respect to the local nonrotating (i.e. Fermi-Walker transported)
+frame. Consider now a geodesic system of coordinates X µ established along the
+worldline of the fiducial observer. At any event τ along the worldline, the straight
+spacelike geodesic lines orthogonal to the worldline span a hyperplane that is Euclidean space. Let xµ be the coordinates of a point on this hyperplane; then,
+xµ = xµ0 + X i λµ(i) (τ ),
+
+τ = X 0.
+
+(1.20)
+
+The Minkowski metric ηµν dxµ dxν with respect to the new coordinates takes the
+form gµν dX µ dX ν , where
+g00 = −(1 + a · X)2 + (Ω × X)2 ,
+
+(1.21)
+
+g0i = (Ω × X)i ,
+
+(1.22)
+
+gij = δij .
+
+These geodesic coordinates are admissible if g00 < 0; a detailed discussion of the
+nature of the boundary of the admissible region is given in [12].
+A comparison of the metric given by (1.21) and (1.22) with (1.4) reveals that
+they are Larmor equivalent at the linear order once
+Φ = −aL · X,
+
+1
+A = − ΩL × X,
+2
+
+(1.23)
+
+and we neglect spatial curvature. The corresponding GEM fields to lowest order are
+E = −∇Φ = aL and B = ∇ × A = −ΩL , as expected from the traditional Larmor
+theorem with qE = −m and qB = −2m.
+The gravitational Larmor theorem [13] is essentially Einstein’s principle of equivalence formulated within the GEM framework. Einstein’s heuristic principle of
+equivalence traditionally refers to the Einstein “elevator” and its translational acceleration in connection with the gravitoelectric field of the source. However, it
+follows from the gravitational Larmor theorem that a rotation of the elevator is
+generally necessary as well in order to take due account of the gravitomagnetic field
+of the source.
+In classical electrodynamics, a charged spinning test particle has a magnetic
+dipole moment µ = qS/(2mc), where m, q and S are respectively the mass, charge
+and the spin of the particle. In an external magnetic field B, the test dipole has an
+interaction energy −µ · B and precesses due to a torque µ × B. In a similar way, a
+test gyroscope of spin S with q → qB = −2m has a gravitomagnetic dipole moment
+µg = −S/c and precesses in the exterior field of a rotating source of mass M and
+spin J with the frequency [14]
+ΩP =
+
+GJ
+[3(Ĵ · r̂)r̂ − Ĵ],
+c2 r 3
+
+(1.24)
+
+1.4. SPACETIME CURVATURE APPROACH TO GEM
+
+7
+
+where ΩP = B/c and the gravitomagnetic field B is given by the curl of the vector
+potential in (1.5) that corresponds to a source with gravitomagnetic dipole moment
+J/c. The related interaction energy is S · ΩP . A major aim of the GP-B is to
+measure (1.24) for gyros in a polar orbit about the Earth.
+It follows from (1.24) that 2π/ΩP is a characteristic timescale for the gravitomagnetic field. More generally, gravitomagnetic effects reveal an interesting temporal
+structure around a rotating mass; this can be further illustrated by the phenomena
+associated with the gravitomagnetic clock effect [15] and the gravitomagnetic time
+delay [16].
+A more exact long-term post-Schwarzschild analysis of the orbital motion of
+an ideal test gyroscope in the field of a rotating source reveals that besides the
+gravitoelectric geodetic (i.e. de Sitter-Fokker) precession of the gyro axis there is
+a complex gravitomagnetic component involving precessional as well as nutational
+motions—the latter is known as relativistic nutation [17]. The net gravitomagnetic
+spin motion reduces in the post-Newtonian approximation to equation (1.24).
+
+1.4
+
+Spacetime Curvature Approach to GEM
+
+The main elements that underlie the gravitational Larmor theorem apply equally
+well but in a different context to an alternative treatment of GEM based on spacetime curvature. Unlike the previous treatment, the new approach is not limited to
+perturbations of flat spacetime and can be employed in an arbitrary curved spacetime.
+Consider a congruence of test observers following geodesics in a gravitational
+field. Choosing a reference observer in this congruence, we set up a Fermi coordinate
+system along its path. This amounts to constructing an inertial system of coordinates in the immediate neighborhood of the reference observer [18]. Let λµ(α) (τ ) be
+the orthonormal tetrad of the reference observer. Here λµ(0) is the vector tangent
+to the worldline of the observer and τ is the proper time along its path. The spatial
+frame λµ(i) , i = 1, 2, 3, consists of unit vectors along ideal gyro directions that are
+parallel transported along the worldline. The Fermi frame is a geodesic reference
+system that is based on the nonrotating orthonormal tetrad λµ(α) . The metric of
+spacetime in Fermi coordinates X µ = (T, X) is then given by
+g00 = −1 − R0i0j X i X j + . . . ,
+(1.25)
+2
+(1.26)
+g0i = − R0jik X j X k + . . . ,
+3
+1
+gij = δij − Rikjl X k X l + . . . ,
+(1.27)
+3
+where Rαβγδ (T ) is the projection of the Riemann curvature tensor on the orthonormal tetrad of the reference observer
+Rαβγδ = Rµνρσ λµ(α) λν(β) λρ(γ) λσ(δ) .
+
+(1.28)
+
+8
+
+CHAPTER 1. GRAVITOELECTROMAGNETISM:
+
+A BRIEF REVIEW
+
+Along the reference geodesic T = τ , X = 0 and gµν = ηµν by construction. The
+Fermi coordinates are admissible within a cylindrical spacetime region of radius ∼ R
+around the worldline of the reference observer. Here R is the radius of curvature of
+spacetime.
+The metric in Fermi coordinates—within the limited region of admissibility—
+has the form of a perturbation about Minkowski spacetime; therefore, using the
+previous GEM approach and comparing (1.25) and (1.26) with (1.4), we define the
+new GEM potentials as
+1
+Φ(T, X) = − R0i0j (T )X i X j + . . . ,
+2
+1
+Ai (T, X) = R0jik (T )X j X k + . . . ,
+3
+
+(1.29)
+(1.30)
+
+where the spatial curvature has been ignored. The GEM fields are defined in terms
+of the potentials as before and are given to lowest order as
+Ei (T, X) = R0i0j (T )X j + . . . ,
+1
+Bi (T, X) = − ǫijk Rjk 0l (T )X l + . . . .
+2
+
+(1.31)
+(1.32)
+
+It is interesting to note that in this approach the gravitoelectric field is directly
+connected with the “electric” components of the curvature tensor R0i0j and the
+gravitomagnetic field is directly connected with the “magnetic” components of the
+curvature tensor R0ijk [19]. It is possible to combine (1.31) and (1.32) in the GEM
+Faraday tensor
+Fαβ = −Rαβ0i X i
+(1.33)
+to linear order in X, where F0i = −Ei and Fij = ǫijk B k . Then, Maxwell’s equations
+F[αβ,γ] = 0 and F αβ,β = 4πJ α are satisfied in this case to lowest order in |X|/R with
+
+
+1
+β
+(1.34)
+4πJα (T, 0) = −R0α = −8πG T0α − η0α T β
+2
+along the reference trajectory in Fermi coordinates. Here we have used the gravitational field equations as well as the symmetries of the Riemann curvature tensor.
+The new approach to GEM naturally contains the analogue of the Lorentz force
+law. The motion of free test particles in the congruence relative to the reference
+particle at the spatial origin of Fermi coordinates can be expressed as
+
+d2 X i
+j
+k j
++
+R
+X
++
+2R
+V
+X
++
+2R0kj0 V i V k
+0i0j
+ikj0
+dT 2
+
+(1.35)
+2
+2
+k l
+i k l
++ Rikjl V V + R0kjl V V V X j = 0,
+3
+3
+valid to linear order in the separation X. This geodesic deviation equation is a
+generalized Jacobi equation [20] in which the rate of geodesic separation (i.e. the
+
+1.4. SPACETIME CURVATURE APPROACH TO GEM
+
+9
+
+relative velocity of the test particle) V = dX/dT is in general arbitrary (|V| < 1
+at X = 0). To linear order in velocity, one can show that (1.35) takes the Lorentz
+form
+d2 X
+m 2 = qE E + qB V × B,
+(1.36)
+dT
+where qE = −m and qB = −2m as before.
+The stress-energy tensor in the new approach can be constructed essentially from
+the Faraday tensor (1.33) as in Maxwell’s theory, i.e.
+
+
+1
+1 αβ
+αβ
+γδ
+α βγ
+GT
+=
+F γ F − g Fγδ F
+,
+(1.37)
+4π
+4
+where an extra factor of G has been introduced due to dimensional considerations.
+From equations (1.33) and (1.37), we find
+
+
+1 αβ
+1
+γδ
+βγ
+α
+αβ
+R γ0i R 0j − η Rγδ0i R 0j X i X j .
+(1.38)
+T
+=
+4πG
+4
+This tensor as well as the Faraday tensor (1.33) vanishes along the worldline of the
+reference observer in the Fermi system; indeed, this is an immediate consequence of
+the inertial character of this system along the reference trajectory and a realization
+of Einstein’s principle of equivalence. Thus this treatment depends on our choice of
+a reference observer and the corresponding Fermi coordinate system.
+To obtain a coordinate-independent measure of the stress-energy content of the
+gravitational field, we invoke the notion that the physical measurement of such a
+quantity requires an averaging process [21]. Starting from an event (T, 0) on the
+reference worldline, we average the tensor given in (1.38) over a small sphere of
+radius ǫL, where 0 < ǫ << 1 and L is an invariant length scale that is characteristic
+of the source of the gravitational field under consideration. For instance, L could be
+GM/c2 or, in the absence of such a scale, the Planck length. The quadratic nature
+of (1.38) in the spatial coordinates implies that the averaging involves
+hX i X j i = k(ǫL)2 δij ,
+
+(1.39)
+
+where k = 1/5 or 1/3 depending on whether the averaging involves the volume or
+the surface of the sphere, respectively. In either case, the constant k can be absorbed
+in the definition of L. Thus
+hTαβ i =
+
+kǫ2 L2
+T̄µνρσ λµ(α) λν(β) λρ(0) λσ(0) ,
+4πG
+
+(1.40)
+
+where T̄µνρσ (x) is the Bel tensor given by
+1
+1
+T̄µνρσ (x) = (Rµξρζ Rν ξ ρζ + Rµξσζ Rν ξ ρζ ) − gµν Rαβργ Rαβσ γ .
+2
+4
+
+(1.41)
+
+10
+
+CHAPTER 1. GRAVITOELECTROMAGNETISM:
+
+A BRIEF REVIEW
+
+This tensor bears a certain similarity with the Maxwell stress-energy tensor and
+on this basis was first defined by Bel [22] for Einstein spaces in 1958. The Bel
+superenergy tensor is symmetric and trace-free in its first pair of indices and only
+symmetric in the second pair of indices. In a Ricci-flat spacetime, the Riemann
+tensor reduces to the Weyl conformal tensor Cµνρσ and the Bel tensor reduces to
+the completely symmetric and trace-free Bel-Robinson tensor Tµνρσ given by
+Tµνρσ =
+
+1
+1
+(Cµξρζ Cν ξσζ + Cµξσζ Cν ξρ ζ ) − gµν gρσ Cαβγδ C αβγδ .
+2
+16
+
+(1.42)
+
+An invariant average GEM stress-energy tensor of the gravitational field can
+thus be defined up to a constant positive multiplicative factor by [23]
+T̄(α)(β) =
+
+L2
+T̄µνρσ λµ(α) λν(β) λρ(0) λσ(0) ,
+G
+
+(1.43)
+
+∗
+where T̄(α)(β) is symmetric and traceless. In the Ricci-flat case, T̄(α)(β) → T(α)(β)
+,
+∗
+where T(α)(β) is the gravitational stress-energy tensor. This designation refers to the
+fact that in a Ricci-flat spacetime, the spatial components of the curvature tensor
+in (1.27), which were essentially ignored in our GEM analysis, are indeed basically
+∗
+given by its electric components; therefore, T(α)(β)
+involves all of the components
+∗ have properties
+of the spacetime curvature. The stress-energy tensors T̄µν and Tµν
+reminiscent of Maxwell’s electrodynamics and have been discussed in detail in [23].
+For instance, in the exterior of a rotating mass the gravitational Poynting flux based
+on the new approach has a flow velocity given by (1.18) with k = 3.
+A significant generalization of the concept of superenergy tensors has been developed in [24].
+The gravitomagnetic contribution to the spacetime curvature due to a rotating
+source involves subtle cumulative effects [25] that can be measured in principle via
+relativistic gravity gradiometry [26].
+
+1.5
+
+Spin-Rotation-Gravity Coupling
+
+An issue of fundamental interest is whether intrinsic spin is affected by a gravitomagnetic field in basically the same way as the classical spin of an ideal gyroscope.
+This question is related to the inertia of intrinsic spin. The description of physical
+states in the quantum theory is based upon the irreducible unitary representations
+of the inhomogeneous Lorentz group, which are characterized by means of mass and
+spin. The inertial properties of mass in moving frames of reference are already well
+known: for instance, via Coriolis, centrifugal and other mechanical effects, as well
+as their quantum mechanical counterparts. The inertial properties of intrinsic spin
+involve the phenomena associated with the spin-rotation-gravity coupling.
+The coupling of intrinsic spin with rotation reveals the rotational inertia of intrinsic spin. That is, as a particle moves, its intrinsic spin keeps its aspect with
+
+1.5. SPIN-ROTATION-GRAVITY COUPLING
+
+11
+
+respect to an inertial frame; therefore, the spin appears to rotate with respect to a
+rotating observer. To this motion of spin corresponds, according to quantum mechanics, a Hamiltonian H = −γΩ · S. The general formula for the transformation
+of energy turns out to be E ′ = γ(E − ~ΩM), where Ω is the frequency of rotation
+of the observer and ~M is the component of the total angular momentum along
+the axis of rotation; that is, M = 0, ±1, ±2, . . . for a scalar or a vector particle,
+while M ∓ 21 = 0, ±1, ±2, . . . for a Dirac particle. This formula relates the energy
+of a quantum system measured by a rotating observer E ′ to measurements performed in a global inertial frame and can be written in the JWKB approximation
+as E ′ = γ(E − Ω · J), where J = r × p + S is the total angular momentum. Thus,
+E ′ = γ(E − v · p) − γΩ · S, so that in the absence of intrinsic spin we recover the
+classical expression for the energy of a particle as measured in the rotating frame
+with v = Ω × r. The spin-rotation coupling therefore involves an energy shift given
+by the Hamiltonian H = −γΩ · S [27].
+Observational evidence for such an energy shift in the case of fermions has been
+provided in certain high-precision experiments by way of a small frequency offset due
+to the coupling between the nuclear spin of mercury and the rotation of the Earth
+[28, 29]; moreover, a direct approach using neutron or atom interferometry has
+been proposed in [30]. For photons, helicity-rotation coupling has been confirmed
+to rather high accuracy using rotating GPS receivers [31]; moreover, experimental
+evidence exists for such a coupling in the microwave and optical regimes in terms of
+the frequency shift of polarized radiation [30]. The modifications of Doppler effect
+and aberration due to the coupling of photon spin with the rotation of the source
+and/or receiver have been the subject of recent studies [32, 33].
+Let us now turn to the coupling of spin with gravitomagnetic fields; the spingravity coupling is naturally related to the spin-rotation coupling by way of Einstein’s principle of equivalence. That is, starting from the spin-rotation Hamiltonian,
+the transformation Ω → −ΩP leads, according to the gravitational Larmor theorem,
+to the spin-gravity Hamiltonian.
+It follows from these ideas that in Earth-based experiments, to every Hamiltonian we must add the spin-rotation-gravity interaction Hamiltonian δH ∼
+= −Ω⊕ ·
+S + ΩP · S, where Ω⊕ and ΩP refer to the rotation frequency of the Earth and
+the corresponding gravitomagnetic precession frequency, respectively. Thus in the
+approximation under consideration here a particle with intrinsic spin behaves essentially like an ideal gyroscope. The energy difference corresponding to a spin-1/2
+particle polarized vertically up and down relative to the surface of the Earth can be
+estimated from ~Ω⊕ ∼
+= 10−19 eV and ~ΩP ∼
+= 10−29 eV. The measurement of the latter
+term is beyond present capabilities by several orders of magnitude. In this connection, however, we note that near Jupiter ~ΩP ∼
+= 10−27 eV, and therefore it is likely
+that with further improvements in magnetometer design, the spin-gravitomagnetic
+coupling could become measurable in a satellite in orbit near the surface of Jupiter
+in the foreseeable future [34]. It is important to recognize that such a relativistic
+
+12
+
+CHAPTER 1. GRAVITOELECTROMAGNETISM:
+
+A BRIEF REVIEW
+
+quantum gravitational effect, like all other gravitational effects, is subject to the
+whole mass-energy content of the universe. It follows that our treatment has been
+based on certain cosmological assumptions regarding the distribution of angular
+momentum in the universe; specifically, we have assumed that on the largest scales
+there is no preferred sense of rotation. Moreover, in δH the spin-gravity coupling
+term has a gradient. Therefore, there exists a gravitomagnetic Stern-Gerlach force
+−∇(ΩP · S) on a spinning particle that is independent of the its mass and hence
+violates the universality of the gravitational acceleration. The weight of a body
+thus depends on its spin, but the effect is too small to be directly measurable in the
+foreseeable future. It is interesting to note that the Stern-Gerlach force has an exact
+analogue in the classical Mathisson-Papapetrou spin-curvature force. The results of
+this section are in agreement with the consequences of Dirac-type wave equations
+in the gravitational field of a rotating mass [35].
+
+References
+[1] G. Holzmüller, Z. Math. Phys. 15, 69 (1870).
+[2] F. Tisserand, Compt. Rend. 75, 760 (1872); 110, 313 (1890).
+[3] A. Einstein, The Meaning of Relativity (Princeton University Press, Princeton, 1950).
+[4] H. Thirring, Phys. Z. 19, 33 (1918); 22, 29 (1921); J. Lense and H. Thirring,
+Phys. Z. 19, 156 (1918); B. Mashhoon, F.W. Hehl and D.S. Theiss, Gen.
+Rel. Grav. 16, 711 (1984).
+[5] W. de Sitter, Mon. Not. Roy. Astron. Soc. 76, 699 (1916).
+[6] I. Ciufolini, Class. Quantum Grav. 17, 2369 (2000).
+[7] C.W.F. Everitt et al., in Near Zero: Festschrift for William M. Fairbank,
+edited by C.W.F. Everitt (Freeman, San Francisco, 1986).
+[8] A. Matte, Canadian J. Math. 5, 1 (1953); L. Bel, Compt. Rend. 247, 1094
+(1958); P. Teyssandier, Phys. Rev. D 16, 946 (1977); 18, 1037 (1978);
+V. Braginsky, C. Caves and K.S. Thorne, Phys. Rev. D 15, 2047 (1977);
+R. Jantzen, P. Carini and D. Bini, Ann. Phys. (NY) 215, 1 (1992); I.
+Ciufolini and J.A. Wheeler, Gravitation and Inertia (Princeton University
+Press, Princeton, 1995); M.A.G. Bonilla and J.M.M. Senovilla, Phys. Rev.
+Lett. 11, 783 (1997); R. Maartens and B.A. Bassett, Class. Quantum Grav.
+15, 705 (1998); S.J. Clark and R.W. Tucker, Class. Quantum Grav. 17,
+4125 (2000); J.M.M. Senovilla, Mod. Phys. Lett. A 15, 159 (2000); Class.
+Quantum Grav. 17, 2799 (2000); M.L. Ruggiero and A. Tartaglia, Nuovo
+Cimento B 117, 743 (2002); L. Iorio and D.M. Lucchesi, Class. Quantum
+Grav. 20, 2477 (2003).
+[9] D. Bini and R.J. Jantzen, in Reference Frames and Gravitomagnetism,
+edited by J.-F. Pascual-Sanchez, L. Floria, A. San Miguel and F. Vicente
+(World Scientific, Singapore, 2001), pp. 199-224.
+13
+
+14
+
+REFERENCES
+[10] B. Mashhoon, in Reference Frames and Gravitomagnetism, edited by J.-F.
+Pascual-Sanchez, L. Floria, A. San Miguel and F. Vicente (World Scientific,
+Singapore, 2001), pp. 121-132.
+[11] J. Larmor, Phil. Mag. 44, 503 (1897).
+[12] B. Mashhoon, in: Advances in General Relativity and Cosmology, edited by
+G. Ferrarese (Pitagora, Bologna, 2003), pp. 323-334.
+[13] B. Mashhoon, Phys. Lett. A 173, 347 (1993).
+[14] L.I. Schiff, Phys. Rev. Lett. 4, 215 (1960).
+[15] J.M. Cohen and B. Mashhoon, Phys. Lett. A 181, 353 (1993); B. Mashhoon,
+F. Gronwald and H.I.M. Lichtenegger, in Testing Relativistic Gravity in
+Space, edited by C. Lämmerzahl, C.W.F. Everitt and F.W. Hehl (Springer,
+Berlin, 2000); B. Mashhoon, F. Gronwald and D.S. Theiss, Ann. Physik 8,
+135 (1999); W.B. Bonnor and B.R. Steadman, Class. Quantum Grav. 16,
+1853 (1999); B. Mashhoon and N.O. Santos, Ann. Physik 9, 49 (2000); A.
+Tartaglia, Gen. Rel. Grav. 32, 1745 (2000) ; B. Mashhoon, L. Iorio and H.
+Lichtenegger, Phys. Lett. A 292, 49 (2001) ; L. Iorio, H.I.M. Lichtenegger
+and B. Mashhoon, Class. Quantum Grav. 19, 39 (2002) ; D. Bini, R.T.
+Jantzen and B. Mashhoon, Class. Quantum Grav. 19, 17 (2002).
+[16] I. Ciufolini and F. Ricci, Class. Quantum Grav. 19, 3863, 3875 (2002); I.
+Ciufolini, S. Kopeikin, B. Mashhoon and F. Ricci, Phys. Lett. A 308, 101
+(2003).
+[17] B. Mashhoon, Found. Phys. 15 (Bergmann Festschrift), 497 (1985); B.
+Mashhoon and D.S. Theiss, Nuovo Cimento B 106, 545 (1991).
+[18] J.L. Synge, Relativity: The General Theory (North-Holland, Amsterdam,
+1960).
+[19] A. Matte, Canadian J. Math. 5, 1 (1953).
+[20] C. Chicone and B. Mashhoon, Class. Quantum Grav. 19, 4231 (2002).
+[21] N. Bohr and L. Rosenfeld, Phys. Rev. 78, 794 (1950).
+[22] L. Bel, Compt. Rend. 247, 1094 (1958).
+[23] B. Mashhoon, J.C. McClune and H. Quevedo, Phys. Lett. A 231, 47 (1997);
+Class. Quantum Grav. 16, 1137 (1999); 17, 533 (2000).
+[24] J.M.M. Senovilla, Class. Quantum Grav. 17, 2799 (2000).
+[25] B. Mashhoon and D.S. Theiss, Phys. Rev. Lett. 49, 1542 (1982).
+
+REFERENCES
+
+15
+
+[26] B. Mashhoon, H.J. Paik and C.M. Will, Phys. Rev. D 39, 2825 (1989).
+[27] B. Mashhoon, Phys. Rev. Lett. 61, 2639 (1988).
+[28] B.J. Venema et al., Phys. Rev. Lett. 68, 135 (1992).
+[29] B. Mashhoon, Phys. Lett. A 198, 9 (1995).
+[30] B. Mashhoon, R. Neutze, M. Hannam, and G.E. Stedman, Phys. Lett. A
+249, 161 (1998).
+[31] N. Ashby, Living Rev. Relativ. 6, 1 (2003).
+[32] B. Mashhoon, Phys. Lett. A 306, 66 (2002).
+[33] J.D. Anderson and B. Mashhoon, Phys. Lett. A 315, 199 (2003).
+[34] B. Mashhoon, Class. Quantum Grav. 17, 2399 (2000).
+[35] C.G. de Oliveira and J. Tiomno, Nuovo Cimento 24, 672 (1962); F.W. Hehl
+and W.T. Ni, Phys. Rev. D 42, 2045 (1990); Y.Q. Cai and G. Papini, Phys.
+Rev. Lett. 66, 1259 (1991); I.D. Soares and J. Tiomno, Phys. Rev. D 54,
+2808 (1996); G. Papini, Phys. Rev. D 65, 077901 (2002); L.H. Ryder and
+B. Mashhoon, in: Proc. Ninth Marcel Grossmann Meeting (Rome, 2000),
+edited by V.G. Gurzadyan, R.T. Jantzen and R. Ruffini (World Scientific,
+Singapore, 2002), pp. 486-497.
+
+

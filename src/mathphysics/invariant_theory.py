@@ -17,7 +17,7 @@ class InvariantAnalyzer:
         """Compute the Hilbert series H(t) = 1 / product(1 - t^d_i)."""
 
         def series(t: complex) -> complex:
-            res = 1.0
+            res = 1.0 + 0.0j
             for d in degrees:
                 res /= 1.0 - t**d
             return res

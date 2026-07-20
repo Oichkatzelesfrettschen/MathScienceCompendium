@@ -20,6 +20,21 @@ This repository is organized for deterministic offline checks and regeneration.
 - `data/external/super_force_analysis/`: curated upstream text/code assets.
 - `data/external/super_force_analysis/PROVENANCE.json`: provenance for curated Super-Force-Analysis sync lane.
 - `data/normalized/corpus/`: normalized JSON records from raw `.txt` files.
+- `data/normalized/frameworks/`: ASCII Markdown reading views, heading indexes,
+  explicit-reference indexes, formula and table candidate indexes, and source-line
+  chunks for retained framework texts.
+- `data/registry/framework_document_decomposition.json`: source, chunk, and output
+  hashes proving complete framework-document coverage.
+- `data/registry/framework_overlap_audit.json`: exact normalized paragraph
+  overlap, containment, and source-line occurrences across framework drafts.
+- `data/registry/unified_framework_claims.json`: canonical statements, source
+  anchors, evidence links, falsification tests, and integration dispositions.
+- `data/registry/aligned_research_mineru_run.json`: per-source MinerU status plus
+  source and primary-output hashes for the manifest-aligned PDF corpus.
+- `data/registry/tesseract_fallback_run.json`: page-selective 400 DPI Tesseract
+  outputs routed by the native-text quality audit.
+- `docs/framework/UNIFIED_EVIDENCE_FRAMEWORK.md`: human-readable consolidated
+  framework governed by the machine-readable claim ledger.
 - `data/registry/*.toml`: generated indexes for corpus/artifacts/experiments.
 - `data/registry/corpus_dedupe_report.toml`: focused duplicate tracking report for normalized corpus.
 - `data/registry/claim_source_crosswalk.toml`: chapter-level claim anchors mapped to external source IDs.
@@ -36,6 +51,12 @@ This repository is organized for deterministic offline checks and regeneration.
 - `python3 scripts/fetch_external_sources.py --manifest data/external/sources.toml --extract-text`
 - `python3 scripts/sync_super_force_analysis_assets.py`
 - `python3 scripts/normalize_txt_to_json.py`
+- `python3 scripts/decompose_framework_documents.py`
+- `python3 scripts/analyze_framework_overlap.py`
+- `python3 scripts/run_mineru_manifest.py`
+- `python3 scripts/audit_pdf_text_quality.py`
+- `python3 scripts/run_tesseract_fallbacks.py`
+- `python3 scripts/index_document_decomposition.py`
 - `python3 scripts/corpus_dedupe_report.py`
 - `python3 scripts/build_registries.py`
 - `python3 scripts/build_docs_index.py`
@@ -63,12 +84,30 @@ This repository is organized for deterministic offline checks and regeneration.
 - external provenance JSON schema validation (`data/external/PROVENANCE.json` plus lane `*/PROVENANCE.json`);
 - schema validation for `data/registry/*.toml` and selected `data/registry/*.json` against `schemas/registry/*.schema.json`;
 - optional archive index JSON validity when present.
+- no tracked LaTeX build intermediates under `papers/`.
 
 ## Notes About PDFs
 
 PDFs are considered first-class offline artifacts and are retained in-repo when available.
 If relocation is ever needed, copy to `~/Documents/MathScienceCompendium/pdfs/` before removal.
 Use `make archive-pdfs` (or `python3 scripts/archive_pdfs_to_documents.py`) to perform this safely.
+
+## Evidence Retention Classes
+
+| Repository surface | Retention class | Durable contract |
+|---|---|---|
+| `source_materials/frameworks/` and `source_materials/pdfs/` | raw exact-target evidence | Retain source bytes with provenance and hashes. |
+| `data/external/` and `data/registry/` manifests | hash manifest | Retain and validate against live source and result bytes. |
+| `scripts/`, `schemas/registry/`, and `tools/document_ocr/` | canonical generator or schema | Retain the executable regeneration and validation path. |
+| `docs/framework/`, `papers/sections/`, and `papers/main.pdf` | synthesized truth surface | Retain the reviewed human-facing result and its source. |
+| `data/normalized/corpus/`, `data/normalized/frameworks/`, extracted text, and paper figures | derived regenerable evidence view | Retain when it provides bounded offline review, with source hashes and generators. |
+| `build/document_ocr/`, Python caches, and LaTeX intermediates | transient noise | Keep out of Git; regenerate from the canonical commands. |
+
+The offline verifier rejects tracked LaTeX intermediates under `papers/`.
+The source PDF, TeX source, generated tables and figures, bibliography source,
+and final PDF remain durable. Files such as `.aux`, `.bbl`, `.blg`, `.toc`,
+`.lof`, `.lot`, `.run.xml`, and `-blx.bib` remain build products governed by
+`.gitignore`.
 
 ## CI Artifact Publication
 

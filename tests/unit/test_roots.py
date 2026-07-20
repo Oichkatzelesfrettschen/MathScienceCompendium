@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import networkx as nx
 import numpy as np
 import pytest
 
@@ -83,12 +84,10 @@ def test_e8_simple_roots_count(e8):
     assert simple.shape == (8, 8)
 
 
-def test_e8_simple_roots_are_unit_norm(e8):
+def test_e8_simple_roots_have_squared_norm_two(e8):
     simple = e8.generate_simple_roots()
-    norms_sq = np.sum(simple ** 2, axis=1)
-    # All simple roots for E8 have squared length 1 or 2; last row is the
-    # half-integer root with squared length 1.
-    assert np.all(norms_sq > 0)
+    norms_sq = np.sum(simple**2, axis=1)
+    np.testing.assert_allclose(norms_sq, np.full(8, 2.0))
 
 
 def test_e8_cartan_matrix_diagonal(e8):
@@ -122,7 +121,7 @@ def test_e8_roots_are_8d(e8):
 
 def test_e8_all_roots_have_squared_norm_2(e8):
     roots = e8.generate_roots()
-    norms_sq = np.sum(roots ** 2, axis=1)
+    norms_sq = np.sum(roots**2, axis=1)
     np.testing.assert_allclose(norms_sq, 2.0, atol=1e-10)
 
 
@@ -132,8 +131,6 @@ def test_e8_dynkin_diagram_has_8_nodes(e8):
 
 
 def test_e8_dynkin_diagram_is_connected(e8):
-    import networkx as nx
-
     g = e8.dynkin_diagram()
     assert nx.is_connected(g)
 
@@ -146,6 +143,11 @@ def test_e8_dynkin_diagram_is_connected(e8):
 def test_e7_has_126_roots(e7):
     roots = e7.generate_roots()
     assert len(roots) == 126
+
+
+def test_e7_root_order_is_lexicographic(e7):
+    root_tuples = [tuple(root) for root in e7.generate_roots()]
+    assert root_tuples == sorted(root_tuples)
 
 
 def test_e7_rank_and_dimension(e7):
@@ -172,17 +174,37 @@ def test_e7_cartan_matrix_diagonal(e7):
     np.testing.assert_allclose(np.diag(cartan), np.full(7, 2.0))
 
 
+def test_e7_cartan_matrix_is_generalized_cartan_matrix(e7):
+    cartan = e7.compute_cartan_matrix()
+    np.testing.assert_allclose(cartan, np.rint(cartan))
+    np.testing.assert_allclose(cartan, cartan.T)
+    off_diagonal = cartan.copy()
+    np.fill_diagonal(off_diagonal, 0.0)
+    assert np.all(off_diagonal <= 0.0)
+    assert set(np.unique(off_diagonal)) <= {-1.0, 0.0}
+
+
+def test_e7_cartan_matrix_has_expected_determinant_and_signature(e7):
+    cartan = e7.compute_cartan_matrix()
+    assert np.linalg.det(cartan) == pytest.approx(2.0)
+    assert np.all(np.linalg.eigvalsh(cartan) > 0.0)
+
+
+def test_e7_dynkin_diagram_is_connected(e7):
+    assert nx.is_connected(e7.dynkin_diagram())
+
+
 def test_e7_classify_root_integer(e7):
-    # First simple root has integer entries
+    # Second simple root has integer entries.
     simple = e7.generate_simple_roots()
-    label = e7.classify_root(simple[0])
+    label = e7.classify_root(simple[1])
     assert "Integer" in label
 
 
 def test_e7_classify_root_half_integer(e7):
-    # Third simple root has half-integer entries
+    # First simple root has half-integer entries.
     simple = e7.generate_simple_roots()
-    label = e7.classify_root(simple[2])
+    label = e7.classify_root(simple[0])
     assert "Half-integer" in label
 
 
@@ -246,6 +268,22 @@ def test_f4_rank_and_dimension():
     assert f4.properties.dimension == 52
 
 
+@pytest.mark.parametrize(
+    "root_system",
+    [E6RootSystem, E7RootSystem, E8RootSystem, F4RootSystem],
+)
+def test_positive_roots_have_nonnegative_simple_root_coefficients(root_system):
+    system = root_system()
+    simple_roots = system.generate_simple_roots()
+    positive_roots = system.positive_roots()
+    assert len(positive_roots) == system.properties.num_positive_roots
+    for root in positive_roots:
+        coefficients, _, _, _ = np.linalg.lstsq(simple_roots.T, root, rcond=None)
+        np.testing.assert_allclose(simple_roots.T @ coefficients, root, atol=1e-9)
+        np.testing.assert_allclose(coefficients, np.rint(coefficients), atol=1e-9)
+        assert np.all(coefficients >= -1e-9)
+
+
 # ---------------------------------------------------------------------------
 # Kac-Moody extensions E9/E10/E11
 # ---------------------------------------------------------------------------
@@ -261,6 +299,37 @@ def test_e9_cartan_matrix_diagonal():
     e9 = E9RootSystem()
     mat = e9.generalized_cartan_matrix()
     np.testing.assert_allclose(np.diag(mat), np.full(9, 2.0))
+
+
+@pytest.mark.parametrize(
+    ("root_system", "expected_determinant", "negative_eigenvalues", "zero_eigenvalues"),
+    [
+        (E9RootSystem, 0.0, 0, 1),
+        (E10RootSystem, -1.0, 1, 0),
+        (E11RootSystem, -2.0, 1, 0),
+    ],
+)
+def test_kac_moody_cartan_determinants_and_signatures(
+    root_system, expected_determinant, negative_eigenvalues, zero_eigenvalues
+):
+    cartan = root_system().generalized_cartan_matrix()
+    eigenvalues = np.linalg.eigvalsh(cartan)
+    assert np.linalg.det(cartan) == pytest.approx(expected_determinant, abs=1e-10)
+    assert np.count_nonzero(eigenvalues < -1e-10) == negative_eigenvalues
+    assert np.count_nonzero(np.abs(eigenvalues) <= 1e-10) == zero_eigenvalues
+
+
+@pytest.mark.parametrize("root_system", [E9RootSystem, E10RootSystem, E11RootSystem])
+def test_kac_moody_matrices_are_connected_generalized_cartan_matrices(root_system):
+    cartan = root_system().generalized_cartan_matrix()
+    np.testing.assert_allclose(cartan, np.rint(cartan))
+    np.testing.assert_allclose(cartan, cartan.T)
+    np.testing.assert_allclose(np.diag(cartan), 2.0)
+    off_diagonal = cartan.copy()
+    np.fill_diagonal(off_diagonal, 0.0)
+    assert np.all(off_diagonal <= 0.0)
+    adjacency = nx.from_numpy_array((off_diagonal < 0.0).astype(int))
+    assert nx.is_connected(adjacency)
 
 
 def test_e10_cartan_matrix_shape():
@@ -307,11 +376,22 @@ def test_coxeter_number_e8():
     assert h == 30
 
 
-def test_coxeter_number_other():
-    # Any matrix with rank != 8 returns 18
-    mat = np.eye(7)
-    h = LieAlgebraCalculator.coxeter_number(mat)
-    assert h == 18
+@pytest.mark.parametrize(
+    ("root_system", "expected"),
+    [
+        (E6RootSystem, 12),
+        (E7RootSystem, 18),
+        (E8RootSystem, 30),
+        (F4RootSystem, 12),
+    ],
+)
+def test_coxeter_number_from_cartan_matrix(root_system, expected):
+    matrix = root_system().compute_cartan_matrix()
+    assert LieAlgebraCalculator.coxeter_number(matrix) == expected
+
+
+def test_coxeter_number_for_disconnected_a1_factors():
+    assert LieAlgebraCalculator.coxeter_number(np.eye(7) * 2) == 2
 
 
 # ---------------------------------------------------------------------------
@@ -357,19 +437,14 @@ def test_exceptional_get_all_names():
 
 
 # ---------------------------------------------------------------------------
-# BaseRootSystem abstract interface guards
+# Root-system interface boundary
 # ---------------------------------------------------------------------------
 
 
-def test_base_root_system_add_raises(e8):
-    with pytest.raises(NotImplementedError):
+def test_root_system_does_not_advertise_lie_element_operations(e8):
+    assert not hasattr(e8, "bracket")
+    assert not hasattr(e8, "norm")
+    with pytest.raises(TypeError):
         _ = e8 + e8
-
-
-def test_base_root_system_mul_raises(e8):
-    with pytest.raises(NotImplementedError):
+    with pytest.raises(TypeError):
         _ = e8 * e8
-
-
-def test_base_root_system_norm_returns_zero(e8):
-    assert e8.norm() == 0.0

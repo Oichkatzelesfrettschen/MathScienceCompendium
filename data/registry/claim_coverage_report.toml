@@ -1,11 +1,11 @@
 generated_by = "scripts/build_claim_coverage_report.py"
-generated_at_utc = "2026-02-12T07:47:48.374966+00:00"
+generated_at_utc = "2026-07-20T09:00:05.544908+00:00"
 crosswalk_relpath = "data/registry/claim_source_crosswalk.toml"
 sources_manifest_relpath = "data/external/sources.toml"
-claims_total = 9
-chapters_with_claims = 5
-groups_tracked = 3
-unique_sources_total = 10
+claims_total = 7
+chapters_with_claims = 4
+groups_tracked = 1
+unique_sources_total = 9
 unknown_source_id_count = 0
 unknown_source_ids = []
 overall_status = "pass"
@@ -13,70 +13,46 @@ overall_status = "pass"
 [coverage_policy]
 min_claims_per_chapter = 1
 min_unique_sources_per_chapter = 2
-min_claims_per_group = 2
-min_unique_sources_per_group = 2
-required_chapter_group_prefixes = ["papers/sections/vol2_", "papers/sections/vol3_", "papers/sections/vol4_"]
+min_claims_per_group = 7
+min_unique_sources_per_group = 6
+required_chapter_group_prefixes = ["papers/sections/review_"]
 
 [[chapter_coverage]]
-chapter_relpath = "papers/sections/vol2_ch5_superforce.tex"
+chapter_relpath = "papers/sections/review_conclusions.tex"
 claims_count = 1
-unique_sources_count = 2
-claim_ids = ["superforce_planck_force_unification"]
-source_ids = ["brandenburg_comment_superforce", "pais_superforce_2023"]
+unique_sources_count = 3
+claim_ids = ["conclusion_strongest_defensible_scope"]
+source_ids = ["pais_superforce_2023", "superframework_expansion", "tourmaline_addendum"]
 status = "pass"
 
 [[chapter_coverage]]
-chapter_relpath = "papers/sections/vol2_ch6_string_theory.tex"
+chapter_relpath = "papers/sections/review_critique_reassessment.tex"
+claims_count = 2
+unique_sources_count = 4
+claim_ids = ["review_conventional_materials_evidence_boundary", "review_planck_force_unification_boundary"]
+source_ids = ["arxiv_1111_4064v2", "brandenburg_comment_superforce", "pais_superforce_2023", "springer_978_3_319_48210_1_ch10"]
+status = "pass"
+
+[[chapter_coverage]]
+chapter_relpath = "papers/sections/review_physical_claims.tex"
+claims_count = 3
+unique_sources_count = 7
+claim_ids = ["physical_planck_force_source_assessment", "physical_tourmaline_novelty_boundary", "physical_zero_point_vibration_boundary"]
+source_ids = ["arxiv_1111_4064v2", "brandenburg_comment_superforce", "pais_superforce_2023", "phys_140a_lecture_14v3", "springer_978_3_319_48210_1_ch10", "tourmaline", "tourmaline_addendum"]
+status = "pass"
+
+[[chapter_coverage]]
+chapter_relpath = "papers/sections/review_scope_method.tex"
 claims_count = 1
 unique_sources_count = 2
-claim_ids = ["superframework_fractional_dynamics_claims"]
+claim_ids = ["review_scope_speculative_source_class"]
 source_ids = ["superframework_expansion", "superframework_foam_octonions"]
 status = "pass"
 
-[[chapter_coverage]]
-chapter_relpath = "papers/sections/vol2_ch7_quantum_gravity.tex"
-claims_count = 2
-unique_sources_count = 4
-claim_ids = ["superforce_quantum_gravity_linkage", "zero_point_vibration_material_basis"]
-source_ids = ["arxiv_1111_4064v2", "doi_10_1063_5_0038222", "pais_superforce_2023", "phys_140a_lecture_14v3"]
-status = "pass"
-
-[[chapter_coverage]]
-chapter_relpath = "papers/sections/vol3_ch9_experiments.tex"
-claims_count = 2
-unique_sources_count = 2
-claim_ids = ["computational_validation_falsification_lane", "high_intensity_target_positron_pathway"]
-source_ids = ["doi_10_1063_5_0038222", "phys_140a_lecture_14v3"]
-status = "pass"
-
-[[chapter_coverage]]
-chapter_relpath = "papers/sections/vol4_ch13_future.tex"
-claims_count = 3
-unique_sources_count = 8
-claim_ids = ["future_program_reference_lane", "tourmaline_material_response_evidence", "tourmaline_superframework_integration"]
-source_ids = ["arxiv_1111_4064v2", "brandenburg_comment_superforce", "pais_superforce_2023", "springer_978_3_319_48210_1_ch10", "superframework_expansion", "superframework_foam_octonions", "tourmaline", "tourmaline_addendum"]
-status = "pass"
-
 [[group_coverage]]
-group_prefix = "papers/sections/vol2_"
-chapters_covered = 3
-claims_count = 4
-unique_sources_count = 7
-source_ids = ["arxiv_1111_4064v2", "brandenburg_comment_superforce", "doi_10_1063_5_0038222", "pais_superforce_2023", "phys_140a_lecture_14v3", "superframework_expansion", "superframework_foam_octonions"]
-status = "pass"
-
-[[group_coverage]]
-group_prefix = "papers/sections/vol3_"
-chapters_covered = 1
-claims_count = 2
-unique_sources_count = 2
-source_ids = ["doi_10_1063_5_0038222", "phys_140a_lecture_14v3"]
-status = "pass"
-
-[[group_coverage]]
-group_prefix = "papers/sections/vol4_"
-chapters_covered = 1
-claims_count = 3
-unique_sources_count = 8
-source_ids = ["arxiv_1111_4064v2", "brandenburg_comment_superforce", "pais_superforce_2023", "springer_978_3_319_48210_1_ch10", "superframework_expansion", "superframework_foam_octonions", "tourmaline", "tourmaline_addendum"]
+group_prefix = "papers/sections/review_"
+chapters_covered = 4
+claims_count = 7
+unique_sources_count = 9
+source_ids = ["arxiv_1111_4064v2", "brandenburg_comment_superforce", "pais_superforce_2023", "phys_140a_lecture_14v3", "springer_978_3_319_48210_1_ch10", "superframework_expansion", "superframework_foam_octonions", "tourmaline", "tourmaline_addendum"]
 status = "pass"

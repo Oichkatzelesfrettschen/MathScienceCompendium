@@ -1,0 +1,236 @@
+{
+  "schema_version": 1,
+  "description": "Executable acceptance, falsification, scope, and rejection gates for all 23 canonical framework claims.",
+  "gates": [
+    {
+      "claim_id": "octonion_normed_division_boundary",
+      "gate_kind": "algebraic_proof",
+      "checker": "cayley_dickson_boundary",
+      "expected_claim_status": "established",
+      "expected_gate_outcome": "accepted",
+      "evidence_paths": ["src/mathphysics/algebras/cayley_dickson.py", "data/registry/cayley_dickson_property_audit.json", "tests/unit/test_cayley_dickson_properties.py"],
+      "acceptance_criteria": ["Dimensions 1, 2, 4, and 8 pass declared identities and a nonzero sedenion zero divisor is reproduced."],
+      "rejection_criteria": ["Reject division or composition above dimension 8 when a nonzero zero divisor is constructed."]
+    },
+    {
+      "claim_id": "higher_cayley_dickson_physical_mapping",
+      "gate_kind": "experimental_admission",
+      "checker": "physical_mapping_admission",
+      "expected_claim_status": "unsupported",
+      "expected_gate_outcome": "rejected",
+      "evidence_paths": ["data/registry/cayley_dickson_property_audit.json", "research/fact_checks/mathematical_validation_report.txt"],
+      "acceptance_criteria": ["Define a dimensional state map, measured observable, retained raw data, and matched algebra-free control."],
+      "rejection_criteria": ["Reject physical interpretation when algebraic labels have no observable map or matched control."]
+    },
+    {
+      "claim_id": "albert_exceptional_group_ladder",
+      "gate_kind": "scope_boundary",
+      "checker": "albert_group_scope",
+      "expected_claim_status": "corrected",
+      "expected_gate_outcome": "corrected",
+      "evidence_paths": ["src/mathphysics/algebras/jordan.py", "data/registry/exceptional_group_scope_audit.json", "tests/unit/test_jordan_algebra.py", "research/fact_checks/Maximal_Extraction_Complete_Analysis.txt"],
+      "acceptance_criteria": ["Identify F4 as the Albert automorphism group and E6 and E7 only through appropriate structure and conformal functors."],
+      "rejection_criteria": ["Reject J3(S) as an Albert algebra and reject E7 as its automorphism group."]
+    },
+    {
+      "claim_id": "spin8_triality",
+      "gate_kind": "algebraic_proof",
+      "checker": "spin8_triality",
+      "expected_claim_status": "established",
+      "expected_gate_outcome": "accepted",
+      "evidence_paths": ["source_materials/pdfs/math_0105155.pdf"],
+      "acceptance_criteria": ["Enumerate the six D4 diagram automorphisms that permute the three outer nodes."],
+      "rejection_criteria": ["Reject extensions of triality when no representation and induced action are defined."]
+    },
+    {
+      "claim_id": "e9_e10_e11_classification",
+      "gate_kind": "algebraic_proof",
+      "checker": "kac_moody_classification",
+      "expected_claim_status": "corrected",
+      "expected_gate_outcome": "corrected",
+      "evidence_paths": ["src/mathphysics/algebras/roots.py", "data/registry/exceptional_group_scope_audit.json", "tests/unit/test_roots.py"],
+      "acceptance_criteria": ["E9 has determinant 0 and one null direction; E10 and E11 have determinants -1 and -2 and one negative direction each."],
+      "rejection_criteria": ["Reject classification as finite-dimensional exceptional simple Lie algebras."]
+    },
+    {
+      "claim_id": "e10_e11_supergravity_scope",
+      "gate_kind": "scope_boundary",
+      "checker": "bounded_correspondence_scope",
+      "expected_claim_status": "bounded",
+      "expected_gate_outcome": "bounded",
+      "evidence_paths": ["source_materials/pdfs/extracted/hep-th_0207267.txt", "source_materials/pdfs/extracted/hep-th_0104081.txt", "research/kac_moody_deep_analysis.txt"],
+      "acceptance_criteria": ["State the truncation, field dictionary, equations matched, and first unmatched term."],
+      "rejection_criteria": ["Reject complete-unification scope broader than the demonstrated truncated correspondence."]
+    },
+    {
+      "claim_id": "monstrous_moonshine_stability",
+      "gate_kind": "scope_rejection",
+      "checker": "moonshine_stability_scope",
+      "expected_claim_status": "unsupported",
+      "expected_gate_outcome": "rejected",
+      "evidence_paths": ["data/registry/exceptional_group_scope_audit.json", "source_materials/pdfs/borcherds_monstrous_moonshine_1992.pdf", "source_materials/pdfs/arxiv_1411.6571.pdf", "papers/sections/review_mathematical_baseline.tex"],
+      "acceptance_criteria": ["Define the Monster representation, modular object, state space, evolution operator, and stability inequality."],
+      "rejection_criteria": ["Reject physical stability language without an operator bridge and matched control."]
+    },
+    {
+      "claim_id": "fractional_and_negative_dimension_scope",
+      "gate_kind": "scope_boundary",
+      "checker": "dimension_definition_scope",
+      "expected_claim_status": "corrected",
+      "expected_gate_outcome": "corrected",
+      "evidence_paths": ["src/mathphysics/fractal_analysis.py", "research/fact_checks/mathematical_validation_report.txt"],
+      "acceptance_criteria": ["Name the measure, metric, limiting procedure, estimator, and admissible domain."],
+      "rejection_criteria": ["Reject literal negative spatial axes derived from formal or multifractal dimensions."]
+    },
+    {
+      "claim_id": "fractal_estimator_convergence",
+      "gate_kind": "numerical_convergence",
+      "checker": "fractal_convergence",
+      "expected_claim_status": "bounded",
+      "expected_gate_outcome": "bounded",
+      "evidence_paths": ["experiments/results/fractal_dimensions.json"],
+      "acceptance_criteria": ["Recover exact controls across three resolutions with stable scale windows and estimator agreement."],
+      "rejection_criteria": ["Classify values as finite-resolution diagnostics when refinement and window stability are absent."]
+    },
+    {
+      "claim_id": "scalar_field_curvature_mechanism",
+      "gate_kind": "experimental_admission",
+      "checker": "scalar_gravity_admission",
+      "expected_claim_status": "unsupported",
+      "expected_gate_outcome": "rejected",
+      "evidence_paths": ["data/registry/experimental_admission_packages.json", "papers/sections/review_physical_claims.tex"],
+      "acceptance_criteria": ["Supply a covariant action, stress tensor, background, perturbation equations, stability analysis, and distinguishing observable."],
+      "rejection_criteria": ["Reject generic sourced scalar equations that do not close the field equations or distinguish an existing model."]
+    },
+    {
+      "claim_id": "zpe_energy_harvesting",
+      "gate_kind": "energy_accounting",
+      "checker": "zpe_energy_admission",
+      "expected_claim_status": "unsupported",
+      "expected_gate_outcome": "rejected",
+      "evidence_paths": ["data/registry/experimental_admission_packages.json", "papers/sections/review_physical_claims.tex"],
+      "acceptance_criteria": ["Close calibrated input, output, storage, thermal, electromagnetic, mechanical, and uncertainty channels over a complete cycle."],
+      "rejection_criteria": ["Reject extraction when the complete balance does not close or any input channel is unmeasured."]
+    },
+    {
+      "claim_id": "time_crystal_energy_amplification",
+      "gate_kind": "energy_accounting",
+      "checker": "time_crystal_energy_admission",
+      "expected_claim_status": "unsupported",
+      "expected_gate_outcome": "rejected",
+      "evidence_paths": ["data/registry/experimental_admission_packages.json", "papers/sections/review_physical_claims.tex"],
+      "acceptance_criteria": ["Measure drive work, dissipation, stored energy, output work, and uncertainty over integer drive periods."],
+      "rejection_criteria": ["Reject amplification when subharmonic response is called production or drive work is omitted."]
+    },
+    {
+      "claim_id": "planck_force_unification",
+      "gate_kind": "algebraic_proof",
+      "checker": "planck_force_identity",
+      "expected_claim_status": "unsupported",
+      "expected_gate_outcome": "rejected",
+      "evidence_paths": ["source_materials/pdfs/SUPERFORCE---S.C.Pais---2023.pdf", "papers/sections/review_physical_claims.tex"],
+      "acceptance_criteria": ["Derive common field content, action, couplings, low-energy limits, and a distinguishing prediction."],
+      "rejection_criteria": ["Reject unification when only E_P/l_P=c^4/G and algebraic hbar cancellation are shown."]
+    },
+    {
+      "claim_id": "origami_fold_merge_operator",
+      "gate_kind": "measurability_rejection",
+      "checker": "operator_measurability",
+      "expected_claim_status": "excluded",
+      "expected_gate_outcome": "excluded",
+      "evidence_paths": ["data/registry/experimental_admission_packages.json", "source_materials/frameworks/Math_Spell_Draft.txt"],
+      "acceptance_criteria": ["Define domain, codomain, operator law, closure, continuity, and a discriminating observable."],
+      "rejection_criteria": ["Exclude metaphor-only operators with no mathematical law or measurable consequence."]
+    },
+    {
+      "claim_id": "e7_root_quotient_charge",
+      "gate_kind": "algebraic_proof",
+      "checker": "e7_root_quotient",
+      "expected_claim_status": "falsified",
+      "expected_gate_outcome": "falsified",
+      "evidence_paths": ["src/mathphysics/algebras/roots.py", "src/mathphysics/fourier_quotient.py"],
+      "acceptance_criteria": ["Express every generated root as an integral combination of the simple roots and therefore in Q."],
+      "rejection_criteria": ["Reject nonzero P/Q charges assigned to roots because roots represent the zero coset."]
+    },
+    {
+      "claim_id": "external_fourier_quotient_map",
+      "gate_kind": "algebraic_proof",
+      "checker": "fourier_quotient_filter",
+      "expected_claim_status": "falsified",
+      "expected_gate_outcome": "falsified",
+      "evidence_paths": ["src/mathphysics/fourier_quotient.py", "data/registry/fourier_quotient_audit.json"],
+      "acceptance_criteria": ["Enumerate every Z^2 to Z/2 homomorphism and identify the nontrivial D4-invariant map."],
+      "rejection_criteria": ["Reject homomorphic filtering when no exact triad is rejected."]
+    },
+    {
+      "claim_id": "kac_moody_fluid_transfer",
+      "gate_kind": "scope_rejection",
+      "checker": "kac_moody_fluid_scope",
+      "expected_claim_status": "unsupported",
+      "expected_gate_outcome": "rejected",
+      "evidence_paths": ["src/mathphysics/algebras/loop_algebras.py", "papers/sections/review_physical_claims.tex"],
+      "acceptance_criteria": ["Define currents, level, stress tensor, Ward identities, fluid variables, dimensional map, and dispersion relation."],
+      "rejection_criteria": ["Reject transfer by label when no operator or dimensional dictionary exists."]
+    },
+    {
+      "claim_id": "lbm_beta_plane_and_jets",
+      "gate_kind": "numerical_convergence",
+      "checker": "retained_lbm_beta_jets",
+      "expected_claim_status": "falsified",
+      "expected_gate_outcome": "falsified",
+      "evidence_paths": ["data/registry/lbm_evidence_audit.json", "src/mathphysics/quantum_lattice_boltzmann.py"],
+      "acceptance_criteria": ["Trace beta into evolution and demonstrate converged zonal energy, jet count, anisotropy, and uncertainty."],
+      "rejection_criteria": ["Reject the historical claim when beta is absent and zonal energy is negligible."]
+    },
+    {
+      "claim_id": "matched_beta_plane_algebraic_ablation",
+      "gate_kind": "dynamical_ablation",
+      "checker": "matched_beta_ablation",
+      "expected_claim_status": "falsified",
+      "expected_gate_outcome": "falsified",
+      "evidence_paths": ["src/mathphysics/beta_plane.py", "data/registry/beta_plane_ablation_preregistration.json", "data/registry/beta_plane_ablation_results.json", "data/registry/fourier_quotient_audit.json"],
+      "acceptance_criteria": ["Implement beta dynamics, preregister refinements and seeds, and require quotient-filter and identity trajectories to match."],
+      "rejection_criteria": ["Reject an algebraic effect if a filter that removes no triads changes the trajectory or controls are unmatched."]
+    },
+    {
+      "claim_id": "lbm_equilibrium_conservation",
+      "gate_kind": "implementation_regression",
+      "checker": "lbm_conservation",
+      "expected_claim_status": "repaired",
+      "expected_gate_outcome": "repaired",
+      "evidence_paths": ["src/mathphysics/quantum_lattice_boltzmann.py", "tests/unit/test_unified_physics.py"],
+      "acceptance_criteria": ["Equilibrium sums to density at nonzero velocity and periodic evolution conserves mass within 1e-10."],
+      "rejection_criteria": ["Fail repaired status on any equilibrium or periodic mass-conservation regression."]
+    },
+    {
+      "claim_id": "tourmaline_novel_energy_effect",
+      "gate_kind": "experimental_admission",
+      "checker": "tourmaline_admission",
+      "expected_claim_status": "bounded",
+      "expected_gate_outcome": "bounded",
+      "evidence_paths": ["data/registry/experimental_admission_packages.json", "source_materials/pdfs/Tourmaline.pdf", "source_materials/pdfs/Tourmaline_Addendum.pdf"],
+      "acceptance_criteria": ["Separate conventional responses from novelty and require raw data, full energy balance, blinded controls, and replication."],
+      "rejection_criteria": ["Reject a novel energy effect when only conventional material responses are measured."]
+    },
+    {
+      "claim_id": "gravitoelectromagnetism_scope",
+      "gate_kind": "scope_boundary",
+      "checker": "gravitoelectromagnetism_scope",
+      "expected_claim_status": "corrected",
+      "expected_gate_outcome": "corrected",
+      "evidence_paths": ["source_materials/pdfs/extracted/gr-qc_0311030.txt", "papers/sections/review_physical_claims.tex"],
+      "acceptance_criteria": ["State weak-field, slow-motion, gauge, source, and normalization assumptions."],
+      "rejection_criteria": ["Reject claims that the analogy creates an independent force or replaces nonlinear Einstein equations."]
+    },
+    {
+      "claim_id": "consciousness_resonance",
+      "gate_kind": "measurability_rejection",
+      "checker": "consciousness_measurability",
+      "expected_claim_status": "excluded",
+      "expected_gate_outcome": "excluded",
+      "evidence_paths": ["data/registry/experimental_admission_packages.json", "source_materials/frameworks/Maximal_Extraction_SET1_SET2.txt"],
+      "acceptance_criteria": ["Define intervention, observable, comparator, blinding, threshold, and replication protocol."],
+      "rejection_criteria": ["Exclude resonance language with no operational observable or discriminating experiment."]
+    }
+  ]
+}

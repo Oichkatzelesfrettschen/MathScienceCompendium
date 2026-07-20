@@ -95,14 +95,14 @@ def test_hilbert_series_single_degree():
     # H(t) = 1 / (1 - t^2) for degrees=[2]
     h = InvariantAnalyzer.compute_hilbert_series([2])
     t = 0.5
-    expected = 1.0 / (1.0 - t ** 2)
+    expected = 1.0 / (1.0 - t**2)
     assert abs(h(t) - expected) < 1e-12
 
 
 def test_hilbert_series_two_degrees():
     h = InvariantAnalyzer.compute_hilbert_series([2, 3])
     t = 0.1
-    expected = 1.0 / ((1.0 - t ** 2) * (1.0 - t ** 3))
+    expected = 1.0 / ((1.0 - t**2) * (1.0 - t**3))
     assert abs(h(t) - expected) < 1e-12
 
 

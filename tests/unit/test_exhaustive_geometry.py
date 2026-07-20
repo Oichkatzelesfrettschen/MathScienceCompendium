@@ -18,7 +18,6 @@ Covers areas not exercised by test_projective_geometry.py:
 from __future__ import annotations
 
 import numpy as np
-import pytest
 
 from mathphysics.projective_geometry import (
     GF2Vector,
@@ -58,7 +57,7 @@ def test_gf2_vector_addition_different_lengths():
 
 
 def test_gf2_vector_addition_involution():
-    # a + a == 0 in GF(2)
+    # Every vector is its own additive inverse over GF(2).
     v = GF2Vector([1, 0, 1, 1])
     result = v + v
     assert result.is_zero()
@@ -231,7 +230,7 @@ def test_pg32_point_to_e7_index_valid():
 
 
 def test_pg32_point_to_e7_index_unknown_point_returns_minus1():
-    pg = ProjectiveSpace(dimension=3)
+    ProjectiveSpace(dimension=3)
     # Without calling generate_points, _point_index is empty
     pg2 = ProjectiveSpace(dimension=3)
     # create a fresh point not in pg2's index
@@ -282,19 +281,14 @@ def test_pg62_e7_geometric_interpretation_out_of_range_empty():
     assert interp == {}
 
 
-def test_pg62_e7_analyze_structure_raises_or_returns_keys():
-    # analyze_structure calls e7.get_statistics() which is not implemented in the
-    # source (AttributeError).  We accept either outcome; the test documents the
-    # known limitation without masking it.
+def test_pg62_e7_analyze_structure_returns_root_and_geometry_statistics():
     conn = PG62_E7Connection()
-    try:
-        analysis = conn.analyze_structure()
-        assert "pg62_points" in analysis
-        assert "e7_states" in analysis
-        assert "perfect_match" in analysis
-    except AttributeError:
-        # Source bug: E7RootSystem.get_statistics() not defined
-        pass
+    analysis = conn.analyze_structure()
+    assert analysis["pg62_points"] == 127
+    assert analysis["e7_states"] == 127
+    assert analysis["perfect_match"] is True
+    assert analysis["e7_properties"]["total_roots"] == 126
+    assert analysis["e7_properties"]["positive_roots"] == 63
 
 
 def test_pg62_e7_analyze_structure_point_count_pre_call():

@@ -3,11 +3,16 @@ from __future__ import annotations
 import numpy as np
 import pytest
 
+
 # loop_algebras imports JAX at the module level; skip the whole file if JAX is absent.
 jnp = pytest.importorskip("jax.numpy", reason="JAX is required for loop_algebras")
 
-from mathphysics.algebras.loop_algebras import AffineLieAlgebra, SL2Affine, SL3Affine
-from mathphysics.algebras.roots import E6RootSystem, E7RootSystem, E8RootSystem
+from mathphysics.algebras.loop_algebras import (  # noqa: E402
+    AffineLieAlgebra,
+    SL2Affine,
+    SL3Affine,
+)
+from mathphysics.algebras.roots import E6RootSystem, E7RootSystem, E8RootSystem  # noqa: E402
 
 
 # ---------------------------------------------------------------------------

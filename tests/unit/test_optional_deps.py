@@ -13,13 +13,11 @@ Covers:
 
 from __future__ import annotations
 
-import importlib
-import sys
-import types
 from unittest.mock import patch
 
 import pytest
 
+import mathphysics.optional_deps as optional_deps_module
 from mathphysics.optional_deps import (
     HAS_GUDHI,
     HAS_JAX,
@@ -30,7 +28,6 @@ from mathphysics.optional_deps import (
     require_dependency,
     safe_import,
 )
-import mathphysics.optional_deps as optional_deps_module
 
 
 # ---------------------------------------------------------------------------
@@ -70,8 +67,7 @@ def test_has_plotly_is_bool():
 def test_all_contains_public_flags():
     import mathphysics.optional_deps as m  # noqa: PLC0415
 
-    for name in ("HAS_JAX", "HAS_QISKIT", "HAS_GUDHI", "HAS_LIESYM",
-                 "HAS_JAXLIE", "HAS_PLOTLY"):
+    for name in ("HAS_JAX", "HAS_QISKIT", "HAS_GUDHI", "HAS_LIESYM", "HAS_JAXLIE", "HAS_PLOTLY"):
         assert name in m.__all__, f"{name} missing from __all__"
 
 
@@ -114,12 +110,14 @@ def _patch_flag_false(flag_name: str, dep_name: str):
 
 def test_require_dependency_unavailable_raises_import_error():
     # Temporarily mark jax as unavailable regardless of actual installation
-    with patch.dict(
-        vars(optional_deps_module),
-        {"HAS_JAX": False},
+    with (
+        patch.dict(
+            vars(optional_deps_module),
+            {"HAS_JAX": False},
+        ),
+        pytest.raises(ImportError, match="jax"),
     ):
-        with pytest.raises(ImportError, match="jax"):
-            require_dependency("jax")
+        require_dependency("jax")
 
 
 def test_require_dependency_import_error_message_has_install_hint():
@@ -130,15 +128,19 @@ def test_require_dependency_import_error_message_has_install_hint():
 
 
 def test_require_dependency_gudhi_unavailable_raises():
-    with patch.dict(vars(optional_deps_module), {"HAS_GUDHI": False}):
-        with pytest.raises(ImportError):
-            require_dependency("gudhi")
+    with (
+        patch.dict(vars(optional_deps_module), {"HAS_GUDHI": False}),
+        pytest.raises(ImportError),
+    ):
+        require_dependency("gudhi")
 
 
 def test_require_dependency_plotly_unavailable_raises():
-    with patch.dict(vars(optional_deps_module), {"HAS_PLOTLY": False}):
-        with pytest.raises(ImportError):
-            require_dependency("plotly")
+    with (
+        patch.dict(vars(optional_deps_module), {"HAS_PLOTLY": False}),
+        pytest.raises(ImportError),
+    ):
+        require_dependency("plotly")
 
 
 # ---------------------------------------------------------------------------

@@ -1,0 +1,1626 @@
+Observation of a Discrete Time Crystal
+J. Zhang, P. W. Hess, A. Kyprianidis, P. Becker, A. Lee, J. Smith, G. Pagano,1
+I.-D. Potirniche,2 A. C. Potter,2, 3 A. Vishwanath,2, 4 N. Y. Yao,2 and C. Monroe1
+1
+
+Spontaneous symmetry breaking is a fundamental concept in many areas of physics, ranging from cosmology and particle physics to condensed matter1 . A prime example is the breaking
+of spatial translation symmetry, which underlies
+the formation of crystals and the phase transition from liquid to solid. Analogous to crystals
+in space, the breaking of translation symmetry in
+time and the emergence of a “time crystal” was
+recently proposed2,3 , but later shown to be forbidden in thermal equilibrium4–6 . However, nonequilibrium Floquet systems subject to a periodic
+drive can exhibit persistent time-correlations at
+an emergent sub-harmonic frequency7–10 . This
+new phase of matter has been dubbed a “discrete
+time crystal” (DTC)10,11 . Here, we present the
+first experimental observation of a discrete time
+crystal, in an interacting spin chain of trapped
+atomic ions. We apply a periodic Hamiltonian to
+the system under many-body localization (MBL)
+conditions, and observe a sub-harmonic temporal
+response that is robust to external perturbations.
+Such a time crystal opens the door for studying
+systems with long-range spatial-temporal correlations and novel phases of matter that emerge
+under intrinsically non-equilibrium conditions7 .
+For any symmetry in a Hamiltonian system, its spontaneous breaking in the ground state leads to a phase
+transition12 . The broken symmetry itself can assume
+many different forms. For example, the breaking of spinrotational symmetry leads to a phase transition from
+paramagnetism to ferromagnetism when the temperature
+is brought below the Curie point. The breaking of spatial
+symmetry leads to the formation of crystals, where the
+continuous translation symmetry of space is replaced by
+a discrete one.
+We now pose an analogous question: can the translation symmetry of time be broken? The proposal of
+such a “time crystal”2 for time-independent Hamiltonians has led to much discussion, with the conclusion that
+such structures cannot exist in the ground state or any
+thermal equilibrium state of a quantum mechanical system4–6 . A simple intuitive explanation is that quantum
+equilibrium states have time-independent observables by
+
+H1
+
+Global rotation
+
+H2
+
+H1 = g(1 - ε) σiy
+
+H3
+
+Interactions
+
+H2
+
+H2 = Jij σix σjx
+
+H3
+
+H1
+
+H1
+
+Disorder
+H3 = Di σi
+
+x
+
+H2
+H3
+
+Time
+(100 Floquet periods)
+
+arXiv:1609.08684v1 [quant-ph] 27 Sep 2016
+
+Joint Quantum Institute, University of Maryland Department of Physics and
+National Institute of Standards and Technology, College Park, MD 20742
+2
+Department of Physics, University of California Berkeley, Berkeley, CA 94720, USA
+3
+Department of Physics, University of Texas at Austin, Austin, TX 78712, USA
+4
+Department of Physics, Harvard University, Cambridge, MA 02138, USA
+(Dated: September 29, 2016)
+
+FIG. 1: Floquet evolution of a spin chain. Three Hamiltonians are applied sequentially in time: a global spin flip of
+nearly π (H1 ), long-range Ising interactions (H2 ), and strong
+disorder (H3 ). The system evolves for 100 Floquet periods of
+this sequence.
+
+construction; thus, time translation symmetry can only
+be spontaneously broken in non-equilibrium systems7–10 .
+In particular, the dynamics of periodically-driven Floquet systems possesses a discrete time translation symmetry governed by the drive period. This symmetry can
+be further broken into “super-lattice” structures where
+physical observables exhibit a period larger than that of
+the drive. Such a response is analogous to commensurate
+charge density waves that break the discrete translation
+symmetry of their underlying lattice1 . The robust subharmonic synchronization of the many-body Floquet system is the essence of the discrete time crystal phase7–10 .
+In a DTC, the underlying Floquet drive should generally be accompanied by strong disorder, leading to manybody localization13 and thereby preventing the quantum
+system from absorbing the drive energy and heating to
+infinite temperatures14–17 .
+Here, we report the direct observation of discrete time
+translation symmetry breaking and DTC formation in a
+spin chain of trapped atomic ions, under the influence
+of a periodic Floquet-MBL Hamiltonian. We experimentally implement a quantum many-body Hamiltonian with
+long-range Ising interactions and disordered local effective fields, using optical control techniques19,20 . Follow-
+
+2
+
+100
+
+0.04
+0.02
+0
+
+0.4
+
+0.5
+
+0.6
+
+Frequency (1/T)
+
+Ion # 1
+
+0.5
+
+20
+
+1.0
+
+60
+
+80
+
+Time (T)
+
+100
+
+0.04
+0.02
+0
+
+0.4
+
+0.5
+
+0
+
+60
+
+80
+
+0.06
+0.04
+0.02
+0
+
+0.4
+
+0.5
+
+1.0
+
+Ion # 4
+
+0.5
+
+1.0
+
+0.0
+
+0.0
+
+0.0
+
+0.0
+
+- 0.5
+
+- 0.5
+
+- 0.5
+
+- 0.5
+
+1.0
+
+20 40 60 80 100
+
+Ion # 6
+
+0.5
+
+- 1.0
+
+0
+
+1.0
+
+20 40 60 80 100
+
+Ion # 7
+
+0.5
+
+- 1.0
+
+0
+
+20 40 60 80 100
+
+1.0
+
+Ion # 8
+
+0.5
+
+- 1.0
+
+0
+
+1.0
+
+20 40 60 80 100
+
+Ion # 9
+
+0.5
+
+- 1.0
+
+0.0
+
+0.0
+
+0.0
+
+- 0.5
+
+- 0.5
+
+- 0.5
+
+- 0.5
+
+- 0.5
+
+- 1.0
+
+- 1.0
+
+- 1.0
+
+- 1.0
+
+(e)
+
+Time (T)
+
+0
+
+20 40 60 80 100
+
+Time (T)
+
+0
+
+20 40 60 80 100
+
+Time (T)
+
+0
+
+20 40 60 80 100
+
+Time (T)
+
+0
+
+0
+
+- 1.0
+
+20
+
+40
+
+60
+
+80
+
+100
+
+Time (T)
+0.06
+0.04
+0.02
+0
+
+0.4
+
+0.5
+
+0.6
+
+Frequency (1/T)
+
+(d) ε = 0.11, 2πJ t /(W t )=0.07
+0 2
+3
+
+20 40 60 80 100
+
+Ion # 10
+
+0.5
+
+0.0
+
+20 40 60 80 100
+
+- 1.0
+
+1.0
+
+1.0
+
+Ion # 3
+
+0.5
+0.0
+
+- 0.5
+
+1.0
+
+0.0
+
+0
+
+- 0.5
+
+Ion # 5
+
+0.5
+
+0.0
+
+0
+
+0.0
+
+0.6
+
+- 0.5
+- 1.0
+
+100
+
+(c) ε = 0.03, 2πJ t /(W t )=0.07
+0 2
+3
+
+Ion # 3
+
+0.5
+
+40
+
+Frequency (1/T)
+
+ε = 0.03, W t3 = π
+1.0
+
+20
+
+Time (T)
+
+0.6
+
+Frequency (1/T)
+
+Ion # 2
+
+0.5
+
+40
+
+0.06
+
+(b)
+
+ε = 0.03, W t3 = 0
+1.0
+
+0
+
+- 1.0
+
+0.5
+
+Magnetization
+
+Time (T)
+
+80
+
+- 0.5
+
+Single Ion Magnetizations
+
+60
+
+0.0
+
+1.0
+
+Magnetization
+
+Magnetization
+
+40
+
+- 1.0
+
+0.06
+
+(a)
+
+Magnetization
+
+20
+
+- 0.5
+
+FFT spectrum
+
+0
+
+0.0
+
+0.5
+
+FFT spectrum
+
+- 1.0
+
+0.5
+
+1.0
+
+FFT spectrum
+
+- 0.5
+
+Interactions On
+
+1.0
+
+Single Ion Magnetizations
+
+0.0
+
+Single Ion Magnetizations
+
+0.5
+
+FFT spectrum
+
+Single Ion Magnetizations
+
+Interactions Off
+1.0
+
+0
+
+20 40 60 80 100
+
+Time (T)
+
+- 1.0
+
+0
+
+20 40 60 80 100
+
+Ion # 8
+
+0.5
+0.0
+- 0.5
+- 1.0
+
+(f)
+
+0
+
+20 40 60 80 100
+
+Time (T)
+
+FIG. 2: Spontaneous breaking of discrete time translation symmetry. Top panel: Time-evolved magnetizations of
+each spin hσix (t)i and their Fourier spectra, showing sub-harmonic response of the system to the Floquet Hamiltonian. (a)
+When only the H1 spin flip is applied, the spins oscillate with a sub-harmonic response that beats due to the perturbation
+ε = 0.03 from perfect π-pulses, with a clear splitting in the Fourier spectrum. (b) With both the H1 spin flip and the disorder
+H3 , the spins precess with various Larmor rates in the presence of different individual fields. (c) Finally, adding the spin-spin
+interaction term H2 (shown with the largest interaction phase J0 t2 = 0.036 rad), the spins lock to the sub-harmonic frequency
+of the drive period. Here the Fourier spectrum merges into a single peak even in the face of perturbation ε on the spin flip
+H1 . (d) When the perturbation is too strong (ε = 0.11), we cross the boundary from the discrete time crystal into a symmetry
+unbroken phase10 . Bottom panel: Individually resolved time traces. (e) Spin magnetization for all 10 spins corresponding to
+the case of (b). (f) Spin 3 and 8 corresponding to the case of (c). Each point is the average of 150 experimental repetitions.
+Error bars are computed from quantum projection noise and detection infidelities.
+
+ing the evolution through many Floquet periods, we measure the temporal correlations of the spin magnetization
+dynamics.
+A DTC requires the ability to control the interplay between three key ingredients: strong drive, interactions,
+and disorder. These are reflected in the applied Floquet
+Hamiltonian H, consisting of the following three successive pieces with overall period T = t1 + t2 + t3 (see Fig.
+1) (~ = 1):
+
+P
+H1 = g(1 − ε) i σiy , time t1
+
+
+
+P
+H = H2 = i Jij σix σjx ,
+time t2
+
+
+P
+
+H3 = i Di σix
+time t3 .
+
+(1)
+
+Here, σiγ (γ = x, y, z) is the Pauli matrix acting on the
+ith spin, g is the Rabi frequency with small perturbation
+ε, Jij is the coupling strength between spins i and j, and
+Di is a site-dependent disordered potential sampled from
+a uniform random distribution with Di ∈ [0, W ].
+
+To implement the Floquet Hamiltonian, each of the
+effective spin-1/2 particles in the chain is encoded in
+the 2 S1/2 |F = 0, mF = 0i and |F = 1, mF = 0i hyperfine
+‘clock’ states of a 171 Yb+ ion, denoted |↓iz and |↑iz and
+separated by 12.642831 GHz21 . We store a chain of 10
+ions in a linear rf Paul trap, and apply single spin rotations using optically-driven Raman transitions between
+the two spin states22 . Spin-spin interactions are generated by spin-dependent optical dipole forces, which give
+rise to a tunable long-range Ising coupling23,24 that falls
+off approximately algebraically as Jij ∝ J0 /|i − j|α . Programmable disorder among the spins is generated by the
+ac Stark shift from a tightly focused laser beam that addresses each spin individually20 . The Stark shift is an
+effective site-dependent σiz field, so we surround this operation with π2 -pulses to transform the field into the x
+direction of the Bloch sphere (see Methods). Finally, we
+measure the magnetization of each spin by collecting the
+spin-dependent fluorescence on a camera for site-resolved
+imaging. This allows access to the single-site magnetiza-
+
+U (T ) = e−iH3 t3 e−iH2 t2 e−iH1 t1 .
+
+(2)
+
+−iH1 t1
+
+The first evolution operator e
+nominally flips all
+the spins around the y-axis of the Bloch sphere by an
+angle 2gt1 = π, but also includes a controlled perturbation in the angle, επ, where ε < 0.15. This critical rotation step is susceptible to noise in the Rabi frequency
+(1% rms) from laser intensity instability, and also optical inhomogeneities (< 5%) across the chain due to
+the shape of the Raman laser beams. In order to accurately control H1 , we use the BB1 dynamical decoupling echo sequence25 (see Methods) to suppress these
+effects, resulting in control of the rotation angle to a precision < 0.5%. The second evolution operator e−iH2 t2
+applies the spin-spin Ising interaction, where the maximum nearest-neighbor coupling J0 ranges from 2π(0.04
+kHz) to 2π(0.25 kHz) and decays with distance at a power
+law exponent α = 1.51. The duration of the interaction
+term is set so that J0 t2 < 0.04 rad of phase accumulation.
+The third evolution operator e−iH3 t3 provides disorder to
+localize the system, and is programmed so that the variance of the disorder is set by W t3 = π. In this regime,
+MBL in the thermodynamic limit is expected to persist
+even in the presence of long-range interactions26–28 .
+To observe the DTC, we initialize the spins to the state
+|ψ0 i = |↓ix = √12 (|↓iz + |↑iz ) through optical pumping
+followed by a global π2 rotation. After many periods of
+the above Floquet unitary Eq.(2), we measure the magnetization of each spin along x, which gives the timecorrelation function
+hσix (t)i = hψ0 | σix (t)σix (0) |ψ0 i .
+
+(3)
+
+Figure 2 depicts the measured spin magnetization dynamics, both in the time and the frequency domain, up
+to N = 100 Floquet periods. A single Floquet period
+T is set to a value between 74-75 µs, depending on the
+parameters in the Hamiltonian.
+The global π-pulse e−iH1 t1 rotates the spins roughly
+half way around the Bloch sphere, so that we expect a
+response of the system at twice the drive period 2T , or
+half of the Floquet frequency. The frequency of this subharmonic response in the magnetization is sensitive to the
+precise value of the global rotation in H1 and is therefore
+expected to track the perturbation ε. This results in coherent beats and a splitting in the Fourier spectrum by
+2ε (Fig. 2(a)). When we add disorder e−iH3 t3 to the Floquet period, the single spins precess at different Larmor
+rates (Fig. 2(e)) and dephase with respect to each other
+(Fig. 2(b)). Only upon adding Ising interactions e−iH2 t2 ,
+and hence many-body correlations, the spin synchronization is restored (Fig. 2(c,f)).
+
+0.08
+
+2πJ0 t2 /(W t3)
+0.012
+
+0.08
+
+2πJ0 t2 /(W t3)
+0.024
+
+0.08
+
+2πJ0 t2 /(W t3)
+0.048
+
+0.08
+
+0.06
+
+0.06
+
+0.06
+
+0.06
+
+0.04
+
+0.04
+
+0.04
+
+0.04
+
+0.02
+
+0.02
+
+0.02
+
+0.02
+
+0.00
+0
+
+(a)
+
+0.05
+
+ε
+
+0.06
+Perturbation ε
+
+tion, σiγ , along any direction with a detection fidelity
+> 98% per spin.
+The unitary time evolution under a single Floquet period is
+
+Peak height variance (arb. )
+
+3
+
+0.04
+0.02
+0
+
+(b)
+
+0.1
+
+0.00
+0
+
+0.05
+
+ε
+
+0.1
+
+0.00
+0
+
+0.05
+
+ε
+
+Symmetry Unbroken
+MBL
+
+0.1
+
+0.00
+0
+
+2πJ0 t2 /(W t3)
+0.072
+
+0.05
+
+ε
+
+0.1
+
+Thermal
+
+Discrete Time Crystal
+
+0.05
+
+2πJ0 t2 /(W t3)
+
+0.1
+
+FIG. 3: Variance of the subharmonic peak amplitude
+as a signature of the DTC transition. (a) Variances
+of the central peak amplitude, computed over the 10 sites
+and averaged over 10 instances of disorder, for four different
+strengths of the long-range interation term J0 . The crossover from symmetry unbroken state to a DTC is observed
+as a peak in the measured variance of the sub-harmonic system response. Dashed lines: numerical results, scaled vertically to fit the experimental data (see supplementary information). Experimental error bars are standard error of the
+mean. (b) Cross-over determined by a fit to the variance peak
+location (dots). Dashed lines: numerically determined phase
+boundaries with experimental long-range coupling parameters10 . Grey shaded region indicates 90% confidence level of
+the DTC to symmetry unbroken phase boundary.
+
+The key result is that with all of these elements, the
+temporal response is locked to twice the Floquet period,
+even in the face of perturbations to the drive in H1 .
+This can be seen clearly as the split Fourier peaks from
+Fig. 2(b) merge into a single peak in Fig. 2(c). This represents the “rigidity” of the discrete time crystal10 , which
+persists under moderate perturbation strengths. However, for large ε, the DTC phase disappears as evinced
+by the decay of the sub-harmonic temporal correlations
+and the suppression of the central peak heights, as shown
+in Fig. 2(d). In the thermodynamic limit, these perturbations induce a phase transition from a DTC to a symmetry unbroken MBL phase7–10 , which is rounded into a
+cross-over in finite size systems.
+The phase boundary is defined by the competition between the drive perturbation ε and strength of the interactions J0 . We probe this boundary by measuring the
+variance of the sub-harmonic spectral peak height, computed over the 10 sites and averaged over 10 instances
+of disorder. Figure 3(a) shows the variances as a function of the perturbation ε, for four different interaction
+
+4
+strengths. As we increase ε, the variance growth distinctively captures the onset of the transition, with increased
+fluctuations signaling the crossing of the phase boundary. When the perturbations are too large, the crystal
+“melts”. Figure 3(b) shows the fitted centers of the variance curve, on top of numerically computed phase boundaries with experimental parameters. The measurements
+are in agreement with the expected DTC to time crystal
+“melting” boundary, which displays approximately linear
+dependence on the perturbation strength in the limit of
+small interactions10 .
+
+2πJ0 t2 /(W t3)
+
+Peak height (arb. units)
+
+0.08
+
+0.072
+0.048
+0.024
+0.012
+
+0.06
+0.04
+
+ACKNOWLEDGEMENTS
+
+0.02
+0.00
+0.00
+
+0.02
+
+0.04
+0.06
+0.08
+Perturbation ε
+
+In summary, we present the first experimental observation of discrete time translation symmetry breaking
+into a DTC. We measure persistent oscillations and synchronizations of interacting spins in a chain and show
+that the discrete time crystal is rigid, or robust to
+perturbations in the drive. Our Floquet-MBL system
+with long-range interactions provides an ideal testbed for
+out-of-equilibrium quantum dynamics and the study of
+novel phases of matter that exist only in a Floquet setting7–10,30,31 . Such phases can also exhibit topological
+order31–35 and can be used for various quantum information tasks, such as implementing a robust quantum
+memory36 .
+
+0.10
+
+0.12
+
+FIG. 4: Subharmonic peak amplitude as a function of
+the drive perturbation. Central subharmonic peak amplitude in the Fourier spectrum as a function of the perturbation ε, averaged over the 10 sites and 10 disorder instances,
+for four different interaction strengths. Solid lines are guides
+to the eye. The height decreases across the phase boundary
+and eventually diminishes as the single peak is split into two.
+Error bars: 1 s.d.
+
+Figure 4 illustrates the amplitude of the subharmonic
+peak as a function of ε, for the four different applied interaction strengths. The amplitude drops off with larger
+perturbations, and this slope is steeper as we decrease
+the interaction strength. The sub-harmonic peak amplitude observable in Fig. 4 can serve as an auxilary probe
+of the rigidity. It is expected to be an order parameter
+for the DTC phase and thus, to scale similarly to the
+mutual information between spins8,10 . This connection
+also provides insight into the Floquet many-body quantum dynamics, and in particular to the correlations or
+entanglement that underly the DTC phase. Indeed, the
+eigenstates of the entire Floquet unitary are expected to
+resemble GHZ or spin-“Schrödinger Cat” states8,18 . The
+initial product state in the experiment can be written as
+a superposition of two cat states: |↓↓ · · · ↓ix = √12 (|φ+ i+
+|φ− i), where |φ± i = √12 (|↓↓ · · · ↓ix ± |↑↑ · · · ↑ix ). These
+two states evolve at different rates corresponding to their
+respective quasi-energies, giving rise to the sub-harmonic
+periodic oscillations of physical observables. Such oscillations are expected to persist at increasingly long times
+as the system size increases7,8,10 .
+
+We acknowledge useful discussions with Mike Zaletel
+and Dan Stamper-Kurn. This work is supported by
+the ARO Atomic and Molecular Physics Program, the
+AFOSR MURI on Quantum Measurement and Verification, the IARPA LogiQ program, the IC Postdoctoral
+Research Fellowship Program, the NSF Physics Frontier
+Center at JQI, and the Miller Institute for Basic Research in Science. A. V. was supported by the AFOSR
+MURI grant FA9550- 14-1-0035 and Simons Investigator
+Program.
+
+[1] Chaikin, P. & Lubensky, T. Principles of Condensed
+Matter Physics, vol. 1 (Cambridge University Press,
+1995).
+[2] Wilczek, F. Quantum time crystals. Phys. Rev. Lett.
+109, 160401 (2012).
+[3] Wilczek, F. Superfluidity and space-time translation
+symmetry breaking.
+Phys. Rev. Lett. 111, 250402
+(2013).
+[4] Bruno, P. Comment on “quantum time crystals”. Phys.
+Rev. Lett. 110, 118901 (2013).
+[5] Bruno, P. Impossibility of spontaneously rotating time
+crystals: A no-go theorem. Phys. Rev. Lett. 111, 070402
+(2013).
+[6] Watanabe, H. & Oshikawa, M. Absence of quantum time
+crystals. Phys. Rev. Lett. 114, 251603 (2015).
+[7] Khemani, V., Lazarides, A., Moessner, R. & Sondhi, S. L.
+Phase structure of driven quantum systems. Phys. Rev.
+Lett. 116, 250401 (2016).
+[8] Else, D. V., Bauer, B. & Nayak, C. Floquet time crystals.
+Phys. Rev. Lett. 117, 090402 (2016).
+[9] von Keyserlingk, C. W., Khemani, V. & Sondhi, S. L.
+Absolute stability and spatiotemporal long-range order
+in floquet systems. Phys. Rev. B 94, 085112 (2016).
+[10] Yao, N. Y., Potter, A. C., Potirniche, I.-D. & Vishwanath, A. Discrete time crystals: rigidity, criticality,
+and realizations. arXiv:1608.02589 (2016).
+[11] This phase is also referred to as a π-spin glass7 or a Floquet time crystal8 .
+
+5
+[12] Sachdev, S. Quantum Phase Transitions (Cambridge
+Univ. Press, Cambridge, 1999).
+[13] Nandkishore, R. & Huse, D. A. Many-body localization and thermalization in quantum statistical mechanics. Annual Review of Condensed Matter Physics 6, 15–
+38 (2015).
+[14] D’Alessio, L. & Rigol, M. Long-time behavior of isolated
+periodically driven interacting lattice systems. Phys. Rev.
+X 4, 041048 (2014).
+[15] Ponte, P., Chandran, A., Papic, Z. & Abanin, D. A. Periodically driven ergodic and many-body localized quantum systems. Annals of Physics 353, 196 – 204 (2015).
+[16] Eckardt, A. Atomic quantum gases in periodically driven
+optical lattices. arXiv:1606.08041v1 (2016).
+[17] We note that under certain conditions, time-crystal dynamics can persist for rather long times even in the absence of localization before ultimately being destroyed by
+thermalization18 .
+[18] Else, D. V., Bauer, B. & Nayak, C. Pre-thermal time
+crystals and floquet topological phases without disorder.
+arXiv:1607.05277 (2016).
+[19] Smith, J. et al. Many-body localization in a quantum
+simulator with programmable random disorder. Nat.
+Phys. advance online publication, – (2016).
+[20] Lee, A. C. et al. Engineering large stark shifts for control of individual clock state qubits. arXiv:1604.08840
+(2016).
+[21] Olmschenk, S. et al. Manipulation and detection of a
+trapped Yb+ hyperfine qubit. Phys. Rev. A 76, 052314
+(2007).
+[22] Hayes, D. et al. Entanglement of atomic qubits using an
+optical frequency comb. Phys. Rev. Lett. 104, 140501
+(2010).
+[23] Porras, D. & Cirac, J. I. Effective quantum spin systems
+with trapped ions. Phys. Rev. Lett. 92, 207901 (2004).
+[24] Kim, K. et al. Entanglement and tunable spin-spin couplings between trapped ions using multiple transverse
+modes. Phys. Rev. Lett. 103, 120502 (2009).
+[25] Brown, K. R., Harrow, A. W. & Chuang, I. L. Arbitrarily
+accurate composite pulse sequences. Phys. Rev. A 70,
+052318 (2004).
+[26] Burin, A. L. Localization in a random xy model
+with long-range interactions: Intermediate case between
+single-particle and many-body problems. Phys. Rev. B
+92, 104428 (2015).
+[27] Yao, N. Y. et al. Many-body localization in dipolar systems. Phys. Rev. Lett. 113, 243002 (2014).
+[28] There has been recent work29 questioning the stability
+of MBL with anything longer-range than exponential-indistance interaction. However, the proposed mechanism
+is not relevant on experimentally accessible length- and
+time- scales.
+[29] De Roeck, W. & Huveneers, F. Stability and instability
+towards delocalization in mbl systems. arXiv:1608.01815
+(2016).
+[30] Bordia, P. & Luschen, H. & Schneider, U. & Kanp, M.
+& Bloch, I. Periodically Driving a Many-Body Localized
+Quantum System. arXiv:1607.07868 (2016).
+[31] von Keyserlingk, C. W. & Sondhi, S. L. Phase structure
+of one-dimensional interacting floquet systems. i. abelian
+symmetry-protected topological phases. Phys. Rev. B
+93, 245145 (2016).
+[32] Else, D. V. & Nayak, C. Classification of topological phases in periodically driven interacting systems.
+
+arXiv:1602.04804 (2016).
+[33] von Keyserlingk, C. W. & Sondhi, S. L. Phase structure of one-dimensional interacting floquet systems. ii.
+symmetry-broken phases. Phys. Rev. B 93, 245146
+(2016).
+[34] Potter, A. C. & Morimoto, T. & Vishwanath, A. Topological classification of interacting 1D Floquet phases.
+arXiv:1602.05194 (2016).
+[35] Roy, R. & Harper, F. Abelian Floquet symmetryprotected topological phases in one dimension. Phys.
+Rev. B 94, 125105 (2016).
+[36] Bahri, Y. & Vosk, R. & Altman, E. & Vishwanath, A.
+Localization and topology protected quantum coherence
+at the edge of hot matter. Nature Communications 6,
+7341 (2016).
+
+METHODS SUMMARY
+Dynamical decoupling sequence.
+
+We use a pair of Raman laser beams globally illuminating the entire ion chain to drive qubit rotations22 . The
+ion chain has 25 µm length, and we shape the beams
+to have 200 µm full width half maximum along the ion
+chain, resulting in ∼ 5% intensity inhomogeneity. When
+a fixed duration is set for H1 in Eq. 1 of the main text,
+the time dependent magnetization for different ions acquire different evolution frequencies, resulting in the net
+magnetization of the system dephasing after about 10
+π-pulses. In addition, the Raman laser has rms intensity noise of about 1%, which restricts the spin-rotation
+coherence to only about 30 π-pulses (80% contrast).
+To mitigate these imperfections, we employ a BB1 dynamical decoupling pulse sequence for the drive unitary
+U1 (written for each spin i):
+π
+
+θ
+
+3θ
+
+π
+
+θ
+
+π
+
+y
+
+U1 (ε) = e−iH1 t1 = e−i 2 σi e−iπσi e−i 2 σi e−i 2 (1−ε)σi ,
+where in y addition to the perturbed π rotation
+π
+e−i 2 (1−ε)σi , three additional rotations are applied: a πpulse along an angle θ = arccos( −π
+4π ), a 2π-pulse along
+3θ, and another π-pulse along θ, where the axes of these
+additional rotations are in the x-y plane of the Bloch
+sphere with the specified angle referenced to the x-axis.
+In this way, any deviation in the original rotation from
+the desired value of π(1 − ε) is reduced to second order.
+See Ref.25 for detailed discussions.
+
+Generating the effective Ising Hamiltonian
+
+We generate spin-spin interactions by applying spindependent optical dipole forces to ions confined in a 3layer linear Paul trap with a 4.8 MHz transverse centerof-mass motional frequency. Two off-resonant laser
+beams with a wavevector difference ∆~k along a principal axis of transverse motion globally address the ions
+
+6
+and drive stimulated Raman transitions. The two beams
+contain a pair of beatnote frequencies symmetrically detuned from the spin transition frequency by an amount µ,
+comparable to the transverse motional mode frequencies.
+In the Lamb-Dicke regime, this results in the Ising-type
+Hamiltonian in Eq. (1)23,24 with
+Ji,j = Ω2 ωR
+
+N
+X
+bi,m bj,m
+,
+2
+µ2 − ωm
+m=1
+
+(4)
+
+where Ω is the global Rabi frequency, ωR = ~∆k 2 /(2M )
+is the recoil frequency, bi,m is the normal-mode matrix,
+and ωm are the transverse mode frequencies. The coupling profile may be approximated as a power-law decay
+Ji,j ≈ J0 /|i − j|α , where in principle α can be tuned
+between 0 and 3 by varying the laser detuning µ or the
+trap frequencies ωm . In this work, α is fixed at 1.51 by
+setting the axial trapping frequency to be 0.44 MHz, and
+Raman beatnode detuning to be 155 kHz.
+
+Apply disorder in the axial direction.
+
+We apply the strong random disordered field with a
+fourth-order ac Stark shift20 , which is naturally an effective σiz operator. To transform this into a σix operator,
+we apply additional π/2 rotations. Hence the third term
+in the Floquet evolution U3 (written for each spin i) is
+also a composite sequence:
+π
+
+y
+
+z
+
+π
+
+y
+
+x
+
+U3 = e−iH3 t3 = ei 4 σi e−iDi σi t3 e−i 4 σi = e−iDi σi t3 .
+METHODS
+Experimental time sequence.
+
+The Floquet time evolution is realized using the timing
+sequence illustrated in Fig. 5.
+The chain of 10 trapped ions is initialized in the
+ground motional state of their center of mass motion using doppler cooling and sideband cooling (not shown).
+Optical pumping prepares the ions in the |↓iz state. We
+then globally rotate each spin vector onto |↓ix by performing a π2 -pulse around the y-axis (“Initialization” in
+Fig. 5).
+The H1 Hamiltonian (perturbed π-pulses) lasts 14-15
+µs depending on ε and it consists of a four pulse BB1
+sequence as described in the methods summary. Our
+carrier Rabi frequency is set such that we perform a πpulse in less than 3 µs. Including the three compensating
+pulses, the BB1 sequence requires 5 π-pulse times to implement U1 (ε).
+The H2 Ising Hamiltonian is applied for 25 µs (“Spinspin interactions” in Fig. 5). The pulse time was sufficiently long that with the pulse shaping described below
+
+the effects of the finite pulse time spectral broadening
+were largely reduced. To compensate for the residual
+off-resonant carrier drive, we apply a small amplitude
+transverse field (“Compensation” in Fig. 5) for 2 µs.
+PN
+For the H3 disorder Hamiltonian, we apply i=1 Di σiz
+(“Strong random disorder” in Fig. 5) generated by Stark
+shifts as described in the Methods summary. This is
+sandwiched in-between rotations around the y-axis to
+convert this into disorder in σix . After up-to 100 applications of the Floquet evolution, we rotate the state back
+to the z-axis (“Prepare for measurement” in Fig. 5) and
+detect the spin state |↑iz or |↓iz using spin-dependent
+fluorescence.
+
+Pulse shaping for suppressing off-resonant
+excitations.
+
+The optical control fields for generating H1 , H2 and H3
+are amplitude modulated using acousto-optic modulators
+(AOMs) to generate the evolution operators. If the RF
+drive to these modulators is applied as a square pulse will
+be significantly broadened in the Fourier domain due to
+fast rise and fall times at the edges (100 ns). As the pulse
+duration decreases, the width of the spectral broadening
+will expand (see Fig 5 inset). The components of the
+evolution operator must be sufficiently short in order to
+evolve 100 Floquet periods within a decoherence time of
+< 8 ms.
+This spectral broadening is problematic when generating the interaction Hamiltonian H2 due to off-resonant
+driving. The spin-spin interactions are applied using
+beatnote frequencies detuned 4.8 MHz from the carrier
+transition and 155 kHz from the sidebands. A broad
+pulse in the frequency domain can drive either the qubit
+hyperfine transition at the carrier frequency or phonons
+via sideband transitions.
+Similar issues occur while we apply the disordered field
+in H3 . The fourth-order ac Stark shift is generated from
+a frequency comb that has a closest beatnote which is 23
+MHz away from hyperfine and Zeeman transitions. To
+apply large average Stark shifts (33 kHz max.) across
+the 10 ions, we raster the laser beam once within a single
+cycle (30 µs), for a single-ion pulse duration of 3µs. The
+fast rastering also produces off-resonant carrier driving
+that resemble σiy fields.
+We mitigate both these effects by shaping the pulses
+with a 25% “Tukey” window , a cosine tapered function
+for the rise and fall. This largely removes off-resonant
+terms in all Hamiltonian chapters, while minimizing the
+reduction in pulse area (80%). We carefully characterize any residual effects in H2 with a single ion where no
+interaction dynamics are present, and apply a small compensation field in σiy to cancel residual effects. We deduce
+an upper limit of 0.3% (relative to H1 ) on the residuals
+from the envelopes of the dynamically decoupled π pulse
+
+7
+sequence.
+
+Emergence of time crystal stabilized by the
+interactions and the disorder.
+
+In the main text we have shown different scenarios
+which occur when we modify sub-sections of the total
+Floquet evolution operator. Here we first expand the
+results shown in Fig.2 of the main text by highlighting
+the effect of the interactions. Figure 6 shows individual
+magnetization evolutions with the same ε and instance
+of disorder {Di } but with increasing interaction J0 , from
+left to right. This shows how, all else being equal, as
+we turn up the interaction strength the synchronization
+across the ions gradually builds up signaling the formation of a discrete time crystal.
+In a complementary fashion, Fig. 7 addresses the role
+of disorder in stabilizing the time crystal formation. In
+particular we compare the magnetization dynamics, both
+in the time and frequency domain, including or removing
+the disorder chapter from the total Floquet evolution.
+We show on the side the corresponding exact numerics
+calculated by applying U (T )N on the initial state |ψ0 i
+with the measured experimental parameters. Figure 7(a)
+shows that, with no disorder, the ions coherent dynamics
+tracks the perturbation ε, which results in coherent beats
+in agreement with our exact results. On the other hand,
+Figure 7(b) shows that, all else being equal, adding the
+disorder chapter locks the subharmonic response of all the
+ions. Although the numerics is qualitatively in agreement
+with the experimental data, nevertheless we observe a
+decay in the magnetization that cannot be explained by
+our numerical unitary simulations.
+This damping can be due to two possible sources: one
+is the residual off-resonant drive of the disorder chapter which is not totally eliminated by the pulse shaping (see pulse-shaping section above). This small residual effect can behave like residual σix and σiy terms, or
+coupling between the clock spin states and the Zeeman
+states |F = 1, mF = ±1i, resulting in a decay in the co-
+
+herent oscillations. This effect varies across the different
+disorder instances and the different interaction strengths
+and leads to an overall decrease of the Fourier subharmonic peak height and of its variance with respect to
+what is expected from the theory (see Fig.7(b)). To take
+this effect into account in the theory, we perform a least
+squares fit of the amplitude of the four theory curves to
+the experimental data. With this procedure we obtain
+the scaling factors (0.56, 0.53, 0.51, 0.78) for the interaction strengths J0 t2 /(W t3 ) = (0.72, 0.48, 0.24, 0.12) respectively, which are consistent with the decays discussed
+above.
+Data analysis and fitting procedure
+
+The peak height variance data in Fig. 3(a) are fit to
+a lineshape in order to extract the cross-over transition
+boundary εp in Fig. 3(b). We use the following phenomenologial lineshape, a Lorentzian of the log10 ()
+1
+
+F (ε) = A
+1+
+
+
+
+log10 (ε/εp )
+γ
+
+2 + B
+
+(5)
+
+A statistical error is extracted from a weighted nonlinear fit to the data, which yields a fractional standard
+error bar of a few percent. The error in the peak height
+is limited by systematic error in the finite number of instances we realized in the experiment. For each value of
+J0 and ε we average over the same 10 instance of disorder.
+These 10 instances are averaged and fit to F (ε).
+In order to estimate the error due to the finite disorder
+instances, we perform random sampling from a numerical
+dataset of 100 instances of disorder. Sampling 10 of these
+and fitting the peak height variance data to F (ε) yields
+a Gaussian distribution of extracted peak centers p over
+10000 repetitions (Fig. 8). We take the one standard
+deviation (67%) confidence interval in the sample as the
+systematic uncertainty in the fit, which yield a fractional
+error of ∼ 15%. This systematic uncertainty dominates
+over the statistical, so we apply error bars in Fig. 3(b)
+equal to this computed finite sampling error.
+
+8
+14~15 μs
+
+27 μs
+
+33 μs
+
+Pulse shaping
+
+π 2π π
+
+Compensation
+
+Spin-spin
+interactions
+
+π(1-ε) rotation
+
+U1
+
+BB1 dynamical
+decoupling
+
+Unshaped
+
+Fourier spectrum
+
+Raster across
+10 sites
+Rotate x
+back to z
+
+Rotate z
+into x
+
+U2
+
+Shaped
+(Tukey window)
+
+Programmable
+random disorder
+
+U3
+
+Initialization
+
+Prepare for
+measurement
+
+Single
+period
+U (T)
+
+optical
+pumping
+(15 μs)
+
+Spin state
+detection (1 ms)
+
+101 Floquet periods
+
+Time
+
+FIG. 5: Experimental pulse sequence. See text for detailed explanations.
+
+- 0.5
+- 1.0
+
+(a)
+
+Spectral Density (arb.)
+
+0
+
+20
+
+40
+
+60
+
+80
+
+1.0
+
+0.5
+0.0
+- 0.5
+- 1.0
+
+100
+
+0
+
+Time (T)
+0.06
+0.04
+0.02
+0
+
+0.4
+
+0.5
+
+Frequency (1/T)
+
+0.6
+
+(b)
+
+20
+
+40
+
+60
+
+80
+
+0.5
+0.0
+- 0.5
+- 1.0
+
+100
+
+0
+
+Time (T)
+0.06
+0.04
+0.02
+0
+
+0.4
+
+0.5
+
+Frequency (1/T)
+
+0.6
+
+(c)
+
+Spectral Density (arb.)
+
+0.0
+
+ε = 0.035, 2πJ0 t2 /(W t3)=0.07
+
+1.0
+
+Spectral Density (arb.)
+
+0.5
+
+ε = 0.035, 2πJ0 t2 /(W t3)=0.024
+Single Ion Magnetizations
+
+Single Ion Magnetizations
+
+Single Ion Magnetizations
+
+ε = 0.035, 2πJ0 t2 /(W t3)=0.012
+1.0
+
+20
+
+40
+
+60
+
+80
+
+100
+
+Time (T)
+0.06
+0.04
+0.02
+0
+
+0.4
+
+0.5
+
+0.6
+
+Frequency (1/T)
+
+FIG. 6: Build up of a discrete time-crystal. From (a) to (b) and (c), we fix the disorder instance and the perturbation,
+while gradually increase the interactions. The temporal oscillations are synchronized with increasing interactions, and the
+Fourier sub-harmonic peak is enhanced.
+
+9
+
+- 1.0
+
+Ion 5
+
+0
+
+20
+
+40
+
+Ion 10
+
+- 1.0
+
+100
+
+0
+
+20
+
+0.1
+
+0.05
+
+0
+
+0.4
+
+40
+
+60
+
+80
+
+0.5
+0.0
+- 0.5
+- 1.0
+
+100
+
+0
+
+20
+
+Time (T)
+Spectral Density (arb.)
+
+Ion 9
+
+Spectral Density (arb.)
+
+Ion 8
+
+80
+
+- 0.5
+
+Time (T)
+
+Ion 6
+Ion 7
+
+60
+
+0.0
+
+Single Ion Magnetizations
+
+- 0.5
+
+0.5
+
+0.5
+
+0.6
+
+0.05
+
+0
+
+0.4
+
+ε = 0.035, 2J0 t2 = 0.036, W t3=0
+
+0.5
+
+40
+
+60
+
+80
+
+Exact numerics
+
+1.0
+0.5
+0.0
+
+Ion 1
+Ion 2
+
+- 0.5
+
+Ion 3
+Ion 4
+
+- 1.0
+
+100
+
+0
+
+20
+
+Time (T)
+
+0.1
+
+Frequency (1/T)
+
+With Disorder
+
+1.0
+
+0.6
+
+0.1
+
+0.05
+
+0
+
+0.4
+
+0.5
+
+40
+
+60
+
+80
+
+100
+
+Time (T)
+Spectral Density (arb.)
+
+Ion 4
+
+0.0
+
+Experiment
+Single Ion Magnetizations
+
+Ion 3
+
+0.5
+
+Exact numerics
+
+1.0
+
+Spectral Density (arb.)
+
+Ion 2
+
+Without Disorder
+Single Ion Magnetizations
+
+Ion 1
+
+Single Ion Magnetizations
+
+Experiment
+1.0
+
+0.6
+
+Frequency (1/T)
+
+Frequency (1/T)
+
+ε = 0.035, 2J0 t2 = 0.036, W t3=0
+
+ε = 0.035, 2J0 t2 = 0.036, W t3=π
+
+Ion 5
+Ion 6
+Ion 7
+
+0.1
+
+Ion 8
+Ion 9
+Ion 10
+
+0.05
+
+0
+
+0.4
+
+0.5
+
+0.6
+
+Frequency (1/T)
+
+ε = 0.035, 2J0 t2 = 0.036, W t3=π
+
+60
+
+0.04
+
+50
+
+0.03
+
+40
+PDF
+
+Peak height variance (arb.)
+
+FIG. 7: Comparing ions dynamics with and without disorder. (a) Without disorder, the interaction suppresses the
+beating. Left: experimental data; right: exact numerics calculated under the Floquet time-evolution. (b) With disorder, the
+time-crystal is more stable. Left: experimnetal result for one single instance; right: numerical simulations.
+
+0.02
+
+30
+
+0.01
+
+20
+
+0.00
+
+10
+
+0.00
+
+0.05
+
+0.10
+0.15
+0.20
+Perturbation ε
+
+0.25
+
+0.30
+
+0
+
+0.030 0.035 0.040 0.045 0.050 0.055 0.060
+Fit Center (εp)
+
+FIG. 8: A random sampling from numerical evolutions. Averages of 10 disorder instances from numerical evolution
+under H for 2πJ0 t2 /(W t3 ) = 0.072. Left: An example random numerical dataset (points) and fit to Methods Eq. 5 (dashed
+line). Right: The normalized probability distribution (PDF) of peak fit centers εp is shown in yellow, and a normal distribution
+is overlaid in red. The normal distribution is fit using only the mean and standard deviation of the sample, showing excellent
+agreement with Gaussian statistics. For this value of J0 the mean ε̄p = 0.046 and the standard deviation σεp = 0.006.
+
+

@@ -1,0 +1,37 @@
+{
+  "schema_version": 1,
+  "review_method": "Side-by-side visual inspection of the rendered source page, MinerU layout output, and Tesseract text output.",
+  "source_pdf": {
+    "relpath": "source_materials/pdfs/Comment_on_the_Pais_Superforce_Theory.pdf",
+    "sha256": "ca32b85da9dc732509ea4560184c160e2e503f56bea861c7a05542040f9e9b75"
+  },
+  "reviewed_pages": [
+    {
+      "page": 5,
+      "criteria": {
+        "reading_order": {
+          "mineru": "pass",
+          "tesseract": "partial"
+        },
+        "display_equations": {
+          "mineru": "pass",
+          "tesseract": "fail"
+        },
+        "diagram_regions": {
+          "mineru": "pass",
+          "tesseract": "fail"
+        },
+        "prose_recovery": {
+          "mineru": "pass",
+          "tesseract": "pass"
+        }
+      },
+      "note": "MinerU preserves equation blocks and diagram regions; Tesseract recovers prose but flattens or corrupts mathematical layout."
+    }
+  ],
+  "selection": {
+    "primary": "mineru_high_effort_hybrid_forced_ocr",
+    "fallback": "tesseract_400_dpi_psm_1",
+    "basis": "MinerU passes the equation, reading-order, and diagram criteria on the reviewed sparse page. Tesseract remains useful as an independent prose fallback. Character counts are not treated as accuracy."
+  }
+}

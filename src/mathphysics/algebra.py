@@ -9,6 +9,8 @@ from __future__ import annotations
 from abc import ABC, abstractmethod
 from typing import Any
 
+from typing_extensions import Self
+
 
 class AlgebraicStructure(ABC):
     """Base interface for all algebraic systems in the framework."""
@@ -57,7 +59,7 @@ class JordanAlgebra(AlgebraicStructure):
     """Interface for Jordan algebras with Jordan products."""
 
     @abstractmethod
-    def jordan_product(self, other: JordanAlgebra) -> JordanAlgebra:
+    def jordan_product(self, other: Self) -> Self:
         """The Jordan product (A*B + B*A) / 2."""
         pass
 
@@ -66,15 +68,15 @@ class CliffordAlgebra(AlgebraicStructure):
     """Interface for Clifford (Geometric) algebras."""
 
     @abstractmethod
-    def geometric_product(self, other: CliffordAlgebra) -> CliffordAlgebra:
+    def geometric_product(self, other: Self) -> Self:
         pass
 
     @abstractmethod
-    def wedge(self, other: CliffordAlgebra) -> CliffordAlgebra:
+    def wedge(self, other: Self) -> Self:
         """The outer (Grassmann) product."""
         pass
 
     @abstractmethod
-    def inner(self, other: CliffordAlgebra) -> CliffordAlgebra:
+    def inner(self, other: Self) -> float:
         """The inner product."""
         pass

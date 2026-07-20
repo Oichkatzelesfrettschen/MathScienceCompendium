@@ -245,3 +245,114 @@ target_relpath = "source_materials/pdfs/gr-qc_0311030.pdf"
 extract_text_relpath = "source_materials/pdfs/extracted/gr-qc_0311030.txt"
 urls = ["https://arxiv.org/pdf/gr-qc/0311030"]
 notes = "Mashhoon gravitoelectromagnetism brief review."
+
+# ==============================================================================
+# Evidence-aligned mathematical foundations and current boundary research
+# ==============================================================================
+
+[[sources]]
+id = "arxiv_baez_math_0105155"
+arxiv_id = "math/0105155"
+filename = "math_0105155.pdf"
+target_relpath = "source_materials/pdfs/math_0105155.pdf"
+extract_text_relpath = "source_materials/pdfs/extracted/math_0105155.txt"
+urls = ["https://arxiv.org/pdf/math/0105155"]
+notes = "Baez survey of octonions, Jordan algebras, and exceptional Lie groups; foundational terminology source."
+
+[[sources]]
+id = "arxiv_moreno_math_0512517"
+arxiv_id = "math/0512517"
+filename = "math_0512517.pdf"
+target_relpath = "source_materials/pdfs/math_0512517.pdf"
+extract_text_relpath = "source_materials/pdfs/extracted/math_0512517.txt"
+urls = ["https://arxiv.org/pdf/math/0512517"]
+notes = "Moreno construction of zero divisors in higher real Cayley-Dickson algebras; primary mathematical evidence."
+
+[[sources]]
+id = "arxiv_wilmot_2505_11747"
+arxiv_id = "2505.11747"
+filename = "arxiv_2505.11747.pdf"
+target_relpath = "source_materials/pdfs/arxiv_2505.11747.pdf"
+extract_text_relpath = "source_materials/pdfs/extracted/arxiv_2505.11747.txt"
+urls = ["https://arxiv.org/pdf/2505.11747"]
+notes = "Current 2025 preprint on Cayley-Dickson structure; retain as non-peer-reviewed boundary research pending independent verification."
+
+[[sources]]
+id = "borcherds_monstrous_moonshine_1992"
+filename = "borcherds_monstrous_moonshine_1992.pdf"
+target_relpath = "source_materials/pdfs/borcherds_monstrous_moonshine_1992.pdf"
+extract_text_relpath = "source_materials/pdfs/extracted/borcherds_monstrous_moonshine_1992.txt"
+urls = ["https://math.berkeley.edu/~reb/papers/monster/monster.pdf"]
+notes = "Author-hosted foundational proof of the Conway-Norton monstrous moonshine conjectures."
+
+[[sources]]
+id = "arxiv_duncan_griffin_ono_1411_6571"
+arxiv_id = "1411.6571"
+filename = "arxiv_1411.6571.pdf"
+target_relpath = "source_materials/pdfs/arxiv_1411.6571.pdf"
+extract_text_relpath = "source_materials/pdfs/extracted/arxiv_1411.6571.txt"
+urls = ["https://arxiv.org/pdf/1411.6571"]
+notes = "Primary survey defining moonshine as specific correspondences among groups, graded modules, and modular functions."
+
+[[sources]]
+id = "arxiv_watanabe_oshikawa_1410_2143"
+arxiv_id = "1410.2143"
+filename = "arxiv_1410.2143.pdf"
+target_relpath = "source_materials/pdfs/arxiv_1410.2143.pdf"
+extract_text_relpath = "source_materials/pdfs/extracted/arxiv_1410.2143.txt"
+urls = ["https://arxiv.org/pdf/1410.2143"]
+notes = "Watanabe-Oshikawa equilibrium quantum time-crystal no-go theorem (PRL 114, 2015)."
+
+[[sources]]
+id = "arxiv_else_bauer_nayak_1603_08001"
+arxiv_id = "1603.08001"
+filename = "arxiv_1603.08001.pdf"
+target_relpath = "source_materials/pdfs/arxiv_1603.08001.pdf"
+extract_text_relpath = "source_materials/pdfs/extracted/arxiv_1603.08001.txt"
+urls = ["https://arxiv.org/pdf/1603.08001"]
+notes = "Else-Bauer-Nayak definition and construction of Floquet time crystals (PRL 117, 2016)."
+
+[[sources]]
+id = "arxiv_zhang_1609_08684"
+arxiv_id = "1609.08684"
+filename = "arxiv_1609.08684.pdf"
+target_relpath = "source_materials/pdfs/arxiv_1609.08684.pdf"
+extract_text_relpath = "source_materials/pdfs/extracted/arxiv_1609.08684.txt"
+urls = ["https://arxiv.org/pdf/1609.08684"]
+notes = "Trapped-ion observation of a discrete time crystal; primary experimental evidence."
+
+[[sources]]
+id = "arxiv_camacho_fauseweh_2605_27211"
+arxiv_id = "2605.27211"
+filename = "arxiv_2605.27211.pdf"
+target_relpath = "source_materials/pdfs/arxiv_2605.27211.pdf"
+extract_text_relpath = "source_materials/pdfs/extracted/arxiv_2605.27211.txt"
+urls = ["https://arxiv.org/pdf/2605.27211"]
+notes = "Current 2026 review of time crystals on quantum devices; use for research routing, not as primary experimental proof."
+
+[[sources]]
+id = "arxiv_fewster_1208_5399"
+arxiv_id = "1208.5399"
+filename = "arxiv_1208.5399.pdf"
+target_relpath = "source_materials/pdfs/arxiv_1208.5399.pdf"
+extract_text_relpath = "source_materials/pdfs/extracted/arxiv_1208.5399.txt"
+urls = ["https://arxiv.org/pdf/1208.5399"]
+notes = "Fewster lectures on rigorous quantum energy inequalities and bounds on negative energy."
+
+[[sources]]
+id = "arxiv_wilson_1105_4714"
+arxiv_id = "1105.4714"
+filename = "arxiv_1105.4714.pdf"
+target_relpath = "source_materials/pdfs/arxiv_1105.4714.pdf"
+extract_text_relpath = "source_materials/pdfs/extracted/arxiv_1105.4714.txt"
+urls = ["https://arxiv.org/pdf/1105.4714"]
+notes = "Wilson et al dynamical Casimir experiment; primary evidence for driven photon production rather than free vacuum-energy extraction."
+
+[[sources]]
+id = "arxiv_chamseddine_connes_hep_th_9606001"
+arxiv_id = "hep-th/9606001"
+filename = "hep-th_9606001.pdf"
+target_relpath = "source_materials/pdfs/hep-th_9606001.pdf"
+extract_text_relpath = "source_materials/pdfs/extracted/hep-th_9606001.txt"
+urls = ["https://arxiv.org/pdf/hep-th/9606001"]
+notes = "Chamseddine-Connes spectral action principle; foundational primary source for noncommutative-geometry claims."

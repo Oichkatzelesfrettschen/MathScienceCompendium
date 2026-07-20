@@ -1,0 +1,1445 @@
+{
+  "code_fences": [],
+  "document_id": "math4genesisframework",
+  "formula_candidates": [
+    {
+      "ascii_text": "Start from \\mathbb{R} to generate complex numbers \\mathbb{C}, quaternions \\mathbb{H}, octonions \\mathbb{O}, and further sedenions \\mathbb{S}. Each step doubles the dimension and introduces new complexities (non-commutativity, non-associativity):",
+      "source_line": 35,
+      "source_line_sha256": "05bdb059d7ac90379e2f3316b8c32d939e55752ee1ada663c3aeed807a933be4",
+      "source_text": "Start from \\mathbb{R} to generate complex numbers \\mathbb{C}, quaternions \\mathbb{H}, octonions \\mathbb{O}, and further sedenions \\mathbb{S}. Each step doubles the dimension and introduces new complexities (non-commutativity, non-associativity):"
+    },
+    {
+      "ascii_text": "\\mathbb{A}_{n+1} = \\mathbb{A}_n \\oplus \\mathbb{A}_n, \\quad (a,b)(c,d) = (ac - d\\overline{b}, \\overline{a}d + cb).",
+      "source_line": 38,
+      "source_line_sha256": "4d81324b8cbf77271bd438ac42ded8eb8bafa33d25c36e4dee4366bf1b6059f4",
+      "source_text": "\\mathbb{A}_{n+1} = \\mathbb{A}_n \\oplus \\mathbb{A}_n, \\quad (a,b)(c,d) = (ac - d\\overline{b}, \\overline{a}d + cb)."
+    },
+    {
+      "ascii_text": "Lemma 2.1.1 (Alternativity): The associator (x,y,z) = (xy)z - x(yz) vanishes if any two of x,y,z are equal, ensuring restricted non-associativity that prevents runaway complexities.",
+      "source_line": 41,
+      "source_line_sha256": "004c0b19fb81a7ddbba6570f80359e5226e3cd1351f84a67c9deb7c2ea677c52",
+      "source_text": "Lemma 2.1.1 (Alternativity): The associator (x,y,z) = (xy)z - x(yz) vanishes if any two of x,y,z are equal, ensuring restricted non-associativity that prevents runaway complexities."
+    },
+    {
+      "ascii_text": "Incorporate modular forms associated with the Monster group \\mathbb{M}. By embedding modular arithmetic into lattice expansions, fractal sets gain arithmetic constraints that enforce stable scaling laws.",
+      "source_line": 45,
+      "source_line_sha256": "4162a49ca616b63436c9cfe9aaa3f983f9b48a9c7256795f5c1196dc7f40f8d2",
+      "source_text": "Incorporate modular forms associated with the Monster group \\mathbb{M}. By embedding modular arithmetic into lattice expansions, fractal sets gain arithmetic constraints that enforce stable scaling laws."
+    },
+    {
+      "ascii_text": "A fractal-harmonic transform \\mathcal{F}_H uses the golden ratio \\phi=(1+\\sqrt{5})/2 to ensure scale invariance:",
+      "source_line": 52,
+      "source_line_sha256": "ff9a4a14490e7e20648a3acba7886af32e8b35e3dc6e7c6c60fe5af511174fb6",
+      "source_text": "A fractal-harmonic transform \\mathcal{F}_H uses the golden ratio \\phi=(1+\\sqrt{5})/2 to ensure scale invariance:"
+    },
+    {
+      "ascii_text": "\\mathcal{F}H[f(x)] = \\sum{m=1}^{\\infty} \\frac{\\sin(2\\pi m x / \\phi)}{m^\\gamma}, \\quad \\gamma > 1.",
+      "source_line": 55,
+      "source_line_sha256": "9d94c2cf6018f9750b7f7c666308811c944e568483933556d73b939ae49faabc",
+      "source_text": "\\mathcal{F}H[f(x)] = \\sum{m=1}^{\\infty} \\frac{\\sin(2\\pi m x / \\phi)}{m^\\gamma}, \\quad \\gamma > 1."
+    },
+    {
+      "ascii_text": "For \\gamma > 1, \\mathcal{F}_H[f(x)] converges absolutely, ensuring stable fractal decompositions and infinite self-similarity through \\phi-scaling.",
+      "source_line": 59,
+      "source_line_sha256": "24f4536396ee7d717c94ebc52ff13f7d8e815376f0e618d699477747289dd948",
+      "source_text": "For \\gamma > 1, \\mathcal{F}_H[f(x)] converges absolutely, ensuring stable fractal decompositions and infinite self-similarity through \\phi-scaling."
+    },
+    {
+      "ascii_text": "Fractional integrals use Hausdorff measures  \\mathcal{H}^{d_{\\text{frac}}}  to extend integrals into fractional dimensions. Negative dimensions arise via analytic continuation. Zeta-regularization techniques ensure finite results. Dimensional transitions are governed by variable-order fractional derivatives and renormalization that preserve integrability.",
+      "source_line": 63,
+      "source_line_sha256": "1ea1683cc8eacc8e89240b9a5cf96d0e3395132a1060430fb9a1185a5ac45a83",
+      "source_text": "Fractional integrals use Hausdorff measures  \\mathcal{H}^{d_{\\text{frac}}}  to extend integrals into fractional dimensions. Negative dimensions arise via analytic continuation. Zeta-regularization techniques ensure finite results. Dimensional transitions are governed by variable-order fractional derivatives and renormalization that preserve integrability."
+    },
+    {
+      "ascii_text": "K_{\\text{Recursive}}(r,t) = \\frac{e^{-\\alpha \\|r\\|^2}}{1+\\gamma \\|r\\|^\\eta}.",
+      "source_line": 77,
+      "source_line_sha256": "977b5979bb9dfd6eb5325f85d78626176016154ecae39f176dc86440a266ca8f",
+      "source_text": "K_{\\text{Recursive}}(r,t) = \\frac{e^{-\\alpha \\|r\\|^2}}{1+\\gamma \\|r\\|^\\eta}."
+    },
+    {
+      "ascii_text": "\\mathcal{F}M = \\prod{k=1}^{26} K_{\\text{primary}}^{(k)} \\prod_{s=1}^{28} K_{\\text{sub}}^{(s)} \\prod_{ss=1}^{10} K_{\\text{sub-sub}}^{(ss)}.",
+      "source_line": 96,
+      "source_line_sha256": "e682cf2a5d13a31b9108b81a55a34a63c359e84e323a6412883de328b317f172",
+      "source_text": "\\mathcal{F}M = \\prod{k=1}^{26} K_{\\text{primary}}^{(k)} \\prod_{s=1}^{28} K_{\\text{sub}}^{(s)} \\prod_{ss=1}^{10} K_{\\text{sub-sub}}^{(ss)}."
+    },
+    {
+      "ascii_text": "\\mathcal{F}_M remains integrable and stable, given exponential damping and fractal scaling \\gamma > 1. A Banach Fixed Point argument ensures convergence under iterative application.",
+      "source_line": 100,
+      "source_line_sha256": "f8a242e2deca1148949f777a7e038bbbe083faa052d94ec1f2c4600e6d34da35",
+      "source_text": "\\mathcal{F}_M remains integrable and stable, given exponential damping and fractal scaling \\gamma > 1. A Banach Fixed Point argument ensures convergence under iterative application."
+    },
+    {
+      "ascii_text": "Operators introduced here--lattice (\\mathcal{L}), fractal-harmonic (\\mathcal{F}_H), time-dynamics (\\mathcal{T}_t), combined (\\mathcal{C}), foldmerge (\\mathcal{F}_M), strongly-coupled cross-link (\\mathcal{S}_C), and quantum-gravitational conduct (\\mathcal{QG}_C)--form the engine of Genesis.",
+      "source_line": 107,
+      "source_line_sha256": "9a7dc82a83bb38eabdf0216ca7f39c5947b67883d07de50a42492dcfc366649d",
+      "source_text": "Operators introduced here\u2014lattice (\\mathcal{L}), fractal-harmonic (\\mathcal{F}_H), time-dynamics (\\mathcal{T}_t), combined (\\mathcal{C}), foldmerge (\\mathcal{F}_M), strongly-coupled cross-link (\\mathcal{S}_C), and quantum-gravitational conduct (\\mathcal{QG}_C)\u2014form the engine of Genesis."
+    },
+    {
+      "ascii_text": "4.1 Lattice Operator (\\mathcal{L})",
+      "source_line": 109,
+      "source_line_sha256": "c380b8f23d794a788a0f0611fd268b2a3dd3f87a2ebfcb37e8e17a525239509a",
+      "source_text": "4.1 Lattice Operator (\\mathcal{L})"
+    },
+    {
+      "ascii_text": "\\mathcal{L}[f(x)] = \\sum_{v \\in \\Lambda} e^{-\\alpha \\|x-v\\|^2} f(x-v),",
+      "source_line": 112,
+      "source_line_sha256": "fee88da5da5d9b07b7d7ad0c5201a34be3802b8d006c3fd3b1b1132fc699c745",
+      "source_text": "\\mathcal{L}[f(x)] = \\sum_{v \\in \\Lambda} e^{-\\alpha \\|x-v\\|^2} f(x-v),"
+    },
+    {
+      "ascii_text": "4.2 Fractal-Harmonic Transform (\\mathcal{F}_H)",
+      "source_line": 117,
+      "source_line_sha256": "f5b405861d325ffa48f8501f2b6fbbb2387cd25d60acdf9885fc6d60317ee045",
+      "source_text": "4.2 Fractal-Harmonic Transform (\\mathcal{F}_H)"
+    },
+    {
+      "ascii_text": "\\mathcal{F}H[f(x)] = \\sum{m=1}^{\\infty} \\frac{\\sin(2\\pi m x/\\phi)}{m^\\gamma}.",
+      "source_line": 120,
+      "source_line_sha256": "b7fe20f2dc3d7291697523835dc5063788a79b033218d35c2f2e0f99f731d419",
+      "source_text": "\\mathcal{F}H[f(x)] = \\sum{m=1}^{\\infty} \\frac{\\sin(2\\pi m x/\\phi)}{m^\\gamma}."
+    },
+    {
+      "ascii_text": "\\int \\psi_m(x)\\psi_n(x) \\mathcal{H}^{d_{\\text{frac}}}(x) = \\delta_{mn},",
+      "source_line": 128,
+      "source_line_sha256": "da5a53ec335e1cf2a6c5018bf2ea3a0299acb6047f29ea4a323814ae312ffbcd",
+      "source_text": "\\int \\psi_m(x)\\psi_n(x) \\mathcal{H}^{d_{\\text{frac}}}(x) = \\delta_{mn},"
+    },
+    {
+      "ascii_text": "4.3 Time Dynamics Operator (\\mathcal{T}_t)",
+      "source_line": 133,
+      "source_line_sha256": "4654e1ade805874ec3d3c29bb81ca6002875ae1e0f1fd7175c9b8367db7005f0",
+      "source_text": "4.3 Time Dynamics Operator (\\mathcal{T}_t)"
+    },
+    {
+      "ascii_text": "\\mathcal{T}_t[f(x)] = f(x)(1 + \\sin(\\omega t + \\frac{\\pi \\|x\\|}{d})).",
+      "source_line": 136,
+      "source_line_sha256": "33a8259300c87c3a145dc920d97b0d2a8d7f7ad03fcddb202756a53ec07eab76",
+      "source_text": "\\mathcal{T}_t[f(x)] = f(x)(1 + \\sin(\\omega t + \\frac{\\pi \\|x\\|}{d}))."
+    },
+    {
+      "ascii_text": "4.4 Combined Operator (\\mathcal{C})",
+      "source_line": 141,
+      "source_line_sha256": "78ff4988a3817859f6f1985176d8444f0a59eab43925450d5b04701419031876",
+      "source_text": "4.4 Combined Operator (\\mathcal{C})"
+    },
+    {
+      "ascii_text": "\\mathcal{C}[f(x)] = \\mathcal{L}[f(x)] + \\mathcal{F}_H[f(x)] + \\mathcal{T}_t[f(x)].",
+      "source_line": 143,
+      "source_line_sha256": "48c2a6300752860b4a187ba1a81f8725b1eaf2442562ce3f2f17c0130ff15415",
+      "source_text": "\\mathcal{C}[f(x)] = \\mathcal{L}[f(x)] + \\mathcal{F}_H[f(x)] + \\mathcal{T}_t[f(x)]."
+    },
+    {
+      "ascii_text": "4.5 FoldMerge Operator (\\mathcal{F}_M)",
+      "source_line": 146,
+      "source_line_sha256": "1a91b1a35862d8d11953c185ef09db55384f84d81a3c011b133449430ba4c597",
+      "source_text": "4.5 FoldMerge Operator (\\mathcal{F}_M)"
+    },
+    {
+      "ascii_text": "\\mathcal{F}M = \\prod{k=1}^{26} K_{\\text{primary}}^{(k)} \\prod_{s=1}^{28} K_{\\text{sub}}^{(s)} \\prod_{ss=1}^{10} K_{\\text{sub-sub}}^{(ss)}.",
+      "source_line": 149,
+      "source_line_sha256": "e682cf2a5d13a31b9108b81a55a34a63c359e84e323a6412883de328b317f172",
+      "source_text": "\\mathcal{F}M = \\prod{k=1}^{26} K_{\\text{primary}}^{(k)} \\prod_{s=1}^{28} K_{\\text{sub}}^{(s)} \\prod_{ss=1}^{10} K_{\\text{sub-sub}}^{(ss)}."
+    },
+    {
+      "ascii_text": "4.6 Strongly-Coupled Cross-Link Operator (\\mathcal{S}_C)",
+      "source_line": 154,
+      "source_line_sha256": "75b19ad9eba32edb7af11c35c17aa852c9f9830293885d4061d5a90093ee1bf8",
+      "source_text": "4.6 Strongly-Coupled Cross-Link Operator (\\mathcal{S}_C)"
+    },
+    {
+      "ascii_text": "4.7 Quantum-Gravitational Conduct Operator (\\mathcal{QG}_C)",
+      "source_line": 157,
+      "source_line_sha256": "f5d3dc6d7b1535474799f4ac11a7dd6ef3d02ffe1ba7e4f3f1692537ce03f5ed",
+      "source_text": "4.7 Quantum-Gravitational Conduct Operator (\\mathcal{QG}_C)"
+    },
+    {
+      "ascii_text": "\\mathcal{QG}C = \\hat{H}{\\text{quantum}} + G_{\\mu\\nu} + \\Lambda g_{\\mu\\nu} + \\Pi(F_{\\mu\\nu}).",
+      "source_line": 160,
+      "source_line_sha256": "54ab8d238e79e621412603b884138f87c28b75e04b43fa8142bc2959a3921406",
+      "source_text": "\\mathcal{QG}C = \\hat{H}{\\text{quantum}} + G_{\\mu\\nu} + \\Lambda g_{\\mu\\nu} + \\Pi(F_{\\mu\\nu})."
+    },
+    {
+      "ascii_text": "Check [\\mathcal{F}_M, \\mathcal{QG}_C] and show it yields bounded operators O_n ensuring no infinite cascades.",
+      "source_line": 166,
+      "source_line_sha256": "a1967c1005f9b79a5d7e6c3f36fbab68efb621130d449dccbf1308181bfe96bc",
+      "source_text": "Check [\\mathcal{F}_M, \\mathcal{QG}_C] and show it yields bounded operators O_n ensuring no infinite cascades."
+    },
+    {
+      "ascii_text": "Incorporating E_8 maximizes symmetry. The presence of E_8 ensures that fractal embeddings and scalar-ZPE couplings do not break fundamental symmetries. Let \\{X_i\\}{i=1}^{248} be E_8 generators with structure constants f{ijk}.",
+      "source_line": 177,
+      "source_line_sha256": "86d6e01553a6718972481aaa40148f8031dae58430f7d358185cb853fc739965",
+      "source_text": "Incorporating E_8 maximizes symmetry. The presence of E_8 ensures that fractal embeddings and scalar-ZPE couplings do not break fundamental symmetries. Let \\{X_i\\}{i=1}^{248} be E_8 generators with structure constants f{ijk}."
+    },
+    {
+      "ascii_text": "J_3(\\mathbb{O}) \\rightarrow F_4, E_6, E_7, E_8,",
+      "source_line": 186,
+      "source_line_sha256": "db4527cd670ca5015232b49d4146b0e0dad5e70dc23ad089c67fbe5435170e6d",
+      "source_text": "J_3(\\mathbb{O}) \\rightarrow F_4, E_6, E_7, E_8,"
+    },
+    {
+      "ascii_text": "D^{\\delta(t)}_x f(x) = \\frac{1}{\\Gamma(1-\\delta(t))}\\frac{d}{dx}\\int_0^x \\frac{f(u)}{(x-u)^{\\delta(t)}}du.",
+      "source_line": 195,
+      "source_line_sha256": "cdaac56cae5f33ea7ab52ab282eaf8a3ca0b667a6f09a7bb2fd4764afad0072f",
+      "source_text": "D^{\\delta(t)}_x f(x) = \\frac{1}{\\Gamma(1-\\delta(t))}\\frac{d}{dx}\\int_0^x \\frac{f(u)}{(x-u)^{\\delta(t)}}du."
+    },
+    {
+      "ascii_text": "Combine E_8 with Leech lattice embeddings. Show that summations over these lattices yield integrals with finite volumes in negative/fractional dimensions. Zeta-regularization ensures that \\int \\Lambda_{E8}(r) dr remains finite.",
+      "source_line": 204,
+      "source_line_sha256": "90bb8cca7a7582963982ca641b2b40f3e32ba291db8455a7099d68d589557978",
+      "source_text": "Combine E_8 with Leech lattice embeddings. Show that summations over these lattices yield integrals with finite volumes in negative/fractional dimensions. Zeta-regularization ensures that \\int \\Lambda_{E8}(r) dr remains finite."
+    },
+    {
+      "ascii_text": "K_{\\text{QCD}}(x,y,t) = \\langle 0|\\mathcal{T}\\{\\bar{\\psi}(x)\\gamma^\\mu T^a\\psi(x)G_{\\mu\\nu}^a(y)\\}|0\\rangle.",
+      "source_line": 217,
+      "source_line_sha256": "f103ef359d2652847921a4967ce20ed3f6c3247841ae8aa8de91c5c123dde2ac",
+      "source_text": "K_{\\text{QCD}}(x,y,t) = \\langle 0|\\mathcal{T}\\{\\bar{\\psi}(x)\\gamma^\\mu T^a\\psi(x)G_{\\mu\\nu}^a(y)\\}|0\\rangle."
+    },
+    {
+      "ascii_text": "For muon-photon couplings, harmonic expansions from \\mathcal{F}_H shape the vacuum structure, introducing stable photon states that can be measured as harmonic resonances in advanced photonic cavities.",
+      "source_line": 226,
+      "source_line_sha256": "e172e1bd1c30e28ff63b2af9a36ca9670b50a7e3c3117d769360e3ea457bdac1",
+      "source_text": "For muon-photon couplings, harmonic expansions from \\mathcal{F}_H shape the vacuum structure, introducing stable photon states that can be measured as harmonic resonances in advanced photonic cavities."
+    },
+    {
+      "ascii_text": "\\mathcal{QG}C = \\hat{H} + G{\\mu\\nu} + \\Lambda g_{\\mu\\nu}.",
+      "source_line": 232,
+      "source_line_sha256": "c36f40a6793eaea3369b2f3ae0e13edd18c71ebd3b230d789cdd713e4dcf72b4",
+      "source_text": "\\mathcal{QG}C = \\hat{H} + G{\\mu\\nu} + \\Lambda g_{\\mu\\nu}."
+    },
+    {
+      "ascii_text": "-\tTime-Crystal Lasers: Employ ultrafast lasers (10-100 fs) and high-repetition rates (~80 MHz) in nonlinear media (tourmaline or doped metamaterials) to detect stable harmonic oscillations predicted by \\mathcal{F}_H.",
+      "source_line": 239,
+      "source_line_sha256": "015f6e29ddb77d3d98917acba4467cfd1e7ee49e779a54330c50ac3368c152e8",
+      "source_text": "\u2022\tTime-Crystal Lasers: Employ ultrafast lasers (10\u2013100 fs) and high-repetition rates (~80 MHz) in nonlinear media (tourmaline or doped metamaterials) to detect stable harmonic oscillations predicted by \\mathcal{F}_H."
+    },
+    {
+      "ascii_text": "-\tQuantum Computing: Enhanced error correction and coherence times through fractal-lattice memory fields and \\mathcal{QG}_C-stabilized quantum states.",
+      "source_line": 248,
+      "source_line_sha256": "0822bc56d4572e58ed42876b238a0ba43edd2d7a6b133478c91a55bb304a96d5",
+      "source_text": "\u2022\tQuantum Computing: Enhanced error correction and coherence times through fractal-lattice memory fields and \\mathcal{QG}_C-stabilized quantum states."
+    },
+    {
+      "ascii_text": "D^{\\delta(t)}_x f(x) = \\frac{1}{\\Gamma(1-\\delta(t))}\\frac{d}{dx}\\int_0^x \\frac{f(u)}{(x-u)^{\\delta(t)}} du.",
+      "source_line": 266,
+      "source_line_sha256": "35e7083ffe1078eebd060b6eb4587bf74846464bc7e0db276283b394923313e6",
+      "source_text": "D^{\\delta(t)}_x f(x) = \\frac{1}{\\Gamma(1-\\delta(t))}\\frac{d}{dx}\\int_0^x \\frac{f(u)}{(x-u)^{\\delta(t)}} du."
+    },
+    {
+      "ascii_text": "\\int_{\\mathbb{R}^{d_{\\text{eff}}}} f(x) \\, d\\mu = \\zeta_{\\text{reg}}\\left(\\int_{\\mathbb{R}^n}f(x)dx; d_{\\text{eff}}\\right).",
+      "source_line": 272,
+      "source_line_sha256": "46b7ff1cffae6ea1184270de4bf2bb9407c315e53149ab1945a7ee5fe6d549fb",
+      "source_text": "\\int_{\\mathbb{R}^{d_{\\text{eff}}}} f(x) \\, d\\mu = \\zeta_{\\text{reg}}\\left(\\int_{\\mathbb{R}^n}f(x)dx; d_{\\text{eff}}\\right)."
+    },
+    {
+      "ascii_text": "Origami fold operator \\mathcal{O} now acts in spaces of fractional or negative dimension. Let f(x)\\in W^{\\delta(t),p}. The fold operation:",
+      "source_line": 290,
+      "source_line_sha256": "898b03227359f761e29413fef644e36c792aa17f2da776ce470cc4091566b4fb",
+      "source_text": "Origami fold operator \\mathcal{O} now acts in spaces of fractional or negative dimension. Let f(x)\\in W^{\\delta(t),p}. The fold operation:"
+    },
+    {
+      "ascii_text": "\\mathcal{O}f = \\int f_{\\text{origami}}(x{\\prime})f(x-x{\\prime})dx{\\prime}",
+      "source_line": 293,
+      "source_line_sha256": "a93c8e642ab509e6b23fe6747a2de9efdf948adc8c5d6acd0535899ac3f372f0",
+      "source_text": "\\mathcal{O}f = \\int f_{\\text{origami}}(x{\\prime})f(x-x{\\prime})dx{\\prime}"
+    },
+    {
+      "ascii_text": "f_{\\text{origami}}(x) = \\prod_{i=1}^n\\cos(\\phi x_i) + \\sum_{j=1}^n \\sin(\\phi x_j),",
+      "source_line": 299,
+      "source_line_sha256": "d01857748182bea7750183f21cd9c825dcf948883b49a2b4027bdbc03b44ea81",
+      "source_text": "f_{\\text{origami}}(x) = \\prod_{i=1}^n\\cos(\\phi x_i) + \\sum_{j=1}^n \\sin(\\phi x_j),"
+    },
+    {
+      "ascii_text": "Here, we refine operator derivations introduced in Chapter 4 and 5. We focus on hypercomplex extensions (quaternions, octonions, sedenions) and their influence on operator commutation, non-associativity management, and strong coupling terms (\\mathcal{S}_C).",
+      "source_line": 312,
+      "source_line_sha256": "8737f65ba080b2026b57ce567253e6e533a3afc97a2d19d75586f3017e658c28",
+      "source_text": "Here, we refine operator derivations introduced in Chapter 4 and 5. We focus on hypercomplex extensions (quaternions, octonions, sedenions) and their influence on operator commutation, non-associativity management, and strong coupling terms (\\mathcal{S}_C)."
+    },
+    {
+      "ascii_text": "Octonions \\mathbb{O} are non-associative but alternative. For sedenions, we lose even alternativity. We must ensure that introducing sedenions or pathions does not yield uncontrolled operator growth:",
+      "source_line": 316,
+      "source_line_sha256": "f89a0bf9817a57e5fa8ac2d22ec6333db5e34ab44661f53b38dd6df6b4ad1d26",
+      "source_text": "Octonions \\mathbb{O} are non-associative but alternative. For sedenions, we lose even alternativity. We must ensure that introducing sedenions or pathions does not yield uncontrolled operator growth:"
+    },
+    {
+      "ascii_text": "[\\mathcal{F}_M, \\mathcal{QG}_C] = i \\sum_n \\lambda_n O_n,",
+      "source_line": 326,
+      "source_line_sha256": "e5fd48ba2ad47df6dd6b11eebd95fe70abbb02da34e0f13835d8982d7136c892",
+      "source_text": "[\\mathcal{F}_M, \\mathcal{QG}_C] = i \\sum_n \\lambda_n O_n,"
+    },
+    {
+      "ascii_text": "For properly chosen damping exponents \\alpha,\\gamma, the filtered structure implies that after finite steps, \\mathcal{F}_M and \\mathcal{QG}_C generate a subalgebra with bounded commutators. Proof uses a Malcev algebra analogy, extending octonionic techniques.",
+      "source_line": 332,
+      "source_line_sha256": "6c4247f455fc6cd02276fdcba20391ceb141bf46b33c93d189884b712a0b6ccf",
+      "source_text": "For properly chosen damping exponents \\alpha,\\gamma, the filtered structure implies that after finite steps, \\mathcal{F}_M and \\mathcal{QG}_C generate a subalgebra with bounded commutators. Proof uses a Malcev algebra analogy, extending octonionic techniques."
+    },
+    {
+      "ascii_text": "8.3 Strong Coupling Operator \\mathcal{S}_C",
+      "source_line": 334,
+      "source_line_sha256": "f8676572a2dda9e39878906d407a63e06958428eee733ccbe67c47760532f31d",
+      "source_text": "8.3 Strong Coupling Operator \\mathcal{S}_C"
+    },
+    {
+      "ascii_text": "\\mathcal{S}_C sums over products of primary, sub-, and sub-sub-kernels. Nonlinear summations might risk divergence. Introduce minimal polynomial constraints from E_8 and Monster symmetries:",
+      "source_line": 336,
+      "source_line_sha256": "5e68dfd9e18c87b19d5c2c8036a2d28648a9521efc0da568f3fb07e07c38a4b5",
+      "source_text": "\\mathcal{S}_C sums over products of primary, sub-, and sub-sub-kernels. Nonlinear summations might risk divergence. Introduce minimal polynomial constraints from E_8 and Monster symmetries:"
+    },
+    {
+      "ascii_text": "We adapt LBM to fractional dimension domains \\mathbb{R}^{d_{\\text{frac}}}. Probability distributions f_i(x,t) evolve as:",
+      "source_line": 350,
+      "source_line_sha256": "212b8223e77318850dda64f354d6560e23dd1dbdb929f2067e76df00393dc7e0",
+      "source_text": "We adapt LBM to fractional dimension domains \\mathbb{R}^{d_{\\text{frac}}}. Probability distributions f_i(x,t) evolve as:"
+    },
+    {
+      "ascii_text": "f_i(x+\\Delta x_i, t+\\Delta t) - f_i(x,t) = -\\frac{1}{\\tau}(f_i - f_i^{\\text{eq}})",
+      "source_line": 353,
+      "source_line_sha256": "c284da3508214f394b1440182fb9e0fe3e1eae02ac0f2b1bd62fdecff8932a62",
+      "source_text": "f_i(x+\\Delta x_i, t+\\Delta t) - f_i(x,t) = -\\frac{1}{\\tau}(f_i - f_i^{\\text{eq}})"
+    },
+    {
+      "ascii_text": "\\int_0^x f(u)(x-u)^{-\\delta(t)} du \\approx \\sum_j w_j f(x_j).",
+      "source_line": 359,
+      "source_line_sha256": "7dd5b6cea8fd2f383fd65150a13134a8fb6bcc832ec8ccd9a23bfb81bd0362e4",
+      "source_text": "\\int_0^x f(u)(x-u)^{-\\delta(t)} du \\approx \\sum_j w_j f(x_j)."
+    },
+    {
+      "ascii_text": "K_{\\text{Genesis}}(x,y,z,t) = \\int_{\\mathcal{C}} [K_{\\text{Base}}\\cdot K_{\\text{Fold}}\\cdot K_{\\text{Quantum}}\\cdot \\mathcal{F}M \\cdot \\mathcal{S}C \\cdot \\mathcal{T}t][1+\\Phi{\\text{Total}}\\cdot T{\\text{Recursive}}\\cdot H{\\text{Genesis}}]\\mathcal{N}(-x,-y,-z) dx,",
+      "source_line": 390,
+      "source_line_sha256": "94ecd4f30a00585d6f3562eb2ebbb90cb93b2619485f06651a6c8b39aa0cc3ac",
+      "source_text": "K_{\\text{Genesis}}(x,y,z,t) = \\int_{\\mathcal{C}} [K_{\\text{Base}}\\cdot K_{\\text{Fold}}\\cdot K_{\\text{Quantum}}\\cdot \\mathcal{F}M \\cdot \\mathcal{S}C \\cdot \\mathcal{T}t][1+\\Phi{\\text{Total}}\\cdot T{\\text{Recursive}}\\cdot H{\\text{Genesis}}]\\mathcal{N}(-x,-y,-z) dx,"
+    },
+    {
+      "ascii_text": "11.1 Derivation of the FoldMerge Operator (\\mathcal{F}_M)",
+      "source_line": 419,
+      "source_line_sha256": "8b035d2ab241f188d1b3fa81e6bc5fde4071e7966bdf188d6ef89cae2c17695d",
+      "source_text": "11.1 Derivation of the FoldMerge Operator (\\mathcal{F}_M)"
+    },
+    {
+      "ascii_text": "\\mathcal{F}M = \\prod{k=1}^{26}K_{\\text{primary}}^{(k)}\\prod_{s=1}^{28}K_{\\text{sub}}^{(s)}\\prod_{ss=1}^{10}K_{\\text{sub-sub}}^{(ss)}.",
+      "source_line": 424,
+      "source_line_sha256": "6fd00dcb817bf8a0bbc99a87b6f86504ccc1f8c40765d21aa245d0220b7105b8",
+      "source_text": "\\mathcal{F}M = \\prod{k=1}^{26}K_{\\text{primary}}^{(k)}\\prod_{s=1}^{28}K_{\\text{sub}}^{(s)}\\prod_{ss=1}^{10}K_{\\text{sub-sub}}^{(ss)}."
+    },
+    {
+      "ascii_text": "Define intermediate products and show that each multiplication preserves integrability. Employ Gelfand triple frameworks to handle distributions and ensure that \\mathcal{F}_M maps from a suitable Hilbert space \\mathcal{H} to itself continuously.",
+      "source_line": 427,
+      "source_line_sha256": "a8f106537f9c7e199a749cd37ad3e0527b6bffba5705b667f852fe3dbfc96eb2",
+      "source_text": "Define intermediate products and show that each multiplication preserves integrability. Employ Gelfand triple frameworks to handle distributions and ensure that \\mathcal{F}_M maps from a suitable Hilbert space \\mathcal{H} to itself continuously."
+    },
+    {
+      "ascii_text": "11.2 Derivation of Fractal-Harmonic Transform (\\mathcal{F}_H)",
+      "source_line": 432,
+      "source_line_sha256": "19b8dbe3d9d9975ed2176e72d79ffdd7e1ec0e3cb3607e6471ee229f0e766c2b",
+      "source_text": "11.2 Derivation of Fractal-Harmonic Transform (\\mathcal{F}_H)"
+    },
+    {
+      "ascii_text": "\\mathcal{F}H[f(x)] = \\sum{m=1}^\\infty \\frac{\\sin(2\\pi m x/\\phi)}{m^\\gamma}.",
+      "source_line": 437,
+      "source_line_sha256": "43458fd2676562281bc3f02dac5802ba82e904908bd7f2070ced574a1ede5d08",
+      "source_text": "\\mathcal{F}H[f(x)] = \\sum{m=1}^\\infty \\frac{\\sin(2\\pi m x/\\phi)}{m^\\gamma}."
+    },
+    {
+      "ascii_text": "We prove that \\mathcal{F}H is a bounded linear operator on L^2(\\mathbb{R}^{d{\\text{frac}}}):",
+      "source_line": 440,
+      "source_line_sha256": "43c5c1b9ab374d897c6e06f360da50401f0e7c508ccfec300716dd63e0f201bb",
+      "source_text": "We prove that \\mathcal{F}H is a bounded linear operator on L^2(\\mathbb{R}^{d{\\text{frac}}}):"
+    },
+    {
+      "ascii_text": "1.\tOrthogonality conditions ensure \\langle \\psi_m,\\psi_n\\rangle = \\delta_{mn}.",
+      "source_line": 441,
+      "source_line_sha256": "21859e1cc95a18adc355a24b111aa0ebadcc683cd4768e216bf797b5e82fc1a3",
+      "source_text": "1.\tOrthogonality conditions ensure \\langle \\psi_m,\\psi_n\\rangle = \\delta_{mn}."
+    },
+    {
+      "ascii_text": "Eigenfunctions \\{\\psi_n\\} derived from \\mathcal{F}_H form a complete basis in fractional-dimensional Hilbert spaces, ensuring any reasonable field can be expanded without loss of information.",
+      "source_line": 445,
+      "source_line_sha256": "bf0b6262bec5cb58bec5a60fa5f4427925e433f5334327d95e41c0cc6c65d96d",
+      "source_text": "Eigenfunctions \\{\\psi_n\\} derived from \\mathcal{F}_H form a complete basis in fractional-dimensional Hilbert spaces, ensuring any reasonable field can be expanded without loss of information."
+    },
+    {
+      "ascii_text": "11.3 Derivation of Quantum-Gravitational Conduct Operator (\\mathcal{QG}_C)",
+      "source_line": 447,
+      "source_line_sha256": "2408b1c8beb582f88ebbd2219fcf28aa9cde777afd74657953c552515b0157ac",
+      "source_text": "11.3 Derivation of Quantum-Gravitational Conduct Operator (\\mathcal{QG}_C)"
+    },
+    {
+      "ascii_text": "\\mathcal{QG}C = \\hat{H}{quantum} + G_{\\mu\\nu} + \\Lambda g_{\\mu\\nu} + \\Pi(F_{\\mu\\nu}),",
+      "source_line": 450,
+      "source_line_sha256": "2773108bca67cea28dd2702e68797a363bdc6a0186be239bce9d0e8eeeffb88a",
+      "source_text": "\\mathcal{QG}C = \\hat{H}{quantum} + G_{\\mu\\nu} + \\Lambda g_{\\mu\\nu} + \\Pi(F_{\\mu\\nu}),"
+    },
+    {
+      "ascii_text": "Use superconducting cavities with tunable boundary conditions to observe photon creation rates modulated by \\mathcal{QG}_C. Cryogenic isolation (<4 K) reduces thermal noise. Detect deviations from standard QED predictions aligning with Genesis expansions.",
+      "source_line": 472,
+      "source_line_sha256": "72073380c20d8832b6d92782a43fd81bf58c599ee5f52d2a3c7cf5c703b69ff9",
+      "source_text": "Use superconducting cavities with tunable boundary conditions to observe photon creation rates modulated by \\mathcal{QG}_C. Cryogenic isolation (<4 K) reduces thermal noise. Detect deviations from standard QED predictions aligning with Genesis expansions."
+    },
+    {
+      "ascii_text": "Compare data to predictions from \\mathcal{F}_M and fractal dimension integrals.",
+      "source_line": 479,
+      "source_line_sha256": "f2f2502c511272b22d16c4e65eb6cde3ca8439e8a7bf5c05581b5f28f6b2029a",
+      "source_text": "Compare data to predictions from \\mathcal{F}_M and fractal dimension integrals."
+    },
+    {
+      "ascii_text": "K_{\\text{Genesis}}(x, y, z, t) = \\int_{\\mathcal{C}} [K_{\\text{Base}}(x,z)\\cdot K_{\\text{Fold}}(z,y)\\cdot K_{\\text{Quantum}}(y,t)\\cdot \\mathcal{F}M \\cdot \\mathcal{S}C \\cdot \\mathcal{T}t][1+\\Phi{\\text{Total}}(x, y, z, t)\\cdot T{\\text{Recursive}}(x, y, z, t)\\cdot H{\\text{Genesis}}(x, y, z, t)]\\mathcal{N}(-x, -y, -z) \\, dx.",
+      "source_line": 517,
+      "source_line_sha256": "b4499555c7167c9874331244f0acf49dc5d6e0b30a60acb70d53e9b3395e3a40",
+      "source_text": "K_{\\text{Genesis}}(x, y, z, t) = \\int_{\\mathcal{C}} [K_{\\text{Base}}(x,z)\\cdot K_{\\text{Fold}}(z,y)\\cdot K_{\\text{Quantum}}(y,t)\\cdot \\mathcal{F}M \\cdot \\mathcal{S}C \\cdot \\mathcal{T}t][1+\\Phi{\\text{Total}}(x, y, z, t)\\cdot T{\\text{Recursive}}(x, y, z, t)\\cdot H{\\text{Genesis}}(x, y, z, t)]\\mathcal{N}(-x, -y, -z) \\, dx."
+    },
+    {
+      "ascii_text": "Now augmented with fractional dimension measure \\mathcal{H}^{d_{\\text{frac}}}, negative dimension zeta-regularization, and vacuum polarization terms, we get:",
+      "source_line": 520,
+      "source_line_sha256": "6825025b6da8062890c3a95af2c8312355fc7ff6427049e1adc45f84c9831c05",
+      "source_text": "Now augmented with fractional dimension measure \\mathcal{H}^{d_{\\text{frac}}}, negative dimension zeta-regularization, and vacuum polarization terms, we get:"
+    },
+    {
+      "ascii_text": "K_{\\text{Genesis,extended}}(r, t) = \\int \\mathcal{H}^{d_{\\text{frac}}}(r{\\prime}) K_{\\text{enhanced}}(r-r{\\prime}) \\cdot \\Lambda_{E_8}(r{\\prime}) \\cdot \\Phi_{\\text{ZPE}}(r{\\prime}, t) F_{\\text{harmonic}}(r{\\prime}, t) \\, d\\mu_{\\text{frac,neg}}(r{\\prime}),",
+      "source_line": 523,
+      "source_line_sha256": "f586b1c23f79b7e5e8af543ec8c3b824ce910df5283e024b8bbac5dbfc9ee6de",
+      "source_text": "K_{\\text{Genesis,extended}}(r, t) = \\int \\mathcal{H}^{d_{\\text{frac}}}(r{\\prime}) K_{\\text{enhanced}}(r-r{\\prime}) \\cdot \\Lambda_{E_8}(r{\\prime}) \\cdot \\Phi_{\\text{ZPE}}(r{\\prime}, t) F_{\\text{harmonic}}(r{\\prime}, t) \\, d\\mu_{\\text{frac,neg}}(r{\\prime}),"
+    },
+    {
+      "ascii_text": "\\int_{\\mathbb{R}^{d_{\\text{frac}}}} \\frac{\\sin(2\\pi m x/\\phi)}{m^\\gamma} dx.",
+      "source_line": 562,
+      "source_line_sha256": "f2ef7eb3eff7ba19fde4839f0794dc77fdae1a97142bfa94dac8225d6289c202",
+      "source_text": "\\int_{\\mathbb{R}^{d_{\\text{frac}}}} \\frac{\\sin(2\\pi m x/\\phi)}{m^\\gamma} dx."
+    },
+    {
+      "ascii_text": "For \\gamma>1, we compare \\sum_{m=1}^\\infty \\frac{1}{m^\\gamma} with \\zeta(\\gamma)<\\infty. The integral of \\sin-weighted terms vanish in mean due to orthogonality properties. The absolute convergence follows from dominated convergence theorem, employing Gaussian weights e^{-\\alpha \\|x\\|^2}.",
+      "source_line": 565,
+      "source_line_sha256": "d5e847fe5402a89098c1881bbfd6c1d21b0a17aae855ef2c0f6d5f587cd0d5b9",
+      "source_text": "For \\gamma>1, we compare \\sum_{m=1}^\\infty \\frac{1}{m^\\gamma} with \\zeta(\\gamma)<\\infty. The integral of \\sin-weighted terms vanish in mean due to orthogonality properties. The absolute convergence follows from dominated convergence theorem, employing Gaussian weights e^{-\\alpha \\|x\\|^2}."
+    },
+    {
+      "ascii_text": "Define Hausdorff measure \\mathcal{H}^{d_{\\text{frac}}}. For a set S:",
+      "source_line": 569,
+      "source_line_sha256": "f267170fccd86f0e9e85b62bf1cad87758f073d8b5fc629f7e2efcdf3339e5fe",
+      "source_text": "Define Hausdorff measure \\mathcal{H}^{d_{\\text{frac}}}. For a set S:"
+    },
+    {
+      "ascii_text": "\\mathcal{H}^{d_{\\text{frac}}}(S) = \\lim_{\\delta \\to 0}\\inf \\left\\{ \\sum_i (\\text{diam}(U_i))^{d_{\\text{frac}}} : S \\subseteq \\bigcup_i U_i, \\text{diam}(U_i)<\\delta \\right\\}.",
+      "source_line": 572,
+      "source_line_sha256": "d1c6a71a2f6fde5648d968cf76e36da490dc14e8ff971174e71b71a6bb053df4",
+      "source_text": "\\mathcal{H}^{d_{\\text{frac}}}(S) = \\lim_{\\delta \\to 0}\\inf \\left\\{ \\sum_i (\\text{diam}(U_i))^{d_{\\text{frac}}} : S \\subseteq \\bigcup_i U_i, \\text{diam}(U_i)<\\delta \\right\\}."
+    },
+    {
+      "ascii_text": "Prove scaling invariance: if S is scaled by 1/\\phi, \\mathcal{H}^{d_{\\text{frac}}}(S) changes by \\phi^{-d_{\\text{frac}}}.",
+      "source_line": 575,
+      "source_line_sha256": "2465a50d000075d9a001207a710f3d7f6453cbb68b65054134a3dfbed8e96f0b",
+      "source_text": "Prove scaling invariance: if S is scaled by 1/\\phi, \\mathcal{H}^{d_{\\text{frac}}}(S) changes by \\phi^{-d_{\\text{frac}}}."
+    },
+    {
+      "ascii_text": "For operator \\mathcal{S}_C:",
+      "source_line": 579,
+      "source_line_sha256": "841ec8390391c8e5ece6d14f01161a23a222aabf0b34991fe185eb482fdcdaf7",
+      "source_text": "For operator \\mathcal{S}_C:"
+    },
+    {
+      "ascii_text": "\\mathcal{S}C = \\sum{k,s,ss} K_{\\text{primary}}^{(k)} K_{\\text{sub}}^{(s)} K_{\\text{sub-sub}}^{(ss)}.",
+      "source_line": 582,
+      "source_line_sha256": "b576b36d4f4a19e11a5f8ae83fa9b829a8b34719a437547c7c8930e77c482644",
+      "source_text": "\\mathcal{S}C = \\sum{k,s,ss} K_{\\text{primary}}^{(k)} K_{\\text{sub}}^{(s)} K_{\\text{sub-sub}}^{(ss)}."
+    },
+    {
+      "ascii_text": "Construct minimal polynomial p(\\lambda) that annihilates \\mathcal{S}_C. By representing each K-factor in a finite-dimensional representation (via expansions in E_8 root space), we show \\exists p(\\lambda) s.t. p(\\mathcal{S}_C)=0. This ensures spectral radius <1 and boundedness.",
+      "source_line": 585,
+      "source_line_sha256": "85230aba0c7ce49f59805ef136570068eb1b369d5768003e74ab402316bdc3ab",
+      "source_text": "Construct minimal polynomial p(\\lambda) that annihilates \\mathcal{S}_C. By representing each K-factor in a finite-dimensional representation (via expansions in E_8 root space), we show \\exists p(\\lambda) s.t. p(\\mathcal{S}_C)=0. This ensures spectral radius <1 and boundedness."
+    },
+    {
+      "ascii_text": "Write the associator: (x,y,z)=(xy)z - x(yz). For octonions, (x,x,y)=0, ensuring alternativity. For sedenions, we lack alternativity but bound associators by embedding them in Malcev algebras. Construct norm estimates to show |(x,y,z)|\\leq C \\|x\\|\\|y\\|\\|z\\|.",
+      "source_line": 591,
+      "source_line_sha256": "725ba276469268784a831b27336b89139cf0fc9832a47c4ef0502d602b59abcf",
+      "source_text": "Write the associator: (x,y,z)=(xy)z - x(yz). For octonions, (x,x,y)=0, ensuring alternativity. For sedenions, we lack alternativity but bound associators by embedding them in Malcev algebras. Construct norm estimates to show |(x,y,z)|\\leq C \\|x\\|\\|y\\|\\|z\\|."
+    },
+    {
+      "ascii_text": "[\\mathcal{F}_M,\\mathcal{QG}_C]=\\mathcal{F}_M\\mathcal{QG}_C-\\mathcal{QG}_C\\mathcal{F}_M.",
+      "source_line": 598,
+      "source_line_sha256": "1d3bd0c98764eee99d9bbf0ea11bc9d0f118a5d27bdb2ea7a29bd8b4e50057f6",
+      "source_text": "[\\mathcal{F}_M,\\mathcal{QG}_C]=\\mathcal{F}_M\\mathcal{QG}_C-\\mathcal{QG}_C\\mathcal{F}_M."
+    },
+    {
+      "ascii_text": "Expand \\mathcal{F}_M in terms of primary kernels and use linearity to reduce to finite sums. Each commutator [K_i,K_j] is bounded because each K-factor is either a contraction mapping or unitary-like operator in a weighted L^2 space. Inductive arguments yield a filtration ensuring higher commutators vanish.",
+      "source_line": 601,
+      "source_line_sha256": "62a0ea97de132b6521579a4b306ba73482094516d720ec59b245201e62bcfd97",
+      "source_text": "Expand \\mathcal{F}_M in terms of primary kernels and use linearity to reduce to finite sums. Each commutator [K_i,K_j] is bounded because each K-factor is either a contraction mapping or unitary-like operator in a weighted L^2 space. Inductive arguments yield a filtration ensuring higher commutators vanish."
+    },
+    {
+      "ascii_text": "Define dimension parameter \\Delta = d_{\\text{eff}}. For \\Delta<0:",
+      "source_line": 607,
+      "source_line_sha256": "636e3efa58e90e166169e9a3f17d5953441584aa155129d234e7282cd1b28c14",
+      "source_text": "Define dimension parameter \\Delta = d_{\\text{eff}}. For \\Delta<0:"
+    },
+    {
+      "ascii_text": "\\int_{\\mathbb{R}^{\\Delta}} f(x) dx := \\zeta_{\\text{reg}}\\left(\\int_{\\mathbb{R}^n} f(x) dx; \\Delta\\right).",
+      "source_line": 610,
+      "source_line_sha256": "ac2f6ffd569a6ac3dcb547301abeab865489107c99d698817ef6754c1d567716",
+      "source_text": "\\int_{\\mathbb{R}^{\\Delta}} f(x) dx := \\zeta_{\\text{reg}}\\left(\\int_{\\mathbb{R}^n} f(x) dx; \\Delta\\right)."
+    },
+    {
+      "ascii_text": "Show that for Gaussian type integrands f(x)=\\exp(-\\|x\\|^2), analytic continuation yields finite values. Extend to our kernels by dominating them with Gaussian bounds.",
+      "source_line": 613,
+      "source_line_sha256": "d6dfd98478f5a03996ef52242112dfd585ca40bcc91e2e91ede36dbed8536f95",
+      "source_text": "Show that for Gaussian type integrands f(x)=\\exp(-\\|x\\|^2), analytic continuation yields finite values. Extend to our kernels by dominating them with Gaussian bounds."
+    },
+    {
+      "ascii_text": "D_x^{\\delta(t)}f(x)=\\frac{1}{\\Gamma(1-\\delta(t))}\\frac{d}{dx}\\int_0^x \\frac{f(u)}{(x-u)^{\\delta(t)}}du.",
+      "source_line": 620,
+      "source_line_sha256": "39eaa5023dda67fc32d331cd3551092d0c53b7d841af1ea656877a2d08146b63",
+      "source_text": "D_x^{\\delta(t)}f(x)=\\frac{1}{\\Gamma(1-\\delta(t))}\\frac{d}{dx}\\int_0^x \\frac{f(u)}{(x-u)^{\\delta(t)}}du."
+    },
+    {
+      "ascii_text": "f_i(x+e_i\\Delta t,t+\\Delta t) - f_i(x,t) = -\\frac{1}{\\tau}(f_i - f_i^{eq}),",
+      "source_line": 632,
+      "source_line_sha256": "3c65618bcf25718a3c798f7a7a35640fcf0d93d7afbbdaa9dfbd1d9dfedb94d8",
+      "source_text": "f_i(x+e_i\\Delta t,t+\\Delta t) - f_i(x,t) = -\\frac{1}{\\tau}(f_i - f_i^{eq}),"
+    },
+    {
+      "ascii_text": "2.\tConstruct candidate library \\Theta(\\Phi)=\\{1,\\Phi,\\nabla\\Phi,\\Phi^2,\\dots\\}.",
+      "source_line": 639,
+      "source_line_sha256": "962b0e6faf63b0c86054388fe3bd184bb3975df30fccb37ee4d7ea8227c5b173",
+      "source_text": "2.\tConstruct candidate library \\Theta(\\Phi)=\\{1,\\Phi,\\nabla\\Phi,\\Phi^2,\\dots\\}."
+    },
+    {
+      "ascii_text": "3.\tSolve \\partial_t \\Phi = \\Theta(\\Phi)\\xi for sparse \\xi.",
+      "source_line": 640,
+      "source_line_sha256": "e70cb122f99babd23769295e8a094e78e682fa562ff0192f35ff9139015a6858",
+      "source_text": "3.\tSolve \\partial_t \\Phi = \\Theta(\\Phi)\\xi for sparse \\xi."
+    },
+    {
+      "ascii_text": "-\tLaser specs: wavelength \\lambda=800\\text{ nm}, pulse width \\approx 50\\text{ fs}.",
+      "source_line": 647,
+      "source_line_sha256": "9a0a2da5e6262a85f08fce110e782c7bba45cfb69a50e21eeea77e754579752b",
+      "source_text": "\u2022\tLaser specs: wavelength \\lambda=800\\text{ nm}, pulse width \\approx 50\\text{ fs}."
+    },
+    {
+      "ascii_text": "-\tMeasure fringe shifts and match with theoretical phase predictions from \\mathcal{F}_H.",
+      "source_line": 650,
+      "source_line_sha256": "f949dc4c0c31083ce15afda03078011dc1f95eb9a45c6d42f600695722582138",
+      "source_text": "\u2022\tMeasure fringe shifts and match with theoretical phase predictions from \\mathcal{F}_H."
+    },
+    {
+      "ascii_text": "-\t\\mathcal{F}_M: FoldMerge operator (product of kernels).",
+      "source_line": 667,
+      "source_line_sha256": "98d010f971f448a35d3103a9399743d881d7c5627ce346838a39d3a725418adc",
+      "source_text": "\u2022\t\\mathcal{F}_M: FoldMerge operator (product of kernels)."
+    },
+    {
+      "ascii_text": "-\t\\mathcal{QG}_C: Quantum-Gravitational Conduct operator.",
+      "source_line": 668,
+      "source_line_sha256": "5fdeba9d04f10aa52970f4247d82ab6b3d4777dddbd726a6534e0f71803930e5",
+      "source_text": "\u2022\t\\mathcal{QG}_C: Quantum-Gravitational Conduct operator."
+    },
+    {
+      "ascii_text": "-\t\\mathcal{T}_t: Time evolution operator.",
+      "source_line": 671,
+      "source_line_sha256": "2c762a05b70d547bac03ada81ec623f1158c4ec9367c1985443e3ae6a205084d",
+      "source_text": "\u2022\t\\mathcal{T}_t: Time evolution operator."
+    },
+    {
+      "ascii_text": "-\tExplicit expansions of minimal polynomial constraints for \\mathcal{S}_C.",
+      "source_line": 675,
+      "source_line_sha256": "91a4fa88ab42fa066546bf5401608a7c41ae50bc43e2c053f0ac12a3bb84ae57",
+      "source_text": "\u2022\tExplicit expansions of minimal polynomial constraints for \\mathcal{S}_C."
+    },
+    {
+      "ascii_text": "-\tUnified Model: Develops the Quantum-Gravitational Conduct Operator (\\mathcal{QG}_C), which explicitly merges quantum Hamiltonians with gravitational curvature tensors and cosmological terms, offering a direct mechanism to couple quantum and gravitational phenomena within the unified framework.",
+      "source_line": 767,
+      "source_line_sha256": "64208ee02205e23ee08b851c09470c3722af55570dff3e18e56ec4f7f8ba8b41",
+      "source_text": "\u2022\tUnified Model: Develops the Quantum-Gravitational Conduct Operator (\\mathcal{QG}_C), which explicitly merges quantum Hamiltonians with gravitational curvature tensors and cosmological terms, offering a direct mechanism to couple quantum and gravitational phenomena within the unified framework."
+    },
+    {
+      "ascii_text": "-\tThe development of operators such as the FoldMerge Operator (\\mathcal{F}_M) and Strongly-Coupled Cross-Link Operator (\\mathcal{S}_C) provides a sophisticated algebraic structure that manages non-associativity and ensures the boundedness and convergence of the framework's mathematical constructs.",
+      "source_line": 779,
+      "source_line_sha256": "d2a12ae6018f4d0c639fb930764268882cac524709f49374bff0e169f0baff94",
+      "source_text": "\u2022\tThe development of operators such as the FoldMerge Operator (\\mathcal{F}_M) and Strongly-Coupled Cross-Link Operator (\\mathcal{S}_C) provides a sophisticated algebraic structure that manages non-associativity and ensures the boundedness and convergence of the framework\u2019s mathematical constructs."
+    },
+    {
+      "ascii_text": "Operator Framework\tUnified force carrier concept\tAdvanced operator algebra with FoldMerge (\\mathcal{F}_M), Strongly-Coupled Cross-Link (\\mathcal{S}_C), Quantum-Gravitational Conduct (\\mathcal{QG}_C) operators",
+      "source_line": 792,
+      "source_line_sha256": "d4145ad05a4b72924dc45071f53b951a562d2106251b5addd21206f2ea4e9f39",
+      "source_text": "Operator Framework\tUnified force carrier concept\tAdvanced operator algebra with FoldMerge (\\mathcal{F}_M), Strongly-Coupled Cross-Link (\\mathcal{S}_C), Quantum-Gravitational Conduct (\\mathcal{QG}_C) operators"
+    },
+    {
+      "ascii_text": "For octonions \\mathbb{O}, alternativity implies:",
+      "source_line": 822,
+      "source_line_sha256": "a6052717431e71744417adcc7cd51ef40ab4ef57aa27ab56737b7198a322dc5b",
+      "source_text": "For octonions \\mathbb{O}, alternativity implies:"
+    },
+    {
+      "ascii_text": "(x, x, y) = (x y) x - x (y x) = 0 \\quad \\text{and} \\quad (y, x, x) = (y x) x - y (x x) = 0",
+      "source_line": 824,
+      "source_line_sha256": "e4a481f5491aea2a028ea64108cf5478814f25f48cb3597304b9426582b96642",
+      "source_text": "(x, x, y) = (x y) x - x (y x) = 0 \\quad \\text{and} \\quad (y, x, x) = (y x) x - y (x x) = 0"
+    },
+    {
+      "ascii_text": "for all x, y \\in \\mathbb{O}.",
+      "source_line": 826,
+      "source_line_sha256": "c9a6d64c0b08c7c92b47cdc5569f22bc466f9529f9189f26356660e0f9cd7302",
+      "source_text": "for all x, y \\in \\mathbb{O}."
+    },
+    {
+      "ascii_text": "The associator (x, y, z) = (x y) z - x (y z) in octonions is non-zero but satisfies:",
+      "source_line": 828,
+      "source_line_sha256": "6ef5ac4278df9e75f74b04815ab964b09847092c9eccf5e8faf1409e77b6a19e",
+      "source_text": "The associator (x, y, z) = (x y) z - x (y z) in octonions is non-zero but satisfies:"
+    },
+    {
+      "ascii_text": "For a set  S \\subseteq \\mathbb{R}^n  and fractional dimension  d_{\\text{frac}} , the Hausdorff measure is defined as:",
+      "source_line": 844,
+      "source_line_sha256": "54b04d0bd7811461b673c558ab422bf5bac0d2776543e98f3ec50067a6ad9fa8",
+      "source_text": "For a set  S \\subseteq \\mathbb{R}^n  and fractional dimension  d_{\\text{frac}} , the Hausdorff measure is defined as:"
+    },
+    {
+      "ascii_text": "\\mathcal{H}^{d_{\\text{frac}}}(S) = \\lim_{\\delta \\to 0} \\inf \\left\\{ \\sum_{i} (\\text{diam}(U_i))^{d_{\\text{frac}}} \\, \\bigg| \\, S \\subseteq \\bigcup_{i} U_i, \\, \\text{diam}(U_i) < \\delta \\right\\}",
+      "source_line": 846,
+      "source_line_sha256": "cd7504cdf9da93066388f440a28ae525ab0804c9aa7720062b3290bf096c05e8",
+      "source_text": "\\mathcal{H}^{d_{\\text{frac}}}(S) = \\lim_{\\delta \\to 0} \\inf \\left\\{ \\sum_{i} (\\text{diam}(U_i))^{d_{\\text{frac}}} \\, \\bigg| \\, S \\subseteq \\bigcup_{i} U_i, \\, \\text{diam}(U_i) < \\delta \\right\\}"
+    },
+    {
+      "ascii_text": "Let  S{\\prime} = \\phi S , where  \\phi  is the golden ratio scaling factor.",
+      "source_line": 851,
+      "source_line_sha256": "e652db5aaf12dc6b6b929c18822d98a344e2a8b69cab31f68629459638e370e4",
+      "source_text": "Let  S{\\prime} = \\phi S , where  \\phi  is the golden ratio scaling factor."
+    },
+    {
+      "ascii_text": "\\text{diam}(U{\\prime}i) = \\phi \\, \\text{diam}(U_i)",
+      "source_line": 855,
+      "source_line_sha256": "88bed2ea2ad2005625efad37db7adfd066a422aa98b806647f07fe7e6f517125",
+      "source_text": "\\text{diam}(U{\\prime}i) = \\phi \\, \\text{diam}(U_i)"
+    },
+    {
+      "ascii_text": "\\mathcal{H}^{d{\\text{frac}}}(S{\\prime}) = \\lim_{\\delta \\to 0} \\inf \\left\\{ \\sum_{i} (\\phi \\, \\text{diam}(U_i))^{d_{\\text{frac}}} \\right\\} = \\phi^{d_{\\text{frac}}} \\mathcal{H}^{d_{\\text{frac}}}(S)",
+      "source_line": 859,
+      "source_line_sha256": "6fab7e3c0664fe86ef8275fb63e77a755bbd98de8a0ec995de2e6f02b9946ebd",
+      "source_text": "\\mathcal{H}^{d{\\text{frac}}}(S{\\prime}) = \\lim_{\\delta \\to 0} \\inf \\left\\{ \\sum_{i} (\\phi \\, \\text{diam}(U_i))^{d_{\\text{frac}}} \\right\\} = \\phi^{d_{\\text{frac}}} \\mathcal{H}^{d_{\\text{frac}}}(S)"
+    },
+    {
+      "ascii_text": "\\mathcal{H}^{d_{\\text{frac}}}(S{\\prime}) = C \\mathcal{H}^{d_{\\text{frac}}}(S)",
+      "source_line": 864,
+      "source_line_sha256": "3eda1df573b25b737a4c19bf85c14b71bdeb2dfcc648dcea273a2d847b414df8",
+      "source_text": "\\mathcal{H}^{d_{\\text{frac}}}(S{\\prime}) = C \\mathcal{H}^{d_{\\text{frac}}}(S)"
+    },
+    {
+      "ascii_text": "where  C = \\phi^{d_{\\text{frac}}} .",
+      "source_line": 866,
+      "source_line_sha256": "6e25ae681c4f22c4de53e6eabd505dfd8d88b5d3445931661b6cba2875993272",
+      "source_text": "where  C = \\phi^{d_{\\text{frac}}} ."
+    },
+    {
+      "ascii_text": "For a linear operator  \\mathcal{S}_C  in a finite-dimensional representation, a minimal polynomial  p(\\lambda)  satisfies:",
+      "source_line": 874,
+      "source_line_sha256": "bdc0edb5ff273e8d980dcf66791de71b11713f77403999f0b1552c4125b216a1",
+      "source_text": "For a linear operator  \\mathcal{S}_C  in a finite-dimensional representation, a minimal polynomial  p(\\lambda)  satisfies:"
+    },
+    {
+      "ascii_text": "p(\\mathcal{S}_C) = 0",
+      "source_line": 876,
+      "source_line_sha256": "e37c6f2a0182e71104b93ea16c1ae3dc82af498f743e825190431573f3cd9e48",
+      "source_text": "p(\\mathcal{S}_C) = 0"
+    },
+    {
+      "ascii_text": "Represent  \\mathcal{S}C  in a finite-dimensional space spanned by  \\{K{\\text{primary}}^{(k)}, K_{\\text{sub}}^{(s)}, K_{\\text{sub-sub}}^{(ss)}\\} .",
+      "source_line": 881,
+      "source_line_sha256": "aa5b865b3a12fa1aca6bb697e4973b2e85f22025f78c05dc5fdbcd37b1ea2fe2",
+      "source_text": "Represent  \\mathcal{S}C  in a finite-dimensional space spanned by  \\{K{\\text{primary}}^{(k)}, K_{\\text{sub}}^{(s)}, K_{\\text{sub-sub}}^{(ss)}\\} ."
+    },
+    {
+      "ascii_text": "p(\\mathcal{S}C) = \\sum{i=0}^{m} a_i \\mathcal{S}_C^i = 0",
+      "source_line": 885,
+      "source_line_sha256": "8e53efcd6da9a979e52a2f940dd789c12bf5244c3a3d347f1f50c2516b05938a",
+      "source_text": "p(\\mathcal{S}C) = \\sum{i=0}^{m} a_i \\mathcal{S}_C^i = 0"
+    },
+    {
+      "ascii_text": "The roots of  p(\\lambda)  are the eigenvalues  \\{\\lambda_1, \\lambda_2, \\dots, \\lambda_m\\}  of  \\mathcal{S}_C . To ensure boundedness, impose:",
+      "source_line": 888,
+      "source_line_sha256": "5c519b9f87de4e06339e51502a22143b16923ea40c7e00d512db0ce2b5cf7ed7",
+      "source_text": "The roots of  p(\\lambda)  are the eigenvalues  \\{\\lambda_1, \\lambda_2, \\dots, \\lambda_m\\}  of  \\mathcal{S}_C . To ensure boundedness, impose:"
+    },
+    {
+      "ascii_text": "By constructing a minimal polynomial with roots inside the unit circle,  \\mathcal{S}_C  is guaranteed to be a contraction mapping, ensuring boundedness and preventing operator norm divergence.",
+      "source_line": 895,
+      "source_line_sha256": "ca725dc76f215eac880cc3b57f978811d5cf58d6439c555bf40225a5a92e9a7a",
+      "source_text": "By constructing a minimal polynomial with roots inside the unit circle,  \\mathcal{S}_C  is guaranteed to be a contraction mapping, ensuring boundedness and preventing operator norm divergence."
+    },
+    {
+      "ascii_text": "(x, y, z) = (x y) z - x (y z)",
+      "source_line": 905,
+      "source_line_sha256": "9b4b45408f26583a53b10b8cd5ce0339a0c409e9ae4a36e31c5941cb436ff58d",
+      "source_text": "(x, y, z) = (x y) z - x (y z)"
+    },
+    {
+      "ascii_text": "\\| (x, y, z) \\| = \\| (x y) z - x (y z) \\|",
+      "source_line": 912,
+      "source_line_sha256": "46a12c87acf217cf1a7abb706e0445f27d2f6f1ba0331e0850d0ac16273c99c4",
+      "source_text": "\\| (x, y, z) \\| = \\| (x y) z - x (y z) \\|"
+    },
+    {
+      "ascii_text": "\\| (x, y, z) \\| \\leq \\|x\\| \\|y\\| \\|z\\| + \\|x\\| \\|y\\| \\|z\\| = 2 \\|x\\| \\|y\\| \\|z\\|",
+      "source_line": 924,
+      "source_line_sha256": "80fcbe4977be7769083b08e9fab762b94f444878339fb2bb87aa67de4d36beca",
+      "source_text": "\\| (x, y, z) \\| \\leq \\|x\\| \\|y\\| \\|z\\| + \\|x\\| \\|y\\| \\|z\\| = 2 \\|x\\| \\|y\\| \\|z\\|"
+    },
+    {
+      "ascii_text": "If any two elements are equal, e.g.,  x = y :",
+      "source_line": 927,
+      "source_line_sha256": "245a76829f300294bb392e85af967bac6a1728cc5fe710d110573f2317c4ede3",
+      "source_text": "If any two elements are equal, e.g.,  x = y :"
+    },
+    {
+      "ascii_text": "(x, x, z) = (x x) z - x (x z) = 0 \\quad \\text{(by alternativity)}",
+      "source_line": 929,
+      "source_line_sha256": "579c682b2a6f95b148a4c0520caec5f8bc4c0467b1ed30e42f00a606cb0eec76",
+      "source_text": "(x, x, z) = (x x) z - x (x z) = 0 \\quad \\text{(by alternativity)}"
+    },
+    {
+      "ascii_text": "To demonstrate that the commutator [ \\mathcal{F}_M, \\mathcal{QG}_C ] yields bounded operators  O_n , preventing infinite cascades in the operator algebra.",
+      "source_line": 938,
+      "source_line_sha256": "5f5327638502cb7e2599e0be8001ea9cea659e78b0c343e8a6f642e6ee03835c",
+      "source_text": "To demonstrate that the commutator [ \\mathcal{F}_M, \\mathcal{QG}_C ] yields bounded operators  O_n , preventing infinite cascades in the operator algebra."
+    },
+    {
+      "ascii_text": "Expand \\mathcal{F}M and \\mathcal{QG}C in terms of their constituent kernels and operators:",
+      "source_line": 942,
+      "source_line_sha256": "c2fbfa8e25d8a2297258042555c400cd4b1c9a657e34422bda8f8fc50669f684",
+      "source_text": "Expand \\mathcal{F}M and \\mathcal{QG}C in terms of their constituent kernels and operators:"
+    },
+    {
+      "ascii_text": "\\mathcal{F}M = \\prod{k=1}^{26} K{\\text{primary}}^{(k)} \\prod{s=1}^{28} K_{\\text{sub}}^{(s)} \\prod_{ss=1}^{10} K_{\\text{sub-sub}}^{(ss)}",
+      "source_line": 944,
+      "source_line_sha256": "340a4d3ee8b03c3e58fc50a3f1eafab3780ec148a59d9cf90c427f4c3c12535a",
+      "source_text": "\\mathcal{F}M = \\prod{k=1}^{26} K{\\text{primary}}^{(k)} \\prod{s=1}^{28} K_{\\text{sub}}^{(s)} \\prod_{ss=1}^{10} K_{\\text{sub-sub}}^{(ss)}"
+    },
+    {
+      "ascii_text": "\\mathcal{QG}C = \\hat{H}{\\text{quantum}} + G_{\\mu\\nu} + \\Lambda g_{\\mu\\nu} + \\Pi(F_{\\mu\\nu})",
+      "source_line": 947,
+      "source_line_sha256": "e4e4aeb696489c91b36130e0c86f55aeef86ae771ff913c2c822fc7c09ca9750",
+      "source_text": "\\mathcal{QG}C = \\hat{H}{\\text{quantum}} + G_{\\mu\\nu} + \\Lambda g_{\\mu\\nu} + \\Pi(F_{\\mu\\nu})"
+    },
+    {
+      "ascii_text": "Compute [ \\mathcal{F}_M, \\mathcal{QG}_C ]:",
+      "source_line": 950,
+      "source_line_sha256": "03e4a9817100add0097871efed99023e2d0cbdcd6c944b8a225f56617d7e5d5e",
+      "source_text": "Compute [ \\mathcal{F}_M, \\mathcal{QG}_C ]:"
+    },
+    {
+      "ascii_text": "[ \\mathcal{F}_M, \\mathcal{QG}_C ] = \\mathcal{F}_M \\mathcal{QG}_C - \\mathcal{QG}_C \\mathcal{F}_M",
+      "source_line": 952,
+      "source_line_sha256": "b938b9ffc5a82a37ca4cee055ff283f73fed5edd147bd3ea0032dab880465916",
+      "source_text": "[ \\mathcal{F}_M, \\mathcal{QG}_C ] = \\mathcal{F}_M \\mathcal{QG}_C - \\mathcal{QG}_C \\mathcal{F}_M"
+    },
+    {
+      "ascii_text": "Due to the product structure of \\mathcal{F}_M, each  K -factor commutes with \\mathcal{QG}_C only under specific symmetry conditions.",
+      "source_line": 954,
+      "source_line_sha256": "f5cdfa99daf983b64270bff37b827dbdd683b6f4c651c5df8e71653ba3a23ac8",
+      "source_text": "Due to the product structure of \\mathcal{F}_M, each  K -factor commutes with \\mathcal{QG}_C only under specific symmetry conditions."
+    },
+    {
+      "ascii_text": "Given that  \\mathcal{F}_M  incorporates E_8 and Monster symmetries, and  \\mathcal{QG}_C  aligns with these symmetries, many commutators  [ K, \\mathcal{QG}_C ]  vanish or yield bounded operators.",
+      "source_line": 956,
+      "source_line_sha256": "562577949d362a3fe39d1375fc5534d34bfe4b8a34f76a75dcbd062b7b2b7786",
+      "source_text": "Given that  \\mathcal{F}_M  incorporates E\u2088 and Monster symmetries, and  \\mathcal{QG}_C  aligns with these symmetries, many commutators  [ K, \\mathcal{QG}_C ]  vanish or yield bounded operators."
+    },
+    {
+      "ascii_text": "O_n = [ K_i, \\mathcal{QG}_C ]",
+      "source_line": 960,
+      "source_line_sha256": "cbc8e48568284f649444d3b11e3106839a3402a44ace1e24f58046dd967909d8",
+      "source_text": "O_n = [ K_i, \\mathcal{QG}_C ]"
+    },
+    {
+      "ascii_text": "Each  O_n  is constructed to be bounded by design, using minimal polynomial constraints and the established boundedness of  \\mathcal{S}_C  and  \\mathcal{F}_M .",
+      "source_line": 962,
+      "source_line_sha256": "12b24b18dbfee1848e59d52778c3bf3039d20be9aa0c1ce5b1cf07fcca64e9fa",
+      "source_text": "Each  O_n  is constructed to be bounded by design, using minimal polynomial constraints and the established boundedness of  \\mathcal{S}_C  and  \\mathcal{F}_M ."
+    },
+    {
+      "ascii_text": "\\| [ \\mathcal{F}_M, \\mathcal{QG}_C ] \\| \\leq C \\| \\mathcal{F}_M \\| \\| \\mathcal{QG}_C \\|",
+      "source_line": 966,
+      "source_line_sha256": "68f71956d8d7fa1429fc0e5bcb1fb4a087dee738922d28b9499c7029845f107b",
+      "source_text": "\\| [ \\mathcal{F}_M, \\mathcal{QG}_C ] \\| \\leq C \\| \\mathcal{F}_M \\| \\| \\mathcal{QG}_C \\|"
+    },
+    {
+      "ascii_text": "The commutator [ \\mathcal{F}_M, \\mathcal{QG}_C ] results in a finite sum of bounded operators  O_n , preventing infinite cascades and maintaining the stability of the operator algebra within the Unified Model.",
+      "source_line": 970,
+      "source_line_sha256": "ca773b1fdc70b8454d6f31a4062afcc949aba38171f9cf40b55b486853613bcd",
+      "source_text": "The commutator [ \\mathcal{F}_M, \\mathcal{QG}_C ] results in a finite sum of bounded operators  O_n , preventing infinite cascades and maintaining the stability of the operator algebra within the Unified Model."
+    },
+    {
+      "ascii_text": "\\int_{\\mathbb{R}^{d_{\\text{eff}}}} f(x) \\, d\\mu = \\zeta_{\\text{reg}} \\left( \\int_{\\mathbb{R}^n} f(x) \\, dx; d_{\\text{eff}} \\right)",
+      "source_line": 980,
+      "source_line_sha256": "38a2df16fa62a28b574f01c483c99b2b96d161613b2a8294d5a518aba192b2d1",
+      "source_text": "\\int_{\\mathbb{R}^{d_{\\text{eff}}}} f(x) \\, d\\mu = \\zeta_{\\text{reg}} \\left( \\int_{\\mathbb{R}^n} f(x) \\, dx; d_{\\text{eff}} \\right)"
+    },
+    {
+      "ascii_text": "\\int_{\\mathbb{R}^n} e^{-\\|x\\|^2} \\, dx = \\pi^{n/2}",
+      "source_line": 988,
+      "source_line_sha256": "e466d18bcf7fe49509aa8506b517f0c7ec7a72f889ab3b592b8948d3dfba29fa",
+      "source_text": "\\int_{\\mathbb{R}^n} e^{-\\|x\\|^2} \\, dx = \\pi^{n/2}"
+    },
+    {
+      "ascii_text": "Extend  n  to complex values  s = d_{\\text{eff}} , allowing  s < 0 .",
+      "source_line": 990,
+      "source_line_sha256": "96bed9e42396985b6a84a10e7a2514214631f0941287b788492d9c13ea8133a1",
+      "source_text": "Extend  n  to complex values  s = d_{\\text{eff}} , allowing  s < 0 ."
+    },
+    {
+      "ascii_text": "\\zeta_{\\text{reg}} \\left( \\int_{\\mathbb{R}^n} e^{-\\|x\\|^2} \\, dx; s \\right) = \\pi^{s/2}",
+      "source_line": 994,
+      "source_line_sha256": "95074086043d547f59bad8187bef1e60e0861ca809284cc42cd633ca6da7803b",
+      "source_text": "\\zeta_{\\text{reg}} \\left( \\int_{\\mathbb{R}^n} e^{-\\|x\\|^2} \\, dx; s \\right) = \\pi^{s/2}"
+    },
+    {
+      "ascii_text": "For  s = d_{\\text{eff}} < 0 , the integral remains finite due to the exponential damping.",
+      "source_line": 996,
+      "source_line_sha256": "6696afdc20e927442f6b80f8a3da1a49eff35f34e0ec8c38cdf58bbd216941e2",
+      "source_text": "For  s = d_{\\text{eff}} < 0 , the integral remains finite due to the exponential damping."
+    },
+    {
+      "ascii_text": "\\zeta_{\\text{reg}} \\left( \\int_{\\mathbb{R}^n} f(x) \\, dx; d_{\\text{eff}} \\right)",
+      "source_line": 1000,
+      "source_line_sha256": "b692ae28dcb5196d4e1c2db2194d7165c1383dfca885fa463007bc56b9264983",
+      "source_text": "\\zeta_{\\text{reg}} \\left( \\int_{\\mathbb{R}^n} f(x) \\, dx; d_{\\text{eff}} \\right)"
+    },
+    {
+      "ascii_text": "D_x^{\\delta(t)} f(x) = \\frac{1}{\\Gamma(1-\\delta(t))} \\frac{d}{dx} \\int_0^x \\frac{f(u)}{(x-u)^{\\delta(t)}} \\, du",
+      "source_line": 1012,
+      "source_line_sha256": "381995afb48b4c74c52e74a5386d5d2ada60863a999765df62f8e18f1018031a",
+      "source_text": "D_x^{\\delta(t)} f(x) = \\frac{1}{\\Gamma(1-\\delta(t))} \\frac{d}{dx} \\int_0^x \\frac{f(u)}{(x-u)^{\\delta(t)}} \\, du"
+    },
+    {
+      "ascii_text": "\\int_0^x \\frac{f(u)}{(x-u)^{\\delta(t)}} \\, du",
+      "source_line": 1021,
+      "source_line_sha256": "dde1c74a2694887eaef996728359a9448814eedcac3817dd56fee36c84891e5b",
+      "source_text": "\\int_0^x \\frac{f(u)}{(x-u)^{\\delta(t)}} \\, du"
+    },
+    {
+      "ascii_text": "\\| D_x^{\\delta(t)} f(x) \\| \\leq \\frac{C}{\\Gamma(1-\\delta(t))} \\| f \\|",
+      "source_line": 1025,
+      "source_line_sha256": "59c533bcd676c1d67a956825037e964324d3dfca2dc23a6ef1446ae7edfde5bf",
+      "source_text": "\\| D_x^{\\delta(t)} f(x) \\| \\leq \\frac{C}{\\Gamma(1-\\delta(t))} \\| f \\|"
+    },
+    {
+      "ascii_text": "-\tDefine a lattice grid in  \\mathbb{R}^{d_{\\text{frac}}} , where  d_{\\text{frac}}  is a non-integer.",
+      "source_line": 1042,
+      "source_line_sha256": "18045367a566f1b7cc489fe5d5bd3f3e9e37cca867cd8f8b1f6eaf192201c03f",
+      "source_text": "\u2022\tDefine a lattice grid in  \\mathbb{R}^{d_{\\text{frac}}} , where  d_{\\text{frac}}  is a non-integer."
+    },
+    {
+      "ascii_text": "-\tInitialize  f_i(x, t=0)  based on the desired initial conditions, ensuring consistency with fractal and hypercomplex symmetries.",
+      "source_line": 1045,
+      "source_line_sha256": "490aa7178592dc18dc953552adad5b7031a9cde7fedd97d77fd77ceb0348d69c",
+      "source_text": "\u2022\tInitialize  f_i(x, t=0)  based on the desired initial conditions, ensuring consistency with fractal and hypercomplex symmetries."
+    },
+    {
+      "ascii_text": "f_i^{\\text{eq}} = f_i + \\omega \\left( \\mathcal{F}_H[f(x)] - f_i \\right)",
+      "source_line": 1049,
+      "source_line_sha256": "0afabbcc43886752271c36d9340dcd753cd4b7a2c1b99e29a6cf44eb9b1b0f38",
+      "source_text": "f_i^{\\text{eq}} = f_i + \\omega \\left( \\mathcal{F}_H[f(x)] - f_i \\right)"
+    },
+    {
+      "ascii_text": "f_i(x + e_i \\Delta t, t + \\Delta t) = f_i^{\\text{eq}}(x, t)",
+      "source_line": 1055,
+      "source_line_sha256": "499ff8b402dcc41922088b663f5abc69c77188646706b058b14cc3708db28430",
+      "source_text": "f_i(x + e_i \\Delta t, t + \\Delta t) = f_i^{\\text{eq}}(x, t)"
+    },
+    {
+      "ascii_text": "-\tMonitor convergence criteria based on  \\mathcal{F}_M  and  \\mathcal{S}_C  operator stability.",
+      "source_line": 1062,
+      "source_line_sha256": "e84267528439609206a7f8a3ae068e2edfe0c572dc89e908e9b10f2015f5a7a2",
+      "source_text": "\u2022\tMonitor convergence criteria based on  \\mathcal{F}_M  and  \\mathcal{S}_C  operator stability."
+    },
+    {
+      "ascii_text": "d_frac = 2.5  # Fractional dimension",
+      "source_line": 1073,
+      "source_line_sha256": "6a7751f145aef32357dab6a30729ebe54b7f2cb0dea4c3b2150bcc5e3b1dd91a",
+      "source_text": "d_frac = 2.5  # Fractional dimension"
+    },
+    {
+      "ascii_text": "alpha = 1.0",
+      "source_line": 1074,
+      "source_line_sha256": "03c14d456330058b3c8687f7245eb5931ce0bd378cced7eeffca9144719752d2",
+      "source_text": "alpha = 1.0"
+    },
+    {
+      "ascii_text": "gamma_exp = 2.0",
+      "source_line": 1075,
+      "source_line_sha256": "42db6d1800f23ebe1f1d0df3f365f6a0f78b008d7074599dc55534046346554b",
+      "source_text": "gamma_exp = 2.0"
+    },
+    {
+      "ascii_text": "eta = 3.0",
+      "source_line": 1076,
+      "source_line_sha256": "eab8678a8a77c954cc5be18baec4b34696214d5a33b55b97be551a3fd0ecd3ee",
+      "source_text": "eta = 3.0"
+    },
+    {
+      "ascii_text": "phi = (1 + np.sqrt(5)) / 2",
+      "source_line": 1077,
+      "source_line_sha256": "4d3c4de3e259236f8dd82b602c56a501001a052512ed52489a4851217f8d2527",
+      "source_text": "phi = (1 + np.sqrt(5)) / 2"
+    },
+    {
+      "ascii_text": "tau = 1.0  # Relaxation time",
+      "source_line": 1078,
+      "source_line_sha256": "8e7f585defd248d1e4c6e6f8eb094e6187b95580a716c567e3dcd972ca2f71ff",
+      "source_text": "tau = 1.0  # Relaxation time"
+    },
+    {
+      "ascii_text": "grid_size = (100, 100, 100)  # Adjust for dimensional embedding",
+      "source_line": 1081,
+      "source_line_sha256": "8d921ab77505a48adf78e8eb619deff3b06899e13fe991553a8d4c3a424f3612",
+      "source_text": "grid_size = (100, 100, 100)  # Adjust for dimensional embedding"
+    },
+    {
+      "ascii_text": "f = cp.zeros(grid_size + (26,), dtype=cp.float32)  # 26 primary directions",
+      "source_line": 1082,
+      "source_line_sha256": "865c3d21bee01ca304a7ef6018798899d8cc0b0c0fc5cff8ddd578bd3092863c",
+      "source_text": "f = cp.zeros(grid_size + (26,), dtype=cp.float32)  # 26 primary directions"
+    },
+    {
+      "ascii_text": "f_eq = equilibrium(f)",
+      "source_line": 1098,
+      "source_line_sha256": "e9a90f2030b46de4c59ea02d03a0b1b4ccfd6393e099a9ebe704cb017e28f879",
+      "source_text": "f_eq = equilibrium(f)"
+    },
+    {
+      "ascii_text": "f += -(1.0 / tau) * (f - f_eq)",
+      "source_line": 1099,
+      "source_line_sha256": "cfc19d0b7ad486a64699e5f6d4ceba23b7ce4fe97f5867336ad0963a13c57e87",
+      "source_text": "f += -(1.0 / tau) * (f - f_eq)"
+    },
+    {
+      "ascii_text": "f = collision(f)",
+      "source_line": 1109,
+      "source_line_sha256": "8dbf3cd0342f0371e7e584f6a6257fe3915e544f10d75d05bf78970b9cec949b",
+      "source_text": "f = collision(f)"
+    },
+    {
+      "ascii_text": "f = streaming(f)",
+      "source_line": 1110,
+      "source_line_sha256": "c7e6a930f6f9fcd81f3a0bb4624fd6a4a0209477a3976bac4b4523fc6faf962c",
+      "source_text": "f = streaming(f)"
+    },
+    {
+      "ascii_text": "\\partial_t \\Phi = \\Theta(\\Phi) \\xi",
+      "source_line": 1127,
+      "source_line_sha256": "0fa393202e736aea77770fa40c773477d26b763c65d79c8a26085c4665307b5a",
+      "source_text": "\\partial_t \\Phi = \\Theta(\\Phi) \\xi"
+    },
+    {
+      "ascii_text": "Phi = np.load('simulation_data.npy')",
+      "source_line": 1140,
+      "source_line_sha256": "7b7ea4e74591395ccc481c0a731c43dac8e980cfa5a3e48fd59345425d2ff4ee",
+      "source_text": "Phi = np.load('simulation_data.npy')"
+    },
+    {
+      "ascii_text": "dPhi_dt = np.load('simulation_derivative.npy')",
+      "source_line": 1141,
+      "source_line_sha256": "7e261b9b0e08ad0d9f750f82dc3815b3874f64362a7fec3156e58ea6b3df06d9",
+      "source_text": "dPhi_dt = np.load('simulation_derivative.npy')"
+    },
+    {
+      "ascii_text": "Theta = []",
+      "source_line": 1145,
+      "source_line_sha256": "55a0bf297e49770ab60ab6532bd40e1c703548764836c11e490229083aa6c251",
+      "source_text": "Theta = []"
+    },
+    {
+      "ascii_text": "Theta = build_library(Phi)",
+      "source_line": 1152,
+      "source_line_sha256": "19fbf0a9a992f90cd8e63b5b85ff88db2f2832b733d246b03ff141c753a9c5e7",
+      "source_text": "Theta = build_library(Phi)"
+    },
+    {
+      "ascii_text": "lasso = Lasso(alpha=0.01, fit_intercept=False)",
+      "source_line": 1155,
+      "source_line_sha256": "8e9ef63296723271274d76dcb9b86ae24dce550438eb040205627ca4d41578cf",
+      "source_text": "lasso = Lasso(alpha=0.01, fit_intercept=False)"
+    },
+    {
+      "ascii_text": "xi = lasso.coef_",
+      "source_line": 1157,
+      "source_line_sha256": "0c25a9749ac42cc7ecef2bf68f68020d99ecaa77fcc93a86276e2fa3cfac8015",
+      "source_text": "xi = lasso.coef_"
+    },
+    {
+      "ascii_text": "f_cpu = cp.asnumpy(f)",
+      "source_line": 1185,
+      "source_line_sha256": "254e597b8e761efa7b8621158859dc687079a6fccd434264443032f63f7b1fcf",
+      "source_text": "f_cpu = cp.asnumpy(f)"
+    },
+    {
+      "ascii_text": "slice_index = 50",
+      "source_line": 1188,
+      "source_line_sha256": "46ec60911a604478c320d1a6846fa44875c3ff540006a5306731cf183d750da7",
+      "source_text": "slice_index = 50"
+    },
+    {
+      "ascii_text": "energy_distribution = f_cpu[:, :, slice_index, 0]  # Example slice",
+      "source_line": 1189,
+      "source_line_sha256": "e4cecf3a38ea850305110f6dd97bdce6a2dec23f4c764fe9987536ee21b64416",
+      "source_text": "energy_distribution = f_cpu[:, :, slice_index, 0]  # Example slice"
+    },
+    {
+      "ascii_text": "fig = plt.figure()",
+      "source_line": 1192,
+      "source_line_sha256": "bfe1e2b8bd00fd36e5a0b76c9cae4b39ec2cac8419799fb633d10bc4f33b47c7",
+      "source_text": "fig = plt.figure()"
+    },
+    {
+      "ascii_text": "ax = fig.add_subplot(111, projection='3d')",
+      "source_line": 1193,
+      "source_line_sha256": "3d1228f0b29d5ef92b488700574f3ab0779381207c503f01654bf43f61e6dc2d",
+      "source_text": "ax = fig.add_subplot(111, projection='3d')"
+    },
+    {
+      "ascii_text": "X, Y = np.meshgrid(range(energy_distribution.shape[0]), range(energy_distribution.shape[1]))",
+      "source_line": 1194,
+      "source_line_sha256": "4ac341e74cbe2ddf4b29bc583a4aed18347e46dc4cf8e4abb8a9dc8cebb4cc81",
+      "source_text": "X, Y = np.meshgrid(range(energy_distribution.shape[0]), range(energy_distribution.shape[1]))"
+    },
+    {
+      "ascii_text": "ax.plot_surface(X, Y, energy_distribution, cmap='viridis')",
+      "source_line": 1195,
+      "source_line_sha256": "b6b2f5c3878e9c0016f0e5f17331346d9a9751e284199fc76556d7652e61c55e",
+      "source_text": "ax.plot_surface(X, Y, energy_distribution, cmap='viridis')"
+    },
+    {
+      "ascii_text": "\\phi\tGolden ratio  \\frac{1+\\sqrt{5}}{2}",
+      "source_line": 1289,
+      "source_line_sha256": "e7a9c13940c102eedabea8faa227459efa667a894c9203774f8f2f9662bb0360",
+      "source_text": "\\phi\tGolden ratio  \\frac{1+\\sqrt{5}}{2}"
+    },
+    {
+      "ascii_text": "\\mathcal{F}_M\tFoldMerge operator",
+      "source_line": 1293,
+      "source_line_sha256": "61ba824ff632e0291a3afee5917d4d3923dff73dfca93a587c129d278d61df43",
+      "source_text": "\\mathcal{F}_M\tFoldMerge operator"
+    },
+    {
+      "ascii_text": "\\mathcal{S}_C\tStrongly-Coupled Cross-Link operator",
+      "source_line": 1294,
+      "source_line_sha256": "c81fc24ca8083e7af82e3584d5b5e85969a4039041d73c24b68d42569f67175b",
+      "source_text": "\\mathcal{S}_C\tStrongly-Coupled Cross-Link operator"
+    },
+    {
+      "ascii_text": "\\mathcal{QG}_C\tQuantum-Gravitational Conduct operator",
+      "source_line": 1295,
+      "source_line_sha256": "0ee9e44c856f709363cb578973f532676fe9c82a085a427b2b10a5dab9148650",
+      "source_text": "\\mathcal{QG}_C\tQuantum-Gravitational Conduct operator"
+    },
+    {
+      "ascii_text": "\\mathcal{T}_t\tTime evolution operator",
+      "source_line": 1298,
+      "source_line_sha256": "b273970a8d681a87dd9f4fe9acc3fdd235660f84cbc7a3273ff86648dcd63bbd",
+      "source_text": "\\mathcal{T}_t\tTime evolution operator"
+    },
+    {
+      "ascii_text": "\\mathcal{H}^{d_{\\text{frac}}} \tHausdorff measure for fractional dimensions",
+      "source_line": 1302,
+      "source_line_sha256": "33b9c2a0d133d5152d14eb92180294131e2da971a0b34d83363a5f11db674a50",
+      "source_text": "\\mathcal{H}^{d_{\\text{frac}}} \tHausdorff measure for fractional dimensions"
+    },
+    {
+      "ascii_text": "\\mathcal{O} \tOrigami fold operator",
+      "source_line": 1303,
+      "source_line_sha256": "d67e0c1fcb308a013e7f6e6cf953aeed8ddefbc3e8cfba924db80ecaa54ec9d3",
+      "source_text": "\\mathcal{O} \tOrigami fold operator"
+    },
+    {
+      "ascii_text": "\\mathcal{C} \tCombined operator",
+      "source_line": 1306,
+      "source_line_sha256": "cdfd74b41383227b626565fe9f257446c4eccfe1b0c040183af306e163815fbe",
+      "source_text": "\\mathcal{C} \tCombined operator"
+    },
+    {
+      "ascii_text": "\\mathcal{F}_H \tFractal-Harmonic Transform operator",
+      "source_line": 1307,
+      "source_line_sha256": "5abdfdd67ee156c2fbb0ca2ba6bc3fe98a4e99fa941185bc4c9ad25fea7d8ccb",
+      "source_text": "\\mathcal{F}_H \tFractal-Harmonic Transform operator"
+    },
+    {
+      "ascii_text": "\\mathcal{L} \tLattice operator",
+      "source_line": 1308,
+      "source_line_sha256": "1894609b76efd9c53285ecd7ad956e540c690131f302825004a23de464871083",
+      "source_text": "\\mathcal{L} \tLattice operator"
+    },
+    {
+      "ascii_text": "\\mathcal{H}_{\\text{quantum}} \tQuantum Hamiltonian operator",
+      "source_line": 1310,
+      "source_line_sha256": "4dd95f32537a88c07a0a675e94a77d88291daaa34d36da4cfc466ccace96f0e5",
+      "source_text": "\\mathcal{H}_{\\text{quantum}} \tQuantum Hamiltonian operator"
+    },
+    {
+      "ascii_text": "\\| K_{\\text{Genesis,extended}} \\| \\leq \\sum_{i} \\| K_i \\| < \\infty",
+      "source_line": 1334,
+      "source_line_sha256": "fc0c9ff33a3464f3155a49db9dfa46fd8fa01749967e7aaf554641affb092aad",
+      "source_text": "\\| K_{\\text{Genesis,extended}} \\| \\leq \\sum_{i} \\| K_i \\| < \\infty"
+    },
+    {
+      "ascii_text": "\\int |K_{\\text{Genesis,extended}}(r, t)| \\, d\\mu_{\\text{frac,neg}}(r) < \\infty",
+      "source_line": 1341,
+      "source_line_sha256": "d604ba1d891518bf14abf570ce40c20e78426cfd46e58adc76501bd4029749c3",
+      "source_text": "\\int |K_{\\text{Genesis,extended}}(r, t)| \\, d\\mu_{\\text{frac,neg}}(r) < \\infty"
+    },
+    {
+      "ascii_text": "\\sum_{m=1}^{\\infty} \\left| \\frac{\\sin(2\\pi m x/\\phi)}{m^\\gamma} \\right| \\leq \\sum_{m=1}^{\\infty} \\frac{1}{m^\\gamma} < \\infty \\quad \\text{for} \\quad \\gamma > 1",
+      "source_line": 1347,
+      "source_line_sha256": "04edd72b7c7fc968c09f91f80ee86ec8fbfb4fa674fcad5e1391b68476e27ee2",
+      "source_text": "\\sum_{m=1}^{\\infty} \\left| \\frac{\\sin(2\\pi m x/\\phi)}{m^\\gamma} \\right| \\leq \\sum_{m=1}^{\\infty} \\frac{1}{m^\\gamma} < \\infty \\quad \\text{for} \\quad \\gamma > 1"
+    },
+    {
+      "ascii_text": "-\tConstruct a Banach space  \\mathcal{B}  where operators act continuously.",
+      "source_line": 1350,
+      "source_line_sha256": "771de12b8dcf23399c35ee261ae81614d53f51523e8076f1f488a88365bad771",
+      "source_text": "\u2022\tConstruct a Banach space  \\mathcal{B}  where operators act continuously."
+    },
+    {
+      "ascii_text": "\\| K_{\\text{Genesis,extended}}(f) - K_{\\text{Genesis,extended}}(g) \\|{\\mathcal{B}} \\leq c \\| f - g \\|{\\mathcal{B}}, \\quad \\text{for} \\quad 0 \\leq c < 1",
+      "source_line": 1353,
+      "source_line_sha256": "435bcd3781cb31c6bb36b8c2e8e8a6e23a50ac502ee8695315c21c56e17331ca",
+      "source_text": "\\| K_{\\text{Genesis,extended}}(f) - K_{\\text{Genesis,extended}}(g) \\|{\\mathcal{B}} \\leq c \\| f - g \\|{\\mathcal{B}}, \\quad \\text{for} \\quad 0 \\leq c < 1"
+    },
+    {
+      "ascii_text": "-\tRepresent  \\mathcal{S}_C  in the basis provided by E_8 lattice vectors.",
+      "source_line": 1363,
+      "source_line_sha256": "5bec403f3f8a558ef1cc0abb76cab15ebdfd82c1dea220619c43d684930c687c",
+      "source_text": "\u2022\tRepresent  \\mathcal{S}_C  in the basis provided by E\u2088 lattice vectors."
+    },
+    {
+      "ascii_text": "-\tExpress  \\mathcal{S}_C  as a matrix  S  with entries derived from kernel products.",
+      "source_line": 1364,
+      "source_line_sha256": "d17184a223ef036b55680a9245fb481acf728d623f2c110bba40b17b013e9a18",
+      "source_text": "\u2022\tExpress  \\mathcal{S}_C  as a matrix  S  with entries derived from kernel products."
+    },
+    {
+      "ascii_text": "-\tIdentify the minimal polynomial  p(\\lambda)  such that  p(S) = 0 .",
+      "source_line": 1366,
+      "source_line_sha256": "15e7c7c69945dc795a53b48d26c79895b29e1a9cc8f3ad163ac67d03dd4f947e",
+      "source_text": "\u2022\tIdentify the minimal polynomial  p(\\lambda)  such that  p(S) = 0 ."
+    },
+    {
+      "ascii_text": "-\tDemonstrate that  \\mathcal{S}_C  satisfies:",
+      "source_line": 1373,
+      "source_line_sha256": "8066f6bd775105bfb2c436f717072b11f739accf759fe64575de215781051c30",
+      "source_text": "\u2022\tDemonstrate that  \\mathcal{S}_C  satisfies:"
+    },
+    {
+      "ascii_text": "\\| \\mathcal{S}_C \\| \\leq \\rho(S) < 1",
+      "source_line": 1375,
+      "source_line_sha256": "5023be9f5c3b2fc31a0f21c386795c8280e528299bcfbf9309a5bc29c81dcec1",
+      "source_text": "\\| \\mathcal{S}_C \\| \\leq \\rho(S) < 1"
+    },
+    {
+      "ascii_text": "-\tThe minimal polynomial constraints ensure that  \\mathcal{S}_C  operates as a contraction mapping, maintaining boundedness and preventing operator norm divergence.",
+      "source_line": 1379,
+      "source_line_sha256": "9fd1703037a3c3b2f2f2d215a3143098f625d46f1ef94defc417ee51b0e1e015",
+      "source_text": "\u2022\tThe minimal polynomial constraints ensure that  \\mathcal{S}_C  operates as a contraction mapping, maintaining boundedness and preventing operator norm divergence."
+    },
+    {
+      "ascii_text": "\\| \\mathcal{O}_1 \\mathcal{O}_2 \\mathcal{O}_3 \\| \\leq \\| \\mathcal{O}_1 \\| \\| \\mathcal{O}_2 \\| \\| \\mathcal{O}_3 \\| + C \\| \\mathcal{O}_1 \\| \\| \\mathcal{O}_2 \\| \\| \\mathcal{O}_3 \\|",
+      "source_line": 1396,
+      "source_line_sha256": "b186811dfa35600a536efbd9a3d1833d207c6860ccf539d91b50e302e9806600",
+      "source_text": "\\| \\mathcal{O}_1 \\mathcal{O}_2 \\mathcal{O}_3 \\| \\leq \\| \\mathcal{O}_1 \\| \\| \\mathcal{O}_2 \\| \\| \\mathcal{O}_3 \\| + C \\| \\mathcal{O}_1 \\| \\| \\mathcal{O}_2 \\| \\| \\mathcal{O}_3 \\|"
+    },
+    {
+      "ascii_text": "-\tDefine a filtration  \\mathcal{F}^k  where  \\mathcal{F}^k  consists of operators with up to  k -fold commutators.",
+      "source_line": 1408,
+      "source_line_sha256": "91413091748a0b28c36949957b3f9257a0ddf73c096da22bae3e67a4b89e1c54",
+      "source_text": "\u2022\tDefine a filtration  \\mathcal{F}^k  where  \\mathcal{F}^k  consists of operators with up to  k -fold commutators."
+    },
+    {
+      "ascii_text": "-\tAssign degree  d(\\mathcal{F}_M) = 1  and  d(\\mathcal{QG}_C) = 1 .",
+      "source_line": 1409,
+      "source_line_sha256": "702dcba22f3a9aa93dcb891851ea2ecc264ad9c37fac13a479ac9878b25533f9",
+      "source_text": "\u2022\tAssign degree  d(\\mathcal{F}_M) = 1  and  d(\\mathcal{QG}_C) = 1 ."
+    },
+    {
+      "ascii_text": "-\tThe commutator  [\\mathcal{F}_M, \\mathcal{QG}_C]  increases the degree:",
+      "source_line": 1411,
+      "source_line_sha256": "d0d628a1f1b2575e4a493c7fffecdc81fe4533039dc889d5eea657003415faa2",
+      "source_text": "\u2022\tThe commutator  [\\mathcal{F}_M, \\mathcal{QG}_C]  increases the degree:"
+    },
+    {
+      "ascii_text": "d([ \\mathcal{F}_M, \\mathcal{QG}_C ]) = d(\\mathcal{F}_M) + d(\\mathcal{QG}_C) + 1 = 3",
+      "source_line": 1413,
+      "source_line_sha256": "c77920c8a6d73c29c3b3b34ce0337ab0367fc2006e16bf0d93c3cad048a74ac6",
+      "source_text": "d([ \\mathcal{F}_M, \\mathcal{QG}_C ]) = d(\\mathcal{F}_M) + d(\\mathcal{QG}_C) + 1 = 3"
+    },
+    {
+      "ascii_text": "-\tShow that for each  [K_i, \\mathcal{QG}_C] \\in \\mathcal{F}^2 , the operator norm satisfies:",
+      "source_line": 1417,
+      "source_line_sha256": "612cc4750ce3a354f0976c4368f26eef16ff3c357d00bd1338d68145f55ade56",
+      "source_text": "\u2022\tShow that for each  [K_i, \\mathcal{QG}_C] \\in \\mathcal{F}^2 , the operator norm satisfies:"
+    },
+    {
+      "ascii_text": "\\| [K_i, \\mathcal{QG}_C] \\| \\leq C_i \\| K_i \\| \\| \\mathcal{QG}_C \\|",
+      "source_line": 1419,
+      "source_line_sha256": "4b23006fef8c49533ea31d7be68c84d485ecfaf9eb80b2932240f01b76945427",
+      "source_text": "\\| [K_i, \\mathcal{QG}_C] \\| \\leq C_i \\| K_i \\| \\| \\mathcal{QG}_C \\|"
+    },
+    {
+      "ascii_text": "\\| [\\mathcal{F}_M, \\mathcal{QG}_C] \\| \\leq \\sum_i C_i \\| K_i \\| \\| \\mathcal{QG}_C \\| < 1",
+      "source_line": 1425,
+      "source_line_sha256": "2bd4e9b190c10c11357f2542056c56722e49676fc69727e1ebb61a15fa10a2d5",
+      "source_text": "\\| [\\mathcal{F}_M, \\mathcal{QG}_C] \\| \\leq \\sum_i C_i \\| K_i \\| \\| \\mathcal{QG}_C \\| < 1"
+    },
+    {
+      "ascii_text": "I^{\\delta(t)} f(x) = \\frac{1}{\\Gamma(\\delta(t))} \\int_0^x (x - u)^{\\delta(t) - 1} f(u) \\, du",
+      "source_line": 1439,
+      "source_line_sha256": "604148a250767092bd01cae734c18be13bf5a32602b01736c91168a5ecb40fbf",
+      "source_text": "I^{\\delta(t)} f(x) = \\frac{1}{\\Gamma(\\delta(t))} \\int_0^x (x - u)^{\\delta(t) - 1} f(u) \\, du"
+    },
+    {
+      "ascii_text": "|I^{\\delta(t)} f(x)| \\leq \\frac{M}{\\Gamma(a)} \\int_0^x (x - u)^{a - 1} \\, du = \\frac{M x^{a}}{\\Gamma(a + 1)}",
+      "source_line": 1447,
+      "source_line_sha256": "3fc7e322a2a28ecb7af95451f76d70cf32bcc151dc8d151bd85a863f6808b121",
+      "source_text": "|I^{\\delta(t)} f(x)| \\leq \\frac{M}{\\Gamma(a)} \\int_0^x (x - u)^{a - 1} \\, du = \\frac{M x^{a}}{\\Gamma(a + 1)}"
+    },
+    {
+      "ascii_text": "\\| I^{\\delta(t)} \\| \\leq \\frac{M \\| x \\|^{a}}{\\Gamma(a + 1)}",
+      "source_line": 1454,
+      "source_line_sha256": "28ede03ea09548510c487b91258b2e73cb42fcb6a201d008fa8e81791f1d6cd8",
+      "source_text": "\\| I^{\\delta(t)} \\| \\leq \\frac{M \\| x \\|^{a}}{\\Gamma(a + 1)}"
+    },
+    {
+      "ascii_text": "T(x \\to y) = \\int K_{\\text{enhanced}}(x, z) \\cdot \\Lambda_{E_8}(z, y) \\cdot D^{\\alpha}(\\|x - z\\|) \\, dz",
+      "source_line": 1468,
+      "source_line_sha256": "677997d35ac47815401c3b9d5d23ff15ec854d6d3ca4ba93be9d0ddf1f13b510",
+      "source_text": "T(x \\to y) = \\int K_{\\text{enhanced}}(x, z) \\cdot \\Lambda_{E_8}(z, y) \\cdot D^{\\alpha}(\\|x - z\\|) \\, dz"
+    },
+    {
+      "ascii_text": "\\int E(x, t) \\, dx = \\int E(y, t) \\, dy",
+      "source_line": 1480,
+      "source_line_sha256": "cd709ae06f32452d297f5f5a45af2f6132e168ba8ad44721abc4c63570a9f6e3",
+      "source_text": "\\int E(x, t) \\, dx = \\int E(y, t) \\, dy"
+    }
+  ],
+  "schema_version": 1,
+  "source_relpath": "source_materials/frameworks/math4GenesisFramework.txt",
+  "source_sha256": "9fd585c5c58e6352f5eaf436f6a0e084e231c581abb4f92dc61c1c24537aa729",
+  "table_row_candidates": [
+    {
+      "ascii_text": "K_{\\text{Recursive}}(r,t) = \\frac{e^{-\\alpha \\|r\\|^2}}{1+\\gamma \\|r\\|^\\eta}.",
+      "source_line": 77,
+      "source_line_sha256": "977b5979bb9dfd6eb5325f85d78626176016154ecae39f176dc86440a266ca8f",
+      "source_text": "K_{\\text{Recursive}}(r,t) = \\frac{e^{-\\alpha \\|r\\|^2}}{1+\\gamma \\|r\\|^\\eta}."
+    },
+    {
+      "ascii_text": "\\mathcal{L}[f(x)] = \\sum_{v \\in \\Lambda} e^{-\\alpha \\|x-v\\|^2} f(x-v),",
+      "source_line": 112,
+      "source_line_sha256": "fee88da5da5d9b07b7d7ad0c5201a34be3802b8d006c3fd3b1b1132fc699c745",
+      "source_text": "\\mathcal{L}[f(x)] = \\sum_{v \\in \\Lambda} e^{-\\alpha \\|x-v\\|^2} f(x-v),"
+    },
+    {
+      "ascii_text": "\\mathcal{T}_t[f(x)] = f(x)(1 + \\sin(\\omega t + \\frac{\\pi \\|x\\|}{d})).",
+      "source_line": 136,
+      "source_line_sha256": "33a8259300c87c3a145dc920d97b0d2a8d7f7ad03fcddb202756a53ec07eab76",
+      "source_text": "\\mathcal{T}_t[f(x)] = f(x)(1 + \\sin(\\omega t + \\frac{\\pi \\|x\\|}{d}))."
+    },
+    {
+      "ascii_text": "K_{\\text{QCD}}(x,y,t) = \\langle 0|\\mathcal{T}\\{\\bar{\\psi}(x)\\gamma^\\mu T^a\\psi(x)G_{\\mu\\nu}^a(y)\\}|0\\rangle.",
+      "source_line": 217,
+      "source_line_sha256": "f103ef359d2652847921a4967ce20ed3f6c3247841ae8aa8de91c5c123dde2ac",
+      "source_text": "K_{\\text{QCD}}(x,y,t) = \\langle 0|\\mathcal{T}\\{\\bar{\\psi}(x)\\gamma^\\mu T^a\\psi(x)G_{\\mu\\nu}^a(y)\\}|0\\rangle."
+    },
+    {
+      "ascii_text": "scaled by \\exp(-\\alpha\\|x\\|^2) for negative dimension integrals. Thus, negative dimensional integrals remain well-defined and stable under folding.",
+      "source_line": 302,
+      "source_line_sha256": "487975ea950a1744dd310f567290b734b43851d382c0ecd70560589a2265d7d0",
+      "source_text": "scaled by \\exp(-\\alpha\\|x\\|^2) for negative dimension integrals. Thus, negative dimensional integrals remain well-defined and stable under folding."
+    },
+    {
+      "ascii_text": "For each step in Cayley-Dickson, define involutions \\overline{x} and ensure the associator (x,y,z) is bounded. Given \\|x\\|,\\|y\\|,\\|z\\|\\leq M, |(x,y,z)|\\leq C M^3, a constant C. This ensures scaling relations keep non-associative anomalies finite.",
+      "source_line": 319,
+      "source_line_sha256": "87711e7095c926ba36dc37c39bb917a7e1c239c1b21c5e0fc00072240f6ec4cc",
+      "source_text": "For each step in Cayley-Dickson, define involutions \\overline{x} and ensure the associator (x,y,z) is bounded. Given \\|x\\|,\\|y\\|,\\|z\\|\\leq M, |(x,y,z)|\\leq C M^3, a constant C. This ensures scaling relations keep non-associative anomalies finite."
+    },
+    {
+      "ascii_text": "Construct minimal polynomials for each operator, ensuring spectral radii remain below unity. By imposing modular arithmetic conditions and fractal scaling, eigenvalue magnitudes |\\lambda_i|<1, guaranteeing norm convergence.",
+      "source_line": 339,
+      "source_line_sha256": "84be8c6f667a05d602311528fb99e504e27fed0085e1161486c67368eaeb5a5c",
+      "source_text": "Construct minimal polynomials for each operator, ensuring spectral radii remain below unity. By imposing modular arithmetic conditions and fractal scaling, eigenvalue magnitudes |\\lambda_i|<1, guaranteeing norm convergence."
+    },
+    {
+      "ascii_text": "\\min_{\\xi} \\|Y - \\Theta(\\Phi)\\xi\\|_2 + \\lambda \\|\\xi\\|_1",
+      "source_line": 367,
+      "source_line_sha256": "a9cb8af98b4879d9bfb902285fd1a0fcb86f26defb01a34cf34ba423ebff8f3a",
+      "source_text": "\\min_{\\xi} \\|Y - \\Theta(\\Phi)\\xi\\|_2 + \\lambda \\|\\xi\\|_1"
+    },
+    {
+      "ascii_text": "For \\gamma>1, we compare \\sum_{m=1}^\\infty \\frac{1}{m^\\gamma} with \\zeta(\\gamma)<\\infty. The integral of \\sin-weighted terms vanish in mean due to orthogonality properties. The absolute convergence follows from dominated convergence theorem, employing Gaussian weights e^{-\\alpha \\|x\\|^2}.",
+      "source_line": 565,
+      "source_line_sha256": "d5e847fe5402a89098c1881bbfd6c1d21b0a17aae855ef2c0f6d5f587cd0d5b9",
+      "source_text": "For \\gamma>1, we compare \\sum_{m=1}^\\infty \\frac{1}{m^\\gamma} with \\zeta(\\gamma)<\\infty. The integral of \\sin-weighted terms vanish in mean due to orthogonality properties. The absolute convergence follows from dominated convergence theorem, employing Gaussian weights e^{-\\alpha \\|x\\|^2}."
+    },
+    {
+      "ascii_text": "Write the associator: (x,y,z)=(xy)z - x(yz). For octonions, (x,x,y)=0, ensuring alternativity. For sedenions, we lack alternativity but bound associators by embedding them in Malcev algebras. Construct norm estimates to show |(x,y,z)|\\leq C \\|x\\|\\|y\\|\\|z\\|.",
+      "source_line": 591,
+      "source_line_sha256": "725ba276469268784a831b27336b89139cf0fc9832a47c4ef0502d602b59abcf",
+      "source_text": "Write the associator: (x,y,z)=(xy)z - x(yz). For octonions, (x,x,y)=0, ensuring alternativity. For sedenions, we lack alternativity but bound associators by embedding them in Malcev algebras. Construct norm estimates to show |(x,y,z)|\\leq C \\|x\\|\\|y\\|\\|z\\|."
+    },
+    {
+      "ascii_text": "Show that for Gaussian type integrands f(x)=\\exp(-\\|x\\|^2), analytic continuation yields finite values. Extend to our kernels by dominating them with Gaussian bounds.",
+      "source_line": 613,
+      "source_line_sha256": "d6dfd98478f5a03996ef52242112dfd585ca40bcc91e2e91ede36dbed8536f95",
+      "source_text": "Show that for Gaussian type integrands f(x)=\\exp(-\\|x\\|^2), analytic continuation yields finite values. Extend to our kernels by dominating them with Gaussian bounds."
+    },
+    {
+      "ascii_text": "\\| (x, y, z) \\| \\leq 2 \\|x\\| \\|y\\| \\|z\\|",
+      "source_line": 830,
+      "source_line_sha256": "6696248ed0b34db590ff43563229c2fe0cbff7b8339575f8220c9d8a2aba947c",
+      "source_text": "\\| (x, y, z) \\| \\leq 2 \\|x\\| \\|y\\| \\|z\\|"
+    },
+    {
+      "ascii_text": "|\\lambda_i| < 1 \\quad \\forall i",
+      "source_line": 890,
+      "source_line_sha256": "3262d33e92f021cbc8719c2789610fb230eaad4f4098bf47199d7488c0b3839e",
+      "source_text": "|\\lambda_i| < 1 \\quad \\forall i"
+    },
+    {
+      "ascii_text": "\\| (x, y, z) \\| = \\| (x y) z - x (y z) \\|",
+      "source_line": 912,
+      "source_line_sha256": "46a12c87acf217cf1a7abb706e0445f27d2f6f1ba0331e0850d0ac16273c99c4",
+      "source_text": "\\| (x, y, z) \\| = \\| (x y) z - x (y z) \\|"
+    },
+    {
+      "ascii_text": "\\| (x, y, z) \\| \\leq \\|x y\\| \\|z\\| + \\|x\\| \\|y z\\|",
+      "source_line": 916,
+      "source_line_sha256": "d400252754fb2f14a1687f06288c96c4e1b4f7389e4910c5a49a235a3f9d1f53",
+      "source_text": "\\| (x, y, z) \\| \\leq \\|x y\\| \\|z\\| + \\|x\\| \\|y z\\|"
+    },
+    {
+      "ascii_text": "\\|x y\\| \\leq \\|x\\| \\|y\\| \\quad \\text{and} \\quad \\|y z\\| \\leq \\|y\\| \\|z\\|",
+      "source_line": 920,
+      "source_line_sha256": "fa6406fd2bc3302b705ba05e026ebe137ab95e0bba24db0ea1d9e4e4e961aea4",
+      "source_text": "\\|x y\\| \\leq \\|x\\| \\|y\\| \\quad \\text{and} \\quad \\|y z\\| \\leq \\|y\\| \\|z\\|"
+    },
+    {
+      "ascii_text": "\\| (x, y, z) \\| \\leq \\|x\\| \\|y\\| \\|z\\| + \\|x\\| \\|y\\| \\|z\\| = 2 \\|x\\| \\|y\\| \\|z\\|",
+      "source_line": 924,
+      "source_line_sha256": "80fcbe4977be7769083b08e9fab762b94f444878339fb2bb87aa67de4d36beca",
+      "source_text": "\\| (x, y, z) \\| \\leq \\|x\\| \\|y\\| \\|z\\| + \\|x\\| \\|y\\| \\|z\\| = 2 \\|x\\| \\|y\\| \\|z\\|"
+    },
+    {
+      "ascii_text": "\\| [ \\mathcal{F}_M, \\mathcal{QG}_C ] \\| \\leq C \\| \\mathcal{F}_M \\| \\| \\mathcal{QG}_C \\|",
+      "source_line": 966,
+      "source_line_sha256": "68f71956d8d7fa1429fc0e5bcb1fb4a087dee738922d28b9499c7029845f107b",
+      "source_text": "\\| [ \\mathcal{F}_M, \\mathcal{QG}_C ] \\| \\leq C \\| \\mathcal{F}_M \\| \\| \\mathcal{QG}_C \\|"
+    },
+    {
+      "ascii_text": "\\int_{\\mathbb{R}^n} e^{-\\|x\\|^2} \\, dx = \\pi^{n/2}",
+      "source_line": 988,
+      "source_line_sha256": "e466d18bcf7fe49509aa8506b517f0c7ec7a72f889ab3b592b8948d3dfba29fa",
+      "source_text": "\\int_{\\mathbb{R}^n} e^{-\\|x\\|^2} \\, dx = \\pi^{n/2}"
+    },
+    {
+      "ascii_text": "\\zeta_{\\text{reg}} \\left( \\int_{\\mathbb{R}^n} e^{-\\|x\\|^2} \\, dx; s \\right) = \\pi^{s/2}",
+      "source_line": 994,
+      "source_line_sha256": "95074086043d547f59bad8187bef1e60e0861ca809284cc42cd633ca6da7803b",
+      "source_text": "\\zeta_{\\text{reg}} \\left( \\int_{\\mathbb{R}^n} e^{-\\|x\\|^2} \\, dx; s \\right) = \\pi^{s/2}"
+    },
+    {
+      "ascii_text": "\\| D_x^{\\delta(t)} f(x) \\| \\leq \\frac{C}{\\Gamma(1-\\delta(t))} \\| f \\|",
+      "source_line": 1025,
+      "source_line_sha256": "59c533bcd676c1d67a956825037e964324d3dfca2dc23a6ef1446ae7edfde5bf",
+      "source_text": "\\| D_x^{\\delta(t)} f(x) \\| \\leq \\frac{C}{\\Gamma(1-\\delta(t))} \\| f \\|"
+    },
+    {
+      "ascii_text": "\\| K_{\\text{Genesis,extended}} \\| \\leq \\sum_{i} \\| K_i \\| < \\infty",
+      "source_line": 1334,
+      "source_line_sha256": "fc0c9ff33a3464f3155a49db9dfa46fd8fa01749967e7aaf554641affb092aad",
+      "source_text": "\\| K_{\\text{Genesis,extended}} \\| \\leq \\sum_{i} \\| K_i \\| < \\infty"
+    },
+    {
+      "ascii_text": "\\int |K_{\\text{Genesis,extended}}(r, t)| \\, d\\mu_{\\text{frac,neg}}(r) < \\infty",
+      "source_line": 1341,
+      "source_line_sha256": "d604ba1d891518bf14abf570ce40c20e78426cfd46e58adc76501bd4029749c3",
+      "source_text": "\\int |K_{\\text{Genesis,extended}}(r, t)| \\, d\\mu_{\\text{frac,neg}}(r) < \\infty"
+    },
+    {
+      "ascii_text": "\\sum_{m=1}^{\\infty} \\left| \\frac{\\sin(2\\pi m x/\\phi)}{m^\\gamma} \\right| \\leq \\sum_{m=1}^{\\infty} \\frac{1}{m^\\gamma} < \\infty \\quad \\text{for} \\quad \\gamma > 1",
+      "source_line": 1347,
+      "source_line_sha256": "04edd72b7c7fc968c09f91f80ee86ec8fbfb4fa674fcad5e1391b68476e27ee2",
+      "source_text": "\\sum_{m=1}^{\\infty} \\left| \\frac{\\sin(2\\pi m x/\\phi)}{m^\\gamma} \\right| \\leq \\sum_{m=1}^{\\infty} \\frac{1}{m^\\gamma} < \\infty \\quad \\text{for} \\quad \\gamma > 1"
+    },
+    {
+      "ascii_text": "\\| K_{\\text{Genesis,extended}}(f) - K_{\\text{Genesis,extended}}(g) \\|{\\mathcal{B}} \\leq c \\| f - g \\|{\\mathcal{B}}, \\quad \\text{for} \\quad 0 \\leq c < 1",
+      "source_line": 1353,
+      "source_line_sha256": "435bcd3781cb31c6bb36b8c2e8e8a6e23a50ac502ee8695315c21c56e17331ca",
+      "source_text": "\\| K_{\\text{Genesis,extended}}(f) - K_{\\text{Genesis,extended}}(g) \\|{\\mathcal{B}} \\leq c \\| f - g \\|{\\mathcal{B}}, \\quad \\text{for} \\quad 0 \\leq c < 1"
+    },
+    {
+      "ascii_text": "-\tImpose  |\\lambda_i| < 1  by normalizing kernel coefficients and introducing damping factors.",
+      "source_line": 1370,
+      "source_line_sha256": "3517ca7ce019639d0fd007a33427a88438952a6a45b39f7332e954d53ce4fd5c",
+      "source_text": "\u2022\tImpose  |\\lambda_i| < 1  by normalizing kernel coefficients and introducing damping factors."
+    },
+    {
+      "ascii_text": "\\| \\mathcal{S}_C \\| \\leq \\rho(S) < 1",
+      "source_line": 1375,
+      "source_line_sha256": "5023be9f5c3b2fc31a0f21c386795c8280e528299bcfbf9309a5bc29c81dcec1",
+      "source_text": "\\| \\mathcal{S}_C \\| \\leq \\rho(S) < 1"
+    },
+    {
+      "ascii_text": "\\| (x, y, z) \\| \\leq C \\|x\\| \\|y\\| \\|z\\|",
+      "source_line": 1387,
+      "source_line_sha256": "48a5873693457e7de04112c596609dddfe9495718f693452066e0b6ebeb893e5",
+      "source_text": "\\| (x, y, z) \\| \\leq C \\|x\\| \\|y\\| \\|z\\|"
+    },
+    {
+      "ascii_text": "\\| \\mathcal{O}_1 \\mathcal{O}_2 \\mathcal{O}_3 \\| \\leq \\| \\mathcal{O}_1 \\| \\| \\mathcal{O}_2 \\| \\| \\mathcal{O}_3 \\| + C \\| \\mathcal{O}_1 \\| \\| \\mathcal{O}_2 \\| \\| \\mathcal{O}_3 \\|",
+      "source_line": 1396,
+      "source_line_sha256": "b186811dfa35600a536efbd9a3d1833d207c6860ccf539d91b50e302e9806600",
+      "source_text": "\\| \\mathcal{O}_1 \\mathcal{O}_2 \\mathcal{O}_3 \\| \\leq \\| \\mathcal{O}_1 \\| \\| \\mathcal{O}_2 \\| \\| \\mathcal{O}_3 \\| + C \\| \\mathcal{O}_1 \\| \\| \\mathcal{O}_2 \\| \\| \\mathcal{O}_3 \\|"
+    },
+    {
+      "ascii_text": "\\| [K_i, \\mathcal{QG}_C] \\| \\leq C_i \\| K_i \\| \\| \\mathcal{QG}_C \\|",
+      "source_line": 1419,
+      "source_line_sha256": "4b23006fef8c49533ea31d7be68c84d485ecfaf9eb80b2932240f01b76945427",
+      "source_text": "\\| [K_i, \\mathcal{QG}_C] \\| \\leq C_i \\| K_i \\| \\| \\mathcal{QG}_C \\|"
+    },
+    {
+      "ascii_text": "\\| [\\mathcal{F}_M, \\mathcal{QG}_C] \\| \\leq \\sum_i C_i \\| K_i \\| \\| \\mathcal{QG}_C \\| < 1",
+      "source_line": 1425,
+      "source_line_sha256": "2bd4e9b190c10c11357f2542056c56722e49676fc69727e1ebb61a15fa10a2d5",
+      "source_text": "\\| [\\mathcal{F}_M, \\mathcal{QG}_C] \\| \\leq \\sum_i C_i \\| K_i \\| \\| \\mathcal{QG}_C \\| < 1"
+    },
+    {
+      "ascii_text": "-\tGiven  f(x)  is bounded,  \\| f \\|_{\\infty} \\leq M , the integral satisfies:",
+      "source_line": 1445,
+      "source_line_sha256": "dcd6af0735674bd96956c61f28edb21aaffde7333d2ea4ed382341afd690a218",
+      "source_text": "\u2022\tGiven  f(x)  is bounded,  \\| f \\|_{\\infty} \\leq M , the integral satisfies:"
+    },
+    {
+      "ascii_text": "|I^{\\delta(t)} f(x)| \\leq \\frac{M}{\\Gamma(a)} \\int_0^x (x - u)^{a - 1} \\, du = \\frac{M x^{a}}{\\Gamma(a + 1)}",
+      "source_line": 1447,
+      "source_line_sha256": "3fc7e322a2a28ecb7af95451f76d70cf32bcc151dc8d151bd85a863f6808b121",
+      "source_text": "|I^{\\delta(t)} f(x)| \\leq \\frac{M}{\\Gamma(a)} \\int_0^x (x - u)^{a - 1} \\, du = \\frac{M x^{a}}{\\Gamma(a + 1)}"
+    },
+    {
+      "ascii_text": "-\tThe operator norm  \\| I^{\\delta(t)} \\|  is bounded by:",
+      "source_line": 1452,
+      "source_line_sha256": "25bb1574a45dd3798025d830d667b61c3f89c8e62bd08d0ad0b2ac76f8a3eb56",
+      "source_text": "\u2022\tThe operator norm  \\| I^{\\delta(t)} \\|  is bounded by:"
+    },
+    {
+      "ascii_text": "\\| I^{\\delta(t)} \\| \\leq \\frac{M \\| x \\|^{a}}{\\Gamma(a + 1)}",
+      "source_line": 1454,
+      "source_line_sha256": "28ede03ea09548510c487b91258b2e73cb42fcb6a201d008fa8e81791f1d6cd8",
+      "source_text": "\\| I^{\\delta(t)} \\| \\leq \\frac{M \\| x \\|^{a}}{\\Gamma(a + 1)}"
+    },
+    {
+      "ascii_text": "T(x \\to y) = \\int K_{\\text{enhanced}}(x, z) \\cdot \\Lambda_{E_8}(z, y) \\cdot D^{\\alpha}(\\|x - z\\|) \\, dz",
+      "source_line": 1468,
+      "source_line_sha256": "677997d35ac47815401c3b9d5d23ff15ec854d6d3ca4ba93be9d0ddf1f13b510",
+      "source_text": "T(x \\to y) = \\int K_{\\text{enhanced}}(x, z) \\cdot \\Lambda_{E_8}(z, y) \\cdot D^{\\alpha}(\\|x - z\\|) \\, dz"
+    },
+    {
+      "ascii_text": "where  D^{\\alpha}(\\|x - z\\|)  is the fractional derivative operator of order  \\alpha .",
+      "source_line": 1470,
+      "source_line_sha256": "72e05e012b19f3b8344979f10065c570a30aeb8100e832f221ffef652479b517",
+      "source_text": "where  D^{\\alpha}(\\|x - z\\|)  is the fractional derivative operator of order  \\alpha ."
+    }
+  ]
+}

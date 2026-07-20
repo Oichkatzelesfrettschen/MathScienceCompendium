@@ -1,0 +1,42 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://mathsciencecompendium.local/schemas/registry/lbm_evidence_audit.schema.json",
+  "title": "LBMEvidenceAudit",
+  "type": "object",
+  "required": ["schema_version", "generator", "method", "snapshot_count", "snapshots"],
+  "properties": {
+    "schema_version": { "type": "integer", "enum": [1] },
+    "generator": { "type": "string", "minLength": 1 },
+    "method": {
+      "type": "object",
+      "required": ["anisotropy", "coordinate_convention", "dominant_mode", "vorticity", "zonal_profile"],
+      "additionalProperties": { "type": "string", "minLength": 1 }
+    },
+    "snapshot_count": { "type": "integer", "minimum": 0 },
+    "snapshots": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["source_relpath", "source_sha256", "iteration", "grid_shape", "mass", "nominal_initial_mass", "relative_mass_drift_from_unit_density", "mean_speed", "rms_speed", "maximum_speed", "dominant_zonal_mode", "zonal_mean_rms", "zonal_to_total_rms_ratio", "vorticity_spectral_second_moment_ratio_x_to_y"],
+        "properties": {
+          "source_relpath": { "type": "string", "pattern": "\\.parquet$" },
+          "source_sha256": { "type": "string", "pattern": "^[a-f0-9]{64}$" },
+          "iteration": { "type": "integer", "minimum": 0 },
+          "grid_shape": { "type": "array", "minItems": 2, "maxItems": 2, "items": { "type": "integer", "minimum": 1 } },
+          "mass": { "type": "number" },
+          "nominal_initial_mass": { "type": "integer", "minimum": 1 },
+          "relative_mass_drift_from_unit_density": { "type": "number", "minimum": 0 },
+          "mean_speed": { "type": "number", "minimum": 0 },
+          "rms_speed": { "type": "number", "minimum": 0 },
+          "maximum_speed": { "type": "number", "minimum": 0 },
+          "dominant_zonal_mode": { "type": "integer", "minimum": 0 },
+          "zonal_mean_rms": { "type": "number", "minimum": 0 },
+          "zonal_to_total_rms_ratio": { "type": ["number", "null"], "minimum": 0 },
+          "vorticity_spectral_second_moment_ratio_x_to_y": { "type": ["number", "null"], "minimum": 0 }
+        },
+        "additionalProperties": false
+      }
+    }
+  },
+  "additionalProperties": false
+}

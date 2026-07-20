@@ -1,0 +1,36 @@
+{
+  "comparisons": {
+    "cyclic_shift_by_one": {
+      "comparison_density_maximum": 1.0167320240856088,
+      "comparison_density_minimum": 0.9832679759143905,
+      "comparison_order_sha256": "555e8eb47203df8979f00e2dd1acf6ea17450a2162250b0a992062dca448b1da",
+      "maximum_absolute_density_difference": 0.009943710284941898,
+      "reference_density_maximum": 1.0168224451630792,
+      "reference_density_minimum": 0.9831775548369206,
+      "reference_order_sha256": "6f8929830cc1e6f318e41bedfb7e5922fff447018d5b7eecc21062cbd7e41f93",
+      "relative_perturbation_l2_difference": 0.5938954733014199
+    },
+    "reverse_order": {
+      "comparison_density_maximum": 1.0168224451630792,
+      "comparison_density_minimum": 0.9831775548369206,
+      "comparison_order_sha256": "5ed0b2e2c18d1a5068512a3ea3677ebe9a96b28e1bee90fb549c0065d4f8e3e1",
+      "maximum_absolute_density_difference": 0.0,
+      "reference_density_maximum": 1.0168224451630792,
+      "reference_density_minimum": 0.9831775548369206,
+      "reference_order_sha256": "6f8929830cc1e6f318e41bedfb7e5922fff447018d5b7eecc21062cbd7e41f93",
+      "relative_perturbation_l2_difference": 0.0
+    }
+  },
+  "effective_harmonic_count": 126,
+  "generator": "scripts/audit_lbm_root_order.py",
+  "grid_shape": [
+    32,
+    32
+  ],
+  "harmonic_amplitude": 0.01,
+  "interpretation": "Ordering is deterministic, but selecting and index-weighting the first roots is a load-bearing modeling choice rather than a Weyl-invariant operation.",
+  "requested_harmonic_count": 127,
+  "root_count": 126,
+  "root_order": "lexicographic coordinate order",
+  "schema_version": 1
+}

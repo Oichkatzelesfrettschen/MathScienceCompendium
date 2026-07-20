@@ -1,7 +1,7 @@
-"""Quantum Lattice Boltzmann Method with E7/E8 Harmonic Scaffolds.
+"""Lattice Boltzmann Method with an E7 root-indexed density scaffold.
 
-Module for D2Q9 LBM simulation with quantum-inspired modifications and
-E7/E8 harmonic patterns.
+Module for D2Q9 LBM simulation with auxiliary arrays and an E7 root-indexed
+initialization pattern.
 """
 
 from __future__ import annotations
@@ -12,6 +12,8 @@ from enum import Enum
 from typing import Any
 
 import numpy as np
+
+from .diagnostics import calculate_vorticity
 
 
 # Import core modules
@@ -65,7 +67,7 @@ class LBMParameters:
     nx: int = 128
     ny: int = 128
     tau: float = 0.8
-    viscosity: float = None
+    viscosity: float | None = None
     reynolds: float = 100.0
     zpe_coupling: float = 0.1
     coherence_decay: float = 0.01
@@ -77,7 +79,7 @@ class LBMParameters:
     snapshot_interval: int = 250
     boundary_type: BoundaryType = BoundaryType.SYMMETRY_PRESERVING
 
-    def __post_init__(self):
+    def __post_init__(self) -> None:
         if self.viscosity is None:
             self.viscosity = CS2 * (self.tau - 0.5)
         else:
@@ -105,7 +107,7 @@ class LBMState:
     total_mass: float = 0.0
     total_energy: float = 0.0
 
-    def update_macroscopic(self):
+    def update_macroscopic(self) -> None:
         self.density = np.sum(self.f, axis=2)
         self.density = np.maximum(self.density, 1e-10)
         for i in range(2):
@@ -115,9 +117,7 @@ class LBMState:
         scaling = np.where(u_mag > u_max, u_max / (u_mag + 1e-10), 1.0)
         self.velocity *= scaling[..., np.newaxis]
         self.pressure = CS2 * self.density
-        dvx_dy = np.gradient(self.velocity[..., 0], axis=0)
-        dvy_dx = np.gradient(self.velocity[..., 1], axis=1)
-        self.vorticity = dvy_dx - dvx_dy
+        self.vorticity = calculate_vorticity(self.velocity)
         speed_squared = np.sum(self.velocity**2, axis=2)
         self.energy = 0.5 * self.density * speed_squared
         self.total_mass = np.sum(self.density)
@@ -129,15 +129,14 @@ class QuantumLatticeBoltzmann:
 
     def __init__(self, params: LBMParameters) -> None:
         self.params = params
-        self.state = None
-        self.genesis = None
-        self.e7_system = None
-        self.e8_roots = None
-        self.snapshots = []
+        self.state: LBMState
+        self.genesis: GenesisHarmonics | None = None
+        self.e7_system: E7RootSystem | None = None
+        self.snapshots: list[dict[str, Any]] = []
         self._initialize_modules()
         self._initialize_state()
 
-    def _initialize_modules(self):
+    def _initialize_modules(self) -> None:
         try:
             if HAS_GENESIS:
                 self.genesis = GenesisHarmonics(
@@ -149,21 +148,10 @@ class QuantumLatticeBoltzmann:
             if HAS_E7:
                 self.e7_system = E7RootSystem()
                 self.e7_system.generate_roots()
-            self._generate_e8_roots()
         except Exception as e:
             warnings.warn(f"Module initialization failed: {e}", stacklevel=2)
 
-    def _generate_e8_roots(self):
-        roots = []
-        for positions in [(i, j) for i in range(8) for j in range(i + 1, 8)]:
-            for signs in [(1, 1), (1, -1), (-1, 1), (-1, -1)]:
-                if sum([s < 0 for s in signs]) % 2 == 0:
-                    vec = np.zeros(8)
-                    vec[positions[0]], vec[positions[1]] = signs
-                    roots.append(vec)
-        self.e8_roots = np.array(roots[:240])
-
-    def _initialize_state(self):
+    def _initialize_state(self) -> None:
         nx, ny = self.params.nx, self.params.ny
         self.state = LBMState(
             f=np.zeros((nx, ny, 9)),
@@ -181,8 +169,9 @@ class QuantumLatticeBoltzmann:
         self._compute_equilibrium()
         self.state.f[:] = self.state.f_eq
         self.state.update_macroscopic()
+        self._initial_mass = float(self.state.total_mass)
 
-    def _initialize_harmonic_scaffold(self):
+    def _initialize_harmonic_scaffold(self) -> None:
         nx, ny = self.params.nx, self.params.ny
         x, y = np.linspace(0, 2 * np.pi, nx), np.linspace(0, 2 * np.pi, ny)
         X, Y = np.meshgrid(x, y, indexing="ij")
@@ -200,20 +189,20 @@ class QuantumLatticeBoltzmann:
                 )
         self._initialize_quantum_fields()
 
-    def _initialize_quantum_fields(self):
+    def _initialize_quantum_fields(self) -> None:
         self.state.coherence[:] = 1.0
         self.state.zpe_field[:] = 1.0 + self.params.zpe_coupling * np.sin(PHI * np.random.rand())
 
-    def _compute_equilibrium(self):
+    def _compute_equilibrium(self) -> None:
         rho, u = self.state.density, self.state.velocity
         usq = np.sum(u**2, axis=2)
         for i in range(9):
             cu = VELOCITIES[i, 0] * u[..., 0] + VELOCITIES[i, 1] * u[..., 1]
             self.state.f_eq[..., i] = (
-                WEIGHTS[i] * rho * (1 + 3 * cu / CS2 + 4.5 * cu**2 / CS4 - 1.5 * usq / CS2)
+                WEIGHTS[i] * rho * (1.0 + cu / CS2 + 0.5 * cu**2 / CS4 - 0.5 * usq / CS2)
             )
 
-    def step(self):
+    def step(self) -> None:
         self._compute_equilibrium()
         tau = self.params.tau
         for i in range(9):
@@ -235,5 +224,20 @@ class QuantumLatticeBoltzmann:
             self.step()
         return self.state
 
-    def validate_conservation(self) -> dict[str, Any]:
-        return {"mass_conserved": True}
+    def validate_conservation(self, relative_tolerance: float = 1e-10) -> dict[str, Any]:
+        """Measure mass conservation against the initialized state."""
+        if relative_tolerance <= 0.0:
+            raise ValueError("relative_tolerance must be positive")
+
+        current_mass = float(self.state.total_mass)
+        relative_mass_error = abs(current_mass - self._initial_mass) / self._initial_mass
+        mass_conserved = bool(
+            np.isfinite(relative_mass_error) and relative_mass_error <= relative_tolerance
+        )
+        return {
+            "mass_conserved": mass_conserved,
+            "relative_mass_error": relative_mass_error,
+            "relative_tolerance": relative_tolerance,
+            "initial_mass": self._initial_mass,
+            "current_mass": current_mass,
+        }

@@ -1,0 +1,627 @@
+Observation of the Dynamical Casimir Effect in a
+Superconducting Circuit
+C.M. Wilson1 ,G. Johansson1 , A. Pourkabirian1 , J.R.
+Johansson2 , T. Duty3 , F. Nori2,4 & P. Delsing1
+
+arXiv:1105.4714v1 [quant-ph] 24 May 2011
+
+1
+
+Depart. of Microtechnology and Nanoscience,
+
+Chalmers University of Technology, Göteborg, Sweden
+2
+
+Advanced Science Institute, RIKEN,
+
+Wako-shi, Saitama 351-0198, Japan
+3
+
+University of New South Wales, Sydney, NSW, 2052 Australia and
+4
+
+University of Michigan, Ann Arbor, MI 48109, USA
+(Dated: November 26, 2024)
+
+PACS numbers:
+
+1
+
+One of the most surprising predictions of modern quantum theory is that the vacuum of
+space is not empty. In fact, quantum theory predicts that it teems with virtual particles
+flitting in and out of existence. While initially a curiosity, it was quickly realized that these
+vacuum fluctuations had measurable consequences, for instance producing the Lamb shift[1]
+of atomic spectra and modifying the magnetic moment for the electron[2]. This type of
+renormalization due to vacuum fluctuations is now central to our understanding of nature.
+However, these effects provide indirect evidence for the existence of vacuum fluctuations.
+From early on, it was discussed if it might instead be possible to more directly observe
+the virtual particles that compose the quantum vacuum. 40 years ago, Moore[3] suggested
+that a mirror undergoing relativistic motion could convert virtual photons into directly
+observable real photons. This effect was later named the dynamical Casimir effect (DCE).
+Using a superconducting circuit, we have observed the DCE for the first time. The circuit
+consists of a coplanar transmission line with an electrical length that can be changed at a
+few percent of the speed of light. The length is changed by modulating the inductance of
+a superconducting quantum interference device (SQUID) at high frequencies (∼ 11 GHz).
+In addition to observing the creation of real photons, we observe two-mode squeezing of the
+emitted radiation, which is a signature of the quantum character of the generation process.
+That a mirror can be used to measure vacuum fluctuations was first predicted by Casimir
+in 1948[4]. Casimir predicted that two mirrors, i.e. perfectly conducting metal plates, held
+parallel to each other in vacuum will experience an attractive force. Essentially, the mirrors
+reduce the density of electromagnetic modes between them. The vacuum radiation pressure
+between the plates is then less than the pressure outside, generating the force. As this static
+Casimir effect can then be explained by a mismatch of vacuum modes in space, the dynamical
+Casimir effect can be seen as arising from a mismatch of vacuum modes in time. As the
+mirror moves, it changes the spatial mode structure of the vacuum. If the mirror’s velocity,
+v, is slow compared to the speed of light, c, the electromagnetic (EM) field can adiabatically
+adapt to the changes and no excitation occurs. If instead v/c is not negligible, then the field
+cannot adjust smoothly and can be nonadiabatically excited out of the vacuum.
+The static Casimir effect can also be calculated in terms of the electrical response of the
+mirrors to the EM field[5]. A similar complementary explanation exists for the DCE[3].
+Theoretically, the ideal mirror represents a boundary condition for the EM field, in particular, that the electric field is zero at the surface. This boundary condition is enforced by
+2
+
+the flow of screening currents in the metal. A mirror moving in a finite EM field then losses
+energy as the screening currents will emit EM radiation, as in an antenna. Classically, we
+expect this radiation damping to be zero in a field-free region. In quantum theory, however,
+the screening currents must always act against the vacuum fluctuations. Therefore, even
+moving in the vacuum will cause a mirror to emit real photons in response to the vacuum
+fluctuations.
+If we consider the literal experiment of moving a physical mirror near the speed light,
+we quickly see that this experiment is not feasible. Braggio et al. considered[6] the case of
+moving a typical microwave mirror in an oscillating motion at a frequency of 2 GHz with a
+displacement of 1 nm. This produces a velocity ratio of only v/c ∼ 10−7 with an expected
+photon production rate of approximately 1 per day. Nevertheless, it requires an input of
+mechanical power of 100 MW while, at the same time, the system would need to be cooled
+to ∼ 20 mK to ensure that the EM field is in its vacuum state. These difficulties have lead
+to a number of alternative proposals[7–15], for instance utilizing surface acoustic waves,
+nanomechanical resonators, or by modulating the electrical properties of cavities.
+Here we investigate one such proposal using a superconducting circuit[12, 13]: an open
+transmission line terminated by a SQUID. A SQUID is comprised of two Josephson junctions
+connected in parallel to form a loop. At the frequencies studied here, the SQUID acts as a
+parametric inductor whose value can be tuned by applying a magnetic flux, Φext , through
+the SQUID loop. When placed at the end of a transmission line, this SQUID can then be
+used to change the line’s boundary condition. In previous work, we showed that this tuning
+can be done on very short time scales[14, 16]. The changing inductance can be described
+as a change in the electrical length of the transmission line and, in fact, provides the same
+time-dependent boundary condition as the idealized moving mirror[17, 18]. In the same
+way as for the mirror, the boundary condition is enforced by screening currents that flow
+through the SQUID. Unlike the mirror, the effective velocity of the boundary, defined as the
+rate of change of the electrical length, can be very large, approaching v/c ∼ 0.05 for a 10%
+modulation of the SQUID inductance. The photon production rate is therefore predicted to
+be several orders of magnitude larger than in other systems.
+Quantum theory allows us to make more detailed predictions than just that photons
+will simply be produced. If the boundary is driven sinusoidally at an angular frequency
+ωd = 2πfd , then it is predicted that photons will be produced in pairs such that their
+3
+
+frequencies, ω1 and ω2 , sum to the drive frequency, i.e., we expect ωd = ω1 + ω2 . This
+pairwise production implies that the EM field at these frequencies, symmetric around ωd /2,
+should be correlated. In detail, we can predict that the field should exhibit what is known
+as two-mode squeezing[19]. These correlations are a signature of the two-photon nature of
+the photon generation process.
+Theoretically, we treat the problem as a scattering problem in the context of quantum
+network theory[20]. For superconducting circuits, it is convenient to describe the EM field
+Rt
+in the transmission line in terms of the phase field operator φ(x, t) = −∞ E(x, t0 )dt0 , where
+E(x, t) is the electric field operator. In the CPW, φ(x, t) is described by the massless,
+scalar Klein-Gordon equation in one dimension, the solution of which can be written as
+φ(x, t) = φin (x−c0 t)+φout (x+c0 t), where φin(out) is the field propagating inward to (outward
+from) the SQUID and c0 ∼ 0.4c is the speed of light in the transmission line. We solve the
+scattering problem in Fourier space defining
+r
+Z
+
+h̄Z0 ∞ dω
+√ ain(out) (ω)e−i(∓kω x+ωt) + h.c.
+φin(out) =
+4π 0
+ω
+where a(ω) and its hermitian conjugate a† (ω) and are the standard annihilation and creation
+operators and kω = ω/c0 is the wavenumber of the radiation. Solving the scattering problem
+then amounts to finding expressions for a†out (ω) and aout (ω) as a function of a†in (ω) and ain (ω).
+The boundary condition imposed by the SQUID determines the connection between these
+operators. With the output operators, we can then calculate the properties of the measurable
+output field assuming the input field is in a definite state, such as a thermal state or vacuum
+state. For a static magnetic flux, Φext , we obtain the simple expressions aout (ω) = R(ω)ain (ω)
+where R(ω) is the reflection coefficient from the SQUID. R(ω) = − exp[2ikω `e (Φext )] has
+the simple form[12] of a phase shift due to a transmission line of fixed length `e (Φext ) =
+√
+LJ (Φext )/L0 . Here c0 = 1/ L0 C0 , L0 (C0 ) is the inductance (capacitance) per unit length
+of the line, LJ (Φext ) = (Φ0 /2π)2 /EJ (Φext ) is the Josephson inductance of the SQUID, EJ is
+its Josephson energy, and Φ0 = h/2e is the superconducting flux quantum.
+In order to generate DCE radiation, `e must change with a nonuniform acceleration. A
+simple example of this type of motion is just a sinusoidal drive with an amplitude of δ`e . If
+it is driven at ωd , we then find a simple expression[13] for aout (ω) in the region ω < ωd :
+aout (ω) = R(ω)ain (ω) + S(ω)a†in (ωd − ω)
+4
+
+(1)
+
+p
+where S(ω) = −i(δ`e /c0 ) ω(ωd − ω)A(ω)A∗ (ωd − ω) and A(ω) is the spectral amplitude of
+the transmission line. Crucially, the time-dependent boundary leads to mixing of the input
+field’s creation and annihilation operators. With this expression we can calculate the output
+photon flux density for an input thermal state
+nout (ω) = ha†out (ω)aout (ω)i = nin (ω) + |S(ω)|2 nin (ωd − ω) + |S(ω)|2 .
+
+(2)
+
+The first two terms, proportional to nin (ω), represent the purely classical effects of reflection
+and upconversion of the input field to the drive frequency. They are zero at zero temperature.
+The last term is due to vacuum fluctuations and is, in fact, the DCE radiation.
+The photon production rate depends on the density of photonic states in the transmission
+line, which is |A(ω)|2 . For an ideal transmission line, A(ω) = 1 and the DCE radiation
+2
+is nDCE
+out (ω) = (δ`e /c0 ) ω(ωd − ω). The integrated photon flux of the DCE radiation is
+
+ΓDCE = (ωd /12π)(ve /c0 )2 where ve = δ`e ωd is the maximum velocity of the boundary. The
+relativistic nature of the effect is apparent here in that the photon flux goes to zero if we
+allow the speed of light to go to infinity. Finally, we note that this spectrum is identical to
+that calculated for an ideal mirror oscillating in 1-D space[18].
+We present measurements on a sample with a short (∼ 100 µm) Al coplanar waveguide
+(CPW) on-chip which transitions to a Cu CPW on a microwave circuit board (see Fig. 1a
+& b). As a first measurement (see Fig. 1d), we can measure the phase shift of a microwave
+probe signal reflected from the SQUID as we change Φext . This illustrates how the SQUID
+changes the boundary condition at the end of the line.
+We can now look at the effects of nonadiabatic perturbations. The flux through the
+SQUID is driven at microwave frequencies by an inductively coupled CPW line that is
+short-circuited ∼ 20 µm from the SQUID. The sample is cooled to 50 mK in a dilution
+refrigerator. This corresponds to a thermal photon occupation number of n = 0.008 at 5
+GHz, the center of our analysis band. If we consider the last two terms in Eq (2) , which
+are the response of the system to the changing boundary, we can compare this small value
+n = 0.008 to the vacuum response, which has a coefficient of 1. We therefore conclude
+that thermal effects are negligible and disregard them in the rest of the paper. For the
+first measurements, the drive is operated in continuous wave (CW) mode and the analysis
+frequency of the digitizer tracks the drive at ωd /2 with a 100 kHz bandwidth determined by
+digital filtering. We study the total output power as a function of drive frequency and power.
+5
+
+Drive Line
+
+CPW
+
+a)
+
+b)
+
+BP
+
+LNA
+
+T < 4.2 K
+
+T= 50 mK
+
+-36 dB BP
+
+LP
+
+DC
+
+LP = Lowpass filter
+BP = Bandpass filter
+
+c)
+Reflected Phase [deg]
+
+120
+100
+80
+60
+40
+20
+0
+-20
+
+d)
+
+-1.0
+
+-0.5
+
+0.0
+
+0.5
+
+1.0
+
+FIG. 1: a) Optical micrograph of the device. Light parts are Al while dark parts are the Si
+substrate. The output line is labeled “CPW” and the drive line enters from the top. Both lines
+converge near the SQUID. b) A scanning-electron micrograph of the SQUID. The SQUID has a
+normal state resistance of 218 Ω implying a Josephson inductance at zero field of LJ (0) = 0.23
+nH. c) A simplified schematic of the measurement setup. In addition to the driving line, a small
+external coil is used to apply a dc flux bias. The driving line has 36 dB of cold attenuation along
+with an 8.4 to 12 GHz bandpass filter. The filter ensures that no thermal radiation couples to the
+transmission line in the frequency region were we expect DCE radiation. The outgoing field of
+the CPW is coupled through two circulators to a cryogenic HEMT amplifier (LNA) with a system
+noise temperature of TN ∼ 6 K. The signal is further amplified at room temperature before being
+captured by two vector RF digitizers which use heterodyne mixing followed by digitization of the
+intermediate frequency signal. d) Measured phase shift of a microwave probe signal reflected from
+the SQUID, as it is tuned with a static flux. The probe frequency is 6.18 GHz.
+
+6
+
+The results are shown in Fig. 2a. We clearly see photon generation for essentially all drive
+frequencies spanning the 8-12 GHz band set by the filtering of the line. This corresponds to
+an analysis band of 4-6 GHz. The detailed drive power dependence of the output depends
+on the frequency and reflects a combination of the frequency response of both the drive line
+and the output line.
+We can quantify the photon production rate by comparing it to the amplifier noise temperature. We see that the produced photons roughly double the noise level, suggesting a
+power per unit bandwidth of a few Kelvin. We predict that in an ideal transmission line that
+the power should instead be a few mK.[12] In general though, transmission lines are not ideal
+and have parasitic resonances with a low quality factor (Q) associated with reflections at
+connectors, etc.. These resonances modify the electromagnetic density of states in the transmission line, |A(ω)|2 , thereby enhancing[13] ΓDCE by a factor of ∼ Q2 . In our measurement
+setup, we see such resonances, with Q ∼ 30-50, likely associated with the superconducting
+cable which runs between the sample and the amplifier. This implies an enhancement of the
+photon production rate by a factor of 1000-2000, consistent with what we observe.
+In the next set of measurements, we fix the drive frequency, but scan the digitizer frequency. In this way, we can see over what band photons are produced for fixed drive
+frequency. In Fig. 2 b & c, we show the results for two different drive frequencies. We
+clearly see broadband photon production at all analysis frequencies, including detunings
+from fd /2 larger than 2 GHz.
+The broadband nature of the photon generation, both in terms of the drive frequency and
+analysis frequency, clearly distinguishes the observed phenomenon from that of a parametric
+amplifier comprised of a driven single-mode oscillator or cavity. For a parametric amplifier,
+we expect the photon production to be narrow band in both drive and analysis frequencies,
+which is clearly not the case in this experiment.
+Theory also predicts that the output should exhibit voltage-voltage correlations at different frequencies with a particular structure commonly known as two-mode squeezing (TMS).
+Following Ref.[19], we can describe a two-photon state, as we expect the DCE to generate, in terms of modulation of the center frequency of the state. We can then define
+√
+the modulation operators at the detuning  as α1 () = (λ+ a(ω+ ) + λ− a† (ω− ))/ 2 and
+√
+α2 () = (−iλ+ a(ω+ ) + iλ− a† (ω− ))/ 2 where ω± = ωd /2 ±  and λ± = (2ω± /ωd )1/2 . The
+factors λ± rescale the operators from quanta at ω± to quanta at the center frequency ωd /2.
+7
+
+Pump Power [dBm]
+
+a) 5
+
+b)
+
+c)
+
+-4
+
+-4
+
+-6
+
+-6
+
+-5
+
+-8
+
+-8
+
+-10
+
+-10
+
+-10
+
+-12
+
+-12
+
+0
+
+-15
+
+-14
+
+-20
+8
+
+9
+
+10
+
+11
+
+Pump Frequency [GHz]
+
+12
+
+fp = 8.7 GHz
+3.5
+
+fp= 11.3 GHz
+
+-14
+
+4.0
+
+4.5
+
+5.0
+
+5.5
+
+3.5
+
+Digitizer Frequency [GHz]
+
+4.0
+
+4.5
+
+5.0
+
+5.5
+
+Digitizer Frequency [GHz]
+
+FIG. 2: Photons generated by the dynamical Casimir effect. Here we show the output power of the
+transmission line while driving the SQUID. Black is low power, while yellow is high power. a) The
+drive frequency and power are scanned in continuous wave mode . The digitizer tracks the drive
+frequency at fd /2 with a 100 kHz analysis bandwidth. b & c) Broadband photon generation. The
+drive frequency is fixed while the digitizer frequency is scanned. The drive is chopped on and off
+and we record the difference in the power level for the on and off state. The on (off) time is 50 ms
+(50 ms) and we measure in a 50 MHz analysis bandwidth. The drive frequencies in b) and c) are
+8.70 GHz and 11.30 GHz respectively. Half the drive frequency is indicated by the blue line. We
+see that for the two drive frequencies, the spectral shape of the output is similar. For instance, the
+output is more intense between 4-4.5 GHz in both cases. This shows how the spectral density of
+the output line affects the radiation. (The decline of the power below 4 GHz is due to the roll-off
+of the amplifier gain.) We also see that when half the drive frequency corresponds to the output
+mode, the necessary drive power decreases.
+
+We see that these operators mix excitations at the upper and lower sidebands of the field
+with a definite phase. The TMS of the field then appears as an imbalance of the noise
+in one of these modes compared to the other. We can then define a normalized squeezing
+statistic[21]
+σ2 =
+
+Σ11 − Σ22
+Σ11 + Σ22
+
+(3)
+
+where Σmn = hαm αn† + αn† αm i/2 is the symmetrized spectral density matrix. For the case of
+an ideal transmission line, we can calculate the TMS of the output field to be
+σ2 = 2
+
+ω+ ω− δ`e
+1
+.
+ωd c0 1 + ω+ ω− (δ`e /c0 )2
+
+(4)
+
+For small detunings (  ωd /2), we get the approximate expression σ2 ≈ ve /2c0 , which
+8
+
+implies a squeezing of about 2% for a 10% modulation of the SQUID inductance.
+Experimentally, we measure the four quadrature voltages of the upper and lower sidebands I± and Q± . The observable (hermitian) quadrature operators can be related to
+creation and annihilation operators as
+r
+h̄ω± Z0
+(a(ω± ) + a(ω± )† ) ;
+I± =
+8π
+
+r
+Q± = −i
+
+h̄ω± Z0
+(a(ω± ) − a(ω± )† ).
+8π
+
+(5)
+
+We can then write σ2 in terms of the quadratures as
+σ2 =
+
+1
+Pavg
+
+(hI+ I− i − hQ+ Q− i) .
+
+(6)
+
+where Pavg = (hI+2 i+hQ2+ i+hI−2 i+hQ2− i)/2 is the average noise power in the sidebands. The
+theory also predicts a special structure for the correlations of the TMS, in particular that
+hI+ I− i = −hQ+ Q− i and that hI+ Q− i = hI− Q+ i. Finally, we comment[19] that Σ transforms
+under phase rotations (see eqn. (7)) such that we can specify hI+ Q− i = hI− Q+ i = 0 without
+loss of generality, which has been done in writing eq. (6).
+To measure the correlations, we use a single amplifier but take advantage of the fact
+that amplifier noise at different frequencies is uncorrelated. After amplifying, we split the
+signal and feed the two outputs into two separate digitizers which are synchronized. We
+then calculate the four IQ cross-correlation functions.[22] Typical results are shown in Fig.
+3. In Fig. 3a & b, we show the hI+ I− i and hQ+ Q− i cross correlations with the drive on
+and drive off for comparison. With the drive on, we see very clear cross correlations which
+are ∼ 100 times larger than the parasitic amplifier correlation. Also, we see that indeed
+hI+ I− i = −hQ+ Q− i as we expect for two-mode squeezing. We also see that this is not the
+case for the amplifier noise. The correlations imply a value of σ2 ∼ 0.04 consistent with
+our expectations. The data in Fig. 3 is measured with a frequency seperation of 40 MHz
+(/2π = 20 MHz), although we have measured similar values with separations as large as
+700 MHz.
+Theory predicts that even as the field is two-mode squeezed, if we look at either sideband
+frequency individually, we expect it to remain unsqueezed, essentially appearing as a thermal
+field at some effective temperature. In Fig. 3c, we then plot the TMS of the field, σ2 , along
+with the one-mode squeezing, σ1 = (hI 2 i − hQ2 i)/(hI 2 i + hQ2 i) at both separate frequencies,
+ω+ and ω− , as a function of drive power. Although there is some scatter in σ2 , we see that it
+clearly increases as a function of drive power while the one-mode fields remain unsqueezed.
+9
+
+b) 3
+
+2
+
+2
+
+Correlation [0.01 %]
+
+3
+1
+0
+-1
+-2
+-3
+
+c)
+
+-400
+
+2.0
+
+0
+-1
+-2
+-3
+
+400
+
+2-mode
+- freq
++ freq
+
+1.5
+Squeezing [%]
+
+-200
+0
+200
+Delay Time [ns]
+
+1
+
+1.0
+
+0.5
+
+0.0
+
+-400
+
+d)
+
+360
+
+Analysis Phase [deg]
+
+Correlation [%]
+
+a)
+
+270
+
+-200
+0
+200
+Delay Time [ns]
+
+400
+
+180
+
+90
+
+0
+
+0.2
+
+0.4
+
+0.6
+0.8
+Pump Power [Arb]
+
+1.0
+
+0
+
+90
+180
+Pump Phase [deg]
+
+270
+
+FIG. 3: Two-mode squeezing of the DCE field. a) and b) The normalized cross-correlation functions
+hI+ I− i/Pavg and hQ+ Q− i/Pavg with the drive on (a) and drive off (b). Note that the scale of (b)
+is expanded by ×100. The drive frequency is 11.30 GHz and the two digitizer frequencies are
+5.63 GHz and 5.67 GHz. The RF bandwidth is 10 MHz and 4 × 107 samples of each voltage
+are used. With the drive on, (a), we clearly see cross correlations of a few percent. Note that
+hI+ I− i = −hQ+ Q− i as predicted. (The shape of the correlation functions in delay time is largely
+determined by the antialiasing filters of the digitizers.) With the drive off, (b), we see that the
+residual correlations of the amplifier are negligible. c) The two-mode squeezing, σ2 , of the field
+along with the one-mode squeezing, σ1 , at both ω+ and ω− as a function of drive power. Although
+there is some scatter in σ2 , we see that it clearly increases while the single-mode fields remain
+unsqueezed. d) The effects of phase rotations on the complex correlation function Ψ (defined in
+the text). The color scale is the real part of Ψ. The x-axis corresponds to a change in the drive
+phase. The y-axis corresponds to a digital rotation of the measured value of Ψ. As expected for
+TMS, we see that Ψ is symmetric under phase rotations.
+
+10
+
+This is an important additional check that the correlations arise from two-mode squeezing,
+and not just some well-timed modulation of, for instance, the amplifier gain that would
+produce the same type of apparent squeezing at the offset frequencies.
+For a two-mode squeezed state, we can predict how the correlations transform under
+rotations of the phase of the EM field by an angle θ. In particular, if we define the appropriate
+combination of correlation functions
+Ψ = (hI+ I− i) − hQ+ Q− i) + i(hI+ Q− i + hI− Q+ i)
+
+(7)
+
+we expect Ψ to transform such that Ψ0 = e−2iθ Ψ. To explore this predicted symmetry, we
+can compute the complex quantity Ψ from the experimental correlation functions and look
+at the rotation properties. In Fig. 3d, we compare the results of rotating the measured
+quantity Ψ to changing the drive phase. We see, as expected for a TMS state, that the
+rotation of one cancels a rotation of the other.
+In conclusion, we observe broadband generation of microwave photons in an open transmission line with a periodically modulated boundary condition. The emitted photons exhibit
+two-mode squeezing correlations, which are characteristic of photons generated in correlated
+pairs. Taken together, we believe these results represent the first experimental observation
+of the dynamical Casimir effect.
+We would also like to acknowledge G. Milburn and V. Shumeiko for fruitful discussions.
+CW, PD, GJ, and AP acknowledge financial support from the Swedish Research Council, the
+Wallenberg foundation, STINT and the European Research Council. FN and JJ acknowledge
+partial support from the LPS, NSA, ARO, DARPA, AFOSR, NSF grant No. 0726909,
+Grant-in-Aid for Scientific Research (S), MEXT Kakenhi on Quantum Cybernetics, and the
+JSPS-FIRST program. TD acknowledges support from STINT and the Australian Research
+Council, grant numbers DP0986932 and FT100100025.
+
+[1] M. O. Scully and M. S. Zubairy, Quantum optics (Cambridge University Press, 1997).
+[2] W. Greiner and S. Schramm, Am J Phys 76, 509 (2008).
+[3] G. Moore, J. Math. Phys. 11, 2679 (1970).
+[4] H. B. G. Casimir, Proc. Kon. Nederland. Akad. Wetensch. B51, 793 (1948).
+[5] S. K. Lamoreaux, Physics Today 60, 40 (2007).
+
+11
+
+[6] C. Braggio, G. Bressi, G. Carugno, C. D. Noce, G. Galeazzi, A. Lombardi, A. Palmieri,
+G. Ruoso, and D. Zanello, Europhys Lett 70, 754 (2005).
+[7] E. Yablonovitch, Phys Rev Lett 62, 1742 (1989).
+[8] Y. Lozovik, V. Tsvetus, and E. Vinogradov, JETP Lett 61, 723 (1995).
+[9] V. Dodonov, A. Klimov, and D. Nikonov, Phys Rev A 47, 4422 (1993).
+[10] S. Liberato, C. Ciuti, and I. Carusotto, Phys Rev Lett 98, 103602 (2007).
+[11] G. Günter, A. A. Anappara, J. Hees, A. Sell, G. Biasiol, L. Sorba, S. D. Liberato, C. Ciuti,
+A. Tredicucci, A. Leitenstorfer, et al., Nature 457, 178 (2009).
+[12] J. R. Johansson, G. Johansson, C. M. Wilson, and F. Nori, Phys Rev Lett 103, 147003 (2009).
+[13] J. R. Johansson, G. Johansson, C. M. Wilson, and F. Nori, Phys. Rev. A 82, 052509 (2010).
+[14] C. M. Wilson, T. Duty, M. Sandberg, F. Persson, V. Shumeiko, and P. Delsing, Phys Rev
+Lett 105, 233907 (2010).
+[15] P. D. Nation, J. R. Johansson, M. P. Blencowe, and F. Nori, arXiv quant-ph (2011),
+1103.0835v1.
+[16] M. Sandberg, C. M. Wilson, F. Persson, T. Bauch, G. Johansson, V. Shumeiko, T. Duty, and
+P. Delsing, Appl. Phys. Lett. 92, 203501 (2008).
+[17] S. A. Fulling and P. C. W. Davies, Proceedings of the Royal Society of London. Series A:
+Mathematical and Physical Sciences 348, 393 (1976).
+[18] A. Lambrecht, M. Jaekel, and S. Reynaud, Phys Rev Lett 77, 615 (1996).
+[19] C. M. Caves and B. L. Schumaker, Phys Rev A 31, 3068 (1985).
+[20] B. Yurke and J. S. Denker, Phys Rev A 29, 1419 (1984).
+[21] Two-mode squeezing is often discussed in terms of the unitary squeezing operator Θ(r) =
+exp[ra(ω+ )a(ω− ) − ra† (ω+ )a† (ω− )] where r is called the squeezing parameter. To connect to
+√
+this language, one can show that σ2 = −λ+ λ− tanh(2r). This then gives r = (δ`e /c0 ) ω+ ω− .
+[22] In Fig. 3, we have displayed time correlation functions (TCF) which are the Fourier transforms
+of the frequency correlation functions (FCF) defined in the text. In particular, the value of
+the TCF at zero delay is the integral of the FCF in the measurement bandwidth. If we assume
+that the FCF is approximately constant in the measurement bandwidth, the integral reduces
+to multiplying the FCF by a constant factor. This is the same for all the TCF, and therefore
+cancels out of the normalized quantities displayed.
+
+12
+
+

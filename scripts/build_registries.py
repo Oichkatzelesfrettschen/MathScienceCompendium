@@ -21,6 +21,8 @@ ARTIFACT_SCAN_ROOTS = [
     "source_materials/pdfs",
 ]
 
+PAPER_ARTIFACTS = {"papers/main.pdf"}
+
 EXPERIMENT_SCAN_PATTERNS = [
     "results/*.parquet",
     "experiments/*results*.json",
@@ -58,10 +60,19 @@ def infer_kind(rel: str) -> str:
     return "artifact"
 
 
+def include_artifact(relpath: str) -> bool:
+    """Keep retained artifacts while excluding sources and build intermediates."""
+    if relpath.startswith("papers/"):
+        return relpath in PAPER_ARTIFACTS
+    if relpath.startswith("source_materials/pdfs/"):
+        return relpath.lower().endswith(".pdf")
+    return True
+
+
 def to_toml_table(name: str, rows: list[dict[str, str | int]]) -> str:
     out: list[str] = []
-    out.append("generated_by = \"scripts/build_registries.py\"")
-    out.append(f"generated_at_utc = \"{now_utc_iso()}\"")
+    out.append('generated_by = "scripts/build_registries.py"')
+    out.append(f'generated_at_utc = "{now_utc_iso()}"')
     out.append("")
     for row in rows:
         out.append(f"[[{name}]]")
@@ -70,7 +81,7 @@ def to_toml_table(name: str, rows: list[dict[str, str | int]]) -> str:
             if isinstance(value, int):
                 out.append(f"{key} = {value}")
             else:
-                out.append(f"{key} = \"{value}\"")
+                out.append(f'{key} = "{value}"')
         out.append("")
     return "\n".join(out).rstrip() + "\n"
 
@@ -83,6 +94,8 @@ def build_artifacts() -> list[dict[str, str | int]]:
             continue
         for path in sorted(p for p in root.rglob("*") if p.is_file()):
             rel = path.relative_to(REPO_ROOT).as_posix()
+            if not include_artifact(rel):
+                continue
             rows.append(
                 {
                     "relpath": rel,

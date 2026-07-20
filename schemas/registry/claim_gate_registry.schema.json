@@ -1,0 +1,32 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://mathsciencecompendium.local/schemas/registry/claim_gate_registry.schema.json",
+  "title": "ClaimGateRegistry",
+  "type": "object",
+  "required": ["schema_version", "description", "gates"],
+  "properties": {
+    "schema_version": {"const": 1},
+    "description": {"type": "string", "minLength": 1},
+    "gates": {
+      "type": "array",
+      "minItems": 23,
+      "maxItems": 23,
+      "items": {
+        "type": "object",
+        "required": ["claim_id", "gate_kind", "checker", "expected_claim_status", "expected_gate_outcome", "evidence_paths", "acceptance_criteria", "rejection_criteria"],
+        "properties": {
+          "claim_id": {"type": "string", "pattern": "^[a-z0-9_]+$"},
+          "gate_kind": {"enum": ["algebraic_proof", "numerical_convergence", "energy_accounting", "dynamical_ablation", "scope_boundary", "scope_rejection", "measurability_rejection", "implementation_regression", "experimental_admission"]},
+          "checker": {"type": "string", "pattern": "^[a-z0-9_]+$"},
+          "expected_claim_status": {"enum": ["established", "corrected", "bounded", "conjectural", "unsupported", "falsified", "repaired", "excluded"]},
+          "expected_gate_outcome": {"enum": ["accepted", "corrected", "bounded", "open", "rejected", "falsified", "repaired", "excluded"]},
+          "evidence_paths": {"type": "array", "minItems": 1, "items": {"type": "string", "minLength": 1}},
+          "acceptance_criteria": {"type": "array", "minItems": 1, "items": {"type": "string", "minLength": 1}},
+          "rejection_criteria": {"type": "array", "minItems": 1, "items": {"type": "string", "minLength": 1}}
+        },
+        "additionalProperties": false
+      }
+    }
+  },
+  "additionalProperties": false
+}

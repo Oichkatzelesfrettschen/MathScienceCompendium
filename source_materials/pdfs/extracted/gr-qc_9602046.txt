@@ -1,0 +1,1892 @@
+Quantum Theory of Geometry I: Area Operators∗
+Abhay Ashtekar1† and Jerzy Lewandowski2,3 ‡
+
+arXiv:gr-qc/9602046v2 23 Aug 1996
+
+1 Center for Gravitational Physics and Geometry
+
+Physics Department, Penn State, University Park, PA 16802, USA
+2 Institute of Theoretical Physics,
+Warsaw University, ul Hoza 69, 00-681 Warsaw, Poland
+3 Max Planck Institut für Gravitationphysik,
+Schlaatzweg 1, 14473 Potsdam, Germany
+
+Abstract
+
+A new functional calculus, developed recently for a fully nonperturbative treatment of quantum gravity, is used to begin a systematic
+construction of a quantum theory of geometry. Regulated operators corresponding to areas of 2-surfaces are introduced and shown to be self-adjoint
+on the underlying (kinematical) Hilbert space of states. It is shown that
+their spectra are purely discrete indicating that the underlying quantum
+geometry is far from what the continuum picture might suggest. Indeed,
+the fundamental excitations of quantum geometry are 1-dimensional, rather
+like polymers, and the 3-dimensional continuum geometry emerges only on
+coarse graining. The full Hilbert space admits an orthonormal decomposition into finite dimensional sub-spaces which can be interpreted as the
+spaces of states of spin systems. Using this property, the complete spectrum of the area operators is evaluated. The general framework constructed
+here will be used in a subsequent paper to discuss 3-dimensional geometric
+operators, e.g., the ones corresponding to volumes of regions.
+
+∗ It is a pleasure to dedicate this article to Professor Andrzej Trautman, who was one of the
+
+first to recognize the deep relation between geometry and the physics of gauge fields1,2 which
+lies at the heart of this investigation.
+† Electronic address: ashtekar@phys.psu.edu
+‡ Electronic address: jerzy.lewandowski@fuw.edu.pl
+
+1
+
+I. INTRODUCTION
+
+In his celebrated inaugural address, Riemann suggested [3] that geometry of space
+may be more than just a fiducial, mathematical entity serving as a passive stage for
+physical phenomena, and may in fact have a direct physical meaning in its own right.
+General relativity proved this vision to be correct: Einstein’s equations put geometry on
+the same footing as matter. Now, the physics of this century has shown us that matter
+has constituents and the 3-dimensional objects we perceive as solids in fact have a discrete
+underlying structure. The continuum description of matter is an approximation which
+succeeds brilliantly in the macroscopic regime but fails hopelessly at the atomic scale.
+It is therefore natural to ask if the same is true of geometry. Does geometry also have
+constituents at the Planck scale? What are its atoms? Its elementary excitations? Is the
+space-time continuum only a “coarse-grained” approximation? If so, what is the nature
+of the underlying quantum geometry?
+To probe such issues, it is natural to look for hints in the procedures that have been
+successful in describing matter. Let us begin by asking what we mean by quantization of
+physical quantities. Let us take a simple example –the hydrogen atom. In this case, the
+answer is clear: while the basic observables –energy and angular momentum– take on a
+continuous range of values classically, in quantum mechanics their spectra are discrete.
+So, we can ask if the same is true of geometry. Classical geometrical observables such as
+areas of surfaces and volumes of regions can take on continuous values on the phase space
+of general relativity. Are the spectra of corresponding quantum operators discrete? If so,
+we would say that geometry is quantized.
+Thus, it is rather easy to pose the basic questions in a precise fashion. Indeed, they
+could have been formulated soon after the advent of quantum mechanics. Answering them,
+on the other hand, has proved to be surprisingly difficult. The main reason, it seems, is
+the inadequacy of the standard techniques. More precisely, the traditional approach to
+quantum field theory has been perturbative, where one begins with a continuum, background geometry. It is then difficult to see how discreteness would arise in the spectra of
+geometric operators. To analyze such issues, one needs a fully non-perturbative approach:
+geometric operators have to be constructed ab-initio without assuming any background
+geometry. To probe the nature of quantum geometry, we can not begin by assuming the
+validity of the continuum picture. We must let quantum gravity itself decide whether
+this picture is adequate at the Planck scale; the theory itself should lead us to the correct
+microscopic picture of geometry.
+In this paper, we will use the non-perturbative, canonical approach to quantum gravity
+based on connections to probe these issues. Over the past three years, this approach has
+been put on a firm mathematical footing through the development of a new functional
+calculus on the space of gauge equivalent connections [4-11]. This calculus does not
+use any background fields (such as a metric) and is therefore well-suited to a fully nonperturbative treatment. The purpose of this paper is to use this framework to explore the
+nature of quantum geometry.
+In section 2, we recall the relevant results from the new functional calculus and out2
+
+line the general strategy. In section 3, we present a regularization of the area operator.
+Its properties are discussed in section 4; in particular, we exhibit its entire spectrum.
+Our analysis is carried out in the “connection representation” and the discussion is selfcontained. However, at a non-technical level, there is a close similarity between the basic
+ideas used here and those used in discussions based on the “loop representation” [12,13].
+Indeed, the development of the functional calculus which underlies this analysis itself was
+motivated, in a large measure, by the pioneering work on loop representation by Rovelli
+and Smolin [14]. The relation between various approaches will discussed in section 5.
+The main result of this paper should have ramifications on the statistical mechanical origin of the entropy of black holes along the lines of [15,16]. This issue is being
+investigated.
+II. PRELIMINARIES
+
+This section is divided into three parts. In the first, we will recall [4,5] the basic
+structure of the quantum configuration space and, in the second, that of the Hilbert
+space of (kinematic) quantum states [10]. The overall strategy will be summarized in the
+third part.
+A. Quantum configuration space
+
+In general relativity, one can regard the space A/G of SU(2) connections modulo
+gauge transformations on a (“spatial”) 3-manifold Σ as the classical configuration space
+[17–19]. For systems with only a finite number of degrees of freedom, the classical configuration space also serves as the domain space of quantum wave functions, i.e., as the
+quantum configuration space. For systems with an infinite number of degrees of freedom, on the other hand, this is not true: generically, the quantum configuration space
+is an enlargement of the classical. In free field theory in Minkowski space (as well as
+exactly solvable models in low space-time dimensions), for example, while the classical
+configuration space can be built from suitably smooth fields, the quantum configuration
+space includes all (tempered) distributions. This is an important point because, typically,
+the classical configuration spaces are of zero measure; wave functions with support only
+on smooth configurations have zero norm! The overall situation is the same in general
+relativity. The quantum configuration space A/G is a certain completion of A/G [4,5].
+The space A/G inherits the quotient structure of A/G, i.e., A/G is the quotient of the
+space A of generalized connections by the space G of generalized gauge transformations.
+To see the nature of the generalization involved, recall first that each smooth connection
+R
+defines a holonomy along paths 1 in Σ: hp (A) := P exp − p A. Generalized connections
+1 For technical reasons, we will assume that all paths are analytic. An extension of the frame-
+
+3
+
+capture this notion. That is, each Ā in A can be defined [6,8] as a map which assigns
+to each oriented path p in Σ an element Ā(p) of SU(2) such that: i) Ā(p−1 ) = (Ā(p))−1 ;
+and, ii) Ā(p2 ◦ p1 ) = Ā(p2 ) · Ā(p1 ), where p−1 is obtained from p by simply reversing the
+orientation, p2 ◦ p1 denotes the composition of the two paths (obtained by connecting
+the end of p1 with the beginning of p2 ) and Ā(p2 ) · Ā(p1 ) is the composition in SU(2).
+A generalized gauge transformation is a map g which assigns to each point v of Σ an
+SU(2) element g(x) (in an arbitrary, possibly discontinuous fashion). It acts on Ā in
+the expected manner, at the end points of paths: Ā(p) → g(v+ )−1 · Ā(p) · g(v− ), where
+v− and v+ are respectively the beginning and the end point of p. If Ā happens to be a
+smooth connections, say A, we have Ā(p) = hp (A). However, in general, Ā(p) can not
+be expressed as a path ordered exponential of a smooth 1-form with values in the Lie
+algebra of SU(2) [5]. Similarly, in general, a generalized gauge transformation can not be
+represented by a smooth group valued function on Σ.
+At first sight the spaces A, G and A/G seem too large to be mathematically controllable. However, they admit three characterizations which enables one to introduce
+differential and integral calculus on them [4,5,7]. We will conclude this sub-section by
+summarizing the characterization –as suitable limits of the corresponding spaces in lattice gauge theory– which will be most useful for the main body of this paper.
+We begin with some definitions. An edge is an oriented, 1-dimensional sub-manifold
+of Σ with two boundary points, called vertices, which is analytic everywhere, including
+the vertices. A graph in Σ is a collection of edges such that if two distinct edges meet,
+they do so only at vertices. In the physics terminology, one can think of a graph as a
+“floating lattice”, i.e., a lattice whose edges are not required to be rectangular. (Indeed,
+they may even be non-trivially knotted!) Using the standard ideas from lattice gauge
+theory, we can construct the configuration space associated with the graph γ. Thus, we
+have the space Aγ , each element Aγ of which assigns to every edge in γ an element of
+SU(2) and the space Gγ each element gγ of which assigns to each vertex in γ an element
+of SU(2). (Thus, if N is the number of edges in γ and V the number of vertices, Aγ
+is isomorphic with [SU(2)]N and Gγ with [SU(2)]V ). Gγ has the obvious action on Aγ :
+Aγ (e) → g(v+ )−1 · Aγ (e) · g(v− ). The (gauge invariant) configuration space associated
+with the floating lattice γ is just Aγ /Gγ . The spaces A, G and A/G can be obtained as
+well-defined (projective) limits of the spaces Aγ , Gγ and Aγ /Gγ [7,5]. Note however that
+this limit is not the usual “continuum limit” of a lattice gauge theory in which one lets
+the edge length go to zero. Here, we are already in the continuum and have available to
+us all possible floating lattices from the beginning. We are just expressing the quantum
+configuration space of the continuum theory as a suitable limit of the configuration spaces
+of theories associated with all these lattices.
+
+work to allow for smooth paths is being carried out [20]. The general expectation is that the
+main results will admit natural generalizations to the smooth category. In this article, A has the
+physical dimensions of a connection, (length)−1 and is thus related to the configuration variable
+Aold in the literature by A = GAold where G is Newton’s constant.
+
+4
+
+To summarize, the quantum configuration space A/G is a specific extension of the
+classical configuration space A/G. Quantum states can be expressed as complex-valued,
+square-integrable functions on A/G, or, equivalently, as G-invariant square-integrable
+functions on A. As in Minkowskian field theories, while A/G is dense in A/G topologically,
+measure theoretically it is generally sparse; typically, A/G is contained in a subset set of
+zero measure of A/G [7]. Consequently, what matters is the value of wave functions on
+“genuinely ” generalized connections. In contrast with the usual Minkowskian situation,
+however, A, G and A/G are all compact spaces in their natural (Gel’fand) topologies [4-8].
+This fact simplifies a number of technical issues.
+Our construction can be compared with the general framework of ‘second quantization’
+proposed by Kijowski [21] already twenty years ago. He introduced the space of states
+for a field theory by using the projective limit of spaces of states associated to a family
+of finite dimensional theories. He also, suggested, as an example, the lattice approach.
+The common element with the present approach is that in our case the space of measures
+on A is also the projective limit of the spaces of measures defined on finite dimensional
+spaces Aγ .
+B. Hilbert space
+
+Since A/G is compact, it admits regular (Borel, normalized) measures and for every
+such measure we can construct a Hilbert space of square-integrable functions. Thus, to
+construct the Hilbert space of quantum states, we need to select a specific measure on
+A/G.
+It turns out that A admits a measure µo that is preferred by both mathematical and
+physical considerations [5,6]. Mathematically, the measure µo is natural because its definition does not involve introduction of any additional structure: it is induced on A by the
+Haar measure on SU(2). More precisely, since Aγ is isomorphic to [SU(2)]N , the Haar
+measure on SU(2) induces on it a measure µoγ in the obvious fashion. As we vary γ, we
+obtain a family of measures which turn out to be compatible in an appropriate sense and
+therefore induce a measure µo on A. This measure has the following attractive
+properties
+R
+[5]: i) it is faithful; i.e., for any continuous, non-negative function f on A, dµo f ≥ 0,
+equality holding if and only if f is identically zero; and, ii) it is invariant under the (induced) action of Diff[Σ], the diffeomorphism group of Σ. Finally, µo induces a natural
+measure µ̃o on A/G: µ̃o is simply the push-forward of µo under the projection map that
+sends A to A/G. Physically, the measure µ̃o is selected by the so-called “reality conditions”. More precisely, the classical phase space admits an (over)complete set of naturally
+defined configuration and momentum variables which are real, and the requirement that
+the corresponding operators on the quantum Hilbert space be self-adjoint selects for us
+the measure µ̃o [10].
+Thus, it is natural to use H̃o := L2 (A/G, dµ̃o ) as our Hilbert space. Elements of H̃o
+are the kinematic states; we are yet to impose quantum constraints. Thus, H̃o is the
+classical analog of the full phase-space of quantum gravity (prior to the introduction of
+
+5
+
+the constraint sub-manifold). Note that these quantum states can be regarded also as
+gauge invariant functions on A. In fact, since the spaces under consideration are compact
+and measures normalized, we can regard H̃o as the gauge invariant sub-space of the Hilbert
+space Ho := L2 (A, dµo ) of square-integrable functions on A [6,7]. In what follows, we we
+will often do so.
+What do “typical” quantum states look like? To provide an intuitive picture, we can
+proceed as follows. Fix a graph γ with N edges and consider functions Ψγ of generalized
+connections of the form Ψγ (Ā) = ψ(Ā(e1 ), ..., Ā(eN )) for some smooth function ψ on
+[SU(2)]N , where e1 , ..., eN are the edges of the graph γ. Thus, the functions Ψγ know
+about what the generalized connections do only to those paths which constitute the edges
+of the graph γ; they are precisely the quantum states of the gauge theory associated
+with the “floating lattice” γ. This space of states, although infinite dimensional, is quite
+“small” in the sense that it corresponds to the Hilbert space associated with a system
+with only a finite number of degrees of freedom. However, if we vary γ through all possible
+graphs, the collection of all states that results is very large. Indeed, one can show that it
+is dense in the Hilbert space Ho . (If we restrict ourselves to Ψγ which are gauge invariant,
+we obtain a dense sub-space in H̃o .) Since each of these states depends only on a finite
+number of variables, borrowing the terminology from the quantum theory of free fields
+in Minkowski space, they are called cylindrical functions and denoted by Cyl. Gauge
+invariant cylindrical functions represent the “typical” kinematic states. In many ways,
+Cyl is analogous to the space Co∞ (R3 ) of smooth functions of compact support on R3
+which is dense in the Hilbert space L2 (R3 , d3 x) of quantum mechanics. Just as one often
+defines quantum operators – e.g., the position, the momentum and the Hamiltonians– on
+Co∞ first and then extends them to an appropriately larger domain in the Hilbert space
+L2 (R3 , d3 x), we will define our operators first on Cyl and then extend them appropriately.
+Cylindrical functions provide considerable intuition about the nature of quantum
+states we are led to consider. These states represent 1-dimensional polymer-like excitations of geometry/gravity rather than 3-dimensional wavy undulations on flat space.
+Just as a polymer, although intrinsically 1-dimensional, exhibits 3-dimensional properties
+in sufficiently complex and densely packed configurations, the fundamental 1-dimensional
+excitations of geometry can be packed appropriately to provide a geometry which, when
+coarse-grained on scales much larger than the Planck length, lead us to continuum geometries [12,22]. Thus, in this description, gravitons can arise only as approximate notions
+in the low energy regime [23]. At the basic level, states in H̃o are fundamentally different
+from the Fock states of Minkowskian quantum field theories. The main reason is the
+underlying diffeomorphism invariance: In absence of a background geometry, it is not
+possible to introduce the familiar Gaussian measures and associated Fock spaces.
+C. Statement of the problem
+
+We can now outline the general strategy that will be followed in sections 4 and 5.
+
+6
+
+Recall that the classical configuration variable is an SU(2) connection2 Aia on a 3manifold Σ, where i is the su(2)-internal index with respect to a basis τi . Its conjugate
+momentum Ejb has the geometrical interpretation of an orthonormal triad with density
+weight one [24,17], the precise Poisson brackets being:
+{Aia (x), Ejb (y)} = Gδab δji δ 3 (x, y) ,
+
+(2.1)
+
+where G is Newton’s constant. (Recall from footnote 1 that the field A, used here, is
+related to Aold used in the literature [25] via A = GAold .)
+Therefore, geometrical observables –functionals of the 3-metric– can be expressed in
+terms of this field Eia . Fix within the 3-manifold Σ any analytic, finite 2-surface S without
+boundary such that the closure of S in Σ is a compact. The area AS of S is a well-defined,
+real-valued function on the full phase space of general relativity (which happens to depend
+only on Eia ). It is easy to verify that these kinematical observables can be expressed as:
+AS :=
+
+Z
+
+S
+
+1
+
+dx1 ∧ dx2 [Ei3 E 3i ] 2 ,
+
+(2.2)
+
+where, for simplicity, we have used adapted coordinates such that S is given by x3 = 0,
+and x1 , x2 parameterize S, and where the internal index i is raised by a the inner product
+we use on su(2), k(τi , τj ) = −2Tr(τi τj ).
+Our task is to find the corresponding operators on the kinematical Hilbert space H̃o
+and investigate their properties.
+There are several factors that make this task difficult. Intuitively, one would expect
+that Eia (x) to be replaced by the “operator-valued distribution” −ih̄Gδ/δAia (x). Unfortunately, the classical expression of AS involves square-roots of products of E’s and hence the
+formal expression of the corresponding operator is badly divergent. One must introduce
+a suitable regularization scheme. Unfortunately, we do not have at our disposal the usual
+machinery of Minkowskian field theories and even the precise rules that are to underlie
+such a regularization are not apriori clear.
+There are however certain basic expectations that we can use as guidelines: i) the
+resulting operators should be well-defined on a dense sub-space of H̃o ; ii) their final
+expressions should be diffeomorphism covariant, and hence, in particular, independent of
+any background fields that may be used in the intermediate steps of the regularization
+procedure; and, iii) since the classical observables are real-valued, the operators should be
+self-adjoint. These expectations seem to be formidable at first. Indeed, these demands are
+rarely met even in Minkowskian field theories; in presence of interactions, it is extremely
+difficult to establish rigorously that physically interesting operators are well-defined and
+
+2 We assume that the underlying 3-manifold Σ is orientable.
+
+Hence, principal SU (2) bundles
+over Σ are all topologically trivial. Therefore, we can represent the SU (2) connections on the
+bundle by a su(2)-valued 1-form on Σ. The matrices τi are anti-Hermitian, given, e.g., by
+(−i/2)-times the Pauli matrices.
+
+7
+
+self-adjoint. As we will see, the reason why one can succeed in the present case is twofolds. First, the requirement of diffeomorphism covariance is a powerful restriction that
+severely limits the possibilities. Second, the background independent functional calculus
+is extremely well-suited for the problem and enables one to circumvent the various road
+blocks in subtle ways.
+Our general strategy will be following. We will define the regulated versions of area
+operators on the dense sub-space Cyl of cylindrical functions and show that they are
+essentially self-adjoint (i.e., admit unique self-adjoint extensions to H̃o ). This task is
+further simplified because the operators leave each sub-space Hγ spanned by cylindrical
+functions associated with any one graph γ invariant. This in effect reduces the field theory
+problem (i.e., one with an infinite number of degrees of freedom) to a quantum mechanics
+problem (in which there are only a finite number of degrees of freedom). Finally, we
+will find that the operators in fact leave invariant certain finite dimensional sub-space
+of Ho (associated with extended spin networks, introduced in Sec. 4.2). This powerful
+simplification further reduces the task of investigating the properties of these operators;
+in effect, the quantum mechanical problem (in which the Hilbert space is still infinite
+dimensional) is further simplified to a problem involving spin systems (where the Hilbert
+space is finite dimensional). It is because of these simplifications that a complete analysis
+is possible.
+III. REGULARIZATION
+
+Our task is to construct a well-defined operator ÂS starting from the classical expression (2.2). As is usual in quantum field theory, we will begin with the formal expression
+obtained by replacing Ei3 in (2.2) by the corresponding operator valued distribution Êi3 and
+then regulate it to obtain the required ÂS . (For an early discussion of non-perturbative
+regularization, see, in particular, [26]). Our discussion will be divided in to two parts.
+In the first, we introduce the basic tools and, in the second, we apply them to obtain a
+well-defined operator ÂS .
+To simplify the presentation, let us first assume that S is covered by a single chart
+of adapted coordinates. Extension to the general case is straightforward: one mimics the
+procedure used to define the integral of a differential form over a manifold. That is, one
+takes advantage of the coordinates invariance of the the resulting ‘local’ operator and uses
+a partition of unity.
+A. Tools
+
+The regularization procedure involves two main ingredients. We will begin by summarizing them.
+The first involves smearing of (the operator analog of) Ei3 (x) and point splitting of
+the integrand in (2.2). Since in this integrand, the point x lies on the 2-surface S, let
+
+8
+
+us try to use a 2-dimensional smearing function. Let fǫ (x, y) be a 1-parameter family of
+fields on S which tend to the δ(x, y) as ǫ tends to zero; i.e., such that
+lim
+
+Z
+
+d2 y fǫ (x1 , x2 ; y 1, y 2)g(y 1, y 2) = g(x1 , x2 ) ,
+
+ǫ→0 S
+
+(3.1)
+
+for all smooth densities g of weight 1 and of compact support on S. (Thus, fǫ (x, y) is
+a density of weight 1 in x and a function in y.) The smeared version of Ei3 (x) will be
+defined to be:
+[Ei3 ]f (x) :=
+
+Z
+
+S
+
+d2 y fǫ (x, y)Ei3(y) ,
+
+(3.2)
+
+so that, as ǫ tends to zero, [Ei3 ]f tends to Ei3 (x). The point-splitting strategy now provides
+a ‘regularized expression’ of area:
+[AS ]f :=
+=
+
+Z
+
+ZS
+
+S
+
+d2 x [
+
+Z
+
+S
+
+d2 y fǫ (x, y)Ei3 (y)
+
+Z
+
+1
+
+S
+
+d2 z fǫ (x, z)E 3i (z) ] 2
+
+1
+
+2
+
+d x [[Ei3 ]f (x)[E 3i ]f (x)] 2 ,
+
+(3.3)
+
+which will serve as the point of departure in the next subsection. To simplify technicalities,
+we will assume that the smearing field fǫ (x, y) has the following additional properties for
+sufficiently small ǫ > 0: i) for any given y, fǫ (x, y) has compact support in x which shrinks
+uniformly to y; and, ii) fǫ (x, y) is non-negative. These conditions are very mild and we
+are thus left with a large class of regulators.3
+We now introduce the second ingredient. To go over to the quantum theory, we want
+to replace Ei3 in (3.3) by Êi3 = −iGh̄δ/δAi3 . However, it is not apriori clear that, even after
+smearing, [Êi3 ]f is a well-defined operator because: i)our wave functions Ψ are functionals
+of generalized connections Ā, whence it is not obvious what the functional derivative
+means; and, ii) we have smeared the operator only along two dimensions. Let us discuss
+these points one by one.
+First, let us fix a graph γ and consider a cylindrical function Ψγ on A,
+Ψγ (Ā) = ψ(Ā(e1 ), .., Ā(eN )) ,
+
+(3.4)
+
+where, as before, N is the total number of edges of γ and where ψ is a smooth function
+on [SU(2)]N . Now, a key fact about generalized connections is that, for any given graph
+γ, each Ā is equivalent to some smooth connection A [5]: Given any Ā, there exists an A
+such that
+Z
+
+Ā(ek ) = hk [A] := P exp −
+
+ek
+
+A,
+
+(3.5)
+
+3 For example, f (x, y) can be constructed as follows. Take any non-negative function f of
+ǫ
+R
+compact support on S such that d2 xf (x) = 1 and set fǫ (x, y) = (1/ǫ2 )f ((x − y)/ǫ). Here, we
+
+have implicitly used the given chart to give fǫ (x, y) a density weight in x.
+
+9
+
+for all k = 1, ..., N. (For any given Ā, the smooth connection A is of course not unique.
+However, this ambiguity does not affect the considerations that follow.) Hence, there is a
+1-1 correspondence between the cylindrical function Ψγ on A and function ψ(h1 (A), ...,hE (A)) on the space A of smooth connections and we can apply the operator [Êi3 ]f to the
+latter. The result is:
+[Êi3 ]f (x) · Ψγ (Ā) = −iGh̄
+= iℓ2P
+
+Z
+
+S
+
+N
+X Z
+
+I=1
+2
+
+S
+
+d2 yfǫ (x, y) (
+
+d y fǫ (x, y)
+
+N
+X
+
+I=1
+
+[
+
+∂ψ
+δhI
+)(A)
+) |y3 =0 (
+i
+δAa (y)
+∂hI
+
+Z 1
+0
+
+(hI (1, t)τ i hI (t, 0))A
+B]
+
+dt e˙I 3 (t) δ(y 1, e1I (t))δ(y 2 , e2I (t))δ(0, e3I (t))
+∂ψ
+(A) ,
+∂hI A
+B
+
+(3.6)
+
+√
+where, ℓP = Gh̄ is the Planck length, the index I labels the edges in the graph, [0, 1] ∋
+R ′
+t 7→ eI (t) is any parameterization of an edge eI , hI (t′ , t) := P exp − tt Aa (eI (s))ėaI (s)ds
+is the holonomy of the connection A along the edge eI from parameter value t to t′ . Thus,
+the functional derivative has a well-defined action on cylindrical functions; the first of the
+two problems mentioned above has been overcome.
+However, because of the presence of the delta distributions, it is still not clear that
+[Êi3 ]f is a genuine operator (rather than a distribution-valued operator). To explicitly see
+that it is, we need to specify some further details. Given a graph γ, we can just subdivide
+some of its its edges and thus obtain a graph γ ′ which occupies the same points in Σ as
+γ but has (trivially) more vertices and edges. Every function which is cylindrical with
+respect to the “smaller” graph γ is obviously cylindrical with respect to the “larger” graph
+γ ′ as well. The idea is to use this freedom to simplify the discussion by imposing some
+conditions on our graph γ. We will assume that: i) if an edge eI contains a segment which
+lies in S, then it lies entirely in the closure of S; ii) each isolated intersection of γ with
+the 2-surface S is a vertex of γ; and, iii) each edge eI of γ intersects S at most once. (The
+overlapping edges are often called edges ‘tangential’ to S; they should not be confused
+with edges which ‘cross’ S but whose tangent vector at the intersection point is tangent
+to S). If the given graph does not satisfy one or more of these conditions, we can obtain
+one which does simply by sub-dividing of some of the edges. Thus these conditions are
+not restrictive. They are introduced to simplify the “book-keeping” in calculations.
+Let us now return to (3.6). If an edge eI has no point in common with S, it does
+not contribute to the sum. If it is contained in S, ė3I vanishes identically whence its
+contribution also vanishes. (For a subtlety, see the remark below Eq (3.11).) We are
+thus left with edges which intersect S in isolated points. Let us first consider only those
+edges which are ‘outgoing’ at the intersection. Then, at the intersection point, the value
+of the parameter t is zero and, for a given edge eI , e˙I 3 is positive (negative) if eI is
+directed “upwards” along increasing x3 (“downwards” along decreasing x3 ). Hence, (3.6)
+
+10
+
+becomes4 :
+[Êi3 ]f (x) · Ψγ =
+=
+
+Z
+
+N
+iℓ2P h X
+∂ψ
+[ d2 yκI fǫ (x, y)δ(y 1, e1I (0))δ(y 2, e2I (0))(hI τ i )A
+B]
+2 I=1 S
+∂hI A
+B
+
+X
+iℓ2P N
+κI fǫ (x, eI (0)) LiI · ψ(Ā(e1 ), ..., Ā(eN )) ,
+2 I=1
+
+(3.7)
+
+where, the constant κI associated with the edge eI is given by:
+
+ 0,
+
+if eI is tangential to S or does not intersect S,
+κI =  +1, if eI has an isolated intersection with S and lies above S
+−1, if eI has an isolated intersection with S and lies below S
+
+(3.8)
+
+and where LiI is the left invariant vector field in the i-th internal direction on the copy of
+SU(2) corresponding to the I-th edge
+LiI · ψ(Ā(e1 ), ..., Ā(eN )) = (Ā(eI )τ i )A
+B
+
+∂ψ
+.
+∂(Ā(eI ))A
+B
+
+(3.9)
+
+If some of the edges are ‘incoming’ at the intersection point, then the final expression of
+[Êia ]f (x) can be written as:
+[Êi3 ]f (x) · Ψγ =
+
+N
+i
+iℓ2P h X
+κI fǫ (x, vαI ) XIi · ψ(Ā(e1 ), ..., Ā(eN )) ,
+2 I=1
+
+(3.10)
+
+where XIi is an operator assigned to a vertex v and an edge eI intersecting v by the
+following formula
+
+ (Ā(eI )τ i )A
+B
+
+XIi · ψ(Ā(e1 ), ..., Ā(eN )) = 
+
+∂ψ
+,
+∂(Ā(eI ))A
+B
+∂ψ
+−(τ i Ā(eI ))A
+B ∂(Ā(eI ))A ,
+B
+
+when eI is outgoing
+when eI is incoming
+
+(3.11)
+
+Remark: Let us briefly return to the edges which are tangential to S. In this case,
+although ė3I vanishes, we also have a singular term δ(0, 0) (in the x3 direction) in (3.6).
+Hence, to recover an unambiguous answer, for these edges, we need to smear also in
+the third direction using an additional regulator, say gǫ′ (x3 , y 3). When this is done, one
+finds that the contribution of the tangential edges vanishes even before removing the
+regulator; as stated earlier, the tangential edges do not contribute. We did not introduce
+the smearing in the third direction right in the beginning to emphasize the point that this
+step is unnecessary for the edges whose contributions survive in the end.
+The right side again defines a cylindrical function based on the (same) graph γ. Denote
+by Hγo the Hilbert space L2 (Aγ , dµoγ ) of square integrable cylindrical functions associated
+R∞
+
+dzg(z)δ(z) = 21 g(0) which follows if the
+δ(z) is obtained, in the standard fashion, as a limit of functions which are symmetric about 0.
+4 In the first step, we have used the regularization
+
+11
+
+0
+
+with a fixed graph γ. Since µoγ is the induced Haar measure on Aγ and since the operator
+is just a sum of right/left invariant vector fields, standard results in analysis imply that,
+with domain Cyl1γ of all C 1 cylindrical functions based on γ, it is an essentially self-adjoint
+on Hγo . Now, it is straightforward to verify that the operators on Hγo obtained by varying
+γ are all compatible5 in the appropriate sense. Hence, it follows from the general results
+in [8] that [Êi3 ]f (x), with domain Cyl1 (the space of all C 1 cylindrical functions), is an
+essentially self-adjoint operator on Ho . For notational simplicity, we will denote its selfadjoint extension also by [Êi3 ]f (x). (The context should make it clear whether we are
+referring to the essentially self-adjoint operator or its extension.)
+The fact that this operator is well-defined may seem surprising at first sight since
+we have used only a 2-dimensional smearing. Recall however that in free field theory
+in Minkowski space, the action of the momentum operator on cylindrical functions is
+well-defined in the same sense without any smearing at all. In our case, a 2-dimensional
+smearing is needed because our states contain one –rather than three- dimensional excitations.
+B. Area operators
+
+Let us now turn to the integrand of the smeared area operator (corresponding to (3.3)).
+Denoting the determinant of the intrinsic metric on S by gS , we have:
+[ĝS ]f (x) · Ψγ := [Ei3 ]f (x)[E 3i ]f (x) · Ψγ
+ℓ4 X
+= − P[
+κ(I, J)fǫ (x, vαI )fǫ (x, vαJ ) XIi XJi ] · Ψγ ,
+4 I,J
+
+(3.12)
+
+where the summation goes over all the oriented pairs (I, J); vαI and vαJ are the vertices
+at which edges eI and eJ intersect S; κ(I, J) = κI κJ equals 0 if either of the two edges eI
+and eJ fails to intersect S or lies entirely in S, +1 if they lie on the same side of S, and, −1
+if they lie on the opposite sides. (For notational simplicity, from now on we shall not keep
+track of the position of the internal indices i; as noted in Sec. 2.3, they are contracted
+using the invariant metric on the Lie algebra su(2).) The next step is to consider vertices
+vα at which γ intersects S and simply rewrite the above sum by re-grouping terms by
+vertices. The result simplifies if we choose ǫ sufficiently small so that, fǫ (x, vαI )fǫ (x, vαJ )
+is zero unless vαI = vαJ . We then have:
+
+5 Given two graphs, γ and γ ′ , we say that γ ≥ γ ′ if and only if every edge of γ ′ can be written as
+
+a composition of edges of γ. Given two such graphs, there is a projection map from Aγ to Aγ ′ ,
+which, via pull-back, provides an unitary embedding Uγ,γ ′ of H̃γo ′ into H̃γo . A family of operators
+Oγ on the Hilbert spaces Hγo is said to be compatible if Uγ,γ ′ Oγ ′ = Oγ Uγ,γ ′ and Uγ,γ ′ Dγ ′ ⊂ Dγ
+for all γ ≥ γ ′ , where Dγ and Dγ ′ are the domains of Oγ and Og′ .
+
+12
+
+X
+ℓ4 X
+κ(Iα , Jα )XIiα XJi α ] · Ψγ ,
+(fǫ (x, vα ))2
+[ĝS ]f (x) · Ψγ = − P [
+4 α
+Iα ,Jα
+
+(3.13)
+
+where the index α labels the vertices on S and Iα and Jα label the edges at the vertex α.
+The next step is to take the square-root of this expression. The same reasoning that
+established the self-adjointness of [Êi3 ]f (x) now implies that [ĝS ]f (x) is a non-negative selfadjoint operator and hence has a well-defined square-root which is also a positive definite
+self-adjoint operator. Since we have chosen ǫ to be sufficiently small, for any given point
+x in S, fǫ (x, vα ) is non-zero for at most one vertex vα . We can therefore take the sum
+over α outside the square-root. One then obtains
+1
+
+([ĝS ]f ) 2 (x) · Ψγ =
+
+X
+1
+ℓ2P X
+κ(Iα , Jα )XIiα XJi α ] 2 · Ψγ .
+fǫ (x, vα )[
+2 α
+Iα ,Jα
+
+(3.14)
+
+Note that the operator is neatly split; the x-dependence all resides in fǫ and the operator
+within the square-root is “internal” in the sense that it acts only on copies of SU(2).
+Finally, we can remove the regulator, i.e., take the limit as ǫ tends to zero. By
+integrating both sides against test functions on S and then taking the limit, we conclude
+that the following equality holds in the distributional sense:
+X
+1
+ℓ2 X (2)
+√
+d
+κ(Iα , Jα )XIiα XJi α ] 2 · Ψγ .
+δ (x, vα )[
+gS (x) · Ψγ = P
+2 α
+Iα ,Jα
+
+(3.15)
+
+Hence, the regularized area operator is given by:
+1
+ℓ2P X X
+[
+κ(Iα , Jα )XIiα XJi α ] 2 · Ψγ .
+ÂS · Ψγ =
+2 α Iα ,Jα
+
+(3.16)
+
+(Here, as before, α labels the vertices at which γ intersects S and Iα labels the edges of
+γ at the vertex vα .) With Cyl2 as its domain, ÂS is essentially self-adjoint on the Hilbert
+space Ho .
+Let us now remove the assumption that the surface Σ is covered by a single chart of
+adapted coordinates. If such a global chart does not exist, we can cover Σ with a family
+U of neighborhoods such that for each U ∈ U there exists a local coordinates system (xa )
+adapted to Σ. Let (ϕU )U ∈U be a partition of unity associated to U. We just repeat the
+above regularization for a slightly modified classical surface area functional, namely for
+AS,U :=
+
+Z
+
+1
+
+S
+
+dx1 ∧ dx2 ϕU [Ei3 E 3i ] 2
+
+(3.17)
+
+which has support within a domain U of an adapted chart. Thus, we obtain the operator
+AˆSU . Then we just define
+ÂS =
+
+X
+
+ÂS,U .
+
+U ∈U
+
+13
+
+(3.18)
+
+The result is given again by the formula (3.16). The reason why the functions ϕU disappear
+from the result is that the operator obtained for a single domain of an adapted chart is
+insensitive on changes of this chart. This concludes our technical discussion.
+The classical expression AS of (2.2) is a rather complicated. It is therefore somewhat
+surprising that the corresponding quantum operators can be constructed rigorously and
+have quite manageable expressions. The essential reason is the underlying diffeomorphism
+invariance which severely restricts the possible operators. Given a surface and a graph,
+the only diffeomorphism invariant entities are the intersection vertices. Thus, a diffeomorphism covariant operator can only involve structure at these vertices. In our case, it
+just acts on the copies of SU(2) associated with various edges at these vertices.
+We have presented this derivation in considerable detail to spell out all the assumptions, to bring out the generality of the procedure and to illustrate how regularization can
+be carried out in a fully non-perturbative treatment. While one is free to introduce auxiliary structures such as preferred charts or background fields in the intermediate steps, the
+final result must respect the underlying diffeomorphism invariance of the theory. These
+basic ideas will be used repeatedly for other geometric operators in the sequel to this
+paper.
+C. General properties of operators
+
+1. Discreteness of the spectrum: By inspection, it follows that the total area operator
+ÂS leaves the sub-space of Cyl2γ which is associated with any one graph γ invariant and
+is a self-adjoint operator on the sub-space Hγo of Ho corresponding to γ. Next, recall that
+Hγo = L2 (Aγ , dµo ), where Aγ is a compact manifold, isomorphic with (SU(2))N where N
+is the total number of edges in γ. As, we explained below, the restriction of ÂS to Hγo
+is given by certain commuting elliptic differential operators on this compact manifold.
+Therefore, all its eigenvalues are discrete. Now suppose that the complete spectrum of
+ÂS on Ho has a continuous part. Denote by Pc the associated projector. Then, given
+any Ψ in Ho , Pc · Ψ is orthogonal to Hγo for any graph γ, and hence to the space Cyl of
+cylindrical functions. Now, since Cyl2 is dense in Ho , Pc · Ψ must vanish for all Ψ in Ho .
+Hence, the spectrum of ÂS has no continuous part.
+Note that this method is rather general: It can be used to show that any self-adjoint
+operator on Ho which maps (the intersection of its domain with) Hγo to Hγo , and whose
+action on Hγo is given by elliptic differential operators, has a purely discrete spectrum on
+Ho . Geometrical operators, constructed purely from the triad field tend to satisfy these
+properties.
+2. Area element: Note that not only is the total area operator well-defined, but in
+√
+fact it arises from a local area element, d
+gS , which is an operator-valued distribution in
+the usual sense. Thus, if we integrate it against test functions, the operator is densely
+defined on Ho (with C 2 cylindrical functions as domain) and the matrix elements
+√
+gS (x) · Ψγ i
+hΨ′ γ ′ , d
+14
+
+(3.19)
+
+are 2-dimensional distributions on S. Furthermore, since we did not have to renormalize
+the regularized operator (3.14) before removing the regulator, there are no free renormalization constants involved. The local operator is completely unambiguous.
+3. [ĝS ]f versus its square-root: Although the regulated operator [ĝs ]f is well-defined,
+if we let ǫ to go zero, the resulting operator is in fact divergent: roughly, it would lead
+to the square of the 2-dimensional δ distribution. Thus, the determinant of the 2-metric
+is not a well-defined in the quantum theory. As we saw, however, the square-root of the
+determinant is well defined: We have to first take the square-root of the regulated expression and then remove the regulator. This, in effect, is the essence of the regularization
+procedure.
+To get around this divergence of ĝS , as is common in Minkowskian field theories, we
+could have first rescaled [ĝS ]f ] by an appropriate factor and then taken the limit. Then
+result can be a well-defined operator, but it will depend on the choice of the regulator,
+i.e., additional structure introduced in the procedure. Indeed, if the resulting operator
+is to have the same density character as its classical analog gS (x) –which is a scalar
+density of weight two– then the operator can not respect the underlying diffeomorphism
+invariance.6 For, there is no metric/chart independent distribution on S of density weight
+two. Hence, such a ‘renormalized’ operator is not useful to a fully non-perturbative
+approach. For the square-root, on the other hand, we need a local density of weight one.
+And, the 2-dimensional Dirac distribution provides this; now is no apriori obstruction for a
+satisfactory operator corresponding to the area element to exist. This is an illustration of
+what appears to be typical in non-perturbative approaches to quantum gravity: Either the
+limit of the operator exists as the regulator is removed without the need of renormalization
+or it inherits back-ground dependent renormalization fields (rather than constants).
+4. Vertex operators: As noted already, in the final expressions of the area element and
+area operators, there is a clean separation between the ‘x-dependent’ and the ‘internal’
+parts. Given a graph γ, the internal part is a sum of square-roots of the operators
+△S,vα :=
+
+X
+
+κ(Iα , Jα )XIiα XJi α
+
+(3.20)
+
+Iα ,Jα
+
+associated with the surface S and the vertex vα on it. It is straightforward to check
+that operators corresponding to different vertices commute. Therefore, to analyze the
+properties of area operators, we can focus just on one vertex operator at a time.
+Furthermore, given the surface S and a point v on it, we can define an operator △S,v
+on the dense sub-space Cyl2 on Ho as follows:
+6 If, on the other hand, for some reason, we are willing to allow the limiting operator to have a
+
+different density character than its classical analog, one can renormalize [ĝ]f (x) in such a way as
+to obtain a background independent limit. For instance, we may use fǫ = (1/ǫ2 )θ(|x − x′ | − 2ǫ ),
+and rescale [ĝ]f by ǫ2 before taking the limit. Then the limit is a well defined, diffeomorphism
+covariant operator but it is a scalar density of weight one rather than two.
+
+15
+
+△S,v · Ψγ :=
+
+P
+
+i i
+I,J κ(I, J)XI XJ
+
+0,
+
+· Ψγ , if γ intersects S in v,
+Otherwise
+
+(3.21)
+
+where I and J label the edges of γ which have v as a vertex. (Recall that every cylindrical
+function is associated with some graph γ. As before, if γ intersects S at v but v is not
+a vertex of γ, one can extend γ just by adding a new vertex v and orienting the edges
+at v to outgoing.) It is straightforward to verify that this definition is unambiguous: if
+a cylindrical function can be represented in two different ways, say as Ψγ and Ψγ ′ , then
+△S,v · Ψγ and △S,v · Ψγ ′ are two representations of the same function on A. There is a
+precise sense [8] in which △S,v can be regarded as a Laplacian operator on Ho . The area
+operator is a sum over all the points v of S of square-roots of Laplacians,
+ÂS =
+
+ℓ2P X q
+−△S,v .
+2 v∈S
+
+(3.22)
+
+(Here the sum is well defined because, for any cylindrical function, it contains only a
+finite number of non-zero terms, corresponding to the isolated intersection points of the
+associated graph with S). We will see in the next subsection that this fact is reflected in
+its spectrum.
+√
+5. Gauge invariance: The classical area element gS is invariant under the internal
+rotations of triads Eia ; its Poisson bracket with the Gauss constraint functional vanishes.
+√
+This symmetry is preserved in the quantum theory: the quantum operator d
+gS commutes
+√
+o
+d
+with the induced action of G on the Hilbert space H . Thus, gS and the total area
+operator ÂS map the space of gauge invariant states to itself; they project down to the
+Hilbert space H̃o of kinematic states.
+Note, however, that the regulated triad operators [Êi3 ]f are not gauge invariant; they
+are defined only on Ho . Nonetheless, they are useful; they feature in an important way
+in our regularization scheme. In the loop representation, by contrast, one can only introduce gauge invariant operators and hence the regulated triad operators do not exist.
+Furthermore, even in the definition (3.3) of the regularized area element, one must use
+holonomies to transport indices between the two points y and z. While this manifest
+gauge invariance is conceptually pleasing, in practice it often makes the calculations in
+the loop representation cumbersome; one has to keep track of these holonomy insertions
+in the intermediate steps although they do not contribute to the final result.
+6. Overall Factors: The overall numerical factors in the expressions of various operators considered above depend on two conventions. The first is the convention noted
+in footnote 4 used in
+the regularization procedure.
+Could we not have used a different
+R∞
+R0
+convention, setting 0 dzg(z)δ(z) = cg(0) and −∞ dzg(z)δ(z) = (1 − c)g(0) for some
+constant c 6= 1/2? The answer is in the negative. For, in this case, the constant κI would
+take values:
+
+
+ 0,
+
+if eI is tangential to S or does not intersect S,
+if eI has an isolated intersection with S and lies above S
+κI = +2c,
+
+
+−2(1 − c), if eI has an isolated intersection with S and lies below S
+16
+
+(3.23)
+
+It then follows that, unless c = 1/2, the action of the area operator ÂS on a given
+cylindrical function would change if we simply reverse the orientation on S (keeping the
+orientation on Σ the same). Since this is physically inadmissible, we must have c = 1/2;
+there is really no freedom in this part of the regularization procedure.
+The second convention has to do with the overall numerical factor in the action, which
+dictates the numerical coefficients in the symplectic structure. Here, we have adopted
+the convention of [25] (see chapter 9) which makes the Poisson bracket {Aia (x), Ejb (y)} =
+Gδab δji δ(x, y), enabling us to express Êia (x) as −iGh̄δ/δAia (x). (Had we rescaled the action
+by 1/8π as is sometimes done, in our expressions, Newton’s constant G would be replaced
+by 8πG.)
+IV. EIGENVALUES AND EIGENVECTORS
+
+This section is divided into three parts. In the first, we derive the complete spectrum
+of the area operators, in the second, we extend the notion of spin networks, and in the
+third, we use this extension to discuss eigenvectors.
+A. The complete spectrum
+
+We are now ready to calculate the complete spectrum of ÂS . Since ÂS is a sum of
+square-roots of vertex operators which all commute with one another, the task reduces
+to that of finding the spectrum of each vertex operator. Furthermore, since vertex operators map (C 2 ) cylindrical functions associated with any one graph to (C 0 ) cylindrical
+functions associated with the same graph, we can begin with an arbitrary but fixed graph
+γ. Consider then a vertex operator △S,v and focus on the edges of γ which intersect S
+at v. Let us divide the edges in to three categories: let e1 , ..., ed lie ‘below’ S (‘down’),
+ed+1 , ..., eu lie ‘above’ S (‘up’) and let eu+1 , ..., et be tangential to S. (As before, the labels
+‘down’ and ‘up’ do not have an invariant significance; the orientation of S and of Σ enable
+us to divide the non-tangential edges in to two parts and we just label one as ‘down’ and
+the other as ‘up’.) Let us set:
+(d) i
+
+JS,v γ
+(t) i
+
+:= −i (X1i + ... + Xdi ),
+
+i
++ ... + Xti ),
+JS,v γ := −i (Xu+1
+
+(u) i
+
+JS,v γ
+(d+u) i
+
+JS,v
+
+i
+:= −i (Xd+1
++ ... + Xui ),
+
+(u) i
+(d) i
+γ := JS,v + JS,v
+
+(4.1)
+
+where XIi is the operator defined in (3.11) assigned to the point v and an edge eI at v.
+This notation is suggestive. We can associate with each edge e a particle with only a spin
+degree of freedom. Then, the operators −iXei can be thought of as the ith component
+(d) i
+
+(u) i
+
+(t) i
+
+of angular momentum operators associated with that particle and JS,v , JS,v and JS,v as
+the total ‘down’, ‘up’ and ‘tangential’ angular momentum operators at the vertex v.
+By varying the graph, we thus obtain a family of operators. It is easy to check that
+(d) i (t) i
+(u) i
+they satisfy the compatibility conditions and thus define operators JS,v , JS,v .JS,v and
+17
+
+(d+u) i
+
+on Cyl. It is also easy to verify that they all commute with one another. Hence,
+JS,v
+one can express the vertex operator △S,v simply as:
+(d) i
+
+(d) i
+
+(u) i
+
+(u) i
+
+− △S,v = (JS,v − JS,v )(JS,v − JS,v ) ;
+
+(4.2)
+
+because of the factor κ(I, J) in (3.21), the edges which are tangential do not feature in
+this expression.
+The evaluation of possible eigenvalues is now straightforward. It is simplest to express
+△S,v as
+(d)
+
+(u)
+
+(d+u) 2
+
+− △S,v = 2(JS,v )2 + 2(JS,v )2 − (JS,v
+
+) .
+
+(4.3)
+
+and, as in elementary text-books, go to the representation in which the operators
+(d)
+(u)
+(d+u)
+(JS,v )2 , (JS,v )2 and (JS,v )2 are diagonal. If we restrict now the operators to Cylγ associated to a fixed graph, it is obvious that the possible eigenvalues λ of △S,v are given
+by:
+λS,v = 2j (d) (j (d) + 1) + 2j (u) (j (u) + 1) − j (d+u) (j (d+u) + 1)
+
+(4.4)
+
+where j (d) , j (u) and j (d+u) are half integers subject to the usual condition:
+j (d+u) ∈ {|j (d) − j (u) |, |j (d) − j (u) | + 1, ... , j (d) + j (u) }.
+
+(4.5)
+
+Returning to the total area operator, we note that the vertex operators associated
+with distinct vertices commute. Although the sum (3.22) is not finite, restricted to any
+graph γ and Cylγ it becomes finite. Therefore, the eigenvalues aS of ÂS are given by
+i1
+ℓ2P X h (d) (d)
+aS =
+2jα (jα + 1) + 2jα(u) (jα(u) + 1) − jα(d+u) (jα(d+u) + 1) 2
+2 α
+
+(4.6)
+
+where α labels a finite set of points in S and the non-negative half-integers assigned to
+each α are subject to the inequality (4.5). The question now is if all these eigenvalues are
+actually attained, i.e., if, given any aS of the form (4.6), there are eigenvectors in Ho with
+that eigenvalue. In Sec. 4.3, will show that the full spectrum is indeed realized on Ho .
+The area operators map the subspace H̃o of gauge invariant elements of Ho to itself.
+Hence we can ask for their spectrum on H̃o . We will see in Sec. 4.3 that further restrictions
+can now arise depending on the topology of the surface S. There are three cases:
+• i) The case when S is an open surface whose closure is contained in Σ. An example
+is provided by the disk z = 0, x2 + y 2 < ro in R3 . In this case, there is no additional
+condition; all aS of (4.6) subject to (4.5) are realized.
+• ii) The case when the surface S is closed (∂S = ∅) and divides Σ into disjoint open
+sets Σ1 and Σ2 (i.e., Σ = Σ1 ∪ S ∪ Σ2 with Σ1 ∩ Σ2 = ∅.) An example is given by:
+18
+
+Σ = R3 and S = S 2 . In this case, there is an a condition on the half integers jα(d)
+and jα(u) that appear in (4.6) in addition to (4.5):
+X
+
+jα(d) = N,
+
+and
+
+α
+
+X
+
+jα(u) = N ′
+
+(4.7)
+
+α
+
+for some integers N and N ′ .
+• iii) The case when S is closed but not of type ii). An example is given by; Σ =
+S 1 × S 1 × S 1 and S = S 1 × S 1 . In this case, the additional condition is milder:
+X
+
+(jα(d) + jα(u) ) = N
+
+(4.8)
+
+α
+
+for some interger N.
+Next, let us note some properties of this spectrum of ÂS . By inspection, it is clear
+that the smallest eigenvalue is 0 and that the spectrum is unbounded from above. One
+can ask for the ‘area gap’ i.e., the value of the smallest non-zero eigenvalue. On the full
+Hilbert space Ho , it is given by:
+√
+3 2
+o
+aS =
+ℓ .
+(4.9)
+4 P
+This is a special case of the situation when there is only one term in the sum in (4.6) with
+j (d) = 0, j (u) = j (d+u) = j. Then
+aS =
+
+ℓ2P q
+j(j + 1) ,
+2
+
+(4.10)
+
+and, if we choose j = 21 , we obtain the eigenvalue aoS . On the Hilbert space H̃o of gauge
+invariant states, on the other hand, because of the constraints on the spectrum discussed
+above, the area gap is sensitive to the topology of S:
+√
+3 2
+ℓ if S is of type i)
+aoS =
+4√ P
+2 2 2
+ℓ if S is of type ii)
+aoS =
+4 P
+2
+aoS = ℓ2P if S is of type iii).
+(4.11)
+4
+Another important feature of the spectrum is its behavior for large aS . As noted above,
+the spectrum is discrete. However, an interesting question is if it approaches continuum
+and, if so, in what manner. We will now show that as aS → ∞, the difference ∆aS
+between aS and its closest eigenvalue satisfies the inequality
+√
+∆aS ≤ (ℓ2P /2)(ℓP / aS ) + O((ℓ2P /aS ))ℓ2P
+19
+
+(4.12)
+
+and hence tends to zero (irrespective of√the topology of S). Specifically, given (odd)
+integers M and N satisfying 1 ≤ M ≤ 2 N, we will obtain an eigenvalue aS,N,M of ÂS
+such that for sufficiently large N, the bound (4.12) is explicitly realized. 7 Let us label
+representations of SU(2) by their dimension, nα = 2jα + 1. Let nα , α = 1, ..., M be
+P
+N
+(odd) integers such that M
+α=1 nα = N, and |nα − M | < 2 Then, for each M, we have
+from (4.10) an eigenvalue aS,N,M
+aS,N,M =
+=
+
+M q
+ℓ2P X
+jα (ja + 1)
+2 α=1
+M
+1
+1
+ℓ2P X
+(nα −
+) + O( ))
+4 α=1
+2nα
+N
+
+ℓ2P
+M2
+kM 2
+1
+(N −
++
++ O( ))
+(4.13)
+2
+4
+2N
+N
+N
+√
+for some integer k ∈ [1, M/2]. As M varies between 1 and
+2
+N , aS,N,M varies between
+√
+2
+2
+2
+(ℓP /4)N and (ℓP /4)(N −2)+4k/N ≤ (ℓP /4)((N −2)+4/ N). Hence, given a sufficiently
+large aS , there exist integers N, M satisfying the conditions given above such that ∆aS :=
+|aS − an,m | satisfies the inequality (4.12).
+We will conclude this discussion of the spectrum by providing an alternative form of
+the expression (4.4) which holds for gauge invariant states. This form will be useful in
+comparing our result with those obtained in the loop representation (where, from the
+beginning, one restricts oneself to gauge invariant states.) Let Ψγ be a gauge invariant
+cylindrical function on A. Then, the Gauss constraint implies that, at every vertex v of
+γ, the following condition must hold:
+=
+
+X
+I
+
+XIi · Ψγ = 0,
+
+(4.14)
+
+where I labels the edges of γ at the vertex v and XIi is assigned to the point v and vertex
+eI (see (3.11). Therefore,
+(d) i
+
+(t) i
+
+(u) i
+
+JS,v + JS,v + JS,v = 0.
+
+(4.15)
+
+Hence, one can now express the operator (4.3) in an alternate form,
+(d)
+
+(u)
+
+(t)
+
+− △S,v = 2(JS,v )2 + 2(JS,v )2 − (JS,v )2 .
+7 This calculation
+
+(4.16)
+
+was motivated by the results of Bekenstein and Mukhanov [15] and our
+estimate has an interesting implication on whether the Hawking spectrum is significantly altered
+due to quantum gravity effects. Because the “level spacing” ∆aS goes to zero as aS goes to
+infinity, the considerations of [15] do not apply to large black holes in our approach and there
+is no reason to expect deviations from Hawking’s semi-classical results. On the other hand, for
+small black-holes, –i.e., the final stages of evaporation– the estimate does not apply and one
+expects transitions between area eigenstates to show significant deviations.
+
+20
+
+Furthermore, if it happens that γ has no edges which are tangential to S at v, (4.14)
+implies:
+(d)
+
+(u)
+
+− △S,v = 4(JS,v )2 = 4(JS,v )2 ,
+whence the corresponding restricted eigenvalues of ÂS are given by
+j are half-integers.
+
+(4.17)
+P 2q
+
+ℓP j(j + 1), where
+
+B. Extended spin networks
+
+As a prelude to the discussion on eigenvectors, in this sub-section we will generalize
+the constructions and results obtained in [9,10,27] on spin networks and spin network
+states. The previous work showed that the spin network states provide us with a natural
+orthogonal decomposition of the Hilbert space H̃o of gauge invariant states in to finite
+dimensional sub-spaces. Here, we will extend those results to the space Ho .
+We begin by fixing some terminology. Given N irreducible representations π1 , ..., πN of
+N
+SU(2), an associated invariant tensor cmk+1 ...mN m1 ...mk is a multi-linear map from kI=1 πI
+N
+to N
+I=k+1 ΠI such that:
+−1 nk
+nk+1 ...nN
+1
+πk+1 (g)nmk+1
+... πN (g)nmNN cmk+1 ...mN m1 ...mk π1 (g −1 )m
+n1 ...nk , (4.18)
+n1 ... πN (g )mk = c
+k+1
+
+for arbitrary g ∈ SU(2), where πI (g) is the matrix representing g in the representation
+πI . An invariant tensor cm1 ...mk mk+1 ...mN is also called an intertwining tensor from the
+representations π1 , ..., πk into πk+1 , ..., πN . All the invariant tensors are given by the
+standard Clebsch-Gordon theory.
+~ consisting of:
+An extended spin network is an quintuplet (γ, ~π , ~c, ρ~, M)
+i) A graph γ;
+ii) A labeling ~π := (π1 , .., πN ) of the edges e1 , ..., eN of that graph γ with irreducible
+and non-trivial representations of SU(2);
+iii) A labeling ρ~ := (ρ1 , ..., ρV ) of the vertices v1 , ..., vV of γ with irreducible representations of SU(2), the constraint being that for every vertex vα the representation ρα
+emerges in the decomposition of the tensor product of representations assigned by
+~π to the edges intersecting vα ;
+iv) A labeling ~c = (c1 , ..., cV ) of the vertices v1 , ..., vV of γ with certain invariant tensors,
+namely, assigned to a vertex vα is an intertwining tensor cα from the representations
+assigned to the edges coming to vα and ρα to the representations assigned to the
+outgoing edges at vα ; and,
+~ := (Mα )α=1,...,V = (M1 , ..., MV ) of the vertices v1 , ..., vV of γ which
+v) A labeling M
+assigns to every vertex vα a vector Mα in the representation ρα ;
+21
+
+It should be emphasized that every πI is necessarily non-trivial whereas ρα may be
+trivial (i.e., 1-dimensional). In the gauge invariant context [9,10], ρα are all trivial whence
+the items iii) and v) are unnecessary. The details of these conditions may seem somewhat
+complicated but they are necessary to achieve the orthogonal decomposition (4.22).
+From spin networks, we can construct states in Ho . An extended spin network state
+Nγ,~c,M~ is simply a C ∞ cylindrical function on A constructed from an extended spin network (γ, ~π , ρ~, ~c, ~
+M),
+Nγ,~c,M~ (Ā) := [
+
+N
+O
+
+I=1
+
+πI (Ā(eI )) ⊗
+
+V
+O
+
+α=1
+
+Mα ] · [ ⊗Vα=1 cα ],
+
+(4.19)
+
+for all Ā ∈ A, where, as before, Ā(eI ) is an element of G associated with an edge eI
+and ‘·’ stands for contracting, at each vertex vα of γ, the upper indices of the matrices
+corresponding to all the incoming edges, the lower indices of the matrices assigned to
+all the outgoing edges and the upper index of the vector Mα with all the corresponding
+indices of cα . (We skip ~π and ρ~ in the symbol for the extended spin network function
+because the intertwiners c contain this information.) Thus, for example, in the simple
+case when the network has only two vertices, and all edges originate at the first vertex
+and end at the second, Nγ,~c,M~ can be written out explicitly as:
+Nγ,~c,M~ = π1 (Ā(e1 ))nm11 ... πN (Ā(eN ))nmNN M1m 1 M2m 2 c1m1 ...mN m′ 1 c2n1 ...nN m′ 2 ,
+′
+
+′
+
+(4.20)
+
+where indices mI , nI range over 1, ..., 2jI + 1 and m′ α ranges over 1, ..., 2jα+1 . Given any
+spin network, (4.19) provides a function on A which is square-integrable with respect to
+the measure µo . Given an extended spin network function on A, the the range R(γ) of
+the associated graph γ is completely determined. Thus, two spin networks can define
+the same function on A if one can be obtained from the other by subdividing edges and
+changing arbitrarily the orientations.
+It turns out that the spin network states provide a decomposition of the full Hilbert
+space Ho into finite dimensional orthogonal sub-spaces (compare with [9,10]). Given a
+triplet (γ, ~π , ρ~) defined by (i − iii) above, consider the vector space Hγ,~π,~ρ spanned by the
+~ compatible with
+spin network functions Nγ,~c,M~ given by all the possible choices for ~c, M
+fixed labelings ~π , ρ~. Note that, according to the representation theory of compact groups,
+every Hγ,~π,~ρ is a finite dimensional irreducible representation of G in Cyl. The group acts
+there via
+Nγ,~c,M~ (g −1 Āg) = Nγ,~c,M~ ′ (Ā),
+
+M ′ α = ρα (g(vα ))Mα .
+
+(4.21)
+
+Modulo the obvious completions, we have the following orthogonal decomposition,
+Ho =
+
+M
+
+R(γ),~
+π ,~
+ρ
+
+Hγ,~π,~ρ
+
+(4.22)
+
+where, given a graph γ, the labelings ~π and ρ~ range over all the data defined above by
+(i-iii) whereas for γ in the sum we take exactly one representative from every range of an
+22
+
+analytic graph in Σ. When ρ~ is trivial we skip ρ in Hγ,~π,~ρ . On Hγ,~π , the action of the gauge
+transformations group G is trivial and we have the following orthogonal decomposition of
+the Hilbert space of gauge invariant cylindrical functions,
+H̃o =
+
+M
+
+R(γ),~
+π
+
+Hγ,~π ,
+
+(4.23)
+
+where we used the same conventions as in (4.22). Thus, we recover the result on spin
+network states obtained in [9,10].
+We conclude this sub-section with a general comment on spin network states. Consider
+tri-valent graphs, i.e. graphs γ each vertex of which has three (or less) edges. In this case,
+the standard Clebsch-Gordon theory implies that the the number of associated gauge
+invariant spin network functions is severely limited: the corresponding sub-space of H̃o
+is one dimensional. Hence, on the sub-space Cyl of H̃o corresponding only to tri-valent
+graphs, the (normalized) spin network states provide a natural orthonormal basis. What is
+remarkable is that these spin networks were first introduced by Penrose [28] already twenty
+five years ago to probe the microscopic structure of geometry, although in a different
+context. Because of the simplicity (and other attractive properties) of these Penrose spin
+network states it is tempting to hope that they might suffice also in the present approach
+to quantum gravity. Indeed, there were conjectures that the higher valent graphs are
+physically redundant. However, it turns out that detailed physical considerations rule out
+this possibility; quantum gravity seems to need graphs with unlimited complexity.
+C. Eigenvectors
+
+We are now ready to exhibit eigenvectors of the operators △S,v and ÂS for any of
+the potential eigenvalues found in section 4.1. We will begin with the full, non-gauge
+invariant Hilbert space Ho and consider an arbitrary surface S. Since Ho serves as the
+(gravitational part) of the kinematical Hilbert space in theories in which gravity is coupled
+to spinor fields, our construction is relevant to that case. In the second part of this subsection, we will turn to the gauge invariant Hilbert space H̃o and exhibit eigenvectors for
+the restricted range of eigenvalues presented in section IV A.
+(d)
+Fix a point v in the surface S. We will investigate the action of the operators (JS,v )2 ,
+(u)
+(d+u)
+(JS,v )2 , (JS,v )2 and △S,v on extended spin network states. Without loss of generality
+we can restrict ourselves to graphs which are adapted to S and contain v as a vertex, say
+v = v1 . Given a graph γ and labeling ~π and ρ~ of its edges and vertices by representations
+of SU(2), we shall denote by Cv the linear space of the intertwining tensors which are
+~ be an
+compatible with ~π and ρ~ at v in the sense of section IV B. Let (γ, ~π , ρ~, ~c, M)
+extended spin network and Nγ,~c,M~ be the corresponding state. As one can see from Eqs.
+(4.1, 3.21), each of the four operators above is given by a linear combination (with constant
+coefficients) of gauge invariant terms of the form bi1 ...iE XIi11 ...XIiEE where bi1 ...iE is a constant
+tensor and all the Xs are associated with the point v and the edges which meet there.
+
+23
+
+On Nγ,~c,M~ the action of any operator of this type reduces to a linear operator ov acting
+in Cv . More precisely, if O is any of the above operators, we have
+ONγ,~c,M~ = Nγ,~c′ ,M~
+
+(4.24)
+
+~)
+where Nγ,~c′ ,M~ is again an extended spin network state and the network (γ, ~π, ρ~, ~c′ , M
+′
+differs from the first one only in one entry of the labeling ~c corresponding to the vertex
+v; c′ α = cα for all the vertices vα 6= v and c′ 1 = ov c1 . Consequently, the problem of
+diagonalizing these operators reduces to that of diagonalizing a finite symmetric matrix
+of ov . Note that a constant vector M assigned to v does not play any role in this action
+and hence will just make eigenvectors degenerate.
+(d)
+(u)
+(d+u)
+In the case of operators (JS,v )2 , (JS,v )2 and (JS,v )2 , the (simultaneous) eigenstates are
+given by the group representation theory. We can now spell out the general construction.
+Let us fix a graph γ and arrange the edges that meet at v into three classes as before; e1 , ..., ed ; ed+1 , ...., eu ; eu+1 , ..., et . Let us also fix a labeling π1 , ..., πt of these edges
+by irreducible, non-trivial representations of SU(2) and an irreducible (possibly trivial)
+representation ρ which emerges in the decomposition of π1 ⊗ ... ⊗ πt . Consider now the
+following ingredients:
+a) Irreducible representations µ(d) , µ(u) and µ(d+u) ;
+′
+
+m
+
+...m m′′
+
+and c(u+d) m′ m′′ m associated, respecb) Invariant tensors c(d) m1 ...md m , c(u)d+1 u
+tively, to the representations π1 , ..., πd , µ(d) , and to πd+1 , ..., πu , µ(u) and finally to
+µ(d) , µ(u) , µ(d+u) ; and,
+c) Invariant tensor c(t) n mu+1 ...mt m associated to µ(d+u) , πu+1 , ..., πt , ρ.
+From this structure, construct the following invariant tensor,
+′′
+
+′
+
+cm1 ...mt n := c(d) m1 ...md m c(u) md+1 ...mu m c(d+u) m′ m′′ n c(t) n mu+1 ...mt m ,
+
+(4.25)
+
+associated with the representations π1 , ..., πt , ρ. To obtain a non-trivial result in the end,
+we need all the tensors to be non-zero. The existence of such tensors is equivalent to the
+following two conditions on the data (a-c):
+d) The representations µ(d) and µ(u) emerge respectively, in π1 ⊗...⊗πd and πd+1 ⊗...⊗πu ;
+and,
+e) the representation µ(d+u) emerges both in µ(d) ⊗ µ(u) and πu+1 ⊗ ... ⊗ πt ⊗ ρ.
+~ ) such that
+Finally, introduce an extended spin network (γ, ~π , ρ~, ~c, M
+~π = (π1 , ..., πt , ..., πN ), ρ~ = (ρ, ρ2 , ..., ρV ), ~c = (c, c2 , ..., cV ),
+
+(4.26)
+
+the remaining entries being arbitrary. Then, the corresponding state Nγ,~c,M~ is an eigen(d)
+
+(u)
+
+(d+u) 2
+
+vector of the operators (JS,v )2 , (JS,v )2 , and (JS,v
+24
+
+) with the eigenvalues j (d) (j (d) + 1),
+
+j (u) (j (u) + 1) and j (d+u) (j (d+u) + 1), respectively, where the half integers j (d) , j (u) and
+j (d+u) correspond to the representations µ(d) , µ(u) and µ(d+u) . Hence, this Nγ,~c,M~ is also
+an eigenvector of △S,v with the eigenvalue (4.4,4.5). It is obvious, that for any triple of
+representations µ(d) , µ(u) and µ(d+u) satisfying the constraint (4.5) there exists an extended
+spin network (4.26).
+This construction provides all eigenvectors of △S,v . The key reason behind this completeness is that, given any choice of π1 , ..., πd , ..., πu , ..., πt and ρ as above, the invariant
+tensors which can be written in the form (4.25) with any µ(d) , µ(u) , and µ(d+u) span the
+entire space Cv of invariant tensors at v compatible with that data. Since the defining
+formula for a spin network function (4.19) is linear with respect to every component of
+~ ) it suffices to decompose the component c1 of ~c at
+~c, given any spin network (γ, ~π, ρ~, ~c, M
+v1 = v into invariant tensors of the form (4.25) in any manner to obtain a decomposition
+of the corresponding spin network function into a linear combination of extended spin network functions given by (4.25,4.26). The desired result now follows from the orthogonal
+decomposition of Ho in to the extended spin network subspaces.
+Let us now turn to the operator ÂS . A basis of eigen vectors can be obtained in the
+following way. Since the area operator can be expressed in terms of and commutes with
+(d)
+(u)
+(d+u)
+(JS,v )2 , (JS,v )2 , and (JS,v )2 at any point v in S, we can simultaneously diagonalize all
+these operators. Because for every graph the area operator preserves the subspace of spinnetwork states associated with that graph and for two different graphs the spin network
+spaces spaces are orthogonal, it is enough to look for eigen vectors for an arbitrary graph
+~ as in section 4.2, at every vertex v contained
+γ. Given a graph γ, labelings ~π , ρ~ and M
+in the surface S choose a basis in the space Cv consisting of invariant tensors of the form
+~ and
+(4.25). The set of the spin network functions (4.19) constructed by varying γ, ~π , ~ρ, M
+o
+picking at each vertex v an element of the basis in Cv constitutes a basis in H . (If we
+restrict the labelings to ρ consisting only of the trivial representations, then the resulting
+set of spin network states provide a basis for the space H̃o of gauge invariant functions.)
+Each of such states is automatically an eigenvector of ÂS with eigenvalue (4.6).
+We conclude the first part of this sub-section with a simple example of an eigen vector
+of the area operator with eigenvalue aS , where aS is any real number satisfying (4.6,4.6).
+• Example. Suppose (jα(d) , jα(u) , jα(d+u) ), α = 1, ..., W , is a finite set of triples of half
+integers which for every α satisfy (4.5)). Rather than repeating the construction a)e) above step by step, we will specify only the simplest of the resulting (extended)
+spin-networks. In S choose W distinct points vα , α = 1, ..., W . To every point
+vα assign two finite analytic curves ed,α and eu,α starting at vα , not intersecting
+S otherwise, and going in opposite directions of S. For a graph γ take the graph
+{ed,1 , eu,1 , ..., ed,W , eu,W }, the vertices being the intersection points vα and the ends
+of the edges ed,α and eu,α (the curves being chosen such that the points vα are the
+only intersections). Label each edge ed,α with the irreducible representation πd,α
+corresponding to a given jα(d) and every edge eu,α with the irreducible representation
+πu,α defined by jα(u) . That defines a labeling ~π of γ. (The absence of edges et,α is
+equivalent to introducing these edges in any manner and assigning to them the trivial
+representations.) To define a labeling ρ~ at the vertices vα , assign to every vertex
+25
+
+vα a representation ρα defined by a given jα(d+u) . Next, to each vertex vα assign an
+d mu m associated to the triple of representations (π
+invariant tensor cm
+d,α , πu,α , ρα )
+α
+introduced above. The construction of a spin-network is completed by: (i) labeling
+that end point of each ed,α and, respectively, of eu,α which is not contained in S, with
+the representation ρd,α := πd,α and, respectively, ρu,α := πu,α ; (ii) labeling of these
+ends of the edges with the unique invariants corresponding to the representations
+~ of vertices
+µ(d),α , ρ(d),α or, respectively, to µ(u),α , ρ(u),α ; (iii) defining a labeling M
+which can be chosen arbitrarily, provided at a vertex vα the associated vector Mα
+belongs to the representation ρ(d+u),α and at an endpoint of either of the edges ed/u,α
+the associated Md/u,α belongs to ρ(d/u),α .
+As we noted in section 2, the Hilbert space Ho is the quantum analog of the full phase
+space. Now, in the classical theory, the imposition of the Gauss constraint on the phase
+space does not restrict the allowed values of the functional AS of (2.2). It is therefore of
+interest to see if this feature persists in the quantum theory: Is the spectrum of ÂS on
+the full Ho the same as that on its gauge invariant sub-space H̃o ? As was indicated in
+Sec. 4.1, the answer is in the affirmative only if the surface is open. If S is closed, there
+are restrictions on the spectrum which depend on topological properties of S embedded
+in Σ. The second part of this section is devoted to this issue. As indicated in Sec. 4.1,
+we need to consider three separate cases.
+Case i): ∂S 6= ∅ (and ∂S ⊂ Σ).
+We will modify the spin-network of the above Example in such a way as to obtain
+a gauge-invariant eigenstate without changing the eigen value of the area operator. Let
+γ and the labeling ~π be the ones defined in the Example. To each vertex vα assign one
+more edge et,α beginning in vα and contained in S. Label it by the representation πt,α
+corresponding to a given jα(d+u) at that point. The labeling ρ~ is now taken to be trivial.
+To every point vα assign, as in the Example, an invariant tensor cα associated now to the
+representations (πd,α , πu,α , πt,α ). Every extension of this data to a spin-network will define
+a spin-network state which is gauge invariant at each of the points vα . Now, we need to
+define a closed spin-network which contains all the edges ed,α , eu,α , et,α and provides an
+extension for the labelings already introduced. For this, we use a key property of the
+area operator associated to a surface with boundary: vertices which lie on ∂S do not
+contribute to the action of the operator. Therefore, we can simply extend every edge et,α
+within S to the boundary of S. Denote the intersection point with ∂S by vt,α . Next, for
+every α we extend (in a piecewise analytic way) the edges ed,α and eu,α such that they end
+at vt,α . The extended edges form a graph γ ′ = {e′ d,1 , e′ u,1 , e′ t,1 , ..., e′ d,W , e′ u,W , e′ t,W }. Let
+us label each primed edge by the irreducible representation assigned before to the edge
+it is an extension of. This defines a labeling π~′ of γ ′ . Finally, assign to each new vertex
+vt,α the non-zero invariant tensor c′ t,α mu ,md ,mt (which is unique up to rescaling) associated
+to the triplet of representations (πd,α , πu,α , πt,α ). This completes the construction of a
+gauge invariant extension of a spin-network state constructed in the Example. Thus, for
+an open surface, the spectrum of the area operator ÂS on H̃o is the same as that on Ho .
+26
+
+Case ii): ∂S = ∅ and S splits Σ in to two open sets.
+In this case we can not repeat the above construction: Since S has no boundary, if
+additional vertices are needed to close the open spin-network, they must now lie in S and
+can make unwanted contributions to the action of the area operator. Consequently, there
+(d)
+(u)
+are further restrictions on the possible eigenvalues of the operators (JS,v )2 , (JS,v )2 and
+(d+u)
+(JS,v )2 . To see this explicitly, consider arbitrary spin-network state (γ, ~π , ~c) given by
+the construction a)-e) of Sec 4.3. Let {v1 , ..., vW } be a set of the vertices of γ contained
+in the surface S. Graph γ can be split into three graphs: γt which is contained in S,
+γu which is contained in a one side of S in Σ and γd contained in the other side of S
+in Σ. The only intersection between the two parts is the set {v1 , ..., vW } of vertices of
+γ which are contained in S. Let γr be one of the parts of γ (i.e. r = d or r = u or
+r = t). According to the construction a)-e), the labelings ~π and ~c define naturally on γr
+an extended spin-network. The labeling of the edges of γr by irreducible representations
+is defined just by the restriction of ~π to γr . The labeling of the vertices by irreducible
+representations and invariant tensors is defined in the following way. For the vertices of
+γr which are not contained in S, the labelings are taken to be again the restriction of ρ~
+(which are all trivial) and ~c. To a vertex vα contained in S we assign the representation
+corresponding to a given jr,α and the invariant tensor cr defined in b) (for r = d, u) and
+c) (for r = t) of the construction a) - e). Finally, we complete it by arbitrary nonzero
+~ of the vertices with vectors in appropriate representations. The construction
+labeling M
+a) - e) guarantees that a resulting extended spin-network state is not zero. Now, for an
+~ ′ ) we have the following “fermion conservation law”:
+extended spin-network (γ ′ , ~π′ , ρ~′ , ~c′ , M
+X
+
+jρ′ (v) = N
+
+(4.27)
+
+v
+
+for some integer N, where v runs through the vertices of a graph γ ′ and each jρ(v) is
+an half-integer corresponding to an representation assigned to v by ρ~′ . In our case we
+therefore obtain the restriction:
+X
+
+jr,α = Nr
+
+(4.28)
+
+α
+
+for r = d, u, d + u which gives the conditions (4.7) listed in Sec 4.1. (In fact either two of
+the above conditions imply the third one).
+The conditions (4.28) are also sufficient for an eigen vector to exist. Suppose we are
+given a set of half integers as in the Example above, which satisfy the restriction (4.28).
+A statement “converse to the fermion conservation law” is that for any set {v1 , ..., vW } of
+points in S and any assignment vα 7→ jα where jα are non-negative half integer satisfying
+~ ′ ) such that every vα is its
+(4.28), there exists an extended spin-network (γ ′ , ~π ′ , ρ~′ , ~c′ , M
+index, jα corresponds to the representation assigned to vα by ρ~′ , and for every vertex
+v 6= vα , α = 1, ..., W , of γ ′ , the representation assigned by ρ~′ is trivial. From extended
+spin-networks provided by the above statement it is easy to construct an eigen vector of
+the corresponding eigen values.
+
+27
+
+Case iii): ∂S = ∅ but S does not split Σ.
+The only difference between this case and the previous one is that now a graph γ
+representing an eigen vector is cut by S into two components: γt contained in S and
+γd+u which corresponds to the rest of γ. Since γd+u can be now connected by the same
+arguments as above, we prove that a necessary and sufficient condition for an eigen vector
+to exists is (4.28) imposed only on the half integers jα(d+u) .
+V. DISCUSSION
+
+In section 1, we began by formulating what we mean by quantization of geometry:
+Are there geometrical observables which assume continuous values on the classical phase
+space but whose quantum analogs have discrete spectra? In the last two sections, we
+answered this question in the affirmative in the case of area operators. In the next paper
+in this series we will show that the same is true of other (‘3-dimensional’ ) operators. The
+discreteness came about because, at the microscopic level, geometry has a distributional
+character with 1-dimensional excitations. This is the case even in semi-classical states
+which approximate classical geometries macroscopically [12,22].
+We will conclude this paper by examining our results on the area operators from
+various angles.
+1. Inputs: The picture of quantum geometry that has emerged here is strikingly
+different from the one in perturbative, Fock quantization. Let us begin by recalling the
+essential ingredients that led us to the new picture.
+This task is made simpler by the fact that the new functional calculus provides the
+degree of control necessary to distill the key assumptions. There are only two essential
+R
+inputs. The first assumption is that the Wilson loop variables, Tα = Tr P − exp α A,
+should serve as the configuration variables of the theory, i.e., that the Hilbert space of
+(kinematic) quantum states should carry a representation of the C ⋆ -algebra generated
+by the Wilson loop functionals on the classical configuration space A/G. The second
+assumption singles out the measure µ̃o . In essence, if we assume that Êia be represented by
+−ih̄δ/δAia , the ‘reality conditions’ lead us to the measure µ̃o [10]. Both these assumptions
+seem natural from a mathematical physics perspective. However, a deeper understanding
+of their physical meaning is still needed for a better understanding of the overall situation
+8
+.
+Compactness of SU(2) plays a key role in all our considerations. Let us therefore
+briefly recall how this group arose. As explained in [17,19], one can begin with the ADM
+
+8 In particular, in the standard spin-2 Fock representation, one uses quite a different algebra
+
+of configuration variables and uses the flat background metric to represent it. It then turns
+out that the Wilson loops are not represented by well-defined operators; our first assumption is
+violated. One can argue that in a fully non-perturbative context, one can not mimic the Fock
+space strategy. Further work is needed, however, to make this argument water-tight.
+
+28
+
+phase-space in the triad formulation, i.e., with the fields (Eia , Kai ) on Σ as the canonical
+variables, and then make a canonical transformation to a new pair (Aia := (Γia + Kai ), Eia ),
+where Kai is the extrinsic curvature and Γia , the spin-connection of Eia . Then, Aia is an
+SU(2) connection, the configuration variable with which we began our discussion in section 2. It is true that, in the Lorentzian signature, it is not straightforward to express
+the Hamiltonian constraint in these variables; one has to introduce an additional step,
+e.g., a generalized Wick transform [18]. However, this point is not directly relevant in
+the discussion of geometric operators which arise at the kinematical level. (See, however,
+below). Finally, we could have followed the well-known strategy [25] of simplifying constraints by using a complex connection CAia := (Γia − iKai ) in place of the real Aia . The
+internal group would then have been complexified SU(2). However, for real (Lorentzian)
+general relativity, the kinematic states would then have been holomorphic functionals of
+C i
+Aa . To construct this representation rigorously, certain technical issues still need to be
+overcome. However, as argued in [18], in broad terms, it is clear that the results will be
+equivalent to the ones obtained here with real connections.
+2. Kinematics versus Dynamics: As was emphasized in the main text, in the classical
+theory, geometrical observables are defined as functionals on the full phase space; these
+are kinematical quantities whose definitions are quite insensitive to the precise nature of
+dynamics, presence of matter fields, etc. Thus, in the connection dynamics description,
+all one needs is the presence of a canonically conjugate pair consisting of a connection and
+a (density weighted) triad. Therefore, one would expect the result on the area operator
+presented here to be quite robust. In particular, they should continue to hold if we bring
+in matter fields or extend the theory to super-gravity.
+There is, however, a subtle caveat: In field theory, one can not completely separate
+kinematics and dynamics. For instance, in Minkowskian field theories, the kinematic field
+algebra typically admits an infinite number of inequivalent representations and a given
+Hamiltonian may not be meaningful on a given representation. Therefore, whether the
+kinematical results obtained in any one representation actually hold in the physical theory
+depends on whether that representation supports the Hamiltonian of the model. In the
+present case, therefore, a key question is whether the quantum constraints of the theory
+can be imposed meaningfully on H̃o .9 Results to date indicate (but do not yet conclusively
+prove) that this is likely to be the case for general relativity. The general expectation is
+that this would be the case also for a class of theories such as super-gravity, which are
+‘near’ general relativity. The results obtained here would continue to be applicable for
+this class of theories.
+3. Dirac Observable: Note that ÂS has been defined for any surface S. Therefore,
+these operators will not commute with constraints; they are not Dirac observables. To
+obtain a Dirac observable, one would have to specify S intrinsically, using, for example,
+
+9 Note that this issue arises in any representation once a sufficient degree of precision is reached.
+
+In geometrodynamics, this issue is not discussed simply because generally the discussion is rather
+formal.
+
+29
+
+matter fields. In view of the Hamiltonian constraint, the problem of providing an explicit
+specification is extremely difficult. However, this is true already in the classical theory. In
+spite of this, in practice we do manage to specify surfaces and furthermore compute their
+areas using the standard formula from Riemannian geometry which is quite insensitive
+to the details of how the surface was actually defined. Similarly, in the quantum theory,
+if we could specify a surface S intrinsically, we could compute the spectrum of ÂS using
+results obtained in this paper.
+4. Comparison: Let us compare our methods and results with those available in
+the literature. Area operators were first examined in the loop representation. The first
+attempt [12] was largely exploratory. Thus, although the key ideas were recognized, the
+very simplest of loop states were considered and the simplest eigenvalues were looked
+at; there was no claim of completeness. In the present language, this corresponds to
+restricting oneself to bi-valent graphs. In this case, apart from an overall numerical factor
+(which does, however, have some conceptual significance) our results reduce to that of
+[12].
+A more complete treatment, also in the framework of the loop representation, was
+given in [13]. It may appear that our results are in contradiction with those in [13] on
+two points. First,
+the final result there was that the spectrum of the area operator is
+q
+2 P
+given by ℓP
+jl (jl + 1), where jl are half-integers, rather than by (4.6). However, the
+reason behind this discrepancy is rather simple: the possibility that some of the edges at
+any given vertex can be tangential to the surface was ignored in [13]. It follows from our
+remark at the end of section 4.2 that, given a surface S, if one restricts oneself to only to
+graphs in which none of the edges are tangential, our result reduces to that of [13]. Thus,
+the eigenvalues reported in [13] do occur in our spectrum. It is just that the spectrum
+reported in [13] is incomplete. Second, it is suggested in [13] that, as a direct consequence
+of the diffeomorphism covariance of the theory, local operators corresponding to volume
+(and, by implication, area) elements would be necessarily ill-defined (which makes it
+necessary to by-pass the introduction of volume (and area) elements in the regularization
+√
+procedure). This assertion appears to contradict our finding that the area element d
+gS
+is a well-defined operator-valued distribution which can be used to construct the total
+area operator ÂS in the obvious fashion. We understand [29], however, that the intention
+of the remark in [13] was only to emphasize that the volume (and area) elements are
+‘genuine’ operator-valued distributions; thus there is no real contradiction.
+The difference in the methodology is perhaps deeper. First, as far as we can tell, in [13]
+only states corresponding to trivalent graphs are considered in actual calculations. Thus,
+even the final expression (Eq (48) in [13]) of the area operator after the removal of the
+regulator is given only on tri-valent graphs. similarly, their observation that every spin
+network is an eigenvector of the area operator holds only in the tri-valent case. Second, for
+the limiting procedure which removes the regulator to be well-defined, there is an implicit
+assumption on the continuity properties of loop states (spelled out in detail in [30]). A
+careful examination shows that this assumption is not satisfied by the states of interest
+and hence an alternative limiting procedure, analogous to that discussed in section 3.1, is
+needed. Work is now progress to fill this gap [29]. Finally, not only is the level of precision
+30
+
+achieved in the present paper significantly higher but the approach adopted is also more
+systematic. In particular, in contrast to [13], in the present approach, the Hilbert space
+structure is known prior to the introduction of operators. Hence, we can be confident
+that we did not just omit the continuous part of the spectrum by excising by fiat the
+corresponding sub-space of the Hilbert space.
+Finally, the main steps in the derivation presented in this paper were sketched in the
+Appendix D of [10]. The present discussion is more detailed and complete.
+5. Manifold versus Geometry: In this paper, we began with an orientable, analytic,
+3-manifold Σ and this structure survives in the final description. As noted in footnote
+1, we believe that the assumption of analyticity can be weakened without changing the
+qualitative results. Nonetheless, a smoothness structure of the underlying manifold will
+persist. What is quantized is ‘geometry’ and not smoothness. Now, in 2+1 dimensions,
+using the loop representation one can recast the final description in a purely combinatorial
+fashion (at least in the so-called ‘time-like sector’ of the theory). In this description, at
+a fundamental level, one can avoid all references to the underlying manifold and work
+with certain abstract groups which, later on, turn out to be the homotopy groups of the
+‘reconstructed/derived’ 2-manifold (see, e.g., section 3 in [31]). One might imagine that,
+if and when our understanding of knot theory becomes sufficiently mature, one would also
+be able to get rid of the underlying manifold in the 3+1 theory and introduce it later as
+a secondary/derived concept. At present, however, we are quite far from achieving this.
+In the context of geometry, however, a detailed combinatorial picture is emerging.
+Geometrical quantities are being computed by counting; integrals for areas and volumes
+are being reduced to genuine sums. (However, the sums are not the ‘obvious’ ones,
+often used in approaches that begin by postulating underlying discrete structures. In the
+computation of area, for example, one does not just count the number of intersections;
+there are precise and rather intricate algebraic factors that depend on the representations
+of SU(2) associated with the edges at each intersection.) It is striking to note that, in the
+same address [3] in which Riemann first raised the possibility that geometry of space may
+be a physical entity, he also introduced ideas on discrete geometry. The current program
+comes surprisingly close to providing us with a concrete realization of these ideas.
+Acknowledgments
+Discussions with John Baez, Bernd Bruegman, Don Marolf, Jose Mourao, Roger
+Picken, Thomas Thiemann, Lee Smolin and especially Carlo Rovelli are gratefully acknowledged. Additional thanks are due to Baez and Marolf for important information
+they communicated to JL on symmetric tensors in the representation theory. This work
+was supported in part by the NSF Grants PHY93-96246 and PHY95-14240, the KBN
+grant 2-P302 11207 and by the Eberly fund of the Pennsylvania State University. JL
+thanks the members of the Max Planck Institute for their hospitality. Both authors acknowledge support from the Erwin Schrodinger International Institute for Mathematical
+Sciences, where the final version of this paper was prepared.
+
+31
+
+REFERENCES
+[1] A. Trautman, Differential Geometry for Physicists. Stony Brook Lectures., Napoli
+1984, Bibliopolis
+[2] A. Trautman, Rep. Math. Phys. 1, p.29 (1970).
+[3] B. Riemann, Über die Hypothesen, welche der Geometrie zugrunde liegen (1854).
+[4] A. Ashtekar and C.J. Isham, Class. & Quan. Grav. 9, 1433 (1992).
+[5] A. Ashtekar and J. Lewandowski, “Representation theory of analytic holonomy C ⋆
+algebras”, in Knots and quantum gravity, J. Baez (ed), (Oxford University Press,
+Oxford 1994); J. Math. Phys. 36, 2170 (1995).
+[6] J. Baez, Lett. Math. Phys. 31, 213 (1994); “Diffeomorphism invariant generalized measures on the space of connections modulo gauge transformations”, hepth/9305045, in the Proceedings of the conference on quantum topology, D. Yetter
+(ed) (World Scientific, Singapore, 1994).
+[7] D. Marolf and J. M. Mourão, Commun. Math. Phys. 170, 583 (1995).
+[8] A. Ashtekar and J. Lewandowski, J. Geo. & Phys. 17, 191 (1995).
+[9] J. Baez, “Spin network states in gauge theory”, Adv. Math. (in press); “Spin networks
+in non-perturbative quantum gravity,” pre-print gr-qc/9504036.
+[10] A. Ashtekar, J. Lewandowski, D. Marolf, J. Mourão and T. Thiemann, J. Math. Phys.
+36, 6456 (1995).
+[11] A. Ashtekar, J. Lewandowski, D. Marolf, J. Mourão and T. Thiemann, J. Funct.
+Analysis, 135, 519 (1996).
+[12] A. Ashtekar, C. Rovelli, L. Smolin, Phys. Rev. Lett. 69, 237 (1992) .
+[13] C. Rovelli and L. Smolin, Nucl. Phys. B442, 593 (1995).
+[14] C. Rovelli, L. Smolin, Nucl. Phys. B331, 80 (1990).
+[15] J. Bekenstein and V.F. Mukhanov, Spectroscopy of quantum black holes, pre-print
+gr-qc/9505012.
+[16] S. Carlip, Statistical mechanics and black-hole entropy, preprint gr-qc/9509024.
+[17] A. Ashtekar, Polymer geometry at Planck scale and quantum Einstein’s equations,
+CGPG-95/11-5 pre-print, hepth 9601054.
+[18] T. Thiemann, Reality conditions inducing transforms for quantum gauge field theory
+and quantum gravity, CGPG-95/11-4 pre-print.
+[19] A. Ashtekar, A Generalized Wick transform for gravity CGPG-95/12-1 pre-print.
+[20] J. Baez and S. Sawin, Functional integration on spaces of connections, q-alg/9507023;
+J. Lewandowski and T. Thiemann (in preparation)
+[21] J. Kijowski, Rep. Math. Phys., 11, 97 (1976).
+[22] A. Ashtekar and L. Bombelli (in preparation)
+[23] J. Iwasaki and C. Rovelli, Int. J. Modern. Phys. D1, 533 (1993); Class. Quant. Grav.
+11, 2899 (1994).
+[24] A. Ashtekar, in Mathematics and General Relativity, ed J. Isenberg (American Mathematical Society, Providence, 1987); Phys. Rev. D36, 1587 (1987).
+[25] A. Ashtekar, Lectures on Non-perturbative Canonical Gravity, Notes prepared in collaboration with R.S. Tate (World Scientific, Singapore, 1991).
+[26] B. Bruegman and J. Pullin, Nucl.Phys., B390, 399 (1993).
+32
+
+[27] C. Rovelli, L. Smolin, Spin networks and quantum gravity CGPG-95/4-4 pre-print;
+T. Thiemann, Inverse loop transform, CGPG-95/4-1.
+[28] R. Penrose, in Quantum Theory and Beyond, ed. T. Bastin (cambridge University
+Press, 1971).
+[29] C. Rovelli, private communication to AA
+[30] L. Smolin, in Quantum Gravity and Cosmology, ed J. Pérez-Mercader et al (World
+Scientific, Sigapore, 1992).
+[31] A. Ashtekar, in Gravitation and Quantizations, ed B. Julia and J. Zinn-Justin (Elsevier, Amsterdam, 1995).
+
+33
+
+

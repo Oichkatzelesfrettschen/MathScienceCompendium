@@ -1,0 +1,416 @@
+MIT-CTP-3614
+
+The Casimir Effect and the Quantum Vacuum
+
+arXiv:hep-th/0503158v1 21 Mar 2005
+
+R. L. Jaffe
+Center for Theoretical Physics,
+Laboratory for Nuclear Science and Department of Physics
+Massachusetts Institute of Technology,
+Cambridge, Massachusetts 02139
+Abstract.
+In discussions of the cosmological constant, the Casimir effect is often invoked as decisive
+evidence that the zero point energies of quantum fields are “real”. On the contrary, Casimir effects
+can be formulated and Casimir forces can be computed without reference to zero point energies.
+They are relativistic, quantum forces between charges and currents. The Casimir force (per unit
+area) between parallel plates vanishes as α, the fine structure constant, goes to zero, and the standard
+result, which appears to be independent of α, corresponds to the α → ∞ limit.
+
+Introduction
+In quantum field theory as usually formulated, the zero point fluctuations of the
+fields contribute to the energy of the vacuum. However this energy does not seem to
+be observable in any laboratory experiment. Nevertheless, all energy gravitates, and
+therefore the energy density of the vacuum, or more precisely the vacuum value of the
+stress tensor, hTµν i ≡ −E gµν ∗ , appears on the right hand side of Einstein’s equations,
+1
+Rµν − gµν R = −8πG(T̃µν − E gµν )
+2
+
+(1)
+
+where it affects cosmology. (T̃µν is the contribution of excitations above the vacuum.) It
+is equivalent to adding a cosmological term, λ = 8πGE , on the left hand side.
+A small, positive cosmological term is now required to account for the observation
+that the expansion of the Universe is accelerating. Recent measurements give[2]
+λ = (2.14 ± 0.13 × 10−3 eV)4
+
+(2)
+
+at the present epoch. This observation has renewed interest in the idea that the zero point
+fluctuations of quantum fields contribute to the cosmological constant, λ[3]. However,
+estimates of the energy density due to zero point fluctuations exceed the measured value
+of λ by many orders of magnitude. Caution is appropriate when an effect, for which
+∗ I use the conventions of Ref. [1] and in particular take g
+
+a positive energy density and a negative pressure.
+
+µν = diag {−1, 1, 1, 1}, so E > 0 corresponds to
+
+there is no direct experimental evidence, is the source of a huge discrepancy between
+theory and experiment!
+As evidence of the “reality” of the quantum fluctuations of fields in the vacuum,
+theorists often point to the Casimir effect [6]. For example, Weinberg in his introduction
+to the cosmological constant problem, writes[5],
+“Perhaps surprisingly, it was along time before particle physicists began seriously to worry about [quantum zero point fluctuation contributions to λ]
+despite the demonstration in the Casimir effect of the reality of zero-point
+energies.”
+More recent examples can be found in the widely read reviews by Carroll[7],
+“ ... And the vacuum fluctuations themselves are very real, as evidenced by the
+Casimir effect.”
+and by Sahni and Starobinsky [8],[9]
+“The existence of zero-point vacuum fluctuations has been spectacularly
+demonstrated by the Casimir effect.”
+In 1997 Lamoreaux opened the door to precise measurement of Casimir forces[10].
+The Casimir force (per unit area) between parallel conducting plates,
+
+F =−
+
+h̄cπ2
+240d 4
+
+(3)
+
+has now been measured to about 1% precision. Casimir physics has become an active
+area of nanoscopic physics in its own right[11]. Not surprisingly, every review and text
+on the subject highlights the supposed special connection between the Casimir effect
+and the vacuum fluctuations of the electromagnetic field [12].
+The object of this paper is to point out that the Casimir effect gives no more (or less)
+support for the “reality” of the vacuum energy of fluctuating quantum fields than any
+other one-loop effect in quantum electrodynamics, like the vacuum polarization contribution to the Lamb shift, for example. The Casimir force can be calculated without
+reference to vacuum fluctuations, and like all other observable effects in QED, it vanishes as the fine structure constant, α, goes to zero.
+There is a long history and large literature surrounding the question whether the
+zero point fluctuations of quantized fields are “real”[13]. Schwinger, in particular, attempted to formulate QED without reference to zero point fluctuations[14]. In contrast
+Milonni has recently reformulated all of QED from the point of view of zero point
+fluctuations[13]. The question of whether zero point fluctuations of the vacuum are or
+are not “real” is beyond the scope of this paper. Instead I address only the narrower
+question of whether the Casimir effect can be considered evidence in their favor.
+For a non-interacting quantum field the vacuum (or zero-point) energy is given by
+E = ± 21 ∑h̄ω0 , where the {h̄ω0 } are the eigenvalues of the free Hamiltonian and the plus
+or minus sign applies to bosons or fermions respectively. In three dimensions the sum
+over frequencies diverges quartically, E ∼ Λ4 . This contribution does not arise if the
+fields in the classical Lagrangian are ordered in a prescribed way (“normal ordering”),
+
+but the reason for this choice of ordering is obscure and it is probably more appropriate to
+choose the ordering arbitrarily (though consistent with the symmetries of the theory), in
+which case the free field zero point energy can be cancelled by a counterterm. However
+comparable contributions reappear when interactions are introduced: the vacuum energy
+is related to the sum of all vacuum-to-vacuum Feynman diagrams, a few of which
+are shown (eg. for QED) in Fig. 1. A counter term can be introduced to cancel these
+contributions to any order in perturbation theory. However since the leading divergence
+is quartic, such fine tuning is generally regarded as unacceptable.
+In the standard approach[12], the Casimir force is
+calculated by computing the change in the zero point
+energy of the electromagnetic field when the separation between parallel perfectly conducting plates is
+changed. The result, eq. (3), seems universal, independent of everything excepth̄, c, and the separation,
+inviting one to regard it as a property of the vacuum.
+This, however, is an illusion. When the plates were
+idealized as perfect conductors, assumptions were 1: QED graphs contributing to the
+zero point energy
+made about the properties of the materials and the
+strength of the QED coupling α, that obscure the fact that the Casimir force originates
+in the forces between charged particles in the metal plates. More specifically,
+• The Casimir effect is a function of the fine structure constant and vanishes as α → 0.
+
+Explicit dependence on α is absent from eq. (3) because it is an asymptotic form,
+exact in the α → ∞ limit. The Casimir force is simply the (relativistic, retarded) van
+der Waals force between the metal plates.
+• Casimir effects in general can be calculated as S-matrix elements, i.e. in terms of
+Feynman diagrams with external lines, and without any reference to the vacuum or
+its fluctuations. The usual calculation, based on the change in 12 ∑h̄ω with separation, is heuristic. An elementary example of a similar situation occurs in electrostatics. The energy of a smooth charge distribution, ρ(x), can be calculated directly
+R
+ρ(x)ρ(y)
+from 21 dxdy |x−y| , or alternatively, from the energy “stored in the electric field”,
+1 R
+2
+~
+8π dx|E(x)| . The existence of the latter formula cannot be regarded as evidence
+for the “reality” of the electric field, which awaited the discovery that light consists
+of propagating electromagnetic waves.
+
+In the following section I review the dependence of the Casimir effect on the fine
+structure constant. Next I discuss the calculation of Casimir effects without mention of
+vacuum energies. Finally I conclude with a brief summary.
+
+The dependence of the Casimir effect on the fine structure constant
+At first sight the Casimir force, eq. (3) seems universal and independent of any
+particular interaction. F depends only on the fundamental constants h̄ and c. However,
+a moment’s thought reveals that interactions entered when one idealized the metallic
+
+plates as perfect conductors that impose boundary conditions on the electromagnetic
+fields.
+Actual metals are not perfect conductors. In fact there is now a large literature
+dedicated to “finite conductivity corrections” to the Casimir effect[12]. These treatments are based on Lifshitz’ theory of the Casimir effect for dielectric media[15]. A
+simpler treatment, based on the Drude model of metals, is sufficient describe things
+qualitatively[16, 17]. A conductor is characterized by a plasma frequency, ωpl , and a
+skin depth, δ. ωpl characterizes the frequency above which the conductivity goes to zero.
+δ measures the distance that electromagnetic fields penetrate the metal. Both ωpl and δ
+depend on the fine structure constant, α, and vanish as α → 0. In the Drude model,
+4πe2 n
+m
+2πω|σ|
+ne2
+=
+where
+σ
+=
+c2
+m(γ0 − iω)
+
+ω2pl =
+δ−2
+
+(4)
+
+where n is the total number of conduction electrons per unit volume, m is their effective
+mass, and γ0 is the damping parameter for the Drude
+√ oscillators. Typically the frequencies of interest are much greater than γ0 , so δ ≈ c/ 2ωpl .
+The frequencies that dominate the Casimir force are of order c/d[12]. So the perfect
+conductor approximation is adequate if c/d ≪ ωpl , or
+mc
+.
+(5)
+α≫
+4πh̄nd 2
+Typical Casimir force measurements are made at separations of order 0.5 microns. For
+a good conductor like copper, eq. (5) requires α to be greater than about 10−5 , which is
+amply satisfied by the physical value α ≈ 1/137. Thus the standard Casimir result can
+be regarded as the α → ∞ limit (!) of a result that for smaller values of α depends in
+detail on the nature of the plates.
+Let us examine the α → 0 limit. In this limit the scale of atomic physics, the Bohr
+radius, h̄2 /me2 , grows like 1/α. Therefore n scales like e6 and both ωpl and δ vanish like
+α2 † . So at any fixed separation, d, the Casimir force goes away quickly as α → 0. Also,
+since δ → ∞ as α → 0, the separation, d, becomes ill-defined since the fields penetrate
+further than the nominal separation of the plates.
+The feature that distinguishes the Casimir force from many other effects in QED is
+that it reaches a finite limit as α → ∞. Had that not been the case, the dependence on
+material parameters like ωpl would have had to be explicit and the effect would never
+have been accorded universal significance. In fact just such a situation occurs in the case
+of the Casimir pressure on a conducting sphere. If one calculates the Casimir pressure
+for a realistic material, one obtains a result that diverges as the plasma frequency (the
+cutoff on the ω-integration) goes to infinity[18]. Therefore it is impossible to define the
+Casimir pressure on a conducting sphere independent of the details of the material∗∗ .
+† Note, γ ≪ ω remains a good approximation as α → 0 at fixed d.
+0
+∗∗ This physical problem must be distinguished from the mathematical problem of the Casimir pressure
+
+on a perfectly conducting, perfectly spherical, zero thickness sphere considered by Boyer[19, 20], which
+
+The Casimir effect without the vacuum
+Casimir’s original goal was to compute the van der Waal’s force between polarizable
+molecules at separations so large that relativistic (retardation) effects are essential. He
+and Polder carried out this program and found an extremely simple result[21],
+∆E = −
+
+23h̄c
+a1 a2 .
+4πR7
+
+a j is the static polarizability of the jth molecule,
+~p = a~E. They found a similarly simple result for a
+polarizable molecule opposite a conducting plate:
+∆E = −3h̄ca/8πR4 . These results were derived using
+the standard apparatus of perturbation theory (to fourth
+order in e) without any reference to the vacuum. They
+correspond to the long range limit of the Feynman
+diagrams of Fig. 2.
+Casimir was intrigued by the simplicity of the result, and following a suggestion by Bohr[22], showed 2: Feynman diagrams for the
+that the Casimir-Polder results could be derived more Casimir-Polder force
+simply by comparing the zero point energy of the electromagnetic field in the presence
+of the molecules with its vacuum values[23]. He then considered the especially simple
+example where both molecules are replaced by conducting plates[6].
+Despite the simplicity of Casimir’s derivation based on zero point energies, it is
+nevertheless possible to derive his result without any reference to zero point fluctuations
+or even to the vacuum. Such a derivation was first given by Schwinger[24] for a scalar
+field, and then generalized to the electromagnetic case by Schwinger, DeRaad, and
+Milton[25]. Reviewing their derivation, one can see why the zero point fluctuation
+approach won out. It is far simpler.
+In more modern language the Casimir energy can be expressed in terms of the trace of
+the Greens function for the fluctuating field in the background of interest (e.g. conducting
+plates),
+Z
+Z
+h̄
+(6)
+E = Im dωω Tr d 3 x [G (x, x, ω + iε) − G0 (x, x, ω + iε)]
+2π
+where G is the full Greens function for the fluctuating field, G0 is the free Greens
+function, and the trace is over spin.
+On the one hand
+Z
+d∆N
+1
+Im [G (x, x, ω + iε) − G0 (x, x, ω + iε)] =
+π
+dω
+is the change in the density of states due to the background, so eq. (6) can be regarded
+as a restatement of the Casimir sum over shifts in zero-point energies, 21 ∑(h̄ω −h̄ω0 ).
+On the other hand, the Lippman-Schwinger equation allows the full Greens function,
+G , to be expanded as a series in the free Green’s function, G0 , and the coupling to the
+gives a finite result of no physical interest.
+
+external field as in Fig. 3 ‡ . So the Casimir energy can be expressed entirely in terms of
+Feynman diagrams with external legs — i.e. in terms of S-matrix elements which make
+no reference to the vacuum.
+As an explicit example, consider the Casimir effect for a
+scalar field, φ, in one dimension, forced to obey a Dirichlet
+boundary condition, φ = 0, at
+x = ±a/2. A traditional calculation, summing over zero-point 3: Diagrammatic expansion of the Casimir force: The
+energies, yields a Casimir force, thick (thin) line denotes the full (free) Greens function;
+F = −h̄cπ/24a2 in this case. the one-point function is omitted because it does not conThis is the one-dimensional, tribute to the force.
+scalar analogue of Casimir’s
+original calculation. As in that case, the dependence on the coupling constant has
+been obliterated by taking a limit where the interaction can be idealized as a boundary
+condition. To better model the physical situation we replace the boundary condition by a
+δ-function external potential at x = ±a/2. Explicitly, we calculate the force between the
+singular points at x = ±a by calculating the derivative with respect to a of the effective
+energy of φ in the presence of a background field, σ(x). The interaction is
+1
+2
+
+Lint = gσ(x)φ2 (x)
+
+(7)
+
+and we specify σ(x) = δ(x − a/2) + δ(x + a/2). The “boundary condition limit”,
+φ(±a/2) = 0, is obtained by sending g → ∞. To regulate infrared divergences that afflict
+scalar fields in one dimension, we introduce a mass, m, for φ.
+The effective energy is given by the sum of all one loop Feynman diagrams with
+insertions of σ(x) — the diagrams shown in Fig. 3 — and its derivative with respect to
+a gives the force[12, 20],
+g2
+F(a, g, m) = −
+π
+
+Z ∞
+
+t 2dt
+e−2at
+√
+m
+t 2 − m2 4t 2 + 4gt + g2 (1 − e−2at )
+
+(8)
+
+This result embodies all the features we desire. It vanishes (quadratically) as g → 0, as
+expected for a phenomenon generated by the coupling of φ to the external field. In the
+boundary condition limit, g → ∞, the dependence on the material disappears,
+lim F(a, g, m) = −
+
+g→∞
+
+Z ∞
+
+dt
+t2
+√
+,
+m π
+t 2 − m2 (e2ta − 1)
+
+(9)
+
+and it reduces to −π/24a2 in the m → 0 limit.
+‡ This reformulation is based on the identification of the Casimir energy as the one-loop effective action
+
+in a static background, σ, S [σ] = T E [σ][26, 27].
+
+Conclusion
+I have presented an argument that the experimental confirmation of the Casimir effect
+does not establish the reality of zero point fluctuations. Casimir forces can be calculated
+without reference to the vacuum and, like any other dynamical effect in QED, vanish as
+α → 0. The vacuum-to-vacuum graphs (See Fig. 1) that define the zero point energy do
+not enter the calculation of the Casimir force, which instead only involves graphs with
+external lines. So the concept of zero point fluctuations is a heuristic and calculational
+aid in the description of the Casimir effect, but not a necessity.
+The deeper question remains: Do the zero point energies of quantum fields contribute
+to the energy density of the vacuum and, mutatis mutandis, to the cosmological constant?
+Certainly there is no experimental evidence for the “reality” of zero point energies
+in quantum field theory (without gravity). Perhaps there is a consistent formulation
+of relativistic quantum mechanics in which zero point energies never appear. I doubt
+it. Schwinger intended source theory to provide such a formulation. However, to my
+knowledge no one has shown that source theory or another S-matrix based approach can
+provide a complete description of QED to all orders. In QCD confinement would seem
+to present an insuperable challenge to an S-matrix based approach, since quarks and
+gluons do not appear in the physical S-matrix. Even if one could argue away quantum
+zero point contributions to the vacuum energy, the problem of spontaneous symmetry
+breaking remains: condensates that carry energy appear at many energy scales in the
+Standard Model. So there is good reason to be skeptical of attempts to avoid the standard
+formulation of quantum field theory and the zero point energies it brings with it. Still, no
+known phenomenon, including the Casimir effect, demonstrates that zero point energies
+are “real”.
+
+Acknowledgments
+I would like to thank Eddie Farhi, Jeffrey Goldstone, Roman Jackiw, Antonello
+Scardicchio, and Max Tegmark for conversations and suggestions, and the Rockefeller
+Foundation for a residency at the Bellagio Study and Conference Center on Lake Come,
+Italy, where this work was begun. This work is supported in part by funds provided
+by the U.S. Department of Energy (D.O.E.) under cooperative research agreement DEFC02-94ER40818.
+
+REFERENCES
+1.
+
+S. Weinberg, Gravitation and Cosmology, (Wiley, 1972).
+
+2.
+
+M. Tegmark et al. [SDSS Collaboration], Phys. Rev. D 69, 103501 (2004) [arXiv:astro-ph/0310723].
+
+3.
+
+As early as 1967 Zeldovich suggested that the zero-point energy contributes to λ[4, 5].
+
+4.
+
+Y. B. Zeldovich, JETP Lett. 6, 316 (1967) [Pisma Zh. Eksp. Teor. Fiz. 6, 883 (1967)].
+
+5.
+
+For a review of work connecting vacuum fluctuations to the cosmological constant see S. Weinberg,
+Rev. Mod. Phys. 61, 1 (1989).
+
+6.
+
+H. B. G. Casimir, Kon. Ned. Akad. Wetensch. Proc. 51 (1948) 793.
+
+7.
+
+S. M. Carroll, Living Rev. Rel. 4, 1 (2001) [arXiv:astro-ph/0004075].
+
+8.
+
+V. Sahni and A. A. Starobinsky, Int. J. Mod. Phys. D 9, 373 (2000) [arXiv:astro-ph/9904398].
+
+9.
+
+Some further examples include S. M. Carroll, W. H. Press, and E. L. Turner, Ann. Rev. Astron. Astrophys. 30 499 (1992); J. D. Cohn, Astrophys. J. Suppl. 259, 213 (1998) [arXiv:astro-ph/9807128];
+J. L. Feng, J. March-Russell, S. Sethi and F. Wilczek, Nucl. Phys. B 602, 307 (2001) [arXiv:hepth/0005276]; P. J. E. Peebles and B. Ratra, Rev. Mod. Phys. 75, 559 (2003) [arXiv:astro-ph/0207347].
+
+10. S. K. Lamoreaux, Phys. Rev. Lett. 78, 5 (1997).
+11. For a recent review and further references, see M. Bordag, U. Mohideen and V. M. Mostepanenko,
+Phys. Rept. 353, 1 (2001) [arXiv:quant-ph/0106045].
+12. See, for example, V. M. Mostepanenko and N. N. Trunov, The Casimir effect and its applications
+(Clarendon Press, Oxford, 1997); K. A. Milton, The Casimir effect : Physical manifestations of zero
+- point energy (World Scientific, Singapore, 2001).
+13. For a discussion and references to earlier work, see P. W. Milonni, The Quantum Vacuum, (Academic, 1994).
+14. J. Schwinger, Particles, Sources, and Fields I, II, and III (Addison Wesley).
+15. E. M. Lifshitz, Zh. Eksp. Teor. Fiz., 29, 94 (1955) [ Sov. Phys. JETP, 2, 73 (1956)]; see also
+L. D. Landau and E. M. Lifshitz, Electrodynamics of Continuous Media (Pergammon, 1960).
+16. N. W. Ashcroft and N. D. Mermin, Solid State Physics (Saunders, 1976).
+17. See, for example, J. D. Jackson, Classical Electrodynamics, 3rd Edition (Wiley, 1998).
+18. G. Barton, J. Phys. A 34, 4083 (2001), J. Phys. A 37 1011 (2004).
+19. T. H. Boyer, Phys. Rev. 174 (1968) 1764.
+20. For further discussion, see N. Graham, R. L. Jaffe, V. Khemani, M. Quandt, M. Scandurra and
+H. Weigel, Phys. Lett. B 572, 196 (2003) [arXiv:hep-th/0207205] and N. Graham, R. L. Jaffe,
+V. Khemani, M. Quandt, O. Schroeder and H. Weigel, Nucl. Phys. B 677, 379 (2004) [arXiv:hepth/0309130].
+21. H. B. G. Casimir and D. Polder, Phys. Rev. 73, 360 (1948).
+22. As quoted in P. W. Milonni, Ref. [13].
+23. H. B. G. Casimir, at the Colloque sur la théorie de la liaison chimique, Paris, April 1948, as quoted
+in [6].
+24. J. Schwinger, Lett. Math. Phys. 1 43 (1975). See also G. Feinberg, Phys. Rev. B9 2490 (1974).
+25. J. Schwinger, L. DeRaad, and K. A. Milton, Ann. Phys. (N.Y.) 115 1 (1978).
+
+26. M. E. Peskin and D. V. Schroeder, An Introduction to Quantum Field Theory (Addison Wesley, 1995)
+27. S. Weinberg, The Quantum Theory of Fields (Cambridge, 1995).
+
+

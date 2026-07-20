@@ -1,0 +1,1182 @@
+arXiv:math/0512517v1 [math.RA] 22 Dec 2005
+
+Constructing zero divisors in the higher dimensional
+Cayley-Dickson algebras
+Guillermo Moreno
+Abstract: In this paper we give methods to construct zero divisors in the
+n
+Cayley–Dickson algebras An =R2 for n larger than 4. Also we relate the set
+of zero divisors with suitable Stiefel manifolds.
+
+1
+
+Introduction:
+In this paper we return to the subject of 97’ authors paper [M1] about
+the description of the zero divisors in the Cayley-Dickson algebras over the
+real numbers.
+This paper must be seen as a sequel of the papers [M1] and [M2] and
+related to papers [M3] and [M4].
+n
+As we know, An = R2 denotes the Cayley Dickson (C-D)-algebras over
+the real numbers. For n = 0, 1, 2, 3 are known as the clasical C-D algebra
+which correspond to A0 = R, A1 = C, A2 = H and A3 = ø, Real, Complex, Quaternions and Octonions number and because they are normed and
+alternative algebras they lack of zero divisors.[Sch2] [K-Y].
+For n ≥ 4, An is no normed, non-alternative (but flexible) algebra and
+has zero divisors i.e.; there are nonzero elements x and y such that xy = 0.
+By definition a zero divisor is a nonzero element a such that there exists
+nonzero b with ab = 0.
+In [M1] the zero divisors in A4 and the zero divisors in An+1 = An × An
+with alternative coordinates are described.
+For n = 4 the set of zero divisors in A4 of fixed norm can be identified
+with V7,2 the real Stiefel Manifold of two frames in R7 and the singular set of
+(x, y) with xy = 0 and ||x|| = ||y|| = 1 is homoemorphic to G2 the exceptional
+simple Lie group of rank 2.See also [K-Y].
+The description of the zero divisors in A4 is given by the known fibration
+π
+
+G2 → V7,2
+with fiber S 3 since all the nontrivial annihilators are 4 dimensional.
+For n ≥ 5 there is NO analogous description. We will show that the zero
+divisors are in An+1 and V2n −1,2 are related, but they are not equal and the
+corresponding singular set has (unknown) complicated description. See [M3].
+In §1 we recall the basic notation and theorems already proved in [M1],
+[M2] which are necesary for further results.
+In §2 we study the basic facts of the linear operators left and right mutiplication by a fixed (pure) element, as in [M2], and then, we define a suitable
+O(2)-action on the double pure elements of An .
+In §3 we define the Spectrum of a non-zero double pure element looking at
+the structure of the linear operators defined by left and right multiplication
+by the element.
+2
+
+By definition, the Spectrum is a set of (2n−2 −1) non negative real numbers
+attached to each nonzero double pure element in An for n ≥ 3 and the
+presence of zero in the spectrum determines that the element is a zero divisor.
+As consequence we see how big can be the annihilator of an element; this
+result complements very nicely with the recent results in [B-D-I].
+Also we look at the O(2)-action on the doubly pure elements showing
+that: the elements in the same O(2)-orbit have the same spectrum and consequently the annihilators of the elements in the O(2)-orbit are all equal.
+In §4 we study the zero divisors and we give new methods to construct
+many of them, noticing that for n larger than 4 the problem becomes extremely difficult.
+Also we prove that:All non-zero pure element in An is a component of a
+zero divisor in An+1
+In §5 we study the relationship between the Stiefel manifold V2n −1,2 [J]
+and the set of zero divisors in An+1 noticing that for n larger than 4 they are
+realted but are ”very far” to be equal.
+Some of the results of this paper were partially done in a personal manuscript
+by the author of 2001,(which had restricted circulation) and some also can
+be found in [Ch].
+We emphasize the initial input and permanent support to study this
+subject given by Professor Fred Cohen with whom we are very grateful.
+
+3
+
+1. Basic definitions and lemmas.
+Here e0 = (e0 , 0) is the algebra unit in An−1 × An−1 = An .
+Definition: e2n−1 = (0, e0 ) ∈ An−1 × An−1 = An is the sympletic unit and
+we denote it by ee0 = (0, e0 ). For
+a = (a1 , a2 ) ∈ An−1 × An−1 = An
+
+ae := (−a2 , a1 ) = (a1 , a2 )(0, e0 ) = aee0 .
+
+is the complexification of a.
+Because the right multiplication by ee0 .
+
+
+
+
+Ree0 : An → An
+
+0 −I
+in M2n−1 (R) in the canonical basis.
+I 0
+Notice that aee = −a for all a ∈ An ; the trace on An is the linear transformation
+tn : An → A0 = R
+has the matrix
+
+given by tn (a) = a+ a = 2 (Real part of a). For a = (a1 , a2 ) ∈ An−1 ×An−1 =
+An
+tn (a) = tn−1 (a1 ).
+
+Definition: An element a is pure in An if
+tn (a) = tn−1 (a1 ) = 0
+Notice that a ∈ An is pure if and only if a ⊥ e0 and a ⊥ b if and only if
+ab = −ba for a and b pure elements in An .
+Definition: An element a = (a1 , a2 ) ∈ An−1 × An−1 = An is doubly pure if
+it is pure i.e. tn (a) = 0 and also tn (ae) = −tn−1 (a2 ) = 0.
+Notice that a is doubly pure if and only if a ∈ {e0 , ee0 }⊥ .
+
+n
+e = R2n −2 =
+Notation: 0 An = R2 −1 = {e0 }⊥ pure elements in An . A
+n
+{e0 , ee0 }⊥ doubly pure elements in An .
+
+f we have that
+Lemma 1.1. For a and b in A
+n
+
+4
+
+1) aee0 = ea and ee0 a = −ae
+
+2) aae = −||a||2 ee0 and aea = ||a||2ee0 so a ⊥ ea
+f with a pure element.
+3) eab = −ab
+
+4) a ⊥ b if and only if aeb + eba = 0
+5) ae ⊥ b if and only if ab = ebae
+
+6) aeb = aeb if and only if a ⊥ b and ae ⊥ b.
+
+Proof: Notice that a is pure if a = −a and if a = (a1 , a2 ) is doubly pure
+then a1 = −a1 and a2 = −a2 .
+1) ee0 a = (0, e0 )(a1 , a2 ) = (−a2 , a1 ) = (a2 , −a1 ) = −(−a2 , a1 ) = −ae.
+
+2) aae = (a1 , a2 )(−a2 , a1 ) = (−a1 a2 + a1 a2 , a21 + a22 ) = −||a||2 ee0
+
+e
+aa = (−a2 , a1 )(a1 , a2 ) = (−a2 a1 + a2 a1 , −a22 − a21 ) = ||a||2ee0 .Now since
+−2hae, ai = aae + aea = 0 we have a ⊥ ea.
+
+3) eab = (−a2 , a1 )(b1 , b2 ) = (−a2 b1 + b2 a1 , −b2 a2 − a1 b1 ). So aefb = (a1 b1 +
+f
+
+f
+b2 a2 , b2 a1 − a2 b1 ) = (a1 , a2 )(b1 , b2 ) = ab then −aeb = aefb = ab.
+
+Notice that in this proof we only use that a1 = −a1 i.e a is pure and b
+doubly pure.
+f = −ba
+f
+4) a ⊥ b ⇔ ab + ba = 0 ⇔ ab = −ba ⇔ ab
+
+⇔ −aeb = eba ⇔ aeb + eba = 0 by (3).
+
+5) ea ⊥ b ⇔ aeeb + ebae = 0 (by (4)) ⇔ −ab + ebea = 0.
+6) If ae ⊥ b and a ⊥ b then
+
+f = ba
+f = −e
+aeb = −ab
+ba = aeb.
+
+Conversly, put a = (a1 , a2 ) and b = (b1 , b2 ) in An−1 × An−1 and define
+c := (a1 b1 + b2 a2 ) and d := (b2 a1 − a2 b1 ) in An−1 .
+
+Then aeb = (a1 , a2 )(−b2 , b1 ) = (−a1 b2 +b1 a2 , b1 a1 +a2 b2 ) so aeb = (−d, c).
+5
+
+f = (−d, c)
+Now ab = (a1 , a2 )(b1 , b2 ) = (a1 b1 +b2 a2 , b2 a1 −a2 b1 ) = (c, d) then ab
+so aeb = (d, −c). Suppose that aeb = aeb so c = −c and d = −d then
+
+tn (ab) = tn−1 (c) = c + c = 0 and a ⊥ b
+tn (aeb) = tn−1 (d) = d + d = 0 and ae ⊥ b.
+
+Q.E.D.
+
+e . The fourth dimensional vector subspace
+Corollary 1.2 For each a 6= 0 in A
+n
+generated by {e0 , ae, a, ee0 } is a copy of A2 = H the Hamilton quaternions. We
+denote it by Ha .
+
+a
+Proof: We suppose that ||a|| = 1, otherwise we take ||a||
+. Construct the
+following multiplication table
+
+e0
+ae
+a
+ee0
+
+e0
+e0
+e
+a
+a
+a
+
+e
+a
+e
+a
+
+−e0
+−ee0
+ee0
+
+a
+a
++ee0
+−e0
+−ae
+
+ee0
+ee0
+−a
+ae
+−e0
+
+By lemma 1.1. aee0 = ae; ee0 a = −ae; eaee0 = eea = −a; ee0 ea = −aee = a; aae = −ee0
+and aea = ee0 .
+This multiplication table is the one of the Hamilton quaternions identifying e0 ↔ 1, ea ↔ î, a ↔ ĵ and ee0 ↔ k̂.
+Q.E.D.
+Artin theorem [Sch1] said that: “Any two elements in A3 = O generate
+an associative subalgebra”.
+Corollary 1.2 is an analogous to this for An with n ≥ 4.
+
+6
+
+2. Left and Right multiplication.
+
+For x and y in An hx, yi denotes the standard Euclidean inner product
+that in terms of the Cayley-Dickson multiplication is given by
+tn (xy) = xy + yx = 2hx, yi.
+In [1] and [8 ] is proved that
+hax, bi = hx, abi
+ha, xbi = hab, xi
+
+and
+
+for all a, b and x in An .
+Therefore if La and Rb : An → An denotes the linear transformation left
+and right multiplication by a and b respectively then LTa = La and RbT = Rb .
+So for a and b pure elements LTa = −La and RbT = −Rb i.e. La and
+Rb are skew–symmetric linear transformations then (−L2a ) and (−Rb2 ) are
+symmetric definite nonegatives linear transformations.
+Lemma 2.1 For a a doubly pure element in An , n ≥ 3
+Ra Ree0 + Ree0 Ra = 0 and La Lee0 + Lee0 La = 0.
+
+Proof: Using Lemma 1.1 (3).
+(Ra Ree0 + Ree0 Ra )(x) = (xee0 )a + (xa)ee0 = xea + f
+xa = 0 for x ∈ 0 An .
+g
+f = r ee0 a + (re0 )a = r(−a
+e+a
+e ) = 0. Then
+If x = re0 for r ∈ R xea + xa
+(Ra Ree0 + Ree0 Ra )(x) = 0 for all x ∈ An .
+On the other hand we have that for y = (y1, y2 )
+ee0 y = (0, e0 )(y1 , y2 ) = (−y 2 , y 1 )
+
+then
+ee0 (ax) =
+=
+=
+=
+
+(0, e0 )(a1 x1 − x2 a2 , x2 a1 + a2 x1 )
+(−(x2 a1 + a2 x1 ), (a1 x1 − x2 a2 ))
+f
+(−(a1 x2 + x1 a2 ), (x1 a1 − a2 x2 )) and because a ∈ A
+n
+(a1 x2 + x1 a2 , −x1 a1 + a2 x2 ) for x = (x1 , x2 ) ∈ An
+7
+
+and a(ee0 x) = (a1 , a2 )(−x2 , x1 ) = (−a1 x2 −x1 a2 , x1 a1 −a2 x2 ) therefore (Lee0 La +
+La Lee0 )(x) = ee0 (ax) + a(ee0 x) = 0 for x ∈ An
+Q.E.D.
+Theorem 2.2. For a ∈ An pure element L2a = Ra2 .
+
+e , A = H ⊕ H⊥ so if x ∈ H then
+Proof: (Case doubly pure). For a ∈ A
+a
+n
+n
+a
+a
+(because Ha is associative)
+
+a(ax) = a2 x = −||a||2 x = −x||a||2 = xa2 = (xa)a.
+If x ∈ H⊥ then a ⊥ x and by flexibility a(ax) = −a(xa) = −(ax)a = (xa)a
+so L2a = Ra2 .
+e and r ∈ R so
+(General case). Suppose that a ∈ A
+n
+L2a+ree0 = (La + rLee0 )2 = L2a + r 2 L22e0 + r(La Lee0 + Lee0 La )
+
+2
+2
+2
+2 2
+Ra+r
+e0 = (Ra + rRee0 ) = Ra + r Ree0 + r(Ra Ree0 + Ree0 Ra ).
+e
+
+By the doubly pure case L2a = Ra2 , also L2ee0 = Ree20 = −I by lemma 2.1
+2
+2
+2
+2
+La Lee0 + Lee0 La = Ra Ree0 + Ree0 Ra = 0 therefore Ra+r
+e0 = La+ree0 = La − r I =
+e
+Ra2 − r 2 I.
+Q.E.D.
+Remark: For 0 6= a pure La and Ra are quite different because the center
+of An is Re0 .
+Notation: For a and b non–zero pure elements.
+A = L2a + Rb2 and S = (a, −, b) = Rb La − La Rb .
+are linear transformations A, S : An → An .
+Notice that A is the sum of two symmetric non–positive definite linear
+transformations so A is also symmetric non–postive definite i.e. L2a ≤ 0 and
+Rb2 ≤ 0 implies that A = L2a + Rb2 ≤ 0 and S = [Rb , La ] is skew–symmetric.
+Theorem 2.3 For a and b (non–zero) pure elements in An
+L2(a,b) : An+1 → An+1
+is given by
+L2(a,b) =
+
+A −S
+S A
+8
+
+!
+
+i.e. L2(a,b) (x, y) = (A(x) − S(y), A(y) + S(x)).
+Proof: (By direct calculation).
+(a, b)[(a, b)(x, y)] =
+=
+=
+=
+=
+=
+
+(a, b)(ax − yb, ya + bx)
+(a(ax) − a(yb) − (ya + bx)b, (ya + bx)a + b(ax − yb)
+(a(ax) − a(yb) + (ay)b − (xb)b, (ya)a + (bx)a − b(xa) − b(by))
+(L2a (x) + (a, y, b) + Rb2 (x), Ra2 (y) + (b, x, a) + L2b (y))
+(A(x) − (a, y, b), A(y) + (a, x, b))
+(A(x) − S(y), A(y) + S(x)).
+
+Q.E.D. Corollary 2.4 For r and s real numbers with r 2 + s2 = 1 and a
+and b pure elements in An we have that
+1) L2(ra−sb,sa+rb) = L2(a,b) in particular L2(−b,a) = L2(a,b)
+2) L2(ra+sb,sa−rb) = L2(b,a) in particular L2(a,−b) = L2(b,a)
+Proof: 1)
+L2ra−sb = (rLa − sLb )2 = r 2 L2a + s2 L2b − rs(La Lb + Lb La )
+L2sa+rb = (sLa + rLb )2 = s2 L2a + r 2 L2b + sr(La Lb + Lb La ).
+Thus L2ra−sb + L2sa+rb = (r 2 + s2 )L2a + (r 2 + s2 )L2b = L2a + Rb2 := A.
+On the other hand for all x ∈ An
+(ra − sb, x, sa + rb) =
+=
+=
+:=
+
+(ra, x, sa) + (ra, x, rb) − (sb, x, sa) − (sb, x, rb)
+0 + r 2 (a, x, b) − s2 (b, x, a) − 0
+(r 2 + s2 )(a, x, b)
+S(x)
+
+by Theorem 2.2 we are done with 1).
+To show 2) we observe that A = L2a + Rb2 = L2b + Ra2 and
+S = (a, −, b) = −(b, −a) so
+and the prove is analogous to case 1).
+
+9
+
+L2(b,a) =
+
+A S
+−S A
+
+!
+
+Q.E.D.
+Corollary 2.5 For α = (a, b) ∈ An × An = An+1 doubly pure we have that:
+and
+
+Lα Lαe + LαeLα = 0
+
+Rα Rαe + RαeRα = 0.
+
+e =
+Proof: Suppose that r and s are in R and r 2 + s2 = 1 so rα + sα
+2
+2
+2
+2
+r(a, b) + s(−b, a) = (ra − sb, rb + sa) then Lrα+sαe = (r + s )Lα by Corollary
+2.4.
+On the other hand
+
+L2rα+sαe = (rLα + sLαe)2 = r 2 L2α + s2 L2αe + rs(Lα Lαe + LαeLα )
+= (r 2 + s2 )L2α
+
+so Lα Lαe + LαeLα = 0.
+Similarly Rα Rαe + RαeRα = 0.
+
+because L2α = L2αe.
+
+Q.E.D.
+
+Remark Notice that Lemma 2.1 and Corollary 2.5 give us a way to define
+Cuaternionic Structures on An for n bigher than 2 via alternative elements
+of norm one, because for such an element a we have also that L2a = Ra2 = −I.
+(See [Po]).
+Now the theory of Schur complement for partitioned matrices ([ Z ] Chapter 2 and [H-J]) tell us that.
+If A is an invertible matrix then
+det(L2(a,b) ) = det (A) det (A + SA−1 S)
+On the other hand A is symmetric definite non–positive i.e. A ≤ 0 because also L2a ≤ 0 and Rb2 ≤ 0 then −A ≥ 0, −L2a ≥ 0 and −Rb2 ≥ 0
+and det(−A) =det(−L2a − Rb2 ) ≥det(−L2a )+det(−Rb2 ) but A, L2a and Rb2 are
+matrices of order 2n so det(A) ≥ det(La )2 + det(Rb )2 .
+Therefore if det(A) = 0 then det(La ) = 0 and det(Rb ) = 0 and A is
+invertible if, either, La or Rb is invertible.
+Suposse now that −A > 0. i.e. La or Rb are invertible then −A−1 > 0
+and since S T = −S. (SA−1S)T = S T (A−1 )T S T = SA−1 S so SA−1 S is
+10
+
+symmetric and hSA−1S(x), xi = h−A−1 S(x), S(x)i ≥ 0 for all x ∈ An ,
+because −A−1 > 0, so (SA−1S) ≥ 0 and (SA−1 S)(x) = 0 if and only if
+S(x) = 0.
+We resume this discussion in
+e
+Theorem 2.6 For (a, b) ∈ 0 An × 0 An = A
+n+1 for n ≥ 3. If La or Rb are
+invertible and λ = −1 is no an eigenvalue of (A−1 S)2 then L(a,b) is invertible
+in An+1 .
+
+Proof: We already show that La or Rb invertible implies that A is invertible.
+Now L(a,b) is invertible if and only if L2(a,b) is invertible and, by Schur
+complement, that happen if and only if det(A + SA−1 S) 6= 0 but det(A +
+SA−1S) = det(A−1 ) det(I + (A−1 S)2 ) so if λ = −1 is an eigenvalue of
+(A−1 S)2 then det(I + (A−1 S)2 ) = 0.
+Q.E.D.
+This theorem is useful when A has a simple expression for instance when
+a and b are alternative elements so A = L2a + Rb2 = (a2 + b2 )I so A−1 =
+(a2 + b2 )−1 I and A−1 S = (a2 + b2 )−1 S then L2(a,b) is singular if there exists
+x 6= 0 in An such that S 2 (x) = −(a2 + b2 )2 x. (See [8] § 2).
+
+11
+
+§ 3. The spectrum of a doubly pure element.
+Let a ∈ An be a doubly pure element with ||a|| 6= 0
+By the diagonalization theorems of skew–symmetric matrices [Pr] we
+know that there exists an orthogonal basis with respect to which La has
+the form
+diag (∧1 , ∧2 , ·, ·, ·, ∧k , 0·, ·, ·, 0)
+0 −λi
+where ∧i =
+λi 0
+L2a has the form
+
+!
+
+for λi ≥ 0 in R. So with respect to the same basis
+
+
+
+diag −λ21 , −λ21 , ·, ·, ·, −λ2k , −λ2k , 0, 0·, ·, 0, 0
+
+
+
+⊥
+Now, recall that La (Ha ) = Ha and La (H⊥
+a ) ⊂ Ha .
+
+Since Ha is associative we have that
+L2a |Ha = a2 I4×4
+Therefore the first two λ′ s,(i.e. λ1 andλ2 ) are equal to ||a|| so we restrict
+ourselves to
+⊥
+La , L2a : H⊥
+a → Ha .
+Define for λ ≥ 0 and a doubly pure with ||a|| = 1
+2
+Vλ = {x ∈ H⊥
+a |a(ax) = −λ x}.
+
+Theorem 3.1 For 0 6= x ∈ Vλ the set {x, (−1/λ)(ax), (−1/λ)( f
+ax), xe} is an
+orthogonal set in Vλ for nonzero λ and the dimension of Vλ is congruent with
+0 mod 4.
+g = −λ2 x
+e. Also
+Proof: If 0 6= x ∈ Vλ then xe ∈ Vλ and a(ax)
+
+a(a((−1/λ)(ax))) = (−1/λ)a(a(ax)) = (−1/λ)(−λ2 ax) = −λ2 (−1/λ)(ax)
+
+f ∈ Vλ and by construction
+and (−1/λ)(ax) ∈ Vλ therefore (−1/λ)(ax)
+{x, (−1/λ)(ax), (−1/λ)( f
+ax), xe} is an orthonormal set. Now take 0 6= y ∈
+(Ha ⊕ {x, (1/λ)(ax), (−1/λ)( f
+ax), xe})⊥
+
+12
+
+f and x
+e using
+Therefore y is doubly pure and orthogonal to a, ea, x, ax, ax
+T
+that La = −La we have that:
+
+hay, xi = hy, −axi = 0 so ay ⊥ x.
+hay, axi = hy, −a(ax)i = hy, −(−λ2 x)i = λ2 hy, xi = 0
+
+hay, f
+axi =
+=
+hay, xei =
+Similarly
+hye, f
+axi =
+
+g xi
+hay, −aexi = hae(ay), xi = h−a(ay),
+ha(ay), xei = hy, a(axe)i = hy, −λ2xei = 0
+h− f
+ay, xi = haey, xi = hy, −aexi = hy, f
+axi = 0
+hye, xi = h−y, xei = 0; hye, axi = hy, − f
+axi = 0
+hy, axi = 0
+
+Finally h f
+ay, xi = h−aey, xi = hy, eaxi = 0 and
+
+g =
+hf
+ay, axi = h−aey, axi = hy, ea(ax)i = hy, −a(ax)i
+= hy, +λ2xei = λ2 hy, xei = 0
+hf
+ay, f
+axi = hay, axi = 0
+
+f x
+e}⊥ we
+Therefore for any 0 6= y ∈ H⊥
+a with y ∈ {x, (−1/λ)ax, (1/λ)x, ax,
+have that Span{y, ye, ay, f
+ay} ∩ Span{x, (−1/λ)ax, (−1/λ) f
+ax, xe} = {0}.
+Q.E.D.
+⊥
+Therefore the eigenvalues of L2a : H⊥
+a → Ha have multiplicity congruent
+with 0 mod 4 and
+
+H⊥
+a = Vλ1 ⊕ Vλ2 ⊕ · · · ⊕ Vλk
+
+k=
+
+2n − 4
+= 2n−2 − 1
+4
+
+Definition: The Spectrum of a a non–zero doubly pure element, Spec(a), is
+the set of (2n−2 − 1) eigenvalues (of multiplicity congruent with 0 mod 4) of
+⊥
+−L2 a : H⊥
+a → Ha
+||a||
+
+.
+By definition the elements in Spectra are nonegative real numbers.
+f then
+For instance if a 6= 0 in A
+3
+
+Spec (a) = {1}.
+13
+
+Recall that a ∈ An is alternative if a(ax) = a2 x for all x so for 0 6= a ∈ An
+alternative.
+Spec (a) = {1, 1, . . . , 1}.
+Also La is non–singular if and only if 0 6∈ Spec(a).
+Example: Take e1 and e2 basic elements
+√ in A3 .
+Define a = (e1 , e2 ) ∈ A4 so ||a|| = 2 and
+(e1 , e2 )(−e4 , e7 ) = (−e1 e4 + e7 e2 , e7 e1 + e2 e4 ) = (−e5 + e5 , −e6 + e6 )
+= (0, 0)
+so 0 ∈ Spec(a) and L(e1 ,e2 ) is non–invertible.
+Also
+(e1 , e2 )(e2 , e1 ) = (2e1 e2 , 0)
+and
+2
+L(e1 ,e2 ) (e2 , e1 ) = 2(e1 (e1 e2 ), e2 (e2 , e1 )) = −2(e2 , e1 ).
+and 1 ∈ Spec(a).
+The spectrum of a has three elements we already calculate two {0, 1}.
+Consider
+(e1 , e2 )(e7 , −e4 ) = (e1 e7 − e4 e2 , −e4 e1 − e2 e7 )
+= (e6 + e6 , e5 + e5 )
+= (2e6 , 2e5 ).
+so
+L2(e1 ,e2 ) (e7 , −e4 ) = 2(e1 , e2 )(e6 , e5 )
+= 2[(e1 e6 + e5 e2 , e5 e1 − e2 e6 )]
+= 2[(−e7 − e7 , e4 + e4 )]
+= 2[(−2e7 .2e4 )]
+= −4(e7 , −e4 ).
+√
+Since |(e1 , e2 )| = 2 then L2 a = ( √12 )2 L2(e1 ,e2 ) so
+||a||
+
+1
+1
+− L2(e1 ,e2 ) (e7 , −e4 ) = (4)(e7 , −e4 ) = 2(e7 , −e4 )
+2
+2
+14
+
+so Spec((e1 , e2 )) = {0, 1, 2}.
+Remarks: We can generalize the argument in last example in the following
+way:
+Suppose that a and b are alternative elements in 0An n ≥ 3 such that
+|a| = |b| 6= 0 and a orthogonal to b then
+(i) 1 ∈ Spec((a, b)) in An+1 .
+(ii) If also (a, b)(x, y) = (0, 0) for some x and y in 0An then 2 ∈ Spec((a, b))
+realized by (y, x) and therefore {0, 1, 2} ⊂ Spec((a, b)).
+It seems to us that (ii) is an expresion of a”Mirror Symmetry” sourrended
+by the zero divisors in An+1 :
+”If (x, y) left 0 in the spectrum of (a, b) then (y, x) leaves 2 in the spectrum
+of (a, b).
+”If (x, y) left 1 in the spectrum of (a, b) then (y, x) leaves 1 in the spectrum
+of (a, b).
+This ”Mirror Symmetry” is ”Broken” in the Singular set defined by The
+zero set of the Hopf map (see [M3])
+{(x, y)|xy = 0, ||x|| = ||y|| = 1}
+Because (x, y)(y, x) = (2xy, ||y||2 − ||x||2 ) for x and y pure non zero elements
+in An , ”The Hopf construction map” in terms of the algebra An+1 .
+Remark: For r and s in R with r 2 + s2 = 1 and (a, b) doubly pure in
+An+1
+φ(a, b) = (ra ∓ sb, sa ± rb)
+
+e
+This define an O(2)-action on A
+n+1 and by Corollary 2.4 we have that
+
+Spec(φ(a, b)) = Spec((a, b))
+
+Now we ”measure” the lack of the Normed property in An in terms of Spectra.
+Definition: An element 0 6= a ∈ 0An (i.e. a is pure) is normed with
+x ∈ An if ||a||||x|| = ||ax||. We also define that a is normed if ||ax|| = ||a||||x||
+for all x ∈ An .
+Theorem 3.2 0 6= a ∈ 0An is normed if and only if a is alternative i.e.
+15
+
+a(ax) = a2 x for all x in An .
+Proof: Suppose that 0 6= a ∈ 0An is alternative so
+||a||2||x||2 = −a2 hx, xi = h−a2 x, xi = h−a(ax), xi = hax, axi
+= ||ax||2
+for all x ∈ An .
+Conversly suppose that ||ax|| = ||a||||x|| for all x ∈ An then h−a2 x, xi =
+hax, axi = h−a(ax), xi and ha2 x − a(ax), xi = 0 for all x ∈ An .
+But (a2 I −L2a ) is a symmetric linear transformation then all its eigenvalues
+are of the form h(a2 I − L2a )(x), xi so a2 I − L2a = 0.
+Q.E.D.
+Remark: Notice that the properties for an element of being normed and alternative coincide globally but no locally i.e. we say that a ∈ 0 An alternate
+with x for x ∈ An if a(ax) = a2 x so a ∈ 0 An is an alternative element if a
+alternates with any element in An (see[M2]).
+Now if a alternate with x then a is normed with x : ||ax||2 = hax, axi =
+h−a(ax), xi = h−a2 x, xi = ||a||2 · ||x||.
+But the converse is no necessarily true.
+Example: Take a = e1 , b = e2 and ee0 = e4 in A3 . Define α = (e1 , e2 ) and
+ε = (ee0 , 0) in A3 × A3 = A4 . Since ε is alternative element in A4 we have
+that ||αε||2 = hαε, αεi = h−(αε)ε, αi = h−αε2 , αi = ||α||2||ε||2 = ||α||2 and
+α is normed with ε.
+On the other hand using th.2.3
+L2α (ε) =
+=
+=
+=
+=
+=
+
+((L2e1 + Re22 )(ee0 ) − 0, 0 + (e1 , ee0 , e2 ))
+((−2I)(e4 ), (e1 e4 )e2 − e1 (e4 e2 ))
+(−2e4 , e5 e2 − e1 (−e6 ))
+(−2e4 , −e7 − e7 )
+(−2e4 , −2e7 )
+−2ε − 2e15
+in A4 .
+
+But α2 ε = −2ε so (α, α, ε) = α2 ε − L2α (ε) = 2e15 and α does not alternate
+with ε.
+e with a 6= 0 and λ ∈ Spec(a).
+Proposition 3.3 For a ∈ A
+n
+e
+Suppose that 0 6= x ∈ Vλ ⊂ H⊥
+a ⊂ An then
+
+16
+
+(1)||ax|| = λ||a||||x||.
+(2) If x is an alternative element then λ = 1.
+Proof: (1) Assuming that ||a|| = 1 we have that
+a(ax) = −λ2 x.
+so
+||ax||2 = hax, axi = −ha(ax), xi = hλ2 x, xi = λ2 ||x||2
+.
+Therefore in general we have that
+||ax|| = λ||ax||
+.
+If 0 6= x is an alternative element then ||yx|| = ||y||||x|| for all y (th
+3.2).Thus if x ∈ Vλ , then by (1), λ = 1, and we are done with (2).
+Q.E.D.
+e with 1 ∈ Spec(a) and a non–
+Remark There are elements 0 6= a ∈ A
+n
+alternative (See example above).
+e ,
+Moreover now we prove that for each nonzero a ∈ A
+n
+
+1 ∈ Spec (a)
+
+For this we need:
+⊥
+e
+Lemma 3.4 For a 6= 0 in A
+n n ≥ 4 there exists x 6= 0 in Ha such that
+||ax|| = ||a||||x||.
+
+Proof: Recall that if 0 6= y ∈ An is alternative then ||ay|| = ||a||||y||. (th
+3.2).Thus If 0 6= y ∈ H⊥
+a for some y alternative we are done.
+On the other hand by dimensional reasons (recall dim Ha = 4 and any
+canonical basic element is alternative) no all alternative element belongs to
+Ha so there exists 0 6= y ∈ An alternative element with y = (y1 + y2 ) ∈
+⊥
+Ha ⊕ H⊥
+a and y2 6= 0 in Ha .
+But ||ay|| = ||a||||y|| implies that
+hay, ayi = ha, aihy, yi
+
+17
+
+But
+hay, ayi = ha(y1 + y2 ), a(y1 + y2 )i
+= hay1 + ay2 , ay1 + ay2 i
+= hay1 , ay1 i + hay2 , ay2 i + 2hay1 , ay2 i
+But hay1 , ay2 i = −ha(ay1 ), y2 i = −ha2 y1 , y2i = 0 and hay1, ay1 i = ha, aihy1 , y1i =
+||a||2||y1||2 because y1 ∈ Ha wich is associative and y2 ⊥ y1 ; therefore
+hay, ayi = ha, aihy1, y1 i + hay2 , ay2 i
+and
+ha, aihy, yi = ha, aihy1 + y2 , y1 + y2 i
+= ha, aihy1, y1 i + ha, aihy2, y2 i
+because y1 ⊥ y2 .
+Cancelling out we have ha, aihy2, y2 i = hay2 , ay2 i and ||a||||y2|| = ||ay2||
+for y2 6= 0 in H⊥
+a
+Q.E.D.
+Remark: We can also use the construction of bilinear maps as in Adem
+(see [A],[L] and [Sh]) to prove this lemma because any non–zero double pure
+element belongs to a alternative subalgebra of An with normed product (see
+[M2]).
+Theorem 3.5 For 0 6= a ∈ An n ≥ 3 with a doubly pure
+1 ∈ Spec(a).
+Proof: Suppose that 1 6∈ Spec(a) then a(ax) 6= a2 x for all (non-zero) x ∈ H⊥
+a
+2
+then a(ax) − a2 x 6= 0 for all (non-zero) x ∈ H⊥
+a . Now La (Ha ) ⊂ Ha and
+⊥
+2
+2
+2
+L2a (H⊥
+a ) ⊂ Ha so we have that La |H⊥ and (La − a I)|H⊥ are symmetric
+a
+a
+linear transformations.
+Therefore ha(ax) − a2 x, xi 6= 0 for all non-zero x ∈ H⊥
+a and hax, axi 6=
+⊥
+2
+|a| hx, xi and ||ax|| 6= ||a||||x|| for all non-zero x ∈ Ha which contradicts the
+previous lemma 3.4.
+Q.E.D.
+Corollary 3.6 For a nonzero element in An n ≥ 3 we have that:
+dimKer(a2 I − L2a ) ≥ 8.
+18
+
+Proof. Since any associator vanish when one of the entries is real,the
+question can be reduced to the case a is a pure element.
+On the other hand by Corollary 1.5 in [M2] is known that for b double
+pure element
+(b, ee0 , x) + (ee0 , b, x) = 0
+
+for all x in An .
+Recalling that ee0 is an alternative element, we can reduce the question to
+tha case a double pure element,so by Theorem 3.5. dimVλ ≥ 4 for λ = 1 and
+dim(Ha ⊕ V1 ) ≥ 8
+Q.E.D.
+
+19
+
+§ 4. The zero divisors in An n ≥ 4.
+In this section 0 6= a = (a1 , a2 ) ∈ An−1 × An−1 = An and n ≥ 4
+Definition: a is zero divisor if there exists x 6= 0 in An such that ax = 0 i.e.
+Ker La 6= {0}.
+Since ||ax|| = ||xa|| for all x in An (see [M1]) we have that ax = 0 if and
+only if xa = 0 so left and right zero divisors concide.
+Also ||ax|| = ||ax|| (see [M1]) then if x 6= 0 tn (a)x = (a+a)x = ax+ax =
+0 if ax = 0; but tn (a) is real number so ax = 0 ⇒ tn (a) = 0 so any zero
+divisor is a pure element.
+Actually
+Lemma 4.1 Any zero divisor in An is double pure.
+Proof: By Corollary 2.4 for a ∈ 0An
+Ker La = Ker L2a = Ker L2ae = Ker Lae
+
+If {0} 6= KerLa then {0} 6= Ker Lae and ae = (−a2 , a1 ) is a zero divisor so ea is
+pure in An and a2 is pure in An−1 then a is doubly pure.
+Q.E.D.
+Notice that ax = 0 if and only if ||a||−1ax = 0 so being a zero divisor
+is independent of the norm. On the other hand by Corollay 2.4(1) if a is
+a zero divisor and r and s in R with r 2 + s2 = 1 then L2a = L2(a1 ,a2 ) =
+L2(ra1 −sa2 ,sa1 +ra2 ) = L2ra+sae then (ra + sae) is a zero divisor (in particular ae is
+a zero divisor) and for any b 6= 0 in Ha doubly pure we have that b is a zero
+divisor and KerLa = KerLb . Because
+L2ra+sae = r 2 L2a + s2 Lae + rs(La Lae + LaeLa )
+= (r 2 + s2 )L2ae + 0
+= L2a .
+
+(Corollary 2.5)
+
+So if ||a|| = 1 then b = ra + sae with r 2 + s2 = 1 and Ker La = KerLb .
+
+Lemma 4.2 Let a = (a1 , a2 ) be in An−1 × An−1 = An with a 6= 0 .a is a
+zero divisor if and only if â := (a2 , a1 ) is a zero divisor. Moreover ax = 0 if
+20
+
+and only if âx̂ = 0.
+Proof: Put x = (x1 , x2 ) so x̂ = (x2 , x1 ) in 0An−1 × 0An−1 calculating we have:
+ax = (a1 , a2 )(x1 , x2 ) = (a1 x1 + x2 a2 , x2 a1 − a2 x1 ) := (c, d)
+âx̂ = (a2 , a1 )(x2 , x1 ) = (a2 x2 + x1 a1 , x1 a2 − a1 x2 ) = (c, −d)
+therefore c = d = 0 in An−1 if and only if ax = âx̂ = 0.
+Q.E.D.
+Remark: Notice that lemma 4.1 said KerLa = KerLae (equality) while lemma
+4.2 said that KerLa ∼
+= KerLâ (isomorphism), induced by
+∧
+0An−1 ×0 An−1 → 0An × 0An
+
+given by (x1 , x2 ) 7→ (x2 , x1 ) which is a one–to one correspondence.
+Now 0 6= a ∈ An is a zero divisor if and only if ra is a zero divisor for all
+r ∈ R, r 6= 0 so we restrict ourselves to the study of zero divisor of norm one.
+Using lemma 1.1 in §1 we can construct zero divisors in the following way:
+Proposition 4.3. For 0 6= a ∈ An , n ≥ 3, and a doubly pure we have:
+1) If b ∈ H⊥
+a and |a| = |b| 6= 0 then (a, b) is a zero divisor in An+1 .
+2) (a, ea) and (a, −ae) are zero divisors in An+1 .
+
+Proof:
+
+e, e
+1) For b ∈ H⊥
+b) = (aae −
+a with |a| = |b| 6= 0 we have that (a, b)(a
+e
+e
+e
+e
+bb, ba + bae) = (aae + bb, ba − bae) in An+1 . By lemma 1.1. (2) aae + ebb =
+−||a||2ee0 + ||b||2ee0 = 0 in An . By lemma 1.1. (6) eba = bae because
+b ∈ H⊥
+a in An .
+
+⊥
+2) Since n ≥ 3, H⊥
+a 6= {0}. Taking 0 6= x ∈ Ha ⊂ An
+
+(a, ae)(x, −xe) = (ax − xeae, −xea − aex) in An+1 .
+
+f =
+By lemma 1.1. (5) ax = xeae and by lemma 1.1 (3) −xea− aex = f
+xa+ ax
+gax = 0 because a ⊥ x.
+xa +
+
+Similarly
+
+(a, −ae)(x, xe) = (ax − xeae, xea + aex) = (0, 0) in An+1
+21
+
+Q.E.D.
+
+Remark: Notice that this proposition is telling us that any non–zero doubly
+pure element in An (n ≥ 3) is the component of a zero divisor in An+1 .
+We will prove that this is true also for non–zero pure elements in An .
+Theorem 4.4. For 0 6= a ∈ An , (n ≥ 3) a doubly pure element of norm one
+and 0 6= λ ∈ Spec(a) we have that (a, ±λee0 ) are zero divisors in An+1 .
+Proof: By definition of the spectrum of a
+a(ax) = −λ2 x
+
+for some
+
+0 6= x ∈ H⊥
+a
+
+Then in An+1
+(a, λee0 )(ax, −λxe) = (a(ax) − λ2 xeee0 , −λxea + λee0 (ax))
+e
+e, λ( f
+= (−λ2 x − λ2 x
+xa) − λ( f
+xa))
+= (0, 0)
+Similarly
+(a, −λee0 )(ax, λxe) = (a(ax) + λ2 xeee0 , λxea − λee0 (ax))
+e
+e, −λxa
+f + λ(xa)
+f
+= (−λ2 x − λ2 x
+= (0, 0).
+Notice also that (a, ±λee0 )(−1/λax, ±xe) = (0, 0).
+
+Q.E.D.
+
+From this we derive the important:
+
+Corollary 4.5 For 0 6= α ∈ An (n ≥ 3) with |α| = 1 and α pure element
+there exists β in An with α ⊥ β and |α| = |β| = 1 such that (α, β) is a zero
+divisor in An+1 .
+Proof: If α is doubly pure we are done by Proposition 4.3. Suppose that α is
+pure element (no double pure) then there exist a ∈ An doubly pure element
+and r and s real numbers with r 2 + s2 = 1 and s 6= 0 such that α = ra + see0
+and |a| = |α| = 1.
+By Corollary 2.4 (1) L2(a,−ee0 ) = L2(ra+see0 ,sa−ree0) . Therefore making β =
+sa − r ee0 we have that
+L2(a,−ee0 ) = L2(α,β)
+22
+
+Now by theorem 3.5 λ = 1 ∈ Spec(a) and by theorem 4.4 (a, −ee0 ) is a zero
+divisor in An+1 so (α, β) is a zero divisor in An+1 .
+By construction |α| = |β| = 1 and α ⊥ β.
+Q.E.D.
+√
+Example: We know that 2 is in Spec((e1 , e2 )) in A4 so if a = ( 2)−1 (e1 , e2 )
+and ee0 = e8 in A4 ,according with Theorem 4.4 we have that
+(a, 2e8 ) =
+
+√ −1
+2 (e1 + e10 ) + 2e16
+
+is a zero divisor in A5 .
+Remarks: Notice that, in contrast, with the case n = 4 where the zero
+divisors must have coordinates in A3 of equal norm (see [M1]) this is no the
+case for A5 .(Besides the ”trivial” cases when one of the coordinates is a zero
+divisor and the other is equal to 0 in A4 .)
+Therefore the zero divisors in A5 are ”very far” to be described as in A4
+where they can be identified with V7,2 the Stiefel Manifold of 2 frames in R7 .
+But also, Corollary 4.5 is telling us that the set of zero divisors in An+1
+has some subset wich can be describe in terms of the Stiefel Manifold V2n −1,2 .
+for n ≥ 3.
+
+23
+
+§5.Zero divisors and Stiefiel manifolds.
+e
+Definition: α = (a, b) ∈ 0An × 0An = A
+n+1 is a Stiefel element if ||a|| =
+||b|| 6= 0 and a ⊥ b in 0An .
+
+e ×A
+e ⊂A
+e
+Definition: α = (a, b) ∈ A
+n
+n
+n+1 is a Non–trivial element if ||a|| =
+⊥
+||b|| 6= 0 and b ∈ Ha i.e. a ⊥ b and ae ⊥ b.
+e
+e
+Clearly any non–trivial element in A
+n+1 is a Stiefel element in An+1 .
+e
+Lemma 5.1. If α = (a, b) and χ = (x, y) are in 0An × 0An = A
+n+1 then
+
+hα, χi = ha, xi + hb, yi
+
+Proof:
+αχ + χα = (ax + yb, ya − bx) + (xa + by, bx − ya)
+= (ax + xa + by + yb, 0)
+so
+−2hα, χi = αχ + χα = (−2ha, xi − 2hy, bi, 0)
+Q.E.D.
+e
+Theorem 5.2 α = (a, b) is a Stiefel element in A
+n+1 if and only if (α, α̂) is
+e
+a non–trivial element in An+2 .
+
+Proof: Recall that if α = (a, b) then α̂ = (b, a). By lemma 5.1 hα, α̂i =
+e
+ha, bi + hb, ai so α ⊥ α̂ in A
+n+1 if and only if a ⊥ b in 0An .
+e ⊥ α̂ in
+Also by lemma 5.1 h e
+α, α̂i = h(−b, a), (b, a)i = −||b||2 + ||a||2 so α
+e
+An+1 if and only if ||a|| = ||b|| 6= 0.
+Q.E.D.
+e
+Theorem 5.3 The set of non–trivial elements in A
+n+1 with entries of norm
+n−1
+1 is the complex Stiefel manifold Wm,2 for m = 2
+− 1.[J].
+
+e ×A
+e → C = complex numbers, by H (x, y) =
+Proof: Define Hn : A
+n
+n
+n
+2hx, yi − 2ihxe, yi.
+e .
+Claim: Hn define a Hermitian inner product in A
+n
+
+24
+
+Clearly Hn is R–bilinear and
+Hn (x, y) = 2hx, yi + 2ihxe, yi = 2hx, yi − 2ihye, xi
+= Hn (y, x).
+Also
+e
+e, yi = 2hx
+e, yi + 2ihx, yi
+Hn (xe, y) = 2hxe, yi − 2ihx
+2
+= 2ihx, yi − 2i hxe, yi = iHn (x, y)
+
+Therefore Hn define a Hermitian product as claimed.
+By definition Hn (a, b) = 0 if and only if b ∈ H⊥
+a and
+for
+
+e ×A
+e |H (a, b) = 0 and ||a|| = ||b|| = 1}
+Wm,2 = {(a, b) ∈ A
+n
+n
+n
+
+1
+m = (2n − 2) = 2n−1 − 1
+2
+
+Q.E.D.
+e
+Remark Notice that the set of Stiefel elements in A
+n+1 , with entries of norm
+one, in 0An can be seen as the real Stiefel manifold V2n −1,2 i.e.
+
+V2n −1,2 = {(a, b) ∈ 0An × 0An |a ⊥ b and |a| = |b| = 1}
+Now we give a partial answer to the following:
+e
+Question: Is any Stiefel element in A
+n+1 a zero divisor?.
+
+Partial Answer: So far, we have seen that the following types of Stiefel
+elements are zero divisors.
+e
+Suppose that α = (a, b) ∈ A
+n+1 with a ∈ 0 An , b ∈ 0 An and |a| = |b| 6= 0
+with a ⊥ b.
+Case: a and b doubly pure in An .
+e ×A
+e is a non–trivial then b ∈ H⊥ and by §4
+1. If α = (a, b) ∈ A
+n
+n
+a
+e
+e
+(a, b)(a, b) = (0, 0) in An+1 .
+
+2. Suppose that b ∈ Ha .
+
+Since |a| = |b| 6= 0 b = ra + sae for r 2 + s2 = 1, and a ⊥ b implies that
+0 = ha, bi = ha, rai + ha, saei,but a ⊥ ae and we have that 0 = rha, ai =
+r||a||2, therefore r = 0 and b = sae with s2 = 1 i.e. b = ±ae.
+25
+
+In § 4 we show that (a, ±ae)(x, ∓xe) = (0, 0) in An+1 for all 0 6= x ∈ H⊥
+a , so
+(a, b) is a zero divisor.
+
+General case: a and b pure elements in An .
+e
+e0 )
+In § 4 we prove that for any non–zero doubly pure element c in A
+n (c, e
+is a zero divisor in An+1 .
+Since any pure element a ∈ 0 An with a 6= 0 is of the form a = rc ∓ see0
+e
+for r, s in R with r 2 + s2 = 1 and |a| = |c| 6= 0 for some c doubly pure in A
+n
+then (rc ∓ see0 , sc ± r ee0 ) is a zero divisor so (a, b) is a zero divisor in An+1 for
+a ∈ 0 An a 6= 0 and b = sc ± r ee0 if a = rc ∓ see0 .
+More generally if 0 6= λ ∈ Spec(c) then (c, λee0 ) is a zero divisor in An+1
+e with c 6= 0 (§4). If a = rc ∓ sλee with r
+for c a doubly pure element in A
+n
+0
+and s in R such that
+r 2 + (sλ)2 = 1
+then (a, b) is a zero divisor for b = (sλ)c ± r ee0 .
+Open Question:
+Given a ∈ 0 An with a 6= 0.
+If b ∈ 0 An with b ⊥ a, |b| = |a| 6= 0 then
+Is b of one the forms described above?
+Remark.Notice that if λ = 0 is in Spec(c) then c is a zero divisor and
+a = rc ∓ sλee0 = rc with r 2 = 1 so a = ±c and b = ∓ee0 and (a, b) is a zero
+divisor.
+REFERENCES
+[A] J. Adem, Construction of some normed maps, Bol. Soc.Mat. Mex. 20
+(1975) 59–75.
+[B-D-I] Biss -Dugger-Isaksen,Large annihilators in Cayley-Dickson algebras RA/0511691
+Nov 2005.
+[Ch] Chaitin-Chatelin F,Inductive multiplication in Dickson algebras CERFACS Technical Report TR/PA/05/56.
+[E-S] Eakin–Sathaye, On automorphisms and derivations of Cayley–Dickson
+algebras, Jornal of Pure and Applied Algebra, 129, 263–278 (1990).
+[H-J] Horn and Jhonson, Matrix analysis, Cambridge University Press.
+26
+
+[J] James I., Topology of Stiefel manifolds, Cambridge University Press.
+[L] Lam, K.Y., Topological methods for studying the composition of quadratic
+forms, Canadian Math. Soc. Conf. Proc. 4 173–192 (1984).
+[M1] Moreno G., The zero divisor of the Cayley–Dickson algebras over the
+real numbers, Bol. Soc. Mat. Mex. (tercera serie), Vol. 4 No. 1 1998.
+[M2] Moreno G., Alternative elements in the Cayley–Dickson algebras.Proceedings
+in Relativity and Field theory in Honor of Jerzy Plebansky Birkhauser
+2004. math.RA/0404395.
+[M3] Moreno G. Hopf construction in higher dimensions Bol. Soc. Mat.
+Mex 2004 also math.AT/0404172.
+[M4] Moreno G. Monomorphisms between Cayley–Dickson algebras.Nonassocitive
+algebras and its applications Chapter 22 CRC Press, Taylor and Francis
+2005.math.RA/0512516.
+[Po] Porteous, I., Topological algebra, Cambridge University Press.
+[Pr] Praslov, Problems and theorems in linear algebra. Translation of the
+A.M.S., Vol. 134.
+[Sch1] Schaffer, R.D., An introduction to non–associtive algebras, Academic
+Press 1966.
+[Sch2] Schaffer, R.D., On algebras formed by the Cayley Dickson Process,
+American J. of Math. 76 (1954) 435–446.
+[Sh] Shapiro, D., Product of sum of squares, Exposition Math. (2) 235–261,
+(1984).
+[K-Y] Khalil– Yiu P., The Cayley–Dickson algebras: A theorem of Hurwitz
+and quaternions., Bulletin de la Societé, de Lódz, Vol. XLVIII (1997)pp.
+117–169.
+[Z] Zhang F., Matrix theory, Springer–Verlag (University Text).
+
+27
+
+Guillermo Moreno Rodrı́guez
+Departamento de Matematicas
+Centro de Investigación y de estudios Avanzados
+(CINVESTAV del IPN) Apartado Postal 14–740
+MEXICO D.F. MEXICO 07300
+gmoreno@math.cinvestav.mx
+
+28
+
+

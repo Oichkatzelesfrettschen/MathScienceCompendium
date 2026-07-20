@@ -17,10 +17,9 @@ Date: October 2025
 
 from __future__ import annotations
 
-from collections import defaultdict
 from dataclasses import dataclass
 from math import ceil, pi, sqrt
-from typing import Any
+from typing import Any, TypedDict
 
 import numpy as np
 
@@ -49,6 +48,29 @@ from qiskit.circuit.library.basis_change import QFT
 
 sys.path.append(str(Path(__file__).parent))
 from .algebras.roots import E8RootSystem
+
+
+class E8MeasuredRoot(TypedDict):
+    root: list[float]
+    type: str
+    probability: float
+    counts: int
+
+
+class E8DecodedMeasurements(TypedDict):
+    total_shots: int
+    measured_roots: dict[int, E8MeasuredRoot]
+    type1_probability: float
+    type2_probability: float
+    invalid_probability: float
+    root_distribution: dict[str, int]
+
+
+class E8AlgebraicInvariants(TypedDict):
+    measured_root_count: int
+    type_ratio: float
+    average_root_norm: float
+    weyl_orbit_sizes: list[int]
 
 
 @dataclass
@@ -89,7 +111,7 @@ class E8RootStructure:
         self.positive_roots = self.e8_system.positive_roots()
         self.simple_roots = self.e8_system.generate_simple_roots()
         self.cartan_matrix = self.e8_system.compute_cartan_matrix()
-        self._root_cache = {}
+        self._root_cache: dict[str, Any] = {}
         self._initialize_root_mappings()
 
     def _initialize_root_mappings(self) -> None:
@@ -212,7 +234,7 @@ class E8OracleBuilder:
         """Initialize E8 oracle builder."""
         self.config = config
         self.root_structure = E8RootStructure()
-        self._oracle_cache = {}
+        self._oracle_cache: dict[str, QuantumCircuit] = {}
 
     def build_algebraic_oracle(self) -> QuantumCircuit:
         """Build oracle based on E8 algebraic properties.
@@ -746,7 +768,7 @@ class E8MeasurementAnalysis:
         """Initialize measurement analyzer."""
         self.root_structure = E8RootStructure()
 
-    def decode_measurement(self, counts: dict[str, int]) -> dict[str, Any]:
+    def decode_measurement(self, counts: dict[str, int]) -> E8DecodedMeasurements:
         """Decode measurement results to E8 root information.
 
         Args:
@@ -756,13 +778,13 @@ class E8MeasurementAnalysis:
             Decoded E8 root analysis
         """
         total_shots = sum(counts.values())
-        results = {
+        results: E8DecodedMeasurements = {
             "total_shots": total_shots,
             "measured_roots": {},
             "type1_probability": 0.0,
             "type2_probability": 0.0,
             "invalid_probability": 0.0,
-            "root_distribution": defaultdict(int),
+            "root_distribution": {},
         }
 
         for bitstring, count in counts.items():
@@ -774,9 +796,9 @@ class E8MeasurementAnalysis:
                 index = int(clean_bits[::-1], 2)
             except ValueError:
                 # Handle unexpected bitstring formats
-                results["invalid_probability"] += count / total_shots
+                results["invalid_probability"] += float(count / total_shots)
                 continue
-            probability = count / total_shots
+            probability = float(count / total_shots)
 
             if index < 240:
                 # Valid E8 root
@@ -798,7 +820,9 @@ class E8MeasurementAnalysis:
                 }
 
                 # Track distribution
-                results["root_distribution"][root_type] += count
+                results["root_distribution"][root_type] = (
+                    results["root_distribution"].get(root_type, 0) + count
+                )
             else:
                 # Invalid state
                 results["invalid_probability"] += probability
@@ -848,7 +872,7 @@ class E8MeasurementAnalysis:
 
         return correlations
 
-    def extract_algebraic_invariants(self, counts: dict[str, int]) -> dict[str, Any]:
+    def extract_algebraic_invariants(self, counts: dict[str, int]) -> E8AlgebraicInvariants:
         """Extract E8 algebraic invariants from measurements.
 
         Args:
@@ -859,7 +883,7 @@ class E8MeasurementAnalysis:
         """
         decoded = self.decode_measurement(counts)
 
-        invariants = {
+        invariants: E8AlgebraicInvariants = {
             "measured_root_count": len(decoded["measured_roots"]),
             "type_ratio": 0.0,
             "average_root_norm": 0.0,
@@ -876,7 +900,7 @@ class E8MeasurementAnalysis:
 
         for root_info in decoded["measured_roots"].values():
             root = np.array(root_info["root"])
-            total_norm += np.linalg.norm(root)
+            total_norm += float(np.linalg.norm(root))
             count += 1
 
         if count > 0:
@@ -986,7 +1010,7 @@ class E8HardwareOptimization:
         depth_factor = 0.999**depth
         fidelity *= depth_factor
 
-        return max(0.0, min(1.0, fidelity))
+        return float(max(0.0, min(1.0, fidelity)))
 
 
 class E8QuantumAlgorithms:

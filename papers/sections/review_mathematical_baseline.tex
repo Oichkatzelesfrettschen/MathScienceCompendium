@@ -1,0 +1,163 @@
+\chapter{Mathematical Baseline}
+\label{ch:mathematics}
+
+\section{Exceptional and extended Lie algebras}
+
+The finite-dimensional exceptional complex simple Lie algebras are
+$G_2$, $F_4$, $E_6$, $E_7$, and $E_8$. Their ranks, dimensions, root counts,
+and Cartan matrices are established classification data. The affine and
+indefinite extensions commonly denoted $E_9$, $E_{10}$, and $E_{11}$ are
+Kac--Moody algebras, not additional members of the finite exceptional list
+\citep{kac1990infinite}.
+
+For a simply laced finite root system with root lattice $Q$ and weight lattice
+$P$, the finite quotient $P/Q$ has order equal to the determinant of the Cartan
+matrix. Thus
+
+\begin{equation}
+  |P/Q| = \det A,
+  \qquad
+  \det A_{E_6}=3,
+  \quad
+  \det A_{E_7}=2,
+  \quad
+  \det A_{E_8}=1.
+\end{equation}
+
+\begin{evidence}{Established result}
+These identities classify lattices and representations. They do not, without
+an explicit mode map and dynamics, determine transport coefficients, forcing
+amplitudes, jet counts, or material response.
+\end{evidence}
+
+The $E_8$ lattice is even and unimodular in eight dimensions, and its minimal
+vectors form the 240 roots of $E_8$. The lattice also appears in the solution
+of the eight-dimensional sphere-packing problem \citep{cohn2017sphere}. None of
+these statements supplies a physical coupling merely by reusing the label
+$E_8$ in a simulation.
+
+The exceptional Jordan algebra, or Albert algebra, is the 27-dimensional
+algebra $J_3(\OO)$ of Hermitian $3\times3$ octonionic matrices. Its exceptional
+group ladder depends on which structure is preserved:
+
+\begin{table}[htbp]
+  \centering
+  \caption{Corrected exceptional-group roles associated with the Albert algebra.}
+  \label{tab:albert-group-ladder}
+  \begin{tabular}{lll}
+    \toprule
+    Group & Dimension & Preserved structure \\
+    \midrule
+    $F_4$ & 52 & Jordan-algebra automorphisms \\
+    $E_{6(-26)}$ & 78 & determinant-preserving reduced structure \\
+    $E_{7(-25)}$ & 133 & conformal/Freudenthal structure \\
+    \bottomrule
+  \end{tabular}
+\end{table}
+
+Therefore $E_7$ is not the automorphism group of a putative $J_3(S)$ built
+from sedenions. The repository audit now evaluates a nonzero octonionic Jordan
+product, verifies its identity and commutativity residuals, tests the Jordan
+identity, and records the three distinct group roles. This replaces the former
+implementation, whose matrix product returned zero for every input.
+
+\section{Cayley--Dickson algebras}
+
+The Cayley--Dickson construction produces real algebras of dimension $2^n$.
+The first four are
+
+\begin{equation}
+  \RR,
+  \qquad
+  \CC,
+  \qquad
+  \HH,
+  \qquad
+  \OO.
+\end{equation}
+
+Algebraic properties are progressively lost under doubling. In particular,
+the sedenions contain zero divisors, so the existence of a high-dimensional
+Cayley--Dickson algebra does not make it a division algebra or a viable space
+of physical states \citep{baez2001octonions,schafer1954composition}.
+
+\begin{evidence}{Established result with a computational illustration}
+A finite program can exhibit a zero-divisor pair or test identities on sampled
+elements. Such a run illustrates a known theorem; it neither proves the theorem
+nor validates a physical use of the algebra.
+\end{evidence}
+
+\scriptsize
+\begin{longtable}{lrrrrrrrr}
+  \caption{Cayley--Dickson property boundary reproduced by the executable audit.}
+  \label{tab:cayley-property-boundary}\\
+  \toprule
+  Algebra & Dim. & Comm. & Assoc. & Alt. & Power & Flex. & Norm & ZD \\
+  \midrule
+  \endfirsthead
+  \toprule
+  Algebra & Dim. & Comm. & Assoc. & Alt. & Power & Flex. & Norm & ZD \\
+  \midrule
+  \endhead
+  \input{generated/review_cayley_property_rows.tex}
+\end{longtable}
+\normalsize
+
+Here ``Power'' means power-associative, ``Flex.'' means flexible, ``Norm''
+means multiplicative norm, and ``ZD'' records a nonzero zero divisor. The exact
+sedenion witness is $(e_3+e_{10})(e_6-e_{15})=0$.
+
+\section{Modular forms and moonshine}
+
+A modular form is defined by holomorphy and a transformation law under a
+specified subgroup of $\mathrm{SL}(2,\ZZ)$. The classical modular invariant has
+the expansion
+
+\begin{equation}
+  j(\tau) = q^{-1} + 744 + 196884q + 21493760q^2 + \cdots,
+  \qquad q=e^{2\pi i\tau}.
+\end{equation}
+
+The appearance of Monster-group representation dimensions in coefficients of
+$j$ led to monstrous moonshine, proved through the construction of a monstrous
+Lie superalgebra \citep{conway1979monstrous,borcherds1992monstrous}.
+
+\begin{evidence}{Established result}
+Recomputing a few coefficients or special values checks an implementation.
+It does not establish that an unrelated physical system has Monster symmetry.
+That requires a defined action, observables transforming under it, and tests
+that distinguish the symmetry from alternatives.
+\end{evidence}
+
+In particular, the theorem identifies graded Monster traces with specified
+genus-zero modular functions. It supplies no generic stability operator for a
+fluid, fractal, or material evolution equation. The physical claim is rejected
+unless a state space, Monster action, evolution operator, invariant or norm,
+stability inequality, and matched non-moonshine control are all defined.
+
+\section{Fractal dimensions}
+
+Hausdorff and box-counting dimensions are well-defined mathematical invariants,
+but finite-resolution estimators depend on scale selection, sampling, and
+regression choices \citep{falconer2004fractal}. A high coefficient of
+determination for a log--log fit is not by itself evidence of asymptotic scaling.
+The fitted window must be stable under resolution changes and must avoid the
+finite-size and discretization plateaus.
+
+\section{The inference boundary}
+
+The established objects in this chapter can parameterize models. They do not
+select a model on their own. A defensible cross-domain construction must provide
+all of the following:
+
+\begin{enumerate}
+  \item a map from the mathematical object to physical degrees of freedom;
+  \item equations of motion that use the mapped structure;
+  \item units and normalization for every parameter;
+  \item a baseline model without the proposed structure;
+  \item an observable that differs between the models; and
+  \item uncertainty estimates or a convergence study for the comparison.
+\end{enumerate}
+
+Without these items, the mathematics may be correct while the physical
+interpretation remains an unsupported extrapolation.

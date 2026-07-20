@@ -17,18 +17,18 @@ def verify_e7_simple_roots():
     # Standard E7 simple roots (Bourbaki convention)
     # The E7 simple roots embedded in R^8 with sum = 0 constraint
     # Following the standard E7 Dynkin diagram:
-    #   α₁ — α₃ — α₄ — α₅ — α₆ — α₇
+    #   alpha_1 -- alpha_3 -- alpha_4 -- alpha_5 -- alpha_6 -- alpha_7
     #        |
-    #       α₂
+    #       alpha_2
     simple_roots = np.array(
         [
-            [0.5, -0.5, -0.5, -0.5, -0.5, -0.5, 0.5, 0.5],  # α₁
-            [0.0, 0.0, 1.0, -1.0, 0.0, 0.0, 0.0, 0.0],  # α₂
-            [0.0, 0.0, -1.0, 0.0, 1.0, 0.0, 0.0, 0.0],  # α₃
-            [0.0, 0.0, 0.0, 1.0, -1.0, 0.0, 0.0, 0.0],  # α₄
-            [0.0, 0.0, 0.0, 0.0, 1.0, -1.0, 0.0, 0.0],  # α₅
-            [0.0, 0.0, 0.0, 0.0, 0.0, 1.0, -1.0, 0.0],  # α₆
-            [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1.0, -1.0],  # α₇
+            [0.5, -0.5, -0.5, -0.5, -0.5, -0.5, 0.5, 0.5],  # alpha_1
+            [0.0, 0.0, 1.0, -1.0, 0.0, 0.0, 0.0, 0.0],  # alpha_2
+            [0.0, 0.0, -1.0, 0.0, 1.0, 0.0, 0.0, 0.0],  # alpha_3
+            [0.0, 0.0, 0.0, 1.0, -1.0, 0.0, 0.0, 0.0],  # alpha_4
+            [0.0, 0.0, 0.0, 0.0, 1.0, -1.0, 0.0, 0.0],  # alpha_5
+            [0.0, 0.0, 0.0, 0.0, 0.0, 1.0, -1.0, 0.0],  # alpha_6
+            [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1.0, -1.0],  # alpha_7
         ]
     )
 
@@ -36,16 +36,16 @@ def verify_e7_simple_roots():
     print("1. Checking if all simple roots sum to zero:")
     for i, root in enumerate(simple_roots):
         root_sum = np.sum(root)
-        print(f"   α{i + 1} sum = {root_sum:.10f}")
-        assert abs(root_sum) < 1e-10, f"Root α{i + 1} does not sum to zero!"
+        print(f"   alpha{i + 1} sum = {root_sum:.10f}")
+        assert abs(root_sum) < 1e-10, f"Root alpha{i + 1} does not sum to zero!"
     print("   [DONE] All simple roots sum to zero\n")
 
     # Verification 2: All roots have squared length 2
     print("2. Checking squared lengths of simple roots:")
     for i, root in enumerate(simple_roots):
         squared_length = np.sum(root**2)
-        print(f"   ||α{i + 1}||² = {squared_length:.10f}")
-        assert abs(squared_length - 2.0) < 1e-10, f"Root α{i + 1} has incorrect length!"
+        print(f"   ||alpha{i + 1}||^2 = {squared_length:.10f}")
+        assert abs(squared_length - 2.0) < 1e-10, f"Root alpha{i + 1} has incorrect length!"
     print("   [DONE] All simple roots have squared length 2\n")
 
     # Verification 3: Compute Cartan matrix
@@ -56,9 +56,9 @@ def verify_e7_simple_roots():
     for i in range(n):
         for j in range(n):
             # For simply-laced algebras like E7:
-            # A_ij = 2 * <α_i, α_j> / <α_j, α_j>
-            # Since all roots have length 2: <α_j, α_j> = 2
-            # So: A_ij = <α_i, α_j>
+            # A_ij = 2 * <alpha_i, alpha_j> / <alpha_j, alpha_j>
+            # Since all roots have length 2: <alpha_j, alpha_j> = 2
+            # So: A_ij = <alpha_i, alpha_j>
             inner_prod = np.dot(simple_roots[i], simple_roots[j])
             cartan[i, j] = inner_prod
 
@@ -92,9 +92,9 @@ def verify_e7_simple_roots():
     # Check E7 Dynkin diagram structure
     print("   c) E7 Dynkin diagram connections:")
     print("      Expected structure:")
-    print("      α₁ — α₃ — α₄ — α₅ — α₆ — α₇")
+    print("      alpha_1 -- alpha_3 -- alpha_4 -- alpha_5 -- alpha_6 -- alpha_7")
     print("           |")
-    print("          α₂")
+    print("          alpha_2")
     print()
     print("      Actual connections (where A[i,j] = -1):")
 
@@ -103,7 +103,7 @@ def verify_e7_simple_roots():
         for j in range(i + 1, n):
             if abs(cartan[i, j] + 1.0) < 1e-10:
                 connections.append((i + 1, j + 1))
-                print(f"      α{i + 1} — α{j + 1}")
+                print(f"      alpha{i + 1} -- alpha{j + 1}")
 
     expected_connections = [(1, 3), (2, 4), (3, 4), (4, 5), (5, 6), (6, 7)]
     print(f"\n      Expected connections: {expected_connections}")
@@ -118,7 +118,7 @@ def verify_e7_simple_roots():
     print("5. Computing Cartan matrix determinant:")
     det = np.linalg.det(cartan)
     print(f"   det(A) = {det:.10f}")
-    print(f"   Expected: 1.0")
+    print("   Expected: 1.0")
 
     if abs(det - 1.0) < 1e-10:
         print("   [DONE] Determinant equals 1 (CORRECT!)")
@@ -147,12 +147,12 @@ def verify_e7_simple_roots():
         # Alternative set based on standard E8 restriction
         alt_simple_roots = np.array(
             [
-                [1.0, -1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0],  # α₁
-                [0.0, 1.0, -1.0, 0.0, 0.0, 0.0, 0.0, 0.0],  # α₂
-                [0.0, 0.0, 1.0, -1.0, 0.0, 0.0, 0.0, 0.0],  # α₃
-                [0.0, 0.0, 0.0, 1.0, -1.0, 0.0, 0.0, 0.0],  # α₄
-                [0.0, 0.0, 0.0, 0.0, 1.0, -1.0, 0.0, 0.0],  # α₅
-                [0.0, 0.0, 0.0, 0.0, 0.0, 1.0, -1.0, 0.0],  # α₆
+                [1.0, -1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0],  # alpha_1
+                [0.0, 1.0, -1.0, 0.0, 0.0, 0.0, 0.0, 0.0],  # alpha_2
+                [0.0, 0.0, 1.0, -1.0, 0.0, 0.0, 0.0, 0.0],  # alpha_3
+                [0.0, 0.0, 0.0, 1.0, -1.0, 0.0, 0.0, 0.0],  # alpha_4
+                [0.0, 0.0, 0.0, 0.0, 1.0, -1.0, 0.0, 0.0],  # alpha_5
+                [0.0, 0.0, 0.0, 0.0, 0.0, 1.0, -1.0, 0.0],  # alpha_6
                 [
                     -0.5,
                     -0.5,
@@ -162,11 +162,11 @@ def verify_e7_simple_roots():
                     -0.5,
                     -0.5,
                     -0.5,
-                ],  # α₇ (incorrect - doesn't sum to 0!)
+                ],  # alpha_7 (incorrect - doesn't sum to 0!)
             ]
         )
 
-        # Fix α₇ to sum to zero
+        # Fix alpha_7 to sum to zero
         alt_simple_roots[6] = [0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5]
 
         print("\nTrying alternative simple roots...")
@@ -185,7 +185,7 @@ def verify_e7_simple_roots():
             print("[DONE] SUCCESS! This set gives determinant 1!\n")
             print("CORRECT SIMPLE ROOTS:")
             for i, root in enumerate(alt_simple_roots):
-                print(f"  α{i + 1} = {root}")
+                print(f"  alpha{i + 1} = {root}")
         else:
             print(f"[FAILED] Still incorrect: det = {alt_det}")
 

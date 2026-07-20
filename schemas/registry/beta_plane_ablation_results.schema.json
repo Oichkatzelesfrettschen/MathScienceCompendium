@@ -1,0 +1,31 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://mathsciencecompendium.local/schemas/registry/beta_plane_ablation_results.schema.json",
+  "title": "BetaPlaneAblationResults",
+  "type": "object",
+  "required": ["schema_version", "generator", "preregistration_relpath", "configuration_count", "arm_run_count", "records", "time_step_refinements", "aggregate_criteria", "conclusion"],
+  "properties": {
+    "schema_version": {"const": 1},
+    "generator": {"const": "scripts/run_beta_plane_ablation.py"},
+    "preregistration_relpath": {"const": "data/registry/beta_plane_ablation_preregistration.json"},
+    "configuration_count": {"const": 12},
+    "arm_run_count": {"const": 36},
+    "records": {"type": "array", "minItems": 12, "maxItems": 12, "items": {"type": "object"}},
+    "time_step_refinements": {"type": "array", "minItems": 6, "maxItems": 6, "items": {"type": "object"}},
+    "aggregate_criteria": {
+      "type": "object",
+      "required": ["all_budgets_passed", "all_beta_sensitivity_checks_passed", "all_negative_controls_passed", "all_time_step_refinements_passed", "all_preregistered_implementation_criteria_passed", "jet_claim_admitted"],
+      "properties": {
+        "all_budgets_passed": {"type": "boolean"},
+        "all_beta_sensitivity_checks_passed": {"type": "boolean"},
+        "all_negative_controls_passed": {"type": "boolean"},
+        "all_time_step_refinements_passed": {"type": "boolean"},
+        "all_preregistered_implementation_criteria_passed": {"type": "boolean"},
+        "jet_claim_admitted": {"type": "boolean"}
+      },
+      "additionalProperties": false
+    },
+    "conclusion": {"type": "string", "minLength": 1}
+  },
+  "additionalProperties": false
+}

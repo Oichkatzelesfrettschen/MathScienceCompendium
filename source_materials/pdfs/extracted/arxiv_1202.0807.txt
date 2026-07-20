@@ -1,0 +1,3211 @@
+IFIC/12-07, TTP12-004, SFB/CPP-12-06
+
+Seesaw Scale in the Minimal Renormalizable SO(10) Grand Unification
+Stefano Bertolini∗
+INFN, Sezione di Trieste, SISSA, via Bonomea 265, 34136 Trieste, Italy
+
+Luca Di Luzio†
+Institut für Theoretische Teilchenphysik, Karlsruhe Institute of Technology (KIT), D-76128 Karlsruhe, Germany
+
+Michal Malinský‡
+
+arXiv:1202.0807v1 [hep-ph] 3 Feb 2012
+
+AHEP Group, Instituto de Fı́sica Corpuscular – C.S.I.C./Universitat de València,
+Edificio de Institutos de Paterna, Apartado 22085, E 46071 València, Spain
+Simple SO(10) Higgs models with the adjoint representation triggering the grand-unified symmetry breaking, discarded a long ago due to inherent tree-level tachyonic instabilities in the physically
+interesting scenarios, have been recently brought back to life by quantum effects. In this work we
+focus on the variant with 45H ⊕ 126H in the Higgs sector and show that there are several regions in
+the parameter space of this model that can support stable unifying configurations with the B − L
+breaking scale as high as 1014 GeV, well above the previous generic estimates based on the minimal
+survival hypothesis. This admits for a renormalizable implementation of the canonical seesaw and
+makes the simplest potentially realistic scenario of this kind a good candidate for a minimal SO(10)
+grand unification. Last, but not least, this setting is likely to be extensively testable at future
+large-volume facilities such as Hyper-Kamiokande.
+PACS numbers: 12.10.-g, 12.60.Jv, 12.15.Ff
+
+I.
+
+INTRODUCTION
+
+For the last about thirty years, the simplest nonsupersymmetric SO(10) gauge models with 45H ⊕ 16H
+or 45H ⊕ 126H in the Higgs sector have been widely
+considered uninteresting for any realistic unified model
+building. This was namely due to the tachyonic instabilities in their tree-level spectra popping up in all settings compatible with the basic gauge unification constraints [1–5] which, in non-SUSY settings, generically
+favour intermediate-energy thresholds. However, as it
+was shown recently in [6, 7], such instabilities are just
+artefacts of the tree-level approximation. Hence, technically, quantum effects bring this class of models back
+from oblivion.
+On the other hand, dedicated renormalization group
+studies such as [8–11] reveal that a successful unification in this class of models typically requires the B − L
+breaking scale below 1012 GeV for the 45H ⊕ 16H variant
+and below 1010 GeV in the 45H ⊕ 126H case. Such values, however, are disfavoured by the neutrino oscillation
+and cosmology data: i) In the former case, h16H i breaks
+the B − L symmetry by one unit and, thus, the seesaw
+requires a pair of h16H i insertions. This can be minimally implemented at the renormalizable level by e.g. a
+variant of the Witten’s radiative mechanism [12–14] or,
+giving up renormalizability, by a d = 5 operator. In either case the “effective” ∆(B − L) = 2 seesaw scale is
+
+∗ bertolin@sissa.it
+† diluzio@particle.uni-karlsruhe.de
+‡ malinsky@ific.uv.es
+
+further suppressed with respect to the B − L breaking
+scale and the light neutrino masses are typically overshoot by many orders of magnitude. Moreover, the nonrenormalizable nature of the seesaw in the d = 5 case
+hinders the general predictivity of this model. ii) With
+126H at play, the B − L symmetry is broken by two units
+so the right-handed neutrinos receive their masses at the
+tree level via the renormalizable 16F 16F 126∗H Yukawa
+interaction [15, 16]. The upper limit on h126H i quoted
+above then again pushes the absolute scale of the light
+neutrino masses much above the current limits.
+Though unpleasant, this, however, does not constitute
+a fundamental blow to the minimal non-SUSY SO(10)
+as an extensive multi-parameter fine-tuning in the seesaw formula can still bring the light neutrino masses
+down to the desired sub-eV domain. In this respect,
+the situation is very different from that of the minimal supersymmetric (SUSY) SO(10) grand unified theory (GUT) [17–25] where the neutrino masses are typically undershot; indeed, the rigidity of the Higgs potential in minimal SUSY Higgs models enforces a population pseudo-Goldstone bosons well below the GUT
+scale (MG ) [20] whenever the SO(10) → SM breaking
+is not essentially one-step [26, 27], hence disturbing the
+nearly ideal unification within the Minimal Supersymmetric Standard Model (MSSM); for further information
+see, e.g., [28] and references therein.
+In the same spirit, one should keep in mind that the key
+upper bounds on the B − L scale identified in [8–11] are
+derived under the strong assumption of the minimal survival hypothesis [29], i.e., that a minimal set of needed
+intermediate thresholds cluster exactly at the relevant
+symmetry breaking scale. This, of course, does not need
+to be the case in general and as little as a single unex-
+
+2
+
+pected multiplet in the bulk can open a room for B − L
+scales much above the naive expectation, thus rendering
+the gauge coupling unification compatible with the neutrino data for a reasonable price. In this respect, the
+non-SUSY models with higher-dimensional Higgs representations (such as 45H ⊕ 126H ) featuring a number of
+free parameters in the Higgs potential1 provide a lot of
+room for such a serendipity. Moreover, given the renormalizable nature of the seesaw in the 45H ⊕ 126H case,
+the Yukawa sector of this kind of models is strongly constrained, which further opens the door for their near future testability.
+In this study we focus on the possible role of accidental thresholds in the desert of the minimal SO(10)
+GUTs based on the 45H ⊕ 126H Higgs sector. In particular, we calculate the tree-level spectrum of the minimal Higgs model and the leading universal radiative correction to the relevant Higgs masses and ask ourselves
+i) whether states with accidentally small masses can pop
+up in some regions of the parametric space without destabilising the scalar potential and ii) whether the corresponding threshold effects can lift the seesaw scale to the
+desired ballpark of 1013÷14 GeV.
+The work is organized as follows: In Section II we define the 45H ⊕ 126H SO(10) Higgs model of interest and
+calculate its tree-level spectrum2 , which reveals the expected tachyonic instabilities except for the phenomenologically questionable SU (5)-like descents. In analogy to
+the canonical example elaborated on in [6] we argue that
+radiative corrections alleviate the issue and that stable
+and potentially realistic SM vacua are accessible. To exemplify that, we calculate the leading SO(10)-invariant
+radiative correction as a minimal scalar-spectrum regulator. In Section III we study the possible effects of various
+multiplets – if they happen to live in the “GUT desert”
+– on the actual location of the B − L scale. We identify two specific simple and consistent settings in which
+all current phenomenological constraints from the proton
+decay searches and big-bang nucleosynthesis are compatible with the latest limits on the absolute neutrino mass
+scale. A simple numerical scan over the parametric space
+reveals extended domains supporting these solutions. Remarkably enough, in both cases the extra threshold is
+pinned to a relatively narrow mass window which, in
+turn, yields a rather specific prediction for the position of
+the GUT scale and, hence, the d = 6 proton decay rate,
+well within the reach of the future large volume facilities
+such as Hyper-Kamiokande (Hyper-K) [32].
+
+With all this at hand, in Section IV we make a case
+for a new potentially realistic minimal renormalizable
+SO(10) GUT based on the 45H ⊕ 126H ⊕ 10H Higgs sector. We comment in brief on the prospects and strategies
+of a future more detailed scrutiny of the scheme, paying
+particular attention to the Yukawa sector fits and the
+ultimate calculation of the proton decay branching ratios in the fully consistent settings. Then we conclude.
+Technical aspects of the Higgs and gauge-boson spectrum
+calculation are deferred to a set of Appendices.
+
+II.
+
+THE 45-126 HIGGS MODEL
+
+A.
+
+The tree-level scalar potential
+
+The most general renormalizable scalar potential that
+can be written with 45H and 126H at hand reads
+V = V45 + V126 + Vmix ,
+where
+a0
+a2
+µ2
+(φφ)0 + (φφ)0 (φφ)0 + (φφ)2 (φφ)2 , (2)
+2
+4
+4
+2
+ν
+V126 = − (ΣΣ∗ )0
+(3)
+5!
+λ2
+λ0
+(ΣΣ∗ )0 (ΣΣ∗ )0 +
+(ΣΣ∗ )2 (ΣΣ∗ )2
++
+2
+(5!)
+(4!)2
+λ′4
+λ4
+∗
+∗
+(ΣΣ
+)
+(ΣΣ
+)
++
+(ΣΣ∗ )4′ (ΣΣ∗ )4′
++
+4
+4
+(3!)2 (2!)2
+(3!)2
+η2
+η∗
++
+(ΣΣ)2 (ΣΣ)2 + 2 2 (Σ∗ Σ∗ )2 (Σ∗ Σ∗ )2 ,
+2
+(4!)
+(4!)
+iτ
+α
+Vmix = (φ)2 (ΣΣ∗ )2 +
+(φφ)0 (ΣΣ∗ )0
+(4)
+4!
+2 · 5! ′
+β
+β4
+(φφ)4 (ΣΣ∗ )4 + 4 (φφ)4′ (ΣΣ∗ )4′
++
+4 · 3!
+3!
+γ2
+γ2∗
++ (φφ)2 (ΣΣ)2 + (φφ)2 (Σ∗ Σ∗ )2 .
+4!
+4!
+V45 = −
+
+Here we have used the symbols φ and Σ for the components of 45H and 126H , respectively. The detailed breakdown of all the contractions (with the subscripts denoting
+the number of open indices in the relevant brackets) is
+given in Appendix A. Notice that all the couplings are
+real but η2 and γ2 .
+
+B.
+1 Here the non-SUSY nature of the model is central - the SM-
+
+vacuum manifold of the minimal SUSY GUT, as complicated
+as it naively looks, is in reality very simple; indeed, it is
+parametrized by a single complex parameter [20].
+2 Though there exist detailed studies of the vacuum of the 54 ⊕
+H
+126H Higgs model, cf. [30, 31], a similar analysis for the setting
+with 45H instead of 54H , to our best knowledge, has never been
+done.
+
+(1)
+
+The symmetry breaking patterns
+
+There are in general three SM singlets in the reducible 45H ⊕ 126H representation of SO(10). Using
+BL ≡ (B − L)/2 and labelling the field components
+with respect to the 3c 2L 2R 1BL (i.e., SU (3)c ⊗ SU (2)L ⊗
+SU (2)R ⊗ U (1)BL ) algebra, the SM singlets reside in the
+(1, 1, 1, 0) and (1, 1, 3, 0) sub-multiplets of 45H and in the
+(1, 1, 3, +1) component of 126H . In what follows we shall
+
+3
+
+denote
+h(1, 1, 1, 0)i ≡ ωBL , h(1, 1, 3, 0)i ≡ ωR , h(1, 1, 3, +1)i ≡ σ,
+(5)
+where ωBL,R are real and σ can be made real by a
+phase redefinition of the 126H . Different VEV configurations trigger the spontaneous breakdown of the SO(10)
+symmetry into several qualitatively distinct subgroups.
+Namely, for σ = 0 one finds (in an obvious notation)
+ωR = 0, ωBL 6= 0 :
+ωR 6= 0, ωBL = 0 :
+ωR 6= 0, ωBL 6= 0 :
+ωR = −ωBL 6= 0 :
+ωR = ωBL 6= 0 :
+
+3c 2L 2R 1BL ,
+4C 2L 1R ,
+3c 2L 1R 1BL ,
+flipped 5′ 1Z ′ ,
+standard 5 1Z ,
+
+(6)
+
+with 5 1Z and 5′ 1Z ′ standing for the two inequivalent
+embeddings of the SM hypercharge operator Y into
+SU (5) ⊗ U (1) ⊂ SO(10) usually called the “standard”
+and the “flipped” SU (5) scenarios [33, 34], respectively.
+(3)
+In the standard case, Y = TR + TBL belongs to the
+SU (5) algebra and the orthogonal Cartan generator Z
+(3)
+is given by Z = −4TR + 6TBL . In the flipped (5′ 1Z ′ )
+case, the right-handed isospin assignment of quarks and
+leptons is turned over so that the flipped hypercharge
+(3)
+generator reads Y ′ = −TR + TBL . Accordingly, the ad(3)
+ditional U (1)Z ′ generator reads Z ′ = 4TR + 6TBL (for
+further details see ,e.g., Ref. [6]).
+For σ 6= 0 all the intermediate gauge symmetries (6)
+are spontaneously broken down to the SM group, with
+the exception of the last case which maintains the SU (5)
+subgroup unbroken and, hence, will not be considered
+here. The decomposition of the 45H and 126H representations with respect to the all relevant intermediate
+symmetries (6) is detailed in Tables I and II.
+C.
+
+The tree-level scalar spectrum
+
+Adopting the convention in which the mass term in the
+Lagrangian is written as 12 ψ T M 2 ψ, where ψ = (φ, Σ∗ , Σ)
+is a 297-dimensional vector, the scalar spectrum is obtained readily by evaluating the relevant functional scalar
+mass matrix of the schematic form
+
+
+Vφφ VφΣ∗ VφΣ
+
+
+M 2 (φ, Σ∗ , Σ) =  VΣ∗ φ VΣ∗ Σ∗ VΣ∗ Σ 
+(7)
+VΣφ VΣΣ∗ VΣΣ
+
+on the SM vacuum. The subscripts here denote the
+derivatives of the scalar potential with respect to a specific set of fields. Subsequently, this matrix is brought to
+a block-diagonal form by a subsequent unitary transformation into the SM basis.
+The complete tree-level spectrum is given in Appendix B. There are several features that can be seen
+readily: i) as anticipated in [6] there is again a pair
+
+of pseudo-Goldstone bosons (cf. also comments in Appendix B 4) entertaining very simple mass formulae:
+M 2 (1, 3, 0) = −2a2 (ωBL − ωR )(ωBL + 2ωR ) ,
+M 2 (8, 1, 0) = −2a2 (ωR − ωBL )(ωR + 2ωBL ) .
+
+(8)
+(9)
+
+These multiplets develop tachyonic masses whenever
+ωBL /ωR is outside the [−2, − 21 ] interval. Hence, as such,
+the tree-level Higgs spectrum is clearly unable to support
+the physically interesting breaking patterns with either
+ωBL ≪ ωR or ωR ≪ ωBL , thus avoiding the intermediate flipped SU (5)′ ⊗ U (1)Z ′ stage. SU (5) intermediate
+stages, ωBL , ωR ≪ σ, are disfavoured as well3 .
+ii) In this respect, it is worth looking at formulae (8)
+and (9) in more detail. For instance, as in the 45H ⊕ 16H
+case [6] there are no contributions there from the B − L
+–breaking VEV σ although the number of available contractions of the type (φ2 )(ΣΣ(∗) ) is larger here. This can
+be understood as follows: regardless of how the indices
+of the ΣΣ(∗) bilinears are contracted, the resulting tensor never breaks the SU (5) symmetry. Since both Σ’s
+couple to both φ’s in the same manner one can always
+view the contraction with the pair of adjoints (φ’s) as
+a quadratic covariant-derivative-like term for the fields
+with the SM gluon and SU (2)L -gauge quantum numbers.
+These fields, however, remain massless at the SU (5) level.
+However, as shown in [6], this is no longer the case
+at the quantum level where all the tree-level forbidden
+couplings do indeed enter the relevant mass formulae and
+thus open the room for the physically interesting settings
+with ωBL very different from ωR .
+
+D.
+
+Leading one-loop corrections
+
+Unlike in the 45H ⊕ 16H case the full-fledged effective
+potential (EP) calculation of the one-loop scalar spectrum in the 45H ⊕ 126H model is very difficult due to the
+enormous complexity of the contractions involving 126H
+so we shall not attempt it here. However, the radiative corrections are really important only for the pseudoGoldstone bosons associated to accidental global symmetries, c.f. [6] and Appendix B 4; thus, one can get a good
+grip on the one-loop spectrum even without the full EP
+analysis. Moreover, some of the results obtained for the
+45H ⊕16H setting in [6] can be readily adopted to the current case; in particular, the one-loop gauge-induced corrections to the masses of the scalars residing solely in 45H
+
+3 Recently, there were several attempts to reconcile the simplest
+
+non-SUSY SU (5) scenarios with the gauge unification by means
+of intermediate-scale thresholds, see, e.g., [35–41] and references
+therein. Though possible in principle, we shall not consider the
+SU (5) option here because there is virtually no room for such
+an intermediate stage below the SO(10)-breaking scale in the
+model of our interest. Moreover, these settings generically rely
+on several multiplets pushed into the desert.
+
+4
+
+3c 2L 1Y
+
+(1, 1, 3) (1, 1, +1)
+
+
+(1, 1, +1) (10, −4) 10, +4
+
+(1, 1, 3, 0)
+
+(1, 1, +1, 0)
+
+5 1Z
+
+5′ 1Z ′
+
+4C 2L 2R 4C 2L 1R 3c 2L 2R 1BL 3c 2L 1R 1BL
+(1, 1, 0)
+
+(1, 1, 0, 0)
+
+(1, 1, 0)
+
+(1, 1, −1)
+
+(1, 1, −1, 0)
+
+(1, 1, −1)
+
+(1, 3, 1)
+
+(1, 3, 0)
+
+(6, 2, 2)
+
+6, 2, + 21
+
+
+
+(1, 3, 1, 0)
+
+6, 2, − 12
+
+
+
+(15, 1, 1) (15, 1, 0)
+
+(1, 0)
+(1, 0)
+
+10, +4 (10, −4)
+
+(1, 3, 0) (24, 0) (24, 0)
+
+(10, −4) (24, 0)
+3, 2, 61
+
+
+(24, 0) (10, −4)
+3, 2, − 12 , − 31
+3, 2, − 65
+
+
+
+1
+1
+5
+3, 2, + 2 , + 3
+3, 2, + 6
+(24, 0) 10, +4
+
+
+
+3, 2, − 21 , + 31
+3, 2, − 61
+10, +4 (24, 0)
+(1, 3, 0, 0)
+
+3, 2, 2, − 13
+
+
+
+3, 2, 2, + 31
+
+
+
+3, 2, + 12 , − 31
+
+
+
+3, 1, 1, + 23
+
+
+
+3, 1, 0, + 32
+
+
+
+3, 1, + 32
+
+
+
+(24, 0) (24, 0)
+
+
+10, +4 10, +4
+
+3, 1, 1, − 32
+
+
+
+3, 1, 0, − 32
+
+
+
+3, 1, − 32
+
+
+
+(10, −4) (10, −4)
+
+(1, 1, 1, 0)
+
+(1, 1, 0, 0)
+
+(8, 1, 1, 0)
+
+(1, 1, 0)
+
+(8, 1, 0, 0)
+
+(8, 1, 0)
+
+(24, 0)
+
+(24, 0)
+
+TABLE I. Decomposition of the adjoint representation 45 with respect to the various SO(10) subgroups. The definitions and normalization
+of the abelian charges are given in the text.
+4C 2L 2R
+(6, 1, 1)
+
+4C 2L 1R
+(6, 1, 0)
+
+3c 2L 2R 1BL 3c 2L 1R 1BL
+
+
+3, 1, 1, + 31
+3, 1, 0, + 31
+
+
+3, 1, 0, − 31
+3, 1, 1, − 31
+
+3c 2L 1Y
+
+1
+
+3, 1, + 3
+
+5 1Z
+
+5′ 1Z ′
+
+
+5, +2
+
+
+5, +2
+
+
+1
+
+3, 1, − 3 (45, −2) (45, −2)
+
+
+(1, 3, −1) 15, −6 15, −6
+
+3, 3, − 31 (45, −2) (45, −2)
+
+
+
+50, +2 50, +2
+6, 3, + 31
+
+
+
+10, 1, 3 10, 1, −1 (1, 1, 3, +1) (1, 1, −1, +1) (1, 1, 0) (1, +10) 50, +2
+
+10, 1, 0
+(1, 1, 0, +1) (1, 1, +1) (10, +6) (10, +6)
+
+
+10, 1, +1
+(1, 1, +1, +1) (1, 1, +2) 50, +2 (1, +10)
+
+
+
+3, 1, 3, + 31
+3, 1, −1, + 13
+3, 1, − 32 (10, +6) (45, −2)
+
+
+
+
+3, 1, 0, + 31
+3, 1, + 31
+50, +2 50, +2
+
+
+3, 1, +1, + 13
+3, 1, + 34 (45, −2) (10, +6)
+
+
+
+
+
+6, 1, 3, − 31
+6, 1, −1, − 13
+6, 1, − 34
+50, +2 15, −6
+
+
+6, 1, 0, − 31
+6, 1, − 31 (45, −2) (45, −2)
+
+
+
+
+6, 1, +1, − 13
+6, 1, + 32
+15, −6 50, +2
+
+
+
+
+1, 2, − 12
+5, +2 (45, −2)
+(1, 2, 2, 0)
+1, 2, − 21 , 0
+(15, 2, 2) 15, 2, − 12
+
+
+
+
+1, 2, + 12 (45, −2) 5, +2
+1, 2, + 21 , 0
+15, 2, + 21
+
+
+
+
+3, 2, 2, − 32
+3, 2, − 21 , − 23
+3, 2, − 76 (45, −2) 15, −6
+
+
+
+3, 2, + 21 , − 23
+3, 2, − 16
+15, −6 (45, −2)
+
+
+
+
+2
+1
+7
+2
+3, 2, + 2 , + 3
+3, 2, + 6
+3, 2, 2, + 3
+50, +2 (10, +6)
+
+
+
+3, 2, + 61 (10, +6) 50, +2
+3, 2, − 21 , + 23
+
+
+
+8, 2, − 12
+50, +2 (45, −2)
+(8, 2, 2, 0)
+8, 2, − 12 , 0
+
+
+
+8, 2, + 21 , 0
+8, 2, + 12 (45, −2) 50, +2
+
+(10, 3, 1)
+
+(10, 3, 0)
+
+(1, 3, 1, −1)
+
+3, 3, 1, − 31
+
+6, 3, 1, + 31
+
+(1, 3, 0, −1)
+
+3, 3, 0, − 31
+
+6, 3, 0, + 31
+
+TABLE II. Same as in Table I for the 126 representation.
+
+(such as (8, 1, 0) and (1, 3, 0)) are identical to those obtained in [6], cf. formulae (D1)-(D2) therein. This, however, is not the case for the contribution of scalars which
+span over the components of 126H . Similarly, the oneloop scalar-induced contributions to the tree level scalar
+masses should be calculated from scratch. Needless to
+say, this is a formidable task if it is to be performed in
+
+full generality.
+Thus, in what follows, we shall focus only on the most
+universal scalar one-loop correction, namely, the leading
+non-logarithmic SO(10)-invariant τ 2 -proportional term
+which, as we argue, can be fully accounted for by a simple diagrammatic calculation. Since it yields a positive
+correction to all the scalar masses, it should already be
+
+5
+
+enough to regularize the salient tachyonic instabilities of
+the tree-level scalar spectrum and, perhaps, open new
+regions in the parametric space where stable unifying
+configurations with phenomenologically favourable intermediate scales could be supported. Moreover, since also
+the other leading non-logarithmic corrections (i.e., those
+coming from the gauge and the remaining scalar loops)
+are typically positive, including just the SO(10) invariant
+piece can be viewed as a minimalistic attempt to stabilize
+the tachyons. In view of this, a detailed calculation of all
+one-loop corrections to the scalar spectrum in this framework is not even necessary and will be left to a dedicated
+future study.
+Since the leading scalar-loop induced non-logarithmic
+corrections in the scalar sector come from tadpoles [42],
+it is easy to see that the only source of a τ 2 -proportional
+non-log term is associated to the renormalization of
+the stationarity conditions. Diagrammatically, it corresponds to a special cluster of one-loop graphs contributing to the one-point function of 45H of the kind
+126
+
+126
+45
+
+∋
+
+45
+τ
+
+τ
+
++
+
+45
+
+τ
+τ
+τ
+
+τ
+126
+
+126∗
+
++. . .
+
+(11)
+
+the universal mass shift due to this class of graphs reads4
+2
+∆M1-loop-τ
+2 =
+
+35τ 2
++ logs ,
+32π 2
+
+(12)
+
+where the symbol “logs” denotes all the logarithmic corrections that are minimized at the GUT scale.
+III.
+
+A.
+
+Consistency
+
+Besides gauge unification, there are other basic aspects
+of an overall consistency of potentially realistic settings
+that will be of our concern here, namely, the stability of
+the physical vacuum (i.e., the absence of tachyons) and
+the position of the unification scale5 which governs the
+d = 6 proton decay. Moreover, with potentially very light
+coloured states in the desert, d > 6 proton decay as well
+as possible BBN issues should be also considered.
+
+∗
+
+(10)
+Given the SO(10) structure of the relevant τ -vertex,
+namely,
+iτ
+V45−126 ∋ φij Σklmni Σ∗klmnj
+4!
+
+amounts to imposing an extra algebraic constraint on
+the parameter space of the model, i.e., it cuts out a region close to the relevant zero-mass hyper-surface. The
+rest of the spectrum then must be evaluated around this
+hyper-surface which, however, brings in a high level of
+non-linearity. Thus, in what follows, we shall mainly
+stick to numerical methods to simulate the heavy scalar
+and vector-boson spectra in order to single out the regions of the parametric space that can support viable
+gauge unification patterns.
+
+UNIFICATION IN THE 45-126 MODEL
+
+With this information at hand, in this section we can
+finally address the question of our main interest, namely,
+whether accidentally light scalar multiplets in the SM
+desert could possibly open the door to a consistent gauge
+unification with a B − L scale well above the unpleasant
+upper limit of about 1010 GeV obtained in [11] under the
+assumption of minimal survival.
+Since the scalar masses are expressed as functions
+of the microscopic parameters entering the scalar potential (1), pushing a specific multiplet into the desert
+
+1.
+
+Vacuum stability
+
+As stated before, from now on we shall stick to
+the “minimally regularized” form of the scalar spectrum, i.e., we shall use the tree-level formulae of Appendix B 2 augmented with the leading SO(10)-invariant
+non-logarithmic one-loop correction (12).
+For each physical point in the parametric space, the
+mass-squares of all propagating scalars should be positive. This, as we shall see, is indeed a very restrictive
+constraint which already disqualifies some of the potentially interesting multiplets, see Sect. III B 1. It is perhaps worth mentioning that with one such a stable vacuum at hand one can generate a continuum of other stable vacua by rescaling all the dimensionful parameters
+entering the mass formulae by a common factor. This invariance will be later on used for a simple optimization of
+the one-loop unification patterns, cf. Sect. III B 2. Moreover, it is easy to understand that, as long as only the
+scalar mass-squares are concerned, further degeneracies
+in the parametric space of the model can be identified;
+among these perhaps the most prominent is the absence
+of the phase of γ2 from the tree-level mass formulae and
+the irrelevance of the overall sign of the mass parameters
+at play (i.e., all that matters are just relative signs).
+
+5 The GUT scale is conventionally defined as the mass scale of
+4 Let
+
+us just mention that the same technique applied to the
+45H ⊕ 16H case yields the uniform mass shift of τ 2 /4π 2 which
+is indeed consistent with the results of the effective potential
+calculation [6].
+
+the gauge bosons associated to the breakdown of SO(10) to either 3c 2L 2R 1BL or 4C 2L 1R intermediate symmetries, i.e., those
+transforming for instance as (3, 2, − 56 ) ⊕ (3, 2, + 65 ) under the SM
+gauge group.
+
+6
+
+2.
+
+3.
+
+Proton lifetime limits
+
+a. d = 6 proton decay: We shall impose the latest
+(2011) Super-Kamiokande (SK) limit on the proton lifetime (for the e+ π 0 channel) [43]:
+τ (p → e+ π 0 )SK,2011 > 8.2 × 1033 years ,
+
+(13)
+
+and, whenever appropriate, comment on the changes in
+the results for a couple of assumed future sensitivity limits, namely those quoted in [32] that Hyper-Kamiokande
+(HK) should reach by 2025 and 2040, respectively:
+τ (p → e+ π 0 )HK,2025 > 9 × 1034 years ,
+τ (p → e+ π 0 )HK,2040 > 2 × 1035 years .
+
+(14)
+(15)
+
+These translate to the following (raw) formula for the
+compatibility regions in the MG − α−1
+G plane:
+ −1 
+αG
+102(nG −15) > 11.8, 39.0, 58.1,
+(16)
+45
+where nG ≡ log10 (MG /GeV) and the three values on the
+right-hand-side correspond to the three lifetime limits in
+Eqs. (13)–(15), respectively. In the relevant figures (cf.
+FIGs 1-3 and FIGs 6-8), the regions of the parametric
+space where the three constraints (16) are fulfilled will
+be, consecutively, denoted by light-gray, dark-gray and a
+black color.
+One should also check that lowering a specific multiplet
+into the GUT desert does not bring any of the protondangerous coloured scalar triplets too much below some
+1014 GeV; although the detailed structure of the scalar
+d = 6 proton decay amplitude is typically suppressed by
+small Yukawa couplings, this is not always the case and
+a coloured triplet well below this limit can be dangerous.
+Since we do not consider the details of the Yukawa sector here, we shall adopt a conservative limit like the one
+quoted above. Remarkably enough, this constraint turns
+out to be rather weak and in a vast majority of the cases
+where (16) are obeyed the scalar triplets are safe.
+b. d > 6 proton decay: Under the “big desert” hypothesis the d = 6 proton decay operators conserve B −L
+up to MW /MG corrections [44, 45]6 . However this picture
+does not need to hold anymore if we consider new structures at intermediate scales well below MG and d > 6 proton decaying operators (such as those conserving B + L
+at the d = 7 level, c.f. [46, 47]) should be inspected.
+A “canonical” example here is the situation when the
+(3, 2, + 61 ) scalar approaches the weak scale; the relevant
+B+L conserving proton decay amplitude7 can then easily
+clash with the experimental limits [38].
+
+BBN and the lifetime of light coloured BSM multiplets
+
+Light colored thresholds can be also troublesome for
+the Big Bang Nucleosynthesis (BBN). This has to do with
+the requirement that any colored state other than the SM
+fields must decay with a lifetime shorter than about 1 second, in order to preserve the classical predictions of the
+light elements’ abundances [43]. From this perspective,
+renormalizable Yukawa couplings of such light scalars to
+the SM matter fields are welcome as the relevant decay
+widths are typically large enough to be safe.
+
+B.
+
+Running with extra thresholds in the desert
+
+For the sake of simplicity, in what follows we shall
+entirely stick to the case with a single extra SM submultiplet of 45H ⊕ 126H in the desert. This not only
+lowers the number of fine-tunings to the minimum, but
+also admits for a systematic classification of the possible
+threshold effects.
+
+1.
+
+Identifying the most suitable thresholds
+
+i) The stability requirements of Sect. III A 1 disfavour
+a light (3, 3, − 31 ) multiplet as there are no suitable stable
+vacua supporting this configuration even if the leading
+universal one-loop correction (11) is taken into account8 .
+ii) There is a good reason to disfavour all multiplets
+whose effect on the hypercharge coupling evolution is
+much larger than the effect on the SU (2)L coupling: Recall that the upper limit on B − L emerges from the
+need to delay the “premature” SM unification of the
+U (1)Y and SU (2)L couplings by lowering enough the
+B − L scale. An extra state in the desert which would
+act against this rule of thumb would further strengthen
+the demands imposed on the B − L scale, thus further
+lowering the relevant upper bound. On the other hand,
+such states are almost never brought down alone as the
+relevant fine-tuning lowers also the states occupying the
+same larger-symmetry multiplets to the respective symmetry breaking scale; however, such intermediate scales
+in the settings of our interest should not be far from MG
+so the effects of these extra components are typically
+sub-leading. Hence, multiplets like (1, 1, +1), (1, 1, +2),
+(3, 1, − 32 ), (3, 1, + 34 ), (6, 1, − 34 ), (6, 1, − 31 ), (6, 1, + 32 ) and
+(3, 2, + 67 ) are not fit for our purposes. On the same footing, the individual effect of an additional (1, 2, + 21 ) is too
+weak to make much difference even if it is pushed down
+to the electroweak scale.
+
+6 In the SO(10) models these operators are usually induced by
+
+the scalar triplets transforming as (3, 1, − 31 ) ⊕ (3, 1, + 31 ) and the
+(3, 2, − 65 ) ⊕ (3, 2, + 65 ) ⊕ (3, 2, + 16 ) ⊕ (3, 2, − 61 ) gauge bosons.
+7 In the current SO(10) model the relevant effective operator is
+traced back to the 1264H quartic coupling and the 16F 16F 126∗H
+Yukawa interaction.
+
+8 Strictly speaking, this is not entirely decisive as the other one-
+
+loop corrections we are not considering here may open more room
+for such a setting.
+
+7
+
+iii) We discard also the (1, 3, −1) component of 126H
+because it is the type-II seesaw triplet – indeed, a very
+light triplet would require an extra fine-tuning of the
+effective SU (2)L -triplet-doublet-doublet coupling otherwise the absolute neutrino mass scale would be overshot
+by many orders of magnitude.
+Thus, from now on we shall entirely focus on the possible threshold effects due to the remaining SM multiplets
+pushed into the GUT desert, namely, the (1, 3, 0) submultiplet of 45H , a pair of (3, 2, + 61 ) mixed multiplets,
+the (6, 3, + 31 ) of 126H and the pair of (8, 2, + 21 ) in 126H .
+
+2.
+
+Technical details of the RGE analysis
+
+On the technical side, we shall always work in the effective SM picture where all the beyond-SM scalar and vector bosons are classified by their 3c 2L 1Y quantum numbers; hence, conveniently, we will be always using the
+three SM “effective” couplings irrespective of the actual
+number of simple gauge factors that can be identified at
+any given energy scale. Needless to say, this is a mere
+convention provided that the matching to the full theory
+(especially at higher orders) is performed consistently.
+Given the tachyonic nature of the tree-level spectrum
+in the settings of our interest, a pure one-loop RGE analysis is meaningless; in principle, the simplest fully consistent approach would be, of course, a two-loop running based on a complete one-loop information about the
+scalar and gauge spectra.
+This, however, is extremely demanding in full generality because even the very analytic minimization of the
+relevant one-loop effective potential in the 45H ⊕ 126H
+case is virtually intractable (note that, in this respect,
+the qualitative difference between the 45H ⊕ 16H and
+45H ⊕ 126H cases is paramount).
+Thus, we shall rather perform a qualitative one-loop
+RGE analysis based on the ”minimally regularised”
+scalar spectrum, see Sections II D and III A 1 which, however, should9 account for all the salient features of the
+fully consistent picture. In other words, we work in the
+approximation in which the full one-loop approach to the
+gauge coupling evolution is refined by the key two-loop
+effects.
+Technically, the calculations are performed in three
+stages along the following lines: First, we randomly scan
+over the parametric space of the model assuming the desired multiplet to be close to the electroweak scale and
+calculate the scalar spectrum for each such a point. For
+
+9 This expectation is based on the simple fact (see for instance [6])
+
+that the tachyons, which can be identified with pseudo-Goldstone
+modes of accidental global symmetries of the scalar potential restored in certain corners of the parametric space, are the only
+states whose mass-squares are really prone to radiative corrections.
+
+those points for which the vacuum turns out to be stable, we adjust the overall scale of the dimensionful parameters ωR , ωBL , σ and τ and the position of the light
+threshold in such a way that a consistent unification is
+obtained. Note that, in many cases, this can be done
+even analytically – at one loop, both such changes inflict essentially linear shifts in the values of the three
+gauge couplings evaluated above the highest threshold10
+so the optimization of the unification pattern amounts
+to a solution of a linear system. Finally, we check the
+full consistency of the resulting pattern with the proton
+decay and BBN limits specified in Section III A and see
+whether the threshold effects can lift the B − L scale into
+the seesaw-favoured domain of 1013÷14 GeV.
+Given that, one can identify the following main sources
+of uncertainties plaguing the precision of the derived
+electroweak-scale values of the gauge couplings: i) Sticking to the one-loop beta-functions we commit an error
+of the size of a typical two-loop effect11 . Assuming the
+usual size of such an uncertainty as observed, e.g., in [11]
+one can expect a reduction of the tree-level prediction of
+MG by roughly a factor of two. ii) We do not re-input
+the derived values of the gauge couplings back into the
+gauge-boson mass-formulae and reiterate the code; for
+the sake of simplicity, we rather use a “typical” gauge
+coupling corresponding to α−1
+G around 40 for all heavy
+gauge boson masses. The error due to this is of the or2
+2
+]/16π 2 which, however, is entirely
+der of log[gtrue
+/gassumed
+negligible. iii) We treat the fine-tuning in the (1, 2, + 21 )
+sector in a simplified manner: since one eigenstate of
+the (1, 2, + 21 ) system is implicitly assumed to be finetuned to the electroweak scale to act as the usual SM
+Higgs boson only the heavier eigenstate of the doublet
+mass matrix should be included in the heavy-spectrum
+analysis. On the other hand, it does not make sense to
+perform such a fine-tuning with just 45H ⊕ 126H at play
+as it would, artificially, bring in an extra constraint on
+the parametric space which would be, however, absent
+in any realistic model including e.g. an extra 10H in the
+Higgs sector. For the sake of this qualitative analysis, we
+decided to resolve this dichotomy by mimicking the effect
+of the (unidentified) heavy doublet by averaging12 over
+the effects of the two massive eigenstates of the doublet
+
+10 Concerning the latter, i.e., the shift in the mass of the acciden-
+
+tally light multiplet, as long as it is well below the next-to-lightest
+and other heavier thresholds it can slide essentially freely without affecting the heavy part of the spectrum at all because all
+such configurations fall into a very small patch of the parametric
+space. This, however, does not need to be always the case and
+one should be more careful here, cf. FIG. 4.
+11 More precisely, here we refer to the typical scale of the two-loop
+corrections in “regular” settings, i.e., those in which one does not
+encounter tachyonic instabilities and a one-loop analysis would
+be perfectly self-consistent.
+12 Note that this way one implicitly retains the desired slope (b =
+i
+−37/3) for all three effective SM couplings above the scale of the
+heaviest component of the scalar spectrum.
+
+8
+
+mass matrix (B9). Note also that the effect of a possible
+extra 10H in the full-fledged models (like those discussed
+later in Sect. IV) is expected to be small because the extra degrees of freedom would typically cluster around the
+GUT scale and, amounting to a full irreducible SO(10)
+representation, they would affect the GUT-scale position
+only marginally. Last, but not least, an extra 10H at play
+does not contain a new candidate for a suitable low-scale
+threshold so, in this respect, the classification given in
+Sect. III B 1 is not affected.
+C.
+
+Results
+
+Let us begin with a short comment on the first two
+options identified in Sect. III B 1, namely, a light (1, 3, 0)
+and/or a light component of the (3, 2, + 61 ) scalar pair. Although in both cases one can find regions of the parametric space supporting such light multiplets in the desert,
+the predicted position of the GUT scale is always at least
+an order of magnitude below the current Super-K limit
+(cf. Sect. III A 2) and, hence, the d = 6 proton decay constraints are always badly violated. Thus, none of these
+two cases turns out to be interesting.
+However, as we argue below, in the remaining cases,
+namely, with either (6, 3, + 31 ) or (8, 2, + 21 ) in the desert,
+fully consistent solutions do exist. Moreover, in both
+these settings, the upper limit on the B − L scale is
+pushed up by several orders of magnitude with respect
+to the naive estimate based on the extended survival hypothesis [11], thus opening a room for a natural implementation of the renormalizable seesaw in this class of
+SO(10) GUTs.
+1.
+
+FIG. 1. M (6, 3, + 31 ) − ωBL correlation in the case of a light
+(6, 3, + 31 ) multiplet in the desert. Various levels of gray correspond to domains accessible for different GUT-scale limits,
+cf. Section III A 2. M (6, 3, + 31 ) can vary only over a couple of
+orders of magnitude (for the current SK limit) and the range
+is likely to shrink considerably in future.
+
+FIG. 2. |ωR | − ωBL correlation in the case of a light (6, 3, + 31 )
+multiplet in the desert. The color code is the same as before,
+cf. Section III A 2. In all of the allowed region |ωR | ≪ ωBL so
+this setting prefers an intermediate 3c 2L 2R 1BL stage.
+
+Consistent setting 1: light (6, 3, + 31 )
+
+a. Stable vacua with a light (6, 3, + 31 ): Let us first
+quote the results of a dedicated numerical scan of the
+parametric space aiming at the identification of the stable
+vacua supporting an accidentally light (6, 3, + 31 ). Confining all the dimensionless couplings into the conservative
+[−1, +1] range stable vacua are confined in the domain
+ωBL > 0, β4′ < 0, β4 > 0, a0 > −0.1 and |γ2 | < 0.6.
+b. One-loop unification with a light (6, 3, + 31 ): Sample regions of the parametric space that support a consistent scalar spectrum and, at the same time, provide a viable gauge-coupling unification, are depicted in FIGs. 1, 2
+and 3. It is worth noticing that: i) In the fully consistent
+settings (6, 3, + 31 ) is pinned down to a relatively narrow
+region around 1011 GeV, cf. FIG. 1. ii) For all consistent
+configurations we find |ωR | ≪ ωBL so these settings generally prefer an intermediate 3c 2L 2R 1BL stage, cf. FIG. 2.
+iii) There is just a little room left if the current SuperK limits get improved considerably in future, see FIG. 1.
+Moreover, since the two-loop effects tend to further lower
+the GUT scale with respect to the one-loop estimates
+(even as much as half an order of magnitude) [11], this
+
+class of scenarios may be ultimately testable at Hyper-K.
+iv) Finally, the actual upper limit on the B − L scale is
+stretched to almost 1015 GeV and it slowly decreases for
+stronger proton-decay limits, cf. FIG. 3.
+However, one should be more careful here because
+these results can be biased by the stability of the numerical approach we are using, cf. Section III B 2. Namely,
+the system of equations implementing the unification
+constraints can be efficiently solved for the position of
+(6, 3, + 31 ) and for the overall shift of the spectrum if and
+only if (6, 3, + 31 ) is considerably lighter than the next-tolightest threshold at play (typically a gauge boson associated to the 2R 1BL → 1Y breaking); otherwise it becomes
+highly non-linear and, hence, difficult to handle. However, as one can see in FIG. 4, for the estimate of the upper limit on σ this issue is less important because some of
+the couplings (namely, β4 and β4′ ) turn non-perturbative
+yet before this issue really occurs. Moreover, the shape
+of the new upper limit on the B − L scale is such that
+one is likely to miss solutions in the lower-B − L regime
+which is not of the utmost importance here.
+
+9
+
+FIG. 3. |ωR | − |σ| correlation in the case of a light (6, 3, + 13 )
+multiplet in the desert. The color code is the same as before,
+cf. Section III A 2. B − L as high as almost 1015 GeV can
+be reached for the current SK limit, with the best Hyper-K
+sensitivity limit the maximum lowers to few×1014 GeV.
+
+FIG. 4. Correlation between the mass of the (6, 3, + 31 ) threshold and the allowed B−L scale σ. There are two basic stability
+issues that bias the estimate of the span of the allowed domains: first, there is the technical requirement we impose on
+the hierarchy between the lightest and next-to-lightest thresholds, i.e, (6, 3, + 13 ) and the gauge sector associated to the
+3c 2L 2R 1BL breaking which cuts the parametric space from
+below right; for large σ’s this, however, becomes irrelevant
+because some of the couplings (namely, β4 and β4′ ) become
+non-perturbative yet before such a numerical instability can
+affect the relevant upper bound.
+
+c. A specific example with a light (6, 3, + 31 ): The
+“effective” SM gauge coupling evolution with a light
+(6, 3, + 31 ) is exemplified in FIG. 5 where the values of the
+input parameters as specified in the left row of TABLE III
+have been used and τ is calculated so that the desired
+M (6, 3, + 31 ) = 5.57 × 1011 GeV is obtained. Note that
+the small |γ2 | region turns out to be preferred for larger
+values of |σ| and that we have chosen a solution with
+relatively small |λ4 | and λ′4 just to optically improve the
+expected “clustering” of the (3, 2, + 67 ) and (3, 2, + 61 ) multiplets at around 1015 GeV (cf. FIG. 5) due to their common origin within (3, 2, 2, + 32 ) of 3c 2L 2R 1BL . A more detailed information about the relevant bosonic spectrum
+underlying the gauge unification in this setting is given
+in TABLE IV of Appendix D.
+
+FIG. 5. Unification of the effective SM gauge couplings in
+a sample setting with a light (6, 3, + 31 ) multiplet (here at
+around 5.6 × 1011 GeV, cf. Section III C 1 c) with the shaded
+area magnified on the lower panel. The short 3c 2L 2R 1BL
+stage is clearly visible here. The small circles indicate the
+positions of various thresholds (for details, see TABLE IV)
+inflicting changes in the three curve’s slopes. The almostvertical solid and dashed lines correspond to the current and
+future proton-decay limits, cf. Section III A 2. The displayed
+setting is compatible (at one loop) with the current SK limit,
+but it can be refuted by the Hyper-Kamiokande. The dotted
+vertical line indicates the position of the B − L scale.
+
+2.
+
+Consistent setting 2: light (8, 2, + 21 )
+
+a. Stable vacua with a light (8, 2, + 21 ): Turning our
+attention to the remaining option of a light (8, 2, + 21 )
+in the desert it is possible to show that (for all dimensionless couplings smaller than 1 in absolute value) there
+are always tachyons in the scalar spectrum outside the
+following domain: |ωBL | < |ωR |, β4′ < 0, a0 > −0.05,
+|γ2 | < 0.6, |γ2 | < −0.8β4′ . Moreover, only one of the
+eigenstates of the mass matrix (B11) can be consistently
+lowered.
+b. One-loop unification with a light (8, 2, + 21 ): Sample regions of the parametric space that support a consistent scalar spectrum and, at the same time, provide a
+viable gauge coupling unification, are depicted in FIGs. 6,
+7 and 8. Note in particular that: i) In the fully consistent settings (8, 2, + 21 ) is narrowed down to the lower
+part of the desert (it is always below 1010 GeV) and even
+more so if proton lifetime limits get improved in the near
+future, cf. FIG. 6. Nevertheless, the allowed domain for
+
+10
+
+light (6, 3, + 31 ) light (8, 2, + 21 )
+parameter
+
+value
+
+value
+
+ωR [GeV]
+
+13
+
+−2.92 × 10
+
+−1.46 × 1016
+
+ωBL [GeV]
+
+15
+
+8.65 × 10
+
+−4.04 × 1012
+
+σ [GeV]
+
+−1.46 × 1014
+
+−3.23 × 1013
+
+a0
+
+0.50
+
+0.50
+
+α
+
+0.55
+
+0.47
+
+β4
+
+0.61
+
+0.60
+
+β4′
+
+−0.41
+
+−0.34
+
+γ2
+
+−0.12
+
+−0.01
+
+λ0
+
+0.95
+
+−0.86
+
+λ2
+
+0.34
+
+−0.14
+
+λ4
+
+−0.07
+
+−0.04
+
+λ′4
+
+−0.15
+
+M (threshold) [GeV]
+
+−0.07
+11
+
+5.57 × 10
+
+FIG. 7. |ωBL |−|ωR | correlation in the case of a light (8, 2, + 21 )
+multiplet in the desert. Various levels of gray correspond
+to domains accessible for different GUT-scale limits, cf. Section III A 2. In the whole allowed region |ωBL | ≪ ωR so this
+setting always exhibits an intermediate 4C 2L 1R stage.
+
+2.3 × 104
+
+TABLE III. Parameters underpinning the two sample settings
+with a light (6, 3, + 13 ) (left) and a light (8, 2, + 21 ) (right), respectively. The value of the τ parameter can be obtained from
+the requirement that the relevant light threshold has the mass
+specified in the last row.
+
+FIG. 8. An interesting |ωBL | − |σ| correlation in the case
+of a light (8, 2, + 21 ) multiplet in the desert. The color code
+is the same as before, cf. Section III A 2. B − L as high as
+1014 GeV can be reached and, remarkably enough, unlike in
+the (6, 3, + 31 ) case the maximum reach is insensitive to the
+proton lifetime limit.
+FIG. 6. M (8, 2, + 12 ) − |ωR | correlation in the case of a light
+(8, 2, + 21 ) multiplet in the desert. The color code is the same
+as before, cf. Section III A 2. M (8, 2, + 21 ) can vary over many
+orders of magnitude in the lower part of the desert, and it is
+pushed down for increasing proton lifetime.
+
+the light threshold is much wider than in the previous
+case, see FIG. 1; hence, this scenario is likely to be more
+robust to the changes inflicted by two-loop effects. In the
+extreme case this class of models requires (8, 2, + 21 ) close
+to the EW scale with possibly interesting collider effects.
+ii) For all consistent configurations we find |ωBL | ≪ |ωR |
+so these settings generally prefer an intermediate 4C 2L 1R
+stage, cf. FIG. 7. iii) The upper limit on the B − L scale
+is pushed to about 1014 GeV and, unlike in the previous
+case, it is rather insensitive to possible future improvements of the proton lifetime limits, cf. FIG. 8.
+Note also that there is no problem with the numerical stability here, cf. Section III B 2, because the gap
+between the mass of (8, 2, + 21 ) and the next-to-lightest
+threshold preferred by the unification constraints is huge.
+
+The
+c. A specific example with a light (8, 2, + 21 ):
+“effective” SM gauge coupling evolution with a light
+(8, 2, + 21 ) is exemplified in FIG. 9 where the values of
+the input parameters as specified in the right column
+of TABLE III have been used and τ is fixed so that
+M (8, 2, + 21 ) = 2.3 × 104 GeV. Note that the small |γ2 |
+region turns out to be preferred for larger values of |σ|
+and we have chosen smaller |λ4 | and λ′4 just to optically improve the expected “clustering” of the remnant
+of the (15, 2, + 21 ) multiplet of 4C 2L 1R (where the light
+(8, 2, + 21 ) comes from) at around 3×1014 GeV, cf. FIG. 9.
+A more detailed information about the relevant bosonic
+spectrum underlying the gauge unification in this setting
+is given in TABLE V of Appendix D.
+
+3.
+
+Further remarks
+
+It is perhaps interesting to note that neither (6, 3, + 31 )
+nor (8, 2, + 21 ), even if pushed well below the GUT scale,
+are any way problematic for either BBN or d > 6 proton-
+
+11
+
+and the relevant branching ratios) is the structure of the
+Yukawa sector.
+
+A.
+
+FIG. 9. The same as in FIG. 5, here with a light (8, 2, + 12 )
+multiplet (at around 2.3 × 104 GeV, cf. Section III C 2 c) instead of (6, 3, + 31 ); for details of the spectrum see TABLE V.
+The short 4C 2L 1R stage as well as the “fake unification” feature is clearly visible here. The displayed setting is compatible
+(at one-loop) with the current SK as well as possible future
+Hyper-Kamiokande limits.
+
+decay, cf. Sects. III A 2 b and III A 3. As for the former,
+their direct coupling to quarks and leptons (by means
+of the 16F 16F 126∗H SO(10) Yukawa interaction) makes
+both of them decay fast enough via a simple tree-level
+diagram. Similarly, neither (6, 3, + 31 ) nor (8, 2, + 21 ) can
+mediate the effective d = 7 (B + L conserving) proton
+decay.
+
+IV.
+
+THE MINIMAL SO(10) GUT REVIVED
+
+The previous analysis reveals several regions of the
+parametric space of the non-SUSY SO(10) Higgs model
+based on the reducible representation 45H ⊕ 126H that
+can consistently support SO(10) → SM symmetry breaking chains compatible with the electroweak data and
+the current proton decay limits and, simultaneously,
+admit for a large-enough B − L breaking scale for
+a natural implementation of a renormalizable seesaw.
+Hence, this simple Higgs model is ready to be upgraded
+to a full-featured, potentially realistic and predictive
+SO(10) GUT.
+In doing so, the central question to be addressed before approaching any of the ultimate goals of such a programme (e.g., a detailed prediction of the proton lifetime
+
+Yukawa sector of the minimal SO(10) GUTs
+
+It is easy to see that the Higgs model containing just
+45H and 126H can not, at renormalizable level, support
+a viable Yukawa sector as there is only one contraction available in such a case, namely, 16F f 126 16F 126∗H .
+Hence, the flavour structure is entirely governed by a single (symmetric) matrix of Yukawa couplings f 126 and no
+mixing nor featured fermionic spectra can be generated.
+The minimal potentially realistic extension of the
+45H ⊕ 126H setting amounts to adding an extra 10- or
+120-dimensional representation which can smear the degeneracy of the effective Yukawa matrices across different fermionic species; for a more detailed discussion see,
+e.g., [15] or, more recently, [16]. In this respect, it is
+interesting to quote namely the results of the new numerical analysis [48] attempting to fit the SM flavour
+structure onto the effective mass matrices emerging in
+both the 126H ⊕ 10H as well as the 126H ⊕ 120H cases:
+Interestingly, the former option is strongly preferred and,
+moreover, successful fits require a dominance of the typeI seesaw contribution13 . However, as interesting as these
+results are, they are still not entirely decisive as there
+are various sources of uncertainties14 that have not been
+taken into account in [48].
+Nevertheless, the Higgs sector based on 45H ⊕ 10H ⊕
+126H is clearly the first choice; not only it has a better
+chance to be compatible with the fermionic data, but the
+addition of an extra 10H rather than a larger multiplet
+like 120H only minimally disturbs the results obtained in
+the previous parts, see also the comments in Sect. III B 2.
+For the sake of completeness, let us reiterate the
+Yukawa-sector sum-rules relevant to this setting. In full
+generality, one can write a renormalizable Lagrangian
+density15
+L ∋ 16F (f110 10H + f210 10∗H + f 126 126∗H )16F + h.c. , (17)
+which is parametrized by three complex symmetric ma10
+trices f1,2
+and f 126 . It leads to the following general
+tree-level formulae for the effective SM quark and lepton
+
+13 This feature is closely related to the need to avoid the b-τ Yukawa
+
+unification in the non-SUSY settings which, however, is generically favoured by type-II seesaw.
+14 In particular: i) the weights of the SM-doublet VEVs entering
+the relevant sum-rules, cf. Eqs. (18), were taken uncorrelated,
+ii) the running fermionic masses were extrapolated to the GUTscale vicinity under the bold assumption of no thresholds in the
+desert and iii) higher order corrections to the relevant sum-rules
+inherent to non-SUSY settings were not taken into account.
+15 Note that 10∗ of SO(10) is equivalent (in the representation
+sense) to 10, so both 162 10 and 162 10∗ are allowed in non-SUSY
+scenarios.
+
+12
+
+mass matrices16
+Mu = Y110 vu10 + Y210 vd10∗ + Y 126 vu126 ,
+Md = Y110 vd10 + Y210 vu10∗ + Y 126 vd126 ,
+Mℓ = Y110 vd10 + Y210 vu10∗ − 3Y 126 vd126 ,
+MνD = Y110 vu10 + Y210 vd10∗ − 3Y 126 vu126 ,
+MνM,I = cI Y 126 σ, MνM,II = cII Y 126 w126 ,
+
+(18)
+
+10
+where Y1,2
+and Y 126 are proportional to the corresponding f -matrices in (17), the subscripts D and M denote
+the Dirac and Majorana segments of the neutrino mass
+matrix and cI,II (for type-I and type-II seesaw, respectively) combine various extra numerical factors such as
+the relevant Clebsch-Gordan coefficients. Let us note
+that, unlike in SUSY, here the 10H of SO(10) can be
+populated by real components [5], which would further
+reduce the number of independent couplings – indeed,
+in such a case, the second term in (17) would be just a
+repetition of the first one. However, this setting is pathological as it leads to a GUT-scale near-equality of the band t-quark masses, cf. [16].
+It should be stressed that in the full model, the
+projections of the SM Higgs VEVs onto the indicated components of the relevant SO(10) multiplets
+vu10 = h(1, 2, + 21 )10 i, vd10 = h(1, 2, − 21 )10 i, vu126 =
+h(1, 2, + 21 )126∗ i and vd126 = h(1, 2, − 21 )126∗ i as well as the
+VEV of the type-II SU (2)L triplet w126 = h(1, 3, +1)126∗ i
+are calculable functions of the parameters entering the
+scalar potential. Note also that, in full generality, the
+formulae (18) correspond to the two-Higgs-doublet realization of the SM Higgs sector; assuming that only one of
+the doublets survives down to the electroweak scale (i.e.,
+implementing a single fine-tuning in the relevant generalization of the mass matrix (B9)) one should further
+assume either17 vu10 = vu126 = 0 or vd10 = vd126 = 0.
+In connection to this, one should mention a couple of
+other interesting features inherent to the models with
+45H that have no counterpart in many other settings including the popular variant with the GUT symmetry broken by 54H [30, 31, 49]: i) First, in the former case, a
+significant admixture of both the 10H and 126H components within the SM Higgs doublet, which turns out to
+be essential for realistic fits of the Yukawa system (18)
+to the quark and lepton data, is naturally obtained via
+the direct mixing term 10H 126∗H 45H 45H . In the latter
+case, however, there is no such a term and the mixing is
+governed namely by the 10H 126∗H 126H 126H contraction
+which, however, yields and extra suppression of the or2
+2
+der of MB−L
+/MG
+. ii) Second, the settings in which the
+
+GUT symmetry is broken by the VEVs of 45H generally
+feature an almost-automatic suppression of the type-II
+seesaw which, as mentioned previously, is not only welcome due to the generic GUT-scale non-equality of the b
+and τ Yukawas in non-SUSY settings [50], but it seems to
+be even crucial for successful Yukawa fits, cf. [48]. Indeed,
+on general grounds, one expects that in theories in which
+the D-parity18 is broken before the SU (2)R symmetry,
+the type-II contribution to the light neutrino masses is
+2
+2
+naturally suppressed by a factor of MB−L
+/MG
+with respect to the type-I term [55]. Again, this is not the case
+in models based on the 54H where the D-parity is preserved down to the SU (2)R -breaking scale and, thus, no
+extra suppression of type-II seesaw occurs.
+
+B.
+
+Predictivity and testability
+
+Concerning the predictivity of the renormalizable
+model based on 45H ⊕ 10H ⊕ 126H in the Higgs sector,
+there are several aspects worth a comment here.
+i) Yukawa sector complexity: There are in general
+three independent complex symmetric matrices entering the effective sum-rules (18), to be compared to just
+two such structures encountered in, e.g., the minimal potentially realistic Yukawa sector in supersymmetry [17].
+This, however, does not necessarily imply a loss of predictivity in the Yukawa sector: First, the weights of the
+SM VEVs entering Eqs. (18) are in general stronger correlated here than in the minimal SUSY case (cf. [20])
+because here the doublet mass matrix (B9) is lowerdimensional. Second, with only one doublet pushed down
+to the electroweak scale, the system (18) is simplified and
+the correlations among different species become much
+tighter. This is also well reflected by the preliminary
+results of a dedicated numerical analysis [56].
+ii) Vacuum stability: Unlike in the (global) SUSY case
+where the positivity of the scalar mass-squares is automatic in any SUSY-preserving vacuum, the consistency
+requirements here narrow the potentially interesting domains of the parametric space down to just few small
+patches (for instance those identified in Sect. III). On
+the other hand, given the higher number of contractions
+available in the non-SUSY case even at the renormalizable level (to be compared to just several such terms
+entering the Higgs superpotential in SUSY) the set of
+SM-like vacua is clearly higher-dimensional (see the number of parameters in TABLE III versus a single complex
+parameter in SUSY, cf. [20]).
+
+16 Let us remind the reader that a good grip on the Yukawa cou-
+
+plings is also necessary for a reliable account of the d = 6 protondecay amplitudes because they depend on the matrix elements
+of the unitary transformation bringing the quarks and leptons
+from the current to the mass basis.
+17 Actually, only the former option has a chance to work in practice because the latter immediately implies an apparently wrong
+relation Md = Mℓ so we discard it.
+
+18 D-parity is a discrete symmetry acting as a charge conjugation
+
+in the left-right symmetric context [51, 52], and, as such, it plays
+the role of a left-right symmetry (enforcing, for instance, equal
+SU (2)L and SU (2)R gauge couplings). As a part of the SO(10)
+algebra, it is a good symmetry until it gets broken by either a Dodd singlet in 45H (or 210H ) or by any SU (2)R -breaking VEV,
+thus allowing for a left-right asymmetric scalar spectrum [53, 54].
+
+13
+
+iii) Radiative corrections: Unlike many popular SUSY
+SO(10) variants, cf. [19, 57] the model under consideration is asymptotically free (with b = −12) so it remains
+weakly coupled up to the Planck scale. On the other
+hand, its radiative structure is much more involved than
+that of the simplest SUSY scenarios and consistent calculations are technically much more demanding. In this
+respect let us reiterate that the nature of the problem
+calls for a two-loop RGE analysis based on a detailed
+knowledge of the one-loop spectrum and in this work we
+have just performed the first steps in that direction.
+Hence, without a detailed analysis it is rather difficult
+to assess the predictive power of the model under consideration. Nevertheless, even the first results obtained in
+Sect. III indicate that the up-coming large volume experiments such as Hyper-K can impose very strong cuts to its
+(already rather constrained) parametric space, possibly
+covering the entire remaining volume.
+Sometimes, it is suggested to further enhance the
+Yukawa-sector predictivity of the non-SUSY models by
+imposing an extra global U (1) symmetry of the PecceiQuinn (PQ) type [58, 59] which, if it transforms 10H
+10
+non-trivially, forbids one of the f1,2
+couplings in the
+Lagrangian (17). Since, in that case, also 126H would
+have to be PQ-charged, such a symmetry would be broken at the same scale as U (1)B−L , thus linking the PQ
+symmetry-breaking scale to the neutrino masses. In this
+respect, it is very interesting that a seesaw scale in the
+preferred 1013÷14 GeV ballpark is indeed very close to the
+109÷12 GeV PQ-symmetry-breaking window favoured by
+astrophysics and cosmology (see e.g. [60]) and there are
+several attempts in the literature to construct a viable
+unified model along these lines (see, e.g, [61], or more
+recently [16]). On the other hand, since h126H i can not
+break the rank of SO(10) ⊗ U (1)P Q by more than a single unit, a global linear combination of U (1)P Q , U (1)R
+and U (1)B−L survives down to the electroweak scale and
+only there it gets finally broken by the electroweak doublet(s); this, however, is unacceptable as the EW-scale
+PQ-symmetry breaking gives rise to an easily visible axion [62, 63]. Thus, a consistent implementation of this
+interesting scheme calls for a further complication of the
+Higgs sector, which we shall not entertain here.
+
+V.
+
+CONCLUSIONS AND OUTLOOK
+
+In this work we have been concerned with a class of
+simple renormalizable SO(10) Higgs models in which the
+first stage of symmetry breaking is triggered by the 45dimensional adjoint Higgs representation. These settings, discarded a long ago due to inherent tree-level
+tachyonic instabilities developing in most of the physically interesting scenarios, have been recently shown to
+be revived by quantum effects. However, many important aspects of these scenarios, such as, for instance, the
+allowed ranges for the unification as well as various inter-
+
+mediate scales, as important as these are for any realistic
+model building, were never studied in sufficient detail
+to allow for a qualified assessment of their physical relevance.
+Focusing on the variant with 45H ⊕ 126H in the Higgs
+sector, we worked out the complete tree-level spectrum
+and, with such an extra information at hand, performed
+a simple analysis of the gauge-unification patterns. Unlike in the previous studies based on the minimal-survival
+hypothesis, that show a no-go for scenarios with the
+B − L scale above 1010 GeV [11], we found several domains in the parametric space of these models that can
+support a consistent gauge-unification with B − L as
+high as 1014 GeV without encountering any tachyonic
+instabilities or proton lifetime issues. The key to this
+unexpected behaviour is an accidentally light threshold
+in the desert which affects the gauge-unification picture
+in a suitable way. We identified two distinct classes of
+such viable solutions: in the first case, an intermediatescale multiplet transforming as (6, 3, + 31 ) of the SM supports SO(10) → SM descents featuring a short SU (3)c ⊗
+SU (2)L ⊗ SU (2)R ⊗ U (1)B−L intermediate-symmetry
+stage, while the second option including a relatively
+light (8, 2, + 21 ) supports SO(10) breaking chains passing through the SU (4)C ⊗ SU (2)L ⊗ U (1)R intermediate
+symmetry. Remarkably enough, in all the cases of interest, the unification scale turns out to be rather close
+to the current Super-Kamiokande proton-lifetime lower
+bound.
+This, however, opens up an intriguing possibility to
+construct a simple, renormalizable and testable SO(10)
+GUT with 45H ⊕126H ⊕10H in the Higgs sector which, in
+view of the recent failure of the simplest supersymmetric
+SO(10) model [26, 27], can even be viewed as the new
+minimal potentially realistic SO(10) GUT.
+Nevertheless, this study provides only the first glimpse
+on the ultimate viability of such a framework and there
+is much more still to be done. Let us reiterate that simple non-SUSY models suffering from significant tree-level
+vacuum instabilities generically call for a refined two-loop
+RGE approach (assuming one-loop scalar spectrum) because only in such a case the tachyons are really under
+control. In this respect, the results of the current analysis, taking into account only the minimal set of radiative
+corrections necessary for the scalar spectrum regularization, can quantitatively (though not qualitatively) differ
+from those to be obtained in a future full one-loop effective potential analysis.
+Remarkably enough, extrapolating the relative size
+and direction of the two-loop effects observed in [11] to
+the current scheme, the chances for its ultimate testability at future experiments look rather promising. Indeed, any further significant decrease of the maximum
+allowed unification scale due to two-loop effects would allow the up-coming large-volume facilities such as HyperKamiokande to scan over the full physically interesting
+domain in the parametric space of this class of models.
+
+14
+
+(φ)2 (ΣΣ∗ )2 ≡ φij Σklmni Σ∗klmnj
+
+Acknowledgments
+
+S.B. is partially supported by MIUR and the EU
+UNILHC-grant agreement PITN-GA-2009-237920. The
+work of L.DL. was supported by the DFG through the
+SFB/TR 9 “Computational Particle Physics”. The work
+of M.M. is supported by the Marie Curie Intra European Fellowship within the 7th European Community
+Framework Programme FP7-PEOPLE-2009-IEF, contract number PIEF-GA-2009-253119, by the EU Network
+grant UNILHC PITN-GA-2009-237920, by the Spanish MICINN grants FPA2008-00319/FPA and MULTIDARK CAD2009-00064 (Consolider-Ingenio 2010 Programme) and by the Generalitat Valenciana grant Prometeo/2009/091.
+
+The 2-index and 5-index completely antisymmetric
+tensors of SO(10) are labelled respectively as φij and
+φijklm . Given the dual map
+i
+ǫijklmnopqr φnopqr ,
+5!
+
+(A1)
+
+we can define the self-dual and the anti-self-dual irreducible components of φijklm as
+
+1 
+(A2)
+Σijklm = √ φijklm + φ̃ijklm ,
+2
+
+1
+(A3)
+Σ∗ijklm = √ φijklm − φ̃ijklm .
+2
+
+Then the relevant contractions in the scalar potential
+of Eq. (1) are given by
+(φφ)0 ≡ φij φij , (ΣΣ∗ )0 ≡ Σijklm Σ∗ijklm
+
+(A4)
+
+(φφ)0 (φφ)0 ≡ φij φij φkl φkl
+
+(A5)
+
+(φφ)2 (φφ)2 ≡ φij φik φlj φlk
+(ΣΣ∗ )0 (ΣΣ∗ )0 ≡ Σijklm Σ∗ijklm Σnopqr Σ∗nopqr
+(ΣΣ∗ )2 (ΣΣ∗ )2 ≡ Σijklm Σ∗ijkln Σopqrm Σ∗opqrn
+(ΣΣ∗ )4 (ΣΣ∗ )4 ≡ Σijklm Σ∗ijkno Σpqrlm Σ∗pqrno
+(ΣΣ∗ )4′ (ΣΣ∗ )4′ ≡ Σijklm Σ∗ijkno Σpqrln Σ∗pqrmo
+(ΣΣ)2 (ΣΣ)2 ≡ Σijklm Σijkln Σopqrm Σopqrn
+(Σ∗ Σ∗ )2 (Σ∗ Σ∗ )2 ≡ Σ∗ijklm Σ∗ijkln Σ∗opqrm Σ∗opqrn
+
+(φφ)4 (ΣΣ∗ )4 ≡ φij φkl Σmnoij Σ∗mnokl
+
+(A7)
+
+(φφ)4′ (ΣΣ∗ )4′ ≡ φij φkl Σmnoik Σ∗mnojl
+(φφ)2 (ΣΣ)2 ≡ φij φik Σlmnoj Σlmnok
+(φφ)2 (Σ∗ Σ∗ )2 ≡ φij φik Σ∗lmnoj Σ∗lmnok .
+We have checked that this constitutes a complete set of
+SO(10) invariants for the 45-126 system at the renormalizable level.
+Appendix B: The scalar spectrum (45H ⊕ 126H )
+
+Appendix A: Details of the scalar potential
+
+φ̃ijklm = −
+
+(φφ)0 (ΣΣ∗ )0 ≡ φij φij Σklmno Σ∗klmno
+
+(A6)
+
+1.
+
+Vacuum manifold and stationarity conditions
+
+The scalar potential Eq. (1) evaluated on the SM vacuum parametrized by ωBL , ωR and σ, cf. Eq. (5) reads
+
+
+4
+4
+2 2
+2
+2
++ 4ωR
++ a0 12ωR
+ωBL + 9ωBL
++ 2ωR
+hV i= −µ2 3ωBL
+
+a2
+4
+4
++
+− 2ν 2 |σ|2 + 4λ0 |σ|4
+3ωBL
++ 2ωR
+2
+ 2
+2
+2
+|σ|
++2τ (3ωBL + 2ωR ) |σ|2 + 2α 3ωBL
++ 2ωR
+
+2
+2
+|σ|2 .
+(B1)
++ ωR
+−4β4′ 6ωR ωBL + 3ωBL
+
+It is perhaps worth noting that not all couplings in expressions (2)–(4) are present here; the reason is the absence of suitable terms quartic in the available VEVs in
+some of the contractions. As an example consider η2 ,
+the coefficient of the 1264H contraction in Eq. (3), which
+enters neither the vacuum manifold nor the stationary
+conditions or the tree-level spectrum. This can be understood by looking at the decomposition of the the relevant
+invariant under SU (5)⊗U (1)Z which never contains more
+than a single submultiplet (1, +10) that is the only component of 126H that can receive a SM-preserving VEV
+(recall that h126H i preserves SU (5)). Indeed, one has at
+best 1264H ⊃ (1, +10)(15, −6)(15, −6)(50, +2), i.e., three
+derivatives are needed in order for η2 to enter anywhere.
+A similar reasoning can be applied to the other couplings,
+hence fully justifying their presence/absence within all
+the relevant structures. However, most of such couplings
+(e.g., λ2 , λ4 etc.) reappear in the tree-level broken-phase
+mass matrices and, ultimately, all of them appear at the
+full one-loop effective potential level.
+The corresponding stationary equations can be conveniently rewritten as
+
+15
+
+
+
+
+
+∂ hV i
+3 ∂ hV i
+1
+2
+2
+2
+2
++ 2α|σ|2 + 2β4′ |σ|2 ,(B2)
++ a2 ωR ωBL + ωBL
++ ωR
+= −µ2 + a0 6ωBL
++ 4ωR
+−
+6(ωBL − ωR ) ∂ωBL 2 ∂ωR
+
+
+2
+∂ hV i
+∂ hV i
+1
+= a2 ωR ωBL (ωBL + ωR ) − τ |σ|2 + 2β4′ (3ωBL + 2ωR ) |σ|2 ,
+(B3)
+− ωBL
+ωR
+4(ωBL − ωR ) 3
+∂ωBL
+∂ωR
+h
+i
+
+∂ hV i
+2
+2
+2
+2
+,
+(B4)
++ ωR
+− 2β4′ 6ωR ωBL + 3ωBL
++ 2ωR
+= 2σ ∗ −ν 2 + 4λ0 |σ|2 + τ (3ωBL + 2ωR ) + α 3ωBL
+∂σ
+
+which hold away from the standard SU (5) ⊗ U (1)Z vacuum (ωBL = ωR ).
+2.
+
+in this sector one can identify 12 Goldstone boson modes
+with
+M 2 (3, 2, − 65 ) = 0 .
+
+Tree-level scalar spectrum in the SM limit
+
+Let us label the scalar states with respect to the
+SU (3)c ⊗ SU (2)L ⊗ U (1)Y algebra. Applying first the
+stationary conditions in Eq. (B2) and Eq. (B4) one finds:
+a.
+
+(B7)
+
+The remaining components of 45H mix with those in
+126H and will be discussed below.
+
+States with components in 45H only
+
+Besides the classical pair of the would-be tachyons with
+mass formulae
+M 2 (1, 3, 0) = −2a2 (ωBL − ωR )(ωBL + 2ωR ) , (B5)
+M 2 (8, 1, 0) = −2a2 (ωR − ωBL )(ωR + 2ωBL ) , (B6)
+
+b.
+
+States with components in 126H only
+
+Starting with pure states with components in 126H one
+has:
+
+M 2 (1, 1, +2) = 2 (4λ2 + 3λ4 + 16λ′4 ) |σ|2 − 4ωR (τ − 6β4′ ωBL ) ,
+M 2 (1, 3, −1) = 8 (2λ2 + 3λ4 + 2λ′4 ) |σ|2 − 2 (3ωBL + ωR ) (τ − 2β4′ ωR ) ,
+M 2 (3, 1, + 34 ) = 4 (3λ2 + 3λ4 + 4λ′4 ) |σ|2 + 2 (ωBL (4β4′ (ωBL + 2ωR ) + β4 ωBL ) − τ (ωBL + 2ωR )) , 
+2
+2
+2
+M 2 (3, 3, − 31 ) = 4 (3λ2 + 3λ4 + 4λ′4 ) |σ|2 − 2τ (2ωBL + ωR ) + 2β4 ωBL
+,
++ ωR
++ 4β4′ 3ωR ωBL + 2ωBL
+′
+2
+′
+2
+1
+M (6, 3, + 3 ) = 2 (4λ2 + 3λ4 + 16λ4 ) |σ| + 2 (ωBL + ωR ) (2β4 (2ωBL + ωR ) − τ ) ,
+M 2 (6, 1, − 34 ) = 2 (4λ2 + 3λ4 + 16λ′4 ) |σ|2 + 4ωBL (2β4′ (ωBL + 2ωR ) − τ ) ,
+
+2
+2
+2
+,
++ ωR
++ 4β4′ 3ωR ωBL + 2ωBL
+M 2 (6, 1, − 31 ) = 4 (3λ2 + 3λ4 + 4λ′4 ) |σ|2 − 2τ (2ωBL + ωR ) + 2β4 ωR
+M 2 (6, 1, + 32 ) = 8 (2λ2 + 3λ4 + 2λ′4 ) |σ|2 − 4 (ωBL + ωR ) (τ − 2β4′ ωBL ) ,
+
+(B8)
+
+while those developing higher-dimensional mass matrices
+are:
+
+M 2 (1, 2, + 21 ) =
+
+
+2
+2
+2
+2
+4(3λ2 + 3λ4 + 4λ′4 )|σ|2 − 3τ (ωBL + ωR ) + β24 −4ωR ωBL + 7ωBL
++ ωR
++ ωR
++ 3β4′ 4ωR ωBL + 3ωBL
+
+2
+2
+− ωBL
+2γ2∗ ωR
+!
+
+2
+2
+− ωBL
+2γ2 ωR
+ , (B9)
+
+2
+2
+2
+2
++ ωR
++ ωR
++ 3β4′ 4ωR ωBL + 3ωBL
+2(4λ2 + 3λ4 − 8λ′4 )|σ|2 − τ (3ωBL + ωR ) + β24 4ωR ωBL + 7ωBL
+
+16
+
+
+2
+2
++ 3ωR
+2 (4λ2 + 3λ4 + 16λ′4 ) |σ|2 − τ (ωBL + 3ωR ) + β24 (ωBL − ωR ) 2 + β4′ 16ωR ωBL + 5ωBL
+
+2
+2
+− ωBL
+2γ2∗ ωR
+!
+
+2
+2
+− ωBL
+2γ2 ωR
+ , (B10)
+2
+2
+4 (3λ2 + 3λ4 + 4λ′4 ) |σ|2 − τ (5ωBL + ωR ) + β24 (ωBL + ωR ) 2 + β4′ 16ωR ωBL + 5ωBL
++ 3ωR
+
+M 2 (3, 2, + 67 ) =
+
+4 (3λ2 + 3λ4 + 4λ′4 ) |σ|2 + 21 (ωBL + ωR ) (6β4′ (3ωBL + ωR ) + β4 (ωBL + ωR ) − 6τ )
+
+2
+2
+− ωBL
+2γ2∗ ωR
+!
+
+2
+2
+2γ2 ωR
+− ωBL
+ , (B11)
+2
+2
+2 (4λ2 + 3λ4 + 16λ′4 ) |σ|2 − τ (3ωBL + ωR ) + β24 (ωBL − ωR ) 2 + 3β4′ 4ωR ωBL + 3ωBL
++ ωR
+
+M 2 (8, 2, + 21 ) =
+
+
+
+
+
+2
+2
+2
+2
++ ωR
++ 4β4′ 3ωR ωBL + 2ωBL
+2(4λ2 + 3λ4 + 8λ′4 )|σ|2 − 2τ (ωBL + ωR ) + β4 ωBL
++ ωR
+
+
+2
+2
+M 2 (3, 1, + 31 ) = 
+4γ2∗ ωBL
+− ωR
+√
+
+2 2 −8λ′4 |σ|2 + β4 ωR ωBL
+
+2
+2
+− ωR
+4γ2 ωBL
+
+
+2
+2
+2
+2
++ ωR
++ ωR
++ 4β4′ 3ωR ωBL + 2ωBL
+4 (3λ2 + 3λ4 + 4λ′4 ) |σ|2 − 2τ (2ωBL + ωR ) + β4 ωBL
+0
+
+√
+
+2 2 −8λ′4 |σ|2 + β4 ωR ωBL
+
+0
+ , (B12)
+
+
+
+2
+2
+2
+2
+2
+′
+2(4λ2 + 3λ4 )|σ| + 2 2β4 3ωR ωBL + 2ωBL + ωR + β4 ωBL + ωR − τ (ωBL + ωR )
+where the mass matrices above are spanned on the following bases (listing only the column
+ basis1 vectors; the1rows
+∗
+are
+just
+their
+conjugates):
+
+(1, 2, − 21)Σ , (1, 2, − 21)Σ ,
+7
+7
+∗ , (3, 2, − )Σ ,
+∗ , (8, 2, − )Σ
+(3, 2,
+(8,
+2,
+−
+)
+)
+−
+Σ
+Σ
+6
+2
+2
+ 6
+and (3, 1, − 31 )1Σ∗ , (3, 1, − 31 )1Σ , (3, 1, − 31 )3Σ∗ . For potentially ambiguous cases we use superscripts to indicate
+
+M 2 (1, 1, +1) =
+
+M
+
+2
+
+(3, 1, − 32 ) =
+
+the SU (2)R origin of the relevant components.
+c.
+
+Mixed states with components in both 45H and 126H
+
+Finally, the remaining components of 126H that mix
+with those in 45H are listed below.
+
+2 −a2 ωBL (ωBL + ωR ) + (β4 − 2β4′ ) |σ|2
+2 (2β4′ (3ωBL + ωR ) + β4 ωR − τ ) σ
+2 −a2 ωR (ωBL + ωR ) + (β4 − 2β4′ ) |σ|2
+−2 (4β4′ (ωBL + ωR ) + β4 ωBL − τ ) σ ∗
+
+
+
+
+
+2 (2β4′ (3ωBL + ωR ) + β4 ωR − τ ) σ ∗
+2ωR (2β4′ (3ωBL + ωR ) + β4 ωR − τ )
+
+!
+
+,
+
+(B13)
+
+−2 (4β4′ (ωBL + ωR ) + β4 ωBL − τ ) σ
+2ωBL (4β4′ (ωBL + ωR ) + β4 ωBL − τ )
+
+!
+
+,
+
+(B14)
+
+M 2 (3, 2, + 61 ) =
+
+
+2 −2a2 ωBL ωR + (β4 − 2β4′ ) |σ|2
+(2β4′ (5ωBL + 3ωR ) + β4 (ωBL + ωR ) − 2τ ) σ ∗
+
+ (2β4′ (5ωBL + 3ωR ) + β4 (ωBL + ωR ) − 2τ ) σ 2 (ωBL + ωR ) (2β4′ (5ωBL + 3ωR ) + β4 (ωBL + ωR ) − 2τ )
+
+2
+2
+− ωBL
+4γ2∗ (ωR − ωBL ) σ
+2γ2∗ ωR
+
+4γ2 (ωR − ωBL ) σ ∗
+
+
+2
+2
+2γ2 ωR
+− ωBL
+ , (B15)
+
+β4
+′
+2
+2
+2
+2
+′
+8 (2λ2 + 3λ4 + 2λ4 ) |σ| − τ (5ωBL + 3ωR ) + 2 (ωBL − ωR ) + β4 8ωR ωBL + 5ωBL + 3ωR
+
+17
+
+M 2 (1, 1, 0) =
+√
+
+
+
+2
+2 12a0 ωBL
++ a2 (ωBL − ωR )(2ωBL + ωR ) − 6β4′ |σ|2
+4 6 2a0 ωBL ωR − β4′ |σ|2
+√
+
+
+
+2
+4 6 2a0 ωBL ωR − β4′ |σ|2
+2 8a0 ωR
+− a2 (ωBL − ωR )(ωBL + 2ωR ) − 4β4′ |σ|2
+
+√
+
+
+6 (τ + 2αωBL − 4β4′ (ωBL + ωR )) σ ∗
+2 (τ + 2αωR − 2β4′ (3ωBL + ωR )) σ ∗
+√
+2 (τ + 2αωR − 2β4′ (3ωBL + ωR )) σ
+6 (τ + 2αωBL − 4β4′ (ωBL + ωR )) σ
+√
+√
+
+6 (τ + 2αωBL − 4β4′ (ωBL + ωR )) σ 6 (τ + 2αωBL − 4β4′ (ωBL + ωR )) σ ∗
+2 (τ + 2αωR − 2β4′ (3ωBL + ωR )) σ
+2 (τ + 2αωR − 2β4′ (3ωBL + ωR )) σ ∗ 
+
+ , (B16)
+
+4λ0 |σ|2
+4λ0 σ ∗2
+4λ0 σ 2
+
+4λ0 |σ|2
+
+
+Here the
+bases are: (3, 1, − 32 )φ , (3, 1, − 32 )Σ∗
+ relevant
+and
+(3, 2, − 61 )φ , (3, 2, − 61 )Σ∗ , (3, 2, − 61 )Σ
+for the
+∗}
+and
+coloured
+triplets
+and
+{(1,
+1,
+−1)
+,
+(1,
+1,
+−1)
+φ
+Σ
+o
+n
+1
+for the sin(1, 1, 0)15
+φ , (1, 1, 0)φ , (1, 1, 0)Σ∗ , (1, 1, 0)Σ
+glets. Wherever ambiguous, the superscripts denote the
+SU (4)C origin of the relevant components.
+Finally, implementing the remaining stationary condition in Eq. (B3) (substituting for a2 ) one obtains
+
+Rank M 2 (1, 1, +1) = 1 ,
+Rank M 2 (3, 1, + 32 ) = 1 ,
+Rank M 2 (3, 2, + 61 ) = 2 ,
+Rank M 2 (1, 1, 0) = 3 .
+2
+
+(B17)
+
+Basic consistency checks
+
+In order to crosscheck the results given above, we shall
+now study the scalar spectrum of Appendix B 2 in three
+physically interesting limits. In each case one should observe a proper re-clustering of the SM multiplets according to the enhanced symmetry as well as extra WGBs.
+a.
+
+The flipped 5′ 1Z ′ limit, ωR = −ωBL 6= 0 and σ = 0
+
+Labelling the scalar states according to the flipped
+5′ 1Z ′ algebra, cf. TABLE I, the 45H components cluster
+as follows
+M 2 (24, 0) = 4a2 ω 2 ,
+M 2 (10, −4) = 0 ,
+M 2 (1, 0) = 4(10a0 + a2 )ω 2 .
+
+M 2 (1, +10) = −ν 2 + 5 ((α − 4β4′ ) ω − τ ) ω ,
+M 2 (5, +2) = −ν 2 + ((5α + 6β4 + 4β4′ ) ω − τ ) ω ,
+M 2 (10, +6) = −ν 2 + ((5α + 2β4 − 4β4′ ) ω − 3τ ) ω ,
+(B19)
+M 2 (15, −6) = −ν 2 + ((5α − 4β4′ ) ω + 3τ ) ω ,
+M 2 (45, −2) = −ν 2 + ((5α + 2β4 + 4β4′ ) ω + τ ) ω ,
+M 2 (50, +2) = −ν 2 + ((5α + 4β4′ ) ω − τ ) ω .
+As expected, there are 45 − 25 = 20 WGBs.
+b.
+
+(3, 2, − 65 ) = 0, cf. Eq. (B7), we account
+
+Together with M
+for exactly 33 WBG bosons corresponding to the coset
+SO(10)/SU (3)c ⊗ SU (2)L ⊗ U (1)Y .
+3.
+
+Similarly, for the 126H components we get:
+
+(B18)
+
+The 3c 2L 2R 1BL limit, ωBL 6= 0, ωR = 0 and σ = 0
+
+Labelling the scalar states according to the 3c 2L 2R 1BL
+algebra, the 45H components cluster as follows:
+2
+M 2 (1, 3, 1, 0) = −2a2 ωBL
+,
+2
+2
+M (1, 1, 3, 0) = −2a2 ωBL ,
+2
+M 2 (8, 1, 1, 0) = 4a2 ωBL
+,
+2
+1
+M (3, 2, 2, − 3 ) = 0 ,
+M 2 (3, 1, 1, − 32 ) = 0 ,
+2
+M 2 (1, 1, 1, 0) = 4 (6a0 + a2 ) ωBL
+.
+
+(B20)
+
+Analogously, for the 126H components we get
+M 2 (1, 3, 1, −1) = −ν 2 + 3 ((α − 2β4′ ) ωBL − τ ) ωBL ,
+M 2 (1, 1, 3, +1) = −ν 2 + 3 ((α − 2β4′ ) ωBL + τ ) ωBL ,
+M 2 (3, 3, 1, − 31 ) = −ν 2
++ ((3α + 2 (β4 + β4′ )) ωBL − τ ) ωBL ,
+2
+1
+M (3, 1, 3, + 3 ) = −ν 2
+(B21)
++ ((3α + 2 (β4 + β4′ )) ωBL + τ ) ωBL ,
+M 2 (6, 3, 1, + 31 ) = −ν 2 + ((3α + 2β4′ ) ωBL + τ ) ωBL ,
+M 2 (6, 1, 3, − 31 ) = −ν 2 + ((3α + 2β4′ ) ωBL − τ ) ωBL ,
+
+18
+
+2
+
+M (1, 2, 2, 0) =
+M 2 (8, 2, 2, 0) =
+M 2 (3, 1, 1, + 31 ) =
+M 2 (3, 2, 2, + 32 ) =
+
+!
+2
+2
+−2γ2 ωBL
+−ν 2 + 21 (6α + 7β4 + 6β4′ ) ωBL
+,
+2
+2
+−2γ2∗ ωBL
+−ν 2 + 21 (6α + 7β4 + 6β4′ ) ωBL
+!
+2
+2
+−ν 2 + 12 (6α + β4 + 6β4′ ) ωBL
+−2γ2 ωBL
+,
+2
+2
+−2γ2∗ ωBL
+−ν 2 + 12 (6α + β4 + 6β4′ ) ωBL
+
+2
+−ν 2 + ((3α + β4 + 2β4′ ) ωBL + τ ) ωBL
+4γ2 ωBL
+2
+4γ2∗ ωBL
+−ν 2 + ((3α + β4 + 2β4′ ) ωBL − τ ) ωBL
+
+(B22)
+(B23)
+!
+
+,
+
+(B24)
+
+2
+−ν 2 + 12 ((6α + β4 − 2β4′ ) ωBL + 4τ ) ωBL
+−2γ2 ωBL
+1
+∗ 2
+2
+−2γ2 ωBL
+−ν + 2 ((6α + β4 − 2β4′ ) ωBL − 4τ ) ωBL
+
+where
+the matrices above
+are spanned over
+
+
+(3,1,1,− 31 )Σ∗,(3,1,1,− 31 )Σ , (3,2,2,− 32 )Σ∗,(3,2,2,− 32 )Σ ,
+{(1,2,2,0)Σ∗ , (1,2,2,0)Σ } and {(8,2,2,0)Σ∗ , (8,2,2,0)Σ }.
+As expected, there are 45 − 15 = 30 WGBs in the
+spectrum.
+
+c.
+
+!
+
+The 4C 2L 1R limit, ωR 6= 0, ωBL = 0 and σ = 0
+
+Again, as anticipated, the clustering of the scalar spectrum in the 4C 2L 1R limit follows the decomposition rule
+listed in TABLE I:
+2
+M 2 (15, 1, 0) = −2a2 ωR
+,
+2
+2
+M (1, 3, 0) = 4a2 ωR ,
+M 2 (6, 2, + 21 ) = 0 ,
+M 2 (1, 1, +1) = 0 ,
+2
+M 2 (1, 1, 0) = 4 (4a0 + a2 ) ωR
+,
+
+It is worth noting that (1, 3, 1, 0) and (1, 1, 3, 0) remain
+degenerate which is due to the fact that for ωR = 0 the Dparity is conserved by even ωBL powers. On the contrary,
+in the 126H components the D-parity is broken by the τ
+term that is linear in ωBL .
+
+2
+
+M (6, 1, 0) =
+M
+
+2
+
+4.
+
+!
+
+,
+
+2
+2γ2 ωR
+−ν 2 + 21 ((4α + β4 + 2β4′ ) ωR − 2τ ) ωR
+2
+2γ2∗ ωR
+−ν 2 + 12 ((4α + β4 + 2β4′ ) ωR + 2τ ) ωR
+
+The mass matrices above are defined on the bases
+{(6, 1, 0)Σ∗ , (6, 1, 0)Σ } and (15, 2, − 21 )Σ∗ , (15, 2, + 21 )Σ ,
+respectively. As expected, there are in total 45 − 19 = 26
+WGBs.
+Few remarks on global symmetries
+
+It is illuminating to look at the global symmetries of
+the scalar potential when only the moduli of 45H and
+126H appear in the scalar potential. In such a case,
+(i.e., with a2 = λ2 = λ4 = λ′4 = η2 = τ = β4 =
+β4′ = γ2 = 0), the global symmetry of V0 in Eq. (1) is
+O(45) ⊗ O(252). This symmetry is spontaneously broken
+into O(44) ⊗ O(251) by the 45H and 126H VEVs yielding
+
+(B26)
+
+2
+M 2 (10, 3, 0) = −ν 2 + 2 (α + β4′ ) ωR
+,
+2
+2
+′
+M (10, 1, −1) = −ν + 2 ((α − β4 ) ωR + τ ) ωR , (B27)
+2
+,
+M 2 (10, 1, 0) = −ν 2 + 2 (α + β4 + β4′ ) ωR
+2
+′
+2
+M (10, 1, +1) = −ν + 2 ((α − β4 ) ωR − τ ) ωR ,
+
+2
+2
+−ν 2 + (2α + β4 + 2β4′ ) ωR
+−4γ2 ωR
+∗ 2
+2
+2
+−4γ2 ωR
+−ν + (2α + β4 + 2β4′ ) ωR
+
+(15, 2, + 21 ) =
+
+, (B25)
+
+(B28)
+!
+
+. (B29)
+
+44 + 251 = 295 Goldstones in the scalar spectrum. Since,
+at the same time, the gauge SO(10) symmetry is broken
+to the SM gauge group, 45 − 12 = 33 would-be Goldstone
+bosons are “eaten” by the gauge fields associated to the
+SO(10)/SM coset and drop from the scalar spectrum,
+295 − 33 = 262 PGB remain. Their masses are generally expected to receive contributions from the explicitly
+breaking terms a2 , λ2 , λ4 , λ′4 , η2 , τ , β4 , β4′ and γ2 . A
+detailed inspection of the mass matrices in Eqs. (B5)–
+(B16), indeed, reveals the total of 262 massless degrees
+of freedom.
+In this respect, let us emphasize that the (1, 3, 0) and
+(8, 1, 0) components of 45H of our central interest in Section II C belong to this category but, for various reasons,
+they receive just the a2 -proportional mass contribution
+
+19
+
+at the tree level while the other couplings enter the relevant mass formulae only via loops.
+Appendix C: The tree-level gauge boson spectrum
+
+Let us start with the scalar kinetic terms19
+1
+1
+(Dµ φ)∗ab (Dµ φ)ab and
+(Dµ Σ)∗abcde (Dµ Σ)abcde ,
+4
+2 · 5!
+(C1)
+where the covariant derivatives are given by
+1
+(Dµ φ)ab = ∂µ φab − i g(Aµ )ij [ǫij , φ]ab
+2
+
+(C2)
+
+and
+h
+1
+(Dµ Σ)abcde = ∂µ Σabcde − i g(Aµ )ij (ǫij )aa′ Σa′ bcde
+2
+(C3)
++ (ǫij )bb′ Σab′ cde + (ǫij )cc′ Σabc′ de i
++ (ǫij )dd′ Σabcd′ e + (ǫij )ee′ Σabcde′ ,
+
+respectively, and ǫij (i, j = 1, . . . , 10) are the SO(10)
+generators in the fundamental representation
+(ǫij )ab = −i(δai δbj − δaj δbi ) .
+
+(C4)
+
+One finds the following expressions for the field dependent mass matrices of the gauge bosons
+M2A (φ)(ij)(kl) =
+
+
+
+
+g2
+Tr ǫ(ij) , φ ǫ(kl) , φ
+2
+
+(C5)
+
+for the contribution from the VEVs in the 45H , and
+g2 h
+(ǫ(ij) )aa′ Σ∗a′ bcde
+M2A (Σ, Σ∗ )(ij)(kl) = −
+2
+·
+5!
++ (ǫ(ij) )bb′ Σ∗ab′ cde + (ǫ(ij) )cc′ Σ∗abc′ dei
++ (ǫ(ij) )dd′ Σ∗abcd′ e + (ǫ(ij) )ee′ Σ∗abcde′
+h
+× (ǫ(kl) )aa′′ Σa′′ bcde
++ (ǫ(kl) )bb′′ Σab′′ cde + (ǫ(kl) )cc′′ Σabc′′ dei
+
++ (ǫ(kl) )dd′′ Σabcd′′ e + (ǫ(kl) )ee′′ Σabcde′′ + c.c. ,
+for that of the VEV in 126H , where (ij), (kl) stand for
+ordered pairs of indices.
+1.
+
+Contributions to gauge bosons masses from 45H
+
+Evaluating Eq. (C5) one obtains
+2
+,
+M2A (1, 1, +1) = 4g 2 ωR
+2
+2 2
+2
+MA (3, 1, − 3 ) = 4g ωBL ,
+2
+M2A (3, 2, − 65 ) = g 2 (ωR − ωBL ) ,
+2
+M2A (3, 2, + 61 ) = g 2 (ωR + ωBL ) ,
+
+(C6)
+
+∗
+19 Notice that Σ∗
+abcde Σabcde = φabcde φabcde , where Σ and Σ are
+
+defined respectively in Eqs. (A2)–(A3).
+
+while, as expected, there are no contributions of h45H i
+to M2A (1, 3, 0), M2A (8, 1, 0) and M2A (1, 1, 0). Note that,
+in the limits of the standard 5 1Z (ωR = ωBL ), flipped
+5′ 1Z ′ (ωR = −ωBL ), 3c 2L 2R 1BL (ωR = 0) and 4C 2L 1R
+(ωBL = 0) vacua, there are 25, 25, 15 and 19 massless
+gauge bosons, respectively.
+2.
+
+Contributions to gauge bosons masses from 126H
+
+Besides M2A (1, 3, 0), M2A (8, 1, 0) and M2A (3, 2, − 65 )
+which receive no contributions from h126H i one has
+M2A (1, 1, +1) = 2g 2 |σ|2 ,
+M2A (3, 1, − 32 ) = 2g 2 |σ|2 ,
+M2A (3, 2, + 61 ) = 2g 2 |σ|2 , !
+√
+6 2 6
+2
+√
+g 2 |σ|2 .
+MA (1, 1, 0) =
+2 6 4
+Here the SM singlet matrix is defined on the pair of singlets from 15 and 1 of SU (4)C , respectively. One has
+DetM2A (1, 1, 0) = 0 ,
+Tr M2A (1, 1, 0) = 10g 2|σ|2 ,
+
+(C7)
+(C8)
+
+and, as expected, there is a massless state in the singlet sector. The number of vanishing entries corresponds
+to the dimension of the SU (5) algebra preserved by the
+126H VEV σ. Summing together the 45H and 126H contributions, one ends up with 12 massless vector bosons of
+the unbroken SU (3)c ⊗SU (2)L ⊗U (1)Y gauge symmetry.
+Appendix D: Sample spectra
+
+The details of the bosonic spectrum for the sample
+settings described in Sects. III C 1 c and III C 2 c are given
+in TABLEs IV and V, respectively. The symbols RS,
+CS and VB denote, consecutively, real scalars, complex
+scalars and vector bosons. Notice that a double counting
+in the SU (2)L doublet sector is, conveniently, avoided
+by treating both (1, 2, + 21 )’s as real scalars; for further
+details see Sect. III B 2.
+Note also that since we are working in the Feynman
+gauge of the SO(10) → SM broken phase, the Goldstones
+affect the b-coefficients at the mass scales of the corresponding vector bosons (recall the Feynman-gauge pole
+structure of the Goldstone boson propagators); hence,
+the Goldstone bosons (GB) are displayed along with the
+relevant gauge fields in TABLEs IV and V.
+
+20
+
+multiplet
+(6, 3, + 31 )
+(1, 1, −1)
+(1, 1, +1)
+(1, 1, +1)
+(1, 1, 0)
+(1, 1, 0)
+(8, 1, 0)
+(3, 2, + 16 )
+(3, 2, + 76 )
+(1, 1, 0)
+(1, 1, +2)
+(3, 2, − 61 )
+(3, 2, + 61 )
+(3, 2, + 61 )
+(3, 2, + 65 )
+(3, 2, − 65 )
+(3, 2, − 65 )
+(1, 1, +1)
+(1, 1, 0)
+(1, 3, 0)
+(3, 1, + 13 )
+(8, 2, + 12 )
+(3, 1, + 43 )
+(3, 1, + 13 )
+(3, 1, − 23 )
+(3, 1, − 23 )
+(3, 1, + 23 )
+(3, 1, − 23 )
+(8, 2, + 12 )
+(6, 1, + 23 )
+(1, 2, + 12 )
+(6, 1, − 13 )
+(6, 1, − 43 )
+(1, 2, + 12 )
+(3, 1, + 13 )
+(3, 3, − 13 )
+(3, 2, + 16 )
+(3, 2, + 76 )
+(1, 3, −1)
+(1, 1, 0)
+
+type eigenstate
+∆b321
+mass [GeV]
+CS
+1
+( 25 , 4, 25 )
+5.6 × 1011
+)
+VB
+1
+(0, 0, − 11
+1.3 × 1014
+5
+11
+VB
+1
+(0, 0, − 5 )
+1.3 × 1014
+1
+GB
+1
+(0, 0, 5 )
+1.3 × 1014
+VB
+1
+(0, 0, 0)
+2.8 × 1014
+GB
+1
+(0, 0, 0)
+2.8 × 1014
+1
+RS
+1
+( 2 , 0, 0)
+7.7 × 1014
+1 1 1
+CS
+2
+( 3 , 2 , 30 )
+1.1 × 1015
+CS
+1
+( 31 , 12 , 49
+)
+1.2 × 1015
+30
+RS
+2
+(0, 0, 0)
+4.3 × 1015
+4
+CS
+1
+(0, 0, 5 )
+4.5 × 1015
+VB
+1
+(− 11
+, − 11
+, − 11
+) 5.2 × 1015
+3
+2
+30
+11
+11
+11
+VB
+1
+(− 3 , − 2 , − 30 ) 5.2 × 1015
+1
+GB
+1
+( 31 , 12 , 30
+)
+5.2 × 1015
+11
+11
+55
+VB
+1
+(− 3 , − 2 , − 6 ) 5.2 × 1015
+VB
+1
+(− 11
+, − 11
+, − 55
+) 5.2 × 1015
+3
+2
+6
+1 1 5
+GB
+1
+(3, 2, 6)
+5.2 × 1015
+1
+CS
+2
+(0, 0, 5 )
+5.6 × 1015
+RS
+3
+(0, 0, 0)
+5.7 × 1015
+1
+RS
+1
+(0, 3 , 0)
+6.1 × 1015
+1
+1
+CS
+1
+( 6 , 0, 15 )
+6.4 × 1015
+CS
+1
+(2, 43 , 45 )
+9.3 × 1015
+CS
+1
+( 61 , 0, 16
+)
+9.6 × 1015
+15
+1
+1
+CS
+2
+( 6 , 0, 15 )
+9.6 × 1015
+1
+4
+CS
+2
+( 6 , 0, 15 )
+9.6 × 1015
+44
+VB
+1
+(− 11
+, 0, − 15
+) 1.0 × 1016
+6
+11
+44
+VB
+1
+(− 6 , 0, − 15 ) 1.0 × 1016
+4
+GB
+1
+( 61 , 0, 15
+1.0 × 1016
+)
+CS
+2
+(2, 43 , 45 )
+1.1 × 1016
+5
+8
+CS
+1
+( 6 , 0, 15 )
+1.5 × 1016
+1
+1
+RS
+1
+(0, 12 , 20 )
+1.5 × 1016
+2
+CS
+1
+( 65 , 0, 15
+)
+1.5 × 1016
+CS
+1
+( 65 , 0, 32
+)
+1.5 × 1016
+15
+1
+1
+RS
+2
+(0, 12 , 20 )
+1.6 × 1016
+1
+1
+CS
+3
+( 6 , 0, 15 )
+1.7 × 1016
+CS
+1
+( 21 , 2, 15 )
+1.8 × 1016
+1 1 1
+CS
+3
+( 3 , 2 , 30 )
+2.1 × 1016
+1 1 49
+CS
+2
+( 3 , 2 , 30 )
+2.1 × 1016
+CS
+1
+(0, 23 , 35 )
+2.6 × 1016
+RS
+4
+(0, 0, 0)
+3.0 × 1016
+
+TABLE IV. A sample spectrum featuring a light (6, 3, + 13 )
+threshold. The relevant scalar potential parameters are given
+in the left column of Table III. ∆b321 indicates the shift in the
+one-loop beta-function. The light threshold and the vector
+bosons defining the GUT scale are in boldface.
+
+multiplet
+(8, 2, + 12 )
+(3, 1, − 32 )
+(3, 1, + 32 )
+(3, 1, − 32 )
+(1, 1, 0)
+(1, 1, 0)
+(3, 2, + 67 )
+(3, 2, + 61 )
+(1, 2, + 21 )
+(1, 1, 0)
+(3, 1, − 32 )
+(6, 3, + 31 )
+(3, 3, − 31 )
+(1, 3, −1)
+(6, 1, − 34 )
+(1, 1, 0)
+(8, 1, 0)
+(1, 3, 0)
+(3, 2, + 56 )
+(3, 2, − 56 )
+(3, 2, − 56 )
+(3, 2, − 16 )
+(3, 2, + 16 )
+(3, 2, + 16 )
+(3, 1, + 31 )
+(3, 1, + 31 )
+(1, 1, +1)
+(3, 1, + 31 )
+(6, 1, − 31 )
+(3, 2, + 67 )
+(1, 2, + 21 )
+(8, 2, + 21 )
+(3, 2, + 61 )
+(1, 1, −1)
+(1, 1, +1)
+(1, 1, +1)
+(1, 1, +2)
+(3, 1, + 34 )
+(6, 1, + 32 )
+(1, 1, 0)
+
+type eigenstate
+∆b321
+mass [GeV]
+CS
+1
+(2, 34 , 45 )
+2.3 × 104
+44
+, 0, − 15
+) 2.8 × 1013
+VB
+1
+(− 11
+6
+44
+11
+VB
+1
+(− 6 , 0, − 15 ) 2.8 × 1013
+4
+)
+GB
+1
+( 16 , 0, 15
+2.8 × 1013
+VB
+1
+(0, 0, 0)
+6.1 × 1013
+GB
+1
+(0, 0, 0)
+6.1 × 1013
+1 1 49
+CS
+1
+( 3 , 2 , 30 )
+2.6 × 1014
+1 1 1
+CS
+3
+( 3 , 2 , 30 )
+2.8 × 1014
+1
+1
+RS
+1
+(0, 12
+, 20
+)
+3.3 × 1014
+RS
+2
+(0, 0, 0)
+2.2 × 1015
+1
+4
+CS
+2
+( 6 , 0, 15 )
+2.3 × 1015
+CS
+1
+( 25 , 4, 52 )
+2.3 × 1015
+1
+1
+CS
+1
+( 2 , 2, 5 )
+2.3 × 1015
+2 3
+CS
+1
+(0, 3 , 5 )
+2.3 × 1015
+5
+32
+CS
+1
+( 6 , 0, 15 )
+3.2 × 1015
+RS
+3
+(0, 0, 0)
+3.3 × 1015
+1
+RS
+1
+( 2 , 0, 0)
+4.6 × 1015
+1
+RS
+1
+(0, 3 , 0)
+6.1 × 1015
+VB
+1
+(− 11
+, − 11
+, − 55
+) 8.7 × 1015
+3
+2
+6
+11
+11
+55
+VB
+1
+(− 3 , − 2 , − 6 ) 8.7 × 1015
+GB
+1
+( 13 , 21 , 56 )
+8.7 × 1015
+11
+VB
+1
+(− 11
+, − 11
+, − 30
+) 8.7 × 1015
+3
+2
+11
+VB
+1
+(− 11
+, − 11
+, − 30
+) 8.7 × 1015
+3
+2
+1 1 1
+GB
+1
+( 3 , 2 , 30 )
+8.7 × 1015
+1
+1
+CS
+1
+( 6 , 0, 15 )
+1.1 × 1016
+1
+CS
+2
+( 16 , 0, 15
+)
+1.2 × 1016
+1
+CS
+2
+(0, 0, 5 )
+1.6 × 1016
+1
+1
+CS
+3
+( 6 , 0, 15 )
+1.6 × 1016
+2
+CS
+1
+( 56 , 0, 15
+1.6 × 1016
+)
+1 1 49
+CS
+2
+( 3 , 2 , 30 )
+1.7 × 1016
+1
+1
+RS
+2
+(0, 12 , 20 )
+1.7 × 1016
+CS
+2
+(2, 34 , 45 )
+1.7 × 1016
+1
+CS
+2
+( 13 , 12 , 30
+)
+1.7 × 1016
+11
+VB
+1
+(0, 0, − 5 )
+1.7 × 1016
+11
+VB
+1
+(0, 0, − 5 )
+1.7 × 1016
+GB
+1
+(0, 0, 15 )
+1.7 × 1016
+4
+CS
+1
+(0, 0, 5 )
+2.4 × 1016
+1
+16
+CS
+1
+( 6 , 0, 15 )
+2.4 × 1016
+8
+CS
+1
+( 56 , 0, 15
+)
+2.4 × 1016
+RS
+4
+(0, 0, 0)
+4.1 × 1016
+
+TABLE V. The same as in Table IV but for the case discussed
+in Sect. III C 2 c featuring a light (8, 2, + 21 ) threshold. The
+relevant scalar potential parameters are given in the right
+column of Table III. P
+Notice that, as required by consistency,
+in both cases bSM + ∆b321 = (− 37
+, − 37
+, − 37
+).
+3
+3
+3
+
+21
+
+[1] F. Buccella, H. Ruegg, and C. A. Savoy, Phys.Lett. B94,
+491 (1980).
+[2] M. Yasue, Phys.Rev. D24, 1005 (1981).
+[3] M. Yasue, Phys.Lett. B103, 33 (1981).
+[4] G. Anastaze, J. Derendinger, and F. Buccella, Z.Phys.
+C20, 269 (1983).
+[5] K. Babu and E. Ma, Phys.Rev. D31, 2316 (1985).
+[6] S. Bertolini, L. Di Luzio, and M. Malinsky, Phys.Rev.
+D81, 035015 (2010), arXiv:0912.1796.
+[7] S. Bertolini, L. Di Luzio, and M. Malinsky,
+J.Phys.Conf.Ser. 259, 012098 (2010), arXiv:1010.0338.
+[8] D. Chang, R. Mohapatra, J. Gipson, R. Marshak, and
+M. Parida, Phys.Rev. D31, 1718 (1985).
+[9] N. Deshpande, E. Keith, and P. B. Pal, Phys.Rev. D46,
+2261 (1993).
+[10] N. Deshpande, E. Keith, and P. B. Pal, Phys.Rev. D47,
+2892 (1993), arXiv:hep-ph/9211232.
+[11] S. Bertolini, L. Di Luzio, and M. Malinsky, Phys.Rev.
+D80, 015013 (2009), arXiv:0903.4049.
+[12] E. Witten, Phys.Lett. B91, 81 (1980).
+[13] B. Bajc and G. Senjanovic, Phys.Lett. B610, 80 (2005),
+arXiv:hep-ph/0411193.
+[14] B. Bajc and G. Senjanovic, Phys.Rev.Lett. 95, 261804
+(2005), arXiv:hep-ph/0507169.
+[15] K. Babu and R. Mohapatra, Phys.Rev.Lett. 70, 2845
+(1993), arXiv:hep-ph/9209215.
+[16] B. Bajc, A. Melfo, G. Senjanovic, and F. Vissani,
+Phys.Rev. D73, 055001 (2006), arXiv:hep-ph/0510139.
+[17] T. Clark, T.-K. Kuo, and N. Nakagawa, Phys.Lett.
+B115, 26 (1982).
+[18] C. Aulakh and R. N. Mohapatra, Phys.Rev. D28, 217
+(1983), Revised version.
+[19] C. S. Aulakh, B. Bajc, A. Melfo, G. Senjanovic,
+and F. Vissani,
+Phys.Lett. B588, 196 (2004),
+arXiv:hep-ph/0306242.
+[20] B. Bajc, A. Melfo, G. Senjanovic, and F. Vissani,
+Phys.Rev. D70, 035007 (2004), arXiv:hep-ph/0402122.
+[21] T. Fukuyama, A. Ilakovac, T. Kikuchi, S. Meljanac,
+and N. Okada,
+Eur. Phys. J. C42, 191 (2005),
+hep-ph/0401213.
+[22] T. Fukuyama, A. Ilakovac, T. Kikuchi, S. Meljanac, and
+N. Okada, JHEP 09, 052 (2004), hep-ph/0406068.
+[23] H. S. Goh, R. N. Mohapatra, and S.-P. Ng, Phys. Lett.
+B570, 215 (2003), hep-ph/0303055.
+[24] H. S. Goh, R. N. Mohapatra, and S.-P. Ng, Phys. Rev.
+D68, 115008 (2003), hep-ph/0308197.
+[25] C. S. Aulakh, (2005), hep-ph/0506291.
+[26] S. Bertolini, T. Schwetz, and M. Malinsky, Phys.Rev.
+D73, 115012 (2006), arXiv:hep-ph/0605006.
+[27] C. S. Aulakh and S. K. Garg, Nucl. Phys. B757, 47
+(2006), hep-ph/0512224.
+[28] B. Bajc, I. Dorsner, and M. Nemevsek, JHEP 11, 007
+(2008), arXiv:0809.1069.
+[29] F. del Aguila and L. E. Ibanez, Nucl.Phys. B177, 60
+(1981).
+[30] F. Buccella, L. Cocco, and C. Wetterich, Nucl.Phys.
+B243, 273 (1984).
+
+[31] F. Buccella, L. Cocco, A. Sciarrino, and T. Tuzi,
+Nucl.Phys. B274, 559 (1986).
+[32] K. Abe et al., (2011), arXiv:1109.3262.
+[33] A. De Rujula, H. Georgi, and S. Glashow, Phys.Rev.Lett.
+45, 413 (1980).
+[34] S. M. Barr, Phys.Lett. B112, 219 (1982).
+[35] I. Dorsner and P. F. Perez, Phys. Lett. B642, 248 (2006),
+hep-ph/0606062.
+[36] I. Dorsner and P. Fileviez Perez, JHEP 0706, 029 (2007),
+arXiv:hep-ph/0612216.
+[37] I. Dorsner and I. Mocioiu, (2007), arXiv:0708.3332 [hepph].
+[38] I. Dorsner and P. Fileviez Perez, Nucl.Phys. B723, 53
+(2005), arXiv:hep-ph/0504276.
+[39] B. Bajc and G. Senjanovic, JHEP 0708, 014 (2007),
+arXiv:hep-ph/0612029.
+[40] B. Bajc, M. Nemevsek, and G. Senjanovic, Phys.Rev.
+D76, 055011 (2007), arXiv:hep-ph/0703080.
+[41] I. Dorsner, P. Fileviez Perez, and R. Gonzalez Felipe,
+Nucl.Phys. B747, 312 (2006), arXiv:hep-ph/0512068.
+[42] K. Aoki, Z. Hioki, M. Konuma, R. Kawabe, and T. Muta,
+Prog.Theor.Phys.Suppl. 73, 1 (1982).
+[43] Particle Data Group, K. Nakamura et al., J.Phys.G G37,
+075021 (2010).
+[44] S. Weinberg, Phys.Rev.Lett. 43, 1566 (1979).
+[45] F. Wilczek and A. Zee, Phys.Rev.Lett. 43, 1571 (1979).
+[46] F. Wilczek and A. Zee, Phys.Lett. B88, 311 (1979).
+[47] H. Weldon and A. Zee, Nucl.Phys. B173, 269 (1980).
+[48] A. S. Joshipura and K. M. Patel, Phys.Rev. D83, 095002
+(2011), arXiv:1102.5148.
+[49] G. Lazarides, Q. Shafi, and C. Wetterich, Nucl.Phys.
+B181, 287 (1981).
+[50] Z.-z. Xing, H. Zhang, and S. Zhou, Phys.Rev. D77,
+113016 (2008), arXiv:0712.1419.
+[51] V. Kuzmin and M. Shaposhnikov, Phys.Lett. B92, 115
+(1980).
+[52] T. Kibble, G. Lazarides, and Q. Shafi, Phys.Rev. D26,
+435 (1982).
+[53] D. Chang, R. Mohapatra, and M. Parida, Phys.Rev.Lett.
+52, 1072 (1984).
+[54] D. Chang, R. Mohapatra, and M. Parida, Phys.Rev.
+D30, 1052 (1984).
+[55] D. Chang and R. N. Mohapatra, Phys.Rev. D32, 1248
+(1985).
+[56] S. Bertolini, L. Di Luzio, M. Malinsky, and K. M. Patel,
+internal communication, work in progress .
+[57] C. S. Aulakh and S. K. Garg,
+(2006),
+arXiv:hep-ph/0612021.
+[58] R. Peccei and H. R. Quinn, Phys.Rev.Lett. 38, 1440
+(1977).
+[59] R. Peccei and H. R. Quinn, Phys.Rev. D16, 1791 (1977).
+[60] G. G. Raffelt,
+Lect.Notes Phys. 741, 51 (2008),
+arXiv:hep-ph/0611350.
+[61] R. N. Mohapatra and G. Senjanovic, Z.Phys. C17, 53
+(1983).
+[62] S. Weinberg, Phys.Rev.Lett. 40, 223 (1978).
+[63] F. Wilczek, Phys.Rev.Lett. 40, 279 (1978).
+
+

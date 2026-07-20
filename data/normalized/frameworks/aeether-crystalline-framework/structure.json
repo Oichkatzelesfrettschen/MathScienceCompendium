@@ -1,0 +1,161 @@
+{
+  "code_fences": [],
+  "document_id": "aeether-crystalline-framework",
+  "formula_candidates": [
+    {
+      "ascii_text": "boxphi + partialV(phi)/partialphi + kappaR(t)phi + zetacos(omegat) + xi(x, t) = 0",
+      "source_line": 23,
+      "source_line_sha256": "6e8c864630465fe04958cb88825d337ae5131a6717c8e6ebd8d2f0ee82e6028c",
+      "source_text": "\u25a1\u03c6 + \u2202V(\u03c6)/\u2202\u03c6 + \u03baR(t)\u03c6 + \u03b6cos(\u03c9t) + \u03be(x, t) = 0"
+    },
+    {
+      "ascii_text": "- partialV(phi)/partialphi: Scalar potential gradient representing self-interaction.",
+      "source_line": 26,
+      "source_line_sha256": "aca850a06a22f63b06b123760682c66ffd4204487b72516c76fcf90f97440d28",
+      "source_text": "- \u2202V(\u03c6)/\u2202\u03c6: Scalar potential gradient representing self-interaction."
+    },
+    {
+      "ascii_text": "V(phi) = (1/2)m^2phi^2 + (lambda/4)phi4 + alphaphi6 + betaphi8",
+      "source_line": 32,
+      "source_line_sha256": "61e851a873705c6a4017f1be28a06375201b801a77c9f032ef2e68cd9f32160a",
+      "source_text": "V(\u03c6) = (1/2)m\u00b2\u03c6\u00b2 + (\u03bb/4)\u03c6\u2074 + \u03b1\u03c6\u2076 + \u03b2\u03c6\u2078"
+    },
+    {
+      "ascii_text": "F(t, kappa) = sin(t)e^(-kappa^2) + 1/(4pi(1 + kappa/8pi)) + zetaphi^2e^(-|t_1 - t_2|/tau)",
+      "source_line": 48,
+      "source_line_sha256": "f22c280725cb4f32c1f82976f9139c936ed2dd9452dce591d2dd3fedd1c08af7",
+      "source_text": "F(t, \u03ba) = sin(t)e^(-\u03ba\u00b2) + 1/(4\u03c0(1 + \u03ba/8\u03c0)) + \u03b6\u03c6\u00b2e^(-|t\u2081 - t\u2082|/\u03c4)"
+    },
+    {
+      "ascii_text": "S_holo = A/(4G) + kappaphi^2cos(omegat) + alphanabla^2phi",
+      "source_line": 66,
+      "source_line_sha256": "757d49dab3e5c5175b8cd6b3c960bd5d6c7a1c3b220e7b09f726f16101b2a7f6",
+      "source_text": "S_holo = A/(4G) + \u03ba\u03c6\u00b2cos(\u03c9t) + \u03b1\u2207\u00b2\u03c6"
+    },
+    {
+      "ascii_text": "- alphanabla^2phi: Lattice-bound dissipative term aligning scalar-induced heat transfer.",
+      "source_line": 70,
+      "source_line_sha256": "1087e0922bcd68713fbdf115b7706dc65a0719cec97252c2160d9515d582f945",
+      "source_text": "- \u03b1\u2207\u00b2\u03c6: Lattice-bound dissipative term aligning scalar-induced heat transfer."
+    },
+    {
+      "ascii_text": "phi(d) = Sigmaphi_i e^(-2pir/L_i), d = {3D, 4D, ..., 8D}",
+      "source_line": 82,
+      "source_line_sha256": "696b57a50c90d63fafa185c47f489beefc8ca532c1edce0a948e53ba40407668",
+      "source_text": "\u03c6(d) = \u03a3\u03c6_i e^(-2\u03c0r/L_i), d = {3D, 4D, ..., 8D}"
+    },
+    {
+      "ascii_text": "P_transfer = kappaphi^2 + zetaF(t) + alphanabla^2phi",
+      "source_line": 136,
+      "source_line_sha256": "884d18dae728629e6dda8e5e3ba5615244bd9775a995e03a59a3e2933fae5b92",
+      "source_text": "P_transfer = \u03ba\u03c6\u00b2 + \u03b6F(t) + \u03b1\u2207\u00b2\u03c6"
+    },
+    {
+      "ascii_text": "- alphanabla^2phi: Dissipative component driving lattice-aligned energy redistribution.",
+      "source_line": 140,
+      "source_line_sha256": "7fa0f32ef103e49ddab1b6fc2998c817dfd9d1197b53bb28754fd26d3f037ba9",
+      "source_text": "- \u03b1\u2207\u00b2\u03c6: Dissipative component driving lattice-aligned energy redistribution."
+    },
+    {
+      "ascii_text": "E_scalar = E_0 e^(-kappaphi^2) sin(omegat + phi_lattice)",
+      "source_line": 158,
+      "source_line_sha256": "bb4fe0bc3c34c95fc8f060cfe4cb56dca360a8870f5c57eba5b30a30908fb310",
+      "source_text": "E_scalar = E_0 e^(-\u03ba\u03c6\u00b2) sin(\u03c9t + \u03c6_lattice)"
+    },
+    {
+      "ascii_text": "F_casimir = Fc(1 + kappaphi/Mp + alphanabla^2phi)",
+      "source_line": 182,
+      "source_line_sha256": "d12905fa4d6143ce1597714892fd26cf1fb625344e48426be9f0398ecd2af7e8",
+      "source_text": "F_casimir = Fc(1 + \u03ba\u03c6/Mp + \u03b1\u2207\u00b2\u03c6)"
+    },
+    {
+      "ascii_text": "- alphanabla^2phi: Dissipative correction accounting for foam-lattice effects.",
+      "source_line": 186,
+      "source_line_sha256": "a53ebce4ae17232a4242cfab3abb55e42233b0a0541d5ebed650edcffc9223a9",
+      "source_text": "- \u03b1\u2207\u00b2\u03c6: Dissipative correction accounting for foam-lattice effects."
+    },
+    {
+      "ascii_text": "phi_lattice(x, t) = phi_0e^(-t/tau) cos(omegat + k*x)",
+      "source_line": 203,
+      "source_line_sha256": "9cb2bae755335611590d8a89f7d90c94f6b303b76f6cc55189772206743bf355",
+      "source_text": "\u03c6_lattice(x, t) = \u03c6\u2080e^(-t/\u03c4) cos(\u03c9t + k\u00b7x)"
+    },
+    {
+      "ascii_text": "DeltaS = S_holo + zetaphi^2cos(omegat) + alphanabla^2phi",
+      "source_line": 226,
+      "source_line_sha256": "b79f420061b7504b6961843fe8ec06558d0e2d4246fa6953b427ec09cb692d47",
+      "source_text": "\u0394S = S_holo + \u03b6\u03c6\u00b2cos(\u03c9t) + \u03b1\u2207\u00b2\u03c6"
+    },
+    {
+      "ascii_text": "- alphanabla^2phi: Dissipative correction accounting for lattice entropy redistribution.",
+      "source_line": 230,
+      "source_line_sha256": "91e76c080e58607ecbbcac40e196470465258b1e7f378baa600d9a9ef11d41e4",
+      "source_text": "- \u03b1\u2207\u00b2\u03c6: Dissipative correction accounting for lattice entropy redistribution."
+    },
+    {
+      "ascii_text": "phi(d) = Sigmaphi_i e^(-2pir / L_i), d = {3D, 4D, ..., 8D}",
+      "source_line": 249,
+      "source_line_sha256": "a96acff0b27f6721b097c5eb82622802d21f73c976515d2e62c6f05e90b456d0",
+      "source_text": "\u03c6(d) = \u03a3\u03c6_i e^(-2\u03c0r / L_i), d = {3D, 4D, ..., 8D}"
+    },
+    {
+      "ascii_text": "- Interferometric measurements under foam density variations (kappa in [0.1, 1.0]).",
+      "source_line": 317,
+      "source_line_sha256": "5e0b4278a816ac76d1a88b109e0339505b05230a90fa9420ac1434fa7e9b5c11",
+      "source_text": "- Interferometric measurements under foam density variations (\u03ba \u2208 [0.1, 1.0])."
+    },
+    {
+      "ascii_text": "- Interferometry revealed harmonic peaks aligning with foam density oscillations (kappa approximately 0.9).",
+      "source_line": 321,
+      "source_line_sha256": "6a418d7b89c9b84dce1e558c6126cc49117b39a0c4dddceab01422dbe64ef7b8",
+      "source_text": "- Interferometry revealed harmonic peaks aligning with foam density oscillations (\u03ba \u2248 0.9)."
+    },
+    {
+      "ascii_text": "- Casimir force measurements at nanoscale plate separations (a in [0.01, 1.0] mum).",
+      "source_line": 328,
+      "source_line_sha256": "cb2c51bd7e749407927610d61850cde36d718f8143097db89d0def10fdb3f943",
+      "source_text": "- Casimir force measurements at nanoscale plate separations (a \u2208 [0.01, 1.0] \u03bcm)."
+    },
+    {
+      "ascii_text": "phi(x,t) = phi_0e^(-t/tau) cos(omegat + k*x) + zetanabla(phipartialtphi)",
+      "source_line": 429,
+      "source_line_sha256": "162231ac73eee486a3a200f31d15f1277c53f0e43532092eccaf512a96318e87",
+      "source_text": "\u03c6(x,t) = \u03c6\u2080e^(-t/\u03c4) cos(\u03c9t + k\u00b7x) + \u03b6\u2207(\u03c6\u2202t\u03c6)"
+    },
+    {
+      "ascii_text": "phi_coherence(d) = Sigmaphi_i e^(-2pir/L_i), d = {4D-8D}",
+      "source_line": 442,
+      "source_line_sha256": "55d0802b1360dee9249669261a56945b214ef5c35e0528760631536e9c9ae366",
+      "source_text": "\u03c6_coherence(d) = \u03a3\u03c6_i e^(-2\u03c0r/L_i), d = {4D\u20138D}"
+    },
+    {
+      "ascii_text": "phi(d) = phi_0cos(omegat)e^(-t/tau)d, d = {3D, 4D, ..., 8D}",
+      "source_line": 477,
+      "source_line_sha256": "421a693a959b9cce8ec0e80d6f367e532527096e239f53269fbc4cc669987ad7",
+      "source_text": "\u03c6(d) = \u03c6\u2080cos(\u03c9t)e^(-t/\u03c4)d, d = {3D, 4D, ..., 8D}"
+    },
+    {
+      "ascii_text": "nabla^2phi + kappaRphi + zetacos(omegat) = 0",
+      "source_line": 830,
+      "source_line_sha256": "14f8211e10532a0d1cd9c91e8e89189830185a9a7655810b8d9c3d4add634097",
+      "source_text": "\u2207\u00b2\u03c6 + \u03baR\u03c6 + \u03b6cos(\u03c9t) = 0"
+    },
+    {
+      "ascii_text": "Lambda_DE proportional to kappaphi^2 + zetaR(t)",
+      "source_line": 864,
+      "source_line_sha256": "53ee39ab25684c0030dc9e6c964f1f3a4c9b30757fbc6ac9729c24a3778bc575",
+      "source_text": "\u039b_DE \u221d \u03ba\u03c6\u00b2 + \u03b6R(t)"
+    }
+  ],
+  "schema_version": 1,
+  "source_relpath": "source_materials/frameworks/\u00c6ether-Crystalline Framework .txt",
+  "source_sha256": "b51cb1cb03fa1505ab0cdd6e46c154597da81c87f332e50f7b15ca17595320c8",
+  "table_row_candidates": [
+    {
+      "ascii_text": "F(t, kappa) = sin(t)e^(-kappa^2) + 1/(4pi(1 + kappa/8pi)) + zetaphi^2e^(-|t_1 - t_2|/tau)",
+      "source_line": 48,
+      "source_line_sha256": "f22c280725cb4f32c1f82976f9139c936ed2dd9452dce591d2dd3fedd1c08af7",
+      "source_text": "F(t, \u03ba) = sin(t)e^(-\u03ba\u00b2) + 1/(4\u03c0(1 + \u03ba/8\u03c0)) + \u03b6\u03c6\u00b2e^(-|t\u2081 - t\u2082|/\u03c4)"
+    }
+  ]
+}

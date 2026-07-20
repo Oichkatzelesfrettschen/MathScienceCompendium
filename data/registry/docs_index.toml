@@ -1,15 +1,24 @@
 generated_by = "scripts/build_docs_index.py"
-generated_at_utc = "2026-02-12T07:47:48.344080+00:00"
-documents_total = 43
+generated_at_utc = "2026-07-20T09:10:16.885697+00:00"
+documents_total = 67
+
+[[documents]]
+id = "docs_architecture_md"
+relpath = "docs/ARCHITECTURE.md"
+category = "docs/root"
+title = "Architecture"
+sha256 = "5f6d9d716ea2e293d7f9e90d7c16a593026649d16248d3cdca4e0723531386a7"
+line_count = 172
+size_bytes = 7644
 
 [[documents]]
 id = "docs_catalog_txt"
 relpath = "docs/CATALOG.txt"
 category = "docs/root"
 title = "MATH SCIENCE COMPENDIUM - SOURCE MATERIALS CATALOG"
-sha256 = "31760f0c088c0611f167ab4fce29ef4cb9a578d9ce2d723b215878b70b18b114"
+sha256 = "94d379d7fea2efe7436a20fee6b7f90d78a0ce1203e9fd151d6fd44135d7ffff"
 line_count = 232
-size_bytes = 8568
+size_bytes = 8595
 
 [[documents]]
 id = "docs_hardware_acceleration_roadmap_md"
@@ -25,9 +34,18 @@ id = "docs_offline_reproducibility_md"
 relpath = "docs/OFFLINE_REPRODUCIBILITY.md"
 category = "docs/root"
 title = "Offline Reproducibility Guide"
-sha256 = "7f6df296c281beaf9cb53cdaa528c2777d43ba5c5fbb3cf5eeaad10a53f3b4f3"
-line_count = 88
-size_bytes = 4676
+sha256 = "c4cad054712ade2cc887b14d96caf4c36a6c2ac1bc083ee940c4e3078cc5d022"
+line_count = 127
+size_bytes = 7453
+
+[[documents]]
+id = "docs_quick_start_md"
+relpath = "docs/QUICK_START.md"
+category = "docs/root"
+title = "Quick Start (5 minutes)"
+sha256 = "cc9b26880cd00e12b1fec6d58d18193725e8582b0297fb474f54aba7b1349a00"
+line_count = 86
+size_bytes = 2042
 
 [[documents]]
 id = "docs_repo_harmonization_plan_md"
@@ -57,40 +75,238 @@ line_count = 30
 size_bytes = 1245
 
 [[documents]]
+id = "docs_framework__aether_revision_reconciliation_md"
+relpath = "docs/framework/AETHER_REVISION_RECONCILIATION.md"
+category = "docs/root"
+title = "Aether Revision Reconciliation"
+sha256 = "ccde27caeadb6eab2254ad507824dbd1b9d601e74deb4dd55ec109834d13b633"
+line_count = 84
+size_bytes = 5327
+
+[[documents]]
+id = "docs_framework__aligned_research_corpus_md"
+relpath = "docs/framework/ALIGNED_RESEARCH_CORPUS.md"
+category = "docs/root"
+title = "Aligned Research Corpus"
+sha256 = "c05fce8ce1e046b926e2e9aa90eb81e5e42df885049b6acf411d50f2ee903fcb"
+line_count = 117
+size_bytes = 6784
+
+[[documents]]
+id = "docs_framework__framework_document_inventory_md"
+relpath = "docs/framework/FRAMEWORK_DOCUMENT_INVENTORY.md"
+category = "docs/root"
+title = "Framework Document Inventory"
+sha256 = "c90ac5fb1d5b870b40255721fa63904c7d1e4fc8406ab3171bc831bcb2d68071"
+line_count = 65
+size_bytes = 3845
+
+[[documents]]
+id = "docs_framework__framework_overlap_audit_md"
+relpath = "docs/framework/FRAMEWORK_OVERLAP_AUDIT.md"
+category = "docs/root"
+title = "Framework Overlap Audit"
+sha256 = "ba8f6eae014de0d82b2b2b02b7eb48cfc7331c451c5c311c4574d58bdd267525"
+line_count = 104
+size_bytes = 14188
+
+[[documents]]
+id = "docs_framework__genesis_revision_reconciliation_md"
+relpath = "docs/framework/GENESIS_REVISION_RECONCILIATION.md"
+category = "docs/root"
+title = "Genesis Revision Reconciliation"
+sha256 = "b2ff8db25a026ecabeef8c752284761526173264539aad606b85996893794dbd"
+line_count = 79
+size_bytes = 4577
+
+[[documents]]
+id = "docs_framework__unified_evidence_framework_md"
+relpath = "docs/framework/UNIFIED_EVIDENCE_FRAMEWORK.md"
+category = "docs/root"
+title = "Unified Evidence-Bounded Mathematical Physics Framework"
+sha256 = "48f144ed711a1a0730ddcc6c45ef4d422c6580361e8da7dd6b4dcee3cfc57f30"
+line_count = 299
+size_bytes = 14022
+
+[[documents]]
+id = "docs_reports__architectural_analysis_report_md"
+relpath = "docs/reports/ARCHITECTURAL_ANALYSIS_REPORT.md"
+category = "docs/root"
+title = "Architectural Analysis Report"
+sha256 = "1b6918483c7c2895887eea562d03656461bca069845784e759ebdf6da9071664"
+line_count = 445
+size_bytes = 14717
+
+[[documents]]
+id = "docs_reports__comprehensive_audit_report_updated_md"
+relpath = "docs/reports/COMPREHENSIVE_AUDIT_REPORT_UPDATED.md"
+category = "docs/root"
+title = "Comprehensive Recursive Audit Report - Updated"
+sha256 = "ae39a887e05814d31d6c89430098554779b7bd047deb8f119e987352adf99967"
+line_count = 404
+size_bytes = 10946
+
+[[documents]]
+id = "docs_reports__comprehensive_integration_report_md"
+relpath = "docs/reports/COMPREHENSIVE_INTEGRATION_REPORT.md"
+category = "docs/root"
+title = "Mathematical Physics Compendium - Comprehensive Integration Report"
+sha256 = "9a10794f98fedc1b2f30ebc11f8cb0f93889ec445f251d09f381653db35f2430"
+line_count = 750
+size_bytes = 19487
+
+[[documents]]
+id = "docs_reports__final_synthesis_report_md"
+relpath = "docs/reports/FINAL_SYNTHESIS_REPORT.md"
+category = "docs/root"
+title = "Mathematical Physics Compendium - Final Synthesis Report"
+sha256 = "79094213b2b614498ef8630e464a6bc05043ef15a07294bb120e180e9489ec69"
+line_count = 35
+size_bytes = 2566
+
+[[documents]]
+id = "docs_reports__project_completion_summary_md"
+relpath = "docs/reports/PROJECT_COMPLETION_SUMMARY.md"
+category = "docs/root"
+title = "Project Completion Summary"
+sha256 = "0eac14940875ed0c94e310a152aa4d6377c58103dfbf27c7189ca4f465406a10"
+line_count = 402
+size_bytes = 11139
+
+[[documents]]
+id = "docs_reports__research_development_integration_report_md"
+relpath = "docs/reports/RESEARCH_DEVELOPMENT_INTEGRATION_REPORT.md"
+category = "docs/root"
+title = "Exhaustive Research & Development Integration Report"
+sha256 = "075918f70f11acc80fb3aa126b925c030395f6caeed3fcbcc4051b161eddd07f"
+line_count = 893
+size_bytes = 21610
+
+[[documents]]
+id = "docs_reports__static_analysis_report_md"
+relpath = "docs/reports/STATIC_ANALYSIS_REPORT.md"
+category = "docs/root"
+title = "Static Analysis Report"
+sha256 = "0f5b594e810f337f98fcee73007e7183564bc47f94ab99cdeea00faa19457855"
+line_count = 379
+size_bytes = 10760
+
+[[documents]]
+id = "docs_reports__technical_debt_analysis_report_md"
+relpath = "docs/reports/TECHNICAL_DEBT_ANALYSIS_REPORT.md"
+category = "docs/root"
+title = "Technical Debt & Lacunae Analysis Report"
+sha256 = "0f2ae7dd57f0e0053456907f06bc11d8bf027abe81469759f3192e2d1ad93d75"
+line_count = 799
+size_bytes = 18164
+
+[[documents]]
 id = "papers_appendix_computational_tex"
 relpath = "papers/sections/appendix_computational.tex"
 category = "papers/sections"
 title = "Computational Infrastructure and Visualization"
-sha256 = "675fcb782092f81855d396bee58d3c88d2976eb6b7c28175f537b66f013dabe2"
-line_count = 48
-size_bytes = 2877
+sha256 = "3f0c924dcd63ec4d2f4d68f61b279c212cb9ba0c3c653bbd1fef7c46c9d92ad0"
+line_count = 400
+size_bytes = 15525
 
 [[documents]]
 id = "papers_appendix_data_tex"
 relpath = "papers/sections/appendix_data.tex"
 category = "papers/sections"
 title = "Data Inventory, Provenance, and Reproduction Notes"
-sha256 = "040425c95449b116f1387c3f685b8282e5c66aa331d5148750a1457f830a3e30"
-line_count = 38
-size_bytes = 1368
+sha256 = "74fb3f98fbb839923494b321721690b36b848b936d2854b42f2cb6dd5c660cad"
+line_count = 348
+size_bytes = 12430
+
+[[documents]]
+id = "papers_review_computational_evidence_tex"
+relpath = "papers/sections/review_computational_evidence.tex"
+category = "papers/sections"
+title = "Computational Evidence Portfolio"
+sha256 = "5c9dda84cabd5bed9cb6698de3695f8df87532adc02d0401483e39f9b5a51508"
+line_count = 216
+size_bytes = 10464
+
+[[documents]]
+id = "papers_review_conclusions_tex"
+relpath = "papers/sections/review_conclusions.tex"
+category = "papers/sections"
+title = "Conclusions and Decision Record"
+sha256 = "b4e04f9f6fd0a858331851ab90e421e387186964891bb53c44bd1b8f3ff832ac"
+line_count = 115
+size_bytes = 5547
+
+[[documents]]
+id = "papers_review_critique_reassessment_tex"
+relpath = "papers/sections/review_critique_reassessment.tex"
+category = "papers/sections"
+title = "Falsification of the Critiques"
+sha256 = "a7335e1927351434bc129bdcff7ecb0a608a994335ad627eb8f0cb5d55b1179f"
+line_count = 40
+size_bytes = 1768
+
+[[documents]]
+id = "papers_review_framework_reconciliation_tex"
+relpath = "papers/sections/review_framework_reconciliation.tex"
+category = "papers/sections"
+title = "Reconciled Framework Architecture"
+sha256 = "26ca402438cf94035a4bf4ba404e8b5eda9c4dbf460e565b6520bb48aab4aaeb"
+line_count = 141
+size_bytes = 7061
+
+[[documents]]
+id = "papers_review_mathematical_baseline_tex"
+relpath = "papers/sections/review_mathematical_baseline.tex"
+category = "papers/sections"
+title = "Mathematical Baseline"
+sha256 = "17ff0c0872d2985a9889b1b4e7df80fa01c05e98e1683f92573b90f46432cbf6"
+line_count = 164
+size_bytes = 6387
+
+[[documents]]
+id = "papers_review_physical_claims_tex"
+relpath = "papers/sections/review_physical_claims.tex"
+category = "papers/sections"
+title = "Audit of the Physical Claims"
+sha256 = "57083768b384e9f2622e34f38e14a020ad36f3dfceff1ac19b2100c1c011f8a9"
+line_count = 206
+size_bytes = 10105
+
+[[documents]]
+id = "papers_review_reproducibility_tex"
+relpath = "papers/sections/review_reproducibility.tex"
+category = "papers/sections"
+title = "Reproducibility and Artifact Inventory"
+sha256 = "32bf96fdc615cc3299ea58f9de18ce5dce84d2f510c1e8f7df3089f2d0c885de"
+line_count = 156
+size_bytes = 6976
+
+[[documents]]
+id = "papers_review_scope_method_tex"
+relpath = "papers/sections/review_scope_method.tex"
+category = "papers/sections"
+title = "Scope, Questions, and Review Method"
+sha256 = "f52ed10b570ddcdbf99ec1e73ce4e36fb7619b093f81774e967face556c347e8"
+line_count = 157
+size_bytes = 6660
 
 [[documents]]
 id = "papers_vol1_ch1_lie_algebras_tex"
 relpath = "papers/sections/vol1_ch1_lie_algebras.tex"
 category = "papers/sections"
 title = "Exceptional Lie Algebras and Their Extensions"
-sha256 = "b273cee5dff8745441ab070564a2fc7663b1914191785a03b0339336773e1b17"
+sha256 = "8b00edf5b53f8477003824a1917a3b9e6888f4ecdcac9f61d4057086fb53d3c2"
 line_count = 279
-size_bytes = 11688
+size_bytes = 11691
 
 [[documents]]
 id = "papers_vol1_ch2_cayley_dickson_tex"
 relpath = "papers/sections/vol1_ch2_cayley_dickson.tex"
 category = "papers/sections"
 title = "Cayley-Dickson Construction and Division Algebras"
-sha256 = "e39706c9aaf2872c364693ac585b5a72d90bddc5c2db77de422e75d0590a574f"
+sha256 = "d9f93d959101d2fa889f32ea4f356dacbb7377203a7446a8072d06a833058d56"
 line_count = 387
-size_bytes = 19036
+size_bytes = 19039
 
 [[documents]]
 id = "papers_vol1_ch3_modular_forms_tex"
@@ -123,10 +339,10 @@ size_bytes = 20298
 id = "papers_vol2_ch5_superforce_tex"
 relpath = "papers/sections/vol2_ch5_superforce.tex"
 category = "papers/sections"
-title = "Superforce Theory and Planck Scale Physics"
-sha256 = "e1f024a70dffd2a42271f977f0a3d968c63f8f566097b2a143aade9e2ba5208e"
+title = "Unified Metaprinciple Theory and Planck Scale Physics"
+sha256 = "a4715d434ffc6f117049a60f103cae9cc66c9c25254df53db029ebdeecdf43db"
 line_count = 312
-size_bytes = 13108
+size_bytes = 13179
 
 [[documents]]
 id = "papers_vol2_ch6_quantum_encoding_tex"
@@ -142,27 +358,27 @@ id = "papers_vol2_ch6_string_theory_tex"
 relpath = "papers/sections/vol2_ch6_string_theory.tex"
 category = "papers/sections"
 title = "String Theory Integration Pathways"
-sha256 = "389f42287e11e5ced808fb263edbe2dfcdfc237e6c55f2a2000a3de47f8c675f"
-line_count = 39
-size_bytes = 1504
+sha256 = "1f5ce85c5c0b5b32c7974b041d168b23108b8db65d4553fb99a6efadefcb00e6"
+line_count = 611
+size_bytes = 24844
 
 [[documents]]
 id = "papers_vol2_ch7_quantum_gravity_tex"
 relpath = "papers/sections/vol2_ch7_quantum_gravity.tex"
 category = "papers/sections"
 title = "Quantum Gravity Interfaces and Constraints"
-sha256 = "c3b6dfa00584ef15e05b87c6af0225bf3c48afc6d8574b17ca39c6b7ebe91afb"
-line_count = 40
-size_bytes = 1396
+sha256 = "84be3e8fd33687c690a19e9f80a767da7c81d6f095c24519d68e68c2acfc52c9"
+line_count = 642
+size_bytes = 25053
 
 [[documents]]
 id = "papers_vol3_ch10_predictions_tex"
 relpath = "papers/sections/vol3_ch10_predictions.tex"
 category = "papers/sections"
 title = "Physical Predictions and Falsifiability Analysis"
-sha256 = "17e2910f2731b6f9ae25ac18127689c88cf0ed0240886493297bd92c9f4790d4"
+sha256 = "7de98e2af39977c36f7b70ebc9f404a52d9ea303466ec0c85e440d21481aafac"
 line_count = 812
-size_bytes = 31078
+size_bytes = 31114
 
 [[documents]]
 id = "papers_vol3_ch8_physical_regime_tex"
@@ -187,9 +403,9 @@ id = "papers_vol4_ch11_validation_tex"
 relpath = "papers/sections/vol4_ch11_validation.tex"
 category = "papers/sections"
 title = "Critical Validation and Fact-Checking"
-sha256 = "1966970d8d5583a1cfb6833a9fd4686f663a8456b1a7604284a587cfe4ef25fc"
+sha256 = "09c13c1e552a9cf3a1447d25916a3cabf25fc506081dec58eed725746399f408"
 line_count = 421
-size_bytes = 18436
+size_bytes = 18447
 
 [[documents]]
 id = "papers_vol4_ch12_unresolved_tex"
@@ -222,28 +438,28 @@ size_bytes = 6208
 id = "research_fact_checks__alpha001_analysis_txt"
 relpath = "research/fact_checks/Alpha001_Analysis.txt"
 category = "research/fact_checks"
-title = "COMPREHENSIVE ANALYSIS OF ALPHA001.06 AETHER FRAMEWORK"
-sha256 = "1fc243acabe76d41d9d3ea7aaf81cbb707b7e159bf76ed975bad4dfc397efaf5"
+title = "COMPREHENSIVE ANALYSIS OF ALPHA001.06 Scalar Field Theory"
+sha256 = "df67a9436359881e1bb660a6971482eb72c4ac349b8b5d1fb4c23253ff071e3f"
 line_count = 2217
-size_bytes = 75898
+size_bytes = 75947
 
 [[documents]]
 id = "research_fact_checks__maximal_extraction_complete_analysis_txt"
 relpath = "research/fact_checks/Maximal_Extraction_Complete_Analysis.txt"
 category = "research/fact_checks"
 title = "COMPREHENSIVE ANALYTICAL REPORT"
-sha256 = "c5e0f5ada182844a60983e0ed25fca8cdbeb30aeaf97bb36d226670212ae6c2d"
+sha256 = "b8cffcd92b1fef6f2c3432e4d453b537141fe782babbfff0c1af053ca9979361"
 line_count = 1416
-size_bytes = 49269
+size_bytes = 49354
 
 [[documents]]
 id = "research_fact_checks__mathematical_validation_report_txt"
 relpath = "research/fact_checks/mathematical_validation_report.txt"
 category = "research/fact_checks"
 title = "MATHEMATICAL VALIDATION REPORT"
-sha256 = "9ead5bd1da9aeea9b15913757fb526b663055e87d51d076f8b67c2ddd57525a6"
-line_count = 258
-size_bytes = 11160
+sha256 = "071f110b3bac50c6deb4d2fe8a22379df3317b2a3b25416370b2fd2c84f7eb69"
+line_count = 260
+size_bytes = 11206
 
 [[documents]]
 id = "research_kac_moody_deep_analysis_txt"
@@ -259,18 +475,18 @@ id = "research_maximal_extraction_analysis_txt"
 relpath = "research/maximal_extraction_analysis.txt"
 category = "research/root"
 title = "# Maximal_Extraction Deep Analysis (26,208 lines)"
-sha256 = "de7688352f67d64a4fa45faa017996cd7669f7fe73fef0eb660906e343441ae1"
+sha256 = "e957287dfec0a60ff09e4280c4e5bd6eca44ce7c29a3393af1361babe35275c7"
 line_count = 1056
-size_bytes = 41460
+size_bytes = 41446
 
 [[documents]]
 id = "research_primary_sources__094101_positron_production_analysis_txt"
 relpath = "research/primary_sources/094101_Positron_Production_analysis.txt"
 category = "research/primary_sources"
 title = "ANALYSIS: Enhancing Positron Production using Front Surface Target Structures"
-sha256 = "118c31499e3a5e9b01191688b099a23cfe3a8c7c87a8fa2c532d5161c112b425"
+sha256 = "c6691c048f5c887981eb243914c2ad286637bce7aacb068c97295c6b38a0ade3"
 line_count = 224
-size_bytes = 9123
+size_bytes = 9135
 
 [[documents]]
 id = "research_primary_sources__1111_4064v2_zeropoint_vibration_analysis_txt"
@@ -286,36 +502,36 @@ id = "research_primary_sources__978-3-319-48210-1_10_tourmaline_electrical_analy
 relpath = "research/primary_sources/978-3-319-48210-1_10_Tourmaline_Electrical_analysis.txt"
 category = "research/primary_sources"
 title = "ANALYSIS: Electrical Effect and Influence Factors of Tourmaline"
-sha256 = "33424567c7a1eec2afddc48dbe0d6ea4c3f7fd4953441867c956c15ca43c9385"
+sha256 = "671bfd2db00b5f677441ae9ff988b6331bac6ed6fc4ce84d2f561cea569ba8c2"
 line_count = 244
-size_bytes = 8494
+size_bytes = 8506
 
 [[documents]]
 id = "research_primary_sources__comment_pais_superforce_brandenburg_analysis_txt"
 relpath = "research/primary_sources/Comment_Pais_Superforce_Brandenburg_analysis.txt"
 category = "research/primary_sources"
-title = "ANALYSIS: Comment on the Pais Superforce Theory"
-sha256 = "19aa32769276adb2c67c234603c9feffc85912cfb3b0220ba594000b93f09bb5"
+title = "ANALYSIS: Comment on the Unified Metaprinciple Field Theory"
+sha256 = "fa2a960a479465f47d065942e14f6e66a72523b48f39ac509bcc58228f6d79ff"
 line_count = 195
-size_bytes = 7576
+size_bytes = 7635
 
 [[documents]]
 id = "research_primary_sources__master_bibliography_txt"
 relpath = "research/primary_sources/MASTER_BIBLIOGRAPHY.txt"
 category = "research/primary_sources"
 title = "MASTER BIBLIOGRAPHY - Mathematical Physics Compendium"
-sha256 = "b7cd3832bcc32e58a50e14ba2c2a0571b93a3c27f94a79efd3a6dbbfd90ef8e8"
+sha256 = "f4de0d4b7e3d05f07e107b081cd57d63662027541e23d5c97afec83c7cdc6634"
 line_count = 396
-size_bytes = 15539
+size_bytes = 15623
 
 [[documents]]
 id = "research_primary_sources__pdf_summary_txt"
 relpath = "research/primary_sources/PDF_SUMMARY.txt"
 category = "research/primary_sources"
 title = "MASTER SUMMARY: Mathematical Physics Compendium - PDF Source Materials Analysis"
-sha256 = "b8acb1e616c440d965f149094f6a06beff225df5c5dd5ebaf02a343ec1aacd9b"
+sha256 = "03b48e1ab3220643221a6c6612713b335735dca191b6d87c08441de7de362b16"
 line_count = 482
-size_bytes = 22059
+size_bytes = 22119
 
 [[documents]]
 id = "research_primary_sources__phys_140a_thermal_conductivity_analysis_txt"
@@ -331,9 +547,9 @@ id = "research_primary_sources__readme_txt"
 relpath = "research/primary_sources/README.txt"
 category = "research/primary_sources"
 title = "PDF EXTRACTION AND ANALYSIS - COMPLETION SUMMARY"
-sha256 = "de01b5002ec5d4604de32558161b812147078184ff9e1ada51a42488cf1058eb"
+sha256 = "fb453c3de7fe6b42e66dbf818228a719b4ffa5e88dce4d6a9100f4229a8913b2"
 line_count = 217
-size_bytes = 7877
+size_bytes = 7889
 
 [[documents]]
 id = "research_primary_sources__superforce_s_c_pais_2023_analysis_txt"
@@ -349,9 +565,9 @@ id = "research_primary_sources__superframework_expansion_analysis_txt"
 relpath = "research/primary_sources/Superframework_Expansion_analysis.txt"
 category = "research/primary_sources"
 title = "ANALYSIS: Expanded Framework for Scalar-ZPE Dynamics, Fractional Dimensions,"
-sha256 = "98d0d4c67c9e523593c3c6a3115775b29d93d277dbadd2187360a42d4884ba01"
+sha256 = "2e4e4c6dbfc9505bde5a737d6320116efca7476a8e40fdd31be6c0b44b700285"
 line_count = 231
-size_bytes = 8484
+size_bytes = 8496
 
 [[documents]]
 id = "research_primary_sources__superframework_foam_octonions_analysis_txt"
@@ -376,9 +592,9 @@ id = "research_primary_sources__tourmaline_unified_framework_analysis_txt"
 relpath = "research/primary_sources/Tourmaline_Unified_Framework_analysis.txt"
 category = "research/primary_sources"
 title = "ANALYSIS: The Unified Mathematical Synthesis of Tourmaline:"
-sha256 = "8817bff9be2265e794f1fda24e1469962094fbccd316314e27c7135f20a4ea8b"
+sha256 = "ccbc51d0c6c9f9576c96289dafee2671e6dd89a531c3d8cb3da910e09968c98d"
 line_count = 290
-size_bytes = 10001
+size_bytes = 10013
 
 [[documents]]
 id = "research_quantum_computing__ibm_eagle_specifications_txt"

@@ -1,0 +1,101 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "generated_at_utc",
+    "generator",
+    "manifest_relpath",
+    "manifest_sha256",
+    "engine",
+    "source_count",
+    "complete_count",
+    "failed_count",
+    "sources"
+  ],
+  "properties": {
+    "schema_version": {"const": 1},
+    "generated_at_utc": {"type": "string", "format": "date-time"},
+    "generator": {"const": "scripts/run_mineru_manifest.py"},
+    "manifest_relpath": {"type": "string", "minLength": 1},
+    "manifest_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "engine": {
+      "type": "object",
+      "required": [
+        "name",
+        "version",
+        "backend",
+        "effort",
+        "mode",
+        "formula",
+        "table",
+        "image_analysis",
+        "execution"
+      ],
+      "properties": {
+        "name": {"const": "MinerU"},
+        "version": {"const": "3.4.4"},
+        "backend": {"const": "hybrid-engine"},
+        "effort": {"const": "high"},
+        "mode": {"const": "auto"},
+        "formula": {"const": true},
+        "table": {"const": true},
+        "image_analysis": {"const": true},
+        "execution": {"const": "sequential docker compose containers"}
+      },
+      "additionalProperties": false
+    },
+    "source_count": {"type": "integer", "minimum": 1},
+    "complete_count": {"type": "integer", "minimum": 0},
+    "failed_count": {"type": "integer", "minimum": 0},
+    "sources": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": [
+          "source_id",
+          "source_relpath",
+          "source_sha256",
+          "source_size_bytes",
+          "status",
+          "outputs"
+        ],
+        "properties": {
+          "source_id": {"type": "string", "minLength": 1},
+          "source_relpath": {"type": "string", "minLength": 1},
+          "source_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+          "source_size_bytes": {"type": "integer", "minimum": 1},
+          "status": {"enum": ["complete", "generated", "failed"]},
+          "returncode": {"type": "integer"},
+          "outputs": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": ["role", "relpath", "size_bytes", "sha256"],
+              "properties": {
+                "role": {
+                  "enum": [
+                    "markdown",
+                    "content_list",
+                    "content_list_v2",
+                    "middle",
+                    "model",
+                    "layout_pdf",
+                    "origin_pdf"
+                  ]
+                },
+                "relpath": {"type": "string", "minLength": 1},
+                "size_bytes": {"type": "integer", "minimum": 1},
+                "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+              },
+              "additionalProperties": false
+            }
+          }
+        },
+        "additionalProperties": false
+      }
+    }
+  },
+  "additionalProperties": false
+}

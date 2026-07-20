@@ -14,8 +14,6 @@ from typing import Any
 import networkx as nx
 import numpy as np
 
-from ..algebra import AlgebraicStructure, LieAlgebra
-
 
 @dataclass
 class LieAlgebraProperties:
@@ -45,7 +43,7 @@ class E7Properties:
     root_squared_length: float = 2.0
 
 
-class BaseRootSystem(LieAlgebra):
+class BaseRootSystem(ABC):
     """Abstract base class for Lie algebra root systems."""
 
     def __init__(self, properties: LieAlgebraProperties) -> None:
@@ -55,21 +53,6 @@ class BaseRootSystem(LieAlgebra):
         self._simple_roots: np.ndarray | None = None
         self._cartan_matrix: np.ndarray | None = None
         self.dimension = properties.dimension
-
-    def __add__(self, other: Any) -> AlgebraicStructure:
-        raise NotImplementedError("Root systems represent structure, not elements")
-
-    def __sub__(self, other: Any) -> AlgebraicStructure:
-        raise NotImplementedError()
-
-    def __mul__(self, other: Any) -> AlgebraicStructure:
-        raise NotImplementedError()
-
-    def norm(self) -> float:
-        return 0.0
-
-    def bracket(self, other: LieAlgebra) -> LieAlgebra:
-        raise NotImplementedError("Structure constant derivation not implemented")
 
     def generate_roots(self) -> np.ndarray:
         """Generate all roots from simple roots using Weyl reflections."""
@@ -99,7 +82,9 @@ class BaseRootSystem(LieAlgebra):
             neg_r = tuple(-np.array(r))
             all_roots.add(neg_r)
 
-        self._roots = np.array([list(r) for r in all_roots])
+        # Set iteration order is an implementation detail. A lexicographic
+        # order makes root-indexed consumers reproducible across runtimes.
+        self._roots = np.array(sorted(all_roots))
         return self._roots
 
     @abstractmethod
@@ -124,13 +109,18 @@ class BaseRootSystem(LieAlgebra):
         if self._positive_roots is not None:
             return self._positive_roots
         roots = self.generate_roots()
+        simple_roots = self.generate_simple_roots()
         positive = []
         for root in roots:
-            for coord in root:
-                if abs(coord) > 1e-10:
-                    if coord > 0:
-                        positive.append(root)
-                    break
+            coefficients, _, _, _ = np.linalg.lstsq(simple_roots.T, root, rcond=None)
+            reconstructed = simple_roots.T @ coefficients
+            if not np.allclose(reconstructed, root, rtol=0.0, atol=1e-9):
+                raise ArithmeticError("generated root is outside the simple-root span")
+            rounded_coefficients = np.rint(coefficients)
+            if not np.allclose(coefficients, rounded_coefficients, rtol=0.0, atol=1e-9):
+                raise ArithmeticError("generated root has nonintegral simple-root coefficients")
+            if np.all(rounded_coefficients >= 0.0) and np.any(rounded_coefficients > 0.0):
+                positive.append(root)
         self._positive_roots = np.array(positive)
         return self._positive_roots
 
@@ -146,6 +136,30 @@ class BaseRootSystem(LieAlgebra):
                     weight = round(abs(cartan[i, j] * cartan[j, i]))
                     G.add_edge(i, j, weight=weight)
         return G
+
+    def is_valid_root(self, root: np.ndarray, tolerance: float = 1e-9) -> bool:
+        """Return whether a vector matches a generated root."""
+        candidate = np.asarray(root, dtype=np.float64)
+        roots = self.generate_roots()
+        if candidate.shape != roots.shape[1:]:
+            return False
+        return any(
+            bool(np.allclose(candidate, known_root, rtol=0.0, atol=tolerance))
+            for known_root in roots
+        )
+
+    def get_statistics(self) -> dict[str, Any]:
+        """Return the stable root-system statistics used by legacy analyzers."""
+        roots = self.generate_roots()
+        positive_roots = self.positive_roots()
+        return {
+            "name": self.properties.name,
+            "rank": self.properties.rank,
+            "dimension": self.properties.dimension,
+            "total_roots": len(roots),
+            "positive_roots": len(positive_roots),
+            "weyl_group_order": self.properties.weyl_group_order,
+        }
 
 
 class E4RootSystem(BaseRootSystem):
@@ -237,8 +251,8 @@ class F4RootSystem(BaseRootSystem):
                 v[i] = s
                 roots.append(v)
         # Type 3: (+/-1/2, +/-1/2, +/-1/2, +/-1/2) - 16 roots
-        for s in product([-0.5, 0.5], repeat=4):
-            roots.append(np.array(s))
+        for signs in product([-0.5, 0.5], repeat=4):
+            roots.append(np.array(signs))
         return np.array(roots)
 
     def generate_simple_roots(self) -> np.ndarray:
@@ -259,13 +273,13 @@ class E7RootSystem(BaseRootSystem):
     def generate_simple_roots(self) -> np.ndarray:
         return np.array(
             [
-                [0.0, 1.0, -1.0, 0.0, 0.0, 0.0, 0.0, 0.0],
-                [0.0, 0.0, 1.0, -1.0, 0.0, 0.0, 0.0, 0.0],
-                [0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, 0.5],
-                [0.0, 0.0, 0.0, 1.0, -1.0, 0.0, 0.0, 0.0],
-                [0.0, 0.0, 0.0, 0.0, 1.0, -1.0, 0.0, 0.0],
-                [0.0, 0.0, 0.0, 0.0, 0.0, 1.0, -1.0, 0.0],
-                [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1.0, -1.0],
+                [0.5, -0.5, -0.5, -0.5, -0.5, -0.5, -0.5, 0.5],
+                [1.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0],
+                [-1.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0],
+                [0.0, -1.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0],
+                [0.0, 0.0, -1.0, 1.0, 0.0, 0.0, 0.0, 0.0],
+                [0.0, 0.0, 0.0, -1.0, 1.0, 0.0, 0.0, 0.0],
+                [0.0, 0.0, 0.0, 0.0, -1.0, 1.0, 0.0, 0.0],
             ]
         )
 
@@ -343,7 +357,9 @@ class E9RootSystem(KacMoodyAlgebra):
     def generalized_cartan_matrix(self) -> np.ndarray:
         res = np.eye(9) * 2
         res[:8, :8] = E8RootSystem().compute_cartan_matrix()
-        res[8, 7] = res[7, 8] = -1
+        # In this E8 node ordering the affine root attaches to node zero.
+        # Attaching it to node seven produces an indefinite matrix, not E8^(1).
+        res[8, 0] = res[0, 8] = -1
         return res
 
 
@@ -376,7 +392,39 @@ class LieAlgebraCalculator:
 
     @staticmethod
     def coxeter_number(cartan_matrix: np.ndarray) -> int:
-        return 30 if len(cartan_matrix) == 8 else 18
+        """Compute the finite root-system Coxeter number from its Cartan matrix."""
+        cartan = np.asarray(cartan_matrix, dtype=np.float64)
+        if cartan.ndim != 2 or cartan.shape[0] != cartan.shape[1]:
+            raise ValueError("Cartan matrix must be square")
+        if not np.allclose(cartan, np.rint(cartan), rtol=0.0, atol=1e-9):
+            raise ValueError("Cartan matrix entries must be integral")
+        rank = int(cartan.shape[0])
+        integral_cartan = np.rint(cartan).astype(int)
+        roots = {
+            tuple(sign if coordinate == simple_index else 0 for coordinate in range(rank))
+            for simple_index in range(rank)
+            for sign in (-1, 1)
+        }
+        frontier = set(roots)
+        maximum_root_count = 100000
+        while frontier:
+            next_frontier: set[tuple[int, ...]] = set()
+            for root_tuple in frontier:
+                root = np.asarray(root_tuple, dtype=int)
+                for simple_index in range(rank):
+                    pairing = int(root @ integral_cartan[:, simple_index])
+                    reflected = root.copy()
+                    reflected[simple_index] -= pairing
+                    reflected_tuple = tuple(int(value) for value in reflected)
+                    if reflected_tuple not in roots:
+                        roots.add(reflected_tuple)
+                        next_frontier.add(reflected_tuple)
+                        if len(roots) > maximum_root_count:
+                            raise ValueError("Cartan matrix does not define a finite root system")
+            frontier = next_frontier
+        if len(roots) % rank != 0:
+            raise ArithmeticError("finite root count is not divisible by rank")
+        return len(roots) // rank
 
 
 class ExceptionalLieAlgebras:

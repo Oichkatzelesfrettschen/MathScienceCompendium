@@ -1,0 +1,1128 @@
+Floquet Time Crystals
+Dominic V. Else,1 Bela Bauer,2 and Chetan Nayak2, 1
+1
+
+Physics Department, University of California, Santa Barbara, California 93106, USA
+2
+Station Q, Microsoft Research, Santa Barbara, California 93106-6105, USA
+
+arXiv:1603.08001v4 [cond-mat.dis-nn] 8 Jun 2016
+
+We define what it means for time translation symmetry to be spontaneously broken in a quantum
+system, and show with analytical arguments and numerical simulations that this occurs in a large
+class of many-body-localized driven systems with discrete time-translation symmetry.
+
+Introduction. Spontaneous
+symmetry-breaking
+(SSB) is a pivotal concept in physics, with implications
+for condensed matter and high-energy physics. It occurs
+when the ground state or low-temperature states of
+a system fail to be invariant under symmetries of the
+Hamiltonian. The Ising model is a prototypical example
+for this behavior: Here, the symmetry is a simultaneous
+flip of all the spins, which leaves the energy of a state
+unchanged. In the ferromagnetic phase, low-energy
+states are formed with a non-zero magnetization. For
+almost every symmetry imaginable, there is a model
+whose ground state breaks it: crystals break the
+continuous translational and rotational symmetries of
+Coulomb interactions; magnetically ordered materials
+break time-reversal symmetry and spin symmetry, and
+superfluids break global gauge symmetry. The lone
+holdout, thus far, has been time-translation symmetry.
+In this paper, we give a definition of time-translation
+symmetry breaking, and construct an example of this
+behavior in a driven many-body localized system.
+Definition of Time Translation Symmetry-Breaking.
+Systems that spontaneously break time-translation symmetry (TTS) have been dubbed “time crystals,” in analogy with ordinary crystals, which break spatial translational symmetries [1, 2]. Even defining this notion correctly requires considerable care, and putative models
+have proven inconsistent [3–9]. The most obvious definition of time-translation symmetry breaking (TTSB)
+would be that the expectation values of observables are
+time-dependent in thermal equilibrium. However, this
+is clearly impossible, since a thermal equilibrium state
+ρ = Z1 e−βH is time-independent by construction (because [ρ, H] = 0). A more sophisticated definition of
+TTSB in terms of correlation functions in the state ρ has
+been proposed – and ruled out by a no-go theorem – in
+Ref. [10].
+Therefore, we must look beyond strict thermal equilibrium. This should not be too surprising, as the state ρ
+preserves all the symmetries of H, which would suggest
+that no symmetry can be spontaneously broken. For
+symmetries other than time translation, the resolution
+to this paradox is well-known: in a system with a spontaneously broken symmetry, there is ergodicity-breaking
+and the lifetime of a symmetry-breaking state diverges
+as the system size grows. Thus, in the thermodynamic
+limit, the state ρ is unphysical and is never reached. This
+
+suggests that an analogous phenomenon should be possible for time translation symmetry, where the time taken
+to reach a time-independent steady state (such as the
+thermal state ρ) diverges exponentially with system size.
+To turn these considerations into a more useful definition, we observe that, in a quantum system, the
+ergodicity-breaking in a phase with a spontaneously broken symmetry can be seen at the level of eigenstates.
+For example, the symmetry-respecting ground states of
+an Ising ferromagnet are |±i = √12 (| ↑ · · · ↑i ± | ↓ · · · ↓i.
+Such long-range correlated “cat states” are unphysical,
+will immediately decohere given any coupling to the environment, and can never be reached in finite time by
+any unitary time evolution starting from a short-range
+correlated starting state. On the other hand, the “physical” combinations | ↑ · · · ↑i and | ↓ · · · ↓i break the Ising
+symmetry.
+In TTSB case, we also need to invoke the intuition that
+oscillation under time evolution requires the superposition of states whose phases wind at different rates. That
+is, whereas in the Ising ferromagnet the two cat states
+|±i are degenerate in the thermodynamic limit, in a timecrystal they would need to have different eigenvalues under the time-evolution operator. Indeed, consider for simplicity a discrete time evolution operator Uf (which describes periodically driven “Floquet” systems as we discuss further below.) Suppose that that the states |±i
+have eigenvalues eiω± under Uf . Then, although the unphysical cat states |±i are time-invariant (up to a phase),
+a physical state such as | ↑ · · · ↑i will evolve according to
+(Uf )n | ↑i ∝ cos(ωn)| ↑ · · · ↑i + sin(ωn)| ↓ · · · ↓i, where
+ω = (ω+ − ω− )/2.
+The above considerations motivate two equivalent
+definitions of TTSB, using the following terminology/notation. We will say that a state |ψi has shortranged correlations if, for any local operator Φ(x),
+hψ|Φ(x)Φ(x0 )|ψi − hψ|Φ(x)|ψihψ|Φ(x0 )|ψi → 0 as |x −
+x0 | → ∞, i.e. if cluster decomposition holds. Note
+that the superpositions defined above are not short-range
+correlated under this definition, while a state such as
+| ↑↑ . . . ↑i is. We assume that time-evolution is described
+by a time-dependent Hamiltonian H(t), with a discrete
+time translation symmetry such that H(t + T ) for some
+T . Note that we have not assumed a continuous time
+translation symmetry, which will allow us to consider
+“Floquet” systems driven at a frequency Ω = 2π/T . Let
+
+2
+U (t1 , t2 ) be the corresponding time evolution operator
+from time t1 to t2 . We now define (in the thermodynamic limit):
+TTSB-1: TTSB occurs if for each t1 , and for every
+state |ψ(t1 )i with short-ranged correlations, there exists an operator Φ such that hψ(t1 + T )|Φ|ψ(t1 + T )i 6=
+hψ(t1 )|Φ|ψ(t1 )i, where |ψ(t1 + T )i = U (t1 + T, t1 )|ψ(t1 )i.
+TTSB-2: TTSB occurs if the eigenstates of the Floquet operator Uf ≡ U (T, 0) cannot be short-range correlated.
+In what follows, we will show how to construct a timedependent Hamiltonian H(t) which satisfies the conditions for TTSB given above. In such a system, even
+though the time-evolution is invariant under the discrete
+TTS generated by time translation by T , the expectation value of some observables is only invariant under
+translations by nT for some n > 1. In other words, the
+system responds at a fraction Ω/n of the original driving
+frequency.
+The first definition puts the time-dependence front and
+center and is directly connected to how TTSB would be
+observed experimentally: prepare a system in a shortrange correlated state and observe its subsequent timeevolution, which will not be invariant under the TTS
+of the time evolution operator. But since, in a Floquet
+eigenstate, observables would necessarily be invariant under the discrete TTS generated by time translation by T ,
+definition TTSB-1 implies that Floquet eigenstates cannot be short-range correlated, thereby implying TTSB-2.
+Conversely, if it is impossible to find Floquet eigenstates
+that are short-range correlated (which is TTSB-2), then
+it means that short-range correlated states can only be
+formed by taking superpositions of Floquet eigenstates
+with different eigenvalues. In such states, observables
+will not be invariant under the discrete TTS generated
+by time translation by T , thereby implying TTSB-1.
+Hence, the two definitions are equivalent. The second
+definition will prove to be particularly useful for analyzing the results of numerical exact diagonalization of
+the Floquet operator. When discrete TTS by T is broken down to TTS by nT , the eigenstates of Uf must be
+superpositions of n different short-range-ordered states.1
+Then, in any Floquet eigenstate, the mutual information
+I(A, B) ≡ SA + SB − SAB , where A and B are spatially
+separated regions of the system and SX is the von Neumann entropy of the reduced density matrix for region
+X, satisfies I(A, B) → ln n as the system size as well as
+the sizes of the regions A and B and their separation is
+taken to infinity [11].
+
+Floquet-Many-Body-Localization. Generic
+translationally invariant many-body Floquet systems likely
+cannot have TTSB, as their eigenstates resemble infinite
+temperature states and hence are short-range correlated [12–14].2 This is analogous to the fact (which
+follows from the results of Ref. [10]) that for continuous time-translation symmetry, TTSB is impossible
+so long as the eigenstate thermalization hypothesis
+(ETH)[20–23] is satisfied. However, we can build upon
+recent developments in the study of Floquet-many-bodylocalized (Floquet-MBL) systems [24–34], for which the
+eigenstates do not resemble infinite temperature states.
+Instead, the Floquet states of such systems exhibit
+the characteristics of the energy eigenstates of static
+MBL [35–44] systems: the eigenstates are local product
+states, up to finite-depth unitary quantum circuits [45].
+In MBL systems, all eigenstates (of the Hamiltonian
+in the static case or of the Floquet operator in the driven
+case) behave as ground states and, therefore, SSB or
+topological order can occur in all eigenstates [45–47]. In
+the SSB case, simultaneous eigenstates of the Floquet
+operator and of the Cartan subalgebra of the symmetry
+generators cannot be short range correlated. TTSB-2 can
+then be viewed as a special case of this in which there
+are no other symmetry generators besides Uf .
+In the next paragraph, we construct a Floquet operator
+and show that it exhibits discrete TTSB. In subsequent
+paragraphs, we show that this soluble Floquet operator
+sits in a finite window in parameter space over which
+TTSB occurs – i.e. that there is a TTSB phase. Models which exhibit TTSB (though not identified as such)
+have previously been considered in Refs. [29, 34]. These
+models also break another symmetry spontaneously, but
+this is not essential to achieve TTSB. Our model will be
+a generalization of that of Refs. [29, 34], with the extra
+symmetry explicitly broken.
+Model and Soluble Point. We consider onedimensional spin-1/2 systems with Floquet unitaries of
+the form:
+!
+πX x
+σ
+(1)
+Uf = exp (−it0 HMBL ) exp i
+2 i i
+In
+stroboscopic time evolution, the Hamiltonian
+P this
+x
+σ
+is
+applied for a time interval π/2, whichPhas the
+i i
+π
+x
+effect
+of
+Q x flipping all of the spins since exp(i 2 i σi ) =
+i iσi . This is followed by time evolution for an interval
+t0 under the Hamiltonian
+X
+
+z
+Ji σiz σi+1
++ hzi σiz + hxi σix
+(2)
+HMBL =
+i
+
+1 To see this, note that we can choose a basis of short-range corre-
+
+lated eigenstates for (Uf )n . By assumption, such states cannot
+be eigenstates of (Uf )k for 0 < k < n. Therefore, Uf generates an
+orbit of n different short-range correlated states. An eigenstate
+of Uf is an equal-weight superposition over such an orbit.
+
+2 Nevertheless, an initial state that is not an eigenstate could po-
+
+tentially heat very slowly, leading to non-trivial intermediatetime dynamics [15–19].
+
+3
+1.0
+0.8
+0.6
+0.4
+0.2
+0.0
+−0.2
+−0.4
+−0.6
+−0.8
+
+hσx i
+
+2T
+
+hσy i
+hσz i
+
+0
+
+5
+
+10
+
+15
+
+20
+
+25
+
+30
+
+t/T
+1.0
+L=8
+L = 10
+L = 12
+
+0.8
+0.6
+Z(t)
+
+where Ji , hzi , and hxi are uniformly chosen from Ji ∈
+[ 21 , 32 ], hzi ∈ [0, 1], hxi ∈ [0, h] where small h is the
+regime of interest. The period of the drive is T =
+t0 + π2 . For h = 0, the eigenstates of HMBL are
+eigenstates of the individual σiz . Call such an eigenstate |{si }i with si = ±1 so that σkz |{si }i = sk |{si }i.
+Then H|{si }iP= (E + ({si }) + E − ({si }))|{siP
+}i where
+−
+z
+E + ({si }) =
+(J
+s
+s
+)
+and
+E
+({s
+})
+=
+i
+i
+i+1
+i
+i
+i (hi si ).
+−
+The Floquet eigenstates are (exp(it
+√ 0 E ({si })/2)|{si }i ±
+exp(−it0 E − ({si })/2)|{−si }i)/ 2, and the corresponding Floquet eigenvalues are ± exp(it0 E + ({si })). Hence,
+TTSB-2 is satisfied for h = 0.
+Stability of TTSB. We now argue that the preceding
+conclusions are no fluke: weak perturbations of the Floquet operator, such as non-zero h or deviations of the
+length of the second time-interval from π2 , do not destroy
+TTSB, so long as a reasonable but non-trivial assumption
+about resonances holds. Ordinarily, there would be little
+doubt that SSB of a discrete symmetry is stable to weak
+perturbations at zero-temperature in 1D. But since the
+symmetry in question is TTS, more care seems necessary.
+To build confidence in the stability of TTSB, we can
+exploit the discrete local connectivity of fully MBL systems: that is, for any eigenstate |ii, and point x, there
+is only a finite number of eigenstates |ji such that the
+matrix elements hi|Φ(x)|ji 6= 0 for some operator Φ(x)
+acting locally at x. In particular, generically the (quasi)energy difference ωj − ωi for eigenstates connected in
+this way will not be close to zero. In systems with such
+a local spectral gap, one expects that local perturbations
+perturb locally [48–51], or more precisely, that there exists
+a single local unitary U (that is, a unitary which can be
+expressed as the time evolution of a local Hamiltonian
+S) which relates perturbed eigenstates to unperturbed
+eigenstates [45]. Such a local unitary U cannot possibly connect short-range correlated states with the longrange correlated eigenstates found above. Therefore, the
+eigenstates of the perturbed Floquet operator still satisfy
+TTSB-2.
+We make these ideas more precise in the Supplementary Material. There, we construct the unitary U orderby-order in perturbation theory and show that it remains
+local at all orders, provided that the local spectral gap
+condition holds. The skeptic might argue, however, that
+there will always be rare regions (known as “resonances”)
+in which the local spectral gap is arbitrarily small, and
+that this will spoil the convergence of the perturbation
+theory. A rigorous treatment of resonances is a difficult
+problem; however, the principle of “local perturbations
+perturb locally” has in fact been proven (given certain
+reasonable assumptions), at least for a particular model
+of stationary MBL [52].
+Numerical Analysis of Uf . In order to confirm that
+resonances do not destroy TTSB, it behooves us to numerically analyze Eq. (1). First, we use the time-evolving
+block decimation (TEBD) scheme [53] to compute the
+
+0.4
+0.2
+0.0
+100
+
+102
+
+104
+
+106
+
+108
+
+1010
+
+1012
+
+t/T
+
+FIG. 1. (Color online) The time evolution of a short-range
+correlated initial state satisfies TTSB-1 for h = 0.3. Top
+Panel: the time-dependence of the disorder-averaged hσix i,
+hσiy i, and hσiz i show that the former two decay rapidly while
+the latter displays persistent oscillations. (The spin-flip part
+of the Floquet operator is here taken to be applied instantaneously.) Bottom Panel: The decay of the disorder-averaged
+magnetization, Z(t), as defined in the main text, is found to
+decay zero on a timescale that diverges exponentially in the
+system size.
+
+time evolution of the short-range correlated initial state
+[cos(π/8)| ↑i + sin(π/8)| ↓i]⊗L for system size L = 200
+and h = 0.3 and t0 = 1. The top panel of Figure 1
+shows the expectation values of the Pauli spin operators,
+averaged over 146 disorder configurations and over the
+spatial interval i ∈ [50, 150]. The TEBD calculations
+were done with Trotter step 0.01T and bond dimension
+χ = 50. The spin-flip part of the Floquet operator is applied instantaneously, which explains why the oscillation
+appears to be step-like. After an initial transient, the
+expectation values oscillate at frequency π/T , half the
+drive frequency.
+Lest a skeptic wonder whether such oscillations continue to much later times of decay just beyond the times
+accessible by TEBD, we analyze smaller systems by numerical exact diagonalization (ED) of the Floquet operator. To extract the time on which the magnetization
+decays, we consider the time evolution of the magnetization starting from random initial product states that
+are polarized in the z direction, and compute the average
+
+4
+
+F33
+F22
+
+0.6
+
+F22 (L = ∞)
+
+0.5
+0.4
+0.3
+
+F22
+
+Mutual information
+
+0.7
+
+1.0
+0.9
+0.8
+0.7
+0.6
+0.5
+0.4
+0.3
+
+h = 0.1
+h = 0.9
+
+6 7 8 9 10 11 12
+L
+0.2
+0.0
+
+0.2
+
+0.4
+
+0.6
+
+0.8
+
+1.0
+
+h
+
+FIG. 2. (Color online) The mutual information between the
+n left- and rightmost sites, Fnn , for n = 2 and n = 3. The
+main panel shows results for L = 12, as well as the extrapolated value of F22 for L → ∞. To extrapolate, we fit
+F22 (L) = F22 (∞) + ce−L/ξ , with F22 (∞), c and ξ fit parameters. Example fits for h = 0.1 and h = 0.9 are shown in the
+inset.
+
+Z(t) = (−1)t hσiz (t)isign(hσiz (0)i) over 500 disorder realizations and for a fixed position i. As shown in the bottom panel of Fig. 1, there is an initial decay of this quantity, which for the parameters chosen here occurs around
+t/T = 10, and then a plateau that extends up to a time
+that diverges exponentially in the system size, and even
+for these small system sizes reaches times comparable to
+the inverse floating point precision. In the Supplementary Material, we explore these timesales in more detail
+and desribe ways in which signatures of TTSB can be
+observed for individual disorder configurations (without
+disorder averaging).
+We now turn to ED of the Floquet operator to verify
+that TTSB-2 holds. We diagonalize Uf for L = 6, 8, 10, 12
+sites and 3200 disorder realizations and compute the
+mutual information between the left- and rightmost n
+sites, labelled Fnn . We find that the mutual information obeys the scaling form: Fnn (h, L) = Fnn (g, ∞) +
+cn exp(−L/ξ(h)). We expect that Fnn (h, ∞) = 0 in the
+TTS-invariant phase, h > hc ; and Fnn (g, ∞) > 0 in the
+TTSB phase, h < hc , with Fnn (g, ∞) → ln 2 as n → ∞.
+The results in Fig. 2 are consistent with this form, with
+hc >
+∼ 1. It is remarkable that scaling holds even for such
+small systems, and that F22 ≈ F33 ≈ log 2 for h < 0.3;
+evidently, L = 12 and n = 2, 3 are not so far from the
+thermodynamic limit.
+Implications of TTSB. In systems exhibiting MBL, it
+is commonly thought that there exists a complete set of
+local integrals of motion (LIOMs): that is, there is a set of
+quasi-local operators τiz which commute with each other
+and with the Floquet operator Uf (or the Hamiltonian
+in the static case), and such that the eigenvalues of τiz
+
+uniquely specify a state in the Hilbert space [41, 43, 44].
+Systems with TTSB violate this principle. Indeed, in
+our model at its soluble point at h = 0, the locally
+−
+indistinguishable states (exp(it
+√ 0 E ({si })/2)|{si }i ±
+−
+exp(−it0 E ({si })/2)|{−si }i)/ 2 are eigenstates, with
+different quasienergy. No LIOM can distinguish between
+these two states, so no set of LIOMs can be complete.
+(Though the existence of a complete set of LIOMs is
+sometimes taken as the definition of MBL, the TTSB
+phase is still MBL in the sense of, for example, longtime dynamics, since (Uf )2 does have a complete set of
+LIOMs). By a similar argument, one can show that
+there does not exist a quasi-local effective Hamiltonian
+Heff such that Uf = exp(−iT Heff ), whereas for FloquetMBL systems without TTSB this is likely to be the case
+[24, 26].
+As noted earlier, the oscillations arise from the occurrence of multiplets of states separated in Floquet eigenvalue by Ω/n, where Ω = 2π/T is the drive frequency. We
+don’t use this to identify the TTSB phase in ED because
+the states are too closely spaced in energy to pick out
+such multiplets. However, their existence suggests that
+the system can radiate at frequency Ω/n. The fact that
+systems oscillating in time can radiate has been cited as
+an argument against the existence of TTSB [4, 6], since
+a system maintaining persistent oscillations while simultaneously radiating would be inconsistent with conservation of energy. However, in the Floquet case, this is
+not an issue since energy is being continually supplied by
+the drive. Nor does such persistent radiation violate conservation of quasienergy, due the fact that physical (i.e.
+short-range correlated) states are not quasienergy eigenstates. (For details, see the Supplementary Material.)
+On the other hand, in a system that breaks continuous
+TTS, radiation would cause the system to decay to the
+ground state, which is reason to doubt that continuous
+TTSB can occur.
+Discussion. The model Eqs. (1)P
+and (2) isQsoluble at
+h = 0 because the operator exp(i π2 i σix ) = i iσix that
+is applied at the beginning of each driving cycle maps
+eigenstates of HMBL to eigenstates of HMBL . Analogous
+soluble models can be constructed for Zn spins in which
+time translation by T is broken down to nT .
+Our model has no symmetries, other than discrete
+time-translation symmetry. Hence, the ln 2 that we find
+in the mutual information must be a consequence of
+TTSB; there is no other symmetry to break. However,
+TTSB can occur in models with other symmetries. A
+particularly interesting example is given by symmetryprotected topological (SPT) phases of Floquet-MBL systems [30–33]. In d-dimensions, such phases are classified
+by H d+1 (G × Z, U (1)) = H d+1 (G, U (1)) × H d (G, U (1))
+[31]. The second factor on the right-hand-side of this
+equality is a (d − 1)-dimensional SPT phase that is
+‘pumped’ to the boundary with each application of the
+Floquet operator, thereby breaking TTS on the bound-
+
+5
+ary.
+The definition TTSB-1 naturally suggests an experiment that could observe the phenomenon predicted here.
+Signatures of MBL have been observed in trapped systems of neutral atoms [54] and trapped ions [55], and signatures of single-particle localization have been seen in
+coupled superconducting qubits [56]. In any of these systems, one can prepare an arbitrary initial product state,
+evolve to late times according to a drive in the class considered here, and measure the “spins” in the desired basis. Our prediction is that persistent oscillations will be
+observed at a fraction of the drive frequency.
+D.E. acknowledges support from the Microsoft Corporation.
+
+[1] F. Wilczek, Phys. Rev. Lett. 109, 160401 (2012),
+arXiv:1202.2539 [quant-ph].
+[2] A. Shapere and F. Wilczek, Phys. Rev. Lett. 109, 160402
+(2012), arXiv:1202.2537 [cond-mat.other].
+[3] T. Li, Z.-X. Gong, Z.-Q. Yin, H. T. Quan, X. Yin,
+P. Zhang, L.-M. Duan, and X. Zhang, Phys. Rev. Lett.
+109, 163001 (2012).
+[4] P. Bruno, Phys. Rev. Lett. 110, 118901 (2013).
+[5] P. Bruno, Phys. Rev. Lett. 111, 029301 (2013).
+[6] P. Bruno, Physical Review Letters 111, 070402 (2013),
+arXiv:1306.6275.
+[7] P. Noziéres, Eur. Phys. Lett. 103, 57008 (2013).
+[8] G. E. Volovik, JETP Letters 98, 491 (2013),
+arXiv:1309.1845.
+[9] K. Sacha and D. Delande, arXiv:1603.05827.
+[10] H. Watanabe and M. Oshikawa, Phys. Rev. Lett. 114,
+251603 (2015), arXiv:1410.2143 [cond-mat.stat-mech].
+[11] C.-M. Jian, I. H. Kim, and X.-L. Qi, arXiv:1508.07006.
+[12] L. D’Alessio and M. Rigol, Physical Review X 4, 041048
+(2014), arXiv:1402.5141.
+[13] A. Lazarides, A. Das, and R. Moessner, Physical Review
+E 90, 012110 (2014), arXiv:1403.2946.
+[14] P. Ponte, A. Chandran, Z. Papić, and D. A. Abanin,
+Annals of Physics 353, 196 (2015), arXiv:1403.6480.
+[15] D. A. Abanin, W. De Roeck, and F. Huveneers, Physical
+Review Letters 115, 256803 (2015), arXiv:1507.01474.
+[16] D. A. Abanin, W. De Roeck, and W. W. Ho, 1510.03405
+, 8 (2015), arXiv:1510.03405.
+[17] T. Kuwahara, T. Mori, and K. Saito, arXiv (2015),
+10.1016/j.aop.2016.01.012, arXiv:1508.05797.
+[18] T. Mori, T. Kuwahara, and K. Saito, Phys. Rev. Lett.
+116, 120401 (2016), arXiv:1509.03968.
+[19] A. Chandran and S. L. Sondhi, arXiv:1506.08836.
+[20] J. M. Deutsch, Phys. Rev. A 43, 2046 (1991).
+[21] M. Srednicki, Phys. Rev. E 50, 888 (1994), arXiv:condmat/9403051.
+[22] M. Rigol, V. Dunjko, and M. Olshanii, Nature 452, 854
+(2008), arXiv:0708.1324.
+[23] L. D’Alessio, Y. Kafri, A. Polkovnikov, and M. Rigol,
+arXiv:1509.06411.
+[24] D. A. Abanin, W. D. Roeck,
+and F. Huveneers,
+arXiv:1412.4752.
+[25] P. Ponte, A. Chandran, Z. Papić, and D. A. Abanin,
+
+Ann. Phys. 353, 196 (2015), arXiv:1403.6480 [condmat.dis-nn].
+[26] P. Ponte, Z. Papić, F. Huveneers, and D. A. Abanin,
+Phys. Rev. Lett. 114, 140401 (2015), arXiv:1410.8518
+[cond-mat.dis-nn].
+[27] A. Lazarides, A. Das, and R. Moessner, Phys. Rev.
+Lett. 115, 030402 (2015), arXiv:1410.3455 [cond-mat.statmech].
+[28] T. Iadecola, L. H. Santos, and C. Chamon, Phys. Rev.
+B 92, 125107 (2015), arXiv:1503.07871 [cond-mat.str-el].
+[29] V. Khemani, A. Lazarides, R. Moessner, and S. L.
+Sondhi, arXiv:1508.03344.
+[30] C. W. von Keyserlingk and S. L. Sondhi,
+arXiv:1602.02157.
+[31] D. V. Else and C. Nayak, arXiv:arXiv:1602.04804.
+[32] A. C. Potter, T. Morimoto,
+and A. Vishwanath,
+arXiv:1602.05194.
+[33] R. Roy and F. Harper, arXiv:1602.08089.
+[34] C. W. von Keyserlingk and S. L. Sondhi,
+arXiv:1602.06949.
+[35] D. M. Basko, I. L. Aleiner, and B. L. Altshuler, Annals
+of Physics 321, 1126 (2006).
+[36] D. M. Basko, I. L. Aleiner, and B. L. Altshuler,
+arXiv:cond-mat/0602510.
+[37] V. Oganesyan and D. A. Huse, Phys. Rev. B 75, 155111
+(2007).
+[38] M. Z̆nidaric̆, T. Prosen, and P. Prelovs̆ek, Phys. Rev. B
+77, 064426 (2008).
+[39] A. Pal and D. A. Huse, Phys. Rev. B 82, 174411 (2010).
+[40] J. H. Bardarson, F. Pollmann, and J. E. Moore, Phys.
+Rev. Lett. 109, 017202 (2012).
+[41] D. A. Huse, R. Nandkishore, and V. Oganesyan, Physical
+Review B 90, 174202 (2014), arXiv:1305.4915.
+[42] M. Serbyn, Z. Papić, and D. A. Abanin, Phys. Rev. Lett.
+110, 260601 (2013), arXiv:1304.4605.
+[43] M. Serbyn, Z. Papić, and D. A. Abanin, Phys. Rev. Lett.
+111, 127201 (2013), arXiv:1305.5554 [cond-mat.dis-nn].
+[44] D. A. Huse, R. Nandkishore, and V. Oganesyan, Phys.
+Rev. B 90, 174202 (2014).
+[45] B. Bauer and C. Nayak, J. Stat. Mech: Theor. Exp. 9,
+09005 (2013), arXiv:1306.5753 [cond-mat.dis-nn].
+[46] D. A. Huse, R. Nandkishore, V. Oganesyan, A. Pal,
+and S. L. Sondhi, Phys. Rev. B 88, 014206 (2013),
+arXiv:1304.1158 [cond-mat.stat-mech].
+[47] Y. Bahri, R. Vosk, E. Altman, and V. A., Nature Comm.
+6, 8341 (2015).
+[48] M. B. Hastings and X.-G. Wen, Physical Review B 72,
+045141 (2005), arXiv:cond-mat/0503554.
+[49] S. Bravyi, M. B. Hastings,
+and S. Michalakis,
+Journal of Mathematical Physics 51, 093512 (2010),
+arXiv:1001.0344.
+[50] S. Bravyi and M. B. Hastings, Communications in Mathematical Physics 307, 609 (2011), arXiv:1001.4363.
+[51] S. Bachmann, S. Michalakis, B. Nachtergaele, and
+R. Sims, Communications in Mathematical Physics 309,
+835 (2012), arXiv:1102.0842.
+[52] J. Z. Imbrie, arXiv:1403.7837.
+[53] G. Vidal, Physical Review Letters 93, 040502 (2004),
+arXiv:quant-ph/0310089.
+[54] M. Schreiber, S. S. Hodgman, P. Bordia, H. P. Lüschen,
+M. H. Fischer, R. Vosk, E. Altman, U. Schneider, and
+I. Bloch, Science 349, 842 (2015), arXiv:1501.05661 [condmat.quant-gas].
+
+6
+[55] J. Smith, A. Lee, P. Richerme, B. Neyenhuis, P. W.
+Hess, P. Hauke, M. Heyl, D. A. Huse, and C. Monroe,
+arXiv:1508.07026.
+[56] Y. Chen, P. Roushan, D. Sank, C. Neill, E. Lucero,
+M. Mariantoni, R. Barends, B. Chiaro, J. Kelly,
+A. Megrant, J. Y. Mutus, P. J. J. O’Malley,
+A. Vainsencher, J. Wenner, T. C. White, Y. Yin, A. N.
+Cleland, and J. M. Martinis, Nature Communications 5,
+5184 (2014), arXiv:1403.6808 [cond-mat.supr-con].
+
+7
+SUPPLEMENTARY MATERIALS
+Local structure of Floquet perturbation theory
+
+Consider a soluble Floquet operator
+R1
+
+Uf0 = T e−i 0 H0 (t)dt ,
+
+(S1)
+
+and a time-dependent local perturbation λV (t), and define
+ Z 1
+
+Uf = T exp −i
+[H0 (t) + λV (t)]dt ,
+
+T = time-ordering.
+
+0
+
+(S2)
+By Trotterizing, we can show that
+
+ Z 1
+0 †
+0
+0
+(Uf ) (t)λV (t)Uf (t) ,
+Uf = Uf × T exp −i
+
+(S3)
+
+0
+Rt
+
+0
+
+where U0 (t) = T e−i 0 H0 (t ) . Hence, without loss of generality we can just consider a perturbed
+operator
+ Floquet
+
+R1
+0 0
+0
+Uf = Uf U , where where U = T exp −i 0 λV (t)dt for
+some local time-dependent V . We label the eigenstates of
+Uf0 as |ii, with quasienergies ωi . We will now construct,
+order-by-order, a local unitary rotation that diagonalizes
+the perturbation.
+First order. At first order we look for a unitary eiλS
+such that eiλS Uf e−iλS is diagonal (to first order in λ).
+Expanding eiλS Uf0 U 0 e−iλS to first-order in λ and taking
+the matrix elements with hi| and |ji, we see that we can
+make it diagonal to this order by taking:
+hi|S|ji =
+
+hi|V |ji
+i(ω
+e i −ωj ) − 1
+
+(i 6= j)
+
+(S4)
+
+R1
+where V = 0 V (s)ds. We can choose to set hi|S|ii = 0.
+It might not be clear whether this S is local, given
+that the eigenstates |ii might be highly non-local “cat
+states”. To see that it is, we adapt an idea originally due
+to Hastings [S1] (as refined in Ref. [S2]) to theP
+Floquet
+case. First write V as a sum of local terms V = X V X ,
+where V X is supported
+on a bounded region X. Then
+P
+we can write S = X SX , where
+SX =
+
+X |iihi|V X |jihj|
+i6=j
+
+ei(ωi −ωj ) − 1
+
+≡
+
+X
+
+f (ωi − ωj )|iihi|V X |jihj|,
+
+i6=j
+
+(S5)
+Now suppose that there are no “resonances” near X, by
+which we mean that |ei(ωi −ωj ) − 1| > γ > 0 for all i, j
+for which the matrix element hi|V X |ji is nonzero. Then
+we can replace f (ω) with fe(ω) in Eq. (S5), where fe(ω) is
+an infinitely differentiable function with period 2π such
+that fe(0) = 0 and fe(ω) = f (ω) for |ei(ωi −ωj ) − 1| > γ.
+By taking matrix elements one can then verify that
+SX =
+
+∞
+X
+n=−∞
+
+an (Uf0 )−n V X (Uf0 )n ,
+
+(S6)
+
+where
+are the Fourier series coefficients of fe: fe(ω) =
+P∞ an inω
+an . From this, we can show that SX is
+n=−∞ e
+quasi-local provided that Uf0 obeys a Lieb-Robinson
+bound. In particular, however, if we choose Uf0 such that
+(Uf0 )n doesn’t increase the support of operators by more
+than an n-independent constant, we see that SX is still
+strictly local on a region of slightly larger size. In particular, this can be shown to be true of the Floquet operator
+Uf0 in Eq. (1) in the main text. To see this, note that
+in (Uf0 )n we can move all the spin flips to the end at
+the cost of simply changing the sign of the hi ’s during
+the course of the evolution, and the time evolution of a
+Hamiltonian which is the sum of terms, each of which is
+a product of Pauli σz operators (even if the coefficients
+vary with time) never increases the support of operators
+by more than a constant amount.
+All orders. Suppose that we have found a unitary rotation which diagonalizes the perturbation to order λn ,
+such that Uf = Uf0 U 0 , with
+
+
+U 0 = exp −i Vd + λn+1 Vnd + O(λn+2 ) ,
+(S7)
+where Vd is diagonal, Vd = O(λ) and Vnd is non-diagonal.
+(At first-order, i.e. n = 0, if U 0 was originally the evolution of a time-dependent Hamiltonian we can still generate such an expression for U 0 using the Campbell-BakerHaussdorf formula.) Then we want to find S such that
+eiS Uf e−iS is diagonal to order λn+1 , or equivalently, writing eiS Uf e−iS = Uf0 U 00 , that U 00 is diagonal. We see that
+†
+
+U 00 = U0† eiS U 0 e−iS = eiU0 SU0 U 0 e−iS .
+
+(S8)
+
+From the Campbell-Baker-Haussdorf formula, we see
+that
+
+
+U 00 = exp i −Vd − λn+1 Vnd + Uf0 S(Uf0 )† − S + O(λn+2 ) ,
+
+(S9)
+and hence we set the expression in {...} to be diagonal.
+Taking off-diagonal matrix elements gives
+hi|S|ji =
+
+hi|λn+1 Vnd |ji
+ei(ωi −ωj ) − 1
+
+(i 6= j),
+
+(S10)
+
+and we choose to set hi|S|ii = 0. We can then repeat the process at next order, with n0 = n + 1, Vd0 =
+0
+Vd + λn+1 Vnd − (Uf0 )† SUf0 + S, and Vnd
+equal to the
+n+2
+coefficient of λ
+in the Campbell-Baker-Haussdorf expansion Eq. (S9).
+We observe that at all orders in the perturbation theory, locality is preserved. The only operations contained
+in the exponentials are addition, conjugation by Uf0 , taking nested commutators (through the Campbell-BakerHaussdorf expansion), and evaluating expressions of the
+form Eq. (S10). The first three manifestly preserve locality, and the last one preserves locality in the absence
+of resonances for the same reasons discussed in the firstorder section above. Therefore, the unitary rotation that
+relates the eigenstates of Uf to the eigenstates of Uf0 is
+indeed a local unitary at all orders.
+
+8
+400
+hσx i
+
+350
+
+hσy i
+
+300
+
+hσz i
+
+250
+200
+
+P (τ )
+
+150
+100
+50
+0
+0.0
+
+0.5
+
+1.0
+
+1.5
+
+2.0
+
+2.5
+
+3.0
+
+ωT /(2π)
+
+h = 0.1
+L=8
+
+102
+
+104
+
+0.12
+
+106
+108
+h = 0.3
+
+1010
+
+1012
+
+1014
+
+L=8
+L = 10
+L = 12
+
+0.10
+0.08
+P (τ )
+
+Figure S1. The Fourier transform of the time evolution at
+late times (taken over the interval 200 < t < 300) for two
+individual disorder realizations (shown as solid and dotted
+lines respectively), at h = 0.3. The dominant peaks at ω =
+(2k + 1)π/T are universal, whereas the smaller peaks at other
+locations are disorder-dependent.
+
+0.16
+0.14
+0.12
+0.10
+0.08
+0.06
+0.04
+0.02
+0.00
+100
+
+0.06
+0.04
+0.02
+
+Numerical Observation of Persistent Oscillations at
+Very Late Times
+
+P (τ )
+
+In a single disorder realization, we can go to much later
+times in TEBD. Moreover, experiments might be carried
+out in a small number of disorder realizations. As noted
+in the main text, hσix i and hσiy i are noisier in individual
+disorder realizations. However, one can still observe a
+clear signature of TTSB by looking at the Fourier transform of the time dependence of a single disorder realization, as shown in Fig. S1. There are strong peaks at
+π/T , with subleading peaks at (2k + 1)π/T , indicating
+the fractional frequency response. (The other peaks in
+the Fourier transform have their origins in the discreteness of the local quasienergy spectrum near a given point,
+and can be distinguished by the fact that their positions
+vary depending on the disorder realization.) These results indicate that the oscillations persist to later times
+than shown in the upper panel of Fig. 1 in the main
+text and that they are visible even in a single disorder
+realization.
+To more carefully examine the decay of the oscillations, we turn again to exact diagonalization. For
+a given disorder realization and initial state, we can
+determine a characteristic timescale τ by computing
+(−1)t hσiz (t)isign(hσiz (0)i). This is defined such that it
+is positive for small times, and we define τ to be the
+time at which this observable first changes its sign. In
+Fig. S2, we show a histogram of these τ for different system sizes and strengths of the magnetic field. We observe
+a very interesting structure: deep in the TTSB phase, at
+h = 0.1, we find a single large peak at very large times
+(here, we show only L = 8 since for larger systems the τ
+are too large compared to the floating point precision).
+In an intermediate range, such as h = 0.3, we find two
+pronounced peaks, where the location of the first peak
+does not depend on system size while the second peak is
+
+0.00
+100
+0.45
+0.40
+0.35
+0.30
+0.25
+0.20
+0.15
+0.10
+0.05
+0.00
+100
+
+102
+
+104
+
+106
+108
+h = 1.5
+
+1010
+
+1012
+
+1014
+
+L=8
+L = 10
+L = 12
+
+102
+
+104
+
+106
+
+108
+
+1010
+
+1012
+
+1014
+
+t/T
+
+Figure S2. Histogram of the characteristic timescale τ , as
+defined in the text, for different values of the magnetic field.
+From top to bottom: h = 0.1 deep in the TTSB phase, h = 0.3
+in the same regime as discussed in the main text, and h = 1.5
+beyond the TTSB phase.
+
+centered around a time that diverges exponentially. The
+relative weight of the two peaks seems unaffected by system size. In this regime, the average of τ is dominated
+by rare instances with very large τ , while the typical
+value is dominated by instances with short characteristic
+times. In the disorder-averaged value of the magnetization Z(t), which was discussed in the main manuscript,
+the first peak in the distribution of τ manifests in the
+decay from the initial value to the intermediate plateau,
+and the second peak corresponds to the decay from this
+plateau to zero. Finally, in the limit of very large h where
+the system has been driven out of the TTSB phase, we
+find the histogram to be dominated by a peak at short
+times.
+
+9
+Radiation Emitted from a TTSB System at Lowest
+Order in Perturbation Theory
+
+Let us suppose, for illustrative puposes, that our spin
+system is coupled to the electromagnetic field through
+the Jaynes-Cummings Hamiltonian
+X
+H1 = V (a + a† ), V = g
+σiz ,
+(S11)
+i
+
+where a† , a are creation/annihilation operators for photons of frequency Ω/2 (where Ω = 2π/T is the drive frequency.) This operator σix conventionally appears in this
+Hamiltonian; our Hamiltonian is rotated in spin space
+relative to the conventional one. The transition amplitude between initial and final Floquet eigenstates |mi,
+
+Am,n = −i
+= −i
+
+∞ Z 1
+X
+k=−∞
+∞
+X
+
+|ni is given, in the interaction picture, by:
+ Z ∞
+
+Am,n = hn, 1| T exp −i
+dtH1 (t0 ) |m, 0i
+
+(S12)
+
+−∞
+
+where hn, 1| is the state with the spin system in the
+state |ni and a single photon (and similarly for |m, 0i),
+and H1 (t) ≡ U0† (t, −∞)H1 U0 (t, −∞) and U0 (t, −∞) ≡
+
+Rt
+T exp −i −∞ dt0 H(t0 ) . The unperturbed Hamiltonian
+H(t) is the stroboscopic Hamiltonian given in Eq. (1)
+in the main text and the text below it. We write
+t = kT + s, where s ∈ [0, T ). Then we can write
+U0 (t, jT ) = U0 (s, 0)Ufk−j . To lowest-order, the transition amplitude can be written in the form:
+
+dshn, 1|(Ufk )† U0† (s, 0)H1 U0 (s, 0)Ufk |m, 0i
+
+0
+
+eikT (ωn −ωm +Ω/2)
+
+Z 1
+
+dshn|U0† (s, 0)V U0 (s, 0)|mi
+
+(S13)
+
+0
+
+k=−∞
+
+Z 1
+≡ −if (ωn − ωm )
+
+dshn|U0† (s, 0)V U0 (s, 0)|mi
+
+(S14)
+
+0
+
+,
+
+where
+
+
+ 
+∞
+1
+2π X
+δ ω+ k+
+f (ω) =
+Ω .
+T
+2
+
+(S15)
+
+k=−∞
+
+This matrix element is generally non-zero.
+For instance, consider the soluble point h = 0,
+where we take the spin-flip part of the Floquet
+operator to act instantaneously such that
+R1
+†
+z
+z
+Then for initial and
+dsU
+0 (s, 0)σi U0 (s, 0) = σi .
+0
+−
+final states are |±i ≡ (exp(it
+0
+√ E ({si })/2)|{si }i ±
+−
+we
+find
+that
+exp(−it0 E ({si })/2)|{−si }i)/ 2,
+h−|σiz |+i = h+|σiz |−i = 1 for any i, and hence
+A+− = A−+ = −
+
+2πigN
+δ(0).
+T
+
+(S16)
+
+Now consider a locally-prepared initial state, such as
+√
+|{si }i = (|+i ± |−i)/ 2,
+
+with time in the interaction picture. (The fractional frequency response in the interaction picture comes from
+the time evolution of observables.) However, Eq. (S16)
+tells us that at lowest-order in perturbation theory, the
+system can emit a photon at frequency Ω/2 and transition from |−i ↔ |+i. However, this only changes the
+superposition Eq. (S17) by a global phase factor ±1.
+One might wonder why this does not violate conservation of quasienergy, given that a photon of frequency
+Ω/2 has been emitted. However, we observe that the
+state Eq. (S17) is not a quasienergy eigenstate; rather,
+it is a superposition of two eigenstates with quasienergies differing by Ω/2. Therefore, its quasienergy is only
+well-defined modulo Ω/2. We note that neither |+i nor
+|−i is “higher” in quasienergy. The system can emit a
+photon of energy Ω/2 while transitioning from |+i to |−i
+or from |−i to |+i since since −Ω/2 ≡ Ω/2 (mod Ω).
+[Mathematically, this corresponds to the statement that
+f (Ω/2) = f (−Ω/2) in Eq. (S14).]
+
+(S17)
+
+[Here we have set hzi = 0 in order to unclutter the equations, so that E − ({si }) = 0.] Then, in the absence of a
+coupling to the electromagnetic field, it would not change
+
+[S1] M. B. Hastings, Phys. Rev. B 69, 104431 (2004),
+arXiv:cond-mat/0305505.
+[S2] T. J. Osborne, Phys. Rev. A 75, 032321 (2007),
+arXiv:quant-ph/0601019.
+
+

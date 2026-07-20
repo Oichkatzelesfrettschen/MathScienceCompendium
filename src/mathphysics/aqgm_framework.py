@@ -43,7 +43,7 @@ from scipy.linalg import eig, eigvals, expm, logm
 
 
 sys.path.append(str(Path(__file__).parent))
-from .algebras.roots import E7RootSystem, E8RootSystem
+from .algebras.roots import BaseRootSystem, E7RootSystem, E8RootSystem
 
 
 @dataclass
@@ -87,7 +87,7 @@ class AlgebraicGraph:
         self.directed = directed
         self.graph = nx.DiGraph() if directed else nx.Graph()
         self.graph.add_nodes_from(range(vertices))
-        self._operator_labels = {}
+        self._operator_labels: dict[int, str] = {}
 
     def add_edge(self, source: int, target: int, weight: float = 1.0) -> None:
         """Add edge to graph with optional weight."""
@@ -194,7 +194,7 @@ class MatrixStarAlgebra(StarAlgebra):
 
     def norm(self, a: np.ndarray) -> float:
         """Operator norm (largest singular value)."""
-        return np.linalg.norm(a, ord=2)
+        return float(np.linalg.norm(a, ord=2))
 
     def commutator(self, a: np.ndarray, b: np.ndarray) -> np.ndarray:
         """Commutator [a, b] = ab - ba."""
@@ -206,7 +206,7 @@ class MatrixStarAlgebra(StarAlgebra):
 
     def is_self_adjoint(self, a: np.ndarray, tolerance: float = 1e-10) -> bool:
         """Check if element is self-adjoint (a = a*)."""
-        return np.allclose(a, self.star(a), atol=tolerance)
+        return bool(np.allclose(a, self.star(a), atol=tolerance))
 
 
 class QuantumGeometricOperator:
@@ -305,7 +305,7 @@ class QuantumGeometricOperator:
         if self._operator_matrix is None:
             raise ValueError("Operator must be built first")
 
-        return np.vdot(state, self._operator_matrix @ state)
+        return complex(np.vdot(state, self._operator_matrix @ state))
 
 
 class ModularAutomorphismGroup:
@@ -408,7 +408,7 @@ class ModularAutomorphismGroup:
         evolved_a = self.modular_flow(operator_a, -beta)
         rhs = np.trace(rho @ operator_b @ evolved_a)
 
-        return abs(lhs - rhs) < tolerance
+        return bool(abs(lhs - rhs) < tolerance)
 
 
 class SpectralTriple:
@@ -486,7 +486,7 @@ class SpectralTriple:
         # Spectral action
         action = np.real(np.sum(cutoff_values))
 
-        return action
+        return float(action)
 
     def heat_kernel_trace(self, time: float) -> float:
         """Compute heat kernel trace Tr(exp(-tD^2)).
@@ -509,7 +509,7 @@ class SpectralTriple:
         # Trace
         trace = np.real(np.trace(heat_kernel))
 
-        return trace
+        return float(trace)
 
     def spectral_dimension(self, time: float = 0.1) -> float:
         """Estimate spectral dimension from heat kernel.
@@ -533,7 +533,7 @@ class SpectralTriple:
 
         spec_dim = -2 * dlog_trace / dlog_t
 
-        return spec_dim
+        return float(spec_dim)
 
 
 class AQGMFramework:
@@ -562,6 +562,7 @@ class AQGMFramework:
         self.algebra = MatrixStarAlgebra(config.graph_vertices)
         self.spectral_triple: SpectralTriple | None = None
         self.modular_group: ModularAutomorphismGroup | None = None
+        self.root_system: BaseRootSystem | None
 
         # Lie algebra integration
         if config.algebra_type == "E7":
@@ -605,10 +606,10 @@ class AQGMFramework:
             n = self.config.graph_vertices
             reference_state = np.ones(n) / np.sqrt(n)
 
-        self.modular_group = ModularAutomorphismGroup(self.algebra, reference_state)
-        self.modular_group.compute_modular_operator()
-
-        return self.modular_group
+        modular_group = ModularAutomorphismGroup(self.algebra, reference_state)
+        modular_group.compute_modular_operator()
+        self.modular_group = modular_group
+        return modular_group
 
     def compute_quantum_observable(self, observable_type: str) -> np.ndarray:
         """Compute quantum geometric observable.
@@ -637,13 +638,12 @@ class AQGMFramework:
         Returns:
             Dictionary of spectral properties
         """
-        if self.spectral_triple is None:
-            self.initialize_spectral_geometry()
+        spectral_triple = self.spectral_triple or self.initialize_spectral_geometry()
 
-        properties = {
-            "spectral_action": self.spectral_triple.spectral_action(self.config.planck_scale),
-            "heat_kernel_trace": self.spectral_triple.heat_kernel_trace(1.0),
-            "spectral_dimension": self.spectral_triple.spectral_dimension(0.1),
+        properties: dict[str, Any] = {
+            "spectral_action": spectral_triple.spectral_action(self.config.planck_scale),
+            "heat_kernel_trace": spectral_triple.heat_kernel_trace(1.0),
+            "spectral_dimension": spectral_triple.spectral_dimension(0.1),
         }
 
         # Graph properties
@@ -651,8 +651,8 @@ class AQGMFramework:
         properties.update({"graph_" + k: v for k, v in graph_props.items()})
 
         # Dirac spectrum
-        if self.spectral_triple.dirac_operator is not None:
-            eigenvalues = eigvals(self.spectral_triple.dirac_operator)
+        if spectral_triple.dirac_operator is not None:
+            eigenvalues = eigvals(spectral_triple.dirac_operator)
             properties["dirac_spectrum"] = {
                 "eigenvalues": eigenvalues.tolist()
                 if len(eigenvalues) <= 20
@@ -675,10 +675,13 @@ class AQGMFramework:
         Returns:
             Test results
         """
-        if self.modular_group is None:
-            self.initialize_modular_theory()
+        modular_group = self.modular_group or self.initialize_modular_theory()
 
-        results = {"kms_satisfied": [], "flow_hermiticity": [], "flow_norm_preservation": []}
+        results: dict[str, list[bool]] = {
+            "kms_satisfied": [],
+            "flow_hermiticity": [],
+            "flow_norm_preservation": [],
+        }
 
         n = self.config.graph_vertices
 
@@ -691,28 +694,28 @@ class AQGMFramework:
             B = (B + B.conj().T) / 2
 
             # Test KMS condition
-            kms = self.modular_group.kms_condition(A, B)
+            kms = modular_group.kms_condition(A, B)
             results["kms_satisfied"].append(kms)
 
             # Test flow properties
             t = 1.0
-            A_evolved = self.modular_group.modular_flow(A, t)
+            A_evolved = modular_group.modular_flow(A, t)
 
             # Hermiticity preservation
-            is_hermitian = np.allclose(A_evolved, A_evolved.conj().T)
+            is_hermitian = bool(np.allclose(A_evolved, A_evolved.conj().T))
             results["flow_hermiticity"].append(is_hermitian)
 
             # Norm preservation (approximately)
             norm_before = np.linalg.norm(A)
             norm_after = np.linalg.norm(A_evolved)
-            norm_preserved = abs(norm_before - norm_after) < 0.1
+            norm_preserved = bool(abs(norm_before - norm_after) < 0.1)
             results["flow_norm_preservation"].append(norm_preserved)
 
         # Summarize
         summary = {
-            "kms_pass_rate": np.mean(results["kms_satisfied"]),
-            "hermiticity_pass_rate": np.mean(results["flow_hermiticity"]),
-            "norm_preservation_rate": np.mean(results["flow_norm_preservation"]),
+            "kms_pass_rate": float(np.mean(results["kms_satisfied"])),
+            "hermiticity_pass_rate": float(np.mean(results["flow_hermiticity"])),
+            "norm_preservation_rate": float(np.mean(results["flow_norm_preservation"])),
         }
 
         return summary

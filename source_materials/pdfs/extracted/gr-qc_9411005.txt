@@ -1,0 +1,1992 @@
+Discreteness of Area and Volume
+in Quantum Gravity
+
+arXiv:gr-qc/9411005v1 2 Nov 1994
+
+Carlo Rovelli∗ and Lee Smolin†
+∗ Department of Physics, University of Pittsburgh, Pittsburgh, Pa15260
+† Center for Gravitational Physics and Geometry, Department of Physics
+
+Pennsylvania State University, University Park, Pa16802-6360
+
+November 26, 2024
+
+Abstract
+We study the operator that corresponds to the measurement of volume,
+in non-perturbative quantum gravity, and we compute its spectrum. The
+operator is constructed in the loop representation, via a regularization procedure; it is finite, background independent, and diffeomorphism-invariant,
+and therefore well defined on the space of diffeomorphism invariant states
+(knot states). We find that the spectrum of the volume of any physical
+region is discrete. A family of eigenstates are in one to one correspondence
+with the spin networks, which were introduced by Penrose in a different
+context. We compute the corresponding component of the spectrum, and
+exhibit the eigenvalues explicitly. The other eigenstates are related to a
+generalization of the spin networks, and their eigenvalues can be computed
+by diagonalizing finite dimensional matrices. Furthermore, we show that
+the eigenstates of the volume diagonalize also the area operator. We argue
+that the spectra of volume and area determined here can be considered as
+predictions of the loop-representation formulation of quantum gravity on
+the outcomes of (hypothetical) Planck-scale sensitive measurements of the
+geometry of space.
+
+∗ rovelli@vms.cis.pitt.edu,
+
+† smolin@phys.psu.edu
+
+1
+
+Introduction
+
+In spite of recent progress, research in quantum gravity[1] has produced few
+precise physical predictions, against which the theory might be, at least ion
+principle, experimentally tested. In this paper, we show that, under certain
+assumptions, predictions for the spectra of certain geometric quantities can
+be derived from the quantum theory of gravity in the formulation based
+on the loop representation[2, 3, 4, 5]1 . More precisely, we show that the
+operators that correspond to the measurements of the volumes and areas of
+appropriately defined regions can be defined in this formulation of quantum
+gravity. We are able to diagonalize these operators, and we find that the
+spectra fall into certain discrete series, some of which we are able to explicitly
+determine. Finally, we argue that these spectra admit an interpretation as
+physical predictions of the loop-representation approach to quantum gravity.
+To establish these or any other physical predictions from non-perturbative
+formulations of quantum gravity, there are two main sources of difficulties
+that must be overcome. The first of these is the quantum-field-theoretical
+problem of defining operator products in the absence of the background geometry on which conventional regularization schemes rely. The second is the
+fact that in a diffeomorphism-invariant theory physical observables express
+correlations amongst degrees of freedom and are therefore non-trivial functions of the elementary fields. Each of these difficulties is addressed in this
+paper, and the methods by which this is done are the main technical underpinnings of our results. We address the first of these difficulties by utilizing a
+recently developed technique for constructing diffeomorphism-invariant regularizations of certain operator products[11]. This technique allows us to
+construct area[3] and volume operators and to compute their spectra. We
+address the second difficulty by considering physically meaningful observables which are obtained by using dynamical matter fields to construct spacetime reference frames, an old idea recently discussed in [12, 13, 14, 15, 16, 17].
+This strategy, combined with the non-dynamical character of quantities we
+are considering, allows us to endow the spectra we compute with a physical
+interpretation[13, 14].
+The volume V (R) of a three-dimensional spatial region R is determined
+by the spacetime metric; in the context of quantum relativistic gravitation,
+therefore, the volume expresses an observable function of the quantum gravitational field. The main work of this paper is the construction of the opera1
+
+See also [6, 7, 8]. For detailed, but not up to date, reviews see [9, 10, 11].
+
+2
+
+tor that represents the quantum observable V̂ (R) in the loop representation,
+and the study its associated spectral problem.
+A key point, which underlies everything that is done here is that both
+the volume and area are non-local functions of the local metric or frame
+fields. Local quantities tend to be divergent or ill-defined in non-trivial
+generally covariant quantum field theories [3, 4, 11], a fact likely to be related
+to the non-renormalizability of the perturbative series. The regularization
+technique we employ for constructing the volume operator [11] exploits the
+non-locality of the volume in order to circumvent this non-renormalizability
+of local quantities. An unphysical background metric is introduced for the
+sake of the regularization, but the operator turns out to be independent of
+this background, in the limit in which the cut-off is removed. Furthermore,
+as a consequence, for reasons that have been discussed previously[3, 4, 11]
+the operator is finite and diffeomorphism invariant. We may note that this
+strategy differs significantly from that involved in the definition of operator
+products in conventional quantum field theories on fixed background fields.
+We expect that this approach to regularization might be of general interest
+for the construction of non-trivial diffeomorphism invariant quantum field
+theories in the several different contexts in which they arise.2
+Our main result is that we find that the spectrum of the volume is
+discrete and that eigenstates and eigenvalues can be expressed in terms of
+the spin network calculus, a technology developed many years ago by Roger
+Penrose with a quite different purpose [18]. We compute one component of
+the spectrum explicitly (eq.(1) below) and define a straightforward strategy
+for computing the rest of it.
+Penrose introduced the spin networks as an attempt to construct a quantum mechanical description of the geometry of space. A spin network is a
+trivalent graph Γ (a graph in which each node joins three links), in which a
+positive integer pl (a “color”), is associated to every link l of the graph (see
+Figure 1), with certain restrictions on the colors at each node. As shown
+in [21], one may associate a quantum state of the gravitational field to each
+spin network; these states are interesting because they can be used to define
+a basis of linearly independent loop states.3 Here we show that the quantum states of the gravitational field defined by the trivalent spin networks
+are eigenstate of the volume operator. The eigenvalues are given as follows.
+2
+
+For various recent perspectives on diffeomorphism invariant quantum field theories
+see [19, 20], and reference therein.
+3
+Arbitrary loop states corresponding to different loops are generally not linearly independent, due to the spinor, or SU (2)-Mandelstam, identities [2].
+
+3
+
+5
+4
+
+3
+2
+
+3
+
+1
+2
+
+2
+
+5
+
+4
+
+2
+2
+2 1
+3
+1 1
+2
+2
+4
+
+3
+
+Figure 1: A spin network
+Let pi , qi , ri be the colors of the links adjacent to the i-th node of the spin
+network, and let ai , bi , ci be defined by pi = ai + bi , qi = bi + ci , ri = ci + ai .
+(The ai , bi , ci are always integer due to the constraints on the coloring, and
+have a simple geometrical interpretation.) We then find that the eigenvalue
+of the operator that corresponds to the volume of a region R is
+V =
+
+1 3 Xp
+l
+ai bi ci + ai bi + ai ci + bi ci ,
+4 P i
+
+(1)
+
+where lP is the Planck length and the sum runs over all the nodes i contained
+in R. This formula provides a component of the physical spectrum of the
+quantum volume.
+Furthermore, we show here that the spin network states also diagonalize
+the operator Â[S], introduced in [3], which measures the area of the surface
+S. (The two operators obviously commute.) We complete the diagonalization of the area, and we compute its full spectrum, which is
+A=
+
+1 2 Xq 2
+pl + 2pl
+l
+2 P l
+
+(2)
+
+where l labels the links of the spin network that cross the surface.
+Given these results, we may ask whether there is there a relation between
+the spectra (1-2), and the volumes and areas that we physically observe.
+Physical information, including the information about geometry, resides in
+
+4
+
+the diffeomorphism invariant observables4 . If we assume that the universe is
+spatially compact, then the volume of a 3-dimensional spatial slice Σ of the
+universe is obviously invariant under 3-dimensional diffeomorphisms of Σ. If
+Σ is determined by the value of a physical field which is part of the dynamical
+theory considered (for instance if it is defined as a constant value surface of
+a scalar field), then this volume is also 4-dimensional diffeomorphism invariant, and hence physically meaningful.5 In addition, if the theory includes
+also physical fields that determine finite spatial regions [12, 13, 14, 15, 16, 17],
+then the volumes of these regions too are 4-dimensional diffeomorphism invariant observables. The same holds for the area of surfaces defined by
+physical fields. Thus, in the presence of dynamical matter, area and volume
+of matter-determined surfaces are diffeomorphism invariant quantities. A
+very important observation is that any actual volume or area measurement
+that we may concretely perform defines such a 4-dimensional diffeomorphism
+invariant observable, because any region whose volume or area we measure is
+determined by physical fields and, in the context of relativistic gravitation,
+these fields are necessarily coupled to the gravitational field [12]. We shall
+argue below that the physical area and volume operators corresponding to
+those measurements in the context of a gravity-matter theory are the same
+mathematical operators as the pure gravity ones constructed here. It follows
+that the spectra are equal; and therefore the spectra we derive here can be
+interpreted as physical predictions from the quantum theory of gravity in
+the loop representation:
+• If one measured the volume of a physical region or the area of a physical
+surface with Planck scale accuracy, one would find that any measurement’s result falls into the discrete spectra given here [as in eqs.(1-2)].
+In section 2 we construct the regularization procedure that yields the
+volume operator. This construction corrects certain difficulties of a previous
+definition [4, 11]. In section 3 we compute the action of the operator on spin
+network states, and we calculate its spectrum. To this purpose, we make
+4
+
+For a discussion on the way in which purely gravitational diffeomorphism invariant
+observables (and loop-kind observablesin particular) code the full physical information
+on spacetime geometry, see [22], where the 2+1 case, which is not plagued by the fieldtheoretical difficulties of the 3+1 case, is discussed.
+5
+Under certain conditions the scalar field may play the role of a clock, and evolution
+with respect to such a clock field can be considered [4, 16, 17]; the volume operator can
+then be seen as a time dependent Heisenberg operator that represents the volume of the
+universe at a certain clock time.
+
+5
+
+use of the results and the technology developed in [21]. This technology
+simplifies the geometrical-combinatorial calculus on loop space, allowing the
+full computation of the action of the three-hands loop operator which enters
+the definition of the volume. In section 4 we study the area operator and
+derive its full spectrum. In section 5 we discuss the physical interpretation
+of the spectra. In section 6 we discuss the general result obtained.
+
+2
+
+Construction of the volume operator
+
+Let us consider a three dimensional region R. The volume of this region is
+given by
+Z
+d3 x
+
+V =
+
+R
+
+p
+
+det g,
+
+(3)
+
+where g is the three-dimensional metric of space. In terms of Ashtekar
+variables [23], the volume element can be written as
+det g = det Ẽ =
+
+1
+ǫabc ǫijk Ẽ ai Ẽ bj Ẽ ck .
+3!
+
+(4)
+
+Indices a, b, ... = 1, 2, 3 label tangent-space vector components and indices
+i, j, ... = 1, 2, 3 internal space components; we refer to [9, 10, 11] for notation
+and background.
+If we try to construct
+√ the local quantum field operator corresponding
+to the volume element det g, we encounter the usual problem of making
+√
+sense of a non linear function of operator-valued distributions. Here, det g
+involves the square root of the cube of the field operator Ẽ ai (~x). As in any
+quantum field theory, one may try to circumvent (undefined) products of
+operator-valued distributions by means of a regularization procedure. In
+the present context, however, the necessity of preserving
+diffeomorphism
+√
+covariance frustrates the attempts to renormalize det g, as we shall discuss
+in a moment. The √
+strategy that works is to sidestep the definition of the
+quantum operator det g by constructing a regularization procedure that
+yields directly the non-local operator V̂ . This strategy was successfully
+introduced in [3] for the area operator, and is based on the (non-local) loop
+operators of the extended loop algebra [2].
+Consider the three-indices (“three-hands”) loop observable [2]
+o
+
+n
+
+T abc [α](s, t, r) = T r Ẽ a (α(s)) Uα (s, t) Ẽ b (α(t)) Uα (t, r) Ẽ c (α(r)) Uα (r, s) ,
+(5)
+6
+
+where Uα (s, t) is the parallel propagator of the Ashtekar connection along
+the loop α from the value s to the value t of the loop parameter, and Ẽ a =
+4Ẽ ai τ i , where the generators of SU (2) are given by τ i = − 2ı σ i , and σ i are
+the Pauli matrices. Using the identity
+1
+(6)
+T r(τ i τ j τ k ) = − ǫijk ,
+4
+we notice that in the limit in which the loop α shrinks to a point x we have
+lim ǫabc T abc [α](s, t, r) = −16 3! det Ẽ.
+
+α→x
+
+(7)
+
+Trying to implement this limit in the quantum theory yields an uncontrolable
+divergence: in fact, if we renormalize the operator so that the limit remains
+finite, we find that the free renormalization “constant” produced by the
+renormalization transforms under diffeomorphisms as a scalar density [3].
+This fact amounts to an infinite-fold renormalization ambiguity, because
+there is no preferred scalar density field on a differentiable manifold
+without
+√
+background metric structure. The local quantum operator det g is thus
+ill-defined in the theory. Notice that this difficulty is a direct consequence
+of the fact that the quantum field theory is to be defined on a differential
+manifold, namely on a much weaker structure than the metric manifolds
+on which quantum field theories are conventionally defined. We are indeed
+confronting here the very core of the problem of quantum gravity: making
+sense of a general covariant quantum field theory.
+As we mentioned already, we deal with this difficulty by representing
+directly the volume of a finite region via√a limiting procedure that does not
+require the (ill-defined) local operator det g as an intermediate step. To
+this aim, let us fix an arbitrary (unphysical) flat metric g0 in R, and let us
+partition the region R into cubic boxes (cubic with respect to g0 ), whose
+sides have length L (with respect to g0 ). We shall later verify that our
+results are independent from g0 and from the partition chosen. We label the
+boxes with an index I. Clearly
+V =
+
+X
+
+VI ,
+
+(8)
+
+I
+
+where VI is the volume of the I-th box. If L is small enough, by the
+p very def3
+inition of the Riemann integral in (3), VI is approximated by L det g(xI ),
+where xI is any point in the I-th box, and
+V = lim
+
+L→0
+
+X
+
+L
+
+3
+
+I
+
+7
+
+r
+
+det Ẽ(xI ) .
+
+(9)
+
+n(ρ)
+ρ
+
+n(τ)
+
+αστρ
+
+τ
+
+σ
+
+n(σ)
+Figure 2: The T̂ abc operator
+We now replace det Ẽ(xI ) by a non-local quantity that approximates
+it for small L. In the quantum theory this non-local quantity will remain
+finite for any finite L. Consider one particular box, and let ∂I indicate its
+boundary, namely the union of the six faces of the cube, oriented outwards.
+Consider three arbitrary points σ, τ and ρ on this boundary. Given these
+three points, let αστ ρ be the triangular loop formed by the three straight (in
+the metric g0 ) segments that connect the three points σ, τ and ρ. We define
+WI ≡
+
+Z
+
+2
+
+d σ
+∂I
+
+Z
+
+∂I
+
+2
+
+d τ
+
+Z
+
+∂I
+
+d2 ρ na (σ)nb (τ )nc (ρ) T abc [αστ ρ ](s, t, r) ,
+
+(10)
+
+where na is the cube’s boundary outward-pointing normal vector (more precisely, it is the one-form tangent to the boundary of the box) and the integration measure is the area element induced by g0 . Furthermore, s, t and
+r are the values of the αστ ρ loop-parameter at the three vertices of the triangle, namely αστ ρ (s) = σ, αστ ρ (t) = τ, αστ ρ (r) = ρ: in other words, the
+hands of the loop observable sit on the box’s boundary at the corners of the
+triangular loop. See Figure 2.
+Then it is easy to verify that
+WI = 27 3! L6 det Ẽ + O(L7 ).
+8
+
+(11)
+
+The factor 27 comes from the 16 in equation (7) and from the fact that the
+triple integral on orthogonal faces of the cube yields a (2L2 )3 term, since
+there are 2 faces of area L2 for every orientation. The quantity (27 3!L6 )−1 WI
+is thus a non-local quantity that approximates det Ẽ(xI ) for small L. Bringing everything together, we can write the total volume as the limit
+V = lim
+
+L→0
+
+Xq
+
+1
+27 3!
+
+I
+
+WI .
+
+(12)
+
+Notice that this expression is a SU (2)-gauge-invariant point splitting of the
+cubic product in the definition of the volume. Equations (10) and (12)
+may not provide the easiest way of calculating a volume classically, but,
+as we shall see, the sum in (12) can be promoted to an operator which is
+well-defined in the limit, in spite of the fact that the local volume element
+is ill-defined. Thus, we define the quantum operator corresponding to the
+physical volume of the region R as
+V̂ = lim
+
+L→0
+
+Xq
+I
+
+1
+27 3!
+
+ŴI ,
+
+(13)
+
+where ŴI is given by (10) with T abc replaced by the corresponding operator
+T̂ abc . What is going to happen is that the quantum (det Ẽ(xI )) diverges
+as L−6 (and thus in a badly background dependent way, because there is
+no covariant meaning in giving the same size to all boxes), therefore ŴI is
+finite in the limit; in addition, however, all but a finite number of terms in
+the sum (13) will vanish in the limit, so that (13) turns out to be finite.
+The definition (13) of the quantum operator V̂ requires us to specify
+the topology in which the limit is taken [11]. We take here the weak
+operator topology (convergence in the ”matrix elements” hα|V̂ |ψi), and
+we define the operator on the domain D formed by the loop functionals
+ψ(α) = hα|ψi continuous in the loop space topology naturally induced by the
+manifold topology. (For an arbitrary smooth metric d on the manifold, the
+ǫ-neigborhood of α is formed by the loops β that admit a parametrization in
+which d(β(s)−α(s)) < ǫ for all s.) Once defined on this domain, the operator
+can then be extended to its maximal domain Dmax . This is a natural choice6 ,
+6
+
+As is well known, in promoting composite observables to quantum operators there
+might remain a degree of arbitrariness not entirely constrained by symmetry or consistency: quantization is an inverse problem, which may have more than one solution. The
+task here is to understand if there is a consistent quantum theory of gravity and to unravel
+its physical consequences, not to find the incontrovertibly correct one out of pure thought.
+
+9
+
+but we should point out that the issue is delicate, because the diffeomorphism invariant states are in Dmax , but not in D. The mathematical-physics
+technology which is being developed by Ashtekar, Isham and collaborators
+[6, 7] should allow to clarify these subtelties; note for instance that there are
+other relevant topologies in state space, as the norm topologies defined by
+the kinematical or diffeomorphism-invariant Hilbert structures [6, 7], which
+are inequivalent to the one in which the limit (13) is taken. See section 4.2
+of [11] for a discussion of this point.
+For completeness, let us recall from [2] the definition of the three-hand
+operator T̂ abc :
+hβ|T̂ abc [α](s, t, r) = lP6 ∆a [β, α(s)]∆b [β, α(t)]∆c [β, α(r)]
+×
+
+X
+
+(−1)r(j) h(α#str β)j |.
+
+(14)
+
+j=1,8
+
+The distributional factor ∆a [β, x] is
+a
+
+∆ [β, x] =
+
+Z
+
+du β̇ a (u) δ3 (β(u), x)
+
+(15)
+
+and j labels the eight different loops (α#str β)j obtained combining α and
+β by breaking and rejoining them in all possible ways at the three points of
+intersection s, t, r, where the operator acts (which we call “grasps”). The
+sign factor r(j) is defined in [2] as the number of times that the orientation of
+loops’ segments (coming from an arbitrary orientation of α and β) must be
+switched to yield a consistent routing; this cumbersome way of keeping track
+of the signs is superseded by the much simpler Penrose notation introduced
+in [21], which we shall recall and use below.
+In the equation (14) the conventional bra notation of the loop representation is used (the loop functionals notation is obtained by contracting
+with a ket on the right: hα|Ô|ψi = Ôψ(α).) In this paper we shall find
+the left eigenvectors of V̂ . To the extent the theory is consistent (which
+is not proven), V̂ must be hermitian and left and right spectra should coincide. Also, for notational simplicity, we shall from now on reverse the
+convention and write all the loop states as kets (so equation (14) becomes
+T̂ abc [α](s, t, r)|βi = ...).
+
+3
+
+Action of the volume operator
+
+Our task is to compute the action of the operator V̂ , given in eq.(13), on
+arbitrary quantum states. To this aim, we chose to work in a particular
+10
+
+basis: the spin network basis [21]. As we will see, this basis essentially
+diagonalises the operators that we are considering; this will allows us to
+deal with the absolute value and the square route, which otherwise could
+have been sources of substantial difficulties.
+We recall here the main elements of the definition of the spin network
+states [21]. A set of n fully overlapping loop segments is denoted as an nrope, or a rope of degree n. An intersection between loops is called k-valent if
+k ropes (of any degree) emerge from it, and a loop state |γi is called k-valent
+if γ contains intersections of valence at most k. We will begin by studying
+the action of V̂ on trivalent states, and consider higher order intersections
+at the end of this section. A basis for the trivalent loop states is given by
+the spin network states. An (imbedded) spin network (Γ, pl ), is a trivalent
+graph Γ, imbedded in the spatial manifold Σ (which we take here compact
+and with fixed topology, say S 3 ), in which each link l is colored by a positive
+integer pl , namely a positive integer is assigned to every link. At each node
+i of the graph, the colors of the three links adjacent to the node satisfy two
+relations: their total sum is even, and none is larger than the sum of the
+other two. A spin network quantum state |Γ, pl i is obtained by a given spin
+network (Γ, pl ) as follows: First, replace every link l with a rope of degree
+pl . Then, at each node join all the segments of the three adjacent ropes
+pairwise, in such a way that each segment is joined with a segment of one
+of the other two ropes. The conditions on the coloring make the matching
+always possible. Since all segments’ end are joined, we obtain in this way
+a (multiple) loop γ (Γ,pl ) . Consider the corresponding loop state |γ (Γ,pl ) i.
+Then, consider all possible permutations of the joining of all segments along
+every rope, so that the original choice of pairing becomes irrelevant. In this
+Q
+way, one obtains a family of M = l pl ! (multiple) loops, which we denote
+(Γ,p )
+as γm l , m = 1, ..., M , or, if the context is clear, simply as γm . Each one
+of these loops have support Γ. The quantum state |Γ, pl i associated to the
+spin network (Γ, pl ) is defined as
+|Γ, pl i =
+
+X
+m
+
+(Γ,pl )
+ǫm |γm
+i.
+
+(16)
+
+ǫm = (−1)(pm +nm )
+
+(17)
+(Γ,p )
+
+where nm is the number of single loops in the multiple loop γm l and pm
+(Γ,p )
+is the parity of the segments’ permutation defining γm l (the overall sign,
+irrelevant for what follows, is not determined by this definition; see [21]).
+One may think of a spin network state as the loop transform of the
+11
+
+p
+a b
+
+a
+
+b
+
+r c
+
+c q
+Figure 3: The integers a, b and c
+
+connection-representation state obtained by replacing every link colored p
+by parallel propagators of the Ashtekar connection, taken in the spin p/2
+representation, and then contracting the three parallel propagator matrices
+at each node in the unique SU (2)-invariant way, namely using the 6j symbols. The conditions on the colorings at each node then reflect the algebra
+of the SU (2) representations, namely the angular momentum addition rules.
+Consider the i-th node of a given spin network, and let p, q and r be the
+colors of the three adjacent links. We define ai , bi , ci by
+p = ai + bi ,
+
+q = bi + ci ,
+
+r = ci + ai .
+
+(18)
+
+When clear from the context, we will drop the suffix i and write just a, b, c.
+In constructing the loop state from the spin network, ai is the number of
+individual loops that are routed through the i-th node from the link colored
+p to the link colored r, and so on, as shown by Figure 3. The numbers
+ai , bi , ci provide a way of coding the coloring, but they are not independent:
+in a spin network with N nodes the 3N numbers ai , bi , ci are related to
+each other because if a link (of color p) connects the i-th and j-th node
+then p = ai + bi = aj + bj , and so on for each link of the spin network;
+12
+
+there is one linear relation of this kind for every link. We shall use also
+the notation (Γ, ai bi ci ) for a spin network, and the notation |Γ, ai bi ci i for
+the corresponding quantum state. For later convenience, we introduce also
+the following notation for the points along the ropes and their tangent: we
+parametrize each link l of the graph with a parameter s, and we denote
+the points of the links as l(s) and their tangents as l˙a (s). We will use l(s)
+(Γ,p )
+and l˙a (s) in place of more cumbersome expressions such as γm l (s) and
+(Γ,pl ) a
+(γ̇m ) (s) when the context is clear.
+We want to compute the action of the volume operator on a (trivalent)
+spin network state. Using the definitions (13), and (10), we have
+V̂ |Γ, ai , bi , ci i =
+
+lim
+
+L→0
+
+=
+
+lim
+
+L→0
+
+Xq
+
+ŴI |Γ, ai bi ci i
+
+1
+27 3!
+
+I
+
+X
+
+1
+27 3!
+
+I
+
+Z
+
+d2 σ d2 τ d2 ρ
+
+∂I×∂I×∂I
+
+× na (σ)nb (τ )nc (ρ) T̂ abc [αστ ρ ](s, t, r)
+
+×|Γ, ai bi ci i.
+
+1/2
+
+(19)
+
+Let us fix a box I and three points σ, τ, ρ on its boundary, and let us
+consider the action of the operator valued distribution T̂ abc [αστ ρ ](s, t, r) on
+|Γ, ai bi ci i. Using the definition (16) of a spin network state and the definition
+(14) of the three-hands loop operator, we have
+T̂ abc [αστ ρ ](s, t, r) |Γ, ai bi ci i = T̂ abc [αστ ρ ](s, t, r)
+=
+
+X
+m
+
+×
+
+Z
+
+ǫm
+
+Z
+
+a
+(s′ ) δ3 (γm (s′ ), σ)
+ds′ γ̇m
+
+c
+dr ′ γ̇m
+(r ′ ) δ3 (γm (r ′ ), ρ)
+
+X
+
+Z
+
+j=1,8
+(Γ,a b c )
+
+X
+m
+
+ǫm |γm i
+
+b
+(t′ ) δ3 (γm (t′ ), τ )
+dt′ γ̇m
+
+|(αστ ρ #(str) γm )j i
+
+(20)
+
+(here, clearly, γm means γm i i i ). The right hand side of this equation
+vanishes except in the case in which the three hands of the operator intersect
+Γ. Therefore, we have a non vanishing result only if the three points σ, τ, ρ
+are intersections points between the boundary of the box and Γ. Let us
+assume this is the case. We denote the three ropes that intersect σ, τ, ρ by
+lσ , lτ , lρ respectively (they may coincide), and their degree by pσ , pτ and pρ .
+The three ropes are thus formed by pσ , pτ and pρ segments respectively, each
+one of which is seen by one of the hands of the operator. Let us introduce
+13
+
+an index S, running from 1 to pσ that labels the pσ segments in the rope
+lσ , and, similarly, indices T = 1...pτ and R = 1...pρ labeling the segments of
+lτ and lρ respectively; and let us denote by sS , tT , rR the values of the loop
+parameter corresponding to the intersections between the box boundary and
+the S-th, T -th and R-th segments of the rope lσ , lτ and lρ respectively. We
+have then
+T̂ abc [αστ ρ ](s, t, r) |Γ, ai bi ci i =
+=
+
+Z
+
+Z
+
+ds l̇σa (s) δ3 (lσ (s), σ)
+
+×|Ψi,
+
+Z
+
+dt l˙τa (t) δ3 (lτ (t), τ )
+
+dr l˙ρa (u) δ3 (lρ (r), ρ)
+(21)
+
+where
+|Ψi =
+
+X
+m
+
+ǫm
+
+XXX X
+S
+
+T
+
+R j=1,8
+
+|(αστ ρ #(sS tT rR ) γm )j i.
+
+(22)
+
+We repeat for clarity: m labels the multiple loop states that form the spin
+network state, or, equivalently, labels all the possible symmetrizations of all
+the segments along each rope of the net; S, T and R label the segments in
+the three ropes that intersect the box; once fixed one of these segments in
+each of the three ropes, j labels the eight outcomes of the three graspings
+of the operator on these three segments.
+Now, the key observation is the following. First, let us exchange the
+order of the summations in the last equation by summing over m first.
+Then, consider what happens to Ψ in the limit in which the box size L
+goes to zero. The loop (αστ ρ #(sS tT rR ) γm )j is obtained by joining the spin
+(Γ,a b c )
+
+network loop γm i i i with the triangular loop αστ ρ which has size L. In
+the limit in which L is zero the three grasping points σ, τ, ρ overlap and
+αστ ρ is a single-point loop, located, say, in the point PI . In this limit, the
+(Γ,a b c )
+loop (αστ ρ #(sS tT rR ) γm i i i )j has the same support as the grasped loop
+(Γ,a b c )
+
+(Γ,a b c )
+
+γm i i i , namely Γ, and can differ from γn i i i only by a rearrangement
+of the joining of the segments in the point PI . But by rearranging the way
+the segments are joined, we can only obtain one of the other loop states of
+Γ,ai bi ci
+the spin network, say |γm
+i for a certain m′ , because the spin network
+′
+state is the linear combination of all loop states obtained symmetrizing the
+ropes in all possible ways. Using the continuity of the loops functionals
+in the domain of definition of V̂ (see the end of section 3), we have thus
+necessarilly
+X
+m
+
+(Γ,ai bi ci ) j
+ǫm |(αστ ρ #(sP tQ uR ) γm
+) i = c(S, T, R, j)|Γ, ai bi ci i + O(L). (23)
+
+14
+
+In the next subsection we will verify this result explicitly and compute the
+proportionality coefficient c(S, T, R, m). This reconstruction of the full spin
+network state in the limit is the technical reason for which the spin network
+states diagonalise the volume operator. Using this result, we have
+|Ψi =
+
+X X
+
+ST R j=1,8
+
+c(S, T, R, j)|Γ, ai bi ci i + O(L)
+
+≡ C(Γ, ai bi ci ; lσ lτ lρ ) |Γ, ai bi ci i + O(L),
+
+(24)
+
+where we have explicitly indicated that the proportionality coefficient depends on the spin network and on the ropes grasped. Obtaining in the limit
+a state proportional to the one on which the operator acts is the result that
+allows us to navigate through the computation of the volume operator.
+To be more precise, the point PI can be either on a link or on a node.
+(If it is on neither, C is zero.) If it is on a link, it is easy to see that the
+rearrangement of the joining of the segments has no effect on a spin network,
+because the segments are symmetrized along the link anyway. But the same
+is true also if PI is a node, because there is only one existing combination
+of fully symmetrized ropes in a trivalent nodes. This is a central property
+of the spin networks, which corresponds to the fact that there is a unique
+invariant way of combining three irreducible representations of SU (2).
+We will compute the coefficient of proportionality C(Γ, ai , bi , ci ; lσ , lτ , lρ )
+in the next subsection. For the moment, we use (21) and (24) to write (19)
+as
+V̂ |Γ, ai bi ci i = lim
+
+L→0
+
+×|na (σ)nb (τ )nc (ρ)
+×
+
+Z
+
+X
+
+1
+27 3!
+
+I
+
+Z
+
+d2 σ d2 τ d2 ρ
+
+∂I×∂I×∂I
+
+X
+
+lσ lτ lρ
+
+ds lσa (s) δ3 (lσ (s), σ)
+
+Z
+
+dt lτa (t) δ3 (lτ (t), τ )
+
+× C(Γ, ai , bi , ci ; lσ lτ lρ )|)−1/2 |Γ, ai bi ci i.
+
+Z
+
+dr lρa (r) δ3 (lρ (r), ρ)
+(25)
+
+We have taken a delicate step here, by taking the limit of a term inside the
+integration. 7
+7
+In a rigorous treatement, one should check the validity of this step by keeping track
+of subleading terms in L and verifying that they remain of lower order also after the
+integration. This is not easy, since the operator is not diagonal beyond L = 0, which
+makes the computation of its square root more difficult.
+
+15
+
+Due to the delta functions, we can take the one-dimensional integrals
+outside the absolute value. Then, we use the well known fact that for every
+two dimensional surface Σ and every loop β
+Z
+
+Σ
+
+2
+
+d σ
+
+Z
+
+ds na (σ)β̇ a (s) δ3 (σ, β(s)) = I[Σ, β]
+
+(26)
+
+is just the (oriented) intersection number between the surface and the loop.
+This simple relation plays a key role in loop-representation regularization
+techniques, because it allows the action of the operators to be expressed
+in topological terms (intersection numbers), which then permits diffeomorphism invariance to be restored.[11] Since the absolute value of a product of
+three numbers each of which is either 1 or -1 can only be the unit, we have
+immediately that
+V̂ |Γ, ai , bi , ci i = lim
+
+L→0
+
+X X q
+I lσ lτ lρ
+
+2−7 |C(Γ, ai , bi , ci ; lσ lτ lρ )| |Γ, ai bi ci i
+
+(27)
+
+where the sum lσ lτ lρ runs over all triples of ropes intersecting the boundary
+of the box I. Note that the factor 1/3! has been absorbed by the fact
+that there are 3! terms coming from the integrals for each given triple of
+intersections.
+There is an important qualification to be added to the meaning of the
+P
+sum l1 l2 l3 : the sum runs only over triples of distinct intersections; namely
+the three intersections between ropes and boundary must lay in three distinct points of the boundary of the box in order to give a non vanishing
+contribution. The reason is the following. In the derivation of (27) from (25),
+every triple of intersections gives rise to 3! terms, obtained by switching the
+locations of σ, τ and ρ. These terms are equal in magnitude, but have
+alternating signs, because T̂ abc changes sign by reversing the order of the
+hands. If the three intersection points are disjoint, then each one of the 3!
+terms comes from a different integration point of the triple (six-dimensional)
+integration space. Since we are taking the absolute value first and then
+integrating, the different signs of the terms are irrelevant: we have to sum
+their absolute values. However, if (at least) two of the intersection points
+overlap, then for each of the 3! terms there is a brother term (obtained by
+switching the two overlapping intersections), which is equal in magnitude,
+but opposite in sign. The two terms with opposite sign arise at the same
+integration point. Thus, we must take the absolute value after summing
+the two terms. Therefore they cancel each other.
+P
+
+16
+
+The important consequence of the fact that only distinct intersections
+enter the sum (27) is that the action of the operator is zero unless the loop
+intersects the boundary of the box in at least three distinct points; a moment
+of reflection shows that for small enough L, this can happens only if there
+is a node inside the box. As L → 0, we reach a point at which each box
+contains at most one node. Therefore we have the result that the sum over
+the boxes I (which are infinite in the limit) reduces to a sum over the nodes
+i contained in the region R (which are finite in the limit). So we can finally
+take the limit, and get
+V̂ |Γ, ai bi ci i =
+
+X X q
+
+2−7 |C(Γ, ai bi ci ; lσ lτ lρ )| |Γ, ai bi ci i,
+
+i lσ lτ lρ
+
+(28)
+
+where now lσ lτ lρ are the triples of ropes adjacent to the i-th node. For a
+trivalent state there is only one triple of ropes emerging from every node,
+and therefore we can write
+V̂ |Γ, ai bi ci i =
+
+Xq
+i
+
+2−7 |C(Γ, ai , bi , ci ; i)| |Γ, ai bi ci i.;
+
+(29)
+
+while we will use the expression (28) for non-trivalent states.
+
+3.1
+
+The combinatorics of the routings
+
+In order to compute C(Γ, ai bi ci ; lσ lτ lρ ), defined in (23) and (24), we use the
+Penrose notation. The present exercise is a demonstration of the power of
+this formalism. We must compute C from
+X
+
+X
+
+X
+
+X X
+
+S=1,pσ T =1,pτ R=1,pτ j=1,8 m
+
+(Γ,ai bi ci ) j
+ǫm |(αστ ρ #(sS tT rR ) γm
+) i=
+
+= C(Γ, ai bi ci ; lσ lτ lρ ) |Γ, ai bi ci i.
+
+(30)
+
+Let the node we are dealing with be the i-th one. The sum includes 8 ×
+pσ × pτ × pρ terms: we have one of the three hands of the operator per
+rope; each hand may grasp any of the segments in the rope, giving pσ ×
+pτ × pρ triple graspings; and each triple grasping produces 23 = 8 terms
+from the two possible outcomes of each grasp. The triple graspings produce
+different outcomes, according to how the grasped segments are rooted among
+themselves through the node. A short reflection shows that there are three
+basic possibilities that we list in Figure 4 (up to the obvious 2π/3 rotational
+symmetry).
+17
+
+(i)
+
+(ii)
+
+(iii)
+
+Figure 4: The three possible grasps
+
+^ abc
+
+T =
+
+a
+
+b
+
+c
+
+Figure 5: The diagrammatic representation of T abc .
+We denote these three possibilities as triple grasps of the first, second,
+and third kind. Counting all possible instances, the number of (triple) grasps
+of the first kind (i. in the Figure) that contribute to the sum (30) is 2abc; the
+number of grasps of the second kind (ii) is 2(ab + bc + ca); and the number of
+grasps of the third kind (iii) is [a(a−1)(b+c)+b(b−1)(a+c)+c(c−1)(b+a)].
+Here a, b and c are defined in terms of pσ , pτ and pρ as in (18), and we drop
+the suffix i for simplicity; we will reintroduce it when needed. One may
+verify that the total number of grasps of any kind is indeed pσ × pτ × pρ .
+Let us recall the basic rules of the diagrammatic Penrose calculus [21].
+The T̂ abc operator is represented by the figure with three boxes shown in
+Figure 5; each box standing for a hand of the operator.
+The elementary action of a box is given in Figure 6.
+Let us begin by considering the grasp of the first kind (i). In diagrammatic notation, this is given in Figure 7, where the circles labeled 1, 2 and
+3 represent the three ropes emerging from the node.
+The result of the grasp is computed using the basic rule Figure 6, and is
+given in in Figure 8.
+Expanding the symmetrizations, we get the 8 terms of Figure 9. We see
+18
+
+=
+
+=
+
++
+
+Figure 6: The grasp
+
+^ abc 1
+
+T
+
+1
+2
+
+3
+
+2
+
+3
+
+=
+
+Figure 7: The grasp of the T abc on the node of type (i)
+immediately that the first, second and third of these terms vanish, because
+all the loops in the rope 2 are symmetrized and an identity of the spin
+calculus is Figure 10.
+The remaining terms become, using the sign rules of [21] those shown in
+Figure 11, all proportional to the original state.
+This confirms the expected result that the action of the volume is diagonal and provide the correct term in the eigenvalue. Recalling that there are
+2(ab+bc+ca) terms of this kind in the grasping, we thus have a contribution
+8(ab + bc + ca) to C from the graspings of the second kind. A completely
+analogous calculation, which we leave to the reader as a simple exercise of
+application of the rules of [21], shows that the contribution of the grasp of
+the first kind is 8abc, while the contribution of the grasps of the third kind
+vanishes. Putting all these results together, we have
+X XX
+
+ST R j
+
+m
+
+(Γ,ai bi ci ) j
+ǫm |(αστ ρ #(sS tT rR ) γm
+) i
+
+= 23 lP6 (abc + ab + bc + ca) |Γ, ai bi ci i.
+
+19
+
+(31)
+
+=
+Figure 8: Action of the grasp of the T abc on the node of type (ii)
+Inserting in (29), we have finally
+V̂ |Γ, ai bi ci i =
+
+1 3 Xq
+l
+|ai bi c + ai bi + bi ci + ci ai | |Γ, ai bi ci i,
+4 P i
+
+(32)
+
+where we restored the suffix i that indicates the node to which a, b and
+c refer. We recall that the sum is over all nodes i in the region R. In
+other words, the component of the spectrum of the volume of the region R
+corresponding to the trivalent states is the one given in (1).
+Finally, let us consider the non-trivalent states. The nodes of order larger
+than 3 are not unique, thus in general the coloring pl of the link are not
+sufficient to characterize the state and we need an additional set of integers
+vi , one for every node i, to characterize the routing of the individual segments
+through the i-th node. We may thus indicate the states as |Γ, pl , vi i. The
+range of the index vi is finite, and depends on the order of the i-th node and
+on the coloring of the adjacent links. For instance, there are two independent
+4-valent nodes with all 4 links colored 1; thus for such an node vi = 1, 2.
+If the point PI , to which the I-th box is shrinking in the limit, coincides
+with the i-th node, and this node is not trivalent, then it is not true anymore
+that in the limit the grasping gives the original state back, precisely because
+nodes of order larger than 3 are not unique. A rearranging of the routing
+of the segments at the node may modify the state. Thus, equation (29)
+does not hold anymore. However, since the possible routings vi through
+each node are of finite number, by repeating the same reasoning as in the
+trivalent case, we have in general that
+V̂ |Γ, pl , vi i =
+
+Xq
+
+2−7 |Ĉi | |Γ, pl , vi i
+
+i
+
+20
+
+(33)
+
++
+
+=
++
+
++
+
++
+
++
+
++
+
++
+
+Figure 9: Expansion of the symmetrization
+
+=
+
+−
+
+Figure 10: The basic spinor identity
+where the operator Ĉi
+Ĉi |Γ, pl , vi i =
+
+X
+vi′
+
+v′
+
+Cvii |Γ, pl , vi′ i,
+
+(34)
+
+is a finite dimensional matrix, uniquely determined by the order of the i-th
+node and the coloring of its adjacent links. These matrices are defined by
+X
+vi′
+
+v′
+
+Cvii |Γ, pl , vi′ i =
+
+X
+m
+
+ǫm
+
+X X X
+
+lσ lτ lρ ST R j=1,8
+
+(Γ,pl ) j
+) i
+|(αστ ρ #(sS tT rR ) γm
+
+(35)
+
+and can be computed using the Penrose calculus, as we did above.
+Clearly, the eigenstates of the volume operator can be found by diagov′
+(n)
+(n)
+nalising the Cvii matrices. If we denote by cvi the eigenvectors and by λi
+21
+
+^ abc 1
+
+T
+
+2
+
+3
+
+=
+
+1
+
+2
+
+= −4
+
+3
+
+1
+
+(−1+2+1+1+1)
+
+2
+
+3
+
+Figure 11: The result of the grasp on the node
+v′
+
+(n)
+
+(n)
+
+the eigenvalues, so that Cvii cv′ = λi
+i
+that the states
+|Γ, pl , ni i =
+
+X
+
+v1 ...vI
+
+(n)
+
+cvi , then it is immediate to verify
+
+(nI )
+1)
+|Γ, pl , vi i
+c(n
+v1 ...cvI
+
+(36)
+
+where I is the number of nodes in Γ, are eigenstates of the volume with
+eigenvalue
+q
+V =
+
+X
+i
+
+(n )
+
+2−7 |λi i |.
+
+(37)
+
+This formula gives the complete spectrum of the volume operator. To compute it explicitly, we must calculate and diagonalise the family of matrices
+v′
+Cvii .
+We conclude this section with a most important observation. Consider
+the case in which the region R is given by the entire three dimensional space.
+In this case, it is immediate to verify that the quantum volume operator,
+defined in (33), satisfies
+U (φ)V̂ = V̂ U (φ)
+(38)
+for any diffeomorphism φ of the three-manifold (in the connected component
+of the identity), where U (φ) is the generator of finite diffeomorphisms which
+acts on the quantum state by displacing loops [2]. This is an immediate
+consequence of the fact that the action of V̂ is only sensitive to features of the
+loop state that are invariant under diffeomorphisms. It follows that V̂ is well
+defined on the equivalence classes of quantum states under diffeomorphisms,
+namely on the knot states [21]. Thus V̂ defines a genuine operator acting
+on knots states. This operator acts on the intersections of the knots, with
+22
+
+no reference to position (or momentum) space. It represents an example of
+the combinatorial operators which may describe quantum general covariant
+physics on knot space.
+
+4
+
+Area
+
+The operator Â[S] that corresponds to the area of a surface S was defined
+in [3], where a component of its spectrum was computed. This component
+corresponds to the eigenstates formed by states in which the surface S is
+pierced by single lines, or 1-ropes. The rest of the spectrum, which we are
+about to compute, corresponds to states in which the surface is crossed by
+ropes of degree higher than one.
+The area of a surface S is given, in terms of the Ashtekar conjugate
+variable by [24]
+Z
+q
+d2 σ
+
+A=
+
+Ẽ ai Ẽ bi na nb
+
+S
+
+(39)
+
+The two-hands loop observable
+
+T ab [α](s, t) = T r[Uα (s, t) Ẽ a (α(t)) Uα (t, s) Ẽ b (α(s))]
+
+(40)
+
+converges to 16Ẽ ai (x)Ẽ bi (x) when α shrinks to x. Therefore for a small
+surface SI we can write
+A2I =
+
+Z
+
+SI
+
+2
+
+d σ
+
+Z
+
+d2 τ
+
+SI
+
+1
+na (σ)nb (τ )T ab [αστ ](s, t)
+8
+
+(41)
+
+up to small terms; here αστ is a small loop going through σ and τ . Following
+the same idea used for the volume, we partition the surface S into small
+square surfaces SI of side L, so that we have
+A = lim
+
+L→0
+
+Xq
+
+A2I ,
+
+(42)
+
+I
+
+and we define the quantum area operator as
+Â = lim
+
+L→0
+
+Xq
+
+Â2I ,
+
+I
+
+where Â2I is defined by replacing T ab with T̂ ab in (41).
+
+23
+
+(43)
+
+Let us now compute the action of Â on a spin network state. From the
+definition of the two-hands loop operator [2] we have
+Â2I |Γ, pl i =
+
+Z
+
+d2 σ d2 τ
+
+SI ×SI
+
+X
+1
+ǫm
+na (σ)nb (τ )
+8
+m
+
+Z
+
+ds
+
+Z
+
+dt
+
+a
+b
+× γ̇m
+(s) δ3 (γm (s), σ) γ̇m
+(t) δ3 (γm (t), τ ) na (σ)nb (τ )
+
+×
+
+X
+
+j=1,4
+
+|(αστ #st γm )j i.
+
+(44)
+
+The right hand side gets contributions only from the intersections between
+γm and the surface. For small enough L there will be at most one rope l
+crossing SI . Assume that this is the case and that the rope l has degree
+p, and label its segments by an index P . Following the same argument we
+used for the volume operator, we have
+Z
+
+Â2I |Γ, pl i =
+
+d2 σ d2 τ
+SI ×SI
+
+×
+
+X
+1
+ǫm
+na (σ)nb (τ )
+8
+m
+
+Z
+
+ds
+
+Z
+
+dt
+
+× l˙a (s) δ3 (l(s), σ) l˙b (t) δ3 (l(t), τ )
+
+|Ψi
+
+(45)
+
+where
+|Ψi =
+
+XX X
+P
+
+P′
+
+j=1,4
+
+|(αστ #sP tP ′ γm )j i = c(p) |Γ, pl i.
+
+(46)
+
+(If the intersection point between the surface and the spin network is a node,
+then only the loops rooted through the node accross the surface contribute
+to the sum.) Inserting in the definition of the area operator we have
+Â |Γ, pl i =
+
+lim
+
+L→0
+
+X Z
+I
+
+d2 σ d2 τ
+SI ×SI
+
+1
+na (σ)nb (τ )
+8
+
+× l̇a (s) δ3 (l(s), σ) l˙b (t) δ3 (l(t), τ ) c(p)
+The integrals are immediate, giving
+Â |Γ, pl i = lim
+
+L→0
+
+X
+I
+
+s
+
+1
+c(p) |Ψi.
+8
+
+Z
+
+ds
+
+Z
+
+−1/2
+
+dt
+|Ψi. (47)
+
+(48)
+
+Two kinds of terms come into the evaluation of this action. The combinatorial calculus is summarized in Figures 12 and 13.
+The result is
+24
+
+=
+
+=
+
+=(2+1+1+2)
+
+=
+
+=−6
+
++
+
+=
+
++
+
++
+
+= (−1+0+0−1)
+Figure 12: The two kinds of terms that come into the action of the area
+operator
+c(p) = −2(p2 + 2p), so that we can take the limit and conclude
+Â|Γ, pl i =
+
+1 2 Xq 2
+p + 2p |Γ, pl i
+l
+2 P l
+
+(49)
+
+where the sum ranges over all links l crossing the surface. The spectrum
+given in eq.(2) follows immediately.8
+This result admits a surprisingly simple interpretation. Recall that a
+rope l of color pl corresponds to a parallel propagator (in the connection
+representation) in the jl = pl /2 representation, and take units in which the
+8
+
+This formula corrects the numerical factor reported in [3], which was incorrect due to
+a miscounting of trace factors.
+
+25
+
+p−1
+
+p
+
+p−2 1
+
+1
+
+= p
+
++p(p−1)
+
+p
+
+=−6p −2p(p−1)
+
+=
+
+2(p2 +2p)
+
+p
+
+Figure 13: The calculation of the action of the area operator
+Newton constant G is one, so that lP2 = h̄. Then we can write the area of
+the surface as
+X q
+(50)
+h̄ jl (jl + 1).
+A=
+l
+
+p
+
+Since the h̄ j(j + 1) is the angular momentum L associated to the j-th
+representation of SU (2), we have that,
+A=
+
+X
+
+Ln = Ltotal
+
+(51)
+
+l
+
+where Ln is the angular momentum of the SU (2) representations associated
+with each rope crossing the surface. See reference [24]. This remarkable fact
+has been pointed out by J. Iwasaki [25].
+
+5
+
+Spectra as physical predictions
+
+Can we relate the spectra that we have computed to physical measurements
+of real volumes and areas? If we want to measure the volume of a region
+26
+
+1
+
+R, we have to physically identify, or specify, the region R in some way or
+another. If we disregard the relativistic properties of the gravitational field,
+a region R can be identified by means of physical objects, and we can assume that these objects are dynamically decoupled from the gravitational
+field. As is well known, this procedure cannot be extended to the relativistic
+gravitational theory: there is no physical object whose dynamics is decoupled from gravity, nor, actually, is there any meaning to such a decoupling.
+In a relativistic gravitational context we must regard any object used to
+identify a physical region as dynamically coupled to the gravitational field
+[12]. Therefore the volume and area that we measure are always determined
+by objects (in a field theoretical perspective, fields) which are components
+of the dynamical theory.
+The remark, which we believe represents the heart of the physical meaning of general covariance9 , is reflected in the mathematics of the theory as
+follows. The volume and area observables V and A considered in the previous sections are defined in pure gravity and thus are functionals of the sole
+gravitational degrees of freedom: V [g], A[g]. A such, they do not commute
+with the canonical constraints, that is, they do not transform as singlets
+under 4-dimensional diffeomorphisms of the dynamical variables on which
+they depend (g); therefore they are not physical observables of the theory.
+However, if matter fields φ are coupled to the theory, and if we consider volumes VP h and areas AP h of regions specified by those matter fields, then such
+volumes and areas do commute with the constraints. Indeed VP h = VP h [g, φ]
+and AP h = AP h [g, φ] are functionals of the gravitational field as well as of
+the matter fields, which determine the domain of integration; a diffeomorphism of all the dynamical variables generated by the constraints acts then
+on the integrand as well as the integration domain. See [12, 13, 14, 15] for
+examples. The observables VP h and AP h that express volumes and areas of
+regions physically identified by dynamical matter are the quantities in the
+theory that truly correspond to the volumes and areas that we concretely
+measure. Our problem is therefore to understand the relation between the
+spectra of V and A computed above and the spectra of VP h and AP h . We
+are now going to argue that the second ones coincide with the first ones.
+We may begin this discussion by noting that we can always fix (perhaps
+partially) the diffeomorphism gauge invariance by constraining the values
+of certain matter fields at given spacetime coordinates or, equivalently, by
+defining preferred spacetime coordinates in terms of these matter fields. In
+9
+
+or, equivalently, diffeomorphism invariance.
+
+27
+
+the gauge fixed theory, the matter degrees of freedom that are employed in
+the gauge fixing disappear, but the gauge freedom is also restricted, so that
+the total number of degrees of freedom of the theory remains the same. Let
+us sketch two examples.
+First, consider a partial gauge fixing. In order for the volume of the universe (assuming this is spatially compact) to have any meaning at all in the
+general case in which there are no symmetries, we have to specify a synchronization of clocks; so that a spacelike surface, having a volume, is singled
+out. However we achieve this concretely, we can formally represent the field
+of clocks by means of a scalar field φ(~x, t), whose dynamics reproduces the
+evolution of the clocks in coordinate time. Let then RT be the region of the
+points where the clocks indicate T , namely where the scalar field has value
+T . The volume of RT is given by
+VP h =
+=
+
+Z
+
+Z
+
+q
+
+det 3 g
+
+RT
+
+d4 x δ4 (φ(x), T )
+
+= VP h [g, φ],
+
+q
+
+det 4 g 4 gµν ∂µ φ∂ν φ
+(52)
+
+where we have indicated by 3 g the spacial metric and by 4 g the 4-dimensional
+one. It is easy to verify that VP h commutes with all the constraints (including the hamiltonian constraint) [12]; indeed, this is a “physical volume”, in
+the sense defined above. Now, the point is that we can gauge fix the hamiltonian constraint by requiring that φ(~x, t) = t. In this gauge we obtain a highly
+non-trivial hamiltonian, which depends on the actual dynamics of φ, and the
+only remaining constraints are the diffeomorphism constraint. Thus, in this
+gauge the theory is formally equivalent to pure GR, but with no hamiltonian constraint and a non-trivial hamiltonian. With respect to the preferred
+physical time coordinate that we have selected, the 3-dimensional geometry
+of space becomes a physical observable; notice that the 3-dimensional geometry contains 3 degrees of freedom, which are precisely the 2 degrees of
+freedom of the pure gravitational field plus the 1 of the scalar field, which has
+disappeared. Now, in the gauge fixed theory the gauge-invariant observable
+quantity VP h is given by
+VP h =
+
+Z
+
+d3 x
+
+q
+
+det 3 g,
+
+(53)
+
+But this observable has precisely the form of the non-gauge-invariant volume
+(3). This gravity+matter gauge fixed theory admits a quantization fully
+28
+
+parallel to the pure gravity theory, only the hamiltonian constraint has now
+been replaced by a hamiltonian. However, nothing in the construction of
+sections 2 and 3 depend on how the dynamics is to be treated. Therefore the
+quantum operator representing VP h in the gauge-fixed theory with matter
+has the very same form as the one representing V in the pure gravity theory.
+Therefore the two have the same spectrum.
+As a second example, consider the case in which we model a full material
+reference system by means of four scalar matter fields φµ (x), with some
+fixed dynamics, and we gauge fix the theory entirely by defining coordinates
+xµ = φµ (x). The case in which such a matter describes dust has been
+recently analyzed in great detail by Brown and Kuchař [17] from the point
+of view of canonical quantization. In the fully gauge fixed theory there is no
+remaining constraints (there is a highly non-trivial hamiltonian). The full
+gravitational field, as a function of the preferred coordinates, is observable.
+If we now fix a spacial region R in the (preferred) coordinate space, the
+volume of any region R is observable. It represents the volume of a region
+identified by material objects described by the φµ (x) fields. Again, in the
+gauge fixed theory the operator that corresponds to the volume of R is
+precisely the volume operator studied in the paper.
+At first sight, the result of the above discussion has a counter-intuitive
+aspect. Indeed, one may be tempted to object that while quantum properties
+of gravity can yield the quantization of, say, the volume of a region R, we
+must take into account the possibility that the matter identifying R must
+also be quantized and thus subject to quantum fluctuations. Thus, the
+discrete spectra found here might be smeared out into a continuum by the
+quantum fluctuations of the matter fields by which the region R is defined.
+However, a more careful analysis shows that this consideration is wrong.
+The reason is that it neglects diffeomorphism invariance. Indeed, the mistake is to assume that the matter that identifies the region as well as all
+of the components of the metric tensor, which determines the volume of the
+region, independently undergo quantum fluctuations. This is wrong because
+all these component fields, being not gauge invariant, cannot represent independent degrees of freedom of the quantum theory. Instead, only the gauge
+invariant quantities that represent true dynamical degrees of freedom are
+subject to the quantum uncertainty principle and to quantum fluctuations.
+Therefore, in a general covariant theory, the kinematical volume by itself is
+not a gauge invariant degree of freedom, nor is the value of the matter fields
+in a coordinate region. The dynamical variable that expresses the volume is
+a combination of the two, and it is only this combination which is dynam29
+
+ically meaningful and which is quantized. One can pick a gauge by fixing
+the coordinates to the values of the matter fields, in which case it appears
+that the dynamical quantum degrees of freedom are represented by certain
+components of the metric. Or one could fix components of the metric, so
+that the matter fields represent, in such a gauge, the dynamical degrees of
+freedom. But these are equivalent descriptions of the same physics. What
+we cannot do is pick a gauge which allows us to view both the metric and
+the reference matter as independent quantum objects. To put it differently,
+reference matter is not quantized, in a gauge in which it is used up by the
+gauge fixing, for the same reason for which the Higgs field is not treated as a
+quantum field in those gauges in which its degree of freedom is represented
+by the longitudinal components of the gauge bosons.
+In conclusion, since the calculations of sections 2 and 3 do not depend on
+the dynamics determined by the hamiltonian constraint, we can reinterpret
+these calculations as referring to physical areas and volumes determined by
+reference matter. Therefore, as we have emphasized in the introduction, we
+may conclude that the the spectra of volume and area computed here may
+be considered to constitute physical predictions of the quantum theory of
+gravity in the loop representation.
+
+6
+
+Conclusions
+
+Many different approaches to quantum gravity incorporate a fundamental
+length. Well-known semiclassical arguments, some simple, other more sophisticated, suggest that geometrical measurements must be limited by an
+intrinsic quantum uncertainty of the order of the Planck length, in quantum
+general relativity [26], as well as in string theory [27]. In string theory, in
+particular, the existence of a short scale discrete structure has been indicated
+as a possible reason for the exponential damping of high energy scattering
+amplitudes [28] and for the slower growth of the thermal partition function
+at high temperature [29], and the intriguing short scale string discreteness
+discovered by Klebanov and Susskind [30] has been recently indicated by
+Horowitz as a suggestive indication of closeness between string theory and
+loop representation [31]. (On the relation between string theory and loop
+representation, see [32].) A relation between black hole entropy and area
+quantization was suggested by Bekenstein [33] and recently studied by Jacobson [34], and some kind of short scale discreteness is implicit in the idea
+of spacetime foam [35]. For an interesting and comprehensive overview of
+
+30
+
+many of these ideas on a fundamental length, see the recent review [36],
+which concludes noticing that “the presence of a lower bound to the uncertainty of geometry measurements seems to be a model-independent feature
+of quantum gravity”.
+Here, such a lower bound, and its associated spectral discreteness, derive
+from the straightforward non-perturbative quantization of general relativity.
+The discreteness is specific, as we have detailed, non-trivial formulae for the
+spectra of volume and area (equations (1) and (2)).
+A characteristic aspect of our results is that they are entirely kinematical.
+As the Hamiltonian constraint plays no role in the derivation, the results
+must be independent of the dynamics of general relativity. In this respect,
+what we have done here may be considered to have carried quantum gravity
+to the same point that normal ordering carried quantum electrodynamics. In
+that case, the correct treatment of a kinematical operator product divergence
+results in the discovery of the physical content of the theory: photons, electrons and positrons. The stage is set for the definition of dynamics via the
+hamiltonian. Here, a more complicated procedure, made necessary by the
+requirement of diffeomorphism invariance and the absense of a background
+metric and an associated positive/negative frequency distinction, reveals the
+physical content of the theory: the discrete states labeled by the spin networks. Again, what remains is to apply the dynamics to these states, either
+via the Hamiltonian constrant or an appropriately defined hamiltonian[4].
+The fact that the results found here derive only from a succesful treatement of kinematical, operator product, divergences, gives them a certain
+robustness. To the extent that the results here stand as predictions of quantum general relativity, they are also predictions of quantum supergravity, or
+any of the large number of modifications of general relativity such as those
+that involve dilaton fields or higher derivative terms.
+The discreteness of areas and volumes found here then supports and
+strengthens the evidence for the existence of a discrete short-scale structure of space, which emerged first from studies of the kinematical “weave”
+states[3, 37]. However, these results go further in extending these results
+to the diffeomorphism invariant level, and in providing a precise physical
+meaning to the claim of the existence of a short-scale structure, one tied
+to the topological discreteness of knot space. This might have far reaching consequences for our understanding of the general structure of infinitedimensional, diffeomorphism invariant quantum field theories.
+It is important to note that the framework here is then substantially
+dissimilar from the conventional framework in which discreteness of the reg31
+
+ularized theory is scaled away by the large scale limit taken at a critical
+point that defines a continuum theory. Here the discreteness is physical. As
+a result, the relation between short distance and long distance regimes of
+the theory is very different than in quantum field theories defined on metric
+manifolds. The continuum limit must be a limit in which universes that are
+large on the Planck scale, and behave semiclassically, are constructed, not
+in which a short distance cutoff is taken to zero.
+This does not mean that further divergences might yet be encountered
+in the evaluation of the dynamics of the theory. However, as the handling of
+the kinematical divergences has, in this case, revealed a state space with a
+natural discrete structure and short distance cutoff, we do not expect anymore the appearance of the conventional ultraviolet divergences, which come
+from summing over the free Fock states of arbitrarily short wavelength. Here
+the possible sources of divergences correspond to infinitely large networks,
+or to arbitrarily large values of the labels on the graphs. But, by the results found here, these correspond to limits of large volumes and large areas;
+hence these must be infrared divergences.
+There remains still much to be understood about these issues. In particular, it is important to note that the Planck constant lP appearing in
+the spectra (1) and (2) is a bare quantity, that may very well suffer finite
+and thus not coincide with the macroscopic value of
+p renormalizations
+h̄GN Ewton /c3 .10
+Finally, we must mention that we can make no claim that the spectra
+computed here are unavoidable consequences of just quantum theory and
+general relativity, since choices and assumptions are made in the construction of any specific quantum theory. Assumptions about the nature of the
+state space on which the theory is constructed may affect the theory substantially. Ashtekar and others [6, 7] are developing a deep mathematical
+analysis of the loop representation capable of addressing these issues. A case
+to be examined in this regard is the extended loop representation [38]: it
+will be interesting to see if the present results can be derived in that case as
+well. On the other hand, the spectra computed here make the present form
+of the loop representation theory falsifiable, in spite of its incompleteness.
+In the absence of Planck scale measurements, it is of course hard to imagine how predictions for the discreteness of these observables could be tested.
+However, the examples of the early developments of quantum mechanics and
+solid state physics suggests that this discreteness could have implications for
+10
+
+For an indication that this does occur, see [4].
+
+32
+
+the thermodynamics of the gravitational field[39]. This could have important implications for the interpretation of black hole entropy, as well as for
+the question of the production, in the very early universe, of a spectrum
+of primordial gravitational radiation. These questions are presently under
+investigation.
+
+We are grateful to Roger Penrose for explaining spin networks to us and
+for advise about these calculations, and to Roumen Borrisov for checking
+our calculations in detail and spotting a wrong factor of 2. We thank Jan
+Ambjorn, Abhay Ashtekar, John Baez, Bernie Bruegmann, Mauro Carfora,
+Louis Crane, Josh Goldberg, Gary Horowitz, Chris Isham, Junichi Iwasaki,
+Ted Jacobson, Karel Kuchař, Renate Loll, Alexander Migdal, Jorge Pullin
+and Ranjiv Tate, for comments, suggestions, conversations and criticisms.
+Finally, we thank the Isaac Newton Institute in Cambridge where this work
+was conceived, and SISSA, in Trieste, where some of it was carried out.
+This work was partially supported by the NSF under grants PHY539634,
+PHY9016733 and INT8815209 and by research funds of Penn State University.
+
+References
+[1] CJ Isham: “Prima facia questions in quantum gravity”, gr-qc/9310031,
+in Canonical Gravity: From Classical to Quantum ed J Ehlers H
+Friedrich, Lecture Notes in Physics 434, Springer-Verlag Berlin 1994
+[2] C Rovelli L Smolin: Phys Rev Lett 61 (1988) 1155; Nucl Phys B133
+(1990) 80
+[3] A Ashtekar C Rovelli L Smolin: Phys Rev Lett 69 (1992) 237
+[4] C Rovelli L Smolin: Phys Rev Lett 72 (1994) 446
+[5] H Morales-Tecotl C Rovelli: Phys Rev Let 72 (1994) 3642
+[6] A Ashtekar C Isham: Class and Quant Grav 9 (1992) 1069
+[7] A Ashtekar J Lewandowski in [20]. A Ashtekar D Marlof J Mourãu
+in Proceedings of the Lanczos International Centenary Conference ed
+33
+
+D Brown et al SIAM publishers Philadelphia 1994. A Ashtekar J
+Lewandowski D Marlof J Mourãu T Thiemann: “Quantum geometrodynamics” and “Coherent state transform on the space of connections”
+Penn State University preprints 1994. J Baez in Proceedings of the Lanczos International Centenary Conference, op cit; in Proceedings of the
+conference on Quantum Topology, eds L Crane D Yetter to appear;
+“Link invariants, functional integration, and holonomy algebras”, hepth/9301063. D. Rayner: Class. and Quant. Grav. 7 (1990) 651
+[8] R Gambini: Physics Letters B 255 (1991) 180. R. Gambini and L. Leal,
+“Loop space coordinates, linear representations of the diffeomorphism
+group and knot invariants” preprint, University of Montevideo, 1991;
+B. Bruegmann, R. Gambini and J. Pullin, Phys. Rev. Lett. 68 (1992)
+431-434
+[9] C Rovelli: Class Quant Grav 8 (1991) 1613
+[10] A Ashtekar: Non perturbative canonical gravity, World scientific, Singapore 1991
+[11] L Smolin: in Quantum Gravity and Cosmology, eds J Pérez-Mercader
+et al, World Scientific, Singapore 1992
+[12] C Rovelli: Class and Quantum Grav 8 (1991) 297, 317
+[13] C Rovelli: Nucl Phys B405 (1993) 797
+[14] C Rovelli: “A physical prediction from Quantum Gravity: the quantization of the area”, in Texas/Pascos 92: Relativistic Astrophysics and
+Particle Cosmology, ed CW Akerlof MA Srednicki, Annals of the New
+York Academy of Science, Volume 688, New York 1993
+[15] L Smolin: Phys Rev D 49 (1994) 4028.
+[16] L Smolin: in Directions in General Relativity, v. 2, papers in honour
+of Dieter Brill, ed BL Hu T Jacobson, Cambridge University Press,
+Cambridge 1994
+[17] K Kuchař JD Brown: “Dust as a Standard of Space and Time in canonical Quantum Gravity”, Utah University preprint 1994
+[18] R Penrose: in Quantum Theory and beyond, ed EA Bastin, Cambridge
+University Press 1971
+34
+
+[19] M Atiyah: The Geometry and Physics of Knots, Cambridge University
+Press, Cambridge 1990
+[20] Knots and Quantum Gravity ed J Baez, Oxford University Press, Oxford 1994
+[21] C Rovelli L Smolin: “Spin-network basis in quantum gravity”, 1994
+unpublished
+[22] S Carlip: “Geometric structures and loop variables in (2+1) dimensional gravity”, in [20]
+[23] A Ashtekar: Phys Rev Lett 57 (1986) 2244; Phys Rev D36 (1987)1587
+[24] C Rovelli: Phys Rev D 47 (1993) 1703
+[25] Junichi Iwasaki: personal communication
+[26] C A Mead: Phys Rev 135 (1964) B849; Phys Rev 143 (1966) 990. T
+Padmanabhan: Ann Phys (NY) 165 (1985) 38; Gen Rel Grav 17 (1985)
+215; Class Q Grav 4 (1987) L107. J Greensite: Phys Lett B255 (1991)
+375
+[27] M Kato: Phys Lett B245 (1990) 43. K Konishi G Paffuti P Provero:
+Phys Lett B234 (1990) 276. G Veneziano: Europhys Lett 2 (1986)199.
+D Amati M Ciafaloni G Veneziano R Guida K Konishi P Provero: Mod
+Phys Lett A6 (1991)1487
+[28] D Gross PF Mende: Phys Lett B197 (1987) 129 ; Nucl Phys B303
+(1988) 407
+[29] J J Atick E Witten: Nucl Phys B310 (1988) 291
+[30] I Klebanov L Susskind: Nucl Phys B309 (1988) 175
+[31] G Horowitz: talk delivered at the conference on Quantum Gravity,
+Durham 1994
+[32] J Baez: Strings, Loops, Knots and Gauge Fields , in [20]
+[33] J D Bekenstein: Lett Nuovo Cim 11 (1974) 467
+[34] T Jacobson: Phys Rev D44 (1991) 1731
+
+35
+
+[35] J A Wheeler: Ann of Phys 2 (1954) 604. SW Hawking: Nucl Phys B144
+(1978) 349
+[36] L J Garay: “Quantum gravity and minimum length”, Imperial College
+preprint/TP/93-94/20, gr-qc/9403008 (1994)
+[37] J Iwasaki C Rovelli: Int J of Mod Phys D1 (1993) 533; Class and
+Quantum Grav 11 (1994) 1653
+[38] C Di Bartolo R Gambini J Griego J Pullin: “Extended loops: a new
+arena for nonperturbative quantum gravity” Phys Rev Lett (1994) to
+appear. C Di Bartolo R Gambini J Griego: “The extended loop representation of quantum gravity” Phys Rev D (1994) to appear
+[39] A Connes C Rovelli: “Von Nemann algebra automorphisms and the
+time-thermodynamics relation in generally covariant quantum theories”
+Class and Quantum Grav, in print (1994). C Rovelli: Class and Quantum Grav 10 (1993) 1549, 1567
+
+36
+
+

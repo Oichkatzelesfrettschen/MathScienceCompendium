@@ -1,0 +1,87 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "required": ["schema_version", "description", "status_vocabulary", "claims"],
+  "properties": {
+    "schema_version": {"const": 1},
+    "description": {"type": "string", "minLength": 1},
+    "status_vocabulary": {
+      "type": "object",
+      "required": [
+        "established",
+        "corrected",
+        "bounded",
+        "conjectural",
+        "unsupported",
+        "falsified",
+        "repaired",
+        "excluded"
+      ],
+      "additionalProperties": {"type": "string", "minLength": 1}
+    },
+    "claims": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "domain",
+          "source_anchors",
+          "source_statement",
+          "canonical_statement",
+          "status",
+          "confidence",
+          "evidence_source_ids",
+          "repo_evidence_paths",
+          "falsification_test",
+          "integration_action"
+        ],
+        "properties": {
+          "id": {"type": "string", "pattern": "^[a-z0-9_]+$"},
+          "domain": {"type": "string", "pattern": "^[a-z0-9_]+$"},
+          "source_anchors": {
+            "type": "array",
+            "minItems": 1,
+            "items": {
+              "type": "object",
+              "required": ["document_id", "source_line"],
+              "properties": {
+                "document_id": {"type": "string", "minLength": 1},
+                "source_line": {"type": "integer", "minimum": 1}
+              },
+              "additionalProperties": false
+            }
+          },
+          "source_statement": {"type": "string", "minLength": 1},
+          "canonical_statement": {"type": "string", "minLength": 1},
+          "status": {
+            "enum": [
+              "established",
+              "corrected",
+              "bounded",
+              "conjectural",
+              "unsupported",
+              "falsified",
+              "repaired",
+              "excluded"
+            ]
+          },
+          "confidence": {"enum": ["high", "medium", "low"]},
+          "evidence_source_ids": {
+            "type": "array",
+            "items": {"type": "string", "minLength": 1}
+          },
+          "repo_evidence_paths": {
+            "type": "array",
+            "items": {"type": "string", "minLength": 1}
+          },
+          "falsification_test": {"type": "string", "minLength": 1},
+          "integration_action": {"type": "string", "minLength": 1}
+        },
+        "additionalProperties": false
+      }
+    }
+  },
+  "additionalProperties": false
+}

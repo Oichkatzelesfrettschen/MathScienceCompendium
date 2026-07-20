@@ -4,10 +4,11 @@
 from __future__ import annotations
 
 import json
-import tomllib
 from collections import defaultdict
 from datetime import datetime, timezone
 from pathlib import Path
+
+import tomllib
 
 
 REPO_ROOT = Path(__file__).resolve().parent.parent
@@ -41,7 +42,7 @@ def write_report(
     lines.append(f"hash_mismatch_count = {len(hash_mismatches)}")
     lines.append(f'status = "{status}"')
     lines.append(
-        'reconciliation_actions = ["Excluded generated *.egg-info/*.txt files from normalization.", "Excluded generated data/external/fetch_traces/*.txt files from normalization.", "Removed stale normalized JSON files that no longer map to corpus index entries."]'
+        'reconciliation_actions = ["Excluded generated build/*.txt files from normalization.", "Excluded generated *.egg-info/*.txt files from normalization.", "Excluded generated data/external/fetch_traces/*.txt files from normalization.", "Removed stale normalized JSON files that no longer map to corpus index entries."]'
     )
     lines.append("")
 
@@ -56,10 +57,16 @@ def write_report(
         lines.append(f'sha256 = "{canonical["sha256"]}"')
         lines.append(f"count = {len(group)}")
         lines.append(f'canonical_source_relpath = "{canonical["source_relpath"]}"')
-        lines.append('recommended_action = "Keep canonical source and mark remaining entries as duplicates in claims/evidence docs if retained intentionally."')
-        source_paths = ", ".join(f'"{toml_escape(str(item["source_relpath"]))}"' for item in sorted(group, key=lambda d: str(d["source_relpath"])))
+        lines.append(
+            'recommended_action = "Keep canonical source and mark remaining entries as duplicates in claims/evidence docs if retained intentionally."'
+        )
+        source_paths = ", ".join(
+            f'"{toml_escape(str(item["source_relpath"]))}"'
+            for item in sorted(group, key=lambda d: str(d["source_relpath"]))
+        )
         normalized_paths = ", ".join(
-            f'"{toml_escape(str(item["normalized_relpath"]))}"' for item in sorted(group, key=lambda d: str(d["normalized_relpath"]))
+            f'"{toml_escape(str(item["normalized_relpath"]))}"'
+            for item in sorted(group, key=lambda d: str(d["normalized_relpath"]))
         )
         lines.append(f"source_relpaths = [{source_paths}]")
         lines.append(f"normalized_relpaths = [{normalized_paths}]")

@@ -1,0 +1,74 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://mathsciencecompendium.local/schemas/registry/pdf_ocr_comparison.schema.json",
+  "title": "PDFOCRComparison",
+  "$defs": {
+    "metrics": {
+      "type": "object",
+      "required": ["engine", "bytes_utf8", "characters", "nonspace_characters", "word_tokens", "line_count"],
+      "properties": {
+        "engine": { "type": "string", "minLength": 1 },
+        "bytes_utf8": { "type": "integer", "minimum": 0 },
+        "characters": { "type": "integer", "minimum": 0 },
+        "nonspace_characters": { "type": "integer", "minimum": 0 },
+        "word_tokens": { "type": "integer", "minimum": 0 },
+        "line_count": { "type": "integer", "minimum": 0 },
+        "source_relpath": { "type": "string", "minLength": 1 },
+        "source_sha256": { "type": "string", "pattern": "^[a-f0-9]{64}$" },
+        "markdown_display_math_blocks": { "type": "integer", "minimum": 0 },
+        "markdown_image_references": { "type": "integer", "minimum": 0 },
+        "manifest_relpath": { "type": "string", "minLength": 1 },
+        "manifest_sha256": { "type": "string", "pattern": "^[a-f0-9]{64}$" },
+        "page_count": { "type": "integer", "minimum": 1 }
+      },
+      "additionalProperties": false
+    }
+  },
+  "type": "object",
+  "required": ["schema_version", "generator", "provenance", "source_pdf", "outputs", "selection"],
+  "properties": {
+    "schema_version": { "type": "integer", "enum": [1] },
+    "generator": { "type": "string", "minLength": 1 },
+    "provenance": {
+      "type": "object",
+      "required": ["run_manifest_relpath", "run_manifest_sha256", "visual_review_relpath", "visual_review_sha256"],
+      "properties": {
+        "run_manifest_relpath": { "type": "string", "minLength": 1 },
+        "run_manifest_sha256": { "type": "string", "pattern": "^[a-f0-9]{64}$" },
+        "visual_review_relpath": { "type": "string", "minLength": 1 },
+        "visual_review_sha256": { "type": "string", "pattern": "^[a-f0-9]{64}$" }
+      },
+      "additionalProperties": false
+    },
+    "source_pdf": {
+      "type": "object",
+      "required": ["relpath", "sha256"],
+      "properties": {
+        "relpath": { "type": "string", "pattern": "\\.pdf$" },
+        "sha256": { "type": "string", "pattern": "^[a-f0-9]{64}$" }
+      },
+      "additionalProperties": false
+    },
+    "outputs": {
+      "type": "object",
+      "required": ["native_pdftotext_layout", "mineru_high_effort_hybrid_forced_ocr", "tesseract_400_dpi_psm_1"],
+      "properties": {
+        "native_pdftotext_layout": { "$ref": "#/$defs/metrics" },
+        "mineru_high_effort_hybrid_forced_ocr": { "$ref": "#/$defs/metrics" },
+        "tesseract_400_dpi_psm_1": { "$ref": "#/$defs/metrics" }
+      },
+      "additionalProperties": false
+    },
+    "selection": {
+      "type": "object",
+      "required": ["primary", "fallback", "basis"],
+      "properties": {
+        "primary": { "type": "string", "minLength": 1 },
+        "fallback": { "type": "string", "minLength": 1 },
+        "basis": { "type": "string", "minLength": 1 }
+      },
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": false
+}

@@ -1,0 +1,54 @@
+{
+  "fourier_lattice": "Z^2 square lattice",
+  "generator": "scripts/audit_fourier_quotient_map.py",
+  "homomorphisms": [
+    {
+      "coefficients": [
+        0,
+        0
+      ],
+      "nontrivial": false,
+      "rejected_exact_triad_count": 0,
+      "square_symmetry_invariant": true
+    },
+    {
+      "coefficients": [
+        0,
+        1
+      ],
+      "nontrivial": true,
+      "rejected_exact_triad_count": 0,
+      "square_symmetry_invariant": false
+    },
+    {
+      "coefficients": [
+        1,
+        0
+      ],
+      "nontrivial": true,
+      "rejected_exact_triad_count": 0,
+      "square_symmetry_invariant": false
+    },
+    {
+      "coefficients": [
+        1,
+        1
+      ],
+      "nontrivial": true,
+      "rejected_exact_triad_count": 0,
+      "square_symmetry_invariant": true
+    }
+  ],
+  "map_existence_outcome": "established",
+  "maximum_rejected_exact_triad_count": 0,
+  "mode_count": 81,
+  "nontrivial_square_symmetry_map_exists": true,
+  "ordered_exact_triad_count": 3721,
+  "proof": "The nontrivial D4-invariant map h(kx,ky)=(kx+ky) mod 2 exists. For every exact triad k+p+q=0, homomorphism additivity gives h(k)+h(p)+h(q)=h(0)=0, so no exact triad is rejected.",
+  "rejection_criterion": "Reject a nontrivial homomorphic triad-filter mechanism when every symmetry-compatible nontrivial map rejects zero exact triads.",
+  "schema_version": 1,
+  "square_shell_radius": 4,
+  "target_quotient": "E7 weight lattice/root lattice P/Q isomorphic to Z/2",
+  "target_quotient_order": 2,
+  "triad_filter_outcome": "falsified"
+}

@@ -31,8 +31,22 @@ from ..algebra import JordanAlgebra
 from .cayley_dickson import Octonion
 
 
+def _build_octonion_multiplication_tensor() -> np.ndarray:
+    """Return structure constants matching the canonical Octonion product."""
+    tensor = np.zeros((8, 8, 8), dtype=np.float64)
+    for left_index in range(8):
+        left = Octonion.basis_element(left_index)
+        for right_index in range(8):
+            right = Octonion.basis_element(right_index)
+            tensor[left_index, right_index, :] = (left * right).coeffs
+    return tensor
+
+
+OCTONION_MULTIPLICATION_TENSOR = jnp.asarray(_build_octonion_multiplication_tensor())
+
+
 class AlbertAlgebraElement(JordanAlgebra):
-    """Offloads h3(O) computations to GPU via JAX."""
+    """An element of the 27-dimensional Albert algebra h3(O)."""
 
     def __init__(self, data: jnp.ndarray | np.ndarray | list) -> None:
         """Initialize with a (3, 3, 8) tensor representing 3x3 Octonions."""
@@ -48,6 +62,10 @@ class AlbertAlgebraElement(JordanAlgebra):
                 self.data = jnp.array(data)
         else:
             self.data = jnp.array(data) if not isinstance(data, jnp.ndarray) else data
+        if self.data.shape != (3, 3, 8):
+            raise ValueError("Albert algebra data must have shape (3, 3, 8)")
+        if not self.is_hermitian(tolerance=1e-6):
+            raise ValueError("Albert algebra data must be Hermitian over the octonions")
 
     @staticmethod
     def from_octonions(matrix: list[list[Octonion]]) -> AlbertAlgebraElement:
@@ -76,10 +94,36 @@ class AlbertAlgebraElement(JordanAlgebra):
 
     @staticmethod
     @jit
-    def _mat_mul_oct(_A: jnp.ndarray, _B: jnp.ndarray) -> jnp.ndarray:
-        """3x3 Octonionic matrix multiplication block-vectorized."""
-        # For CI logic, we use a placeholder that returns a valid shape
-        return jnp.zeros((3, 3, 8))
+    def _mat_mul_oct(A: jnp.ndarray, B: jnp.ndarray) -> jnp.ndarray:
+        """Compute 3x3 matrix multiplication with octonion entries."""
+        return jnp.einsum("ika,kjb,abc->ijc", A, B, OCTONION_MULTIPLICATION_TENSOR)
+
+    @staticmethod
+    def identity() -> AlbertAlgebraElement:
+        data = jnp.zeros((3, 3, 8))
+        for diagonal_index in range(3):
+            data = data.at[diagonal_index, diagonal_index, 0].set(1.0) if HAS_JAX else data
+            if not HAS_JAX:
+                data[diagonal_index, diagonal_index, 0] = 1.0
+        return AlbertAlgebraElement(data)
+
+    def is_hermitian(self, tolerance: float = 1e-10) -> bool:
+        """Check diagonal reality and conjugate symmetry."""
+        values = np.asarray(self.data)
+        for row_index in range(3):
+            if np.max(np.abs(values[row_index, row_index, 1:])) > tolerance:
+                return False
+            for column_index in range(row_index + 1, 3):
+                conjugate = values[row_index, column_index].copy()
+                conjugate[1:] *= -1.0
+                if not np.allclose(
+                    conjugate,
+                    values[column_index, row_index],
+                    rtol=0.0,
+                    atol=tolerance,
+                ):
+                    return False
+        return True
 
     def trace(self) -> jnp.ndarray:
         # Return the (8,) sum of diagonal octonions

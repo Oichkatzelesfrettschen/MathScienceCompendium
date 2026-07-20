@@ -13,18 +13,8 @@ import numpy as np
 
 try:
     import jax.numpy as jnp
-    from jax import jit
-
-    HAS_JAX = True
 except ImportError:
     jnp = np  # Fallback to numpy
-    HAS_JAX = False
-
-    def jit(func=None, **_kwargs):
-        """Dummy jit decorator when JAX is not available."""
-        if func is None:
-            return lambda f: f
-        return func
 
 
 if TYPE_CHECKING:
@@ -37,7 +27,7 @@ class ModularForms:
     @staticmethod
     def tau_to_q(tau: complex) -> complex:
         """Convert half-period ratio tau to nome q = exp(2*pi*i*tau)."""
-        return np.exp(2j * np.pi * tau)
+        return complex(np.exp(2j * np.pi * tau))
 
     @staticmethod
     def eisenstein_series_E4(tau: complex, num_terms: int = 100) -> complex:
@@ -48,7 +38,7 @@ class ModularForms:
     @staticmethod
     def eisenstein_e4(q: complex, num_terms: int = 100) -> complex:
         """Eisenstein series E4(q) = 1 + 240 * sum sigma_3(n) * q^n."""
-        res = 1.0
+        res = 1.0 + 0.0j
         for n in range(1, num_terms + 1):
             sigma3 = sum(d**3 for d in range(1, n + 1) if n % d == 0)
             res += 240 * sigma3 * (q**n)
@@ -63,7 +53,7 @@ class ModularForms:
     @staticmethod
     def eisenstein_e6(q: complex, num_terms: int = 100) -> complex:
         """Eisenstein series E6(q) = 1 - 504 * sum sigma_5(n) * q^n."""
-        res = 1.0
+        res = 1.0 + 0.0j
         for n in range(1, num_terms + 1):
             sigma5 = sum(d**5 for d in range(1, n + 1) if n % d == 0)
             res -= 504 * sigma5 * (q**n)
@@ -98,7 +88,7 @@ class ModularForms:
             q = tau_or_q
         k = np.arange(-num_terms, num_terms + 1)
         res = np.sum(((-1.0) ** k) * (q ** (k * (3 * k - 1) / 2.0)))
-        return (q ** (1.0 / 24.0)) * res
+        return complex((q ** (1.0 / 24.0)) * res)
 
     @staticmethod
     def modular_discriminant(tau: complex, num_terms: int = 100) -> complex:
@@ -108,11 +98,10 @@ class ModularForms:
         return (e4**3 - e6**2) / 1728.0
 
     @staticmethod
-    @jit
     def jacobi_theta(z: complex, q: complex, n_terms: int = 50) -> complex:
         """Jacobi Theta function theta_3(z, q)."""
         n = jnp.arange(-n_terms, n_terms + 1)
-        return jnp.sum((q ** (n**2)) * jnp.exp(2j * n * z))
+        return complex(jnp.sum((q ** (n**2)) * jnp.exp(2j * n * z)))
 
 
 class AffineCharacterAnalyzer:

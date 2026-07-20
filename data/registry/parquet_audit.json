@@ -1,47 +1,174 @@
 {
-  "generated_at_utc": "2026-02-12T07:47:48.419835+00:00",
+  "generated_at_utc": "2026-07-20T09:00:04.746418+00:00",
   "generated_by": "scripts/parquet_audit.py",
-  "parquet_count": 6,
+  "parquet_count": 7,
   "records": [
     {
-      "reason": "pyarrow_unavailable",
+      "fields": [
+        {
+          "name": "iteration",
+          "type": "int64"
+        },
+        {
+          "name": "density",
+          "type": "list<element: list<element: double>>"
+        },
+        {
+          "name": "velocity_x",
+          "type": "list<element: list<element: double>>"
+        },
+        {
+          "name": "velocity_y",
+          "type": "list<element: list<element: double>>"
+        }
+      ],
+      "num_columns": 4,
+      "num_row_groups": 1,
+      "num_rows": 1,
       "relpath": "results/highres_lbm_000100.parquet",
-      "schema_available": false,
+      "schema_available": true,
       "sha256": "c7aeba862ffdee014df92d4be10549abd341d12dde8835fbebecd28ece7616c0",
       "size_bytes": 5323874
     },
     {
-      "reason": "pyarrow_unavailable",
+      "fields": [
+        {
+          "name": "iteration",
+          "type": "int64"
+        },
+        {
+          "name": "density",
+          "type": "list<element: list<element: double>>"
+        },
+        {
+          "name": "velocity_x",
+          "type": "list<element: list<element: double>>"
+        },
+        {
+          "name": "velocity_y",
+          "type": "list<element: list<element: double>>"
+        }
+      ],
+      "num_columns": 4,
+      "num_row_groups": 1,
+      "num_rows": 1,
       "relpath": "results/highres_lbm_000200.parquet",
-      "schema_available": false,
+      "schema_available": true,
       "sha256": "d647fddda11403a961620ac3e240789516809f9c0c4d302771675d38c2b58c49",
       "size_bytes": 5309107
     },
     {
-      "reason": "pyarrow_unavailable",
+      "fields": [
+        {
+          "name": "iteration",
+          "type": "int64"
+        },
+        {
+          "name": "density",
+          "type": "list<element: list<element: double>>"
+        },
+        {
+          "name": "velocity_x",
+          "type": "list<element: list<element: double>>"
+        },
+        {
+          "name": "velocity_y",
+          "type": "list<element: list<element: double>>"
+        }
+      ],
+      "num_columns": 4,
+      "num_row_groups": 1,
+      "num_rows": 1,
       "relpath": "results/highres_lbm_000300.parquet",
-      "schema_available": false,
+      "schema_available": true,
       "sha256": "6be05778380a3f86ea2af4ef3ef230702b3e78c02e9fdacc54121c7eaf313407",
       "size_bytes": 5361841
     },
     {
-      "reason": "pyarrow_unavailable",
+      "fields": [
+        {
+          "name": "iteration",
+          "type": "int64"
+        },
+        {
+          "name": "density",
+          "type": "list<element: list<element: double>>"
+        },
+        {
+          "name": "velocity_x",
+          "type": "list<element: list<element: double>>"
+        },
+        {
+          "name": "velocity_y",
+          "type": "list<element: list<element: double>>"
+        }
+      ],
+      "num_columns": 4,
+      "num_row_groups": 1,
+      "num_rows": 1,
       "relpath": "results/highres_lbm_000400.parquet",
-      "schema_available": false,
+      "schema_available": true,
       "sha256": "693336f6c9cd285b102f52703993e1e7fee8c700fbadf16befadea8b45298157",
       "size_bytes": 5330979
     },
     {
-      "reason": "pyarrow_unavailable",
+      "fields": [
+        {
+          "name": "iteration",
+          "type": "int64"
+        },
+        {
+          "name": "density",
+          "type": "list<element: list<element: double>>"
+        },
+        {
+          "name": "velocity_x",
+          "type": "list<element: list<element: double>>"
+        },
+        {
+          "name": "velocity_y",
+          "type": "list<element: list<element: double>>"
+        }
+      ],
+      "num_columns": 4,
+      "num_row_groups": 1,
+      "num_rows": 1,
       "relpath": "results/highres_lbm_000500.parquet",
-      "schema_available": false,
+      "schema_available": true,
       "sha256": "a06fa7253f6bc11cbd40961dbbc7268a2de572edf8247577d77564c358e80af9",
       "size_bytes": 5287332
     },
     {
-      "reason": "pyarrow_unavailable",
+      "fields": [
+        {
+          "name": "iteration",
+          "type": "int64"
+        },
+        {
+          "name": "density",
+          "type": "list<element: double>"
+        }
+      ],
+      "num_columns": 2,
+      "num_row_groups": 1,
+      "num_rows": 1,
+      "relpath": "results/test_state_unit_000042.parquet",
+      "schema_available": true,
+      "sha256": "ab34e02861820d171b35a9bdbd49da1a9aa15abd88b3bd9709eaa4bbd480a5b5",
+      "size_bytes": 3256
+    },
+    {
+      "fields": [
+        {
+          "name": "unified_trace",
+          "type": "list<element: struct<step: int64, trace: double>>"
+        }
+      ],
+      "num_columns": 1,
+      "num_row_groups": 1,
+      "num_rows": 1,
       "relpath": "results/unified_experiment.parquet",
-      "schema_available": false,
+      "schema_available": true,
       "sha256": "bda210577502ef4f6886553014d9cc27eefc10d4ff7a10d97292d023423a1ddf",
       "size_bytes": 2260
     }

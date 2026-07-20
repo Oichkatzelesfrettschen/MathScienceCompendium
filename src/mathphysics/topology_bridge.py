@@ -47,7 +47,7 @@ class TopologyBridge:
             rips = gd.RipsComplex(points=points, max_edge_distance=threshold)
             st = rips.create_simplex_tree(max_dimension=2)
             st.persistence()
-            return st.betti_numbers()
+            return [int(value) for value in st.betti_numbers()]
 
         # Fallback
         return [1, 0, 0]  # Simply connected component

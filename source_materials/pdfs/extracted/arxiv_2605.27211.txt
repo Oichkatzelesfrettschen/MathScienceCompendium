@@ -1,0 +1,2291 @@
+Time Crystals on Quantum Devices
+Gonzalo Camacho 1, ∗ and Benedikt Fauseweh 1, 2, †
+1
+
+arXiv:2605.27211v1 [quant-ph] 26 May 2026
+
+Department High-Performance Computing, Institute of Software Technology,
+German Aerospace Center (DLR), 51147 Cologne, Germany
+2
+Department of Physics, TU Dortmund University, Otto-Hahn-Str. 4, 44227, Dortmund, Germany
+Time crystals are nonequilibrium phases of matter characterized by the emergence of temporal
+ordering, in which an interacting many-body system develops robust structure in its time evolution
+that is not trivially dictated by the external driving or environment. While related phenomena have
+long been studied in classical nonlinear systems, their realization in entangled quantum matter represents a distinct frontier. The theoretical understanding of discrete time crystals has substantially
+advanced, yet recent experiments using modern quantum devices and quantum processors reveal
+regimes beyond established paradigms. These developments call for an extended classification of
+time-crystalline phases according to both their stabilization mechanisms and their physical character, including discrete and continuous, closed and open, critical, topological, quasiperiodic, and
+controlled realizations. We review recent implementations of time crystals on quantum platforms
+and propose such a classification framework, identifying promising directions for the discovery of
+novel time-crystalline phases of matter.
+
+I.
+
+INTRODUCTION
+
+The original idea of employing quantum devices as universal simulators [1, 2] has motivated a rapid development
+in the field of quantum technologies in recent years, putting on a firm footing the capabilities brought by quantum
+devices to study nature at its most fundamental level. Even though currently available quantum devices are still
+susceptible to noise [3], impressive experimental achievements in the field of quantum simulation [4–7] have opened
+up the possibility to explore interesting quantum phenomena employing a range of different platforms [8–11] where
+quantum advantage with respect to classical simulation is expected [12, 13]. The maturation of various different
+technologies for quantum devices has motivated further interest in the study of dynamics of many-body quantum
+systems [14, 15], in particular whether traditional concepts used in the definition of equilibrium phases of matter can
+be generalized to the out-of-equilibrium realm.
+A nonequilibrium phase of matter that has received considerable attention in recent years is that of time crystals
+(TCs) [16]. While these systems have attracted an impressive amount of attention from a theoretical point of view,
+the possibility of implementing and observing time-crystalline behavior on current quantum devices has made these
+systems one of the most promising potential applications for the near-term use of quantum technologies.
+A.
+
+Aims and scope
+
+Time crystals have established themselves as an independent research field that has experienced a massive growth,
+receiving input from both theory and experiments. On the theory side, this has resulted in a number of reviews
+on the subject [17–22], which focus mostly on discrete time crystals. However, the increasing diversity of timecrystalline phases, differing both in their physical character and in their stabilization mechanisms, indicates that a
+unified picture of time-crystallinity is still emerging. In this review, we therefore do not aim to provide an in-depth
+theoretical introduction to the topic. Instead, based on the recent advances and extensions of the concept, we provide
+a classification of the different types of time crystals that have been identified to date and provide an overview of
+their implementation on different quantum hardware.
+We focus on experimental realizations of time crystals that have been implemented exclusively on quantum devices,
+i.e. platforms that require a description by quantum mechanical laws. A genuine quantum mechanical time crystal
+requires that the system under study, and the device, contain a minimal, nonzero amount of entanglement. Including
+entanglement as a resource [23] establishes a direct connection with the fields of quantum information theory and
+quantum computing. Thus, we deliberately leave out cases concerning the simulation of classical systems by digitization of their equations of motion, because in this case, the system under study does not contain any entanglement
+
+∗ gonzalo.camacho@dlr.de
+† benedikt.fauseweh@tu-dortmund.de
+
+2
+and can in principle be simulated efficiently with a classical computer. At the same time, we include systems that
+are genuinely quantum mechanical in the sense of requiring entanglement for their physical description, even when
+their macroscopic dynamics admit an effective classical field theory or semiclassical description, thereby separating
+the notion of intrinsic quantumness from that of classical simulability.
+The review is organized as follows. In Sec. II, we give a basic introduction to the theory of time crystals and their
+early proposals. We also provide a classification of time crystals based on their different stabilization mechanisms,
+providing an outline of both experimentally observed and outstanding cases. In Sec. III, we briefly present the different
+quantum platforms currently available for quantum simulation, addressing their individual advantages and limitations
+for implementing time crystals. Sec. IV reviews experimental results of time crystals on quantum devices, outlining
+current challenges based on their classification. In Sec. V, we give a broad outlook on the outstanding theoretical
+proposals to realize time crystals on quantum devices, arguing which of these show stronger potential for immediate
+implementations. In Sec. VI, we conclude the review.
+
+GENERAL THEORETICAL CONCEPTS
+
+periodic drive
+
+ECT/few-body
+
+2
+0
+
+5
+
+0
+
+0.2
+
+5
+
+0.5
+0
+
+0.7
+
+0.5
+
+0
+
+0.2
+5
+
+1.0
+0
+
+space
+
+0.0
+
+BEC
+
+0.7
+5
+
+4
+
+6
+
+8
+
+10
+
+12
+
+II.
+
+Bath
+
+time
+
+MBL-DTC
+Prethermal
+
+Local energy scale
+
+Figure 1: Schematic view of a DTC breaking the discrete symmetry of the drive. While the drive oscillates with
+period T , the system displays subharmonic motion with period 2T . Time crystal phases can be stabilized through
+different mechanisms. Prethermal DTCs require large frequencies Ω ≫ J above some characteristic energy scale of
+the system J, usually from initially ordered (low temperature) states. In contrast, MBL-DTC is characterized by
+the system displaying subharmonic motion starting from random (high temperature) initial states, with the drive
+and the MBL phase coexisting. Some genuinely many-body quantum systems, such as Bose-Einstein condensates
+(BECs), display time crystal behavior under periodic driving and dissipation to a bath with some effective coupling
+Γ. In these cases, the stabilization mechanism is commonly described by effective classical theories (ECTs) or rather
+few-body descriptions involving mean-field approaches.
+
+A.
+
+Early works on spontaneous time translation symmetry breaking
+
+Time crystals were conceptualized as the time analog of ordinary spatial crystals. Roughly speaking, a time crystal
+is a macroscopic many-body system in perpetual periodic motion with a different period than the one governing
+
+3
+its equations of motion [24]. Among other properties, time crystals develop long-range order [17–19, 22, 25, 26]
+(LRO) along the temporal dimension of the space-time manifold, retaining infinitely long-lived memory about distant
+time events. The underlying mechanism of time crystal formation is that of spontaneous time translation symmetry
+breaking (Sτ B), where the state of the macroscopic system, be it classical or quantum [16, 27, 28], breaks any temporal
+symmetries governing its equations of motion.
+The idea of Sτ B was originally developed in the context of ground states of macroscopic systems [16], with early
+proposals suggesting that time crystals could be experimentally observed under equilibrium conditions using a trappedion quantum device [29]. Soon after, the possibility that Sτ B takes place under equilibrium conditions became a subject
+of debate [30–33], given that for isolated systems Sτ B challenges the second law of thermodynamics. These early
+objections were further supported by important no-go results showing that for local Hamiltonians no spatiotemporal
+LRO can emerge under equilibrium conditions [34], i.e. if a system experiences Sτ B, then the system must be out of
+equilibrium.
+A generic example is a system that is driven by a T -periodic Hamiltonian, i.e., a system with a discrete time
+symmetry. The important distinction arises when the response of the system is observed. If a discrete symmetry
+is spontaneously broken resulting in a correlated response of the system with the drive that is a multiple of T , i.e.,
+nT, n ∈ {2, 3 . . . }, then Sτ B takes place in a discrete fashion, and one talks about discrete time crystals (DTCs), see
+Fig. 1. In frequency space, the system responds at a subharmonic frequency which is in clear correlation with the
+underlying periodicity of the drive.
+Subharmonic response alone, however, is not sufficient to establish a DTC. A time-crystalline phase should additionally display rigidity of the subharmonic frequency against perturbations of the drive, robustness over a finite region
+of parameter space and a lifetime that diverges in the thermodynamic limit. This distinction is particularly important for finite-size quantum processors, where period doubling can occur as a transient response without constituting
+spontaneous breaking of discrete time-translation symmetry.
+The DTC is the clearest manifestation of Sτ B under nonequilibrium conditions. In a different fashion, Sτ B can
+take place with the system presenting a somewhat uncorrelated response with the drive. This occurs mostly if the
+drive is characterized by some relevant energy scales and the system responds oscillating with a frequency completely
+unrelated to those energy scales. Another relevant scenario occurs in continuously pumped systems, for instance
+when an amplitude-varying wave field is employed as a drive. In that case, the drive is no longer periodic due to the
+continuous amplitude ramping, but the system can eventually respond by oscillating with a well-defined frequency.
+These last two scenarios are related to the notion of a continuous time crystal (CTC). In the latter, it is argued
+that a continuous time symmetry is broken; however, the definition of a continuous time symmetry in this case is
+somewhat challenging, as the system evolves under nonequilibrium conditions and generically possesses a complex
+dynamical structure without a continuous translational symmetry in time. The former scenario is somewhat easier
+to identify: if no correlation exists between the response of the system and the drive, we cannot identify the system
+as a DTC, even if the broken symmetries are discrete ones. These considerations hint at a more flexible time crystal
+classification beyond the current DTC/CTC dichotomy.
+Another aspect of time crystals is that they never reach equilibrium because the system keeps finding itself indefinitely in repetitive periodic motion. Thus, for isolated systems, time crystals challenge the conventional understanding
+of equilibrium and thermalization inherited from statistical mechanics principles. For a time crystal, fundamental
+thermodynamic concepts like ergodicity and entropy are expected to display unconventional behavior compared to
+generic systems following the standard statistical mechanics paradigm.
+Therefore, to understand the physics of time crystals, we need to address the causes leading to stabilization of
+time-crystallinity in macroscopic quantum systems. Moreover, we will see that there is a sharp distinction between
+time crystals occurring in the presence of an external environment (open) and those completely isolated from the
+environment (closed). The latter case is identified with time crystals that can be realized perfectly on ideal (noisefree) quantum computers, with the system undergoing purely unitary dynamics. For the former, some degree of
+dissipation is necessary to allow non-unitary evolution in the system in order to realize time crystal behavior.
+
+B.
+
+Ergodicity and thermalization in closed quantum systems
+
+Consider an isolated quantum system prepared in some initial state |ψ0 ⟩ belonging to a macroscopically large Hilbert
+space. The state evolves under a generic time-dependent Hamiltonian H(t) from an initial time t0 until a final time
+t (using units with ℏ = 1):
+|ψ(t)⟩ = T̂ e
+
+−i
+
+Rt
+t0
+
+dτ H(τ )
+
+|ψ0 ⟩,
+
+where T̂ is the time-ordering operator. What is the expected long-time behavior of the system?
+
+(1)
+
+4
+In the absence of an extensive number of symmetries, an analogy with the ergodic hypothesis for classical systems
+can be drawn at the level of the Hilbert space: we expect for sufficiently long times that any state will be visited
+at equal rates, i.e. all states become equally likely [35, 36]. Intuitively, this occurs due to the absence of energy
+conservation, and the fact that the system continuously absorbs energy from the drive in all possible configurations
+and cannot dissipate this energy to any external environment. The result is that in the long-time limit, the system
+is driven towards an infinite temperature state, maximizing its entropy [37]. This generic view in the quantum case
+establishes an analogy with the second law of thermodynamics of classical systems.
+A different but related situation occurs when the system evolves on its own under a time-independent Hamiltonian,
+eventually approaching equilibrium. If in the long-time limit the values of local observables coincide with those
+predicted by an appropriate statistical equilibrium ensemble, it is said that the system has thermalized [38–40]. If
+the initial configuration |ψ0 ⟩ is chosen to have support in the eigenbasis of H in the interval ∆E = [E − δE, E + δE],
+from Eq. (1) any long-time average of a local observable Ô yields:
+1
+t→∞ t
+
+Z t
+
+lim
+
+dt′ ⟨ψ(t′ )|Ô|ψ(t′ )⟩ ≈
+
+0
+
+X
+
+|⟨ε|ψ0 ⟩|2 ⟨ε|Ô|ε⟩.
+
+(2)
+
+ε∈∆E
+
+Given that for a macroscopic system energy level separation scales as δε ∼ exp(−kN ) for some constant k, there
+are exponentially many contributions in the ensemble average and thus statistical fluctuations in the eigenstates are
+expected to be negligible [41]. This results in having equivalent contributions in the weights |⟨ε|ψ0 ⟩|2 , yielding the
+microcanonical ensemble average. The above is known as the Eigenstate Thermalization Hypothesis [42–44] (ETH).
+Systems following the ETH are frequently identified as ergodic [45, 46]. The ETH is not a universal description for
+the late time evolution of generic isolated quantum systems. There are mechanisms by which an isolated quantum
+system might fail to display ergodic behavior, normally due to the existence of an extensive number of internal
+or emergent symmetries. Examples in this category concern integrable systems [47], or non-interacting, disordered
+systems showing signatures of Anderson’s localization [48, 49].
+
+C.
+
+Ergodicity breaking mechanisms in driven closed quantum systems
+
+By definition, a time crystal cannot satisfy the ergodic hypothesis. Due to its infinitely long-lived periodic motion,
+the system does not populate all available microstates at equal rates, but only those configurations that repeat within
+a single periodic cycle. Thus a mechanism is required to circumvent the ergodic hypothesis for a time crystal.
+Generalizing the concept of off-diagonal long-range order to Sτ B, there are two basic defining requirements common
+to any definition of a time crystal: (i) the system presents Sτ B in the thermodynamic limit in some local order
+parameter, (ii) it is a many-body system described by a Hamiltonian containing sufficiently short-ranged interactions.
+Thus, in accordance with (ii), the following discussion applies to interacting systems.
+It should be stressed that additional supporting conditions defining a many-body quantum time crystal have been
+put forward in detail in the literature [17–19, 34]. Proposals for time crystals that fall outside this paradigm have
+also gained considerable attention in recent years, opening the requirements to include systems hosting long-range
+interactions [50], topological order [51], time quasi-crystals [20] or even disordered but structured drives [52]. All these
+cases have in common the presence of at least one ergodicity breaking mechanism leading to time crystal behavior.
+An important set of problems where different ergodicity breaking mechanisms have been clearly identified concerns
+periodically driven quantum systems and DTCs [53, 54]. Due to the periodic symmetry, the dynamics in these systems
+are governed by the single-period Floquet operator,
+RT
+
+UF (T, 0) := T e−i 0 dτ H(τ ) = e−iHF T ,
+
+(3)
+
+where HF is the Floquet Hamiltonian, i.e. the Hermitian operator generating the unitary UF (T, 0). Since the
+Hamiltonian is explicitly time-dependent, energy is not a conserved quantity in these systems. However, the eigenstates
+of HF can be associated with quasi-energies uniquely defined up to mod 2π
+T , establishing a close connection with
+systems evolving under a stationary, effective Hamiltonian. Even for time-dependent Hamiltonians H(t) hosting
+short-range interactions, HF is generically nontrivial and usually involves long-range interactions.
+The long-time dynamics of generic periodically driven systems are well understood [55–58] and follow the set of
+arguments exposed in Sec. II B for ergodic behavior, although exceptions in the thermodynamic limit have been
+reported to occur in certain models [59–64]. Due to the presence of quasi-conserved quantities, it is not surprising
+that some periodically driven systems can actually behave in a non-ergodic way in the long-time limit. In general
+terms, there are two main escape routes to avoid the ergodic fate: (i) Prethermalization taking place in systems driven
+at very high frequencies [40, 65–75], and (ii) periodically driven systems hosting strong spatial disorder [58, 76–78].
+
+5
+Prethermalization in periodically driven systems occurs when the driving frequency Ω = 2π
+T is very large compared
+to the intrinsic energy scales of the system [65, 70]. In such cases, the dynamics of the system are governed by a
+time-independent, quasi-local, effective Hamiltonian [79] that approximates the true Floquet Hamiltonian HF up to
+exponentially long times, such that energy absorption in the system is suppressed [70] by the large drive frequency
+Ω. As a result, after all transient behavior has died out, the dynamics of the system enter a prethermal phase
+lasting for exponentially long times. If in addition the effective Hamiltonian contains an emergent symmetry below
+a certain critical temperature Tc , a suitably chosen symmetry broken initial state corresponding to T < Tc leads to
+Sτ B and the emergence of a prethermal DTC [69]. There is the possibility to realize prethermal time crystal behavior
+without spontaneous symmetry breaking in the effective Floquet Hamiltonian, but rather through the emergence of
+a global, long-lived U (1) symmetry in the system that approximately commutes with the effective Hamiltonian [73].
+In this scenario, not only low-temperature initial states display nontrivial dynamics under periodic driving, but also
+high-temperature initial states that explicitly break the U (1) symmetry.
+For disordered systems, the generalization of Anderson’s localization phenomenon to interacting systems is known
+as Many-Body Localization (MBL) [39, 80–82], and is widely believed to be an ergodicity breaking mechanism in
+low-dimensional systems even for non-periodic systems. The MBL phase is characterized by an emergent, extensive
+number of conserved quantities (the so called “l-bits" [39, 82, 83]). In simple terms, localization introduces an extensive
+number of quasi-local conserved quantities in the system, leading to an effective integrability that breaks ergodicity.
+Although rigorous results on MBL for one-dimensional spin chains exist [84], the question of the stability of the MBL
+phase in the presence of small ergodic patches (quantum avalanches) is still an ongoing topic of research [85–87].
+In the presence of a periodic drive, systems hosting an MBL phase avoid rapid energy absorption in a different
+way than systems experiencing prethermalization. Remarkably, if Sτ B takes place at any point, this proves to
+be independent of the initial configuration of the system (contrary to the prethermal case, where the choice of
+the initial state clearly dictates the appearance of Sτ B) [88]. This situation manifests in the so called many-body
+localized discrete time crystal (MBL-DTC), where the existence of an MBL phase is the responsible mechanism for
+the ergodicity breaking under periodic driving [53, 54, 89]. This form of ergodicity breaking mechanism emerges due
+to the presence of robust eigenstate order in the localized phase [25, 90–92], making the MBL-DTC independent of
+the initial configuration.
+Even though the above mechanisms are considered to be central for witnessing ergodicity breaking dynamics in
+periodically driven systems, exceptions exist. The first is that of observed time crystal behavior in disordered dipolar
+ensembles [93]. One of the main features of these time crystals is that their spatiotemporal correlations decay rather
+algebraically, in contrast to the MBL-DTCs (where correlations do not decay) or prethermal DTCs (where correlations
+decay exponentially slow with the driving frequency). Although these systems are highly disordered, sufficiently longrange interactions are expected to induce delocalization effects [94, 95], which in principle rules out the existence of
+MBL in these systems. Prethermalization is also ruled out occur, since the initial state is not a low-energy eigenstate of
+the effective prethermal Hamiltonian. Instead, what occurs is that an interplay between disorder-induced localization
+tendencies and delocalization effects from long-range interactions takes place, giving rise to a critical time crystal [96]
+hosting power-law decaying correlations.
+The second exception has to do with driven systems whose underlying dynamics is based on effective classical theories
+(ECTs) or few-body descriptions. This situation is expected in time crystals emerging from periodically driven BoseEinstein condensates [97]. In these systems, dynamics can be generally understood by an effective classical description
+in the thermodynamic limit where the Kolmogorov-Arnold-Moser (KAM) theorem applies, or where the governing
+equation of motion becomes a periodically-driven version of the Gross-Pitaevskii equation (GPE) [22]. Alternatively,
+an effective low-energy theory of these systems admits a two-boson mode description [97]. A curious fact is that Sτ B
+can occur when the number of particles tends to infinity while the effective number of degrees of freedom remains
+finite, as in mean-field or few-mode descriptions [98], with numerical results supporting this claim [99].
+
+D.
+
+Stabilization mechanisms in open periodically driven quantum systems
+
+Contrary to the case of periodically driven systems described by unitary dynamics, the concept of ergodicity is not
+clearly defined in the presence of an external environment. The effect of the environment in the system dynamics is
+frequently modelled as stochastic noise, whose Markovian [100] or non-Markovian [101, 102], nature depends on the
+problem at hand.
+The quantum dynamics of a system coupled to a Markovian environment are generally described by the Lindblad
+equation, which assumes that the reduced dynamics of the system are memoryless, i.e. the future evolution depends
+only on the present state. This is the case we will limit ourselves to, given that most up-to-date time crystal models
+on open quantum systems have considered the Markovian case [103], although time crystals in the context of nonMarkovian noise have also been theoretically explored [104]. For periodically driven systems coupled to dissipative
+
+6
+environments, contrary to the closed system scenario it is expected that Floquet heating does not pose a problem
+because the absorbed energy from the drive can leak into the environment [105]. This energy leak into the environment
+can lead to stable time-crystal behavior, through the analogy of a limit-cycle in the dynamics.
+Indeed, even in the MBL-DTC, which is considered to be the most stable and robust closed time crystal, any
+coupling to an external environment will generally result in the absence of DTC behavior [106]. This result is in
+accordance with arguments questioning the stability of the MBL phase in the presence of a dissipative environment,
+although different approaches to circumvent this problem have been proposed [107–112].
+An alternative route to witness time crystal behavior in open quantum systems is to turn to the high-frequency
+regime, which can host prethermalization and emergent discrete symmetries of the associated Floquet operator that
+remain robust in the presence of dissipation. In this regime, coupling to an environment can indeed enhance the
+time crystal response in the weak coupling limit [113], until stronger coupling to the environment kills Sτ B. This
+competing effect scenario is reminiscent of the critical time crystals previously discussed, but now the competing
+mechanisms are the coupling to an environment and the presence of very large driving frequencies. The result is
+a DTC with exponentially-decaying correlations, with lifetime depending non-monotonically on the coupling to the
+environment. There remains the question of whether there are steady states for which Sτ B is preserved indefinitely,
+as in the MBL-DTC for closed systems.
+In contrast to the case of closed quantum systems, the question reduces to whether the system equilibrates towards
+a steady state that explicitly presents signatures of Sτ B [114]. This is the leading mechanism behind the so called
+boundary time crystals [115] (BTCs), where in the thermodynamic limit, the system evolves towards a steady state
+where only a reduced portion of the Hilbert space presents Sτ B (breaking the continuous symmetry of time translation
+in that region).
+
+III.
+
+QUANTUM PLATFORMS
+
+Here we give a summary of the current platforms employed for realizing quantum time crystals. Many of these
+platforms also serve as computing platforms that rely on digital, analog, or hybrid approaches. However, it should be
+noted that not all of them are suitable to perform computation tasks, e.g. dissipative BECs are limited in this regard.
+Quantum devices based on superconducting (SC) qubits created from Josephson junctions have become increasingly
+active in recent years, promoted in part by their fast industrial development [116–121]. Their favorable scalability to
+a large number of qubits and fast measurement rates have put SC qubits at the vanguard of research in the field of
+quantum simulation, even though qubit coherence times and overall noise reduction of these devices is still an ongoing
+topic of research.
+Trapped ions were originally proposed as one of the first quantum platforms [122] to perform quantum computation [123] and simulation [6, 124, 125]. Since then, these devices have seen remarkable progress in their development [126–129]. One of the main characteristics of these platforms is that they present long coherence times resulting
+from controlled isolation of the qubits. Ions remain confined using strong electromagnetic fields (Paul traps), and
+provide a versatile platform to achieve arbitrary couplings between the qubits through controlled laser or microwave
+pulses addressing different energy levels. Main research on trapped-ion devices focuses on reducing measurement
+times and on finding efficient scalable approaches.
+Neutral atoms [130–133] are also very promising platforms for the simulation of quantum time crystals. In these
+systems, the atoms are laser cooled and their levels are addressed in order to encode qubits, which are entangled with
+one another using Rydberg states. These platforms offer promising scalability, flexibility in how qubits are locally
+addressed or non-locally coupled, and potential to transport entangled qubits in arbitrary geometries.
+Solid-state devices based on nitrogen-vacancy (NV) centers were experimentally realized as quantum registers [134–
+136], and are now being actively used for quantum simulation [137, 138]. In these devices, a 14 N vacancy sits between
+13
+C diamond cells, with devices operating at room temperature. During single-qubit operations, the electron spin on
+the NV is optically addressed to an excited state, which in turn induces a hyperfine level splitting in one proximal
+nuclear spin.
+Photonic quantum computing [139, 140] platforms are currently in development[141]. The resilience of photons
+against external noise makes them ideal candidates for the processing and transmission of quantum information
+employing linear optics elements. However, these devices suffer from scalability issues, as well as from difficulties in
+generating entangled operations employing photons. This can be circumvented by coupling the photons strongly to
+matter using resonators and Kerr non-linear optical microcavities [142, 143].
+Alternative platforms are also being actively developed and explored for quantum simulation and for realizations of
+time crystals. Examples include quantum dots on semiconductor structures [144–146], electron–nuclear spin systems in
+semiconductors [147] and cold atoms platforms coupled to a radiation field [148], as well as platforms of Bose-Einstein
+
+7
+condensates (BEC) [149, 150] and magnon condensates in superfluid Helium [151]. These have become highly relevant
+to realize a variety of time crystals, especially in the presence of dissipation.
+Another platform recently employed for realizing time crystal behavior is based on spin-maser devices [152, 153],
+where self-driven oscillatory systems employ feedback schemes to compensate losses due to decoherence, thus maintaining the overall periodic motion over large atomic ensembles.
+Recent years have also seen an impressive advance in the development of platforms capable of performing universal quantum computation beyond qubits by exploiting higher-dimensional quantum systems, whose basic unit of
+information is the qudit. These platforms comprise a varied number of different physical setups, including trappedions [154, 155], superconducting circuits [156–158], ultracold molecules [159], photonic circuits [160], solid-state bosonic
+ladders [161], silicon-photonic integrated circuits [162], NV centers [163] and semiconductor-based platforms [164, 165].
+
+IV.
+
+IMPLEMENTATIONS
+
+In this section we present an overview of the time crystals that have been observed on quantum devices. In
+particular, we provide a classification of these implementations according to the different stabilization mechanisms
+for the observation of temporal order. We also identify unobserved cases that show potential for implementation on
+available hardware.
+
+A.
+
+Many-body localized time crystals
+
+Figure 2: (Adapted from Ref. [166]) Digital (gate-based) implementation of the MBL-DTC on a superconducting
+quantum processor, where the model consists of a periodically kicked 1D Ising chain with nearest-neighbor
+interactions and random local fields. In the MBL-DTC phase, different random instances of initial product states
+lead to robust subharmonic oscillations in the autocorrelation of all local observables, in contrast to the thermal
+phase where an arbitrary initial state choice leads to fast thermalization and absence of spatiotemporal order.
+The first experiments observing time crystals under periodic driving were originally performed on trapped-ion
+devices; in particular, the MBL-DTC was reported to be observed in Ref. [167] on a trapped-ion device with all-to-all
+connectivity and power-law decaying interactions. Importantly, Ref. [167] states that the system undergoes MBL
+despite interactions being long-range with couplings decaying as a power-law with exponent α > 1. The considered
+model is a periodically kicked Ising Hamiltonian, where a kick parameter serves to tune away from the perfect spin-flip
+scenario. Despite the small system size (ten trapped ions), the experiment reported evidence of robust subharmonic
+response for a wide range of parameters, identifying the phase diagram of the MBL-DTC. However, due to the longrange nature of interactions and the highly polarized states, it is not clear that the true stabilization mechanism in
+this case is due to MBL, but rather points towards a prethermal time crystal [168].
+Soon after, it was theoretically proposed that superconducting qubit-based platforms also represent suitable hardware candidates for the implementation of several MBL-DTC models [169]. This analysis led to the first observation
+of the MBL-DTC in these platforms in Refs. [166, 170, 171], where the model under consideration is a disordered,
+periodically-kicked Ising chain. Even though these devices suffer from strong decoherence effects, clear signatures
+
+8
+of subharmonic response could be witnessed for random initial “bitstring" states, a characteristic signature of the
+MBL-DTC, see Fig. 2.
+Follow-up works on these platforms investigated the observation of MBL-DTCs further. In particular, Ref. [172]
+has reported experimental results on a superconducting qubit platform for a two-dimensional disordered version of
+the anisotropic Heisenberg model with signatures of discrete Sτ B. Given that the existence of MBL in two or more
+dimensions is under debate, it is not clear whether MBL is the actual stabilization mechanism in this case, even
+though the system presents a considerable degree of disorder.
+More recently, making use of superconducting qubit-based machines with the largest available number of qubits,
+critical properties of the MBL-DTC [173] have been investigated. This system has also been employed to address
+performance characterization of these machines [174] as well.
+The MBL-DTC has also been observed on a programmable spin-based quantum simulator comprising 27 13 C nuclear
+spins close to an NV center [175]. In this case, an effective chain of dipole-dipole interacting spins is periodically kicked,
+where disorder is inherited from random positional placements of the nuclei in the system.
+Recently, a 3T -periodic DTC from a disordered Floquet chiral clock model has been realized employing superconducting trasmon qudits [176], where robust eigenstate order beyond qubit architectures is reported.
+B.
+
+Prethermal time crystals
+
+Figure 3: (Adapted from [177] and [178]) Implementation of prethermal DTCs on a trapped-ion device [177] (left)
+and the NMR quantum emulator [178] employing fluorapatite (Ca5 (PO4 )3 F ) crystalline structure (right), with both
+systems hosting long-range interactions. In the experiment in Ref. [177], a spin polarized initial state displays the
+slow decay in the magnetization dynamics (pannel B). The survival of the prethermal phase up to finite
+thermalization time scales starting from low-energy density states of the effective Hamiltonian Heff is a distinct
+signature of prethermal DTCs (pannel C). In the NMR experiment of Ref. [178], the initial state is represented by a
+P
+classical (unnormalized) state of the form M̂z = 12 l σlz . The system is kicked with γ acting as a tuning parameter
+related to changing the period of the drive or the effective Hamiltonian interactions. Deep in the DTC phase, a clear
+subharmonic response of the autocorrelation function at stroboscopic times is reported.
+The prethermal DTC was observed for the first time in Ref. [177], where the experiment reported observation
+of prethermal time-crystal behavior on a 25-ion trapped-ion quantum simulator, whose effective Hamiltonian is an
+all-to-all Ising Hamiltonian with uniform local fields, see Fig. 3. The observation of subharmonic response at high
+enough driving frequencies from polarized initial states is the characteristic signature of the prethermal discrete time
+crystal.
+Prethermal DTCs have also been experimentally realized on superconducting qubit platforms. Implementation of
+periodically-kicked Ising models with uniform interactions and fields in alternative lattice geometries like the Kagome
+or Lieb lattice have recently shown signatures of prethermal DTC behavior [179]. The discrete Sτ B is attributed to
+two different mechanisms in this cases, namely the existence of protected boundary modes or noise inducing period
+doubling oscillations. Prethermal DTC behavior beyond period doubling has also been observed on superconducting
+processors in Ref. [180], where robust period-quadrupling (4T ) oscillations have been reported. In this case the
+prethermal phase is stable against introducing moderate disorder in the system. It was also observed that prethermal
+DTCs can emerge and be stabilized in the presence of long-range interactions in these platforms [181]. In this case,
+Trotterization schemes are employed to treat the long-range interactions. Recently, in Ref. [182] a prethermal DTC has
+
+9
+been realized for systems consisting of 72 superconducting qubits. Moving away from purely digital implementations,
+Ref. [183] reported the observation of a U (1) prethermal DTC on a superconducting quantum processor under a
+digital-analog scheme, even in the presence of disorder.
+There have been experimental realizations of prethermal DTCs on alternative platforms apart from trapped-ions
+and superconducting qubits. For instance, in Ref. [184], a prethermal DTC was observed on a 3D system of 13 C nuclei
+in diamond at room temperature. The system is driven in a way such that the carbon nuclei get hyperpolarized by
+surrounding NV centers, whose dynamics alternates between fast and slow drives. The process generates an effective
+quasi-conservation law, responsible for prethermalization. Given the long-range nature of interactions, it is concluded
+that the time-crystalline order observed in these case corresponds to a critical DTC.
+Solid-state NMR devices have also been employed to witness prethermal DTCs. In Ref. [178], a crystal structure of
+Ca5 (PO4 )3 F was employed to obtain a quasi-1D nuclear spin ensemble, which is subjected to high-frequency periodic
+driving and displays subharmonic response of the spin-spin correlations.
+Going beyond qubit-based architectures, prethermal DTC behavior has been recently observed on a trapped-ion
+qudit processor [185]. In this case, a periodically-driven S = 1 chain is shown to undergo prethermal behavior
+due to Hilbert-space localization mechanism. The emergent symmetry of the effective Hamiltonian locks initial lowtemperature states into a symmetry sector of the Hilbert space.
+
+C.
+
+Effective classical theories and few-body time crystals
+
+Figure 4: (Adapted from Ref. [186]) Observation of a CTC employing a BEC magnon condensate [186]. In the
+experiment, the BEC is transversally driven by highly polarized optical pump with increasing amplitude. After some
+pumping time, the amplitude of the drive is kept constant, and the system features subharmonic oscillations on the
+cavity photon number NP (t), which acts as order parameter.
+The first realization of a continuous time crystal (CTC) employed a Bose-Einstein condensate of 87 Rb atoms in
+optical cavities in the presence of dissipation [186], see Fig. 4. In this case, the intracavity photon number is the
+relevant order parameter for witnessing Sτ B as the optical pump strength of the laser is linearly ramped, displaying
+a clearly oscillating pattern. The model is described by an effective atom-field equation that incorporates nonlinear
+
+10
+effects. In Ref. [187], a transition from a dissipative CTC to a dissipative DTC was experimentally observed. This
+transition is achieved by first applying a linear ramp of the pump field to realize a CTC, followed by a periodic drive
+locking the collective response of the system to the first subharmonic frequency.
+Apart from CTCs, dissipative DTC behavior has also been reported in BEC obtained from sodium atoms [188],
+where oscillations featured by radial breathing mode acting as the drive are reported to have a different frequency
+than those corresponding to the observed crystalline mode, thus signaling Sτ B. In Ref. [189] a CTC in noble spin
+gases of 129 Xe and 87 Rb atoms has been implemented through optical pumping. This experiment is at the boundary
+between open CTC and, due to the feedback, controlled TCs. In this case, the stabilization mechanism is few-body as
+the collective dynamics can be described by a set of nonlinear Bloch equations. Time crystal behavior and Sτ B were
+observed in laser-driven Erbium samples [190]. These consist of four-level atoms driven by continuous-wave lasers.
+The effective Hamiltonian driving the system is time-independent, but oscillations of finite frequency were reported to
+exist in this case, which is a signature of CTC. The system was analyzed under Lindblad dynamics, but is effectively
+few-body, as evidenced by the mean-field analysis.
+More recently, realizations of a CTC in an electron-nuclear spin system of a semiconductor have been reported [147],
+where the system undergoes auto-oscillations for very long times. By employing magnetic fields, the electron spin
+polarization precesses through a process of dynamic nuclear polarization. The result is a collective subharmonic
+response of the system even in the absence of an external drive; the system becomes time-dependent because the
+Overhauser field of nuclear spins is not parallel to the average electron spin in the nonlinear regime. Applying a
+magnetic field enhances the precession accordingly for CTC behavior. In Ref. [191], the same solid-state device
+was employed in the presence of a periodic drive achieved by periodically modulating the excitation polarization.
+This in turn results in the observation of collective oscillations that are nT periodic, i.e. the system becomes a DTC.
+Collective synchronization between CTCs due to diffusion and mediated coupling processes has been recently reported
+in experiments using these solid-state devices [192].
+A dissipative DTC was observed [193] in low-temperature, microwave pulse-addressed doped 28 Si. In the experiment, initially polarized spins are driven by a "spin-locking" protocol that allows the spins to interact following an
+effective central spin model. The spin-locking is followed by a pulse sequence that compensates variations in the
+Rabi frequencies, completing realization of a Floquet cycle. The resulting spin polarization displays subharmonic
+oscillations characteristics of DTC behavior in the presence of dissipation due to magnetic impurities and charge
+noise. DTCs stabilized by dissipation have also been reported in recent experiments involving atom-cavity platforms
+of BEC [194].
+Transitions between different time-crystalline regimes in dissipative environments have also been experimentally
+realized recently. In Ref. [195], a BEC from 87 Rb atoms was strongly coupled to an optical cavity, witnessing a
+transition from a dissipative CTC to a time quasi-crystal with two dominant subharmonic frequencies. A classical
+orbit analysis concludes that this transition corresponds to passing from a limit cycle characterizing the CTC to a
+limit torus characterizing the time quasi-crystal.
+Dissipative time crystals have also been observed in Kerr-nonlinear optical microcavity setups described by effective
+classical theories. In Ref. [196], a dissipative DTC was realized by driving the microresonator through injection locking
+driving of two independent laser pulses. Due to the locking mechanism, spontaneous formation of optical solitons
+with a different periodic pattern around the resonator from that of the modulated background takes place, with the
+system featuring Sτ B.
+Strongly interacting Rydberg gases have also been employed in experiments to realize time crystal behavior, mostly
+comprising dissipative time crystals. A dissipative CTC was observed in Ref. [197] employing a 85 Rb vapor cell at
+room temperature traversed by parallel probe and reference beams, and a counter-propagating coupling beam. The
+transverse beam generates a coherent coupling between the atomic ground state and different Rydberg states, causing
+subharmonic oscillations in the monitored transmission signal between the reference and probe beams. Multiple time
+crystals, including DTCs and high-harmonic time crystals, have also been realized by similar protocols involving
+Rydberg ensembles [198–200]. In Ref. [201], a time-crystalline response was observed employing a superfluid quantum
+gas of ultracold atoms forming a BEC. In this case, the observation corresponds to a DTC where the system collectively
+oscillates with period ∼ 2T , with T being the period of the radial breathing mode that excites the atomic cloud forming
+the condensate. The dynamics can be captured by an effective classical description based on the Gross–Pitaevskii
+equation, and equivalently by a low-dimensional few-mode model with almost negligible dissipation. In Ref. [202], a
+CTC in a dissipative Rydberg atomic gas was experimentally controlled near its critical boundary to a thermal phase,
+in order to achieve multi-parameter estimation in the context of quantum metrology.
+Feedback schemes are currently being explored in the context of time crystals. Ref. [203] reported the observation
+of time crystal behavior on a driven Rb-Xe spin-maser system with a feedback-induced retarded interaction, which
+causes Sτ B in the system if the feedback is strong enough. The study concludes that time crystal behavior in this
+case originates from the retarded feedback interaction.
+Time crystals resulting from magnon dynamics in BECs have also been reported [204–208]. The systems under
+
+11
+consideration normally admit an effective classical theory that incorporates nonlinear effects. These experimental
+findings establish a connection between the field of nonlinear wave propagation dynamics and Floquet time crystals.
+A CTC from polaritons resulting from continuous wave optical excitations has been observed in Ref. [209], where the
+photoluminescence spectra show the development of a subharmonic peak as the optical excitation power is increased.
+The model describing the system is analogous to a Gross-Pitaevskii equation, where the effects of the dissipative
+reservoir are included. It is concluded that the dynamics of the reservoir are essential to observe Sτ B in the system.
+
+D.
+
+Detection
+
+Interaction
+
+-1.5
+
+0
+
+-1
+
+-0.5
+
+0.5
+
+-1
+-1.5-1
+-1
+
+-0.5
+4
+
+-0.5
+
+0
+0
+
+3.5
+
+0.5
+
+0.5
+
+3
+1
+
+1
+
+2.5
+
+1.5
+
+-1
+-0.5
+0
+
+2
+
+2
+
+-1.5
+
+1.5
+0.5
+
+-1
+
+2
+1
+
+2.5
+
+1.5
+2
+
+-0.5
+
+1.5
+
+2.5
+
+3
+
+2.5
+3
+3.5
+
+3.5
+
+0
+
+-1.5
+
+4
+
+1
+
+-1
+
+3
+
+-0.5
+
+0
+
+0.5
+
+1
+
+1.5
+
+2
+
+2.5
+
+3
+
+4
+
+-1
+
+3.5
+
+4
+
+0.5
+
+0.5
+
+3.5
+
+1.5
+1
+
+-0.5
+
+-1
+
+0.5
+
+4
+
+1
+
+4
+
+0
+
+-1.5
+1.5
+
+0
+
+3.5
+
+0
+
+-0.5
+
+-0.5
+
+-0.5
+-0.5
+
+4
+
+-1
+
+-1
+
+3.5
+
+0.5
+
+-1
+
+4
+
+0
+
+-1.5
+
+0
+
+1
+
+3
+
+3
+
+0.5
+
+3.5
+
+1
+
+𝜋 Global
+∓
+2 ! rotation
+
+1.5
+2.5
+
+2.5
+
+0.5
+
+-0.5
+-0.5
+
+0
+
+0.5
+
+1
+
+1.5
+
+2
+
+2.5
+
+3
+
+3.5
+
+4
+
+-0.5
+
+0.5
+
+0
+
+-1
+
+-1.5
+-1
+
+-0.5
+
+0
+
+-1
+
+-1.5 -1
+
+-1.5 -1
+
+4
+
+-0.5
+
+0
+
+3.5
+
+0
+
+1
+
+0.5
+
+3
+
+0.5
+
+1
+
+2.5
+
+1
+
+1.5
+
+1.5
+
+2
+
+1.5
+
+2
+
+2
+
+1.5
+
+2
+
+2.5
+
+1
+
+3
+
+1.5
+
+-0.5
+
+1.5
+
+1
+0.5
+
+0
+
+1.5
+
+0
+
+-0.5
+
+-1.5-1
+
+-1
+
+1
+
+0.5
+
+1.5
+
+1
+
+0
+
+-1
+-0.5
+0.5
+1
+1.5
+1.5
+
+1
+0.5
+
+0
+
+-1
+
+0
+
+-1.5
+
+-0.5
+
+0.5
+
+1
+
+-0.5
+
+1.5
+
+-1
+-1.5-1
+-1
+
+-0.5
+4
+
+-0.5
+
+0
+0
+
+3.5
+
+0.5
+
+0.5
+
+3
+1
+
+1
+
+2.5
+
+1.5
+
+-1
+-0.5
+0
+
+2
+
+2
+
+-1.5
+
+1.5
+0.5
+
+-1
+
+2
+1
+
+2.5
+
+1.5
+2
+
+-0.5
+
+1.5
+
+2.5
+
+3
+
+2.5
+3
+3.5
+
+3.5
+
+0
+
+-1.5
+
+4
+
+-1
+
+1
+
+3
+
+-0.5
+
+0
+
+0.5
+
+1
+
+1.5
+
+2
+
+2.5
+
+3
+
+4
+
+3.5
+
+3.5
+
+-1
+
+4
+
+0.5
+
+0.5
+
+1.5
+1
+
+1
+
+4
+
+-0.5
+
+-1
+
+-1.5
+
+0
+0.5
+
+4
+
+⋯⋯
+
+0.5
+
+1 − 𝜖 𝜋!
+
+1.5
+
+1
+0.5
+
+0
+-0.5
+
+1
+
+Ω
+
+1.5
+
+(a)
+Laser Polarization
+Microwave
+Static
+Global 𝜋
+rotation 2 !
+
+Others / Unknown
+
+1.5
+
+0
+
+4
+
+-1
+3.5
+
+0
+
+-0.5
+
+-0.5
+
+-0.5
+-0.5
+-1
+
+4
+
+0
+
+0
+
+3.5
+
+0.5
+
+-1
+-1.5
+
+1
+
+3
+
+3
+
+0.5
+1
+
+3.5
+
+0.5
+1.5
+2.5
+
+2.5
+
+1.5
+
+2
+
+1
+
+1.5
+
+1.5
+
+0.5
+
+1
+
+0
+
+1
+
+0.5
+
+-0.5
+
+0.5
+
+0
+
+-1
+
+0
+
+-1.5 -1
+
+-1
+
+0.5
+
+1
+
+1.5
+
+2
+
+2.5
+
+3
+
+3.5
+
+4
+
+-0.5
+
+0
+
+-0.5
+
+1.5
+
+1
+0.5
+
+0
+
+0
+
+1.5
+
+-0.5
+
+-1
+
+-1.5-1
+
+1
+
+0.5
+
+1.5
+
+-0.5
+
+1
+
+0
+
+-0.5
+
+0.5
+
+0
+
+-0.5
+
+-1
+0.5
+1
+1.5
+
+Amplitude
+
+40
+
+(0, −1) (−1, 1) 𝜔# (0,0) 𝜔"
+40
+
+0
+20 0.76
+
+0.84
+
+0
+0
+
+0.5
+
+1
+
+40 50
+Amplitude
+
+⟨𝑆 $ 𝑡 ⟩
+
+-1.5
+-1
+
+Time t (𝜏" )
+
+-0.5
+-1.5 -1
+
+4
+
+⟨𝑆 $ 𝑡 ⟩
+
+3.5
+
+(c)
+
+(e)
+𝜏" = 2.00 𝜇s
+1 − 𝜖 = 0.933
+
+3
+
+(d)
+
+2.5
+
+𝜏" = 0.25 𝜇s
+1 − 𝜖 = 0.933
+
+2
+
+(b)
+
+2
+
+1.5
+
+2
+
+2.5
+
+1
+
+3
+
+1.5
+
+𝜏"
+𝜏#
+
+0
+
+20 0.76
+0
+0
+
+0.84
+
+0.5
+
+Frequency 𝜈 (𝜔" )
+
+1
+
+Figure 5: (Obtained from Ref. [210]) Observation of a discrete-time quasicrystal. In Fourier space, discrete time
+quasicrystals are characterized by the emergence of several subharmonic frequency contributions away from
+incommensurate driving frequencies ω1 , ω2 . This results in observing different quasi-periodic temporal patterns in
+the transverse spin polarization ⟨S x (t)⟩.
+By now, a variety of time crystals have been realized experimentally, showing stabilization mechanisms away from
+the three conventional ones previously discussed. We group them here not because their mechanisms are necessarily
+unknown, but because they cut across the MBL/prethermal/ECT distinction or combine several ingredients.
+A remarkable class of DTCs are observed on disordered dipolar ensembles [93], corresponding to the so called
+critical time crystal discussed in Sec. II C. In the experiment, an ensemble of nitrogen-vacancy impurities in diamond
+is periodically driven. The impurities have an electronic spin S = 1, from which two-levels are isolated to realize
+−3
+qubit degrees of freedom. The interaction between spins decays with distance as ∼ Jij rij
+, placing the system at
+the marginal case α = d, where localization and delocalization compete. The system is periodically driven through
+a sequence of microwave pulses alternating between interaction-dominated evolution and global spin rotations. Sτ B
+is observed in the spin polarization, which presents a clear subharmonic pattern, signaling the emergence of DTC
+behavior. A similar experiment involving nitrogen-vacancy centers was carried out in Ref. [211], where thermalization
+dynamics of DTCs involving Z2 and Z3 symmetries were probed.
+DTCs have also been observed in ordered dipolar spin ensembles [212, 213], where nuclear magnetic resonance
+(NMR) data was reported to feature subharmonic response in spatiotemporal correlations and the average magnetization. Since these systems consist of highly 3D ordered structures, the existence of a MBL phase is ruled out as the
+leading mechanism behind the observed DTC behavior. In addition, the states employed in the experiment are rather
+high-temperature states of the effective Floquet Hamiltonian, which also rules out prethermalization.
+In Ref. [214], nuclear spin clusters in molecules described by central spin models were driven under periodic kicks.
+
+12
+The total magnetization of the system shows the characteristic 2T period doubling of a DTC. The experiments are
+reported to be performed in the low-frequency regime of the drive, which in principle rules out prethermalization to
+be the true stabilization mechanism.
+A different category concerns topologically ordered time crystals. Digital quantum simulation of Floquet symmetry
+protected topological (FSPT) phases employing an array of 26 superconducting qubits [215] has shown evidence of
+Sτ B at the boundaries of the one-dimensional system. This is in stark contrast with behavior in the bulk, where no
+oscillations are present. The system is disordered and thus it is claimed that deep in the FSPT phase, MBL is present.
+However, both the presence of topologically protected edge modes and the three-body nature of interactions in the
+system could indicate that such stabilization mechanism indeed goes beyond the presence of MBL.
+The observation of a prethermal, topologically ordered DTC was reported in Ref. [216] on a 18-qubit quantum
+processor. The considered model is that of a periodically driven rotated surface code, where stabilizer operators show
+Sτ B in the autocorrelation function in the small disorder regime. The drive is kept fixed and at T ∼ 1.4µs of the
+corresponding circuit runtime, which ensures to work in the high-frequency regime. Interestingly, in the prethermal
+regime, individual qubit magnetizations are shown to decay quickly to zero without oscillating, and the presence of a
+DTC in this case is witnessed by subharmonic oscillations in rather quasi-local operators.
+Rydberg gases in the presence of an electric field have also been employed to witness time crystal behavior [217–
+219]. In this case, strong electric fields are employed in order to obtain discrete time crystal behavior under the Stark
+effect. The system is dissipative, which can in principle prevent localization of the dynamics (rather resulting in a
+stable steady state limit that breaks Sτ B).
+In Ref. [220], a prethermal DTC realized on a quantum processor of NV centers on 13 C was employed to devise
+frequency-selective quantum sensor of time varying AC fields. It was shown that the prethermal lifetime of the DTC
+can be extended by orders of magnitude using this selective sensing mechanism in the AC fields. This enhancement
+of the DTC order parameter by external action is characteristic of controlled time crystals.
+Moving away from purely periodic temporal patterns, the experimental realization of time quasicrystals presents
+as a very promising emerging field. Time quasicrystals have been first observed in magnon condensation in superfluid
+3
+He [221] forming a BEC. Also more recent realizations of discrete time quasicrystals have taken place in NV centers
+on 13 C ordered structures [210], see Fig. 5, where the stabilization mechanism is rather suspected to be intimately
+related to the critical time crystals [93]. Prethermal quasicrystals have been realized on superconducting quantum
+circuits [222]. Recent advances in the emergent subfield of time rondeau crystals has led to experimental realization
+of this new form of spatiotemporal order on NV center quantum platforms [223].
+Finally, we will mention that despite being conceptually different from the many-body time crystal, implementations
+of photonic time crystals [224–227] are currently being explored. In photonic time crystals, subharmonic response is
+observed in the refractive index of certain materials, with the process happening already at the single-particle level
+due to the system having a non-trivial topology. Including nonlinear medium could in principle allow for interactions
+between the photons as in standard parametric down conversion processes. Photonic time crystals have been realized in
+experiments by applying mode-locked lasers in semiconductors, first proposed in Ref. [228] and recently experimentally
+realized [229].
+
+E.
+
+Overview
+
+A classification of time crystals is desirable to establish a connection between the various time crystals and the
+available quantum devices for their implementation. Until now, only a few classes of time crystals have been experimentally realized on quantum devices, but it is expected that new theoretical proposals will be implemented in the
+near term. Table I summarizes different types of time crystals, along with their ergodicity-breaking or stabilization
+mechanisms discussed in Secs. II C and II D.
+The rows of Table I should be read as phenomenological characters of temporal order, while the columns indicate
+the dominant stabilization or ergodicity-breaking mechanism. These categories are not strictly mutually exclusive:
+a topological DTC may also be prethermal, a controlled TC may employ feedback on top of an otherwise MBL
+mechanism, and a critical TC may arise from the competition between disorder and long-range interactions. The
+table is therefore intended as an organizing map of present evidence and theoretical possibilities, rather than as a
+mutually exclusive taxonomy of phases. In particular, entries marked as observed may represent different levels of
+evidence, ranging from robust finite-time signatures on noisy devices to stronger indications of an asymptotic phase.
+The first category concerns systems realized in the ideal limit of an almost noise-free or error-corrected quantum
+device, where the time evolution in the system can be regarded to a good extent as unitary (closed systems). As
+previously discussed in Sec. II A, if a discrete symmetry is broken and the system responds in correlation with the
+drive (i.e. subharmonically), this leads to the observation of a DTC [233]. To date, the observation of DTCs is limited
+
+13
+Overview of Time Crystals on Quantum Devices
+Ergodicity breaking / stabilization mechanism
+TC type
+
+MBL
+
+Closed DTC
+Dissipative CTC
+
+[166, 167]
+
+Prethermal ECT/few-body Other/Unknown
+[177]
+
+[201]
+
+?
+
+[186]
+
+) [113]
+
+[194]
+
+?
+
+[184]
+
+?
+
+[93]
+
+) [231]
+
+[220]
+
+[203]
+
+Topological
+
+[215]
+
+[216]
+
+?
+
+?
+?
+
+Time quasicrystals
+
+?
+
+) [232]
+
+[221]
+
+[210]
+
+[223]
+
+?
+
+?
+
+?
+?
+?
+
+Dissipative DTC
+Critical
+Controlled
+
+Time rondeau crystals
+
+(
+
+(
+
+) [52]
+
+(
+
+(
+
+[212, 214]
+
+(
+
+) [230]
+
+Table I: Table of observed , unobserved ? and theoretically predicted ( ) realizations of time crystals on
+quantum devices, depending on the ergodicity breaking or stabilization mechanism. We note that MBL and
+prethermal mechanisms are common routes to stabilize Sτ B in closed systems, whereas ECT or few-body
+descriptions are common in systems in the presence of dissipation. References are representative rather than
+exhaustive.
+
+by the coherence times of currently available noisy devices, but subsequent hardware improvement is expected to
+bring these time crystal realizations to firmer grounds.
+Dissipative time crystals comprise systems whose dynamics cannot be understood without taking into account
+effects from the surrounding environment. Since a certain degree of dissipation takes place between the system and
+environment, the evolution of the system is no longer unitary. The presence of dissipation allows the system to leak
+energy with the (macroscopic) environment, and thus the stabilization mechanism of these time crystals relies on the
+emergence of a steady state or a limit cycle that breaks any time-translational symmetries of the system. Dissipative
+DTCs and CTCs have been mainly implemented on platforms of BECs and Rydberg atoms. In particular, CTCs
+have until now not been observed in a (in principle) noise-free scenario.
+A different category comprises those time crystals observed in disordered dipolar ensembles, also known as critical.
+In critical time crystals, the decay of the dipolar interaction strength with distance is an essential feature competing
+against the presence of disorder in the system, as discussed in Sec. II B. These types of time crystals have gained
+considerable relevance in the field of quantum simulation employing NV center devices.
+Another type of time crystals concerns controlled systems and systems hosting topological properties. The reason
+to consider these two cases separately is the potential direct connection these TCs have with quantum error correction
+(QEC) protocols. Even though for quantum error correcting codes the whole system of logical and physical qubits
+can be considered as a closed system, the logical subspace is naturally an open system being entangled with the rest
+of the qubits necessary for error correction. Thus, these time crystals, if implemented, would resemble neither purely
+closed nor open systems.
+There has been recent interest in moving away from the concept of a perfect crystal in time, relaxing the periodicity
+condition in order to allow for quasi-ordered spatiotemporal patterns in many-body systems. Thus, we also include
+the novel route to witness partial time order in driven systems, those known as time quasicrystals [232, 234, 235]. In
+analogy with conventional quasicrystals in space, time quasicrystals develop almost periodic patterns along the time
+dimension. More concretely, a discrete time quasicrystal is a system responding to a quasiperiodic drive with a set of
+frequencies that are not harmonics of the original drive. If the original drive is quasiperiodic, it will generally have a
+P (p) (p)
+spectral decomposition with peaks at frequencies ωp = l nl ωl , i.e. linear combinations of some incommensurate
+frequencies. The discrete time quasicrystal breaks this apparent order by responding quasiperiodically with a different
+set of frequencies ω̃p than those of the drive [22].
+Finally, we also include new advances in systems where spatiotemporal order at stroboscopic times coexists with
+temporal disorder in the micromotion. The idea is that even though the Floquet theorem does not apply to these
+temporally disordered systems, prethermalization [40] can still take place in the system, e.g., by employing random
+multipolar drives [52, 236, 237]. Even though spatiotemporal correlations decay algebraically in this case, employing
+large dipolar structured drives can significantly increase the lifetimes of the prethermal phase, even to exponential
+scale. These new systems realized through non-periodic, but otherwise structured drives, have been called time
+
+14
+rondeau crystals
+
+V.
+
+FURTHER PROPOSALS
+
+Over the past decade, research on time crystals has generated a broad range of potential applications, with theoretical developments advancing rapidly [22, 238]. Here we outline several active research directions focused on proposals
+for realizing quantum time crystals that may be implementable on near-term quantum devices.
+The most promising proposals for immediate implementation on current quantum hardware concern time crystals in
+the context of clean (disorder-free) DTCs. These systems present a clear computational advantage for the realization
+of time crystals on quantum devices because they avoid the overhead caused by statistical averaging in disordered
+systems. Some proposals to realize clean DTCs involve periodically driven quantum spin chain models [239–245],
+two-dimensional DTCs [246], kicked boson [247] and hardcore-boson models [248], clock models hosting long-range
+interactions [249] and models of Rydberg atoms [250, 251].
+Periodically driven spin-ladder models employing ultra-cold atoms to realize time crystal behavior have been put
+forward [252]. In this case, the couplings among different directions of the spin ladder are alternated within a single
+period of the drive. The stabilization mechanism for these time crystals is shown to go beyond the prethermal regime
+even in the presence of strong interactions. Another route to construct clean DTC models relies on the presence of
+Floquet dynamical symmetries [253, 254], gauge symmetries [255] or integrability [256].
+A widely studied approach to clean TCs involves the application of high-frequency driving, which induces a prethermal regime in which Sτ B may occur. These approaches generally rely on high-frequency expansions of the effective
+Floquet Hamiltonian [257]. Recent work has shown the robustness of this phase against transverse and longitudinal
+perturbative fields [258], with some prethermal phases displaying critical properties [259, 260]. It has also been proposed that Hilbert space fragmentation can lead to very long-lived DTCs in the absence of disorder even at moderately
+small values of the driving frequency [261]. Even though prethermal DTCs are in general strongly dependent on the
+initial state configuration, it has been recently proposed that prethermalization can exist for arbitrary initial states in
+models hosting zero-dimensional corner modes [262]. There have been several proposals to realize disorder-free time
+crystals in quantum dot systems [263, 264].
+For disordered systems undergoing MBL, the MBL-DTC for the kicked, disordered Ising chain and its variants
+has now been studied extensively, remaining an active area of research as a paradigmatic model for DTC behavior.
+Recent results show the connection between temporal spin correlations and spectral characteristics of the model [265].
+It is known that MBL is the driving ergodicity-breaking mechanism; however, understanding the phase diagram in
+full generality remains an active area of current research [266, 267]. Away from the standard MBL mechanism based
+on short-ranged interactions, alternative localization mechanisms based on the Stark effect involving strong electric
+fields have been proposed to observe time crystal behavior [268–271]. Other proposals involve chiral Floquet phases of
+interacting bosons in combination with MBL [272]. The combination of disorder and prethermal DTCs at very high
+frequencies has been explored in quantum spin chain models [273]. The simulation of two-dimensional models [274] and
+system forming highly geometric patterns [275] in the presence of disorder further support the possibility to implement
+higher-dimensional MBL-DTCs employing superconducting qubits hardware, as well as quantum dots [276, 277] and
+diamond-based [278] quantum simulators.
+Topological quantum time crystals [51] have also been proposed, with only a few implementations being so far been
+realized on quantum devices, as discussed in Sec. IV. Some of these proposals involve the presence of interactions
+in systems undergoing MBL [279, 280], magnon dynamics in interacting spin systems [281] as well as tight-binding
+models subjected to periodic drive [282, 283]. The unification of topological quantum systems and nonequilibrium
+dynamics shows great potential in finding genuine time crystal phases [284] in cases where the stabilization mechanism
+is rather unknown (see Table I).
+In the context of dissipative time crystals, several proposals have gathered considerable attention. One of them is
+boundary time crystals [115, 285–290], where a small portion of the Hilbert space undergoes Sτ B, whereas the rest
+of the system remains time-translational invariant and regarded as an environment. Due to the low-dimensionality
+of the system, some boundary time crystal models admit exact solutions [104]. In addition, these systems can host
+multipartite entanglement in the steady state [291, 292], and are expected to be highly relevant in the development of
+quantum sensing applications [293–297]. Recent works have explored the role of long-range interactions in boundary
+time crystals [298], the presence of dynamical quantum phase transitions [299] and topological properties [300, 301].
+Early proposals to realize time crystals in atom-cavity setups of BECs [302, 303] have led to an immense activity
+in recent years involving dissipative time crystals. These include the survival of the DTC phase in the presence of
+dissipation for one-dimensional disordered [106] and ordered spin systems [304], fermionic [305, 306], bosonic [307, 308]
+and spin-boson models [309], as well as spin systems with long-range interactions [310–314] or central spin models [315].
+Dissipative time crystals have also been predicted to exist for quantized charge density wave (CDW) rings coupled to an
+
+15
+environment, where a metastable ground state of the system is formed and displays periodic oscillations [316]. In this
+case, decoherence acts as a source to break Sτ B. Realizing limit cycles resembling time crystal behavior in dissipative
+systems has also been explored in two-dimensional spin models [317] as well as chiral atomic systems evolving under
+nonlinear master equations [318]. These cases can be regarded as a subclass of CTC emerging through dissipation or
+the presence of self-organizing, non-Markovian dynamics depending on the initial state choice [319]. Complementing
+these findings, it has been reported that the dynamics of CTC in the presence of dissipation cannot be faithfully
+captured by mean-field approaches if the initial state of the system is highly correlated [320]. The nonequilibrium
+transition occurring in dissipative DTC models has also been explored in the periodically driven quantum van der
+Pol model [321]. More recently, chaotic synchronization between dissipative time crystals [322] has been explored,
+as well as models involving non-Markovian dissipation [323] that are particularly relevant for systems comprised of
+interacting Rydberg gases [114].
+Periodically driven BECs are widely regarded as natural setups to realize dissipative time crystal behavior. It has
+been shown that BECs coupled to a cavity can display time crystal behavior in the thermodynamic limit [324] or
+lead to a metastable DTC phase [325], with recent proposals for few-mode models [326]. Along these lines, numerous
+proposals involving cavity QED and Kerr resonators to realize time crystals in the presence of dissipation have been
+put forward [327–334], even in the presence of nonlinear effects [335].
+An interesting avenue is to realize time crystals in ultra-cold atom ensembles bouncing on an periodically oscillating
+mirror [99, 336–340]. In this case, the atoms strongly attract each other forming a BEC, and the overall dynamics can
+be effectively described by a Gross-Pitaevski equation and mean-field approximation. Further theoretical approaches in
+the context of BEC to realize time crystals have been put forward [98, 341–346]. This can have important implications
+for synchronization approaches in CTC realized in BECs [347]. Proposals for realizing emergent limit cycles on atomcavity systems also exist [302].
+In the area of quantum computation and quantum information processing, there have been a number of proposals to
+develop quantum error correction using time crystals [348–351]. This subfield of research comprises the controlled time
+crystals shown in Table I. Special mention in this category deserve those systems defined in the context of monitored or
+measurement based quantum systems [352–354] and monitored quantum clocks [355]. Recent approaches explore the
+application of measurement-based feedback schemes to time crystal stabilization in the presence of decoherence [231,
+356].
+It is possible to relax the strict periodic dynamical constraint of time crystals by applying quasi-periodic structures in
+time. These systems include time quasicrystals [232, 234, 235, 357]; also in dissipative environments [358]. More exotic
+systems include engineering time crystals in time domain [359, 360] and timetronics [361]. Going away from systems
+with pure periodicity, but with otherwise structured drives in time domain, temporal disorder in the micromotion
+coexists with long-range order at stroboscopic times: these are the so called time rondeau crystals. In this case,
+high-frequency driving similar to the case of prethermal DTCs is the leading stabilization mechanism for initial
+states breaking the discrete symmetry of an effective Hamiltonian; nevertheless, correlations are expected to decay
+algebraically [52]. The stability of time rondeau crystals in the presence of dissipation is a current topic of interest [362].
+Many theoretical proposals have explored new platforms to realize time crystals. These include the realization
+of time crystals using superconducting Higgs modes [363–366], phonon vibrational modes [367], hybrid Josephson
+junctions [368], time crystals emerging from excited eigenstates and many-body scars [369–371] or in few-body systems [372], and proposals to realize DTCs in long-range interacting systems [50, 373–381].
+In the quest to realize higher-dimensional time-crystalline phases using quantum hardware, proposals involving
+qudit-platforms have also received considerable attention lately [382]. The possibility to observe time-crystalline
+behavior employing these devices [185] paves the way towards simulating these systems beyond qubit architectures,
+for which several theoretical works have been put forward [268, 383–388]. More exotic proposals involve fractional and
+non-hermitian DTCs [295, 389], time crystals emerging from spatial translation induced Sτ B [390], coupled models of
+continuous and discrete time crystals [391], and recent theoretical developments in the study of out-of-time ordered
+correlators (OTOC) crystals [392, 393].
+Even though current applications involving DTCs are limited, there is ongoing interest to explore the role time
+crystals can play in the context of quantum spin networks related to machine learning models and quantum reservoir
+computing [394–398].
+Finally, proposals for photonic devices that involve the realization of time crystals are varied [399–406] and being
+actively explored in the context of metamaterials [407–411] and nonlinear photonic time crystals hosting superluminal
+k-gap solitons [412]. Several works consider that there is an ECT mechanism behind these systems [413], which is
+usually the case in the presence of dissipation [414]. An interesting research route along these lines is to realize pairs of
+entangled plasmons in these systems [415]. Photonic time crystals have been proposed as systems in which Anderson’s
+localization can be generalized to the time domain [416].
+
+16
+VI.
+
+CONCLUSION
+
+Based on our review, we find that various new types of time crystals, beyond the DTC and CTC dichotomy,
+have emerged and have already been realized experimentally. This demonstrates the capabilities brought by current
+quantum devices to study such nonequilibrium phases of matter and explore their properties. Nevertheless, a unifying
+framework covering all of these cases is still lacking, with several fundamental questions remaining open.
+A particularly interesting direction concerns understanding the transitions between the variety of existing time
+crystal phases having different stabilization mechanisms as summarized in Table I. It is also relevant to understand
+whether such (necessarily nonequilibrium) transitions between time crystal phases occur abruptly, perhaps sharing
+some analogies with the standard theory of phase transitions in equilibrium, or whether they instead constitute a
+nonequilibrium crossover.
+Along these lines, exploring the effect of these transitions on entanglement and also stabilizer entropy [417] is
+a promising route to understand how quantum information changes between time crystal phases. Intuitively, the
+amount of entanglement existing in deep time crystal phases is expected to be moderate, considering that the system
+presents a rather close-to-classical dynamical behavior. By appropriate parameter tuning, the system can be brought
+to a critical regime separating two different time-crystal phases. In this regime, the existence of nonlocal correlations
+is expected to be enhanced and captured by several entanglement witnesses. Achieving this degree of control in time
+crystal dynamics has promising potential implications in the development of optimal strategies to manipulate and
+further exploit entanglement as a resource on different quantum devices.
+One important application of time crystals concerns the storage of quantum information in systems where interactions are otherwise expected to induce nontrivial dynamics and information scrambling. Time crystals overcome
+information loss through coherent superposition effects, making it possible to store various types of quantum data
+ranging from low-energy states, as in the prethermal TC, to general product states in the MBL-DTC case. This
+is particularly relevant in settings where the system is externally driven due to outside conditions; in this case, appropriately engineering the interactions to realize a TC can prevent otherwise rapid thermalization (see Sec. II B).
+Another relevant scenario concerns the notion of designing quantum memories for practical purposes through quantum
+low density parity check (qLDPC) codes [418]. Elevating passive qLDPC codes to driven quantum memories is an
+interesting route in this domain.
+Another promising route in this direction is that of stabilization mechanisms including non-unitary operations, i.e.
+measurement and feedback schemes, which can conveniently be incorporated during circuit execution times.
+Time crystals have various potential applications within quantum technologies, particularly in quantum sensing
+and metrology [419]. As discussed in Sec. V, many proposals consider time crystals as good candidates to develop
+highly reliable quantum sensors capturing disturbances in the subharmonic motion of the system due to external
+perturbations. This high sensitivity of time crystals to external disturbances can also be employed for quantum
+metrology tasks. For example, high-precision parameter estimation can be achieved by tuning a time crystal into a
+phase where the quantum Fisher information becomes significantly enhanced.
+Finally, the overview presented in Sect. IV E shows a promising window for near-term implementations that have
+yet to be explored, particularly those already theoretically predicted in Table I.
+
+ACKNOWLEDGEMENTS
+
+This work was funded by the Deutsche Forschungsgemeinschaft (DFG, German Research Foundation)-Project No.
+FA 1884/5-1. Q-Neko project has received funding from the European Union’s Horizon Europe research and innovation
+programme under Grant Agreement No. 101241875. This work was also performed for Council for Science, Technology
+and Innovation (CSTI), Cross-ministerial Strategic Innovation Promotion Program (SIP), “Promoting the application
+of advanced quantum technology platforms to social issues”(Funding agency: QST). This project was made possible
+by the DLR Quantum Computing Initiative and the Federal Ministry for Research, Technology and Space of Germany.
+
+[1] R. P. Feynman, International Journal of Theoretical Physics 21, 467 (1982).
+[2] S. Lloyd, Science 273, 1073 (1996).
+[3] J. Preskill, Quantum 2, 79 (2018).
+[4] I. Bloch, J. Dalibard, and S. Nascimbène, Nature Physics 8, 267 (2012).
+[5] I. Bloch, J. Dalibard, and W. Zwerger, Reviews of Modern Physics 80, 885 (2008).
+[6] R. Blatt and C. F. Roos, Nature Physics 8, 277 (2012).
+
+17
+[7] C. Gross and I. Bloch, Science 357, 995 (2017).
+[8] A. A. Houck, H. E. Türeci, and J. Koch, Nature Physics 8, 292 (2012).
+[9] A. Aspuru-Guzik and P. Walther, Nature Physics 8, 285 (2012).
+[10] H. Bernien, S. Schwartz, A. Keesling, H. Levine, A. Omran, H. Pichler, S. Choi, A. S. Zibrov, M. Endres, M. Greiner,
+V. Vuletić, and M. D. Lukin, Nature 551, 579 (2017).
+[11] L. K. Joshi, A. Elben, A. Vikram, B. Vermersch, V. Galitski, and P. Zoller, Physical Review X 12, 011018 (2022).
+[12] J. I. Cirac and P. Zoller, Nature Physics 8, 264 (2012).
+[13] A. J. Daley, I. Bloch, C. Kokail, S. Flannigan, N. Pearson, M. Troyer, and P. Zoller, Nature 607, 667 (2022).
+[14] J. Eisert, M. Friesdorf, and C. Gogolin, Nature Physics 11, 124 (2015).
+[15] B. Fauseweh, Nature Communications 15, 2123 (2024).
+[16] F. Wilczek, Physical Review Letters 109, 160401 (2012).
+[17] K. Sacha and J. Zakrzewski, Reports on Progress in Physics 81, 016401 (2018).
+[18] V. Khemani, R. Moessner, and S. L. Sondhi, A Brief History of Time Crystals (2019).
+[19] K. Sacha, Time Crystals, Springer Series on Atomic, Optical, and Plasma Physics, Vol. 114 (Springer International
+Publishing, Cham, 2020).
+[20] D. V. Else, C. Monroe, C. Nayak, and N. Y. Yao, Annual Review of Condensed Matter Physics 11, 467 (2020).
+[21] L. Guo and P. Liang, New Journal of Physics 22, 075003 (2020).
+[22] M. P. Zaletel, M. Lukin, C. Monroe, C. Nayak, F. Wilczek, and N. Y. Yao, Reviews of Modern Physics 95, 031001 (2023).
+[23] R. Horodecki, P. Horodecki, M. Horodecki, and K. Horodecki, Reviews of Modern Physics 81, 865 (2009).
+[24] Non-periodic systems can be regarded as having an infinite period of oscillation. A time crystal would break this infinite
+periodicity to oscillate at some finite rate T < ∞.
+[25] C. W. Von Keyserlingk, V. Khemani, and S. L. Sondhi, Physical Review B 94, 085112 (2016).
+[26] R. Moessner and S. L. Sondhi, Nature Physics 13, 424 (2017).
+[27] A. Shapere and F. Wilczek, Physical Review Letters 109, 160402 (2012).
+[28] N. Y. Yao, C. Nayak, L. Balents, and M. P. Zaletel, Nature Physics 16, 438 (2020).
+[29] T. Li, Z.-X. Gong, Z.-Q. Yin, H. T. Quan, X. Yin, P. Zhang, L.-M. Duan, and X. Zhang, Physical Review Letters 109,
+163001 (2012).
+[30] P. Nozières, EPL (Europhysics Letters) 103, 57008 (2013).
+[31] P. Bruno, Physical Review Letters 111, 070402 (2013).
+[32] P. Bruno, Physical Review Letters 110, 118901 (2013).
+[33] F. Wilczek, Physical Review Letters 110, 118902 (2013).
+[34] H. Watanabe and M. Oshikawa, Physical Review Letters 114, 251603 (2015).
+[35] S. Pilatowsky-Cameo, C. B. Dag, W. W. Ho, and S. Choi, Physical Review Letters 131, 250401 (2023).
+[36] S. Pilatowsky-Cameo, I. Marvian, S. Choi, and W. W. Ho, Physical Review X 14, 041059 (2024).
+[37] Strictly speaking, this cannot occur globally under unitary evolution, because the state remains pure at all evolution
+times. Instead, any subregion of the system is characterized by the reduced density matrix in that particular region, and
+in the long time limit this becomes effectively a thermal density matrix with parameter β = kB1 T ∼ 0. Thus, any local
+probe of the system in this subregion resembles that of a maximally mixed state due to continuous absorption from the
+drive.
+[38] A. Polkovnikov, K. Sengupta, A. Silva, and M. Vengalattore, Reviews of Modern Physics 83, 863 (2011).
+[39] R. Nandkishore and D. A. Huse, Annual Review of Condensed Matter Physics 6, 15 (2015).
+[40] T. Mori, T. N. Ikeda, E. Kaminishi, and M. Ueda, Journal of Physics B: Atomic, Molecular and Optical Physics 51,
+112001 (2018).
+[41] J. M. Deutsch, Reports on Progress in Physics 81, 082001 (2018).
+[42] J. M. Deutsch, Physical Review A 43, 2046 (1991).
+[43] M. Srednicki, Physical Review E 50, 888 (1994).
+[44] M. Rigol, V. Dunjko, and M. Olshanii, Nature 452, 854 (2008).
+[45] M. Rigol and M. Srednicki, Physical Review Letters 108, 110601 (2012).
+[46] L. D’Alessio, Y. Kafri, A. Polkovnikov, and M. Rigol, Advances in Physics 65, 239 (2016).
+[47] P. Calabrese, F. H. L. Essler, and G. Mussardo, Journal of Statistical Mechanics: Theory and Experiment 2016, 064001
+(2016).
+[48] P. W. Anderson, Physical Review 109, 1492 (1958).
+[49] F. Evers and A. D. Mirlin, Reviews of Modern Physics 80, 1355 (2008).
+[50] V. K. Kozin and O. Kyriienko, Physical Review Letters 123, 210602 (2019).
+[51] K. Giergiel, A. Dauphin, M. Lewenstein, J. Zakrzewski, and K. Sacha, New Journal of Physics 21, 052003 (2019).
+[52] H. Zhao, J. Knolle, and R. Moessner, Physical Review B 108, L100203 (2023).
+[53] D. V. Else, B. Bauer, and C. Nayak, Physical Review Letters 117, 090402 (2016).
+[54] V. Khemani, A. Lazarides, R. Moessner, and S. Sondhi, Physical Review Letters 116, 250401 (2016).
+[55] L. D’Alessio and A. Polkovnikov, Annals of Physics 333, 19 (2013).
+[56] L. D’Alessio and M. Rigol, Physical Review X 4, 041048 (2014).
+[57] A. Lazarides, A. Das, and R. Moessner, Physical Review E 90, 012110 (2014).
+[58] P. Ponte, A. Chandran, Z. Papić, and D. A. Abanin, Annals of Physics 353, 196 (2015).
+[59] T. Prosen, Physical Review Letters 80, 1808 (1998).
+
+18
+[60] T. Prosen, Physical Review E 60, 3949 (1999).
+[61] D. J. Luitz, Y. Bar Lev, and A. Lazarides, SciPost Physics 3, 029 (2017).
+[62] A. Haldar and A. Das, Annalen der Physik 529, 1600333 (2017).
+[63] A. Haldar, R. Moessner, and A. Das, Physical Review B 97, 245122 (2018).
+[64] F. Harper, R. Roy, M. S. Rudner, and S. Sondhi, Annual Review of Condensed Matter Physics 11, 345 (2020).
+[65] M. Bukov, L. D’Alessio, and A. Polkovnikov, Advances in Physics 64, 139 (2015).
+[66] T. Kuwahara, T. Mori, and K. Saito, Annals of Physics 367, 96 (2016).
+[67] T. Mori, T. Kuwahara, and K. Saito, Physical Review Letters 116, 120401 (2016).
+[68] S. A. Weidinger and M. Knap, Scientific Reports 7, 45382 (2017).
+[69] D. V. Else, B. Bauer, and C. Nayak, Physical Review X 7, 011026 (2017).
+[70] D. A. Abanin, W. De Roeck, and F. Huveneers, Physical Review Letters 115, 256803 (2015).
+[71] D. A. Abanin, W. De Roeck, W. W. Ho, and F. Huveneers, Physical Review B 95, 014112 (2017).
+[72] D. Abanin, W. De Roeck, W. W. Ho, and F. Huveneers, Communications in Mathematical Physics 354, 809 (2017).
+[73] D. J. Luitz, R. Moessner, S. Sondhi, and V. Khemani, Physical Review X 10, 021046 (2020).
+[74] F. Machado, D. V. Else, G. D. Kahanamoku-Meyer, C. Nayak, and N. Y. Yao, Physical Review X 10, 011043 (2020).
+[75] W. W. Ho, T. Mori, D. A. Abanin, and E. G. Dalla Torre, Annals of Physics 454, 169297 (2023).
+[76] A. Lazarides, A. Das, and R. Moessner, Physical Review Letters 115, 030402 (2015).
+[77] D. A. Abanin, W. De Roeck, and F. Huveneers, Annals of Physics 372, 1 (2016).
+[78] P. Bordia, H. Lüschen, U. Schneider, M. Knap, and I. Bloch, Nature Physics 13, 460 (2017).
+[79] N. Goldman and J. Dalibard, Physical Review X 4, 031027 (2014).
+[80] I. V. Gornyi, A. D. Mirlin, and D. G. Polyakov, Physical Review Letters 95, 206603 (2005).
+[81] D. Basko, I. Aleiner, and B. Altshuler, Annals of Physics 321, 1126 (2006).
+[82] D. A. Abanin, E. Altman, I. Bloch, and M. Serbyn, Reviews of Modern Physics 91, 021001 (2019).
+[83] D. A. Abanin and Z. Papić, Annalen der Physik 529, 1700169 (2017).
+[84] J. Z. Imbrie, Journal of Statistical Physics 163, 998 (2016).
+[85] W. De Roeck and F. Huveneers, Physical Review B 95, 155129 (2017).
+[86] D. J. Luitz, F. Huveneers, and W. De Roeck, Physical Review Letters 119, 150602 (2017).
+[87] A. Morningstar, L. Colmenarez, V. Khemani, D. J. Luitz, and D. A. Huse, Physical Review B 105, 174205 (2022).
+[88] As long as the initial configuration does not contain any significant quantum correlations, i.e. entanglement.
+[89] P. Ponte, Z. Papić, F. Huveneers, and D. A. Abanin, Physical Review Letters 114, 140401 (2015).
+[90] D. A. Huse, R. Nandkishore, V. Oganesyan, A. Pal, and S. L. Sondhi, Physical Review B 88, 014206 (2013).
+[91] C. W. Von Keyserlingk and S. L. Sondhi, Physical Review B 93, 245146 (2016).
+[92] N. Yao, A. Potter, I.-D. Potirniche, and A. Vishwanath, Physical Review Letters 118, 030401 (2017).
+[93] S. Choi, J. Choi, R. Landig, G. Kucsko, H. Zhou, J. Isoya, F. Jelezko, S. Onoda, H. Sumiya, V. Khemani, C. Von Keyserlingk, N. Y. Yao, E. Demler, and M. D. Lukin, Nature 543, 221 (2017).
+[94] N. Yao, C. Laumann, S. Gopalakrishnan, M. Knap, M. Müller, E. Demler, and M. Lukin, Physical Review Letters 113,
+243002 (2014).
+[95] A. L. Burin, Energy delocalization in strongly disordered systems induced by the long-range many-body interaction
+(2006).
+[96] W. W. Ho, S. Choi, M. D. Lukin, and D. A. Abanin, Physical Review Letters 119, 010602 (2017).
+[97] K. Sacha, Physical Review A 91, 033617 (2015).
+[98] J. Wang, K. Sacha, P. Hannaford, and B. J. Dalton, Physical Review A 104, 053327 (2021).
+[99] A. Kuroś, R. Mukherjee, W. Golletz, F. Sauvage, K. Giergiel, F. Mintert, and K. Sacha, New Journal of Physics 22,
+095001 (2020).
+[100] R. Fazio, J. Keeling, L. Mazza, and M. Schirò, SciPost Phys. Lect. Notes , 99 (2025).
+[101] H.-P. Breuer, E.-M. Laine, J. Piilo, and B. Vacchini, Reviews of Modern Physics 88, 021002 (2016).
+[102] I. De Vega and D. Alonso, Reviews of Modern Physics 89, 015001 (2017).
+[103] A. Riera-Campeny, M. Moreno-Cardoner, and A. Sanpera, Quantum 4, 270 (2020).
+[104] F. Carollo and I. Lesanovsky, Physical Review A 105, L040202 (2022).
+[105] T. Mori, Annual Review of Condensed Matter Physics 14, 35 (2023).
+[106] A. Lazarides and R. Moessner, Physical Review B 95, 195135 (2017).
+[107] M. H. Fischer, M. Maksymenko, and E. Altman, Physical Review Letters 116, 160401 (2016).
+[108] M. V. Medvedyeva, T. Prosen, and M. Žnidarič, Physical Review B 93, 094205 (2016).
+[109] E. Levi, M. Heyl, I. Lesanovsky, and J. P. Garrahan, Physical Review Letters 116, 237203 (2016).
+[110] H. P. Lüschen, P. Bordia, S. S. Hodgman, M. Schreiber, S. Sarkar, A. J. Daley, M. H. Fischer, E. Altman, I. Bloch, and
+U. Schneider, Physical Review X 7, 011034 (2017).
+[111] I. Vakulchyk, I. Yusipov, M. Ivanchenko, S. Flach, and S. Denisov, Physical Review B 98, 020202 (2018).
+[112] Z. Lenarčič, O. Alberton, A. Rosch, and E. Altman, Physical Review Letters 125, 116601 (2020).
+[113] D. Vu and S. Das Sarma, Physical Review Letters 130, 130401 (2023).
+[114] F. Gambetta, F. Carollo, M. Marcuzzi, J. Garrahan, and I. Lesanovsky, Physical Review Letters 122, 015701 (2019).
+[115] F. Iemini, A. Russomanno, J. Keeling, M. Schirò, M. Dalmonte, and R. Fazio, Physical Review Letters 121, 035301
+(2018).
+[116] A. Blais, R.-S. Huang, A. Wallraff, S. M. Girvin, and R. J. Schoelkopf, Physical Review A 69, 062320 (2004).
+[117] J. Clarke and F. K. Wilhelm, Nature 453, 1031 (2008).
+
+19
+[118] P. Krantz, M. Kjaergaard, F. Yan, T. P. Orlando, S. Gustavsson, and W. D. Oliver, Applied Physics Reviews 6, 021318
+(2019).
+[119] F. Arute, K. Arya, R. Babbush, D. Bacon, J. C. Bardin, R. Barends, R. Biswas, S. Boixo, F. G. S. L. Brandao, D. A.
+Buell, B. Burkett, Y. Chen, Z. Chen, B. Chiaro, R. Collins, W. Courtney, A. Dunsworth, E. Farhi, B. Foxen, A. Fowler,
+C. Gidney, M. Giustina, R. Graff, K. Guerin, S. Habegger, M. P. Harrigan, M. J. Hartmann, A. Ho, M. Hoffmann,
+T. Huang, T. S. Humble, S. V. Isakov, E. Jeffrey, Z. Jiang, D. Kafri, K. Kechedzhi, J. Kelly, P. V. Klimov, S. Knysh,
+A. Korotkov, F. Kostritsa, D. Landhuis, M. Lindmark, E. Lucero, D. Lyakh, S. Mandrà, J. R. McClean, M. McEwen,
+A. Megrant, X. Mi, K. Michielsen, M. Mohseni, J. Mutus, O. Naaman, M. Neeley, C. Neill, M. Y. Niu, E. Ostby,
+A. Petukhov, J. C. Platt, C. Quintana, E. G. Rieffel, P. Roushan, N. C. Rubin, D. Sank, K. J. Satzinger, V. Smelyanskiy,
+K. J. Sung, M. D. Trevithick, A. Vainsencher, B. Villalonga, T. White, Z. J. Yao, P. Yeh, A. Zalcman, H. Neven, and
+J. M. Martinis, Nature 574, 505 (2019).
+[120] M. Kjaergaard, M. E. Schwartz, J. Braumüller, P. Krantz, J. I.-J. Wang, S. Gustavsson, and W. D. Oliver, Annual Review
+of Condensed Matter Physics 11, 369 (2020).
+[121] Google Quantum AI and Collaborators, R. Acharya, D. A. Abanin, L. Aghababaie-Beni, I. Aleiner, T. I. Andersen,
+M. Ansmann, F. Arute, K. Arya, A. Asfaw, N. Astrakhantsev, J. Atalaya, R. Babbush, D. Bacon, B. Ballard, J. C. Bardin,
+J. Bausch, A. Bengtsson, A. Bilmes, S. Blackwell, S. Boixo, G. Bortoli, A. Bourassa, J. Bovaird, L. Brill, M. Broughton,
+D. A. Browne, B. Buchea, B. B. Buckley, D. A. Buell, T. Burger, B. Burkett, N. Bushnell, A. Cabrera, J. Campero,
+H.-S. Chang, Y. Chen, Z. Chen, B. Chiaro, D. Chik, C. Chou, J. Claes, A. Y. Cleland, J. Cogan, R. Collins, P. Conner,
+W. Courtney, A. L. Crook, B. Curtin, S. Das, A. Davies, L. De Lorenzo, D. M. Debroy, S. Demura, M. Devoret, A. Di Paolo,
+P. Donohoe, I. Drozdov, A. Dunsworth, C. Earle, T. Edlich, A. Eickbusch, A. M. Elbag, M. Elzouka, C. Erickson, L. Faoro,
+E. Farhi, V. S. Ferreira, L. F. Burgos, E. Forati, A. G. Fowler, B. Foxen, S. Ganjam, G. Garcia, R. Gasca, E. Genois,
+W. Giang, C. Gidney, D. Gilboa, R. Gosula, A. G. Dau, D. Graumann, A. Greene, J. A. Gross, S. Habegger, J. Hall,
+M. C. Hamilton, M. Hansen, M. P. Harrigan, S. D. Harrington, F. J. H. Heras, S. Heslin, P. Heu, O. Higgott, G. Hill,
+J. Hilton, G. Holland, S. Hong, H.-Y. Huang, A. Huff, W. J. Huggins, L. B. Ioffe, S. V. Isakov, J. Iveland, E. Jeffrey,
+Z. Jiang, C. Jones, S. Jordan, C. Joshi, P. Juhas, D. Kafri, H. Kang, A. H. Karamlou, K. Kechedzhi, J. Kelly, T. Khaire,
+T. Khattar, M. Khezri, S. Kim, P. V. Klimov, A. R. Klots, B. Kobrin, P. Kohli, A. N. Korotkov, F. Kostritsa, R. Kothari,
+B. Kozlovskii, J. M. Kreikebaum, V. D. Kurilovich, N. Lacroix, D. Landhuis, T. Lange-Dei, B. W. Langley, P. Laptev, K.M. Lau, L. Le Guevel, J. Ledford, J. Lee, K. Lee, Y. D. Lensky, S. Leon, B. J. Lester, W. Y. Li, Y. Li, A. T. Lill, W. Liu,
+W. P. Livingston, A. Locharla, E. Lucero, D. Lundahl, A. Lunt, S. Madhuk, F. D. Malone, A. Maloney, S. Mandrà,
+J. Manyika, L. S. Martin, O. Martin, S. Martin, C. Maxfield, J. R. McClean, M. McEwen, S. Meeks, A. Megrant, X. Mi,
+K. C. Miao, A. Mieszala, R. Molavi, S. Molina, S. Montazeri, A. Morvan, R. Movassagh, W. Mruczkiewicz, O. Naaman,
+M. Neeley, C. Neill, A. Nersisyan, H. Neven, M. Newman, J. H. Ng, A. Nguyen, M. Nguyen, C.-H. Ni, M. Y. Niu,
+T. E. O’Brien, W. D. Oliver, A. Opremcak, K. Ottosson, A. Petukhov, A. Pizzuto, J. Platt, R. Potter, O. Pritchard,
+L. P. Pryadko, C. Quintana, G. Ramachandran, M. J. Reagor, J. Redding, D. M. Rhodes, G. Roberts, E. Rosenberg,
+E. Rosenfeld, P. Roushan, N. C. Rubin, N. Saei, D. Sank, K. Sankaragomathi, K. J. Satzinger, H. F. Schurkus, C. Schuster,
+A. W. Senior, M. J. Shearn, A. Shorter, N. Shutty, V. Shvarts, S. Singh, V. Sivak, J. Skruzny, S. Small, V. Smelyanskiy,
+W. C. Smith, R. D. Somma, S. Springer, G. Sterling, D. Strain, J. Suchard, A. Szasz, A. Sztein, D. Thor, A. Torres,
+M. M. Torunbalci, A. Vaishnav, J. Vargas, S. Vdovichev, G. Vidal, B. Villalonga, C. V. Heidweiller, S. Waltman, S. X.
+Wang, B. Ware, K. Weber, T. Weidel, T. White, K. Wong, B. W. K. Woo, C. Xing, Z. J. Yao, P. Yeh, B. Ying, J. Yoo,
+N. Yosri, G. Young, A. Zalcman, Y. Zhang, N. Zhu, and N. Zobrist, Nature 638, 920 (2025).
+[122] J. I. Cirac and P. Zoller, Physical Review Letters 74, 4091 (1995).
+[123] C. Monroe, D. M. Meekhof, B. E. King, W. M. Itano, and D. J. Wineland, Physical Review Letters 75, 4714 (1995).
+[124] J. Smith, A. Lee, P. Richerme, B. Neyenhuis, P. W. Hess, P. Hauke, M. Heyl, D. A. Huse, and C. Monroe, Nature Physics
+12, 907 (2016).
+[125] M. Foss-Feig, G. Pagano, A. C. Potter, and N. Y. Yao, Annual Review of Condensed Matter Physics 16, 145 (2025).
+[126] C. Ospelkaus, U. Warring, Y. Colombe, K. R. Brown, J. M. Amini, D. Leibfried, and D. J. Wineland, Nature 476, 181
+(2011).
+[127] B. P. Lanyon, C. Hempel, D. Nigg, M. Müller, R. Gerritsma, F. Zähringer, P. Schindler, J. T. Barreiro, M. Rambach,
+G. Kirchmair, M. Hennrich, P. Zoller, R. Blatt, and C. F. Roos, Science 334, 57 (2011).
+[128] C. D. Bruzewicz, J. Chiaverini, R. McConnell, and J. M. Sage, Applied Physics Reviews 6, 021314 (2019).
+[129] C. Monroe, W. Campbell, L.-M. Duan, Z.-X. Gong, A. Gorshkov, P. Hess, R. Islam, K. Kim, N. Linke, G. Pagano,
+P. Richerme, C. Senko, and N. Yao, Reviews of Modern Physics 93, 025001 (2021).
+[130] L. Henriet, L. Beguin, A. Signoles, T. Lahaye, A. Browaeys, G.-O. Reymond, and C. Jurczak, Quantum 4, 327 (2020).
+[131] T. M. Graham, Y. Song, J. Scott, C. Poole, L. Phuttitarn, K. Jooya, P. Eichler, X. Jiang, A. Marra, B. Grinkemeyer,
+M. Kwon, M. Ebert, J. Cherek, M. T. Lichtman, M. Gillette, J. Gilbert, D. Bowman, T. Ballance, C. Campbell, E. D.
+Dahl, O. Crawford, N. S. Blunt, B. Rogers, T. Noel, and M. Saffman, Nature 604, 457 (2022).
+[132] D. Bluvstein, H. Levine, G. Semeghini, T. T. Wang, S. Ebadi, M. Kalinowski, A. Keesling, N. Maskara, H. Pichler,
+M. Greiner, V. Vuletić, and M. D. Lukin, Nature 604, 451 (2022).
+[133] G. Semeghini, H. Levine, A. Keesling, S. Ebadi, T. T. Wang, D. Bluvstein, R. Verresen, H. Pichler, M. Kalinowski,
+R. Samajdar, A. Omran, S. Sachdev, A. Vishwanath, M. Greiner, V. Vuletić, and M. D. Lukin, Science 374, 1242 (2021).
+[134] M. V. G. Dutt, L. Childress, L. Jiang, E. Togan, J. Maze, F. Jelezko, A. S. Zibrov, P. R. Hemmer, and M. D. Lukin,
+Science 316, 1312 (2007).
+[135] J. R. Maze, P. L. Stanwix, J. S. Hodges, S. Hong, J. M. Taylor, P. Cappellaro, L. Jiang, M. V. G. Dutt, E. Togan, A. S.
+Zibrov, A. Yacoby, R. L. Walsworth, and M. D. Lukin, Nature 455, 644 (2008).
+
+20
+[136] M. H. Abobeih, J. Randall, C. E. Bradley, H. P. Bartling, M. A. Bakker, M. J. Degen, M. Markham, D. J. Twitchen, and
+T. H. Taminiau, Nature 576, 411 (2019).
+[137] C. Bradley, J. Randall, M. Abobeih, R. Berrevoets, M. Degen, M. Bakker, M. Markham, D. Twitchen, and T. Taminiau,
+Physical Review X 9, 031045 (2019).
+[138] G. Kucsko, S. Choi, J. Choi, P. Maurer, H. Zhou, R. Landig, H. Sumiya, S. Onoda, J. Isoya, F. Jelezko, E. Demler,
+N. Yao, and M. Lukin, Physical Review Letters 121, 023601 (2018).
+[139] E. Knill, R. Laflamme, and G. J. Milburn, Nature 409, 46 (2001).
+[140] F. Flamini, N. Spagnolo, and F. Sciarrino, Reports on Progress in Physics 82, 016001 (2019).
+[141] S. Barz, Journal of Physics B: Atomic, Molecular and Optical Physics 48, 083001 (2015).
+[142] T. Herr, V. Brasch, J. D. Jost, C. Y. Wang, N. M. Kondratiev, M. L. Gorodetsky, and T. J. Kippenberg, Nature Photonics
+8, 145 (2014).
+[143] T. J. Kippenberg, A. L. Gaeta, M. Lipson, and M. L. Gorodetsky, Science 361, eaan8083 (2018).
+[144] C. H. Yang, K. W. Chan, R. Harper, W. Huang, T. Evans, J. C. C. Hwang, B. Hensen, A. Laucht, T. Tanttu, F. E.
+Hudson, S. T. Flammia, K. M. Itoh, A. Morello, S. D. Bartlett, and A. S. Dzurak, Nature Electronics 2, 151 (2019).
+[145] A. West, B. Hensen, A. Jouan, T. Tanttu, C.-H. Yang, A. Rossi, M. F. Gonzalez-Zalba, F. Hudson, A. Morello, D. J.
+Reilly, and A. S. Dzurak, Nature Nanotechnology 14, 437 (2019).
+[146] X. Wang, E. Khatami, F. Fei, J. Wyrick, P. Namboodiri, R. Kashid, A. F. Rigosi, G. Bryant, and R. Silver, Nature
+Communications 13, 6824 (2022).
+[147] A. Greilich, N. E. Kopteva, A. N. Kamenskii, P. S. Sokolov, V. L. Korenev, and M. Bayer, Nature Physics 20, 631 (2024).
+[148] H. Ritsch, P. Domokos, F. Brennecke, and T. Esslinger, Reviews of Modern Physics 85, 553 (2013).
+[149] E. A. Cornell and C. E. Wieman, Reviews of Modern Physics 74, 875 (2002).
+[150] W. Ketterle, Reviews of Modern Physics 74, 1131 (2002).
+[151] J. T. Mäkinen, S. Autti, and V. B. Eltsov, Applied Physics Letters 124, 100502 (2024).
+[152] T. E. Chupp, R. J. Hoare, R. L. Walsworth, and B. Wu, Phys. Rev. Lett. 72, 2363 (1994).
+[153] T. Sato, Y. Ichikawa, S. Kojima, C. Funayama, S. Tanaka, T. Inoue, A. Uchiyama, A. Gladkov, A. Takamine, Y. Sakamoto,
+Y. Ohtomo, C. Hirao, M. Chikamori, E. Hikota, T. Suzuki, M. Tsuchiya, T. Furukawa, A. Yoshimi, C. Bidinosti, T. Ino,
+H. Ueno, Y. Matsuo, T. Fukuyama, N. Yoshinaga, Y. Sakemi, and K. Asahi, Physics Letters A 382, 588 (2018).
+[154] M. Ringbauer, M. Meth, L. Postler, R. Stricker, R. Blatt, P. Schindler, and T. Monz, Nature Physics 18, 1053 (2022).
+[155] P. Hrmo, B. Wilhelm, L. Gerster, M. W. Van Mourik, M. Huber, R. Blatt, P. Schindler, T. Monz, and M. Ringbauer,
+Nature Communications 14, 2242 (2023).
+[156] A. Fedorov, L. Steffen, M. Baur, M. P. Da Silva, and A. Wallraff, Nature 481, 170 (2012).
+[157] B. L. Brock, S. Singh, A. Eickbusch, V. V. Sivak, A. Z. Ding, L. Frunzio, S. M. Girvin, and M. H. Devoret, Nature 641,
+612 (2025).
+[158] V. Tripathi, N. Goss, A. Vezvaee, L. B. Nguyen, I. Siddiqi, and D. A. Lidar, Physical Review Letters 134, 050601 (2025).
+[159] N. B. Vilas, P. Robichaud, C. Hallas, G. K. Li, L. Anderegg, and J. M. Doyle, Nature 628, 282 (2024).
+[160] M. Kues, C. Reimer, P. Roztocki, L. R. Cortés, S. Sciara, B. Wetzel, Y. Zhang, A. Cino, S. T. Chu, B. E. Little, D. J.
+Moss, L. Caspani, J. Azaña, and R. Morandotti, Nature 546, 622 (2017).
+[161] L. B. Nguyen, N. Goss, K. Siva, Y. Kim, E. Younis, B. Qing, A. Hashim, D. I. Santiago, and I. Siddiqi, Nature Communications 15, 7117 (2024).
+[162] Y. Chi, J. Huang, Z. Zhang, J. Mao, Z. Zhou, X. Chen, C. Zhai, J. Bao, T. Dai, H. Yuan, M. Zhang, D. Dai, B. Tang,
+Y. Yang, Z. Li, Y. Ding, L. K. Oxenløwe, M. G. Thompson, J. L. O’Brien, Y. Li, Q. Gong, and J. Wang, Nature
+Communications 13, 1166 (2022).
+[163] V. A. Soltamov, C. Kasper, A. V. Poshakinskiy, A. N. Anisimov, E. N. Mokhov, A. Sperlich, S. A. Tarasenko, P. G.
+Baranov, G. V. Astakhov, and V. Dyakonov, Nature Communications 10, 1678 (2019).
+[164] F. Moro, A. J. Fielding, L. Turyanska, and A. Patanè, Advanced Quantum Technologies 2, 1900017 (2019).
+[165] I. Fernández De Fuentes, T. Botzem, M. A. I. Johnson, A. Vaartjes, S. Asaad, V. Mourik, F. E. Hudson, K. M. Itoh,
+B. C. Johnson, A. M. Jakob, J. C. McCallum, D. N. Jamieson, A. S. Dzurak, and A. Morello, Nature Communications
+15, 1380 (2024).
+[166] X. Mi, M. Ippoliti, C. Quintana, A. Greene, Z. Chen, J. Gross, F. Arute, K. Arya, J. Atalaya, R. Babbush, J. C. Bardin,
+J. Basso, A. Bengtsson, A. Bilmes, A. Bourassa, L. Brill, M. Broughton, B. B. Buckley, D. A. Buell, B. Burkett, N. Bushnell, B. Chiaro, R. Collins, W. Courtney, D. Debroy, S. Demura, A. R. Derk, A. Dunsworth, D. Eppens, C. Erickson,
+E. Farhi, A. G. Fowler, B. Foxen, C. Gidney, M. Giustina, M. P. Harrigan, S. D. Harrington, J. Hilton, A. Ho, S. Hong,
+T. Huang, A. Huff, W. J. Huggins, L. B. Ioffe, S. V. Isakov, J. Iveland, E. Jeffrey, Z. Jiang, C. Jones, D. Kafri, T. Khattar,
+S. Kim, A. Kitaev, P. V. Klimov, A. N. Korotkov, F. Kostritsa, D. Landhuis, P. Laptev, J. Lee, K. Lee, A. Locharla,
+E. Lucero, O. Martin, J. R. McClean, T. McCourt, M. McEwen, K. C. Miao, M. Mohseni, S. Montazeri, W. Mruczkiewicz,
+O. Naaman, M. Neeley, C. Neill, M. Newman, M. Y. Niu, T. E. O’Brien, A. Opremcak, E. Ostby, B. Pato, A. Petukhov,
+N. C. Rubin, D. Sank, K. J. Satzinger, V. Shvarts, Y. Su, D. Strain, M. Szalay, M. D. Trevithick, B. Villalonga, T. White,
+Z. J. Yao, P. Yeh, J. Yoo, A. Zalcman, H. Neven, S. Boixo, V. Smelyanskiy, A. Megrant, J. Kelly, Y. Chen, S. L. Sondhi,
+R. Moessner, K. Kechedzhi, V. Khemani, and P. Roushan, Nature 601, 531 (2022).
+[167] J. Zhang, P. W. Hess, A. Kyprianidis, P. Becker, A. Lee, J. Smith, G. Pagano, I.-D. Potirniche, A. C. Potter, A. Vishwanath, N. Y. Yao, and C. Monroe, Nature 543, 217 (2017).
+[168] V. Khemani, R. Moessner, and S. L. Sondhi, A comment on "Discrete time crystals: rigidity, criticality, and realizations"
+(2021), version Number: 1.
+[169] M. Ippoliti, K. Kechedzhi, R. Moessner, S. Sondhi, and V. Khemani, PRX Quantum 2, 030346 (2021).
+
+21
+[170] H. Xu, J. Zhang, J. Han, Z. Li, G. Xue, W. Liu, Y. Jin, and H. Yu, Realizing discrete time crystal in an one-dimensional
+superconducting qubit chain (2021).
+[171] P. Frey and S. Rachel, Science Advances 8, eabm7652 (2022).
+[172] E. D. Switzer, N. F. Robertson, N. Keenan, A. Rodriguez-Alcaraz, A. D’Urbano, B. Pokharel, T. S. Rahman, O. Shtanko,
+S. Zhuk, and N. Lorente, Nature Communications 17, 605 (2026).
+[173] Y. Hirasaki, T. Itoko, N. Kanazawa, and E. Saitoh, Applied Physics Letters 128, 054002 (2026).
+[174] V. Zhang and P. D. Nation, Characterizing quantum processors using discrete time crystals (2023).
+[175] J. Randall, C. E. Bradley, F. V. Van Der Gronden, A. Galicia, M. H. Abobeih, M. Markham, D. J. Twitchen, F. Machado,
+N. Y. Yao, and T. H. Taminiau, Science 374, 1474 (2021).
+[176] N. Goss, N. Suri, B. Marinelli, L. Chen, A. Hashim, S. Anand, A. Morvan, R. K. Naik, E. Rrapaj, D. I. Santiago,
+W. de Jong, N. Y. Yao, J. E. Moore, and I. Siddiqi, A qutrit time crystal stabilized with native chiral interactions (2026),
+arXiv:2605.14293 [quant-ph].
+[177] A. Kyprianidis, F. Machado, W. Morong, P. Becker, K. S. Collins, D. V. Else, L. Feng, P. W. Hess, C. Nayak, G. Pagano,
+N. Y. Yao, and C. Monroe, Science 372, 1192 (2021).
+[178] A. Stasiuk and P. Cappellaro, Physical Review X 13, 041016 (2023).
+[179] K. Shinjo, K. Seki, and S. Yunoki, Emergent Discrete Time Crystals on Digital Quantum Computers: Boundary-Protected
+and Ancilla-Induced Disorder Mechanisms of Thermalization Slowdown (2025).
+[180] T. Chen, R. Shen, C. H. Lee, B. Yang, and R. W. Bomantara, Quantum Science and Technology (2026).
+[181] A. Solfanelli, S. Ruffo, S. Succi, and N. Defenu, Physical Review Research 6, 013311 (2024).
+[182] Z. Bao, Z. Zhu, Y.-R. Liu, Z. Song, F. Jin, X. Zhu, Y. Gao, C. Zhang, N. Wang, Y. Zou, Z. Tan, A. Zhang, Z. Cui,
+F. Shen, J. Zhong, Y. He, H. Wang, J.-N. Yang, Y. Wang, J. Shen, G. Liu, Y. Han, Y. Wu, J. Deng, H. Dong, P. Zhang,
+H. Li, Z. Wang, C. Song, C. Cheng, R. Mondaini, Q. Guo, B. Huang, and H. Wang, Fock space prethermalization and
+time-crystalline order on a quantum processor (2026).
+[183] C. Ying, Q. Guo, S. Li, M. Gong, X.-H. Deng, F. Chen, C. Zha, Y. Ye, C. Wang, Q. Zhu, S. Wang, Y. Zhao, H. Qian,
+S. Guo, Y. Wu, H. Rong, H. Deng, F. Liang, J. Lin, Y. Xu, C.-Z. Peng, C.-Y. Lu, Z.-Q. Yin, X. Zhu, and J.-W. Pan,
+Physical Review A 105, 012418 (2022).
+[184] W. Beatrez, C. Fleckenstein, A. Pillai, E. De Leon Sanchez, A. Akkiraju, J. Diaz Alcala, S. Conti, P. Reshetikhin,
+E. Druga, M. Bukov, and A. Ajoy, Nature Physics 19, 407 (2023).
+[185] G. Camacho, C. L. Edmunds, M. Meth, M. Ringbauer, and B. Fauseweh, Observing dynamical localization on a trappedion qudit quantum processor (2024).
+[186] P. Kongkhambut, J. Skulte, L. Mathey, J. G. Cosme, A. Hemmerich, and H. Keßler, Science 377, 670 (2022).
+[187] P. Kongkhambut, J. G. Cosme, J. Skulte, M. A. Moreno Armijos, L. Mathey, A. Hemmerich, and H. Keßler, Reports on
+Progress in Physics 87, 080502 (2024).
+[188] J. Smits, H. T. C. Stoof, and P. Van Der Straten, New Journal of Physics 22, 105001 (2020).
+[189] Y. Huang, T. Wang, H. Yin, M. Jiang, Z. Luo, and X. Peng, Nature Communications 16, 9375 (2025).
+[190] Y.-H. Chen and X. Zhang, Nature Communications 14, 6161 (2023).
+[191] A. Greilich, N. E. Kopteva, V. L. Korenev, P. A. Haude, and M. Bayer, Nature Communications 16, 2936 (2025).
+[192] A. Greilich, N. E. Kopteva, V. L. Korenev, P. A. Haude, L. Kunze, B. W. Grobecker, S. Anghel, M. Betz, and M. Bayer,
+Non-local synchronization of continuous time crystals in a semiconductor (2025), version Number: 1.
+[193] J. O’Sullivan, O. Lunt, C. W. Zollitsch, M. L. W. Thewalt, J. J. L. Morton, and A. Pal, New Journal of Physics 22,
+085001 (2020).
+[194] H. Keßler, P. Kongkhambut, C. Georges, L. Mathey, J. G. Cosme, and A. Hemmerich, Physical Review Letters 127,
+043602 (2021).
+[195] J. G. Cosme, P. Kongkhambut, A. Bölian, R. J. L. Tuquero, J. Skulte, L. Mathey, A. Hemmerich, and H. Keßler, Physical
+Review Letters 134, 223601 (2025).
+[196] H. Taheri, A. B. Matsko, L. Maleki, and K. Sacha, Nature Communications 13, 848 (2022).
+[197] X. Wu, Z. Wang, F. Yang, R. Gao, C. Liang, M. K. Tey, X. Li, T. Pohl, and L. You, Nature Physics 20, 1389 (2024).
+[198] Y. Jiao, W. Jiang, Y. Zhang, J. Bai, Y. He, H. Shen, J. Zhao, and S. Jia, Nature Communications 16, 8767 (2025).
+[199] Y. Jiao, Y. Zhang, J. Bai, S. Jia, C. S. Adams, Z. Bai, H. Shen, and J. Zhao, Physical Review Letters 135, 163603 (2025).
+[200] B. Liu, L.-H. Zhang, Y. Ma, Q.-F. Wang, T.-Y. Han, J. Zhang, Z.-Y. Zhang, S.-Y. Shao, Q. Li, H.-C. Chen, G.-C. Guo,
+D.-S. Ding, and B.-S. Shi, Nature Communications 16, 1419 (2025).
+[201] J. Smits, L. Liao, H. Stoof, and P. Van Der Straten, Physical Review Letters 121, 185301 (2018).
+[202] B. Liu, J.-R. Chen, Y. Ma, Q.-F. Wang, T.-Y. Han, H. Tian, Y.-H. Qian, G.-C. Guo, L.-H. Zhang, B.-B. Wei, A. Bayat,
+D.-S. Ding, and B.-S. Shi, Enhanced multi-parameter metrology in dissipative Rydberg atom time crystals (2026), version
+Number: 1.
+[203] W. Wang, M. Feng, Q. Ma, Z. Cai, E. Li, and G. Liu, Communications Physics 8, 191 (2025).
+[204] A. J. E. Kreil, H. Y. Musiienko-Shmarova, S. Eggert, A. A. Serga, B. Hillebrands, D. A. Bozhko, A. Pomyalov, and V. S.
+L’vov, Physical Review B 100, 020406 (2019).
+[205] S. Autti, P. J. Heikkinen, J. T. Mäkinen, G. E. Volovik, V. V. Zavjalov, and V. B. Eltsov, Nature Materials 20, 171
+(2021).
+[206] S. Autti, P. J. Heikkinen, J. Nissinen, J. T. Mäkinen, G. E. Volovik, V. V. Zavyalov, and V. B. Eltsov, Nature Communications 13, 3090 (2022).
+[207] N. Träger, P. Gruszecki, F. Lisiecki, F. Groß, J. Förster, M. Weigand, H. Głowiński, P. Kuświk, J. Dubowik, G. Schütz,
+M. Krawczyk, and J. Gräfe, Physical Review Letters 126, 057201 (2021).
+
+22
+[208] J. T. Mäkinen, P. J. Heikkinen, S. Autti, V. V. Zavjalov, and V. B. Eltsov, Time crystal optomechanics (2025).
+[209] I. Carraro-Haddad, D. L. Chafatinos, A. S. Kuznetsov, I. A. Papuccio-Fernández, A. A. Reynoso, A. Bruchhausen,
+K. Biermann, P. V. Santos, G. Usaj, and A. Fainstein, Science 384, 995 (2024).
+[210] G. He, B. Ye, R. Gong, C. Yao, Z. Liu, K. W. Murch, N. Y. Yao, and C. Zu, Physical Review X 15, 011055 (2025).
+[211] J. Choi, H. Zhou, S. Choi, R. Landig, W. W. Ho, J. Isoya, F. Jelezko, S. Onoda, H. Sumiya, D. A. Abanin, and M. D.
+Lukin, Physical Review Letters 122, 043603 (2019).
+[212] J. Rovny, R. L. Blum, and S. E. Barrett, Physical Review Letters 120, 180603 (2018).
+[213] J. Rovny, R. L. Blum, and S. E. Barrett, Physical Review B 97, 184301 (2018).
+[214] S. Pal, N. Nishad, T. Mahesh, and G. Sreejith, Physical Review Letters 120, 180602 (2018).
+[215] X. Zhang, W. Jiang, J. Deng, K. Wang, J. Chen, P. Zhang, W. Ren, H. Dong, S. Xu, Y. Gao, F. Jin, X. Zhu, Q. Guo,
+H. Li, C. Song, A. V. Gorshkov, T. Iadecola, F. Liu, Z.-X. Gong, Z. Wang, D.-L. Deng, and H. Wang, Nature 607, 468
+(2022).
+[216] L. Xiang, W. Jiang, Z. Bao, Z. Song, S. Xu, K. Wang, J. Chen, F. Jin, X. Zhu, Z. Zhu, F. Shen, N. Wang, C. Zhang,
+Y. Wu, Y. Zou, J. Zhong, Z. Cui, A. Zhang, Z. Tan, T. Li, Y. Gao, J. Deng, X. Zhang, H. Dong, P. Zhang, S. Jiang,
+W. Li, Z. Lu, Z.-Z. Sun, H. Li, Z. Wang, C. Song, Q. Guo, F. Liu, Z.-X. Gong, A. V. Gorshkov, N. Y. Yao, T. Iadecola,
+F. Machado, H. Wang, and D.-L. Deng, Nature Communications 15, 8963 (2024).
+[217] D. Arumugam, Scientific Reports 15, 13446 (2025).
+[218] D. Arumugam, Scientific Reports 15, 35976 (2025).
+[219] D. Arumugam, Communications Physics 9, 156 (2026).
+[220] L. J. I. Moon, P. M. Schindler, R. J. Smith, E. Druga, Z.-R. Zhang, M. Bukov, and A. Ajoy, Nature Physics 22, 367
+(2026).
+[221] S. Autti, V. Eltsov, and G. Volovik, Physical Review Letters 120, 215301 (2018).
+[222] K. Shinjo, K. Seki, T. Shirakawa, R.-Y. Sun, and S. Yunoki, npj Quantum Information 12, 41 (2026).
+[223] L. J. I. Moon, P. M. Schindler, Y. Sun, E. Druga, J. Knolle, R. Moessner, H. Zhao, M. Bukov, and A. Ajoy, Nature
+Physics 21, 1813 (2025).
+[224] B. Wang, J. Quan, J. Han, X. Shen, H. Wu, and Y. Pan, Laser & Photonics Reviews 16, 2100469 (2022).
+[225] X. Wang, M. S. Mirmoosa, V. S. Asadchy, C. Rockstuhl, S. Fan, and S. A. Tretyakov, Science Advances 9, eadg7541
+(2023).
+[226] J. Xiong, X. Zhang, L. Duan, J. Wang, Y. Long, H. Hou, L. Yu, L. Zou, and B. Zhang, Nature Communications 16,
+11182 (2025).
+[227] Z. Liu, X. Zhu, Z. G. Zhang, W. M. Zhang, X. Chen, Y. Q. Yang, R. W. Peng, M. Wang, J. Li, and H. W. Wu, Direct
+Observation of k-Gaps in Dynamically Modulated Phononic Time Crystal (2025).
+[228] E. R. Koch, S. V. Gurevich, and J. Javaloyes, Optics Letters 49, 5663 (2024).
+[229] R. Weng, E. R. Koch, J. Yelo-Sarrión, J. Batle, N. G. R. Broderick, J. Javaloyes, and S. V. Gurevich, Phys. Rev. Lett.
+136, 193801 (2026).
+[230] F. Russo and T. Pohl, Physical Review Letters 135, 110404 (2025).
+[231] G. Camacho and B. Fauseweh, Physical Review Research 6, 033092 (2024).
+[232] D. V. Else, W. W. Ho, and P. T. Dumitrescu, Physical Review X 10, 021032 (2020).
+[233] N. Y. Yao and C. Nayak, Physics Today 71, 40 (2018).
+[234] H. Zhao, F. Mintert, and J. Knolle, Physical Review B 100, 134302 (2019).
+[235] P. T. Dumitrescu, R. Vasseur, and A. C. Potter, Physical Review Letters 120, 070602 (2018).
+[236] H. Zhao, F. Mintert, R. Moessner, and J. Knolle, Physical Review Letters 126, 040601 (2021).
+[237] T. Mori, H. Zhao, F. Mintert, J. Knolle, and R. Moessner, Phys. Rev. Lett. 127, 050602 (2021).
+[238] P. Hannaford and K. Sacha, Europhysics Letters 139, 10001 (2022).
+[239] W. C. Yu, J. Tangpanitanon, A. W. Glaetzle, D. Jaksch, and D. G. Angelakis, Physical Review A 99, 033618 (2019).
+[240] M. Medenjak, B. Buča, and D. Jaksch, Physical Review B 102, 041117 (2020).
+[241] H. Yarloo, A. Emami Kopaei, and A. Langari, Physical Review B 102, 224309 (2020).
+[242] P. Liang, R. Fazio, and S. Chesi, New Journal of Physics 22, 125001 (2020).
+[243] S. Choudhury, Atoms 9, 25 (2021).
+[244] P. Nurwantoro, R. W. Bomantara, and J. Gong, Physical Review B 100, 214311 (2019).
+[245] Y. Bar Lev and A. Lazarides, Physical Review Letters 133, 200401 (2024).
+[246] A. Santini, G. E. Santoro, and M. Collura, Physical Review B 106, 134301 (2022).
+[247] K. Giergiel, J. Wang, B. J. Dalton, P. Hannaford, and K. Sacha, Physical Review B 108, L180201 (2023).
+[248] X. Yang and Z. Cai, Physical Review Letters 126, 020602 (2021).
+[249] F. M. Surace, A. Russomanno, M. Dalmonte, A. Silva, R. Fazio, and F. Iemini, Physical Review B 99, 104303 (2019).
+[250] C.-h. Fan, D. Rossini, H.-X. Zhang, J.-H. Wu, M. Artoni, and G. C. La Rocca, Physical Review A 101, 013417 (2020).
+[251] Y. Xue, Z. Bai, and Y.-Q. Ma, Science China Physics, Mechanics & Astronomy 69, 250511 (2026).
+[252] B. Huang, Y.-H. Wu, and W. V. Liu, Physical Review Letters 120, 110603 (2018).
+[253] K. Chinzei and T. N. Ikeda, Physical Review Letters 125, 060601 (2020).
+[254] M. Medenjak, T. Prosen, and L. Zadnik, SciPost Phys. 9, 003 (2020).
+[255] A. Russomanno, S. Notarnicola, F. M. Surace, R. Fazio, M. Dalmonte, and M. Heyl, Physical Review Research 2, 012003
+(2020).
+[256] R. Schäfer, G. S. Uhrig, and J. Stolze, Phys. Rev. B 100, 184301 (2019).
+[257] K. Mizuta, K. Takasan, and N. Kawakami, Physical Review B 100, 020301 (2019).
+
+23
+[258] L. Fernandes, J. Tindall, and D. Sels, Physical Review B 111, L100304 (2025).
+[259] M. Natsheh, A. Gambassi, and A. Mitra, Physical Review B 103, 014305 (2021).
+[260] M. Natsheh, A. Gambassi, and A. Mitra, Physical Review B 103, 224311 (2021).
+[261] L.-Z. Tang, X. Li, Z. D. Wang, and D.-W. Zhang, Discrete time crystals enabled by Floquet strong Hilbert space fragmentation (2025), version Number: 1.
+[262] S. Jiang, D. Yuan, W. Jiang, D.-L. Deng, and F. Machado, Phys. Rev. Lett. 135, 110401 (2025).
+[263] S. Sarkar and Y. Dubi, Nano Letters 22, 4445 (2022).
+[264] S. Sarkar and Y. Dubi, ACS Nano 18, 27988 (2024).
+[265] A.-G. Penner, H. Schmid, L. I. Glazman, and F. Von Oppen, Physical Review B 111, 184308 (2025).
+[266] W. Zhang, Y. Wu, X. Qiu, J. Nan, and X. Li, Physical Review B 108, 014307 (2023).
+[267] Y.-R. Liu and B. Huang, Analytical quantification of strongly disordered discrete time crystals (2025).
+[268] A. Kshetrimayum, M. Goihl, D. M. Kennes, and J. Eisert, Physical Review B 103, 224205 (2021).
+[269] A. Kshetrimayum, J. Eisert, and D. M. Kennes, Physical Review B 102, 195116 (2020).
+[270] S. Liu, S.-X. Zhang, C.-Y. Hsieh, S. Zhang, and H. Yao, Physical Review Letters 130, 120403 (2023).
+[271] J.-J. Wang, L.-Z. Tang, Y.-X. Du, and D.-W. Zhang, Physics Letters A 558, 130896 (2025).
+[272] H. C. Po, L. Fidkowski, T. Morimoto, A. C. Potter, and A. Vishwanath, Physical Review X 6, 041070 (2016).
+[273] T.-S. Zeng and D. N. Sheng, Physical Review B 96, 094202 (2017).
+[274] C. Sims, Crystals 13, 10.3390/cryst13081188 (2023).
+[275] C. Sims, Crystals 13, 10.3390/cryst13081265 (2023).
+[276] N. L. Foulk and S. Das Sarma, Physical Review B 107, 125420 (2023).
+[277] R. E. Throckmorton and S. Das Sarma, Physical Review B 106, 245419 (2022).
+[278] N. Egawa, K. Mizuta, and J. Nasu, Physical Review B 111, 144311 (2025).
+[279] T. B. Wahl, B. Han, and B. Béri, Nature Communications 15, 9845 (2024).
+[280] V. Motamarri, C. McLauchlan, and B. Béri, SymTFT out of equilibrium: from time crystals to braided drives and Floquet
+codes (2023), version Number: 2.
+[281] D. Bhowmick, H. Sun, B. Yang, and P. Sengupta, Physical Review B 108, 014434 (2023).
+[282] Y. Peng, Physical Review Letters 128, 186802 (2022).
+[283] S.-X. Wang and S. Wan, Physical Review B 106, 195146 (2022).
+[284] B. Placke, T. Rakovszky, N. P. Breuckmann, and V. Khemani, Topological Quantum Spin Glass Order and its realization
+in qLDPC codes (2024), version Number: 1.
+[285] G. Piccitto, M. Wauters, F. Nori, and N. Shammah, Physical Review B 104, 014307 (2021).
+[286] L. F. D. Prazeres, L. D. S. Souza, and F. Iemini, Physical Review B 103, 184308 (2021).
+[287] Y. Nakanishi and T. Sasamoto, Physical Review A 107, L010201 (2023).
+[288] P. Xu and T.-S. Deng, Physical Review B 107, 104301 (2023).
+[289] F. Carollo, I. Lesanovsky, M. Antezza, and G. De Chiara, Quantum Science and Technology 9, 035024 (2024).
+[290] M. Jirasek, I. Lesanovsky, and A. Cabot, The Boundary Time Crystal as a light source for quantum enhanced sensing
+beyond the Heisenberg Limit (2025), version Number: 1.
+[291] A. C. Lourenço, L. F. D. Prazeres, T. O. Maciel, F. Iemini, and E. I. Duzzioni, Physical Review B 105, 134422 (2022).
+[292] V. Montenegro, M. G. Genoni, A. Bayat, and M. G. A. Paris, Communications Physics 6, 304 (2023).
+[293] F. Iemini, R. Fazio, and A. Sanpera, Physical Review A 109, L050203 (2024).
+[294] A. Cabot, F. Carollo, and I. Lesanovsky, Physical Review Letters 132, 050801 (2024).
+[295] R. Yousefjani, K. Sacha, and A. Bayat, Physical Review B 111, 125159 (2025).
+[296] D. Gribben, A. Sanpera, R. Fazio, J. Marino, and F. Iemini, SciPost Physics 18, 100 (2025).
+[297] R. K. Shukla, L. Chotorlishvili, S. K. Mishra, and F. Iemini, Physical Review B 111, 024315 (2025).
+[298] Z. Wang, R. Gao, X. Wu, B. Buča, K. Mølmer, L. You, and F. Yang, Physical Review Letters 135, 230401 (2025).
+[299] S. Mondkar, P. Ghosh, and U. Sen, Dynamical quantum phase transitions in boundary time crystals (2026).
+[300] D. Nemeth, A. Nazir, A. Principi, and R.-J. Slager, Topological boundary time crystal oscillations (2026).
+[301] D. Nemeth, A. Nazir, R.-J. Slager, and A. Principi, Operator space transport and the emergence of boundary time crystals
+(2026), arXiv:2604.14291 [quant-ph].
+[302] H. Keßler, J. G. Cosme, M. Hemmerling, L. Mathey, and A. Hemmerich, Physical Review A 99, 053605 (2019).
+[303] H. Keßler, J. G. Cosme, C. Georges, L. Mathey, and A. Hemmerich, New Journal of Physics 22, 085002 (2020).
+[304] A. Lazarides, S. Roy, F. Piazza, and R. Moessner, Physical Review Research 2, 022002 (2020).
+[305] B. Buča, J. Tindall, and D. Jaksch, Nature Communications 10, 1730 (2019).
+[306] C. Booker, B. Buča, and D. Jaksch, New Journal of Physics 22, 085007 (2020).
+[307] C. Lledó and M. H. Szymańska, New Journal of Physics 22, 075002 (2020).
+[308] M. Esencan, A. I. Lvovsky, and B. Buča, Time crystals as passively protected oscillating qubits (2026), arXiv:2602.20269
+[quant-ph].
+[309] L. D. S. Souza, L. F. Dos Prazeres, and F. Iemini, Physical Review Letters 130, 180401 (2023).
+[310] K. Tucker, B. Zhu, R. J. Lewis-Swan, J. Marino, F. Jimenez, J. G. Restrepo, and A. M. Rey, New Journal of Physics 20,
+123003 (2018).
+[311] K. Chinzei and T. N. Ikeda, Physical Review Research 4, 023025 (2022).
+[312] H. Wang and J. Wang, Physical Review A 108, 012209 (2023).
+[313] G. Passarelli, P. Lucignano, R. Fazio, and A. Russomanno, Physical Review B 106, 224308 (2022).
+[314] A. Cabot, L. S. Muhle, F. Carollo, and I. Lesanovsky, Physical Review A 108, L041303 (2023).
+
+24
+[315] A. Cabot, F. Carollo, and I. Lesanovsky, Physical Review B 106, 134311 (2022).
+[316] K. Nakatsugawa, T. Fujii, and S. Tanda, Physical Review B 96, 094308 (2017).
+[317] S. Yang, Z. Wang, L. Fu, and J. Jie, Communications Physics 8, 114 (2025).
+[318] M. G. Silveirinha, H. Terças, and M. Antezza, Physical Review B 108, 235154 (2023).
+[319] Y.-X. Xiang, Q.-L. Lei, Z. Bai, and Y.-Q. Ma, Phys. Rev. Res. 6, 033185 (2024).
+[320] A. Mukherjee, Y. Ibrahim, M. Hajdušek, and S. Vinjanampathy, Physical Review A 110, 012220 (2024).
+[321] A. Cabot, G. L. Giorgi, and R. Zambrini, PRX Quantum 5, 030325 (2024).
+[322] E. Postavová, G. Passarelli, P. Lucignano, and A. Russomanno, New Journal of Physics 28, 034502 (2026).
+[323] B. Das, N. Jaseem, and V. Mukherjee, Physical Review A 110, 012208 (2024).
+[324] B. Buča and D. Jaksch, Physical Review Letters 123, 260401 (2019).
+[325] R. J. L. Tuquero, J. Skulte, L. Mathey, and J. G. Cosme, Physical Review A 105, 043311 (2022).
+[326] J. G. Cosme and L. Mathey, Time crystals in cavity-bec systems (2026), arXiv:2605.23881 [cond-mat.quant-gas].
+[327] D. C. Cole and S. B. Papp, Physical Review Letters 123, 173904 (2019).
+[328] J. G. Cosme, J. Skulte, and L. Mathey, Physical Review A 100, 053615 (2019).
+[329] Z. Gong, R. Hamazaki, and M. Ueda, Physical Review Letters 120, 040404 (2018).
+[330] B. Zhu, J. Marino, N. Y. Yao, M. D. Lukin, and E. A. Demler, New Journal of Physics 21, 073028 (2019).
+[331] R. D. Jara, D. F. Salinel, and J. G. Cosme, Physical Review A 109, 042212 (2024).
+[332] R. Mattes, I. Lesanovsky, and F. Carollo, Physical Review A 108, 062216 (2023).
+[333] S. B. Jäger, J. M. Giesen, I. Schneider, and S. Eggert, Physical Review A 110, L010202 (2024).
+[334] D. Chen, Z. Peng, J. Li, S. Chesi, and Y. Wang, Physical Review Research 6, 013130 (2024).
+[335] Y. Li, C. Wang, Y. Tang, and Y.-C. Liu, Physical Review Letters 132, 183803 (2024).
+[336] K. Giergiel, A. Kosior, P. Hannaford, and K. Sacha, Physical Review A 98, 013613 (2018).
+[337] K. Giergiel, T. Tran, A. Zaheer, A. Singh, A. Sidorov, K. Sacha, and P. Hannaford, New Journal of Physics 22, 085004
+(2020).
+[338] P. Hannaford and K. Sacha, AAPPS Bulletin 32, 12 (2022).
+[339] W. Golletz, A. Czarnecki, K. Sacha, and A. Kuroś, New Journal of Physics 24, 093002 (2022).
+[340] W. Golletz and K. Sacha, New Journal of Physics 27, 063202 (2025).
+[341] L. Liao, J. Smits, P. Van Der Straten, and H. T. C. Stoof, Physical Review A 99, 013625 (2019).
+[342] C. Lledó, T. K. Mavrogordatos, and M. H. Szymańska, Physical Review B 100, 054303 (2019).
+[343] P. Öhberg and E. M. Wright, Physical Review Letters 123, 250402 (2019).
+[344] J. Wang, P. Hannaford, and B. J. Dalton, New Journal of Physics 23, 063012 (2021).
+[345] G. P. Martins, O. L. Berman, and G. Gumbs, Scientific Reports 13, 19707 (2023).
+[346] C. H. Johansen, J. Lang, and F. Piazza, SciPost Phys. 17, 089 (2024).
+[347] P. Solanki, M. Krishna, M. Hajdušek, C. Bruder, and S. Vinjanampathy, Physical Review Letters 133, 260403 (2024).
+[348] R. W. Bomantara, Physical Review B 104, L180304 (2021).
+[349] R. W. Bomantara, Physical Review B 104, 064302 (2021).
+[350] R. W. Bomantara and J. Gong, Physical Review Letters 120, 230405 (2018).
+[351] R. W. Bomantara, Physical Review B 106, L060305 (2022).
+[352] M. Krishna, P. Solanki, M. Hajdušek, and S. Vinjanampathy, Physical Review Letters 130, 150401 (2023).
+[353] M. McGinley, S. Roy, and S. A. Parameswaran, Phys. Rev. Lett. 129, 090404 (2022).
+[354] E. O’Connor, V. Montenegro, F. Albarelli, M. G. A. Paris, A. Bayat, and M. G. Genoni, Attaining quantum sensing
+enhancement from monitored dissipative time crystals (2026).
+[355] L. Viotti, M. Huber, R. Fazio, and G. Manzano, Phys. Rev. Lett. 136, 110401 (2026).
+[356] G. Cenedese, S. T. Mister, M. Antezza, G. Benenti, and G. De Chiara, Physical Review B 112, 054303 (2025).
+[357] A. Pizzi, J. Knolle, and A. Nunnenkamp, Physical Review Letters 123, 150601 (2019).
+[358] X. Feng, S. Liu, S. Chen, and S.-X. Zhang, Tunable discrete quasi-time crystal from a single drive (2025), version Number:
+1.
+[359] K. Giergiel, A. Kuroś, A. Kosior, and K. Sacha, Physical Review Letters 127, 263003 (2021).
+[360] K. Giergiel, A. Kuroś, and K. Sacha, Physical Review B 99, 220303 (2019).
+[361] K. Giergiel, P. Hannaford, and K. Sacha, Phys. Rev. B 112, 214316 (2025).
+[362] Z. Ma, J. Yan, H. Zhao, and L.-Y. Peng, Physical Review B 112, L140301 (2025).
+[363] G. Homann, J. G. Cosme, and L. Mathey, Physical Review Research 2, 043214 (2020).
+[364] H. P. Ojeda Collado, G. Usaj, C. A. Balseiro, D. H. Zanette, and J. Lorenzana, Physical Review Research 3, L042023
+(2021).
+[365] Z. Dai, V. Ravindran, N. Y. Yao, and M. P. Zaletel, Photo-induced Superconductivity = Discrete Time Crystal? (2022),
+version Number: 1.
+[366] B. Fan, Z. Cai, and A. M. García-García, Physical Review B 110, 134307 (2024).
+[367] Y.-L. Zhan, C.-F. Liu, J.-T. Bu, K.-F. Cui, S.-L. Su, L.-L. Yan, and G. Chen, Science China Physics, Mechanics &
+Astronomy 69, 260317 (2026).
+[368] M. Nashaat, J. Tekić, and Y. M. Shukrinov, Phys. Rev. B 112, 184507 (2025).
+[369] B. Huang, T.-H. Leung, D. M. Stamper-Kurn, and W. V. Liu, Physical Review Letters 129, 133001 (2022).
+[370] A. Syrwid, J. Zakrzewski, and K. Sacha, Physical Review Letters 119, 250602 (2017).
+[371] K. Bull, A. Hallam, Z. Papić, and I. Martin, Physical Review Letters 129, 140602 (2022).
+[372] R. E. Barfknecht, S. E. Rasmussen, A. Foerster, and N. T. Zinner, Physical Review B 99, 144304 (2019).
+
+25
+[373] C. Lyu, S. Choudhury, C. Lv, Y. Yan, and Q. Zhou, Physical Review Research 2, 033070 (2020).
+[374] M. H. Muñoz-Arias, K. Chinni, and P. M. Poggi, Physical Review Research 4, 023018 (2022).
+[375] A. Pizzi, A. Nunnenkamp, and J. Knolle, Nature Communications 12, 1061 (2021).
+[376] A. Pizzi, J. Knolle, and A. Nunnenkamp, Nature Communications 12, 2341 (2021).
+[377] A. Russomanno, F. Iemini, M. Dalmonte, and R. Fazio, Physical Review B 95, 214307 (2017).
+[378] J. G. Cosme, J. Skulte, and L. Mathey, Physical Review B 108, 024302 (2023).
+[379] R. Gargiulo, G. Passarelli, P. Lucignano, and A. Russomanno, Physical Review B 109, 174310 (2024).
+[380] P. Reimann, P. Vorndamme, and J. Schnack, Physical Review Research 5, 043040 (2023).
+[381] M. Rahaman, A. Sakurai, and A. Roy, New Journal of Physics 26, 063035 (2024).
+[382] W.-G. Ma, H. Fan, and S.-X. Zhang, A Qudit-native Framework for Discrete Time Crystals (2025), version Number: 1.
+[383] A. Kuroś, R. Mukherjee, F. Mintert, and K. Sacha, Physical Review Research 3, 043203 (2021).
+[384] J. Dziarmaga, Physical Review B 105, 054203 (2022).
+[385] N. V. Prokof’ev and B. V. Svistunov, Journal of Experimental and Theoretical Physics 127, 860 (2018).
+[386] G. Giachetti, A. Solfanelli, L. Correale, and N. Defenu, Physical Review B 108, L140102 (2023).
+[387] R. Chandra and A. Roy, Physics Letters A 511, 129552 (2024).
+[388] Z.-A. Hu, B. Fu, X. Li, and S.-Q. Shen, Physical Review Research 5, L032024 (2023).
+[389] P. Matus and K. Sacha, Physical Review A 99, 033626 (2019).
+[390] K. Mizuta, K. Takasan, M. Nakagawa, and N. Kawakami, Physical Review Letters 121, 093001 (2018).
+[391] J. C. Schumann, I. Lesanovsky, and P. Solanki, Hierarchical time crystals (2026), version Number: 1.
+[392] B. Buča, Physical Review Letters 128, 100601 (2022).
+[393] M. Hajdušek, P. Solanki, R. Fazio, and S. Vinjanampathy, Physical Review Letters 128, 080603 (2022).
+[394] A. Sakurai, V. M. Bastidas, M. P. Estarellas, W. J. Munro, and K. Nemoto, Physical Review B 104, 054304 (2021).
+[395] M. P. Estarellas, T. Osada, V. M. Bastidas, B. Renoust, K. Sanaka, W. J. Munro, and K. Nemoto, Science Advances 6,
+eaay8892 (2020).
+[396] A. Sakurai, V. Bastidas, W. Munro, and K. Nemoto, Physical Review Letters 126, 120606 (2021).
+[397] A. Sakurai, M. P. Estarellas, W. J. Munro, and K. Nemoto, Physical Review Applied 17, 064044 (2022).
+[398] D. Zhang, X. Li, Y. Guo, H. Yu, Y. Jin, and Z.-Q. Yin, Robust and Efficient Quantum Reservoir Computing with Discrete
+Time Crystal (2025), version Number: 1.
+[399] Y. Sharabi, E. Lustig, and M. Segev, Physical Review Letters 126, 163902 (2021).
+[400] A. Dikopoltsev, Y. Sharabi, M. Lyubarov, Y. Lumer, S. Tsesses, E. Lustig, I. Kaminer, and M. Segev, Proceedings of the
+National Academy of Sciences 119, e2119705119 (2022).
+[401] E. Lustig, Y. Sharabi, and M. Segev, Optica 5, 1390 (2018).
+[402] S. Saha, O. Segal, C. Fruhling, E. Lustig, M. Segev, A. Boltasseva, and V. M. Shalaev, Optics Express 31, 8267 (2023).
+[403] N. Wang and G. P. Wang, New Journal of Physics 23, 103023 (2021).
+[404] J. Jin, L. He, J. Lu, E. J. Mele, and B. Zhen, Physical Review Letters 129, 063902 (2022).
+[405] Z. Hayran, J. B. Khurgin, and F. Monticone, Optical Materials Express 12, 3904 (2022).
+[406] M. Lyubarov, Y. Lumer, A. Dikopoltsev, E. Lustig, Y. Sharabi, and M. Segev, Science 377, 425 (2022).
+[407] M. M. Asgari, P. Garg, X. Wang, M. S. Mirmoosa, C. Rockstuhl, and V. Asadchy, Advances in Optics and Photonics 16,
+958 (2024).
+[408] J. Dong, S. Zhang, H. He, H. Li, and J. Xu, Physical Review Letters 134, 063801 (2025).
+[409] H. Li, S. Yin, H. He, J. Xu, A. Alù, and B. Shapiro, Physical Review Letters 130, 093803 (2023).
+[410] S. Sadhukhan and S. Ghosh, Phys. Rev. A 108, 023511 (2023).
+[411] S. Sadhukhan and S. Ghosh, Momentum controlled optical pulse amplification in photonic time crystals (2023), version
+Number: 1.
+[412] Y. Pan, M.-I. Cohen, and M. Segev, Physical Review Letters 130, 233801 (2023).
+[413] E. I. Kiselev and Y. Pan, Physical Review A 111, 053509 (2025).
+[414] K. Seibold, R. Rota, and V. Savona, Physical Review A 101, 033839 (2020).
+[415] E. I. Kiselev, Y. Pan, and N. H. Lindner, Physical Review B 110, L241411 (2024).
+[416] K. S. Eswaran, A. E. Kopaei, and K. Sacha, Physical Review B 111, L180201 (2025).
+[417] L. Leone, S. F. E. Oliviero, and A. Hamma, Phys. Rev. Lett. 128, 050402 (2022).
+[418] B. Placke, T. Rakovszky, N. P. Breuckmann, and V. Khemani, Topological quantum spin glass order and its realization
+in qldpc codes (2024).
+[419] S. Choi, N. Y. Yao, and M. D. Lukin, Quantum metrology based on strongly correlated matter (2017).
+
+

@@ -1,0 +1,31 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://mathsciencecompendium.local/schemas/registry/cayley_dickson_property_audit.schema.json",
+  "title": "CayleyDicksonPropertyAudit",
+  "type": "object",
+  "required": ["schema_version", "generator", "construction", "source_evidence", "interpretation", "algebras"],
+  "properties": {
+    "schema_version": {"const": 1},
+    "generator": {"const": "scripts/audit_cayley_dickson_properties.py"},
+    "construction": {"type": "string", "minLength": 1},
+    "source_evidence": {"type": "array", "minItems": 2, "items": {"type": "object", "required": ["relpath", "scope"], "properties": {"relpath": {"type": "string"}, "scope": {"type": "string"}}, "additionalProperties": false}},
+    "interpretation": {"type": "string", "minLength": 1},
+    "algebras": {
+      "type": "array",
+      "minItems": 6,
+      "maxItems": 6,
+      "items": {
+        "type": "object",
+        "required": ["name", "dimension", "properties", "witnesses"],
+        "properties": {
+          "name": {"type": "string"},
+          "dimension": {"type": "integer"},
+          "properties": {"type": "object"},
+          "witnesses": {"type": "object"}
+        },
+        "additionalProperties": false
+      }
+    }
+  },
+  "additionalProperties": false
+}

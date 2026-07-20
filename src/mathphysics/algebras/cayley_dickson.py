@@ -19,6 +19,7 @@ from dataclasses import dataclass
 from typing import TYPE_CHECKING, Any
 
 import numpy as np
+from typing_extensions import Self
 
 from ..config import Config
 
@@ -40,6 +41,31 @@ class _NumpyEncoder(json.JSONEncoder):
         return super().default(o)
 
 
+def _recursive_cayley_dickson_product(left: np.ndarray, right: np.ndarray) -> np.ndarray:
+    """Multiply equal-size coefficient vectors using the repository convention."""
+    if left.shape != right.shape or left.ndim != 1:
+        raise ValueError("Cayley-Dickson operands must be equal one-dimensional vectors")
+    if len(left) == 1:
+        return left * right
+    if len(left) % 2 != 0:
+        raise ValueError("Cayley-Dickson coefficient count must be a power of two")
+
+    half_dimension = len(left) // 2
+    left_a, left_b = left[:half_dimension], left[half_dimension:]
+    right_a, right_b = right[:half_dimension], right[half_dimension:]
+    conjugate_right_a = right_a.copy()
+    conjugate_right_a[1:] *= -1.0
+    conjugate_right_b = right_b.copy()
+    conjugate_right_b[1:] *= -1.0
+    product_left = _recursive_cayley_dickson_product(
+        left_a, right_a
+    ) - _recursive_cayley_dickson_product(conjugate_right_b, left_b)
+    product_right = _recursive_cayley_dickson_product(
+        right_b, left_a
+    ) + _recursive_cayley_dickson_product(left_b, conjugate_right_a)
+    return np.concatenate((product_left, product_right))
+
+
 @dataclass
 class AlgebraicProperties:
     """Properties of a Cayley-Dickson algebra."""
@@ -48,6 +74,9 @@ class AlgebraicProperties:
     is_commutative: bool
     is_associative: bool
     is_alternative: bool
+    is_power_associative: bool
+    is_flexible: bool
+    norm_is_multiplicative: bool
     is_division_algebra: bool
     has_zero_divisors: bool
     name: str
@@ -60,6 +89,9 @@ class AlgebraicProperties:
             "is_commutative": self.is_commutative,
             "is_associative": self.is_associative,
             "is_alternative": self.is_alternative,
+            "is_power_associative": self.is_power_associative,
+            "is_flexible": self.is_flexible,
+            "norm_is_multiplicative": self.norm_is_multiplicative,
             "is_division_algebra": self.is_division_algebra,
             "has_zero_divisors": self.has_zero_divisors,
         }
@@ -116,7 +148,7 @@ class CayleyDickson:
         """Return basis element names."""
         raise NotImplementedError
 
-    def __add__(self, other: CayleyDickson | float) -> CayleyDickson:
+    def __add__(self, other: CayleyDickson | float) -> Self:
         """Addition."""
         if isinstance(other, (int, float)):
             result = self.coeffs.copy()
@@ -127,11 +159,11 @@ class CayleyDickson:
         else:
             return NotImplemented
 
-    def __radd__(self, other: CayleyDickson | float) -> CayleyDickson:
+    def __radd__(self, other: CayleyDickson | float) -> Self:
         """Right addition."""
         return self.__add__(other)
 
-    def __sub__(self, other: CayleyDickson | float) -> CayleyDickson:
+    def __sub__(self, other: CayleyDickson | float) -> Self:
         """Subtraction."""
         if isinstance(other, (int, float)):
             result = self.coeffs.copy()
@@ -142,7 +174,7 @@ class CayleyDickson:
         else:
             raise ArithmeticError(f"Cannot subtract {type(other)} from {type(self)}")
 
-    def __rsub__(self, other: CayleyDickson | float) -> CayleyDickson:
+    def __rsub__(self, other: CayleyDickson | float) -> Self:
         """Right subtraction."""
         if isinstance(other, (int, float)):
             result = -self.coeffs
@@ -151,22 +183,22 @@ class CayleyDickson:
         else:
             return NotImplemented
 
-    def __neg__(self) -> CayleyDickson:
+    def __neg__(self) -> Self:
         """Negation."""
         return self.__class__(-self.coeffs)
 
-    def __mul__(self, other: CayleyDickson | float) -> CayleyDickson:
+    def __mul__(self, other: CayleyDickson | float) -> Self:
         """Multiplication (must be overridden for each algebra)."""
         raise NotImplementedError
 
-    def __rmul__(self, other: CayleyDickson | float) -> CayleyDickson:
+    def __rmul__(self, other: CayleyDickson | float) -> Self:
         """Right multiplication."""
         if isinstance(other, (int, float)):
             return self.__class__(other * self.coeffs)
         else:
             return NotImplemented
 
-    def __truediv__(self, other: CayleyDickson | float) -> CayleyDickson:
+    def __truediv__(self, other: CayleyDickson | float) -> Self:
         """Division."""
         if isinstance(other, (int, float)):
             if abs(other) < 1e-10:
@@ -177,7 +209,7 @@ class CayleyDickson:
         else:
             return NotImplemented
 
-    def conjugate(self) -> CayleyDickson:
+    def conjugate(self) -> Self:
         """Complex conjugate."""
         result = self.coeffs.copy()
         result[1:] *= -1
@@ -185,20 +217,20 @@ class CayleyDickson:
 
     def norm_squared(self) -> float:
         """Squared norm."""
-        return np.sum(self.coeffs**2)
+        return float(np.sum(self.coeffs**2))
 
     def norm(self) -> float:
         """Euclidean norm."""
-        return np.sqrt(self.norm_squared())
+        return float(np.sqrt(self.norm_squared()))
 
-    def inverse(self) -> CayleyDickson:
+    def inverse(self) -> Self:
         """Multiplicative inverse."""
         norm_sq = self.norm_squared()
         if norm_sq < 1e-10:
             raise ZeroDivisionError("Cannot invert zero element")
         return self.conjugate() / norm_sq
 
-    def normalized(self) -> CayleyDickson:
+    def normalized(self) -> Self:
         """Return normalized version (unit norm)."""
         n = self.norm()
         if n < 1e-10:
@@ -206,7 +238,7 @@ class CayleyDickson:
         return self / n
 
     @classmethod
-    def basis_element(cls, index: int) -> CayleyDickson:
+    def basis_element(cls, index: int) -> Self:
         """Create a basis element."""
         coeffs = np.zeros(cls._dimension_static())
         coeffs[index] = 1.0
@@ -218,7 +250,7 @@ class CayleyDickson:
         raise NotImplementedError
 
     @classmethod
-    def random(cls, scale: float = 1.0) -> CayleyDickson:
+    def random(cls, scale: float = 1.0) -> Self:
         """Create random element."""
         coeffs = np.random.randn(cls._dimension_static()) * scale
         return cls(coeffs)
@@ -237,7 +269,7 @@ class Real(CayleyDickson):
     def _basis_names(self) -> list[str]:
         return [""]
 
-    def __mul__(self, other: Real | float) -> Real:
+    def __mul__(self, other: CayleyDickson | float) -> Real:
         """Real multiplication."""
         if isinstance(other, (int, float)):
             return Real(self.coeffs[0] * other)
@@ -254,6 +286,9 @@ class Real(CayleyDickson):
             is_commutative=True,
             is_associative=True,
             is_alternative=True,
+            is_power_associative=True,
+            is_flexible=True,
+            norm_is_multiplicative=True,
             is_division_algebra=True,
             has_zero_divisors=False,
             name="Real",
@@ -273,7 +308,7 @@ class Complex(CayleyDickson):
     def _basis_names(self) -> list[str]:
         return ["", "i"]
 
-    def __mul__(self, other: Complex | float) -> Complex:
+    def __mul__(self, other: CayleyDickson | float) -> Complex:
         """Complex multiplication: (a+bi)(c+di) = (ac-bd) + (ad+bc)i."""
         if isinstance(other, (int, float)):
             return Complex(self.coeffs * other)
@@ -287,16 +322,16 @@ class Complex(CayleyDickson):
     @property
     def real(self) -> float:
         """Real part."""
-        return self.coeffs[0]
+        return float(self.coeffs[0])
 
     @property
     def imag(self) -> float:
         """Imaginary part."""
-        return self.coeffs[1]
+        return float(self.coeffs[1])
 
     def arg(self) -> float:
         """Argument (phase angle)."""
-        return np.arctan2(self.imag, self.real)
+        return float(np.arctan2(self.imag, self.real))
 
     @staticmethod
     def properties() -> AlgebraicProperties:
@@ -306,6 +341,9 @@ class Complex(CayleyDickson):
             is_commutative=True,
             is_associative=True,
             is_alternative=True,
+            is_power_associative=True,
+            is_flexible=True,
+            norm_is_multiplicative=True,
             is_division_algebra=True,
             has_zero_divisors=False,
             name="Complex",
@@ -325,7 +363,7 @@ class Quaternion(CayleyDickson):
     def _basis_names(self) -> list[str]:
         return ["", "i", "j", "k"]
 
-    def __mul__(self, other: Quaternion | float) -> Quaternion:
+    def __mul__(self, other: CayleyDickson | float) -> Quaternion:
         """Quaternion multiplication using Hamilton's rules:
         i^2 = j^2 = k^2 = ijk = -1
         ij = k, jk = i, ki = j
@@ -358,7 +396,7 @@ class Quaternion(CayleyDickson):
     @property
     def scalar(self) -> float:
         """Scalar (real) part."""
-        return self.coeffs[0]
+        return float(self.coeffs[0])
 
     @property
     def vector(self) -> np.ndarray:
@@ -397,6 +435,9 @@ class Quaternion(CayleyDickson):
             is_commutative=False,
             is_associative=True,
             is_alternative=True,
+            is_power_associative=True,
+            is_flexible=True,
+            norm_is_multiplicative=True,
             is_division_algebra=True,
             has_zero_divisors=False,
             name="Quaternion",
@@ -416,7 +457,7 @@ class Octonion(CayleyDickson):
     def _basis_names(self) -> list[str]:
         return ["", "e1", "e2", "e3", "e4", "e5", "e6", "e7"]
 
-    def __mul__(self, other: Octonion | float) -> Octonion:
+    def __mul__(self, other: CayleyDickson | float) -> Octonion:
         """Octonion multiplication using Cayley-Dickson construction."""
         if isinstance(other, (int, float)):
             return Octonion(self.coeffs * other)
@@ -463,6 +504,9 @@ class Octonion(CayleyDickson):
             is_commutative=False,
             is_associative=False,
             is_alternative=True,  # Octonions are alternative
+            is_power_associative=True,
+            is_flexible=True,
+            norm_is_multiplicative=True,
             is_division_algebra=True,
             has_zero_divisors=False,
             name="Octonion",
@@ -503,7 +547,7 @@ class Sedenion(CayleyDickson):
             names.append(f"e{i}")
         return names
 
-    def __mul__(self, other: Sedenion | float) -> Sedenion:
+    def __mul__(self, other: CayleyDickson | float) -> Sedenion:
         """Sedenion multiplication using Cayley-Dickson construction."""
         if isinstance(other, (int, float)):
             return Sedenion(self.coeffs * other)
@@ -541,23 +585,14 @@ class Sedenion(CayleyDickson):
 
     @staticmethod
     def find_zero_divisors(trials: int = 100) -> list[tuple[Sedenion, Sedenion]]:
-        """Find examples of zero divisors in sedenions."""
-        zero_divisors = []
-        for _ in range(trials):
-            # Create structured sedenions likely to be zero divisors
-            # Based on the theory that certain combinations yield zero
-            Sedenion.random(scale=1.0)
-            Sedenion.random(scale=1.0)
-
-            # Check specific constructions known to produce zero divisors
-            # For example: (e9 + e10)(e11 - e12) type constructions
-            test_a = Sedenion.basis_element(9) + Sedenion.basis_element(10)
-            test_b = Sedenion.basis_element(11) - Sedenion.basis_element(12)
-
-            if test_a.has_zero_divisor_with(test_b):
-                zero_divisors.append((test_a, test_b))
-
-        return zero_divisors
+        """Return a deterministic exact zero-divisor witness when requested."""
+        if trials <= 0:
+            return []
+        left_factor = Sedenion.basis_element(3) + Sedenion.basis_element(10)
+        right_factor = Sedenion.basis_element(6) - Sedenion.basis_element(15)
+        if not left_factor.has_zero_divisor_with(right_factor):
+            raise ArithmeticError("canonical sedenion zero-divisor witness failed")
+        return [(left_factor, right_factor)]
 
     @staticmethod
     def properties() -> AlgebraicProperties:
@@ -567,6 +602,9 @@ class Sedenion(CayleyDickson):
             is_commutative=False,
             is_associative=False,
             is_alternative=False,  # Lost at sedenions
+            is_power_associative=True,
+            is_flexible=True,
+            norm_is_multiplicative=False,
             is_division_algebra=False,  # Has zero divisors
             has_zero_divisors=True,
             name="Sedenion",
@@ -589,7 +627,7 @@ class Pathion(CayleyDickson):
             names.append(f"f{i}")
         return names
 
-    def __mul__(self, other: Pathion | float) -> Pathion:
+    def __mul__(self, other: CayleyDickson | float) -> Pathion:
         """Pathion multiplication using Cayley-Dickson construction."""
         if isinstance(other, (int, float)):
             return Pathion(self.coeffs * other)
@@ -624,8 +662,12 @@ class Pathion(CayleyDickson):
             is_commutative=False,
             is_associative=False,
             is_alternative=False,
+            is_power_associative=True,
+            is_flexible=True,
+            norm_is_multiplicative=False,
             is_division_algebra=False,
             has_zero_divisors=True,
+            name="Pathion",
         )
 
 
@@ -635,6 +677,18 @@ class Chingon(Pathion):
     @classmethod
     def _dimension_static(cls) -> int:
         return 256
+
+    def _dimension(self) -> int:
+        return self._dimension_static()
+
+    def __mul__(self, other: CayleyDickson | float) -> Self:
+        if isinstance(other, (int, float)):
+            return self.__class__(self.coeffs * other)
+        if isinstance(other, self.__class__):
+            return self.__class__(
+                _recursive_cayley_dickson_product(self.coeffs, other.coeffs)
+            )
+        return NotImplemented
 
     @classmethod
     def _basis_names(cls) -> list[str]:
@@ -668,7 +722,7 @@ class Polyxon(Rouxion):
 class CayleyDicksonValidator:
     """Validator for Cayley-Dickson algebra properties."""
 
-    def __init__(self, algebra_class: type) -> None:
+    def __init__(self, algebra_class: type[CayleyDickson]) -> None:
         """Initialize validator with an algebra class."""
         self.algebra_class = algebra_class
         self.dimension = algebra_class._dimension_static()
@@ -760,26 +814,23 @@ class CayleyDicksonValidator:
 
         return max_relative_error < tolerance, max_relative_error
 
-    def find_zero_divisors(self, trials: int = 1000) -> list[tuple[Any, Any]]:
-        """Search for zero divisors."""
-        zero_divisors = []
+    def find_zero_divisors(
+        self, trials: int = 1000
+    ) -> list[tuple[CayleyDickson, CayleyDickson]]:
+        """Return the canonical embedded sedenion zero-divisor witness."""
+        zero_divisors: list[tuple[CayleyDickson, CayleyDickson]] = []
 
-        if self.dimension <= 8:
-            # No zero divisors expected for dimensions <= 8
+        if self.dimension <= 8 or trials <= 0:
             return zero_divisors
 
-        for _ in range(trials):
-            a = self.algebra_class.random()
-            b = self.algebra_class.random()
-
-            # Check if both are non-zero but product is zero
-            if a.norm() > 1e-10 and b.norm() > 1e-10:
-                product = a * b
-                if product.norm() < 1e-10:
-                    zero_divisors.append((a, b))
-                    if len(zero_divisors) >= 5:  # Limit examples
-                        break
-
+        left_factor = self.algebra_class.basis_element(3) + self.algebra_class.basis_element(10)
+        right_factor = self.algebra_class.basis_element(6) - self.algebra_class.basis_element(15)
+        if (
+            left_factor.norm_squared() > 0.0
+            and right_factor.norm_squared() > 0.0
+            and (left_factor * right_factor).norm_squared() == 0.0
+        ):
+            zero_divisors.append((left_factor, right_factor))
         return zero_divisors
 
     def generate_multiplication_table(self) -> np.ndarray:

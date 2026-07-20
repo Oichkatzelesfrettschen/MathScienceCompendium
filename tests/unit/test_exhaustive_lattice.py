@@ -17,7 +17,6 @@ from __future__ import annotations
 import json
 
 import numpy as np
-import pytest
 
 from mathphysics.lattice_theory import (
     E8Lattice,
@@ -227,7 +226,7 @@ def test_analyze_lattice_density_positive():
 
 
 def test_analyze_lattice_with_output_dir_writes_json(tmp_path):
-    results = analyze_lattice_properties(output_dir=tmp_path)
+    analyze_lattice_properties(output_dir=tmp_path)
     outfile = tmp_path / "lattice_analysis.json"
     assert outfile.exists()
     with outfile.open() as f:

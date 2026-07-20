@@ -11,14 +11,13 @@ from pathlib import Path
 PROJECT_ROOT = Path(__file__).resolve().parent.parent.parent
 
 # Data directories
-DATA_DIR = os.environ.get("MATHPHYSICS_DATA_DIR", PROJECT_ROOT / "data")
-RESULTS_DIR = os.environ.get("MATHPHYSICS_RESULTS_DIR", PROJECT_ROOT / "results")
-FIGURES_DIR = os.environ.get("MATHPHYSICS_FIGURES_DIR", PROJECT_ROOT / "figures")
+DATA_DIR = Path(os.environ.get("MATHPHYSICS_DATA_DIR", str(PROJECT_ROOT / "data")))
+RESULTS_DIR = Path(os.environ.get("MATHPHYSICS_RESULTS_DIR", str(PROJECT_ROOT / "results")))
+FIGURES_DIR = Path(os.environ.get("MATHPHYSICS_FIGURES_DIR", str(PROJECT_ROOT / "figures")))
 
 # Ensure directories exist
 for directory in [DATA_DIR, RESULTS_DIR, FIGURES_DIR]:
-    if isinstance(directory, (str, Path)):
-        Path(directory).mkdir(parents=True, exist_ok=True)
+    directory.mkdir(parents=True, exist_ok=True)
 
 
 class Config:
@@ -32,17 +31,17 @@ class Config:
     @staticmethod
     def get_data_path(filename: str) -> Path:
         """Get path for a data file."""
-        return Path(DATA_DIR) / filename
+        return Path(Config.DATA_DIR) / filename
 
     @staticmethod
     def get_results_path(filename: str) -> Path:
         """Get path for a results file."""
-        return Path(RESULTS_DIR) / filename
+        return Path(Config.RESULTS_DIR) / filename
 
     @staticmethod
     def get_figure_path(filename: str) -> Path:
         """Get path for a figure file."""
-        return Path(FIGURES_DIR) / filename
+        return Path(Config.FIGURES_DIR) / filename
 
     @staticmethod
     def get_jax_backend():

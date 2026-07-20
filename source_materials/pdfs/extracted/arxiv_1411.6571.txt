@@ -1,0 +1,5093 @@
+MOONSHINE
+
+arXiv:1411.6571v2 [math.RT] 5 Apr 2015
+
+JOHN F. R. DUNCAN, MICHAEL J. GRIFFIN AND KEN ONO
+Abstract. Monstrous moonshine relates distinguished modular functions to the representation theory of the Monster M. The celebrated observations that
+(*)
+
+1 = 1,
+
+196884 = 1 + 196883,
+
+21493760 = 1 + 196883 + 21296876,
+
+......
+
+illustrate the case of J(τ ) = j(τ ) − 744, whose coefficients turn out to be sums of the
+dimensions of the 194 irreducible representations of M. Such formulas are dictated by
+the structure of the graded monstrous moonshine modules. Recent works in moonshine
+suggest deep relations between number theory and physics. Number theoretic Kloosterman sums have reappeared in quantum gravity, and mock modular forms have emerged
+as candidates for the computation of black hole degeneracies. This paper is a survey of
+past and present research on moonshine. We also compute the quantum dimensions of
+the monster orbifold, and obtain exact formulas for the multiplicities of the irreducible
+components of the moonshine modules. These formulas imply that such multiplicities
+are asymptotically proportional to dimensions. For example, the proportion of 1’s in
+(*) tends to
+dim(χ1 )
+1
+= 1.711 . . . × 10−28 .
+=
+P194
+5844076785304502808013602136
+i=1 dim(χi )
+
+1. Introduction
+This story begins innocently with peculiar numerics, and in its present form exhibits
+connections to conformal field theory, string theory, quantum gravity, and the arithmetic
+of mock modular forms. This paper is an introduction to the many facets of this beautiful
+theory.
+We begin with a review of the principal results in the development of monstrous moonshine in §§2-4. We refer to the introduction of [105], and the more recent survey [117],
+for more on these topics. After describing these classic works, we discuss the interplay
+between moonshine and Rademacher sums in §5, and related observations which suggest
+a connection between monstrous moonshine and three-dimensional quantum gravity in
+2010 Mathematics Subject Classification. 11F11, 11F22, 11F37, 11F50, 20C34, 20C35.
+The authors are supported by the NSF. The first author also thanks the Simons Foundation
+(#316779), and the third author also thanks the support of the Asa Griggs Candler Fund. The authors thank John McKay and and John Thompson for answering questions about the history related
+to the study of distributions within the moonshine module. Thanks are due also to Miranda Cheng,
+Igor Frenkel, Bob Griess, Daniel Grumiller, Jeff Harvey, Shamit Kachru, Barry Mazur, John McKay,
+Jean-Pierre Serre and the anonymous referee, for comments, corrections and excellent suggestions.
+1
+
+2
+
+JOHN F. R. DUNCAN, MICHAEL J. GRIFFIN AND KEN ONO
+
+§6. The remainder of the paper is devoted to more recent works. We describe a generalization of moonshine, the moonshine tower, in §7, and in §8 we compute the quantum
+dimensions of the monster orbifold and discuss the distributions of irreducible representations of the monster arising in monstrous moonshine. We present a survey of the recently
+discovered umbral moonshine phenomenon in §9, and conclude, in §10, with problems for
+future work.
+2. Early Days
+The classification of finite simple groups [2] distinguishes twenty-six examples above
+the others; namely, the sporadic simple groups, which are those that belong to none of the
+naturally occurring infinite families: cyclic groups, alternating groups, or finite groups
+of Lie type. Distinguished amongst the sporadic simple groups is the Fischer–Griess
+monster M, on account of its size, which is
+(2.1)
+
+|M| = 246 · 320 · 59 · 76 · 112 · 133 · 17 · 19 · 23 · 29 · 31 · 41 · 47 · 59 · 71
+
+(cf. [120]). Note that the margin is not small, for the order of the monster is
+(2.2)
+
+25 · 37 · 53 · 74 · 11 · 132 · 29 · 41 · 59 · 71
+
+times that of the next largest sporadic simple group, the baby monster (cf. [170]).
+Fischer and Griess independently produced evidence for the monster group in 1973 (cf.
+[120]). Well before it was proven to exist, Tits gave a lecture on its conjectural properties
+at the Collège de France in 1975. In particular, he described its order (2.1). Around this
+time, Ogg had been considering the automorphism groups of certain algebraic curves,
+and had arrived at the set of primes
+(2.3)
+
+{2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 41, 47, 59, 71}
+
+in a purely geometric way (cf. the Corollaire of [194]). Making what may now be
+identified as the first observation of monstrous moonshine, Ogg offered a bottle of Jack
+Daniels1 for an explanation of this coincidence (cf. Remarque 1 of [194]).
+Ogg’s observation would ultimately be recognized as reflecting another respect in which
+the monster is distinguished amongst finite simple groups: as demonstrated by the pioneering construction of Frenkel–Lepowsky–Meurman [103, 104, 105], following the astonishing work of Griess [121, 122], the “most natural” representation of the monster, is
+infinite-dimensional.
+The explanation of this statement takes us back to McKay’s famous observation, that
+(2.4)
+
+196884 = 1 + 196883
+
+1We refer the reader to [91] for a recent analysis of the Jack Daniels problem.
+
+MOONSHINE
+
+3
+
+(cf. [59, 222]), and the generalizations of this observed by Thompson [222], including2
+21493760 = 1 + 196883 + 21296876,
+864299970 = 2 × 1 + 2 × 196883 + 21296876 + 842609326,
+(2.5)
+20245856256 = 2 × 1 + 3 × 196883 + 2 × 21296876 + 842609326 + 19360062527.
+Of course the left hand sides of (2.4) and (2.5) are familiar to number theorists and
+algebraic geometers, as coefficients in the Fourier coefficients of the normalized elliptic
+modular invariant
+
+(2.6)
+
+1728g2(τ )3
+− 744
+g2 (τ )3 − 27g3(τ )2
+= q −1 + 196884q + 21493760q 2 + 864299970q 3 + 20245856256q 4 + . . .
+
+J(τ ) :=
+
+Here q := e2πiτ , and we set g2 (τ ) := 60G4 (τ ) and g3 (τ ) := 140G6 (τ ), where G2k (τ )
+denotes the Eisenstein series of weight 2k,
+(2.7)
+
+G2k (τ ) :=
+
+X
+
+(m + nτ )−2k ,
+
+(m,n)6=(0,0)
+
+for k ≥ 2. The functions g2 and g3 serve to translate between the two most common
+parameterizations of a complex elliptic curve: as a quotient C/(Z + Zτ ) for τ in the
+upper-half plane, H := {τ ∈ C | ℑ(τ ) > 0}, and as the locus of a Weierstrass equation,
+y 2 = 4x3 − g2 x − g3 .
+The fundamental property of J(τ ), from both the number theoretic and algebrogeometric points of view, is that it is a modular function for SL2 (Z). In fact, and
+importantly for the monster’s natural infinite-dimensional representation, J(τ ) is a generator for the field of SL2 (Z)-invariant holomorphic functions on H that have at most
+exponential growth as ℑ(τ ) → ∞.
+The right hand sides of (2.4) and (2.5) are familiar to finite group theorists, as simple
+sums of dimensions of irreducible representations of the monster M. In fact, the irreducible representations appearing in (2.4) and (2.5) are just the first six, of a total of
+
+2As was pointed out to us by J.-P. Serre, the decomposition for 20245856256 that appears in [222]
+
+differs from that which develops from the monster’s natural, infinite-dimensional representation. We
+reproduce Serre’s decomposition in (2.5).
+
+4
+
+JOHN F. R. DUNCAN, MICHAEL J. GRIFFIN AND KEN ONO
+
+194, in the character table of M (cf. [57]), when ordered by size. We have that
+χ1 (e) = 1
+χ2 (e) = 196883
+χ3 (e) = 21296876
+χ4 (e) = 842609326
+(2.8)
+
+χ5 (e) = 18538750076
+χ6 (e) = 19360062527
+..
+.
+χ194 (e) = 258823477531055064045234375.
+
+Here e denotes the identity element of M, so χi (e) is just the dimension of the irreducible
+representation of M with character χi .
+3. Classical Moonshine
+The coincidences (2.4) and (2.5) led Thompson to make the following conjecture [222]
+which realizes the natural representation of the monster alluded to above.
+Conjecture 3.1 (Thompson). L
+There is a naturally defined graded infinite-dimensional
+♮
+♮
+monster module, denoted V = ∞
+n=−1 Vn , which satisfies
+(3.1)
+
+dim(Vn♮ ) = c(n)
+
+for n ≥ −1 (Cf. (2.6)), such that the decompositions into irreducible representations
+of the monster satisfy (2.4) and (2.5) for n = 1, 2, 3 and 4 (and a similar condition for
+n = 5).
+At the time that Thompson’s conjecture was made, the monster had not yet been
+proven to exist, but Griess [120], and Conway–Norton [59], had independently conjectured
+the existence of a faithful representation of dimension 196883, and Fischer–Livingstone–
+Thorne had constructed the character table of M, by assuming the validity of this claim
+(cf. [59]) together with conjectural statements (cf. [120]) about the structure of M.
+Thompson also suggested [221] to investigate the properties of the graded-trace functions
+∞
+X
+(3.2)
+tr(g|Vn♮ )q n ,
+Tg (τ ) :=
+n=−1
+
+for g ∈ M, now called the monstrous McKay–Thompson series, that would arise from
+the conjectural monster module V ♮ . Using the character table constructed by Fischer–
+Livingstone–Thorne, it was observed [59, 221] that the functions Tg are in many cases
+directly similar to J in the following respect: the first few coefficients of each Tg coincide
+
+MOONSHINE
+
+5
+
+with those of a generator for the function field of a discrete group3 Γg < SL2 (R), commensurable with SL2 (Z), containing −I, and having width one at infinity, meaning that
+the subgroup of upper-triangular matrices in Γg coincides with
+ 
+
+
+1 n
+Γ∞ := ±
+(3.3)
+|n∈Z ,
+0 1
+for all g ∈ M.
+This observation was refined and developed by Conway–Norton [59], leading to their
+famous monstrous moonshine conjectures:.
+Conjecture 3.2 (Monstrous Moonshine: Conway–Norton). For each g ∈ M there is a
+specific group Γg < SL2 (R) such that Tg is the unique normalized principal modulus4 for
+Γg .
+This means that each Tg is the unique Γg -invariant holomorphic function on H which
+satisfies
+(3.4)
+
+Tg (τ ) = q −1 + O(q),
+
+as ℑ(τ ) → ∞, and remains bounded as τ approaches any non-infinite cusp of Γg . We
+refer to this feature of the Tg as the principal modulus property of monstrous moonshine.
+The hypothesis that Tg is Γg -invariant, satisfying (3.4) near the infinite cusp of Γg but
+having no other poles, implies that Tg generates the field of Γg -invariant holomorphic
+functions on H that have at most exponential growth at cusps, in direct analogy with J.
+In particular, the natural Riemann surface structure on Γg \H (cf. e.g. [212]) must be
+that of the Riemann sphere b
+C = C ∪ {∞} with finitely many points removed, and for this
+reason the groups Γg are said to have genus zero, and the principal modulus property is
+often referred to as the genus zero property of monstrous moonshine.
+The reader will note the astonishing predictive power that the principal modulus property of monstrous moonshine bestows: the fact that a normalized principal modulus for
+a genus zero group Γg is unique, means that we can compute the trace of an element
+g ∈ M, on any homogeneous subspace of the monster’s natural infinite-dimensional representation V ♮ , without any information about the monster, as soon as we can guess
+correctly the discrete group Γg . The analysis of Conway–Norton in [59] establishes very
+strong guidelines for the determination of Γg , and once Γg has been chosen, the “theory
+of replicability” (cf. [1, 59, 192]) allows for efficient computation of the coefficients of the
+normalized principal modulus Tg , given the knowledge of just a few of them (cf. [100],
+or (3.10)).
+It was verified by Atkin–Fong–Smith [213], using results of Thompson [221] (cf. also
+[208]), that a graded (possibly virtual) infinite-dimensional monster module V ♮ , such that
+the functions Tg of (3.2) are exactly those predicted by Conway–Norton in [59], exists.
+3The relevant groups Γ
+
+g shall be discussed in detail in Section 8.1.
+
+4A principal modulus is also referred to as a Hauptmodul.
+
+6
+
+JOHN F. R. DUNCAN, MICHAEL J. GRIFFIN AND KEN ONO
+
+Theorem
+L∞ 3.3 ♮(Atkin–Fong–Smith). There exists a (possibly virtual) graded M-module
+♮
+V = n=−1 Vn such that if Tg is defined by (3.2), then Tg is the Fourier expansion of
+the unique Γg -invariant holomorphic function on H that satisfies Tg (τ ) = q −1 + O(q) as
+τ approaches the infinite cusp, and has no poles at any non-infinite cusps of Γg , where
+Γg is the discrete subgroup of SL2 (R) specified by Conway–Norton in [59].
+Thus Thompson’s conjecture was confirmed, albeit indirectly. By this point in time,
+Griess, in an astonishing tour de force, had constructed the monster explicitly, by hand,
+by realizing it as the automorphism group of a commutative but non-associative algebra
+of dimension 196884 [121, 122]. (See also [56, 223].) Inspired by Griess’ construction, and
+by the representation theory of affine Lie algebras, which also involves graded infinitedimensional vector spaces whose graded dimensions enjoy good modular properties (cf.
+e.g. [149, 150, 151, 154]), Frenkel–Lepowsky–Meurman established Thompson’s conjecture in a strong sense.
+Theorem 3.4 (Frenkel–Lepowsky–Meurman). Thompson’s Conjecture is true. In particular, the moonshine module V ♮ is constructed in [103, 104].
+Frenkel–Lepowsky–Meurman generalized the homogeneous realization of the basic representation of an affine Lie algebra ĝ due, independently, to Frenkel–Kac [102] and Segal
+[209], in such a way that Leech’s lattice Λ [168, 169]—the unique [54] even self-dual
+positive-definite lattice of rank 24 with no roots—could take on the role played by the
+root lattice of g in the Lie algebra case. In particular, their construction came equipped
+with rich algebraic structure, furnished by vertex operators, which had appeared first in
+the physics literature in the late 1960’s.
+We refer to [102], and also the introduction to [105] for accounts of the role played
+by vertex operators in physics (up to 1988) along with a detailed description of their
+application to the representation theory of affine Lie algebras. The first application of
+vertex operators to affine Lie algebra representations was obtained by Lepowsky–Wilson
+in [172].
+Borcherds described a powerful axiomatic formalism for vertex operators in [15]. In
+particular, he introduced the notion of a vertex algebra, which can be regarded as similar
+to a commutative associative algebra, except that multiplications depend upon formal
+variables zi , and can be singular, in a certain formal sense, along the canonical divisors
+{zi = 0}, {zi = zj } (cf. [20, 101]).
+The appearance of affine Lie algebras above, as a conceptual ingredient for the Frenkel–
+Lepowsky–Meurman construction of V ♮ hints at an analogy between complex Lie groups
+and the monster. Borcherds’ vertex algebra theory makes this concrete, for Borcherds
+showed [15] that both in the case of the basic representation of an affine Lie algebra, and
+in the case of the moonshine module V ♮ , the vertex operators defined by Frenkel–Kac,
+Segal, and Frenkel–Lepowsky–Meurmann, extend naturally
+to vertex algebra structures.
+L
+In all of these examples the Virasoro algebra, V = n CL(n) ⊕ Cc, being the unique
+d
+universal central extension of the Lie algebra C[t, t−1 ] dt
+of polynomial vector fields on
+
+MOONSHINE
+
+7
+
+the circle,
+m3 − m
+δm+n,0 c, [L(m), c] = 0,
+12
+acts naturally on the underlying vector space. (See [155] for a detailed analysis of V.
+d
+.) This Virasoro structure, which
+The generator L(m) lies above the vector field −tm+1 dt
+has powerful applications, was axiomatized in [105], with the introduction of the notion
+of a vertex operator algebra. If V is a vertex operator algebra and the central element c
+of the Virasoro algebra acts as c times the identity on V , for some c ∈ C, then V is said
+to have central charge c.
+For the basic representation of an affine Lie algebra ĝ, the group of vertex operator
+algebra automorphisms—i.e. those vertex algebra automorphisms that commute with the
+Virasoro action—is the adjoint complex Lie group associated to g. For the moonshine
+module V ♮ , it was shown by Frenkel–Lepowsky–Meurman in [105], that the group of
+vertex operator algebra automorphisms is precisely the monster.
+L
+♮
+Theorem 3.5 (Frenkel–Lepowsky–Meurman). The moonshine module V ♮ = ∞
+n=−1 Vn
+is a vertex operator algebra of central charge 24 whose graded dimension is given by J(τ ),
+and whose automorphism group is M.
+(3.5)
+
+[L(m), L(n)] = (m − n)L(m + n) +
+
+Vertex operator algebras are of relevance to physics, for we now recognize them as
+“chiral halves” of two-dimensional conformal field theories (cf. [106, 107]). From this
+point of view, the construction of V ♮ by Frenkel–Lepowsky–Meurman constitutes one of
+the first examples of an orbifold conformal field theory (cf. [73, 74, 75]). In the case of
+V ♮ , the underlying geometric orbifold is the quotient
+
+(3.6)
+R24 /Λ /(Z/2Z),
+
+of the 24-dimensional torus Λ ⊗Z R/Λ ≃ R24 /Λ by the Kummer involution x 7→ −x,
+where Λ denotes the Leech lattice. So in a certain sense, V ♮ furnishes a “24-dimensional”
+construction of M. We refer to [101, 105, 153, 171] for excellent introductions to vertex
+algebra, and vertex operator algebra theory.
+Affine Lie algebras are special cases of Kac–Moody algebras, first considered by Kac
+[148] and Moody [185, 186], independently. Roughly speaking, a Kac–Moody algebra is
+“built” from copies of sl2 , in such a way that most examples are infinite-dimensional,
+but much of the finite-dimensional theory carries through (cf. [152]). Borcherds generalized this further, allowing also copies of the three-dimensional Heisenberg Lie algebra
+to serve as building blocks, and thus arrived [16] at the notion of generalized Kac–Moody
+algebra, or Borcherds–Kac–Moody (BKM) algebra, which has subsequently found many
+applications in mathematics and mathematical physics (cf. [139, 207]).
+One of the most powerful such applications occurred in moonshine, when Borcherds
+introduced a particular example—the monster Lie algebra m—and used it to prove [18]
+the moonshine conjectures of Conway–Norton. His method entailed using monsterequivariant versions of the denominator identity for m to verify that the coefficients
+
+8
+
+JOHN F. R. DUNCAN, MICHAEL J. GRIFFIN AND KEN ONO
+
+of the McKay–Thompson series Tg , defined by (3.2) according to the Frenkel–Lepowsky–
+Meurman construction of V ♮ , satisfy the replication formulas conjectured by Conway–
+Norton in [59]. This powerful result reduced the proof of the moonshine conjectures to a
+small, finite number of identities, that he could easily check by hand.
+Theorem 3.6 (Borcherds). Let V ♮ be the moonshine module vertex operator algebra
+constructed by Frenkel–Lepowsky–Meurman, whose automorphism group is M. If Tg is
+defined by (3.2) for g ∈ M, and if Γg is the discrete subgroup of SL2 (R) specified by
+Conway–Norton in [59], then Tg is the unique normalized principal modulus for Γg .
+Recall that an even self-dual lattice of signature (m, n) exists if and only if m − n = 0
+(mod 8) (cf. e.g. [63]). Such a lattice is unique up to isomorphism if mn > 0, and is
+typically denoted IIm,n . In the case that m = n = 1 we may take
+(3.7)
+
+II1,1 := Ze + Zf,
+
+where e and f are isotropic, he, ei = hf, f i = 0, and he, f i = 1. Then me + nf ∈ II1,1 has
+square-length 2mn. Note that II25,1 and Λ ⊕ II1,1 are isomorphic, for Λ the Leech lattice,
+since both lattices are even and self-dual, with signature (25, 1).
+In physical terms the monster Lie algebra m is (“about half” of) the space of “physical
+states” of a bosonic string moving in the quotient
+
+R24 /Λ ⊕ R1,1 /II1,1 /(Z/2Z)
+(3.8)
+of the 26-dimensional torus II25,1 ⊗Z R/II25,1 ≃ R24 /Λ ⊕ R1,1 /II1,1 by the involution
+(x, y) 7→ (−x, y) (acting as the Kummer involution on the Leech summand, and trivially
+on the hyperbolic summand). The monster Lie algebra m is constructed in a functorial
+way from V ♮ (cf. [37]), inherits an action by the monster from V ♮ , and admits a monsterinvariant grading by II1,1 .
+The denominator identity for a Kac–Moody algebra g equates a product indexed by
+the positive roots of g with a sum indexed by the Weyl group of g. A BKM algebra also
+admits a denominator identity, which for the case of the monster Lie algebra m is the
+beautiful Koike–Norton–Zagier formula
+Y
+(3.9)
+p−1
+(1 − pm q n )c(mn) = J(σ) − J(τ ),
+m,n∈Z
+m>0
+
+where σ ∈ H and p = e2πiσ (and c(n) is the coefficient of q n in J(τ ), cf. (2.6)). Since the
+right hand side of (3.9) implies that the left hand side has no terms pm q n with mn 6= 0,
+this identity imposes many non-trivial polynomial relations upon the coefficients of J(τ ).
+Among these is
+n
+X
+(3.10)
+c(4n + 2) = c(2n + 2) +
+c(k)c(2n − k + 1),
+k=1
+
+which was first found by Mahler [174] by a different method, along with similar expressions for c(4n), c(4n + 1), and c(4n + 3), which are also entailed in (3.9). Taken together
+
+MOONSHINE
+
+9
+
+these relations allow us to compute the coefficients of J(τ ) recursively, given just the
+values
+c(1) = 196884,
+c(2) = 21493760,
+
+(3.11)
+
+c(3) = 864299970,
+c(5) = 333202640600.
+
+To recover the replication formulas of [59, 192] we require to replace J with Tg , and
+c(n) = dim(Vn♮ ) with tr(g|Vn♮ ) in (3.9), and for this we require a categorification of the
+denominator identity, whereby the positive integers c(mn) are replaced with M-modules
+of dimension c(mn).
+A categorification of the denominator formula for a finite-dimensional simple complex
+Lie algebra was obtained by Kostant [166], following an observation of Bott [23]. This was
+generalized to Kac–Moody algebras by Garland–Lepowsky [119], and generalized further
+to BKM algebras by Borcherds in [18]. In its most compact form, it is the identity of
+virtual vector spaces
+^
+(3.12)
+(e) = H(e),
+−1
+
+where e is the sub Lie algebra of a BKM algebra corresponding to its positive roots (cf.
+[144, 145, 152]).
+V
+In (3.12), which is a version of the Euler–Poincaré principle, we understand −1 (e) to
+be the specialization of the formal series
+^
+X
+(e) :=
+(3.13)
+∧k (e)tk
+t
+
+k≥0
+
+to t = −1, where ∧k (e) is the k-th exterior power of e, and we write
+X
+(3.14)
+(−1)k Hk (e)
+H(e) :=
+k≥0
+
+for the alternating sum of the Lie algebra homology groups of e.
+In the case of the monster Lie algebra m, the spaces ∧k (e) and Hk (e) are graded by II1,1 ,
+and acted on naturally by the monster. If we use the variables p and q to keep track of
+the II1,1 -gradings, then the equality of (3.12) holds in the ring R(M)[[p, q]][q −1 ] of formal
+power series in p and q (allowing finitely many negative powers of q), with coefficients
+in the (integral) representation ring of M. The so-called no-ghost theorem (cf. Theorem
+5.1 in [18]) allows to express the Hk (e) in terms of the homogenous subspaces of V ♮ , and
+the identity (3.12) becomes
+
+
+^ X
+ X ♮ m+1 X ♮ n
+♮
+(3.15)
+−
+Vn pq .
+Vm p
+pm q n  =
+Vmn
+
+−1
+
+m,n∈Z
+m>0
+
+m∈Z
+
+n∈Z
+
+10
+
+JOHN F. R. DUNCAN, MICHAEL J. GRIFFIN AND KEN ONO
+
+(It turns out that Hk (e) = 0 for k ≥ 3.)
+The identity (3.15) returns (3.9) once we replace Vk♮ everywhere with dim(Vk♮ ) = c(k),
+and divide both sides by p. More generally, replacing Vk♮ with tr(g|Vk♮ ) for g ∈ M, we
+deduce from (3.15) that
+
+
+
+ X X 1
+♮
+(3.16)
+tr(g k |Vmn
+)pmk q nk  = Tg (σ) − Tg (τ )
+p−1 exp −
+k
+k>0 m,n∈Z
+m>0
+
+(cf. [18], and also [147]), which, in turn, implies the replication formulas formulated
+in [59, 192]. Taking g = e in (3.16) we recover (3.9), so (3.16) furnishes a natural,
+monster-indexed family of analogues of the identity (3.9).
+4. Modularity
+
+Despite the power of the BKM algebra theory developed by Borcherds, and despite
+some conceptual improvements (cf. [65, 145, 146]) upon Borcherds’ original proof of
+the moonshine conjectures, a conceptual explanation for the principal modulus property
+of monstrous moonshine is yet to be established. Indeed, there are generalizations and
+analogs of the notion of replicability which hold for generic modular functions and forms
+(for example, see [32]), not just those modular functions which are principal moduli.
+Zhu explained the modularity of the graded dimension of V ♮ in [238], by proving that
+this is typical for vertex operator algebras satisfying certain natural (but restrictive)
+hypotheses, and Dong–Li–Mason extended Zhu’s work in [80], obtaining modular invariance results for graded trace functions arising from the action of a finite group of
+automorphisms.
+To prepare for a statement of the results of Zhu and Dong–Li–Mason, we mention
+that the module theory for vertex operators algebras includes so-called twisted modules,
+associated to finite order automorphisms. If g is a finite order automorphism of V , then
+V is called g-rational in case every g-twisted V -module is a direct sum of simple g-twisted
+V -modules. Dong–Li–Mason proved [79] that a g-rational vertex operator algebra has
+finitely many simple g-twisted modules up to isomorphism. So in particular, a rational
+vertex operator algebra has finitely many simple (untwisted) modules.
+Given a module M for the vertex operator algebra V , let us write dim∗ M for its graded
+dimension,
+X
+(4.1)
+dim∗ M :=
+dim(Mn )q n .
+n
+
+When the substitution q = e2πiτ in (4.1) yields a locally uniformly convergent series for
+τ ∈ H write ZM (τ ) for the resulting holomorphic function on the upper half plane,
+
+(4.2)
+
+ZM (τ ) := dim∗ M|q=e2πiτ .
+
+Theorem 4.1 (Zhu, Dong–Li–Mason). Let V be rational C2 -cofinite vertex operator algebra. Then the graded dimensions dim∗ M i of its simple modules M i define holomorphic
+
+MOONSHINE
+
+11
+
+functions ZM i (τ ) which span a finite-dimensional representation of SL2 (Z). More generally, if G is a finite subgroup of Aut(V ) and V is g-rational for every g ∈ G, then the
+P
+graded trace functions n tr(h̃|Mn )q n , attached to the triples (g, h̃, M), where g, h ∈ G
+commute, M is a simple h-stable g-twisted module for V , and h̃ is a lift of h to GL(M),
+span a finite-dimensional representation of SL2 (Z).
+We refer to the Introduction of [80] (see also §2 of [81]) for a discussion of h-stable
+twisted modules, and the relevant notion of lift. PNote that any two lifts for h differ
+only up to multiplication by a non-zero scalar, so n tr(h̃|Mn )q n is uniquely defined by
+(g, h, M), up to a non-zero scalar.
+L
+In the case of V ♮ , there is a unique simple g-twisted module Vg♮ = n (Vg♮ )n for every
+g ∈ M = Aut(V ♮ ) (cf. Theorem 1.2 of [79]), and Vg♮ is necessarily h-stable for any h ∈ M
+that commutes with g. Therefore, Theorem 4.1 suggests that the functions
+X
+(4.3)
+T(g,h̃) (τ ) :=
+tr(h̃|(Vg♮ )n )q n ,
+n
+
+associated to pairs (g, h) of commuting elements of M, may be of interest.
+Indeed, this was anticipated a decade earlier by Norton, following observations of
+Conway–Norton [59] and Queen [199], which associated principal moduli to elements of
+groups that appear as centralizers of cyclic subgroups in the monster. Norton formulated
+his generalized moonshine conjectures in [191] (cf. also [193], and the Appendix to [182]).
+
+Conjecture 4.2 (Generalized Moonshine: Norton). There is an assignment of holomorphic functions T(g,h̃) : H → C to every pair (g, h) of commuting elements in the monster,
+such that the following are true:
+(1) For every x ∈ M we have T(x−1 gx,x−1 h̃x) = T(g,h̃) .
+(2) For every γ ∈ SL2 (Z) we have that T(g,h̃)γ (τ ) is a scalar multiple of T(g,h̃) (γτ ).
+(3) The coefficient functions h̃ 7→ tr(h̃|(Vg♮ )n ), for fixed g and n, define characters of
+a projective representation of the centralizer of g in M,
+(4) We have that T(g,h̃) is either constant or a generator for the function field of a
+genus zero group Γ(g,h) < SL2 (R).
+(5) We have that T(g,h̃) is a scalar multiple of J if and only if g = h = e.
+Remark. In Conjecture 4.2 (2) above, the right-action of SL2 (Z) on commuting pairs of
+elements of the monster is given by
+(4.4)
+
+(g, h)γ := (g a hc , g bhd )
+
+for γ = ( ac db ). The (slightly ambiguous) T(g,h̃)γ denotes the graded trace of a lift of
+g b hd to GL(Vg♮a hc ). Norton’s generalized moonshine conjectures reduce to the original
+Conway–Norton moonshine conjectures of [59] when g = e.
+Conjecture 4.2 is yet to be proven in full, but has been established for a number of
+special cases. Theorem 4.1 was used by Dong–Li–Mason in [80], following an observation
+
+12
+
+JOHN F. R. DUNCAN, MICHAEL J. GRIFFIN AND KEN ONO
+
+of Tuite (cf. [77], and [224, 225, 226] for broader context), to prove Norton’s conjecture
+for the case that g and h generate a cyclic subgroup of M, and this approach, via twisted
+modules for V ♮ , has been extended by Ivanov–Tuite in [142, 143]. Höhn obtained a
+generalization of Borcherds’ method by using a particular twisted module for V ♮ to
+construct a BKM algebra adapted to the case that g is in the class named 2A in [57]—
+the smaller of the two conjugacy classes of involutions in M—and in so doing established
+[136] generalized moonshine for the functions T(g,h̃) with g ∈ 2A. So far the most general
+results in generalized moonshine have been obtained by Carnahan [35, 36, 37]. (See [38]
+for a recent summary.)
+Theorem 4.1 explains why the McKay–Thompson series Tg (τ ) of (3.2), and the T(g,h̃) (τ )
+of (4.3) more generally, should be invariant under the actions of (finite index) subgroups of
+SL2 (Z), but it does not explain the surprising predictive power of monstrous moonshine.
+That is, it does not explain why the full invariance groups Γg of the Tg should be so
+large that they admit normalized principal moduli, nor does it explain why the Tg should
+actually be these normalized principal moduli.
+A program to establish a conceptual foundation for the principal modulus property of
+monstrous moonshine, via Rademacher sums and three-dimensional gravity, was initiated
+in [85] by the first author and Frenkel.
+
+5. Rademacher Sums
+To explain the conjectural connection between gravity and moonshine, we first recall
+some history. The roots of the approach of [85] extend back almost a hundred years,
+to Einstein’s theory of general relativity, formulated in 1915, and the introduction of
+the circle method in analytic number theory, by Hardy–Ramanujan [132]. At the same
+time that pre-war efforts to quantize Einstein’s theory of gravity were gaining steam
+(see [214] for a review), the circle method was being refined and developed, by Hardy–
+Littlewood (cf. [131]), and Rademacher [200], among others. (See [227] for a detailed
+account of what is now known as the Hardy–Littlewood circle method.) Despite being
+contemporaneous, these works were unrelated in science until this century: as we will
+explain presently, Rademacher’s analysis led to a Poincaré series-like expression—the
+prototypical Rademacher sum—for the elliptic modular invariant J(τ ). It was suggested
+first in [71] (see also [181]) that this kind of expression might be useful for the computation
+of partition functions in quantum gravity.
+Rademacher “perfected” the circle method introduced by Hardy–Ramanujan, and he
+obtained an exact convergent series expression for the combinatorial partition function
+p(n). In 1938 he generalized this work [201] and obtained such exact formulas for the
+Fourier coefficients
+of general modular functions. For the elliptic modular invariant
+P
+n
+J(τ ) =
+n c(n)q (cf. (2.6)), Rademacher’s formula (which was obtained earlier by
+
+MOONSHINE
+
+13
+
+Petersson [198], via a different method) may be written as
+X X e−2πi ac e2πin dc X (4π 2 )k
+nk
+1
+c(n) = 4π
+,
+2
+2k (k + 1)! k!
+c
+c
+c>0 0<a<c
+k≥0
+2
+
+(5.1)
+
+(a,c)=1
+
+where d, in each summand, is a multiplicative inverse for a modulo c, and (a, c) is the
+greatest common divisor of a and c. Having established the formula (5.1), Rademacher
+sought to reverse the process, and use it to derive the modular invariance of J(τ ). That
+is, he set out to prove directly
+P that Jn0 (τ + 1) = J0 (−1/τ ) = J0 (τ ), when J0 (τ ) is defined
+−1
+by setting J0 (τ ) = q + n>0 c(n)q , with c(n) defined by (5.1).
+Rademacher achieved this goal in [202], by reorganizing the summation
+(5.2)
+
+X
+
+X X X e−2πi ac e2πin(τ + dc ) X (4π 2 )k
+nk
+1
+c(n)q = 4π
+c2
+c2k (k + 1)! k!
+n>0
+n>0 c>0 0<a<c
+n
+
+2
+
+k≥0
+
+(a,c)=1
+
+into a Poincaré series-like expression for J. More precisely, Rademacher proved that
+X
+aτ +b
+a
+(5.3)
+J(τ ) + 12 = e−2πiτ + lim
+e−2πi cτ +d − e−2πi c ,
+K→∞
+
+0<c<K
+−K 2 <d<K 2
+(c,d)=1
+
+where a, b ∈ Z are chosen arbitrarily, in each summand, so that ad − bc = 1. We call the
+right hand side of (5.3) the first Rademacher sum.
+Rademacher’s expression (5.3) for the elliptic modular invariant J is to be compared
+to the formal sum
+X
+aτ +b
+(5.4)
+e−2πim cτ +d ,
+c,d∈Z
+(c,d)=1
+
+for m a positive integer, which we may regard as a (formal) Poincaré series of weight zero
+for SL2 (Z). In particular, (5.4) is (formally) invariant for the action of SL2 (Z), as we
+see by recognizing the matrices ( ac db ) as representatives for the right coset space Γ∞ \Γ,
+where Γ = SL2 (Z) and Γ∞ is defined in (3.3): for a fixed bottom row (c, d) of matrices in
+SL2 (Z), any two choices for the top row (a, b) are related by left-multiplication by some
+element of Γ∞ .
+The formal sum (5.4) does not converge for any τ ∈ H, so a regularization procedure is
+required. Rademacher’s sum (5.3) achieves this, for m = 1, by constraining the order of
+aτ +b
+summation, and subtracting the limit as ℑ(τ ) → ∞ of each summand e−2πi cτ +d , whenever
+this limit makes sense. Rademacher’s method has by now been generalized in various ways
+by a number of authors. The earliest generalizations are due to Knopp [158, 159, 160, 161],
+and a very general negative weight version of the Rademacher construction was given by
+Niebur in [189]. We refer to [46] for a detailed review and further references. A nice
+account of the original approach of Rademacher appears in [157].
+
+14
+
+JOHN F. R. DUNCAN, MICHAEL J. GRIFFIN AND KEN ONO
+
+We note here that one of the main difficulties in establishing formulas like (5.3) is
+the demonstration of convergence. When the weight w of the Rademacher sum under
+consideration lies in the range 0 ≤ w ≤ 2, then one requires non-trivial estimates on
+sums of Kloosterman sums, like
+X X e−2πim ac e2πin dc
+c2
+c>0 0<a<c
+
+(5.5)
+
+(a,c)=1
+
+(for the case that w = 0 or w = 2). The demonstration of convergence generally becomes
+more delicate as w approaches 1.
+(−m)
+In [85] the convergence of a weight zero Rademacher sum RΓ (τ ) is shown, for m
+a positive integer and Γ an arbitrary subgroup of SL2 (R) that is commensurable with
+SL2 (Z). Assuming that Γ contains −I and has width one at infinity (cf. (3.3)), we have
+X
+aτ +b
+a
+(−m)
+RΓ (τ ) = e−2πimτ + lim
+(5.6)
+e−2πim cτ +d − e−2πim c ,
+K→∞
+
+(Γ∞ \Γ)×
+<K
+
+where the summation, for fixed K, is over non-trivial right cosets of Γ∞ in Γ (cf. (3.3)),
+having representatives ( ac db ) such that 0 < c < K and |d| < K 2 .
+(−m)
+The modular properties of the RΓ
+are also considered in [85], and it is at this point
+that the significance of Rademacher sums in monstrous moonshine appears. To state the
+relevant result we give the natural generalization (cf. §3.2 of [85]) of the Rademacher–
+Petersson formula (5.1) for c(n), which is
+(5.7)
+
+2
+
+cΓ (−m, n) = 4π lim
+
+K→∞
+
+X
+
+e−2πim c e2πin c X (4π 2 )k mk+1 nk
+,
+c2
+c2k (k + 1)! k!
+k≥0
+a
+
+(Γ∞ \Γ/Γ∞ )×
+<K
+
+d
+
+where the summation, for fixed K, is over non-trivial double cosets of Γ∞ in Γ (cf. (3.3)),
+having representatives ( ac db ) such that 0 < c < K. Note that this formula simplifies for
+n = 0, to
+(5.8)
+
+2
+
+cΓ (−m, 0) = 4π m lim
+
+K→∞
+
+X
+
+(Γ∞ \Γ/Γ∞ )×
+<K
+
+a
+
+e−2πim c
+.
+c2
+
+The value cΓ (−1, 0) is the Rademacher constant attached to Γ. (Cf. §6 of [192] and §5.1
+of [85].)
+(−m)
+A normalized Rademacher sum TΓ (τ ) is defined in §4.1 of [85] by introducing an
+extra complex variable and taking a limit. It is shown in §4.4 of [85] that
+(5.9)
+
+(−m)
+
+TΓ
+
+(−m)
+
+(τ ) = RΓ
+
+1
+(τ ) − cΓ (−m, 0)
+2
+
+MOONSHINE
+
+15
+
+for any group Γ < SL2 (R) that is commensurable with SL2 (Z). If Γ has width one at
+infinity (cf. (3.3)), then also
+X
+(−m)
+TΓ (τ ) = q −m +
+(5.10)
+cΓ (−m, n)q n ,
+n>0
+
+(−m)
+
+so in particular, TΓ (τ ) = q −m +O(q) as ℑ(τ ) → ∞. The following theorem by the first
+author and Frenkel summarizes the central role of Rademacher sums and the principal
+modulus property.
+Theorem 5.1 (Duncan–Frenkel [85]). Let Γ be a subgroup of SL2 (R) that is commen(−m)
+surable with SL2 (Z). Then the normalized Rademacher sum TΓ
+is Γ-invariant if and
+(−1)
+only if Γ has genus zero. Furthermore, if Γ has genus zero then TΓ
+is the normalized
+principal modulus for Γ.
+(−1)
+
+(−m)
+
+In the case that the normalized Rademacher sum TΓ
+is not Γ-invariant, TΓ
+is
+an abelian integral of the second kind for Γ, in the sense that it has at most exponential
+(−m)
+(−m)
+growth at the cusps of Γ, and satisfies TΓ (γτ ) = TΓ (τ ) + ω(γ) for γ ∈ Γ, for some
+function ω : Γ → C (depending on m).
+Theorem 5.1 is used as a basis for the formulation of a characterization of the discrete groups Γg of monstrous moonshine in terms of Rademacher sums in §6.5 of [85],
+following earlier work [58] of Conway–McKay–Sebbar. It also facilitates a proof of the
+following result, which constitutes a uniform construction of the McKay–Thompson series
+of monstrous moonshine.
+Theorem 5.2 (Duncan–Frenkel [85]). Let g ∈ M. Then the McKay–Thompson series
+(−1)
+Tg coincides with the normalized Rademacher sum TΓg .
+Proof. Theorem 3.6 states that Tg is a normalized principal modulus for Γg , and in
+(−1)
+particular, all the Γg have genus zero. Given this, it follows from Theorem 5.1 that TΓg
+is also a normalized principal modulus for Γg . A normalized principal modulus is unique
+(−1)
+if it exists, so we conclude Tg = TΓg for all g ∈ M, as we required to show.
+
+Perhaps most importantly, Theorem 5.1 is an indication of how the principal modulus
+property of monstrous moonshine can be explained conceptually. For if we can develop a
+mathematical theory in which the underlying objects are graded with graded traces that
+are provably
+(1) modular invariant, for subgroups of SL2 (R) that are commensurable with SL2 (Z),
+and
+(2) given explicitly by Rademacher sums, such as (5.6),
+then these graded trace functions are necessarily normalized principal moduli, according
+to Theorem 5.1.
+We are now led to ask: what kind of mathematical theory can support such results?
+As we have alluded to above, Rademacher sums have been related to quantum gravity by
+
+16
+
+JOHN F. R. DUNCAN, MICHAEL J. GRIFFIN AND KEN ONO
+
+articles in the physics literature. Also, a possible connection between the monster and
+three-dimensional quantum gravity was discussed in [233]. This suggests the possibility that three-dimensional quantum gravity and moonshine are related via Rademacher
+sums, and was a strong motivation for the work [85]. In the next section we will give a
+brief review of quantum gravity, since it is an important area of physical inquiry which
+has played a role in the development of moonshine, but we must first warn the reader:
+problems have been identified with the existing conjectures that relate the monster to
+gravity, and the current status of this connection is uncertain.
+6. Quantum Gravity
+Witten was the first to predict a role for the monster in quantum gravity. In [233]
+Witten considered pure quantum gravity in three dimensions with negative cosmological
+constant, and presented evidence that the moonshine module V ♮ is a chiral half of the
+conformal field theory dual to such a quantum gravity theory, at the most negative
+possible value of the cosmological constant.
+To explain some of the content of this statement, note that the action in pure threedimensional quantum gravity is given explicitly by
+Z
+√
+1
+IEG :=
+d3 x −g(R − 2Λ),
+(6.1)
+16πG
+
+where G is the Newton or gravitational constant, R denotes the Ricci scalar, and the
+cosmological constant is the scalar denoted by Λ.
+The case that the cosmological constant Λ is negative is distinguished, since then there
+exist black hole solutions to the action (6.1), as was discovered by Bañados–Teitelboim–
+Zanelli [9]. These black hole solutions—the BTZ black holes—are locally isomorphic to
+three-dimensional anti-de Sitter space [8], which is a Lorentzian analogue of hyperbolic
+space, and may be realized explicitly as the universal cover of a hyperboloid
+(6.2)
+
+2
+−X−1
+− X02 + X12 + X22 + X33 = −ℓ2
+
+in R2,3 (cf. e.g. [175]). The parameter ℓ in (6.2) is called the radius of curvature. For
+a locally anti-de Sitter (AdS) solution to (6.1), the radius of curvature is determined by
+the cosmological constant, according to
+(6.3)
+
+ℓ2 = −1/Λ.
+
+In what has become the most cited5 paper in the history of high energy physics,
+Maldacena opened the door on a new, and powerful approach to quantum gravity in
+[176], by presenting evidence for a gauge/gravity duality, in which gauge theories serve
+as duals to gravity theories in one dimension higher. (See [175] for a recent review.) In
+the simplest examples, the gauge theories are conformal field theories, and the gravity
+5Maldacena’s groundbreaking paper [176] on the gauge/gravity duality has over 10,000 citations at
+
+the time of writing, according to inspirehep.net.
+
+MOONSHINE
+
+17
+
+theories involve locally AdS spacetimes. The gauge/gravity duality for these cases is now
+known as the AdS/CFT correspondence.
+Maldacena’s duality furnishes a concrete realization of the holographic principle, introduced by ’t Hooft [217], and elaborated on by Susskind [216]. For following refinements
+to Maldacena’s proposal due to Gubser–Klebanov–Polyakov [127], and Witten [232], it
+is expected that gravity theories with (d + 1)-dimensional locally AdS spacetimes can be
+understood through the analysis of d-dimensional conformal field theories defined on the
+boundaries of these AdS spaces. Thus in the case of AdS solutions to three-dimensional
+quantum gravity, a governing role may be played by two-dimensional conformal theories,
+which can be accessed mathematically via vertex operator algebras (as we have mentioned
+in §3).
+The conjecture of [233] is that the two-dimensional conformal field theory corresponding to a tensor product of two copies of the moonshine module V ♮ (one “left-moving,”
+the other “right-moving”) is the holographic dual to pure three-dimensional quantum
+gravity with ℓ = 16G, and therefore
+1
+.
+256G2
+It is also argued that the only physically consistent values of ℓ are ℓ = 16Gm, for m a
+positive integer, so that (6.4) is the most negative possible value for Λ, by force of (6.3).
+Shortly after this conjecture was formulated, problems with the quantum mechanical
+interpretation were identified by Maloney–Witten in [179]. Moreover, Gaiotto [115] and
+Höhn [138] cast doubt on the relevance of the monster to gravity by demonstrating that
+it cannot act on a holographically dual conformal field theory corresponding to ℓ = 32G
+(i.e. m = 2), at least under the hypotheses (namely, an extremality condition, and
+holomorphic factorization) presented in [233].
+Interestingly, the physical problems with the analysis of [233] seem to disappear in the
+context of chiral three-dimensional gravity, which was introduced and discussed in detail
+by Li–Song–Strominger in [173] (cf. also [178, 215]). This is the gravity theory which
+motivates much of the discussion in §7 of [85].
+In order to define chiral three-dimensional gravity, we first describe topologically massive gravity, which was introduced in 1982 by Deser–Jackiw–Templeton [69, 70]. (See
+also [68].) The action for topologically massive gravity is given by
+(6.4)
+
+(6.5)
+
+Λ=−
+
+ITMG := IEG + ICSG ,
+
+where IEG is the Einstein–Hilbert action (cf. (6.1)) of pure quantum gravity, and ICSG
+denotes the gravitational Chern–Simons term
+
+
+Z
+1
+2 σ τ
+3 √
+σ
+λµν ρ
+ICSG :=
+d x −gǫ Γ λσ ∂µ Γ ρν + Γ µτ Γ νρ .
+(6.6)
+32πGµ
+3
+
+The Γ∗∗∗ are Christoffel symbols, and the parameter µ is called the Chern–Simons coupling
+constant.
+
+18
+
+JOHN F. R. DUNCAN, MICHAEL J. GRIFFIN AND KEN ONO
+
+Chiral three-dimensional gravity is the special case of topologically
+massive gravity in
+√
+which the Chern–Simons coupling constant is set to µ = 1/ℓ = −Λ. It is shown in [173]
+that at this special value of µ, the left-moving central charges of the boundary conformal
+field theories vanish, and the right-moving central charges are
+3ℓ
+c=
+(6.7)
+= 24m,
+2G
+for m a positive integer, ℓ = 16Gm.
+Much of the analysis of [233] still applies in this setting, and the natural analogue of
+the conjecture mentioned above states that V ♮ is holographically dual to chiral threedimensional quantum gravity at ℓ = 16G, i.e. m = 1. However, as argued in detail
+in [178], the problem of quantizing chiral three-dimensional gravity may be regarded as
+equivalent to the problem of constructing a sequence of extremal chiral two-dimensional
+conformal field theories (i.e. vertex operator algebras), one for eachL
+central charge c =
+24m, for m a positive integer. Here, a vertex operator algebra V = n Vn with central
+charge c = 24m is called extremal, if its graded6 dimension function satisfies
+1
+dim∗ V = q −m Q
+(6.8)
++ O(q)
+n
+n>1 (1 − q )
+(cf. (4.1).) The moonshine module is the natural candidate for m = 1 (indeed, it is the
+only candidate if we assume the uniqueness conjecture of [105]), as the right hand side of
+(6.8) reduces to q −1 + O(q) in this case, but the analysis of [115, 138] also applies here,
+indicating that the monster cannot act non-trivially on any candidate7 for m = 2. Thus
+the role of the monster in quantum gravity is still unclear, even in the more physically
+promising chiral gravity setting.
+Nonetheless, the moonshine module V ♮ may still serve as the holographic dual to chiral
+three-dimensional quantum gravity at ℓ = 16G, m = 1. In this interpretation, the graded
+dimension, or genus one partition function for V ♮ —namely, the elliptic modular invariant
+J—serves
+√ as the exact spectrum of physical states of chiral three-dimensional gravity at
+µ = −Λ = 1/16G, in spacetime asymptotic to the three-dimensional anti-de Sitter
+space (cf. (6.2)).
+Recall that if V is a representation of the Virasoro algebra V (cf. (3.5)), then v ∈ V
+is called a Virasoro highest weight vector with highest weight h ∈ C if L(m)v = hδm,0 v
+whenever m ≥ 0. A Virasoro descendant is a vector of the form
+(6.9)
+
+L(m1 ) · · · L(mk )v,
+
+where v is a Virasoro highest weight vector, and m1 ≤ · · · ≤ mk ≤ −1.
+Assuming that V ♮ is dual to chiral three-dimensional gravity at m = 1, the Virasoro
+highest weight vectors in V ♮ define operators that create black holes, and the Virasoro
+descendants of a highest weight vector describe black holes embellished by boundary
+6We regard all vertex operator algebras as graded by L(0) − c/24. Cf. (3.5).
+
+7The existence of extremal vertex operator algebras with central charge c = 24m for m > 1 remains
+
+an open question. We refer to [111, 116, 138, 235] for analyses of this problem.
+
+MOONSHINE
+
+19
+
+excitations. In particular, the 196883-dimensional representation of the monster which is
+contained in the 196884-dimensional homogenous subspace V1♮ < V ♮ (cf. (2.4) and (3.1)),
+represents an 196883-dimensional space of black hole states in the chiral gravity theory.
+More generally, the black hole states in the theory are classified, by the monster, into
+194 different kinds, according to which monster irreducible representation they belong
+to.
+Question 6.1. Assuming that the moonshine module V ♮ serves as the holographic dual
+to chiral three-dimensional quantum gravity at m = 1, how are the 194 different kinds
+of black hole states distributed amongst the homogeneous subspaces Vn♮ < V ♮ . Are some
+kinds of black holes more or less common than others?
+This question will be answered precisely in §8.
+A positive solution to the conjecture that V ♮ is dual to chiral three-dimensional gravity
+at m = 1 may furnish a conceptual explanation for why the graded dimension of V ♮ is
+the normalized principal modulus for SL2 (Z). For on the one hand, modular invariance
+is a consistency requirement of the physical theory—the genus one partition function
+function is really defined on the moduli space SL2 (Z)\H of genus one curves, rather than
+on H—and on the other hand, the genus one partition function of chiral three-dimensional
+gravity is given by a Rademacher sum, as explained by Manschot–Moore [181], following
+earlier work [71] by Dijkgraaf–Maldacena–Moore–Verlinde. (Cf. also [178, 179, 180].) So,
+as we discussed in §5, the genus one partition function must be the normalized principal
+modulus J(τ ) for SL2 (Z), according to Theorem 5.1.
+In the analysis of [180, 181], the genus one partition function of chiral three-dimensional
+gravity is a Rademacher sum (5.6), because it is obtained as a sum over three-dimensional
+hyperbolic structures on a solid torus with genus one boundary, and such structures are
+naturally parameterized by the coset space Γ∞ \ SL2 (Z) (cf. (3.3)), as explained in [177]
++b
+−2πim aτ
+cτ +d in (5.6) are obtained by evaluating e−ITMG ,
+(see also §5.1
+of
+[71]).
+The
+terms
+e
+√
+with µ = −Λ = 1/16Gm, on a solution with boundary curve C/(Z + τ Z), and the
+a
+subtraction of e−2πim c represents quantum corrections to the classical action.
+In [85], the above conjecture is extended so as to encompass the principal modulus
+property for all elements of the monster, with a view to establishing a conceptual foundation for monstrous moonshine. More specifically, the first main conjecture of [85] states
+the following.
+Conjecture 6.2 (Duncan–Frenkel). There exists a monster-indexed family of twisted
+chiral three-dimensional gravity theories, whose genus one partition functions at
+√
+µ = −Λ = 1/16G
+(6.10)
+(−1)
+
+(−1)
+
+are given by TΓg (−1/τ ), where TΓg (τ ) is the normalized Rademacher sum attached
+to Γg , satisfying (5.9).
+From the point of view of vertex operator algebra theory, Tg (−1/τ )—which coincides
+(−1)
+with TΓg (−1/τ ) according to Theorems 3.6 and 5.1—is the graded dimension of the
+
+20
+
+JOHN F. R. DUNCAN, MICHAEL J. GRIFFIN AND KEN ONO
+
+unique simple g-twisted V ♮ -module Vg♮ (cf. §4). This non-trivial fact about the functions
+Tg (−1/τ ) is proven by Carnahan in Theorem 5.1.4 of [37].
+Geometrically, the twists of the above conjecture are defined by imposing (generalized) spin structure conditions on solutions to the chiral gravity equations, and allowing
+orbifold solutions of certain kinds. See §7.1 of [85] for a more complete discussion. The
+corresponding sums over geometries are then indexed by coset spaces Γ∞ \Γ, for various groups Γ < SL2 (R), commensurable with SL2 (Z). According to Theorem 5.1, the
+genus one partition function corresponding to such a twist, expected to be a Rademacher
+sum on physical grounds, will only satisfy the basic physical consistency condition of Γinvariance if Γ is a genus zero group. One may speculate that a finer analysis of physical
+consistency will lead to the list of conditions given in §6.5 of [85], which characterize the
+groups Γg for g ∈ M, according to Theorem 6.5.1 of [85]. Thus the discrete groups Γg of
+monstrous moonshine may ultimately be recovered as those defining physically consistent
+twists of chiral three-dimensional gravity.
+On the other hand, it is reasonable to expect that twisted chiral gravity theories are
+determined by symmetries of the underlying untwisted theory. Conceptually then, but
+still conjecturally, the monster group appears as the symmetry group of chiral threedimensional gravity, for which the corresponding twists exist. The principal modulus
+property of monstrous moonshine may then be explained: as a consequence of Theorem
+5.1, together with the statement that the genus one partition function of a twisted the(−1)
+(−1)
+ory is TΓ (−1/τ ), where TΓ (τ ) is the normalized Rademacher sum attached to the
+subgroup Γ < SL2 (R) that parameterizes the geometries of the twist.
+Before concluding this section we mention two further variations on three-dimensional
+gravity which may ultimately prove relevant to moonshine. The first of these is log gravity
+which was initiated by work [124] of Grumiller–Johansson, and discussed also in [178].
+We refer to [126] for a detailed review. The second is flat space chiral gravity which was
+introduced in [7], and is also reviewed in [126].
+For more background on the mathematics and physics of black holes we refer the reader
+to [125]. We refer to [33, 34] for reviews that focus on the particular role of conformal
+field theory in understanding quantum gravity.
+7. Moonshine Tower
+An optimistic view on the relationship between moonshine and gravity is adopted in
+§7 of [85]. In particular, in §7.2 of [85] the consequences of Conjecture 6.2 for the second
+quantization of chiral three-dimensional gravity are explored. (We warn the reader that
+the notion of second quantized gravity is very speculative at this stage.)
+Motivated in part by the results on second quantized string theory in [72], the existence
+of a tower of monster modules
+(7.1)
+
+V
+
+(−m)
+
+=
+
+∞
+M
+
+n=−m
+
+Vn(−m) ,
+
+MOONSHINE
+
+21
+
+parameterized by positive integer values of m, is predicted in §7.2 of [85]. Moreover, it
+is suggested that the graded dimension of V (−m) should be given by
+J (−m) := mT̂ (m)J,
+
+(7.2)
+
+where T̂ (m) denotes the (order m) Hecke operator, acting on SL2 (Z)-invariant holomorphic functions on H according to the rule
+
+
+1 X
+aτ + b
+(T̂ (m)f )(τ ) :=
+f
+(7.3)
+.
+m ad=m
+d
+0≤b<d
+
+Standard calculations (cf. e.g. Chp.VII, §5 of [210]) determine that mT̂ (m)J is an
+SL2 (Z)-invariant holomorphic function on H, whose Fourier coefficients
+X
+(7.4)
+J (−m) (τ ) =
+c(−m, n)q n
+n
+
+are expressed in terms of those of J(τ ) =
+and
+(7.5)
+
+c(−m, n) =
+
+P∞
+
+n=−1 c(n)q
+
+n
+
+, by c(−m, n) = δ−m,n for n ≤ 0,
+
+X m
+c(mn/k 2 ),
+k
+k>0
+
+k|(m,n)
+
+for n > 0, where (m, n) denotes the greatest common divisor of m and n. In particular, J (−m) (τ ) = q −m + O(q) as ℑ(τ ) → ∞. There is only one such SL2 (Z)-invariant
+holomorphic function on H, so we have
+(7.6)
+
+J
+
+(−m)
+
+(τ ) =
+
+∞
+X
+
+(−m)
+
+dim(V (−m) )q n = TΓ
+
+(τ )
+
+n=−m
+
+according to (5.10) and Theorem 5.1, when Γ = SL2 (Z). So the graded dimension of
+V (−m) is also a normalized Rademacher sum.
+We would like to investigate the higher order analogues of the McKay–Thompson series
+Tg (cf. (3.2)), encoding the graded traces of monster elements on V (−m) , but for this we
+(−m)
+must first determine the M-module structure on each homogeneous subspace Vn
+.
+A solution to this problem is entailed in Borcherds’ proof [18] of the monstrous moonshine conjectures, and the identity (3.15), in particular. To explain this, recall the Adams
+operation ψ k on virtual G-modules, defined, for k ≥ 0 and G a finite group, by requiring
+that
+(7.7)
+
+tr(g|ψ k (V )) = tr(g k |V )
+
+for g ∈ G. (Cf. [6, 162] for more details on Adams operations.) Using the ψ k we may
+equip V (−m) with a virtual M-module structure (we will see momentarily that it is actually
+
+22
+
+JOHN F. R. DUNCAN, MICHAEL J. GRIFFIN AND KEN ONO
+(−m)
+
+an M-module, cf. Proposition 7.2) by defining V−m
+(−m)
+trivial M-module, Vn
+:= 0 for −m < n ≤ 0, and
+Vn(−m) :=
+
+(7.8)
+
+M
+
+k>0
+k|(m,n)
+
+:= C to be the one-dimensional
+
+♮
+Cm/k ⊗ ψ k (Vmn/k
+2)
+
+for n > 0, where Cm/k denotes the trivial M-module of dimension m/k. For convenience
+(0)
+later on, we also define V (0) = V0 := C to be the trivial, one-dimensional M-module,
+regarded as graded, with grading concentrated in degree n = 0.
+Evidently ψ k preserves dimension, so the graded dimension of V (−m) is still given by
+(−m)
+J (−m) , according to (7.5). Define the order m McKay–Thompson series Tg
+, for m ≥ 0
+and g ∈ M, by setting
+Tg(−m) (τ ) := q −m +
+
+(7.9)
+
+X
+
+tr(g|Vn(−m) )q n .
+
+n>0
+
+(0)
+
+(−1)
+
+Then Tg = 1 for all g ∈ M, and Tg
+is the original McKay–Thompson series Tg .
+(−m)
+More generally, we have the following result, which constructs the Tg
+uniformly and
+explicitly as Rademacher sums.
+(−m)
+
+Theorem 7.1. For m > 0 and g ∈ M we have Tg
+
+(−m)
+
+(τ ) = TΓg
+
+(τ ), where Γg is the
+(−m)
+invariance group of Tg (τ ), and TΓ
+denotes the normalized Rademacher sum of order
+(−m)
+m attached to Γ, as in (5.9). In particular, Tg
+(τ ) is a monic integral polynomial of
+degree m in Tg (τ ).
+(−m)
+
+Proof. We will use Borcherds’ identity (3.15). To begin, note that Tg
+in terms of traces on V ♮ by
+(7.10)
+
+Tg(−m) (τ ) = q −m +
+
+is given explicitly
+
+X X m
+♮
+n
+tr(g|ψ k (Vmn/k
+2 ))q
+k
+n>0
+k|(m,n)
+
+according to (7.8) and (7.9). Recall that R(G) denotes the integral representation ring of
+a finite group G. Extend the ψ k from R(G) to R(G)[[p, q]][q −1 ], by setting ψ k (Mpm q n ) =
+ψ k (M)pkm q km for M ∈ R(G). Then it is a general property of the Adams operations (cf.
+§5.2 of [147]) that
+(7.11)
+
+log
+
+^
+
+−1
+
+(X) = −
+
+X1
+k>0
+
+k
+
+ψ k (X)
+
+MOONSHINE
+
+23
+
+in R(G)[[p, q]][q −1 ] ⊗Z Q, for X ∈ R(G)[[p, q]][q −1 ]. So taking X =
+obtain
+
+log
+(7.12)
+
+^
+
+
+
+
+
+P
+
+♮
+m n
+m,n∈Z Vmn p q we
+m>0
+
+X X 1
+ X ♮ m n
+♮
+ψ k (Vmn
+)pkm q kn
+Vmn p q  = −
+
+−1
+k
+k>0 m,n∈Z
+m,n∈Z
+m>0
+
+m>0
+
+X X 1
+♮
+m n
+=−
+ψ k (Vmn/k
+2 )p q
+k
+m,n∈Z
+m>0
+
+k|(m,n)
+
+P (−m) n
+(−m)
+for the logarithm of the left hand side of (3.15). If we now define
+V
+(q)
+:=
+q ,
+n Vn
+P
+−1
+m (−m)
+an element of R(M)[[q]][q ], then the generating series m>0 p V
+(q) is obtained
+(−m)
+when we apply −p∂p to (7.12), according to the definition (7.8) of the Vn
+as elements
+of R(M). So apply −p∂p log( · ) to both sides of (3.15) to obtain the identity
+X
+X
+(7.13)
+V (−m) (q)pm = −1 − (p∂p V ♮ (p))
+V ♮ (q)k V ♮ (p)−k−1
+m>0
+
+k≥0
+
+P
+in R(M)[[p, q]][q −1 ], where V ♮ (q) = V (−1) (q) = q −1 + n>0 Vn♮ q n . The right hand
+side of (7.13) really is a taylor series in p, for we use V ♮ (p)−1 as a short hand for
+P
+P
+k k+1 ♮
+V+ (p), where V+♮ (p) := n>0 Vn♮ pn is the regular part of V ♮ (p).
+k≥0 (−1) p
+(−m)
+The McKay–Thompson series Tg
+(τ ) is just the trace of g on V (−m) (q), so an appli(−m)
+cation of tr(g| · ) to (7.13) replaces V (−m) (q) with Tg
+(τ ), and V ♮ (q) with Tg (τ ), etc.
+(−m)
+and shows that Tg
+is indeed a polynomial in Tg , of degree m since the leading term
+(−m)
+(−m)
+−m
+of Tg
+is q
+by definition. In particular, Tg
+is a modular function for Γg , with no
+poles away from the infinite cusp. Since Γg has genus zero, such a function is uniquely
+determined (up to an additive constant) by the polar terms in its Fourier expansion. The
+(−m)
+(−m)
+and the Rademacher sum TΓg both satisfy q −m + O(q)
+McKay–Thompson series Tg
+as ℑ(τ ) → ∞ (cf. (5.10)), and neither have poles away from the infinite cusp, so they
+must coincide. This completes the proof.
+
+
+Remark. The identity obtained by taking the trace of g ∈ M on (7.13) may be compactly
+rewritten
+X
+p∂p Tg (σ)
+Tg(−m) (τ )pm =
+(7.14)
+,
+T
+(τ
+)
+−
+T
+(σ)
+g
+g
+m≥0
+P
+where p = e2πiσ and Tg (σ) = m tr(g|Vm♮ )pm . This expression (7.14) is proven for some
+special cases by a different method in [12].
+Recall that the monster group has 194 irreducible ordinary representations, up to
+equivalence. Let us denote these by Mi , for 1 ≤ i ≤ 194, where the ordering is as in [57],
+so that the character of Mi is the function denoted χi in [57]. Define mi (−m, n) to be
+
+24
+
+JOHN F. R. DUNCAN, MICHAEL J. GRIFFIN AND KEN ONO
+(−m)
+
+the multiplicity of Mi in Vn
+
+, so that
+
+(7.15)
+
+Vn(−m) ≃
+P194
+
+194
+M
+
+⊕mi (−m,n)
+
+Mi
+
+i=1
+
+as M-modules, and c(−m, n) = i=1 mi (−m, n)χi (e).
+(−m)
+A priori, the M-modules Vn
+may be virtual, meaning that some of the integers
+mi (−m, n) are negative.
+(−m)
+
+Proposition 7.2. The Vn
+are all (non-virtual) modules for the monster. In particular, the integers mi (−m, n) are all non-negative.
+Proof. The claim follows from the modification of Borcherds’ proof of Theorem 3.6 presented by Jurisich–Lepowsky–Wilson in [147]. In [147] a certain free Lie sub algebra u−
+of the monster Lie algebra m is identified, for which the identity Λ(u− ) = H(u− ) (or
+rather, the logarithm of this) yields
+!k
+X X 1
+X1 X ♮
+♮
+m n
+m n
+k
+p q
+V
+ψ (Vmn/k2 )p q =
+(7.16)
+k
+k m,n>0 m+n−1
+m,n>0
+k>0
+k|(m,n)
+
+in R(M)[[p, q]][q −1 ] ⊗ Q. (Notice the different range of summation, compared to (3.15).)
+(−m)
+We apply p∂p to (7.16), and recall the definition (7.8) of Vn
+to obtain
+!
+!k−1
+X ♮
+X
+X X
+♮
+mVm+n−1 pm q n
+Vm+n−1 pm q n
+(7.17)
+.
+Vn(−m) pm q n =
+m,n>0
+
+k>0
+
+m,n>0
+
+m,n>0
+
+The coefficient of pm q n in the right hand side of (7.17) is evidently a non-negative integer
+combination of the M-modules Vn♮ , so the proof of the claim is complete.
+
+In §8 we will determine the behavior of the multiplicity functions mi (−m, n) (cf. (7.15))
+as n → ∞. For applications to gravity a slightly different statistic is more relevant. Recall
+from §6 that it is the Virasoro highest weight vectors—i.e. those v ∈ Vn♮ with L(k)v = 0
+for k > 0—that represent black hole states in chiral three-dimensional gravity at m = 1.
+Such vectors generate highest weight modules for V, the structure of which has been
+determined by Feigin–Fuchs in [99]. (See [5] for an alternative treatment.) Specializing
+to the case that the central element c (cf. (3.5)) acts as c = 24m times the identity, for
+some positive integer m, we obtain from the results of [99] that the isomorphism type
+of an irreducible highest weight module for V depends only on the L(0)-eigenvalue of a
+generating highest weight vector, v, and if L(0)v = hv for h a non-negative integer, then
+(
+q −m (1 − q)(q)−1
+if h = 0,
+∞
+dim∗ L(h, c) =
+(7.18)
+h−m
+−1
+if h > 0,
+q
+(q)∞
+
+MOONSHINE
+
+25
+
+(cf. (4.1)) where L(h, c) denotes the irreducible highest weight V-module generated by
+v, and
+Y
+(q)∞ :=
+(7.19)
+(1 − q n ).
+n>0
+
+(Note that all the Virasoro modules in this work are graded by L(0) − c/24. See [130]
+for details of the calculation that returns (7.18) in the case that m = 1.)
+Remark. We may now recognize the leading terms in (6.8) as exactly those of the graded
+dimension of the Virasoro module L(0, 24m).
+
+It is known that V ♮ is a direct sum of highest weight modules for the Virasoro algebra
+(cf. e.g. [130]). Since the Virasoro and monster actions on V ♮ commute, we have an
+isomorphism
+M
+♮
+(7.20)
+⊕
+L(n + 1, 24) ⊗ Wn♮
+V ♮ ≃ L(0, 24) ⊗ W−1
+n>0
+
+of modules for V × M, where Wn♮ denotes the subspace of Vn♮ spanned by Virasoro highest
+weight vectors. To investigate how the black hole states in V ♮ are organized by the
+representation theory of the monster, we define non-negative integers ni (n) by requiring
+that
+194
+M
+⊕n (n)
+(7.21)
+Wn♮ ≃
+Mi i ,
+i=1
+
+for n ≥ −1.
+Evidently ni (n) ≤ mi (−1, n) for all i and n since Wn♮ is a subspace of Vn♮ . To determine
+the precise relationship between the ni (n) and mi (−1, n), define Ug (τ ) for g ∈ M by
+setting
+∞
+X
+(7.22)
+Ug (τ ) :=
+tr(g|Wn♮ )q n ,
+−1
+
+P
+
+n=−1
+
+P194
+
+so that Ug (τ ) = q + n>0 i=1 ni (n)χi (g)q n (cf. (7.21)). Combining (7.18), (7.20) and
+(7.21), together with the definitions (3.2) of Tg and (7.22) of Ug , we obtain
+
+(7.23)
+or equivalently,
+(7.24)
+
+Tg (τ ) = q
+
+−1 (1 − q)
+
+(q)∞
+
+194
+1 X
++
+q
+ni (n)χi (g),
+(q)∞ i=1
+n>0
+
+X
+
+n
+
+Ug (τ ) = (q)∞ Tg (τ ) + 1
+
+for all g ∈ M. (This computation also appears in [130].)
+In §8 we will use (7.24) to determine the asymptotic behavior of the ni (n) (cf. Theorem
+8.1), and thus the statistics of black hole states, at ℓ = 16G, in the conjectural chiral
+three-dimensional gravity theory dual to V ♮ .
+
+26
+
+JOHN F. R. DUNCAN, MICHAEL J. GRIFFIN AND KEN ONO
+
+Remark. Note that we may easily construct modules for V × M satisfying the extremal
+condition (6.8), for each positive integer m, by considering direct sums of the monster
+modules V (−m) constructed in Proposition 7.2. A very slight generalization of the argument just given will then yield formulas for the graded traces of monster elements on
+the corresponding Virasoro highest weight spaces. Since it has been shown [115, 138]
+that such modules cannot admit vertex operator algebra structure, we do not pursue this
+here.
+
+8. Monstrous Moonshine’s Distributions
+We now address the problem of determining exact formulas and asymptotic distributions of irreducible components. This work will rely heavily on the modularity of the
+underlying McKay–Thompson series (i.e. Theorems 3.3 and 7.1).
+We prove formulas for the multiplicities mi (−m, n) and ni (n) which in turn imply the
+following asymptotics.
+Theorem 8.1. If m is a positive integer and 1 ≤ i ≤ 194, then as n → +∞ we have
+dim(χi )|m|1/4 4π√|mn|
+mi (−m, n) ∼ √
+·e
+2|n|3/4 |M|
+√
+√
+π
+12 dim(χi )
+23|24n+1|
+6
+ni (n) ∼
+·
+e
+|24n + 1|1/2 |M|
+These asymptotics immediately imply that the following limits are well-defined
+
+(8.1)
+
+mi (−m, n)
+δ (mi (−m)) := lim P194
+n→+∞
+i=1 mi (−m, n)
+ni (n)
+δ (ni ) := lim P194
+.
+n→+∞
+i=1 ni (n)
+
+Corollary 8.2. In particular, we have that
+
+dim(χi )
+dim(χi )
+.
+δ (mi (−m)) = δ (ni ) = P194
+=
+5844076785304502808013602136
+j=1 dim(χj )
+
+We illustrate these asymptotics explicitly, for χ1 , χ2 , and χ194 , in the case that m = 1,
+in Table 1, where we let δ (mi (−m, n)) denote the proportion of components correspond(m)
+ing to χi in Vn .
+
+MOONSHINE
+
+27
+
+Table 1.
+n
+-1
+0
+1
+2
+..
+.
+
+δ (m1 (−1, n))
+1
+0
+1/2
+1/3
+..
+.
+
+δ (m2 (−1, n))
+0
+0
+1/2
+1/3
+..
+.
+
+···
+···
+···
+···
+···
+..
+.
+
+δ (m194 (−1, n))
+0
+0
+0
+0
+..
+.
+
+40
+60
+80
+100
+120
+140
+160
+180
+200
+220
+240
+..
+.
+
+4.011 . . . × 10−4
+2.699 . . . × 10−9
+4.809 . . . × 10−14
+4.427 . . . × 10−18
+1.377 . . . × 10−21
+1.156 . . . × 10−24
+2.621 . . . × 10−27
+1.877 . . . × 10−28
+1.715 . . . × 10−28
+1.711 . . . × 10−28
+1.711 . . . × 10−28
+..
+.
+
+2.514 . . . × 10−3
+2.732 . . . × 10−8
+7.537 . . . × 10−13
+1.077 . . . × 10−16
+5.501 . . . × 10−20
+1.260 . . . × 10−22
+3.443 . . . × 10−23
+3.371 . . . × 10−23
+3.369 . . . × 10−23
+3.368 . . . × 10−23
+3.368 . . . × 10−23
+..
+.
+
+···
+···
+···
+···
+···
+···
+···
+···
+···
+···
+···
+
+0.00891. . .
+0.04419. . .
+0.04428. . .
+0.04428. . .
+0.04428. . .
+0.04428. . .
+0.04428. . .
+0.04428. . .
+0.04428. . .
+0.04428. . .
+0.04428. . .
+..
+.
+
+∞
+
+1
+5844076785304502808013602136
+
+196883
+5844076785304502808013602136
+
+···
+
+258823477531055064045234375
+5844076785304502808013602136
+
+The precise values given in the bottom row of Table 1 admit the following decimal
+approximations:
+
+(8.2)
+
+δ (m1 (−m)) =
+
+1
+≈ 1.711 . . . × 10−28
+5844076785304502808013602136
+
+δ (m2 (−m)) =
+
+196883
+≈ 3.368 . . . × 10−23
+5844076785304502808013602136
+
+δ (m194 (−m)) =
+
+258823477531055064045234375
+≈ 4.428 . . . × 10−2
+5844076785304502808013602136
+
+Before explaining the proof of Theorem 8.1 we describe an application to the computation8 of quantum dimensions. Suppose that V is a vertex operator algebra and M is a
+V -module such that the graded-dimension functions ZV and ZM are defined (cf. (4.2)).
+8We are grateful to the referee for suggesting this.
+
+28
+
+JOHN F. R. DUNCAN, MICHAEL J. GRIFFIN AND KEN ONO
+
+Then the quantum dimension of M relative to V is defined by setting
+ZM (iy)
+(8.3)
+qdimV M := lim
+y→0 ZV (iy)
+(for y real and positive), assuming the limit exists. (Cf. §3.1 of [76].)
+Dong–Mason initiated a vertex algebraic quantum Galois theory in [82]. (Cf. also
+[78, 83, 128].) In this theory, inclusions of vertex operator algebras take on the role
+played by inclusions of fields in the classical setting. It is established in [76] that the
+quantum dimension qdimU V , for U a sub vertex operator algebra of V , serves as the
+quantum analogue of the relative dimension dimE F of a field F over a subfield E.
+Write V M for the fixed points of the action of M on V ♮ . Then V M is a sub vertex
+operator algebra of V ♮ , called the monster orbifold. Using Theorem 8.1, together with a
+result from [76], we will compute the quantum dimensions of the monster orbifold. To
+formulate this precisely, note that, according to the main theorem of [78], we have
+♮
+
+V ≃
+
+(8.4)
+
+194
+M
+i=1
+
+ViM ⊗ Mi ,
+
+as V ×M-modules, for some V -submodules ViM in V ♮ , where Mi denotes an irreducible
+module for M with character χi , as in (7.15).
+M
+
+M
+
+Corollary 8.3. We have qdimV M ViM = χi (e). In particular, the quantum dimension of
+ViM relative to V M exists, for all 1 ≤ i ≤ 194.
+
+Proof. Recall (cf. (4.2)) that ZViM (τ ) is the function obtained by substituting q = e2πiτ in
+P
+dim∗ ViM = n (ViM )n q n , assuming this series converges. Note that V M = V1M . According
+to Proposition 3.6 of [76], if the limit
+(8.5)
+
+dim(ViM )n
+n→∞ dim(V1M )n
+
+di := lim
+
+exists, then the quantum dimension of ViM relative to V1M also exists, and equals di .
+Comparing with (7.15) we see that dim(ViM )n = mi (−1, n). Applying Theorem 8.1 we
+obtain di = χi (e), and this completes the proof.
+
+Note that Corollary 8.3 confirms a special case of Conjecture 6.7 of [76]. It would
+be interesting to see how generally this method can be applied, to the computation of
+quantum dimensions of orbifolds V G , where V is a vertex operator algebra and G is a
+group of automorphisms of Aut(G). (See also Problem 10.11.)
+8.1. The modular groups in monstrous moonshine. To obtain exact formulas, we
+begin by recalling the modular groups which arise in monstrous moonshine. Suppose
+Γ∗ < GL2 (R) is a discrete group which is commensurable with SL2 (Z). If Γ∗ defines a
+genus zero quotient of H, then the field of modular functions which are invariant under
+Γ∗ is generated by a single element, the principal modulus (cf. (3.4)). Theorem 3.6
+implies that the Tg (defined by (3.2)) are principal moduli for certain groups Γg . We can
+
+MOONSHINE
+
+29
+
+describe these groups in terms of groups Eg which in turn may be described in terms of
+the congruence subgroups
+
+
+
+a b
+(8.6)
+Γ0 (N) :=
+∈ SL2 (Z) : c ≡ 0 (mod N) ,
+c d
+and the Atkin–Lehner involutions We for Γ0 (N) given by
+
+
+ae b
+(8.7)
+We :=
+,
+cN de
+where e is an exact divisor of N (i.e. e|N, and (e, N/e) = 1), and a, b, c, and d are
+integers chosen so that We has determinant e.
+Following Conway–Norton [59] and Conway–McKay–Sebbar [58], we denote the groups
+Eg by symbols of the form Γ0 (N|h) + e, f, . . . (or simply N|h + e, f, . . . ), where h divides
+(N, 24), and each of e, f, etc. exactly divide N/h. This symbol represents the group
+
+
+
+
+h 0
+1/h 0
+hΓ0 (N/h), We , Wf , . . . i
+,
+Γ0 (N|h) + e, f, · · · :=
+0 1
+0 1
+where We , Wf , etc. are representative of Atkin–Lehner involutions on Γ0 (N/h). We use
+the notation Wg := {1, e, f, . . . } to denote this list of Atkin–Lehner involutions contained
+in Eg . We also note that Γ0 (N|h) + e, f, . . . contains Γ0 (Nh).
+The groups Eg are eigengroups for the Tg , so that if γ ∈ Eg , then Tg (γτ ) = σg (γ)Tg ,
+where σg is a multiplicative group homomorphism from Eg to the group of h-th roots of
+unity. Conway and Norton [59] give the following values for σg evaluated on generators
+of N|h + e, f, . . . .
+Lemma 8.4 (Conway–Norton). Assuming the notation above, the following are true:
+(a) σg (γ) = 1 if γ ∈ Γ0 (Nh)
+(b) σg (γ) = 1 if γ is an Atkin–Lehner
+involution of Γ0 (Nh) inside Eg
+
+
+−2πi
+1 1/h
+(c) σg (γ) = e h if γ =
+0 1 
+2πi
+1 0
+,
+(d) σg (γ) = e−λg h if γ =
+N 1
+where λg in (d) is −1 if N/h ∈ Wg , and +1 otherwise.
+(−m)
+
+This information is sufficient to properly describe the modularity of the series Tg
+(τ )
+on Eg . In section 8.4, we give an explicit procedure for evaluating σg . The invariance
+group Γg , denoted by Γ0 (N||h) + e, f, . . . (or by the symbol N||h + e, f, . . . ), is defined
+as the kernel of σg . A complete list of the groups Γg can be found in the Appendix (§A)
+of this paper, or in table 2 of [59].
+Theorems 3.3 and 7.1 are summarized by the following uniform statement.
+
+30
+
+JOHN F. R. DUNCAN, MICHAEL J. GRIFFIN AND KEN ONO
+(−m)
+
+Theorem 8.5. Let g ∈ M and m ≥ 1. Then Tg
+is the unique weakly holomorphic
+(−m)
+modular form of weight zero for Γg that satisfies Tg
+= q −m + O(q) as τ approaches
+the infinite cusp, and has no poles at any cusps inequivalent to the infinite one.
+Remark. A weakly holomorphic modular form is a meromorphic modular form whose
+poles (if any) are supported at cusps.
+8.2. Harmonic Maass forms. Maass–Poincaré series allow us to obtain formulas for
+weakly holomorphic modular forms and mock modular forms. We begin by briefly recalling the definition of a harmonic Maass form of weight k ∈ 21 Z and multiplier ν (a
+generalization of the notion of a Nebentypus). If τ = x + iy with x and y real, we define
+the weight k hyperbolic Laplacian by
+
+
+
+ 2
+∂2
+∂
+∂
+∂
+2
+,
++ iky
++
++i
+(8.8)
+∆k := −y
+∂x2 ∂y 2
+∂x
+∂y
+
+
+a b
+and if γ =
+∈ SL2 (Z), define
+c d
+(γ : τ ) := (cτ + d).
+
+Suppose Γ is a subgroup of finite index in SL2 (Z) and 32 ≤ k ∈ 21 Z. Then a real analytic
+function F (τ ) is a harmonic Maass form of weight k on Γ with multiplier ν if:
+(a) The function F (τ ) satisfies the modular transformation with respect to the weight
+k slash operation,
+F (τ )|k γ := (γ : τ )−k F (γτ ) = ν(γ)F (τ )
+for every matrix γ ∈ Γ, where if k ∈ Z + 12 , the square root is taken to be the
+principal branch. In particular, if ν is trivial, then F is invariant under the action
+of the slash operator.
+(b) We have that ∆k F (τ ) = 0,
+(c) The singularities of F (if any) are supported at the cusps of Γ, and for each cusp
+ρ there is a polynomial PF,ρ(q −1 ) ∈ C[q −1/tρ ] and a constant c > 0 such that
+F (τ ) − PF,ρ(e−2πiτ ) = O(e−cy ) as τ → ρ from inside a fundamental domain. Here
+tρ is the width of the cusp ρ.
+Remark. The polynomial PF,ρ above is referred to as the principal part of F at ρ. In
+certain applications, condition (c) of the definition may be relaxed to admit larger classes
+of harmonic Maass forms. However, for our purposes we will only be interested in those
+satisfying the given definition, having a holomorphic principal part.
+We denote the complex vector space of such functions by Hk (Γ, ν), and note that in
+order for Hk (Γ, ν) to be nonzero, ν must satisfy (γ : δτ )k (δ : τ )k ν(γ)ν(δ) = (γδ : τ )k ν(γδ)
+for every γ, δ ∈ Γ.
+Let S(Γ) denote some fixed complete set of inequivalent representatives
+of the
+
+ cusps of
+−δ
+β
+Γ. For each representative ρ = αγ with (α, γ) = 1, fix a matrix Lρ =
+∈ SL2 (Z)
+γ −α
+
+MOONSHINE
+
+31
+
+so that ρ = L−1
+ρ ∞. Following Rankin [206], let tρ be the cusp width and let κρ be the
+2πiκρ
+cusp parameter,
+as the least nonnegative integer so that ν(Lρ T tρ L−1
+,
+ρ ) = e
+ defined
+
+1 1
+where T :=
+. The stabilizer of ρ in Γ is given by Γρ := h±T tρ i , so for example
+0 1
+Γ∞ = h±T i. Given F (τ ) ∈ H2−k (Γ, ν), we refer to Fρ (τ ) := F (τ )|2−k Lρ as the expansion
+of F at the cusp ρ. We note that this expansion depends on the choice of Lρ . These facts
+imply that the expansion of Fρ can be given as a Fourier series of the form
+X
+Fρ (τ ) =
+a(n, y)e2πix(n+κρ )/tρ .
+n
+
+More precisely, we have the following. The Fourier expansion of harmonic Maass forms
+F at a cusp ρ (see Proposition 3.2 of [31]) splits into two components. As before, we let
+q := e2πiτ .
+
+Lemma 8.6. If F (τ ) is a harmonic Maass form of weight 2 − k for Γ where 23 ≤ k ∈ 21 Z,
+and if ρ is a cusp of Γ, then
+Fρ (τ ) = Fρ+ (τ ) + Fρ− (τ )
+where Fρ+ is the holomorphic part of Fρ , given by
+X
+(n+κρ )/τρ
+Fρ+ (τ ) :=
+c+
+,
+F,ρ (n)q
+n≫−∞
+
+and Fρ− is the nonholomorphic part, given by
+Fρ− (τ ) +
+
+X
+n<0
+
+(n+κρ )/tρ
+c−
+.
+F ρ (n)Γ(k − 1, 4πy|(n + κρ )/tρ |)q
+
+By inspection, we see that weakly holomorphic modular forms are themselves harmonic
+Maass forms. In fact, under the given definition, all harmonic Maass forms of positive
+weight are weakly holomorphic. On the other hand, if the weight is non-positive, then
+the space of harmonic Maass forms may be larger than the space of weakly holomorphic
+modular forms. However, as with the weakly holomorphic modular forms, a harmonic
+Maass form is uniquely defined by its principal parts at all cusps. This is clear if the form
+is weakly holomorphic. If the nonholomorphic part is non-zero, we have the following
+lemma which follows directly from the work of Bruinier and Funke [31].
+Lemma 8.7. If F ∈ H2−k (Γ0 (N)) has the property that F − 6= 0, then the principal part
+of F is nonconstant for at least one cusp.
+Sketch of the Proof. Bruinier and Funke define a pairing {•, •} on harmonic weak Maass
+∂
+Forms. The particular quantity {2iy k ∂τ
+F , F } can be described in terms of either a
+Petersson norm, or in terms of products of coefficients of the principal part of F with
+coefficients of the nonholomorphic part. Since the Petersson norm is non-zero, at least
+one coefficient of the principal part is also non-zero.
+
+
+32
+
+JOHN F. R. DUNCAN, MICHAEL J. GRIFFIN AND KEN ONO
+
+Hence, if F and G are harmonic Maass forms of non-positive weight whose principal
+parts are equal at all cusps, then F − G is holomorphic and vanishes at cusps, and
+therefore identically 0.
+8.3. Maass–Poincaré series. The Maass–Poincaré series define a basis for a space of
+harmonic Maass forms and provide exact formulas for their coefficients. The following
+construction of the Maass–Poincaré series follows the method and notation of Bringmann
+and the third author [26] which builds on the early work of Rademacher, followed by more
+contemporary work of Fay, Niebur, among many others [98, 188, 189]. The Poincaré series
+we construct in this section are modular for congruence subgroups Γ0 (N) which we will
+then use to construct the McKay–Thompson series. Although we could follow similar
+methods to construct Poincaré series for the groups Γg directly, we restrict our attention
+to these groups since the congruence subgroups Γ0 (N) are more standard.
+For s ∈ C, w ∈ R \ {0}, and k ≥ 3/2, k ∈ 21 Z, let
+(8.9)
+
+k
+
+Ms (w) := |y| 2 −1 Msign(w)(1−k/2),s− 1 (|w|),
+2
+
+where Mν,µ (z) is the M-Whittaker function which is a solution to the differential equation
+
+
+1
+− µ2
+∂2u
+1 ν
+4
++ − + +
+u = 0,
+∂z 2
+4 z
+z2
+and (here and throughout this paper) τ = x + iy. Using this function, let
+(8.10)
+
+φs (τ ) := Ms (4πy)e2πix .
+
+Given a positive integer m and a cusp ρ, Maass–Poincaré series provide a form with
+principal part equal to q (−m+κρ )/tρ plus a constant at the cusp ρ, and constant at all other
+cusps, thereby forming a basis for H2−k (Γ, ν).
+Suppose m > 0 and L ∈ SL2 (Z) with ρ = L−1 ∞. Then we have the Maass–Poincaré
+series
+
+(8.11)
+
+PL (τ, m, Γ, 2 − k, s, ν) :=
+
+X
+
+M ∈Γρ \Γ
+
+φs
+
+
+
+−m+κρ
+· L−1 Mτ
+tρ
+
+
+
+(L−1 : Mτ )2−k (M : τ )2−k ν(M)
+
+.
+
+It is easy to check that φs (τ ) is an eigenfunction of ∆2−k with eigenvalue
+k 2 − 2k
+.
+4
+The right hand side of (8.11) converges absolutely for ℜ(s) > 1, however Bringmann and
+the third author establish conditional convergence when s ≥ 3/4 [26], giving Theorem 8.8
+below. The theorem is stated for the specific case Γ = Γ0 (N) for some N and k ≥ 3/2,
+in which case we modify the notation slightly and define
+k
+1
+PL (τ, m, Γ0 (N), 2 − k, , ν)
+(8.12)
+PL (τ, m, N, 2 − k, ν) :=
+Γ(k)
+2
+s(1 − s) +
+
+MOONSHINE
+
+33
+
+In the statement of the theorem below, Kc is a modified Kloosterman sum given by
+(8.13)
+
+
+
+Kc (2 − k, L, ν, m, n) :=
+
+a≡−
+
+X
+
+(S : τ )2−k exp 2πi
+
+0≤a<ctρ
+N
+(mod (γ,N)
+)
+ad≡1 (mod c)
+
+a·
+
+(−m+κρ )
+(n+κ )
++d· t ∞
+tρ
+∞
+
+c
+
+(L−1 : LSτ )2−k (LS : τ )2−k ν(LS)
+
+,
+
+c·(α,N)
+αγ
+
+
+
+a b
+where S =
+∈ SL2 (Z). If ν is trivial, we omit it from the notation. We also have
+c d
+that δL,S (m) is an indicator function for the cusps ρ = L−1 ∞ and µ = S −1 ∞ given by
+(
+−m+κ
+2πir t ρ
+ρ
+ν(M)−1 e
+if M = LT r S −1 ∈ Γ0 (N),
+δL,S (m) :=
+0
+if µ 6∼ ρ in Γ0 (N).
+Using this notation, we have the following theorem which gives exact formulas for the
+coefficients and principal part of PL (τ, m, N, 2−k, ν), which is a generalization of Theorem
+3.2 of [26].
+Theorem 8.8. Suppose that 32 ≤ k ∈ 21 Z, and suppose ρ = L−1 ∞ is a cusp of Γ0 (N).
+If m is a positive integer, then PL (τ, m, N, 2 − k, ν) is in H2−k (Γ0 (N), ν). Moreover, the
+following are true:
+(1) We have
+X
+PL+ (τ, m, N, 2 − k, ν) = δρ,I (m) · q −m+κ∞ +
+a+ (n)q n .
+n≥0
+
+Moreover, if n > 0, then a+ (n) is given by
+
+−m + κρ
+−ik 2π
+tρ (n + κ∞ )
+
+k−1
+2
+
+X Kc (2 − k, L, ν, −m, n)
+· Ik−1
+c
+c>0
+
+4π
+c
+
+s
+
+|−m + κρ | |n + κ∞ |
+tρ
+
+!
+
+,
+
+(c,N )=(γ,N )
+
+where Ik is the usual I-Bessel function.
+(2) If S ∈ SL2 (Z), then there is some c ∈ C so that the principal part of PL (τ, m, N, 2−
+k) at the cusp µ = S −1 ∞ is given by
+δL,S (m)q
+
+−m+κρ
+tρ
+
++c
+
+Remark. We shall use Theorem 8.8 to prove Theorem 8.1. We note that one could prove
+Theorem 8.1 without referring to the theory of Maass–Poincaré series. One could make
+use of ordinary weakly holomorphic Poincaré series. However, we have chosen to use
+Maass–Poincaré series and the theory of harmonic Maass forms because these results
+are more general, and because of the recent appearance of harmonic Maass forms in the
+theory of umbral moonshine (see §9).
+
+34
+
+JOHN F. R. DUNCAN, MICHAEL J. GRIFFIN AND KEN ONO
+
+Sketch of the proof. Writing ρ = αγ , Bringmann and the third author prove this theorem
+for the case that γ | N and (α, N) = 1, along with the assumption that µ and ρ are in
+a fixed complete set of inequivalent cusps, so that δµ,ρ = 1 or 0. This general form is
+useful to us particularly since it works equally
+ well for the cusps ∞ with L taken to be
+0 −1
+the identity, and for 0 with L taken to be
+.
+1 0
+Here and for the remainder of the paper we let SN denote any complete set of inequivalent cusps of Γ0 (N), and for each ρ ∈ SN , we fix some Lρ with ρ = L−1
+ρ ∞. Rankin
+notes [206] (Proof of Theorem 4.1.1(iii)) that given some choice of SN , each right coset
+of Γ0 (N)\ SL2 (Z) is in Γ0 (N) · Lρ T r for some unique ρ ∈ SN . Moreover, the r in the
+statement is unique modulo tρ , so the function δL,S (m) given above is well-defined on all
+matrices in SLq (Z).
+In the proof given by Bringmann and the third author, the sum of Kloosterman sums
+X
+Kc (2 − k, L, ν, −m, n)
+. . . is written as a sum over representatives of the double
+c
+c>0
+(c,N )=(γ,N )
+
+coset Γρ \L−1 Γ0 (N)/Γ∞ (omitting the identity if present). Following similar arguments,
+but without the assumptions on α and γ, we find the indices of summation given in (8.13)
+and Theorem 8.8. As in their case, we find that the principal part of PLρ (τ, m, N, 2−k) at
+−m
+
+a cusp µ is constant if µ 6∼ ρ and is δLρ ,Lµ q tρ + c for some constant if µ = ρ. Therefore,
+if µ is a cusp with Lµ = M −1 Lρ T r for some M ∈ Γ0 (N, ), then the principal part of
+2πir −m+κ
+t
+
+PLρ (τ, m, N, 2 − k, ν) at µ is clearly ν(M)−1 e
+
+ρ
+
+q
+
+−m+κρ
+tρ
+
++ c.
+
+
+
+Since harmonic Maass forms with a nonholomorphic part have a non-constant principal
+part at some cusp, we have the following theorem.
+Theorem 8.9. [26, Theorem 1.1] Assuming the notation above, if 23 ≤ k ∈ 21 Z, and
+−m+κρ
+P
+F (τ ) ∈ H2−k (Γ0 (N), ν) has principal part Pρ (τ ) = m≥0 aρ (−m)q tρ for each cusp
+ρ ∈ SN , then
+X X
+F (τ ) =
+aρ (−m)Pρ (τ, m, N, 2 − k, ν) + g(τ ),
+ρ∈SN m>0
+
+where g(τ ) is a holomorphic modular form. Moreover, we have that c = 0 whenever
+k > 2, and is a constant when k = 2.
+(−m)
+
+8.4. Exact formulas for Tg
+. Using Theorems 8.8 and 8.9, we can write exact for(−m)
+mulas for the coefficients of the Tg
+provided we know its principal parts at all cusps
+of Γ0 (Nh). With this in mind, we now regard Tg as a modular function on Γ0 (Nh) with
+trivial multiplier. The location and orders of the poles were determined by Harada and
+Lang [129].
+
+MOONSHINE
+
+35
+
+Lemma 8.10.
+7, 9] Suppose the Γg is given by the symbol N||h + e, f...,
+ [129, Lemma
+
+
+
+−δ β
+γ
+N
+, Nh = eh
+,
+and let L =
+∈ SL2 (Z). Then Tg |0 L has a pole if and only if (γ,h)
+γ −α
+2
+for some e ∈ Wg (Note, here we allow e = 1). The order of the pole is given by (h,γ)
+.
+eh2
+Harada and Lang prove this lemma by showing that if u !
+is an integer chosen such
+
+uγ−α·(h,γ)
+h
+
+is integral and divisible by e and U =
+
+e·h
+(h,γ)
+
+0
+
+u
+h
+(h,γ)
+h
+
+, then LU is an Atkin–
+
+Lehner involution We ∈ Eg . Therefore, we have that
+
+
+(h, γ)2
+u · (h, γ)
+(8.14)
+Tg |0 L = σg (LU)Tg
+τ−
+.
+eh2
+eh2
+Harada and Lang do not compute σg (LU), however we will need these values in order
+to apply Theorem 8.9. Using Lemma 8.4, the following procedure allows us to compute
+σg (M) for any matrix M ∈ Eg .
+
+
+ae hb
+with e ∈ Wg and
+Given a matrix M ∈ Eg , we may write M as M =
+cN de
+N
+= 1. We may also write h = he · he , where he is the largest divisor of h
+ade − bc eh
+N
+is co-prime to both d and e, we may chose integers A, B, and C
+co-prime to e. Since c eh
+(mod h) such that:
+N
+• c eh
+A + d is co-prime to he but is divisible by he ,
+N
+• B ≡ −(eaA + b)(c Nh A + ed)−1 (mod he ) and Bc eh
++ b ≡ 0 (mod he ),
+N
+−1
+• C ≡ −c(c h A + ed) (mod he ), and C ≡ 0 (mod he ).
+
+
+ B  A 
+1 0
+he 0
+1 h
+1 h
+c
+M
+is an Atkin–
+A calculation shows that M :=
+CN 1
+0 he
+0 1
+0 1
+c) =
+Lehner involution WE for Γ0 (Nh) where E = e · h2e . By Lemma 8.4, this implies σg (M
+1, and therefore
+
+
+2πi
+σg (M) = exp
+(A + B + λg C) .
+h
+Combined with Lemma 8.10, this leads us to the following proposition.
+
+
+−δ β
+Proposition 8.11. Given a matrix L =
+∈ SL2 (Z), let u and U be chosen as
+γ −α
+above, and define
+u·(h,γ)
+
+Then by (8.14), we have that
+
+ǫg (L) := σg (LU) · e2πi eh2 .
+(h,γ)2
+
+Tg |0 L = ǫg (L)q − eh2 + O(q).
+(−m)
+
+Using this notation, we are equipped to find exact formulas for the Tg
+
+.
+
+36
+
+JOHN F. R. DUNCAN, MICHAEL J. GRIFFIN AND KEN ONO
+
+Theorem 8.12. Let g ∈ M, with Γg = N|h + e, f, . . . , and let SN h and Wg be as above.
+if m and n are positive integers, then there is a constant c for which
+X
+X
++
+Tg(−m) (τ ) = c +
+ǫg (Lρ )m Pα/γ
+(τ, m, Nh, 0).
+e∈Wg
+
+(
+
+(−m)
+
+The n-th coefficient of Tg
+X
+
+e∈Wg
+
+X
+
+ρ= α
+∈SNh
+γ
+
+α
+∈SNh
+γ
+γ
+N
+, N = eh
+(γ,h) h
+
+)
+
+(τ ) is given by
+1
+
+−m (h, γ)2 2
+×
+ǫg (Lρ ) 2π
+·
+n
+eh2
+m
+
+γ
+=N
+,N
+( (γ,h)
+h ) eh
+
+X
+
+c>0
+(c,N h)=(γ,N h)
+
+Kc (0, L, −m, n)
+· I1
+c
+
+4π
+c
+
+s
+
+−mn · (h, γ)2
+eh2
+
+!
+
+.
+
+Proof. Every modular function is a harmonic Maass form. Therefore, the idea is to exhibit
+a linear combination of Maass–Poincaré series with exactly the same principal parts at
+(−m)
+(−m)
+all cusps as Tg
+. By Lemma 8.7 and Theorem 8.9, this form equals Tg
+up to an
+additive constant. Lemma 8.4 (c) implies that the coefficients cg (n) of Tg are supported
+(−m)
+on the arithmetic progression n ≡ −1 (mod h). The function Tg
+is a polynomial in Tg ,
+and as such must be the sum of powers of Tg each of which is congruent to m (mod h).
+Therefore, if M ∈ Γg , then T (−m) |0 M = σg (M)m T (−m) . Given L ∈ SL2 (Z), let U be a
+matrix as in (8.14) so that LU ∈ Γg . By applying Proposition 8.11, we find
+(h,γ)2
+
+Tg(−m) |0 L = σg (LU)m Tg(−m) |0 U −1 = ǫg (L)m q −m eh2 + O(q).
+2
+
+Theorem 8.9, along with the observations that tρ = (h,γ)
+and κρ = 0 for every ρ = αγ =
+eh2
+L−1
+ρ ∞, implies the first part of the theorem. The formula for the coefficients follows by
+Theorem 8.8.
+
+8.5. Exact formulas for Ug up to a theta function. Following a similar process
+23
+1
+bg (τ ) = q − 24
+to that in the previous section, we may construct a series U
++ O(q 24 ) with
+principal parts matching those of η(τ )Tg (τ ) at all cusps. Then according to (7.24), the
+1
+bg is a weight 1 holomorphic modular form, which by a celebrated
+difference q 24 (Ug −1)− U
+2
+result [211] of Serre–Stark, is a finite linear combination of unary theta functions. This
+bg differ primarily
+will not affect the asymptotics in Theorem 8.1. The functions Tg and U
+η(M τ )
+bg has a non-trivial multiplier νη : M →
+in their weight, and in that U
+. They
+(M :τ )1/2 η(τ )
+also have slightly different orders of poles, which is accounted for by the fact that the
+bg , rather than 0 for the
+multiplier νη implies that κρ = tρ /24 at every cusp ρ for the U
+Tg . The proof of the following theorem is the same as that of Theorem 8.12, mutatis
+mutandis.
+
+MOONSHINE
+
+37
+
+Theorem 8.13. Let g ∈ M, with Γg = N|h + e, f, . . . , and let SN h and Wg be as above.
+If m is a positive integer then
+X
+X
+bg =
+U
+ǫg (Lρ )PL+ρ (τ, 1, Nh, 1/2, νη ).
+ρ= α
+∈SNh
+γ
+
+e∈Wg
+
+γ
+=N
+,N
+( (γ,h)
+h ) eh
+
+1
+bg is given by
+For n a non-negative integer, the coefficient of q n+ 24 in U
+
+X
+
+e∈Wg
+
+(
+
+2
+
+X
+
+ρ= α
+∈SNh
+γ
+γ
+N
+N
+= eh
+,
+(γ,h) h
+
+1
+− (h,γ)
++ 24
+1−i
+eh2
+ǫg (Lρ ) √ 2π
+1
+n + 24
+2
+
+1
+4
+
+×
+
+)
+
+X
+
+c>0
+(c,N h)=(γ,N h)
+
+Kc ( 12 , L, νη , −1, n)
+· I1
+2
+c
+
+4π
+c
+
+s
+
+1
+(h, γ)2
++
+−
+2
+eh
+24
+
+1
+n+
+24
+
+!
+
+.
+
+This immediately admits the following corollary.
+Corollary 8.14. Given the notation above, there is a weight 12 linear combination of
+1
+theta functions hg (τ ) for which the coefficient q n in Ug (τ ) − q − 24 hg (τ ) coincides with the
+1
+bg , given explicitly in Theorem 8.13.
+coefficient of q n+ 24 in U
+8.6. Proof of Theorem 8.1.
+
+Proof of Theorem 8.1. Following Harada and Lang [129], we begin by defining the functions
+1 X
+(8.15)
+Tχ(−m)
+(τ
+)
+:=
+χi (g)Tg(−m) (τ ).
+i
+|M| g∈M
+The orthogonality of characters imply that for g and h ∈ M,
+(
+194
+X
+|CM (g)| if g and h are conjugate,
+(8.16)
+χi (g)χi (h) =
+0
+otherwise.
+i=1
+Here |CM (g)| is the order of the centralizer of g in M. Since the order of the centralizer
+times the order of the conjugacy class of an element is the order of the group, (8.16) and
+(8.15) together imply the inverse relation
+Tg(−m) (τ ) =
+
+194
+X
+i=1
+
+χi (g)Tχ(−m)
+(τ ).
+i
+
+38
+
+JOHN F. R. DUNCAN, MICHAEL J. GRIFFIN AND KEN ONO
+(−m)
+
+In particular we have that Te
+
+(τ ) =
+
+194
+X
+
+dim(χi )Tχ(−m)
+(τ ), and therefore we can identify
+i
+
+i=1
+
+(−m)
+the mi (−m, n) as the Fourier coefficients of the Tχi (τ ) =
+
+∞
+X
+
+mi (−m, n)q n .
+
+n=−m
+(−m)
+
+Using Theorem 8.12, we obtain exact formulas for the coefficients of Tχi (τ ). Let
+g ∈ M with Γg = Ng ||hg + eg , fg , . . . . If m and n are positive integers, then the nth
+coefficient is given exactly by
+X
+1 X
+χi (g)
+|M| g∈M
+e∈W
+
+g
+
+
+
+X
+
+1
+
+α
+∈SNg hg
+γ
+
+N
+N
+γ
+, g = ehg
+(γ,hg ) hg
+g
+
+X
+
+c>0
+(c,Ng hg )=(γ,Ng hg )
+
+−m (hg , γ)2 2
+ǫg (Lρ ) 2π
+·
+n
+eh2g
+m
+
+Kc (2 − k, L, ν, −m, n)
+· I1
+c
+
+4π
+c
+
+s
+
+−mn · (hg , γ)2
+eh2g
+
+!
+
+,
+
+where SNg hg and Wg are given as above.
+Using the well-known asymptotics for the I-Bessel function
+
+
+ex
+4k 2 − 1
+Ik (x) ∼ √
+1−
++ ... ,
+8x
+2πx
+we see that the formula for mi (−m, n) is dominated by the c = 1 term which appears
+only for g = e (so that Ne = he = 1). This term yields the asymptotic
+χi (e) · |m|1/4 4π√|mn|
+·e
+mi (−m, n) ∼ √
+2n3/4 |M|
+as in the statement of the theorem.
+The asymptotics for ni (n) follows similarly, using the formula
+1 X
+χi (g)Ug(−m) (τ ).
+Uχi (τ ) :=
+|M| g∈M
+
+We note that the coefficients of the theta functions hg (τ ) in Corollary 8.14 are bounded
+by constants and so do not affect the asymptotics. This yields
+√
+√
+π
+12 χi (e)
+23|24n+1|
+6
+ni (n) ∼
+·
+e
+|24n + 1|1/2 |M|
+as in the theorem.
+
+8.7. Examples of the exact formulas. We conclude with a few examples illustrating
+the exact formulas for the McKay–Thompson series. These formulas for the coefficients
+generally converge rapidly. However the rate of convergence is not uniform and often
+requires many more terms to converge to a given precision.
+
+MOONSHINE
+
+39
+
+Example. We first consider the case that g is the identity element. Then we have
+Γg = SL2 (Z), which has only the cusp infinity. In this case Theorem 8.12 reduces to the
+well known expansion
+ √ 
+X 2π X Kc (∞, −m, n)
+4π n n
+−1
+√ ·
+Tg = J(τ ) − 744 = q +
+q .
+· I1
+n c>0
+c
+c
+n≥1
+Table 2 below contains several approximations made by bounding the size of the c term
+in the summation.
+Table 2.
+c ≤ 25
+≤ 50
+≤ 75
+≤ 100
+∞
+
+n=1
+196883.661 . . .
+196883.881 . . .
+196883.840 . . .
+196883.958 . . .
+196884
+
+n=5
+333202640598.254 . . .
+333202640599.429 . . .
+333202640599.828 . . .
+333202640599.827 . . .
+333202640600
+
+n = 10
+22567393309593598.047 . . .
+22567393309593598.660 . . .
+22567393309593599.369 . . .
+22567393309593599.681 . . .
+22567393309593600
+
+Example. The second example we consider is g in the conjugacy class 4B. In this case
+we have Γg = 4||2 + 2 ⊃ Γ0 (8). The function Tg has a pole at each of the four cusps of
+Γ0 (8):
+(1) The cusp ∞ has e = 1, width t = 1, and coefficient ǫ(L∞ ) = 1.
+(2) The cusp 0 has e = 2, width t = 8, and coefficient ǫ(L0 ) = 1.
+(3) The cusp 1/2 has e = 2, width t = 2, and coefficient ǫ(L1/2 ) = i.
+(4) The cusp 1/4 has e = 1, width t = 1, and ǫ(L1/4 ) = −1.
+Table 3 below contains several approximations as in Table 2.
+Table 3.
+c ≤ 25
+≤ 50
+≤ 75
+≤ 100
+∞
+
+n=1
+51.975 . . .
+52.003 . . .
+52.041 . . .
+51.894 . . .
+52
+
+n=5
+4760.372 . . .
+4759.860 . . .
+4760.066 . . .
+4760.049 . . .
+4760
+
+n = 10
+0.107 . . .
+0.117 . . .
+0.092 . . .
+0.040 . . .
+0
+
+9. Umbral Moonshine
+In this penultimate section, we review the recently discovered, and rapidly developing
+field of umbral moonshine.
+
+40
+
+JOHN F. R. DUNCAN, MICHAEL J. GRIFFIN AND KEN ONO
+
+9.1. K3 Surfaces. Eguchi–Ooguri–Tachikawa reignited the field of moonshine with their
+2010 observation [94] that dimensions of representations of the largest Mathieu group,
+M24 , occur as multiplicities of superconformal algebra characters in the K3 elliptic genus.
+To formulate their observation more precisely, recall that a complex K3 surface is a compact connected complex manifold M of dimension 2, with Ω2M ≃ OM and H 1 (M, OM ) =
+0. (See [10, 11] for introductory accounts.) Following Witten [167, 231], the elliptic genus
+of a complex manifold M of dimension d is defined to be
+Z
+(9.1)
+ZM :=
+ch(Eq,y ) td(M),
+M
+
+where td(M) is the Todd class of M, and ch(Eq,y ) is the Chern character of the formal
+power series
+(9.2)
+
+d
+
+Eq,y = y 2
+
+∞ ^
+O
+n=1
+
+−y
+
+TM ⊗
+−1 n−1
+q
+
+^
+
+−yq
+
+∗
+TM
+⊗
+n
+
+_
+
+q
+
+TM ⊗
+n
+
+_
+
+q
+
+
+∗
+T
+M ,
+n
+
+whose coefficients are virtual vector bundles, obtained as sums of tensor products of
+the exterior and symmetric powers of the holomorphic tangent bundle TM , and its W
+dual
+∗
+bundle TM
+. (Cf. also V
+§1 of [123] or Appendix A of [72].) In (9.2) we interpret t E
+in direct analogy with t E (cf. (3.13)), replacing exterior powers ∧k E with symmetric
+powers ∨k E.
+Since a complex K3 surface M has trivial canonical bundle, and hence vanishing first
+Chern class, its elliptic genus is a weak Jacobi form ZM (τ, z) of weight zero and index
+dim(M)/2 = 1—see [123] or [137] for proofs of this fact—once we set q = e(τ ) and
+y = e(z). This means9 that ZM (τ, z) is a holomorphic function on H × C, satisfying
+
+
+
+
+aτ + b
+z
+−cz 2
+ZM
+,
+ZM (τ, z) = e
+cτ + d
+cτ + d cτ + d
+(9.3)
+= e(λ2 τ + 2λz)ZM (τ, z + λτ + µ)
+P
+for ( ac db ) ∈ SL2 (Z) and λ, µ ∈ Z, with a Fourier expansion ZM (τ, z) = n,r c(n, r)q n y r
+such that c(n, r) = 0 whenever n < 0.
+It is known that ZM (τ, z) specializes to the Euler characteristic χ(M) = 24 when
+z = 0 (cf. e.g. [123]). The space of weak Jacobi forms of weight zero and index one is
+one-dimensional (cf. [97]), so ZM is independent of the choice of M. In fact, we have
+
+
+θ2 (τ, z)2 θ3 (τ, z)2 θ4 (τ, z)2
+(9.4)
+,
++
++
+ZM (τ, z) = 8
+θ2 (τ, 0)2 θ3 (τ, 0)2 θ4 (τ, 0)2
+9See [67] or [97] for more on Jacobi forms, including the general transformation formula in case of
+
+weight different from zero or index different from one.
+
+MOONSHINE
+
+41
+
+where the θi (τ, z) are the usual Jacobi theta functions:
+X
+Y
+2
+θ2 (τ, z) :=
+y n+1/2q (n+1/2) /2 = y 1/2 q 1/8
+(1 + y −1q n−1 )(1 + yq n )(1 − q n )
+n∈Z
+
+(9.5)
+
+θ3 (τ, z) :=
+
+X
+
+y nq
+
+n2 /2
+
+=
+
+θ4 (τ, z) :=
+
+n>0
+
+(1 + y −1q n−1/2 )(1 + yq n−1/2)(1 − q n )
+
+n>0
+
+n∈Z
+
+X
+
+Y
+
+(−1)n y n q
+
+n2 /2
+
+=
+
+Y
+
+(1 − y −1q n−1/2 )(1 − yq n−1/2 )(1 − q n ).
+
+n>0
+
+n∈Z
+
+In Witten’s original analysis [167, 231] the elliptic genus ZM is the graded trace of an
+integer-valued operator on a Hilbert space arising from a supersymmetric nonlinear sigma
+model on M. In the case that M is a K3 surface—see [3, 4] for analyses of the sigma
+models associated to K3 surfaces—it is expected that the corresponding Hilbert space
+admits an unitary action by the (small) N = 4 superconformal algebra (cf. [96]). At least
+this is known for some special cases, so (9.4) can be written as an integer combination
+of the irreducible unitary N = 4 algebra characters. This leads (cf. [92, 95]) to an
+expression
+ZM (τ, z) = 24µ(τ, z) ·
+
+(9.6)
+
+θ1 (τ, z)2
+θ1 (τ, z)2
++
+H(τ
+)
+·
+,
+η(τ )3
+η(τ )3
+
+where θ1 (τ, z) is the Jacobi theta function
+(9.7)
+θ1 (τ, z) := i
+
+X
+
+2
+
+(−1)n y n+1/2 q (n+1/2) /2 = iy 1/2 q 1/8
+
+Y
+
+(1 − y −1q n−1 )(1 − yq n )(1 − q n ),
+
+n>0
+
+n∈Z
+
+µ(τ, z) denotes the Appell–Lerch sum defined by
+(9.8)
+
+µ(τ, z) :=
+
+iy 1/2 X
+y n q n(n+1)/2
+(−1)n
+,
+θ1 (τ, z) n∈Z
+1 − yq n
+
+and q 1/8 H(τ ) is a power series in q with integer coefficients,
+(9.9) H(τ ) = −2q −1/8 + 90q 7/8 + 462q 15/8 + 1540q 23/8 + 4554q 31/8 + 11592q 39/8 + . . . .
+The surprising observation of [94] is that each coefficient of a non-polar term appearing
+in (9.9) is twice the dimension of an irreducible representation (cf. [57]) of the sporadic
+simple group M24 , discovered by Émile Mathieu [183, 184] more than 150 years ago.
+(Generally, the coefficient of a positive power of q in (9.9) is some non-negative integer
+combination of dimensions of representations of M24 .) Thus H(τ ) serves as an analogue
+of J(τ ) (cf. (2.6)) for M24 , and
+(9.10)
+
+90 = 45 + 45
+
+is the Mathieu analogue of McKay’s monstrous observation (2.4).
+
+42
+
+JOHN F. R. DUNCAN, MICHAEL J. GRIFFIN AND KEN ONO
+
+The analogy with monstrous moonshine was quickly taken up, with the determination
+by Cheng [39], Eguchi–Hikami [93], and Gaberdiel–Hohenegger–Volpato [108, 109], of
+Mathieu McKay–Thompson series
+X
+(9.11)
+Hg (τ ) = −2q −1/8 +
+tr(g|Kn−1/8 )q n−1/8
+n>0
+
+L
+
+associated to a graded M24 -module K = n>0 Kn−1/8 , such that K7/8 is the sum of the
+two 45-dimensional irreducible representations of M24 , and K15/8 the sum of the two 231dimensional irreducible representations, etc. (See [43] for a detailed review of Mathieu
+moonshine, and explicit descriptions of the Hg in particular.) We have the following
+beautiful recent result of Gannon [43].
+L
+Theorem 9.1 (Gannon). There is a graded M24 -module K =
+n>0 Kn−1/8 for which
+(9.11) is true (given that the Hg are as described in [43]).
+Remark. A concrete construction of K remains unknown.
+The observer may ask: how were the Hg determined, if the module K is as yet unknown? To explain this, note that the subscript in M24 is a reference to the fact that
+M24 is distinguished amongst permutation groups: it may be characterized as the unique
+proper subgroup of the alternating group A24 that acts quintuply transitively on 24 points
+(cf. [66]). Write χg for the number of fixed points of an element g ∈ M24 , in this defining
+permutation representation.
+The first few terms of Hg are determined by the Eguchi–Ooguri–Tachikawa observation
+on (9.9), for it indicates that the coefficient of q 7/8 in Hg should be the trace of g on
+the sum of the two 45-dimensional irreducible representations, and the coefficient of q 15/8
+should be the trace of g on the sum of the two 231-dimensional irreducible representations,
+etc. To determine the remaining infinitely many terms, modularity may be used: the
+series Hg , determined in [39, 93, 108, 109], have the property that
+(9.12)
+
+Zg (τ, z) := χg µ(τ, z) ·
+
+θ1 (τ, z)2
+θ1 (τ, z)2
++
+H
+(τ
+)
+·
+g
+η(τ )3
+η(τ )3
+
+is a weak Jacobi form of weight zero and index one for ΓJ0 (N) := Γ0 (N) ⋉ Z2 (with
+non-trivial multiplier when χg = 0), where N = o(g) is the order of g, and Γ0 (N) is as
+in (8.6).
+Thus Mathieu moonshine entails twisted, or twined versions (9.12) of the K3 elliptic
+genus (9.4), but the single variable series Hg (τ ) may also be studied in their own right,
+as automorphic objects of a particular kind: it turns out that they are mock modular
+forms10 of weight 1/2, for various groups Γ0 (N), with shadows χg η(τ )3 . This means that
+10The notion of mock modular form has arisen recently, from Zwegers’ foundational work [239] on
+
+Ramanujan’s mock theta functions [204, 205], and the subsequent contributions [25] and [237]. We refer
+to [67, 195, 237] for nice introductions to the theory.
+
+MOONSHINE
+
+43
+
+the completed functions
+
+Z ∞
+1
+dw
+b
+(9.13)
+Hg (τ ) := Hg (τ ) + χg √
+η (−w)3 √
+w+τ
+2 i −τ
+are harmonic Maass forms of weight 1/2, with the same multiplier system as η(τ )−3 when
+χg 6= 0. (In case χg = 0, i.e. when Hg is already a modular form, the multiplier is slightly
+different. See e.g. [43]. The groups Γ0 (o(g)) for which χg 6= 0 are characterized in [45].)
+b g (τ ), is the mock modular form.
+The function Hg (τ ), being the holomorphic part of H
+In contrast to the twined K3 elliptic genera Zg , the mock modular forms Hg are distinguished, in a manner directly analogous to the McKay–Thompson series Tg of monstrous
+moonshine: it is shown in [44] that the Hg admit a uniform description in terms of
+Rademacher sums, in direct analogy with Theorem 5.2. (We refer to [44] or the review
+[43] for a precise statement of this result.) Since the coincidence between the monstrous
+McKay–Thompson series and (normalized) Rademacher sums depends in a crucial way
+upon the genus zero property of monstrous moonshine, as evidenced by Theorem 5.1, it is
+natural to identify the Rademacher sum realization of the Hg as the Mathieu moonshine
+counterpart to the genus zero property of monstrous moonshine.
+As we have hinted above, the Rademacher sum property that distinguishes the Tg
+and Hg does not hold for the weight zero Jacobi forms Zg (cf. (9.12)). A Poincaré
+series approach to Jacobi forms is described in [24], using the foundations established in
+[27, 28], and it is verified there that the Zg are not all realized in this way. On the other
+hand, the main result of [24] is the Poincaré series construction of certain Maass–Jacobi
+forms of weight one, naturally associated to elements of M24 . Thus we can expect that
+Jacobi forms of weight one, rather than the Zg of (9.12), will play an important role in
+a comprehensive conceptual explanation of the Mathieu moonshine phenomenon.
+Note that some of the functions Zg admit a geometric interpretation in terms of K3
+surfaces. Namely, it has been established in [64] that if ḡ is a symplectic automorphism
+of a K3 surface M then the natural ḡ-equivariant modification of (9.1) coincides with Zg ,
+for a suitable element g ∈ M24 . However, not all Zg arise in this way. Please see §9.4 for
+a fuller discussion of this.
+9.2. Niemeier Lattices. Vector-valued versions of the Rademacher sums that characterize the Hg were used in [48] to identify Mathieu moonshine as a special case of six
+directly similar correspondences, between conjugacy classes in certain finite groups and
+distinguished (vector-valued) mock modular forms of weight 1/2. Since the mock modular forms arising seemed to be characterized by their shadows, this was dubbed umbral
+moonshine in [48].
+The conjectures of [48] were greatly expanded in [49], following an observation of
+Glauberman (cf. the Acknowledgement in [49]), that the finite groups identified in [48]
+also appear as automorphism groups of codes associated to deep holes in the Leech lattice
+(cf. [60] or [57]).
+To explain the significance of this, recall that an integral lattice is a free abelian group
+L together with a symmetric bilinear form h· , ·i : L × L → Z. A lattice L is called
+
+44
+
+JOHN F. R. DUNCAN, MICHAEL J. GRIFFIN AND KEN ONO
+
+positive-definite if hλ, λi ≥ 0 for all λ ∈ L, with equality only when λ = 0. It is called
+even if hλ, λi ∈ 2Z for all λ ∈ L, and self-dual if L = L∗ , for L∗ the dual of L,
+(9.14)
+
+L∗ := {µ ∈ L ⊗Z Q | hλ, µi ∈ Z ⇐ λ ∈ L} .
+
+The even self-dual positive-definite lattices of rank 24 have been classified [190] (see also
+[61, 228]) by Niemeier: there are 24 in total, up to isomorphism. They are characterized
+by their root systems—i.e. the configurations of their vectors with square length equal
+to 2—and the Leech lattice Λ (cf. §3) is the unique such lattice whose root system is
+empty. We refer to the remaining 23 as the Niemeier lattices. The Niemeier root systems
+are the root systems of the Niemeier lattices, and they are described explicitly as
+(9.15)
+(9.16)
+
+12
+8
+6
+4
+2
+A24
+1 , A2 , A3 , A4 , A6 , A12 ,
+
+A45 D4 , A27 D52 , A38 , A29 D6 , A11 D7 E6 , A15 D9 , A17 E7 , A24 ,
+2
+D46 , D64 , D83 , D10 E72 , D12
+, D16 E8 , D24 , E64 , E83 ,
+
+in terms of the irreducible, simply-laced (i.e. ADE type) root systems. (See [63] or [140]
+for more on root systems.)
+In (9.15) and (9.16) we use juxtaposition as a shorthand for direct sum, so that A24
+1
+denotes 24 copies of the A1 root system, and A11 D7 E6 is shorthand for A11 ⊕ D7 ⊕ E6 ,
+etc. The subscripts indicate ranks. The Coxeter numbers of the ADE root systems are
+given by
+(9.17)
+
+m(An ) = n + 1, m(Dn ) = 2n − 2, m(E6 ) = 12, m(E7 ) = 18, m(E8 ) = 30,
+
+and one can check that the Niemeier root systems (9.15), (9.16) are exactly those unions
+of ADE type root systems for which the total rank is 24, and the Coxeter number is
+constant across irreducible components.
+For X a Niemeier root system and N X the corresponding Niemeier lattice, define the
+outer automorphism group of N X by setting
+(9.18)
+
+Out(N X ) := Aut(N X )/W X ,
+
+where W X denotes the subgroup of Aut(N X ) generated by reflections in root vectors.
+Applying this construction to the Leech lattice, corresponding to X = ∅, we obtain the
+Conway group,
+(9.19)
+
+Co0 := Aut(Λ),
+
+so named in light of Conway’s detailed description [53, 55] of its structure. A number
+of the 26 sporadic simple groups appear as subgroups, or quotients of subgroups of Co0 ,
+including the three sporadic simple Conway groups, Co1 , Co2 and Co3 . The Conway
+group Co0 is a double cover of the first, and largest of these,
+(9.20)
+
+Co1 ≃ Aut(Λ)/{±Id}.
+
+Note that M24 is naturally a subgroup of Co0 , and also Co1 , for if {λi } ⊂ Λ is a set of 24
+vectors such that hλi , λj i = 8δij , then the subgroup of Co0 that stabilizes this set {λi } is
+
+MOONSHINE
+
+45
+
+a copy of M24 .
+(9.21)
+
+M24 ≃ {g ∈ Co0 | {g(λi )} ⊂ {λi }} .
+
+According to Conway–Parker–Sloane [60], the Niemeier root systems classify the deepest holes in the Leech lattice, being the points in Λ⊗Z R at maximal distance from vectors
+in Λ. Moreover, this correspondence is strong enough that the Niemeier outer automorphism groups Out(N X ) are also visible inside the Conway group, Co0 . More precisely, if
+x ∈ Λ ⊗Z R is a deep hole, with corresponding Niemeier root system X according to [60],
+then the stabilizer Aut(Λ, x) of x in Aut(Λ) has a normal subgroup C x such that
+(9.22)
+
+Aut(Λ, x)/C x ≃ Out(N X ).
+
+The subgroup C x even encodes a method for constructing N X , as is explained in detail in
+[62], for if LX denotes the sub lattice of N X generated by roots, then N X is determined
+by its image in (LX )∗ /LX (cf. (9.14)) under the natural map N X → (LX )∗ /LX . Write
+C X for this subgroup of (LX )∗ /LX , called the glue code of X in [62] (see also [61]). Then
+C x is isomorphic to C X , according to [62].
+(9.23)
+
+1 → C X ≃ C x → Aut(Λ, x) → Out(N X ) → 1
+
+Thus Out(N X ) acts as automorphisms on the glue code C X , and Glauberman’s observation suggests an extension of the results of [48], whereby distinguished vector-valued
+X
+mock modular forms HgX = (Hg,r
+) are associated to elements g in the umbral groups
+(9.24)
+
+GX := Out(N X ),
+
+for each Niemeier root system X. The realization of this suggestion is described in detail
+X
+in [49]. For X = A24
+is a copy of the extended binary Golay code (cf.
+1 , the glue code C
+X
+[63] or [203]), and G is its full automorphism group, M24 . Thus, from the Niemeier
+root system perspective, Mathieu moonshine is the special case of umbral moonshine
+corresponding to the root system A24
+1 .
+In (9.15) we have separated out the Niemeier root systems of the form Adn with d = 24/n
+even. It is exactly these cases of umbral moonshine that are discussed in [48]. The original
+umbral moonshine observation of Eguchi–Ooguri–Tachikawa stemmed from consideration
+of the weight zero, index one weak Jacobi form ZM (cf. (9.4)), realized as the K3
+elliptic genus. The analysis of [48] is, to some extent, similarly motivated, including the
+(n+1)
+attachment of a weight zero, index n weak Jacobi form Zg
+(τ, z) to each g ∈ GX , for
+d
+each Niemeier root system X = An with d = 24/n even.
+A notion of extremal Jacobi form is formulated in [48], motivated by the representation
+theory of the N = 4 superconformal algebra, and it is proven11 there that the six functions
+11The main step in the classification given in [48] is a demonstration that the existence of an extremal
+
+Jacobi form of index m − 1 implies the vanishing of L(f, 1) for all new forms f of weight 2 and level
+m, where L(f, s) is the Dirichlet series naturally attached to f (cf. e.g. §3.6 of [212]). At this point
+one expects extremal Jacobi forms to be very few in number, on the strength of the Birch–SwinnertonDyer conjecture (cf. [14, 230]), for example. This machinery is evidently quite powerful, and we may
+anticipate further applications to umbral moonshine in the future.
+
+46
+
+JOHN F. R. DUNCAN, MICHAEL J. GRIFFIN AND KEN ONO
+(n+1)
+
+Z (n+1) := Ze
+, for n ∈ {1, 2, 3, 4, 6, 12}, exhaust all examples. Thus the cases (9.15) of
+umbral moonshine considered in [48] are distinguished from the point of view of Jacobi
+forms of weight zero.
+By contrast, there seems to be no natural way to associate weight zero Jacobi forms
+to the Niemeier root systems not12 of the pure A-type, Adn . Rather, the mock modular
+forms HgX described in [49] naturally appear as the theta-coefficients of finite parts of
+certain meromorphic Jacobi forms ψgX of weight 1 and index m,
+X
+X
+(9.25)
+ψgX (τ, z) = ψgX,P (τ, z) +
+Hg,r
+(τ )θm,r (τ, z),
+r
+
+(mod 2m)
+
+where m = m(X) is the Coxeter number of any irreducible component of X (cf. (9.17)).
+Here, meromorphic means that we allow poles in the functions z 7→ ψgX (τ, z), at torsion
+points z ∈ Qτ + Q. The Weierstrass ℘ function
+X
+1
+1
+1
+℘(τ, z) := 2 +
+(9.26)
+− 2
+2
+z
+(z + ω)
+ω
+ω∈Zτ +Z
+ω6=0
+
+is a natural example (with weight two and index zero).
+The decomposition (9.25) is described in detail in [49], following the general structural
+results on meromorphic Jacobi forms established in [67, 239]. For now let us just mention
+that the first summand on the right hand side is the polar part of ψgX , defined as in §8.2
+of [67], and
+X
+2
+(9.27)
+y 2km+r q (2km+r) /4m
+θm,r (τ, z) :=
+k∈Z
+
+evidently depends only on r modulo 2m.
+A number of the meromorphic Jacobi forms attached to Niemeier root systems by
+umbral moonshine also appear amongst the specific examples of [67], where the main
+application is the computation of quantum degeneracies of black holes in certain string
+theories. However, whilst some speculations are offered in §5.5 of [48], no direct relationship between umbral moonshine and string theory has been formulated as yet.
+We have seen in §9.1 that the mock modular forms attached to M24 by Mathieu
+moonshine (i.e. umbral moonshine for X = A24
+1 ) may be characterized as Rademacher
+sums, and this serves as an umbral analogue of the principal modulus/genus zero property
+of monstrous moonshine, on the strength of Theorem 5.1. It is natural to ask for an
+extension of this result to all cases of umbral moonshine.
+Conjecture 5.4 of [48] amounts to the prediction that vector-valued generalizations of
+the Rademacher sums of [44] will recover the HgX for X = Adn with d even (cf. (9.15)),
+and Conjecture 3.2 of [50] is an extension of this to all Niemeier root systems X. Thus a
+positive solution to Conjecture 3.2 of [50] will verify the umbral analogue of the principal
+12The cases A3 and A
+
+24 do come with weight zero Jacobi forms attached, which are obtained via a
+8
+slight weakening of the notion of extremal Jacobi form formulated in [48]. Cf. §4.3 of [49].
+
+MOONSHINE
+
+47
+
+modulus property of monstrous moonshine. So far, the Rademacher sum conjecture for
+umbral moonshine is known to be true only in the case that X = A24
+1 , but a program
+to analyze the Rademacher sum conjecture for more general cases of umbral moonshine,
+via the theory of Maass–Jacobi forms (cf. [27, 28]), has been initiated in [24].
+A notion of optimal growth was formulated in §6.3 of [49], following the work [67],
+with a view to extending Conjecture 5.4 of [48]. It is now known that this condition does
+not uniquely determine the HgX for general X (see [50] for a full discussion of this), but
+all the HgX serve as examples. With this in mind, it is interesting to note that many
+of Ramanujan’s mock theta functions [204, 205] appear as components of the umbral
+McKay–Thompson series HgX . (Cf. §4.7 of [48] and §5.4 of [49].)
+9.3. Modules. As we have explained above, the Rademacher sum property of umbral
+moonshine is a natural counterpart to the principal modulus, or genus zero property of
+monstrous moonshine (cf. §3), formulated in a detailed way by Conway–Norton [59].
+The natural counterpart to Thompson’s conjecture, Conjecture 3.1, verified by the
+Frenkel–Lepowsky–Meurman construction [103, 104, 105] of the moonshine module V ♮ ,
+together with Borcherds’ work [18], is the following (cf. §6.1 of [49], and §2 of [50]).
+Conjecture 9.2 (Cheng–Duncan–Harvey). For each Niemeier root system X, there is
+a bi-graded GX -module
+M
+M
+X
+(9.28)
+Ǩr,−D/4m
+,
+Ǩ X =
+r∈I X
+
+D=r 2
+
+D∈Z
+(mod 4m)
+
+X
+such that the vector-valued umbral McKay–Thompson series HgX = (Hg,r
+) is recovered13
+from the graded trace of g on Ǩ X via
+X
+X
+X
+(9.29)
+tr(g|Ǩr,−D/4m
+)q −D/4m
+Hg,r
+(τ ) = −2q −1/4m δr,1 +
+D=r 2
+
+D∈Z
+(mod 4m)
+
+for r ∈ I X .
+In (9.28) and (9.29), m = m(X) is the Coxeter number of any irreducible component
+X
+X
+X
+of X, as in (9.25). The Hg,r
+satisfy Hg,−r
+= −Hg,r
+, so the umbral McKay–Thompson
+X
+series HgX is determined by its components Hg,r
+with 0 < r < m. If the highest rank
+irreducible component of X is of type D or E then there are more symmetries amongst
+X
+the Hg,r
+, and the definition of the set I X ⊂ Z/2mZ reflects this: if X has an A-type
+component then I X := {1, 2, 3, . . . , m − 1}. If the highest rank component of X is of type
+13In the original formulation, Conjecture 6.1 of [49], the function H X
+
+X
+g,r in (9.29) is replaced with 3Hg,r
+X
+X
+3
+It also predicted that Ǩr,−D/4m is a virtual G -module in case X = A8 and
+D = 0. Recently, a modification of the specification of the HgX for X = A38 has been discovered, which
+
+in the case that X = A38 .
+
+leads to the simpler, more uniform formulation appearing here. We refer to [50] for a full discussion of
+this.
+
+48
+
+JOHN F. R. DUNCAN, MICHAEL J. GRIFFIN AND KEN ONO
+
+D then m = 2 mod 4, and I X := {1, 3, 5, . . . , m/2}. The remaining cases are X = E64 ,
+in which case I X := {1, 4, 5}, and X = E83 , for which I X := {1, 7}.
+As mentioned in §9.1, the existence of the module Ǩ X for X = A24
+1 has been proven
+by Gannon [118]. More specifically, Gannon has shown that the coefficients of the nonnegative powers of q in HgX for X = A24
+1 are traces of elements of M24 on direct sums of
+irreducible M24 -modules. A priori, we might have needed C-linear combinations of such
+X
+traces in order to recover the Hg,r
+.
+In forthcoming work [86], the authors confirm the validity of Conjecture 9.2.
+Theorem 9.3 (Duncan–Griffin–Ono). Conjecture 9.2 is true.
+Theorem 9.3 serves, to a certain extent, as the umbral counterpart to Borcherds’ result,
+Theorem 3.6. Indeed, the method of [86] may be used to give an alternative proof of the
+existence of the M-module V ♮ , for which the associated graded trace functions are the
+normalized principal moduli of the genus zero groups Γg , identified by Conway–Norton
+in [59].
+Nonetheless, there is still work to be done, for in order to have a direct counterpart
+to Theorem 3.6 we require concrete constructions of the Ǩ X . In the case of monstrous
+moonshine, the construction of V ♮ due to Frenkel–Lepowsky–Meurman came equipped
+with rich algebraic structure, ultimately leading to the notion of vertex operator algebra,
+and powerful connections to physics. We can expect that a full explanation of the umbral
+moonshine phenomena will require analogues of this for all the Ǩ X .
+Just such an analogue for X = E83 has recently been obtained in [87], where a super
+vertex operator algebra V X is constructed, together with an action of GX ≃ S3 , such that
+X
+the components of the vector-valued mock modular forms HgX = (Hg,r
+) are recovered from
+X
+X
+traces of elements of G on canonically-twisted modules for V . The main ingredient
+in the construction of [87] is an adaptation of the familiar (to specialists) lattice vertex
+algebra construction (cf. [15, 105]), to cones in indefinite lattices. The choice of cone is
+in turn inspired by Zwegers’ work [240] on a particular pair of the fifth order mock theta
+functions of Ramanujan.
+In [47, 90] a different approach to the module problem is considered, whereby meromorphic Jacobi forms associated to the HgX are recovered as graded traces on canonicallytwisted modules for certain super vertex algebras. In [90] constructions are given for the
+ψgX of (9.25), for X ∈ {A83 , A64 , A46 , A212 }. In [47] certain half-integral index analogues of
+2
+the ψgX are recovered, for X ∈ {D64 , D83 , D12
+, D24 }.
+As we will explain in more detail in the next section, recent work [41, 52] constructs
+modules underlying assignments of vector-valued mock modular forms to the sporadic
+simple groups M24 , M23 and M22 . Here, M23 denotes the maximal subgroup of M24
+composed of elements fixing any given point in the defining permutation representation
+(cf. §9.1), and M22 is obtained similarly from M23 , as the subgroup stabilizing a point in
+its natural permutation representation of degree 23. Although the mock modular forms
+realized in [41, 52] are not directly related to the HgX , it seems likely that the construction
+
+MOONSHINE
+
+49
+
+used therein holds important hints for future developments in the module problem for
+umbral moonshine.
+
+9.4. Sigma Models. Recall from §9.1 that Ω2M ≃ OM for M a complex K3 surface. An
+automorphism of M that induces the trivial action on H 0 (M, Ω2M ) is called symplectic. It
+is a celebrated result of Mukai [187] (cf. also [163]), that the finite groups of symplectic
+automorphisms of complex K3 surfaces are, up to isomorphism, precisely the subgroups
+of M24 that have at least five orbits in the unique non-trivial permutation representation
+on 24 points, including at least one fixed point.
+Since a symplectic automorphism of a complex K3 surface M induces a supersymmetry preserving automorphism of a sigma model attached to M (cf. §9.1), and since
+it is the supersymmetry preserving automorphisms of a K3 sigma model that can be
+used to twine the K3 elliptic genus (9.4), the problem of classifying the supersymmetry preserving automorphism groups of nonlinear K3 sigma models was considered by
+Gaberdiel–Hohenegger–Volpato in [110].
+One might have anticipated that all supersymmetry preserving K3 sigma model automorphism groups would be contained in M24 , but this is not the case. Rather, the main
+result of [110], being a quantum analogue of Mukai’s classification of finite symplectic
+automorphism groups of K3 surfaces, is that the groups of supersymmetry preserving
+automorphisms of K3 sigma models are, up to isomorphism, precisely the subgroups of
+Co0 = Aut(Λ) (cf. (9.19)) that fix a sublattice of Λ with rank at least four.
+Note that the results of [110] are obtained subject to certain conjectural assumptions
+about the structure of the moduli space of K3 sigma models. Nonetheless, it seems fair
+to conclude that the K3 sigma models do not furnish quite the right theoretical setting
+for solving the mysteries of umbral moonshine. For not all of the M24 -twinings (9.12) of
+the K3 elliptic genus (9.4) arise as twinings defined by K3 sigma model automorphisms,
+since, for example, there are elements of M24 (cf. (9.21)) that do not fix a rank four
+lattice in the Leech lattice, Λ. (Cf. also, the last sentence of §9.1.)
+That notwithstanding, we can expect to learn useful information about umbral moonshine from further investigation of K3 sigma models. The history of monstrous moonshine
+provides a useful point of comparison: in advance of his proof of the Conway–Norton conjectures, Borcherds considered a certain BKM algebra (cf. §3) in [17], which was, at the
+time, called the monster Lie algebra, although it turned out to be only indirectly connected to the monster. The Lie algebra constructed in [17] is now known as the fake
+monster Lie algebra (cf. §2 of [18]), and has found a number of applications outside
+of moonshine. For example, the denominator function of the fake monster Lie algebra
+(cf. Example 2 in §10 of [19]) is used to prove facts about families of K3 surfaces in
+[21, 164, 236].
+At the level of vertex operator algebras, the fake monster Lie algebra corresponds to
+the lattice vertex algebra VΛ attached to the Leech lattice. This may be regarded as a
+“fake” moonshine module, for it has exactly the same graded dimension as V ♮ , up to the
+
+50
+
+JOHN F. R. DUNCAN, MICHAEL J. GRIFFIN AND KEN ONO
+
+constant term,
+(9.30)
+
+dim∗ VΛ = J(τ ) + 24.
+
+(Cf. (4.1).) There is no action of the monster on VΛ , although there is an action by
+a group14 of the shape 224 .Co0 = 224 .(2.Co1 ) (cf. (9.20)), whereas the monster contains a maximal subgroup with the shape (2.224 ).Co1 . The Frenkel–Lepowsky–Meurman
+construction of V ♮ takes VΛ as a main ingredient. (Cf. (3.6).)
+It is striking that the Conway group Co0 = 2.Co1 plays a prominent role in so many
+of the objects we have discussed: it is visible within the monster, and within the automorphism group of VΛ . It serves for K3 sigma models as M24 does for K3 surfaces, as
+discussed above, and all of the umbral moonshine groups (9.24) are visible within Co0 ,
+according to (9.22).
+Moreover, there is moonshine for the Conway group, in direct analogy with that for the
+monster, in the sense that there is an assignment of normalized principal moduli Tgs to
+elements g ∈ Co0 which are realized as trace functions on a graded infinite-dimensional
+Co0 -module. A proof of this statement has recently appeared in [88].
+To explain this, take g ∈ Co0 , let {εi } be the eigenvalues associated to the action of g
+on Λ ⊗Z C, and define
+(9.31)
+
+Tgs (τ ) := q −1/2
+
+24
+YY
+
+n>0 i=1
+
+where
+(9.32)
+
+χg :=
+
+(1 − εi q n−1/2 ) + χg ,
+
+X
+
+εi
+
+i
+
+is the character value associated to the action of g on Λ ⊗Z C. Then Tgs (2τ ) = q −1 + O(q)
+is the normalized principal modulus for a genus zero group, according to Conway–Norton
+[59] and Queen [199]. (See also [165].)
+It has been demonstrated in [88] that the functions Tgs are the graded traces attached to
+L
+s♮
+the action of Co0 on a distinguished15 super vertex operator algebra, V s♮ = ∞
+n=−1 Vn/2 .
+(9.33)
+
+Tgs (τ ) =
+
+∞
+X
+
+s♮
+tr(zg|Vn/2
+)q n/2
+
+n=−1
+14Given groups A and B, say that a group G has the shape A.B, and write G = A.B, if G contains
+
+a normal subgroup isomorphic to A such that G/A ≃ B. In this setting it is typical to write pn as a
+shorthand for an elementary abelian p-group with pn elements.
+15The super vertex operator algebra V s♮ admits actions by both Co (cf. (9.19)) and the simple group
+0
+Co1 (cf. (9.20)). It’s construction as a Co1 -module was sketched first in §15 of [104], described later in
+§5 of [22], and subsequently studied in detail in [84]. The Co0 -module structure on V s♮ is mentioned
+in [84], following [22], but it seems that the modular properties of the trace functions associated to the
+Co0 -action were not considered until [88].
+
+MOONSHINE
+
+51
+
+s♮
+(In (9.33) we write z for the super space involution, acting as (−1)n Id on Vn/2
+.) Thus the
+s♮
+super vertex operator algebra V solves the Conway moonshine analogue of Thompson’s
+Conjecture 3.1, and V s♮ is the natural analogue of the moonshine module V ♮ for the
+Conway group, Co0 .
+The Conway module V s♮ is closely related to monstrous moonshine, for, in addition
+to being directly analogous to V ♮ , many of the discrete groups Γg < SL2 (R), for g ∈ M,
+also arise as invariance groups of principal moduli attached to Co0 via its action on V s♮ .
+(Cf. [88].) On the other hand, V s♮ enjoys a close connection to K3 sigma models, for it
+is shown in [89] that the data defining a K3 sigma model gives rise to a bi-grading on a
+distinguished, canonically-twisted16 V s♮ -module
+M s♮
+s♮
+(9.34)
+Vtw
+=
+(Vtw )n,r ,
+n,r
+
+such that the associated graded traces of compatible elements of Co0 are weak Jacobi
+forms.
+More specifically, following §2.1 of [110], we may regard the data of a K3 sigma model
+as equivalent17 to a choice of positive-definite 4-space Π < II4,20 ⊗Z R (cf. (3.7)), such
+that
+(9.35)
+
+δ ∈ Π⊥ ∩ II4,20 =⇒ hδ, δi 6= −2.
+
+Then the supersymmetry preserving automorphism group of the nonlinear sigma model
+defined by Π is the group
+(9.36)
+
+GΠ := Aut(II4,20 , Π),
+
+composed of orthogonal transformations of II4,20 that extend to the identity on Π, according to §2.2 of [110]. One of the main results of [110] is that GΠ may be identified
+with a subgroup of Co0 .
+s♮
+The construction of [89] uses Vtw
+to attach a graded trace function
+X
+s♮
+(9.37)
+φg (τ, z) := −
+tr(zg|(Vtw
+)n,r )q n y r
+n,r
+
+to each pair (g, Π), where Π < II4,20 ⊗Z R satisfies (9.35), and g ∈ GΠ , and z is a certain
+s♮
+naturally defined involution on Vtw
+(analogous to the z in (9.33)). It is shown in [89] that
+φg is a weak Jacobi form of weight zero and index one for ΓJ0 (N) (cf. (9.12)), for some N,
+for all choices of Π and g ∈ GΠ . Moreover, φg is found to coincide with the g-twined K3
+elliptic genus associated to the sigma model defined by Π, for all the examples computed
+in [110, 114, 229]. (These examples account for about half of the conjugacy classes of
+16Twisted modules for vertex algebras are discussed in §4. In the case of a super vertex algebra there
+
+is a canonically defined involution coming from the superspace structure, called the parity involution.
+A module for a super vertex algebra that is twisted with respect to the parity involution is called
+canonically-twisted.
+17This convention excludes some interesting K3 sigma models, such as those considered in [51]. We
+refer to [3, 4] for detailed discussions of K3 sigma model moduli.
+
+52
+
+JOHN F. R. DUNCAN, MICHAEL J. GRIFFIN AND KEN ONO
+
+Co0 that fix a 4-space in Λ ⊗Z R.) In particular, taking g = e in (9.37) recovers the K3
+elliptic genus (9.4), but in the form
+θ2 (τ, z)2 ∆(2τ ) 1 θ3 (τ, z)2
+1 θ4 (τ, z)2 ∆(τ /2)
+∆(τ )2
++
+−
+,
+θ2 (τ, 0)2 ∆(τ )
+2 θ3 (τ, 0)2 ∆(2τ )∆(τ /2) 2 θ4 (τ, 0)2 ∆(τ )
+Q
+n 24
+where ∆(τ ) := η(τ )24 = q ∞
+n=1 (1 − q ) .
+s♮
+Thus Vtw
+serves as a kind of universal object for K3 sigma models. This is interesting,
+for generally it is difficult to construct the Hilbert spaces underlying a K3 sigma model,
+and therefore difficult to compute the associated twined K3 elliptic genera, for instance,
+for all but a few special examples.
+In [141], Huybrechts has related the positive-definite 4-spaces Π < II4,20 ⊗Z R satisfying
+(9.35) to pairs (X, σ), where X is a projective complex K3 surface, and σ is a stability
+condition on the bounded derived category of coherent sheaves on X. In this way he has
+obtained an alternative analogue of Mukai’s result [187], whereby symplectic automorphisms of K3 surfaces are replaced by symplectic derived autoequivalences. (The results
+of [89] are formulated in this language.)
+A number of the functions Zg (cf. (9.12)) arising in Mathieu moonshine are realized
+as φg for some g ∈ Co0 . So the construction of [89] relates V s♮ to umbral moonshine, but
+the connection goes deeper, for it is shown in [89] that a natural generalization of the
+definition (9.37) recovers a number of the Jacobi forms attached to other root systems
+of the form X = Adn (cf. §9.2), beyond the special case X = A24
+1 . It is interesting to
+compare this to the results of [51] (see also the precursor [134]), which demonstrate a
+role for K3 surface geometry in all cases of umbral moonshine (i.e., for all the Niemeier
+root systems), by considering sigma models attached to K3 surfaces admitting du Val
+singularities. Indeed, many of the Jacobi forms computed in [51] appear also in [89].
+From the discussion above we see that the Conway module V s♮ provides evidence for
+a deep connection between monstrous and umbral moonshine. Further support for the
+notion that monstrous and umbral moonshine share a common origin is obtained in [196],
+where the generalized Borcherds products of [30] are used to relate the trace functions of
+monstrous and umbral moonshine directly.
+We elaborate now upon the results of [41, 52], which, as mentioned at the end of
+§9.3, fall outside of umbral moonshine as formulated in [49], but are nonetheless related.
+Actually, these works are further applications of the Conway moonshine module V s♮ ,
+s♮
+for in [41] the canonically-twisted V s♮ -module Vtw
+(cf. (9.34)) is equipped with module
+structures for the N = 2 and N = 4 superconformal algebras, which in turn give rise
+to an assignment of distinguished vector-valued mock modular forms to elements of the
+sporadic simple Mathieu groups M23 and M22 , respectively. This work furnishes the first
+examples of concretely constructed modules for sporadic simple groups, such that the
+associated graded trace functions define mock modular forms. The methods of [41] are
+extended in [52], to the case of the Spin(7) algebra (a certain extension of the N = 1
+superconformal algebra, cf. [13] and references therein) and vector-valued mock modular
+forms for M24 are obtained. Interestingly, Conway’s sporadic groups Co2 and Co3 , and
+(9.38) φe (τ, z) = −211
+
+MOONSHINE
+
+53
+
+the sporadic groups of McLaughlin and Higman–Sims (all rather larger than M24 , or any
+of the other umbral groups GX ) also appear in the analysis of [41, 52].
+As a further indication of the important role that K3 sigma models will play in illuminating umbral moonshine, we mention the interesting work [113, 218, 219, 220], which
+seeks to explain the Mathieu moonshine observation by formulating a precise mechanism
+for combining symmetries of distinct K3 sigma models into a single group. We note in
+particular, that a fixed-point-free maximal subgroup of M24 is constructed in this way in
+[220].
+We conclude this section with references [42, 133, 134, 135, 156, 197, 234] to a number
+of other occurrences of umbral groups in geometry and physics, all promising connections
+to Mathieu moonshine, or umbral moonshine more generally. We also note the recent
+work [40], which analyzes all cases of generalized umbral moonshine, thereby extending
+the investigation of generalized Mathieu moonshine that was initiated in [112].
+10. Open Problems
+We conclude the article by identifying some open problems for future research that are
+suggested by our results in §7 and §8, and the developments described in §9.
+Problem 10.1. We have seen that the known connections between monstrous moonshine and physics owe much to the Frenkel–Lepowsky–Meurman construction of the
+moonshine module V ♮ , and its associated vertex operator algebra structure. Just as the
+vertex operator algebra structure on V ♮ gives a strong solution to Thompson’s conjecture,
+Conjecture 3.1, we can expect concrete constructions of the Ǩ X —whose existence is now
+guaranteed thanks to Theorem 9.3—to be necessary for the elucidation of the physical
+origins of umbral moonshine. As we have described in §9.3, progress on this problem
+has been obtained recently in [47, 87, 90], and the related work [41] may also be useful,
+in the determination of a general, algebraic solution to the module problem for umbral
+moonshine.
+Problem 10.2. Norton’s generalized moonshine conjectures were discussed in §4, and
+generalized umbral moonshine has been investigated in [40, 112]. A special case of generalized moonshine for the Conway group is established in [88], but the full formulation
+and proof of generalized Conway moonshine remains open. Given the close connections
+between V s♮ and umbral moonshine discussed in §9.4, it will be very interesting to determine the precise relationship between the corresponding generalized moonshine theories.
+We can expect that the elucidation of these structures will be necessary for a full understanding of the role that umbral moonshine plays in physics.
+Problem 10.3. As discussed in §9.2, the fact (cf. Theorem 5.2) that the McKay–
+Thompson series of monstrous moonshine are realized as Rademacher sums admits conjectural analogues for umbral moonshine. (See Conjecture 3.2 of [50] for a precise formulation.) So far this has been established only for X = A24
+1 , corresponding to Mathieu
+moonshine (cf. [44]), and the general case remains open. As explained in §9.2, a positive
+
+54
+
+JOHN F. R. DUNCAN, MICHAEL J. GRIFFIN AND KEN ONO
+
+solution to Conjecture 3.2 of [50] will establish an umbral moonshine counterpart to the
+principal modulus/genus zero property of monstrous moonshine.
+Problem 10.4. As discussed above, in §5 and in §9.2, Rademacher sums play a crucial
+role in both monstrous and umbral moonshine, by serving to demonstrate the distinguished nature of the automorphic functions arising in each setting. In the case of monstrous moonshine, the Rademacher sum property also indicates a potentially powerful
+connection to physics, via three-dimensional gravity, as explained in §6. Thus it is an
+interesting problem to formulate umbral moonshine analogues of the conjectures of [85],
+discussed here in §§6,7.
+Problem 10.5. Relatedly, it follows from the results of [85] that the McKay–Thompson
+series Tgs (cf. (9.33)), attached to elements g in the Conway group Co0 via its action
+on V s♮ (cf. §9.4), are also realized as Rademacher sums. That is, Theorem 5.2 generalizes naturally to Conway moonshine. Thus it is natural to investigate the higher order
+analogues V s(−m) of the super vertex operator algebra V s♮ , and the Conway group analogues of the three-dimensional gravity conjectures of [85]. Some perspectives on this are
+available in [138, 179, 233].
+Problem 10.6. The notion of extremal vertex operator algebra is defined by (6.8).
+So far the only known example is the moonshine module V ♮ . As explained in §6, the
+construction of a series of extremal vertex operator algebras, with central charges the
+positive integer multiples of 24, would go a long way towards the construction of a chiral
+three-dimensional quantum gravity theory. This problem also has a super analogue, cf.
+[138].
+Problem 10.7. The monster modules V (−m) , defined in §7, cannot be vertex operator
+algebras for m > 1, for an action of the Virasoro algebra would generate a non-zero
+vector with non-positive eigenvalue for L(0) − c/24, and this would violate the condition
+P
+(−m) n
+)q = q −m + O(q). Nonetheless, we may ask: do the V (−m) admit vertex
+n dim(Vn
+algebra structure? Or, is there another natural algebraic structure, which characterizes
+the monster group actions on the V (−m) ?
+Problem 10.8. Relatedly, V × M-modules satisfying the extremal condition (6.8) may
+be easily constructed from the monster modules V (−m) , as is mentioned at the conclusion
+of §7. What is the algebraic significance of these spaces? We know from [115, 138] that
+they cannot admit vertex operator algebra structure compatible with the given V × M
+actions. Is there some other kind of algebraic structure which is compatible with this
+symmetry?
+(−m)
+
+Problem 10.9. The result of Corollary 8.2 implies that the Vn
+and Wn♮ tend to direct
+sums of copies of the regular representation of M, as n → ∞. This means that if we
+write each homogeneous subspace of each module, particularly the moonshine module
+V ♮ , as the sum of a free part (free over the group ring of M) and a non-free part, then the
+non-free part tends to 0 (relative to the free part) as n → ∞. Is there something to be
+
+MOONSHINE
+
+55
+
+learnt from an analysis of the non-free parts of V (−m) , W ♮ ? As one can see from Table 8,
+some irreducible representations of the monster feature more often in the non-free part
+than others. We thank Bob Griess for posing this question.
+Problem 10.10. It is a natural problem to generalize the methods employed in §8,
+to determine the distributions of irreducible representations of the umbral groups GX
+(cf. (9.24)) in the umbral moonshine modules Ǩ X (cf. (9.28)). Similarly, one may
+also consider the distributions of the Co0 -modules in V s♮ = V s(−1) , and in the V s(−m)
+more generally. In all of these cases, questions analogous to Problem 10.9 may reward
+investigation.
+Problem 10.11. In Corollary 8.3 we have used our asymptotic results (Theorem 8.1)
+on multiplicities of monster modules inside V ♮ to compute the quantum dimensions of
+the monster orbifold, and in so doing confirmed a special case of Conjecture 6.7 of [76].
+How generally can this method be applied, to orbifolds V G , where V is a vertex operator
+algebra and G is a compact group of automorphisms of V ? Note the following strengths
+of the asymptotic approach: thanks to Proposition 3.6 of [76], we did not need to verify
+that the monster orbifold of V ♮ is a rational vertex operator algebra, nor did we need to
+assume the positivity condition of Theorem 6.3 in [76] (which in any case does not hold
+for V ♮ ).
+
+56
+
+JOHN F. R. DUNCAN, MICHAEL J. GRIFFIN AND KEN ONO
+
+Appendix A. Monstrous Groups
+The table below contains the symbols Γg = N||h + e, f, . . . , for each conjugacy class
+of the monster. Following [58], if h = 1, we omit the ‘||1’ from the symbol. If Wg = {1},
+then we write N||h, whereas if it contains every exact divisor of N/h, we write N||h+.
+The naming of the conjugacy classes is as in [57]. We follow the convention of writing
+23AB as a shorthand for 23A∪23B, since these conjugacy classes are related by inversion
+in the monster. (There are 22 such pairs. The Monster group has 196 conjugacy classes
+in total.) Since the monstrous McKay–Thompson series have real coefficients, Tg = Tg−1
+and Γg = Γg−1 for all g in the monster. Note however that 27A and 27B are not related
+by inversion, even though Γ27A = Γ27B . To the authors best knowledge, this coincidence
+has not yet been explained.
+1A
+2A
+2B
+3A
+3B
+3C
+4A
+4B
+4C
+4D
+5A
+5B
+6A
+6B
+6C
+6D
+6E
+6F
+7A
+7B
+8A
+8B
+8C
+8D
+8E
+8F
+9A
+9B
+10A
+10B
+10C
+10D
+10E
+11A
+12A
+12B
+
+1
+2+
+2
+3+
+3
+3||3
+4+
+4||2+
+4
+4||2
+5+
+5
+6+
+6+6
+6+3
+6+2
+6
+6||3
+7+
+7
+8+
+8||2+
+8||4+
+8||2
+8
+8||4
+9+
+9
+10+
+10 + 5
+10 + 2
+10 + 10
+10
+11+
+12+
+12 + 4
+
+12C
+12D
+12E
+12F
+12G
+12H
+12I
+12J
+13A
+13B
+14A
+14B
+14C
+15A
+15B
+15C
+15D
+16A
+16B
+16C
+17A
+18A
+18B
+18C
+18D
+18E
+19A
+20A
+20B
+20C
+20D
+20E
+20F
+21A
+21B
+21C
+
+12||2+
+12||3+
+12 + 3
+12||2 + 6
+12||2 + 2
+12 + 12
+12
+12||6
+13+
+13
+14+
+14 + 7
+14 + 14
+15+
+15 + 5
+15 + 15
+15||3
+16||2+
+16
+16+
+17+
+18 + 2
+18+
+18 + 9
+18
+18 + 18
+19+
+20+
+20||2+
+20 + 4
+20||2 + 5
+20||2 + 10
+20 + 20
+21+
+21 + 3
+21||3+
+
+21D
+22A
+22B
+23AB
+24A
+24B
+24C
+24D
+24E
+24F
+24G
+24H
+24I
+24J
+25A
+26A
+26B
+27A
+27B
+28A
+28B
+28C
+28D
+29A
+30A
+30B
+30C
+30D
+30E
+30F
+30G
+31AB
+32A
+32B
+33A
+33B
+
+21 + 21
+22+
+22 + 11
+23+
+24||2+
+24+
+24 + 8
+24||2 + 3
+24||6+
+24||4 + 6
+24||4 + 2
+24||2 + 12
+24 + 24
+24||12
+25+
+26+
+26 + 26
+27+
+27+
+28||2+
+28+
+28 + 7
+28||2 + 14
+29+
+30 + 6, 10, 15
+30+
+30 + 3, 5, 15
+30 + 5, 6, 30
+30||3 + 10
+30 + 2, 15, 30
+30 + 15
+31+
+32+
+32||2+
+33 + 11
+33+
+
+MOONSHINE
+
+34A
+35A
+35B
+36A
+36B
+36C
+36D
+38A
+39A
+39B
+39CD
+40A
+40B
+40CD
+41A
+42A
+42B
+42C
+42D
+44AB
+45A
+46AB
+
+34+
+35+
+35 + 35
+36+
+36 + 4
+36||2+
+36 + 36
+38+
+39+
+39||3+
+39 + 39
+40||4+
+40||2+
+40||2 + 20
+41+
+42+
+42 + 6, 14, 21
+42||3 + 7
+42 + 3, 14, 42
+44+
+45+
+46 + 23
+
+46CD
+47AB
+48A
+50A
+51A
+52A
+52B
+54A
+55A
+56A
+56BC
+57A
+59AB
+60A
+60B
+60C
+60D
+60E
+60F
+62AB
+66A
+66B
+
+46+
+47+
+48||2+
+50+
+51+
+52||2+
+52||2 + 26
+54+
+55+
+56+
+56||4 + 14
+57||3+
+59+
+60||2+
+60+
+60 + 4, 15, 60
+60 + 12, 15, 20
+60||2 + 5, 6, 30
+60||6 + 10
+62+
+66+
+66 + 6, 11, 66
+
+57
+
+68A
+69AB
+70A
+70B
+71AB
+78A
+78BC
+84A
+84B
+84C
+87AB
+88AB
+92AB
+93AB
+94AB
+95AB
+104AB
+105A
+110A
+119AB
+
+68||2+
+69+
+70+
+70 + 10, 14, 35
+71+
+78+
+78 + 6, 26, 39
+84||2+
+84||2 + 6, 14, 21
+84||3+
+87+
+88||2+
+92+
+93||3+
+94+
+95+
+104||4+
+105+
+110+
+119+
+
+References
+[1] D. Alexander, C. Cummins, J. McKay, and C. Simons, Completely replicable functions, Groups,
+combinatorics & geometry (Durham, 1990), London Math. Soc. Lecture Note Ser., vol. 165, Cambridge Univ. Press, Cambridge, 1992, pp. 87–98. MR 1200252 (94g:11029)
+[2] M. Aschbacher, The status of the classification of the finite simple groups, Notices Amer. Math.
+Soc. 51 (2004), no. 7, 736–740. MR 2072045
+[3] P. S. Aspinwall, K3 surfaces and string duality, Fields, strings and duality (Boulder, CO, 1996),
+World Sci. Publ., River Edge, NJ, 1997, pp. 421–540. MR 1479699 (98j:81243)
+[4] P. S. Aspinwall and D. R. Morrison, String theory on K3 surfaces, Mirror symmetry, II, AMS/IP
+Stud. Adv. Math., vol. 1, Amer. Math. Soc., Providence, RI, 1997, pp. 703–716. MR 1416354
+(97i:81128)
+[5] A. Astashkevich, On the structure of Verma modules over Virasoro and Neveu-Schwarz algebras,
+Comm. Math. Phys. 186 (1997), no. 3, 531–562. MR 1463812 (98h:17028)
+[6] M. F. Atiyah, K-theory, second ed., Advanced Book Classics, Addison-Wesley Publishing Company, Advanced Book Program, Redwood City, CA, 1989, Notes by D. W. Anderson. MR 1043170
+(90m:18011)
+[7] A. Bagchi, S. Detournay, and D. Grumiller, Flat-Space Chiral Gravity, Phys.Rev.Lett. 109 (2012),
+151301.
+[8] M. Bañados, M. Henneaux, C.Teitelboim, and J. Zanelli, Geometry of the 2 + 1 black hole, Phys.
+Rev. D (3) 48 (1993), no. 4, 1506–1525. MR 1236812 (94g:83079)
+[9] M. Bañados, C. Teitelboim, and J. Zanelli, Black hole in three-dimensional spacetime, Phys. Rev.
+Lett. 69 (1992), no. 13, 1849–1851. MR MR1181663 (93e:83042)
+
+58
+
+JOHN F. R. DUNCAN, MICHAEL J. GRIFFIN AND KEN ONO
+
+[10] W. P. Barth, K. Hulek, C. A. M. Peters, and A. Van de Ven, Compact complex surfaces, second
+ed., Ergebnisse der Mathematik und ihrer Grenzgebiete. 3. Folge. A Series of Modern Surveys in
+Mathematics [Results in Mathematics and Related Areas. 3rd Series. A Series of Modern Surveys
+in Mathematics], vol. 4, Springer-Verlag, Berlin, 2004. MR 2030225 (2004m:14070)
+[11] A. Beauville et al., Géométrie des surfaces K3: modules et périodes, Société Mathématique de
+France, Paris, 1985, Papers from the seminar held in Palaiseau, October 1981–January 1982,
+Astérisque No. 126 (1985). MR 785216 (87h:32052)
+[12] L. Beneish and H. Larson, Traces of singular values of Hauptmoduln, Int. J. Numb. Th., accepted
+for publication.
+[13] N. Benjamin, S. M. Harrison, S. Kachru, N. M. Paquette, and D. Whalen, On the elliptic genera
+of manifolds of Spin(7) holonomy, ArXiv e-prints (2014).
+[14] B. J. Birch and H. P. F. Swinnerton-Dyer, Notes on elliptic curves. II, J. Reine Angew. Math. 218
+(1965), 79–108. MR 0179168 (31 #3419)
+[15] R. Borcherds, Vertex algebras, Kac-Moody algebras, and the Monster, Proceedings of the National
+Academy of Sciences, U.S.A. 83 (1986), no. 10, 3068–3071.
+, Generalized Kac-Moody algebras, J. Algebra 115 (1988), no. 2, 501–512. MR 943273
+[16]
+(89g:17004)
+, The monster Lie algebra, Adv. Math. 83 (1990), no. 1, 30–47. MR 1069386 (91k:17027)
+[17]
+[18]
+, Monstrous moonshine and monstrous Lie superalgebras, Invent. Math. 109, No.2 (1992),
+405–444.
+[19]
+, Automorphic forms with singularities on Grassmannians, Invent. Math. 132 (1998), no. 3,
+491–562. MR 1625724 (99c:11049)
+, Quantum vertex algebras, Taniguchi Conference on Mathematics Nara ’98, Adv. Stud.
+[20]
+Pure Math., vol. 31, Math. Soc. Japan, Tokyo, 2001, pp. 51–74. MR 1865087 (2002k:17054)
+[21] R. Borcherds, L. Katzarkov, T. Pantev, and N. I. Shepherd-Barron, Families of K3 surfaces, J.
+Algebraic Geom. 7 (1998), no. 1, 183–193. MR 1620702 (99d:14029)
+[22] R. Borcherds and A. J. E. Ryba, Modular Moonshine. II, Duke Math. J. 83 (1996), no. 2, 435–459.
+MR 1390654 (98b:17030)
+[23] R. Bott, Homogeneous vector bundles, Ann. of Math. (2) 66 (1957), 203–248. MR 0089473
+(19,681d)
+[24] K. Bringmann, J. Duncan, and L. Rolen, Maass-Jacobi Poincaré series and Mathieu Moonshine,
+ArXiv e-prints (2014).
+[25] K. Bringmann and K. Ono, The f (q) mock theta function conjecture and partition ranks, Invent.
+Math. 165 (2006), no. 2, 243–266. MR 2231957 (2007e:11127)
+, Coefficients of harmonic maass forms, Partitions, q-Series, and Modular Forms (Krish[26]
+naswami Alladi and Frank Garvan, eds.), Developments in Mathematics, vol. 23, Springer New
+York, 2012, pp. 23–38.
+[27] K. Bringmann and O. Richter, Zagier-type dualities and lifting maps for harmonic Maass-Jacobi
+forms, Adv. Math. 225 (2010), no. 4, 2298–2315. MR 2680205 (2011h:11052)
+, Exact formulas for coefficients of Jacobi forms, Int. J. Number Theory 7 (2011), no. 3,
+[28]
+825–833. MR 2805582 (2012f:11095)
+[29] J. D. Brown and M. Henneaux, Central charges in the canonical realization of asymptotic symmetries: an example from three-dimensional gravity, Comm. Math. Phys. 104 (1986), no. 2, 207–226.
+MR 836000 (87d:83034)
+[30] J. H. Bruinier and K. Ono, Heegner divisors, L-functions and harmonic weak Maass forms, Ann.
+of Math. (2) 172 (2010), no. 3, 2135–2181. MR 2726107 (2012c:11101)
+[31] J. H. Bruinier and J. Funke, On two geometric theta lifts, Duke Math. J. 125 (2004), no. 1, 45–90.
+MR 2097357 (2005m:11089)
+
+MOONSHINE
+
+59
+
+[32] J. H. Bruinier, W. Kohnen, and K. Ono, The arithmetic of the values of modular functions and the
+divisors of modular forms, Compos. Math. 140 (2004), no. 3, 552–566. MR 2041768 (2005h:11083)
+[33] S. Carlip, Conformal field theory, (2+1)-dimensional gravity, and the BTZ black hole,
+Class.Quant.Grav. 22 (2005), R85–R124.
+, Effective Conformal Descriptions of Black Hole Entropy, Entropy 13 (2011), 1355–1379.
+[34]
+[35] S. Carnahan, Generalized moonshine I: genus-zero functions, Algebra Number Theory 4 (2010),
+no. 6, 649–679. MR 2728485 (2012b:11065)
+, Generalized moonshine, II: Borcherds products, Duke Math. J. 161 (2012), no. 5, 893–950.
+[36]
+MR 2904095
+[37]
+, Generalized Moonshine IV: Monstrous Lie algebras, (2012).
+[38]
+, Monstrous Lie Algebras, RIMS Kôkyûroku 1872 (2014).
+[39] M. Cheng, K3 surfaces, N = 4 dyons and the Mathieu group M24 , Commun. Number Theory
+Phys. 4 (2010), no. 4, 623–657. MR 2793423 (2012e:11076)
+[40] M. Cheng, P. de Lange, and D. Whalen, Generalised Umbral Moonshine, (2015).
+[41] M. Cheng, X. Dong, J. Duncan, S. Harrison, S. Kachru, and T. Wrase, Mock Modular Mathieu
+Moonshine Modules, ArXiv e-prints (2014).
+[42] M. Cheng, X. Dong, J. Duncan, J. Harvey, S. Kachru, and T. Wrase, Mathieu Moonshine and
+N=2 String Compactifications, JHEP 1309 (2013), 030.
+[43] M. Cheng and J. Duncan, The largest Mathieu group and (mock) automorphic forms, String-Math
+2011, Proc. Sympos. Pure Math., vol. 85, Amer. Math. Soc., Providence, RI, 2012, pp. 53–82.
+MR 2985326
+, On Rademacher Sums, the Largest Mathieu Group, and the Holographic Modularity of
+[44]
+Moonshine, Commun. Number Theory Phys. 6 (2012), no. 3.
+, On the Discrete Groups of Mathieu Moonshine, Perspectives in Representation Theory,
+[45]
+Contemporary Mathematics 610 (2014).
+, Rademacher sums and rademacher series, Conformal Field Theory, Automorphic Forms
+[46]
+and Related Topics (Winfried Kohnen and Rainer Weissauer, eds.), Contributions in Mathematical
+and Computational Sciences, vol. 8, Springer Berlin Heidelberg, 2014, pp. 143–182 (English).
+, Meromorphic Jacobi Forms of Half-Integral Index and Umbral Moonshine Modules, (2015).
+[47]
+[48] M. Cheng, J. Duncan, and J. Harvey, Umbral Moonshine, Commun. Number Theory Phys. 8
+(2014), no. 2.
+, Umbral Moonshine and the Niemeier Lattices, Research in the Mathematical Sciences 1
+[49]
+(2014), no. 3.
+[50]
+, Weight One Jacobi Forms and Umbral Moonshine, (2015).
+[51] M. Cheng and S. Harrison, Umbral Moonshine and K3 Surfaces, ArXiv e-prints (2014).
+[52] M. C. N. Cheng, S. M. Harrison, S. Kachru, and D. Whalen, Exceptional Algebra and Sporadic
+Groups at c=12, ArXiv e-prints (2015).
+[53] J. H. Conway, A perfect group of order 8, 315, 553, 613, 086, 720, 000 and the sporadic simple groups,
+Proc. Nat. Acad. Sci. U.S.A. 61 (1968), 398–400. MR 0237634 (38 #5915)
+, A characterisation of Leech’s lattice, Invent. Math. 7 (1969), 137–142. MR 0245518 (39
+[54]
+#6824)
+, A group of order 8, 315, 553, 613, 086, 720, 000, Bull. London Math. Soc. 1 (1969), 79–88.
+[55]
+MR 0248216 (40 #1470)
+[56]
+, A simple construction for the Fischer-Griess monster group, Invent. Math. 79 (1985),
+no. 3, 513–540. MR MR782233 (86h:20019)
+[57] J.H. Conway, R.T. Curtis, S.P. Norton, R.A. Parker, and R.A. Wilson, Atlas of finite groups.
+Maximal subgroups and ordinary characters for simple groups. With comput. assist. from J. G.
+Thackray., Oxford: Clarendon Press, 1985.
+
+60
+
+JOHN F. R. DUNCAN, MICHAEL J. GRIFFIN AND KEN ONO
+
+[58] J. Conway, J. McKay, and A. Sebbar, On the discrete groups of Moonshine, Proc. Amer. Math.
+Soc. 132 (2004), 2233–2240.
+[59] J. H. Conway and S. P. Norton, Monstrous moonshine, Bull. London Math. Soc. 11 (1979), no. 3,
+308–339. MR 554399 (81j:20028)
+[60] J. H. Conway, R. A. Parker, and N. J. A. Sloane, The covering radius of the Leech lattice, Proc.
+Roy. Soc. London Ser. A 380 (1982), no. 1779, 261–290. MR 660415 (84m:10022b)
+[61] J. H. Conway and N. J. A. Sloane, On the enumeration of lattices of determinant one, J. Number
+Theory 15 (1982), no. 1, 83–94. MR 666350 (84b:10047)
+, Twenty-three constructions for the Leech lattice, Proc. Roy. Soc. London Ser. A 381
+[62]
+(1982), no. 1781, 275–283. MR 661720 (84m:10020)
+[63]
+, Sphere packings, lattices and groups, third ed., Grundlehren der Mathematischen Wissenschaften [Fundamental Principles of Mathematical Sciences], vol. 290, Springer-Verlag, New
+York, 1999, With additional contributions by E. Bannai, R. E. Borcherds, J. Leech, S. P. Norton,
+A. M. Odlyzko, R. A. Parker, L. Queen and B. B. Venkov. MR 1662447 (2000b:11077)
+[64] T. Creutzig and G. Höhn, Mathieu moonshine and the geometry of K3 surfaces, Commun. Number
+Theory Phys. 8 (2014), no. 2, 295–328. MR 3271177
+[65] C. J. Cummins and T. Gannon, Modular equations and the genus zero property of moonshine
+functions, Invent. Math. 129 (1997), no. 3, 413–443. MR 1465329 (98k:11046)
+[66] R. T. Curtis, Natural constructions of the Mathieu groups, Math. Proc. Cambridge Philos. Soc.
+106 (1989), no. 3, 423–429. MR 1010366 (90h:20020)
+[67] A. Dabholkar, S. Murthy, and D. Zagier, Quantum Black Holes, Wall Crossing, and Mock Modular
+Forms, (2012).
+[68] S. Deser and R. Jackiw, Erratum: “Topologically massive gauge theories” [Ann. Physics 140
+(1982), no. 2, 372–411; MR0665601 (84j:81128)] by Deser, Jackiw and S. Templeton, Ann. Physics
+185 (1988), no. 2, 406. MR 965585 (90a:81077b)
+[69] S. Deser, R. Jackiw, and S. Templeton, Topologically massive gauge theories, Ann. Physics 140
+(1982), no. 2, 372–411. MR 665601 (84j:81128)
+[70] S. Deser, R. Jackiw, and S. Templeton, Three-Dimensional Massive Gauge Theories,
+Phys.Rev.Lett. 48 (1982), 975–978.
+[71] R. Dijkgraaf, J. Maldacena, G. Moore, and E. Verlinde, A black hole farey tail, (2007).
+[72] R. Dijkgraaf, G. Moore, E. Verlinde, and H. Verlinde, Elliptic genera of symmetric products and
+second quantized strings, Commun. Math. Phys. 185 (1997), 197–209.
+[73] L. Dixon, P. Ginsparg, and J. Harvey, Beauty and the beast: superconformal symmetry in a Monster
+module, Comm. Math. Phys. 119 (1988), no. 2, 221–241. MR 968697 (90b:81119)
+[74] L. Dixon, J. A. Harvey, C. Vafa, and E. Witten, Strings on orbifolds, Nuclear Phys. B 261 (1985),
+no. 4, 678–686. MR 818423 (87k:81104a)
+, Strings on orbifolds. II, Nuclear Phys. B 274 (1986), no. 2, 285–314. MR 851703
+[75]
+(87k:81104b)
+[76] C. Dong, X. Jiao, and F. Xu, Quantum dimensions and quantum Galois theory, Trans. Amer.
+Math. Soc., 365 (2013), no. 12, 6441–6469. MR 3105758
+[77] C. Dong, H. Li, and G. Mason, Some twisted sectors for the Moonshine module, Moonshine, the
+Monster, and related topics (South Hadley, MA, 1994), Contemp. Math., vol. 193, Amer. Math.
+Soc., Providence, RI, 1996, pp. 25–43. MR 1372716 (97b:17021)
+, Compact automorphism groups of vertex operator algebras, Internat. Math. Res. Notices,
+[78]
+(1996), no. 18, 913–921. MR 1420556 (98a:17044)
+, Twisted representations of vertex operator algebras, Math. Ann. 310 (1998), no. 3, 571–
+[79]
+600. MR 1615132 (99d:17030)
+[80]
+, Modular invariance of trace functions in orbifold theory and generalized Moonshine, Communications in Mathematical Physics 214 (2000), 1–56.
+
+MOONSHINE
+
+61
+
+[81] C. Dong and G. Mason, Nonabelian orbifolds and the boson-fermion correspondence, Comm. Math.
+Phys. 163 (1994), no. 3, 523–559. MR 1284796 (95i:17031)
+, On quantum Galois theory, Duke Math. J. 86 (1997), no. 2, 305–321. MR 1430435
+[82]
+(97k:17042)
+, Quantum Galois theory for compact Lie groups, J. Algebra, 214 (1999), no. 1, 92–102.
+[83]
+MR 1684904 (2000g:17043b)
+[84] J. F. Duncan, Super-Moonshine for Conway’s largest sporadic group, Duke Math. J. 139 (2007),
+no. 2, 255–315.
+[85] J. F. R. Duncan and I. B. Frenkel, Rademacher sums, moonshine and gravity, Commun. Number
+Theory Phys. 5 (2011), no. 4, 1–128.
+[86] J. F. R. Duncan, M. Griffin and K. Ono, Proof of the Umbral Moonshine Conjecture, ArXiv e-prints
+(2015).
+[87] J. F. R. Duncan and J. A. Harvey, The Umbral Mooonshine Module for the Unique Unimodular
+Niemeier Root System, ArXiv e-prints (2014).
+[88] J. F. R. Duncan and S. Mack-Crane, The Moonshine Module for Conway’s Group, ArXiv e-prints
+(2014).
+, Derived Equivalences of K3 Surfaces and Twined Elliptic Genera, (2015).
+[89]
+[90] J. Duncan and A. O’Desky, Super Vertex Algebras, Meromorphic Jacobi Forms, and Umbral Moonshine, (2015).
+[91] J. F. R. Duncan and K. Ono, The Jack Daniels Problem, ArXiv e-prints (2014).
+[92] T. Eguchi and K. Hikami, Superconformal Algebras and Mock Theta Functions 2. Rademacher
+Expansion for K3 Surface, Communications in Number Theory and Physics 3, (2009), 531–554.
+[93]
+, Note on Twisted Elliptic Genus of K3 Surface, Phys.Lett. B694 (2011), 446–455.
+[94] T. Eguchi, H. Ooguri, and Y. Tachikawa, Notes on the K3 Surface and the Mathieu group M24 ,
+Exper.Math. 20 (2011), 91–96.
+[95] T. Eguchi, H. Ooguri, A. Taormina, and S.-K. Yang, Superconformal Algebras and String Compactification on Manifolds with SU(N) Holonomy, Nucl. Phys. B315 (1989), 193.
+[96] T. Eguchi and A. Taormina, Unitary representations of the N = 4 superconformal algebra, Phys.
+Lett. B 196 (1987), no. 1, 75–81. MR 910253 (88j:17022)
+[97] M. Eichler and D. Zagier, The theory of Jacobi forms, Birkhäuser, 1985.
+[98] J. Fay, Fourier coefficients of the resolvent for a Fuchsian group, J. Reine Angew. Math. 293/294
+(1977), 143–203. MR 0506038 (58 #21944)
+[99] B. L. Feı̆gin and D. B. Fuchs, Verma modules over the Virasoro algebra, Topology (Leningrad,
+1982), Lecture Notes in Math., vol. 1060, Springer, Berlin, 1984, pp. 230–245. MR 770243
+(86g:17004)
+[100] D. Ford, J. McKay, and S. Norton, More on replicable functions, Comm. Algebra 22 (1994), no. 13,
+5175–5193. MR 1291027 (95i:11036)
+[101] E. Frenkel and D. Ben-Zvi, Vertex algebras and algebraic curves, second ed., Mathematical Surveys
+and Monographs, vol. 88, American Mathematical Society, Providence, RI, 2004. MR 2082709
+(2005d:17035)
+[102] I. B. Frenkel and V. G. Kac, Basic representations of affine Lie algebras and dual resonance models,
+Invent. Math. 62 (1980/81), no. 1, 23–66. MR 84f:17004
+[103] I. Frenkel, J. Lepowsky, and A. Meurman, A natural representation of the Fischer-Griess Monster
+with the modular function J as character, Proc. Nat. Acad. Sci. U.S.A. 81 (1984), no. 10, Phys.
+Sci., 3256–3260. MR MR747596 (85e:20018)
+[104]
+, A moonshine module for the Monster, Vertex operators in mathematics and physics
+(Berkeley, Calif., 1983), Math. Sci. Res. Inst. Publ., vol. 3, Springer, New York, 1985, pp. 231–273.
+MR 86m:20024
+
+62
+
+[105]
+
+JOHN F. R. DUNCAN, MICHAEL J. GRIFFIN AND KEN ONO
+
+, Vertex operator algebras and the Monster, Pure and Applied Mathematics, vol. 134, Academic Press Inc., Boston, MA, 1988. MR 90h:17026
+[106] M. Gaberdiel, An Introduction to conformal field theory, Rept.Prog.Phys. 63 (2000), 607–667.
+, 2D conformal field theory and vertex operator algebras, (2005).
+[107]
+[108] M. Gaberdiel, S. Hohenegger, and R. Volpato, Mathieu Moonshine in the elliptic genus of K3,
+JHEP 1010 (2010), 062.
+, Mathieu twining characters for K3, JHEP 1009 (2010), 058, 19 pages.
+[109]
+[110]
+, Symmetries of K3 sigma models, Commun. Number Theory Phys. 6 (2012), no. 1, 1–50.
+MR 2955931
+[111] M. Gaberdiel, C. Keller, and R. Volpato, Genus two partition functions of chiral conformal field
+theories, Commun. Number Theory Phys. 4 (2010), no. 2, 295–363. MR 2725054 (2011h:81208)
+[112] M. Gaberdiel, D. Persson, H. Ronellenfitsch, and R. Volpato, Generalized Mathieu Moonshine,
+Commun. Number Theory Phys. 7 (2013), no. 1, 145–223. MR 3108775
+[113] M. Gaberdiel, A. Taormina, R. Volpato, and K. Wendland, A K3 sigma model with Z28 : M20
+symmetry, (2013).
+[114] M. Gaberdiel and R. Volpato, Mathieu Moonshine and Orbifold K3s, (2012).
+[115] D. Gaiotto, Monster symmetry and Extremal CFTs, (2008).
+[116] D. Gaiotto and X. Yin, Genus two partition functions of extremal conformal field theories, JHEP
+0708 (2007), 029.
+[117] T. Gannon, Monstrous moonshine: the first twenty-five years, Bull. London Math. Soc. 38 (2006),
+no. 1, 1–33. MR 2201600 (2006k:11071)
+[118]
+, Much ado about Mathieu, (2012).
+[119] H. Garland and J. Lepowsky, Lie algebra homology and the Macdonald-Kac formulas, Invent. Math.
+34 (1976), no. 1, 37–76. MR 0414645 (54 #2744)
+[120] R. L. Griess, Jr., The structure of the “monster” simple group, Proceedings of the Conference on
+Finite Groups (Univ. Utah, Park City, Utah, 1975), Academic Press, New York, 1976, pp. 113–118.
+MR 0399248 (53 #3099)
+[121]
+, A construction of F1 as automorphisms of a 196, 883-dimensional algebra, Proc. Nat.
+Acad. Sci. U.S.A. 78 (1981), no. 2, part 1, 686–691. MR 605419 (82d:20022)
+, The friendly giant, Invent. Math. 69 (1982), no. 1, 1–102. MR 671653 (84m:20024)
+[122]
+[123] V. Gritsenko, Elliptic genus of Calabi-Yau manifolds and Jacobi and Siegel modular forms, Algebra
+i Analiz 11 (1999), no. 5, 100–125. MR 1734348 (2001i:11051)
+[124] D. Grumiller and N. Johansson, Instability in cosmological topologically massive gravity at the
+chiral point, Journal of High Energy Physics, 7 (2008).
+[125] D. Grumiller, R. McNees, and J. Salzer, Black holes and thermodynamics - The first half century,
+(2014).
+[126] D. Grumiller, W. Riedler, J. Rosseel, and T. Zojer, Holographic applications of logarithmic conformal field theories, J.Phys. A46 (2013), 494002.
+[127] S. S. Gubser, I. R. Klebanov, and A. M. Polyakov, Gauge theory correlators from noncritical string
+theory, Phys.Lett. B428 (1998), 105–114.
+[128] A. Hanaki, M. Miyamoto, and D. Tambara, Quantum Galois theory for finite groups, Duke Math.
+J. 97 (1999), no. 3, 541–544. MR 1682988 (2000g:17043a)
+[129] K. Harada and M.-L. Lang, The McKay-Thompson series associated with the irreducible characters
+of the Monster, Moonshine, the Monster, and related topics (South Hadley, MA, 1994), Contemp.
+Math., vol. 193, Amer. Math. Soc., Providence, RI, 1996, pp. 93–111. MR 1372718 (97b:11059)
+, Modular forms associated with the Monster module, The Monster and Lie algebras (Colum[130]
+bus, OH, 1996), Ohio State Univ. Math. Res. Inst. Publ., vol. 7, de Gruyter, Berlin, 1998, pp. 59–83.
+MR 1650637 (2000f:11046)
+
+MOONSHINE
+
+63
+
+[131] G. H. Hardy, Collected papers of G. H. Hardy (Including Joint papers with J. E. Littlewood and
+others). Vol. I, Edited by a committee appointed by the London Mathematical Society, Clarendon
+Press, Oxford, 1966. MR 0201267 (34 #1151)
+[132] G. H. Hardy and S. Ramanujan, Asymptotic formulæ in combinatory analysis [Proc. London
+Math. Soc. (2) 17 (1918), 75–115], Collected papers of Srinivasa Ramanujan, AMS Chelsea Publ.,
+Providence, RI, 2000, pp. 276–309. MR 2280879
+[133] S. Harrison, S. Kachru, and N. Paquette, Twining Genera of (0,4) Supersymmetric Sigma Models
+on K3, JHEP 1404 (2014), 048.
+[134] J. A. Harvey and S. Murthy, Moonshine in Fivebrane Spacetimes, ArXiv e-prints (2013).
+[135] J. A. Harvey, S. Murthy, and C. Nazaroglu, ADE Double Scaled Little String Theories, Mock
+Modular Forms and Umbral Moonshine, ArXiv e-prints (2013).
+[136] G. Hoehn, Generalized Moonshine for the Baby Monster, (2003).
+, Komplexe elliptische Geschlechter und S 1 -aequivariante Kobordismustheorie (Complex
+[137]
+elliptic genera and S 1 -equivariant cobordism theory), ArXiv Mathematics e-prints (2004).
+[138] G. Hoehn, Self-dual vertex operator superalgebras of large minimal weight, arXiv:0801.1822v1,
+January 2008.
+[139] S. Hohenegger, Automorphic products, generalized Kac-Moody algebras and string amplitudes,
+J.Phys.Conf.Ser. 346 (2012), 012008.
+[140] J. Humphreys, Introduction to Lie algebras and representation theory, Springer-Verlag, New York,
+1972, Graduate Texts in Mathematics, Vol. 9. MR 0323842 (48 #2197)
+[141] D. Huybrechts, On derived categories of K3 surfaces, symplectic automorphisms and the Conway
+group, ArXiv e-prints (2013).
+[142] R. Ivanov and M. Tuite, Rational generalised moonshine from abelian orbifoldings of the moonshine
+module, Nuclear Phys. B 635 (2002), no. 3, 435–472. MR 1915258 (2003g:11040)
+, Some irrational generalised moonshine from orbifolds, Nuclear Phys. B 635 (2002), no. 3,
+[143]
+473–491. MR 1915259 (2003f:11057)
+[144] E. Jurisich, An exposition of generalized Kac-Moody algebras, Lie algebras and their representations
+(Seoul, 1995), Contemp. Math., vol. 194, Amer. Math. Soc., Providence, RI, 1996, pp. 121–159.
+MR 1395597 (97e:17035)
+, Generalized Kac-Moody Lie algebras, free Lie algebras and the structure of the Monster
+[145]
+Lie algebra, J. Pure Appl. Algebra 126 (1998), no. 1-3, 233–266. MR 1600542 (99b:17032)
+, Borcherd’s proof of the Conway-Norton conjecture, Moonshine: the first quarter century
+[146]
+and beyond, London Math. Soc. Lecture Note Ser., vol. 372, Cambridge Univ. Press, Cambridge,
+2010, pp. 219–235. MR 2681781 (2012a:20026)
+[147] E. Jurisich, J. Lepowsky, and R. L. Wilson, Realizations of the Monster Lie algebra, Selecta Math.
+(N.S.) 1 (1995), no. 1, 129–161. MR 1327230 (96e:17059)
+[148] V. G. Kac, Simple irreducible graded Lie algebras of finite growth, Izv. Akad. Nauk SSSR Ser. Mat.
+32 (1968), 1323–1367. MR 0259961 (41 #4590)
+[149]
+, Infinite-dimensional Lie algebras, and the Dedekind η-function, Funkcional. Anal. i
+Priložen. 8 (1974), no. 1, 77–78. MR 0374210 (51 #10410)
+[150]
+, Infinite-dimensional algebras, Dedekind’s η-function, classical Möbius function and the
+very strange formula, Adv. in Math. 30 (1978), no. 2, 85–136. MR 513845 (83a:17014a)
+, An elucidation of: “Infinite-dimensional algebras, Dedekind’s η-function, classical Möbius
+[151]
+(1)
+function and the very strange formula”. E8 and the cube root of the modular invariant j, Adv.
+in Math. 35 (1980), no. 3, 264–273. MR 563927 (83a:17014b)
+[152]
+, Infinite-dimensional Lie algebras, third ed., Cambridge University Press, Cambridge, 1990.
+MR 1104219 (92k:17038)
+, Vertex algebras for beginners, second ed., University Lecture Series, vol. 10, American
+[153]
+Mathematical Society, Providence, RI, 1998. MR 1651389 (99f:17033)
+
+64
+
+JOHN F. R. DUNCAN, MICHAEL J. GRIFFIN AND KEN ONO
+
+[154] V. G. Kac and D. H. Peterson, Infinite-dimensional Lie algebras, theta functions and modular
+forms, Adv. in Math. 53 (1984), no. 2, 125–264. MR 750341 (86a:17007)
+[155] V. G. Kac and A. K. Raina, Bombay lectures on highest weight representations of infinitedimensional Lie algebras, Advanced Series in Mathematical Physics, vol. 2, World Scientific Publishing Co., Inc., Teaneck, NJ, 1987. MR 1021978 (90k:17013)
+[156] S. Katz, A. Klemm, and R. Pandharipande, On the motivic stable pairs invariants of K3 surfaces,
+ArXiv e-prints (2014).
+[157] M. I. Knopp, Rademacher on J(τ ), Poincaré series of nonpositive weights and the Eichler cohomology, Notices Amer. Math. Soc. 37 (1990), no. 4, 385–393. MR MR1050700 (91e:11047)
+[158]
+, Construction of a class of modular functions and forms, Pacific J. Math. 11 (1961),
+275–293. MR MR0122994 (23 #A325)
+[159]
+, Construction of a class of modular functions and forms. II, Pacific J. Math. 11 (1961),
+661–678. MR MR0130229 (24 #A96)
+, Construction of automorphic forms on H-groups and supplementary Fourier series, Trans.
+[160]
+Amer. Math. Soc. 103 (1962), 168–188. MR MR0136735 (25 #197)
+, On abelian integrals of the second kind and modular functions, Amer. J. Math. 84 (1962),
+[161]
+615–628. MR MR0146379 (26 #3901)
+[162] D. Knutson, λ-rings and the representation theory of the symmetric group, Lecture Notes in Mathematics, Vol. 308, Springer-Verlag, Berlin-New York, 1973. MR 0364425 (51 #679)
+[163] S. Kondō, Niemeier lattices, Mathieu groups, and finite groups of symplectic automorphisms of
+K3 surfaces, Duke Math. J. 92 (1998), no. 3, 593–603, With an appendix by Shigeru Mukai.
+MR 1620514 (99i:14042)
+[164]
+, On the Kodaira dimension of the moduli space of K3 surfaces. II, Compositio Math. 116
+(1999), no. 2, 111–117. MR 1686793 (2000j:14055)
+[165] T. Kondo, The automorphism group of Leech lattice and elliptic modular functions, J. Math. Soc.
+Japan 37 (1985), no. 2, 337–362. MR 780666 (86k:11033)
+[166] B. Kostant, Lie algebra cohomology and the generalized Borel-Weil theorem, Ann. of Math. (2) 74
+(1961), 329–387. MR 0142696 (26 #265)
+[167] P. S. Landweber (ed.), Elliptic curves and modular forms in algebraic topology, Lecture Notes in
+Mathematics, vol. 1326, Springer-Verlag, Berlin, 1988. MR 970278 (91a:57021)
+[168] J. Leech, Some sphere packings in higher space, Canad. J. Math. 16 (1964), 657–682. MR 0167901
+(29 #5166)
+, Notes on sphere packings, Canad. J. Math. 19 (1967), 251–267. MR 0209983 (35 #878)
+[169]
+[170] J. Leon and C. Sims, The existence and uniqueness of a simple group generated by {3, 4}transpositions, Bull. Amer. Math. Soc. 83 (1977), no. 5, 1039–1040. MR 0444765 (56 #3113)
+[171] J. Lepowsky and H. Li, Introduction to vertex operator algebras and their representations, Progress
+in Mathematics, vol. 227, Birkhäuser Boston Inc., Boston, MA, 2004. MR 2023933 (2004k:17050)
+(1)
+[172] J. Lepowsky and R. L. Wilson, Construction of the affine Lie algebra A1 , Comm. Math. Phys.
+62 (1978), no. 1, 43–53. MR 0573075 (58 #28089)
+[173] W. Li, W. Song, and A. Strominger, Chiral gravity in three dimensions, J. High Energy Phys.
+(2008), no. 4, 082, 15. MR 2425221 (2010a:83101)
+[174] K. Mahler, On a class of non-linear functional equations connected with modular functions, J.
+Austral. Math. Soc. Ser. A 22 (1976), no. 1, 65–118. MR 0441867 (56 #258)
+[175] J. Maldacena, The gauge gravity duality, Proceedings of Xth Quark Confinement and the Hadron
+Spectrum (Confinement X). 8-12 October, 2012. TUM Camous Garching, Munich, Germany.
+[176]
+, The large N limit of superconformal field theories and supergravity, Adv.Theor.Math.Phys.
+2 (1998), 231–252.
+[177] J. Maldacena and A. Strominger, AdS(3) black holes and a stringy exclusion principle, JHEP 9812
+(1998), 005.
+
+MOONSHINE
+
+65
+
+[178] A. Maloney, W. Song, and A. Strominger, Chiral Gravity, Log Gravity and Extremal CFT,
+Phys.Rev. D81 (2010), 064007.
+[179] A. Maloney and E. Witten, Quantum gravity partition functions in three dimensions, J. High
+Energy Phys. (2010), no. 2, 029, 58. MR 2672754 (2011m:83022)
+[180] J. Manschot, AdS3 partition functions reconstructed, J. High Energy Phys. (2007), no. 10, 103, 7.
+MR MR2357875
+[181] J. Manschot and G. W. Moore, A Modern Fareytail, Commun.Num.Theor.Phys. 4 (2007), 103–159.
+[182] G. Mason, Finite groups and modular functions, The Arcata Conference on Representations of
+Finite Groups (Arcata, Calif., 1986), Proc. Sympos. Pure Math., vol. 47, Amer. Math. Soc.,
+Providence, RI, 1987, With an appendix by S. P. Norton, pp. 181–210. MR 933359 (89c:11066)
+[183] É. Mathieu, Mémoire sur l’étude des fonctions de plusiers quantités, sur la manière de les former
+et sur les substitutions qui les laissent invariables, Journal de Mathématiques Pures et Appliquées
+6 (1861), 241–323.
+, Sur la fonction cinq fois transitive de 24 quantités, Journal de Mathématiques Pures et
+[184]
+Appliquées 18 (1873), 25–46.
+[185] R. V. Moody, Lie algebras associated with generalized Cartan matrices, Bull. Amer. Math. Soc. 73
+(1967), 217–221. MR 0207783 (34 #7598)
+, A new class of Lie algebras, J. Algebra 10 (1968), 211–230. MR 0229687 (37 #5261)
+[186]
+[187] S. Mukai, Finite groups of automorphisms of K3 surfaces and the Mathieu group, Invent. Math.
+94 (1988), no. 1, 183–221. MR 958597 (90b:32053)
+[188] D. Niebur, A class of nonanalytic automorphic functions, Nagoya Math. J. 52 (1973), 133–145.
+MR MR0337788 (49 #2557)
+, Construction of automorphic forms and integrals, Trans. Amer. Math. Soc. 191 (1974),
+[189]
+373–385. MR MR0344196 (49 #8936)
+[190] H. V. Niemeier, Definite quadratische Formen der Dimension 24 und Diskriminante 1, J. Number
+Theory 5 (1973), 142–178. MR 0316384 (47 #4931)
+[191] S. P. Norton, Generalized Moonshine, Proc. Symp. Pure Math 47 (1987), 208–209.
+[192] S. P. Norton, More on moonshine, Computational group theory (Durham, 1982), Academic Press,
+London, 1984, pp. 185–193. MR 760657 (86h:20020)
+, From Moonshine to the Monster, Proceedings on Moonshine and related topics (Montréal,
+[193]
+QC, 1999), CRM Proc. Lecture Notes, vol. 30, Amer. Math. Soc., Providence, RI, 2001, pp. 163–
+171. MR 1877765 (2002k:20025)
+[194] A. P. Ogg, Automorphismes de courbes modulaires, Séminaire Delange-PisotPoitou (16e année:
+1974/75), Théorie des nombres, Fasc. 1, Exp. No. 7, Secrétariat Mathématique, Paris, 1975, p. 8.
+MR 0417184 (54 #5242)
+[195] K. Ono, Unearthing the visions of a master: harmonic Maass forms and number theory, Current
+developments in mathematics, 2008, Int. Press, Somerville, MA, 2009, pp. 347–454. MR 2555930
+(2010m:11060)
+[196] K. Ono, L. Rolen, and S. Trebat-Leder, Classical and Umbral Moonshine: Connections and p-adic
+Properties, J. Ramanujan Math. Soc., to appear (ArXiv e-prints (2014)).
+[197] N. Paquette and T. Wrase, Comments on M24 representations and CY3 geometries, (2014).
+[198] H. Petersson, Über die Entwicklungskoeffizienten der automorphen Formen, Acta Math. 58 (1932),
+no. 1, 169–215. MR 1555346
+[199] L. Queen, Modular functions arising from some finite groups, Math. Comp. 37 (1981), no. 156,
+547–580. MR 628715 (83d:20008)
+[200] H. Rademacher, On the Partition Function p(n), Proc. London Math. Soc. (2) 43 (1937), 241–254.
+[201]
+, The Fourier Coefficients of the Modular Invariant J(τ ), Amer. J. Math. 60 (1938), no. 2,
+501–512. MR MR1507331
+
+66
+
+[202]
+
+JOHN F. R. DUNCAN, MICHAEL J. GRIFFIN AND KEN ONO
+
+, The Fourier Series and the Functional Equation of the Absolute Modular Invariant J(τ ),
+Amer. J. Math. 61 (1939), no. 1, 237–248. MR MR1507375
+[203] E. Rains and N. J. A. Sloane, Self-dual codes, Handbook of coding theory, Vol. I, II, North-Holland,
+Amsterdam, 1998, pp. 177–294. MR 1667939
+[204] S. Ramanujan, The lost notebook and other unpublished papers, Springer-Verlag, Berlin, 1988, With
+an introduction by George E. Andrews. MR 947735 (89j:01078)
+, Collected papers of Srinivasa Ramanujan, AMS Chelsea Publishing, Providence, RI, 2000,
+[205]
+Edited by G. H. Hardy, P. V. Seshu Aiyar and B. M. Wilson, Third printing of the 1927 original,
+With a new preface and commentary by Bruce C. Berndt. MR 2280843 (2008b:11002)
+[206] R. A. Rankin, Modular forms and functions, Cambridge University Press, Cambridge-New YorkMelbourne, 1977. MR 0498390 (58 #16518)
+[207] U. Ray, Generalized Kac-Moody algebras and some related topics, Bull. Amer. Math. Soc. (N.S.)
+38 (2001), no. 1, 1–42 (electronic). MR 1803076 (2001j:17044)
+[208] W. Reynolds, Thompson’s characterization of characters and sets of primes, J. Algebra 156 (1993),
+no. 1, 237–243. MR 1213794 (94b:20012)
+[209] G. Segal, Unitary representations of some infinite-dimensional groups, Comm. Math. Phys. 80
+(1981), no. 3, 301–342. MR 626704 (82k:22004)
+[210] J.-P. Serre, A course in arithmetic, Springer-Verlag, New York, 1973, Translated from the French,
+Graduate Texts in Mathematics, No. 7. MR 0344216 (49 #8956)
+[211] J.-P. Serre and H. M. Stark, Modular forms of weight 1/2, in Modular functions of one variable,
+VI (Proc. Second Internat. Conf., Univ. Bonn, Bonn, 1976), 27–67. Lecture Notes in Math., Vol.
+627. Springer, Berlin, 1977.
+[212] G. Shimura, Introduction to the arithmetic theory of automorphic functions, Publications of the
+Mathematical Society of Japan, No. 11. Iwanami Shoten, Publishers, Tokyo, 1971, Kanô Memorial
+Lectures, No. 1. MR MR0314766 (47 #3318)
+[213] S. D. Smith, On the head characters of the Monster simple group, Finite groups—coming of age
+(Montreal, Que., 1982), Contemp. Math., vol. 45, Amer. Math. Soc., Providence, RI, 1985, pp. 303–
+313. MR 822245 (87h:20037)
+[214] J. Stachel, The early history of quantum gravity (1916–1940), Black holes, gravitational radiation
+and the universe, Fund. Theories Phys., vol. 100, Kluwer Acad. Publ., Dordrecht, 1999, pp. 525–
+534. MR 1663704
+[215] A. Strominger, A Simple Proof of the Chiral Gravity Conjecture, (2008).
+[216] L. Susskind, The world as a hologram, Journal of Mathematical Physics 36 (1995), 6377–6396.
+[217] G. ’t Hooft, Dimensional Reduction in Quantum Gravity, ArXiv General Relativity and Quantum
+Cosmology e-prints (1993).
+[218] A. Taormina and K. Wendland, The overarching finite symmetry group of Kummer surfaces in the
+Mathieu group M24 , J. High Energy Phys. (2013), no. 8, 125, front matter+62. MR 3106313
+[219]
+, A twist in the M24 moonshine story, (2013).
+, Symmetry-surfing the moduli space of Kummer K3s, (2013).
+[220]
+[221] J. G. Thompson, Finite groups and modular functions, Bull. London Math. Soc. 11 (1979), no. 3,
+347–351. MR MR554401 (81j:20029)
+, Some numerology between the Fischer-Griess Monster and the elliptic modular function,
+[222]
+Bull. London Math. Soc. 11 (1979), no. 3, 352–353. MR MR554402 (81j:20030)
+[223] J. Tits, On R. Griess’ “friendly giant”, Invent. Math. 78 (1984), no. 3, 491–499. MR 768989
+(86f:20019)
+[224] M. P. Tuite, Monstrous Moonshine from orbifolds, Commun. Math. Phys. 146 (1992), 277–309.
+[225]
+, On the relationship between monstrous moonshine and the uniqueness of the moonshine
+module, Commun. Math. Phys. 166 (1995), 495–532.
+
+MOONSHINE
+
+67
+
+[226]
+
+, Generalized moonshine from abelian orbifold constructions, Contemp. Maths. 193 (1995),
+353–368.
+[227] R. C. Vaughan, The Hardy-Littlewood method, second ed., Cambridge Tracts in Mathematics, vol.
+125, Cambridge University Press, Cambridge, 1997. MR 1435742 (98a:11133)
+[228] B. B. Venkov, On the classification of integral even unimodular 24-dimensional quadratic forms,
+Trudy Mat. Inst. Steklov. 148 (1978), 65–76, 273, Algebra, number theory and their applications.
+MR 558941 (81d:10024)
+[229] R. Volpato, On symmetries of N=(4,4) sigma models on T4, ArXiv e-prints (2014).
+[230] A. Wiles, The Birch and Swinnerton-Dyer conjecture, The millennium prize problems, Clay Math.
+Inst., Cambridge, MA, 2006, pp. 31–41. MR 2238272
+[231] E. Witten, Elliptic genera and quantum field theory, Comm. Math. Phys. 109 (1987), no. 4, 525–
+536. MR 885560 (89i:57017)
+, Anti-de Sitter space and holography, Adv.Theor.Math.Phys. 2 (1998), 253–291.
+[232]
+[233]
+, Three-Dimensional Gravity Revisited, (2007).
+[234] T. Wrase, Mathieu moonshine in four dimensional N = 1 theories, JHEP 1404 (2014), 069.
+[235] X. Yin, Partition functions of three-dimensional pure gravity, Commun. Number Theory Phys. 2
+(2008), no. 2, 285–324. MR 2442775 (2009m:83105)
+[236] K.-I. Yoshikawa, Nikulin’s K3 surfaces, adiabatic limit of equivariant analytic torsion, and the
+Borcherds Φ-function, Complex analysis in several variables—Memorial Conference of Kiyoshi
+Oka’s Centennial Birthday, Adv. Stud. Pure Math., vol. 42, Math. Soc. Japan, Tokyo, 2004,
+pp. 339–345. MR 2087068 (2005h:14093)
+[237] D. Zagier, Ramanujan’s mock theta functions and their applications (after Zwegers and OnoBringmann), Astérisque (2009), no. 326, Exp. No. 986, vii–viii, 143–164 (2010), Séminaire Bourbaki. Vol. 2007/2008. MR 2605321 (2011h:11049)
+[238] Y. Zhu, Modular invariance of characters of vertex operator algebras, Journal of the American
+Mathematical Society 9 (1996), no. 1, 237–302.
+[239] S. Zwegers, Mock Theta Functions, Ph.D. thesis, Utrecht University, 2002.
+[240]
+, On two fifth order mock theta functions, Ramanujan J. 20 (2009), no. 2, 207–214.
+MR 2558702 (2011a:11046)
+Department of Mathematics, Applied Mathematics and Statistics, Case Western Reserve University, Cleveland, Ohio 44106
+E-mail address: john.duncan@case.edu
+Department of Mathematics and Computer Science, Emory University, Atlanta, Georgia 30322
+E-mail address: mjgrif3@emory.edu
+Department of Mathematics and Computer Science, Emory University, Atlanta, Georgia 30322
+E-mail address: ono@mathcs.emory.edu
+
+

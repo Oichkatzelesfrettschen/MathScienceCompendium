@@ -1,0 +1,109 @@
+{
+  "generator": "scripts/analyze_retained_lbm.py",
+  "method": {
+    "anisotropy": "vorticity-power second moment in x divided by y",
+    "coordinate_convention": "axis 0 is x; axis 1 is y",
+    "dominant_mode": "largest nonzero real-FFT power of zonal profile",
+    "vorticity": "gradient(velocity_y, axis=0) - gradient(velocity_x, axis=1)",
+    "zonal_profile": "mean x-velocity over axis 0, then remove profile mean"
+  },
+  "schema_version": 1,
+  "snapshot_count": 5,
+  "snapshots": [
+    {
+      "dominant_zonal_mode": 2,
+      "grid_shape": [
+        512,
+        512
+      ],
+      "iteration": 100,
+      "mass": 262144.32235533,
+      "maximum_speed": 0.012253698526103814,
+      "mean_speed": 0.006525363283200995,
+      "nominal_initial_mass": 262144,
+      "relative_mass_drift_from_unit_density": 1.2296879958739737e-06,
+      "rms_speed": 0.006891952788804432,
+      "source_relpath": "results/highres_lbm_000100.parquet",
+      "source_sha256": "c7aeba862ffdee014df92d4be10549abd341d12dde8835fbebecd28ece7616c0",
+      "vorticity_spectral_second_moment_ratio_x_to_y": 0.9948245927005946,
+      "zonal_mean_rms": 6.860733944970283e-06,
+      "zonal_to_total_rms_ratio": 0.0009954702469980841
+    },
+    {
+      "dominant_zonal_mode": 13,
+      "grid_shape": [
+        512,
+        512
+      ],
+      "iteration": 200,
+      "mass": 262144.58296608925,
+      "maximum_speed": 0.012381853905093346,
+      "mean_speed": 0.006827066109481476,
+      "nominal_initial_mass": 262144,
+      "relative_mass_drift_from_unit_density": 2.2238391466089524e-06,
+      "rms_speed": 0.007128315008342347,
+      "source_relpath": "results/highres_lbm_000200.parquet",
+      "source_sha256": "d647fddda11403a961620ac3e240789516809f9c0c4d302771675d38c2b58c49",
+      "vorticity_spectral_second_moment_ratio_x_to_y": 1.0140775425874324,
+      "zonal_mean_rms": 8.716383569021596e-06,
+      "zonal_to_total_rms_ratio": 0.0012227831624753837
+    },
+    {
+      "dominant_zonal_mode": 8,
+      "grid_shape": [
+        512,
+        512
+      ],
+      "iteration": 300,
+      "mass": 262144.8805863261,
+      "maximum_speed": 0.009693923077485506,
+      "mean_speed": 0.0020331723237895388,
+      "nominal_initial_mass": 262144,
+      "relative_mass_drift_from_unit_density": 3.359170250405441e-06,
+      "rms_speed": 0.0025463193791583983,
+      "source_relpath": "results/highres_lbm_000300.parquet",
+      "source_sha256": "6be05778380a3f86ea2af4ef3ef230702b3e78c02e9fdacc54121c7eaf313407",
+      "vorticity_spectral_second_moment_ratio_x_to_y": 1.0003647822289579,
+      "zonal_mean_rms": 9.311815768755059e-06,
+      "zonal_to_total_rms_ratio": 0.003656970859575664
+    },
+    {
+      "dominant_zonal_mode": 2,
+      "grid_shape": [
+        512,
+        512
+      ],
+      "iteration": 400,
+      "mass": 262145.1611511111,
+      "maximum_speed": 0.012709252159025524,
+      "mean_speed": 0.005958460772840962,
+      "nominal_initial_mass": 262144,
+      "relative_mass_drift_from_unit_density": 4.429439968589577e-06,
+      "rms_speed": 0.006436307432699542,
+      "source_relpath": "results/highres_lbm_000400.parquet",
+      "source_sha256": "693336f6c9cd285b102f52703993e1e7fee8c700fbadf16befadea8b45298157",
+      "vorticity_spectral_second_moment_ratio_x_to_y": 0.9985463638702005,
+      "zonal_mean_rms": 9.305962177553649e-06,
+      "zonal_to_total_rms_ratio": 0.0014458542067575702
+    },
+    {
+      "dominant_zonal_mode": 17,
+      "grid_shape": [
+        512,
+        512
+      ],
+      "iteration": 500,
+      "mass": 262145.4679558277,
+      "maximum_speed": 0.011049230582856008,
+      "mean_speed": 0.00692099177067269,
+      "nominal_initial_mass": 262144,
+      "relative_mass_drift_from_unit_density": 5.599807082035113e-06,
+      "rms_speed": 0.0071496793872819165,
+      "source_relpath": "results/highres_lbm_000500.parquet",
+      "source_sha256": "a06fa7253f6bc11cbd40961dbbc7268a2de572edf8247577d77564c358e80af9",
+      "vorticity_spectral_second_moment_ratio_x_to_y": 0.9923391166140818,
+      "zonal_mean_rms": 8.746719364676025e-06,
+      "zonal_to_total_rms_ratio": 0.0012233722508221802
+    }
+  ]
+}

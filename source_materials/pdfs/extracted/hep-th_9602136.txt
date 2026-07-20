@@ -1,0 +1,1635 @@
+UCLA/96/TEP/8
+CERN-TH/96-53
+SU-ITP-96-8
+hep-th/9602136
+February 25, 1996
+
+arXiv:hep-th/9602136v3 10 Jun 1996
+
+SUPERSYMMETRY AND ATTRACTORS
+
+Sergio Ferrara1
+Theory Division, CERN, 1211 Geneva 23, Switzerland
+UCLA Physics Department, Los Angeles CA, USA
+Renata Kallosh2
+Physics Department, Stanford University, Stanford CA 94305-4060, USA
+
+ABSTRACT
+We find a general principle which allows one to compute the area of the horizon of
+N=2 extremal black holes as an extremum of the central charge. One considers the
+ADM mass equal to the central charge as a function of electric and magnetic charges
+and moduli and extremizes this function in the moduli space (a minimum corresponds
+to a fixed point of attraction). The extremal value of the square of the central charge
+provides the area of the horizon, which depends only on electric and magnetic charges.
+The doubling of unbroken supersymmetry at the fixed point of attraction for N=2
+black holes near the horizon is derived via conformal flatness of the Bertotti-Robinsontype geometry. These results provide an explicit model independent expression for
+the macroscopic Bekenstein-Hawking entropy of N=2 black holes which is manifestly
+duality invariant. The presence of hypermultiplets in the solution does not affect the
+area formula. Various examples of the general formula are displayed. We outline the
+attractor mechanism in N=4,8 supersymmetries and the relation to the N=2 case.
+The entropy-area formula in five dimensions, recently discussed in the literature, is
+also seen to be obtained by extremizing the 5d central charge.
+1
+2
+
+E-mail: ferraras@cernvm.cern.ch
+E-mail: kallosh@physics.stanford.edu
+
+1
+
+1
+
+Introduction
+
+Supersymmetry seems to be related to dynamical systems with fixed points describing the equilibrium and stability3 . The particular property of the long-term behavior of dynamical flows in
+dissipative systems is the following: in approaching the attractors the orbits lose practically all
+memory of their initial conditions, even though the dynamics is strictly deterministic.
+The first known to us example of such attractor behavior in the supersymmetric system
+was discovered in the context of N=2 extremal black holes [1, 2]. The corresponding motion
+describes the behavior of the moduli fields as they approach the core of the black hole. They
+evolve according to a damped geodesic equation (see eq. (20) in [1]) until they run into the
+fixed point near the black hole horizon. The moduli at fixed points were shown to be given as
+ratios of charges in the pure magnetic case [1]. Recently Strominger has further shown that this
+phenomenon extends to the generic case when both electric and magnetic charges are present [2].
+The inverse distance to the horizon plays the role of the evolution parameter in the corresponding
+attractor. By the time moduli reach the horizon they lose completely the information about the
+initial conditions, i.e. about their values far away from the black hole, which correspond to the
+values of various coupling constants, see Fig.1.
+The main result of this paper is the derivation of the universal property of the stable fixed
+point of the supersymmetric attractors: fixed point is defined by the new principle of a minimal
+central charge4 and the area of the horizon is proportional to the square of the central charge,
+computed at the point where it is extremized in the moduli space. In N=2, d=4 theories, which is
+the main object of our study in this paper, the extremization has to be performed in the moduli
+space of the special geometry and is illustrated in Fig. 1. This results in the following formula
+for the Bekenstein-Hawking entropy S, which is proportional to the quarter of the area of the
+horizon:
+A
+d=4.
+(1)
+S = = π|Zfix |2 ,
+4
+This result allows generalization for higher dimensions, for example, in five-dimensional spacetime one has
+A
+S = ∼ |Zfix |3/2 ,
+d=5.
+(2)
+4
+There exists a beautiful phenomenon in the black hole physics: according to the no-hair
+theorem, there is a limited number of parameters5 which describe space and physical fields far
+away from the black hole. In application to the recently studied black holes in string theory,
+these parameters include the mass, the electric and magnetic charges, and the asymptotic values
+of the scalar fields.
+3
+A point xfix where the phase velocity v(xfix ) is vanishing is named a fixed point and represents the system in
+equilibrium, v(xfix ) = 0. The fixed point is said to be an attractor of some motion x(t) if limt→∞ x(t) = xfix (t).
+4
+We are assuming that the extremum is a minimum, as it can be explicitly verified in some models. However
+for the time being we cannot exclude situations with different extrema or even where the equation Di Z = 0 has
+no solutions.
+5
+This number can be quite large, e.g. for N=8 supersymmetry one can have 56 charges and 70 moduli.
+
+2
+
+It appears that for supersymmetric black holes one can prove a new, stronger version of the
+no-hair theorem: black holes lose all their scalar hair near the horizon. Black hole solutions near
+the horizon are characterized only by those discrete parameters which correspond to conserved
+charges associated with gauge symmetries, but not by the values of the scalar fields at infinity
+which may change continuously.
+A simple example of this attractor mechanism is given by the dilatonic black holes of the
+heterotic string theory [3, 4], see Sec. 4 for details. The modulus of the central charge in question
+which is equal to the ADM mass is given by the formula
+1
+MADM = |Z| = (e−φ0 |p| + eφ0 |q|) .
+2
+
+(3)
+
+In application to this case the general theory, developed in this paper gives the following recipe
+to get the area
+i) Find the extremum of the modulus of the central charge as a function of a dilaton e2φ0 = g 2
+at fixed charges
+!
+∂
+1 ∂ 1
+1
+|Z|(g, p, q) =
+|p| + g|q| = − 2 |p| + |q| = 0.
+(4)
+∂g
+2 ∂g g
+g
+ii) Get the fixed value of the moduli
+2
+gfix
+=
+
+p
+.
+q
+
+(5)
+
+iii) Insert the fixed value into your central charge formula (3), get the fixed value of the central
+charge: the square of it is proportional to the area of the horizon and defines the BekensteinHawking entropy
+A
+S = = π|Zfix |2 = π|pq| .
+(6)
+4
+This indeed coincides with the result obtained before by completely different methods [4, 5].
+In general supersymmetric N=2 black holes have an ADM mass M depending
+on charges
+
+
+(p, q) as well as on moduli z through the holomorphic symplectic sections X Λ (z), FΛ (z) , see
+Appendix. The moduli present the values of the scalar fields of the theory far away from the black
+hole. The general formula for the mass of the state with one half of unbroken supersymmetry of
+N=2 supergravity interacting with vector multiplets as well as with hypermultiplets is [6]-[9]
+M 2 = |Z|2 ,
+
+(7)
+
+where the central charge is [6]
+Z(z, z̄, q, p) = e
+
+K(z,z̄)
+2
+
+(X Λ (z)qΛ − FΛ (z) pΛ ) = (LΛ qΛ − MΛ pΛ ) ,
+
+(8)
+
+so that
+2
+2
+MADM
+= |Z|2 = MADM
+(z, z̄, p, q) .
+
+3
+
+(9)
+
+The area, however, is only charge dependent:
+A = A(p, q) .
+
+(10)
+
+This happens since the values of the moduli near the horizon are driven to the fixed point defined
+by the ratios of the charges. This mechanism was explained before in [1] and [2] on the basis of
+the conformal gauge formulation of N=2 theory [7].
+This attractor mechanism is by no means an exclusive property of only N=2 theory in four
+dimensions. Our analysis suggests that it may be a quite universal phenomenon in any supersymmetric theory. The main purpose of this paper is to investigate the attractor mechanism in
+the symplectic covariant form of N=2 theory, to analyse the attractors of N=4 and N=8 theory,
+and to reinterpret them in terms of N=2 theory.
+In this paper we will use the “coordinate free” formulation of the special geometry [8, 6, 9]
+which will allow us to present a symplectic invariant description of the system. We will be able
+to show that the unbroken supersymmetry requires the fixed point of attraction to be defined by
+the solution of the duality symmetric equation
+1
+Di Z = (∂i + Ki )Z(z, z̄, p, q) = 0 ,
+2
+
+(11)
+
+∂
+|Z| = 0
+∂z i
+
+(12)
+
+which implies, see Appendix,
+at
+
+
+
+Z = Zfix = Z LΛ (p, q), MΛ (p, q), p, q
+
+
+
+.
+
+(13)
+
+Equation ∂i |Z| = 0 exhibits the minimal area principle in the sense that the area is defined
+by the extremum of the central charge in the moduli space of the special geometry, see Fig. 2
+illustrating this point. Upon substitution of this extremal values of the moduli into the square of
+the central charge we get the Bekenstein-Hawking entropy,
+S=
+
+A
+= π|Zfix |2 .
+4
+
+(14)
+
+The area of the black hole horizon has also an interpretation as the mass of the Bertotti-Robinson
+universe [10] describing the near horizon geometry.
+2
+A/4π = MBR
+.
+
+(15)
+
+This mass, as different from the ADM mass, depends only on charges since the moduli near the
+horizon are in their fixed point equilibrium positions,
+2
+2
+MBR
+= |Zfix |2 = MBR
+(p, q) .
+
+(16)
+
+Note that in the Einstein-Maxwell system without scalar fields the ADM mass of the extreme
+supersymmetric black hole simply coincides with the Bertotti-Robinson one, both being functions
+of charges:
+2
+2
+MADM
+(p, q) = MBR
+(p, q) .
+(17)
+4
+
+We will describe below a near horizon black holes of N=2 supergravity interacting with vector
+and hyper multiplets. The basic difference from the pure N=2 supergravity solutions comes
+from the following: the metric near the horizon is of the Bertotti-Robinson type, as before.
+However, the requirement of unbroken supersymmetry and duality symmetry forces the moduli
+to become functions of the ratios of charges, i.e. take the fixed point values. We will describe
+these configurations, show that they provide the restoration of full unbroken N=2 supersymmetry
+near the horizon. We will call them N=2 attractors, see Sec. 2. In Sec. 3 we will analyse some of
+N=4 and N=8 attractors and provide their interpretation from the point of view of N=2 theory.
+In Sec. 4 examples of N=4 and N=8 attractors will be presented using in each case the parameters
+(“attractor variables”) which allow to demonstrate explicitly the dependence of the ADM mass
+on charges as well as on moduli and the independence of the area on moduli. In the last section
+we make some remarks on the possible developments of ideas of this paper in the context of
+looking for the general links between the microscopic and macroscopic physics in supersymmetric
+theories. Appendix contains a short resume of special geometry.
+
+2
+
+N=2 Attractor
+
+The special role of the Bertotti-Robinson metric in the context of the solitons in supergravity was
+explained by Gibbons [11]. He suggested to consider the Bertotti-Robinson (BR) metric as an
+alternative, maximally supersymmetric, vacuum state. The extreme Reissner-Nordström metric
+spatially interpolates between this vacuum and the trivial flat one, as one expects from a soliton.
+Near the horizon all N=2 extremal black holes with one half of unbroken supersymmetry
+restore the complete N=2 unbroken supersymmetry. This phenomenon of the doubling of the
+supersymmetry near the horizon was discovered in the Einstein-Maxwell system in [11]. It was
+explained in [12] that the manifestation of this doubling of unbroken supersymmetry is the appearance of a covariantly constant on shell superfield of N=2 supergravity. In presence of a
+dilaton this mechanism was studied in [13]. In the context of exact four-dimensional black holes,
+string theory and conformal theory on the world-sheet the BR space-time was studied in [14].
+In more general setting the idea of vacuum interpolation in supergravity via super p-branes was
+developed in [15].
+We will show here using the most general supersymmetric system of N=2 supergravity interacting with vector multiplets and hypermultiplets how this doubling of supersymmetry occurs
+and what is the role of attractors in this picture. The supersymmetry transformation for the
+gravitino, for the gaugino and for the hyperino are given in the manifestly symplectic covariant
+formalism [8, 9] 6 in absence of fermions and in absence of gauging as follows:
+
+6
+
+− ν B
+δψAµ = Dµ ǫA + ǫAB Tµν
+γ ǫ ,
+i i− µν AB
+δλiA = iγ µ ∂µ z i ǫA + Fµν
+γ ǫB ǫ ,
+2
+δζα = i UuBβ ∂µ q u γ µ ǫA ǫAB Cαβ ,
+
+The notation are given in [9].
+
+5
+
+(18)
+
+where λiA , ψAµ are the chiral gaugino and gravitino fields, ζα is a hyperino, ǫA , ǫA are the chiral
+and antichiral supersymmetry parameters respectively, ǫAB is the SO(2) Ricci tensor. The moduli
+−
+i−
+dependent duality invariant combinations of field strength Tµν
+, Fµν
+are defined by eqs. (31), UuBβ
+is the quaternionic vielbein [16].
+Our goal is to find solutions with unbroken N=2 supersymmetry. The first one is a standard
+flat vacuum: the metric is flat, there are no vector fields, and all scalar fields in the vector
+multiplets as well as in the hypermultiplets take arbitrary constant values:
+ds2 = dxµ dxν ηµν ,
+
+−
+i−
+Tµν
+= Fµν
+=0,
+
+z i = z0i ,
+
+q u = q0u .
+
+(19)
+
+This solves the Killing conditions δψAµ = δλiA = δζα = 0 with constant unconstrained values
+of the supersymmetry parameter ǫA . The unbroken supersymmetry manifests itself in the fact
+that each non-vanishing scalar field represents the first component of a covariantly constant N=2
+superfield for the vector and/or hyper multiplet, but the supergravity superfield vanishes.
+The second solution with unbroken supersymmetry is much more sophisticated. First, let us
+solve the equations for the gaugino and hyperino by using only a part of the previous ansatz:
+i−
+Fµν
+=0,
+
+∂µ z i = 0 ,
+
+∂µ q u = 0 .
+
+(20)
+
+The Killing equation for the gravitino is not gauge invariant. We may therefore consider the
+variation of the gravitino field strength the way it was done in [12, 13]. Our ansatz for the metric
+will be to use the geometry with the vanishing scalar curvature and Weyl tensor and covariantly
+−
+constant graviphoton field strength Tµν
+:
+R=0,
+
+Cµνλδ = 0 ,
+
+−
+Dλ (Tµν
+)=0.
+
+(21)
+
+It was explained in [12, 13] that such configuration corresponds to a covariantly constant superfield
+of N=2 supergravity Wαβ (x, θ), whose first component is given by a two-component graviphoton
+field strength Tαβ . The doubling of supersymmetries near the horizon happens by the following
+reason. The algebraic condition for the choice of broken versus unbroken supersymmetry is
+given in terms of the combination of the Weyl tensor plus or minus a covariant derivative of the
+graviphoton field strength, depending on the sign of the charge. However, near the horizon both
+the Weyl curvature as well as the vector part vanish. Therefore both supersymmetries are restored
+and we simply have a covariantly constant superfield Wαβ (x, θ). The new feature of the generic
+configurations which include vector and hyper multiplets is that in addition to a covariantly
+constant superfield of supergravity Wαβ (x, θ), we have covariantly constant superfields, whose
+first component is given by the scalars of the corresponding multiplets. However, now as different
+from the trivial flat vacuum, which admits any values of the scalars, we have to satisfy the
+consistency conditions for our solution, which requires that the Ricci tensor is defined by the
+product of graviphoton field strengths,
+BR
+Rαβα
+′ β ′ = Tαβ T̄α′ β ′ ,
+
+(22)
+
+and that the vector multiplet vector field strength vanishes
+i−
+Fµν
+=0.
+
+6
+
+(23)
+
+Before analysing these two consistency conditions in terms of symplectic structures of the theory,
+let us describe the black hole metric near the horizon.
+The explicit form of the metric is taken as a limit near the horizon r = |~x| → 0 of the black
+hole metric
+ds2 = −e2U dt2 + e−2U d~x2 ,
+(24)
+
+where
+
+∆e−U = 0 .
+
+(25)
+
+We choose
+
+2
+MBR
+A
+=
+,
+4π|~x|2
+r2
+where the Bertotti-Robinson mass is defined by the black hole area of the horizon
+
+e−2U =
+
+A
+.
+4π
+
+2
+MBR
+=
+
+(26)
+
+(27)
+
+We may show that this metric, which is the Bertotti-Robinson metric
+ds2BR = −
+
+2
+|~x|2 2 MBR
+dt
++
+d~x2 ,
+2
+MBR
+|~x|2
+
+(28)
+
+is conformally flat in the properly chosen coordinate system. In spherically symmetric coordinate
+system
+M2
+r2
+(dr 2 + r 2 dΩ) .
+(29)
+ds2BR = − 2 dt2 + BR
+MBR
+r2
+2
+2
+After the change of variables r = MBR
+/ρ and |~x| = MBR
+/|~y | the metric becomes obviously
+conformally flat
+
+ds2BR = −
+
+2
+2
+2
+MBR
+MBR
+MBR
+2
+2
+2
+dt
++
+(dρ
++
+ρ
+dΩ)
+=
+(−dt2 + d~y 2) ,
+ρ2
+ρ2
+|~y |2
+
+(30)
+
+which is in agreement with the vanishing of the Weyl tensor.
+Now we are ready to describe our solution in terms of symplectic structures, as defined in [9].
+The symplectic structure of the equations of motion comes by defining the Sp(2nV +2) symplectic
+(antiselfdual) vector field strength (F −Λ , GΛ− ).
+Two symplectic invariant combinations of the symplectic field strength vectors are:
+T − = MΛ F −Λ − LΛ GΛ−
+F −i = Gij̄ (Dj̄ M̄Λ F −Λ − Dj̄ L̄Λ GΛ− ) .
+
+(31)
+
+The central charge as well as the covariant derivative of the central charge are defined as follows:
+1
+Z=−
+2
+
+Z
+
+7
+
+S2
+
+T− ,
+
+(32)
+
+and
+
+1Z
+F +j̄ Gij̄ .
+(33)
+Z i ≡ Di Z = −
+2 S2
+The central charge, as well as its derivative, are functions of moduli and electric and magnetic
+charges. The objects defined by eqs. (31) have the physical meaning of being the (modulidependent) vector combinations which appear in the gravitino and gaugino supersymmetry transformations respectively. In the generic point of the moduli space there are two symplectic invariants homogeneous of degree 2 in electric and magnetic charges [9]:
+I1 = |Z|2 + |Di Z|2 ,
+I2 = |Z|2 − |Di Z|2 .
+
+(34)
+
+Note that
+1
+I1 = I1 (p, q, z, z̄) = − P t M(N )P ,
+2
+1
+I2 = I2 (p, q, z, z̄) = − P t M(F )P .
+2
+
+(35)
+
+Here P = (p, q) and M(N ) is the real symplectic 2n + 2 × 2n + 2 matrix
+
+
+A B
+C D
+
+
+
+(36)
+
+where
+A = ImN + ReN ImN −1 ReN ,
+
+B = −ReN ImN −1
+
+C = −ImN −1 ReN ,
+
+D = ImN −1 .
+
+(37)
+
+The vector kinetic matrix N is defined in Appendix. The same type of matrix appears in (35)
+with N → F = FΛΣ . Both N , F are Kähler invariant functions, which means that they depend
+only on ratios of sections, i.e. only on tΛ , fΛ , see Appendix.
+The unbroken supersymmetry of the near horizon black hole requires the consistency condition
+(23), which is also a statement about the fixed point for the scalars z i (r) as functions of the
+distance from the horizon r
+∂  i 
+z (r) = 0
+∂r
+
+=⇒
+
+Di Z = 0 .
+
+(38)
+
+Thus the fixed point is defined due to supersymmetry by the vanishing of the covariant derivative
+of the central charge. At this point the critical values of moduli become functions of charges, and
+two symplectic invariants become equal to each other:
+I1 fix = I2 fix = (|Z|2 )Di Z=0 ≡ |Zfix |2 .
+8
+
+(39)
+
+The way to explicitly compute the above is by solving in a gauge-invariant fashion eq. (38),
+Dī Z̄ = Dī L̄Λ qΛ − NΛΣ Dī L̄ī pΛ = 0 .
+
+(40)
+
+By contracting with Di LΣ Giī and using the property
+Di LΣ Giī Dī L̄Λ = − 12 Im(N −1 )
+we get
+2Z L̄Σ = ipΣ − Im(N −1)
+
+ΣΛ
+
+ΣΛ
+
+− L̄Σ LΛ
+
+(41)
+
+ΣΓ
+
+(42)
+
+qΛ + Im(N −1 )
+
+ReNΓ∆ p∆ .
+
+Here we used the fact that Z = LΛ qΛ − MΛ pΛ . This finally gives
+2iZ̄LΣ = pΣ + i(ImN −1 ReN p + ImN −1 q)Σ ,
+
+(43)
+
+2iZ̄MΣ = qΣ + i(ImN p + ReN ImN −1 Re N p − ReN ImN −1 q)Σ ,
+
+(44)
+
+and
+so that
+
+pΛ = i(Z̄LΛ − Z L̄Λ ) ,
+
+qΛ = i(Z̄MΛ − Z M̄Λ ) .
+
+(45)
+
+From the above equations it is evident that (p, q) determine the sections up to a (Kähler)
+gauge transformation (which can be fixed setting L0 = eK/2 ). Vice versa the fixed point tΛ can
+only depend on ratios of charges since the equations are homogeneous in p,q.
+2
+The first invariant provides an elegant expression of |Z
+the charges
+
+ fix | which only involves
+Λ
+Λ
+¯
+and the vector kinetic matrix at the fixed point Nfix = N tfix , t̄fix , fΛ fix , fΛ fix .
+
+1
+(I1 )fix = (|Z|2 + |DiZ|2 )fix = − P t M(Nfix )P = (|Zfix |2 ) .
+2
+
+(46)
+
+Indeed eq. (46) can be explicitly verified by using eq. (47). For magnetic solutions the area
+formula was derived in [1]. This formula presents the area as the function of the zero component
+of the magnetic charge and of the Kähler potential at the fixed point7 .
+A = π(p0 )2 e−K .
+
+(47)
+
+In the symplectic invariant formalism we may check that the area formula (47) which is valid
+for the magnetic solutions (or for generic solutions but in a specific gauge only) indeed can be
+brought to the symplectic invariant form [1]:
+A = π(p0 )2 e−K = 4π(|Z|2 + |Di Z|2 )fix = 4π(|Zfix |2 ) = −2πpΛ ImFΛΣ pΣ .
+
+(48)
+
+One can also check the first consistency condition of unbroken supersymmetry (22), which
+relates the Ricci tensor to the graviphoton. Using the definition of the central charge in the fixed
+7
+
+In this paper we have a normalization of charges which is different from [1] due to the use of the conventions
+of [9] and not [7].
+
+9
+
+point we are lead to the formula for the area of the horizon (which is defined via the mass of the
+Bertotti-Robinson geometry) in the following form
+2
+MBR
+=
+
+A
+= (|Z|2 )Di Z=0 ,
+4π
+
+S=
+
+A
+2
+= πMBR
+.
+4
+
+(49)
+
+The new area formula (49) has various advantages following from manifest symplectic symmetry. It also implies the principle of the minimal mass of the Bertotti-Robinson universe, which
+is given by the extremum in the moduli space of the special geometry.
+∂i MBR = 0 .
+
+3
+
+(50)
+
+N=4,8 ⇐⇒ N=2
+
+Pure N=4 supergravity consists of N=2 supergravity and one N=2 vector multiplet. This can
+be regarded as a SU(2) × SU(4) invariant truncation of N=8. The N=4 theory exists in two
+formulations, the SO(4) and SU(4). They are related by duality [6], but for our purpose it is
+important to observe that the first corresponds to a prepotential F (X) = −iX 0 X 1 , while the
+second has no prepotential and corresponds to a symplectic change of the basis:
+X̂ 0 = X 0 ,
+
+X̂ 1 = −F1 ,
+
+F̂0 = F0 ,
+
+F̂1 = X 1 .
+
+(51)
+
+The charges in these two theories are
+1) SO(4)
+p0 ,
+
+p1 = p0 Re t ,
+
+q0 = 0 ,
+
+q1 = p0 Im t .
+
+(52)
+
+The central charge at the fixed point is |Zfix |2 = p20 Re t = p0 p1 and is given by the product of the
+two magnetic charges.
+2) SU(4)
+p0 ,
+
+p1 = 0 ,
+
+q0 = p0 Im t ,
+
+q1 = p0 Re t .
+
+(53)
+
+1
+
+X
+2
+2
+In these equations t = X
+0 . The central charge at the fixed point is |Zfix | = p0 Re t = p0 q1 and
+is given by the product of electric and magnetic charge. This is expected for the dilatonic black
+hole, see next section.
+
+In what follows we would like to outline some results concerning the attractive behavior of N=2
+theory and N=8 theory by taking a consistent N=2 reductions of N=8. In this way one can easily
+obtain N=2 models with variety of vector and hyper multiplets. The particle decomposition
+of N=8 to N=2 gives fifteen vector multiplets, nv = 15, and ten hyper multiplets, nh = 10.
+Therefore any model will have those numbers as upper bounds for vector and hyper multiplets.
+To get a consistent truncation one must choose a subgroup H of SU(8) such that the two residual
+supersymmetries are H-singlets. The H invariant states will then give a consistent N=2 theory. In
+10
+
+7
+of the form S(nv ) × Q(nh ), where
+particular, the scalar field manifold will be a subspace of SUE(8)
+S(nv ) , Q(nh ) are special and quaternionic manifolds of complex and quaternionic dimensions
+nv , nh respectively.
+
+A convenient way for obtaining such theories is by considering the untwisted moduli of ZTN6
+orbifolds with H = ZN ⊂ SU(3). In this way, by considering type II A, II B theories on such
+orbifolds, one obtains pairs of models related by c-map [17]
+A
+(nA
+v , nh ) ,
+
+A
+B
+A
+(nB
+v = nh − 1, nh = nv + 1)
+
+(54)
+
+0
+A
+0
+0
+0
+where nA
+v = h11 , nh = h12 + 1. Here h11 , h12 are Hodge numbers of the untwisted moduli. This
+implies that nv can be at most 9 (because nmax
+= 10). The bound is saturated for the ZT63 orbifold
+h
+for which
+nv = 9, nh = 1 , or nv = 0, nh = 10
+(55)
+
+in type II A, II B respectively. Since the hypermultiplets do not matter at the level of N=2 theory
+this appears to be the richest example. In the two cases:
+SU (3,3)
+(2,1)
+1) S(nv = 9) = SU (3)×SU
+, Q(nh = 1) = SUSU
+,
+(3)×U (1)
+(2)×U (1)
+E6
+.
+2) Q(nh = 10) = SU (2)×SU
+(6)
+
+The N=8 area formula [22] is a square-root of a quartic invariant constructed out of 56 ZAB
+central charges, under N=2 reductions SU(8) =⇒ SU(2) × SU(6) we get
+ZAB =⇒ (1, 1) + (2, 6) + (1, 15) ,
+so that the SU(2) invariant part is (Z, Zi). Z is the N=2 central charge and all Zi = Di Z vanish
+at the fixed point. In this way we necessarily get
+A ∼ |Z|2 ,
+as expected. Indeed, working out a couple of models and examples, which are consistent truncation of N=8, SU(8) supergravity, we reproduced the result given by the E7 invariant formula
+[22]. In the first example we expect to recover the N=8 formula as a function of 10 electric
+and 10 magnetic charges. We will derive this formula from special geometry in the case where
+two electric and two magnetic charges exists. Also we will set to zero the electric and magnetic
+0(2,2)
+charges of the other six U(1) gauge fields. This corresponds to a submanifold SUU (1,1)
+× 0(2)×0(2)
+(1)
+SU (3,3)
+in SU (3)×SU
+.
+(3)×U (1)
+
+The appropriate parametrization for a symplectic section in a covariant O(2, 2) basis [6] is
+(X Λ , FΛ = SX Λ ),
+
+XΛ = ηΛΣ XΣ ,
+
+where ηΛΣ = (++, −−) is a Lorentz metric of O(2, 2),
+X Λ XΛ = 0 ,
+
+K = − ln i(S − S̄) − ln X Λ X̄Λ .
+11
+
+We choose the gauge X 0 = 1, X Λ = tΛ and pΛ = p0 (ReX Λ ), qΛ = p0 (ReFΛ ), moreover we
+choose t1 , t3 imaginary and t2 real. The fixed point value of the central charge becomes |Zfix |2 =
+−p20 ImS(1 − (Re t2 )2 ). This finally can be reduced to
+A∼
+
+q
+
+|(p20 − p22 )(q32 − q12 )| =
+
+q
+
+|m0 m2 e1 e3 | ,
+
+(56)
+
+where we set m0 = p0 − p2 , m2 = p2 + p0 , e1 = q3 − q1 , e3 = q3 + q1 This gives the area formula for
+the solutions found in [18, 21, 22] and described in appropriate (attractor) variables in the next
+section.
+
+4
+
+Examples of N=4,8 attractors
+
+As already mentioned in the Introduction, we will present here the well known black hole solutions
+of N=4,8 theories for the convenience of the reader but we will do it using the adequate variables
+so that the mass depends on moduli whereas the area obviously does not. To the best of our
+understanding, this form did not appeared before, neither for N=4 nor for N=8 case. We will
+call these variables “attractor variables”.
+N=4 dilaton dyonic black holes [3, 4] near the horizon give an example of a stable attractor.
+We follow
+here the description of the black holes near the horizon in [13]. All notations (up to
+√
+the 2 factors) are those of [4]. The action we will use is the part of the SO(4) version of the
+N=4, d = 4 supergravity action without axion,
+1
+I=
+16π
+
+Z
+
+√
+
+#
+
+"
+
+
+1  −2φ µν
+d4 x −g −R + 2 ∂ µ φ · ∂µ φ −
+e F Fµν + e2φ G̃µν G̃µν ,
+2
+
+(57)
+
+where the SO(4) field G̃µν is related to the SU(4) field Gµν as follows
+G̃µν =
+
+i 1
+√
+e−2φ ǫµνλδ Gλδ .
+2 −g
+
+(58)
+
+This means that each time we have an electric SO(4) field, it correspond to the magnetic SU(4)
+one and vise versa. For extreme supersymmetric dilatonic black holes, the fields are built out of
+two functions H1 and H2 [4] :
+ds2 = e2U dt2 − e−2U d~x2 ,
+A = ψdt ,
+B̃ = χdt ,
+F = dψ ∧ dt ,
+G̃ = dχ ∧ dt ,
+−2U
+e
+= H1 H2 ,
+e2φ = H2 /H1 ,
+ψ = ±H1−1 ,
+χ = ±H2−1 ,
+
+(59)
+
+where the condition on the functions H1 , H2 is that they be harmonic,
+∂i ∂i H1 = 0 ,
+
+∂i ∂i H2 = 0 .
+12
+
+(60)
+
+We use isotropic coordinates r 2 = ~x2 and we define, as different from [13] and [4]
+|q|
+,
+r
+
+H2 = e+φ0 +
+
+!
+
+|p|
++
+r
+
+H1 = e−φ0 +
+
+|p|
+.
+r
+
+(61)
+
+e−φ0 |p| + eφ0 |q| |pq|
++ 2 .
+r
+r
+
+(62)
+
+The metric becomes
+gtt−1 = gii = e−2U =
+
+−φ0
+
+e
+
+|q|
++
+r
+
+e
+
++φ0
+
+The dilaton is
+−2φ
+
+e
+
+=
+
+!
+
+e−φ0 + |q|
+r
+e+φ0 + |p|
+r
+
+=1+
+
+.
+
+(63)
+
+This explains everything: the mass defined by the 1/r term in this expression when r → ∞
+depends on charges and moduli, whereas the area, defined by the 1/r 2 term when r → 0, depends
+only on the charges p and q. The mass M and the dilaton charge Σ are related to the U(1)
+electric q and magnetic p charges as
+M = 12 (e−φ0 |p| + eφ0 |q|) ,
+
+Σ = 12 (e−φ0 |p| − eφ0 |q|) .
+
+(64)
+
+Thus the black hole solution is characterized by three independent parameters: two charges p, q
+and the value of the dilaton at infinity e−φ0 . In particular, the mass of the black hole depends on
+all three parameters. We will now find that the black hole solution near the horizon is described
+completely by the two charges: the value of the dilaton at infinity becomes irrelevant. No matter
+what was the value of the dilaton e−φ0 at infinity, near the horizon it is driven to the fixed point
+given by
+|q|
+.
+(e−2φ )fix =
+|p|
+
+Consider the extreme pq 6= 0 dilatonic black holes near the horizon, in the limit r → 0, i.e. in
+the limit 1/r ≡ ρ → ∞. The metric in (59) becomes
+ds2 =
+
+r 2 2 |pq| 2
+dt − 2 dr − |pq| dΩ2 .
+|pq|
+r
+
+(65)
+
+This metric is precisely the BR metric. The dilaton for these solutions behaves as
+−2φ
+
+e
+
+|q|
+e−φ0 |p| − eφ0 |q|
+=
+1+
++ O(1/ρ2) ,
+|p|
+|pq|ρ
+
+
+
+
+(66)
+
+so we see that the term linear in 1/ρ is proportional to the dilaton charge Σ. The electric and
+magnetic fields are given by
+F =
+
+1
+dr ∧ dt ,
+q
+
+1
+dr ∧ dt ,
+p
+
+(67)
+
+G = p sin θ dθ ∧ dφ .
+
+(68)
+
+G̃ =
+
+or equivalently, in terms of dual fields
+F̃ = q sin θ dθ ∧ dφ ,
+13
+
+The dilaton has vanishing derivative at ρ → ∞, which is a fixed point. The value of the dilaton
+given in eq. (66) shows that close to the fixed point the dilaton has a positive derivative or a
+negative derivative depending on the sign of the dilaton charge Σ. An example of a basin of
+attraction for the dilaton is given in Fig. 1. Independently of initial conditions for the dilaton at
+infinity all trajectories are attracted to a fixed point (e−2φ )fix = 4 near r = 0.
+The example of the N=8 attractor is given using the truncated action of N=8 supergravity.
+The form of this solution is a slight modification of the one obtained in [18, 19, 20, 21, 22]. The
+modification makes the area independence of moduli manifest.
+S =
+−
+
+1
+16πG
+
+Z
+
+i
+h
+√ 
+d4 x −g R − 12 (∂η)2 + (∂σ)2 + (∂ρ)2
+
+i
+eη h σ+ρ
+e (F1 )2 + eσ−ρ (F2 )2 + e−σ−ρ (F3 )2 + e−σ+ρ (F4 )2 .
+4
+
+ds2 = −e2U dt2 + e−2U dx2 ,
+e−2η =
+
+ψ1 ψ3
+,
+χ2 χ4
+
+e−2σ =
+
+F1 = ±dψ1 ∧ dt ,
+
+(69)
+
+e4U = ψ1 ψ3 χ2 χ4 ,
+ψ1 χ4
+,
+χ2 ψ3
+
+F̃2 = ±dχ1 ∧ dt ,
+
+e−2ρ =
+
+ψ1 χ2
+,
+ψ3 χ4
+
+F3 = ±dψ3 ∧ dt ,
+
+F̃4 = ±dχ4 ∧ dt ,
+
+(70)
+
+where
+ψ1 =
+ψ3 =
+
+e
+e
+
+η0 +σ0 +ρ0
+2
+
+η0 −σ0 −ρ0
+2
+
+|q|1
++
+r
+
+!−1
+
+|q|3
++
+r3
+
+!−1
+
+,
+,
+
+χ2 = e
+χ4 = e
+
+−η0 −σ0 +ρ0
+2
+
+−η0 +σ0 −ρ0
+2
+
+|p|2
++
+r2
+
+!−1
+
+,
+
+(71)
+
+|p|4
++
+r4
+
+!−1
+
+,
+
+(72)
+
+∗
+and magnetic potentials correspond to F̃2/4 = eη±(σ−ρ) F2/4
+. Here ∗ denotes the Hodge dual. We
+may keep in mind the standard definition of the moduli in terms of the constant values of S, T, U
+fields at infinity:
+e−η0 = ImS ,
+e−σ0 = ImT ,
+e−ρ0 = ImU .
+(73)
+
+The metric becomes
+
+gtt−1 = gii = e−2U = (ψ1 ψ3 χ2 χ4 )−1/2
+
+(74)
+
+At infinity r → ∞ it is
+gtt−1 = gii → 1 +
+
+
+η0 +σ0 −ρ0
+−η0 +σ0 +ρ0
+η0 −σ0 +ρ0
+1  −η0 −σ0 −ρ0
+2
+2
+e
+|q1 | + e 2 |p2 | + e
+|q3 | + e 2 |p4 | + . . .
+2r
+
+(75)
+
+This shows that the mass depends heavily on the values of moduli, in addition to dependence on
+charges. However, near the horizon r → 0 we get a nice and simple dependence only on charges:
+gtt−1 = gii →
+
+|q1 p2 q3 p4 |1/2
++ ... ,
+r2
+14
+
+(76)
+
+which defines the properties of the area formula. The fixed point values of moduli at the attractor
+r → 0 are
+p2 p4
+p2 q3
+p4 q3
+(e−2η )fix =
+,
+(e−2σ )fix =
+,
+(e−2ρ )fix =
+.
+(77)
+q1 q3
+q1 p4
+q1 p2
+The previous N=4 case is the special case of this solution with trivial T, U:
+|q1 | = |q3 | ,
+
+5
+
+|p2 | = |p4 | .
+
+(78)
+
+Discussion
+
+In this paper we have found a complete description of N=2 d=4 attractors which serve to define the entropy-area-central charge formula of the most general extremal black holes in N=2
+supergravity interacting with the arbitrary number of vector and hyper multiplets.
+To support our point of view that the extremization of the central charge in the moduli space
+is the generic phenomenon of any supersymmetric theory describing non-rotating black holes
+with the non-vanishing area of the horizon we discuss the extension of the above analysis, in five
+dimensions, when 5d black holes are considered. Details will be given elsewhere.
+In N=1 case (which reduces to N=2 of d=4) the underlying geometry of vector multiplets is
+real [23] (called “very special geometry” in ref. [24]). It is defined in terms of symmetric constants
+dABC which multiply the geometrical term
+ω
+
+ABC
+
+=
+
+Z
+
+AA ∧ F B ∧ F C ,
+
+A, B, C = 0, . . . , nv ,
+
+(79)
+
+to build the dABC ω ABC term in the effective action. The central charge is [26]
+Z(z, q) = tA (z)qA ,
+
+(80)
+
+dABC tA (z)tB (z)tC (z) = 1 .
+
+(81)
+
+where tA is subject to the constraint
+
+Here z i denote real coordinate of the nv dimensional manifold with the metric
+Gij = −3∂i tA dAB (t) ∂j tB ,
+
+(82)
+
+where dAB (t(z)) ≡ dABC tC (z), (dA ≡ dAB tB , dA ∂i tA = 0). Unbroken supersymmetry for the BR
+metric requires, as in d=4,
+∂i Z (t(z), q) = 0 .
+(83)
+The BR mass is then Z(q) = Z (t(z), q) |∂i Z=0 . The area is proportional to Z 3/2 (q) and therefore
+it is possible to give a general expression at d=5 for N=1 extremal black hole entropy:
+S=
+
+A
+∼ (Z(q))3/2 ,
+4
+15
+
+(84)
+
+where Z(q) is given below. This formula for particular choices of dABC can be also applied to the
+N=2 (N=4 of d=4) d=5 black holes of type II strings, compactified on K3 ×S1 , recently discussed
+in the literature [29, 20]. The point is that there is a sector in common with the heterotic string
+compactified on K3 × S1 [25] which has N=1 supersymmetry at d=5. The sector contains three
+vectors, the dual of Bµν , Bµ6 , gµ6 and in the heterotic case gives two matter vectors and the
+graviphoton. By denoting by es , e1 , e2 their charges and using the vector parametrization of Z as
+in ref. [26] it is straightforward to show that8
+Z|∂i Z=0 ∼ (es e1 e2 )1/3 ,
+and therefore
+A ∼ Z 3/2 |∂i Z=0 ∼
+
+(85)
+
+q
+
+QH Q2F ,
+
+(86)
+
+where QH = es , QR ± QL = e1 , e2 , Q2F ≡ Q2R − Q2L = e1 e2 in notation of ref. [29].
+The formula above is a particular case of a general formula for Z valid for any N=1, d=5
+theory which we report here
+Zfix =
+
+
+−1
+
+
+
+q
+
+(dAB (q))−1 qA qB ,
+
+A∼
+
+
+
+d
+
+AB
+
+(q)
+
+−1
+
+qA qB
+
+3/4
+
+,
+
+(87)
+
+−1
+
+where dAB (q)
+= dAB (t(z))|∂i Z=0 . Equation (87) applies in particular to eleven dimensional supergravity compactified on Calabi-Yau threefold.
+It would be interesting to find the general class of 5d black holes with 1/2 of unbroken N=1,
+d=5 (N=2 of d=4) supersymmetry with the area of the horizon realizing the formula (87).
+
+It was emphasized over the years by Susskind [27] that the Bekenstein-Hawking entropy of a
+ground state of a system is a logarithm of a number of microstates of string theory. Therefore
+it cannot vary continuously and should depend on charges since the charges are discrete and not
+continuous parameters. This idea become particularly appealing from the time that the entropy
+of U(1)2 dilatonic √
+black holes was shown to be proportional to the product of charges P Q in U(1)2
+theory [4] and to P1 Q2 P3 Q4 in U(1)4 case [18]. This idea was studied and further developed in
+[28, 19].
+The important property of the entropy of supersymmetric black holes was proved in [4]: according to supersymmetric non-renormalization theorem the entropy does not change when quantum corrections are taken into account (in theories where there are no supersymmetry anomalies).
+The basic reason for the supersymmetric non-renormalization theorem comes from the fact that
+the unbroken supersymmetry of the bosonic configuration is associated with the fermionic isometries in the superspace. Using Berezin’s integration rules over anticommuting variables one can
+show the absence of quantum corrections to the effective euclidean on shell action related to the
+entropy.
+8
+
+We conjecture in analogy with ref. [22] that the cubic expression in (85) is related to the cubic E(6) invariant
+of the d=5, N=4 theory (N=8 of d=4).
+
+16
+
+Quite recently a dramatic progress was achieved in the understanding the microstates of the
+string theory, which has allowed to compare the macroscopic and the microscopic calculation of
+the entropy [29] -[32]. This again at the moment goes from one striking example to another. The
+most recent review of the known dyonic extremal black holes with the non-vanishing area can be
+found in [20].
+We believe that the general property of extremization of the central charge in the moduli space
+which was found in this paper in the context of the four-dimensional N=2 supergravity and static
+extremal black holes may be generalized for higher supersymmetries, higher dimensions (like we
+have shown it in d=5 case) and rotating stationary black holes. It may become a universal
+principle, which will control the value of the area of the horizon and the Bekenstein-Hawking
+entropy of the extreme black holes and other extreme objects with the non-vanishing area of the
+horizon. This principle may finally make it possible to not merely accumulate various examples of
+amazing things happening with supersymmetric solitons but serve as a link between macroscopic
+and microscopic systems including black holes, strings, p-branes and d-branes.
+
+Acknowledgements
+We are grateful to Andrew Strominger for having shown us his paper [2] prior to publication.
+We appreciate stimulating conversations with F. Larsen, A. Linde, L. Susskind and E. Witten.
+We would like also to express our gratitude to Arvind Rajaraman who asked us if it is possible
+to explain the Strominger-Vafa 5d area formula and its apparent asymmetry in charges from the
+point of view of central charge extremization.
+S.F. was supported in part by DOE under grant DE-FGO3-91ER40662, Task C and by EEC
+Science program SC1*ct92-0789 and INFN. R.K. was supported by NSF grant PHY-9219345.
+
+17
+
+Appendix: Resume on special geometry
+Symplectic sections are defined as
+(LΛ , MΛ ),
+
+Λ = 0, 1, ...n,
+
+(88)
+
+where (L, M) obey the symplectic constraint
+i(L̄Λ MΛ − LΛ M̄Λ ) = 1 .
+
+(89)
+
+LΛ (z, z̄) and MΛ (z, z̄) depend on z, z̄, which are the coordinates of the “moduli space”. Special
+geometry relations are
+MΛ = NΛΣ LΣ ,
+Dī M̄Λ = NΛΣ Dī L̄Σ .
+
+(90)
+
+LΛ and MΛ are covariantly holomorphic (with respect to Kähler connection), e.g.
+1
+Dk̄ Lλ = (∂k̄ − Kk̄ )LΛ = 0 .
+2
+
+(91)
+
+This equation can be solved by setting
+LΛ = eK/2 X Λ , MΛ = eK/2 FΛ ,
+
+(∂k̄ X Λ = ∂k̄ FΛ = 0) .
+
+(92)
+
+The Kähler potential is
+K = − ln i(X̄ Λ FΛ − X Λ F̄Λ ) ,
+
+(93)
+
+iī
+and the Kähler metric Giī = ∂i ∂ī K with the inverse metric G−1
+iī = G .
+
+It is obvious that the ratios
+
+XΛ
+LΛ
+t = 0 = 0
+L
+X
+are holomorphic in the coordinates and gauge invariant
+Λ
+
+∂k̄ tΛ (z, z̄) = 0,
+
+(94)
+
+tΛ = tΛ (z) .
+
+(95)
+
+Consider now the quadratic matrix
+eai (z) = ∂i ta (z) ,
+
+a = 1, . . . n,
+
+t0 = 1 .
+
+(96)
+
+If eai is invertible we can choose a frame where
+eai (z) = δia ,
+
+ta = z i δia ,
+
+(97)
+
+i.e. the sections tΛ can be identified with the moduli coordinates (tΛ are called special coordinates). In this frame one can further
+show that FΛ is integrable,
+
+ i.e. FΛ = ∂Λ F , and that
+1
+∂
+0 2
+a
+F (X) = (X ) f (t) and X 0 ∂Λ F = ∂ta f (t), f0 (t) = 2f (t) − t ∂a f (t) . Since |L0 | = eK/2 |X 0 |, by a
+Kähler transformation X Λ → X Λ e−f (t) we can set X 0 = 1 and get |L0 | = eK/2 as in the conformal
+18
+
+gauge of [7]. If eai is not invertible no prepotential exists in the chosen symplectic basis. This is
+what happens in some examples of Sec. 3.
+Note that X Λ (z) are subject to holomorphic redefinitions (sections of a holomorphic line
+bundle):
+X Λ (z) → X Λ (z) e−f (z) ,
+(98)
+so that
+LΛ (z) → LΛ (z) e
+
+f¯(z)−f (z)
+2
+
+.
+
+(99)
+
+This occurs because LΛ = eK/2 X Λ and K → K + f + f¯ under Kähler transformations, so that
+Z(q, p, z) → Z(q, p, z) e
+
+f¯(z)−f (z)
+2
+
+.
+
+(100)
+
+We will show in what follows that Di Z = 0 implies ∂i |Z| = 0.
+Generically Z̄ is covariantly holomorphic: Di Z̄ = (∂i − 12 Ki )Z̄ = 0, which leads to ∂i Z̄ = 12 Ki Z̄,
+however Di Z = (∂i + 21 Ki )Z 6= 0. Only at the fixed point we have to satisfy the constraint
+Di Z = 0, that implies Di Z Z̄ = 0, Di (Z Z̄) = 0. It follows that Di Z Z̄ + ZDi Z̄ = (∂i + 12 Ki )Z Z̄ +
+Z(∂i − 12 Ki )Z̄ = ∂i Z Z̄ + Z∂i Z̄ = ∂i |Z|2 = 2|Z|∂i|Z|=0.
+|Z| is both symplectic and Kähler gauge invariant, this is why the connection drops and
+Di Z = 0 (Dī Z = 0) entails ∂i |Z| = 0.
+
+19
+
+References
+[1] S. Ferrara, R. Kallosh, and A. Strominger, Phys. Rev. D 52, 5412 (1995), hep-th/9508072.
+[2] A. Strominger, “Macroscopic Entropy of N=2 Extremal Black Holes,” hep-th/9602111.
+[3] G.W. Gibbons, Nucl. Phys. B207, 337 (1982).
+[4] R. Kallosh, A. Linde, T. Ortı́n, A. Peet, and A. Van Proyen, Phys. Rev. D 46, 5278 (1992),
+hep-th/9205027.
+[5] R. Kallosh, Ortı́n, and A. Peet , Phys. Rev. D 47, 5400 (1993), hep-th/9205027.
+[6] A. Ceresole, R. D’Auria, S. Ferrara, and A. Van Proeyen, Nucl. Phys. B444, 92 (1995),
+hep-th/9502072.
+[7] B. de Wit, P.G. Lauwers, and A. Van Proeyen, Nucl. Phys. B255, 569 (1985).
+[8] L. Castellani, R. D’Auria, and S. Ferrara, Class. Quantum Grav. 1, 317 (1990); R. D’Auria,
+S. Ferrara, and P. Fré, Nucl. Phys. B359, 705 (1991).
+[9] A. Ceresole, R. D’Auria and S. Ferrara, “The Symplectic Structure of N=2 Supergravity
+and its Central Extension,” in Proceedings of the ICTP Trieste Conference on “S-Duality
+and Mirror Symmetry,” Miramare, Trieste, Italy (1995), hep-th/9509160.
+[10] T. Levi-Civita, R.C. Acad. Lincei 26, 519 (1917); B. Bertotti, Phys. Rev. 116, 1331 (1959);
+I. Robertson, Bull. Acad. Polon. 7, 351 (1959).
+[11] G.W. Gibbons, in: Supersymmetry, Supergravity and Related Topics, eds. F. del Aguila, J.
+de Azcárraga, and L. Ibáñez (World Scientific, Singapore 1985), p. 147.
+[12] R. Kallosh, Phys. Lett. B282, 80 (1992), hep-th/9201029.
+[13] R. Kallosh and A. Peet , Phys. Rev. D46, 5223 (1992); hep-th/9209116.
+[14] D. A. Lowe and A. Strominger, Phys. Rev. Lett. 73, 1468 (1994); hep-th/94031186.
+[15] G. Gibbons and P. Townsend, Phys. Rev. Lett. 71, 3754 (1993); hep-th/9307049.
+[16] J. Bagger and E. Witten, Nucl. Phys. B222, 1 (1983).
+[17] S. Cecotti, S. Ferrara, and L. Girardello, Int. J. Mod. Phys. A4, 2475 (1989).
+[18] M. Cvetic and D. Youm, “Dyonic BPS Saturated Black Holes of Heterotic String on a SixTorus,” Pennsylvania University preprint UPR-0672-TA (1995), hep-th/9507090.
+[19] M. Cvetic and A. Tseytlin, “Solitonic Strings and BPS Saturated Dyonic Black Holes,”
+Imperial/TP/95-96/14, IASSNS-HEP-95-102 (1995), hep-th/9512031.
+[20] A.A. Tseytlin, “Extreme Dyonic Black Holes in String Theory”,IMPERIAL-TP-95-96-22
+(1996), hep-th/9601177.
+20
+
+[21] J. Rahmfeld, “Extremal Black Holes as Bound States,” Texas A&M University preprint
+CTP-TAMU-51-95 (1995), hep-th/9512089.
+[22] R. Kallosh and B. Kol, “E(7) Symmetric Area of the Black Hole Horizon,” Stanford University preprint SU-ITP-95-7, (1996), hep-th/9602014.
+[23] M. Günaydin, G. Sierra and P. K. Townsend, Nucl. Phys. B242, 244 (1984); Nucl. Phys.
+B253, 573 (1985).
+[24] B. de Wit and A. Van Proeyen, Phys. Lett. B293, 94 (1992).
+[25] A.C. Cadavid, A. Ceresole, R. D’Auria and S. Ferrara, Phys. Lett. B357, 76 (1995),
+hep-th/9506144; G. Papadopoulos, P.K. Townsed, Phys. Lett. B357, 300 (1995), hepth/9506150.
+[26] I. Antoniadis, S. Ferrara and T.R. Taylor, “N=2 heterotic Superstring and its Dual Theory
+in Five Dimensions”, CERN-TH/95-3000, hep-th/9511108.
+[27] L. Susskind, “Some Speculations about Black Hole Entropy in String Theory,” Rutgers
+University preprint RU-93-44 (1993), hep-th/9309145; L. Susskind and J. Uglum, Phys. Rev.
+D50, 2700 (1994), hep-th/9401070.
+[28] F. Larsen and F. Wilczek, “Internal Structure of Black Holes,” Princeton University preprint
+PUPT-1576 (1995), hep-th/9511064.
+[29] A. Strominger and C. Vafa, “Microscopic Origin of the Bekenstein-Hawking Entropy,” Harvard University preprint HUTP-96-A002 (1996), hep-th/9601029.
+[30] C. Callan and J. Maldacena, “D-Brane Approach to Black Hole Quantum Mechanics,”
+Princeton University preprint PUPT-1591 (1996), hep-th/9602043.
+[31] G. Horowitz and A. Strominger, “Counting States of N=2 Extremal Black Holes,” hepth/9602051.
+[32] J. Beckenridge, R. Myers, A. Peet, and C. Vafa, “D-Branes and Spinning Black Holes,”
+Harvard University preprint HUTP-96-A005 (1996), hep-th/9602065.
+
+21
+
+20
+
+e 2
+15
+
+10
+
+5
+
+2
+
+4
+
+6
+
+8
+
+10
+
+12
+
+14
+
+r
+
+Figure 1: Evolution of the dilaton from various initial conditions at infinity to a common fixed
+point at r = 0.
+
+j
+
+Zj
+
+z
+
+i
+
+x
+
+(p; q )
+
+z
+
+i
+
+Figure 2: Extremum of the central charge in the moduli space.
+
+22
+
+

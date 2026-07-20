@@ -1,0 +1,2967 @@
+Lectures on quantum energy inequalities
+arXiv:1208.5399v1 [gr-qc] 27 Aug 2012
+
+Christopher J. Fewster∗
+Department of Mathematics, University of York,
+Heslington, York, YO10 5DD, UK
+November 27, 2024
+
+Abstract
+Quantum field theory violates all the classical energy conditions of general relativity. Nonetheless, it turns out that quantum field theories satisfy remnants of the
+classical energy conditions, known as Quantum Energy Inequalities (QEIs), that have
+been developed by various authors since the original pioneering work of Ford in 1978.
+These notes provide an introduction to QEIs and also to some of the techniques of
+quantum field theory in curved spacetime (particularly, the use of microlocal analysis together with the algebraic formulation of QFT) that enable rigorous and general
+QEIs to be derived. Specific examples are computed for the free scalar field and their
+consequences are discussed. QEIs are also derived for the class of unitary, positive
+energy conformal field theories in two spacetime dimensions. In that setting it is
+also possible to determine the probability distribution for individual measurements
+of certain smearings of the stress-energy tensor in the vacuum state.
+
+∗
+
+Electronic address: chris.fewster@york.ac.uk
+
+1
+
+Contents
+0 Introduction and scope
+
+3
+
+1 Quantum (energy) inequalities
+1.1 The classical energy conditions . . . . . . . . . . . . . . . . . . . . . . . . .
+1.2 Violation of Energy Conditions in QFT . . . . . . . . . . . . . . . . . . . .
+1.3 An example of a QEI and its consequences . . . . . . . . . . . . . . . . . .
+1.4 Some history and references . . . . . . . . . . . . . . . . . . . . . . . . . .
+
+4
+4
+7
+10
+14
+
+2 Some methods of Quantum Field Theory in Curved spacetime
+2.1 The Klein–Gordon field . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+2.2 Phase space . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+2.3 Algebraic formulation of the quantum field theory . . . . . . . . . . . . . .
+2.4 The QEI derivation . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+2.5 Computations in n = 4 Minkowski space for minimal coupling . . . . . . .
+
+15
+15
+17
+20
+24
+26
+
+3 Microlocal analysis and Hadamard states
+3.1 The wavefront set . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+3.2 Microlocal formulation of the Hadamard condition . . . . . . . . . . . . . .
+3.3 Application to QEIs . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+
+30
+30
+34
+37
+
+4 Conformal field theories
+4.1 Derivation of the QEI . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+4.2 Probability distributions . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+
+38
+38
+40
+
+5 Other directions
+5.1 Nonminimal coupling . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+5.2 Interacting fields . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+5.3 Singularity theorems . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+
+44
+44
+45
+45
+
+2
+
+0
+
+Introduction and scope
+
+The weak energy condition (WEC) of classical general relativity holds if all observers
+measure the local energy density of matter to be nonnegative. Expressed in terms of the
+stress-energy tensor Tab , the WEC amounts to the inequality Tab ua ub ≥ 0 for all timelike
+vectors ua . This condition, and others like it, were introduced as conditions to model
+generic matter distributions in the discussion of results such as singularity theorems. The
+energy conditions are obeyed by many (though not all) classical theories of interest and
+have a central place in mathematical general relativity.
+However, it has long been known that quantum field theory, our most successful fundamental matter model, is incompatible with these energy conditions [14]. This raises
+many questions, for example: Should one doubt the validity of the singularity theorems
+for realistic matter? Can quantum fields be used to support ‘exotic’ spacetime geometries (time machines, wormholes, warp drives...) which require energy-condition-violating
+stress-energy tensors if they are to be solutions to the Einstein equations?
+These lecture notes provide an introduction to the subject of Quantum Energy Inequalities (QEIs) [also often called Quantum Inequalities (QIs) in the literature]. These
+are conditions derived from within quantum field theory, that constrain the extent to which
+the classical energy conditions are violated. They strongly suggest that the answers to the
+questions just asked are negative (or raise apparently infeasible engineering problems).
+The lectures were given at the Albert Einstein Institute, Golm (March 2012) as five
+lectures aimed at graduate students enrolled in the IMPRS programme. The secondary
+aim of the lectures was to provide an introduction to the algebraic formulation of quantum
+field theory in curved spacetimes and the microlocal analytic techniques that, following
+their introduction by Radzikowski [74], have been important in many recent developments,
+including the perturbative construction of interacting field theories in curved spacetime [7,
+58, 59, 56]. From this perspective, the QEIs provide a useful application of the theory
+that illustrates some of its key features. With this in mind, the discussion of QEIs is
+biased towards the derivation and analysis of various bounds, and not to applications
+such as constraints on exotic spacetime geometries. The reviews [75, 84, 42] provide a
+counterpoint in that regard.
+I would like to thank the organisers of the IMPRS lectures, particularly Stefan Fredenhagen, for the invitation and for financial support, the students for their interest and
+questions, Atsushi Higuchi and Henning Bostelmann for useful discussions and Tom Roman
+for comments on the text.
+Summary of main conventions
+• ~ = c = G = 1, and the metric has signature + − − · · ·
+• (∇a ∇b − ∇b ∇a )v d = Rabc d v c , and hence (∇a ∇b − ∇b ∇a )vd = Rabcd v c ;
+• the Ricci tensor is Rab = Rd adb
+• Fourier transforms will be defined nonstandardly by
+Z
+b
+f (k) = dn x eik·x f (x);
+the hat will sometimes be displaced e.g., f ∧ (k), for typographical reasons.
+3
+
+1
+
+Quantum (energy) inequalities
+
+1.1
+
+The classical energy conditions
+
+The Einstein equations
+1
+Gab = Rab − Rgab = −8πTab
+2
+are a curious mixture. Einstein himself likened the theory to a building ‘one wing of which
+is built of fine marble... but the other wing of which is built of low-grade wood’. Elsewhere,
+he wrote that ‘the right side is a formal condensation of all things whose comprehension
+in the sense of field-theory is still problematic’.1
+Two observations illustrate some of the ‘low grade’ features of the right-hand side. First,
+non-gravitational physics only ever considers differences between stress-energy tensors (or
+derivatives of stress-energy tensors). Arguably, the quantity on the right-hand side of the
+Einstein equations [the absolute stress-energy tensor] appears nowhere else in physics!2
+Second, without further qualification, the Einstein equations have no predictive power
+whatsoever: every smooth Lorentzian spacetime solves the Einstein equations for a suitable
+choice of Tab – a fact that is often exploited in discussions of time-machines, wormholes,
+warp drives etc. A key issue is to determine what sorts of stress-energy tensors are physically reasonable. As the real world contains a complicated combination of many different
+sources of stress-energy, one would ideally like some general principles that should apply
+fairly widely.
+The energy conditions are attempts at such principles. They are motivated partly by
+physics, and partly by mathematical expediency. The main conditions are:
+• The Weak Energy Condition (WEC)
+Tab ua ub ≥ 0
+
+for all timelike ua
+
+Interpretation: All observers see nonnegative energy density.
+• The Null Energy Condition (NEC)
+Tab ua ub ≥ 0
+
+for all null ua
+
+• The Dominant Energy Condition (DEC)
+Tab ua v b ≥ 0
+
+for all future-pointing timelike ua and v b
+
+Interpretation: All observers see a causal flux of energy-momentum.
+• The Strong Energy Condition (SEC)
+1
+Tab ua ub − g ab Tab ≥ 0
+2
+for all timelike unit ua .
+1
+
+Quoted in [10] Ch. 5, p. 123.
+The standard approach–which we employ later–is to obtain the stress-energy tensor as a functional
+derivative of the action with respect to the metric. But many actions describe the same physics, of course.
+2
+
+4
+
+If matter satisfies these conditions and the Einstein equations hold, we obtain corresponding conditions on the geometry. For example, the NEC implies that Rab ua ub ≤ 0 for
+all null ua , while the SEC implies the same for all timelike ua .
+The principal interest in these conditions comes from the fact that they enforce various
+focussing behaviours for congruences of geodesics (see, e.g., [54, 86]). Consider a congruence
+of timelike geodesics with future-pointing unit tangent field ua . The expansion, shear and
+vorticity are defined uniquely by
+1
+∇b ua = θ(ua ub − gab ) + σab + ωab
+3
+and the requirements that σ is traceless symmetric, while ω is antisymmetric. In particular,
+θ = ∇a ua , and σab is purely spatial and has positive square σab σ ab . The Raychaudhuri
+equation3 gives
+1
+dθ
+= Rab ua ub − θ2 − σab σ ab + ωab ω ab
+dτ
+3
+so it is clear that an irrotational congruence obeys
+dθ
+1
+≤ − θ2
+dτ
+3
+if the SEC holds, or equivalently that
+d 1
+1
+≥ .
+dτ θ
+3
+Thus
+
+1
+τ
+1
+≥
++
+θ(τ )
+θ(0) 3
+
+and hence,
+θ(τ ) ≤
+
+1
+θ(0)−1 + τ /3
+
+.
+
+Accordingly, if θ(0) < 0, we see that θ(τ ) → −∞ as τ → τ∗ < 3|θ(0)|−1 . Initially
+contracting irrotational congruences therefore form focal points in finite proper time if
+the ambient matter distribution obeys SEC. Arguments of this type lie at the core of the
+singularity theorems [54] and many other key results in mathematical relativity.
+3
+
+Derivation: Use the geodesic property of u and the Riemann tensor definition to obtain
+uc ∇c ∇b ua = uc ∇b ∇c ua − Rcbad uc ud = ∇b (uc ∇c ua ) − (∇b uc )(∇c ua ) − Rcbad uc ud
+= −(∇b uc )(∇c ua ) − Rcbad uc ud
+
+and trace to give the required result, noting that the terms in the expansion of ∇b ua are mutually orthogonal.
+
+5
+
+Examples
+1. A perfect fluid has stress-energy tensor
+Tab = (µ + p)va vb − pgab
+for flow 4-velocity v a , energy-density µ, pressure p. Noting that the contraction ua va
+between future-pointing timelike unit vectors ua and v a may take any value in [1, ∞),
+one may easily show that
+• WEC holds iff µ ≥ 0 and µ + p ≥ 0
+• SEC holds iff µ + p ≥ 0 and µ + 3p ≥ 0
+• NEC holds iff µ + p ≥ 0
+• DEC holds iff µ ≥ |p|.
+Exercise: Prove these statements. Deduce that, while it is clear that DEC =⇒
+WEC =⇒ NEC, and also that SEC =⇒ NEC, there are no implications between
+SEC and DEC/WEC.
+2. The minimally coupled scalar field has stress-energy tensor
+1
+1
+Tab = (∇a φ)(∇b φ) − gab g cd (∇c φ)(∇d φ) + m2 gab φ2
+2
+2
+Given any timelike unit vector ua , choose a tetrad eA with e0 = u. Then
+3
+
+1X
+1
+Tab u u =
+(eA · ∇φ)2 + m2 φ2 ≥ 0
+2 A=0
+2
+a b
+
+so this theory obeys WEC due to the ‘sum of squares’ form. Likewise, DEC also
+holds for this reason, and the same is true for the electromagnetic field.
+However, we also see that
+1
+1
+Tab ua ub − T aa = (ua ∇a φ)2 − m2 φ2
+2
+2
+so the SEC can fail even for this model if m > 0.
+3. The nonminimally coupled field, with coupling ξ, has stress-energy tensor
+(ξ)
+
+(ξ=0)
+
+Tab = Tab
+
++ ξ (gab g − ∇a ∇b − Gab ) φ2 ,
+
+As the additional terms are not of the sum of squares form, even NEC can be violated:
+at points where ∇φ = 0, for example, this happens when the second derivative terms
+outweigh contributions proportional to φ2 .
+6
+
+1.2
+
+Violation of Energy Conditions in QFT
+
+Quantization and positivity do not mix well. For instance, the prototypical example of a
+positive classical quantity — the square of a field — is replaced by a Wick square in QFT.
+Although the formal square is positive, it is infinite; although the Wick square is finite, it
+is indefinite.
+To be specific, consider the standard quantized real scalar field in four-dimensional
+Minkowski space with mass m ≥ 0,
+Z
+
+d3 k
+√
+e−ik·x a(k) + eik·x a(k)∗ ,
+Φ(x) =
+(2π)3 2ω
+p
+where the 4-vector k is kµ = (ω, k), with ω = kkk2 + m2 , and the annihilation and
+creation operators obey the commutation relations
+[a(k), a(k0 )] = 0,
+
+[a(k), a(k0 )] = (2π)3 δ (3) (k − k0 )11.
+
+The vacuum vector, annihilated by all the a(k), is denoted Ω. To form the Wick square
+:Φ2 :(x), of course, we modify the formal expression for Φ(x)2 , replacing a(k)a(k0 )∗ by
+a(k0 )∗ a(k). We define the smeared Wick square by
+Z
+2
+:Φ :(f ) = d4 x :Φ2 :(x)f (x),
+where f ∈ C0∞ (R4 ) is any test function on spacetime. Then it is a simple calculation
+(recalling our convention for Fourier transform) to show that
+Z
+1 b
+d3 k d3 k0
+2
+√
+f (k + k 0 )a(k)∗ a(k0 )∗ Ω;
+:Φ :(f )Ω =
+3
+3
+(2π) (2π) 2 ωω 0
+it is obvious that hΩ | :Φ2 :(f )Ωi = 0, and a short calculation gives
+2
+
+2
+
+k:Φ :(f )Ωk =
+
+Z
+
+d3 k d3 k0 |fb(k + k 0 )|2
+,
+(2π)3 (2π)3
+2ωω 0
+
+which is nonzero unless f is identically zero4 . The observable :Φ2 :(f ) therefore has vanishing expectation value in the state Ω, but does not annihilate Ω. Standard variational
+arguments imply that :Φ2 :(f ) must have some negative spectrum. Indeed, if we write
+ψα = cos α Ω + sin α:Φ2 :(f )Ω
+(assuming f is chosen so k:Φ2 :(f )Ωk = 1) it is easy to calculate
+hψα | :Φ2 :(f )ψα i = sin(2α) + sin2 αhΩ | :Φ2 :(f )3 Ωi = 2α + O(α2 )
+4
+
+Indeed, this is true on general grounds owing to the Reeh–Schlieder theorem.
+
+7
+
+giving negative expectation values for sufficiently small α < 0, even if f is nonnegative.
+By a scaling argument [18] it may be shown that the expectation value of :Φ2 : at a point
+is unbounded from below as the state varies among Hadamard states.
+The same conclusion may be reached on general grounds. An argument due to Epstein,
+Glaser and Jaffe [14] proves that loss of positivity is unavoidable for Wightman fields with
+vanishing vacuum expectation values. The main thrust of their argument is the following.
+Suppose a local observable A has vanishing vacuum expectation value, i.e., hΩ | AΩi = 0.
+If A is positive, it has a square root, and we have
+kA1/2 Ωk2 = hΩ | AΩi = 0
+and therefore A1/2 Ω = 0. Hence AΩ = 0 and, as the Reeh–Schlieder theorem [52] tells us
+that no nonzero local observable can annihilate the vacuum, A must vanish. (The Reeh–
+Schlieder theorem only applies to local observables, which is why there is no contradiction
+between the positivity of the Hamiltonian and its vanishing v.e.v.) Alternatively, one can
+argue as follows: individual measurements of A in state Ω constitute a random variable
+with vanishing expectation value; this implies either that zero is measured with probability
+1, in which case AΩ = 0 (impossible for nonzero local observables by the Reeh–Schlieder
+theorem) or that there is a nonzero probability for both positive and negative measurement
+values, so the spectrum of A extends into the negative half-line.
+There are many physical situations of interest in which negative energy densities arise
+in QFT calculations. One of the main examples is provided by the Casimir effect, in which
+plane parallel conducting plates in vacuo experience an attractive force. Actually, quite a
+bit can be done without much calculation [6]. In the case of infinite plane plates, separated
+through distance L along the z-axis in standard (t, x, y, z) coordinates, one may deduce
+on symmetry grounds and dimensional considerations that the stress-energy tensor of the
+electromagnetic field takes the form [6]
+Tµν =
+
+C(z)
+diag (−1, 1, 1, −3).
+L4
+
+where C(z) is dimensionless; here we have also used tracelessness of the stress-energy
+tensor. Conservation of the stress-energy tensor entails that C(z) is constant except at the
+plates, so C may take different values C0 and C1 inside and outside the plates (by reflection
+symmetry the values on the two outer components should be equal). As there is no other
+length scale in the problem, C1 and C0 must be independent of the plate separation L. Now
+the two limits L → 0 and L → ∞ can both be regarded as describing a single plate alone in
+the world (as far as the outer regions are concerned). For the stress-energy tensor outside
+the plates to behave in the same way in these limits, we must take C1 = 0. The inward
+pressure on each plate is then 3C0 /L4 , so we would deduce C0 > 0 from an attractive
+force. Therefore, the energy density between the plates, −C0 /L4 , is negative, and we have
+deduced that WEC is violated. The full computation of the stress-energy tensor in QFT
+leads to the values C1 = 0 and C0 = π 2 /720, replicating the Casimir force formula.5
+5
+
+The reader might wonder how knowledge of a force, which is obtained from a difference of stress-
+
+8
+
+4
+
+3.5
+
+3
+
+t
+2.5
+
+2
+
+1.5
+
+1
+1
+
+1.5
+
+2
+
+2.5
+
+3
+
+3.5
+
+4
+
+z
+
+Figure 1: A spacetime plot of the energy density in a vacuum + 2-particle superposition
+state [32]. Dark areas represent negative values.
+One of the striking features of the Casimir result is the small magnitude of the leading
+coefficient π 2 /720 = 0.0137.... Indeed, the central message of these lectures is that the
+energy conditions are in various ways ‘almost satisfied’: violations are either small in
+magnitude, or short-lived, or when they are not, require disparate scales, highly noninertial
+motion, or large positive energies somewhere in the system. Indeed, it has been argued
+that the classical energy conditions might be regarded as holding in an operational sense,
+once on takes account of the positive energies present in apparatus used to produce and
+detect negative energy densities [55].
+Nonetheless, it is clear that there is no possibility of insisting on pointwise energy
+conditions in QFT. To gain some insight into what might be possible, it is helpful to note
+that the energy densities of states formed as superpositions of the vacuum and two-particle
+states (like ψα above) tend to form fringes reminiscent of interference patterns. An example
+is given in Fig. 1 from which it can be seen that the fringes are spacelike in character; any
+timelike observer meets alternating positive and negative values and cannot ‘surf’ a trough
+of negative energy density. This suggests seeking constraints on local averages of the energy
+density along timelike curves, and that is precisely what we will do.
+energy tensors, has apparently allowed us to compute an absolute stress-energy tensor. The answer is
+that the tracelessness of the stress-energy tensor has ‘smuggled in’ the extra information. The argument
+above therefore presents a choice of either accepting violations of the WEC or abandoning the standard
+electromagnetic stress-tensor based a conformally invariant Lagrangian.
+
+9
+
+1.3
+
+An example of a QEI and its consequences
+
+The massive Klein–Gordon field in 4-dimensional Minkowski space obeys the following
+bound [22]
+Z
+Z ∞
+1
+2
+hT00 iω (t, x) |g(t)| dt ≥ −
+|b
+g (u)|2 u4 Q3 (u/m)du
+(1)
+16π 3 m
+for any smooth compactly supported g, and all Hadamard states6 ω, where Q3 : [1, ∞) →
+R+ is defined by
+1/2 
+
+
+√
+1
+1
+1
+1 − 2 − 4 ln(x + x2 − 1)
+Q3 (x) = 1 − 2
+x
+2x
+2x
+
+(2)
+
+and obeys 0 ≤ Q3 (x) ≤ 1 with Q3 (x) → 1 as x → ∞.
+Q3 (x)
+1
+
+0
+
+x
+
+1
+
+Figure 2: Q3 (x)
+In the m = 0 case, the bound simplifies, and actually gives a bound valid for all m ≥ 0
+Z
+Z ∞
+1
+2
+hT00 iω (t, x) g(t) dt ≥ −
+|g 00 (t)|2 dt.
+(3)
+2
+16π
+−∞
+These bounds will be derived in Sec. 2.5 as a special cases of more general results. Note
+that
+• The left-hand side depends on the quantum state ω, while the right-hand side is
+state-independent.
+• The bound is known not to be optimal.
+• The bound requires a certain degree of smoothness in g. In four-dimensions, it
+remains valid if one take g to be an element of the Sobolev space W 2,2 (R), i.e., g, g 0
+and g 00 are required to exist (in the distributional sense) and be square-integrable. But
+6
+
+We will say more about these states later, but for now it is enough to know that they form a large
+class of physically reasonable states.
+
+10
+
+the bound does not apply to g with lower regularity, in particular, to discontinuous
+g. By ‘sharp switching’, one can trap arbitrarily large negative energy densities. Of
+course, no physical device is capable of instantaneous switching, as a consequence of
+the uncertainty principle.
+The QEIs contain a lot of information, as we now show.
+Scaling behaviour Put gτ (t) = τ −1/2 g(t/τ ). Then the bound, applied to gτ is
+Z
+Z ∞
+1
+1
+2
+|g 00 (t)|2 dt,
+hT00 iω (t, x) g(t/τ ) dt ≥ −
+τ
+16π 2 τ 4 −∞
+which, in the short sampling time limit τ → 0, is consistent with the fact that the expectation value of energy density at a point is unbounded below, and in the limit τ → ∞
+gives
+Z
+lim inf hT00 iω (t, x) g(t/τ )2 dt ≥ 0
+τ →∞
+
+for any Hadamard state ω, so the WEC holds in this averaged sense (known as AWEC).
+In Sec. 2.5 we will see how these results are modified for noninertial trajectories.
+Bounds on the duration of negative energy density Suppose that hT00 iω < ρ for
+some interval t ∈ [t0 , t0 + τ ] of time. Then, for any g ∈ C0∞ ((t0 , t0 + τ )),
+Z ∞
+Z
+Z
+1
+2
+2
+|g 00 (t)|2 dt.
+ρ |g(t)| dt ≥ hT00 iω (t, x) g(t) dt ≥ −
+16π 2 −∞
+Rearranging and integrating by parts twice, this says that
+hg | g 0000 i
+≥ −16π 2 ρ
+hg | gi
+for all such g 6= 0, where angle brackets denote the standard L2 inner product. But the
+left-hand side can be minimized over g, to give the minimum eigenvalue of the operator
+d4 /dt4 on [t0 , t0 + τ ], with boundary conditions at each end corresponding to vanishing of
+the function and its first derivative.7 The upshot is that
+C
+ρ ≥ − 4,
+τ
+
+(4)
+
+where the numerical constant C ∼ 3.17. Turning this around, in any time interval of
+duration τ , the energy density must at some instant exceed −C/τ 4 . Tighter results may
+be obtained for massive fields [16].
+7
+
+These boundary conditions emerge from some Sobolev space analysis [36].
+
+11
+
+Quantum interest Developing this theme, the QEI can be regarded as asserting that
+the differential operator
+d4
++ 16π 2 ρ(t),
+4
+dt
+where ρ(t) = hT00 iω (t, x), is positive on any open interval of R, with vanishing of the
+function and first derivative at any boundaries. (A more precise formulation is to say that
+the Friedrichs extension of the above operator defined on the dense domain C0∞ (I) ⊂ L2 (I)
+is positive for any interval I – the boundary conditions may be deduced from this [36].)
+This leads to quite substantial restrictions on the possible form of ρ.
+For example, suppose that ρ has an isolated pulse, i.e., ρ(t) = 0 on [t1 − τ1 , t1 ] and
+[t2 , t2 + τ2 ] with t1 < t2 and τ1 , τ2 > 0. Choose a test function g ∈ C0∞ ((t1 − τ1 , t2 + τ2 ))
+that equals 1 on [t1 , t2 ]. Then the quantum inequality gives
+Z t1
+
+Z t2
+Z t2 +τ2
+1
+00
+2
+00
+2
+ρ(t) dt ≥ −
+|g (t)| dt +
+|g (t)| dt
+16π 2
+t1
+t1 −τ1
+t2
+and we can optimize over g to give
+Z t2
+A
+A
+A
+−
+≥− 2
+,
+ρ(t) dt ≥ −
+3
+3
+2
+2
+16π τ1
+16π τ2
+8π min{τ1 , τ2 }3
+t1
+where
+
+Z 1
+A = inf
+g
+
+|g 00 (t)|2 dt
+
+0
+
+with g restricted to smooth functions equal to 1 near t = 0 and 0 near t = 1. This amounts
+to an Euler–Lagrange equation g 0000 = 0 with g(0) = 1, g 0 (0) = g(1) = g 0 (1) = 0. The
+solution g(t) = 1 − 3t2 + 2t3 gives A = 12, so
+Z t2
+3
+3
+min{τ1 , τ2 }
+ρ(t) dt ≥ − 2 ,
+2π
+t1
+which gives a nontrivial constraint on the extent to which a pulse (of any shape) can be
+isolated if the integral is negative. In particular, if ρ is compactly supported, it can only
+be compatible with the QEI restrictions if it has nonnegative integral (another version of
+AWEC). Abreu and Visser [1] haveRalso shown that if ρ is the energy density compatible
+with the quantum inequalities and ρ = 0, then ρ ≡ 0.
+Ford and Roman [48] first described this sort of behaviour with a financial analogy:
+nature allows you to ‘borrow’ negative energy density, but you must ‘repay’ it within a
+maximum loan term. Moreover, (excluding the case of identically zero energy density) the
+amount repaid must always exceed the amount borrowed. This is the so-called quantum
+interest effect – one may also show in various ways that the interest rate diverges if one
+delays payment towards the maximum loan term. The argument above (which is new) is
+based on [36], further developments of which can be found in [1, 82]. A slightly earlier
+proof of some aspects of Ford and Roman’s Quantum Interest Conjecture can be found
+in [73], but this is not as quantitative in nature as the bounds given here.
+12
+
+Application: A priori bounds on Casimir energy densities Experiments conducted in a causally convex globally hyperbolic region ought not to yield any information
+regarding the spacetime geometry outside the region. This insight has been used to analyse the Casimir effect for a long time [64] and has also been at the root of much recent
+progress in QFT in CST following the work of Brunetti, Fredenhagen and Verch [9]. Here,
+we combine it with the quantum inequalities; what follows is based on [31] (see also [20]).
+
+`
+2`
+
+L
+
+Figure 3: Spacetime diagram of the Casimir plate set-up.
+Consider a region between Casimir plates at z = ±L/2 in otherwise flat spacetime and
+an inertial trajectory parallel to the plates. Let ` be the distance from this trajectory to
+the nearest plate in the t = 0 surface. Then no experiment conducted along the trajectory
+in a time interval of less than 2` can possibly know about the existence of the plates;
+it should be as if the experiment was conducted in Minkowski space. In particular the
+quantum energy inequalities apply, and [as the energy density is supposed constant along
+the trajectory] (4) gives an a priori bound
+T00 ≥ −
+
+3.17
+0.20
+C
+∼−
+=− 4 .
+4
+4
+(2`)
+(2`)
+`
+
+By comparison, the known value of the Casimir energy density for the massless minimally
+coupled scalar field is
+T00 = −
+
+π2
+π 2 3 − 2 cos2 (πz/L)
+−
+1140L4 48L4
+cos4 πz/L
+
+which ranges between 3-7% of the bound as z varies in [−L/2, L/2].
+13
+
+However, the a priori bound is valid even in situations where exact calculation is difficult/impossible; it also applies to all stationary (Hadamard) states of the system. This
+partly answers the question (often emphasised by Ford): why are the Casimir energies so
+small? They are constrained by QEIs, which already gives a small leading constant in
+front of the 1/`4 one might expect on dimensional grounds. There remains an interesting
+question as to why the Casimir energy density is a comparatively small proportion of the
+allowed bound.
+
+1.4
+
+Some history and references
+
+The study of QEIs began with a 1978 paper of Ford [40], in which he argued that a
+beam of negative energy (described by a pure quantum state) could be used to cool a
+hot body and decrease its entropy. Ford argued from the macroscopic validity of the
+second law of thermodynamics that violations of the energy conditions must be governed
+by bounds of uncertainty principle type. That was borne out in subsequent derivations of
+quantum inequalities by Ford in a series of papers written in conjunction with Roman and
+Pfenning [41, 45, 47, 70, 72, 44], concerning Minkowski space and some static spacetimes.
+These papers established lower bounds on weighted averages of the energy density8 of the
+scalar and electromagnetic quantum fields along a static trajectory, where the weight is
+given by the Lorentzian function f (t) = τ /(π(t2 + τ 2 )). Here τ sets the timescale for the
+averaging. For example, the massless scalar field in 4-dimensions obeys a bound
+Z
+3
+τ hT00 (t, x)iω
+dt ≥ −
+2
+2
+π(t + τ )
+32π 2 τ 4
+for all sufficiently nice states ω and any τ > 0.
+The first QEI for general weighted averages was derived by Flanagan [39] for the special
+case of massless quantum fields in two-dimensional Minkowski space. His argument forms
+the basis of a general argument for two-dimensional conformal field theories [26] that will
+be discussed in Sect. 4.1.
+The bound discussed in Sect. 1.3 was derived in [22] for the scalar field of mass m ≥ 0
+in Minkowski space of arbitrary dimension and for averaging along inertial curves with
+general weight functions of sufficiently rapid decay. This was generalized to some static
+spacetimes [35] for averaging along static trajectories. With some modification, the method
+also applies to the electromagnetic [69], Dirac [27] and Rarita–Schwinger fields [88]. The
+general approach of [22] (somewhat rephrased) formed the basis for the first fully rigorous
+QEI [17] for the scalar field, which was also much more general than the previously known
+results. We will discuss that argument in Sect. 2.4. Generalizations to the Dirac and
+electromagnetic fields are also known [37, 12, 30].
+There is a significant literature on the theory and applications of QEIs—reviews can be
+found in [18, 19, 75] and the recently published [15] gives a popular but nonetheless careful
+8
+
+In fact, the earliest papers consider negative energy-momentum fluxes, but the energy density soon
+became the main object of interest.
+
+14
+
+account. I mention only two aspects here. First, QEIs place significant constraints on the
+ability of quantum fields to support wormholes or other exotic spacetimes, if the fields are
+assumed to obey a QEI similar to those found for the free scalar fields [71, 46, 33]. Second,
+the link between QEIs and thermodynamics, which originally motivated Ford [40], can be
+pursued abstractly (in a setting that includes the scalar field) [38].
+
+2
+
+Some methods of Quantum Field Theory in Curved
+spacetime
+
+The QEI studied in Sec. 1.3 can be derived directly by fairly elementary means [22].
+However, it is also a special case of a rather general QEI, whose proof will be our main
+goal. To achieve this we introduce the algebraic formulation of QFT in CST; the completion
+of the proof will also need the tools of microlocal analysis in a subsequent lecture. In terms
+of literature, [2] contains much relevant material, while [87] emphasises a slightly different
+version of the algebraic approach (and does not cover microlocal analytic methods). Some
+of this material is based on [21] (although emphases differ) which contains a more broadly
+based account of QFT in CST.9
+Throughout, let M be a globally hyperbolic spacetime, understood to comprise a
+(smooth etc) n-dimensional manifold with time-oriented Lorentz metric and such that
+• there are no closed causal curves
+• for any points p, q, the intersection of causal futures/pasts J + (p)∩J − (q) is compact.10
+
+2.1
+
+The Klein–Gordon field
+
+We will study the formulation of the real scalar field, defined by Lagrangian density
+
+1
+Lg [φ] = ρg g ab (∇a φ)(∇b φ) − (m2 + ξR)φ2 ,
+2
+where ρg is the density induced by the metric gab of M , R is the Ricci scalar and ξ is
+a dimensionless coupling constant. The case ξ = 0 is known as minimal coupling and
+ξ 6= 0 as non-minimal coupling. In the special case m = 0, ξ = (n − 2)/(4n − 4), the
+action exhibits conformal invariance, because the Lagrangian density is unchanged under
+the simultaneous replacements
+gab → g ab = Ω2 gab
+
+φ → φ = Ω1−n/2 φ
+
+for any smooth positive function Ω, i.e., Lg [φ] = Lg [φ]. This value of ξ is accordingly
+called conformal coupling.
+9
+
+I am aware of a number of misprints and minor errors in [21], which I hope to correct in due course.
+The definition given in [54, 86] also requires strong causality, but this is a consequence of the other
+two conditions and can be dropped [4, Thm 3.2].
+10
+
+15
+
+This field equation derived from this action is the Klein–Gordon equation
+P φ := (g + m2 + ξR)φ = 0,
+
+where g = g ab ∇a ∇b ,
+
+and the stress-energy tensor, obtained by varying the action with respect to the metric, is
+1
+1
+Tab = (∇a ϕ)(∇b ϕ) − gab g cd (∇c ϕ)(∇d ϕ) + m2 gab ϕ2
+2
+2
++ ξ (gab g − ∇a ∇b − Gab ) φ2 ,
+where Gab is the Einstein tensor. Note that the effect of the coupling constant can be seen
+in the stress-energy tensor even where the metric is Ricci flat, even though the ξRφ2 term
+in the Klein–Gordon equation vanishes in such situations.
+The Klein–Gordon field is well-posed on globally hyperbolic spacetimes, for which we
+refer to the thorough and clear presentation of [3]. For our purposes, the main result is:
+Theorem 2.1 If M is globally hyperbolic then, to each f ∈ C0∞ (M ) there exists φ± ∈
+C ∞ (M ), with supp φ± ⊂ J ± (supp f ), solving the inhomogeneous problem
+P φ± = f,
+
+(5)
+
+Moreover, φ+/− is the unique (distributional) solution to (5) whose support is past/futurecompact (i.e., the support has compact intersection with every set of the form J ∓ (p)). The
+maps
+E ± : C0∞ (M ) −→ C ∞ (M )
+f 7−→ φ±
+are linear continuous mappings, where C0∞ (M ) and C ∞ (M ) are given their standard
+topologies.
+Due to the support properties, E − (resp., E + ) is called the advanced (resp., retarded)
+fundamental solution (or Green function). In the special case where f = P f 0 for some
+f 0 ∈ C0∞ (M ), we note that f 0 is both past and future compact, so f 0 = E ± f by uniqueness.
+Hence we have
+E ±P f 0 = f 0
+together with the initial property P E ± f = f .
+The advanced-minus-retarded fundamental solution E is defined by E = E − −
+E + . (Warning: some authors use retarded-minus-advanced, or label retarded and advanced
+the other way round! Furthermore, in the − + ++ signature, the fundamental solutions
+to (g − m2 )φ = f are minus the fundamental solutions we use; e.g., Wald’s A [87] is our
+−E − .) Clearly φ = Ef is a smooth solution to the homogeneous equation P φ = 0, but
+we also have an important result (cf. [3, Thm 3.4.7]) that summarises a number of key
+properties in a compact form.
+16
+
+Theorem 2.2 The following is an exact sequence (that is, the image of each map is precisely equal to the kernel of the next):
+E
+
+P
+
+P
+
+∞
+∞
+(M )
+(M ) −→ CSC
+0 −→ C0∞ (M ) −→ C0∞ (M ) −→ CSC
+
+(6)
+
+∞
+where CSC
+(M ) denotes those functions in C ∞ (M ) with support contained in J(K) =
+J + (K) ∪ J − (K) for some compact K.
+∞
+Remark: The support of any function F ∈ CSC
+(M ) has compact intersection with any
+Cauchy surface. But it is not the case that a smooth function whose support has compact
+intersection with each leaf of a given foliation of M by Cauchy surfaces is necessarily in
+∞
+CSC
+(M ).11 Unfortunately the literature contains many references to functions ‘compactly
+∞
+supported on Cauchy surfaces’ that would be more accurately rendered as ‘in CSC
+(M )’.
+−
++
+−
+Proof: The equalities EP f = E P f − E P f = f − f = 0 and P Ef = P E f − P E + f =
+f − f = 0 for f ∈ C0∞ (M ) are immediate, so each image is certainly contained in the
+kernel of the following map. For the reverse inclusions, we observe that
+
+• if P f = 0 with f ∈ C0∞ (M ) then f = E + 0 = 0 by uniqueness of past-compact
+solutions;
+• if Ef = 0 with f ∈ C0∞ (M ) then E + f = E − f , which shows that E + f is supported
+in the compact set J + (supp f ) ∩ J − (supp f ) and hence f = P E + f ∈ P C0∞ (M );
+∞
+(M ) we argue as follows. Choose any two Cauchy surfaces
+• if P φ = 0 with φ ∈ CSC
+±
++
++
+−
+Σ , with Σ ⊂ I (Σ ) and a smooth function χ with χ = 1 in J − (Σ− ) and χ = 0
+in J + (Σ+ ). Then
+f = P χφ
+
+is compactly supported (in I + (Σ− ) ∩ I − (Σ+ )). As χφ has future-compact support,
+χφ = E − f . But (χ−1)φ has past-compact support, and P (χ−1)φ = f , so (χ−1)φ =
+E + f . Subtracting, φ = E − f − E + f = Ef .
+Note: This shows that if O is any open neighbourhood of a Cauchy surface, then any
+solution φ may be expressed as Ef for some f ∈ C0∞ (O).
+
+
+2.2
+
+Phase space
+
+The symplectic space Our phase space consists of all real-valued solutions with SC
+support
+∞
+SolR (M ) := {φ ∈ CSC
+(M ; R) : P φ = 0}.
+For example, in four dimensional Minkowski space, the set ∪∞
+n=1 {1/n} × Bn , where Bn is a ball of
+unit radius, centred at (4n, 0, 0) ∈ R3 has compact intersection with each t = const hypersurface, but is
+not contained in J(K) for any compact K.
+11
+
+17
+
+However, it is rather convenient to work with its complexification, i.e., the space of complexvalued solutions
+∞
+Sol(M ) := {φ ∈ CSC
+(M ) : P φ = 0}.
+In view of the exact sequence (6) and the first isomorphism theorem for vector spaces, this
+may be reformulated as
+Sol(M ) = EC0∞ (M ) ∼
+= C0∞ (M )/P C0∞ (M ).
+Let us write Ê for the isomorphism Ê : C0∞ (M )/P C0∞ (M ) → Sol(M ), which has action
+Ê(f + P C0∞ (M )) = Ef.
+The pairing C ∞ (M ) × C0∞ (M ) → C,
+Z
+(φ, f ) 7−→
+
+φf dvol
+M
+
+clearly induces a pairing Sol(M ) × (C0∞ (M )/P C0∞ (M )) → C by
+Z
+hφ, [f ]i =
+φf dvol
+M
+
+(we use the formal self-adjointness of P here). We may now define a bilinear map on
+Sol(M ) by
+σ(φ1 , φ2 ) = hφ2 , Ê −1 φ1 i,
+(note reversal of order!)
+which evidently has the properties that
+σ(Ef, φ) = hφ, Ê
+
+−1
+
+Z
+Ef i = hφ, [f ]i =
+
+φf dvol
+
+(7)
+
+M
+
+and hence
+
+Z
+
+def
+
+σ(Ef1 , Ef2 ) =
+
+(Ef2 )f1 dvol = E(f1 , f2 ).
+M
+
+An easy calculation shows that
+Z
+(φ1 ∇n φ2 − φ2 ∇n φ1 ) dΣ
+
+σ(φ1 , φ2 ) =
+
+(8)
+
+Σ
+
+for any smooth spacelike Cauchy surface Σ with future-pointing unit normal vector n,
+from which it is clear that σ is antisymmetric and, moreover, is the standard symplectic
+form for the Klein–Gordon system. To prove (8), write φ1 = Ef for some f ∈ C0∞ (M )
+supported to the past of Σ. Given the definition of E and the support properties of E ± ,
+
+18
+
+φ1 = (E − − E + )f = −E + f on Σ, so
+Z
+
+RHS of (8) =
+−E + f ∇n φ2 + φ2 ∇n E + f dΣ
+ZΣ
+
+∇a φ2 ∇a E + f − E + f ∇a φ2 dvol
+=
+I − (Σ)
+Z
+
+=
+φ2 P E + f − (E + f )P φ2 dvol
+I − (Σ)
+Z
+φ2 f dvol = σ(φ1 , φ2 )
+=
+M
+
+using the divergence theorem in conjunction with the fact that E + f has past-compact
+support, and supp f ⊂ I − (Σ), together with Eq. (7).
+0
+The map σ is evidently weakly nondegenerate,
+R in the sense that if σ(φ ,∞φ) = 0 for
+0
+0
+all φ ∈ Sol(M ), then, putting φ = Ef , we find φf dvol = 0 for all f ∈ C0 (M ) and
+hence φ = 0.
+As mentioned, σ is the standard symplectic form for the Klein–Gordon field. To make
+our conventions more explicit, we observe that the covariant momentum conjugate Πa to
+the field is defined by the functional derivative12
+Πa =
+so
+
+1 δS
+= ∇a φ
+ρg δ∇a φ
+
+Z
+σ(φ1 , φ2 ) =
+
+(φ1 Πa2 − φ2 Πa1 ) na dΣ.
+
+Σ
+
+(This corresponds to the convention that the symplectic form, in finite dimensions, may
+be written σ = dq i ∧ dpi in terms of canonical coordinates q i and momenta pi .)
+The upshot is that SolR (M ), equipped with (the restriction of) σ is a weakly nondegenerate symplectic space, while Sol(M ) equipped with σ and complex conjugation, is its
+complexification.
+Classical observables and Poisson brackets Classical observables are functions on
+this phase space: for example, every f ∈ C0∞ (M ; R) defines an observable Ff which acts
+on solutions φ ∈ SolR (M ) by
+Z
+Ff (φ) =
+dvolg (p)φ(p)f (p) = σ(Ef, φ).
+M
+12
+
+The meaning of this expression is that
+Z
+Z
+d
+a
+Π wa dvol =
+L (φ, ∇φ + λw)
+dλ V
+M
+λ=0
+
+for every smooth compactly supported covector field wa , and any relatively compact open subset V containing supp w.
+
+19
+
+(By weak nondegeneracy, the last equality shows that there are enough such observables
+to distinguish elements of SolR (M ).) We may observe that the Ff depend linearly on f ,
+and that some of them vanish identically:
+FP f (φ) = σ(EP f, φ) = 0
+for any f ∈ C0∞ (M ; R) and φ ∈ SolR (M ).
+If (P, ω) is a finite-dimensional (real) symplectic manifold, the Poisson bracket of two
+smooth functions F, G ∈ C ∞ (P) is given in terms of the exterior derivatives of F and G
+by
+{F, G}(p) = dF (dG] )|p ,
+(9)
+where (dG)] |p ∈ Tp P, which is the Hamiltonian vector field induced by G, satisfies
+ωp ((dG)] |p , v) = dG|p (v)
+
+(10)
+
+for v ∈ Tp P(M ) according to our convention for the symplectic form.13 In particular, if
+P is a vector space (regarded as a manifold with Tp P ∼
+= P) and F and G are linear
+functionals on P, then dF |p (v) = F (v), etc, so the Poisson bracket–a function on phase
+space–is a constant,
+{F, G} ≡ F (G] ),
+
+where ω(G] , v) = G(v).
+
+Although infinite-dimensional manifolds require care, these formulae will be enough for our
+purposes. With G = Ff , we know that
+Ff (φ) = σ(Ef, φ)
+so we may take Ff] = Ef (and there is no other solution, by weak nondegeneracy). Hence
+Z
+{Ff1 , Ff2 } ≡ Ff1 (Ef2 ) =
+f1 Ef2 dvol = E(f1 , f2 ).
+M
+
+It is worth observing that our class of observables F (M ) := {Ff : f ∈ C0∞ (M ; R)} is,
+itself, a copy of the phase space, when equipped with the Poisson bracket as the symplectic
+form: the map Ff 7→ Ef is easily seen to be a symplectic isomorphism. So this class of
+observables provides a complete description of the underlying dynamical system.
+
+2.3
+
+Algebraic formulation of the quantum field theory
+
+The algebraic approach is actually nothing but Dirac quantization, but without requiring
+quantized observables to act on a Hilbert space in the first instance.
+13
+
+Our convention for Poisson brackets then amounts to
+{F, G} =
+
+∂F ∂G
+∂F ∂G
+−
+i
+∂q ∂pi
+∂pi ∂q i
+
+in canonical coordinates in the finite dimensional case.
+
+20
+
+Dirac quantization Applying Dirac’s quantization prescription to the classical observcf (f ∈ C0∞ (M ; R)) obeying
+ables Ff , we seek (at least formally) self-adjoint operators14 F
+the same algebraic relations as the Ff , but with the standard replacement of Poisson
+brackets by commutators
+0
+\
+cf , Fc
+[F
+f 0 ] = i{Ff , Ff 0 } = iE(f, f )11
+
+(11)
+
+(note that any constant function is quantized as an appropriate multiple of the unit 11). As
+cf are interpreted as smeared quantum
+quantizations of the classical smeared fields, the F
+cf and Fc
+fields. In particular, when the supports of f and f 0 are spacelike-separated, F
+f0
+should commute, reflecting the Bose statistics of a spin-0 field.
+It is also convenient to permit smearings with complex-valued functions. Accordingly,
+we define
+[
+[
+Φ(f ) = F
+Re f + iFIm f
+for f ∈ C0∞ (M ), dropping the hats from now on and seek to implement the following
+relations):
+• f 7→ Φ(f ) is complex-linear;
+• Φ(f )∗ = Φ(f ) for all f ∈ C0∞ (M )
+• Φ(P f ) = 0 for all f ∈ C0∞ (M ; R) for all f ∈ C0∞ (M )
+• [Φ(f ), Φ(f 0 )] = iE(f, f 0 )11 for all f, f 0 ∈ C0∞ (M ).
+This may be done by invoking a unital ∗-algebra with abstract elements Φ(f ) (f ∈ C0∞ (M ))
+as generators, subject to the above relations. We denote it A(M ). (The only risk is that
+A(M ) might be trivial, but it is not: as a vector space it is isomorphic to the symmetric
+tensor vector space
+∞
+M
+Sol(M ) n
+Γ (Sol(M )) =
+n=0
+
+over the solution space Sol(M ) on M . In fact, A(M ) is also simple, so one could not
+impose additional relations without it collapsing to the trivial algebra.)
+States and the GNS representation Self-adjoint elements [A∗ = A] of A(M ) should
+play the role of observables. However, this is rather empty without a rule for turning
+observables into expectation values, in other words, notion of a state.
+Definition 2.3 A state on A(M ) is a linear map ω : A(M ) → C obeying
+ω(11) = 1
+∀A ∈ A(M ), ω(A∗ A) ≥ 0
+14
+
+normalisation
+positivity.
+
+We will write hats on top of operators only in this section. This should not be confused with the
+notation for a Fourier transform used later.
+
+21
+
+Expectation values
+def
+
+ωn (f1 , . . . , fn ) = ω(Φ(f1 )Φ(f2 ) · · · Φ(fn ))
+are called n-point functions. It is clearly sufficient to specify the n-point functions to fix
+ω. The algebraic relations in M have implications for the n-point functions: for example,
+ω2 (f1 , f2 ) − ω2 (f2 , f1 ) = ω(Φ(f1 )Φ(f2 ) − Φ(f2 )Φ(f1 )) = ω(iE(f1 , f2 )11) = iE(f1 , f2 ),
+and
+ω2 (P f1 , f2 ) = ω(Φ(P f1 )Φ(f2 )) = 0 = ω2 (f1 , P f2 )
+while positivity of the state implies directly that
+ω2 (f , f ) = ω(Φ(f )Φ(f )) = ω(Φ(f )∗ Φ(f ) ≥ 0.
+Thus ω2 (x, x0 ) is a bidistribution of positive type that is a bisolution to the Klein–Gordon
+equation and whose antisymmetric part is 2i E(x, x0 ).
+Perhaps reassuringly, given a state ω we may regain a Hilbert space setting using
+the GNS construction (Gel’fand, Naimark, Segal) which gives a Hilbert space Hω , a
+dense domain Dω ⊂ Hω , a representation πω of A(M ) as (generally unbounded) operators
+defined on Dω , and a distinguished vector Ωω ∈ Dω such that
+hΩω | πω (A)Ωω i = ω(A)
+for all A ∈ A(M ). However, we will not develop this here; see, e.g. [52].
+Hadamard states The algebra A(M ) admits rather too many states and it is necessary
+to select a ‘physically reasonable’ subclass. We consider Hadamard states which are
+states whose 2-point functions are distributions and take a specific form for near-coincidence
+of the points. The Hadamard class was precisely described in [66]; the definition given there
+is rather involved, but the rough idea (in four spacetime dimensions) is that when x and
+x0 lie in a common causally convex geodesic normal neighbourhood, one should have
+U (x, x0 )
++ V (x, x0 ) log(σ+ /`2 ) + W (x, x0 )
+ω2 (x, x ) = 2
+0
+4π σ+ (x, x )
+0
+
+(12)
+
+where U , V and W are smooth, σ the signed square geodesic separation of x and x0 ,
+taken to be positive for spacelike separation15 and the notation f (σ+ ) indicates a certain
+regularization of f (σ) (the Minkowski space case is given explicitly below). The parameter
+` is a length scale, necessary for dimensional reasons. The functions U and V are defined
+using `, the local geometry and the Klein–Gordon operator, along with the condition that
+15
+
+Note: Some authors, including [13], use σ for half of the signed squared separation; our convention
+follows e.g., [66].
+
+22
+
+U (x, x) = 1, which allow U to be identified as the square root of the van Vleck-Morette
+determinant,16
+det[−∂µ ∂µ0 12 σ(x, x0 )]
+0
+p
+∆(x, x ) = −
+g(x)g(x0 )
+and V to be expressed as series in σ. (In general, the series for V does not converge but there
+are various standard work-arounds that I will not discuss here.) All the state-dependent
+information is contained in W . There is a much cleaner definition of the Hadamard class
+in terms of microlocal analysis – see Sec. 3.2.
+The motivation for Eq. (12) is that it makes the singular part of ω2 as much as possible
+like the leading behaviour of the Minkowski vacuum 2-point function, which, for mass
+m ≥ 0 is
+ω2 (x, x0 ) = lim+ F ([−(t − t0 − i)2 + |x − x0 |2 ]1/2 ),
+→0
+
+where, for m > 0,
+F (z) =
+
+1
+m2
+m
+K
+(mz)
+=
++
+log(mz) + O(1)
+1
+4π 2 z
+4π 2 z 2 8π 2
+
+while F (z) = 1/(4π 2 z 2 ) for m = 0. Hence
+ω2 (x, x0 ) =
+
+1
+m2
++
+log m2 σ+ + . . . ,
+4π 2 σ+ 16π 2
+
+where f (σ+ ) is the distributional limit
+f (σ+ ) = lim+ f (−(t − t0 − i)2 + |x − x0 |2 ).
+→0
+
+The major consequence of the definition is that the difference of two Hadamard 2-point
+functions is smooth.
+Quantities like the Wick square and stress-energy tensor can be defined by normal
+ordering relative to some reference state ω R using a point-splitting prescription, e.g.,
+h:Φ2 :(x)iω = (ω2 − ω2R )(x, x)
+One can do without the reference state if, instead of ω2R , we subtract a local Hadamard
+parametrix, i.e., an expression of the form of the RHS of (12), but with W determined by
+local geometry rather than a reference state. Actually, there are remaining freedoms in
+W that give finite renormalisation freedoms; we suppose that some choice has been made
+and denote the resulting object by Φ2ren . The procedure is described in [87] with particular
+16
+See [13, §1], modulo change in notation. Here the derivatives are partial derivatives in some coordinate
+system, and g = | det gµν | in the same coordinates. Exercise: check that this is a bi-scalar quantity.
+
+23
+
+reference to the stress-energy tensor;17 see [58] for a much more far-reaching development.
+Of course
+hΦ2ren (x)iω − hΦ2ren (x)iωR = h:Φ2 :(x)iω
+with normal ordering relative to ω R .
+
+2.4
+
+The QEI derivation
+
+Let γ : R → M be a smooth timelike curve, with proper time parameterisation. Let Q be
+any partial differential operator with smooth real coefficients. We consider the quantity
+:(QΦ)2 :, with normal ordering performed relative to a reference Hadamard state ω R , and
+seek a lower bound on
+Z
+dτ |g(τ )|2 h:(QΦ)2 :iω (γ(τ ))
+for g ∈ C0∞ (R) and any Hadamard state ω.
+To this end, we introduce a point-split quantity
+G(τ, τ 0 ) = hQΦ(γ(τ ))QΦ(γ(τ 0 ))iω ,
+and write GR for the same quantity evaluated in the reference state. Both G and GR are
+distributions, but their difference F = G − GR is a smooth function, which is symmetric
+[as both G and GR have equal antisymmetric parts] and whose diagonal τ 0 = τ gives
+F (τ, τ ) = h:(QΦ):2 (γ(τ ))iω .
+Then for any real-valued g ∈ C0∞ (R) we compute
+Z
+Z
+2
+2
+dτ |g(τ )| h:(QΦ) :iω (γ(τ )) = dτ |g(τ )|2 F (τ, τ )
+Z ∞
+Z
+dα
+0
+=
+dτ dτ 0 g(τ )g(τ 0 )e−iα(τ −τ ) F (τ, τ 0 )
+−∞ 2π
+(inserting a δ-function to ‘unsplit’ the points)
+Z ∞
+dα
+=
+F (g−α ⊗ gα )
+−∞ 2π
+(thinking of F as a distribution and writing gα (τ ) = g(τ )eiατ )
+Z ∞
+dα
+=
+F (g−α ⊗ gα )
+π
+0
+17
+As a sketch: Let T be a differential operator that maps smooth functions on M × M (or local subset
+thereof) to smooth bi-covector fields, with the property that T (φ ⊗ φ)(x, x) is the classical stress-energy
+tensor of any Klein–Gordon solution φ. Applying T to ω2 − H, where H is a local Hadamard parametrix,
+and bringing the points together, we obtain a rank-2 covariant tensor field x 7→ (T (ω2 − H))(x, x). It turns
+out that although this tensor field is not necessarily conserved, the problem can be fixed by subtracting a
+local geometrical term of the form Qgab , and can be avoided altogether by a clever choice of T [67].
+
+24
+
+using the symmetry of F , and hence F (g−α ⊗ gα ) = F (gα ⊗ g−α ) to make the final step.
+As g is real-valued, we have g−α (τ ) = gα (τ ) and obtain
+Z
+Z ∞
+dα
+2
+2
+dτ |g(τ )| h:(QΦ) :iω (γ(τ )) =
+F (gα ⊗ gα )
+π
+0
+Z ∞
+dα R
+≥−
+G (gα ⊗ gα ),
+(13)
+π
+0
+where we have used F = G − GR and the positive type property of G, which it inherits
+from ω2 . The positive type property also tells us that the integrand in the final expression
+is pointwise positive in α. The result may be generalised to complex-valued g ∈ C0∞ (R)
+simply by applying the above argument to the real and imaginary parts separately.
+This derivation provides a quantum inequality on :(QΦ)2 : and hence on any other
+quantity that can be expressed as a finite sum of such quantities. In particular, it applies
+to the energy density of the minimally coupled scalar field. Note that the bound depends
+only on the reference state ωR together with γ and g. We summarise with a theorem
+Theorem 2.4 Let M be any globally hyperbolic spacetime, Q be any partial differential
+operator with smooth real coefficients, γ be any smooth timelike curve in a proper-time
+parameterization. For normal ordering performed relative to any Hadamard reference state
+ω R , the inequality (13) holds for all Hadamard states ω of the real scalar field and all
+g ∈ C0∞ (R).
+However, there are two important questions that must be resolved to complete the
+proof of this result:
+• Is it legitimate to restrict the differentiated two-point function to the world-line, as
+we did in defining G?
+• Is the final integral in (13) finite? (If not, then the bound would not be of much
+interest.)
+The (affirmative) answers to these questions require a more in-depth understanding of
+Hadamard states than we have previously given: namely, using some tools of microlocal
+analysis, which are developed in Section 3.1. However, the reader who does not wish to
+delve into the details should at least note that neither is simply a matter of fine precision
+because
+• the first question would be answered negatively for a null trajectory and indeed there
+is no QEI bound in this case [32];
+• one may alter the derivation above slightly to yield a bound in which the final integral
+is taken over the negative half-line and diverges.
+Remarks:
+
+25
+
+1. We could equally take averages of other classically positive contractions of Tab along
+the timelike curve, e.g., contracted against a null vector or possibly differing futurepointing causal vector fields, to obtain QNEI [32], QDEI etc.
+2. Variants exist for averages over suitable Lorentzian submanifolds, instead of timelike
+curves (see, e.g. [34]).
+3. One may show that no such bounds exist for smearings over spacelike surfaces (certainly above 2-dimensions) [43] or, as already mentioned, along null curves [32].
+4. The argument above, and the analogous argument for the energy density, relies on
+‘classical positivity’ of the quantity in question. This permits a number of related
+bounds to be proven by similar methods, e.g., see [30] for spin-1 fields. Nonetheless,
+there are also QEIs for the free Dirac field [37, 12, 80] despite the fact that the
+‘classical’ Dirac energy density is symmetrical about zero and unbounded from below.
+It turns out that the analogue of the Hadamard condition also functions as a local
+version of the Dirac sea, and restores positivity [modulo a finite QEI lower bound]
+as well as renormalising the energy density.
+5. See Sect. 5 for discussion of nonminimally coupled scalar fields and the case of interacting QFT.
+Dependence on the reference state We can rewrite the inequality (13) as
+Z
+Z
+Z ∞
+dα R
+2
+2
+2
+2
+G (gα ⊗ gα )
+dτ |g(τ )| h(QΦ)ren iω (γ(τ )) ≥ dτ |g(τ )| h(QΦ)ren iωR (γ(τ )) −
+π
+0
+using a renormalized square, rather than Wick ordering. Now, slightly heuristically,
+h(QΦ)2ren iωR (γ(τ )) is the diagonal of a function Fren (τ, τ 0 ) = GR − Gren , where Gren is
+formed from the Hadamard parametrix (i.e., local geometry) and the operator Q. So the
+dependence on the reference state actually cancels, and we obtain
+Z
+Z ∞
+dα
+2
+2
+dτ |g(τ )| h(QΦ)ren iω (γ(τ )) ≥ −
+Gren (gα ⊗ gα ).
+π
+0
+Making this precise and quantitative takes a bit of work [34].
+
+2.5
+
+Computations in n = 4 Minkowski space for minimal coupling
+
+Inertial trajectory Take Q to be a partial differential operator with constant real
+coefficients, so that Qeikx = p(k)eikx for some polynomial p (which necessarily obeys
+p(−k) = p(k)) and adopt the Minkowski vacuum state as the reference, with
+Z
+d3 k 1 −ik(x−x0 )
+0
+ω2 (x, x ) =
+e
+.
+(2π)3 2ω
+26
+
+With this choice, the normal ordering is precisely the conventional normal ordering of
+Minkowski space QFT (and indeed, one would normally adjust the full renormalized quantity to coincide with this as well). We take our trajectory to be γ(τ ) = (τ, x) in standard
+inertial coordinates. Then
+Z
+d3 k |p(k)|2 −iω(τ −τ 0 )
+R
+0
+G (τ, τ ) =
+e
+(2π)3 2ω
+and so
+R
+
+G (gα ⊗ gα ) =
+
+Z
+
+d3 k |p(k)|2 b
+g (−ω − α)b
+g (ω + α) =
+(2π)3 2ω
+
+Z
+
+d3 k |p(k)|2
+|b
+g (ω + α)|2 .
+3
+(2π) 2ω
+
+In the specific case of the energy density (of the minimally coupled field) measured
+along the inertial curve, the classical expression
+3
+
+T00 =
+
+1X
+1
+(∂µ φ)2 + m2 φ2
+2 µ=0
+2
+
+leads us to consider the operators Q = 2−1/2 ∂µ for µ = 0, ..., 3 and Q = 2−1/2 m. Summing,
+Z
+Z ∞
+Z
+dα
+d3 k ω 2 + kkk2 + m2
+2
+dτ |g(τ )| h:T00 :iω (τ, x) ≥ −
+|b
+g (ω + α)|2
+3
+π
+(2π)
+4ω
+0
+Z
+Z ∞
+dα ∞ dk 2
+k ω|b
+g (ω + α)|2
+=−
+2
+π
+4π
+0
+0
+so changing variables from k to ω =
+
+√
+k 2 − m2 , and then from (α, ω) to (α + ω, ω):
+Z ∞
+Z u
+1
+2
+=− 3
+du|b
+g (u)|
+dω ω 2 (ω 2 − m2 )1/2
+4π m
+m
+Z ∞
+1
+du|b
+g (u)|2 u4 Q3 (u).
+=−
+16π 3 m
+
+where Q3 was defined in (2). This is the bound stated as (1).
+Uniformly accelerated trajectory Again we use the vacuum state as the reference,
+restricting to massless fields for simplicity. Here it is more convenient to work with the
+vacuum two-point function in the form
+ω2 (x, x0 ) =
+
+4π 2 σ
+
+1
+0
++ (x, x )
+
+rather than to use a Fourier representation. We consider the trajectory
+γ(τ ) = (ξ0 sinh(τ /ξ0 ), ξ0 cosh(τ /ξ0 ), 0, 0)
+27
+
+in inertial coordinates, where ξ0 > 0 is constant. This is easily seen to be a proper-time
+parameterisation of a trajectory with uniform proper acceleration ξ0−1 .
+If we introduce coordinates x(τ, ξ, y, z) = (ξ sinh(τ /ξ0 ), ξ cosh(τ /ξ0 ), y, z) then our trajectory is ξ = ξ0 , y = z = 0. Moreover, on this curve, the vectors ∂/∂τ , ∂/∂ξ, ∂/∂y and
+∂/∂z form an orthonormal basis and the point-split energy density may be written as
+ 2
+
+1
+∂
+∂2
+∂2
+∂2
+:ω2 :(x, x0 ).
++
++
++
+0
+0
+0
+0
+2 ∂τ ∂τ
+∂ξ∂ξ
+∂y∂y
+∂z∂z
+In terms of the above coordinates, we have18
+
+
+
+−1
+τ − τ 0 − 2i
+1
+2
+0
+0 2
+0
+0 2
+0 2
+ω2 (x, x ) = lim
+(ξ − ξ ) − 4ξξ sinh
++ (y − y ) + (z − z )
+→0+ 4π 2
+2ξ0
+and after some calculation one finds that the point-split energy density of the reference
+state restricts to the trajectory as a boundary value distribution
+
+
+σ − 2i
+3
+4
+R
+0
+0
+cosech
+.
+G (τ, τ ) = T (τ − τ ), where T (σ) = lim
+→0+ 32π 2 ξ04
+2ξ0
+The Fourier transform may be shown to be [31]
+ 3
+−2 
+1
+u
++
+uξ
+0
+Tb(u) =
+2π 1 − e−2πξ0 u
+and similar calculations to those above give
+Z
+Z ∞
+1
+2 a b
+dτ |g(τ )| γ̇ γ̇ h:Tab :iω (γ(τ )) ≥ −
+du |b
+g (u)|2 Υ(ξ0 , u)
+3
+16π −∞
+
+(14)
+
+for any Hadamard state ω, where
+Z u
+Υ(ξ0 , u) = 4
+
+dv
+−∞
+
+v 3 + vξ0−2
+.
+1 − e−2πξ0 v
+
+As |b
+g (u)|2 is even, we may replace Υ(ξ0 , u) by 12 (Υ(ξ0 , u) + Υ(ξ0 , −u)) in (14). But one
+18
+
+A little justification is needed here, because our standard i regularisation gives
+
+
+
+
+τ − τ0
+τ
+τ0
+σ = (ξ − ξ 0 )2 − 4ξξ 0 sinh2
++ 2i ξ sinh
+− ξ 0 sinh
++ 2 + (y − y 0 )2 + (z − z 0 )2
+2ξ0
+ξ0
+ξ0
+
+in these coordinates. The important point is that σ has positive imaginary part when x and x0 are nullseparated with x to the future of x0 (which implies τ > τ 0 ). This is also true of the corresponding term in
+our expression for ω2 , and so the alternative i prescription is valid.
+
+28
+
+easily sees that
+Z 0
+v 3 + vξ0−2
+v 3 + vξ0−2
+dv
+Υ(ξ0 , u) + Υ(ξ0 , −u) = 2Υ(ξ0 , 0) + 4
+dv
+−4
+1 − e−2πξ0 v
+1 − e−2πξ0 v
+0
+−u
+
+
+Z u
+1
+1
+3
+−2
+dv (v + vξ0 )
+= 2Υ(ξ0 , 0) + 4
++
+1 − e−2πξ0 v 1 − e2πξ0 v
+0
+{z
+}
+|
+Z u
+
+=1
+
+2
+
+= u4 +
+
+u
+11
++
+,
+2
+ξ0
+30ξ04
+
+where we have combined the integrals in the second step, changing variables from u to
+−u in one of them and inserted a closed-form expression for Υ(ξ0 , u). Accordingly, the
+following QEI holds for all Hadamard states ω and all real-valued g ∈ C0∞ (R):
+
+
+Z ∞
+Z
+11
+u2
+1
+2
+4
+2 a b
+du |b
+g (u)| u + 2 +
+dτ |g(τ )| γ̇ γ̇ h:Tab :iω (γ(τ )) ≥ −
+32π 3 −∞
+ξ0
+30ξ04
+
+
+Z ∞
+1
+11α04
+00
+2
+2 0
+2
+2
+dτ |g (τ )| + α0 |g (τ )| +
+|g(τ )| ,
+=−
+16π 2 −∞
+30
+(15)
+where α0 = 1/ξ0 is the proper acceleration of the trajectory. Comparing with (3), we see
+that the acceleration leads to modifications to the QEI bound that are lower order in the
+number of derivatives applied to g.
+In particular, the scaling behaviour discussed in Section 1.3 is modified; we have
+Z
+kg 00 k2
+kg 0 k2 α02 11kgk2 α04
+1
+γ̇ a γ̇ b hTab iω (γ(t))|g(t/τ )|2 dt ≥ −
+−
+−
+,
+τ
+16π 2 τ 4
+16π 2 τ 2
+480π 2
+where the norm is that of L2 (R). For α0 τ  1 the previous result is recovered to good
+approximation; however, for α0 τ  1 it is the last term that dominates and, indeed,
+the AWEC fails – multiplied by τ , the right-hand side diverges to −∞ as τ → ∞. By
+subtracting this troublesome term we can deduce that
+
+Z 
+11α04
+a b
+lim inf
+γ̇ γ̇ hTab iω (γ(t)) +
+|g(t/τ )|2 dt ≥ 0
+τ →∞
+480π 2
+holds for any Hadamard state ω. It is a remarkable fact that the constant negative contribution is precisely equal to the energy density of the Rindler vacuum state for the
+right-wedge {(t, x, y, z) : x > |t|} of Minkowski space. (Even though the Rindler vacuum
+does not extend to a Hadamard state on the whole of Minkowski space, it is Hadamard on
+the interior of the wedge, which completely contains the accelerated trajectory. Arguments
+based on local covariance [9] show that the Minkowski QEI along that trajectory must be
+respected by the energy density of the Rindler vacuum – see [31] for discussion and other
+examples – but it is nonetheless surprising that the Rindler vacuum saturates the QEI in
+this way.)
+29
+
+This example might suggest that a good way of ‘mining’ negative energy density is
+simply to follow a uniformly accelerated trajectory, when the field is prepared in (an
+approximation to) the Rindler vacuum. It is worth noting that the work required to
+maintain this motion grows exponentially with the proper time, and therefore the ‘cost’ in
+work done is growing much more rapidly than the ‘benefit’ of negative energy ‘seen’. This
+seems to fit a broader pattern of adverse cost-benefit analyses in other situations where
+sustained negative energy densities may be created.
+
+3
+
+Microlocal analysis and Hadamard states
+
+3.1
+
+The wavefront set
+
+Fourier analysis provides a fundamental duality between smoothness and decay: smooth
+functions have rapidly decaying Fourier transforms, and vice versa. The fundamental
+idea underlying microlocal analysis is that decay properties of the Fourier transform of a
+distribution can be used to obtain detailed information about its singular structure. A
+general reference for this section is [61], particularly chapter 8.
+The wave-front set Recall that our convention for the Fourier transform of functions
+is
+Z
+fb(k) = dn x eik·x f (x).
+The Fourier transform of a compactly supported distribution T is, similarly, Tb(k) = T (ek ),
+where ek (x) = eik·x . The Fourier transform of Schwartz distributions can be defined using
+duality, because the Fourier transform is an isomorphism of the Schwartz space to itself,
+and hence dually of the Schwartz distributions; general distributions in D 0 do not have
+Fourier transforms.
+The duality between smoothness and decay mentioned above is illustrated by the following examples.
+
+Rn) then
+
+a) If f ∈ C0∞ (
+
+2m
+
+1 + |k|
+
+
+
+m
+
+∧
+
+Z
+
+fb(k) = |(1 + (−4) f ) (k)| ≤
+
+dn x |(1 + (−4)m f )(x)| < ∞.
+
+So for each N , there exists a constant CN such that
+fb(k) ≤
+
+CN
+1 + |k|N
+
+as k → ∞
+
+(this is what we mean by ‘rapid decay’.)
+b
+b) The δ-distribution at the origin has Fourier transform δ(k)
+= 1, which exhibits no
+decay at ∞.
+30
+
+c) The distribution T ∈ D 0 (R) defined by
+Z
+T (f ) = lim+
+ε→0
+
+f (s)
+ds
+s − iε
+
+has Fourier transform
+Z
+Tb(k) = lim+
+ε→0
+
+eiks
+ds = 2πiΘ(k),
+s − iε
+
+which decays as k → −∞ but not as k → +∞.
+The wavefront set localises information of this type both in x-space and on the “sphere at
+∞” in k-space.
+Definition 3.1 (A) If u ∈ D 0 (Rn ), a pair (x, k) ∈ Rn × ((Rn )∗ \{0}) is a regular direction
+for u if there exist
+i) φ ∈ C0∞ (Rn ) with φ(x) 6= 0
+ii) a conic neighbourhood V of k in (Rn )∗
+iii) constants CN , N ∈ N
+so that
+CN
+c
+<
+∀k ∈ V, N ∈ N
+φu(k)
+1 + |k|N
+i.e., c
+φu decays rapidly as k → ∞ in V .
+(B) The wavefront set of u is defined to be
+WF (u) = {(x, k) ∈ Rn × ((Rn )∗ \{0}) : (x, k) is not a regular direction for u}.
+Examples
+a) If f ∈ C ∞ (Rn ), then WF (f ) = ∅.
+c
+b) WF (δ) = {(0, k) ∈ R2 : k 6= 0}. (Note that φδ(k)
+= φ(0), so (x, k) is a regular
+direction for x 6= 0 as we may then choose φ with φ(x) 6= 0, φ(0) = 0).
+c) WF (T ) = {(0, k) ∈ R2 : k > 0} (exercise!).
+The wavefront set has many natural and useful properties. For our purposes, the most
+important are the following:
+• WF(u) = φ ⇐⇒ u ∈ C ∞ (Rn ).
+• WF(λu + µv) ⊂ WF(u) ∪ WF(v) for u, v ∈ D 0 (Rn ), λ, µ ∈
+
+31
+
+C.
+
+• If P is any partial differential operator with smooth coefficients, then
+WF(P u) ⊂ WF(u) ⊂ WF(P u) ∪ Char P,
+for any u ∈ D 0 (Rn ), where Char P is the characteristic set of P . To define the
+characteristic set, let m P
+be the order of P , i.e., the least m ∈ N0 so that P may be
+written in the form P = |α|≤m aα (x)(iD)α where α is a multi-index. The principal
+symbol of P is the smooth function on Rn × (Rn )∗ given by
+X
+pm (x, k) =
+aα (x)k α
+|α|=m
+
+and the characteristic set is
+Char P = {(x, k) ∈ Rn × (Rn∗ \ {0}) : pm (x, k) = 0}.
+• Propagation of Singularities: WF(u) \ WF(P u) is invariant under the Hamiltonian flow generated by pm .
+• Under coordinate changes, WF and Char transform as subsets of the cotangent bundle: given a diffeomorphism ϕ, define ϕ∗ u by (ϕ∗ u)(f ) = u(f ◦ ϕ). Then
+WF(u) = {(x, ξDϕ|x ) : (ϕ(x), ξ) ∈ WF(ϕ∗ u)};
+similarly, setting (Pϕ f ) ◦ ϕ = P (f ◦ ϕ), we have
+(pϕ )m (ϕ(x), ξ) = pm (x, ξDϕ|x ).
+Here ξDϕ|x is the composition of ξ and Dϕ|x as linear maps, i.e., the action of the dual
+map to Dϕ|x on ξ.) In particular, we may extend the wavefront set and characteristic
+set to distributions and partial differential operators defined on manifolds; both are
+subsets of the cotangent bundle.
+Examples:
+1. Let P be the Klein–Gordon operator P = g + m2 + ξR on a spacetime M . The
+principal symbol is easily seen to be
+p2 (x, ξ) = −g ab (x)ξa ξb
+and so the characteristic set is
+Char P = N := {(x, ξ) ∈ T ∗ M : ξ a non-zero null at p},
+the bundle of nonzero null covectors on M . Hence the wavefront set of any (distributional)
+solution to P u = 0 obeys
+WF(u) ⊂ N ;
+32
+
+moreover, WF(u) is invariant under the Hamiltonian evolution λ 7→ (x(λ), ξ(λ)) ∈ T ∗ M
+given by the ‘Hamiltonian’ p2 (x, ξ) = −g ab (x)ξa ξb . The solution curve λ 7→ (x(λ), ξ(λ)) is
+such that x(λ) is a geodesic [which is easily seen by noting that the ‘Lagrangian’ underlying
+p2 is − 41 gab ẋa ẋb ] to which ξ(λ)] is tangent and along which ξ(λ) is parallel-transported.
+Recalling that WF (u) ⊂ N , we may deduce that if (x, ξ) ∈ WF (u), then ξ is null, and
+further, the wavefront set contains every point (x(λ), ξ(λ)) for λ ∈ R, where x(λ) is the
+null geodesic through x with tangent ξ ] and ξ(λ) is the parallel transport of ξ along x(λ).
+2. Now consider Klein–Gordon bisolutions, i.e., F ∈ D 0 (M × M ) such that
+(P ⊗ 1)F = (1 ⊗ P )F = 0.
+Now the operator P ⊗ 1 has principal symbol
+p(x, ξ; x0 , ξ 0 ) = −g ab (x)ξa ξb
+and characteristic set
+Char (P ⊗ 1) = (N0 × T ∗ M ) \ Z
+where N0 is the bundle of (possibly zero) null covectors on M (i.e., N , with the zero
+covector added at each point) and Z is the zero section of T ∗ (M × M ). Similarly, 1 ⊗ P
+has principal symbol
+p0 (x, ξ; x0 , ξ 0 ) = −g ab (x0 )ξa0 ξb0
+and characteristic set
+Char (1 ⊗ P ) = (T ∗ M × N0 ) \ Z
+Any bisolution F therefore has wavefront set with upper bound
+WF (F ) ⊂ Char (1 ⊗ P ) ∩ Char (P ⊗ 1)
+⊂ ((N0 × T ∗ M ) ∩ (T ∗ M × N0 ))) \ Z
+⊂ (N0 × N0 ) \ Z
+Pull-backs Suppose X and Y are smooth manifolds and ϕ : Y → X is smooth. Given
+u ∈ D 0 (X), Theorem 2.5.110 in [60] constructs the pull-back ϕ∗ u as a distribution on Y
+provided WF (u) ∩ Nϕ = ∅, where
+Nϕ = {(ϕ(y), ξ) ∈ T ∗ X | ξDϕ(y) = 0}
+
+(16)
+
+defines the set of normals of the map ϕ. The wave front set of the pull-back is constrained
+by
+WF (ϕ∗ u) ⊂ ϕ∗ WF (u) = {(y, ξDϕ(y)) | (ϕ(y), ξ) ∈ WF (u)} .
+(17)
+If u is smooth, the pull-back reduces to ordinary composition ϕ∗ u(y) = u(ϕ(y)).
+Example Let F ∈ D 0 (M × M ) be a Klein–Gordon bisolution, and let γ : R → M be a
+smooth timelike curve. We wish to consider the pull-back (γ × γ)∗ F .
+
+33
+
+To see that this is well-defined, we first compute the set of normals to γ × γ : R2 →
+M × M , noting that
+ 
+
+t
+0
+k k D(γ × γ)|(τ,τ 0 ) 0 = (γ̇(τ ) · k)t + (γ̇(τ 0 ) · k 0 )t0
+t
+and therefore vanishes for all t, t0 iff γ̇(τ ) · k = γ̇(τ 0 ) · k 0 = 0. Thus
+Nγ×γ = {(γ(τ ), k; γ(τ 0 ), k 0 ) ∈ T ∗ M × T ∗ M | γ̇(τ ) · k = γ̇(τ 0 ) · k 0 = 0} .
+Now the covectors arising in WF (F ) are always null and at least one of them must be
+nonzero; moreover, no nonzero null covector can have vanishing contraction with a timelike
+vector. Thus
+WF (F ) ∩ Nγ×γ = ∅
+and the pull-back is well-defined, with wave-front set
+WF (G) ⊂ (γ × γ)∗ WF (F )
+= {(τ, γ̇(τ ) · k; τ 0 , γ̇(τ 0 ) · k 0 ) ∈ T ∗ R × T ∗ R | (γ(τ ), k; γ(τ 0 ), k 0 ) ∈ WF (F )} .
+The same is true for any distribution QF , where Q is a partial differential operator on
+M × M with smooth coefficients, because the wave-front set cannot expand under the
+action of Q.
+There are similar wave-front set conditions under which products of distributions can
+be defined.
+
+3.2
+
+Microlocal formulation of the Hadamard condition
+
+Let us compute the wave-front set of the Minkowski vacuum 2-point function
+Z
+d3 k 1 −ik(x−x0 )
+0
+ω2 (x, x ) =
+e
+.
+(2π)3 2ω
+Consider a localising function of the form φ(x1 , x2 ) = φ1 (x1 )φ2 (x2 ) where φi ∈ C0∞ (M ).
+Then
+Z
+d3 k 1 b
+0
+d
+φ1 (` − k)φb2 (`0 + k)
+φω2 (`, ` ) =
+(2π)3 2ω
+with future pointing, on-shell k. As the functions φi are smooth, their Fourier transforms
+decay rapidly as their arguments become large. The main contribution to the integral
+therefore arises from regions of k where ` − k and `0 + k are simultaneously small, i.e., `
+must be near to the future pointing on-shell covector k, and `0 must be near −k. Arguing
+in this way, it is not hard to see that there are open conic neighbourhoods of R4− × R4 and
+R4 × R4+ in which the integral will tend rapidly to zero as (`, `0 ) → ∞, where R4± is the
+half-space in which ±k0 ≥ 0.
+
+34
+
+k0
+
+k 2 = m2
+
+k
+
+d2 (l, l0 ) → 0 rapidly, regardless of `0 .
+Figure 4: If ` → ∞ in the shaded region then φω
+Thus (x1 , k1 ; x2 , k2 ) is a regular direction if either (i) (k1 )0 ≤ 0 or (ii) (k2 )0 ≥ 0. Putting
+this together with the upper bound
+WF (ω2 ) ⊂ N0 × N0
+we conclude that
+WF (ω2 ) ⊂ N + × N − ,
+
+(18)
+
+where
+N ± = {(p, ξ) ∈ N : ξ is future(+)/past(−) directed}.
+Now any Hadamard state of the Minkowski theory must have the same 2-point wave-front
+set, because 2-point functions of Hadamard states differ by smooth functions. We now
+elevate this to a general principle in curved spacetimes.
+Definition 3.2 A state ω obeys the Microlocal Spectrum Condition (µSC)19 if
+WF (ω2 ) ⊂ N + × N − .
+In particular, this asserts that the ‘singular behaviour’ of the two-point function is
+positive-frequency in the first slot and negative-frequency in the second. We have already
+argued that the Minkowski vacuum obeys the µSC; it is also true that ground and thermal
+states on various classes of stationary spacetime satisfy the µSC [62, 76, 81]. (In relation
+to thermal states, the key point is that negative frequency contributions to the first slot
+19
+
+The term microlocal spectrum condition was introduced in [8] with an apparently stronger definition;
+see the remarks at the end of this section.
+
+35
+
+of the thermal two-point functions are exponentially suppressed, rather than being absent.
+But this is enough to get the necessary decay properties.)
+A truly remarkable fact is that the µSC is enough to completely fix the singular structure
+of ω2 (and even more: see remarks at the end of this section). Bear in mind that even if
+two distributions have the same wavefront set, their difference is not necessarily smooth
+(WF (δ) = WF (2δ), for instance). The following result is due to Radzikowski [74].
+Theorem 3.3 If ω and ω 0 obey the µSC then
+ω2 − ω20 ∈ C ∞ (M × M )
+i.e., the µSC determines an equivalence of class of states under equality of two-point functions modulo C ∞ . Moreover, the µSC is equivalent to the Hadamard condition.
+As mentioned, it is surprising that such a result can be true. The key point is that,
+while the antisymmetric parts of ω2 and ω20 are both equal to 21 iE, WF(ω2 ) is not the whole
+of WF(E), which intersects both N + × N − and N − × N + . Accordingly, the singularities
+in the symmetric part must precisely cancel the unwanted singular directions in WF (E),
+which is how the microlocal spectrum condition does, after all, fix the singular structure
+of the two-point function.
+It follows from Theorem 3.3 that all two-point functions of states obeying µSC must
+have equal wavefront sets. The universal nature of the antisymmetric part of the two-point
+function also allows us to fix the wavefront set of the two-point function as follows.
+Lemma 3.4 If ω obeys the µSC then WF (ω2 ) = WF (E) ∩ (N + × N − ).
+Proof: Define ω̃2 (x, x0 ) = ω2 (x0 , x), so WF (ω̃2 ) ⊂ N − × N + by the µSC. But, using
+successively that iE = ω2 − ω̃2 and ω2 = ω̃2 + iE, we find
+WF (E) ⊂ WF (ω2 ) ∪ WF (ω̃2 ) ⊂ WF (ω̃2 ) ∪ WF (E)
+so, using again the fact that WF (ω̃2 ) ⊂ N − × N +
+WF (E) ⊂ WF(ω2 ) ∪ (N − × N + ) ⊂ (N − × N + ) ∪ WF (E),
+and we take intersections with N + × N − to obtain the required result. 
+The wavefront set of E is known from work of Duistermaat and Hörmander on distinguished parametrices. This permits us to give a final form of the wavefront set of a
+Hadamard 2-point function:
+WF (ω2 ) = {(p, ξ; p, −ξ 0 ) ∈ T ∗ (M × M ) \ Z : (p, ξ) ∼ (p0 , ξ 0 ) and ξ ∈ N + },
+
+(19)
+
+where the equivalence relation ∼ is defined so that (p, ξ) ∼ (p0 , ξ 0 ) if and only if either
+• there is a null geodesic γ connecting p and p0 , so that ξ is parallel to γ̇ [ at p, and ξ 0
+is the parallel transport of ξ to p0 (and necessarily parallel to γ̇ [ at p0 ); or,
+• p = p0 and ξ = ξ 0 .
+36
+
+Eq. (19) is the form that Radzikowski stated as his ‘wavefront set spectral condition’.
+Remarks:
+1. As the following quotation, taken from the 1978 paper of Fulling, Sweeny and Wald
+[50], makes clear, the introduction of the Hadamard condition was a spur to the
+development of the algebraic approach to QFT in CST:
+All these considerations suggest that the validity of [the Hadamard condition] be regarded as a basic criterion for a “physically reasonable” state,
+perhaps even as the definition of that phrase. This raises the possibility of
+constructing quantum states from two-point distribution solutions of the
+field equation by a procedure of the Wightman or GNS type... ...bypassing
+the quantization of normal modes in a Fock space.
+2. We have only discussed regularity of the 2-point function. In some references, the
+term microlocal spectrum condition is defined as a condition on all n-point functions
+of the form
+WF (ωn ) ⊂ Γn ,
+where the Γn are particular subsets of T ∗ M ×n . This condition was introduced in [8],
+where it is also shown to be satisfied by all quasifree Hadamard states. Very recently,
+Sanders has proved that this apparently more general condition is actually equivalent
+to the µSC in the form we have stated; and, moreover, that all states obeying µSC
+have smooth truncated n-point functions for n 6= 2 [77, 78]. One may interpret this
+as saying that all Hadamard states are ‘microlocally quasifree’; it also shows that the
+class of (not necessarily quasifree) Hadamard states is precisely the ‘state space of
+perturbative QFT’ studied by Hollands & Ruan in [57], and previously identified as
+a plausible class of interest by Kay [65].
+3. Finally, we mention a variation on the theme. For some purposes it is sufficient only
+to require the two-point functions to agree with a Hadamard parametrix modulo corrections in some Sobolev space, rather than modulo C ∞ . This leads to the microlocal
+study of adiabatic states [63].
+
+3.3
+
+Application to QEIs
+
+There were two issues to resolve in completing the proof of the general QEI in Sect. 2.4.
+The first was to establish the validity of restricting the differentiated 2-point function to
+the worldline. Effectively we want to define
+G(τ, τ 0 ) = ((Q ⊗ Q)ω2 )) (γ(τ ), γ(τ 0 )),
+i.e., G = (γ × γ)∗ ((Q ⊗ Q)ω2 )). This is well-defined by the example at the end of Section 3.1; moreover,
+WF (G) = {(τ, γ̇(τ ) · k; τ 0 , γ̇(τ 0 ) · k 0 ) ∈ T ∗ R × T ∗ R | (γ(τ ), k; γ(τ 0 ), k 0 ) ∈ WF (ω2 )}
+⊂ R × R+ × R × R− ,
+37
+
+because the covector in the first slot of WF (ω2 ) is future-pointing, as is γ̇(τ ), while the
+covector in the second slot is past-pointing. Here we have used both the Hadamard condition and the timelike nature of the curve in an essential way. The same results apply to
+GR , of course.
+The second question concerned the convergence of
+Z ∞
+dα R
+G (gα ⊗ gα ).
+π
+0
+Now the integrand is
+Z
+0
+dτ dτ 0 g(τ )e−iατ g(τ 0 )eiατ GR (τ, τ 0 ) = [(g ⊗ g)GR ]∧ (−α, α)
+and this decays rapidly as α → +∞ by definition of the wave-front set, and the bound
+WF (GR ) ⊂ R × R+ × R × R− . Thus we have convergence of the integral and a finite bound
+– and we also see why it would have been a bad idea to arrange the final integral in terms
+of an integral over the negative half-line.
+
+4
+
+Conformal field theories
+
+4.1
+
+Derivation of the QEI
+
+Conformal quantum field theories in two-dimensions provide examples of non-free fields
+for which quantum inequality results may be derived. The basic idea was given by Flanagan [39] for massless scalar fields. It was generalised to massless Dirac fields by Vollick [85]
+and made into a general and rigorous argument for CFTs by Fewster & Hollands [26]. We
+will not emphasize analytical details here, although everything can be made precise and
+rigorous. Throughout, we work in two-dimensional Minkowski space; a general reference
+is [51].
+Recall that the stress tensor T ab in CFT is traceless and splits into chiral components
+T 00 (t, x) = TR (t − x) + TL (t + x)
+T 01 (t, x) = TR (t − x) − TL (t + x)
+and that the left- and right-moving chiral components TL and TR commute and obey the
+spectrum condition
+Z
+PL,R =
+
+TL,R (v) dv ≥ 0.
+
+The important feature of CFTs we will use is that reparameterisations of null coordinates v = t − x, u = t + x are unitarily implemented, in the following sense. Under the
+correspondence v 7→ z(v) := (i − v)/(i + v), the real-line is mapped to T \ {−1}, where
+T∼
+= S 1 is the unit circle in C. If a reparameterisation v 7→ V (v) lifts to an orientation
+preserving diffeomorphism of S 1 , then there is a unitary UR (V ) s.t.
+cR
+{V, v}1,
+UR (V )TR (v)UR (V )−1 = V 0 (v)2 TR (V (v)) −
+24π
+38
+
+where cR is the central charge (for right-movers) and
+p
+1
+d2
+{V, v} = −2 V 0 (v) 2 p
+dv
+V 0 (v)
+is the Schwarzian derivative. The same is true for TL and the unitaries UL , UR commute.20
+Consider one of the stress-tensor components, say, T (v) and let f be a smooth compactly
+supported positive real-valued function. We define
+Z
+T (f ) = T (v)f (v) dv
+and aim to show that there is a lower bound on the expectation values hT (f )iψ .
+The idea is to define v 7→ V (v) by V 0 (v) = 1/f (v) and set ψ 0 = U (V )ψ. Then
+f (v)hT (v)iψ = f (v)hU (V )T (v)U (V )−1 iψ0
+c
+{V, v}f (v)
+= V 0 (v)hT (V (v))iψ0 −
+24π
+so
+Z
+
+Z
+
+Z
+c
+hT (v)iψ f (v) dv =
+hT (V )iψ0 dV −
+{V, v}f (v) dv
+24π
+Z
+c
+= hP iψ0 −
+{V, v}f (v) dv.
+24π
+
+Using the spectrum condition, and rearranging, we find
+2
+Z
+Z  p
+c
+d
+hT (v)iψ f (v) dv ≥ −
+f (v) dv
+12π
+dv
+for all ‘reasonable’ ψ.
+The only problem is that the map v 7→ V (v) does not lift to a diffeomorphism of S 1 .
+The resolution is to replace f by
+fn (v) = f (v) +  − ζn (v)
+with ζn chosen so that
+0
+1
+• V
+Z (v) = 1/fn (v) does lift to a diffeomorphism of S for all n ∈ N,  > 0;
+•
+
+hT (v)iψ ζn (v) dv −→ 0 as n → ∞ for each fixed ψ, ;
+
+20
+
+More generally, the theory contains commuting ‘left’ and ‘right’ unitary multiplier representations of
+the universal covering group of the orientation-preserving diffeomorphisms of S 1 , obeying
+0
+
+U (ρ)U (ρ0 ) = eicB(ρ,ρ ) U (ρρ0 )
+where B is the Bott cocycle and c is the central charge.
+
+39
+
+Z 
+
+dp
+• lim+ lim
+fn (v)
+→0 n→∞
+dv
+Then, for each fixed ψ
+Z
+
+2
+
+Z 
+dv =
+
+2
+dp
+f (v) dv.
+dv
+
+c
+hT (v)iψ fn (v) dv ≥ −
+12π
+
+Z 
+
+2
+dp
+fn (v) dv
+dv
+
+so taking n → ∞...
+Z
+
+c
+hT (v)iψ f (v) dv + hP iψ ≥ −
+lim
+12π n→∞
+
+Z 
+
+2
+dp
+fn (v) dv
+dv
+
+...and  → 0+ , we obtain the desired bound
+Z
+
+c
+hT (v)iψ f (v) dv ≥ −
+12π
+
+Z 
+
+2
+dp
+f (v) dv .
+dv
+
+The fully rigorous argument for this is given in [26], where an axiomatic setting is
+adopted in which all the above manipulations are justified and the class of ‘reasonable’ ψ
+is specified. The axioms are shown to hold for CFTs constructed from unitary, positive
+energy Virasoro representations. We also proved that the bound is sharp if the theory has
+a conformally invariant vacuum. Any nonnegative f ∈ S (R) can be used for smearing.
+This argument is notable, partly as the first examples of QEIs for non-free fields, but
+also because it does not depend on a ‘sum of squares’ form of the energy density. It is also
+model-independent, applying to all unitary positive energy CFTs in one go.
+
+4.2
+
+Probability distributions
+
+Everything said so far concerns the expectation value of the smeared stress-energy tensor or
+other similar quantities. Here, we discuss what information can be gleaned concerning the
+underlying probability distribution of individual measurements of such quantities. Again,
+CFTs provide a framework in which this can be studied for a whole class of models. The
+argument given here is taken from [23] and approaches the probability distribution through
+its moment generating function
+M [µf ] =
+
+∞
+X
+µn hΩ | T (f )n Ωi
+
+n!
+
+n=0
+
+.
+
+Our notation is
+Gn (un , . . . , u1 ) = hΩ | T (un ) · · · T (u1 )Ωi
+Gn [f ] = Gn (f, . . . , f ) = hΩ | T (f )n Ωi
+
+40
+
+(G0 = 1)
+
+and we assume that test functions are real-valued and rapidly decaying at infinity. The
+main tool used in the argument is the CFT Ward identity [51, p. 28]21
+n−1 
+X
+c Gn−2 (un−1 , . . . , ûj , . . . , u1 )
+Gn (un , . . . , u1 ) =
+8π 2
+(un − uj − i0)4
+j=1
+
+
+∂j Gn−1 (un−1 , . . . , u1 ) Gn−1 (un−1 , . . . , u1 )
+−
+−
+,
+2π(un − uj − i0)
+π(un − uj − i0)2
+where the hat denotes an omitted variable.
+Since G0 = 1 and G1 (u1 ) = hT (u1 )i ≡ 0, it follows immediately that
+G2 (u2 , u1 ) =
+
+c
+8π 2 (u2 − u1 − i0)4
+
+(20)
+
+and if we smear the Ward identity against n copies of f , we find
+Gn [f ] = (n − 1)G2 [f ]Gn−2 [f ] +
+
+n−1
+X
+
+In,j ,
+
+j=1
+
+where
+1
+In,j = −
+2π
+
+
+
+Z
+
+1
+∂j Gn−1 (f, . . . , uj , . . . , f )
+un − uj − i0
+
+2
++
+Gn−1 (f, . . . , uj , . . . , f )
+(un − uj − i0)2
+= Gn−1 (f, . . . , f ? f , . . . , f )
+| {z }
+dun duj f (un )f (uj )
+
+j
+
+after integration by parts. Here, f ? f is
+ 
+
+
+Z
+f (uj )
+f (uj )
+−
+f ? f (uj ) =
+dun f (un ) ∂j
+2π(un − uj − i0)
+π(un − uj − i0)2
+
+
+Z
+f (un )f 0 (uj )
+f (un )f (uj )
+=
+dun
+−
+2π(un − uj − i0) 2π(un − uj − i0)2
+
+
+Z
+f (un )f 0 (uj )
+1
+=
+dun
++ f (un )f (uj )∂n
+2π(un − uj − i0)
+2π(un − uj − i0)
+Z
+0
+0
+f (un )f (uj ) − f (un )f (uj )
+=
+dun
+2π(un − uj − i0)
+Z
+f (un )f 0 (uj ) − f 0 (un )f (uj )
+=
+dun
+2π(un − uj )
+21
+
+(21)
+(22)
+
+Beware, however, a misprint in Eq. (3.12a) of [51] [Θ(−) should be Θ(+) ]. Fortunately the result given
+before (3.15) of [51] is correct.
+
+41
+
+after using the Leibniz rule, a further integration by parts in one term and observing that
+the the numerator in the penultimate integrand vanishes as O(un − uj ) as un → uj . Note
+that no boundary terms arise when integrating by parts provided f is compactly supported,
+for instance.
+To solve the recurrence relation, consider a 1-parameter family of test functions (fλ (u))λ∈R
+solving
+dfλ
+= fλ ? f λ
+f0 = f.
+dλ
+Then the recurrence relation becomes
+Gn [fλ ] = (n − 1)G2 [fλ ]Gn−2 [fλ ] +
+
+d
+Gn−1 [fλ ]
+dλ
+
+and gives a p.d.e.
+∂
+∂
+M [µfλ ] = µG2 [fλ ]M [µfλ ] +
+M [µfλ ]
+∂µ
+∂λ
+using G0 [fλ ] = 1, G1 [fλ ] = 0. Solving, using the fact that M [µfλ ]|µ=0 = 1 and setting
+λ = 0,
+
+Z µ
+dλ (µ − λ)G2 [fλ ] ,
+M [µf ] = exp
+0
+
+a result first obtained by Haba [53].
+In general, it is not easy to take this further.√ However, if f is Gaussian, we may proceed
+2
+2
+to a closed form result. Let f (u) = e−u /τ /(τ π) and make an ansatz fλ (u) = A(λ)f (u).
+Then
+A(λ)2
+A(λ)
+2
+2
+(fλ ? fλ )(u) = 3 3/2 e−u /τ = 2 fλ (u),
+τ π
+τ π
+so the flow equation for fλ reduces to
+A0 (λ) =
+
+A(λ)2
+.
+τ 2π
+
+The unique solution with A(0) = 1 is
+A(λ) =
+
+πτ 2
+.
+πτ 2 − λ
+
+Thus G2 [fλ ] = A(λ)2 G2 [f ] and we calculate
+"
+
+2
+
+e−µ/(πτ )
+M [µf ] =
+1 − µ/(πτ 2 )
+
+#c/24
+.
+
+The probability distribution itself is then obtained essentially by inverse Laplace transformation: we seek P (ω) such that
+Z ∞
+M [µf ] =
+dω P (ω)eµω .
+−∞
+
+42
+
+and the solution is
+P (ω) = ϑ(ω + ω0 )
+
+β α (ω + ω0 )α−1
+exp(−β(ω + ω0 )),
+Γ(α)
+
+(a shifted Gamma distribution) with parameters
+ω0 =
+
+c
+,
+24πτ 2
+
+α=
+
+c
+,
+24
+
+β = πτ 2 ,
+
+which has an integrable singularity at lower limit for c < 24.
+P (x)
+
+1
+− 24
+
+x
+
+0
+
+Figure 5: The probability density P (x) plotted for c = 1, where x = πτ 2 ω
+One should mention that the Hamburger moment theorem guarantees that this is the
+only possible solution: noting that it is a solution, we may use it to read off the moments
+an of P (ω) and note that they obey a bound |Gn [f ]| ≤ BC n n! for some constants B, C,
+thereby satisfying the hypotheses of the Hamburger uniqueness theorem [79].
+The probability distribution is clearly highly skewed. We see that the lower bound of
+the support coincides precisely with the sharp lower bound on the expectation values of
+T (f ) for the Gaussian f , i.e., −c/(24πτ 2 ) – as it should for general reasons [23]. Thus the
+QEI bound, which was originally derived as a constraint on the expectation value of the
+smeared energy density, also turns out to be a constraint on the minimum value that can
+be achieved in an individual measurement of this quantity.
+The probability of obtaining a negative value is given in terms of incomplete Γ-functions:
+Prob(ω < 0) = 1 −
+
+Γ(c/24, c/24)
+.
+Γ(c/24)
+
+For c = 1, this results in a value 0.89 – an overwhelming likelihood of obtaining a negative
+value from a measurement in the vacuum state. In the limit c → ∞ the probability tends to
+43
+
+1/2, to be expected from the central limit theorem. (Note: the above computation refers
+to just one of the chiral components of Tab , and for averaging along the corresponding
+light-ray. For Gaussian averages of the energy density along an inertial curve and c = 1,
+the probability of obtaining a negative value is 0.84.)
+It is somewhat ironic that negative energy densities, which are suppressed (in all physically reasonable states) by the uncertainty principle expressed in the QEIs, turn out to
+occur with such high probability, in individual measurements made in the vacuum state. It
+is not known with what probability negative energy densities occur in any other state, or
+for test functions other than a Gaussian, but it would be of interest to extend the analysis
+further. Investigations of similar phenomena in four dimensions can be found in [24]. An
+application to two-dimensional dilaton quantum gravity was made in [11], to argue that
+the positive energy tail causes strong focussing of light cones near the Planck scale.
+
+5
+
+Other directions
+
+5.1
+
+Nonminimal coupling
+
+As mentioned above, the classical minimally coupled scalar field obeys the WEC by virtue
+of a decomposition of the energy density as a sum of squares. This is not true for the
+nonminimally coupled field, and indeed the energy density can be made arbitrarily negative
+at any given point (see, e.g., [49] for a discussion). It turns out that this behaviour is,
+nonetheless, constrained by locally averaged energy conditions reminiscent of the QEIs [28].
+For example, if γ is a complete causal geodesic with affine parameter λ in a spacetime M ,
+and the coupling constant is ξ ∈ [0, 1/4] then there is a bound
+
+
+
+
+Z
+Z
+1
+1
+a b
+2
+2
+2
+a b
+2
+2
+dλ Tab γ̇ γ̇ |g| ≥ −2ξ dλ |∂λ g| + Rab γ̇ γ̇ |g| −
+− ξ Rγ̇ |g| φ2
+2
+4
+γ
+γ
+for any solution φ to the nonminimally coupled Klein–Gordon equation, with corresponding
+stress-energy tensor Tab and any g ∈ C0∞ (R). In particular this result includes the case of
+conformal coupling. Note that the bound involves the field, but not its derivatives, while
+the quantity to be bounded involves field and derivatives, including some of second order.
+This inequality therefore exhibits the ‘gain in derivatives’ phenomenon that occurs in the
+Gårding inequalities of pseudodifferential operator theory.
+The corresponding quantum theory was discussed in [29] for the case of Minkowski
+space. It was found that the nonminimally coupled field can sustain large negative energy
+densities for long periods of time. The argument is the following: the failure of classical
+WEC allows the existence of one-particle states with negative energy density near the
+origin, say. By a scaling argument these can be taken to have any desired spacetime extent,
+although the magnitude is correspondingly reduced. However, we may tensor together as
+many of these one-particle states as we wish, with respect to which the energy density is
+additive (as this is a free theory). Thus states of arbitrarily negative energy density can
+be sustained over arbitrarily large spacetime volumes.
+44
+
+However, there is a cost. The overall energy of these states is positive, and grows more
+rapidly than the scales characterising the negative energy density effect produced. So the
+production of negative energy density is inefficient in this sense. By modifying the QEI
+arguments discussed in these notes, one can establish QEI bounds for the nonminimally
+coupled field that are state-dependent [29]. In these bounds the averaged energy density
+is bounded below by state-independent terms together with terms that involve averages
+of the expectation value of the Wick square of the field in the state of interest – again
+demonstrating a ‘gain in derivatives’ phenomenon. If one estimates these terms using the
+Hamiltonian operator, it again emerges that the production of sustained negative energy
+densities only occurs when disproportionately large positive energies are available. This is
+still a comparatively new development; further work, it is hoped, will clarify these issues.
+
+5.2
+
+Interacting fields
+
+There is now a fairly complete theory of quantum energy inequalities for free fields in
+globally hyperbolic spacetimes of any dimension (although optimal bounds are lacking in
+general). As we have seen, similar results hold in a large class of conformal field theories
+in two dimensions. The situation for interacting fields is more complicated, of course, and
+not so much is known. The following remarks summarise the state of knowledge:
+• One cannot expect state-independent QEIs to hold; as mentioned, these can even fail
+in the nonminimally coupled theory. Moreover, on physical grounds, we can expect
+that long-lasting negative energy densities can be sustained by quantum fields as
+shown by the example of the Casimir effect, modelling the plates as certain states of
+a full interacting theory. A computation along these lines was undertaken by Olum
+and Graham [68]; although there is a net positive energy density near the ‘plates’,
+their set-up maintains a negative energy density near the mid-point between them.
+However, it is possible that modified QEIs hold – see [15, p. 176] for some discussion.
+• In terms of positive results, the averaged null energy condition is known to hold in
+general two-dimensional quantum field theories [83]. In spacetime dimension of 3 or
+more, Bostelmann & Fewster [5] have proved that for a wide class of theories obeying
+the ‘microscopic phase space condition’ there are generally state-dependent QI type
+results on quantities that are ‘classically positive’, i.e., arise as the leading term in
+the OPE of a sum of squares.
+
+5.3
+
+Singularity theorems
+
+I originally motivated the energy conditions by reference to the singularity theorems, in
+which they guarantee certain focussing behaviour. An important question is whether or
+not the QEI results provide sufficient control to guarantee that quantised matter also obeys
+singularity theorems.
+
+45
+
+Although this question is far from resolved, Fewster & Galloway [25] have recently
+shown that the hypotheses of the singularity theorems can be weakened to accommodate bounds motivated by the QEIs. Unfortunately there is still a bit of a gap, because
+Hawking-style singularity theorems, concerning congruences of timelike geodesics, require
+the SEC (for which there is not a state-independent QEI) and Penrose-type results involve
+null geodesic congruences (which are not suitable for QEI bounds). Nonetheless, this is
+encouraging, and one can hope for more progress. For previous results along these lines
+see references in [25].
+
+References
+[1] Abreu, G. and Visser, M., Quantum interest in (3 + 1)-dimensional Minkowski space, Phys.
+Rev. D 79 (2009) 065004, arXiv:0808.1931.
+[2] Bär, C. and Fredenhagen, K. (eds.), Quantum field theory on curved spacetimes: Concepts
+and mathematical foundations, Lecture Notes in Physics, Vol. 786 (Springer-Verlag, Berlin,
+2009). Lecture notes from the course held at the University of Potsdam, Potsdam, October
+2007.
+[3] Bär, C., Ginoux, N., and Pfäffle, F., Wave equations on Lorentzian manifolds and quantization (European Mathematical Society (EMS), Zürich, 2007), arXiv:0806.1036.
+[4] Bernal, A. N. and Sánchez, M., Globally hyperbolic spacetimes can be defined as causal
+instead of strongly causal, Class. Quant. Grav. 24 (2007) 745–750, arXiv:gr-qc/0611138.
+[5] Bostelmann, H. and Fewster, C. J., Quantum inequalities from operator product expansions,
+Comm. Math. Phys. 292 (2009) 761–795, arXiv:0812.4760.
+[6] Brown, L. S. and Maclay, G. J., Vacuum stress between conducting plates: An image solution,
+Phys. Rev. 184 (1969) 1272–1279.
+[7] Brunetti, R. and Fredenhagen, K., Microlocal analysis and interacting quantum field theories: Renormalization on physical backgrounds, Commun. Math. Phys. 208 (2000) 623–661,
+arXiv:math-ph/9903028.
+[8] Brunetti, R., Fredenhagen, K., and Köhler, M., The microlocal spectrum condition and Wick
+polynomials of free fields on curved spacetimes, Commun. Math. Phys. 180 (1996) 633–652,
+arXiv:gr-qc/9510056.
+[9] Brunetti, R., Fredenhagen, K., and Verch, R., The generally covariant locality principle:
+A new paradigm for local quantum physics, Commun. Math. Phys. 237 (2003) 31–68,
+arXiv:math-ph/0112041.
+[10] Capria, M., Physics Before And After Einstein (IOS Press, 2005).
+[11] Carlip, S., Mosna, R. A., and Pitelli, J. P. M., Vacuum fluctuations and the small scale
+structure of spacetime, Phys. Rev. Lett. 107 (2011) 021303, arXiv:1103.5993.
+[12] Dawson, S. P. and Fewster, C. J., An explicit quantum weak energy inequality for Dirac
+fields in curved spacetimes, Class. Quant. Grav. 23 (2006) 6659–6681, arXiv:gr-qc/0604106.
+[13] DeWitt, B. S. and Brehme, R. W., Radiation damping in a gravitational field, Ann. Physics
+9 (1960) 220–259.
+[14] Epstein, H., Glaser, V., and Jaffe, A., Nonpositivity of the energy density in quantized field
+theories, Il Nuovo Cim. 36 (1965) 1016–1022.
+[15] Everett, A. and Roman, T., Time travel and warp drives (University of Chicago Press,
+Chicago, 2012).
+
+46
+
+[16] Eveson, S. P. and Fewster, C. J., Mass dependence of quantum energy inequality bounds, J.
+Math. Phys. 48 (2007) 093506, arXiv:math-ph/0702074.
+[17] Fewster, C. J., A general worldline quantum inequality, Class. Quant. Grav. 17 (2000) 1897–
+1911, arXiv:gr-qc/9910060.
+[18] Fewster, C. J., Energy inequalities in quantum field theory, in XIVth International Congress
+on Mathematical Physics, ed. Zambrini, J. C. (World Scientific, Singapore, 2005). An expanded and updated version is available as arXiv:math-ph/0501073.
+[19] Fewster, C. J., Quantum energy inequalities and stability conditions in quantum field theory,
+in Rigorous Quantum Field Theory: A Festschrift for Jacques Bros, eds. Boutet de Monvel,
+A., Buchholz, D., Iagolnitzer, D., and Moschella, U., Progress in Mathematics, Vol. 251
+(Birkhäuser, Boston, 2006), arXiv:math-ph/0502002.
+[20] Fewster, C. J., Quantum energy inequalities and local covariance. II. Categorical formulation,
+Gen. Relativity Gravitation 39 (2007) 1855–1890, arXiv:math-ph/0611058.
+[21] Fewster, C. J., Lectures on quantum field theory in curved spacetime (2008), lecture
+Note 39/2008 of the Max Planck Institute for Mathematics in the Natural Sciences,
+http://www.mis.mpg.de/publications/other-series/ln/lecturenote-3908.html.
+[22] Fewster, C. J. and Eveson, S. P., Bounds on negative energy densities in flat spacetime,
+Phys. Rev. D 58 (1998) 084010, arXiv:gr-qc/9805024.
+[23] Fewster, C. J., Ford, L. H., and Roman, T. A., Probability distributions of smeared quantum
+stress tensors, Phys. Rev. D 81 (2010) 121901, arXiv:1004.0179.
+[24] Fewster, C. J., Ford, L. H., and Roman, T. A., Probability distributions for quantum stress
+tensors in four dimensions, Phys. Rev. D 85 (2012) 125038, arXiv:1204.3570.
+[25] Fewster, C. J. and Galloway, G. J., Singularity theorems from weakened energy conditions,
+Classical Quantum Gravity 28 (2011) 125009, arXiv:1012.6038.
+[26] Fewster, C. J. and Hollands, S., Quantum energy inequalities in two-dimensional conformal
+field theory, Rev. Math. Phys. 17 (2005) 577–612, arXiv:math-ph/0412028.
+[27] Fewster, C. J. and Mistry, B., Quantum weak energy inequalities for the Dirac field in flat
+spacetime, Phys. Rev. D 68 (2003) 105010, arXiv:gr-qc/0307098.
+[28] Fewster, C. J. and Osterbrink, L. W., Averaged energy inequalities for the nonminimally
+coupled classical scalar field, Phys. Rev. D 74 (2006) 044021, arXiv:gr-qc/0606009.
+[29] Fewster, C. J. and Osterbrink, L. W., Quantum energy inequalities for the non-minimally
+coupled scalar field, J. Phys. A41 (2008) 025402, arXiv:0708.2450 [gr-qc].
+[30] Fewster, C. J. and Pfenning, M. J., A quantum weak energy inequality for spin-one fields in
+curved spacetime, J. Math. Phys. 44 (2003) 4480–4513, arXiv:gr-qc/0303106.
+[31] Fewster, C. J. and Pfenning, M. J., Quantum energy inequalities and local covariance. I:
+Globally hyperbolic spacetimes, J. Math. Phys. 47 (2006) 082303, arXiv:math-ph/0602042.
+[32] Fewster, C. J. and Roman, T. A., Null energy conditions in quantum field theory, Phys. Rev.
+D67 (2003) 044003, gr-qc/0209036.
+[33] Fewster, C. J. and Roman, T. A., On wormholes with arbitrarily small quantities of exotic
+matter, Phys. Rev. D72 (2005) 044023, arXiv:gr-qc/0507013.
+[34] Fewster, C. J. and Smith, C. J., Absolute quantum energy inequalities in curved spacetime,
+Annales Henri Poincaré 9 (2008) 425–455, arXiv:gr-qc/0702056.
+[35] Fewster, C. J. and Teo, E., Bounds on negative energy densities in static space-times, Phys.
+Rev. D 59 (1999) 104016, arXiv:gr-qc/9812032.
+[36] Fewster, C. J. and Teo, E., Quantum inequalities and “quantum interest” as eigenvalue
+problems, Phys. Rev. D 61 (2000) 084012, arXiv:gr-qc/9908073.
+
+47
+
+[37] Fewster, C. J. and Verch, R., A quantum weak energy inequality for Dirac fields in curved
+spacetime, Commun. Math. Phys. 225 (2002) 331–359, arXiv:math-ph/0105027.
+[38] Fewster, C. J. and Verch, R., Stability of quantum systems at three scales: Passivity, quantum weak energy inequalities and the microlocal spectrum condition, Commun. Math. Phys.
+240 (2003) 329–375, arXiv:math-ph/0203010.
+[39] Flanagan, É. É., Quantum inequalities in two-dimensional Minkowski spacetime, Phys. Rev.
+D (3) 56 (1997) 4922–4926, arXiv:gr-qc/9706006.
+[40] Ford, L. H., Quantum coherence effects and the second law of thermodynamics, Proc. Roy.
+Soc. Lond. A 364 (1978) 227–236.
+[41] Ford, L. H., Constraints on negative-energy fluxes, Phys. Rev. D 43 (1991) 3972–3978.
+[42] Ford, L. H., Negative Energy Densities in Quantum Field Theory, International Journal of
+Modern Physics A 25 (2010) 2355–2363, arXiv:0911.3597 [quant-ph].
+[43] Ford, L. H., Helfer, A. D., and Roman, T. A., Spatially averaged quantum inequalities do not
+exist in four-dimensional spacetime, Phys. Rev. D 66 (2002) 124012, arXiv:gr-qc/0208045.
+[44] Ford, L. H., Pfenning, M. J., and Roman, T. A., Quantum inequalities and singular negative
+energy densities, Phys. Rev. D 57 (1998) 4839–4846, arXiv:gr-qc/9711030.
+[45] Ford, L. H. and Roman, T. A., Averaged energy conditions and quantum inequalities, Phys.
+Rev. D 51 (1995) 4277–4286, arXiv:gr-qc/9410043.
+[46] Ford, L. H. and Roman, T. A., Quantum field theory constrains traversable wormhole geometries, Phys. Rev. D53 (1996) 5496–5507, arXiv:gr-qc/9510071.
+[47] Ford, L. H. and Roman, T. A., Restrictions on negative energy density in flat spacetime,
+Phys. Rev. D 55 (1997) 2082–2089, arXiv:gr-qc/9607003.
+[48] Ford, L. H. and Roman, T. A., The quantum interest conjecture, Phys. Rev. D 60 (1999)
+104018, 8, arXiv:gr-qc/9901074.
+[49] Ford, L. H. and Roman, T. A., Classical scalar fields and the generalized second law, Phys.
+Rev. D 64 (2001) 024023, 12, arXiv:gr-qc/0009076.
+[50] Fulling, S. A., Sweeny, M., and Wald, R. M., Singularity structure of the two point function
+in quantum field theory in curved space-time, Commun. Math. Phys. 63 (1978) 257–264.
+[51] Furlan, P., Sotkov, G. M., and Todorov, I. T., Two-dimensional conformal quantum field
+theory, Riv. Nuovo Cimento (3) 12 (1989) 1–202.
+[52] Haag, R., Local Quantum Physics: Fields, Particles, Algebras (Springer-Verlag, Berlin,
+1992).
+[53] Haba, Z., Generating functional for the energy-momentum tensor in two-dimensional conformal field theory, Phys. Rev. D 41 (1990) 724–726.
+[54] Hawking, S. W. and Ellis, G. F. R., The Large Scale Structure of Space-Time (Cambridge
+University Press, London, 1973).
+[55] Helfer, A. D., “Operational” energy conditions, Classical Quantum Gravity 15 (1998) 1169–
+1183, arXiv:gr-qc/9709047.
+[56] Hollands, S., Renormalized quantum Yang-Mills fields in curved spacetime, Rev. Math. Phys.
+20 (2008) 1033–1172, arXiv:0705.3340.
+[57] Hollands, S. and Ruan, W., The state space of perturbative quantum field theory in curved
+spacetimes, Annales Henri Poincaré 3 (2002) 635–657, gr-qc/0108032.
+[58] Hollands, S. and Wald, R. M., Local Wick polynomials and time ordered products of quantum
+fields in curved spacetime, Commun. Math. Phys. 223 (2001) 289–326, arXiv:gr-qc/0103074.
+[59] Hollands, S. and Wald, R. M., Existence of local covariant time ordered products of quantum
+fields in curved spacetime, Commun. Math. Phys. 231 (2002) 309–345, arXiv:gr-qc/0111108.
+
+48
+
+[60] Hörmander, L., Fourier integral operators. I, Acta Math. 127 (1971) 79–183.
+[61] Hörmander, L., The Analysis of Linear Partial Differential Operators I (Springer Verlag,
+Berlin, 1983).
+[62] Junker, W., Hadamard states, adiabatic vacua and the construction of physical states for
+scalar quantum fields on curved space- time, Rev. Math. Phys. 8 (1996) 1091–1159.
+[63] Junker, W. and Schrohe, E., Adiabatic vacuum states on general spacetime manifolds: Definition, construction, and physical properties, Annales Poincaré Phys. Theor. 3 (2002) 1113–
+1182, arXiv:math-ph/0109010.
+[64] Kay, B. S., Casimir effect in quantum field theory, Phys. Rev. D20 (1979) 3052–3062.
+[65] Kay, B. S., Quantum field theory in curved space-time, in Mathematical Physics X: Proceedings of the Xth Congress on Mathematical Physics, ed. Schmüdgen, K. (Springer-Verlag,
+Berlin, 1992), pp. 383–387.
+[66] Kay, B. S. and Wald, R. M., Theorems on the uniqueness and thermal properties of stationary, nonsingular, quasifree states on space-times with a bifurcate Killing horizon, Phys.
+Rept. 207 (1991) 49–136.
+[67] Moretti, V., Comments on the stress-energy tensor operator in curved spacetime, Commun.
+Math. Phys. 232 (2003) 189–221, arXiv:gr-qc/0109048.
+[68] Olum, K. D. and Graham, N., Static negative energies near a domain wall, Phys. Lett. B554
+(2003) 175–179, arXiv:gr-qc/0205134.
+[69] Pfenning, M. J., Quantum inequalities for the electromagnetic field, Phys. Rev. D 65 (2001)
+024009, arXiv:gr-qc/0107075.
+[70] Pfenning, M. J. and Ford, L. H., Quantum inequalities on the energy density in static
+Robertson-Walker spacetimes, Phys. Rev. D 55 (1997) 4813–4821, arXiv:gr-qc/9608005.
+[71] Pfenning, M. J. and Ford, L. H., The unphysical nature of ‘warp drive’, Class. Quant. Grav.
+14 (1997) 1743–1751, arXiv:gr-qc/9702026.
+[72] Pfenning, M. J. and Ford, L. H., Scalar field quantum inequalities in static spacetimes, Phys.
+Rev. D 57 (1998) 3489–3502, arXiv:gr-qc/9710055.
+[73] Pretorius, F., Quantum interest for scalar fields in Minkowski spacetime, Phys. Rev. D 61
+(2000) 064005, arXiv:gr-qc/9903055.
+[74] Radzikowski, M. J., Micro-local approach to the Hadamard condition in quantum field theory
+on curved space-time, Commun. Math. Phys. 179 (1996) 529–553.
+[75] Roman, T. A., Some thoughts on energy conditions and wormholes, in Proceedings of the
+Tenth Marcel Grossmann Conference on General Relativity, eds. Bergliaffa, S. and Novello,
+M. (World Scientific, Singapore, 2006), gr-qc/0409090.
+[76] Sahlmann, H. and Verch, R., Passivity and microlocal spectrum condition, Commun. Math.
+Phys. 214 (2000) 705–731, arXiv:math-ph/0002021.
+[77] Sanders, J. A., Aspects of locally covariant quantum field theory, Ph.D. thesis, University of
+York (2008), arXiv:0809.4828 [math-ph].
+[78] Sanders, K., Equivalence of the (generalised) Hadamard and microlocal spectrum condition
+for (generalised) free fields in curved spacetime, Comm. Math. Phys. 295 (2010) 485–501,
+arXiv:0903.1021.
+[79] Simon, B., The classical moment problem as a self-adjoint finite difference operator, Adv.
+Math. 137 (1998) 82–203.
+[80] Smith, C. J., An absolute quantum energy inequality for the Dirac field in curved spacetime,
+Class. Quant. Grav. 24 (2007) 4733–4750, arXiv:0705.2203 [gr-qc].
+
+49
+
+[81] Strohmaier, A., Verch, R., and Wollenberg, M., Microlocal analysis of quantum fields on
+curved spacetimes: Analytic wavefront sets and Reeh-Schlieder theorems, J. Math. Phys. 43
+(2002) 5514–5530, arXiv:math-ph/0202003.
+[82] Teo, E. and Wong, K. F., Quantum interest in two dimensions, Phys. Rev. D 66 (2002)
+064007, arXiv:gr-qc/0206066.
+[83] Verch, R., The averaged null energy condition for general quantum field theories in two
+dimensions, J. Math. Phys. 41 (2000) 206–217, arXiv:math-ph/9904036.
+[84] Verch, R., Quantum (or averaged) energy inequalities in quantum field theory, in Quantum
+field theory and beyond (World Sci. Publ., Hackensack, NJ, 2008), pp. 122–140.
+[85] Vollick, D. N., Quantum inequalities in curved two-dimensional spacetimes, Phys. Rev. D
+61 (2000) 084022, arXiv:gr-qc/0001009.
+[86] Wald, R. M., General Relativity (University of Chicago Press, Chicago, 1984).
+[87] Wald, R. M., Quantum Field Theory in Curved Spacetime and Black Hole Thermodynamics
+(University of Chicago Press, Chicago, 1994).
+[88] Yu, H. and Wu, P., Quantum inequalities for the free Rarita-Schwinger fields in flat spacetime, Phys. Rev. D 69 (2004) 064008, arXiv:gr-qc/0312071.
+
+50
+
+

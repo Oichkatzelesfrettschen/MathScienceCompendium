@@ -1,0 +1,243 @@
+{
+  "schema_version": 1,
+  "description": "Operational admission and rejection packages for physical claims that survive mathematical triage.",
+  "packages": [
+    {
+      "claim_id": "scalar_field_curvature_mechanism",
+      "package_kind": "field_theory_model",
+      "current_outcome": "rejected",
+      "measurable": true,
+      "admission_ready": false,
+      "established_baseline": "A scalar field can source curvature only through a specified covariant action and its derived stress-energy tensor.",
+      "mechanism_under_test": "A new scalar sector produces stable curvature dynamics and a signal not reproduced by general relativity or a standard minimally coupled scalar.",
+      "source_ids": [],
+      "observables": [
+        {"name": "constraint_residual", "unit": "dimensionless", "measurement": "Maximum normalized Hamiltonian and momentum constraint residual."},
+        {"name": "perturbation_growth_rate", "unit": "1/s", "measurement": "Largest linearized mode growth rate on the named background."},
+        {"name": "distinguishing_signal", "unit": "model_defined", "measurement": "Preregistered observable for which the proposed action differs from both controls."}
+      ],
+      "controls": [
+        "General-relativity solution with the same matter source and boundary data.",
+        "Minimally coupled scalar with matched initial energy and spectrum.",
+        "Null-source evolution with identical numerical resolution and gauge conditions."
+      ],
+      "energy_accounting": {
+        "required": true,
+        "cycle_boundary": "A complete evolution interval with all initial, final, boundary, and source terms retained.",
+        "closure_equation": "E_initial + W_matter_exchange + W_boundary = E_final + E_radiated + E_dissipated + residual",
+        "channels": [
+          {"name": "scalar_kinetic_energy", "direction": "stored", "measurement_status": "undefined"},
+          {"name": "scalar_gradient_energy", "direction": "stored", "measurement_status": "undefined"},
+          {"name": "scalar_potential_energy", "direction": "stored", "measurement_status": "undefined"},
+          {"name": "matter_exchange_work", "direction": "input_or_output", "measurement_status": "undefined"},
+          {"name": "boundary_flux", "direction": "input_or_output", "measurement_status": "undefined"},
+          {"name": "radiated_energy", "direction": "output", "measurement_status": "undefined"}
+        ]
+      },
+      "acceptance_criteria": [
+        "A covariant action, field content, coupling constants, units, gauge conditions, and boundary data are fixed before evaluation.",
+        "The field equations and stress-energy tensor are derived from the action and the evolution preserves normalized constraints at or below 1e-8 under refinement.",
+        "The named background has no ghost, gradient, or tachyonic instability in the claimed operating regime.",
+        "A preregistered distinguishing observable exceeds both matched controls with a corrected 5 percent false-positive rate on held-out data."
+      ],
+      "rejection_criteria": [
+        "Reject the mechanism when the action, units, stress tensor, or boundary data are absent.",
+        "Reject novelty when the signal is reproduced by either matched control or disappears under numerical refinement.",
+        "Reject stability when any physical perturbation mode grows in the claimed stable regime."
+      ],
+      "missing_required_evidence": [
+        "Covariant action and parameter units.",
+        "Derived metric and scalar field equations.",
+        "Named background and perturbative stability spectrum.",
+        "Raw numerical or experimental data for a distinguishing observable."
+      ]
+    },
+    {
+      "claim_id": "zpe_energy_harvesting",
+      "package_kind": "closed_cycle_energy_accounting",
+      "current_outcome": "rejected",
+      "measurable": true,
+      "admission_ready": false,
+      "established_baseline": "Static Casimir forces and driven dynamical-Casimir photon production are measurable vacuum-response phenomena; neither establishes cyclic net vacuum work extraction.",
+      "mechanism_under_test": "A device completes a cycle with positive net useful work after every conventional input, loss, and stored-energy change is included.",
+      "source_ids": ["arxiv_jaffe_hep_th_0503158", "arxiv_wilson_1105_4714", "arxiv_fewster_1208_5399"],
+      "observables": [
+        {"name": "net_cycle_work", "unit": "J", "measurement": "Useful output minus all calibrated input work over one complete return cycle."},
+        {"name": "energy_closure_residual", "unit": "J", "measurement": "Signed residual of the complete measured energy balance."},
+        {"name": "output_spectrum", "unit": "W/Hz", "measurement": "Calibrated emitted power spectrum with thermal and amplifier noise subtraction fixed in advance."}
+      ],
+      "controls": [
+        "Identical device with boundary modulation disabled.",
+        "Matched classical parametric source with the same pump waveform and impedance.",
+        "Blind sham cycles analyzed by the same locked calibration pipeline."
+      ],
+      "energy_accounting": {
+        "required": true,
+        "cycle_boundary": "The device, field configuration, storage elements, and thermal state return to their initial values within uncertainty.",
+        "closure_equation": "W_electrical + W_pump + W_boundary + Q_environment = W_useful + E_radiated + E_dissipated + delta_E_stored + residual",
+        "channels": [
+          {"name": "electrical_input", "direction": "input", "measurement_status": "unmeasured"},
+          {"name": "pump_work", "direction": "input", "measurement_status": "unmeasured"},
+          {"name": "boundary_control_work", "direction": "input", "measurement_status": "unmeasured"},
+          {"name": "environmental_heat", "direction": "input_or_output", "measurement_status": "unmeasured"},
+          {"name": "useful_output_work", "direction": "output", "measurement_status": "unmeasured"},
+          {"name": "radiated_energy", "direction": "output", "measurement_status": "unmeasured"},
+          {"name": "dissipated_energy", "direction": "output", "measurement_status": "unmeasured"},
+          {"name": "stored_energy_change", "direction": "stored", "measurement_status": "unmeasured"}
+        ]
+      },
+      "acceptance_criteria": [
+        "The absolute energy-closure residual is no larger than three times its propagated standard uncertainty.",
+        "The lower bound of the multiplicity-corrected 95 percent confidence interval for net cycle work is positive.",
+        "The result survives both matched controls and an independent replication using retained raw data and calibration records."
+      ],
+      "rejection_criteria": [
+        "Reject extraction when any pump, boundary, electrical, thermal, mechanical, radiative, or storage channel is omitted.",
+        "Reject extraction when the device does not return to its initial state or the closure residual exceeds three standard uncertainties.",
+        "Reject a vacuum-source interpretation when a matched driven classical model accounts for the output."
+      ],
+      "missing_required_evidence": [
+        "A physical device and complete-cycle protocol.",
+        "Calibrated raw input and output records.",
+        "Stored-energy and thermal-state closure.",
+        "Blind controls and independent replication."
+      ]
+    },
+    {
+      "claim_id": "time_crystal_energy_amplification",
+      "package_kind": "driven_phase_energy_accounting",
+      "current_outcome": "rejected",
+      "measurable": true,
+      "admission_ready": false,
+      "established_baseline": "Equilibrium continuous time crystals are excluded under broad conditions, while discrete time crystals are driven nonequilibrium phases with robust subharmonic order.",
+      "mechanism_under_test": "Time-crystalline order yields net useful energy amplification rather than a subharmonic response powered by state preparation, drive, control, and cooling.",
+      "source_ids": ["arxiv_watanabe_oshikawa_1410_2143", "arxiv_else_bauer_nayak_1603_08001", "arxiv_zhang_1609_08684", "arxiv_camacho_fauseweh_2605_27211"],
+      "observables": [
+        {"name": "subharmonic_order_parameter", "unit": "dimensionless", "measurement": "Locked Fourier amplitude at the preregistered fraction of the drive frequency."},
+        {"name": "order_lifetime", "unit": "drive_periods", "measurement": "Number of periods before the order parameter crosses the preregistered decay threshold."},
+        {"name": "net_period_work", "unit": "J", "measurement": "Useful output minus drive, preparation, control, cooling, and readout work over integer drive periods."}
+      ],
+      "controls": [
+        "Noninteracting driven system with matched drive waveform and initial energy.",
+        "Disorder-free or localization-disabled system with matched readout.",
+        "Off-resonant drive and blind sham sequences analyzed by the locked pipeline."
+      ],
+      "energy_accounting": {
+        "required": true,
+        "cycle_boundary": "An integer number of drive periods with initial and final state energy, apparatus state, and bath heat measured.",
+        "closure_equation": "W_drive + W_preparation + W_control + W_cooling + W_readout = W_useful + delta_E_system + Q_bath + E_other_losses + residual",
+        "channels": [
+          {"name": "drive_work", "direction": "input", "measurement_status": "unmeasured"},
+          {"name": "state_preparation_work", "direction": "input", "measurement_status": "unmeasured"},
+          {"name": "control_work", "direction": "input", "measurement_status": "unmeasured"},
+          {"name": "cooling_work", "direction": "input", "measurement_status": "unmeasured"},
+          {"name": "readout_work", "direction": "input", "measurement_status": "unmeasured"},
+          {"name": "useful_output_work", "direction": "output", "measurement_status": "unmeasured"},
+          {"name": "system_energy_change", "direction": "stored", "measurement_status": "unmeasured"},
+          {"name": "bath_heat", "direction": "output", "measurement_status": "unmeasured"},
+          {"name": "other_losses", "direction": "output", "measurement_status": "unmeasured"}
+        ]
+      },
+      "acceptance_criteria": [
+        "Subharmonic order remains frequency-locked across the preregistered drive-perturbation interval and exceeds all matched controls.",
+        "The absolute energy-closure residual is no larger than three times its propagated standard uncertainty over integer drive periods.",
+        "The lower multiplicity-corrected 95 percent confidence bound for net useful work after every input is positive in an independent replication."
+      ],
+      "rejection_criteria": [
+        "Reject energy amplification when subharmonic spectral response is the only endpoint.",
+        "Reject energy amplification when drive, preparation, control, cooling, readout, bath, or stored-energy channels are omitted.",
+        "Reject self-sustaining language when order ends after drive removal or when the matched driven controls explain the energy output."
+      ],
+      "missing_required_evidence": [
+        "A specified Hamiltonian or open-system generator for the proposed device.",
+        "Raw subharmonic-order and lifetime records.",
+        "Complete period-resolved energy accounting.",
+        "Blind controls and independent replication."
+      ]
+    },
+    {
+      "claim_id": "tourmaline_novel_energy_effect",
+      "package_kind": "materials_experiment",
+      "current_outcome": "bounded",
+      "measurable": true,
+      "admission_ready": false,
+      "established_baseline": "Tourmaline has conventional dielectric, piezoelectric, pyroelectric, thermal, and lattice-vibration responses that depend on composition, orientation, stress, and temperature.",
+      "mechanism_under_test": "A tourmaline specimen produces an excess-energy or scalar-coupling signal beyond conventional pyroelectric, piezoelectric, dielectric, thermal, triboelectric, electromagnetic, and vibrational responses.",
+      "source_ids": ["arxiv_1111_4064v2", "springer_978_3_319_48210_1_ch10", "tourmaline", "tourmaline_addendum"],
+      "observables": [
+        {"name": "net_cycle_energy", "unit": "J", "measurement": "Electrical and mechanical output minus thermal, mechanical, electrical, and optical inputs over a return cycle."},
+        {"name": "charge_response", "unit": "C", "measurement": "Electrode charge versus calibrated stress and temperature histories."},
+        {"name": "temperature_field", "unit": "K", "measurement": "Spatially resolved specimen and fixture temperature with emissivity calibration."}
+      ],
+      "controls": [
+        "Composition-matched nonpolar or depolarized mineral specimen with identical geometry and electrodes.",
+        "Tourmaline rotated to interchange polar and nonpolar axes while preserving mounting and thermal history.",
+        "Blind dummy fixture cycles and a calibrated conventional piezoelectric or pyroelectric reference."
+      ],
+      "energy_accounting": {
+        "required": true,
+        "cycle_boundary": "Specimen, fixture, electrodes, storage elements, stress, and temperature return to their initial states within uncertainty.",
+        "closure_equation": "Q_thermal + W_mechanical + W_electrical + E_optical = W_electrical_output + W_mechanical_output + E_radiated + E_dissipated + delta_E_stored + residual",
+        "channels": [
+          {"name": "thermal_input", "direction": "input", "measurement_status": "unmeasured"},
+          {"name": "mechanical_input", "direction": "input", "measurement_status": "unmeasured"},
+          {"name": "electrical_input", "direction": "input", "measurement_status": "unmeasured"},
+          {"name": "optical_input", "direction": "input", "measurement_status": "unmeasured"},
+          {"name": "electrical_output", "direction": "output", "measurement_status": "unmeasured"},
+          {"name": "mechanical_output", "direction": "output", "measurement_status": "unmeasured"},
+          {"name": "radiated_energy", "direction": "output", "measurement_status": "unmeasured"},
+          {"name": "dissipated_energy", "direction": "output", "measurement_status": "unmeasured"},
+          {"name": "stored_energy_change", "direction": "stored", "measurement_status": "unmeasured"}
+        ]
+      },
+      "acceptance_criteria": [
+        "The conventional constitutive model is fitted on calibration data and predicts held-out control responses within its uncertainty budget.",
+        "The proposed novelty endpoint exceeds every blinded matched control at a multiplicity-corrected 5 percent false-positive rate.",
+        "The absolute energy-closure residual is no larger than three propagated standard uncertainties and the positive result is independently replicated."
+      ],
+      "rejection_criteria": [
+        "Reject novelty when the signal follows known pyroelectric, piezoelectric, dielectric, thermal, triboelectric, electromagnetic, or vibrational response.",
+        "Reject excess energy when any input, output, loss, or stored-energy channel is omitted or fails closure.",
+        "Reject the material-specific mechanism when orientation, reference-material, or dummy-fixture controls reproduce the endpoint."
+      ],
+      "missing_required_evidence": [
+        "Calibrated specimen composition, crystallographic orientation, and geometry.",
+        "Raw synchronized stress, temperature, charge, voltage, current, and vibration data.",
+        "Complete-cycle energy balance with propagated uncertainty.",
+        "Blinded controls and independent replication."
+      ]
+    },
+    {
+      "claim_id": "origami_fold_merge_operator",
+      "package_kind": "measurability_exclusion",
+      "current_outcome": "excluded",
+      "measurable": false,
+      "admission_ready": false,
+      "established_baseline": "Geometric folding and coordinate transformations can be defined on specified spaces, but the retained fold-merge wording does not define an operator.",
+      "mechanism_under_test": "No testable mechanism exists until the domain, codomain, operator law, topology, state map, and observable are supplied.",
+      "source_ids": [],
+      "observables": [],
+      "controls": [],
+      "energy_accounting": {"required": false, "cycle_boundary": "not_applicable", "closure_equation": "not_applicable", "channels": []},
+      "acceptance_criteria": ["Re-enter review only after a closed operator definition and a discriminating observable are supplied."],
+      "rejection_criteria": ["Exclude any claim stated only through fold, merge, dimensional transition, or origami analogy."],
+      "missing_required_evidence": ["Domain and codomain.", "Operator law and closure proof.", "Physical state map.", "Discriminating observable and control."]
+    },
+    {
+      "claim_id": "consciousness_resonance",
+      "package_kind": "measurability_exclusion",
+      "current_outcome": "excluded",
+      "measurable": false,
+      "admission_ready": false,
+      "established_baseline": "The retained corpus supplies no operational consciousness variable, causal intervention, dose, comparator, or biological endpoint.",
+      "mechanism_under_test": "No testable mechanism exists until a biological causal model and operational endpoint replace resonance language.",
+      "source_ids": [],
+      "observables": [],
+      "controls": [],
+      "energy_accounting": {"required": false, "cycle_boundary": "not_applicable", "closure_equation": "not_applicable", "channels": []},
+      "acceptance_criteria": ["Re-enter review only after the intervention, dose, biological endpoint, causal model, blinding, threshold, and replication plan are specified."],
+      "rejection_criteria": ["Exclude resonance claims with no operational variable or discriminating experiment."],
+      "missing_required_evidence": ["Operational consciousness endpoint.", "Intervention and dose.", "Causal mechanism.", "Blinded comparator and replication protocol."]
+    }
+  ]
+}

@@ -19,7 +19,7 @@ from __future__ import annotations
 
 from dataclasses import dataclass
 from math import asin, floor, pi, sqrt
-from typing import Any, Callable
+from typing import Any, Callable, TypedDict
 
 import numpy as np
 
@@ -55,6 +55,29 @@ sys.path.append(str(Path(__file__).parent))
 from .algebras.roots import E7RootSystem
 
 
+class E7MeasuredRoot(TypedDict):
+    root: list[float]
+    type: str
+    probability: float
+    counts: int
+
+
+class E7DecodedMeasurements(TypedDict):
+    total_shots: int
+    measured_roots: dict[int, E7MeasuredRoot]
+    type1_probability: float
+    type2_probability: float
+    zero_probability: float
+
+
+class E7MeasurementValidation(TypedDict):
+    valid_roots: int
+    invalid_states: int
+    total_states: int
+    validity_rate: float
+    invalid_indices: list[int]
+
+
 @dataclass
 class E7CircuitConfig:
     """Configuration for E7 quantum circuits."""
@@ -86,7 +109,7 @@ class E7OracleBuilder:
         """Initialize oracle builder."""
         self.config = config
         self.e7_system = E7RootSystem()
-        self._oracle_cache = {}
+        self._oracle_cache: dict[str, QuantumCircuit] = {}
 
     def build_geometric_oracle(self, _precision_bits: int = 4) -> QuantumCircuit:
         """Build geometric oracle checking E7 root properties.
@@ -400,7 +423,7 @@ class E7GroverOperator:
         amplitude = np.sin((2 * iterations + 1) * theta)
         probability = amplitude**2
 
-        return probability
+        return float(probability)
 
 
 class E7StatePreparation:
@@ -554,7 +577,7 @@ class E7MeasurementDecoder:
         self.e7_system = e7_system or E7RootSystem()
         self.roots = self.e7_system.generate_roots(include_zero=True)
 
-    def decode_index_measurement(self, counts: dict[str, int]) -> dict[str, Any]:
+    def decode_index_measurement(self, counts: dict[str, int]) -> E7DecodedMeasurements:
         """Decode index-encoded measurement results.
 
         Args:
@@ -564,7 +587,7 @@ class E7MeasurementDecoder:
             Decoded root information
         """
         total_shots = sum(counts.values())
-        results = {
+        results: E7DecodedMeasurements = {
             "total_shots": total_shots,
             "measured_roots": {},
             "type1_probability": 0.0,
@@ -579,7 +602,7 @@ class E7MeasurementDecoder:
             if index < 127:
                 # Valid E7 state
                 root = self.roots[index]
-                probability = count / total_shots
+                probability = float(count / total_shots)
 
                 # Classify root
                 if index == 126 and np.allclose(root, 0):
@@ -635,7 +658,7 @@ class E7MeasurementDecoder:
 
         return top_roots
 
-    def validate_measurement_results(self, counts: dict[str, int]) -> dict[str, Any]:
+    def validate_measurement_results(self, counts: dict[str, int]) -> E7MeasurementValidation:
         """Validate that measured states are valid E7 roots.
 
         Args:
@@ -644,7 +667,7 @@ class E7MeasurementDecoder:
         Returns:
             Validation results
         """
-        validation = {
+        validation: E7MeasurementValidation = {
             "valid_roots": 0,
             "invalid_states": 0,
             "total_states": len(counts),

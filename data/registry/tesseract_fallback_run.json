@@ -1,0 +1,146 @@
+{
+  "document_count": 13,
+  "documents": [
+    {
+      "manifest_relpath": "build/document_ocr/tesseract_fallbacks/094101_1_accepted_manuscript/manifest.json",
+      "manifest_sha256": "c981c3a1819618c347705be97ce835865a14605a8e6f1ff29325c1db4d081773",
+      "selected_pages": [
+        7,
+        8,
+        9,
+        10,
+        11
+      ],
+      "source_relpath": "source_materials/pdfs/094101_1_accepted_manuscript.pdf",
+      "source_sha256": "8ec8b02db96d399d3d510973b9d523560cda0d1564030f5300f38229ec54fc5e"
+    },
+    {
+      "manifest_relpath": "build/document_ocr/tesseract_fallbacks/Comment_on_the_Pais_Superforce_Theory/manifest.json",
+      "manifest_sha256": "a67e097051f575b8de1435530e20d2629d8e6cb4705481b6ed17455fba910d83",
+      "selected_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        11,
+        12,
+        13
+      ],
+      "source_relpath": "source_materials/pdfs/Comment_on_the_Pais_Superforce_Theory.pdf",
+      "source_sha256": "ca32b85da9dc732509ea4560184c160e2e503f56bea861c7a05542040f9e9b75"
+    },
+    {
+      "manifest_relpath": "build/document_ocr/tesseract_fallbacks/Phys-140A-lecture-14v3/manifest.json",
+      "manifest_sha256": "8f067a5f2c928682eb17836907d6359f98839c05328ccc5c80b18d64e61a580a",
+      "selected_pages": [
+        8
+      ],
+      "source_relpath": "source_materials/pdfs/Phys-140A-lecture-14v3.pdf",
+      "source_sha256": "3f789aedd14872d1a56c24ce62f293dac7dc6e3a6bcaa9f60b18afaf5684c859"
+    },
+    {
+      "manifest_relpath": "build/document_ocr/tesseract_fallbacks/Superframework-Foam-Octonions/manifest.json",
+      "manifest_sha256": "affd414d073f72db4ba494997c2c2450cea28a0f2c8fbd37c33ce821dc5cb4ab",
+      "selected_pages": [
+        2,
+        10
+      ],
+      "source_relpath": "source_materials/pdfs/Superframework-Foam-Octonions.pdf",
+      "source_sha256": "571c445f4d8ac3a85efc955806783efc8f2bda7d94547056823e4e7a47e0fea8"
+    },
+    {
+      "manifest_relpath": "build/document_ocr/tesseract_fallbacks/Superframework_Expansion/manifest.json",
+      "manifest_sha256": "dbfc6f4388e30f47d97381696b7285b320106dafbaf1baa1bd2357fc2d5a807d",
+      "selected_pages": [
+        4
+      ],
+      "source_relpath": "source_materials/pdfs/Superframework_Expansion.pdf",
+      "source_sha256": "8732128532cccd5f22b1f333735f444aa2268b72097020256f072a08a2024297"
+    },
+    {
+      "manifest_relpath": "build/document_ocr/tesseract_fallbacks/Tourmaline/manifest.json",
+      "manifest_sha256": "7fc220233ceb7ca6b12d0365070a8e4d66e145aeaee418571bb8cf316fade71e",
+      "selected_pages": [
+        23
+      ],
+      "source_relpath": "source_materials/pdfs/Tourmaline.pdf",
+      "source_sha256": "11dfbf3969c24812b66f30a1dcf33c4685f4125bb82dc4b5e25ba05498870fdf"
+    },
+    {
+      "manifest_relpath": "build/document_ocr/tesseract_fallbacks/arxiv_1203.3591/manifest.json",
+      "manifest_sha256": "9f9b160dacfaaffbdbd3a494f99e193151501fdc1715ebed2893fe456f4d0cdd",
+      "selected_pages": [
+        146
+      ],
+      "source_relpath": "source_materials/pdfs/arxiv_1203.3591.pdf",
+      "source_sha256": "181ea7ee0c58c57c4d1fd987e9acb210d1dcf71a0d7e5dab10f12a7467c00477"
+    },
+    {
+      "manifest_relpath": "build/document_ocr/tesseract_fallbacks/hep-th_0503158/manifest.json",
+      "manifest_sha256": "f4672574630d17cdc40e949022f7dd49ed043eb9d93510bfa655ca8e31bcb1b4",
+      "selected_pages": [
+        9
+      ],
+      "source_relpath": "source_materials/pdfs/hep-th_0503158.pdf",
+      "source_sha256": "1a7d3c3d6659701ebfebff9849d9834f061287b966448c09f1afdf55224f3e38"
+    },
+    {
+      "manifest_relpath": "build/document_ocr/tesseract_fallbacks/hep-th_9602136/manifest.json",
+      "manifest_sha256": "56a024e778af5c8917d8a0c089bd723f5b0050fb18ac46683d2a21707eaa451a",
+      "selected_pages": [
+        22
+      ],
+      "source_relpath": "source_materials/pdfs/hep-th_9602136.pdf",
+      "source_sha256": "8fc82e5382e5395a51e7e05ce54bc622998253fae3afff0002bfef497cf24af1"
+    },
+    {
+      "manifest_relpath": "build/document_ocr/tesseract_fallbacks/hep-th_9605030/manifest.json",
+      "manifest_sha256": "87664a44fad9b2cefd01809d2d59716ceb998fd49b279f4c33789ce5be5e09e2",
+      "selected_pages": [
+        32
+      ],
+      "source_relpath": "source_materials/pdfs/hep-th_9605030.pdf",
+      "source_sha256": "fbd76745ab6e6640ef5d436e6e84b2205cdcca351ed6c00e0700b3ea2a34b22c"
+    },
+    {
+      "manifest_relpath": "build/document_ocr/tesseract_fallbacks/hep-th_9606001/manifest.json",
+      "manifest_sha256": "51e7f93618b9aba61cac128cc825417637242b468b7b2233122c0ec495376c05",
+      "selected_pages": [
+        27
+      ],
+      "source_relpath": "source_materials/pdfs/hep-th_9606001.pdf",
+      "source_sha256": "2c5cdd1bd8da1dcc65d90cb2d28d17e8d4cddd9697af1eb7387128f15d47b756"
+    },
+    {
+      "manifest_relpath": "build/document_ocr/tesseract_fallbacks/math_0512517/manifest.json",
+      "manifest_sha256": "88d75e973c6dfc563885fd145be9fb22836638dd86aa7dfc6d943643e3e7b5fa",
+      "selected_pages": [
+        28
+      ],
+      "source_relpath": "source_materials/pdfs/math_0512517.pdf",
+      "source_sha256": "32fe067046f230b7b8f1f30fef9411170ea9223b68ec31de4bc27b61cc73d129"
+    },
+    {
+      "manifest_relpath": "build/document_ocr/tesseract_fallbacks/quant-ph_0609227/manifest.json",
+      "manifest_sha256": "19c6241410b064bede1e3d37165674380eacd1a6e6175ef79d7d9f032306652a",
+      "selected_pages": [
+        16
+      ],
+      "source_relpath": "source_materials/pdfs/quant-ph_0609227.pdf",
+      "source_sha256": "a9c41f3d79cf61ac36c256db82efd36ee2eafe2cadefeec0644bc94270bfd393"
+    }
+  ],
+  "dpi": 400,
+  "engine_version": "tesseract 5.5.2",
+  "generator": "scripts/run_tesseract_fallbacks.py",
+  "page_count": 29,
+  "page_segmentation_mode": 1,
+  "quality_audit_relpath": "data/registry/pdf_text_quality_audit.json",
+  "quality_audit_sha256": "c3363f8f877d0445d13c4cdea199777a3b966db21134b594dee82dac363e25b9",
+  "schema_version": 1
+}

@@ -1,12 +1,15 @@
 from __future__ import annotations
 
 import matplotlib
+
+
 matplotlib.use("Agg")  # Non-interactive backend; must be set before other matplotlib imports
 
 import matplotlib.pyplot as plt
 import numpy as np
 import pytest
 
+from mathphysics.algebras.roots import E8RootSystem
 from mathphysics.viz import ColorScheme, Visualizer, VizConfig
 
 
@@ -36,7 +39,6 @@ def small_roots():
 
 @pytest.fixture
 def e8_roots_fixture():
-    from mathphysics.algebras.roots import E8RootSystem
     return E8RootSystem().generate_roots()
 
 
@@ -142,7 +144,7 @@ def test_plot_time_series_with_error_bars(viz):
 
 def test_plot_time_series_custom_labels(viz):
     x = np.arange(10, dtype=float)
-    y = x ** 2
+    y = x**2
     fig = viz.plot_time_series_with_stats(
         x, y, title="Custom Title", xlabel="Time", ylabel="Energy"
     )
@@ -204,10 +206,12 @@ def test_plot_persistence_barcode_custom_title(viz):
 
 
 def test_plot_persistence_barcode_multiple_dimensions(viz):
-    persistence = np.array([
-        [0, 0.0, 1.5],
-        [1, 0.3, 1.0],
-        [2, 0.5, 0.7],
-    ])
+    persistence = np.array(
+        [
+            [0, 0.0, 1.5],
+            [1, 0.3, 1.0],
+            [2, 0.5, 0.7],
+        ]
+    )
     fig = viz.plot_persistence_barcode(persistence)
     assert isinstance(fig, plt.Figure)

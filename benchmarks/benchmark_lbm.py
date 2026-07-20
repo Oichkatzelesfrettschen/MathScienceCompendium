@@ -3,7 +3,6 @@
 import time
 
 import jax
-import numpy as np
 
 from mathphysics.accelerated_lbm import AcceleratedLBM
 from mathphysics.quantum_lattice_boltzmann import LBMParameters, QuantumLatticeBoltzmann

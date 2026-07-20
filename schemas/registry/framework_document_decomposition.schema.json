@@ -1,0 +1,156 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://mathsciencecompendium.local/schemas/registry/framework_document_decomposition.schema.json",
+  "title": "FrameworkDocumentDecomposition",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "generator",
+    "index_relpath",
+    "index_sha256",
+    "policy",
+    "document_count",
+    "source_line_count",
+    "chunk_count",
+    "heading_count",
+    "reference_count",
+    "formula_candidate_count",
+    "table_row_candidate_count",
+    "code_fence_count",
+    "documents"
+  ],
+  "properties": {
+    "schema_version": { "type": "integer", "enum": [1] },
+    "generator": { "type": "string", "minLength": 1 },
+    "index_relpath": { "type": "string", "pattern": "^data/normalized/frameworks/README\\.md$" },
+    "index_sha256": { "type": "string", "pattern": "^[a-f0-9]{64}$" },
+    "policy": {
+      "type": "object",
+      "required": [
+        "source_authority",
+        "reading_view",
+        "max_source_lines_per_chunk",
+        "heading_alignment_minimum_lines"
+      ],
+      "properties": {
+        "source_authority": { "type": "string", "minLength": 1 },
+        "reading_view": { "type": "string", "minLength": 1 },
+        "max_source_lines_per_chunk": { "type": "integer", "minimum": 1 },
+        "heading_alignment_minimum_lines": { "type": "integer", "minimum": 1 }
+      },
+      "additionalProperties": false
+    },
+    "document_count": { "type": "integer", "minimum": 0 },
+    "source_line_count": { "type": "integer", "minimum": 0 },
+    "chunk_count": { "type": "integer", "minimum": 0 },
+    "heading_count": { "type": "integer", "minimum": 0 },
+    "reference_count": { "type": "integer", "minimum": 0 },
+    "formula_candidate_count": { "type": "integer", "minimum": 0 },
+    "table_row_candidate_count": { "type": "integer", "minimum": 0 },
+    "code_fence_count": { "type": "integer", "minimum": 0 },
+    "documents": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "title",
+          "source_relpath",
+          "source_sha256",
+          "source_bytes",
+          "line_count",
+          "chunk_count",
+          "heading_count",
+          "reference_count",
+          "formula_candidate_count",
+          "table_row_candidate_count",
+          "code_fence_count",
+          "unknown_unicode_count",
+          "unknown_unicode",
+          "index_relpath",
+          "index_sha256",
+          "reference_index_relpath",
+          "reference_index_sha256",
+          "structure_index_relpath",
+          "structure_index_sha256",
+          "headings",
+          "chunks"
+        ],
+        "properties": {
+          "id": { "type": "string", "pattern": "^[a-z0-9-]+$" },
+          "title": { "type": "string", "minLength": 1 },
+          "source_relpath": { "type": "string", "pattern": "^source_materials/frameworks/.+\\.txt$" },
+          "source_sha256": { "type": "string", "pattern": "^[a-f0-9]{64}$" },
+          "source_bytes": { "type": "integer", "minimum": 0 },
+          "line_count": { "type": "integer", "minimum": 0 },
+          "chunk_count": { "type": "integer", "minimum": 0 },
+          "heading_count": { "type": "integer", "minimum": 0 },
+          "reference_count": { "type": "integer", "minimum": 0 },
+          "formula_candidate_count": { "type": "integer", "minimum": 0 },
+          "table_row_candidate_count": { "type": "integer", "minimum": 0 },
+          "code_fence_count": { "type": "integer", "minimum": 0 },
+          "unknown_unicode_count": { "type": "integer", "minimum": 0 },
+          "unknown_unicode": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": ["token", "count"],
+              "properties": {
+                "token": { "type": "string", "pattern": "^\\[U\\+[A-F0-9]{4,6}\\]$" },
+                "count": { "type": "integer", "minimum": 1 }
+              },
+              "additionalProperties": false
+            }
+          },
+          "index_relpath": { "type": "string", "pattern": "^data/normalized/frameworks/.+/README\\.md$" },
+          "index_sha256": { "type": "string", "pattern": "^[a-f0-9]{64}$" },
+          "reference_index_relpath": { "type": "string", "pattern": "^data/normalized/frameworks/.+/references\\.json$" },
+          "reference_index_sha256": { "type": "string", "pattern": "^[a-f0-9]{64}$" },
+          "structure_index_relpath": { "type": "string", "pattern": "^data/normalized/frameworks/.+/structure\\.json$" },
+          "structure_index_sha256": { "type": "string", "pattern": "^[a-f0-9]{64}$" },
+          "headings": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": ["line", "title"],
+              "properties": {
+                "line": { "type": "integer", "minimum": 1 },
+                "title": { "type": "string", "minLength": 1 }
+              },
+              "additionalProperties": false
+            }
+          },
+          "chunks": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": [
+                "id",
+                "source_line_start",
+                "source_line_end",
+                "source_chunk_sha256",
+                "markdown_relpath",
+                "markdown_sha256",
+                "markdown_bytes",
+                "heading_count"
+              ],
+              "properties": {
+                "id": { "type": "string", "pattern": "^[a-z0-9-]+-[0-9]{4}$" },
+                "source_line_start": { "type": "integer", "minimum": 1 },
+                "source_line_end": { "type": "integer", "minimum": 1 },
+                "source_chunk_sha256": { "type": "string", "pattern": "^[a-f0-9]{64}$" },
+                "markdown_relpath": { "type": "string", "pattern": "^data/normalized/frameworks/.+\\.md$" },
+                "markdown_sha256": { "type": "string", "pattern": "^[a-f0-9]{64}$" },
+                "markdown_bytes": { "type": "integer", "minimum": 1 },
+                "heading_count": { "type": "integer", "minimum": 0 }
+              },
+              "additionalProperties": false
+            }
+          }
+        },
+        "additionalProperties": false
+      }
+    }
+  },
+  "additionalProperties": false
+}

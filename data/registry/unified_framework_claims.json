@@ -1,0 +1,371 @@
+{
+  "schema_version": 1,
+  "description": "Canonical claim and conflict ledger for consolidating the retained framework documents.",
+  "status_vocabulary": {
+    "established": "The statement follows from standard definitions or cited theorem-level evidence.",
+    "corrected": "The source claim contains a repairable mathematical or terminological error; the canonical statement records the repair.",
+    "bounded": "A narrower statement is supported within explicit assumptions or data limits.",
+    "conjectural": "The statement is precise enough to test but has not passed its stated falsification gate.",
+    "unsupported": "The statement lacks a defined mechanism, derivation, or discriminating evidence.",
+    "falsified": "A stated or implemented version fails a reproducible counterexample or measurement.",
+    "repaired": "A reproducible implementation defect was corrected and regression-tested.",
+    "excluded": "The statement is too undefined or non-empirical to enter the scientific core."
+  },
+  "claims": [
+    {
+      "id": "octonion_normed_division_boundary",
+      "domain": "nonassociative_algebra",
+      "source_anchors": [
+        {"document_id": "maximal-extraction-set1-set2", "source_line": 146},
+        {"document_id": "math4genesisframework", "source_line": 310}
+      ],
+      "source_statement": "The Cayley-Dickson sequence supplies progressively higher-dimensional algebraic foundations.",
+      "canonical_statement": "The real normed division algebras stop at the octonions. Further Cayley-Dickson doublings remain algebras but lose division, composition, and additional identities.",
+      "status": "established",
+      "confidence": "high",
+      "evidence_source_ids": ["arxiv_baez_math_0105155", "arxiv_moreno_math_0512517"],
+      "repo_evidence_paths": ["src/mathphysics/algebras/cayley_dickson.py", "experiments/results/cayley_dickson_real_validation.json", "data/registry/cayley_dickson_property_audit.json", "tests/unit/test_cayley_dickson_properties.py"],
+      "falsification_test": "Construct a nonzero zero divisor in each claimed division algebra beyond dimension eight, or prove the asserted norm composition identity for all elements.",
+      "integration_action": "Use dimensions 1, 2, 4, and 8 for division-algebra claims; require explicit weaker identities at every higher doubling."
+    },
+    {
+      "id": "higher_cayley_dickson_physical_mapping",
+      "domain": "mathematical_physics",
+      "source_anchors": [
+        {"document_id": "maximal-extraction-set1-set2", "source_line": 170},
+        {"document_id": "maximal-extraction-set1-set2", "source_line": 734}
+      ],
+      "source_statement": "Sedenion zero divisors and higher Cayley-Dickson algebras represent physical defects, states, or force structures.",
+      "canonical_statement": "Higher Cayley-Dickson algebras provide testable algebraic objects, but no retained derivation maps their zero divisors to a measured physical observable.",
+      "status": "unsupported",
+      "confidence": "high",
+      "evidence_source_ids": ["arxiv_moreno_math_0512517", "arxiv_wilmot_2505_11747"],
+      "repo_evidence_paths": ["research/fact_checks/mathematical_validation_report.txt"],
+      "falsification_test": "Define a dimensional state map, derive an observable that changes under zero-divisor structure, and distinguish it from a matched algebra-free control.",
+      "integration_action": "Keep the algebraic construction in the core and move physical interpretations to the open-hypothesis register."
+    },
+    {
+      "id": "albert_exceptional_group_ladder",
+      "domain": "jordan_algebra",
+      "source_anchors": [
+        {"document_id": "maximal-extraction-set1-set2", "source_line": 397},
+        {"document_id": "maximal-extraction-set1-set2", "source_line": 398}
+      ],
+      "source_statement": "E6 is the automorphism group of J3(O), and E7 is the automorphism group of J3(S).",
+      "canonical_statement": "For the Albert algebra J3(O), F4 is the automorphism group; suitable real or complex forms of E6 and E7 arise as structure and conformal groups. J3(S) is not an Albert algebra and cannot justify the stated E7 automorphism claim.",
+      "status": "corrected",
+      "confidence": "high",
+      "evidence_source_ids": ["arxiv_baez_math_0105155"],
+      "repo_evidence_paths": ["src/mathphysics/algebras/jordan.py", "data/registry/exceptional_group_scope_audit.json", "tests/unit/test_jordan_algebra.py", "research/fact_checks/Maximal_Extraction_Complete_Analysis.txt"],
+      "falsification_test": "Verify each proposed group action preserves the relevant Jordan product or determinant and identify the exact group functor and real form.",
+      "integration_action": "Replace the source ladder with an automorphism-structure-conformal table and remove J3(S)."
+    },
+    {
+      "id": "spin8_triality",
+      "domain": "lie_theory",
+      "source_anchors": [
+        {"document_id": "maximal-extraction-set1-set2", "source_line": 62}
+      ],
+      "source_statement": "Spin(8) triality permutes vector and two spinor representations.",
+      "canonical_statement": "The outer automorphism group of Spin(8) permutes its vector and two inequivalent eight-dimensional spinor representations.",
+      "status": "established",
+      "confidence": "high",
+      "evidence_source_ids": ["arxiv_baez_math_0105155"],
+      "repo_evidence_paths": ["research/fact_checks/mathematical_validation_report.txt"],
+      "falsification_test": "Construct the D4 Dynkin-diagram automorphisms and verify the induced permutation of the three representations.",
+      "integration_action": "Retain as a mathematical foundation; do not extend triality to fractal or fluid systems without a defined representation."
+    },
+    {
+      "id": "e9_e10_e11_classification",
+      "domain": "kac_moody_algebra",
+      "source_anchors": [
+        {"document_id": "maximal-extraction-set1-set2", "source_line": 498}
+      ],
+      "source_statement": "E9, E10, and E11 are exceptional Lie algebras.",
+      "canonical_statement": "E9 is the affine extension of E8, E10 is hyperbolic, and E11 is very extended; they are infinite-dimensional Kac-Moody algebras rather than additional finite-dimensional exceptional simple Lie algebras.",
+      "status": "corrected",
+      "confidence": "high",
+      "evidence_source_ids": ["arxiv_damour_e10_0207267", "arxiv_west_e11_0104081"],
+      "repo_evidence_paths": ["src/mathphysics/algebras/roots.py", "data/registry/exceptional_group_scope_audit.json", "tests/unit/test_roots.py", "research/kac_moody_deep_analysis.txt"],
+      "falsification_test": "Derive the generalized Cartan matrices and classify them by affine, hyperbolic, and very-extended criteria.",
+      "integration_action": "Normalize terminology throughout the framework and isolate proposed supergravity correspondences as conjectural."
+    },
+    {
+      "id": "e10_e11_supergravity_scope",
+      "domain": "quantum_gravity",
+      "source_anchors": [
+        {"document_id": "maximal-extraction-set1-set2", "source_line": 326}
+      ],
+      "source_statement": "E10 and E11 supply a general unifying physical symmetry.",
+      "canonical_statement": "Specific truncated correspondences between E10 or E11 structures and supergravity variables motivate research programs; they do not establish a complete unifying symmetry of observed interactions.",
+      "status": "bounded",
+      "confidence": "high",
+      "evidence_source_ids": ["arxiv_damour_e10_0207267", "arxiv_west_e11_0104081"],
+      "repo_evidence_paths": ["research/kac_moody_deep_analysis.txt"],
+      "falsification_test": "State the level truncation, dictionary, equations matched, and first unmatched term; reject any scope broader than the demonstrated correspondence.",
+      "integration_action": "Present the established algebra first and the supergravity dictionary as a bounded conjectural application."
+    },
+    {
+      "id": "monstrous_moonshine_stability",
+      "domain": "modular_forms",
+      "source_anchors": [
+        {"document_id": "maximal-extraction-set1-set2", "source_line": 521},
+        {"document_id": "math4genesisframework", "source_line": 201}
+      ],
+      "source_statement": "Monster Group modular invariants enforce stability in fractal and physical kernels.",
+      "canonical_statement": "Monstrous moonshine relates specific modular functions to graded Monster representations. No retained operator maps that theorem to stability of a fractal, fluid, or physical evolution equation.",
+      "status": "unsupported",
+      "confidence": "high",
+      "evidence_source_ids": ["borcherds_monstrous_moonshine_1992", "arxiv_duncan_griffin_ono_1411_6571"],
+      "repo_evidence_paths": ["data/registry/exceptional_group_scope_audit.json", "papers/sections/review_mathematical_baseline.tex"],
+      "falsification_test": "Define the Monster representation, modular object, state space, evolution operator, and a stability bound that fails under a matched non-moonshine control.",
+      "integration_action": "Retain moonshine as mathematics and remove generic stability language from the scientific core."
+    },
+    {
+      "id": "fractional_and_negative_dimension_scope",
+      "domain": "fractal_geometry",
+      "source_anchors": [
+        {"document_id": "math4genesisframework", "source_line": 63},
+        {"document_id": "math5genesisframeworkunveiled", "source_line": 108}
+      ],
+      "source_statement": "Fractional and negative dimensions behave as dynamical spatial dimensions.",
+      "canonical_statement": "Hausdorff, box-counting, and generalized dimensions may be non-integer. Negative values arise in specialized multifractal or formal extensions and are not literal negative spatial axes.",
+      "status": "corrected",
+      "confidence": "high",
+      "evidence_source_ids": [],
+      "repo_evidence_paths": ["research/fact_checks/mathematical_validation_report.txt", "src/mathphysics/fractal_analysis.py"],
+      "falsification_test": "Name the measure, metric, limiting procedure, estimator, and admissible domain; verify exact controls and resolution convergence.",
+      "integration_action": "Use named dimension definitions only and exclude literal negative-space interpretations."
+    },
+    {
+      "id": "fractal_estimator_convergence",
+      "domain": "numerical_analysis",
+      "source_anchors": [
+        {"document_id": "maximal-extraction-set1-set2", "source_line": 112}
+      ],
+      "source_statement": "Retained fractal dimensions establish scale-invariant structure.",
+      "canonical_statement": "The retained values are finite-resolution diagnostics because estimator agreement and scale-window refinement have not converged.",
+      "status": "bounded",
+      "confidence": "high",
+      "evidence_source_ids": [],
+      "repo_evidence_paths": ["experiments/results/fractal_dimensions.json", "data/registry/critique_evidence_ledger.json"],
+      "falsification_test": "Recover exact dimensions for controls, report slope stability across scale windows, and demonstrate convergence under resolution refinement.",
+      "integration_action": "Report estimator, scale range, uncertainty, and finite-resolution status with every value."
+    },
+    {
+      "id": "scalar_field_curvature_mechanism",
+      "domain": "field_theory",
+      "source_anchors": [
+        {"document_id": "draft-reply-to-pais", "source_line": 31},
+        {"document_id": "alpha003-02-aether-chrystalline-fluidic-framework", "source_line": 26}
+      ],
+      "source_statement": "A sourced scalar wave equation stabilizes curvature and supplies the missing Superforce mechanism.",
+      "canonical_statement": "Scalar fields can couple to gravity in specified actions, but the retained equation does not define units, coupling to the metric, stress-energy, boundary data, or a stability theorem.",
+      "status": "unsupported",
+      "confidence": "high",
+      "evidence_source_ids": [],
+      "repo_evidence_paths": ["data/registry/experimental_admission_packages.json", "papers/sections/review_physical_claims.tex"],
+      "falsification_test": "Provide a covariant action, derive field and metric equations, establish dimensional consistency, and test perturbative stability around a named background.",
+      "integration_action": "Replace the generic equation with an explicit model or retain it only as an open hypothesis template."
+    },
+    {
+      "id": "zpe_energy_harvesting",
+      "domain": "quantum_field_theory",
+      "source_anchors": [
+        {"document_id": "draft-reply-to-pais", "source_line": 38},
+        {"document_id": "alpha003-02-aether-chrystalline-fluidic-framework", "source_line": 512}
+      ],
+      "source_statement": "Zero-point energy supplies a self-sustaining energy source that mitigates dissipation.",
+      "canonical_statement": "Casimir and dynamical-Casimir phenomena do not establish cyclic net work extraction from the vacuum; any driven implementation must include work supplied by boundaries, pumps, or control fields.",
+      "status": "unsupported",
+      "confidence": "high",
+      "evidence_source_ids": ["arxiv_jaffe_hep_th_0503158", "arxiv_wilson_1105_4714", "arxiv_fewster_1208_5399"],
+      "repo_evidence_paths": ["data/registry/experimental_admission_packages.json", "papers/sections/review_physical_claims.tex"],
+      "falsification_test": "Close the full energy balance over a cycle, include control work and losses, and reproduce positive net output against blinded matched controls.",
+      "integration_action": "Replace energy-source language with vacuum-response and driven-conversion terminology."
+    },
+    {
+      "id": "time_crystal_energy_amplification",
+      "domain": "condensed_matter_physics",
+      "source_anchors": [
+        {"document_id": "draft-reply-to-pais", "source_line": 45},
+        {"document_id": "alpha003-02-aether-chrystalline-fluidic-framework", "source_line": 553}
+      ],
+      "source_statement": "Time crystals amplify ZPE and provide self-sustaining coherence for spacetime engineering.",
+      "canonical_statement": "Equilibrium continuous time crystals are ruled out under broad conditions; realized discrete time crystals are nonequilibrium many-body phases whose drive, dissipation, and stabilization cannot be omitted from the energy budget.",
+      "status": "unsupported",
+      "confidence": "high",
+      "evidence_source_ids": ["arxiv_watanabe_oshikawa_1410_2143", "arxiv_else_bauer_nayak_1603_08001", "arxiv_zhang_1609_08684", "arxiv_camacho_fauseweh_2605_27211"],
+      "repo_evidence_paths": ["data/registry/experimental_admission_packages.json", "source_materials/frameworks/draft reply to pais.txt"],
+      "falsification_test": "Specify the driven Hamiltonian or open-system generator, measure subharmonic order and lifetime, and close the pump-to-output energy balance.",
+      "integration_action": "Retain time-crystalline order as a real nonequilibrium phenomenon and remove free-amplification claims."
+    },
+    {
+      "id": "planck_force_unification",
+      "domain": "dimensional_analysis",
+      "source_anchors": [
+        {"document_id": "draft-reply-to-pais", "source_line": 11}
+      ],
+      "source_statement": "The Planck-force identity demonstrates unification of fundamental interactions.",
+      "canonical_statement": "The quantity c^4/G defines a force scale. Algebraic cancellation of hbar does not provide field content, a common gauge structure, coupling relations, or a distinguishing prediction.",
+      "status": "unsupported",
+      "confidence": "high",
+      "evidence_source_ids": ["pais_superforce_2023", "brandenburg_comment_superforce"],
+      "repo_evidence_paths": ["data/registry/critique_evidence_ledger.json"],
+      "falsification_test": "Derive a common action and interaction content whose low-energy limits reproduce measured couplings and yield a preregistered distinguishing observable.",
+      "integration_action": "Retain the dimensional scale and remove claims that the identity is a unification mechanism."
+    },
+    {
+      "id": "origami_fold_merge_operator",
+      "domain": "operator_theory",
+      "source_anchors": [
+        {"document_id": "math-spell-draft", "source_line": 3},
+        {"document_id": "maximal-extraction-set1-set2", "source_line": 529}
+      ],
+      "source_statement": "A fold-merge or origami operator produces physical dimensional transitions.",
+      "canonical_statement": "The retained fold-merge expressions do not specify a domain, codomain, topology, measure, operator properties, or physical state map.",
+      "status": "excluded",
+      "confidence": "high",
+      "evidence_source_ids": [],
+      "repo_evidence_paths": ["data/registry/experimental_admission_packages.json", "source_materials/frameworks/Math_Spell_Draft.txt"],
+      "falsification_test": "Define the operator on a named function or state space, prove closure and continuity properties, and identify an observable that distinguishes folding from a coordinate transformation.",
+      "integration_action": "Keep as an analogy appendix until a mathematical definition exists."
+    },
+    {
+      "id": "e7_root_quotient_charge",
+      "domain": "lattice_theory",
+      "source_anchors": [
+        {"document_id": "maximal-extraction-set1-set2", "source_line": 56}
+      ],
+      "source_statement": "E7 roots carry nontrivial P/Q charge labels that can filter fluid modes.",
+      "canonical_statement": "Every root lies in the root lattice Q and therefore represents the zero coset in P/Q. The separately defined external Fourier-mode homomorphism does not assign nonzero quotient classes to roots.",
+      "status": "falsified",
+      "confidence": "high",
+      "evidence_source_ids": [],
+      "repo_evidence_paths": ["src/mathphysics/algebras/roots.py", "src/mathphysics/fourier_quotient.py", "data/registry/fourier_quotient_audit.json", "experiments/results/e8_analysis.json", "data/registry/critique_evidence_ledger.json"],
+      "falsification_test": "Enumerate all roots and compute their P/Q classes; separately define and test any proposed external mode homomorphism.",
+      "integration_action": "Remove root-as-charge filtering and keep the external Fourier-lattice audit as a separate falsified mechanism."
+    },
+    {
+      "id": "external_fourier_quotient_map",
+      "domain": "lattice_theory",
+      "source_anchors": [
+        {"document_id": "maximal-extraction-set1-set2", "source_line": 56}
+      ],
+      "source_statement": "A revised conjecture asks whether Fourier modes can be mapped externally to nontrivial P/Q classes without assigning those classes to roots.",
+      "canonical_statement": "For E7, P/Q is isomorphic to Z/2 and the unique nontrivial square-symmetry-invariant homomorphism is h(kx,ky)=(kx+ky) mod 2. It rejects no exact convolution triad because homomorphism additivity maps k+p+q=0 to zero charge.",
+      "status": "falsified",
+      "confidence": "high",
+      "evidence_source_ids": [],
+      "repo_evidence_paths": ["src/mathphysics/algebras/roots.py", "src/mathphysics/fourier_quotient.py", "data/registry/fourier_quotient_audit.json"],
+      "falsification_test": "Define the Fourier lattice and quotient target, prove the map is nontrivial and symmetry-compatible, enumerate admitted triads, and reject the mechanism if it performs no better than label-shuffled controls.",
+      "integration_action": "Retain the map-existence proof and reject homomorphic quotient charge as a nontrivial exact-triad filter."
+    },
+    {
+      "id": "kac_moody_fluid_transfer",
+      "domain": "mathematical_physics",
+      "source_anchors": [
+        {"document_id": "maximal-extraction-set1-set2", "source_line": 498}
+      ],
+      "source_statement": "Affine or imaginary-root structure transfers directly to fluid dynamics and evanescent spatial modes.",
+      "canonical_statement": "The retained code defines neither a current algebra and Sugawara stress tensor nor a dimensional map between the Kac-Moody bilinear form and a fluid dispersion relation.",
+      "status": "unsupported",
+      "confidence": "high",
+      "evidence_source_ids": [],
+      "repo_evidence_paths": ["src/mathphysics/algebras/loop_algebras.py", "data/registry/critique_evidence_ledger.json"],
+      "falsification_test": "Define currents, representation level, stress tensor, Ward identities, fluid variables, and a dispersion relation that survives a label-shuffled control.",
+      "integration_action": "Keep algebraic and fluid models separate until an explicit transfer map passes tests."
+    },
+    {
+      "id": "lbm_beta_plane_and_jets",
+      "domain": "computational_fluid_dynamics",
+      "source_anchors": [
+        {"document_id": "maximal-extraction-set1-set2", "source_line": 21}
+      ],
+      "source_statement": "The retained simulation implements beta-plane dynamics and produces four zonal jets.",
+      "canonical_statement": "The retained evolution does not contain a beta term, and the final high-resolution state is nearly isotropic under fixed diagnostics; a peak index alone does not establish four strong jets.",
+      "status": "falsified",
+      "confidence": "high",
+      "evidence_source_ids": [],
+      "repo_evidence_paths": ["data/registry/lbm_evidence_audit.json", "src/mathphysics/quantum_lattice_boltzmann.py", "experiments/notebooks/06_turbulence_lbm.ipynb"],
+      "falsification_test": "Trace beta into the evolution equation and measure zonal energy fraction, jet count, anisotropy, and uncertainty against matched controls.",
+      "integration_action": "Remove beta-plane and four-jet conclusions from the core; retain the run as a nearly isotropic LBM artifact."
+    },
+    {
+      "id": "matched_beta_plane_algebraic_ablation",
+      "domain": "computational_fluid_dynamics",
+      "source_anchors": [
+        {"document_id": "maximal-extraction-set1-set2", "source_line": 21}
+      ],
+      "source_statement": "A revised hypothesis asks whether an explicitly implemented algebraic filter changes beta-plane jet statistics under matched controls.",
+      "canonical_statement": "A preregistered barotropic beta-plane solver shows beta-dependent evolution across every seed and refinement. The E7 P/Q homomorphic filter is bit-identical to the identity control because it rejects no exact triads, so the proposed algebraic dynamical effect is falsified.",
+      "status": "falsified",
+      "confidence": "high",
+      "evidence_source_ids": [],
+      "repo_evidence_paths": ["src/mathphysics/beta_plane.py", "data/registry/beta_plane_ablation_preregistration.json", "data/registry/beta_plane_ablation_results.json", "data/registry/fourier_quotient_audit.json"],
+      "falsification_test": "Preregister zonal energy fraction, jet count threshold, anisotropy, enstrophy flux, conservation error, refinement behavior, and multi-seed effect sizes; reject the filter if it does not exceed matched controls.",
+      "integration_action": "Retain the beta-plane solver and negative-control result; reject homomorphic quotient filtering as a jet mechanism and do not infer jets from the short decaying runs."
+    },
+    {
+      "id": "lbm_equilibrium_conservation",
+      "domain": "computational_fluid_dynamics",
+      "source_anchors": [
+        {"document_id": "math4genesisframework", "source_line": 344}
+      ],
+      "source_statement": "The historical CPU D2Q9 demonstration conserves mass.",
+      "canonical_statement": "The historical equilibrium double-counted sound-speed factors. The corrected implementation now satisfies the population-sum identity and conservation regression tests.",
+      "status": "repaired",
+      "confidence": "high",
+      "evidence_source_ids": [],
+      "repo_evidence_paths": ["src/mathphysics/quantum_lattice_boltzmann.py", "experiments/quantum_lbm_stable_results.json", "tests/unit/test_unified_physics.py"],
+      "falsification_test": "Evaluate equilibrium at nonzero velocity and assert that populations sum to density; fail on injected mass drift.",
+      "integration_action": "Use the corrected solver only as a numerical prerequisite, not as evidence for exceptional-algebra physics."
+    },
+    {
+      "id": "tourmaline_novel_energy_effect",
+      "domain": "materials_science",
+      "source_anchors": [
+        {"document_id": "alpha003-02-aether-chrystalline-fluidic-framework", "source_line": 2559}
+      ],
+      "source_statement": "Tourmaline or related materials support novel scalar-ZPE or excess-energy effects.",
+      "canonical_statement": "The corpus contains conventional electrical, thermal, and lattice-vibration evidence, but no calibrated raw data, full energy balance, blinded control, or independent replication of a novel coupling.",
+      "status": "bounded",
+      "confidence": "high",
+      "evidence_source_ids": ["arxiv_1111_4064v2", "springer_978_3_319_48210_1_ch10", "tourmaline", "tourmaline_addendum"],
+      "repo_evidence_paths": ["data/registry/experimental_admission_packages.json", "data/registry/critique_evidence_ledger.json"],
+      "falsification_test": "Measure preregistered output with calibrated instruments, complete energy accounting, matched materials, blinding, and independent replication.",
+      "integration_action": "Retain conventional material properties and quarantine novel-energy claims as untested."
+    },
+    {
+      "id": "gravitoelectromagnetism_scope",
+      "domain": "general_relativity",
+      "source_anchors": [
+        {"document_id": "alpha003-02-aether-chrystalline-fluidic-framework", "source_line": 864}
+      ],
+      "source_statement": "Gravitoelectromagnetism directly couples gravitational and electromagnetic waves and enables dual-field propulsion.",
+      "canonical_statement": "Gravitoelectromagnetism describes gravitoelectric and gravitomagnetic fields in weak-field or accelerated-frame formulations of general relativity. The electromagnetic analogy does not create a new electromagnetic-gravitational interaction or establish propulsion.",
+      "status": "corrected",
+      "confidence": "high",
+      "evidence_source_ids": ["arxiv_mashhoon_gr_qc_0311030"],
+      "repo_evidence_paths": ["source_materials/pdfs/extracted/gr-qc_0311030.txt"],
+      "falsification_test": "Derive the proposed force from a covariant action, state source and test-body variables with consistent units, recover the general-relativistic weak-field limit, and predict a controlled signal not explained by ordinary electromagnetic coupling or vibration.",
+      "integration_action": "Retain GEM as a weak-field general-relativity formalism and remove direct-unification and propulsion conclusions."
+    },
+    {
+      "id": "consciousness_resonance",
+      "domain": "biophysics",
+      "source_anchors": [
+        {"document_id": "math5genesisframeworkunveiled", "source_line": 193},
+        {"document_id": "alpha003-02-aether-chrystalline-fluidic-framework", "source_line": 1797}
+      ],
+      "source_statement": "Consciousness emerges from Superforce, plasmoid, binaural, or aetheric resonance.",
+      "canonical_statement": "The retained texts define neither a measurable consciousness variable nor a causal mechanism, dose, control, or discriminating prediction.",
+      "status": "excluded",
+      "confidence": "high",
+      "evidence_source_ids": [],
+      "repo_evidence_paths": ["data/registry/experimental_admission_packages.json", "research/fact_checks/Maximal_Extraction_Complete_Analysis.txt"],
+      "falsification_test": "Define the intervention, biological endpoint, causal model, blinding, preregistered effect size, and null result that rejects the hypothesis.",
+      "integration_action": "Exclude from the mathematical-physics core and preserve only as historical ideation."
+    }
+  ]
+}

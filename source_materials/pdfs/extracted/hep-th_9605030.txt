@@ -1,0 +1,2828 @@
+DESY 96–080
+
+arXiv:hep-th/9605030v1 6 May 1996
+
+hep-th/9605030
+
+Nonperturbative Evolution Equation for
+Quantum Gravity
+
+M. Reuter
+Deutsches Elektronen-Synchrotron DESY
+Notkestrasse 85
+D-22603 Hamburg
+Germany
+
+Abstract
+A scale–dependent effective action for gravity is introduced and an exact
+nonperturbative evolution equation is derived which governs its renormalization group flow. It is invariant under general coordinate transformations and satisfies modified BRS Ward–Identities. The evolution equation
+is solved for a simple truncation of the space of actions. In 2+ε dimensions,
+nonperturbative corrections to the β–function of Newton’s constant are derived and its dependence on the cosmological constant is investigated. In 4
+dimensions, Einstein gravity is found to be “antiscreening”, i.e., Newton’s
+constant increases at large distances.
+
+1
+
+Introduction
+
+In many of the traditional approaches to quantum gravity the Einstein–Hilbert
+term has been regarded as a fundamental action which should be quantized along
+the same lines as the familiar renormalizable field theories in flat space, such as
+QED for example [1]. It was soon realized that this program is not only technically
+rather involved but also leads to severe conceptual difficulties. In particular, the
+nonrenormalizability of the theory hampers a meaningful perturbative analysis.
+While this does not rule out the possibility that the theory exists nonperturbatively, not much is known in this direction. However, it could also be argued that
+gravity, as we know it, should not be quantized at all, because Einstein gravity
+is an effective theory [2] which results from quantizing some yet unknown fundamental theory. If so, the Einstein–Hilbert term is an effective action analogous
+to the Heisenberg–Euler action in QED and it should not be compared to the
+“microscopic” action of electrodynamics.
+It seems not unreasonable to assume that the truth lies somewhere between
+those two extreme points of view, i.e., that Einstein gravity is an effective theory
+which is valid near a certain nonzero momentum scale k. This means that it arises
+from the fundamental theory by a “partial quantization” in which only excitations
+with momenta larger than k are integrated out, while those with momenta smaller
+than k are not included. (The interpretation of the Einstein–Hilbert term as a
+fundamental or an ordinary effective action is recovered in the limits k → ∞
+
+and k → 0, respectively.) An “effective theory at scale k”, when evaluated at
+tree level, should correctly describe all gravitational phenomena which involve
+
+a typical momentum scale k acting as a physical infrared cutoff. Only if one is
+interested in processes with momenta k ′ ≪ k, loop calculations become necessary;
+
+they amount to integrating out the missing field modes in the momentum interval
+[k ′ , k].
+We shall regard the scale–dependent action for gravity, henceforth denoted
+Γk , as a Wilsonian effective action which is obtained from the fundamental (“microscopic”) action S by a kind of coarse–graining analogous to the iterated block–
+
+spin transformations which are familiar from lattice systems [3]. In the continuum,
+Γk will be defined in terms of a modified functional integral over e−S in which the
+contributions of all field modes with momenta smaller than k are suppressed. In
+
+1
+
+this manner Γk interpolates between S (for k → ∞) and the effective action Γ (for
+k → 0). The trajectory in the space of all action functionals can be obtained as
+
+the solution of a certain functional evolution equation, the exact renormalization
+
+group equation. Its form is independent of the action S under consideration. The
+latter enters via the initial conditions for the renormalization group trajectory;
+it is specified at some UV cutoff scale Λ: ΓΛ = S. If S is a truly fundamental
+action, Λ is sent to infinity at the end. The renormalization group equation can
+also be used to evolve effective actions, known at some point Λ, towards smaller
+scales k < Λ. In this case Λ is a fixed, finite scale. In this framework, the
+(non)renormalizability of a theory is seen as a global property of the renormalization group flow for Λ → ∞. The evolution equation by itself is perfectly finite
+
+and well behaved in either case, because it describes only infinitesimal changes of
+the cutoff.
+In this paper we shall give a precise meaning to the notion of a scale–
+dependent gravitational action Γk [gµν ] and we shall derive the associated evolution equation. We employ a formulation in which the metric is the fundamental
+dynamical variable. Alternative approaches based upon the spin–connection and
+the vielbeins are also possible, but they will not be considered here. By using a
+variant of the background gauge technique we are able to make Γk [gµν ] invariant
+under general coordinate transformations. This property is very important if one
+wants to find nonperturbative solutions of the evolution equations in terms of simple truncations of the space of actions. Our construction of Γk [gµν ] parallels the
+definition of the “effective average action” [4, 5] which was widely used recently
+[6, 7, 8, 9].1 The remarkable successes of this method in flat space are partly due
+to the fact that it allows for nonperturbative solutions when no small expansion
+parameter is available, and that Γk has a built–in infrared cutoff. Therefore the
+low–momentum behavior of (almost) massless theories can be investigated even
+in cases where IR divergences render standard perturbation theory inapplicable.
+For the purposes of quantum gravity, both of these features are very welcome,
+of course. In fact, in quantum cosmology one of the most intriguing questions is
+how quantized Einstein gravity behaves at extremely large distances. It has been
+argued [13, 14] that in presence of a nonzero cosmological constant there should
+1
+
+For related work using similar techniques see refs. [10, 11, 12].
+
+2
+
+be very strong renormalization effects in the infrared which might even provide a
+mechanism for a dynamical relaxation of the cosmological constant. The method
+which we are going to develop would be ideally suited to study problems of this
+type. Since only long distance physics is involved here, there are good chances
+that this can be done without knowing the microscopic theory of quantum gravity.
+(See ref. [2] for a related discussion.)
+The “effective average action” used in this paper should not be confused
+with the closely related “average action” which was introduced earlier [15]. The
+former obeys a more convenient evolution equation while the latter has a simple
+interpretation in terms of field averages. Their precise relation is explained in
+ref.[16]. The average action has been used in a gravitational context in refs.[17],
+[18], but no exact evolution equation was formulated. The evolution of the effective
+average action in a gravitational background was studied in ref.[19] in the context
+of Liouville field theory. For a review of the effective average action and its
+applicaton to Yang–Mills theory we refer to [20].
+The remaining sections of this paper are organized as follows. In section 2
+we give the definition of Γk and derive the exact, nonperturbative renormalization
+group equation. In section 3 we establish the modified Ward identities satisfied
+by Γk , and we show that the conventional diffeomorphism Ward identities are
+recovered in the limit k → 0. In its general form, the evolution equation describes
+a flow on the infinite dimensional space of all action functionals. Approximate
+
+nonperturbative solutions can be found by truncating the space of actions, i.e., by
+projecting the flow on a finite–dimensional subspace. In section 4 we investigate
+R√
+R√
+the “Einstein–Hilbert truncation” where only the operators
+g and
+gR are
+retained. In section 5 we determine the resulting scale dependence of Newton’s
+
+constant and of the cosmological constant. As an example, gravity in 2 + ε and
+in 4 dimensions is discussed in detail.
+
+2
+
+The Renormalization Group Equation
+
+In this section we introduce the effective average action for euclidean quantum
+gravity in d dimensions and we derive the exact renormalization group equation
+which governs its scale dependence.
+We are going to employ the background gauge fixing technique [21, 22] which
+
+3
+
+means that we decompose the integration variable γµν (x) in the functional integral
+over all metrics according to
+γµν (x) = ḡµν (x) + hµν (x)
+
+(2.1)
+
+Here ḡµν is a fixed background metric so that the integration over γµν may be
+replaced by an integration over hµν . We consider the following scale–dependent
+modification of the generating functional for the connected Green’s functions
+exp {Wk [tµν , σ µ , σ̄µ ; β µν , τµ ; ḡµν ]}
+=
+
+Z
+
+n
+
+Dhµν DC µ D C̄µ exp − S[ḡ + h] − Sgf [h; ḡ]
+−Sgh [h, C C̄; ḡ] − ∆k S[h, C, C̄; ḡ] − Ssource
+
+(2.2)
+
+o
+
+Here S[γ] = S[ḡ + h] is the classical action which is assumed to be invariant under
+the general coordinate transformations
+δγµν = Lv γµν ≡ v ρ ∂ρ γµν + ∂µ v ρ γρν + ∂ν v ρ γµρ
+
+(2.3)
+
+where Lv denotes the Lie derivative with respect to the vector field v µ . For the
+time being let us also assume that S is positive definite.
+
+Furthermore, Sgf denotes the gauge fixing term for the gauge condition
+Fµ (ḡ, h) = 0,
+
+1 Z d √ µν
+d x ḡ ḡ Fµ Fν
+(2.4)
+Sgf [h; ḡ] =
+2α
+and Sgh is the action for the corresponding Faddeev–Popov ghosts C µ and C̄µ :
+−1
+
+Sgh [h, C, C̄; ḡ] = −κ
+
+Z
+
+dd x C̄µ ḡ µν
+
+∂Fν
+LC (ḡαβ + hαβ )
+∂hαβ
+
+(2.5)
+
+The Faddeev–Popov action Sgh is obtained along the same lines as in Yang–Mills
+theory: one applies a gauge transformation
+δhµν = Lv γµν = Lv (ḡµν + hµν )
+
+(2.6)
+
+δḡµν = 0
+to Fµ and replaces the parameters v µ by the ghost field C µ . The integral over C µ
+and C̄µ provides a representation of the Faddeev–Popov determinant det[δFµ /δv ν ]
+
+4
+
+then. In eq. (2.5) we introduced the constant (proportional to the Planck mass)
+
+
+−1/2
+
+κ ≡ 32π Ḡ
+
+(2.7)
+
+where Ḡ denotes the bare Newtonian constant. In principle our construction
+works for an arbitrary background gauge fixing. It is particularly convenient to
+use a Fµ which is linear in the quantum field hµν :
+Fµ =
+
+√
+
+2κ F αβ
+µ [ḡ] hαβ
+
+(2.8)
+
+We shall mostly employ the harmonic coordinate condition for which F αβ
+µ is the
+following first order differential operator constructed from ḡµν :
+1 αβ
+β αγ
+F αβ
+µ = δµ ḡ D̄γ − ḡ D̄µ
+2
+
+(2.9)
+
+The covariant derivative D̄µ involves the Christoffel symbols Γ̄ρµν of the background
+metric ḡµν . For the gauge fixing (2.8) with (2.9) the ghost action reads
+√ Z
+√
+Sgh [h, C, C̄; ḡ] = − 2 dd x ḡ C̄µ M[g, ḡ]µ ν C ν
+
+(2.10)
+
+with the Faddeev–Popov operator
+M[g, ḡ]µ ν = ḡ µρ ḡ σλ D̄λ (gρν Dσ + gσν Dρ ) − ḡ ρσ ḡ µλ D̄λ gσν Dρ
+
+(2.11)
+
+The essential piece in eq.(2.2) is the IR cutoff for the gravitational field hµν
+and for the ghosts:
+Z
+√
+1 2
+dd x ḡ hµν Rkgrav [ḡ]µνρσ hρσ
+∆k S[h, C, C̄; ḡ] = κ
+2
+√ Z
+√
++ 2 dd x ḡ C̄µ Rkgh [ḡ]C µ
+
+(2.12)
+
+The cutoff operators Rkgrav and Rkgh serve the purpose of discriminating between
+high–momentum and low–momentum modes. Eigenmodes of −D̄ 2 with eigenval-
+
+ues p2 ≫ k 2 are integrated out in (2.2) without any suppression whereas modes
+with small eigenvalues p2 ≪ k 2 are suppressed by a kind of momentum depen-
+
+dent mass term. The operators Rkgrav and Rkgh describe the transition from the
+high–momentum to the low–momentum regime. Either of them has the structure
+Rk [ḡ] = Z k k 2 R(0) (−D̄ 2 /k 2 )
+5
+
+(2.13)
+
+where the dimensionless function R(0) interpolates smoothly between R(0) (0) = 1
+and lim R(0) (u) = 0. A convenient choice is for example
+u→∞
+
+R(0) (u) = u[exp(u) − 1]−1
+
+(2.14)
+
+The factors Z k are different for the graviton and the ghost cutoff. For the ghost
+Z k ≡ Zkgh is a pure number, whereas for the metric fluctuation Z k ≡ Z grav
+is
+k
+a tensor constructed from the background metric ḡµν . In the simplest case one
+
+would take
+(Z grav
+)
+k
+
+µνρσ
+
+= ḡ µρ ḡ νσ Zkgrav
+
+(2.15)
+
+In section 4 we shall employ a slightly more refined choice. There we shall also
+explain how the factors Zkgh and Zkgrav should be choosen. Note that the cutoff
+action (2.12) is quadratic in the quantum fields hµν , C µ and C̄µ . This is an
+important prerequisite for obtaining a tractable evolution equation later on. The
+requirement of a quadratic ∆k S forces us to use the covariant Laplacian D̄ 2 ≡
+
+ḡ µν D̄µ D̄ν in the background metric as the operator which discriminates between
+high–momentum and low–momentum modes.
+In (2.2) we coupled hµν , C µ and C̄µ to the sources tµν , σ̄µ and σ µ , respectively:
+Ssource = −
+
+Z
+
+√ n
+dd x ḡ tµν hµν + σ̄µ C µ + σ µ C̄µ
+µν
+
+ν
+
++β LC (ḡµν + hµν ) + τµ C ∂ν C
+
+µ
+
+o
+
+(2.16)
+
+The sources β µν and τµ couple to the BRS variations of hµν and C µ , respectively.
+In fact, it is not difficult verify that S + Sgf + Sgh is invariant under the BRS
+transformations (ε is an anticommuting parameter)
+δε hµν = εκ−2 LC γµν = εκ−2 LC (ḡµν + hµν )
+δε ḡµν = 0
+δε C
+
+µ
+
+(2.17)
+−2
+
+ν
+
+= εκ C ∂ν C
+
+µ
+
+δε C̄µ = ε (ακ)−1 Fµ
+Given the functional Wk , we introduce k–dependent classical fields
+1 δWk
+h̄µν = √
+ḡ δtµν
+
+,
+
+1 δWk
+ξµ = √
+ḡ δσ̄µ
+
+6
+
+,
+
+1 δWk
+ξ¯µ = √
+ḡ δσ µ
+
+(2.18)
+
+and we formally solve for the sources (tµν , σ µ , σ̄µ ) as functionals of the fields
+e of W de(h̄µν , ξ µ , ξ¯µ ) and of (β µν , τµ ; ḡµν ). Then the Legendre transform Γ
+k
+k
+
+pends on the classical fields and parametrically on β, τ and ḡ:
+e [h̄, ξ, ξ̄; β, τ ; ḡ] =
+Γ
+k
+
+Z
+
+o
+√ n
+dd x ḡ tµν h̄µν + σ̄µ ξ µ + σ µ ξ¯µ − Wk [t, σ, σ̄; β, τ ; ḡ] (2.19)
+
+e by subtracting the
+By definition, the effective average action Γk obtains from Γ
+k
+
+cutoff action ∆k S with the classical fields inserted:
+
+e [h̄, ξ, ξ̄; β, τ ; ḡ] − ∆ S[h̄, ξ, ξ̄; ḡ]
+Γk [h̄, ξ, ξ̄; β, τ ; ḡ] = Γ
+k
+k
+
+(2.20)
+
+gµν (x) ≡ ḡµν (x) + h̄µν (x)
+
+(2.21)
+
+It is convenient to define the metric
+
+as the classical analogue of the quantum metric γµν ≡ ḡµν + hµν and to consider
+Γk as a functional of gµν rather than h̄µν :
+
+Γk [gµν , ḡµν , ξ µ, ξ¯µ ; β, τ ] ≡ Γk [gµν − ḡµν , ξ µ , ξ̄µ; β, τ ; ḡµν ]
+
+(2.22)
+
+The main virtue of the background technique employed here is that the functional
+Γk is invariant under general coordinate transformations where all its arguments
+transform as tensors of the corresponding rank:
+Γk [Φ + Lv Φ] = Γk [Φ]
+
+n
+
+Φ ≡ gµν , ḡµν , ξ µ , ξ̄µ; β µν , τµ
+
+,
+
+o
+
+(2.23)
+
+Note that in (2.23), contrary to the “gauge transformation” (2.6), also the background metric transforms as an ordinary tensor field: δḡµν = Lv ḡµν . Eq. (2.23) is
+
+a consequence of
+
+Wk [J + Lv J ] = Wk [J ]
+
+,
+
+J ≡ {tµν , σ µ , σ̄µ ; β µν , τµ ; ḡµν }
+
+(2.24)
+
+This invarianc property follows from (2.2) if one performs a compensating transformation on the integration variables hµν , C µ and C̄µ . At this point we assume
+that the measure is diffeomorphism invariant.
+The general coordinate invariance of Γk is of major practical importance because if we know a priori that no symmetry–violating terms are generated during
+the evolution it is sufficient to use truncations which consist of invariant combinations of the fields only. The conventionally defined effective action of the metric,
+
+7
+
+Γ[gµν ], obtains in the limit of a vanishing IR cutoff by setting the ghosts, β and τ
+to zero and by identifying ḡµν with gµν :
+Γ[gµν ] = lim Γk [gµν , gµν , 0, 0; 0, 0]
+
+(2.25)
+
+k→0
+
+As a consequence, Γ[gµν ] is invariant under δgµν = Lv gµν . Even though we are
+mostly interested in the functional
+
+Γ̄k [gµν ] ≡ Γk [gµν , gµν , 0, 0; 0, 0]
+
+(2.26)
+
+which depends on gµν only, an exact renormalization group equation can be formulated only if one keeps track of the dependence on ξ, ξ¯ and ḡ as well. For the
+derivation of the (modified) BRS Ward identities satisfied by Γk the dependence
+on β and τ must be retained in addition.
+The derivation of the evolution equation for Γk proceeds as follows. Taking
+a derivative of the functional integral (2.2) with respect to the renormalization
+group “time” t ≡ ln k one obtains, in matrix notation
+
+
+
+
+
+ i
+1 h
+b
+b
+− Tr < C̄ ⊗ C > ∂t R
+− ∂t Wk = Tr < h ⊗ h > ∂t R
+k
+k
+ξ̄ξ
+h̄h̄
+2
+
+
+
+(2.27)
+
+b is a matrix in field space whose non–zero entries are
+Here R
+k
+
+
+b
+R
+k
+
+
+µνρσ
+h̄h̄
+
+b
+R
+k
+
+
+
+ξ̄ξ
+
+= κ2 (Rkgrav [ḡ])µνρσ
+(2.28)
+=
+
+√
+
+2Rkgh [ḡ]
+
+The RHS of (2.27) can be expressed in terms of Γk by noting that the connected
+two–point function
+Gij (x, y) ≡ < χi (x)χj (y) > −ϕi (x)ϕj (y)
+δ 2 Wk
+= q
+i
+j
+ḡ(x)ḡ(y) δJ (x)δJ (y)
+
+(2.29)
+
+1
+
+and
+(2) ij
+
+e
+Γ
+k
+
+e
+1
+δ2Γ
+k
+(x, y) ≡ q
+δϕ
+(x)δϕ
+j (y)
+ḡ(x)ḡ(y) i
+
+8
+
+(2.30)
+
+are inverse matrices in the sense that
+Z
+
+d
+
+d y
+
+q
+
+(2) jl
+
+e
+ḡ(y) Gij (x, y) Γ
+k
+
+δ(x − z)
+(y, z) = δil q
+ḡ(z)
+
+(2.31)
+
+Here we used the shorthand notation χi ≡ {h, C, C̄}, J i ≡ {t, σ, σ̄} and ϕi ≡
+{h̄, ξ, ξ̄}. Thus one obtains the evolution equation
+
+
+
+
+−1 
+1
+(2)
+b
+b
+∂t R
+∂t Γk [h̄, ξ, ξ̄; β, τ ; ḡ] = Tr Γk + R
+k
+k
+h̄h̄
+h̄h̄
+2
+
+−
+
+1
+Tr
+2
+
+
+
+(2)
+
+b
+Γk + R
+k
+
+−1
+ξ̄ξ
+
+
+
+
+
+(2)
+
+b
+− Γk + R
+k
+
+−1  
+ξ ξ̄
+
+b
+∂t R
+k
+
+ 
+
+(2.32)
+
+ξ̄ξ
+
+If one evaluates the RHS of this equation in terms of position–space matrix el(2)
+
+ements then Γk
+
+is defined by a formula similar to (2.30) and the integration
+
+implied by “Tr” has to be interpreted as
+
+R
+
+q
+
+dd x ḡ(x). The matrix elements in the
+
+ghost sector are defined in terms of left derivatives, e.g.
+
+
+ 
+
+(2)
+Γk
+ξ̄ξ
+
+νy
+
+µx
+
+δ
+1
+δΓk
+1
+q
+=q
+µ
+¯
+ḡ(x) δξ (x) ḡ(y) δ ξν (y)
+
+(2.33)
+
+For any cutoff which is qualitatively similar to (2.14) the traces on the RHS
+of eq.(2.32) are well convergent, both in the IR and the UV. By virtue of the
+b , the dominant contributions come from a narrow band of generalized
+factor ∂t R
+k
+
+momenta centered around k. Large momenta are exponentially suppressed.
+
+Solving the evolution equation (2.32) with the appropriate initial condition
+at the UV cutoff scale Λ → ∞ is tantamount to computing the original functional
+integral (2.2). In order to determine the correct initial value ΓΛ we consider the
+following integral equation satisfied by Γk :
+n
+
+o
+
+exp −Γk [h̄, ξ, ξ̄; β, τ ; ḡ] =
+Z
+
+"
+
+e
+DhDCDC̄ exp − S[h,
+C, C̄; β, τ ; ḡ]
+
++
+
+Z
+
+dd x
+
+n
+
+hµν − h̄µν
+
+ δΓ
+
+k
+
+δ h̄µν
+
++ (C µ − ξ µ )
+
+n
+
+ δΓ o
+
+
+
+δΓk
+k
++ C̄µ − ξ¯µ ¯
+µ
+δξ
+δ ξµ
+o
+
+· exp −∆k S[h − h̄, C − ξ, C̄ − ξ; ḡ]
+
+9
+
+#
+
+(2.34)
+
+Here
+Se ≡ S + S
+
+gf + Sgh −
+
+Z
+
+√
+dd x ḡ {β µν LC (ḡµν + hµν ) + τµ C ν ∂ν C µ }
+
+(2.35)
+
+is expressed in terms of the “microscopic” fields (h, C, C̄). Eq. (2.34) obtains by
+inserting the definition of Γk into (2.2) and using
+e
+√
+δΓ
+k
+= ḡ tµν
+δ h̄µν
+
+e
+√
+δΓ
+k
+= − ḡ σ µ
+¯
+δ ξµ
+
+,
+
+,
+
+e
+√
+δΓ
+k
+= − ḡ σ̄µ
+µ
+δξ
+
+(2.36)
+
+The crucial observation is that for k → ∞ the last exponential in (2.34) becomes
+
+proportional to a δ–functional which equates the quantum fields (h, C, C̄) to their
+classical counterparts:
+¯
+e−∆k S k→∞
+g δ[h − h̄]δ[C − ξ]δ[C̄ − ξ]
+
+(2.37)
+
+As a consequence, the effective average action at the UV cutoff reads2
+ΓΛ [h̄, ξ, ξ̄; β, τ ; ḡ] = S[ḡ + h̄] + Sgf [h̄; ḡ] + Sgh [h̄, ξ, ξ̄; ḡ]
+−
+
+Z
+
+(2.38)
+o
+√ n
+dd x ḡ β µν Lξ (ḡµν + h̄µν ) + τµ ξ ν ∂ν ξ µ
+
+It is this action ΓΛ which has to be used as the initial condition for the evolution
+equation. We note that at the level of the functional Γ̄k [g] eq.(2.38) boils down to
+Γ̄Λ [gµν ] = S[gµν ]
+
+(2.39)
+
+(2)
+
+As Γk involves derivatives with respect to gµν at fixed ḡµν it is clear that the
+evolution equation cannot be formulated in terms of Γ̄k alone, however.
+Up to now we assumed that the fundamental action S is positive definite and
+the euclidean functional integral (2.2) makes sense as it stands. It is well known
+that this is not the case for the Einstein–Hilbert action, for example, because the
+conformal factor has a “wrong sign” kinetic term. Clearly it would be desirable
+to have an evolution equation which can be applied in such cases as well. It is
+quite remarkable therefore that the renormalization group equation (2.32), with a
+2
+
+Strictly speaking (2.38) is correct only up to local terms which at most change the bare
+
+parameters in S. Because the value of the bare parameters has anyhow no physical significance
+we ignore these terms here.
+
+10
+
+properly chosen cutoff, is well–defined even if S and Γk are not positive definite.
+To see this, let us look at the first trace on the RHS of (2.32) and let us concentrate
+on the contribution of a fixed mode φ contained in the metric. We assume that φ
+(2)
+
+is an eigenfunction of Γk with eigenvalue zk p2 where p2 is a positive eigenvalue
+of some covariant kinetic operator, typically of the form −D̄ 2 + R–terms. For
+
+theories with S > 0, the wave function renormalization zk is positive (at least
+
+for large k). In this case the general rule [5, 6] is to define the constant Z k in
+the cutoff Rk , eq.(2.13), as Z k = zk because this guarantees that for the low–
+
+momentum modes the effective inverse propagators Γ(2) + Rk becomes zk (p2 + k 2 ),
+as it should be.
+The important question is how Z k should be chosen if zk is negative. If we
+
+continue to use Z k = zk , the evolution equation is perfectly well defined because
+
+the inverse propagator −|zk |(p2 + k 2 ) never vanishes, and the traces of (2.32) are
+not suffering from any IR problems. In fact, if we write down the perturbative
+
+expansion for the functional trace, for instance, it is clear that all propagators are
+correctly cut off in the IR, and that loop momenta smaller than k are suppressed.
+On the other hand, if we set Z k = −zk , then −|zk |(p2 − k 2 ) introduces a spurios
+
+singularity at p2 = k 2 , and the cutoff fails to make the theory IR finite in this
+
+case.
+At first sight the choice Z k = −zk might have appeared more natural because
+R
+
+only if Z k > 0 the factor exp (−∆k S) ∼ exp (− Rk φ2 ) is a damped exponential
+
+which suppresses the low momentum modes in the usual way. In this paper we
+shall nevertheless adopt the rule Z = zk for either sign of zk . We shall see that
+at least for the Einstein–Hilbert truncation of section 4 the evolution equations
+
+are well defined and consistent even though it is difficult to give a meaning to
+R
+
+the functional integral itself. In the case Z k = zk < 0 the factor exp (+ |Rk |φ2 )
+unavoidably becomes a growing exponential and it might seem that this enhances
+
+rather than suppresses the low momentum modes. However, as suggested by the
+perturbative argument above, this conclusion is too naive probably. Moreover, if
+one invokes the usual prescription of rotating the contour of integration over φ so
+that it is parallel to the imaginary axis, both the kinetic term and the cutoff lead
+to damped exponentials.
+Furthermore, it is important to note that the constructions in this section can
+be repeated for metrics on Lorentzian spacetimes. Then one deals with oscillating
+
+11
+
+exponentials eiS , and for arguments like the one leading to eq.(2.37) one has
+to employ the Riemann-Lebesgue lemma. Apart from the obvious substitutions
+Γk → −iΓk , Rk → −iRk , the evolution equation remains unaltered. For Z k = zk
+
+it has all the desired features, and zk < 0 seems not to pose any special problem.
+
+3
+
+Modified Ward Identities and
+Consistent Truncations
+
+We mentioned already that the classical action plus the gauge fixing and ghost
+terms are invariant under the BRS transformations (2.17). Therefore the BRS
+variation of the total action Stot ≡ S + Sgf + Sgh + ∆k S + Ssources receives contribu-
+
+tions only from the cutoff and the source terms. If we apply a BRS transformation
+to the integral defining Wk and assume that the measure is invariant we obtain
+< δε Ssources + δε ∆k S >= 0
+where
+−Wk
+
+< O >≡ e
+
+Z
+
+(3.1)
+
+DhDCD C̄ O e−Stot
+
+(3.2)
+
+Our goal is to convert (3.1) to a statement about the average action Γk . Because
+the BRS transformation (2.17) is off–shell nilpotent when acting on hµν and on
+C µ (but not on C̄µ ) one has
+−2
+
+δε Ssources = −εκ
+
+Z
+
+√ n
+dd x ḡ tµν LC (ḡµν + hµν )
+
+(3.3)
+
+−σ̄µ C ν ∂ν C µ − κα−1 σ µ Fµ (ḡ, h)
+
+o
+
+If we take the expectation value of (3.3) and express Wk in terms of Γk we find
+ǫ
+< δε Ssource >= 2
+κ
+with
+Ye
+
+k ≡
+
+Z
+
+d
+
+d x
+
+(
+
+1
+√
+ḡ
+
+Z
+
+d
+
+1
+
+d xq
+ḡ(x)
+
+(
+
+δΓ′k δΓ′k
+δΓ′k δΓ′k
++
+δξ µ δτµ
+δ h̄µν δβ µν
+
+δ∆k S δΓ′k
+δ∆k S δΓ′k
++
+δξ µ δτµ
+δ h̄µν δβ µν
+
+!
+
+)
+
++
+
+ε e
+Yk
+κ2
+
+√ κ√
+ḡFµ (ḡ, h̄)Rkgh ξ µ
+− 2
+α
+
+(3.4)
+
+)
+
+(3.5)
+
+Here we defined
+Γ′k ≡ Γk − Sgf [h̄; ḡ]
+12
+
+(3.6)
+
+and we exploited the equation of motion < δStot /δ C̄µ >= 0 which can be cast in
+the form
+
+
+
+
+√ µν ρσ 1
+δ
+δ
+ Γk [h̄, ξ, ξ̄; β, τ ; ḡ] = 0
+q
+−
+2ḡ F ν q
+ρσ
+¯
+δβ
+(x)
+δ
+ξ
+(x)
+µ
+ḡ(x)
+ḡ(x)
+1
+
+(3.7)
+
+The variation of the cutoff terms gives rise to
+
+
+ε 
+< δε ∆k S >= − 2 Yk + Yek
+κ
+
+with
+2
+
+Yk ≡ κ Tr
+
+"
+
+(Rkgrav )µνρσ
+"
+
+
+
+−1
+(2)
+b
+Γk + R
+k
+h̄ρσ ϕ
+
+(3.8)
+
+δ 2 Γk
+√
+√
+ḡδϕ ḡδβ µν
+
+
+−1
+√
+δ 2 Γk
+(2)
+b
+− 2Tr Rkgh Γk + R
+√
+k µ √
+ξ ϕ
+ḡδϕ ḡδτµ
+−1 2
+
++2α κ Tr
+
+
+
+Rkgh F ρσ
+µ
+
+
+
+−1
+(2)
+b
+Γk + R
+k
+h̄ρσ ξ̄µ
+
+#
+
+#
+
+(3.9)
+
+
+
+where ϕ ≡ {h̄, ξ, ξ̄} is summed over. From (3.4) and (3.8) we obtain the Ward
+identities in their final form:
+Z
+
+1
+d x√
+ḡ
+d
+
+(
+
+δΓ′k δΓ′k
+δΓ′k δΓ′k
++
+δξ µ δγµ
+δ h̄µν δβ µν
+
+)
+
+= Yk
+
+(3.10)
+
+Eq.(3.10) has to be compared to the ordinary gravitational Ward identities [23]
+which are similar to (3.10) but with a vanishing RHS. In fact, the contribution Yk is
+due to the cutoff and therefore it vanishes in the limit k → 0 because Rk ∼ k 2 → 0
+
+in this limit. Hence the standard effective action lim Γk is guaranteed to obey its
+k→0
+
+usual Ward identities, and BRS invariance is restored for k → 0.
+
+Because the Ward identity (3.10) is derived from the same functional integral
+
+as the evolution equation, it is automatically satisfied for the exact solution of the
+evolution equation. For approximate solutions of the evolution equation their
+consistency with the Ward identity is not guaranteed, and one may even use
+(3.10) to judge the quality of the approximation[12, 19].
+The most important strategy for finding approximate (but still nonperturbative) solutions to the evolution equation is to truncate the space of action
+functionals. Typically one works on a finite–dimensional subspace parametrized
+by only a few generalized couplings. As a first step towards such a truncation one
+
+13
+
+can try to neglect the evolution of the ghost action. This amounts to making an
+ansatz of the following form:
+b [g, ḡ] + S [g − ḡ; ḡ] + S [g − ḡ, ξ, ξ̄; ḡ]
+Γk [g, ḡ, ξ, ξ̄; β, τ ] = Γ̄k [g] + Γ
+k
+gf
+gh
+
+−
+
+Z
+
+(3.11)
+
+√
+
+dd x ḡ {β µν Lξ gµν + τµ ξ ν ∂ν ξ µ }
+
+In (3.11) we pulled out the classical Sgf and Sgh from Γk , and also the coupling
+to the BRS variations has the same form as in the bare action. The remaining
+b
+functional depends on both gµν and ḡµν . It is further decomposed as Γ̄k + Γ
+k
+
+b contains the deviations for ḡ 6= g. Hence
+where Γ̄k is defined as in (2.26) and Γ
+k
+
+by definition
+
+b [g, g] = 0
+Γ
+k
+
+(3.12)
+
+b can be viewed as a quantum correction the gauge fixing term which also vanΓ
+k
+
+ishes for ḡ = g. The ansatz (3.11) satisfies the initial condition (2.38) if
+Γ̄Λ = S
+
+,
+
+b =0
+Γ
+Λ
+
+(3.13)
+
+and it satisfies the quantum equation of motion (3.7) exactly. Eq. (3.13) suggests
+b = 0 for all k in a first approximation. In this case it can be checked
+to set Γ
+k
+
+that if the ansatz (3.11) is inserted into the Ward identity (3.10) its LHS vanishes
+b the Ward identity assumes the form
+identically. Including Γ
+k
+Z
+
+dd x Lξ gµν
+
+b [g, ḡ]
+δΓ
+k
+= −Yk
+δgµν (x)
+
+(3.14)
+
+b = 0 is a good approximation provided we may neglect Y . The
+We see that Γ
+k
+k
+
+traces which define Yk amount to loop integrals, and if we think in terms of a
+loop expansion Yk is certainly a higher loop effect and may be neglected in a
+b =0
+first approximation. At the nonperturbative level one can still try to set Γ
+k
+
+and investigate the consequences in concrete examples. In Yang–Mills theory the
+analogous truncation has led to rather encouraging results already [5, 6, 9]. In
+the next section we shall perform an explicit calculation in this approximation.
+
+If one inserts the ansatz (3.11) into the evolution equation (2.32) one finds
+the following equation for the evolution of Γk in the subspace spanned by the
+
+14
+
+ansatz:
+
+
+
+
+
+−1
+1
+(2)
+∂t Rkgrav [ḡ]
+∂t Γk [g, ḡ] = Tr κ−2 Γk [g, ḡ] + Rkgrav [ḡ]
+2
+
+−Tr
+
+
+
+−1
+
+−M[g, ḡ] + Rkgh [ḡ]
+
+
+
+(3.15)
+
+∂t Rkgh [ḡ]
+
+This equation is written down in terms of
+Γk [g, ḡ] = Γk [g, ḡ, 0, 0; 0, 0]
+(3.16)
+b [g, ḡ]
+= Γ̄k [g] + Sgf [g − ḡ; ḡ] + Γ
+k
+
+(2)
+
+Γk is the Hessian of Γk [g, ḡ] with respect to gµν at fixed ḡµν . For the harmonic
+coordinate condition, the classical kinetic term of the ghosts, M, is given by
+eq.(2.11).
+
+4
+
+The Einstein–Hilbert Truncation
+
+In this section we illustrate the use of eq.(3.15) by means of a simple example. At
+the UV scale Λ we start from the classical Einstein–Hilbert action in d dimensions,
+1
+S=
+16π Ḡ
+
+Z
+
+o
+√ n
+dd x g −R(g) + 2λ̄ ,
+
+(4.1)
+
+and we evolve it down to smaller scales k < Λ. For the time being we shall not
+try to send Λ to infinity, so the nonrenormalizability of the theory is not an issue
+here. We are going to use a truncation which replaces in (4.1) the bare Newton
+constant Ḡ and the bare cosmological constant λ̄ by k–dependent functions
+Gk ≡ ZN k −1 Ḡ
+
+(4.2)
+
+and λ̄k , respectively:
+Γk [g, ḡ] = 2κ2 ZN k
+
+Z
+
++κ2 ZN k
+
+Z
+
+o
+√ n
+dd x g −R(g) + 2λ̄k
+
+√
+
+
+
+
+
+ρσ
+dd x ḡ ḡ µν F αβ
+µ gαβ (F ν gρσ )
+
+15
+
+(4.3)
+
+b neglected and the classical gauge fixing
+This ansatz is of the form (3.16) with Γ
+k
+αβ
+term given by (2.4) with (2.8), (2.9) and α = 1/ZN k . (Note that F αβ
+µ gαβ = F µ h̄αβ
+
+because D̄µ ḡαβ = 0.) In order to determine the functions ZN k and λ̄k we have
+√
+to project the evolution equation on the space spanned by the operators g and
+√
+gR. After having inserted the ansatz into the evolution equation we may set
+
+ḡµν = gµν so that the gauge fixing term in (4.3) vanishes. The LHS of the evolution
+equation reads then
+∂t Γk [g, g] = 2κ2
+
+Z
+
+
+i
+√ h
+dd x g −R(g)∂t ZN k + 2∂t ZN k λ̄k
+
+(4.4)
+
+On the RHS of (3.15) we have to perform a derivative expansion and retain only
+R√
+R√
+g and
+gR. Equating the result to (4.4) we can
+the terms proportional to
+read off the system of ordinary differential equations for ZN k and λ̄k . They have
+
+to be solved subject to the initial conditions ZN Λ = 1 and λ̄Λ = λ̄. In this manner
+the renormalization group flow in the space of all action functionals is projected
+onto the 2–dimensional subspace parametrized by Ḡ and λ̄.
+In the evolution equation we need the second functional derivative of Γk [g, ḡ]
+at fixed ḡµν . We expand
+Γk [ḡ + h̄, ḡ] = Γk [ḡ, ḡ] + O(h̄) + Γquad
+[h̄; ḡ] + O(h̄3 )
+k
+
+(4.5)
+
+and we find for the piece which is quadratic in h̄µν :
+Γquad
+[h̄; ḡ] = ZN k κ2
+k
+
+Z
+
+h
+i
+√
+dd x ḡ h̄µν −K µνρσ D̄ 2 + U µνρσ h̄ρσ
+
+(4.6)
+
+Here indices are raised and lowered with ḡµν , and the tensors K and U are given
+by
+K µνρσ =
+and
+U µνρσ =
+−
+
+i
+1h µ ν
+δρ δσ + δσµ δρν − ḡ µν ḡρσ
+4
+
+(4.7)
+
+i
+i
+
+1h µ ν
+1h
+δρ δσ + δσµ δρν − ḡ µν ḡρσ R̄ − 2λ̄k + ḡ µν R̄ρσ + ḡρσ R̄µν
+4
+2
+
+1h
+4
+
+i
+
+δρµ R̄νσ + δσµ R̄νρ + δρν R̄µσ + δσν R̄µρ −
+
+1h
+
+2
+
+R̄νρ µσ + R̄νσµρ
+
+(4.8)
+
+i
+
+In eq.(4.8) all geometrical quantities are constructed from the background metric.3
+In order to partially diagonalize the quadratic form (4.6) we write h̄µν as the sum
+3
+
+We use the conventions Rσρµν = −∂ν Γσµρ + . . ., Rµν = Rσµσν and R = g µν Rµν .
+
+16
+
+µν
+b
+of a traceless tensor h
+µν and a trace part involving φ ≡ ḡ h̄µν :
+
+b + d−1 ḡ φ ,
+h̄µν = h
+µν
+µν
+
+b =0
+ḡ µν h
+µν
+
+As a consequence, eq.(4.6) becomes
+Γquad
+[h̄; ḡ]
+k
+
+= ZN k κ2
+
+Z
+
+√
+
+dd x ḡ
+
+(
+
+i
+1b h
+b µν
+hµν −D̄ 2 − 2λ̄k + R̄ h
+2
+!
+
+"
+
+(4.9)
+
+#
+
+d−2
+d−4
+−
+φ −D̄ 2 − 2λ̄k +
+R̄ φ
+4d
+d
+−R̄µν
+
+b νρ h
+b µ + R̄
+h
+
+αβνµ
+
+ρ
+
+(4.10)
+
+b βν h
+b αµ + d − 4 φR̄
+h
+
+d
+
+µν
+
+b µν
+h
+
+)
+
+R√
+g and
+The equations for ZN k and λ̄k obtain by comparing the coefficients of
+R√
+gR on both sides of the evolution equation at ḡµν = gµν . For this purpose we
+
+may insert an arbitrary family of metrics gµν which is general enough to identify
+R√
+R√
+the terms
+g and
+gR and to distinguish them from higher order terms in
+R√
+R√
+gR2 or
+gRµν Dµ Dν R, for instance. We
+the derivative expansion, such as
+
+exploit this freedom by assuming that ḡµν corresponds to a maximally symmetric
+space, i.e., that
+R̄µνρσ =
+R̄µν =
+
+1
+[ḡµρ ḡνσ − ḡµσ ḡνρ ] R̄
+d(d − 1)
+
+(4.11)
+
+1
+ḡµν R̄
+d
+
+From now on the curvature scalar R̄ parametrizes the family of metrics inserted,
+and it should be regarded as an externally prescribed number rather than a functional of the metric. For a maximally symmetric background the quadratic action
+boils down to
+Γquad
+[h̄; ḡ]
+k
+
+(
+
+Z
+h
+i
+1
+2
+2
+b
+b µν
+= ZN k κ
+dd x h
+µν −D̄ − 2λ̄k + CT R̄ h
+2
+
+−
+with
+CT ≡
+
+!
+
+h
+
+i
+
+d−2
+φ −D̄ 2 − 2λ̄k + CS R̄ φ
+2d
+
+d(d − 3) + 4
+d(d − 1)
+
+,
+
+17
+
+CS ≡
+
+d−4
+d
+
+)
+
+(4.12)
+
+(4.13)
+
+Before continuing we have to specify the precise form of the cutoff operators
+Rkgrav and Rkgh to be used in the evolution equation (3.15).
+
+Both of them have
+
+the structure (2.13) whereby Z k should be adjusted in such a way that for every
+
+low–momentum mode the cutoff combines with the kinetic term of this mode to
+−D̄ 2 + k 2 times a constant. Looking at (4.12) we see that the respective kinetic
+
+b
+terms for h
+µν and φ differ by a factor of −(d − 2)/2d. This suggests the following
+
+choice:
+
+"
+
+µνρσ
+(Z grav
+)
+=
+k
+
+(I − Pφ )
+
+µνρσ
+
+#
+
+d − 2 µνρσ
+−
+P
+ZN k
+2d φ
+
+(4.14)
+
+Here
+(Pφ )µνρσ = d−1 ḡµν ḡ ρσ
+
+(4.15)
+
+is the projector on the trace part of the metric. For the traceless tensor (4.14)
+coincides with (2.15) for Zkgrav = ZN k , and for φ the different relative normalization
+b and the φ–sector, respectively:
+is taken into account. Thus we obtain in the h
+
+
+
+
+
+
+(2)
+
+h
+
+i
+
+κ−2 Γk [g, g] + Rkgrav bb = ZN k −D 2 + k 2 R(0) (−D 2 /k 2 ) − 2λ̄k + CT R ,
+hh
+
+(2)
+
+κ−2 Γk [g, g] + Rkgrav
+
+
+
+φφ
+
+= −
+
+h
+i
+d−2
+ZN k −D 2 + k 2 R(0) (−D 2 /k 2 ) − 2λ̄k + CS R
+2d
+(4.16)
+
+From now on we may set ḡ = g and we omit the bars from the metric and the
+curvature.
+The last missing ingredient for the evolution equation is the Faddeev–Popov
+operator. From (2.11) one obtains at ḡ = g
+h
+
+M[g, g]µν = δνµ D 2 + Rµν = −δνµ −D 2 + CV R
+
+i
+
+(4.17)
+
+with
+
+1
+(4.18)
+d
+In the second part of (4.17) we used (4.11) for a maximally symmetric background.
+CV ≡ −
+
+Since we did not take into account any renormalization effects in the ghost action
+we set Zkgh ≡ 1 in Rkgh and obtain
+− M + Rkgh = −D 2 + k 2 R(0) (−D 2 /k 2 ) + CV R
+
+18
+
+(4.19)
+
+Let us write S k (R) for the RHS of the renormalization group equation (3.15)
+
+with ḡ = g. Inserting (4.16) and (4.19) there we arrive at
+i
+
+h
+
+h
+
+S k (R) = TrT N (A + CT R)−1 + TrS N (A + CS R)−1
+h
+
+− 2TrV N 0 (A0 + CV R)−1
+
+i
+
+(4.20)
+
+i
+
+with
+A ≡ −D 2 + k 2 R(0) (−D 2 /k 2 ) − 2λ̄k
+h
+
+N ≡ (2ZN k )−1 ∂t ZN k k 2 R(0) (−D 2 /k 2 )
+
+
+
+
+i
+
+(4.21)
+
+1
+= 1 − ηN (k) k 2 R(0) (−D 2 /k 2 ) + D 2 R(0) ′ (−D 2 /k 2 )
+2
+where a prime denotes the derivative with respect to the argument and
+ηN (k) ≡ −∂t ln ZN k
+is the anomalous dimension of the operator
+
+√
+
+(4.22)
+
+gR. The operators N 0 and A0 are
+
+defined similarly to (4.21) but with λ = 0 and ZN k = 1, i.e., ηN (k) = 0. Eq.(4.20)
+
+involves traces of functions of the covariant Laplacian D 2 ≡ g µν Dµ Dν acting on
+
+traceless symmetric tensors (“T ”), scalars (“S”) and vectors (“V ”). Because we
+need only the zeroth and the first order in the curvature scalar we can expand
+i
+
+h
+
+i
+
+h
+
+h
+
+S k (R) = TrT N A−1 + TrS N A−1 − 2TrV N 0 A−1
+0
+
+
+i
+
+h
+
+i
+
+h
+
+i
+h
+
+(4.23)
+i
+
++O(R2)
+− R CT TrT N A−2 + CS TrS N A−2 − 2CV TrV N 0 A−2
+0
+The traces in (4.23) can be evaluated by taking advantage of the heat kernel
+expansion
+h
+
+−isD 2
+
+Tr e
+
+i
+
+
+
+i
+=
+4πs
+
+d/2
+
+tr(I)
+
+Z
+
+√
+
+
+
+1
+d x g 1 − isR + O(R2 )
+6
+d
+
+
+
+(4.24)
+
+Here I denotes the unit matrix of the space of fields on which D 2 acts. Hence
+
+19
+
+tr(I) is the number of independent field components and in particular
+trS (I) = 1
+(4.25)
+
+trV (I) = d
+1
+trT (I) = (d − 1)(d + 2)
+2
+
+f , the expansion
+Considering an arbitrary function W with a Fourier transform W
+
+of the trace
+
+2
+
+Tr[W (−D )] =
+
+Z ∞
+
+−∞
+
+is given by
+2
+
+Tr[W (−D )] = (4π)
+
+−d/2
+
+h
+
+f (s) Tr e−isD
+ds W
+
+(
+
+tr(I) Qd/2 [W ]
+
+Z
+
+Qn [W ] ≡
+
+Z ∞
+
+i
+
+(4.26)
+
+√
+dd x g
+
+1
++ Qd/2−1 [W ]
+6
+with
+
+2
+
+Z
+
+√
+dd x gR + O(R2)
+
+(4.27)
+
+)
+
+f (s)
+ds (−is)n W
+
+−∞
+
+(4.28)
+
+Reexpressing (4.28) in terms of W leads to the Mellin transform (n > 0)
+
+Q0 [W ] = W (0)
+Qn [W ] =
+
+1
+Γ(n)
+
+Z ∞
+0
+
+(4.29)
+dz z n−1 W (z)
+
+The next step is to use (4.27) in order to evaluate (4.23) and to combine S(R)
+R√
+with the LHS of the evolution equation, eq.(4.4). From the coefficients of
+g
+we can read off the following equation
+
+
+∂t ZN k λ̄k
+
+
+
+2 −1
+
+= (4κ ) (4π)
+
+−d/2
+
+(
+
+trT (I)Qd/2 [N /A]
+)
+
++trS (I)Qd/2 [N /A] − 2trV (I)Qd/2 [N 0 /A0 ]
+
+20
+
+(4.30)
+
+Likewise
+
+R√
+
+gR gives rise to
+2 −1
+
+∂t ZN k = −(12κ ) (4π)
+
+−d/2
+
+"
+
+n
+
+o
+
+n
+
+o
+
+trT (I) Qd/2−1 [N /A] − 6CT Qd/2 [N /A2 ]
+
+(4.31)
+
++trS (I) Qd/2−1 [N /A] − 6CS Qd/2 [N /A2 ]
+−2trV (I)
+
+n
+
+o
+
+Qd/2−1 [N 0 /A0 ] − 6CV Qd/2 [N 0 /A20 ]
+
+#
+
+In (4.30) and (4.31), N and A are considered c–number functions of z which
+
+replaces −D 2 in (4.21). For every cutoff R(0) we define the functions (p = 1, 2, . . .)
+Φpn (w)
+
+for n > 0, and4
+
+1
+=
+Γ(n)
+
+Z ∞
+
+1
+Γ(n)
+
+Z ∞
+
+e p (w) =
+Φ
+n
+
+0
+
+0
+
+dz z n−1
+dz z n−1
+
+R(0) (z) − yR(0) ′ (z)
+[z + R(0) (z) + w]p
+
+(4.32)
+
+(0)
+
+R (z)
+[z + R(0) (z) + w]p
+
+e p (w) = (1 + w)−p
+Φp0 (w) = Φ
+0
+
+(4.33)
+
+In terms of the Φ’s, eq.(4.30) assumes the form
+
+
+∂t ZN k λ̄k
+
+
+
+2 −1
+
+= (16κ ) (4π)
+
+
+
+k 2d(d + 1)Φ1d/2 (−2λ̄k /k 2 ) − 8dΦ1d/2 (0)
+
+−d/2 d
+
+e 1 (−2λ̄ /k 2 )
+−d(d + 1)ηN Φ
+k
+d/2
+
+and (4.31) becomes
+
+
+
+(4.34)
+
+∂t ZN k = −(24κ2 )−1 (4π)−d/2 k d−2 ·
+"
+
+
+
+1 e1
+2
+· d(d + 1) Φ1d/2−1 (−2λ̄k /k 2 ) − ηN Φ
+d/2−1 (−2λ̄k /k )
+2
+
+
+1 e2
+2
+−6d(d − 1) Φ2d/2 (−2λ̄k /k 2 ) − ηN Φ
+d/2 (−2λ̄k /k )
+2
+#
+
+−4dΦ1d/2−1 (0) − 24Φ2d/2 (0)
+4
+
+Actually eq.(4.33) follows from (4.32) in the limit n ց 0.
+
+21
+
+
+
+
+
+(4.35)
+
+Let us introduce the dimensionless, renormalized Newton constant
+gk ≡ k d−2 Gk ≡ k d−2 ZN k −1 Ḡ
+
+(4.36)
+
+and the dimensionless cosmological constant
+λk ≡ k −2 λ̄k
+
+(4.37)
+
+Here Gk ≡ ZN k −1 Ḡ is the dimensionful renormalized Newton constant at scale k.
+The evolution of gk is governed by the equation
+
+∂t gk = [d − 2 + ηN (k)] gk
+
+(4.38)
+
+From (4.35) we obtain for the anomalous dimension ηN (k):
+ηN (k) = gk B1 (λk ) + ηN (k)gk B2 (λk )
+
+(4.39)
+
+with
+"
+
+1
+B1 (λk ) ≡ (4π)1−d/2 d(d + 1)Φ1d/2−1 (−2λk ) − 6d(d − 1)Φ2d/2 (−2λk )
+3
+#
+
+(4.40)
+
+−4dΦ1d/2−1 (0) − 24Φ2d/2 (0)
+
+h
+i
+1
+e1
+e2
+B2 (λk ) ≡ − (4π)1−d/2 d(d + 1)Φ
+d/2−1 (−2λk ) − 6d(d − 1)Φd/2 (−2λk )
+6
+
+We can solve (4.39) for the anomalous dimension in terms of gk and λk :
+ηN =
+
+gk B1 (λk )
+1 − gk B2 (λk )
+
+(4.41)
+
+The scale derivative of λk is related to (4.34) according to
+∂t λk = −(2 − ηN )λk + 32πgk κ2 k −d ∂t (ZN k λ̄k )
+
+(4.42)
+
+so that
+1
+∂t λk = −(2 − ηN )λk + gk (4π)1−d/2 ·
+2
+
+(4.43)
+
+h
+
+e 1 (−2λ )
+· 2d(d + 1)Φ1d/2 (−2λk ) − 8dΦ1d/2 (0) − d(d + 1)ηN Φ
+k
+d/2
+
+22
+
+i
+
+Eqs.(4.38) and (4.43) with (4.41) is the set of differential equations we wanted
+to derive. Once the initial values gΛ and λΛ are given, it determines the value
+of the running Newton’s constant and cosmological constant at any scale k ≤
+
+Λ. Although they were derived from a relatively simple truncation, the above
+evolution equations encapsulate nonperturbative effects which go beyond a simple
+one–loop calculation. This is particularly obvious if one expands for instance
+(4.41) for small values of gk :
+h
+
+i
+
+ηN = gk B1 (λk ) 1 + gk B2 (λk ) + gk2B22 (λk ) + · · ·
+
+(4.44)
+
+We observe that ηN receives contributions from arbitrarily high orders of perturbation theory.
+
+5
+
+Running Newton’s Constant and
+Cosmological Constant
+
+5.1
+
+Near two dimensions
+
+In d = 2 dimensions
+
+R√
+
+gR is a topological invariant proportional to the Euler
+
+number and the quantum theory under consideration has at most finitely many
+(topological) degrees of freedom. In d = 2 + ε dimensions, on the other hand, one
+finds a dynamically nontrivial theory with a nonzero β–function for gk [24, 25, 26]:
+∂t gk = [ε + ηN ] gk
+
+(5.1)
+
+Gravity in 2+ε dimensions provides an interesting laboratory for a first test of the
+evolution equation because here the conformal factor of the metric can have both
+a conventional (ε < 0) and a “wrong–sign” (ε > 0) kinetic term, see eq.(4.12).
+The anomalous dimension has a power series expansion
+(0)
+
+(1)
+
+(2)
+
+ηN = ηN + ηN ε + ηN ε2 + . . .
+and therefore
+∂t gk =
+
+h
+
+(1)
+
+1 + ηN
+
+
+
+(0)
+
+i
+
+ε + ηN gk + O(ε2)
+
+23
+
+(5.2)
+
+(5.3)
+
+(0)
+
+(1)
+
+Expanding the functions (4.40) as B1,2 = B1,2 + B1,2 ε + . . . one has
+(0)
+
+(0)
+ηN
+
+=
+
+(1)
+
+ηN =
+The lowest order terms are
+
+gk B1
+
+(0)
+
+1 − gk B2
+
+(5.4)
+
+(1)
+(0) (1)
+gk B1
+gk2 B1 B2
++
+
+
+(0)
+(0) 2
+1 − gk B2
+1 − gk B2
+
+(0)
+
+B1 (λk ) = 2(1 − 2λk )−1 − 4Φ21 (−2λk ) −
+
+32
+3
+
+(5.5)
+
+(0)
+
+e 2 (−2λ ) − (1 − 2λ )−1
+B2 (λk ) = 2Φ
+k
+k
+1
+
+(0)
+
+We remark that for vanishing cosmological constant, B1 is a universal quantity,
+i.e., it does not depend on the precise form of R(0) :
+(0)
+
+B1 (0) = −
+
+38
+3
+
+(5.6)
+
+The reason is that the integrand in the integral representation of Φ21 (0) equals the
+derivative of z(z + R(0) (z))−1 ; hence it is sufficient to know that R(0) is bounded
+everywhere in order to establish that
+Φ21 (0) = 1
+
+(5.7)
+
+e 2 (λ ) is sensitive to the shape of R(0) even for λ = 0. In order
+Unlike Φ21 (0), Φ
+k
+k
+1
+
+to be more explicit we evaluate (5.5) at λ 6= 0 for the constant cutoff function
+R(0) (z) = 1. Though it does not vanish for z → ∞, it yields at least qualitatively
+
+correct results [6, 9] as long as it does not introduce UV divergences into the
+e 2 this is not the case and one finds
+integral under consideration. For Φ21 and Φ
+1
+
+so that
+
+e 2 (w) = (1 + w)−1
+Φ21 (w) = Φ
+1
+
+(0)
+
+B1 (λk ) = −2(1 − 2λk )−1 −
+(0)
+
+B2 (λk ) = (1 − 2λk )−1
+
+24
+
+32
+3
+
+(5.8)
+
+(5.9)
+
+As a consequence, we obtain the following answer for the anomalous dimension:
+(0)
+
+ηN = −
+
+1 − 32
+λ
+38
+19 k
+gk
+3 1 − gk − 2λk
+
+(5.10)
+
+Eq.(5.10) improves on earlier results in refs.[24, 25, 26]. It takes into account
+partially resummed higher loop effects (higher powers of gk ) and it includes the
+effect of the running cosmological constant.
+One of the interesting features of Einstein–Hilbert gravity in 2+ε dimensions
+is that the evolution of Newton’s constant is governed by a fixed point g∗ at which
+the β–function (5.3) vanishes. To lowest order in ε it is given by
+(0)
+
+g∗ = −εB1 (λk )−1
+
+(5.11)
+
+The λ–dependence of g∗ is non–universal. For R(0) = 1 we obtain
+g∗ =
+
+3 1 − 2λk
+ε
+32
+38 1 − 19
+λk
+
+(5.12)
+
+Eq.(5.12) is reliable for λk ≪ 1. In this regime the fixed point g∗ is UV stable
+
+if ε > 0 and it is IR stable for ε < 0. For ε > 0 and λk ≡ 0 this fixed point
+was discussed by Weinberg [25] in the context of the asymptotic safety scenario
+
+for quantum gravity. Our result for the dependence of gk on the cosmological
+constant can only be obtained in a framework with a proper infrared regularization
+because we are investigating the influence of the relevant dimension–two operator
+on a marginal coupling. (In a sense, the rôle played by the running cosmological
+constant is similar to the quadratic mass renormalization in four dimensional
+scalar theories.) For ε > 0 the theory is asymptotically free. Near the fixed point
+the dimensionful Newton constant Gk = g∗ /k ε vanishes for k → ∞.
+
+The evolution of λk itself is governed by eq.(4.43). For gk ≈ g∗ where gk and
+
+ηN are of order ε, one finds that also the β–function of λ has a zero of order ε:
+λ∗ = −
+
+3 1
+Φ (0)ε
+38 1
+
+(5.13)
+
+This fixed point of the λ–evolution is UV stable for either sign of ε. We conclude
+that to first order in ε and for ε > 0 the combined (λ, g)–system has an UV stable
+fixed point given by (5.13) together with g∗ = (3/38)ε.
+
+25
+
+5.2
+
+Four dimensions
+
+In d = 4 dimensions, the running of Newton’s constant is governed by the following
+functions of the cosmological constant:
+B1 (λ) = −
+B2 (λ) =
+
+i
+1 h
+18Φ22 (−2λ) − 5Φ11 (−2λ) + 6Φ22 (0) + 4Φ11 (0)
+3π
+
+i
+1 h e2
+e 1 (−2λ)
+18Φ2 (−2λ) − 5Φ
+1
+6π
+
+(5.14)
+(5.15)
+
+The dimensionful quantity Gk evolves according to
+∂t Gk = ηN Gk
+
+(5.16)
+
+with the anomalous dimension given by (4.41). In order to get a feeling for
+the behavior of Gk , let us restrict our attention to the lowest order in gk which
+amounts to keeping only the first nontrivial correction of the expansion in Ḡk 2 .
+Then ηN = B1 (λk )gk + . . ., or with gk = k 2 Gk = k 2 Ḡ + O(Ḡ2),
+ηN = B1 (λk )Ḡk 2 + O(Ḡ2)
+
+(5.17)
+
+First we consider the case where the cosmological constant is much smaller than
+k 2 . Then we may approximate λk ≈ 0 in (5.17), and (5.16) has the solution
+h
+
+Gk = G0 1 − ω Ḡk 2 + O(Ḡ2k 4 )
+
+i
+
+(5.18)
+
+Here
+
+i
+1
+1 h
+ω ≡ − B1 (0) =
+24Φ22 (0) − Φ11 (0)
+(5.19)
+2
+6π
+is a pure number, which depends on the function R(0) , however. For the exponen-
+
+tial cutoff (2.14) we have Φ11 (0) = π 2 /6 and Φ22 (0) = 1, so that
+4
+π2
+ω=
+1−
+π
+144
+
+!
+
+>0
+
+(5.20)
+
+For different cutoff functions the numerical value of ω will be slightly different
+but it will still be positive. Therefore eq.(5.18) tells us that Newton’s constant
+decreases as k 2 increases; it is small in the UV and grows larger as we evolve it
+towards the infrared. The sign of this effect is the same as for the non–abelian
+gauge coupling in Yang–Mills theory and it is opposite to the one in QED. The
+main difference is that Gk depends quadratically on k while, to lowest order,
+
+26
+
+the gauge coupling in Yang–Mills theory runs only logarithmically. We see that
+gravity is “antiscreening” in the sense that at large distances Newton’s constant
+is larger than at small distances. This confirms the intuitive picture that the
+gravitational charge (mass) is not screened by quantum fluctuations but rather
+receives an additional positive contribution from the virtual particles surrounding
+it.
+Let us consider a gravitational (thought) experiment which involves a typical
+length scale r, the distance of two heavy test particles, for instance. If r ≡ k −1
+
+acts as the effective IR cutoff scale, eq.(5.18) suggests the following form of a
+distance–dependent Newton’s constant (with factors of h̄ and c restored):
+"
+
+
+
+Ḡh̄
+1
+G(r) = G(∞) 1 − ω 2 3 + O 4
+r c
+r
+
+#
+
+(5.21)
+
+We expect5 that, to leading order in 1/r, the quantum corrected static Newtonian
+potential of two test masses should be closely related to V (r) = −G(r)m1 m2 /r.
+
+It is interesting to compare (5.21) to what is actually obtained by a diagrammatic
+
+calculation of the lowest order correction to the potential. Recently Donoghue [28]
+has pointed out that quantized Einstein gravity makes a well defined prediction
+for this quantity which is unaffected by the nonrenormalizability of the theory.
+One finds a result of the form
+"
+
+m1 m2
+G(m1 + m2 )
+Gh̄
+e
+V (r) = −G
+1−
+−ω
+2
+r
+2c r
+r 2 c3
+
+#
+
+(5.22)
+
+The term proportional to (m1 + m2 )/r is a kinematic effect of classical general relativity; it is independent of h̄ and is not related to the β–function of Gk therefore.
+However, the last term in (5.22), proportional to Gh̄/r2 , has precisely the same
+e was performed in ref.[29]
+structure as (5.21). The most recent calculation of ω
+
+with the result
+
+118
+>0
+(5.23)
+15π
+This number has the same sign and is of the same order of magnitude as the value
+e =
+ω
+
+e was
+found originally in ref.[28], but there is no precise agreement yet. In ref.[30], ω
+
+calculated using different methods [31, 32] and a negative value was found; this
+5
+
+Recall that in QED the analogous substitution e2 /r → e2 (r−1 )/r correctly reproduces the
+
+leading term of the Uehling potential if the one–loop formula for the running coupling e2 (µ) is
+used [27].
+
+27
+
+would correspond to “screening” rather than “antiscreening”. Possible reasons
+for this discrepancy were discussed in ref.[29]. While the issue is not fully settled
+yet, it is believed that by correctly identifying and evaluating the set of relevant
+Feynman diagrams, quantum Einstein gravity gives rise to an unambiguous value
+e From our investigation of the renormalization group flow we expect this
+for ω.
+
+value to be positive.
+
+One can use the full nonperturbative information contained in (4.41) in order
+
+to extend the domain of validity of our result towards larger values of gk or smaller
+distances r. This would involve a numerical solution of eq.(4.38) on which we shall
+not embark at this point.
+In our approach we can study the influence of the cosmological constant on
+the running of Gk . It is an interesting question, for instance, whether a large λk
+can destroy the antiscreening character of the gravitational interaction (ηN < 0).
+Let us look at (5.17) with B1 (λk ) given in (5.14). If there exists a regime with
+ηN > 0 (screening) then B1 (λ) must be positive there. This can only happen if
+the term 5Φ11 (−2λk ) in the brackets on the RHS of (5.14) is larger then the sum of
+the other terms because the Φ’s are always positive. However, Φpn (w) decreases for
+increasing w and finally vanishes for w → ∞. Therefore a negative cosmological
+
+constant will not change the sign of ηN since B1 (λk ) < 0 for λk ≤ 0.
+
+For λk > 0, the Φ’s in (5.14) are evaluated at negative arguments w ≡ −2λk .
+
+From (4.32) it is clear that Φpn (w) blows up for w → −1. (The function z + R(0) (z)
+
+assumes its minimum value 1 at z = 0 and increases monotonically for z > 0.)
+This signals that our approximation breaks down for λk ≈ 1/2 or λ̄k ≈ k 2 /2. For
+
+moderately large values of λk , B1 (λk ) is still negative. As λk approaches 1/2 from
+below, only the first two terms on the RHS of (5.14) are important. It might be
+that B1 turns negative then, but this would be in a regime where our truncation
+is not reliable any more, and the sign would even depend on R(0) in general.
+At this point a general remark concerning the domain of validity of our
+truncation might be in order. In section 3 we showed that truncations of the form
+b = 0 are consistent with the modified Ward identities provided Y
+(3.11) with Γ
+k
+k
+
+is small. For the Einstein–Hilbert truncation we can evaluate the traces in (3.9)
+and we can express Yk in terms of the functions Φpn (w). It is clear, therefore, that
+Yk becomes large for w → −1, and that our truncation cannot account for this
+
+regime.
+
+28
+
+The running of the (dimensionful) cosmological constant itself is governed
+by the equation
+∂t λ̄k = ηN λ̄k +
+
+i
+1 4 h
+k Gk 10Φ12 (−2λ̄k /k 2 ) − 8Φ12 (0) − 5ηN Φ12 (−2λ̄k /k 2 )
+2π
+
+(5.24)
+
+If we switch off the renormalization group improvement for a moment and set
+ηN = 0, λ̄k = 0 on the RHS of eq.(5.24), it has the solution
+λ̄k =
+
+1 1
+Φ (0)Ḡ(k 4 − Λ4 ) + λ̄Λ
+4π 2
+
+(5.25)
+
+We observe the canonical scale dependence λ̄k ∼ k 4 which one expects in any
+
+naive one–loop calculation: if λ̄k starts off positive at k = Λ, its absolute value
+decreases when k is lowered until it reaches zero and then λ̄k becomes negative
+(for Λ large enough). It is obvious that any attempt to fine–tune λ̄Λ in such a
+way that lim λ̄k = 0 cannot have a universal meaning because Φ12 (0) depends
+k→0
+
+on the form of the cutoff. The evolution equation (5.24) improves on the one–
+loop result in two respects: it includes the effect of the running Gk , and via the
+“threshold function” Φ12 it describes the backreaction of the changing λ̄k on its
+β–function. In particular, for λ̄k < 0 and k 2 ≪ |λ̄k | the relevant IR cutoff in
+
+the graviton propagator is |λ̄k | rather than k 2 . Then the graviton modes do not
+contribute to the running of λ̄k any longer, and their decoupling is described by
+
+the function Φ12 (w). If, on the other hand, the evolution starts with λ̄k > 0, the
+threshold functions make the coefficient of the k 4 –term in (5.24) even larger, and
+the running towards zero is faster than in (5.25). This effect is counteracted by the
+term ηN λ̄k which is negative for ηN < 0. It cannot prevent λ̄k from overshooting
+zero, however.
+
+6
+
+Conclusion
+
+In this paper we proposed a general framework for the treatment of quantum
+gravity along the lines of the Wilsonian renormalization group. We introduced a
+scale–dependent effective action and we derived an exact renormalization group
+equation which describes its dependence on the built–in infrared cutoff. The effective action is invariant under general coordinate transformations; no symmetry
+violating terms are generated during the evolution. It satisfies a set of modified
+gravitational Ward identities which ensure that, in the limit of a vanishing cutoff,
+
+29
+
+the conventional Ward identities are recovered. By virtue of the diffeomorphism–
+invariance of the effective action, fairly simple invariant truncations of the space
+of actions are sufficient to describe the essential physics in a nonperturbative way.
+The modified Ward identities provide a check for the quality of the truncations.
+The evolution equation can be used both for the quantization of fundamental theories (Λ → ∞) and for the evolution of effective theories (Λ finite). It is defined in
+
+terms of manifestly finite, ultraviolet convergent functional traces. The evolution
+equation by itself is meaningful even if the action is not positive definite. In this
+case the original euclidean functional integral formulation might be problematic,
+and the precise relation between the two approaches is not entirely clear yet.
+As a first application, we have tested our method within a simple truncation
+R√
+R√
+which retains only the invariants
+gR and
+g. Nevertheless, the resulting
+
+evolution equations for Newton’s constant and the cosmological constant contain
+nonperturbative information. In 2 + ε dimensions we found corrections to the β–
+function for Gk and we determined its dependence on the cosmological constant.
+In 4 dimensions we saw that the β–function for Gk depends on k quadratically,
+and that Newton’s constant increases at large distances. Within its restricted
+domain of validity, this result confirms earlier speculations by Polyakov [33] on a
+possible gravitational antiscreening.
+It would be interesting to allow for a more general truncation and to include
+more complicated invariants in the ansatz for Γk . Not only higher powers of
+the curvature should be kept but also, and perhaps more importantly, nonlocal
+terms must be included (similar to the 2D induced gravity action
+
+R
+
+RD −2 R, for
+
+instance). This would lead to a better understanding of quantum gravity in the
+extreme infrared, and might help to clarify certain issues in quantum cosmology.
+For instance, it has been proposed that quantum gravitational effects at large
+distances should be important both in the context of the dark matter problem
+[34] and the cosmological constant problem [14, 33]. In fact, it is quite clear that
+the nature of the IR divergences, and hence of the renormalization group flow
+for k → 0, is quite different depending on whether λ is zero or not [13]. In a
+
+perturbative expansion, one of the traces on the RHS of the evolution equation
+consists of graviton loops attached to external graviton lines. The most singular
+
+(for k → 0) diagrams are those which involve the vertices obtained by expanding
+R√
+λ
+g, because they do not contain any momentum factors. Hence for λ 6= 0 the
+30
+
+renormalization effects should be much stronger than for λ = 0, and this could
+eventually drive the cosmological constant to zero. We hope to come back to this
+point elsewhere.
+Acknowledgement: I would like to thank C.Wetterich for many helpful discussions.
+
+31
+
+References
+[1] R.P.Feynman, Acta Phys.Polon. 24(1963)697;
+B.DeWitt, Phys.Rev. 160(1967)1113; Phys.Rev. 162(1967)1195, 1239;
+G.’t Hooft, M.Veltman, Ann.Inst. H.Poincaré 20(1974)69;
+S.Deser, P. van Nieuwenhuizen, Phys.Rev. D10(1974)401, 410
+[2] For an introduction see J.F.Donoghue, preprint gr-qc/9512024
+[3] K.G.Wilson, Phys. Rev. B4(1971)3174, 3184;
+K.G.Wilson, J.Kogut, Phys. Rep. 12(1974)75;
+F.Wegner, A.Houghton, Phys. Rev. A8(1973)401;
+S.Weinberg, “Critical Phenomena for Field Theorists”,
+Erice Subnucl. Phys. (1976) 1;
+J.Polchinski, Nucl. Phys. B231(1984)269
+[4] C.Wetterich, Phys.Lett. B301(1993)90
+[5] M.Reuter, C.Wetterich, Nucl.Phys. B417(1994)181
+[6] M.Reuter, C.Wetterich, Nucl.Phys. B391(1993)147;
+Nucl.Phys. B408(1993)91; Nucl.Phys. B427(1994)291
+[7] N.Tetradis, C.Wetterich, Nucl. Phys. B398(1993)659,
+Int. J. Mod. Phys. A9(1994)4029, Nucl. Phys. B422(1994)541;
+M.Gräter and C.Wetterich, Phys. Rev. Lett. 75(1995)378;
+N.Tetradis, D.Litim, Preprint hep-th/9512073; Preprint hep-th/9501042;
+B.Bergerhoff, F.Freire, D.Litim, S.Lola, C.Wetterich,
+Preprint hep-ph/950334
+[8] M.Reuter, Phys.Rev. D53(1996)4430 and hep–th/9511128
+[9] M.Reuter, DESY 96–065 and hep–th/9604124
+[10] A.Hasenfratz, P. Hasenfratz, Nucl. Phys. B270(1986)685;
+B.Warr, Ann. Phys. 183(1988)1, 59;
+T.Hurd, Commun. Math. Phys. 124(1989)153;
+G.Keller, C. Kopper, Phys. Lett. B273(1991)323;
+U.Ellwanger, Z. Phys. C58(1993)619;
+
+32
+
+U.Ellwanger, L.Vergara, Nucl. Phys. B398(1993)52;
+M.Bonini, M.D’Attanasio, G.Marchesini, Nucl. Phys. B409(1993)441,
+B418(1994)81, B437(1995)163;
+M.Alford, Phys. Lett. B336(1994)237;
+M.Alford, J.March-Russell, Nucl. Phys. B417(1994)527;
+S.-B.Liao, J.Polonyi, D.Xu, Phys. Rev. D51(1995)748;
+P.E.Haagensen, Y.Kubyshin, J.I.Latorre, E.Moreno,
+Phys. Lett. B323(1994)330;
+U.Kerres, G.Mack, G.Palma, Preprint hep–lat/9505008;
+J.Comellas, Y.Kubyshin, E.Moreno, Preprint hep-th/9601112;
+M.Griessl, G.Mack, Y.Xylander, G.Palma, Preprint hep–lat/9602014
+[11] T.R.Morris, Phys. Lett. B345(1995)139, B329(1994)241,
+B334(1994)355
+[12] U.Ellwanger, Phys. Lett. B335(1994)364;
+U.Ellwanger, M.Hirsch, A.Weber, Preprint hep-th/9506019
+[13] N.C.Tsamis, R.P. Woodard, Phys.Lett. B301(1993)351;
+Ann.Phys.(NY) 238(1995)1;
+A.D.Dolgov, M.B.Einhorn, V.I.Zakharov, Phys.Rev. D52(1995)717
+[14] I.Antoniadis, E.Mottola, Phys.Rev. D45(1992)2013;
+E.Mottola, preprint hep–th/9502109
+[15] A.Ringwald, C.Wetterich Nucl.Phys. B334(1990)506;
+C.Wetterich, Nucl.Phys. B352(1991)529
+[16] C.Wetterich, Z.Phys. C60(1993)461
+[17] A.Bonanno, Phys.Rev. D52(1995)969
+[18] R.Floreanini, R.Percacci, Nucl.Phys. B436(1995)141
+[19] M.Reuter, C.Wetterich, to appear
+[20] M.Reuter in: Proceedings of the 5th Hellenic School and Workshop on
+Elementary Particle Physics, Corfu, Greece, Sept.1995, and hep-th/9602012
+
+33
+
+[21] S.L.Adler, Rev.Mod.Phys. 54(1982)729
+[22] I.L.Buchbinder, S.D.Odintsov, I.L.Shapiro, Effective Action in Quantum
+Gravity, IOP, Bristol, 1992
+[23] N.Nakanishi, I.Ojima, Covariant Operator Formalism of Gauge Theories and
+Quantum Gravity, World Scientific, Singore, 1990
+[24] R.Gastmans, R.Kallosh, C.Truffin, Nucl.Phys. B133(1978)417;
+S.M.Christensen, M.J.Duff, Phys.Lett. 79B(1978)213
+[25] S.Weinberg, in General Relativity, an Einstein Centenary Survey,
+S.W.Hawking, W.Israel (Eds.), Cambridge Univ. Press, 1979
+[26] H.Kawai, M.Ninomiya, Nucl.Phys. B336(1990)115;
+I.Jack, D.R.T.Jones, Nucl.Phys. B358(1991)695;
+H.Kawai, Y.Kitazawa, M.Ninomiya, Nucl.Phys. B404(1993)684;
+T.Aida, Y.Kitazawa, J.Nishimura, A.Tsuchiya, Nucl.Phys. B444(1995)353
+[27] W.Dittrich, M.Reuter, Effective Lagrangians in Quantum Electrodynamics,
+Springer, Berlin, 1985
+[28] J.F.Donoghue, Phys.Rev.Lett. 72(1994)2996; Phys.Rev. D50(1994)3874
+[29] H.W.Hamber, S.Liu, Phys.Lett. B357(1995)51
+[30] I.J.Muzinich, S.Vokos, Phys.Rev. D52(1995)3472
+[31] G.Modanese, Phys.Lett. B325(1994)354;
+Nucl.Phys. B434(1995)697; hep–th/9306078
+[32] H.W.Hamber, R.M.Williams, Nucl.Phys. B435(1995)361
+[33] A.M.Polyakov, Princeton preprint PUPT–1394 and hep–th/9304146
+[34] T.Goldman, J.Perez–Mercader, F.Cooper, M.M.Nieto,
+Phys.Lett. B281(1992)219;
+O.Bertolami, J.Garcia–Bellido, preprint astro–ph/9502010;
+A.Bottino, C.W.Kim, J.Song, Phys.Lett. B351(1995)116
+
+34
+
+

@@ -1,0 +1,64 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://mathsciencecompendium.local/schemas/registry/fourier_quotient_audit.schema.json",
+  "title": "FourierQuotientAudit",
+  "$defs": {
+    "homomorphism": {
+      "type": "object",
+      "required": ["coefficients", "nontrivial", "square_symmetry_invariant", "rejected_exact_triad_count"],
+      "properties": {
+        "coefficients": {
+          "type": "array",
+          "minItems": 2,
+          "maxItems": 2,
+          "items": {"type": "integer", "enum": [0, 1]}
+        },
+        "nontrivial": {"type": "boolean"},
+        "square_symmetry_invariant": {"type": "boolean"},
+        "rejected_exact_triad_count": {"type": "integer", "minimum": 0}
+      },
+      "additionalProperties": false
+    }
+  },
+  "type": "object",
+  "required": [
+    "schema_version",
+    "generator",
+    "fourier_lattice",
+    "target_quotient",
+    "target_quotient_order",
+    "square_shell_radius",
+    "mode_count",
+    "ordered_exact_triad_count",
+    "homomorphisms",
+    "nontrivial_square_symmetry_map_exists",
+    "maximum_rejected_exact_triad_count",
+    "map_existence_outcome",
+    "triad_filter_outcome",
+    "proof",
+    "rejection_criterion"
+  ],
+  "properties": {
+    "schema_version": {"const": 1},
+    "generator": {"const": "scripts/audit_fourier_quotient_map.py"},
+    "fourier_lattice": {"type": "string", "minLength": 1},
+    "target_quotient": {"type": "string", "minLength": 1},
+    "target_quotient_order": {"const": 2},
+    "square_shell_radius": {"type": "integer", "minimum": 1},
+    "mode_count": {"type": "integer", "minimum": 1},
+    "ordered_exact_triad_count": {"type": "integer", "minimum": 1},
+    "homomorphisms": {
+      "type": "array",
+      "minItems": 4,
+      "maxItems": 4,
+      "items": {"$ref": "#/$defs/homomorphism"}
+    },
+    "nontrivial_square_symmetry_map_exists": {"const": true},
+    "maximum_rejected_exact_triad_count": {"const": 0},
+    "map_existence_outcome": {"const": "established"},
+    "triad_filter_outcome": {"const": "falsified"},
+    "proof": {"type": "string", "minLength": 1},
+    "rejection_criterion": {"type": "string", "minLength": 1}
+  },
+  "additionalProperties": false
+}

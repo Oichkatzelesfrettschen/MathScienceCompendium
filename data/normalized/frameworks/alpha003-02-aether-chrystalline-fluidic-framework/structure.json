@@ -1,0 +1,1265 @@
+{
+  "code_fences": [],
+  "document_id": "alpha003-02-aether-chrystalline-fluidic-framework",
+  "formula_candidates": [
+    {
+      "ascii_text": "ds^2 = g_munu dx^mu dx^nu + deltag(phi, ZPE, foam),",
+      "source_line": 16,
+      "source_line_sha256": "b14508f96e9788bbed5b0359ba9c2a475c2263c74b08c0181d7bb4134e9cd226",
+      "source_text": "ds\u00b2 = g_\u03bc\u03bd dx^\u03bc dx^\u03bd + \u03b4g(\u03c6, ZPE, foam),"
+    },
+    {
+      "ascii_text": "nabla^2phi - partial^2phi/partialt^2 + V'(phi) = -rho,",
+      "source_line": 30,
+      "source_line_sha256": "586100756119b0baaa39b2f658f019dd41e00a05c7eef266cc5c116bbba1e681",
+      "source_text": "\u2207\u00b2\u03c6 - \u2202\u00b2\u03c6/\u2202t\u00b2 + V'(\u03c6) = -\u03c1,"
+    },
+    {
+      "ascii_text": "rho_total = rho_ZPE + gphi(t),",
+      "source_line": 44,
+      "source_line_sha256": "10d366b4c3396911bcc6737476a21a6ef76a19a16ee48e22beb4d52479ec7707",
+      "source_text": "\u03c1_total = \u03c1_ZPE + g\u03c6(t),"
+    },
+    {
+      "ascii_text": "deltag(ZPE, phi) = g_0 + lambdaphi ZPE^2,",
+      "source_line": 47,
+      "source_line_sha256": "eba9f18e798cfa4823b3c9811dd6ba43d507df1af1789ed820a46cc880b39275",
+      "source_text": "\u03b4g(ZPE, \u03c6) = g\u2080 + \u03bb\u03c6 ZPE\u00b2,"
+    },
+    {
+      "ascii_text": "phi(t) = phi_0 cos(omegat) + Deltaphi sin(gammat),",
+      "source_line": 60,
+      "source_line_sha256": "4cb5ff949831d259d475638db839855fc77895953f3a68a73ae24950aed6959d",
+      "source_text": "\u03c6(t) = \u03c6\u2080 cos(\u03c9t) + \u0394\u03c6 sin(\u03b3t),"
+    },
+    {
+      "ascii_text": "rho_foam = <|E|^2> - <E>^2.",
+      "source_line": 73,
+      "source_line_sha256": "3db4efdc4f51740bc4bf36540037c523558676c0f7920ce30ccf4b9a4f261100",
+      "source_text": "\u03c1_foam = \u27e8|E|\u00b2\u27e9 - \u27e8E\u27e9\u00b2."
+    },
+    {
+      "ascii_text": "rho_neg = -g^2/(8piG).",
+      "source_line": 85,
+      "source_line_sha256": "e70dbdbd0e85d3cbf02be0e3b06a81affeb9bc38a2db8cdef9de2c5f1fd57560",
+      "source_text": "\u03c1_neg = -g\u00b2/(8\u03c0G)."
+    },
+    {
+      "ascii_text": "H_lattice = Sigma (phi(x) + ZPE(x) + deltafoam)^2.",
+      "source_line": 97,
+      "source_line_sha256": "2c548c047ffa0999d9c31c507bef3ec462c66e8e0b0473fae799ffc2d2013984",
+      "source_text": "H_lattice = \u03a3 (\u03c6(x) + ZPE(x) + \u03b4foam)\u00b2."
+    },
+    {
+      "ascii_text": "F_casimir = pi^2hbarc / (240 d4),",
+      "source_line": 109,
+      "source_line_sha256": "ef35e740c6555db894018c19daafd33bf18effb798f6e93ac97ca1dac7ade69f",
+      "source_text": "F_casimir = \u03c0\u00b2\u210fc / (240 d\u2074),"
+    },
+    {
+      "ascii_text": "V(phi) = 12m^2phi^2 + lambdaphi4.",
+      "source_line": 122,
+      "source_line_sha256": "76df16591bc9f9ce6eba241d4ce385206c8bd3ae8742c6f85e37c5fda7dfe024",
+      "source_text": "V(\u03c6) = \u00bdm\u00b2\u03c6\u00b2 + \u03bb\u03c6\u2074."
+    },
+    {
+      "ascii_text": "S = A / 4Ghbar + integral ZPE(t) d^3x.",
+      "source_line": 134,
+      "source_line_sha256": "93391739c65548186b3080cd835ae58f94be62e5bad2ebe9c1b78d1d692589bc",
+      "source_text": "S = A / 4G\u210f + \u222b ZPE(t) d\u00b3x."
+    },
+    {
+      "ascii_text": "rho_unified = rho_foam + rho_ZPE + rho_scalar.",
+      "source_line": 157,
+      "source_line_sha256": "f7b89a977ccc66ba327d5b9f1576e272b1fa4e2efd8db877391202fc5b80406a",
+      "source_text": "\u03c1_unified = \u03c1_foam + \u03c1_ZPE + \u03c1_scalar."
+    },
+    {
+      "ascii_text": "nabla^2phi - partial^2phi/partialt^2 + V'(phi) = -rho(x),",
+      "source_line": 172,
+      "source_line_sha256": "677013439ce063c33420b1a060dc2173ce49c88e64ca700c795e14837b874836",
+      "source_text": "\u2207\u00b2\u03c6 - \u2202\u00b2\u03c6/\u2202t\u00b2 + V'(\u03c6) = -\u03c1(x),"
+    },
+    {
+      "ascii_text": "phi(t) = phi_0 cos(omegat + delta).",
+      "source_line": 195,
+      "source_line_sha256": "b967631b98ea9ea65874489281569d4ad6ed91ac76039468773cd99b8cb3e432",
+      "source_text": "\u03c6(t) = \u03c6\u2080 cos(\u03c9t + \u03b4)."
+    },
+    {
+      "ascii_text": "L_int = g phi ZPE^2.",
+      "source_line": 215,
+      "source_line_sha256": "8edc2521c78e5142d8518efec0637d3241238af280b138e2aa01a75f1391547b",
+      "source_text": "L_int = g \u03c6 ZPE\u00b2."
+    },
+    {
+      "ascii_text": "E_eff(x, t) = integral phi(x, t) ZPE(t) d^3x.",
+      "source_line": 235,
+      "source_line_sha256": "c6c31589fce19ff0cf033384ac014bb233902bae6e39256bb1e68c1ff46a8bdd",
+      "source_text": "E_eff(x, t) = \u222b \u03c6(x, t) ZPE(t) d\u00b3x."
+    },
+    {
+      "ascii_text": "V(phi) = 12m^2phi^2 + lambdaphi4.",
+      "source_line": 255,
+      "source_line_sha256": "76df16591bc9f9ce6eba241d4ce385206c8bd3ae8742c6f85e37c5fda7dfe024",
+      "source_text": "V(\u03c6) = \u00bdm\u00b2\u03c6\u00b2 + \u03bb\u03c6\u2074."
+    },
+    {
+      "ascii_text": "g_eff = g_ij + alphaphi(nabla^2h_ij).",
+      "source_line": 275,
+      "source_line_sha256": "fc6fd976492b5dea789bf0e8ffdeda9443700d4e96edc8d8c515eebd8252cc2b",
+      "source_text": "g_eff = g_ij + \u03b1\u03c6(\u2207\u00b2h_ij)."
+    },
+    {
+      "ascii_text": "F_inertia = integral ZPE(t) phi(x) dx^3.",
+      "source_line": 295,
+      "source_line_sha256": "8e50b685e97cdca27147e26926971223bf3b84fee41871cf41d94d0a3fb907c4",
+      "source_text": "F_inertia = \u222b ZPE(t) \u03c6(x) dx\u00b3."
+    },
+    {
+      "ascii_text": "rho_neg = -g^2 / (8piG).",
+      "source_line": 315,
+      "source_line_sha256": "8871ca1b0d91e07ddbca764f4d7fa3fc0fa2da1d234bb15391852de5452028f2",
+      "source_text": "\u03c1_neg = -g\u00b2 / (8\u03c0G)."
+    },
+    {
+      "ascii_text": "Deltaphi = npi, n in Z.",
+      "source_line": 337,
+      "source_line_sha256": "cf6ad2fe11add086f9bd796c7c4ba62c75c64aa74cceaa607f287fbdf1ab5e08",
+      "source_text": "\u0394\u03c6 = n\u03c0, n \u2208 Z."
+    },
+    {
+      "ascii_text": "tau_coherence = tau_0 exp(-lambdaphi).",
+      "source_line": 357,
+      "source_line_sha256": "a6b279fa9c515d588fde9ad163b11684c548fc4d598ac21fcd67fb214b7faf9e",
+      "source_text": "\u03c4_coherence = \u03c4\u2080 exp(-\u03bb\u03c6)."
+    },
+    {
+      "ascii_text": "nabla^2Phi + partial^2Phi/partialt^2 = krho_plasma.",
+      "source_line": 377,
+      "source_line_sha256": "37f96ad37aca16b88d6aedff0447192832497d24563dfcac621941f5c50b759c",
+      "source_text": "\u2207\u00b2\u03a6 + \u2202\u00b2\u03a6/\u2202t\u00b2 = k\u03c1_plasma."
+    },
+    {
+      "ascii_text": "L_int = g phi sin(omegat).",
+      "source_line": 397,
+      "source_line_sha256": "90003928374baa5bfc8b49ec6d563b7562e449917ba6580730444f33f71d5918",
+      "source_text": "L_int = g \u03c6 sin(\u03c9t)."
+    },
+    {
+      "ascii_text": "phi_H = nablaphi(r_s) + ZPE(r_s).",
+      "source_line": 417,
+      "source_line_sha256": "bf60ca161f88118d6627b3ad5009b77e5f0279c125ecb44cd295a98f291869c8",
+      "source_text": "\u03c6_H = \u2207\u03c6(r_s) + ZPE(r_s)."
+    },
+    {
+      "ascii_text": "tau_neural = tau_0 sin(omegat).",
+      "source_line": 437,
+      "source_line_sha256": "c8d6db66167905ff55783fbb3e8a50e51605bbe34748cf3f01950893296fdc67",
+      "source_text": "\u03c4_neural = \u03c4\u2080 sin(\u03c9t)."
+    },
+    {
+      "ascii_text": "DeltaE Deltat >= hbar/2,",
+      "source_line": 472,
+      "source_line_sha256": "89aa3e511259932f34303289e9aaeb5fabc6205b23203ed77b8ce5159ce46c24",
+      "source_text": "\u0394E \u0394t \u2265 \u210f/2,"
+    },
+    {
+      "ascii_text": "rho_ZPE(x) = <|E|^2> - <E>^2.",
+      "source_line": 496,
+      "source_line_sha256": "9472c9001bf9010104ad31c15c0f7c7a47b351a19afe72fdb335bea1ea83395e",
+      "source_text": "\u03c1_ZPE(x) = \u27e8|E|\u00b2\u27e9 - \u27e8E\u27e9\u00b2."
+    },
+    {
+      "ascii_text": "F_casimir = pi^2hbarc / (240 d4),",
+      "source_line": 516,
+      "source_line_sha256": "ef35e740c6555db894018c19daafd33bf18effb798f6e93ac97ca1dac7ade69f",
+      "source_text": "F_casimir = \u03c0\u00b2\u210fc / (240 d\u2074),"
+    },
+    {
+      "ascii_text": "F_inertia = integral ZPE(t) phi(x) dx^3.",
+      "source_line": 537,
+      "source_line_sha256": "8e50b685e97cdca27147e26926971223bf3b84fee41871cf41d94d0a3fb907c4",
+      "source_text": "F_inertia = \u222b ZPE(t) \u03c6(x) dx\u00b3."
+    },
+    {
+      "ascii_text": "rho_ZPE(t) = rho_0 cos^2(omegat).",
+      "source_line": 557,
+      "source_line_sha256": "74d7e1b24b4885418b2e4acf065e6af16653b587415aa77b597907c67040f17d",
+      "source_text": "\u03c1_ZPE(t) = \u03c1\u2080 cos\u00b2(\u03c9t)."
+    },
+    {
+      "ascii_text": "E_ZPE = integral(r_s,infinity) ZPE(r) dr,",
+      "source_line": 577,
+      "source_line_sha256": "b73250aaf48cc41ac509aba6cbd5c7d9ddcad878654593ddd829781ea47cece3",
+      "source_text": "E_ZPE = \u222b(r_s,\u221e) ZPE(r) dr,"
+    },
+    {
+      "ascii_text": "L_int = g phi ZPE^2.",
+      "source_line": 598,
+      "source_line_sha256": "8edc2521c78e5142d8518efec0637d3241238af280b138e2aa01a75f1391547b",
+      "source_text": "L_int = g \u03c6 ZPE\u00b2."
+    },
+    {
+      "ascii_text": "rho_neg = -E_ZPE / V_eff.",
+      "source_line": 618,
+      "source_line_sha256": "a06e62bc3f589ff634ffe2e6b390aa8f02318acbd490b017f41ea83dcda7dbab",
+      "source_text": "\u03c1_neg = -E_ZPE / V_eff."
+    },
+    {
+      "ascii_text": "tau_coherence = tau_0 sin^2(rho_ZPE t).",
+      "source_line": 638,
+      "source_line_sha256": "e991dd2c9ad6b699b0a6778adda11db2bbdd7f796f0af71bbbec18a816299ce4",
+      "source_text": "\u03c4_coherence = \u03c4\u2080 sin\u00b2(\u03c1_ZPE t)."
+    },
+    {
+      "ascii_text": "E_ZPE = integral (r_s, r) rho_ZPE(r) dr.",
+      "source_line": 658,
+      "source_line_sha256": "695e47ff181c85f18e2c73a20126d9d7fca803336a64edf49981009a33fc8003",
+      "source_text": "E_ZPE = \u222b (r_s, r) \u03c1_ZPE(r) dr."
+    },
+    {
+      "ascii_text": "nabla^2Phi + partial^2Phi/partialt^2 = k ZPE,",
+      "source_line": 678,
+      "source_line_sha256": "848a8184f93b7a5f14a5b1882708793c4d7b9e3816d7aa81e5054fa16c291272",
+      "source_text": "\u2207\u00b2\u03a6 + \u2202\u00b2\u03a6/\u2202t\u00b2 = k ZPE,"
+    },
+    {
+      "ascii_text": "E_out = E_in cos(Deltak * r),",
+      "source_line": 719,
+      "source_line_sha256": "70b9cc549d6a1762e72acd8ad07bfa616de9a7d63aa71141e3b11a6bc7e9fb35",
+      "source_text": "E_out = E_in cos(\u0394k \u00b7 r),"
+    },
+    {
+      "ascii_text": "S = A / (4hbarG) + integral ZPE(t) d^3x,",
+      "source_line": 740,
+      "source_line_sha256": "3b727afb321ef01be409e251a1309f54d0b6d9b402aabb52eb6d1095e86a5b38",
+      "source_text": "S = A / (4\u210fG) + \u222b ZPE(t) d\u00b3x,"
+    },
+    {
+      "ascii_text": "box h_ij = 0,",
+      "source_line": 784,
+      "source_line_sha256": "189c6474d59ab0a940cb309406064d1653d3bf3fa5e186e81d29a11587b798ca",
+      "source_text": "\u25a1 h_ij = 0,"
+    },
+    {
+      "ascii_text": "h(t) = DeltaL / L,",
+      "source_line": 805,
+      "source_line_sha256": "18c87e0143a94beaeed06349cca92fb77be2afdffe4f9277d51374cf9f6e283a",
+      "source_text": "h(t) = \u0394L / L,"
+    },
+    {
+      "ascii_text": "h_eff = h_ij + alphaphi(nabla^2h_ij),",
+      "source_line": 826,
+      "source_line_sha256": "f07129d386ccec5c954fd222043af82a7508c63f908e5838204e25ec36e96b31",
+      "source_text": "h_eff = h_ij + \u03b1\u03c6(\u2207\u00b2h_ij),"
+    },
+    {
+      "ascii_text": "A_eff = A_0 exp(integral ZPE dx),",
+      "source_line": 847,
+      "source_line_sha256": "dd9b21519aecd93c083e440daa26d93164d82ff772b9c3ba92eb714aa2d5b92c",
+      "source_text": "A_eff = A\u2080 exp(\u222b ZPE dx),"
+    },
+    {
+      "ascii_text": "F_GEM = rho \\vec{g} + (1/c^2) \\vec{J} * \\vec{B}_g,",
+      "source_line": 868,
+      "source_line_sha256": "89d40eceba3ea873b3b7f146952b29d0296d184ce31a3740a94c4487009df298",
+      "source_text": "F_GEM = \u03c1 \\vec{g} + (1/c\u00b2) \\vec{J} \u00d7 \\vec{B}_g,"
+    },
+    {
+      "ascii_text": "F_GW = integral(partial^2phi/partialt^2) dx^3,",
+      "source_line": 889,
+      "source_line_sha256": "6d380e7bf978209c8a1ead48880eec13c45aa87e492a93294434ea9b64195e9f",
+      "source_text": "F_GW = \u222b(\u2202\u00b2\u03c6/\u2202t\u00b2) dx\u00b3,"
+    },
+    {
+      "ascii_text": "T_munu = -g^2 / (8piG).",
+      "source_line": 910,
+      "source_line_sha256": "f7fce7bb7f6e0680ca924609cce8093445d663f8a7bd0544bb8a0a0e68dcf96a",
+      "source_text": "T_\u03bc\u03bd = -g\u00b2 / (8\u03c0G)."
+    },
+    {
+      "ascii_text": "phi(t) = phi_0 cos(omegat) + Deltaphi sin(gammat),",
+      "source_line": 933,
+      "source_line_sha256": "4cb5ff949831d259d475638db839855fc77895953f3a68a73ae24950aed6959d",
+      "source_text": "\u03c6(t) = \u03c6\u2080 cos(\u03c9t) + \u0394\u03c6 sin(\u03b3t),"
+    },
+    {
+      "ascii_text": "H_eff = H_0 + Sigma V_d cos(omegad t),",
+      "source_line": 947,
+      "source_line_sha256": "7f79d3e1752a0f6921612ff921a3e430c2a792389a8ccdab3e6334f2c51fbd85",
+      "source_text": "H_eff = H\u2080 + \u03a3 V_d cos(\u03c9d t),"
+    },
+    {
+      "ascii_text": "Deltak = (2pi/T) n_eff,",
+      "source_line": 960,
+      "source_line_sha256": "f4652a1430ee50fa4dfaed409d6bc0bc429f5ab7c7a9b01da30a0ad4c7c5060e",
+      "source_text": "\u0394k = (2\u03c0/T) n_eff,"
+    },
+    {
+      "ascii_text": "rho_ZPE(t) = rho_0 sin^2(omegat).",
+      "source_line": 973,
+      "source_line_sha256": "b8148656ce37efd4ebf9a9fdfe3c0e727ef007224724a1029dc4c51ff6da1a4f",
+      "source_text": "\u03c1_ZPE(t) = \u03c1\u2080 sin\u00b2(\u03c9t)."
+    },
+    {
+      "ascii_text": "tau_coherence = tau_0 cos(omegat) + Deltatau.",
+      "source_line": 985,
+      "source_line_sha256": "12cc4ccc57484dc034892b607a30aee5408943844be87283bcf5957965f2d8fa",
+      "source_text": "\u03c4_coherence = \u03c4\u2080 cos(\u03c9t) + \u0394\u03c4."
+    },
+    {
+      "ascii_text": "nabla^2Phi + partial^2Phi/partialt^2 = k cos(omegat),",
+      "source_line": 997,
+      "source_line_sha256": "1daf9e458b8e0e2934b091baac3b7d9b4f21202361b388cc1a04bc726c633153",
+      "source_text": "\u2207\u00b2\u03a6 + \u2202\u00b2\u03a6/\u2202t\u00b2 = k cos(\u03c9t),"
+    },
+    {
+      "ascii_text": "L_int = g phi sin(omegat).",
+      "source_line": 1010,
+      "source_line_sha256": "90003928374baa5bfc8b49ec6d563b7562e449917ba6580730444f33f71d5918",
+      "source_text": "L_int = g \u03c6 sin(\u03c9t)."
+    },
+    {
+      "ascii_text": "omega_eff = omega_0 + Deltaomega sin(gammat).",
+      "source_line": 1034,
+      "source_line_sha256": "1717d167b8b0deaff75b822e16b3d26947011bdcbb5343e1501ec009110b1bb8",
+      "source_text": "\u03c9_eff = \u03c9\u2080 + \u0394\u03c9 sin(\u03b3t)."
+    },
+    {
+      "ascii_text": "g_eff = g_ij + alpha sin(omegat).",
+      "source_line": 1046,
+      "source_line_sha256": "42db3418fcbec6334f7d839686f0cf41b32f604d87798b96397a0dd26c3c6166",
+      "source_text": "g_eff = g_ij + \u03b1 sin(\u03c9t)."
+    },
+    {
+      "ascii_text": "V_eff(phi, t) = V_0 cos(omegat).",
+      "source_line": 1058,
+      "source_line_sha256": "8ff29a7da0c7c8c90f5828a97cc050fca2ccd4afd330eb56ffaf1504a79c9a38",
+      "source_text": "V_eff(\u03c6, t) = V\u2080 cos(\u03c9t)."
+    },
+    {
+      "ascii_text": "E_stored = 12 momega^2 sin^2(omegat).",
+      "source_line": 1070,
+      "source_line_sha256": "298c08ff32c0f7558ee236e5b71a9a06504d40a745f34f40be262c493cdb78cd",
+      "source_text": "E_stored = \u00bd m\u03c9\u00b2 sin\u00b2(\u03c9t)."
+    },
+    {
+      "ascii_text": "tau_neural = tau_0 sin(omegat) + Deltatau.",
+      "source_line": 1082,
+      "source_line_sha256": "066a3ccaf49ba8101c908c8a18e8b7126e955d2a7be1695fbd134951a6a93906",
+      "source_text": "\u03c4_neural = \u03c4\u2080 sin(\u03c9t) + \u0394\u03c4."
+    },
+    {
+      "ascii_text": "g_eff = g_ij + beta sin(omegat).",
+      "source_line": 1094,
+      "source_line_sha256": "8f12c96962910d4b4503ae433f0691f5c5449bad8d3bf018027aa08a9062dc7c",
+      "source_text": "g_eff = g_ij + \u03b2 sin(\u03c9t)."
+    },
+    {
+      "ascii_text": "F_eff = DeltaP sin^2(omegat).",
+      "source_line": 1106,
+      "source_line_sha256": "685726eb2a3c82bc6730a136c01886c47f131f5b66a0912e715366cd2f9f0212",
+      "source_text": "F_eff = \u0394P sin\u00b2(\u03c9t)."
+    },
+    {
+      "ascii_text": "ds^2 = g_munu dx^mu dx^nu + deltag(ZPE, phi, t),",
+      "source_line": 1119,
+      "source_line_sha256": "caa253917af93a1927e6fb0302cb361f4439e0ba5dacdc6f9f050a9c2153f298",
+      "source_text": "ds\u00b2 = g_\u03bc\u03bd dx^\u03bc dx^\u03bd + \u03b4g(ZPE, \u03c6, t),"
+    },
+    {
+      "ascii_text": "nabla^2phi = -rho_scalar,",
+      "source_line": 1131,
+      "source_line_sha256": "8d993b44b059a19bde5bcc7ffb52e7ff9c703c74ce239166a14c614d9b8069fa",
+      "source_text": "\u2207\u00b2\u03c6 = -\u03c1_scalar,"
+    },
+    {
+      "ascii_text": "g_eff = g_munu + lambdaZPE(t).",
+      "source_line": 1144,
+      "source_line_sha256": "5434920542f0d39d64429d14a6caaebf9b2751cd8355bf6eb8df090f17feaa38",
+      "source_text": "g_eff = g_\u03bc\u03bd + \u03bbZPE(t)."
+    },
+    {
+      "ascii_text": "g_eff = g_ij + alpha sin(omegat).",
+      "source_line": 1156,
+      "source_line_sha256": "42db3418fcbec6334f7d839686f0cf41b32f604d87798b96397a0dd26c3c6166",
+      "source_text": "g_eff = g_ij + \u03b1 sin(\u03c9t)."
+    },
+    {
+      "ascii_text": "rho_neg = -g^2/(8piG).",
+      "source_line": 1168,
+      "source_line_sha256": "e70dbdbd0e85d3cbf02be0e3b06a81affeb9bc38a2db8cdef9de2c5f1fd57560",
+      "source_text": "\u03c1_neg = -g\u00b2/(8\u03c0G)."
+    },
+    {
+      "ascii_text": "F_GW = integral(partial^2phi/partialt^2) dx^3,",
+      "source_line": 1180,
+      "source_line_sha256": "6d380e7bf978209c8a1ead48880eec13c45aa87e492a93294434ea9b64195e9f",
+      "source_text": "F_GW = \u222b(\u2202\u00b2\u03c6/\u2202t\u00b2) dx\u00b3,"
+    },
+    {
+      "ascii_text": "rho_exotic = -E_ZPE / V_eff.",
+      "source_line": 1193,
+      "source_line_sha256": "8178f0e689538c409602f1598a0b77df65cdf9263af5dde583b680d6586559b1",
+      "source_text": "\u03c1_exotic = -E_ZPE / V_eff."
+    },
+    {
+      "ascii_text": "E_out = integral(r_s, r) ZPE(r) dr,",
+      "source_line": 1205,
+      "source_line_sha256": "feab17546e277ebed363fa8a420bb8d3ff72f53f59ee768194d2a61f4710ba22",
+      "source_text": "E_out = \u222b(r_s, r) ZPE(r) dr,"
+    },
+    {
+      "ascii_text": "nabla^2h_ij + partial^2h_ij/partialt^2 = krho_plasma.",
+      "source_line": 1218,
+      "source_line_sha256": "02426e602e2aaa9d1c23428c65e969515a2b4c013991f2d1c8581337a38bca5e",
+      "source_text": "\u2207\u00b2h_ij + \u2202\u00b2h_ij/\u2202t\u00b2 = k\u03c1_plasma."
+    },
+    {
+      "ascii_text": "h(t) = Sigma an cos(nomegat + phin).",
+      "source_line": 1230,
+      "source_line_sha256": "1d0f65aef83f20e7ba595a84e1a1ca39913b7248875f72af4bdfd36183c90a56",
+      "source_text": "h(t) = \u03a3 a\u2099 cos(n\u03c9t + \u03c6\u2099)."
+    },
+    {
+      "ascii_text": "P = DeltaE sin^2(omegat).",
+      "source_line": 1242,
+      "source_line_sha256": "9beaac7d9c460c8b6bee2bc467c62e5601eb06fb75661c997b39029ac22e2a2e",
+      "source_text": "P = \u0394E sin\u00b2(\u03c9t)."
+    },
+    {
+      "ascii_text": "g_eff = g_munu + lambdaphi^2.",
+      "source_line": 1254,
+      "source_line_sha256": "64a6695e4c09b6d6fb4d1d7a3fae24d3ba9790482f4e059d2a1c1ad48505da7d",
+      "source_text": "g_eff = g_\u03bc\u03bd + \u03bb\u03c6\u00b2."
+    },
+    {
+      "ascii_text": "E_harvest = integral ZPE(t) g_eff dx^3.",
+      "source_line": 1288,
+      "source_line_sha256": "a1b3e9e9f2f7003cf0ea43fe98bd11498895a1743f5e2bc347f87ff2a7a156f3",
+      "source_text": "E_harvest = \u222b ZPE(t) g_eff dx\u00b3."
+    },
+    {
+      "ascii_text": "deltag(ZPE, phi) = g_0 + lambdaphi ZPE^2.",
+      "source_line": 1301,
+      "source_line_sha256": "0b707cf48bb5bee52491bff420492dcba9d02569ca080e7c87c4786b42b90e00",
+      "source_text": "\u03b4g(ZPE, \u03c6) = g\u2080 + \u03bb\u03c6 ZPE\u00b2."
+    },
+    {
+      "ascii_text": "phi(t) = phi_0 cos(omegat) + Deltaphi sin(gammat).",
+      "source_line": 1314,
+      "source_line_sha256": "5c82ab6a3ffd4cb92f09a9079187dcb160062322c716c8f093652ebfd0421d28",
+      "source_text": "\u03c6(t) = \u03c6\u2080 cos(\u03c9t) + \u0394\u03c6 sin(\u03b3t)."
+    },
+    {
+      "ascii_text": "h_eff = h_ij + alphaphi(nabla^2h_ij) + lambdaZPE(t).",
+      "source_line": 1327,
+      "source_line_sha256": "9c728823b68cca04d49c181b02e4709339f4049cb19a9bc1bc10b848cefef8fe",
+      "source_text": "h_eff = h_ij + \u03b1\u03c6(\u2207\u00b2h_ij) + \u03bbZPE(t)."
+    },
+    {
+      "ascii_text": "nabla^2Phi + partial^2Phi/partialt^2 = kphirho_plasma.",
+      "source_line": 1340,
+      "source_line_sha256": "dfc57d046f4fb5afffd21f378d122028281b24f191c885b2d37833abaecad849",
+      "source_text": "\u2207\u00b2\u03a6 + \u2202\u00b2\u03a6/\u2202t\u00b2 = k\u03c6\u03c1_plasma."
+    },
+    {
+      "ascii_text": "g_eff = g_ij + alpha sin(omegat).",
+      "source_line": 1353,
+      "source_line_sha256": "42db3418fcbec6334f7d839686f0cf41b32f604d87798b96397a0dd26c3c6166",
+      "source_text": "g_eff = g_ij + \u03b1 sin(\u03c9t)."
+    },
+    {
+      "ascii_text": "T_munu = -g^2/(8piG) + lambdaphi^2 ZPE.",
+      "source_line": 1366,
+      "source_line_sha256": "954c73c231597c104d1cc50c9a60db9af473afc978cfafdd6c128ad0cb207d65",
+      "source_text": "T_\u03bc\u03bd = -g\u00b2/(8\u03c0G) + \u03bb\u03c6\u00b2 ZPE."
+    },
+    {
+      "ascii_text": "E_out = integral(r_s, r) ZPE(r) dr.",
+      "source_line": 1378,
+      "source_line_sha256": "7040fe3dcac0f14166978c27bb213bcd7a49b70ee1286567cadf8fe83d4672df",
+      "source_text": "E_out = \u222b(r_s, r) ZPE(r) dr."
+    },
+    {
+      "ascii_text": "tau_neural = tau_0 sin(omegat).",
+      "source_line": 1391,
+      "source_line_sha256": "c8d6db66167905ff55783fbb3e8a50e51605bbe34748cf3f01950893296fdc67",
+      "source_text": "\u03c4_neural = \u03c4\u2080 sin(\u03c9t)."
+    },
+    {
+      "ascii_text": "P = DeltaE sin^2(omegat).",
+      "source_line": 1404,
+      "source_line_sha256": "9beaac7d9c460c8b6bee2bc467c62e5601eb06fb75661c997b39029ac22e2a2e",
+      "source_text": "P = \u0394E sin\u00b2(\u03c9t)."
+    },
+    {
+      "ascii_text": "deltax deltap >= hbar / 2,",
+      "source_line": 1433,
+      "source_line_sha256": "709f7008d43d846891b5afb81994ade4cd3e4716a3dfa3ca8025708b76deaf39",
+      "source_text": "\u03b4x \u03b4p \u2265 \u210f / 2,"
+    },
+    {
+      "ascii_text": "phi(foam) = phi_0 + lambdadeltafoam,",
+      "source_line": 1447,
+      "source_line_sha256": "696b2130a2a61639474f2189b146dc488aabf46f9e027ed36d4d0dd9e9cea962",
+      "source_text": "\u03c6(foam) = \u03c6\u2080 + \u03bb\u03b4foam,"
+    },
+    {
+      "ascii_text": "rho_ZPE = <|E_foam|^2> - <E_foam>^2.",
+      "source_line": 1460,
+      "source_line_sha256": "af2b5bd9b354551ad8703f302680872181e56eb2eb351c2212ed93ed4550c9b0",
+      "source_text": "\u03c1_ZPE = \u27e8|E_foam|\u00b2\u27e9 - \u27e8E_foam\u27e9\u00b2."
+    },
+    {
+      "ascii_text": "deltafoam(t) = delta_0 sin^2(omegat).",
+      "source_line": 1472,
+      "source_line_sha256": "8aa031786ef324025752f16f85eb3eea22adab0fca0e883f4e4baaf7e91f43a9",
+      "source_text": "\u03b4foam(t) = \u03b4\u2080 sin\u00b2(\u03c9t)."
+    },
+    {
+      "ascii_text": "h_eff = h_ij + lambdadeltafoam,",
+      "source_line": 1484,
+      "source_line_sha256": "e17031a991dcdb26bd8447d6bb798be353e214a47393666f1bc8671ae4df68aa",
+      "source_text": "h_eff = h_ij + \u03bb\u03b4foam,"
+    },
+    {
+      "ascii_text": "rho_string = mufoam / L,",
+      "source_line": 1497,
+      "source_line_sha256": "39995ffa05fbd33ea236680d93067ab56ffeb26ce4821c3984bca6d0328d7543",
+      "source_text": "\u03c1_string = \u03bcfoam / L,"
+    },
+    {
+      "ascii_text": "ds^2 = -e^2(deltafoam) dt^2 + a^2 dr^2,",
+      "source_line": 1510,
+      "source_line_sha256": "0084cbc38629214720117ae9a9cd37349c059e178ce285838ec201b0d3485da1",
+      "source_text": "ds\u00b2 = -e\u00b2(\u03b4foam) dt\u00b2 + a\u00b2 dr\u00b2,"
+    },
+    {
+      "ascii_text": "rho_neg = -deltafoam^2 / 8piG.",
+      "source_line": 1523,
+      "source_line_sha256": "520efbb310d2007246c44a50e20520543ba603a4ceca135b7b17f6a7b818a7b4",
+      "source_text": "\u03c1_neg = -\u03b4foam\u00b2 / 8\u03c0G."
+    },
+    {
+      "ascii_text": "V_inflation = lambdafoam phi4.",
+      "source_line": 1535,
+      "source_line_sha256": "7c21efc1454821ad23fefa5484f64dbef3a7fdbdb8869f0ef5be48074eb344be",
+      "source_text": "V_inflation = \u03bbfoam \u03c6\u2074."
+    },
+    {
+      "ascii_text": "E_Hawking = integral deltafoam^2 dr.",
+      "source_line": 1547,
+      "source_line_sha256": "02e0ee124d3ea32493f59cf2625b60ff05892f3bb71e5beff0f44c796161ab2c",
+      "source_text": "E_Hawking = \u222b \u03b4foam\u00b2 dr."
+    },
+    {
+      "ascii_text": "S_cosmic = A / 4Ghbar + integral foam(t) d^3x.",
+      "source_line": 1559,
+      "source_line_sha256": "3fad36b8bfece2631acea79ad8ef54af544303171845a28f708b6238b57ae112",
+      "source_text": "S_cosmic = A / 4G\u210f + \u222b foam(t) d\u00b3x."
+    },
+    {
+      "ascii_text": "tau_neural = tau_0 foam(t).",
+      "source_line": 1584,
+      "source_line_sha256": "34dfd8bfbb8835150821fca69d2677db0e37fb2c9b5f6b85ca63085e8d5f30c4",
+      "source_text": "\u03c4_neural = \u03c4\u2080 foam(t)."
+    },
+    {
+      "ascii_text": "P = DeltaE foam^2.",
+      "source_line": 1596,
+      "source_line_sha256": "6d91879e5f92dce9fd2fd1de81d243aadc8c9c91b5506150ee765da931e84362",
+      "source_text": "P = \u0394E foam\u00b2."
+    },
+    {
+      "ascii_text": "Lambda_eff = Lambda + lambdaphi^2,",
+      "source_line": 1620,
+      "source_line_sha256": "bbfbea6a14f42072d78d55cf45aa2586e4c0722b30fdbc4e9fb9b441f1a40c8a",
+      "source_text": "\u039b_eff = \u039b + \u03bb\u03c6\u00b2,"
+    },
+    {
+      "ascii_text": "rho_dark = <foam(t)> + rho_ZPE.",
+      "source_line": 1634,
+      "source_line_sha256": "0f63edf69c4c805b769e67d926c91edf5710c40a79c08f8ffb80e0e072cf5346",
+      "source_text": "\u03c1_dark = \u27e8foam(t)\u27e9 + \u03c1_ZPE."
+    },
+    {
+      "ascii_text": "V(phi) = 12m^2phi^2 + lambdaphi4.",
+      "source_line": 1646,
+      "source_line_sha256": "76df16591bc9f9ce6eba241d4ce385206c8bd3ae8742c6f85e37c5fda7dfe024",
+      "source_text": "V(\u03c6) = \u00bdm\u00b2\u03c6\u00b2 + \u03bb\u03c6\u2074."
+    },
+    {
+      "ascii_text": "rho_dark_matter = Sigma M_baryon / V_eff.",
+      "source_line": 1658,
+      "source_line_sha256": "aff4dd195d97d52dd102a1049a23a96d358cf07b21a96c9046ec593b48ff9271",
+      "source_text": "\u03c1_dark_matter = \u03a3 M_baryon / V_eff."
+    },
+    {
+      "ascii_text": "rho_foam = Sigma deltatopology.",
+      "source_line": 1670,
+      "source_line_sha256": "d8daaa9ea3cd904f949a1259a6d0de2390f4a376c1664a76475153e0b1975593",
+      "source_text": "\u03c1_foam = \u03a3 \u03b4topology."
+    },
+    {
+      "ascii_text": "rho_neg = -g^2 / (8piG).",
+      "source_line": 1682,
+      "source_line_sha256": "8871ca1b0d91e07ddbca764f4d7fa3fc0fa2da1d234bb15391852de5452028f2",
+      "source_text": "\u03c1_neg = -g\u00b2 / (8\u03c0G)."
+    },
+    {
+      "ascii_text": "E_out = 2mc^2 + DeltaZPE,",
+      "source_line": 1694,
+      "source_line_sha256": "ffdc341cd67c13d5e7d7e657ee41ec1afd0fa5d5fddd3719ec7544c072880bf7",
+      "source_text": "E_out = 2mc\u00b2 + \u0394ZPE,"
+    },
+    {
+      "ascii_text": "S_total = S_entropy + S_anti-energy.",
+      "source_line": 1707,
+      "source_line_sha256": "c5472ed410608a462c59bd37238cfc7e8437aababf7485849583d792e930b125",
+      "source_text": "S_total = S_entropy + S_anti-energy."
+    },
+    {
+      "ascii_text": "phi_total = phi_matter - phi_antimatter.",
+      "source_line": 1719,
+      "source_line_sha256": "55c40875b7f0ad57b5bb66846737d83cb412cc0bc405fd12008b25d66cf36327",
+      "source_text": "\u03c6_total = \u03c6_matter - \u03c6_antimatter."
+    },
+    {
+      "ascii_text": "T_munu = -g^2/(8piG) + rho_dark.",
+      "source_line": 1731,
+      "source_line_sha256": "b943a2bda55b63f55e8c2de056c53e82dba24ccea2cda63cb634ebdc3363d71a",
+      "source_text": "T_\u03bc\u03bd = -g\u00b2/(8\u03c0G) + \u03c1_dark."
+    },
+    {
+      "ascii_text": "E_Hawking = integral deltaantimatter dr.",
+      "source_line": 1743,
+      "source_line_sha256": "c8535c1adedc0550dd8e24024fecdf7a91993e31c62990b0f86874397f3d42f5",
+      "source_text": "E_Hawking = \u222b \u03b4antimatter dr."
+    },
+    {
+      "ascii_text": "rho_dark(t) = rho_0 sin^2(omegat).",
+      "source_line": 1768,
+      "source_line_sha256": "0b21488316413d018f006274f48ae49c284b62c1648d05b07f4942ad14513392",
+      "source_text": "\u03c1_dark(t) = \u03c1\u2080 sin\u00b2(\u03c9t)."
+    },
+    {
+      "ascii_text": "P_out = integral ZPE(t)rho_dark dx^3.",
+      "source_line": 1780,
+      "source_line_sha256": "948d20d1beac2cff4e221202cf4326156d467ecb704919a6331b57491b012ead",
+      "source_text": "P_out = \u222b ZPE(t)\u03c1_dark dx\u00b3."
+    },
+    {
+      "ascii_text": "nabla*E = rho/epsilon_0,    (Gauss's Law)",
+      "source_line": 1804,
+      "source_line_sha256": "e02a0e3e32126b0a5e483501d275745760142bb4cd977633b2ee542223bcc436",
+      "source_text": "\u2207\u00b7E = \u03c1/\u03b5\u2080,    (Gauss\u2019s Law)"
+    },
+    {
+      "ascii_text": "nabla*B = 0,        (Magnetic Field Divergence)",
+      "source_line": 1805,
+      "source_line_sha256": "b9e8269d01def7b2c1b9606fa0741606f631bd59886112295d28f60fda9c978b",
+      "source_text": "\u2207\u00b7B = 0,        (Magnetic Field Divergence)"
+    },
+    {
+      "ascii_text": "nabla*E = -partialB/partialt,   (Faraday's Law)",
+      "source_line": 1806,
+      "source_line_sha256": "982c06e8a0dde760ac74b15807f57dbc17d007d328a6061ddc191317e51d956a",
+      "source_text": "\u2207\u00d7E = -\u2202B/\u2202t,   (Faraday\u2019s Law)"
+    },
+    {
+      "ascii_text": "nabla*B = mu_0J + mu_0epsilon_0partialE/partialt.  (Ampere-Maxwell Law)",
+      "source_line": 1807,
+      "source_line_sha256": "f4f684d768e2caeb001293f120996c16529cf0d6e85b6f3e3b9ca8f1e92c4ef3",
+      "source_text": "\u2207\u00d7B = \u03bc\u2080J + \u03bc\u2080\u03b5\u2080\u2202E/\u2202t.  (Ampere-Maxwell Law)"
+    },
+    {
+      "ascii_text": "nabla*B = mu_0J,",
+      "source_line": 1832,
+      "source_line_sha256": "b5c43394995e31a3a1f2fac45af33e8d534d1edb775f4e304878b1a6a9417ff4",
+      "source_text": "\u2207\u00d7B = \u03bc\u2080J,"
+    },
+    {
+      "ascii_text": "partial^2E/partialt^2 - c^2nabla^2E = epsilon_0mu_0partial^2P/partialt^2,",
+      "source_line": 1850,
+      "source_line_sha256": "c04b4a55a158581155889fd39cfcd76d717a676bc8123dc357fc976a88003668",
+      "source_text": "\u2202\u00b2E/\u2202t\u00b2 - c\u00b2\u2207\u00b2E = \u03b5\u2080\u03bc\u2080\u2202\u00b2P/\u2202t\u00b2,"
+    },
+    {
+      "ascii_text": "L_ZPE = integral(E*P) dx^3,",
+      "source_line": 1863,
+      "source_line_sha256": "30428fa1368d958aaacdba22e1fefd795cc4c75288be7ea0d922e75b955d84f9",
+      "source_text": "L_ZPE = \u222b(E\u00b7P) dx\u00b3,"
+    },
+    {
+      "ascii_text": "h_eff = h_ij + lambda_plasmoidnabla^2phi,",
+      "source_line": 1888,
+      "source_line_sha256": "bb8cc457504400879eb120037f41c5c52ca78da19ec60adcc2d6cda319c3c23f",
+      "source_text": "h_eff = h_ij + \u03bb_plasmoid\u2207\u00b2\u03c6,"
+    },
+    {
+      "ascii_text": "nabla^2Phi + partial^2Phi/partialt^2 = kphirho_plasma.",
+      "source_line": 1901,
+      "source_line_sha256": "dfc57d046f4fb5afffd21f378d122028281b24f191c885b2d37833abaecad849",
+      "source_text": "\u2207\u00b2\u03a6 + \u2202\u00b2\u03a6/\u2202t\u00b2 = k\u03c6\u03c1_plasma."
+    },
+    {
+      "ascii_text": "F_plasmoid = integralrho(E * B) dx^3.",
+      "source_line": 1913,
+      "source_line_sha256": "405343a56ed1bc0f774bcf056092dd82019cfd4a826f1549c3a9dc520028d068",
+      "source_text": "F_plasmoid = \u222b\u03c1(E \u00d7 B) dx\u00b3."
+    },
+    {
+      "ascii_text": "nabla^2E - mu_0epsilon_0partial^2E/partialt^2 = 0.",
+      "source_line": 1925,
+      "source_line_sha256": "6395fd38c2859fc68c3677103a067ee14b72fba328cc31d8289908c78103d033",
+      "source_text": "\u2207\u00b2E - \u03bc\u2080\u03b5\u2080\u2202\u00b2E/\u2202t\u00b2 = 0."
+    },
+    {
+      "ascii_text": "tau_plasmoid = tau_0 sin^2(omegat),",
+      "source_line": 1939,
+      "source_line_sha256": "4731cd7f55de6e71cd5fa9542ad9fb1972d3b4dd9421f406d09faaca4f4b4cba",
+      "source_text": "\u03c4_plasmoid = \u03c4\u2080 sin\u00b2(\u03c9t),"
+    },
+    {
+      "ascii_text": "E_reconnection = integral(E * B) dx^3.",
+      "source_line": 1964,
+      "source_line_sha256": "e9ed1cee5d44365f4ad8018944515fc54bef4fcacbc73533f03aee8e77266bc1",
+      "source_text": "E_reconnection = \u222b(E \u00d7 B) dx\u00b3."
+    },
+    {
+      "ascii_text": "Phi(t) = Phi_0 cos(omegat + phi_time).",
+      "source_line": 1976,
+      "source_line_sha256": "beaf83e2649a706095226098b399bf3446b2165e7960445385ada016dd2a9970",
+      "source_text": "\u03a6(t) = \u03a6\u2080 cos(\u03c9t + \u03c6_time)."
+    },
+    {
+      "ascii_text": "ds^2 = -(1 - 2GM/r) dt^2 + (1 - 2GM/r)^-1 dr^2 + r^2(dtheta^2 + sin^2theta dphi^2),",
+      "source_line": 1999,
+      "source_line_sha256": "4bf110cdf88d665444f34bb2f1333ae223d5f9da20b7f4f4623a34eff0e51076",
+      "source_text": "ds\u00b2 = -(1 - 2GM/r) dt\u00b2 + (1 - 2GM/r)\u207b\u00b9 dr\u00b2 + r\u00b2(d\u03b8\u00b2 + sin\u00b2\u03b8 d\u03c6\u00b2),"
+    },
+    {
+      "ascii_text": "ds^2 = -(1 - 2GM/r)^-1 dr^2 + (1 - 2GM/r) dt^2 + r^2(dtheta^2 + sin^2theta dphi^2),",
+      "source_line": 2013,
+      "source_line_sha256": "dc33fc1462e8eccdf61d5e5bc0616ff040ad04737604a9c3dd3bcbe7a97ad27d",
+      "source_text": "ds\u00b2 = -(1 - 2GM/r)\u207b\u00b9 dr\u00b2 + (1 - 2GM/r) dt\u00b2 + r\u00b2(d\u03b8\u00b2 + sin\u00b2\u03b8 d\u03c6\u00b2),"
+    },
+    {
+      "ascii_text": "ds^2 = -e^2(deltafoam) dt^2 + delta^2 dr^2,",
+      "source_line": 2040,
+      "source_line_sha256": "41aca726257b84a7f075fba60902b7664d02c6d886f67a8c19da601cdabe1ddc",
+      "source_text": "ds\u00b2 = -e\u00b2(\u03b4foam) dt\u00b2 + \u03b4\u00b2 dr\u00b2,"
+    },
+    {
+      "ascii_text": "S_BH = k c^3 A / (4 G hbar),",
+      "source_line": 2053,
+      "source_line_sha256": "0b5919bb168ce2e274af24497bceecf704a47e599a2d6c5e99763db8071ddd87",
+      "source_text": "S_BH = k c\u00b3 A / (4 G \u210f),"
+    },
+    {
+      "ascii_text": "I_emit = e^{-S_BH / k}.",
+      "source_line": 2066,
+      "source_line_sha256": "7592b486fb35129a3650e3b017aa5fe879ad5af15b518981363f304effd3dacb",
+      "source_text": "I_emit = e^{\u2212S_BH / k}."
+    },
+    {
+      "ascii_text": "L_int = g phi ZPE^2,",
+      "source_line": 2078,
+      "source_line_sha256": "e8c1af94f94cbf3334dca052df4c278b8da360da3e7ddad8a746b47bdeb0a844",
+      "source_text": "L_int = g \u03c6 ZPE\u00b2,"
+    },
+    {
+      "ascii_text": "E_H = integral (r_s, r) deltafoam^2 dr.",
+      "source_line": 2091,
+      "source_line_sha256": "53f46dde8045c27f09507c054ecd684021c5458a4a3e481c105f4a0829a9a3d3",
+      "source_text": "E_H = \u222b (r_s, r) \u03b4foam\u00b2 dr."
+    },
+    {
+      "ascii_text": "h_eff = h_ij + alpha sin(omegat),",
+      "source_line": 2103,
+      "source_line_sha256": "e38960d129fe3d1ad3108153aeb9924696cac2b4b7e67388f5947309ecdc6879",
+      "source_text": "h_eff = h_ij + \u03b1 sin(\u03c9t),"
+    },
+    {
+      "ascii_text": "H_lattice = Sigma phi(ZPE) + deltafoam^2.",
+      "source_line": 2116,
+      "source_line_sha256": "456bd219cbadb9c247c11aec3c042b63b6d4c0f64ae8b756252d53552073ca57",
+      "source_text": "H_lattice = \u03a3 \u03c6(ZPE) + \u03b4foam\u00b2."
+    },
+    {
+      "ascii_text": "ds^2 = -Phi(t) dt^2 + delta(r) dr^2,",
+      "source_line": 2128,
+      "source_line_sha256": "f84d208ff203221d2d714e88e366dedcdeac964697fd169897c508ba4868c12d",
+      "source_text": "ds\u00b2 = -\u03a6(t) dt\u00b2 + \u03b4(r) dr\u00b2,"
+    },
+    {
+      "ascii_text": "omega_eff = omega_0 + Deltaomega sin^2(gammat).",
+      "source_line": 2141,
+      "source_line_sha256": "1de0715af67e511880b4b5c0659be6123993de973eb0ec5d2e063e16a1d39cd5",
+      "source_text": "\u03c9_eff = \u03c9\u2080 + \u0394\u03c9 sin\u00b2(\u03b3t)."
+    },
+    {
+      "ascii_text": "ds^2 = -e^{2Phi(r)} dt^2 + (1 - b(r)/r)^-1 dr^2 + r^2(dtheta^2 + sin^2theta dphi^2),",
+      "source_line": 2186,
+      "source_line_sha256": "71ec85e32fd6a591958a8ae7075145ea170b3c26faefa1ab35540ef1ffb51884",
+      "source_text": "ds\u00b2 = -e^{2\u03a6(r)} dt\u00b2 + (1 - b(r)/r)\u207b\u00b9 dr\u00b2 + r\u00b2(d\u03b8\u00b2 + sin\u00b2\u03b8 d\u03c6\u00b2),"
+    },
+    {
+      "ascii_text": "nabla^2phi - partial^2phi/partialt^2 + V'(phi) = -rho,",
+      "source_line": 2216,
+      "source_line_sha256": "586100756119b0baaa39b2f658f019dd41e00a05c7eef266cc5c116bbba1e681",
+      "source_text": "\u2207\u00b2\u03c6 - \u2202\u00b2\u03c6/\u2202t\u00b2 + V'(\u03c6) = -\u03c1,"
+    },
+    {
+      "ascii_text": "ds^2 = -e^2(deltafoam) dt^2 + a^2 dr^2,",
+      "source_line": 2229,
+      "source_line_sha256": "0084cbc38629214720117ae9a9cd37349c059e178ce285838ec201b0d3485da1",
+      "source_text": "ds\u00b2 = -e\u00b2(\u03b4foam) dt\u00b2 + a\u00b2 dr\u00b2,"
+    },
+    {
+      "ascii_text": "rho_neg = -E_ZPE / V_eff.",
+      "source_line": 2242,
+      "source_line_sha256": "a06e62bc3f589ff634ffe2e6b390aa8f02318acbd490b017f41ea83dcda7dbab",
+      "source_text": "\u03c1_neg = -E_ZPE / V_eff."
+    },
+    {
+      "ascii_text": "h_eff = h_ij + lambdaphi(nabla^2h_ij),",
+      "source_line": 2254,
+      "source_line_sha256": "0c852e7516686174f5f8c00d01a1cfc73b938b3a1edfc9c27efd4ea26ad52c24",
+      "source_text": "h_eff = h_ij + \u03bb\u03c6(\u2207\u00b2h_ij),"
+    },
+    {
+      "ascii_text": "Deltaphi = npi, n in Z,",
+      "source_line": 2267,
+      "source_line_sha256": "fc79b49c82feed89eb74ea7e7abc5a746307f407a3bb2c173af6eff52dd36ea0",
+      "source_text": "\u0394\u03c6 = n\u03c0, n \u2208 Z,"
+    },
+    {
+      "ascii_text": "g_eff = g_ij + alpha sin(omegat).",
+      "source_line": 2280,
+      "source_line_sha256": "42db3418fcbec6334f7d839686f0cf41b32f604d87798b96397a0dd26c3c6166",
+      "source_text": "g_eff = g_ij + \u03b1 sin(\u03c9t)."
+    },
+    {
+      "ascii_text": "T_munu = -g^2/(8piG).",
+      "source_line": 2292,
+      "source_line_sha256": "c105d76734130df5ea216bfadeef5bc41e68ca42013cc2dfef5adfe3282b6fe2",
+      "source_text": "T_\u03bc\u03bd = -g\u00b2/(8\u03c0G)."
+    },
+    {
+      "ascii_text": "L_int = g phi ZPE^2.",
+      "source_line": 2317,
+      "source_line_sha256": "8edc2521c78e5142d8518efec0637d3241238af280b138e2aa01a75f1391547b",
+      "source_text": "L_int = g \u03c6 ZPE\u00b2."
+    },
+    {
+      "ascii_text": "h(t) = Sigma an cos(nomegat + phin).",
+      "source_line": 2329,
+      "source_line_sha256": "1d0f65aef83f20e7ba595a84e1a1ca39913b7248875f72af4bdfd36183c90a56",
+      "source_text": "h(t) = \u03a3 a\u2099 cos(n\u03c9t + \u03c6\u2099)."
+    },
+    {
+      "ascii_text": "P = DeltaE sin^2(omegat).",
+      "source_line": 2341,
+      "source_line_sha256": "9beaac7d9c460c8b6bee2bc467c62e5601eb06fb75661c997b39029ac22e2a2e",
+      "source_text": "P = \u0394E sin\u00b2(\u03c9t)."
+    },
+    {
+      "ascii_text": "tau_coherence = tau_0 sin(omegat).",
+      "source_line": 2353,
+      "source_line_sha256": "a18fbf020f0139e0aef841c02a2678df62189f05656682adc231038669dbf445",
+      "source_text": "\u03c4_coherence = \u03c4\u2080 sin(\u03c9t)."
+    },
+    {
+      "ascii_text": "F_total = F_grav + F_EM + F_weak + F_strong + deltaF_scalar,",
+      "source_line": 2381,
+      "source_line_sha256": "bc2fc74c845bc714822be91a62e64764202348abc18761afcfd68de190efcecf",
+      "source_text": "F_total = F_grav + F_EM + F_weak + F_strong + \u03b4F_scalar,"
+    },
+    {
+      "ascii_text": "G_munu + Lambdag_munu = 8piG(T_munu + T_scalar),",
+      "source_line": 2394,
+      "source_line_sha256": "97f2eaf35d0a17455c6f6d6bad8fd8dae10aa57afa24d9a529f70177c8431c48",
+      "source_text": "G_\u03bc\u03bd + \u039bg_\u03bc\u03bd = 8\u03c0G(T_\u03bc\u03bd + T_scalar),"
+    },
+    {
+      "ascii_text": "nabla*E = rho/epsilon_0 + partialphi/partialt,",
+      "source_line": 2407,
+      "source_line_sha256": "15420977ab2f3fda5cf51f1e125d7ee58666d5aa057d4aa357cb76c1aa6f9869",
+      "source_text": "\u2207\u00b7E = \u03c1/\u03b5\u2080 + \u2202\u03c6/\u2202t,"
+    },
+    {
+      "ascii_text": "nabla*B = mu_0J + mu_0epsilon_0partialE/partialt + lambdaphiB.",
+      "source_line": 2408,
+      "source_line_sha256": "5ddb6b12a62bb06943b20569d69a06a5dd9a3e37f87bd4730142e9f9d1c465d0",
+      "source_text": "\u2207\u00d7B = \u03bc\u2080J + \u03bc\u2080\u03b5\u2080\u2202E/\u2202t + \u03bb\u03c6B."
+    },
+    {
+      "ascii_text": "V_weak = g_weak (1 + alphaphi),",
+      "source_line": 2420,
+      "source_line_sha256": "2a37c3106797269cf730c8e623c7f6f292b66778dbf018da5f66678a9774e30c",
+      "source_text": "V_weak = g_weak (1 + \u03b1\u03c6),"
+    },
+    {
+      "ascii_text": "F_strong = -nablaV_QCD + lambdaphi.",
+      "source_line": 2433,
+      "source_line_sha256": "e4564d9fbc96302e47fe7f3c44a983aac5e5bed21a17f3082324ccace7e75bad",
+      "source_text": "F_strong = -\u2207V_QCD + \u03bb\u03c6."
+    },
+    {
+      "ascii_text": "F_eff = F_classical + g ZPE^2.",
+      "source_line": 2445,
+      "source_line_sha256": "366a86c66797730ed90bbe7bc923913fe21c59f9311881d767a8d8bef1f81a74",
+      "source_text": "F_eff = F_classical + g ZPE\u00b2."
+    },
+    {
+      "ascii_text": "V_total = Sigma V_classical + lambdaphi^2.",
+      "source_line": 2457,
+      "source_line_sha256": "92fb07eed2fd5dca336445879bf151ac5c512d5c02c3e07c484d932b7b56973e",
+      "source_text": "V_total = \u03a3 V_classical + \u03bb\u03c6\u00b2."
+    },
+    {
+      "ascii_text": "partial^2E/partialt^2 - c^2nabla^2E = rho ZPE,",
+      "source_line": 2469,
+      "source_line_sha256": "253281ab51159234b55e1761645fd599aab6b217ef9c7a4083acfab53a469823",
+      "source_text": "\u2202\u00b2E/\u2202t\u00b2 - c\u00b2\u2207\u00b2E = \u03c1 ZPE,"
+    },
+    {
+      "ascii_text": "F_eff(t) = F_0 sin^2(omegat).",
+      "source_line": 2482,
+      "source_line_sha256": "2e4a49fed2bf8ad5d9c6889f7d0c97d42180b2fb6fbd995fdc6ba6110a951e44",
+      "source_text": "F_eff(t) = F\u2080 sin\u00b2(\u03c9t)."
+    },
+    {
+      "ascii_text": "F_GEM = rhog + (1/c^2)J*B_g,",
+      "source_line": 2494,
+      "source_line_sha256": "4c47973e2aaee227e5f71b8e965dc214841f5bc512307307acbcdf0cc1fd9983",
+      "source_text": "F_GEM = \u03c1g + (1/c\u00b2)J\u00d7B_g,"
+    },
+    {
+      "ascii_text": "rho_neg = -g^2/(8piG).",
+      "source_line": 2507,
+      "source_line_sha256": "e70dbdbd0e85d3cbf02be0e3b06a81affeb9bc38a2db8cdef9de2c5f1fd57560",
+      "source_text": "\u03c1_neg = -g\u00b2/(8\u03c0G)."
+    },
+    {
+      "ascii_text": "g_eff = g_classical + lambdaphi^2.",
+      "source_line": 2519,
+      "source_line_sha256": "a9f7ac2bdcfad9af0466bb7b5a6f462c3b7beb1ccef3a60b5c19e6b10debcdbf",
+      "source_text": "g_eff = g_classical + \u03bb\u03c6\u00b2."
+    },
+    {
+      "ascii_text": "F_total = Sigma F_classical + lambdaphi ZPE^2.",
+      "source_line": 2543,
+      "source_line_sha256": "02b152105aa2f572bcc7f80459086be2f8436a5572d62118da5a7d0ae93a71c2",
+      "source_text": "F_total = \u03a3 F_classical + \u03bb\u03c6 ZPE\u00b2."
+    },
+    {
+      "ascii_text": "deltaphi = (partialphi/partialx) Deltax,",
+      "source_line": 2568,
+      "source_line_sha256": "318ca5ae06ca48f423a4155a15527c7d828750290c62b5212777eba672224212",
+      "source_text": "\u03b4\u03c6 = (\u2202\u03c6/\u2202x) \u0394x,"
+    },
+    {
+      "ascii_text": "P_ZPE = integral rho_ZPE(t) phi(x) dx^3.",
+      "source_line": 2583,
+      "source_line_sha256": "aa8fcd24755b2833321a8d1fb4fcc45d17b7d0a35a2fa92ccf4e801bb3aff7c2",
+      "source_text": "P_ZPE = \u222b \u03c1_ZPE(t) \u03c6(x) dx\u00b3."
+    },
+    {
+      "ascii_text": "tau_coherence = tau_0 sin^2(omegat).",
+      "source_line": 2597,
+      "source_line_sha256": "1bc994092f4b0f96648de479bd25d406ec89c9793bc324c6c328c5d0a64c23e0",
+      "source_text": "\u03c4_coherence = \u03c4\u2080 sin\u00b2(\u03c9t)."
+    },
+    {
+      "ascii_text": "h_eff = h_ij + lambdaZPE(t).",
+      "source_line": 2611,
+      "source_line_sha256": "d26ef89a192d3646b0011d4ccce61e9347c79d7f24457bdcba610c7f7d628f17",
+      "source_text": "h_eff = h_ij + \u03bbZPE(t)."
+    },
+    {
+      "ascii_text": "ds^2 = -Phi(t) dt^2 + delta^2 dr^2.",
+      "source_line": 2625,
+      "source_line_sha256": "f940d0b0e7a2b62ab3ae8405ac32b78f0fd353a45b191052498039729fed818c",
+      "source_text": "ds\u00b2 = -\u03a6(t) dt\u00b2 + \u03b4\u00b2 dr\u00b2."
+    },
+    {
+      "ascii_text": "deltaHawking = integral deltafoam^2 dr.",
+      "source_line": 2639,
+      "source_line_sha256": "3918f473f8831c1f4b9ef2cbcd2dd4c4b90058e141f0ace2416aa1caa2a4c980",
+      "source_text": "\u03b4Hawking = \u222b \u03b4foam\u00b2 dr."
+    },
+    {
+      "ascii_text": "nabla^2Phi + partial^2Phi/partialt^2 = kphirho_plasma.",
+      "source_line": 2653,
+      "source_line_sha256": "dfc57d046f4fb5afffd21f378d122028281b24f191c885b2d37833abaecad849",
+      "source_text": "\u2207\u00b2\u03a6 + \u2202\u00b2\u03a6/\u2202t\u00b2 = k\u03c6\u03c1_plasma."
+    },
+    {
+      "ascii_text": "F_ZPE = integral rho(E * B) dx^3.",
+      "source_line": 2667,
+      "source_line_sha256": "b29a4d732383afe2ec3fc5ae40d579887362befd5190ef791ed9ff033c5544b5",
+      "source_text": "F_ZPE = \u222b \u03c1(E \u00d7 B) dx\u00b3."
+    },
+    {
+      "ascii_text": "tau_entangle = tau_0 exp(-deltaphi).",
+      "source_line": 2681,
+      "source_line_sha256": "18ee99f43f71b53952b61ca34fe778174a121c34ccb48cd6d828cc89ff64c5fd",
+      "source_text": "\u03c4_entangle = \u03c4\u2080 exp(-\u03b4\u03c6)."
+    },
+    {
+      "ascii_text": "P_plasma = integral (E * P) dx^3.",
+      "source_line": 2695,
+      "source_line_sha256": "8ef1b1dd6f648d01015b2bdfa797904c105e4ab0b2d678eef9dda9ddf7f9c7b4",
+      "source_text": "P_plasma = \u222b (E \u00b7 P) dx\u00b3."
+    },
+    {
+      "ascii_text": "nabla^2h_ij + partial^2h_ij/partialt^2 = krho_plasma.",
+      "source_line": 2709,
+      "source_line_sha256": "02426e602e2aaa9d1c23428c65e969515a2b4c013991f2d1c8581337a38bca5e",
+      "source_text": "\u2207\u00b2h_ij + \u2202\u00b2h_ij/\u2202t\u00b2 = k\u03c1_plasma."
+    },
+    {
+      "ascii_text": "E_out = integral (r_s, r) ZPE(r) dr.",
+      "source_line": 2723,
+      "source_line_sha256": "7fdab7e2ea9b0eb931681449326ba938e6c52f0f5b2dd3cdeef82c23817be2ad",
+      "source_text": "E_out = \u222b (r_s, r) ZPE(r) dr."
+    },
+    {
+      "ascii_text": "F_plasmoid = integralrho(E * B) dx^3.",
+      "source_line": 2737,
+      "source_line_sha256": "405343a56ed1bc0f774bcf056092dd82019cfd4a826f1549c3a9dc520028d068",
+      "source_text": "F_plasmoid = \u222b\u03c1(E \u00d7 B) dx\u00b3."
+    },
+    {
+      "ascii_text": "tau_bio = tau_0 sin^2(omegat),",
+      "source_line": 2775,
+      "source_line_sha256": "939ce532340c3adb7412d5b495075ba1955a13734bae2f07b7856ebeb0205381",
+      "source_text": "\u03c4_bio = \u03c4\u2080 sin\u00b2(\u03c9t),"
+    },
+    {
+      "ascii_text": "Deltaf = f_1 - f_2,",
+      "source_line": 2788,
+      "source_line_sha256": "bcde53ed334caea4c4d21739cf38c096f9136ebaca32bc2c3d21c452c2c1e18a",
+      "source_text": "\u0394f = f\u2081 - f\u2082,"
+    },
+    {
+      "ascii_text": "tau_neural = tau_0 sin(omegat) + DeltaZPE.",
+      "source_line": 2801,
+      "source_line_sha256": "2c355054e3374d84aa14c5a271d2b20714ab69f5079f5f0efdef9974f8eaa5c9",
+      "source_text": "\u03c4_neural = \u03c4\u2080 sin(\u03c9t) + \u0394ZPE."
+    },
+    {
+      "ascii_text": "phi_brain(t) = phi_0 cos(omegat) + Deltaphi sin(gammat).",
+      "source_line": 2813,
+      "source_line_sha256": "96f94ac5ad10b48523dfc6ca6f715442f9f80ad868bb1e56ff7d9743385dab30",
+      "source_text": "\u03c6_brain(t) = \u03c6\u2080 cos(\u03c9t) + \u0394\u03c6 sin(\u03b3t)."
+    },
+    {
+      "ascii_text": "Q_eff = Q_0 exp(-lambdaZPE^2).",
+      "source_line": 2825,
+      "source_line_sha256": "70eb2fc740964803a77d06913d02b70cf10b3fe376dc94b2acfe26a6c2f2f63e",
+      "source_text": "Q_eff = Q_0 exp(-\u03bbZPE\u00b2)."
+    },
+    {
+      "ascii_text": "AI_opt = Sigma W(i, j) + phi_scalar(i),",
+      "source_line": 2837,
+      "source_line_sha256": "9142cd6a2dcf53d114fa97c9145810a0a39ded4ec4f26c0c8062f94bdbe57a49",
+      "source_text": "AI_opt = \u03a3 W(i, j) + \u03c6_scalar(i),"
+    },
+    {
+      "ascii_text": "tau_coherence = tau_0 exp(-lambdaZPE).",
+      "source_line": 2850,
+      "source_line_sha256": "73d9bcd8c1898bd3f5c6261a8748141002f1feb67e0c0fffbb1642789f369ef0",
+      "source_text": "\u03c4_coherence = \u03c4\u2080 exp(-\u03bbZPE)."
+    },
+    {
+      "ascii_text": "d_fractal = log(N) / log(r),",
+      "source_line": 2862,
+      "source_line_sha256": "ed793b8a03a8c3ab745284ed2c06665e8058fcd8c053e66b428c17c0d49e778f",
+      "source_text": "d_fractal = log(N) / log(r),"
+    },
+    {
+      "ascii_text": "psi_brain = Sigma phi(ZPE) sin^2(omegat).",
+      "source_line": 2875,
+      "source_line_sha256": "15b544921c2ccff4dfd7efce9ed055a50326044470742313fc1fb3e3c1701dae",
+      "source_text": "\u03c8_brain = \u03a3 \u03c6(ZPE) sin\u00b2(\u03c9t)."
+    },
+    {
+      "ascii_text": "psi_Aether = Sigma (phi + ZPE + g).",
+      "source_line": 2887,
+      "source_line_sha256": "a474791395f9ed0b89a460a2f0b6195ad903433ca6b99019cbf79a8f0fab68b8",
+      "source_text": "\u03c8_Aether = \u03a3 (\u03c6 + ZPE + g)."
+    },
+    {
+      "ascii_text": "E_fractal = Sigma log(N) / log(r).",
+      "source_line": 2899,
+      "source_line_sha256": "d03aa67ac9ab882468c1b921aae5242a95b3fc65cfd0f95512bc95ca95d66d46",
+      "source_text": "E_fractal = \u03a3 log(N) / log(r)."
+    },
+    {
+      "ascii_text": "tau_perception = tau_0 phi(ZPE).",
+      "source_line": 2911,
+      "source_line_sha256": "bff300346cc95e88fc12ef6eb10e7b9d12986977c9f7fa225bd555ec464d2713",
+      "source_text": "\u03c4_perception = \u03c4\u2080 \u03c6(ZPE)."
+    },
+    {
+      "ascii_text": "E_system = Sigma d_fractal log(N).",
+      "source_line": 2935,
+      "source_line_sha256": "244cf77d65a45ea1fdc15ad316971f14266b7e188695ce642c4de1bb2c1bed35",
+      "source_text": "E_system = \u03a3 d_fractal log(N)."
+    },
+    {
+      "ascii_text": "U_total = Sigma (phi(ZPE) + tau_neural + AI_opt).",
+      "source_line": 2947,
+      "source_line_sha256": "9d614de556ffb7c3e85d386f0393936038dedcf03a2a2a0cefc4da72bf73f741",
+      "source_text": "U_total = \u03a3 (\u03c6(ZPE) + \u03c4_neural + AI_opt)."
+    },
+    {
+      "ascii_text": "nabla^2phi + partial^2phi/partialt^2 = krho_air,",
+      "source_line": 2960,
+      "source_line_sha256": "d131c352557ce62bedd49179b9333de088d176360fdd4967c9c28ea7ea25f60b",
+      "source_text": "\u2207\u00b2\u03c6 + \u2202\u00b2\u03c6/\u2202t\u00b2 = k\u03c1_air,"
+    },
+    {
+      "ascii_text": "P_atm = integral ZPE(x) phi dx^3.",
+      "source_line": 2973,
+      "source_line_sha256": "978b9c2793eebf01c19244882a561c1f9cdfd6ddcf6dc5f2106d5cbbf73115bb",
+      "source_text": "P_atm = \u222b ZPE(x) \u03c6 dx\u00b3."
+    },
+    {
+      "ascii_text": "nabla^2Phi + partial^2Phi/partialt^2 = krho_plasma,",
+      "source_line": 2985,
+      "source_line_sha256": "42228dcb12eb4a96068f1e94c1c0b8c02ec09eeb105d1c9742d330e89863226a",
+      "source_text": "\u2207\u00b2\u03a6 + \u2202\u00b2\u03a6/\u2202t\u00b2 = k\u03c1_plasma,"
+    },
+    {
+      "ascii_text": "d_weather = log(N)/log(r),",
+      "source_line": 2998,
+      "source_line_sha256": "94b29a287e0a509d3521d50c40c6eb9af3c5883636b72e9d0316a6ac1c9229d3",
+      "source_text": "d_weather = log(N)/log(r),"
+    },
+    {
+      "ascii_text": "nabla^2phi + partialphi/partialt = rho_ocean,",
+      "source_line": 3011,
+      "source_line_sha256": "14e03dff0df1674128a2bbead79884aac9ca62014aa3f4260fd3362a1ff07547",
+      "source_text": "\u2207\u00b2\u03c6 + \u2202\u03c6/\u2202t = \u03c1_ocean,"
+    },
+    {
+      "ascii_text": "phi_atm(t) = phi_0 sin^2(omegat).",
+      "source_line": 3024,
+      "source_line_sha256": "3da500cb9c42081d73aa84ef5427903fa2062e44a483920bd56a5ff46cbb1e4e",
+      "source_text": "\u03c6_atm(t) = \u03c6\u2080 sin\u00b2(\u03c9t)."
+    },
+    {
+      "ascii_text": "E_solar = integral ZPE(r) d^3x,",
+      "source_line": 3036,
+      "source_line_sha256": "a8630630e2d9b48f9ade2aaf3750ff1d8004213531e2f8827ced3844c6623d20",
+      "source_text": "E_solar = \u222b ZPE(r) d\u00b3x,"
+    },
+    {
+      "ascii_text": "rho_neg = -g^2 / (8piG).",
+      "source_line": 3049,
+      "source_line_sha256": "8871ca1b0d91e07ddbca764f4d7fa3fc0fa2da1d234bb15391852de5452028f2",
+      "source_text": "\u03c1_neg = -g\u00b2 / (8\u03c0G)."
+    },
+    {
+      "ascii_text": "nabla^2h + partial^2h/partialt^2 = krho_ocean.",
+      "source_line": 3061,
+      "source_line_sha256": "a13dafa411d8390d7720aca6867180b8131f642b74050d4598f59103566645a7",
+      "source_text": "\u2207\u00b2h + \u2202\u00b2h/\u2202t\u00b2 = k\u03c1_ocean."
+    },
+    {
+      "ascii_text": "P_coherent = integral phi(t) dx^3.",
+      "source_line": 3085,
+      "source_line_sha256": "7f64c1ddf15f2b832f4bb064a6541bbdfee773d63e3d9615eecdd6a8af65c372",
+      "source_text": "P_coherent = \u222b \u03c6(t) dx\u00b3."
+    },
+    {
+      "ascii_text": "DeltaP_weather = <foam(t)> + DeltaZPE.",
+      "source_line": 3097,
+      "source_line_sha256": "25d2950a87cdb4038317c9f00d2cfa216d267e15aa484e1a7a5b840136e11660",
+      "source_text": "\u0394P_weather = \u27e8foam(t)\u27e9 + \u0394ZPE."
+    },
+    {
+      "ascii_text": "F_weather = Sigma (phi + ZPE + plasma) dx^3.",
+      "source_line": 3121,
+      "source_line_sha256": "c7fb87052c415a3a425aaa4e0b88aa04cf45599093cf493e3207b85006cbc892",
+      "source_text": "F_weather = \u03a3 (\u03c6 + ZPE + plasma) dx\u00b3."
+    },
+    {
+      "ascii_text": "ds^2 = g_munu dx^mu dx^nu + deltag(phi, ZPE, foam, t),",
+      "source_line": 3610,
+      "source_line_sha256": "0896bdf97d3c043056bf3693623482768d95393b236a65b90b41c07824686780",
+      "source_text": "ds\u00b2 = g_\u03bc\u03bd dx^\u03bc dx^\u03bd + \u03b4g(\u03c6, ZPE, foam, t),"
+    },
+    {
+      "ascii_text": "deltax deltap >= hbar / 2,",
+      "source_line": 3622,
+      "source_line_sha256": "709f7008d43d846891b5afb81994ade4cd3e4716a3dfa3ca8025708b76deaf39",
+      "source_text": "\u03b4x \u03b4p \u2265 \u210f / 2,"
+    },
+    {
+      "ascii_text": "deltag(ZPE, phi) = g_0 + lambdaphi ZPE^2.",
+      "source_line": 3636,
+      "source_line_sha256": "0b707cf48bb5bee52491bff420492dcba9d02569ca080e7c87c4786b42b90e00",
+      "source_text": "\u03b4g(ZPE, \u03c6) = g\u2080 + \u03bb\u03c6 ZPE\u00b2."
+    },
+    {
+      "ascii_text": "phi(t) = phi_0 cos(omegat) + Deltaphi sin(gammat).",
+      "source_line": 3649,
+      "source_line_sha256": "5c82ab6a3ffd4cb92f09a9079187dcb160062322c716c8f093652ebfd0421d28",
+      "source_text": "\u03c6(t) = \u03c6\u2080 cos(\u03c9t) + \u0394\u03c6 sin(\u03b3t)."
+    },
+    {
+      "ascii_text": "h_eff = h_ij + alphaphi(nabla^2h_ij).",
+      "source_line": 3662,
+      "source_line_sha256": "eb0bf7579c70a4ac2138976f4d6b6b41fedef548fdac602f9dfb9212b294f4dd",
+      "source_text": "h_eff = h_ij + \u03b1\u03c6(\u2207\u00b2h_ij)."
+    },
+    {
+      "ascii_text": "rho_neg = -g^2 / (8piG).",
+      "source_line": 3675,
+      "source_line_sha256": "8871ca1b0d91e07ddbca764f4d7fa3fc0fa2da1d234bb15391852de5452028f2",
+      "source_text": "\u03c1_neg = -g\u00b2 / (8\u03c0G)."
+    },
+    {
+      "ascii_text": "tau_qubit = tau_0 exp(-lambdaZPE^2).",
+      "source_line": 3688,
+      "source_line_sha256": "752388ebfda999bc4771c074d6619b93a72721254487aa9c01e5c71efd500956",
+      "source_text": "\u03c4_qubit = \u03c4\u2080 exp(-\u03bbZPE\u00b2)."
+    },
+    {
+      "ascii_text": "S_total = A / 4Ghbar + integral foam(t) d^3x.",
+      "source_line": 3701,
+      "source_line_sha256": "534bae2affd5162f5da1fdf1733ed25b337db4f7749718313867b11d736a5318",
+      "source_text": "S_total = A / 4G\u210f + \u222b foam(t) d\u00b3x."
+    }
+  ],
+  "schema_version": 1,
+  "source_relpath": "source_materials/frameworks/Alpha003.02_Aether_Chrystalline_Fluidic_Framework.txt",
+  "source_sha256": "a93c439612fc23c6336d236aaad9af6a28fd5c0701198f2ef92ed976ff535bc8",
+  "table_row_candidates": [
+    {
+      "ascii_text": "rho_foam = <|E|^2> - <E>^2.",
+      "source_line": 73,
+      "source_line_sha256": "3db4efdc4f51740bc4bf36540037c523558676c0f7920ce30ccf4b9a4f261100",
+      "source_text": "\u03c1_foam = \u27e8|E|\u00b2\u27e9 - \u27e8E\u27e9\u00b2."
+    },
+    {
+      "ascii_text": "rho_ZPE(x) = <|E|^2> - <E>^2.",
+      "source_line": 496,
+      "source_line_sha256": "9472c9001bf9010104ad31c15c0f7c7a47b351a19afe72fdb335bea1ea83395e",
+      "source_text": "\u03c1_ZPE(x) = \u27e8|E|\u00b2\u27e9 - \u27e8E\u27e9\u00b2."
+    },
+    {
+      "ascii_text": "rho_ZPE = <|E_foam|^2> - <E_foam>^2.",
+      "source_line": 1460,
+      "source_line_sha256": "af2b5bd9b354551ad8703f302680872181e56eb2eb351c2212ed93ed4550c9b0",
+      "source_text": "\u03c1_ZPE = \u27e8|E_foam|\u00b2\u27e9 - \u27e8E_foam\u27e9\u00b2."
+    }
+  ]
+}

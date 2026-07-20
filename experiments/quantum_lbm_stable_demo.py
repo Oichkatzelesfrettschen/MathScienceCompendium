@@ -1,11 +1,5 @@
 #!/usr/bin/env python3
-"""
-Stable demonstration of Quantum Lattice Boltzmann with E7/E8 harmonics.
-
-This script provides a stable, working example of the quantum LBM framework
-with carefully tuned parameters to ensure numerical stability while still
-demonstrating the key features.
-"""
+"""Mass-conservation regression for the CPU D2Q9 LBM implementation."""
 
 import json
 import sys
@@ -19,7 +13,7 @@ SRC_ROOT = REPO_ROOT / "src"
 if str(SRC_ROOT) not in sys.path:
     sys.path.insert(0, str(SRC_ROOT))
 
-from mathphysics.quantum_lattice_boltzmann import (
+from mathphysics.quantum_lattice_boltzmann import (  # noqa: E402
     BoundaryType,
     LBMParameters,
     QuantumLatticeBoltzmann,
@@ -27,11 +21,11 @@ from mathphysics.quantum_lattice_boltzmann import (
 
 
 def run_stable_demo():
-    """Run a numerically stable quantum LBM demonstration."""
+    """Run a periodic D2Q9 regression with a root-indexed density scaffold."""
 
     print("=" * 70)
-    print("STABLE QUANTUM LATTICE BOLTZMANN DEMONSTRATION")
-    print("With E7/E8 Harmonic Scaffold Initialization")
+    print("D2Q9 MASS-CONSERVATION REGRESSION")
+    print("With E7 Root-Indexed Density Initialization")
     print("=" * 70)
 
     # Create very stable parameters
@@ -100,12 +94,10 @@ def run_stable_demo():
         # Monitor every 10 steps
         if (step + 1) % 10 == 0:
             mass_error = abs(sim.state.total_mass - initial_mass) / initial_mass
-            energy_ratio = sim.state.total_energy / (initial_energy + 1e-10)
-
             print(
                 f"Step {step + 1:3d}: "
                 f"Mass error: {mass_error:.2e}, "
-                f"Energy ratio: {energy_ratio:.2e}, "
+                f"Kinetic energy: {sim.state.total_energy:.2e}, "
                 f"Max |u|: {np.max(np.sqrt(np.sum(sim.state.velocity**2, axis=2))):.4f}"
             )
 
@@ -141,13 +133,14 @@ def run_stable_demo():
     final_energy = sim.state.total_energy
 
     mass_error = abs(final_mass - initial_mass) / initial_mass
-    energy_change = abs(final_energy - initial_energy) / (initial_energy + 1e-10)
+    kinetic_energy_change = final_energy - initial_energy
 
     print("\nConservation Analysis:")
     print(f"  Initial mass: {initial_mass:.6f}")
     print(f"  Final mass: {final_mass:.6f}")
     print(f"  Mass conservation error: {mass_error:.2e}")
-    print(f"  Energy change ratio: {energy_change:.2e}")
+    print(f"  Initial kinetic energy: {initial_energy:.6e}")
+    print(f"  Final kinetic energy: {final_energy:.6e}")
 
     # Stability assessment
     print("\nStability Assessment:")
@@ -158,10 +151,10 @@ def run_stable_demo():
     else:
         print("  [FAIL] Mass conservation poor (error > 10%)")
 
-    if energy_change < 1.0:
-        print("  [PASS] Energy change reasonable")
+    if np.isfinite(final_energy) and final_energy >= 0.0:
+        print("  [PASS] Kinetic-energy diagnostic is finite and non-negative")
     else:
-        print("  [WARN] Large energy change detected")
+        print("  [FAIL] Kinetic-energy diagnostic is invalid")
 
     max_velocity = np.max(np.sqrt(np.sum(sim.state.velocity**2, axis=2)))
     if max_velocity < 0.3:
@@ -182,9 +175,13 @@ def run_stable_demo():
         },
         "conservation": {
             "mass_error": mass_error,
-            "energy_change": energy_change,
             "initial_mass": initial_mass,
             "final_mass": final_mass,
+        },
+        "kinetic_energy": {
+            "initial": initial_energy,
+            "final": final_energy,
+            "change": kinetic_energy_change,
         },
         "snapshots": snapshots,
     }
@@ -200,30 +197,30 @@ def run_stable_demo():
     print("SCIENTIFIC INTERPRETATION")
     print("=" * 70)
     print("""
-The Quantum Lattice Boltzmann simulation demonstrates:
+This regression demonstrates:
 
 1. D2Q9 LATTICE STRUCTURE:
    - 9-velocity lattice successfully implemented
    - BGK collision operator functioning
    - Streaming and collision steps balanced
 
-2. E7/E8 HARMONIC INITIALIZATION:
-   - Density field modulated by E7 root harmonics
-   - Golden ratio scaling applied to harmonic amplitudes
-   - Fractal structure embedded in initial conditions
+2. ROOT-INDEXED INITIALIZATION:
+   - Density is modulated by coordinates selected from the E7 root array
+   - Golden-ratio weighting is a chosen amplitude schedule
+   - No quotient charge or triad-selection operator is applied
 
-3. QUANTUM MODIFICATIONS:
-   - Coherence field evolution tracked
-   - ZPE field modulation applied (though minimal)
-   - Quantum-inspired relaxation dynamics
+3. PASSIVE AUXILIARY FIELDS:
+   - Coherence and ZPE arrays are initialized
+   - They do not enter the CPU collision or streaming equations
+   - The run therefore supplies no quantum-dynamics evidence
 
 4. STABILITY CONSIDERATIONS:
    - Conservative parameters ensure numerical stability
    - Velocity limiting prevents supersonic flows
    - Positive density maintained throughout
 
-This implementation provides a foundation for exploring quantum-classical
-hybrid fluid dynamics with exceptional Lie algebra symmetries.
+The result is a numerical conservation regression. It does not establish a
+physical coupling between exceptional Lie algebras and fluid dynamics.
     """)
 
     return sim, output_data

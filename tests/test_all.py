@@ -103,8 +103,13 @@ class TestCayleyDickson:
         validator = CayleyDicksonValidator(Sedenion)
         props = validator.verify_all_properties()
 
-        # Sedenions should have zero divisors
-        assert props.get("has_zero_divisors", False) or True  # May not find in small sample
+        assert props["has_zero_divisors"] is True
+        witnesses = validator.find_zero_divisors()
+        assert len(witnesses) == 1
+        left_factor, right_factor = witnesses[0]
+        assert left_factor.norm_squared() > 0.0
+        assert right_factor.norm_squared() > 0.0
+        assert (left_factor * right_factor).norm_squared() == 0.0
 
     def test_dimension_progression(self):
         """Test dimension doubling."""
@@ -159,7 +164,7 @@ class TestFractalAnalysis:
         # Calculate dimension
         result = calculator.box_counting_dimension(cantor_points, num_scales=10)
 
-        # Theoretical: log(2)/log(3) ≈ 0.631
+        # Theoretical: log(2)/log(3) approximately 0.631
         theoretical = np.log(2) / np.log(3)
         assert abs(result.dimension - theoretical) < 0.2  # Reasonable tolerance
 
@@ -273,10 +278,10 @@ class TestLatticeTheory:
         e8 = E8Lattice()
         theta = e8.theta_series(max_n=2)
 
-        # a_0 = 1 (origin)
+        # The constant coefficient represents the origin.
         assert theta[0] == 1
 
-        # a_1 = 240 (minimal vectors)
+        # The first nonconstant coefficient counts minimal vectors.
         assert theta[1] == 240
 
     def test_e8_packing_density(self):
@@ -284,7 +289,7 @@ class TestLatticeTheory:
         e8 = E8Lattice()
         density = e8.packing_density()
 
-        # Should be π^4/384
+        # Should be pi^4/384
         expected = np.pi**4 / 384
         assert abs(density - expected) < 1e-10
 
@@ -354,9 +359,9 @@ class TestModularForms:
         tau_values = ModularForms.ramanujan_tau(num_terms=10)
 
         # Known values
-        assert tau_values[0] == 1  # τ(1)
-        assert tau_values[1] == -24  # τ(2)
-        assert tau_values[2] == 252  # τ(3)
+        assert tau_values[0] == 1  # tau(1)
+        assert tau_values[1] == -24  # tau(2)
+        assert tau_values[2] == 252  # tau(3)
 
     def test_monster_order(self):
         """Test Monster group order."""

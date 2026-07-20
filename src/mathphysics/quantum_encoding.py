@@ -17,7 +17,7 @@ from __future__ import annotations
 
 from dataclasses import dataclass
 from math import ceil, log2, sqrt
-from typing import Any
+from typing import Any, TypedDict
 
 import numpy as np
 
@@ -28,6 +28,16 @@ from qiskit.quantum_info import Statevector
 
 # Local imports
 from .algebras.roots import E7RootSystem, E8RootSystem
+
+
+class EncodingValidationResult(TypedDict):
+    """Aggregate validation result for one encoding scheme."""
+
+    tested_samples: int
+    successes: int
+    failures: int
+    average_fidelity: float
+    errors: list[str]
 
 
 @dataclass
@@ -60,7 +70,7 @@ class QuantumEncoder:
         """Initialize quantum encoder with configuration."""
         self.config = config
         self.config.validate()
-        self._cache = {}
+        self._cache: dict[str, Any] = {}
 
     def clear_cache(self) -> None:
         """Clear encoding cache."""
@@ -306,7 +316,7 @@ class BinaryEncoder(QuantumEncoder):
 
     def float_to_binary(self, value: float, signed: bool = True) -> str:
         """Convert float value to fixed-point binary string."""
-        val = np.clip(value, -1.0, 1.0)
+        val = float(np.clip(value, -1.0, 1.0))
         n_bits = self.config.precision_bits
 
         if signed:
@@ -332,10 +342,10 @@ class BinaryEncoder(QuantumEncoder):
             if not mag_bits:
                 return 0.0
             scaled = int(mag_bits, 2)
-            return sign * (scaled / (2 ** (n_bits - 1)))
+            return float(sign * (scaled / (2 ** (n_bits - 1))))
         else:
             scaled = int(binary, 2)
-            return 2.0 * (scaled / (2**n_bits)) - 1.0
+            return float(2.0 * (scaled / (2**n_bits)) - 1.0)
 
     def encode_root_binary(self, root: np.ndarray) -> QuantumCircuit:
         """Encode root vector as binary quantum state.
@@ -423,7 +433,7 @@ class QROMEncoder(QuantumEncoder):
         self.data_register_size = 0
 
     def build_qrom_circuit(
-        self, data: list[np.ndarray], _labels: list[str] | None = None
+        self, data: list[np.ndarray], labels: list[str] | None = None
     ) -> QuantumCircuit:
         """Build QROM circuit for accessing stored data.
 
@@ -435,6 +445,8 @@ class QROMEncoder(QuantumEncoder):
             QuantumCircuit implementing QROM
         """
         n_items = len(data)
+        if labels is not None and len(labels) != n_items:
+            raise ValueError("QROM labels must match the number of data vectors")
         n_select = self.required_qubits(n_items)
 
         # Assume uniform data size
@@ -449,6 +461,8 @@ class QROMEncoder(QuantumEncoder):
             qc = QuantumCircuit(qr_select, qr_data, qr_anc, name="QROM")
         else:
             qc = QuantumCircuit(qr_select, qr_data, name="QROM")
+        if labels is not None:
+            qc.metadata = {"labels": list(labels)}
 
         # Store register sizes
         self.select_register_size = n_select
@@ -509,7 +523,10 @@ class QROMEncoder(QuantumEncoder):
         e7 = E7RootSystem()
         roots = e7.get_127_state_system()
 
-        return self.build_qrom_circuit(roots.tolist(), labels=[f"E7_root_{i}" for i in range(127)])
+        return self.build_qrom_circuit(
+            [np.asarray(root) for root in roots],
+            labels=[f"E7_root_{i}" for i in range(127)],
+        )
 
     def build_e8_qrom(self) -> QuantumCircuit:
         """Build QROM circuit for E8 root system.
@@ -520,7 +537,10 @@ class QROMEncoder(QuantumEncoder):
         e8 = E8RootSystem()
         roots = e8.generate_roots()
 
-        return self.build_qrom_circuit(roots.tolist(), labels=[f"E8_root_{i}" for i in range(240)])
+        return self.build_qrom_circuit(
+            [np.asarray(root) for root in roots],
+            labels=[f"E8_root_{i}" for i in range(240)],
+        )
 
 
 class HybridEncoder(QuantumEncoder):
@@ -679,14 +699,14 @@ class EncodingValidator:
         # Calculate fidelity
         fidelity = abs(np.vdot(quantum_state.data, classical_normalized)) ** 2
 
-        is_valid = fidelity > (1 - tolerance)
+        is_valid = bool(fidelity > (1 - tolerance))
 
-        return is_valid, fidelity
+        return is_valid, float(fidelity)
 
     @staticmethod
     def validate_encoding_scheme(
         encoder: QuantumEncoder, test_data: np.ndarray, samples: int = 10
-    ) -> dict[str, Any]:
+    ) -> EncodingValidationResult:
         """Validate encoding scheme with test data.
 
         Args:
@@ -697,7 +717,7 @@ class EncodingValidator:
         Returns:
             Validation results dictionary
         """
-        results = {
+        results: EncodingValidationResult = {
             "tested_samples": min(samples, len(test_data)),
             "successes": 0,
             "failures": 0,

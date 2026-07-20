@@ -95,17 +95,19 @@ class GF2Vector:
 
     def is_zero(self) -> bool:
         """Check if vector is zero."""
-        return np.all(self.components == 0)
+        return bool(np.all(self.components == 0))
 
     def to_tuple(self) -> tuple[int, ...]:
         """Convert to tuple for hashing."""
-        return tuple(self.components)
+        return tuple(int(component) for component in self.components)
 
     def __hash__(self) -> int:
         return hash(self.to_tuple())
 
-    def __eq__(self, other: GF2Vector) -> bool:
-        return np.array_equal(self.components, other.components)
+    def __eq__(self, other: object) -> bool:
+        if not isinstance(other, GF2Vector):
+            return NotImplemented
+        return bool(np.array_equal(self.components, other.components))
 
     def __repr__(self) -> str:
         return f"GF2({list(self.components)})"
@@ -144,7 +146,9 @@ class ProjectivePoint:
     def __hash__(self) -> int:
         return hash(self.canonical)
 
-    def __eq__(self, other: ProjectivePoint) -> bool:
+    def __eq__(self, other: object) -> bool:
+        if not isinstance(other, ProjectivePoint):
+            return NotImplemented
         return self.canonical == other.canonical
 
     def __repr__(self) -> str:
@@ -224,7 +228,9 @@ class ProjectiveLine:
     def __hash__(self) -> int:
         return hash(self.points)
 
-    def __eq__(self, other: ProjectiveLine) -> bool:
+    def __eq__(self, other: object) -> bool:
+        if not isinstance(other, ProjectiveLine):
+            return NotImplemented
         return self.points == other.points
 
     def __repr__(self) -> str:
@@ -280,7 +286,7 @@ class ProjectiveSpace:
 
         Formula: 2^(n+1) - 1
         """
-        return 2 ** (self.dimension + 1) - 1
+        return int(2 ** (self.dimension + 1) - 1)
 
     def generate_lines(self) -> list[ProjectiveLine]:
         """Generate all lines in PG(n, 2).
@@ -328,7 +334,7 @@ class ProjectiveSpace:
         Formula: (2^(n+1) - 1)(2^n - 1) / 3
         """
         num_pts = 2 ** (self.dimension + 1) - 1
-        return num_pts * (2**self.dimension - 1) // 3
+        return int(num_pts * (2**self.dimension - 1) // 3)
 
     def incidence_matrix(self) -> np.ndarray:
         """Build point-line incidence matrix.
@@ -550,7 +556,7 @@ class PG62_E7Connection:
         Returns:
             Analysis results
         """
-        analysis = {
+        analysis: dict[str, Any] = {
             "pg62_points": len(self.pg_points),
             "e7_states": len(self.e7_roots),
             "correspondence_size": len(self._pg_to_e7_map),

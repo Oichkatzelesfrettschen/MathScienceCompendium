@@ -1,0 +1,3659 @@
+arXiv:gr-qc/0108040v1 14 Aug 2001
+
+UCD-2001-04
+gr-qc/0108040
+March 2001
+
+Quantum Gravity: a Progress Report
+S. Carlip∗
+Department of Physics
+University of California
+Davis, CA 95616
+USA
+
+Abstract
+The problem of reconciling general relativity and quantum theory has
+fascinated and bedeviled physicists for more than 70 years. Despite
+recent progress in string theory and loop quantum gravity, a complete
+solution remains out of reach. I review the status of the continuing
+effort to quantize gravity, emphasizing the underlying conceptual issues
+and the various attempts to come to grips with them.
+
+∗
+
+email: carlip@dirac.ucdavis.edu
+
+1
+
+Introduction
+
+The two main pillars of modern physics, it is often said, are general relativity and
+quantum theory. Phenomena at large scales are governed by gravitational interactions,
+and observations from cosmological distances to millimeter scales [1] are well-described by
+general relativity. Phenomena at small scales are dominated by strong and electroweak
+interactions, and observations at distances ranging from a fraction of a millimeter [2] down
+to 10−19 meters are well-described by quantum mechanics and quantum field theory. No
+known fundamental interaction falls outside this framework.
+When we look more closely, however, it is not so clear that these two pillars are part
+of the same edifice. The foundations of general relativity—a dynamical spacetime, with no
+preferred reference frame—clash with the needs of quantum theory, which in its standard
+formulations requires a fixed background and a preferred splitting of spacetime into space
+and time. Despite some 70 years of active research, no one has yet formulated a consistent
+and complete quantum theory of gravity.
+The failure to quantize gravity rests in part on technical difficulties. General relativity
+is, after all, a complicated and highly nonlinear theory. Indeed, it was not until 1986 that it
+was finally shown that conventional quantum field theoretic techniques fail [3]. But the real
+problems are almost certainly deeper: quantum gravity requires a quantization of spacetime
+itself, and at a fundamental level we do not know what that means.
+The two leading candidates for a quantum theory of gravity today are string theory and
+loop quantum gravity. I will not try to review these approaches in detail; readers will find a
+thorough introduction to string theory in Polchinski’s textbook [4], and an excellent review
+of quantum geometry in Rovelli’s article [5]. I will instead try to give a broader overview,
+concentrating on underlying conceptual problems and the attempts to resolve them.
+While string theory and loop quantum gravity have many attractive features, there is
+not, at this writing, a compelling argument that either is the correct quantum theory of
+gravity. Nor is there much observational evidence to point us in any particular direction.
+Quantum gravity remains a theorists’ playground, an arena for “theoretical experiments,”
+some of them quite adventurous, which may or may not stand the test of time. Some of the
+ideas I discuss here will survive, but others will undoubtedly be mere historical curiosities
+a decade from now.
+This paper should be read as an outline and a guide to further reading. I make no claims
+of being complete or unbiased. For complementary reading and some different perspectives,
+I suggest Rovelli’s recent summary of the history of quantum gravity [6], Isham’s 1991
+review [7], and Au’s interviews with several leading practitioners [8]. Readers may also
+want to look at the new collection Physics meets philosophy at the Planck scale [9].
+Readers should be warned that conventions on indices, units, signs, and the like vary
+widely from paper to paper. Equations here should not be applied elsewhere without carefully checking conventions. Finally, let me stress that my references are by no means comprehensive. In particular, while I have tried to avoid major historical inaccuracies, I often
+cite later reviews rather than original papers. I apologize to the people whose work I have
+neglected, misunderstood, or mutilated in an effort to keep this review finite in length.
+1
+
+2
+
+Why quantum gravity?
+
+Before undertaking such a difficult task as the quantization of general relativity, one
+should first ask, “Is this really necessary?” The problems addressed by general relativity
+and those addressed by quantum theory typically arise at very different length and energy
+scales, and there is not yet any direct experimental evidence that gravity is quantized.
+Perhaps general relativity is fundamentally different; maybe we don’t need to quantize it.
+The stock reply is an appeal to the unity of physics. The historical trend of fundamental physics has certainly been toward unity, from Maxwell’s unification of electricity and
+magnetism to the Weinberg-Salam electroweak model and the ubiquity of gauge theories.
+But such a historical argument is not entirely convincing; let us try to go further.
+Consider a scheme in which the gravitational field is not quantized. The obvious objection is that such a theory could lead to a violation of the uncertainty principle: gravity
+could be used to simultaneously determine the position and momentum of a particle to
+arbitrary accuracy. This problem has been studied by Eppley and Hannah [10], who show
+that if “measurement” by a gravitational wave leads to wave function collapse, the uncertainty relations can be saved only by sacrificing conservation of momentum. If, on the
+other hand, gravitational “measurements” do not cause wave function collapse, then gravitational interactions with quantum matter could be used to transmit an observable signal
+faster than light. One might instead appeal to the Everett (“many worlds”) interpretation
+of quantum theory, but unquantized gravity in this picture is physically unrealistic and, in
+fact, experimentally excluded [11]: if gravity were not quantized, a quantum superposition
+of macroscopically separated distributions of matter would produce a gravitational field
+pointing toward the “average” center of mass rather than the observed definite position.
+Further difficulties arise in more detailed proposals. The simplest coupling of quantum
+theory and classical gravity, often called “semiclassical gravity,” was proposed by Møller [12]
+and Rosenfeld [13]. In this approach, the Einstein field equations take the form
+Gµν = 8πGhψ|Tµν |ψi,
+
+(2.1)
+
+where the operator-valued stress-energy tensor of matter is replaced by an expectation value.
+Note that some change of this sort is necessary: if matter is quantized, the stress-energy
+tensor is an operator, and cannot be simply set equal to the c-number Einstein tensor.
+To investigate such a model, it is useful to start with a simpler model of Newtonian
+gravity coupled to nonrelativistic quantum matter via the Schrödinger equation [14]. For a
+particle of mass m, we have
+ih̄
+
+∂ψ
+h̄2 2
+=−
+∇ ψ + mV ψ,
+∂t
+2m
+
+with ∇2 V = 4πGm|ψ|2
+
+(2.2)
+
+where the second equality is the Poisson equation for the Newtonian gravitational potential
+of a mass distribution m|ψ|2 . As an approximation of an exact theory, these equations are
+the analog of the Hartree approximation, and present no problem. If they are taken to be
+fundamental, though, they clearly lead to a nonlinear Schrödinger equation; the principle
+of superposition fails, and with it go the foundations of conventional quantum mechanics.
+2
+
+The full general relativistic version of this nonlinearity has been discussed by Kibble and
+Randjbar-Daemi [15]. It is not certain that the resulting theory is inconsistent with existing
+experiment [16], but the deep incompatibility with standard quantum theory is clear.
+While there are continuing efforts to understand how to couple a quantum system to a
+classical one [17], these arguments strongly suggest that an internally consistent model of
+the physical world requires that either general relativity or quantum mechanics be changed.
+The usual choice is to demand the quantization of general relativity, although some, notably
+Penrose [18], argue that perhaps it is quantum mechanics that ought to be modified. I
+suspect the preference for the former comes in part from “majority rule”—most interactions
+are very successfully described by quantum field theory, with general relativity standing
+alone outside the quantum framework—and in part from the fact that we already know
+a good deal about how to quantize a classical theory, but almost nothing about how to
+consistently change quantum theory.
+There is a second line of argument for quantizing gravity, arising more from hope than
+necessity. Both classical general relativity and quantum field theory have serious limitations,
+and there is some reason to believe that quantum gravity may offer a cure.
+Wheeler’s famous characterization [19] of gravitational collapse as “the greatest crisis in
+physics of all time” may be hyperbole, but general relativity’s prediction of the inevitability
+of singularities is certainly a cause for concern. Cosmology faces a similar problem: an initial
+singularity not only fails to provide an adequate set of initial conditions, it even removes
+the point at which initial conditions could be imposed. While no one has proven that the
+quantization of gravity will eliminate singularities, this is the sort of thing one might expect
+from a quantum theory. A proper treatment of quantum gravity might even determine
+initial conditions for the Universe, making cosmology a completely predictive science [20].
+Quantum field theory, in turn, has its own problems, in the form of the infinities that
+plague perturbation theory. From the modern point of view [21], most quantum field theories
+are really “effective field theories,” in which the divergences reflect our ignorance of physics
+at very high energies. It has long been speculated that the missing ingredient is quantum
+gravity, which has a natural length scale and might provide an automatic cutoff at the
+Planck energy [22, 23, 24]. While there is no proof that such a cutoff occurs, there are some
+suggestive results: for example, when gravity is included, certain infinite sets of divergent
+Feynman diagrams can be resummed to give finite results [25, 26, 27].
+We thus approach quantum gravity with a mixture of hope and fear: hope that it can
+solve some fundamental problems in general relativity and quantum field theory and perhaps
+offer us a unified picture of physics, and fear that a failure will demonstrate underlying flaws
+in the physics we think we now understand. Given these powerful motivations, we turn to
+our next question: Why has general relativity not yet been quantized?
+
+3
+
+Why is gravity not yet quantized?
+
+The first technical papers on quantum gravity were written by Rosenfeld in 1930 [28].
+The list of researchers who have worked on the problem since then reads like a Who’s Who of
+
+3
+
+modern physics, including ten Nobel Laureates—Einstein, Bohr, Heisenberg, Dirac, Pauli,
+Schwinger, Feynman, Veltman, ’t Hooft, and Weinberg. In one sense, the work has been
+very successful, leading to much that we now take for granted: gauge fixing and FaddeevPopov ghosts, the background field method and the effective action, and much of what we
+know about constrained dynamics. What it has not led to is a quantum theory of gravity.
+Quantum gravity is undoubtedly technically hard, but this failure has deeper roots in
+our lack of understanding of what “quantized spacetime” might mean. This is a bit of a
+cliché, and deserves further explanation:
+In an ordinary field theory on a fixed background spacetime M, the points in M are physically meaningful. It makes sense, for example, to speak of “the value of the electromagnetic
+field at the point x.” General relativity, in contrast, is invariant under diffeomorphisms,
+“active” coordinate transformations that move points in M, and points no longer have any
+independent meaning. Consider, for instance, a small empty region (a “hole”) V ⊂ M. Let
+f : M → M be a diffeomorphism that reduces to the identity outside V but differs from the
+identity inside V . By assumption, f does not affect matter—there is no matter in V —but
+merely “moves points” in empty spacetime. In a noncovariant theory, or more generally
+a theory with a fixed background structure, M and f (M) are distinct manifolds, and one
+can talk about “a point x ∈ V .” In general relativity, though—at least in the standard
+physicists’ interpretation—M and f (M) are identical , even though we have “moved some
+points,” and there is no way to distinguish x and f (x).
+This is a short version of Einstein’s “hole argument,” and was one of his reasons for
+initially rejecting general covariance [29,30]. For us, the significance is that we cannot view
+the metric as merely a superstructure sitting atop a physically meaningful set of points that
+make up a spacetime. The manifold and the geometry are fundamentally inseparable, and
+quantizing the geometry really does mean quantizing the spacetime itself.
+This problem appears in a number of guises:
+1. General covariance vs. locality: The fundamental symmetry of general relativity
+is general covariance (strictly speaking, diffeomorphism invariance), the lack of dependence of physical quantities on the choice of coordinates. Observables in quantum
+gravity should presumably respect this symmetry [31]. But diffeomorphism-invariant
+observables in general relativity are necessarily nonlocal [32], essentially because active coordinate transformations “move points” and cannot preserve a quantity defined
+by its value at individual points.
+2. The “problem(s) of time”: Time plays two vital roles in quantum theory: it determines the choice of canonical positions and momenta, and it fixes the normalization
+of the wave function, which must be normalized to one at a fixed time [33]. In general relativity, though, there is no preferred “time slicing” of spacetime into spatial
+hypersurfaces. This has many consequences, discussed in detail in review papers by
+Kuchař [34] and Isham [35]; I will only touch on a few highlights.
+• The natural Hamiltonian in general relativity is a constraint, which, up to possible boundary terms, is identically zero for physical states. In retrospect, this is
+4
+
+not surprising: a time translation t → t + δt can be viewed as a coordinate transformation, and general relativity is invariant under such transformations [36,37].
+Similarly, if we impose the natural requirement that observables commute with
+constraints, then all observables must be constants of motion.
+• Quantum field theory includes causality as a fundamental axiom: fields at points
+separated by spacelike intervals must commute. But if the metric itself is subject
+to quantum fluctuations, we can no longer tell whether the separation between
+two points is spacelike, null, or timelike. Quantum fluctuations of the metric can
+exchange past and future. This has led to speculations that causality requirements might compel drastic changes in the starting point of quantization [38,39].
+• In classical general relativity, the evolution of a configuration from an initial to a
+final spatial hypersurface is independent of the choice of time coordinate in the
+intervening spacetime. While this may still be true in quantum gravity with a
+proper choice of operator ordering [40], the issue is far from being settled. Indeed,
+for even as simple a system as a scalar field in a flat spacetime, different choices
+of intermediate time slicing can lead to inequivalent quantum evolution [41].
+• The obvious candidates for wave functions in quantum gravity, solutions of the
+Wheeler-DeWitt equation, are not normalizable. This is to be expected: because
+of general covariance, time enters into the wave function only implicitly through
+the metric [42], and the normalization secretly involves an integral over time. It
+may be possible to cure this problem by “gauge-fixing the inner product” [43],
+but solutions of this sort are, at best, technically very difficult [44, 45].
+It is tempting to sidestep these problems by defining time as “the reading of a clock.”
+But a clock only measures time along its world line; to define time globally, one needs
+a space-filling “reference fluid,” which then has a back reaction on the gravitational
+field [34]. Worse, a clock made of quantum matter cannot be reliable: any clock built
+from matter with a positive Hamiltonian has a finite probability of sometimes running
+backward [46], and thus cannot be used to consistently normalize wave functions.
+3. The reconstruction problem: We saw above that observables in quantum gravity
+must be nonlocal constants of motion. Even if we find a set of observables, we must
+still figure out how to reconstruct the standard local description as the classical limit.
+This problem is already present in classical general relativity: to accurately test Solar
+System predictions, for instance, one must replace coordinate-dependent quantities
+(“the position of the Moon”) with invariants (“the round trip time for a radar pulse
+reflected by the Moon, as measured by a particular clock”). In quantum gravity, it is
+harder (how does one specify “the Moon” or “this clock”?); even for the simple model
+of general relativity in 2+1 dimensions, such a reconstruction requires a complete
+understanding of the space of solutions of the classical field equations [47, 48].
+4. Small-scale structure: Computations in standard quantum field theory are almost
+always perturbative, involving expansions around a simple vacuum state. When the
+5
+
+vacuum is not simple—in low energy quantum chromodynamics, for instance—these
+methods often fail. When general relativity is treated as an ordinary quantum field
+theory, the usual choice for the vacuum is flat Minkowski space. This is a reasonable
+guess, given the positive energy theorem, which states that Minkowski space is the
+lowest energy asymptotically flat solution of the classical Einstein field equations.
+But it is not clear that the ground state of quantum gravity can be described as a
+classical smooth manifold at all. Indeed, various analyses of the measurement process
+suggest that quantum gravity has a minimum length scale, below which a classical
+description makes no sense [49]. The analyses differ in detail, and should not be
+taken as the final word, but it is not unreasonable to expect a modified uncertainty
+relationship of the form
+h̄
+∆p
+∆x ≥
++ L2
+,
+(3.1)
+∆p
+h̄
+where L is of the order of the Planck length, LPlanck = (h̄G/c3 )1/2 ≈ 10−35 m. If this
+is the case, perturbation theory around a smooth classical background may simply
+not make sense. The picture is further complicated by Wheeler’s suggestion [50] that
+even the topology of spacetime may be subject to quantum fluctuations, leading to
+microscopic “spacetime foam.”
+5. Large-scale structure and scattering states: It is very difficult to describe exact
+states in an interacting quantum field theory. We usually avoid this problem by
+focusing on S-matrix elements between asymptotic states. As a practical matter,
+this works as long as states far from the interaction region are nearly those of a free
+field theory. But in general relativity, it is doubtful that free field theory is a good
+approximation even asymptotically, since quantum fluctuations of the short-distance
+structure of spacetime will still be present [51].
+6. The “wave function of the Universe”: A key motivation for quantum gravity is
+the need to understand quantum cosmology, the quantum mechanics of the Universe
+as a whole. But the observer is a part of the Universe, and one can no longer make the
+conventional split between observer and observed. We must thus face a whole set of
+questions about the meaning of quantum mechanics that can usually be ignored [52]:
+When do wave functions collapse? What does it mean to assign a probability to a
+unique system? What makes an “observer” special in quantum theory?
+Given these fundamental issues, it is perhaps remarkable that any progress at all has been
+made in quantizing gravity. But despite the difficulty of the problem, a good deal has been
+learned. Existing approaches to quantum gravity fall into two broad categories, “covariant”
+and “canonical.” Covariant quantization treats diffeomorphism invariance as fundamental,
+and tries to manifestly preserve this symmetry. This usually requires perturbative quantization around a fixed background. Canonical quantization treats the symplectic structure
+of quantum mechanics as fundamental, and splits the classical variables into “positions”
+and “momenta” from the start. This allows a nonperturbative treatment, but usually at
+6
+
+the expense of manifest covariance. There is a long history of debate between advocates of
+these two philosophies, which has mainly served to clarify the weaknesses of each. Given
+that neither approach can yet boast of any overwhelming success, I will not attempt to
+choose between them, but will review both.
+
+4
+
+Classical preliminaries
+
+The real world is, presumably, quantum mechanical, and ideally we should start with a
+quantum theory and obtain classical physics as a limiting case. In practice, though, we rarely
+know how to formulate a quantum theory directly from first principles; the best we can do is
+to start with a classical theory and “quantize” it. We must therefore understand something
+of classical general relativity before discussing quantum gravity. General relativity can be
+described in a number of different ways, each of which suggests a different approach to
+quantization. I shall now briefly review these starting points.∗
+
+4.1
+
+Covariant formalism: second order form
+
+We begin with the Einstein-Hilbert action on a manifold M,
+1
+I=
+16πG
+
+Z
+
+M
+
+√
+d x −g(R − 2Λ) ±
+4
+
+1
+8πG
+
+Z
+
+∂M
+
+√
+d3 x q K + Imatter ,
+
+(4.1)
+
+where qij is a (fixed) induced three-metric at the boundary of M and K is the mean extrinsic
+curvature of the boundary (see section 4.2). The boundary term in (4.1) may be unfamiliar;
+it is needed to cancel terms in the variation of the action that arise from integration by
+parts [53, 54], and appears with a positive sign for spacelike components of ∂M and a
+negative sign for timelike components.
+The action (4.1) is invariant under diffeomorphisms mapping M to M. For an infinitesimal diffeomorphism xµ → xµ − ξ µ , the fields transform as
+δgµν = Lξ gµν = ∇µ ξν + ∇ν ξµ ,
+
+δϕ = Lξ ϕ,
+
+(4.2)
+
+where Lξ denotes the Lie derivative and ϕ represents an arbitrary collection of matter fields.
+Diffeomorphisms can be viewed as “active” coordinate transformations, and diffeomorphism
+invariance is essentially general covariance. But as noted earlier, the active view of these
+transformations has a deeper philosophical import: it highlights the fact that spacetime
+points have no independent physical meaning.
+Although the action (4.1) is usually introduced geometrically, there is an interesting
+alternative. Start with a flat spacetime with metric ηµν , and postulate a massless spin two
+∗
+
+Although generalizations are not hard, I shall usually restrict myself to spacetimes of the observed four
+dimensions. My conventions are as follows: Greek letters λ, µ, . . . are spacetime coordinate indices, ranging
+from 0 to 3; lower case Roman letters i, j, . . . are spatial indices at a fixed time, ranging from 1 to 3; capital
+Roman letters I, J, . . . are “tangent space indices,” ranging from 0 to 3, that label vectors in an orthonormal
+ˆ . . . are
+tetrad, and are subject to local Lorentz (SO(3, 1)) transformations; hatted capital Roman letters ˆ
+I, J,
+gauge-fixed tangent space indices, ranging from 1 to 3 and subject to local SO(3) transformations.
+
+7
+
+tensor field hµν that couples universally to the stress-energy tensor. As a first approximation,
+we can write a field equation for h̄µν = hµν − 21 ηµν η ρσ hρσ in the form
+✷h̄µν − η στ (∂µ ∂σ h̄ντ + ∂ν ∂σ h̄µτ ) + ηµν η πρ η στ ∂π ∂σ h̄ρτ = 16πGTµν ,
+
+(4.3)
+
+where the coefficients are fixed by energy conservation and the requirement that hµν be
+pure spin two [55]. These equations can be obtained from a Lagrangian L(2) quadratic in
+hµν . But (4.3) is only a “first approximation”: the right-hand side should include the stressenergy tensor of hµν itself, which is quadratic in hµν . To obtain such a source term from our
+Lagrangian, we must include a cubic term L(3) , which in turn leads to a cubic term to the
+stress-energy tensor, requiring a quartic term L(4) , etc. With a clever choice of variables,
+the resulting series can be made to terminate, and the sum leads almost uniquely to the
+Einstein-Hilbert action for the metric gµν = ηµν + hµν [56]. A similar derivation starts with
+the quantum field theory of a massless spin two field, and shows that the low-energy limit
+is necessarily Einstein gravity [57]. It was this property that first led to the realization that
+string theory—then regarded as a theory of hadrons—might be connected with gravity [58].
+
+4.2
+
+Canonical formalism: second order form
+
+We next turn to the Hamiltonian, or canonical, formulation of general relativity. Such a
+formulation requires a choice of time, that is, a slicing of spacetime into preferred spatial
+hypersurfaces. The Arnowitt-Deser-Misner (ADM) approach [59] starts with a slicing of
+M into constant-time hypersurfaces Σt , each equipped with coordinates {xi } and a threemetric qij with determinant q and inverse q ij . (For equivalent “modern” descriptions in
+terms of four-vectors, see [35] or Appendix E of [60].) To obtain the four-geometry, we
+start at a point on Σt with coordinates xi , and displace it infinitesimally normal to Σt . The
+resulting change in proper time can be written as dτ = Ndt, where N is called the lapse
+function. In a generic coordinate system, though, such a displacement will also shift the
+spatial coordinates: xi (t + dt) = xi (t) − N i dt, where N i is called the shift vector. By the
+Lorentzian version of the Pythagoras theorem (see figure 1), the interval between (t, xi ) and
+(t + dt, xi + dxi ) is then
+ds2 = −N 2 dt2 + qij (dxi + N i dt)(dxj + N j dt).
+
+(4.4)
+
+It is customary in the canonical formalism to establish new conventions that emphasize
+the role of the hypersurface Σ. Spatial indices will now be lowered and raised with the
+spatial metric qij and its inverse q ij , and not with the full spacetime metric. (Note that q ij
+is not simply the spatial part of the four-metric g µν .) When there is a likelihood of confusion
+between three- and four-dimensional objects, I will use a prefix (3) or (4) .
+Expressed in terms of the ADM metric, the Einstein-Hilbert action is a function of qij
+and its first time derivative, or equivalently qij and the extrinsic curvature Kij of the time
+slice Σt viewed as an embedded hypersurface. A straightforward computation [19] shows
+that the canonical momentum conjugate to qij is
+π ij =
+
+∂L
+1 √
+q(K ij − q ij K),
+=
+∂(∂t qij )
+16πG
+8
+
+(4.5)
+
+i
+
+i
+
+qx + dx
+♣
+♣
+♣
+q♣ xi − N i dt
+♣
+♣♣
+♣
+♣
+♣
+❇
+ds❇❇ Ndt
+❇
+❇
+❇q xi
+
+Σt+dt
+
+Σt
+
+Figure 1: The ADM decomposition expresses the Lorentzian version of the Pythagoras
+theorem.
+where K = q ij Kij (sometimes written TrK) is the mean extrinsic curvature. The action
+(4.1) becomes
+I=
+where
+
+Z
+
+dt
+
+Z
+
+Σ
+
+
+
+
+
+d3 x π ij ∂t qij − NH − Ni Hi + boundary terms,
+
+1
+1 √ (3)
+1
+H = 16πG √ (πij π ij − π 2 ) −
+q ( R − 2Λ)
+q
+2
+16πG
+
+(4.6)
+
+(4.7)
+
+is known as the Hamiltonian constraint and
+Hi = −2(3) ∇j π ij
+
+(4.8)
+
+are the momentum constraints. The field equations are the standard Hamilton’s equations
+of motion for this action, with the Poisson brackets
+1
+{qij (x), π kl (x′ )} = (δik δjl + δil δjk )δ̃ 3 (x − x′ ),
+2
+
+(4.9)
+
+where δ̃ 3 (x − x′ ) is the metric-independent (“densitized”) delta function. Note that the
+Hamiltonian constraint is quadratic in the momenta π ij and nonpolynomial in the positions
+qij . Both of these features will return to plague us when we try to quantize this system.
+The action (4.6) contains no time derivatives of the lapse and shift functions; N and
+Ni are not dynamical variables, but only Lagrange multipliers. Their variation leads to the
+field equations H = 0 and Hi = 0, implying that the “Hamiltonian term” in the action
+(4.6) vanishes on shell, up to possible boundary terms. The conditions H = 0 and Hi = 0
+themselves involve no time derivatives, and are thus not ordinary dynamical equations of
+motion. Rather, they are constraints on the possible initial values of the fields qij and π ij .
+In Dirac’s terminology [61], they are first class constraints: that is, the Poisson brackets of
+any pair of constraints is itself proportional to the constraints.
+In any constrained Hamiltonian system, the first class constraints generate gauge transformations [62]. This statement is nontrivial, but plausible: since the constraints vanish
+9
+
+on physical states, their brackets with the canonical variables should be “zero,” i.e., physically unobservable. Since the fundamental symmetry of general relativity is diffeomorphism
+invariance, one might expect H and Hi to generate diffeomorphisms. This is almost the
+case—the constraints generate “surface deformations,” equivalent to diffeomorphisms when
+the field equations hold. More specifically, if ξ µ = (0, ξ i) is an infinitesimal deformation of
+the time slice Σt , the transformation (4.2) is an ordinary canonical transformation, generated by the momentum constraints Hi . If ξ 0 6= 0, though, the diffeomorphism xµ → xµ − ξ µ
+includes a time translation from Σt to Σt+ξ0 , and is in some sense “dynamical.” Such a
+diffeomorphism is generated by the Hamiltonian constraint H, but only on shell, that is, up
+to terms proportional to the equations of motion.
+The entanglement of symmetry and dynamics is an instance of the “problem of time”
+discussed in section 3. In reappears in the Poisson algebra of the constraints, which is
+not the standard algebra of spacetime diffeomorphisms. Rather, the constraints give a
+representation of the surface deformation algebra [63, 64]
+ˆi ˆ⊥ ˆi ˆ⊥
+{ξˆ1 , ξˆ2 }⊥
+SD = ξ1 ∂i ξ2 − ξ2 ∂i ξ1
+
+
+{ξˆ1 , ξˆ2 }i = ξˆ1j ∂j ξˆi − ξˆ2j ∂j ξˆi + q ij ξˆ⊥ ∂j ξˆ⊥ − ξˆ⊥ ∂j ξˆ⊥ ,
+SD
+
+2
+
+1
+
+1
+
+2
+
+2
+
+1
+
+(4.10)
+
+where ξˆ⊥ = Nξ 0 and ξˆi = ξ i + N i ξ 0 . The explicit presence of the metric on the right-hand
+side of (4.10) means that the algebra of constraints is not a Lie algebra—it has “structure
+functions” rather than structure constants. This considerably complicates quantization [65].
+It has recently been observed that certain combinations of the constraints form a genuine
+Lie algebra [66, 67, 68, 69], although still not the algebra of spacetime diffeomorphisms. For
+instance, if G = H2 − q ij Hi Hj , the constraints {G, Hi } are equivalent to the standard set,
+but form a true Lie algebra. This result may be helpful in canonical quantization, but it
+has not yet been widely applied.
+
+4.3
+
+Covariant formalism: first order form
+
+As an alternative to the metric formalism of section 4.1, we can write the gravitational
+action in terms of an orthonormal frame (or “tetrad,” or “vierbein”) and a spin connection,
+treated as independent variables. We introduce a coframe eµ I , where orthonormality means
+g µν eµ I eν J = η IJ ,
+
+ηIJ eµ I eν J = gµν .
+
+(4.11)
+
+Since parallel transport now requires a comparison of frames as well as tangent spaces, we
+must introduce a new “spin connection” ωµ I J , with curvature Rµν IJ , in addition to the
+usual Christoffel connection. The gravitational action becomes
+I=
+
+1
+16πG
+
+Z
+
+
+
+
+
+d4 x |det e| eµI eνJ RµνIJ − 2Λ + Imatter .
+
+(4.12)
+
+Along with diffeomorphism invariance, this action is invariant under local Lorentz transformations in the tangent space. It is straightforward to show that extremizing this action
+reproduces the standard Einstein field equations [70].
+10
+
+A slightly different first-order formalism is useful as a starting point for loop variable
+quantization. The dual of an antisymmetric two-index object FIJ is defined as
+i
+∗
+FIJ
+= − ǫIJ KL FKL
+2
+
+(4.13)
+
+where the factor of −i/2 comes from the Lorentzian signature of spacetime and the requirement that F ∗∗ = F . The spin connection determines a self-dual connection
+Aµ IJ =
+
+1
+i
+ωµ IJ − ǫIJ KL ωµ KL
+2
+2
+
+
+
+
+(4.14)
+
+and a corresponding curvature Fµν IJ , where for the moment we work in complex general
+relativity. Even though it involves only the self-dual part of the connection, the action
+I=
+
+
+
+1 Z 4
+d x |det e| eµI eνJ FµνIJ − Λ + Imatter
+8πG
+
+(4.15)
+
+can be shown to yield the usual Einstein field equations [70, 71, 72].
+
+4.4
+
+Canonical formalism: first order form
+
+The canonical form of the first-order action (4.12) gives little that is new [73]. The ADM
+description of the self-dual action (4.15), on the other hand, is more interesting [70, 74, 75,
+76, 77]. Without loss of generality, we can first gauge-fix the triad to require that e0 Iˆ = 0
+for Iˆ = 1, 2, 3. We now define a “densitized triad” and a local SO(3) connection†
+√
+ˆ
+ˆˆ
+Ẽ i Iˆ = q ei Iˆ,
+(4.16)
+Ai I = ǫ0I J K̂ AiJˆK̂
+ˆ
+
+on the time slice Σt , and an SO(3) curvature Fij K̂ of Ai I .
+ˆ
+ˆ
+Using self-duality to write Aµ 0I in terms of Aµ I , we find that the action (4.15) becomes
+1
+I=
+8πG
+
+Z
+
+1
+√
+dt d x iAi ∂t Ẽ Iˆ − iA0IˆG + iN Vi − (N/ q) S ,
+2
+Σ
+Z
+
+3
+
+
+
+Iˆ
+
+Iˆ
+
+i
+
+
+
+i
+
+(4.17)
+
+with constraints
+ˆ
+
+ˆ
+
+GI = Dj Ẽ j I
+
+ˆ
+
+Vi = Ẽ j IˆFij I
+
+(4.18)
+
+ˆˆ
+
+S = ǫI J K̂ Ẽ i IˆẼ j JˆFij K̂ −
+
+Λ
+ˆˆ
+ηijk ǫI J K̂ Ẽ i IˆẼ j JˆẼ k K̂ ,
+6
+ˆ
+
+where Di is the gauge-covariant derivative with respect to the connection Ai I . This action
+is already in canonical form, and we can read off the Poisson brackets,
+ˆ
+
+ˆ
+
+{Ẽ i Iˆ, Aj J } = −8πiGδIJˆ δji δ̃ 3 (x − x′ ).
+†
+
+(4.19)
+ˆ
+
+ˆ
+
+Many authors use an SU(2) spinorial description of the fields: Ẽ i = 2Ẽ i Iˆτ I and Ai = AiIˆτ I , where
+ˆ
+τ = − 2i σ I are the spin 1/2 su(2) generators. Note that normalizations vary.
+Iˆ
+
+11
+
+ˆ
+
+The phase space is now that of an ordinary complex SO(3) Yang-Mills theory—Ai I is an
+SO(3) “gauge potential” and Ẽ i Iˆ is its conjugate “electric field”—with added constraints.
+We can thus view general relativity as embedded in Yang-Mills theory. In particular, the
+ˆ
+constraint GI = 0 is simply the Gauss law constraint, and generates ordinary SO(3) gauge
+transformations, while Vi and S are analogs of the ADM momentum and Hamiltonian
+constraints, with an algebra that is essentially the surface deformation algebra (4.10).
+In contrast to the ADM form, the constraints are now polynomial in both the positions
+and the momenta. This simplification comes at a price, though: to define the self-dual
+connection we had to complexify the metric, and we must now require that the metric and
+ordinary spin connection be real [70, 78].
+The implementation of such “reality conditions” in the quantum theory has proven very
+difficult, and a good deal of work has been expended in trying to avoid them. Note first that
+the need for a complex connection originated in the factor of i in the duality condition (4.13).
+If our metric had Riemannian (positive definite) rather than Lorentzian signature, this i
+would disappear. This does not help much in the classical theory—spacetime is observably
+Lorentzian!—but as in ordinary quantum field theory, it may be that a “Euclidean” quantum
+theory can be “Wick rotated” back to Lorentzian signature [79, 80].
+To explore another alternative, let us reexpress the spin connection in terms of ADM-like
+variables. In our gauge e0 Iˆ = 0, it is easy to check that
+ˆ
+
+1 ˆˆ
+ˆ
+Γi I = ǫ0I J K̂ ωiJˆK̂ ,
+2
+
+ˆ
+
+ˆ
+
+ωi 0I = ej I Kij = Ki I ,
+
+(4.20)
+
+ˆ
+
+where Kij is the extrinsic curvature of Σt and Γi I is a three-dimensional SO(3) connection,
+ˆ
+ˆ
+ˆ
+treated as a function of the triad. The Ashtekar-Sen connection is then Ai I = Γi I + iKi I .
+Barbero and Immirzi have proposed a more general linear combination [81, 82, 83, 84],
+(γ)Iˆ
+
+Ai
+
+ˆ
+
+ˆ
+
+= Γi I + γKi I ,
+
+(4.21)
+
+where γ is an arbitrary “Immirzi parameter.” The new connection has Poisson brackets
+(γ)Jˆ
+
+{Ẽ i Iˆ, Aj
+
+ˆ
+
+} = −8πγGδIJˆ δji δ̃ 3 (x − x′ ).
+
+(4.22)
+
+The resulting Hamiltonian constraint becomes considerably more complicated,
+Λ
+1 + γ 2 i j (γ)Iˆ
+ˆˆ
+(γ)Jˆ
+Jˆ
+Iˆ
+)
+−
+)(A
+−
+Γ
+(A
+−
+Γ
+Ẽ
+Ẽ
+ηijk ǫI J K̂ Ẽ i IˆẼ j JˆẼ k K̂ ,
+ˆ
+ˆ
+j
+i
+j
+i
+J]
+[
+I
+γ2
+6
+(4.23)
+but as we shall see in section 7.2, it might still be manageable.
+ˆˆ
+
+S (γ) = ǫI J K̂ Ẽ i IˆẼ j JˆFij K̂ − 2
+
+4.5
+
+Gravity as a constrained BF theory
+
+One more formulation of classical general relativity makes an appearance in quantization,
+particularly in the spin foam approach of section 7.2. Note first that the action (4.12) can
+be conveniently written in terms of differential forms as
+
+
+Z
+4 K
+1
+I
+J
+KL
+L
+ǫIJKLe ∧ e ∧ R − Λe ∧ e + Imatter ,
+(4.24)
+I=−
+64πG
+3
+12
+
+where eI = eµ I dxµ and RKL = Rµν KL dxµ ∧ dxν are the tetrad one-form and curvature
+two-form. In this notation, it is evident that the tetrad appears only in the antisymmetric
+combination B IJ = eI ∧ eJ . We can trivially rewrite the action in terms of B, provided that
+we include a constraint that B IJ is of the special form eI ∧ eJ for some eI . This constraint
+can be interpreted geometrically as a requirement that “left-handed area,” formed with the
+self-dual part of B IJ , equal “right-handed area,” formed with the anti-self-dual part [85].
+The constraint can be implemented in a number of ways [86]. For instance, (4.24) is
+(almost) equivalent to the action [85, 86, 87, 88]
+I=−
+
+1
+64πG
+
+Z 
+
+
+
+4
+ǫIJKLB IJ ∧ RKL − ΛB KL + φIJKL B IJ ∧ B KL − eǫIJKL .
+3
+
+
+
+
+
+
+(4.25)
+
+The value of this formalism comes in part from that fact that the unconstrained action—the
+action (4.25) without the Lagrange multiplier φIJKL—is that of a “BF theory,” a topological
+theory with a well-understood quantization [89].
+
+5
+
+Covariant quantization
+
+We turn at last to the problem of quantizing gravity. I will begin with “covariant
+quantization,” quantization based on the four-dimensional action with no arbitrary choice
+of time. With a single exception—covariant canonical quantization, to be discussed in
+section 6.3—work on this program relies on perturbation theory of one kind or another.
+Typically, the metric is split into a “background” ḡµν and a “quantum fluctuation” hµν ,
+√
+(5.1)
+gµν = ḡµν + 16πG hµν
+and quantities of interest are computed perturbatively in hµν . The background metric,
+in turn, can be determined self-consistently, for instance as an extremum of the quantum
+effective action. The method earns the title “covariant” because it yields quantities that are
+covariant under diffeomorphisms of the background metric. Much of this field was pioneered
+by DeWitt [90,91,92,93], who introduced the background field method, developed Feynman
+rules, and discovered (along with Feynman [94]) the need for ghosts.
+Although there are a number of ways to formulate the resulting theory, most begin with
+a path integral over either Lorentzian metrics or “Wick rotated” Riemannian metrics. I will
+describe two efforts to understand this path integral below.
+
+5.1
+
+Lorentzian perturbation theory
+
+The most straightforward approach to quantizing gravity treats general relativity, as much
+as possible, as an ordinary field theory, and is perhaps best understood as quantization of
+the massless spin two field of section 4.1. The starting point is the formal path integral
+J
+out h0|0iin = Z[J] =
+
+Z
+
+
+
+[dg] exp i(Igrav +
+13
+
+Z
+
+
+
+d4 x gµν J µν ) ,
+
+(5.2)
+
+where J µν is an external source, included so that functional derivatives of Z[J] yield correlation functions:
+!
+
+1 δ
+1 δ
+Z[J]
+...
+µ
+ν
+1
+1
+i δJ
+(x1 )
+i δJ µn νn (xn )
+
+J=0
+
+= out h0|T gµ1 ν1 (x1 ) . . . gµn νn (xn )|0iin .
+
+(5.3)
+
+The connected Greens functions can be obtained as functional derivatives of W [J] =
+−i ln Z[J] (see, for example, chapter 2 of [95]). The object is now to find Z[J].
+The generating functional (5.2) is a formal expression, ordinarily defined only in perturbation theory. There are potential problems with such an approach—the time ordering in
+(5.3), for example, will be with respect to the background metric and may not express the
+“true” causality—but it is the best we can usually do. The derivation of Feynman rules and
+a perturbative expansion is by now standard, although it is worth remembering that many
+of the subtleties were first discovered in early attempts to quantize gravity.
+To obtain an expansion, we start with the decomposition (5.1) and change the functional integration variable from g to h. If the background metric satisfies the classical field
+equations, the terms linear in h will drop out, and the quadratic terms will be of the form
+Igrav =
+
+Z
+
+√
+d4 x −ḡ hµν (D −1 [ḡ])µνρσ hρσ + . . .
+
+(5.4)
+
+In a simpler field theory, D would be the propagator, and we could write down Feynman
+rules for interactions directly from the higher order terms in the expansion. For gravity,
+though, D −1 has eigenfunctions with eigenvalue zero, and is not invertible. This is a direct
+consequence of diffeomorphism invariance: if hµν is an infinitesimal diffeomorphism (4.2),
+the action is invariant, so such an hµν must be a zero mode of D −1 .
+As in gauge theories, the solution is to add a gauge-fixing term that breaks the invariance,
+and to restrict the path integral to gauge-fixed fields. In quantum electrodynamics, one can
+simply insert the gauge condition into the path integral. But as Feynman first noticed [94],
+this leads to a loss of unitarity in quantum gravity, which must be compensated by adding
+extra “ghost” fields [92,96]. We now understand that these ghosts arise from the geometry of
+the space of fields. In fixing a gauge, we are changing variables from hµν to {h̃µν , ξ ρ}, where
+h̃µν is a gauge-fixed field and ξ ρ parametrizes diffeomorphisms. This change of variables
+involves a nontrivial Jacobian in the path integral, which can be expressed as a determinant
+of a differential operator D; that determinant, in turn, can be written as a functional integral
+detD =
+
+Z
+
+ Z
+
+[dc̄][dc] exp i
+
+4
+
+√
+
+
+
+d x −ḡ c̄Dc ,
+
+(5.5)
+
+where c and c̄ are anticommuting bosonic fields. This description is, of course, sketchy; for
+an elegant derivation based on the geometry of the space of fields, see [97].
+Once the gauge-fixing and ghost terms have been added, the path integral determines
+Feynman rules with which one can compute correlation functions and other quantities of
+interest. There are still subtleties, some not yet resolved—the integration measure is not
+certain [65], a globally valid gauge condition may not exist [98], and off-shell quantities,
+while invariant under diffeomorphisms of ḡµν , can depend parametrically on the choice of
+14
+
+gauge-fixing [99]—but one can still begin to calculate. In practice, one usually computes
+the effective action Γ[ḡ], which is a functional Legendre transform of the generating function
+W [J] and itself generates one-particle irreducible diagrams [100].
+The approach I have described treats gravity as an ordinary quantum field theory. As
+in most such theories, computations often give divergent answers, and a key question is
+whether the infinities can be absorbed into redefinitions of the coupling constants—that
+is, whether the theory is renormalizable. Here the background field method is especially
+powerful, since any counterterms in the effective action must be diffeomorphism-invariant
+functions of ḡµν ; symmetry thus strictly limits the counterterms one must consider.
+In 1974, ’t Hooft and Veltman showed that pure quantum gravity was one-loop finite on
+shell, i.e., that at lowest order all counterterms were proportional to equations of motion
+and could be eliminated by field redefinitions [101]. They also showed, however, that the
+addition of a scalar matter field made the theory nonrenormalizable. The next step for
+pure quantum gravity, the two-loop computation, was not carried out until 1986, when
+Goroff and Sagnotti finally showed that the theory was nonrenormalizable [3]: a divergent
+counterterm
+Z
+√
+209
+1
+(2)
+Γdiv =
+(5.6)
+d4 x −g Rµν πρ Rπρ στ Rστ µν
+2
+2880(4π) ǫ
+appears in the effective action. The result was confirmed by van de Ven [102], and effectively
+put an end to the hopes of a conventional quantum field theoretical approach to gravity.
+There are several ways one may react to this failure of renormalizability:
+1. Perhaps the right combination of matter fields can cancel the divergences. Fermion
+and boson loops contribute with opposite signs, and supersymmetry forces some exact
+cancellations; indeed, symmetry considerations rule out terms like (5.6) in supergravity. Unfortunately, using new computation techniques inspired by string theory, Bern
+et al. have now shown that supergravity is also nonrenormalizable [103], although the
+case of maximal (N = 8) supersymmetry is not completely settled.
+2. Perhaps the action (4.1) should be revised, for instance by including terms involving
+higher powers of the curvature. Even if they are not present in the original action,
+such terms will appear in the effective action when one renormalizes the stress-energy
+tensor [104, 105]. A typical higher order action would take the form
+(quad)
+Igrav
+=
+
+Z
+
+√ 
+d4 x −g
+
+1
+(R − 2Λ) + aR2 + bCµνρσ C µνρσ
+16πG
+
+
+
+(5.7)
+
+where Cµνρσ is the Weyl tensor. The quadratic curvature terms generically suppress
+divergences, since they lead to a propagator that goes as 1/k 4 rather than 1/k 2 at
+large momenta. Indeed, Stelle has shown that the action (5.7) is renormalizable for
+most choices of the coupling constants [106, 95]. Unfortunately, though, the resulting
+quantum theory is also perturbatively nonunitary: a typical propagator has the form
+1
+1
+m2
+= 2− 2
+,
+2
+2
+2
+k (k + m )
+k
+k + m2
+15
+
+(5.8)
+
+and the minus sign in the second term indicates a negative norm “ghost” state. The
+coupling constants in (5.7) can be adjusted to eliminate ghosts, but at precisely those
+values, the theory again becomes nonrenormalizable. It may be that a full nonperturbative treatment restores unitarity [107, 108], but this idea remains speculative, and
+the restoration appears to come at the expense of causality at short distances [109].
+3. Perhaps when the perturbation series is properly summed, quantum gravity is finite.
+The problem with a nonrenormalizable theory is that the effective action contains
+infinitely many terms, each with an undetermined coupling constant, thus drastically
+limiting predictive power. But if the higher order terms have finite coefficients that
+can be determined from the original Einstein-Hilbert action, the problem largely disappears. The idea that quantum gravity eliminates divergences gains support from the
+observation that classical gravity eliminates the infinite electromagnetic self-energy of
+a charged point particle [110], and from various partial resummations of Feynman diagrams [25,26,27] and similar approximations [111,112,113]. But we do not know how
+to perform a complete summation of perturbation theory, of course, so this argument
+really points toward the need for new nonperturbative methods.
+4. Perhaps we have used the wrong set of variables. The metric variables in (5.2) are not
+diffeomorphism-invariant, and the correlation functions (5.3) are actually correlators
+of complicated nonlocal functions of curvatures determined by the gauge-fixing [51].
+It might be more sensible to start with invariant fields. Now, S-matrix elements are
+unchanged by local field redefinitions, but nonlocal redefinitions can change the theory.
+Attempts to do perturbation theory using invariant fields have so far only made the
+divergences worse, but we may not yet know the right choices.
+5. Perhaps we are doing perturbation theory wrong. The split (5.1) of the metric into a
+background piece and a fluctuation cannot be quite right, since for hµν large enough
+the metric will no longer have Lorentzian signature. The path integral is missing the
+geometry of the space of metrics; this may be a fatal problem [114]. Or perhaps we
+need to expand in a different parameter: the three-dimensional Gross-Neveu model,
+for example, is nonrenormalizable in the weak coupling expansion but renormalizable
+in the 1/N expansion [115].
+6. Perhaps we can live with nonrenormalizability. Recall that in quantum field theory,
+the “coupling constants” in the effective action really depend on energy scale, with a
+flow given by the renormalization group [21]. Flows that avoid unphysical high energy
+singularities form “ultraviolet critical surfaces” in the space of coupling constants.
+Weinberg calls a theory asymptotically safe if its coupling constants lie on such a
+surface, and proposes that quantum gravity might be such a theory [116]. If the
+relevant surface turns out to be finite dimensional, we gain the same advantage we
+would have with a finite theory: although the number of coupling constants is infinite,
+all are determined in terms of a finite number of independent parameters.
+
+16
+
+7. Perhaps the perturbative approach is simply wrong, either because the metric is not
+a fundamental field (the approach of string theory) or because the expansion around
+a smooth classical background is invalid (the approach of loop quantum gravity).
+Note that even though the perturbation theory described here does not provide an
+ultimate quantum theory of gravity, it can still provide a good effective theory for the
+low energy behavior of quantum gravity [116, 117]. Whatever the final theory, gravity
+at low energies is at least approximately described by a massless spin two field, whose
+action must look like the Einstein-Hilbert action plus possible higher order terms. If we
+restrict our attention to processes in which all external particles have energies of order
+E ≪ MPlanck , we can write an “effective action” that includes all local terms allowed by
+diffeomorphism invariance.∗ Physically, the uncertainty principle guarantees that any high
+energy intermediate states involve short distances, and can thus be described by a local
+action, much as Fermi theory approximates electroweak theory at energies far enough below
+the mass of the W boson.
+If we now use this effective action to compute low energy, long distance processes, we
+find that high energy corrections from higher order terms will be suppressed by powers of
+E/MPlanck . Low energy quantum effects can be isolated, and give, for example, modifications
+to the long distance Newtonian limit [118]:
+"
+
+#
+
+G(m1 + m2 )
+Gm1 m2
+127 Gh̄
+1−
+V (r) = −
+−
++ ... .
+2
+r
+rc
+30π 2 r 2 c3
+
+5.2
+
+(5.9)
+
+The Euclidean path integral
+
+The path integral (5.2) was designed to compute correlation functions, but it has another
+use as well. Let M be a manifold with boundary, and fix the spatial metric qij on ∂M.
+Then the path integral over metrics on M with the specified boundary data should give a
+transition amplitude. For example, if ∂M has two disconnected components Σ and Σ′ , the
+path integral determines a transition amplitude between three-geometries qij and qij′ ; if ∂M
+has three disconnected components, the path integral gives an amplitude for the creation
+of a “baby universe”; and if M has only a single boundary, the path integral describes
+“tunneling from nothing” and provides a candidate for the wave function of the Universe,
+the Hartle-Hawking wave function [20]. The problem of nonrenormalizability remains, of
+course, but even if the Einstein-Hilbert action only describes an effective field theory, we
+may still be able to obtain useful approximate information.
+In this approach, we can discard the external source J in (5.2), and consider the path
+integral as a function of the boundary data qij . The leading contribution will come from
+“saddle points,” classical solutions of the field equations with the prescribed boundary data.
+For most topologies, though, no such classical solutions exist. The Hartle-Hawking path
+integral, for instance, requires a Lorentzian metric on a four-manifold M with a single
+∗
+
+This use of the term “effective action” differs from the previous definition as a Legendre transform of the
+generating functional. Both usages are common.
+
+17
+
+Σ
+
+M
+
+Figure 2: A manifold M with a single boundary Σ describes the birth of a universe in the
+Hartle-Hawking approach to quantum cosmology.
+spacelike boundary; but simple topological arguments show that most manifolds M admit
+no such metric [119, 120]. More generally, a four-manifold M admits a Lorentzian metric
+that mediates topology change between closed spacelike boundaries only if its Euler number
+is zero, and even then there can be dynamical obstructions to topology change [121, 122].
+These obstructions can be eased in several ways—for instance, by allowing mild singularities [123]—but the usual choice is to “analytically continue” to Riemannian signature [124];
+hence the term “Euclidean path integral.” This choice is inspired by the analogy to ordinary
+quantum field theory, where Euclidean saddle points, or instantons, give a good semiclassical
+description of tunneling [125]. Of course, the relationship between Wick-rotated correlation
+functions in quantum field theory and their Lorentzian counterparts is rigorously understood, while no such result is known for quantum gravity; the Euclidean path integral
+should really be thought of as a definition of a quantum theory.
+One problem with this definition is that the Euclidean action IE [g]—that is, the action
+(4.1) evaluated on metrics with Riemannian signature—is not positive definite. The problem
+lies in the “conformal factor”: if we consider a new metric g̃µν = Ω2 gµν , we find that
+i
+1
+√ h
+IE [g̃] = −
+(5.10)
+d4 x g Ω2 R[g] − 2Ω4 Λ + 6g µν ∂µ Ω∂ν Ω ,
+16πG
+so by allowing Ω to vary fast enough we can make the action arbitrarily negative. This is no
+problem at the classical level, of course, and the unwanted conformal term is exactly canceled
+by the Faddeev-Popov determinant at one loop [126] and perhaps more generally [127].
+For the full path integral, though, the situation is not entirely clear, and might depend
+crucially on the integration measure. Metrics with √
+large negative actions may ultimately be
+R1
+unimportant—by analogy, we can evaluate 0 dx/ x even though the integrand blows up
+at 0—but it may alternatively be necessary to further “analytically continue” the conformal
+factor [124]. Once we permit such a step, though, the choice of an integration contour in the
+space of complex metrics becomes ambiguous, and different choices may lead to different
+amplitudes [128].
+The Euclidean path integral depends on the three-metric qij and the corresponding
+boundary data for matter, but also on the topology of the interpolating four-manifold
+Z
+
+18
+
+M. We must thus decide which four-manifolds to include. In the absence of any natural
+way to single out a preferred topology, and following Wheeler’s arguments for fluctuating
+topology [50], the usual choice is to sum over all manifolds, thus allowing for “spacetime
+foam.” For simplicity, let us specialize to the case of a single boundary; the Hartle-Hawking
+wave function is then
+Ψ[q, ϕ|Σ ] =
+
+XZ
+M
+
+[dg][dϕ]e−IE [g,ϕ;M ] ≈
+
+X
+
+∆M [ḡ, ϕ̄]e−IE [ḡ,ϕ̄;M ]
+
+(5.11)
+
+M
+
+where IE is the Euclidean action, ϕ is a generic collection of matter fields, ḡ and ϕ̄ are
+the classical solutions with the specified boundary data q and ϕ|Σ , and ∆M is the one-loop
+correction, which includes the Faddeev-Popov determinant (5.5) and determinants coming
+from integrating quadratic fluctuations around {ḡ, ϕ̄} [129, 130].
+Gibbons and Hartle have argued that since the Universe is now Lorentzian, the relevant
+saddle points of (5.11) are “real tunneling geometries,” which extrapolate from Riemannian
+metrics in the early Universe to Lorentzian metrics later [132]. If one views the boundary
+Σ in figure 2 as the site of such a signature change, smoothness of the metric requires
+that Σ have vanishing extrinsic curvature. From the point of view of quantum theory, this
+restriction doesn’t quite make sense, though: to define a wave function on Σ we must allow
+the induced metric qij to vary, and we cannot simultaneously specify the extrinsic curvature,
+which is conjugate to the metric. It may be shown, however, that the wave function Ψ[q],
+viewed as a functional of q, is extremal when the spatial metric is the boundary value of a
+real tunneling metric. Moreover, if we fix “time” by specifying Tr K = 0, it is likely that
+these extrema are in fact maxima, so real tunneling geometries emerge as (probabilistic)
+predictions of the Euclidean path integral rather than extra inputs [133].
+The Euclidean path integral gives us a wave function that can at least formally be
+shown [131] to satisfy the Wheeler-DeWitt equation of canonical quantum gravity (see
+section 6.1). The interpretation of this wave function is not entirely clear—in particular, it
+contains no explicit reference to time—and will be discussed in section 6. One advantage
+of the path integral formalism is that it suggests a natural inner product on the space of
+such wave functions: if Ψ and Φ are obtained from path integrals over manifolds M1 and
+M2 with diffeomorphic boundaries Σ, we can “glue” the two manifolds at the boundary to
+obtain a closed manifold M = M1 ∪Σ M2 , and define
+hΦ|Ψi =
+
+Z
+
+[dg][dϕ]e−IE [g,ϕ;M ] .
+
+(5.12)
+
+With the exception of some recent work string theory and “spin foams,” the Euclidean
+path integral is the only standard approach to quantum gravity in which fluctuations of
+spacetime topology appear naturally. It is not entirely clear what the sum over topologies
+in (5.11) means, since four-manifolds are not classifiable [134], and one might wish to sum
+over spaces more general than manifolds [135, 136]. Nevertheless, we can get some idea of
+the role of complicated topologies by considering the saddle point approximation.
+In the absence of matter, a simple computation of the classical action gives
+−IE [ḡ;M ]
+
+e
+
+9
+= exp
+ṽ(M) ,
+8πΛG
+
+
+19
+
+
+
+(5.13)
+
+where ṽ is the “normalized volume” of M, obtained by rescaling the metric to set the
+scalar curvature to ±12. For a negative cosmological constant, ṽ(M) is a good measure of
+topological complexity; for hyperbolic manifolds, for example, it is proportional to the Euler
+number. At first sight, (5.13) thus implies that the path integral is dominated by the simplest
+topologies, with contributions from more complex topologies exponentially suppressed. On
+the other hand, there are a great many complex, high ṽ topologies; in fact, their number
+increases faster than exponentially, and arbitrarily complicated manifolds dominate both
+the partition function [137] and the Hartle-Hawking wave function [138]. The full sum over
+topologies is actually badly divergent, perhaps indicating that a universe with Λ < 0 is
+“thermodynamically” unstable.
+For Λ > 0, the manifold with the largest normalized volume is the four-sphere, which
+gives the largest single contribution to the sum (5.11). Much less is known about the overall
+sum; the relevant mathematics does not yet exist. As Baum [139] and Hawking [140] first
+noted, however, the exponent (5.13) is infinitely peaked at Λ = 0, so if the cosmological
+constant is somehow allowed to vary, small values of Λ will be strongly preferred. These ideas
+were elaborated by Coleman [141], who considered “approximate instantons” consisting of
+large spherical regions connected by small wormholes; he argued that the sum over such
+configurations exponentiates the exponential in (5.13), giving a wave function even more
+sharply peaked at Λ = 0. As an explanation for the observed absence of a cosmological
+constant, this picture has the right “flavor”—wormholes with very small mouths can connect
+very distant points, thus coupling the small scale quantum field theory that can produce a
+large vacuum energy with the large scale cosmology at which Λ is observed to be nearly zero.
+But the argument assumes a good deal about quantum gravity that is not well understood—
+for example, the correct combinatorics of wormholes is not clear [142]—and it is plagued by
+problems such as a failure to suppress (unobserved) “giant wormholes” [143].
+
+5.3
+
+Consistent histories
+
+While the path integral is often presented as an alternative to canonical quantization, typical
+path integral approaches implicitly rely on canonical methods. In the path integral (5.2), for
+instance, the vacuum states |0iin and |0iout are defined only through canonical quantization,
+and quantities such as propagators only become physically meaningful when suitable initial
+and final states are folded in. The Hartle-Hawking path integral (5.11) defines a state—
+possibly even one for each four-manifold M—and perhaps an inner product, but it does not
+give us the full Hilbert space or the set of operators that act on states.
+The consistent histories (“decoherent histories,” “post-Everett quantum mechanics”)
+program [144] is in part an attempt to define a generalized quantum mechanics directly in
+terms of path integrals, without reference to states or operators. The fundamental objects
+are histories—for general relativity, spacetimes—or, more generally, coarse-grained histories,
+described only incompletely by a temporal sequence of alternatives. We know from quantum
+mechanics that histories cannot always be assigned consistent probabilities, but the members
+of a set of sufficiently decoherent “consistent histories” can; such histories have negligible
+interference, and their probabilities obey the usual axioms of probability theory.
+20
+
+The consistent histories program is not an approach to quantum gravity per se, but rather
+a generalization of standard quantum mechanics that is potentially useful for quantum
+gravity. Ordinary quantum mechanics arises as a special limit, but the new formalism is
+broader. In particular, by dropping the usual requirement of a fixed foliation of spacetime,
+it may evade the “problem of time” and allow a quantum mechanical treatment of situations
+such as topology change in which no global time slicing exists.
+
+6
+
+Canonical quantization
+
+To quantize gravity, one must choose between two competing geometric structures: the
+diffeomorphism-invariant four-geometry of spacetime and the infinite-dimensional symplectic geometry of the space of metrics and momenta on a fixed time slice. In the preceding
+section, we took the former as fundamental. In this section, we focus on the latter.
+There is no universal prescription for canonically quantizing a classical theory. Roughly
+speaking, we would like to promote Poisson brackets to commutators of operators on a
+Hilbert space:
+1
+{x, y} → [x̂, ŷ].
+(6.1)
+ih̄
+Ambiguities arise because this is not, strictly speaking, possible: even for the simplest classical theories, factor ordering difficulties prevent us from simultaneously making the substitution (6.1) for all classical variables [145]. Instead, we must pick a subalgebra of “elementary
+classical variables”—usually, though not always, phase space coordinates (p, q)—and construct the remaining operators from elements of this set [146].
+The requirement that the resulting operator algebra be irreducible adds further restrictions. In particular, if the classical variables (p, q) have the usual Poisson brackets, we must
+choose a polarization, a splitting of phase space into “positions” and “momenta” so that
+wave functions depend on only half the variables. There is sometimes a natural choice of
+polarization—if the phase space is a cotangent bundle, for example, we can choose the base
+space as our configuration space and the cotangent vectors as momenta—but often there is
+not, and there is no guarantee that different polarizations yield equivalent quantum theories.
+Further technical issues arise if the topology of phase space is nontrivial. Even more care
+is needed for the proper treatment of fields: field operators are distribution-valued, with
+products that are ill-defined without regularization, and the conventional Hilbert space
+formalism must be generalized. I will generally avoid explicit discussion of these issues,
+though they may ultimately prove crucial.
+Our starting point for gravity is the canonical formalism of section 4.2. Its fundamental
+feature is the existence of the constraints (4.7)–(4.8), and the first question we must ask
+is how to enforce them in a quantum theory. Broadly speaking, we have two choices: we
+can quantize first and then impose the constraints as conditions on wave functions (Dirac
+quantization), or we can first eliminate the constraints to obtain a classical “physical phase
+space” and then quantize (reduced phase space quantization). The two methods have been
+applied to simple models, and have been found to often be inequivalent [147, 148, 149, 150].
+There is, unfortunately, no compelling reason to prefer one or the other for quantum gravity.
+21
+
+6.1
+
+Dirac quantization and the Wheeler-DeWitt equation
+
+We begin with Dirac quantization (“quantize, then constrain”) [151,152]. In this approach,
+quantization of gravity takes place in a series of steps:
+1. Define an auxiliary Hilbert space H (aux) consisting of a suitable collection of functions
+(more generally, sections of a bundle) Ψ[q] of the “positions” qij .
+2. Promote the canonical Poisson brackets (4.9) to commutators,
+i
+[qij (x), π kl (x′ )] = (δik δjl + δil δjk )δ̃ 3 (x − x′ ),
+2
+
+(6.2)
+
+and represent the canonical momenta as operators,
+π kl = −i
+
+δ
+.
+δqkl
+
+(6.3)
+
+3. Write the constraints as operators acting on H (aux) , and demand that physical states
+be annihilated by these operators.
+4. Find a new inner product on the space of states annihilated by the constraints, and
+form a new physical Hilbert space H (phys) . Note that operators on H (aux) will take
+physical states to physical states only if they commute with the constraints.
+5. Figure out how to interpret the resulting wave functions and operators.
+While these steps are easy to sketch, none is easy to accomplish:
+Step 1: We must decide exactly what functions to include in H (aux) , and what spatial
+metrics qij to allow as arguments. Must qij be nonsingular? If our spatial hypersurface is
+open, do we restrict the asymptotic behavior of the metric?
+Step 2: The commutators (6.2) may be a bad starting point, since they do not respect
+positivity of the spatial metric [146]. Just as the momentum p generates translations of the
+position q in ordinary quantum mechanics, π ij generates translations of qij , and nothing
+forbids a translation to negative values. One possible solution is to use triads rather than
+metrics as “positions,” since there is no need for ei I to be positive [153]. Another is to replace
+the commutators (6.2) with affine commutators of the form [q, qπ] ∼ iq, [qπ, qπ] ∼ iqπ, since
+these can be shown to preserve positivity [154].
+Step 3: From (6.3), the momentum constraints (4.8) become operator equations
+2i
+
+(3)
+
+∇j
+
+δΨ[q]
+δqij
+
+!
+
+= 0.
+
+(6.4)
+
+In principle, these are easy: as in the classical case, the constraints generate spatial diffeomorphisms, and a state Ψ[q] satisfies (6.4) precisely when it is a diffeomorphism-invariant
+functional of qij . Equivalently, we can consider Ψ to be a function on “superspace,” the
+22
+
+quotient Riem(Σ)/Diff 0 (Σ) of Riemannian metrics on Σ modulo diffeomorphisms [50, 155,
+156, 157].∗
+The Hamiltonian constraint (4.7) is harder. It takes the operator form
+"
+
+#
+
+δ δ
+1 √ (3)
+(16πG)Gijkl
+q ( R − 2Λ) Ψ[q] = 0,
++
+δqij δqkl 16πG
+
+(6.5)
+
+where
+
+1
+(6.6)
+Gijkl = q −1/2 (qik qjl + qil qjk − qij qkl )
+2
+is DeWitt’s supermetric. Equation (6.5) is the famous (or notorious) Wheeler-DeWitt equation [152, 155].
+We cannot, of course, find the general exact solution to (6.5). Before we even start, it
+is worthwhile to consider some of the difficulties:
+• The equation contains a product of two functional derivatives at the same point, whose
+action on a functional of qij will typically give a factor δ 3 (0). The Wheeler-DeWitt
+equation must be regularized.
+• The operator orderings in (6.4) and (6.5) are ambiguous. With the orderings given,
+the commutator algebra of the constraints does not close properly. In general, closure
+of the algebra cannot be separated from the choice of regularization [158, 159].
+• Unless one works with functionals that are explicitly invariant under spatial diffeomorphisms, the coupling of the Wheeler-DeWitt equation and the momentum constraints
+causes severe problems [160], typically in the form of nonlocal terms. The alternative
+of working with invariant expressions fromR the beginning is not much easier, since one
+must include nonlocal invariants such as R∆−1 R [161].
+• It is not clear what, if any, boundary conditions we need.
+
+Despite these problems, valiant efforts have been made to solve the Wheeler-DeWitt equation. One approach is to freeze out all but a few degrees of freedom to form a “minisuperspace” (see section 9.1). Another is to search for a perturbative expansion, in powers of
+the inverse cosmological constant [161] or the inverse Planck mass [162, 163]. One very nice
+result—see [162] for a review—is that a Born-Oppenheimer approximation to the WheelerDeWitt equation for gravity coupled to matter yields the Schrödinger equation for matter
+as a first approximation, with quantum gravitational corrections appearing at the next order. A Feynman diagram approach to higher order corrections exists, but it seems that new
+ultraviolet divergences appear and that the problem of nonrenormalizability reemerges [163].
+Step 4: Suppose that we have somehow found a set of solutions of the Wheeler-DeWitt
+equation. We must now choose an inner product and make this into a Hilbert space. The
+∗
+Diff 0 (Σ) is the identity component of the group of diffeomorphisms of Σ, that is, the group of diffeomorphisms that can be built up from infinitesimal transformations. The “large” diffeomorphisms—those that
+cannot be continuously deformed to the identity—are not generated by the momentum constraints, and
+may act as symmetries rather than gauge transformations; see section 6.2.
+
+23
+
+DeWitt supermetric (6.6) has signature (− + + + + + ), so the Wheeler-DeWitt equation
+formally resembles a Klein-Gordon equation on superspace. A natural guess for a KleinGordon-like inner product is therefore, schematically [152],
+↔
+1 Y
+ij
+∗
+hΨ|Φi =
+dΣ Gijkl Ψ [q] δ Φ[q]
+2i x∈Σ S
+δqkl
+
+Z
+
+(6.7)
+
+where S is a hypersurface in superspace with directed surface element dΣij . Like the inner
+product in Klein-Gordon theory, though, (6.7) is not positive definite, and cannot be interpreted directly as a probability. In ordinary Klein-Gordon theory, this problem is solved by
+restricting to positive energy solutions. That seems to make little sense in the context of
+quantum gravity (though see [164]), where the analogous solutions correspond roughly to
+expanding universes; and even with such a restriction, the inner product (6.7) still generally
+fails to be positive definite [34]. Moreover, the inner product (6.7) vanishes for real wave
+functions, while as Barbour has stressed [165], the Wheeler-DeWitt equation is real, and
+hence does not couple real and imaginary parts of Ψ[q] in any natural way.
+An alternative [20] is to take the inner product to be simply
+hΨ|Φi =
+
+Z
+
+[dq]Ψ∗ [q]Φ[q].
+
+(6.8)
+
+But here we must directly confront the “problem of time.” In classical canonical gravity, the
+three-metric qij on a hypersurface Σ contains information not only about the gravitational
+degrees of freedom (the usual two transverse polarizations for weak fields), but also about
+the “time” on Σ, that is, the way Σ fits into a four-manifold [42]. As Wheeler and his
+collaborators have stressed, one must pick out a time variable before a probability interpretation makes sense. If one integrates over the full three-metric in (6.8), the norm implicitly
+includes an integration over time, and must diverge [7, 34, 46].
+Woodard has argued that this problem arises because we have not “gauge-fixed the
+inner product” [43]. The Hamiltonian constraint does not merely constrain fields; it also
+generates transformations that leave physical states invariant, and these must somehow be
+factored out when one forms an inner product. This argument gains support from the
+path integral inner product of section 5.2, and is known to be correct for certain simpler
+field theories [166]. A similar but more mathematically sophisticated approach, “refined
+algebraic quantization,” is currently the subject of considerable attention [44, 45, 167].
+Once we have an inner product, we must also find self-adjoint operators that carry
+solutions of the Wheeler-DeWitt equation to solutions. The obvious candidates fail: qij ,
+for example, is not invariant under spatial diffeomorphisms. Torre has shown that classical
+physical observables† cannot be local functionals of (qij , π ij ) [32]. Kuchař has further shown
+that there are no classical observables, even nonlocal, that are linear in the momenta [169].
+Step 5: Finally, if we have succeeded in the formal construction of a Hilbert space
+of solutions of the Wheeler-DeWitt equation, we must interpret our results. Some of the
+†
+By “observables” I mean functions that have vanishing Poisson brackets with the constraints, or operators
+that commute with the constraints. This is a loaded term; Kuchař, for example, argues that observables
+ought not be required to commute with the Hamiltonian constraint [168].
+
+24
+
+problems of interpretation have been touched on above: our observables will be nonlocal,
+and it is not clear what we will mean by “time” or “evolution.” Beyond these issues, we
+will have to decide what a “wave function of the Universe” means, a question that touches
+upon deep uncertainties in the interpretation of quantum mechanics [52, 144, 170, 171, 172]
+and goes far beyond the scope of this review.
+Some of these problems may be alleviated by a slightly different approach to Dirac quantization, the “functional Schrödinger representation” [173, 174, 175]. In this approach, we
+isolate a choice of time before quantizing, by choosing a classical “time function” T [q, π; x]
+built from the metric and momenta. A canonical transformation makes T and its conjugate πT into phase space coordinates: (q, π) → (T, πT ; q̃, π̃). If we then solve the classical
+Hamiltonian constraint for πT ,
+πT = −hT [q̃, π̃, T ],
+(6.9)
+the analog of the Wheeler-DeWitt equation becomes
+i
+
+δ
+δ
+Ψ[q̃, T ] = hT [q̃, −i , T ]Ψ[q̃, T ].
+δT
+δ q̃
+
+(6.10)
+
+This constraint looks more like an ordinary Tomonaga-Schwinger “many-fingered time”
+Schrödinger equation, and one can define a Schrödinger inner product like (6.8) restricted
+to fixed T . But the problems now reappear in a different guise [34, 35]:
+• For many spatial topologies, including the simplest ones, there are global obstructions
+to finding any solution (6.9) of the Hamiltonian constraint [176,177,178]: the topology
+of phase space may preclude the existence of a well-behaved global time function.
+Moreover, even locally, most simple choices of time function T lead to physically
+unacceptable descriptions in which the “time” at a given event depends not only on
+the event, but on the choice of a spatial hypersurface containing that event [34, 35].
+• The solution (6.9) of the constraints typically leads to a Hamiltonian that is, at best,
+√
+horribly unwieldy. Consider two popular choices: Tint = q (“intrinsic time”) and
+√
+Text = qij π ij / q (“extrinsic time”). If we choose Tint as our time function, we must
+solve the Hamiltonian constraint for its conjugate variable, which is essentially Text .
+Since H is quadratic in momenta, (6.9) yields a Hamiltonian hT proportional to a
+square root of a functional differential operator [179]. But the operator inside the
+square root need not be positive, and even when it is, the only way to define its
+square root, through a spectral decomposition, is highly nonlocal.
+If we instead choose Text as our time function, we must solve the Hamiltonian constraint for Tint . But the constraint is then a complicated elliptic differential equation—
+see section 6.2—and hT can be given only implicitly.
+In either case, the Hamiltonian is plagued with severe operator ordering ambiguities,
+and it is not obvious that it can be defined as a Hermitian operator at all. These
+problems are not just “technical”: the difficulty of defining products of noncommuting
+operators at a single point underlies the divergences in ordinary quantum field theory,
+and the renormalization problems of section 5.1 are likely to reappear here.
+25
+
+• Perhaps most serious, it is not clear that different choices of a classical time function
+T lead to equivalent quantum theories. Classically, of course, the choice is irrelevant:
+this is simply an expression of general covariance. But quantum mechanically, even
+in as simple a model as a scalar field in flat spacetime, the analogous procedure leads
+to theories that depend on the choice of time slicing, and the theories corresponding
+to different slicings can be unitarily inequivalent [41]. This possible loss of general
+covariance will reappear below when we discuss reduced phase space quantization.
+
+6.2
+
+Reduced phase space methods
+
+We next turn to reduced phase space quantization (“constrain, then quantize”). This approach has traditionally been less popular than Dirac quantization, in part because the first
+step—“solve the classical constraints”—is so difficult. Nonetheless, considerable work has
+gone into studying models and looking for potential pitfalls.
+Like Dirac quantization, reduced phase space quantization requires a series of steps:
+1. Solve the classical constraints (4.7)–(4.8). The solutions will lie on a subspace of the
+full phase space, the “constraint surface” Γ̄.
+2. The group G of symmetries generated by the constraints, the surface deformation
+group of section 4.2, acts on the constraint surface. Factor out this action (or gaugefix the symmetries) to obtain the “physical” or “reduced” phase space Γ̂ = Γ̄/G.
+3. The reduced phase space inherits a symplectic structure (that is, a set of Poisson
+brackets) from the brackets (4.9). One can also write the action (4.6) in terms of the
+reduced phase space variables. The reduced phase space action will no longer have
+constraints, but will typically have a nontrivial Hamiltonian. Quantize this system.
+4. Depending on the topology of Σ, there may still be discrete symmetries coming from
+“large” diffeomorphisms. Impose these as symmetries of the wave functions.
+5. Figure out how to interpret the resulting wave functions and operators.
+Once again, none of these steps is particularly easy:
+Steps 1 and 2: Symplectic reduction, the process of eliminating the constraints, is
+understood well in principle [180, 181, 182]. For spatially compact topologies, we know that
+Γ̂ is a stratified manifold, with lower-dimensional strata corresponding to spacetimes with
+symmetries; that it has four degrees of freedom per point (twelve degrees of freedom in
+{qij , π ij } minus four constraints and four symmetries); and that it does, indeed, inherit
+a symplectic structure from the brackets (4.9) [183]. On the other hand, finding a useful
+parametrization of Γ̂ is extremely difficult: solving the constraints is certainly not trivial!
+Interesting progress in this direction has recently been made by Fischer and Moncrief
+[184,185]. Starting from an old idea of York’s [186], they conformally rescale the metric and
+
+26
+
+decompose the momentum into irreducible pieces,
+qij = φ4 q̄ij
+
+
+√
+2
+1
+√
+φ−4 pij − TrKφ2 q̄ ij q̄ + (LY )ij q
+π ij =
+16πG
+3
+
+(6.11)
+¯ j pij = 0
+with q̄ij pij = 0, ∇
+
+where (LY )ij = ∇i Y j + ∇j Y i − 23 q ij ∇k Y k is the traceless symmetric derivative and pij is
+the “transverse traceless” component of the momentum. They then fix the time slicing and
+the conformal factor by requiring that
+qij π ij
+TrK = −8πG √ = −t
+q
+(3)
+
+R[q̄] = k
+
+with k = 0, ±1.
+
+(6.12)
+
+The TrK equation is York’s “extrinsic time” gauge; it tells us to foliate spacetime by
+spacelike hypersurfaces of constant mean extrinsic curvature. Such a time slicing often
+exists [187], and is conjectured to always exist for spatially compact spacetimes; it amounts
+physically to using the rate of expansion of the Universe as time. The restriction on (3)R
+means that q̄ij is a “Yamabe metric.” The existence and (near) uniqueness of such a
+conformal rescaling follows from Schoen’s proof of the Yamabe conjecture [188]; the value
+of k, the “Yamabe type” of the spacetime, is determined entirely by the topology of Σ.
+The momentum constraints now reduce to equations for Y , whose solution requires that
+(LY )ij = 0. The vector Y thus drops out of the momentum (6.11). For spatial topologies of
+Yamabe type −1, a case that includes a wide range of interesting topologies, the Hamiltonian
+constraint becomes an elliptic partial differential equation,
+ik jl
+
+
+¯ − 1 φ + 1 t2 − 3Λ φ5 − 1 q̄ij q̄kl p p φ−7 = 0,
+∆φ
+8
+12
+8
+q̄ 2
+
+(6.13)
+
+which has a unique solution φ = φ(q̄, p). The reduced phase space is thus parametrized by
+pairs {q̄ij , pij } of Yamabe metrics and transverse traceless momenta.
+Step 3: The phrase “quantize this system” can hide a multitude of sins. First, we must
+choose a polarization. In the Fischer-Moncrief approach, it can be shown that the reduced
+phase space is a cotangent bundle over “conformal superspace,” the space of diffeomorphism
+classes of Yamabe metrics q̄, and this provides a natural guess for a polarization. But
+experience with (2+1)-dimensional gravity tells us that it is by no means the unique (or
+even the uniquely physically reasonable) choice [48].
+Next, we must confront a major problem: the Hamiltonian in this formalism is a complicated and highly nonlocal function of the reduced phase space degrees of freedom. In the
+Fischer-Moncrief approach, for example, the ADM action reduces to
+1
+I=
+16πG
+
+
+2 Z
+
+dt
+
+Z
+
+4√ 6
+d x p ∂t q̄ij −
+q̄φ ,
+3
+3
+
+
+
+ij
+
+
+
+(6.14)
+
+with φ implicitly defined through (6.13). Even if we could solve (6.13), we would face
+horrible ordering ambiguities in any attempt to make the “Hamiltonian” term in (6.14) into
+an operator, with a possible reappearance of ultraviolet divergences.
+27
+
+Such nonlocality is inherent in reduced phase space methods, in which differential equations are used to eliminate degrees of freedom. Electromagnetism, for example, has a
+constraint given by Gauss’s law, ∇ · E = 4πρ. This constraint can be solved by splitting
+the electric
+field into a “physical” transverse component E⊥ and a longitudinal component
+R 3
+k
+E = ∇ d yG(x − y)ρ(y). E⊥ is then a field in the reduced phase space, but Ek also contributes to the Hamiltonian, giving a nonlocal piece that can be recognized as the Coulomb
+energy. For electromagnetism, this nonlocal term is harmless, since it is independent of
+the “physical” degrees of freedom. But gravitational energy itself gravitates, and no such
+simplification can be expected in quantum gravity.
+Step 4: The momentum constraints generate infinitesimal spatial diffeomorphisms, and
+thus account for any diffeomorphism that can be built up from infinitesimal transformations.
+But for many spatial topologies, the group of diffeomorphisms is not connected; there are
+additional “large” diffeomorphisms that cannot be generated by the constraints. The group
+of large diffeomorphisms, sometimes called the mapping class group, is known to play an
+important role in questions ranging from the spin of geons [189, 190] to the existence of
+theta vacua [191]. We know from the example of quantum gravity in 2+1 dimensions,
+where steps 1–3 are comparatively simple, that the treatment of such large diffeomorphisms
+is potentially quite difficult [192]; the mapping class group can have a very complicated
+action on the reduced phase space, which may not easily project down to an action on the
+configuration space.
+Step 5: Let us suppose we have solved all of the problems of formally constructing
+a reduced phase space quantization. Some of the difficulties of Dirac quantization will
+have disappeared: there are no longer any constraints; wave functions are just functions
+(or sections of a bundle) on a reduced configuration space with an ordinary inner product;
+observables are functions and derivatives on that space; and we now have an ordinary, albeit
+complicated, Hamiltonian. But is this the quantum theory of gravity we want?
+In passing to the reduced phase space, we froze many degrees of freedom classically,
+forbidding their quantum fluctuations. It is not clear that this is the right thing to do.
+In a path integral, for instance, all histories are at least nominally included. By treating
+only a subset of “physical” fields quantum mechanically, we may be excluding physically
+important quantum effects.
+Even more worrisome is the treatment of time [34,35]. In the Fischer-Moncrief reduction
+we fixed time to be TrK, and can easily define quantum states only on TrK = const. slices.
+Other methods of reduction involve different choices of a time slicing, but some choice
+must be made. Even if we are willing to accept this restriction on initial and final states,
+it is by no means clear that different time slicings in intermediate regions will give the
+same transition amplitudes—reduced phase space quantization may not preserve general
+covariance. The results of Torre and Varadarajan again tell a cautionary tale [41]: even for
+a free scalar field in flat spacetime with fixed initial and final spatial hypersurfaces, different
+intermediate time slicings lead to inequivalent quantum theories. Of course, many problems
+can be translated into operator ordering ambiguities, and it could be that a proper choice
+of ordering restores covariance [40], but this remains largely a hope.
+
+28
+
+6.3
+
+Covariant canonical quantization
+
+From a relativist’s point of view, the canonical methods of this section share a fundamental weakness: all require a split of spacetime into space and time, violating at least the
+spirit of general covariance. The covariant methods of the preceding section share a different weakness: they are perturbative, and require a “nice” classical background. One
+approach, covariant canonical quantization, avoids both of these weaknesses, though only
+at the expense of immense and perhaps unsolvable technical difficulty.
+The starting point for covariant canonical quantization is the observation that the phase
+space of a well-behaved classical theory is isomorphic to the space of classical solutions, or
+“histories” [193, 194, 195, 196, 197]. To see this, let C be an arbitrary (but fixed) Cauchy
+surface. Then a point in phase space gives initial data on C, which determine a unique
+solution, while conversely, a classical solution restricted to C determines a point in phase
+space. Wald et al. have found an elegant description of the resulting symplectic structure
+on the space of histories [196, 197]. For the first order action (4.24), the symplectic form
+(strictly speaking, the presymplectic form—we must still factor out gauge invariances) is
+especially simple:
+Z
+1
+Ω[δ1 e, δ2 ω] =
+ǫIJKLeI ∧ δ1 eI ∧ δ2 ω KL,
+(6.15)
+32πG C
+where C is any Cauchy surface. One should view δe and δω as “vectors on the space of
+histories”; Ω is then an antisymmetric two-form on this space, and defines a symplectic
+structure. If we parametrize the space of classical solutions by variables (qα , pβ ), (6.15) is,
+schematically, Ω[p, q] = Ωαβ qα pβ , and the corresponding Poisson brackets are
+{qα , pβ } = Ω−1 αβ .
+
+(6.16)
+
+The idea of covariant canonical quantization is to “quantize these brackets.”
+Since the parameters (qα , pβ ) describe entire classical solutions, they are automatically
+diffeomorphism invariant. In particular, there is no need to choose a time slicing; the symplectic form (6.15) is independent of C. Moreover, since we began with classical solutions,
+the constraints are trivially satisfied. The (qα , pβ ) are thus observables in the strong sense:
+they are diffeomorphism-invariant quantities that have vanishing Poisson brackets with the
+constraints. Kuchař has coined the term “perennials” for such observables to emphasize
+their time independence.
+I have, of course, concealed a multitude of problems. Apart from the difficulty of finding
+a complete set of perennials (qα , pβ )—essentially, finding the general solution of the classical
+field equations—I have assumed a polarization, a splitting of phase space into “positions”
+and “momenta.” In 2+1 dimensions, this turns out to be easy [48]: the space of histories is
+a cotangent bundle, with a base space parametrized by spin connections. But life is more
+complicated in 3+1 dimensions, and there may not be a preferred choice.
+The big problem, though, lies in determining physically interesting observables. Wave
+functions in covariant canonical quantization are functions on the space of spacetimes, and
+are thus inherently time independent. We obtain a sort of Heisenberg picture, in which
+
+29
+
+time dependence must reside in the operators. But the “perennials” (qα , pβ ) are also time
+independent, and cannot in themselves describe evolution.
+One proposal to solve this problem is due to Rovelli [198, 199]: observables should be
+“evolving constants of motion,” one-parameter families Ot of operators on the space of
+histories that agree classically with time-dependent observables at time t. Consider, for
+example, the family of classical functions Vt [g] = “the volume of the spacelike hypersurface
+of mean curvature TrK = −t in the spacetime characterized by the metric g.” For each
+label t, Vt is a function on the space of solutions, and in principle can be expressed in
+terms of (qα , pβ ). Again in principle, we can turn such a function into an operator. In
+practice, we quickly encounter the same problems of nonlocality and ordering ambiguities
+that plague other methods. These can lead to disaster: “bad” choices of observables can
+lead to inconsistent time orderings and different predictions for the same history [201].
+A related problem has been found by Hájı́ček: different initial choices of the parameters
+(qα , pβ ) can lead to unitarily inequivalent quantum theories [202]. The problem, slightly
+oversimplified, is that spacetime coordinates should not be observable—the theory is, after
+all, covariant—but metric-dependent classical coordinate transformations can mix coordinates and observables. Note that such metric-dependent coordinate transformations are
+not easy to avoid: in even the simple example of the transformation from Schwarzschild
+to Kruskal coordinates, the transformation depends on the (observable) mass. The issue
+can be rephrased in terms of the “reconstruction problem” of section 3, as the statement
+that the “metric operator,” the “position operator,” and similar quantities built from the
+fundamental variables of covariant canonical quantization are not uniquely defined.
+Because of the immense technical problems, fairly little progress has been made in
+covariant canonical quantization except in simple models. In (2+1)-dimensional general
+relativity, the program can be carried out in full for a few spatial topologies [47, 48], and
+one can find operators that reproduce the results of reduced phase space quantization with
+the York time slicing. Attempts to quantize asymptotic “radiative” gravitational degrees
+of freedom use similar methods [200]. It is an open question whether these results can be
+extended, perhaps perturbatively, to a full quantum theory of gravity.
+
+7
+
+Loop quantum gravity and “quantum geometry”
+
+In 1986, building on an observation of Sen [74], Ashtekar suggested that the right variables for quantum gravity were the self-dual connection variables of sections 4.3–4.4, and
+pointed out the usefulness of the connection representation [75]. Those suggestions have
+blossomed into a major program, “loop quantum gravity” or “quantum geometry.” Much
+of the work in this area has been based on Dirac quantization of the constraints (4.18),
+though there have been recent advances in the use of covariant “spin foam” methods [203].
+Since a thorough review of this subject already exists [5] (see also [204,205]), my treatment
+will be sketchy, emphasizing the relationships to other approaches to quantum gravity.
+
+30
+
+2
+
+3/2
+
+3/2
+
+s
+s
+1
+
+1/2
+
+1
+
+s
+
+s
+1
+
+s
+s
+
+1/2
+1/2
+
+3/2
+
+s
+
+1
+1/2
+
+3/2
+
+1
+
+s
+
+s
+
+s
+
+1/2
+
+Figure 3: A trivalent spin network. The intertwiners at each vertex are ordinary ClebschGordan coefficients.
+
+7.1
+
+Kinematics and spin networks
+
+Loop quantum gravity is based on Dirac quantization of the set of constraints (4.18). The
+program is greatly simplified if one uses the real connection formulation described at the
+end of section 4.4. Accordingly, let us allow an arbitrary Immirzi parameter γ, with the
+general Hamiltonian constraint (4.23). We begin in the connection representation; that is,
+we start with a space of functionals Ψ[A] of the connection. By (4.22), this means
+Ẽ i Iˆ = −8πγG
+
+δ
+.
+δAi Iˆ
+
+(7.1)
+
+One of the important achievements of loop quantization is its ability to make sense of
+expressions of this sort as well-defined operators on a genuine Hilbert space.
+ˆ
+ˆ
+We start with the Gauss law constraint G I = 0. As in ordinary Yang-Mills theory, G I
+generates (SO(3) or SU(2)) gauge transformations, and the constraint requires that states
+be gauge-invariant functionals of the connection A. Fortunately, we know how to find such
+functionals. For any curve γ : [0, 1] → Σ, consider the holonomy
+dxi (s) Iˆ
+Uγ (s1 , s2 ) = P exp −
+Ai τIˆ ,
+ds
+ds
+s1
+(
+
+Z s2
+
+)
+
+(7.2)
+
+where P denotes path ordering. Then for a closed curve, the “Wilson loop” Tr Uγ (0, 1) is
+gauge invariant. More generally, let Γ be a graph, and define a “coloring” as follows:
+1. to each edge, assign a half-integer si labeling an irreducible representation of SU(2);
+2. to each vertex at which spins s1 , . . . , sn meet, assign an intertwiner, that is, an invariant tensor vα in the tensor product of the representations s1 , . . . , sn .
+Such a colored graph S = {Γ, si , vα }, introduced by Penrose [206], is called a spin network.∗
+Each spin network determines a gauge-invariant functional of the connection, evaluated
+∗
+
+For an introduction to spin networks and spin network technology, see [204] and [207].
+
+31
+
+by a simple algorithm: for each edge labeled by spin si , find the holonomy of A in the
+representation si , and use the intertwiner at each vertex to combine the holonomies into an
+invariant. This functional can be viewed as a state ψS [A] in the connection representation.
+In contrast to the mathematical imprecision of the metric representation of section 6.1,
+Ashtekar, Baez, Lewandowski, and others have shown how to define an inner product on the
+space of gauge-invariant functionals of the connection and make it into an honest Hilbert
+space. Equivalently, one can do integral and differential calculus on the space A/G of
+gauge-equivalence classes of generalized connections [205]. The spin network states form an
+orthogonal basis for this Hilbert space; any state can be written as a superposition,
+|ψi =
+
+X
+S
+
+hS|ψi|Si
+
+(7.3)
+
+where the coefficient hS|ψi is the inner product of ψ[A] with the basis state ψS [A],
+hS|ψi =
+
+Z
+
+A/G
+
+dµ[A]ψS∗ [A]ψ[A].
+
+(7.4)
+
+The coefficients hS|ψi thus completely determine a state, giving a “spin network representation.” Such representations were originally defined for Wilson loops [208]; hence the term
+“loop quantum gravity.”
+We can next define a natural set of gauge-invariant “loop operators,”
+T [γ] = −Tr Uγ (0, 1)
+T i [γ](s) = −Tr [Uγ (s, s)Ẽ i (s)]
+T i1 ...iN [γ](s1 , . . . , sN ) = −Tr [Uγ (s1 , sN )Ẽ iN (sN ) . . . Uγ (s2 , s1 )Ẽ i1 (s1 )].
+
+(7.5)
+
+Using (7.1), we obtain well-defined operators on the spin network states, with a calculable
+commutator algebra. In particular, the algebra of the lowest order operators, T and T i ,
+gives a faithful representation of their classical Poisson algebra.
+Other more “geometric” operators can also be defined, notably an area operator A and a
+volume operator V. Such operators contain products of functional derivatives at a point—
+A, for instance, depends on (Ẽ)2 , or on T ij (s1 , s1 )—and must be regularized. Thanks to the
+discrete nature of spin network states, though, they behave better than one might expect,
+and their complete spectra can be computed. By (7.1), the results depend on the Immirzi
+parameter. The area operator, for example, has eigenvalues of the form
+A = 8πγG
+
+Xq
+
+ji (ji + 1),
+
+(7.6)
+
+i
+
+where {ji } are a set of integers and half-integers; see [209] for a simple computation. The
+γ dependence remains mysterious, and may represent a genuine quantization ambiguity; it
+will be important in the discussion of black hole entropy in section 10.2.
+We next turn to the momentum constraints Vi = 0. As in the ADM picture, these
+constraints generate spatial diffeomorphisms, and their action on spin network states is
+32
+
+essentially to drag the graph Γ. To solve the constraints, we simply “forget” the embedding
+of Γ in Σ, and consider only its topologically invariant knotting and linking properties.
+States thus depend only on “knots,” or more precisely “s-knots,” equivalence classes of spin
+networks. This can all be made mathematically rigorous, and we can again define a genuine
+Hilbert space H (Diff) with a calculable inner product [210].
+The area and volume operators are not invariant under the transformations generated
+by Vi . If σ ⊂ Σ is a fixed surface, for example, Vi will act on the phase space variables
+in A(σ) but not on σ itself. A and V are thus not defined on H (Diff) . If a surface σ or
+volume v is defined by physical variables, however—“the surface on which the scalar field ϕ
+vanishes,” for instance—then the constraints will act on σ or v as well, and A(σ) and V(v)
+will be good operators on H (Diff) . This is an expression of the “reconstruction problem” of
+section 3: one no longer has a background spacetime to label geometric objects, but must
+characterize them intrinsically in a way that respects the symmetries and the dynamics.
+
+7.2
+
+Dynamics
+
+We have now completed steps 1–3 and half of step 4 of section 6.1. So far, we are in good
+shape: we have well-defined operators acting on a well-defined “kinematical” Hilbert space,
+and have even obtained some concrete predictions like the quantization of area. It remains
+to complete the program by solving the Hamiltonian constraint, forming a true physical
+Hilbert space, and interpreting the resulting theory.
+An original rationale for Ashtekar variables was that they simplified the Hamiltonian
+constraint. But this simplification requires the choice γ = i, and thus a complex connection
+and problematic reality conditions. Spin network technology, in contrast, is based on real
+SU(2) connections. There are three basic strategies for dealing with this mismatch:
+1. We can try to relate real and complex connections via a “Wick rotation” [79, 80].
+For metrics with Riemannian signature, a real Immirzi parameter γ = 1 leads to a
+simple Hamiltonian constraint of the form (4.18). We certainly cannot simply work
+with Riemannian metrics and then analytically continue in time, but we can find an
+operator T̂ that transforms between the “Lorentzian” Hamiltonian constraint and the
+simpler “Riemannian” one. It is formally true that
+i Z 3
+ˆ
+SLor = e SRiem e
+with T̂ =
+(7.7)
+d xKi I Ẽ i Iˆ
+16G Σ
+where SLor is the complicated constraint (4.23) for γ = 1 and SRiem is the simpler
+“Riemannian” equivalent. If we could really define this operation on spin network
+states, we could solve the simpler “Wick rotated constraint” SRiem |ψRiem i = 0 and
+then “rotate back” the wave function to |ψLor i = exp{−iT̂ }|ψRiem i.
+−iT̂
+
+iT̂
+
+ˆ
+
+This is not easy: Ki I is defined by (4.21), and is thus a complicated functional of the
+triad. Thiemann has suggested a clever trick for defining this and similar operators
+in terms of commutators [79, 211]. Classically, it is easily checked that
+SRiem =
+
+o
+n
+1 √ ijk
+qǫ Fij K̂ Ak K̂ , V(Σ)
+4πG
+
+33
+
+(7.8)
+
+R
+√
+where V(Σ) = Σ d3 x q is the spatial volume. Similarly, T can be expressed in terms
+of the Poisson bracket of SRiem with V. Thiemann proposes that the corresponding
+operators be defined on spin network states by replacing the Poisson brackets with
+commutators and using the established regularization of the volume operator.
+
+2. We can try to make sense of the Hamiltonian constraint SLor directly. Again, the main
+proposal is to use Poisson brackets like (7.8) to define the action of the constraint [211].
+This can be done [212], and gives a “combinatorial” action in which the constraint
+adds lines and vertices to a spin network in a prescribed fashion. Unfortunately,
+this approach has a number of problems [213, 214]. It is, in a sense, “too local”:
+the constraint acts independently on separate regions of a typical spin network, and
+solutions lack long range correlations needed for a good classical limit. Moreover,
+the commutators of the constraints fail to reproduce the surface deformation algebra
+(4.10), essentially because the regularization sets the inverse spatial metric q ij on
+the right-hand side of (4.10) to zero. These difficulties are already present in the
+“Riemannian” formulation, making the Wick rotation method problematic as well.
+Recently, some progress has been made in an alternative approach to the Hamiltonian
+constraint [77,215], based on a different set of states constructed from generalized knot
+invariants (Vassiliev invariants). But here, too, the commutators of the constraints
+fail to reproduce the surface deformation algebra, and the regularized inverse spatial
+metric vanishes. This is not necessarily a problem, since q ij is not an observable—this
+is again a reflection of the “reconstruction problem”—but it is a cause for worry.
+3. We can return to a four-dimensional picture and try to formulate a path integral
+approach that enforces the Hamiltonian constraint. The canonical formulation of
+loop quantum gravity describes states in terms of spin networks, so it is natural to
+try to describe the full four-dimensional theory in terms of evolving spin networks,
+or “spin foams” (see [203, 216] for reviews). The simplest spin foam is just the world
+sheet of a spin network, that is, a spin network in which the vertices are stretched out
+in the temporal direction to form lines and the edges are stretched to form surfaces.
+More complicated spin foams allow transitions between spin networks, as illustrated
+for instance in figure 4.
+The impetus for this line of research comes from several directions. First, one can formally impose the Hamiltonian constraint by looking at amplitudes hψ| exp{itĤ}|φi,
+where Ĥ is an integrated version of the Hamiltonian constraint, and then integrating
+over t. Reisenberger and Rovelli have shown that given some fairly general assumptions about Ĥ, such amplitudes can be expressed in terms of spin foams [217], which
+act as “Feynman diagrams” in the expansion of the propagator. Spin foams also appear in certain lattice formulations of gravity. Finally, spin foams are known to give
+correct amplitudes and partition functions for topological BF theories, and gravity, as
+we saw in section 4.5, can be viewed as a constrained BF theory. This last perspective
+suggests interesting interpretation of spin foams as “quantum four-geometries” [216].
+
+34
+
+✡
+r✡
+✘
+❳
+✘
+❳❳
+✘
+r ❳
+❳❳
+✘✘r✘
+❅
+❅
+❅
+❅✇
+
+r
+✘❳
+❳❳❳
+✘✘✘
+❳❳
+✘✘
+
+Figure 4: A simple spin foam vertex, representing the creation of a new line and two new
+vertices in a spin network.
+Existing spin foam models depend on a triangulation of the underlying spacetime: each
+vertex of the spin foam corresponds to a four-simplex of the manifold, each edge to a
+tetrahedron, and each face to a triangle. This causes no problem for unconstrained BF
+theory, for which amplitudes are independent of the triangulation, essentially because
+BF theory has no local degrees of freedom. But a fixed triangulation in quantum
+gravity truncates the degrees of freedom, and is clearly inappropriate. It may be
+possible to carry the “Feynman diagram” analogy further, and treat spin foams as
+diagrams that must be summed to include all triangulations. It is formally possible to
+write a field theory for which spin foams really are Feynman diagrams [218], though
+the deeper significance of such a theory remains unclear.
+Most spin foam research has focused on the relatively simple case of Riemannian signature. Recently, though, there have been interesting attempts to define Lorentzian
+spin foams, both as geometrically-motivated generalizations of the Riemannian constructions [219] and from the perspective of causal sets [220].
+Despite the problems in defining the Hamiltonian constraint, some exact solutions are
+known [204]. If the cosmological constant vanishes, the diffeomorphism and Hamiltonian
+ˆ
+constraints are both proportional to Fij I , so any gauge-invariant wave function that has
+its support only on flat connections is automatically a solution [221]. For Λ 6= 0, wave
+functions proportional to the exponential of the Chern-Simons action for the connection A
+solve all the constraints [222, 223]. Such solutions are at best a very small piece of the total
+physical Hilbert space, but the ability to write down any exact solution in quantum gravity
+is something of a breakthrough.
+
+7.3
+
+Conceptual issues
+
+Finally, we come to the problem of interpreting loop quantum gravity. Perhaps because of
+the technical successes of the program, issues of interpretation are brought into sharp relief.
+35
+
+For example, loop quantum gravity with Thiemann’s regularization of the Hamiltonian
+constraint appears to be a consistent, diffeomorphism-invariant quantum theory obtained
+by quantizing general relativity. But as noted above, there are indications that it is not
+“quantum gravity”—that is, it may not reduced to general relativity in the classical limit.
+The basic problem is the “reconstruction problem”: how, given a collection of states and
+operators, does one recover a geometrical picture of spacetime? At the Planck scale, the
+states of loop quantum gravity don’t look like three-space: the “geometry” is restricted to a
+discrete, one dimensional network. They certainly don’t look like spacetime: we chose from
+the beginning to work on a fixed time slice. This is not necessarily a bad thing—quantum
+gravity should be expected to transform our microscopic picture of spacetime—but the
+result cannot be called gravity until we can understand how the classical picture emerges.
+One strength of loop quantum gravity is the existence of “geometric” operators like area
+and volume, from which one might hope to build up an approximate classical geometry.
+Unfortunately, these operators do not commute with the constraints, so they fail to take
+physical states to physical states. It may be possible to define “evolving constant of motion”
+[198, 199] that determine invariant information about such geometric quantities, but we do
+not yet know how, except by artificially adding extra fields to pick out surfaces [224, 225].
+These problems would be far more tractable if we knew how to find a classical limit
+for loop quantum gravity. Work in this area includes the construction of “weave states”
+approximating fixed classical backgrounds [225, 226, 227]; an attempt to build spin network
+states from random classical geometries with fixed statistical properties [228]; and efforts
+to define coherent states [229]. While some progress has been made in building states with
+reasonable semiclassical behavior, it remains unclear why these particular states should be
+the ones relevant to our macroscopic world.
+
+8
+
+String theory
+
+I have so far avoided discussing what is arguably the most popular current approach to
+quantum gravity, string theory. String theory is much more than an attempt to quantize
+gravity; it is a proposal for a “theory of everything,” in which gravity would take its place
+beside the other fundamental interactions. As such, it is a huge subject, big enough for
+textbooks (reference [4] is the most recent) and extensive review articles, including one in
+this journal [230]. I will make no attempt to review this area; rather, I will focus on a few
+points at which string theory is most relevant to the problem of quantizing gravity.∗
+
+8.1
+
+Perturbative string theory
+
+The basic premise of perturbative string theory is that the fundamental constituents of
+matter are one-dimensional “strings” rather than point particles. Strings may be closed
+(loops) or open (line segments); they interact by splitting and merging, as in figure 5.
+∗
+In this section, lower case Roman letters a, b, . . . from the beginning of the alphabet are world sheet
+indices, ranging from 0 to 1. Spacetime coordinates are X µ ; world sheet coordinates are σ a or σ, τ .
+
+36
+
+Figure 5: A closed string vertex and a one-loop process.
+String theory offers an unexpected solution to the problem of nonrenormalizability: by
+replacing pointlike processes with extended interactions that cannot be localized, it avoids
+quantum field theoretical divergences from the start. This idea is surprising not so much
+because nonlocality is inherently strange, but because it is extraordinarily hard to find
+a consistent nonlocal theory that respects Lorentz invariance, much less diffeomorphism
+invariance, while preserving causality.
+As a string moves through a D-dimensional background spacetime, it traces out a twodimensional “world sheet” S, which can be described by an embedding (σ, τ ) → X µ (σ, τ ).
+The simplest string action, the Nambu-Goto action, is just the area of this world sheet. It
+is usually easier to use an equivalent action, introduced by Polyakov [231],
+1
+Istr =
+4πα′
+
+Z
+
+S
+
+√
+d2 σ gg ab ∂a X µ ∂b X ν ηµν + λχ
+
+(8.1)
+
+where gab is an auxiliary world sheet metric, λ is a constant fixed by the dilaton vacuum
+expectation value, and α′ is a coupling constant of the order of the square of the Planck
+length. In the last term, χ is the Euler number of S,
+1
+χ=
+4π
+
+1
+√
+d σ g (2)R +
+2π
+S
+
+Z
+
+2
+
+Z
+
+∂S
+
+ds k,
+
+(8.2)
+
+where k is the geodesic curvature of the boundary. The Euler number is a topological
+invariant, and does not affect the classical equations of motion, but it controls the string
+coupling strength. Indeed, each closed string loop decreases χ by 2, and so contributes a
+factor of e2λ in the path integral
+Zstring =
+
+Z
+
+[dg][dX] exp{−Istr }.
+
+(8.3)
+
+We thus have a “coupling constant” gc = eλ for each closed string vertex. Similarly, each
+open string vertex comes with a coupling constant go = eλ/2 .
+From the point of view of the two-dimensional world sheet, the action (8.1) describes a
+scalar field theory, with a set of fields {X µ } that happen to be interpretable as coordinates
+37
+
+of an embedding. In addition to its obvious world sheet diffeomorphism invariance and
+spacetime Lorentz invariance, (8.1) is invariant under Weyl (“conformal”) transformations,
+gab → e2ω(σ,τ ) gab ,
+
+(8.4)
+
+so this two-dimensional theory is a conformal field theory. Preservation of Weyl invariance
+in the quantum theory determines key aspects of string theory.
+Canonical quantization of the Polyakov action is relatively straightforward, although the
+treatment of diffeomorphism invariance requires some care. Roughly speaking, X µ can be
+expanded in a Fourier series, which for a closed string takes the form
+s
+
+α′ X 1 µ −2in(τ −σ) 1 µ −2in(τ +σ)
+X (σ, τ ) = x + 2α p τ + i
+,
+α e
++ α̃n e
+2 n6=0 n n
+n
+µ
+
+µ
+
+′ µ
+
+
+
+
+
+(8.5)
+
+and the coefficients αnµ and α̃nµ are found to have commutators
+µ
+µ
+[αm
+, αnν ] = [α̃m
+, α̃nν ] = mη µν δm,−n ,
+
+µ
+[αm
+, α̃nν ] = 0.
+
+(8.6)
+
+With a proper treatment of the indefinite metric, these act like an infinite tower of creation
+and annihilation operators, and one can build states from the vacuum by acting with a
+string of creation operators α−n and α̃−n . It is not hard to compute the masses of such
+states—the zero of energy is fixed by the requirements of Weyl and Lorentz invariance—and
+µ
+ν
+one finds that for closed strings, the state α−1
+α̃−1
+|0i is massless. The symmetric traceless
+part of this state is thus a massless, spin two field, and by the arguments of section 4.1,
+must be described by an action that looks like the Einstein action plus possible higher order
+corrections [58]. String theory thus contains “gravitons.”
+The action (8.1) describes a string in a flat Minkowski background. A second sign that
+string theory contains gravity appears if we replace the flat metric ηµν with a more general
+background metric Gµν (X), where a capital letter is used to distinguish the spacetime metric
+from the world sheet metric. From the two-dimensional point of view, this turns the action
+into that of an interacting field theory, and we must, in general, include other counterterms
+as well. To lowest order, the general action for a closed string is
+Istr =
+
+1
+4πα′
+
+Z
+
+i
+√ h
+d2 σ g g ab ∂a X µ ∂b X ν Gµν (X) + iǫab ∂a X µ ∂b X ν Bµν (X) + α′ (2)RΦ(X) (8.7)
+
+where Bµν is an antisymmetric gauge potential for a three-form field Hµνρ and Φ is a scalar,
+the dilaton. Comparing with (8.1)–(8.2), we see that the string coupling λ is not really an
+independent parameter, but is determined by the vacuum expectation value Φ0 of the dilaton. If we now impose Weyl invariance—technically by requiring that the renormalization
+group beta functions vanish—we find that Gµν , Bµν , and Φ cannot be specified arbitrarily;
+they must, rather, obey a set of equations that can be obtained from an action
+1
+I0 = 2
+2κ0
+
+Z
+
+√
+2(D − 26) (D)
+1
+d x −Ge−2Φ −
++ R[G] − Hµνρ H µνρ + Gµν ∂µ Φ∂ν Φ + O(α′) .
+′
+3α
+12
+(8.8)
+D
+
+"
+
+#
+
+38
+
+This is almost the Einstein-Hilbert action for a gravitational field coupled to matter. Indeed,
+if we rescale the metric to G̃µν = e−4/(D−2) (Φ−Φ0 ) Gµν , then the curvature term in (8.8) takes
+the standard Einstein-Hilbert form—albeit at the expense of slightly complicated matter
+couplings—with Newton’s constant GN given by
+8πGN = κ0 2 e−2Φ0 .
+
+(8.9)
+
+For more general supersymmetric string theories, additional background fields appear in
+the action, and the rescaling of the metric gives them different couplings to Φ. Thus
+string theory predicts potentially observable violations of the equivalence principle [232,233].
+Higher order corrections give additional terms in the background action involving higher
+powers of the curvature, but all have finite and calculable coefficients.
+String theory thus contains gravity in two ways: string excitations include “gravitons,”
+and consistent propagation requires that the background spacetime satisfy the Einstein
+field equations. The two are not independent: if we take the background to be nearly flat,
+Gµν = ηµν + hµν , and expand in powers of h, we find that the first-order term in the action
+(8.7) is exactly the “vertex operator” that creates a graviton.
+The background field action (8.8) has a huge cosmological constant, proportional to
+D − 26. If flat spacetime is to be even an approximate solution, we must require that
+D = 26 (or D = 10 for the supersymmetric extension of the action). For string theory
+to describe our world, we must somehow hide all but four of these dimensions. We can
+do so by “compactifying” spacetime, requiring that all but four dimensions form a small
+(typically Planck-scale) compact manifold, as in Kaluza-Klein theory [234]. Alternatively, it
+could be that the physical processes we observe are restricted to a hypersurface in a higher
+dimensional spacetime [235, 236]. In either case, perturbative string theory fails to pick
+out a unique “vacuum” state; the hope, as yet unrealized, is that a full nonperturbative
+treatment might.
+The need for a nonperturbative treatment goes deeper. The string analog of a sum of
+Feynman diagrams is a sum over intermediate world sheet topologies; figure 5, for instance,
+shows a one-loop contribution to the propagator. String diagrams are finite order by order,
+but the sum does not converge, and the series is not even Borel summable [237]. This
+is not quite as bad as it sounds—the same is true for Feynman diagrams in quantum
+electrodynamics, for instance—but it means that perturbative string theory only makes
+sense as an asymptotic expansion of some nonperturbative theory.
+
+8.2
+
+Dualities and D-branes
+
+Consider a closed bosonic string in a flat spacetime with one coordinate, say X 25 , compactified to a circle of radius R. This requires two changes in the mode expansion (8.5).
+First, the momentum p25 is no longer arbitrary, but must be quantized: p25 = n/R (n ∈ Z).
+Second, we must allow new “winding modes” mRσ (m ∈ Z) in the expansion of X 25 ; while
+these are not strictly periodic, they change X 25 by 2πmR as σ varies from 0 to 2π, and are
+therefore permitted by the identification X 25 ∼ X 25 + 2πR. It is not hard to compute the
+39
+
+masses of states containing quantized momenta and winding modes; we find
+M2 =
+
+n2
+m2 R2
++
++ oscillator contributions.
+R2
+α′2
+
+(8.10)
+
+The mass spectrum (8.10) is invariant under the exchange
+n ↔ m,
+
+R ↔ α′ /R.
+
+(8.11)
+
+In fact, everything in the theory is invariant [238]: string theory on a circle of radius R is
+strictly equivalent to string theory on a circle of radius α′ /R. A slightly more detailed analysis shows that the background fields in the effective action (8.8) do transform nontrivially.
+From the spacetime point of view, this duality is thus a symmetry that relates different
+background fields. This is a profound statement: it tells us that field configurations that
+are clearly distinct in general relativity must be treated as identical in string theory.
+Next consider the limit as the compactification radius goes to zero, so the momentum
+p25 goes to infinity. In a field theory one would expect the corresponding excitations to drop
+out of the spectrum; the theory would become effectively 25-dimensional. In closed string
+theory, on the other hand, R → 0 is equivalent to R → ∞: the winding modes become
+massless, and a noncompact 26th dimension reemerges.
+Open strings, on the other hand, have no winding modes, and their p25 6= 0 states
+really do drop out as R → 0. This seems paradoxical: how can closed strings that see 26
+dimensions interact with open strings that see only 25? The answer turns out to be that
+the interiors of the open strings are still 26-dimensional, but their endpoints are restricted
+to a collection of 25-dimensional hypersurfaces. Such lower-dimensional hypersurfaces upon
+which open string endpoints are frozen are called D-branes (for “Dirichlet membranes”)
+[239]. D-branes are string theory solitons, and like solitons in ordinary field theory, they
+have masses inversely proportional to the coupling strength and give rise to important
+nonperturbative effects. A recent review may be found in [240].
+The symmetry (8.11) is the simplest example of “T-duality,” the first of a great many
+relations among string theories that have been discovered in the past few years. There
+are five known consistent supersymmetric string theories,† but we now understand that
+they are all related, and related as well to 11-dimensional supergravity, through duality
+transformations. (For a review, see [241], or for a less technical treatment, [242].) In general,
+dualities connect one string theory at weak coupling with another at strong coupling, and
+map elementary string states in one theory to solitons in another. This makes it possible to
+avoid some of the difficulties that come with strong couplings and nonperturbative effects by
+rephrasing questions as simpler but equivalent “dual” questions in a weakly coupled theory.
+As more has been learned about string dualities, it has seemed more and more likely
+that string theories are limits of a larger theory, given the deliberately ambiguous name M
+theory.‡ Perturbative string theories and 11-dimensional supergravity live at the edges of
+†
+The bosonic string theory of section 8.1 is not actually one of them: its spectrum contains tachyons,
+imaginary mass excitations whose presence indicates an unstable vacuum.
+‡
+“M theory” can refer either to the putative theory that has 11-dimensional supergravity as its low-energy
+limit, or more broadly to the theory that includes 11-dimensional supergravity and string theories.
+
+40
+
+the moduli space of M theory, while the interior remains unknown. Presumably the deep
+questions involved in quantum gravity can be answered only by investigating M theory.
+
+8.3
+
+The AdS/CFT correspondence
+
+There are currently two major programs for gaining information about M theory. The
+first, “M(atrix) theory” [243], is a quantum mechanical theory of a small number of N × N
+matrices and their supersymmetric partners, and is conjectured to be equivalent to M theory
+in a particular frame. Remarkably, this simple set-up can be shown to reproduce at least
+linearized gravity in eleven dimensions, along with some nonlinear corrections. M(atrix)
+theory is reviewed in depth in reference [244], and I will have no more to say about it here.
+The second, Maldacena’s celebrated “AdS/CFT correspondence” [245], is a proposal that
+nonperturbative string theory in an asymptotically anti-de Sitter background is exactly dual
+to a flat spacetime conformal field theory in one less dimension.
+More precisely, consider a ten-dimensional spacetime with the structure M d+1 × N 9−d
+(with d = 2 or 4) or an eleven-dimensional spacetime with the structure M d+1 × N 10−d
+(with d = 3 or 6), where M is asymptotically anti-de Sitter and N is compact. The
+AdS/CFT conjecture is that string theory on M × N is dual to a conformal field theory
+on a flat d-dimensional spacetime conformal to the boundary of M at spatial infinity. Such
+a correspondence requires that each field Φi in the string theory be associated with an
+operator Oi in the conformal field theory. The partition function Zstring of the string theory
+depends on the asymptotic boundary values Φb,i of the fields—this is directly analogous
+to the boundary value dependence of the Euclidean path integral in section 5.2—and the
+proposal is that [246, 247]
+D R
+
+Zstring [Φb,i ] = ei ∂M Φb,i O
+
+i
+
+E
+
+CFT
+
+(8.12)
+
+where the expectation value on the right-hand side is taken in the conformal field theory,
+with the (fixed) Φb,i treated as source terms.
+Evidence for such a duality first appeared in the study of coincident D3-branes (that is,
+(3+1)-dimensional D-branes). The string theory of N such branes has an effective description in the small gc N limit in terms of an SU(N) supersymmetric Yang-Mills theory, and in
+the large gc N limit in terms of supergravity on a spacetime with the background geometry
+AdS5 × S 5 . Since the correspondence relates weak and strong couplings, direct tests are
+difficult, but a large amount of evidence has accumulated: global symmetries, including
+certain discrete symmetries, match; spectra of chiral operators match; anomalies match;
+and phase changes at finite temperatures match. Moreover, some correlation functions can
+be compared, because they are protected from large quantum corrections by symmetries;
+they, too, match. An extensive review of these results can be found in [248].
+Given that the AdS/CFT correspondence describes gravity in ten (or eleven) dimensions
+in terms of a field theory in d < 10 dimensions, one should expect the relationship between
+degrees of freedom to be subtle. For example, the boundary of anti-de Sitter space cannot
+directly describe the “radial” dependence of the gravitational field; that information seems
+41
+
+to be encoded, at least in part, in the size of the corresponding conformal field theory
+excitation [249, 250]. There are, moreover, strong arguments that localized objects in the
+interior of anti-de Sitter space must be represented by highly nonlocal operators in the
+conformal field theory [251, 252]. This suggests that some of the fundamental issues of
+quantum gravity discussed in section 3—in particular, the problem of locality and the
+reconstruction problem—are just now making their appearance in string theory.
+
+8.4
+
+String theory and quantum gravity
+
+We have seen that perturbative string theory contains perturbative quantum gravity, while
+successfully avoiding the problem of nonrenormalizability. Unfortunately, this does not yet
+mean that string theory is a quantum theory of gravity. Perturbative string theory is at
+best an asymptotic expansion, and the nonperturbative theory of which it is an expansion
+remains largely unknown. Nevertheless, we have some intriguing hints:
+1. The T duality of section 8.2 implies
+a minimum compactification radius: string theory
+√
+on a circle of radius less than α′ is completely equivalent to string theory on a larger
+radius. Similarly, investigations of high energy string scattering suggest a modified
+uncertainty relation of the form (3.1) with L2 ∼ α′ [253], essentially because the extra
+energy required to increase the momentum of a string probe also increases its size.
+The issue
+√ of a minimum length is delicate, since D-branes can probe distances smaller
+than α′ [254], but there is definitely a suggestion of a new short-distance spacetime
+structure on the string (or perhaps the 11-dimensional Planck) scale.
+2. The AdS/CFT correspondence, and in a somewhat different manner the M(atrix)
+model, provide concrete realizations of the “holographic hypothesis” [255,256]. Holography is the proposal, inspired by the behavior of black hole entropy, that the number
+of degrees of freedom of a gravitating system in a region R of space is the same as
+that of a system on the boundary of R. (For a review, see [257].) Such a hypothesis
+requires a rather drastic reformulation of our description of fields and interactions, and
+presumably of spacetime itself: it not only restricts the number of degrees of freedom,
+but it allows them to grow only much more slowly than volume. These restrictions are
+intrinsically nonlocal, and they requires that we ultimately abandon local quantum
+field theory. This is not an unreasonable outcome of a quantum theory of gravity,
+since, as we have seen, diffeomorphism invariance already requires that observables
+be nonlocal. But it leaves us with the difficult task—not yet accomplished in string
+theory—of explaining why the Universe looks local.
+3. As a related consequence, the AdS/CFT correspondence offers a way to construct
+observables in quantum gravity, from fields of the dual conformal field theory. The
+problem is, once again, that while these observables are useful for describing certain asymptotic properties (S-matrix elements, for instance), we do not know how to
+recover a local spacetime description.
+
+42
+
+4. Under some circumstances, coordinates describing the locations of D-branes become
+noncommuting [258, 259]. This suggests a possible role for noncommutative geometry
+(see section 9.2), perhaps even as a replacement for ordinary Riemannian geometry.
+5. Even in its incomplete form, string theory suggests answers to some of the common
+questions one might ask of quantum gravity. For instance:
+• String theory eliminates some, but not all singularities [260, 261, 262]. Unfortunately, we do not yet understand the physically important cases of cosmology
+and gravitational collapse.
+• String theory allows spatial topology to change [262,263,264]. At the same time,
+it restricts certain topologies that would otherwise occur in the Euclidean path
+integral, possibly eliminating the divergences in the sum over topologies described
+in section 5.2 [265].
+• String theory provides a microscopic description of black hole entropy, at least
+for some black holes. I will discuss this further in section 10.2.
+Finally, it is amusing to speculate about the connection between string theory and
+loop quantum gravity. In both theories, the fundamental excitations are one-dimensional
+objects that trace out two-dimensional world sheets/spin foams; perhaps the two approaches
+are seeing different aspects of the same underlying structure. There has, in fact, been
+some preliminary exploration of the possibility of unifying string theory and loop quantum
+gravity [266], but the ideas remain highly speculative.
+
+9
+
+Other approaches
+
+As we have seen, attempts to quantize gravity force us to confront fundamental questions
+about the nature of space and time. In addition to the direct attacks on the problem that I
+have described above, workers in this field have tried two other approaches: they have looked
+at simpler models, and have begun to explore more radical ways in which the underlying
+assumptions of general relativity and quantum theory might be altered. In this section, I
+will briefly describe some of these efforts.
+
+9.1
+
+Simpler models
+
+Much of the difficulty in understanding quantum gravity comes from the fact that deep
+conceptual issues are entangled with problems that are complicated but “merely technical.”
+We can gain insight by looking at simpler models that share some of the conceptual foundations while simplifying the technical difficulties. In reference [34], for example, Kuchař
+describes a number of simple physical systems, ranging from relativistic particles to coupled
+harmonic oscillators, that have been used to model pieces of the “problem of time.” Systems
+closer to real (3+1)-dimensional general relativity include the following:
+
+43
+
+Lattices: By putting general relativity on a lattice, we can reduce the theory to a
+system of finitely many degrees of freedom, which may be more amenable to both direct
+calculation and numerical methods. Broadly speaking, there are two lattice formulations of
+general relativity: Regge calculus [267], in which spacetime is approximated as a simplicial
+manifold with varying edge lengths, and the method of dynamical triangulations [268], in
+which edge lengths are fixed but the triangulation is allowed to vary. Ashtekar variables for
+quantum gravity have also been put on the lattice, and spectra of geometric operators have
+been computed [269]. Good reviews can be found in [270, 271].
+Lattice approaches to quantum gravity typically focus on the Euclidean path integral of
+section 5.2, which can be approximated as a finite sum over lattice configurations and can
+be evaluated, for example, by Monte Carlo simulations. The results indicate the existence
+of two phases: for large values of Newton’s constant G a “crumpled” phase with small
+curvature, high Hausdorff dimension, and high connectivity, and for small G a tree-like
+“branched polymer” phase with large curvature and Hausdorff dimension 2. Neither looks
+much like a classical spacetime, and there is now good evidence that the phase transition
+between them is first order, so no new continuum physics is expected at the transition.
+But some exciting new results [271, 272] indicate that lattice models for the Lorentzian
+path integral behave very differently, with a semiclassical limit that looks much more like
+standard general relativity. It is too early to assess these results, but they suggest that a
+careful treatment of causality may be more important than has been generally appreciated.
+Mini- and midisuperspaces: A more drastic simplification of general relativity can
+be obtained by “freezing out” all but a few of the degrees of freedom of the metric [152,273,
+274, 275]. By choosing an ansatz in which the metric depends only on a few parameters,
+we can reduce the space of metrics—the superspace of section 6.1—to a finite-dimensional
+“minisuperspace,” such as the space of homogeneous cosmologies. Alternatively, we may
+keep enough degrees of freedom to allow an infinite-dimensional “midisuperspace” [276],
+such as the space of cylindrical gravitational waves, while still simplifying enough to allow
+quantization. Minisuperspace models have dominated work in quantum cosmology, and
+mini- and midisuperspaces have been used to investigate the Wheeler-DeWitt equation,
+Lorentzian and Euclidean path integrals, and reduced phase space quantization. Such models have been testing grounds for the notion of “evolving constants of motion” [277] and
+for the reconstruction of geometric quantities from diffeomorphism-invariant quantum observables [278], and they have provided interesting insights into the possibilities of quantum
+fluctuations of the light cone [278] and certain unexpectedly large quantum gravitational
+effects [279].
+Caution must be used in interpreting such calculations, however. The minisuperspace
+approximation can be tested by embedding a model with high symmetry and few variables
+into one with lower symmetry and more variables, in effect “unfreezing” some degrees of
+freedom. The behavior can turn out to be qualitatively very different [280]: minisuperspace
+models can miss important physics.
+Lower dimensional models: Classical general relativity becomes much simpler in
+fewer than four spacetime dimensions, and this simplification carries over to the quantum
+theory as well. In particular, general relativity in 2+1 dimensions has no field degrees of
+44
+
+freedom: in a canonical formulation, we have six degrees of freedom in {qij , π ij } minus
+three constraints and three symmetries. This does not mean that the theory is trivial—in
+the presence of point particles or nontrivial topologies, a finite number of global degrees
+of freedom remain—but it means that quantum field theory reduces to much more manageable quantum mechanics. The (2+1)-dimensional model has no Newtonian limit, and
+is not physically realistic; but as a diffeomorphism-invariant theory of spacetime geometry,
+it shares the basic conceptual underpinnings of (3+1)-dimensional general relativity, and
+provides a valuable test bed for quantization.
+Many of the quantization programs described here—phase space path integrals, reduced
+phase space quantization, covariant canonical quantization, Dirac quantization with firstorder variables, loop quantum gravity, and various exact lattice methods—can be carried
+out in full in 2+1 dimensions, at least for simple spatial topologies. (For a review, see [48].)
+Others, notably the Euclidean path integral and the Wheeler-DeWitt equation, remain
+difficult, but can be explored in more detail. Results from 2+1 dimensions provide an
+“existence proof” for quantum gravity, showing that general relativity can be quantized,
+at least in a simple setting, without any need for additional ingredients. In particular, the
+reconstruction problem and the problems of time can be resolved, and a sensible classical
+limit can be found. The model also provides a “nonuniqueness proof”: different consistent
+approaches can lead to quantum theories that differ in rather fundamental ways, for instance
+in their answer to the question of whether spacetime has a minimum length.
+In two spacetime dimensions, the Einstein-Hilbert action is a topological invariant, and
+the Einstein tensor is identically zero. One can write a more general action, though:
+I=
+
+Z
+
+√
+d2 x −g (aϕR + bg µν ∂µ ϕ∂ν ϕ + V [ϕ]) ,
+
+(9.1)
+
+where ϕ is a scalar, the dilaton, a and b are constants, and V is an arbitrary potential. The
+special case V ∼ eλϕ is known as Liouville theory; it arises frequently in string theory, and
+has been studied extensively [281], although some key questions remain. Dilaton gravity
+coupled to N scalar fields and evaluated in the 1/N expansion has proven useful in studying
+the quantum mechanics of black hole formulation and evaporation [282], and a variety of
+approaches to the quantization of dilaton models have been explored [283, 284, 285, 286].
+Planckian scattering: The study of scattering at Planckian energies would seem an
+unlikely place to try to gain control over quantum gravity. But scattering involves two scales,
+center of mass energy and momentum transfer, and a new approximation—essentially the
+eikonal approximation—is available for small momentum transfer [287, 288]. The quantum
+dynamics of the longitudinal gravitational modes turns out to be described by a topological
+field theory with S-matrix elements that have some resemblance to string amplitudes, and
+there is an intriguing appearance of noncommuting “ingoing” and “outgoing” coordinates,
+suggesting a new uncertainty relationship that might be relevant for black hole evaporation
+[289].
+
+45
+
+9.2
+
+Radical departures
+
+It is safe to say that most people working in quantum gravity expect that the theory will
+eventually lead to radical changes in our understanding of space and time. A few are more
+ambitious: they argue that radical changes in our starting point may be a precondition for
+quantizing gravity. It may be necessary, for example, to reformulate classical geometry in
+a way that makes causal relations more fundamental, or to somehow “quantize” spacetime
+points, or to even do away with the idea of points altogether. Work along these lines has
+not yet led to any physical breakthroughs, but perhaps that is too much to ask, given that
+more conventional approaches have not been terribly successful either. A sampling of the
+more radical new proposals is the following:
+Causal sets: A Lorentzian metric determines both a geometry and a causal structure,
+that is, a partial ordering that specifies which events lie to the future of any given event.
+While the causal structure seems much weaker, it actually determines the metric up to
+a conformal factor. The causal set program [39] takes the causal structure as primary,
+and starts with a finite set of points with a causal ordering; the conformal factor is then
+(approximately) recovered by counting points. Computer simulations of simple models have
+shown evidence for a continuum limit [290], and the causal set proposal has recently been
+combined with the loop representation to formulate “causal spin foams” [220].
+Twistors: The twistor program [38] also gives primacy to the causal structure of spacetime, essentially by viewing spacetime as a collection of null geodesics. Points are now
+derived quantities—a point is represented by a sphere in four-complex-dimensional twistor
+space, corresponding physically to the celestial sphere at that point. The goal is to translate
+all spacetime physics into the “more primitive”realm of twistor space. The program has had
+success in treating massless fields in flat spacetime, but gravity has proven more elusive; for
+a summary of some recent developments, see [291].
+Null surface formulation: The null surface formalism [292] also takes null geodesics
+to be fundamental, and rewrites general relativity as a theory of null surfaces. At each
+point, a function Z(x, ζ, ζ̄) gives a two-sphere’s worth of surfaces; when a single metricity
+condition is imposed, these become null surfaces, with (ζ, ζ̄) acting as coordinates on the
+celestial sphere. The Einstein field equations can be rewritten in terms of Z, and the free
+data that determines Z can, at least in principle, be quantized at null infinity. The resulting
+picture of spacetime has “fuzzy points” and “fuzzy null cones.”
+Noncommutative geometry: Given that quantizing gravity means “quantizing the
+structure of spacetime,” and that quantum mechanics is characterized by the existence of
+noncommuting observables, it is natural to look for a way to make spacetime itself noncommutative. Heuristically, a noncommutative geometry is simply one in which spacetime
+coordinates fail to commute. This idea dates back to Snyder [293], who suggested in 1947
+that quantum field theory on a spacetime with noncommutative coordinates might be less
+divergent while still preserving Lorentz invariance. A recent resurgence of interest has been
+inspired in part by the pioneering mathematical work of Connes [294], and in part by the discovery that certain D-brane configurations in string theory naturally involve noncommuting
+coordinates [258, 259].
+46
+
+The notion of noncommutative geometry is a bit tricky, especially in general relativity,
+where coordinates—and, indeed, points—have no independent physical meaning. To make
+the idea sufficiently general and well defined [294,295], one must take a detour first suggested
+by Geroch [296], and reexpress the spacetime manifold M in terms of the algebra of functions
+on M. Much is now known about how to obtain the ordinary picture of spacetime from
+such an algebra of functions; the geometry, for example, can be reconstructed from the
+eigenvalues of the Dirac operator /
+D . Geometry can then be made noncommutative by
+appropriately generalizing to a noncommutative algebra of functions.
+Fields on a noncommutative geometry are themselves noncommuting, even at the classical level. In some cases, though, a field theory in a noncommutative geometry is equivalent
+to a theory involving ordinary commuting fields, but with products of fields in the action
+replaced by nonlocal “Moyal” [297] or ⋆-products.∗ The resulting quantum theories are
+nonlocal, and exhibit some peculiar features, including the coupling of high- and low-energy
+degrees of freedom (“UV/IR mixing”) [299,300]. They are sometimes unitary, but need not
+be [301]. In general relativity, the ⋆-product approach requires the introduction of complex
+metrics; there have been some interesting preliminary investigations [302, 303], but it is not
+yet clear where they will lead. A somewhat different approach, based more directly on
+Connes’ general formulation of noncommutative geometry, can give rise to a classical model
+that seems to naturally incorporate both gravity and the Standard Model of high energy
+physics [304].
+For the most part, noncommutative geometry is still “classical”—it does not involve
+Planck’s constant—and much remains unknown about how to quantize the resulting theories. The program has had an interesting impact on other approaches to quantum gravity, though: it has led to the realization that the eigenvalues of /
+D provide a nice set of
+nonlocal, diffeomorphism-invariant observables, whose classical Poisson brackets can be
+computed [305]. At least for metrics with Riemannian signature, these provide a nearly
+complete characterization of the classical geometry, thus giving us the first good candidates
+for a (nearly) complete set of diffeomorphism-invariant observables.
+Other possibilities: One radical option is to quantize not just the geometry, but the
+point set topology of spacetime [306]. Another is to change the foundations of axiomatic
+quantum field theory to make them compatible with general covariance [307], or, more
+drastically, to make quantum mechanics itself nonlinear and allow gravity to cause wave
+function collapse [18]. Or perhaps we need to begin with an even more fundamental “pregeometry”: ’t Hooft has suggested that a deterministic but dissipative system should underlie
+quantum mechanics at the Planck scale [308], and Wheeler has even proposed the calculus
+of propositions as a starting point [19]!
+
+10
+
+How will we know we’re right?
+
+We finally turn to the most daunting problem of quantum gravity, the nearly complete
+lack of observational and experimental evidence that could point us in the right direction
+∗
+
+For a recent review of quantum field theory on noncommutative spacetime, see [298].
+
+47
+
+or provide tests for our models. The ultimate measure of any theory is its agreement with
+Nature; if we do not have any such tests, how will we know whether we’re right?
+It may be that there is only one self-consistent quantum theory of gravity, and that
+any answer is equivalent to any other. But progress in (2+1)-dimensional quantum gravity
+casts doubt on this possibility: in that setting, at least, there are consistent but physically inequivalent quantizations [48]. Similarly, there is now strong evidence for dramatic
+differences between lattice models for Euclidean and Lorentzian path integrals [272].
+Fortunately, though, the picture is not so grim. There are a number of places at which
+quantum gravity can already come into contact with observation, and more may appear in
+the not-too-distant future.
+
+10.1
+
+The classical limit
+
+The “zeroth test” of any quantum theory of gravity is its ability to reproduce the successes
+of classical general relativity. This is not trivial: finding the classical limit requires that we
+solve the “reconstruction problem,” the problem of recovering local geometry from nonlocal
+observables. The problem is not just technical—it is by no means automatic that a theory
+obtained by “quantizing general relativity” will have general relativity as its classical limit.
+As we saw in section 7.2, for example, there are strong arguments that the best known
+definition of the Hamiltonian constraint in loop quantum gravity leads to a theory whose
+classical limit is not general relativity. Similarly, lattice models for the Euclidean path
+integral fail to predict smooth four-geometries, and naive perturbative string theory predicts
+a 10-dimensional universe.
+In particular, a successful quantum theory of gravity must predict, or at least allow,
+a classical limit with a nearly vanishing cosmological constant. This is a major challenge,
+since straightforward effective field theory arguments predict that Λ should receive quantum
+corrections of order L−2
+Planck , some 120 orders of magnitude larger than the observational
+limit [309, 310]. It is possible that there is a “generic” solution to this problem—there are
+tentative arguments, described in section 5.2, that fluctuations in spacetime topology could
+suppress positive [125] or negative [137] values of Λ—but a successful quantization of gravity
+should presumably provide a detailed mechanism. The demonstration of such a mechanism
+would be a strong argument for the validity of an approach to quantization.
+Arguably, quantum gravity should provide even more. Our Universe is not a generic solution of the field equations, but a particular one, and quantum gravity may have something
+to say about which one. For example:
+• We do not know the large scale topology of the Universe, but it may soon be measurable [311]. If quantum gravity permits fluctuating spatial topology, it should be
+possible to obtain at least a probabilistic prediction of this topology.
+• In inflationary cosmologies, the large scale structure of the Universe is seeded by early
+quantum fluctuations, whose spectra determine the cosmic microwave background
+anisotropies and the structure observed today [312]. But the details of these spectra
+depend on assumptions about the initial state [313], which may in turn be affected
+48
+
+by quantum gravity. Moreover, since inflation can stretch out initial smaller-thanPlanck-size fluctuations to observable scales, predictions may be sensitive to details of
+Planck length physics, although a careful analysis shows considerably less sensitivity
+than one might naively expect [314, 315, 316, 317, 318, 319].
+• Some proposals—notably the Hartle-Hawking [20] and the Vilenkin [320] boundary
+conditions—make specific predictions about the quantum state of the Universe. String
+theory may do more, since the string vacuum determines the spectrum and gauge
+group of elementary particles. One may argue about whether such predictions are
+part of quantum gravity proper or whether they are added assumptions, but they at
+least require a well-formulated quantum theory of gravity as a setting.
+
+10.2
+
+Black hole thermodynamics
+
+Even in the absence of a quantum theory of gravity, we have one robust prediction of such
+a theory: the existence and spectrum of black hole Hawking radiation. Hawking radiation
+is a “semiclassical” prediction, originally discovered in the study of quantum field theory
+on a fixed curved background [321], and subsequently confirmed in a remarkable number of
+different computations, ranging from the saddle point approximation of the Euclidean path
+integral [53] to the investigation of symplectic structure of the space of solutions [197] to
+the calculation of amplitudes for black hole pair production [322,323]. Any theory that fails
+to reproduce this prediction is almost surely wrong.
+Black hole radiation implies a temperature and an entropy, the Bekenstein-Hawking
+entropy [321, 324]
+Ahorizon
+SBH =
+.
+(10.1)
+4h̄G
+In ordinary thermodynamics, entropy is a measure of the number of states, and a successful
+quantum theory of gravity ought to allow us to describe and enumerate the states responsible
+for SBH . Both string theory and loop quantum gravity have been partially successful in
+meeting this challenge. String theory reproduces (10.1) for a large class of extremal and
+near-extremal black holes by counting states at weak coupling; the number of states is
+then protected by supersymmetry as the coupling increases. For nonextremal black holes,
+string theory continues to predict an entropy proportional to horizon area, but the constant
+of proportionality becomes hard to calculate [325]. Loop quantum gravity leads to an
+entropy for both extremal and nonextremal black holes of the form (10.1), but with a
+proportionality constant
+that depends on the Immirzi parameter [326, 327]. The peculiar
+√
+choice γ = ln 2/π 3 seems to be necessary to reproduce the Bekenstein-Hawking result,
+but the same choice then holds for a wide variety of different black holes.
+It has recently been suggested that the value of the Bekenstein-Hawking entropy may
+be fixed “universally” by a broken conformal symmetry at or near the horizon, which is
+inherited in turn from the diffeomorphism invariance of general relativity [328]. If this is true,
+then a quantum prediction of the entropy is just a test that the group of diffeomorphisms
+is represented correctly. Even so, a true quantum theory of gravity will not only predict
+49
+
+the entropy (10.1); it will provide a concrete realization of the relevant degrees of freedom.
+Different theories may also differ in their one-loop corrections to the entropy, although there
+are some interesting signs of “universality” there as well [329].
+
+10.3
+
+Direct tests
+
+The characteristic scale for quantum gravity is the Planck energy, EPlanck ∼ 1019 GeV. This
+is so far out of the range of experiment that direct observational tests have long seemed
+impossible. In the past few years, though, a number of tests have been proposed, based on
+two ideas: that we can detect very small deviations from otherwise exact symmetries, and
+that we can integrate over long distances or times to observe very small collective effects.
+For the most part, these proposals remain highly speculative, but they are at least somewhat
+plausible. A recent review of many of these ideas may be found in [330]. In particular:
+• Quantum gravity may lead to violations of the equivalence principle, either generically
+for superpositions of mass states [331] or in specific models, for instance from dilaton
+couplings in string theory [232,233]. These effects may be detectable in future precision
+tests of the equivalence principle and in atomic and neutron interferometry.
+• Quantum gravity may lead to violations of CPT invariance, for instance through the
+formation of virtual black holes [332,333]. Present experimental limits are approaching
+the level at which such effects might be observable [334]. Gravitational effects may also
+lead to violations of other global symmetries such as CP, with observable consequences
+that may be quite sensitive to the Planck scale structure of spacetime [335].
+• Quantum gravity may distort the dispersion relations for light and neutrinos over long
+distances, leading to a frequency-dependent speed of light [336, 337, 338]. This effect
+is potentially testable through the observation of gamma ray bursts; current limits are
+near the scale at which quantum gravity might be significant [339]. The effect may
+also depend on polarization, and tests of gravity-induced birefringence may be within
+observational reach [340].
+• A few physicists have suggested that the interferometers being built for gravitational
+wave detection are so sensitive that they could potentially observe quantum fluctuations in the geometry of space [341,342]. Data from the existing 40-meter interferometer at Caltech can already be used to rule out one simple guess, that the arms of the
+interferometer undergo random Planck length fluctuations at a rate of one per Planck
+time. Different models predict very different spectra of length fluctuations, but some
+of these may be testable in future interferometers, although such claims remain quite
+controversial.
+• Quantum gravitational effects near the Planck mass affect renormalization group flows
+and low energy coupling constants in grand unified theories [343]. Unfortunately, this
+“Planck smearing” mainly makes it hard to test GUTs rather than making it easy to
+test quantum gravity.
+50
+
+• It has been proposed that the use of intense lasers to accelerate electrons may make it
+possible to (indirectly) observe Unruh radiation, the counterpart of Hawking radiation
+for an accelerating particle in flat spacetime [344]. One may argue about whether this
+is a direct test of quantum gravity, but it is certainly at least a test of quantum field
+theoretical predictions of the sort that go into quantum gravity.
+• Another indirect test may come from condensed matter analogs of black holes, which
+should emit “Hawking radiation” phonons from sonic horizons, regions at which the
+fluid flow reaches the speed of sound [345, 346]. Tests may be possible in the not-toodistant future in Bose-Einstein condensates [347], superfluid helium 3 [348], and “slow
+light” in dielectrics [349].
+These proposed experiments do not, for the most part, test specific models of quantum
+gravity, largely because the available models cannot yet make clear enough predictions.
+They do, however, test Planck scale physics of the sort that should generically be affected
+by quantum gravity. Although it is not at all certain that these tests are actually feasible,
+the possibility of directly observing quantum gravitational effects is beginning to be taken
+seriously.
+
+10.4
+
+Large extra dimensions and TeV-scale gravity
+
+In the past few months, there has been a burst of interest in possible experimental tests
+for a particular class of models of quantum gravity. These “TeV scale gravity” or “brane
+world” models [235,236] postulate additional “large” dimensions beyond the four we observe.
+The idea of extra dimensions is certainly not new, and as we saw in section 8.1, string
+theory requires them. But while normal Kaluza-Klein theories hide the extra dimensions
+by compactifying them to sizes on the order of the Planck length, TeV-scale gravity allows
+dimensions as large as a millimeter.
+In these models, we do not observe the extra dimensions, not because they are too small
+to see, but because the fundamental particles and interactions we can see are confined to a
+four-dimensional “brane.” The idea of such confinement is natural in string theory, where
+fields associated with the ends of open strings can be stuck on D-branes, but it occurs in
+other contexts as well: fields can be trapped on topological defects or gravitationally bound
+to a membrane.† One of the chief attractions of such models is that they offer a simple
+answer to the question of why the Planck energy is so high compared to the energy scales
+of the other fundamental interactions. The answer is that it is not: the four-dimensional
+Planck scale we observe is either
+1
+Vn
+∼
+(10.2)
+8πG4
+8πG4+n
+for n compact dimensions of volume Vn , or
+1
+1
+∼
+8πG4
+8πGn+4
+†
+
+Z ymax
+0
+
+dn y⊥ e−2k|y⊥ |
+
+See the note at the end of [350] for some historical references.
+
+51
+
+(10.3)
+
+for n noncompact dimensions with coordinates y⊥ and an appropriate “warped” metric.
+By adjusting the number and size of the extra dimensions, it is relatively easy to obtain a
+theory in which the fundamental (4+n)-dimensional Planck scale is a few TeV, on the order
+of the electroweak scale.
+TeV-scale gravity models are no easier to quantize than ordinary four-dimensional general relativity, and all of the fundamental conceptual problems remain. But even as low
+energy effective theories, they generate a host of testable predictions, ranging from a breakdown of the inverse square law for gravity at short distances to missing energy carried off
+into the extra dimensions to the emergence of towers of Kaluza-Klein particles at accelerator energies. At this writing, there is not yet a good review article on this subject, though
+several are in preparation; reference [351] gives a good sample of the work being done on
+the phenomenology of these models, while reference [352] gives a careful general relativistic
+treatment of induced gravity on the brane.
+
+10.5
+
+Other desiderata
+
+There are a number of other desirable features we might hope to find in a quantum theory of
+gravity, which, while not directly testable, could serve as signs that we are on the right track.
+Notable among these are the treatment of singularities in general relativity and divergences
+in quantum field theory, and the ability to resolve the “black hole information paradox.”
+Wheeler has long argued that the gravitational collapse reveals a fundamental breakdown
+of general relativity, which must be fixed by quantum gravity [19]. This is a delicate issue:
+singularities are already difficult to define in classical general relativity, and it is not at
+all clear how to extend the classical definitions to quantum gravity (the “reconstruction
+problem” again). Still, we can at least demand that the theory exclude such phenomena as
+infinite densities and wave functions that disappear off “edges” of spacetime.
+Quantum gravity should probably not treat all singularities the same way, though.
+Some classical singularities—notably those that occur in gravitational collapse and big bang
+cosmology—are a consequence of normal physical processes, and one might reasonably expect quantum gravity to “smooth them out” into nonsingular states. But other classical
+singularities should not be smoothed out; they must rather be forbidden from the start [260].
+In particular, the positive energy theorem of classical general relativity holds only if certain singular configurations such as negative mass Schwarzschild solutions are excluded. A
+quantum theory that “smoothed out” the singularity of the negative mass Schwarzschild
+metric would then admit negative mass states, and would have no stable vacuum. String
+theory provides an interesting example of the excision of a particular naked singularity, the
+“repulson”: it turns out that effects related to string duality prevent the singularity from
+ever forming in the first place [261].
+On the flip side, there is an old hope that quantum gravity will eliminate the divergences
+of quantum field theory by providing a natural Planck scale cutoff [22, 23, 24]. There are
+a number of arguments that make this suggestion plausible. Divergences come from the
+contributions of very high energy virtual particles, and at high energies quantum gravity
+cannot be ignored. Gravitational fluctuations could “smear out” light cones and the asso52
+
+ciated infinities; the minimum length implied by the generalized uncertainty relations (3.1)
+could dramatically affect short distance behavior; the negative contribution of gravitational
+self-energy could cancel the divergent self-energy of quantum field theory, as it does in classical electromagnetism; and high energy virtual particles might collapse into black holes,
+which would at the very least make existing computations of divergences unreliable.
+None of these arguments is decisive, and such an ultraviolet cutoff is certainly not a
+prerequisite for a successful quantization, but a theory that provided such a cutoff would
+surely be attractive. Ideally, a finite cutoff might even allow us to predict some fundamental
+quantities like particle masses. String theory, of course, is even more ambitious: the hope
+is that a unique nonperturbative string vacuum would fix the entire particle spectrum and
+gauge group of the Standard Model. With or without new Planck scale observations, such
+a successful “retrodiction” of the Standard Model would be a decisive test of the theory.
+Finally, the little we know about semiclassical gravity has led to a paradox that the
+full quantum theory will have to resolve. Consider a process in which matter in a pure
+quantum state collapses to form a black hole, which subsequently evaporates via Hawking
+radiation. If, as semiclassical calculations indicate, Hawking radiation is truly thermal, then
+this process represents evolution from a pure initial state to a mixed final state. Entropy
+has increased, and “information” has been lost. But standard quantum mechanics forbids
+such evolution: at the microscopic level, quantum mechanical entropy is conserved, and a
+pure state can evolve only into a pure state. The literature is filled with ideas for resolving
+this “black hole information paradox” [353]: Hawking radiation may have complex hidden
+correlations; black hole evaporation may end with information-rich “remnants”; or perhaps
+quantum mechanics should be altered to allow pure states to become mixtures, or to introduce a “complementarity” between states inside and outside a horizon. But none of the
+suggestions is yet very convincing; it may well take a full quantum theory of gravity to give
+a satisfactory explanation.
+
+11
+
+Where we stand
+
+In classical general relativity, the “force” we call gravity is a consequence of the geometry of spacetime. Quantizing gravity means, conservatively, quantizing the structure of
+space and time; or, more radically, eliminating space and time altogether as fundamental
+attributes of the Universe and replacing them with something new. This is an ambitious
+goal, and it should not be so surprising that we have not yet succeeded.
+Nevertheless, we have learned a great deal in the past 70 years of research. We now
+know a quite a lot about what doesn’t work: we cannot, for instance, simply treat general
+relativity as an ordinary quantum field theory. We also know much more about what is
+needed for success: we must, for instance, understand how to approximately reconstruct a
+classical spacetime from nonlocal diffeomorphism-invariant observables.
+The two main contemporary programs of quantum gravity, string theory and loop quantum gravity, are just now beginning to confront the fundamental issues. This should not be
+interpreted as a criticism. One cannot solve the problem of time or the spacetime reconstruc-
+
+53
+
+tion problem by simply thinking hard about time and observables; it has taken tremendous
+work to clear away enough of the underbrush to even pose the questions as physics rather
+than philosophy. The crucial tests, though, are still to come. Can string theory find good
+nonperturbative observables that describe local physics, and explain how to connect these to
+the gravitational predictions of perturbative string theory? Can loop quantum gravity solve
+the Hamiltonian constraint, and reconstruct good semiclassical states from the solutions?
+Can any of the more radical approaches move into the realm of predictive theories?
+The next decade promises to be an interesting one.
+
+Acknowledgments
+I would like to thank John Baez, Gary Horowitz, Peter Salzman, and Sachindeo Vaidya
+for catching errors in earlier drafts of this review. I’m afraid I didn’t give them time to
+find all the errors; those that remain are mine. This work was supported in part by U.S.
+Department of Energy grant DE-FG03-91ER40674.
+
+References
+[1] C. D. Hoyle et al., Phys. Rev. Lett. 86, 1418 (2001), eprint hep-ph/0011014.
+[2] J. R. Friedman, V. Patel, W. Chen, S. K. Tolpygo, and J. E. Lukens, Nature 406, 43
+(2000).
+[3] M. H. Goroff and A. Sagnotti, Nucl. Phys. B266, 709 (1986).
+[4] J. Polchinski, String theory (Cambridge University Press, Cambridge, 1998).
+[5] C. Rovelli, Living Rev. Rel. 1–1 (1998).
+[6] C. Rovelli, preprint gr-qc/0006061.
+[7] C. J. Isham, in Recent aspects of quantum fields, Lecture Notes in Physics 396, edited
+by H. Mitter and H. Gausterer (Springer, Berlin, 1991).
+[8] G. Au, preprint gr-qc/9506001.
+[9] C. Calendar and N. Huggett, Physics meets philosophy at the Planck scale (Cambridge
+University Press, Cambridge, 2001).
+[10] K. Eppley and E. Hannah, Found. Phys. 7, 51 (1977).
+[11] D. N. Page and C. D. Geilker, Phys. Rev. Lett. 47, 979 (1981).
+[12] C. Møller, Les theories relativistes de la gravitation (CNRS, Paris, 1962).
+[13] L. Rosenfeld, Nucl. Phys. 40, 353 (1963).
+54
+
+[14] L. Diósi, Phys. Lett. 105A, 199 (1989).
+[15] T. W. B. Kibble and S. Randjbar-Daemi, J. Phys. A13, 141 (1980).
+[16] O. Bertolami, Phys. Lett. 154A, 225 (1991).
+[17] J. J. Halliwell, Phys. Rev. D57, 2337 (1998), eprint quant-ph/9705005.
+[18] R. Penrose, Gen. Rel. Grav. 28, 581 (1996).
+[19] C. W. Misner, K. S. Thorne, and J. A. Wheeler, Gravitation (W. H. Freeman, San
+Francisco, 1973).
+[20] J. B. Hartle and S. W. Hawking, Phys. Rev. D28, 2960 (1983).
+[21] S. Weinberg, The quantum theory of fields, Vol. I (Cambridge University Press, Cambridge, 1995).
+[22] L. D. Landau, in Niels Bohr and the development of physics, edited by W. Pauli with
+the assistance of L. Rosenfeld and V. Weisskopf (McGraw-Hill, New York, 1955).
+[23] W. Pauli, Helv. Phys. Acta Suppl. 4, 69 (1956).
+[24] S. Deser, Rev. Mod. Phys. 29, 417 (1957).
+[25] B. S. DeWitt, Phys. Rev. Lett. 13, 114 (1964).
+[26] I. B. Khriplovich, Sov. J. Nucl. Phys. 3, 415 (1966).
+[27] C. J. Isham, A. Salam, and J. Strathdee, Phys. Rev. D3, 1805 (1971); Phys. Rev. D5,
+2548 (1972).
+[28] L. Rosenfeld, Ann. der Physik 5, 113 (1930); Zeit. Phys. 65, 589 (1930).
+[29] J. Stachel, “Einstein’s search for general covariance,” in Einstein and the history of
+general relativity, edited by D. Howard and J. Stachel (Birkhäuser, Boston, 1989).
+[30] J. D. Norton, Rep. Prog. Phys. 56, 791 (1993).
+[31] P. G. Bergmann, Nuovo Cimento 3, 1177 (1956).
+[32] C. G. Torre, Phys. Rev. D48, 2373 (1993), eprint gr-qc/9306030.
+[33] W. G. Unruh, Int. J. Theor. Phys. 28, 1181 (1989).
+[34] K. Kuchař, in General relativity and relativistic astrophysics, proceedings of the 4th
+Canadian conference, edited by G. Kunstatter, D. E. Vincent, and J. G. Williams
+(World Scientific, Singapore, 1992).
+
+55
+
+[35] C. J. Isham, in Integrable systems, quantum groups, and quantum field theories, edited
+by L. A. Ibort and M. A. Rodrı́guez (Kluwer, Dordrecht, 1993).
+[36] C. W. Misner, Rev. Mod. Phys. 29, 497 (1957).
+[37] P. G. Bergmann et al., Phys. Rev. 80, 81 (1950).
+[38] R. Penrose, J. Math. Phys. 8, 345 (1967); Gen. Rel. Grav. 7, 31 (1976).
+[39] L. Bombelli, J. Lee, D. Meyer, and R. Sorkin, Phys. Rev. Lett. 59, 521 (1987).
+[40] R. Cosgrove, Class. Quant. Grav. 13, 891 (1996), eprint gr-qc/9511059.
+[41] C. G. Torre and M. Varadarajan, Class. Quant. Grav. 16, 2651 (1999), eprint hepth/9811222.
+[42] R. F. Baierlein, D. H. Sharp, and J. A. Wheeler, Phys. Rev. 126, 1864 (1962).
+[43] R. P. Woodard, Class. Quant. Grav. 10, 483 (1993).
+[44] D. Marolf, preprint gr-qc/9508015; preprint gr-qc/0011112.
+[45] D. Giulini and D. Marolf, Class. Quant. Grav. 16, 2479 (1999), eprint gr-qc/9812024;
+Class. Quant. Grav. 16, 2489 (1999), eprint gr-qc/9902045.
+[46] W. G. Unruh and R. M. Wald, Phys. Rev. D40, 2598 (1989).
+[47] S. Carlip, in Knots and quantum gravity, edited by J. Baez (Clarendon Press, Oxford,
+1994), eprint gr-qc/9309020.
+[48] S. Carlip, Quantum gravity in 2+1 dimensions (Cambridge University Press, Cambridge, 1998).
+[49] L. J. Garay, Int. J. Mod. Phys. A10, 145 (1995), eprint gr-qc/9403008.
+[50] J. A. Wheeler, in Relativity, Groups, and Topology, edited by C. DeWitt and B. S.
+DeWitt (Gordon and Breach, New York, 1964).
+[51] N. C. Tsamis and R. P. Woodard, Ann. Phys. (N.Y.) 215, 96 (1992).
+[52] J. S. Bell, in Quantum gravity 2: a second Oxford symposium, edited by C. J. Isham,
+R. Penrose, and D. W. Sciama (Clarendon Press, Oxford, 1981).
+[53] G. W. Gibbons and S. W. Hawking, Phys. Rev. D15, 2752 (1977).
+[54] J. W. York, Found. Phys. 16, 249 (1986).
+[55] R. P. Feynman, F. B. Moringo, and W. G. Wagner, Feynman lectures on gravitation
+(Addison-Wesley, Reading, MA, 1995).
+56
+
+[56] S. Deser, Gen. Rel. Grav. 1, 9 (1970); Class. Quant. Grav. 4, L99 (1987).
+[57] D. G. Boulware and S. Deser, Ann. Phys. (N.Y.) 89, 193 (1975).
+[58] J. Scherk and J. H. Schwarz, Nucl. Phys. B81, 118 (1974).
+[59] R. Arnowitt, S. Deser, and C. W. Misner, in Gravitation: an introduction to current
+research, edited by L. Witten (Wiley, New York, 1962).
+[60] R. M. Wald, General relativity (University of Chicago Press, Chicago, 1984).
+[61] P. A. M. Dirac, Can. J. Math. 2, 129 (1950); Can. J. Math. 3, 1 (1951); Proc. Roy.
+Soc. (London) A246, 326 (1958).
+[62] M. Henneaux and C. Teitelboim, Quantization of gauge systems (Princeton University
+Press, Princeton, 1992).
+[63] C. Teitelboim, Ann. Phys. (N.Y.) 79, 542 (1973).
+[64] J. D. Brown, Lower dimensional gravity (World Scientific, Singapore, 1988), Appendix
+II.2.
+[65] B. S. DeWitt, in Relativity, groups, and topology II , edited by B. S. DeWitt and R.
+Stora (North-Holland, Amsterdam, 1984).
+[66] J. D. Brown and K. V. Kuchař, Phys. Rev. D51, 5600 (1995), eprint gr-qc/9409001.
+[67] K. V. Kuchař and J. D. Romano, Phys. Rev. D51, 5579 (1995), eprint gr-qc/9501005.
+[68] F. G. Markopoulou, Class. Quant. Grav. 13, 2577 (1996), eprint gr-qc/9601038.
+[69] I. Kouletsis, Class. Quant. Grav. 13, 3085 (1996), eprint gr-qc/9601043.
+[70] A. Ashtekar, Lectures on non-perturbative quantum gravity (World Scientific, Singapore, 1991).
+[71] T. Jacobson and L. Smolin, Phys. Lett. B196, 39 (1987); Class. Quant. Grav. 5, 583
+(1988).
+[72] J. Samuel, Pramana-J. Phys. L249 (1987).
+[73] P. Peldan, Class. Quant. Grav. 11, 1087 (1994), eprint gr-qc/9305011.
+[74] A. Sen, Phys. Lett. B119, 89 (1982).
+[75] A. Ashtekar, Phys. Rev. Lett. 57, 2244 (1986); Phys. Rev. D36, 1587 (1987).
+[76] C. Rovelli, Class. Quant. Grav. 8, 1613 (1991).
+
+57
+
+[77] R. Gambini and J. Pullin, Loops, knots, gauge theories and quantum gravity (Cambridge University Press, Cambridge, 1996).
+[78] A. Ashtekar, J. D. Romano, and R. S. Tate, Phys. Rev. D40, 2572 (1989).
+[79] T. Thiemann, Class. Quant. Grav. 13, 1383 (1996), eprint gr-qc/9511057.
+[80] A. Ashtekar, Phys. Rev. D53, R2865 (1996), eprint gr-qc/9511083.
+[81] J. F. Barbero, Phys. Rev. D51, 5507 (1995), eprint gr-qc/9410014.
+[82] G. Immirzi, Class. Quant. Grav. 14, L177 (1997), eprint gr-qc/9612030.
+[83] S. Holst, Phys. Rev. D53, 5966 (1996), eprint gr-qc/9511026.
+[84] S. Alexandrov, Class. Quant. Grav. 17, 4255 (2000), eprint gr-qc/0005085.
+[85] M. P. Reisenberger, preprint gr-qc/9804061.
+[86] R. Capovilla, M. Montesinos, V. A. Prieto, and E. Rojas, Class. Quant. Grav. 18, L49
+(2001), eprint gr-qc/0102073.
+[87] J. F. Plebanski, J. Math. Phys. 18, 2511 (1977).
+[88] R. De Pietri and L. Freidel, Class. Quant. Grav. 16, 2187 (1999), eprint gr-qc/9804071.
+[89] D. Birmingham, M. Blau, M. Rakowski, and G. Thompson, Phys. Reports 209, 129
+(1991).
+[90] B. S. DeWitt, J. Math. Phys. 3, 1073 (1962).
+[91] B. S. DeWitt, Dynamical theory of groups and fields (Gordon and Breach, New York,
+1965).
+[92] B. S. DeWitt, Phys. Rev. 162, 1195 (1967); Phys. Rev. 162, 1239 (1967).
+[93] B. S. DeWitt, in Quantum gravity 2: a second Oxford symposium, edited by C. J.
+Isham, R. Penrose, and D. W. Sciama (Clarendon Press, Oxford, 1981).
+[94] R. P. Feynman, Acta Phys. Polonica 24, 697 (1963).
+[95] I. L. Buchbinder, S. D. Odintsov, and I. L. Shapiro, Effective action in quantum gravity
+(IOP Publishing, Bristol, 1992).
+[96] L. D. Faddeev and V. N. Popov, Phys. Lett. B25, 30 (1967).
+[97] Z. Bern, S. K. Blau, and E. Mottola, Phys. Rev. D43, 1212 (1991).
+[98] C. J. Isham, Phys. Lett. B106, 188 (1981).
+58
+
+[99] G. A. Vilkovisky, Nucl. Phys. B234, 125 (1984).
+[100] L. .F. Abbott, Acta Phys. Polon. B13, 33 (1982).
+[101] G. ’t Hooft, and M. Veltman, Ann. Inst. Henri Poincaré Phys. Theor. A20, 69 (1974).
+[102] A. E. M. van de Ven, Nucl. Phys. B378, 309 (1992).
+[103] Z. Bern et al., preprint hep-th/0012230; Nucl. Phys. B530, 401 (1998), eprint hepth/9802162.
+[104] R. Utiyama and B. S. DeWitt, J. Math. Phys. 3, 608 (1962).
+[105] N. D. Birrell and P. C. W. Davies, Quantum fields in curved space (Cambridge University Press, Cambridge, 1982).
+[106] K. S. Stelle, Phys. Rev. D16, 953 (1977).
+[107] E. Tomboulis, Phys. Lett. B70, 361 (1977); Phys. Lett. B97, 77 (1980).
+[108] B. S. Kay, Phys. Lett. B101, 241 (1981).
+[109] T. D. Lee and G. C. Wick, Nucl. Phys. B9, 209 (1969); Phys. Rev. D2, 1033 (1970).
+[110] R. Arnowitt, S. Deser, and C. W. Misner, Phys. Rev. 120, 313 (1960).
+[111] H. Ohanian, Phys. Rev. D60, 104051 (1999).
+[112] A. O. Barvinsky and G. A. Vilkovisky, Nucl. Phys. B282, 163 (1987); Nucl. Phys.
+B333, 471 (1990); Nucl. Phys. B333, 512 (1990).
+[113] A. O. Barvinsky, Yu. V. Gusev, G. A. Vilkovisky, and V. V. Zhytnikov, J. Math.
+Phys. 35, 3525 (1994), eprint gr-qc/9404061.
+[114] B. S. DeWitt, in Conceptual problems of quantum gravity, edited by A. Ashtekar and
+J. Stachel (Birkhäuser, Boston, 1991).
+[115] D. J. Gross, in Methods in field theory, edited by R. Balin and J. Zinn-Justin (NorthHolland, Amsterdam, 1976).
+[116] S. Weinberg, in General relativity: an Einstein centenary survey, edited by S. W.
+Hawking and W. Israel (Cambridge University Press, Cambridge, 1979).
+[117] J. Donoghue, in Recent developments in theoretical and experimental general relativity, gravitation, and relativistic field theories (Proc. of the Eighth Marcel Grossmann
+Meeting on General Relativity), edited by Z. Piran (World Scientific, Singapore, 1999),
+eprint gr-qc/9712070.
+[118] J. Donoghue, Phys. Rev. D50, 3874 (1994), eprint gr-qc/9405057.
+59
+
+[119] R. Sorkin, Phys. Rev. D33, 978 (1986).
+[120] B. L. Reinhart, Topology 2, 173 (1963).
+[121] F. J. Tipler, Ann. Phys. (N.Y.) 108, 1 (1977).
+[122] A. Borde, preprint gr-qc/9406053.
+[123] G. Horowitz, Class. Quant. Grav. 8, 587 (1991).
+[124] S. W. Hawking, Nucl. Phys. B144, 349 (1978); Phys. Rev. D18, 1747 (1978).
+[125] S. Coleman, Aspects of symmetry (Cambridge University Press, Cambridge, 1985).
+[126] P. Mazur and E. Mottola, Nucl. Phys. B278, 694 (1986).
+[127] A. Dasgupta and R. Loll, preprint hep-th/0103186.
+[128] J. Louko, in Gravitation: a Banff summer institute, edited by R. Mann and P. Wesson
+(World Scientific, Singapore, 1991).
+[129] S. W. Hawking, in General relativity: an Einstein centenary survey, edited by S. W.
+Hawking and W. Israel (Cambridge University Press, Cambridge, 1979).
+[130] S. M. Christensen and M. J. Duff, Nucl. Phys. B170[FS1], 480 (1980).
+[131] J. J. Halliwell and J. B. Hartle, Phys. Rev. D43, 1170 (1991).
+[132] G. W. Gibbons and J. B. Hartle, Phys. Rev. D42, 2458 (1990).
+[133] S. Carlip, Class. Quant. Grav. 10, 1057 (1993), eprint gr-qc/9301006.
+[134] R. Geroch and J. B. Hartle, Found. Phys. 16, 533 (1986).
+[135] J. B. Hartle, Class. Quant. Grav. 2, 707 (1985).
+[136] K. Schleich and D. M. Witt, Nucl. Phys. B402, 411 (1993), eprint gr-qc/9307015;
+Nucl. Phys. B402, 469 (1993), eprint gr-qc/9307019.
+[137] S. Carlip, Phys. Rev. Lett. 79, 4071 (1997), eprint gr-qc/9708026; Class. Quant. Grav.
+15, 2629 (1998), eprint gr-qc/9710114.
+[138] J. G. Ratcliffe, and S. T. Tschantz, Class. Quant. Grav. 17, 2999 (2000), eprint grqc/0009004.
+[139] E. Baum, Phys. Lett. B133, 185 (1983).
+[140] S. W. Hawking, Phys. Lett. B134, 403 (1984).
+[141] S. Coleman, Nucl. Phys. B310, 643 (1988).
+60
+
+[142] S. Carlip and S. P. de Alwis, Nucl. Phys. B337, 681 (1990).
+[143] J. Polchinski, Nucl. Phys. B325, 619 (1989).
+[144] J. B. Hartle, in Gravitation and quantizations, edited by B. Julia and J. Zinn-Justin
+(Elsevier, Amsterdam, 1995); in Directions in general relativity, Vol. I, edited by B. L.
+Hu, M. P. Ryan, and C. V. Vishveshwara (Cambridge University Press, Cambridge,
+1993), eprint gr-qc/9304006.
+[145] L. Van Hove, Acad. Roy. Belgique Bull. Cl. Sci. 37, 610 (1951).
+[146] S. J. Isham, in Relativity, groups and topology II , edited by B. S. DeWitt and R. Stora
+(Elsevier, Amsterdam, 1984).
+[147] A. Ashtekar and G. T. Horowitz, Phys. Rev. D26, 3342 (1982).
+[148] J. D. Romano and R. S. Tate, Class. Quant. Grav. 6, 1487 (1989).
+[149] K. Schleich, Class. Quant. Grav. 7, 1529 (1990).
+[150] R. J. Epp and G. Kunstatter, Phys. Rev. D51, 781 (1995), eprint gr-qc/9403065.
+[151] P. A. M. Dirac, Lectures on quantum mechanics (Yeshiva University Press, New York,
+1964).
+[152] B. S. DeWitt, Phys. Rev. 160, 1113 (1967).
+[153] C. .J. Isham, Proc. Roy. Soc. (London) A351, 209 (1976).
+[154] J. R. Klauder, in Relativity, edited by M. S. Carmeli, S. I. Fickler, and L. Witten (Plenum Press, New York, 1970); J. Math. Phys. 40, 5860 (1999), eprint grqc/9906013.
+[155] J. A. Wheeler, in Battelle rencontres, 1967 lectures in mathematics and physics, edited
+by C. M. DeWitt and J. A. Wheeler (W. A. Benjamin, New York, 1968).
+[156] D. G. Ebin, Symp. Pure Math. Am. Math. Soc. 15, 11 (1970).
+[157] A. E. Fischer, in Relativity, edited by M. S. Carmeli, S. I. Fickler, and L. Witten
+(Plenum Press, New York, 1970); J. Math. Phys. 27, 718 (1986).
+[158] N. C. Tsamis and R. P. Woodard, Phys. Rev. D36, 3641 (1987).
+[159] J. L. Friedman and I. Jack, Phys. Rev. D37, 3495 (1988).
+[160] S. Carlip, Class. Quant. Grav. 11, 31 (1994), eprint gr-qc/9309002.
+[161] T. Banks, W. Fischler, and L. Susskind, Nucl. Phys. B262, 159 (1985).
+
+61
+
+[162] C. Kiefer, in Canonical gravity—from classical to quantum, edited by J. Ehlers and
+H. Friedrich (Springer, Berlin, 1994), eprint gr-qc/9312015.
+[163] A. O. Barvinsky and C. Kiefer, Nucl. Phys. B526, 509 (1998), eprint gr-qc/9711037.
+[164] R. M. Wald, Phys. Rev. D48, 2377 (1993), eprint gr-qc/9305024.
+[165] J. B. Barbour, Phys. Rev. D47, 5422 (1993).
+[166] E. Witten, Commun. Math. Phys. 144, 189 (1992).
+[167] N. P. Landsman, Class. Quant. Grav. 12, L119 (1995), eprint gr-qc/9510033.
+[168] K. Kuchař, in Conceptual problems of quantum gravity, edited by A. Ashtekar and J.
+Stachel (Birkhäuser, Boston, 1991).
+[169] K. Kuchař, J. Math. Phys. 22, 2640 (1981).
+[170] C. M. Patton and J. A. Wheeler, in Quantum gravity: an Oxford symposium, edited
+by C. J. Isham, R. Penrose, and D. W. Sciama (Clarendon Press, Oxford, 1981).
+[171] D. N. Page, in Conceptual problems of quantum gravity, edited by A. Ashtekar and J.
+Stachel (Birkhäuser, Boston, 1991).
+[172] L. Smolin, in Conceptual problems of quantum gravity, edited by A. Ashtekar and J.
+Stachel (Birkhäuser, Boston, 1991).
+[173] P. G. Bergmann and A. B. Komar, in Recent developments in general relativity (Pergamon, New York, 1962).
+[174] C. Teitelboim, Phys. Lett. B56, 376 (1975).
+[175] K. Kuchař, in Quantum gravity 2: an Oxford symposium, edited by C. J. Isham, R.
+Penrose, and D. W. Sciama (Clarendon Press, Oxford, 1975).
+[176] P. Hájı́ček, Phys. Rev. D34, 1040 (1986).
+[177] M. Shön and P. Hájı́ček, Class. Quant. Grav. 7, 861 (1990).
+[178] C. G. Torre, Phys. Rev. D 46, R3231 (1992), eprint hep-th/9204014.
+[179] W. F. Blyth and C. J. Isham, Phys. Rev. D11, 768 (1975).
+[180] A. E. Fischer and J. E. Marsden, in Isolated gravitating systems in general relativity,
+edited by J. Ehlers (North-Holland, Amsterdam, 1979).
+[181] J. Isenberg and J. E. Marsden, Phys. Reports 89, 179 (1982).
+[182] J. Isenberg, Phys. Rev. Lett. 59, 2389 (1987).
+62
+
+[183] J. Isenberg and J. E. Marsden, J. Geom. Phys. 1, 85 (1984).
+[184] A. E. Fischer and V. Moncrief, in Constrained dynamics and quantum gravity 1996 ,
+Nucl. Phys. Proc. Suppl. 57, edited by V. de Alfaro et al. (North-Holland, Amsterdam,
+1997).
+[185] A. E. Fischer and V. Moncrief, in Mathematical and quantum aspects of relativity and
+cosmology, edited by S. Cotsakis and G. W. Gibbons (Springer, Berlin, 2000).
+[186] J. W. York, Phys. Rev. Lett. 26, 1656 (1971).
+[187] J. E. Marsden and F. J. Tipler, Phys. Rep. 66, 109 (1980).
+[188] R. Schoen, J. Diff. Geom. 20, 479 (1984).
+[189] J. L. Friedman and R. D. Sorkin, Phys. Rev. Lett. 44, 1100 (1980).
+[190] S. Carlip, Phys. Rev. D33, 1638 (1986).
+[191] C. J. Isham, Phys. Lett. B106, 188 (1981).
+[192] S. Carlip and J. E. Nelson, Phys. Rev. D59, 024012 (1999), eprint gr-qc/9807087.
+[193] A. Ashtekar and A. Magnon, Proc. Roy. Soc. Lond. A346, 375 (1975).
+[194] A. Ashtekar, L. Bombelli, and O. Reula, in Analysis, geometry, and mechanics: 200
+years after Lagrange, edited by M. Francaviglia and D. Holm (North-Holland, Amsterdam, 1991).
+[195] C. Crnkovic and E. Witten, in Three hundred years of gravitation, edited by S. W.
+Hawking and W. Israel (Cambridge University Press, Cambridge, 1987).
+[196] J. Lee and R. M. Wald, J. Math. Phys. 31, 725 (1990).
+[197] R. M. Wald, Phys. Rev. D48, R3427 (1993), eprint gr-qc/9307038.
+[198] C. Rovelli, Phys. Rev. D42, 2638 (1990); Phys. Rev. D43, 442 (1991).
+[199] C. Rovelli, “Is there incompatibility between the way time is treated in general relativity and in standard quantum mechanics?”, in Conceptual problems of quantum
+gravity, edited by A. Ashtekar and J. Stachel (Birkhäuser, Boston, 1991).
+[200] A. Ashtekar, in Quantum gravity 2: an Oxford symposium, edited by C. J. Isham, R.
+Penrose, and D. W. Sciama (Clarendon Press, Oxford, 1975).
+[201] J. B. Hartle, Class. Quant. Grav. 13, 361 (1996), eprint gr-qc/9509037.
+[202] P. Hájı́ček, preprint gr-qc/9903089.
+[203] J. C. Baez, Lect. Notes Phys. 543, 25 (2000), eprint gr-qc/9905087.
+63
+
+[204] K. Ezawa, Phys. Reports 286, 271 (1997), eprint gr-qc/9601050.
+[205] Knots and quantum gravity, edited by J. Baez (Clarendon Press, Oxford, 1994).
+[206] R. Penrose, in Quantum theory and beyond , edited by T. Bastin (Cambridge University Press, Cambridge, 1971).
+[207] S. A. Major, Am. J. Phys. 67, 972 (1999), eprint gr-qc/9905020.
+[208] C. Rovelli and L. Smolin, Phys. Rev. Lett. 61, 1155 (1988); Nucl. Phys. B331, 80
+(1990).
+[209] C. Rovelli and P. Upadhya, preprint gr-qc/9806079.
+[210] A. Ashtekar, J. Lewandowski, D. Marolf, and J. Murão, J. Math. Phys. 36, 6456
+(1995), eprint gr-qc/9504018.
+[211] T. Thiemann, Class. Quant. Grav. 15, 839 (1998), eprint gr-qc/9606089 ; Class. Quant.
+Grav. 15, 875 (1998), eprint gr-qc/9606090; Class. Quant. Grav. 15, 1207 (1998),
+eprint gr-qc/9705017.
+[212] R. Borissov, R. De Pietri, and C. Rovelli, Class. Quant. Grav. 14, 2793 (1997), eprint
+gr-qc/9703090.
+[213] L. Smolin, preprint gr-qc/9609034.
+[214] R. Gambini, J. Lewandowski, D. Marolf, and J. Pullin, Int. J. Mod. Phys. D7, 97
+(1998), eprint gr-qc/9710018.
+[215] C. Di Bartolo, R. Gambini, J. Griego, and J. Pullin, Class. Quant. Grav. 17,
+3211 (2000), eprint gr-qc/9911009; Class. Quant. Grav. 17, 3239 (2000), eprint grqc/9911010.
+[216] J. Baez, Class. Quant. Grav. 15, 1827 (1998), eprint gr-qc/9709052.
+[217] M. P. Reisenberger and C. Rovelli, Phys. Rev. D56, 3490 (1997), eprint gr-qc/9612035.
+[218] M. P. Reisenberger and C. Rovelli, Class. Quant. Grav. 18, 121 (2001), eprint grqc/0002095.
+[219] J. W. Barrett and L. Crane, Class. Quant. Grav. 17, 3101 (2000), eprint grqc/9904025.
+[220] F. Markopoulou and L. Smolin, Nucl. Phys. B508, 409 (1997), eprint gr-qc/9702025.
+[221] M. P. Blencowe, Nucl. Phys. B341, 213 (1990).
+[222] H. Kodama, Phys. Rev. D42, 2548 (1990).
+64
+
+[223] B. Brugmann, R. Gambini, and J. Pullin, Nucl. Phys. B385, 587 (1992), eprint hepth/9202018.
+[224] L. Smolin, Phys. Rev. D49, 4028 (1994), eprint gr-qc/9302011.
+[225] A. Ashtekar, C. Rovelli, and L. Smolin, Phys. Rev. Lett. 69, 237 (1992), eprint hepth/9203079.
+[226] J. Zegwaard, Phys. Lett. B300, 217 (1993), eprint hep-th/9210033.
+[227] J. Iwasaki and C. Rovelli, Class. Quant. Grav. 11, 1653 (1994).
+[228] L. Bombelli, preprint gr-qc/0101080.
+[229] H. Sahlmann, T. Thiemann, and O. Winkler, preprint gr-qc/0102038.
+[230] U. Danielsson, Rep. Prog. Phys. 64, 51 (2001).
+[231] A. M. Polyakov, Phys. Lett. 103B, 207 (1981).
+[232] T. Damour and A. M. Polyakov, Nucl. Phys. 423, 532 (1994), eprint hep-th/9401069.
+[233] D. B. Kaplan and M. B.Ẇise, JHEP 0008, 037 (2000), eprint hep-ph/0008116.
+[234] P. Candelas, G. T. Horowitz, A. Strominger, and E. Witten, Nucl. Phys. B258, 46
+(1985).
+[235] N. Arkani-Hamed and S. Dimopoulos, Phys. Lett. B429, 263 (1998), eprint hepph/9803315.
+[236] L. Randall and R. Sundrum, Phys. Rev. Lett. 83, 3370 (1999), eprint hep-ph/9905221;
+Phys. Rev. Lett. 83, 4690 (1999), eprint hep-th/9906064.
+[237] D. J. Gross and V. Periwal, Phys. Rev. Lett. 60, 2105 (1988).
+[238] V. P. Nair, A. Shapere, A. Strominger, and F. Wilczek, Nucl. Phys. B287, 402 (1987).
+[239] J. Polchinski, Phys. Rev. Lett. 75, 4724 (1995), eprint hep-th/9510017.
+[240] C. V. Johnson, preprint hep-th/0007170.
+[241] A. Sen, preprint hep-th/9802051.
+[242] J. Polchinski, Rev. Mod. Phys. 68, 1245 (1996), eprint hep-th/9607050.
+[243] T. Banks, W. Fischler, S. H. Shenker, and L. Susskind, Phys. Rev. D55, 5112 (1997),
+eprint hep-th/9610043.
+[244] W. Taylor, preprint hep-th/0101126.
+65
+
+[245] J. Maldacena, Adv. Theor. Math. Phys. 2, 231 (1998) and Int. J. Theor. Phys. 38,
+1113 (1999), eprint hep-th/9711200.
+[246] S. S. Gubser, I. R. Klebanov, and A. M. Polyakov, Phys. Lett. B428, 105 (1998),
+eprint hep-th/9802109.
+[247] E. Witten, Adv. Theor. Math. Phys. 2, 253 (1998), eprint hep-th/9802150.
+[248] O. Aharony, S. S. Gubser, J. Maldacena, H. Ooguri, and Y. Oz, Phys. Reports 323,
+183 (2000), eprint hep-th/9905111.
+[249] L. Susskind and E. Witten, preprint hep-th/9805114.
+[250] V. Balasubramanian, P. Kraus, A. Lawrence, and S. P. Trivedi, Phys. Rev. D59,
+104021 (1999), eprint hep-th/9808017.
+[251] L. Susskind and N. Toumbas, Phys. Rev. D61, 044001 (2000), eprint hep-th/9909013.
+[252] L. Susskind, preprint hep-th/9901079.
+[253] D. Amati, M. Ciafolini, and G. Veneziano, Phys. Lett. B216, 41 (1989).
+[254] M. R. Douglas, D. Kabat, P. Poulet, and S. H. Shenker, Nucl. Phys. B485, 85 (1997),
+eprint hep-th/9608024.
+[255] G. ’t Hooft, preprint gr-qc/9310026.
+[256] L. Susskind, J. Math. Phys. 36, 6377 (1995), eprint hep-th/9409089.
+[257] D. Bigatti and L. Susskind, preprint hep-th/0002044.
+[258] N. Seiberg and E. Witten, JHEP 9909, 032 (1999), eprint hep-th/9908142.
+[259] R. C. Myers, JHEP 9912, 022 (1999), eprint hep-th/9910053.
+[260] G. Horowitz and R. Myers, Gen. Rel. Grav. 27, 915 (1995), eprint gr-qc/9503062.
+[261] C. V. Johnson, A. W. Peet, and J. Polchinski, Phys. Rev. D61, 086001 (2000), eprint
+hep-th/9911161.
+[262] G. Horowitz, preprint gr-qc/0011089.
+[263] P. Aspinwall, B. Greene, and D. Morrison, Nucl. Phys. B416, 414 (1994), eprint hepth/9309097.
+[264] B. Greene, D. Morrison, and A. Strominger, Nucl. Phys. B451, 109 (1995), eprint
+hep-th/9504145.
+[265] R. Dijkgraaf, J. Maldacena, G. Moore, and E. Verlinde, preprint hep-th/0005003.
+66
+
+[266] L. Smolin, in Constrained dynamics and quantum gravity 1999 , Nucl. Phys. Proc.
+Suppl. 88, edited by V. de Alfaro et al. (North-Holland, Amsterdam, 2000); Phys.
+Rev. D62, 086001 (2000), eprint hep-th/9903166.
+[267] T. Regge, Nuovo Cimento 19, 558 (1961).
+[268] J. Ambjørn, M. Carfora, and A. Marzuoli, The geometry of dynamical triangulations
+(Springer, Berlin, 1997).
+[269] R. Loll, Nucl. Phys. B460, 143 (1996), eprint gr-qc/9511030; Class. Quant. Grav. 14,
+1725 (1997), eprint gr-qc/9612068.
+[270] R. Loll, Living Rev. Rel. 1–13 (1998), eprint gr-qc/9805049.
+[271] J. Ambjorn, J. Jurkiewicz, and R. Loll, preprint hep-th/0002050.
+[272] J. Ambjorn, J. Jurkiewicz, and R. Loll, Phys. Rev. Lett. 85, 924 (2000), eprint hepth/0002050; preprint hep-th/0011276.
+[273] C. W. Misner, Phys. Rev. 186, 1319 (1969).
+[274] M. Ryan, Hamiltonian cosmology (Springer, Berlin, 1972).
+[275] D. L. Wiltshire, in Cosmology: the physics of the Universe, edited by B. Robson,
+N. Visvanathan, and W. S. Woolcock (World Scientific, Singapore, 1996), eprint grqc/0101003 .
+[276] K. Kuchař, Phys. Rev. D4, 955 (1971).
+[277] A. Ashtekar, R. Tate, and C. Uggla, Int. J. Mod. Phys. D2, 15 (1993), eprint grqc/9302027.
+[278] A. Ashtekar and M. Pierri, J. Math. Phys. 37, 6250 (1996), eprint gr-qc/9606085.
+[279] M. E. Angulo and G. A. Mena Marugan, Int. J. Mod. Phys. D9, 669 (2000), eprint
+gr-qc/0002056.
+[280] K. V. Kuchar and M. P. Ryan, Phys. Rev. D40, 3982 (1989).
+[281] N. Seiberg, Prog. Theor. Phys. Suppl. 102, 319 (1990).
+[282] C. G. Callan, Jr., S. B. Giddings, J. A. Harvey, and A. Strominger, Phys. Rev. D45,
+1005 (1992), eprint hep-th/9111056.
+[283] D. Cangemi, R. Jackiw, and B. Zwiebach, Ann. Phys. (N.Y.) 245, 408 (1996), eprint
+hep-th/9505161.
+[284] E. Benedict, R. Jackiw, and H. J. Lee, Phys. Rev. D54, 6213 (1996), eprint hepth/9607062 .
+67
+
+[285] D. Louis-Martinez, Phys. Rev. D55, 791 (1997), eprint hep-th/9610088.
+[286] K. V. Kuchař, J. D. Romano, and M. Varadarajan, Phys. Rev. D55, 795 (1997), eprint
+gr-qc/9608011.
+[287] H. Verlinde and E. Verlinde, Nucl. Phys. B371, 246 (1992), eprint hep-th/9110017.
+[288] D. Kabat and M. Ortiz, Nucl. Phys. B388, 570 (1992), eprint hep-th/9203082.
+[289] G. ’t Hooft, Nucl. Phys. B335, 138 (1990).
+[290] D. P. Rideout and R. D. Sorkin, Phys. Rev. D63, 104011 (2001), eprint gr-qc/0003117.
+[291] R. Penrose, Class. Quant. Grav. 16, A113 (1999).
+[292] C. N. Kozameh, in Gravitation and relativity: at the turn of the millennium, edited
+by N. Dadhich and J. Narlikar (IUCAA, Pune, 1998).
+[293] H. S. Snyder, Phys. Rev. 71, 38 (1947); Phys. Rev. 72, 68 (1947).
+[294] A. Connes, Noncommutative geometry (Academic Press, New York, 1994).
+[295] J. Madore, An introduction to noncommutative differential geometry and its physical
+applications (Cambridge University Press, Cambridge, 1999).
+[296] R. Geroch, Commun. Math. Phys. 26, 271 (1972).
+[297] J. E. Moyal, Proc. Camb. Phil. Soc. 45, 99 (1949).
+[298] M. R. Douglas and N. A. Nekrasov, preprint hep-th/0106048.
+[299] S. Minwalla, M. Van Raamsdonk, and N. Seiberg, JHEP 0005, 020 (2000), eprint
+hep-th/9912072.
+[300] S. Vaidya, preprint hep-th/0102212.
+[301] J. Gomis and T. Mehen, Nucl. Phys. B591, 265 (2000), eprint hep-th/0005129.
+[302] A. H. Chamseddine, Commun. Math. Phys. 218, 283 (2001), eprint hep-th/0005222;
+Phys. Lett. B504, 33 (2001), eprint hep-th/0009153.
+[303] J. W. Moffat, Phys. Lett. B491, 345 (2000), eprint hep-th/0007181; Phys. Lett. B493,
+142 (2000), eprint hep-th/0008089; preprint hep-th/0011259.
+[304] A. H. Chamseddine and A. Connes, Commun. Math. Phys. 186, 731 (1997), eprint
+hep-th/9606001.
+[305] G. Landi and C. Rovelli, Phys. Rev. Lett. 78, 3051 (1997), eprint gr-qc/9612034; Mod.
+Phys. Lett. A13, 479 (1998), eprint gr-qc/9708041.
+68
+
+[306] C. J. Isham, in Physics, geometry, and topology, edited by H. C. Lee (Plenum Press,
+New York, 1990).
+[307] K. Fredenhagen and R. Haag, Commun. Math. Phys. 108, 91 (1987).
+[308] G. ’t Hooft, Class. Quant. Grav. 16, 3263 (1999), eprint gr-qc/9903084.
+[309] S. Weinberg, Rev. Mod. Phys. 61, 1 (1989).
+[310] S. M. Carroll, Living Rev. Rel. 4–1 (2000), eprint astro-ph/0004075.
+[311] N. J. Cornish, D. N. Spergel, and G. D. Starkman, Class. Quant. Grav. 15, 2657
+(1998), eprint astro-ph/9801212.
+[312] A. R. Liddle and D. H. Lyth, Cosmological inflation and large-scale structure (Cambridge University Press, Cambridge, 2000).
+[313] J. Lesgourgues, D. Polarski, and A. A. Starobinsky, Nucl. Phys. B497, 479 (1997),
+eprint gr-qc/9611019.
+[314] R. H. Brandenberger and J. Martin, preprint astro-ph/0005432.
+[315] J. C. Niemeyer and R. Parentani, preprint astro-ph/0101451.
+[316] L. Mersini, M. Bastero-Gil, and P. Kanti, preprint hep-ph/0101210.
+[317] T. Tanaka, preprint astro-ph/0012431.
+[318] A. A. Starobinsky, Pisma Zh. Eksp. Teor. Fiz. 73, 415 (2001), eprint astro-ph/0104043.
+[319] R. Easther, B. R. Greene, W. H. Kinney, and G. Shiu, preprint hep-th/0104102.
+[320] A. Vilenkin, Phys. Rev. D33, 3560 (1986).
+[321] S. W. Hawking, Nature 248, 30 (1974).
+[322] D. Garfinkle, S. B. Giddings, and A. Strominger, Phys. Rev. D49, 958 (1994), eprint
+gr-qc/9306023.
+[323] F. Dowker, J. P. Gauntlett, D. A. Kastor, and J. Traschen, Phys. Rev. D49, 2909
+(1994), eprint hep-th/9309075.
+[324] J. D. Bekenstein, Phys. Rev. D7, 2333 (1973).
+[325] A. W. Peet, preprint hep-th/0008241.
+[326] A. Ashtekar, J. Baez, A. Corichi, and K. Krasnov, Phys. Rev. Lett. 80, 904 (1998),
+eprint gr-qc/9710007.
+[327] A. Ashtekar, J. Baez, and K. Krasnov, preprint gr-qc/0005126.
+69
+
+[328] S. Carlip, Phys. Rev. Lett. 82, 2828 (1999), eprint hep-th/9812013; Class. Quant.
+Grav. 16, 3327 (1999), eprint gr-qc/9906126 .
+[329] S. Carlip, Class. Quant. Grav. 17, 4175 (2000), eprint gr-qc/0005017.
+[330] G. Amelino-Camelia, preprint gr-qc/9910089.
+[331] G. Z. Adunas, E. Rodriguez-Milla, and D. V. Ahluwalia, Phys. Lett. B485, 215 (2000),
+eprint gr-qc/0006021.
+[332] J. Ellis, J. S. Hagelin, D. V. Nanopoulos, and M. Srednicki, Nucl. Phys. B241 (1984)
+381.
+[333] V. A. Kostelecky and R. Potting, Phys. Lett. B381, 89 (1996), eprint hep-th/9605088.
+[334] CPLEAR Collaboration et al., Phys. Lett. B364, 239 (1995), eprint hep-ex/9511001.
+[335] R. Kallosh, A. Linde, D. Linde, and L. Susskind, Phys. Rev. D52, 912 (1995), eprint
+hep-th/9502069.
+[336] G. Amelino-Camelia, J. Ellis, N. E. Mavromatos, D. V. Nanopoulos, and S. Sarkar,
+Nature 393, 763 (1998), eprint astro-ph/9712103.
+[337] R. Gambini and J. Pullin, Phys. Rev. D59, 124021 (1999), eprint gr-qc/9809038.
+[338] J. Alfaro, H. A. Morales-Técotl, and L. F. Urrutia, Phys. Rev. Lett. 84, 2318 (2000),
+eprint gr-qc/9909079.
+[339] S. D. Biller et al., Phys. Rev. Lett. 83, 2108 (1999).
+[340] R. J. Gleiser and C. N. Kozameh, preprint gr-qc/0102093.
+[341] G. Amelino-Camelia, Nature 398, 216 (1999), eprint gr-qc/9808029; Phys. Rev. D62,
+024015 (2000), eprint gr-qc/9903080.
+[342] Y. Jack Ng and H. van Dam, Found. Phys. 30, 795 (2000), eprint gr-qc/9906003.
+[343] L. J. Hall and U. Sarid, Phys. Rev. Lett. 70, 2673 (1993), eprint hep-ph/9210240.
+[344] P. Chen and T. Tajima, Phys. Rev. Lett. 83, 256 (1999).
+[345] W. G. Unruh, Phys. Rev. Lett. 46, 1351 (1981).
+[346] M. Visser, preprint gr-qc/9901047.
+[347] L. J. Garay, J. R. Anglin, J. I. Cirac, and P. Zolle, Phys. Rev. Lett. 85, 4643 (2000),
+eprint gr-qc/0002015.
+[348] G. E. Volovik, Proc. Nat. Acad. Sci. 96, 6042 (1999), eprint cond-mat/9812381.
+70
+
+[349] U. Leonhardt and P. Piwnicki, Phys. Rev. Lett. 84, 822 (2000).
+[350] M. Visser, preprint hep-th/9910093.
+[351] G. F. Giudice, R. Rattazzi, and J. D. Wells, Nucl. Phys. B544, 3 (1999), eprint hepph/9811291.
+[352] T. Shiromizu, K. Maeda, and M. Sasaki, Phys. Rev. D62, 024012 (2000), eprint grqc/9910076.
+[353] S. B. Giddings, in Particles, strings and cosmology 1995 , edited by J. Bagger (World
+Scientific, Singapore, 1996), eprint hep-th/9508151.
+
+71
+
+

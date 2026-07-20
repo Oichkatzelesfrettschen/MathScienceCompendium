@@ -1,0 +1,2234 @@
+{
+  "document_id": "alpha001-06-draft-aether-framework",
+  "references": [
+    {
+      "context": "https://ncatlab.org/nlab/files/Abstract-Homotopy.pdf",
+      "kind": "url",
+      "source_line": 1557,
+      "value": "https://ncatlab.org/nlab/files/Abstract-Homotopy.pdf"
+    },
+    {
+      "context": "https://citeseer.ist.psu.",
+      "kind": "url",
+      "source_line": 2047,
+      "value": "https://citeseer.ist.psu"
+    },
+    {
+      "context": "http://math.ucr.edu/home/baez/",
+      "kind": "url",
+      "source_line": 3378,
+      "value": "http://math.ucr.edu/home/baez/"
+    },
+    {
+      "context": "http://math.ucr.edu/home/baez/yetter.ps",
+      "kind": "url",
+      "source_line": 3381,
+      "value": "http://math.ucr.edu/home/baez/yetter.ps"
+    },
+    {
+      "context": "http://math.ucr.edu/home/baez/",
+      "kind": "url",
+      "source_line": 4292,
+      "value": "http://math.ucr.edu/home/baez/"
+    },
+    {
+      "context": "http://math.ucr.",
+      "kind": "url",
+      "source_line": 6376,
+      "value": "http://math.ucr"
+    },
+    {
+      "context": "https://ir.cwi.nl/pub/10039/",
+      "kind": "url",
+      "source_line": 6447,
+      "value": "https://ir.cwi.nl/pub/10039/"
+    },
+    {
+      "context": "https://projecteuclid.org/ebooks/books-by-",
+      "kind": "url",
+      "source_line": 7144,
+      "value": "https://projecteuclid.org/ebooks/books-by-"
+    },
+    {
+      "context": "http://www.tac.mta.ca/tac/reprints/articles/12/",
+      "kind": "url",
+      "source_line": 7187,
+      "value": "http://www.tac.mta.ca/tac/reprints/articles/12/"
+    },
+    {
+      "context": "https://www.hpl.hp.com/techreports/96/HPL-BRIMS-96-02.pdf",
+      "kind": "url",
+      "source_line": 7575,
+      "value": "https://www.hpl.hp.com/techreports/96/HPL-BRIMS-96-02.pdf"
+    },
+    {
+      "context": "http://www.paultaylor.eu/stable/Proofs+Types.",
+      "kind": "url",
+      "source_line": 7641,
+      "value": "http://www.paultaylor.eu/stable/Proofs+Types"
+    },
+    {
+      "context": "/dl.acm.org/doi/abs/10.1145/215465.215577",
+      "kind": "arxiv",
+      "source_line": 7739,
+      "value": "5465.21557"
+    },
+    {
+      "context": "http://www.lix.polytechnique.fr/",
+      "kind": "url",
+      "source_line": 7748,
+      "value": "http://www.lix.polytechnique.fr/"
+    },
+    {
+      "context": "http://boole.stanford.edu/pub/tppp.pdf",
+      "kind": "url",
+      "source_line": 7759,
+      "value": "http://boole.stanford.edu/pub/tppp.pdf"
+    },
+    {
+      "context": "https://link.",
+      "kind": "url",
+      "source_line": 7892,
+      "value": "https://link"
+    },
+    {
+      "context": "https://link.springer.com/content/pdf/",
+      "kind": "url",
+      "source_line": 7908,
+      "value": "https://link.springer.com/content/pdf/"
+    },
+    {
+      "context": "http://iml.univ-mrs.fr/",
+      "kind": "url",
+      "source_line": 8053,
+      "value": "http://iml.univ-mrs.fr/"
+    },
+    {
+      "context": "http://iml.univ-mrs.fr/",
+      "kind": "url",
+      "source_line": 8062,
+      "value": "http://iml.univ-mrs.fr/"
+    },
+    {
+      "context": "http://math.ucr.edu/home/baez/ncat.def.html",
+      "kind": "url",
+      "source_line": 8115,
+      "value": "http://math.ucr.edu/home/baez/ncat.def.html"
+    },
+    {
+      "context": "http://www.numdam.org/item/AST_1994_",
+      "kind": "url",
+      "source_line": 8356,
+      "value": "http://www.numdam.org/item/AST_1994_"
+    },
+    {
+      "context": "http://www.ams.org/notices/199607/weinstein.pdf",
+      "kind": "url",
+      "source_line": 9729,
+      "value": "http://www.ams.org/notices/199607/weinstein.pdf"
+    },
+    {
+      "context": "https://en.wikipedia.org/wiki/Quark-gluon",
+      "kind": "url",
+      "source_line": 10702,
+      "value": "https://en.wikipedia.org/wiki/Quark-gluon"
+    },
+    {
+      "context": "http://www.bnl.gov/RHIC/",
+      "kind": "url",
+      "source_line": 10706,
+      "value": "http://www.bnl.gov/RHIC/"
+    },
+    {
+      "context": "http://www.ams.org/notices/199509/199509-toc.html",
+      "kind": "url",
+      "source_line": 12032,
+      "value": "http://www.ams.org/notices/199509/199509-toc.html"
+    },
+    {
+      "context": "http://math.ucr.edu/home/baez/six.html",
+      "kind": "url",
+      "source_line": 12070,
+      "value": "http://math.ucr.edu/home/baez/six.html"
+    },
+    {
+      "context": "https://web.archive.org/web/19970506010314/",
+      "kind": "url",
+      "source_line": 13003,
+      "value": "https://web.archive.org/web/19970506010314/"
+    },
+    {
+      "context": "http://stugyro.stanford.edu/RELATIVITY/GPB/GPB.html",
+      "kind": "url",
+      "source_line": 13004,
+      "value": "http://stugyro.stanford.edu/RELATIVITY/GPB/GPB.html"
+    },
+    {
+      "context": "http://einstein.stanford.",
+      "kind": "url",
+      "source_line": 13009,
+      "value": "http://einstein.stanford"
+    },
+    {
+      "context": "http://www.ligo.caltech.edu/",
+      "kind": "url",
+      "source_line": 13028,
+      "value": "http://www.ligo.caltech.edu/"
+    },
+    {
+      "context": "http://www.altavista.digital.com/",
+      "kind": "url",
+      "source_line": 15432,
+      "value": "http://www.altavista.digital.com/"
+    },
+    {
+      "context": "http://www.cyc.com/",
+      "kind": "url",
+      "source_line": 15445,
+      "value": "http://www.cyc.com/"
+    },
+    {
+      "context": "http://boole.stanford.edu/pub/cyc.report",
+      "kind": "url",
+      "source_line": 15462,
+      "value": "http://boole.stanford.edu/pub/cyc.report"
+    },
+    {
+      "context": "http://xanadu.net/the.project",
+      "kind": "url",
+      "source_line": 15470,
+      "value": "http://xanadu.net/the.project"
+    },
+    {
+      "context": "http://www.foresight.org/backlinks1.3.1.",
+      "kind": "url",
+      "source_line": 15486,
+      "value": "http://www.foresight.org/backlinks1.3.1"
+    },
+    {
+      "context": "http://www.foresight.org/backlinks.",
+      "kind": "url",
+      "source_line": 15497,
+      "value": "http://www.foresight.org/backlinks"
+    },
+    {
+      "context": "http://www.hss.caltech.edu/~hanson/",
+      "kind": "url",
+      "source_line": 15500,
+      "value": "http://www.hss.caltech.edu/~hanson/"
+    },
+    {
+      "context": "http://math.ucr.edu/home/baez/hamiltonian/",
+      "kind": "url",
+      "source_line": 16894,
+      "value": "http://math.ucr.edu/home/baez/hamiltonian/"
+    },
+    {
+      "context": "http://www.phys.lsu.edu//mog/mog8/node7.html",
+      "kind": "url",
+      "source_line": 16900,
+      "value": "http://www.phys.lsu.edu//mog/mog8/node7.html"
+    },
+    {
+      "context": "http://valdostamuseum.org/hamsmith/",
+      "kind": "url",
+      "source_line": 18340,
+      "value": "http://valdostamuseum.org/hamsmith/"
+    },
+    {
+      "context": "https://projecteuclid.org/",
+      "kind": "url",
+      "source_line": 18495,
+      "value": "https://projecteuclid.org/"
+    },
+    {
+      "context": "https://web.archive.org/web/",
+      "kind": "url",
+      "source_line": 18502,
+      "value": "https://web.archive.org/web/"
+    },
+    {
+      "context": "20110808093537/http://valdostamuseum.org/hamsmith/FTsquare.html",
+      "kind": "url",
+      "source_line": 18503,
+      "value": "http://valdostamuseum.org/hamsmith/FTsquare.html"
+    },
+    {
+      "context": "http://www.ams.org/",
+      "kind": "url",
+      "source_line": 19118,
+      "value": "http://www.ams.org/"
+    },
+    {
+      "context": "https://www.physics.upenn.edu/",
+      "kind": "url",
+      "source_line": 19291,
+      "value": "https://www.physics.upenn.edu/"
+    },
+    {
+      "context": "http://math.ucr.edu/home/",
+      "kind": "url",
+      "source_line": 19368,
+      "value": "http://math.ucr.edu/home/"
+    },
+    {
+      "context": "http://math.ucr.edu/home/baez/",
+      "kind": "url",
+      "source_line": 19664,
+      "value": "http://math.ucr.edu/home/baez/"
+    },
+    {
+      "context": "https://math.berkeley.edu/",
+      "kind": "url",
+      "source_line": 20258,
+      "value": "https://math.berkeley.edu/"
+    },
+    {
+      "context": "https://math.berkeley.edu/",
+      "kind": "url",
+      "source_line": 20263,
+      "value": "https://math.berkeley.edu/"
+    },
+    {
+      "context": "http://atomcool.rice.edu/",
+      "kind": "url",
+      "source_line": 20439,
+      "value": "http://atomcool.rice.edu/"
+    },
+    {
+      "context": "https://web.archive.org/web/",
+      "kind": "url",
+      "source_line": 20441,
+      "value": "https://web.archive.org/web/"
+    },
+    {
+      "context": "19990203201237/http://amo.mit.edu/%7Ebec/news/news.html",
+      "kind": "url",
+      "source_line": 20442,
+      "value": "http://amo.mit.edu/%7Ebec/news/news.html"
+    },
+    {
+      "context": "http://www.phys.lsu.edu//mog/mog9/",
+      "kind": "url",
+      "source_line": 21079,
+      "value": "http://www.phys.lsu.edu//mog/mog9/"
+    },
+    {
+      "context": "https://math.ucr.edu/home/baez/penrose/",
+      "kind": "url",
+      "source_line": 21411,
+      "value": "https://math.ucr.edu/home/baez/penrose/"
+    },
+    {
+      "context": "https://ncatlab.org/nlab/files/Abstract-Homotopy.pdf",
+      "kind": "url",
+      "source_line": 25364,
+      "value": "https://ncatlab.org/nlab/files/Abstract-Homotopy.pdf"
+    },
+    {
+      "context": "https://citeseer.ist.psu.",
+      "kind": "url",
+      "source_line": 25854,
+      "value": "https://citeseer.ist.psu"
+    },
+    {
+      "context": "http://math.ucr.edu/home/baez/",
+      "kind": "url",
+      "source_line": 27185,
+      "value": "http://math.ucr.edu/home/baez/"
+    },
+    {
+      "context": "http://math.ucr.edu/home/baez/yetter.ps",
+      "kind": "url",
+      "source_line": 27188,
+      "value": "http://math.ucr.edu/home/baez/yetter.ps"
+    },
+    {
+      "context": "http://math.ucr.edu/home/baez/",
+      "kind": "url",
+      "source_line": 28099,
+      "value": "http://math.ucr.edu/home/baez/"
+    },
+    {
+      "context": "http://math.ucr.",
+      "kind": "url",
+      "source_line": 30183,
+      "value": "http://math.ucr"
+    },
+    {
+      "context": "https://ir.cwi.nl/pub/10039/",
+      "kind": "url",
+      "source_line": 30254,
+      "value": "https://ir.cwi.nl/pub/10039/"
+    },
+    {
+      "context": "https://projecteuclid.org/ebooks/books-by-",
+      "kind": "url",
+      "source_line": 30951,
+      "value": "https://projecteuclid.org/ebooks/books-by-"
+    },
+    {
+      "context": "http://www.tac.mta.ca/tac/reprints/articles/12/",
+      "kind": "url",
+      "source_line": 30994,
+      "value": "http://www.tac.mta.ca/tac/reprints/articles/12/"
+    },
+    {
+      "context": "https://www.hpl.hp.com/techreports/96/HPL-BRIMS-96-02.pdf",
+      "kind": "url",
+      "source_line": 31382,
+      "value": "https://www.hpl.hp.com/techreports/96/HPL-BRIMS-96-02.pdf"
+    },
+    {
+      "context": "http://www.paultaylor.eu/stable/Proofs+Types.",
+      "kind": "url",
+      "source_line": 31448,
+      "value": "http://www.paultaylor.eu/stable/Proofs+Types"
+    },
+    {
+      "context": "/dl.acm.org/doi/abs/10.1145/215465.215577",
+      "kind": "arxiv",
+      "source_line": 31546,
+      "value": "5465.21557"
+    },
+    {
+      "context": "http://www.lix.polytechnique.fr/",
+      "kind": "url",
+      "source_line": 31555,
+      "value": "http://www.lix.polytechnique.fr/"
+    },
+    {
+      "context": "http://boole.stanford.edu/pub/tppp.pdf",
+      "kind": "url",
+      "source_line": 31566,
+      "value": "http://boole.stanford.edu/pub/tppp.pdf"
+    },
+    {
+      "context": "https://link.",
+      "kind": "url",
+      "source_line": 31699,
+      "value": "https://link"
+    },
+    {
+      "context": "https://link.springer.com/content/pdf/",
+      "kind": "url",
+      "source_line": 31715,
+      "value": "https://link.springer.com/content/pdf/"
+    },
+    {
+      "context": "http://iml.univ-mrs.fr/",
+      "kind": "url",
+      "source_line": 31860,
+      "value": "http://iml.univ-mrs.fr/"
+    },
+    {
+      "context": "http://iml.univ-mrs.fr/",
+      "kind": "url",
+      "source_line": 31869,
+      "value": "http://iml.univ-mrs.fr/"
+    },
+    {
+      "context": "http://math.ucr.edu/home/baez/ncat.def.html",
+      "kind": "url",
+      "source_line": 31922,
+      "value": "http://math.ucr.edu/home/baez/ncat.def.html"
+    },
+    {
+      "context": "http://www.numdam.org/item/AST_1994_",
+      "kind": "url",
+      "source_line": 32163,
+      "value": "http://www.numdam.org/item/AST_1994_"
+    },
+    {
+      "context": "http://www.ams.org/notices/199607/weinstein.pdf",
+      "kind": "url",
+      "source_line": 33536,
+      "value": "http://www.ams.org/notices/199607/weinstein.pdf"
+    },
+    {
+      "context": "https://en.wikipedia.org/wiki/Quark-gluon",
+      "kind": "url",
+      "source_line": 34509,
+      "value": "https://en.wikipedia.org/wiki/Quark-gluon"
+    },
+    {
+      "context": "http://www.bnl.gov/RHIC/",
+      "kind": "url",
+      "source_line": 34513,
+      "value": "http://www.bnl.gov/RHIC/"
+    },
+    {
+      "context": "http://www.ams.org/notices/199509/199509-toc.html",
+      "kind": "url",
+      "source_line": 35839,
+      "value": "http://www.ams.org/notices/199509/199509-toc.html"
+    },
+    {
+      "context": "http://math.ucr.edu/home/baez/six.html",
+      "kind": "url",
+      "source_line": 35877,
+      "value": "http://math.ucr.edu/home/baez/six.html"
+    },
+    {
+      "context": "https://web.archive.org/web/19970506010314/",
+      "kind": "url",
+      "source_line": 36810,
+      "value": "https://web.archive.org/web/19970506010314/"
+    },
+    {
+      "context": "http://stugyro.stanford.edu/RELATIVITY/GPB/GPB.html",
+      "kind": "url",
+      "source_line": 36811,
+      "value": "http://stugyro.stanford.edu/RELATIVITY/GPB/GPB.html"
+    },
+    {
+      "context": "http://einstein.stanford.",
+      "kind": "url",
+      "source_line": 36816,
+      "value": "http://einstein.stanford"
+    },
+    {
+      "context": "http://www.ligo.caltech.edu/",
+      "kind": "url",
+      "source_line": 36835,
+      "value": "http://www.ligo.caltech.edu/"
+    },
+    {
+      "context": "http://www.altavista.digital.com/",
+      "kind": "url",
+      "source_line": 39239,
+      "value": "http://www.altavista.digital.com/"
+    },
+    {
+      "context": "http://www.cyc.com/",
+      "kind": "url",
+      "source_line": 39252,
+      "value": "http://www.cyc.com/"
+    },
+    {
+      "context": "http://boole.stanford.edu/pub/cyc.report",
+      "kind": "url",
+      "source_line": 39269,
+      "value": "http://boole.stanford.edu/pub/cyc.report"
+    },
+    {
+      "context": "http://xanadu.net/the.project",
+      "kind": "url",
+      "source_line": 39277,
+      "value": "http://xanadu.net/the.project"
+    },
+    {
+      "context": "http://www.foresight.org/backlinks1.3.1.",
+      "kind": "url",
+      "source_line": 39293,
+      "value": "http://www.foresight.org/backlinks1.3.1"
+    },
+    {
+      "context": "http://www.foresight.org/backlinks.",
+      "kind": "url",
+      "source_line": 39304,
+      "value": "http://www.foresight.org/backlinks"
+    },
+    {
+      "context": "http://www.hss.caltech.edu/~hanson/",
+      "kind": "url",
+      "source_line": 39307,
+      "value": "http://www.hss.caltech.edu/~hanson/"
+    },
+    {
+      "context": "http://math.ucr.edu/home/baez/hamiltonian/",
+      "kind": "url",
+      "source_line": 40701,
+      "value": "http://math.ucr.edu/home/baez/hamiltonian/"
+    },
+    {
+      "context": "http://www.phys.lsu.edu//mog/mog8/node7.html",
+      "kind": "url",
+      "source_line": 40707,
+      "value": "http://www.phys.lsu.edu//mog/mog8/node7.html"
+    },
+    {
+      "context": "http://valdostamuseum.org/hamsmith/",
+      "kind": "url",
+      "source_line": 42147,
+      "value": "http://valdostamuseum.org/hamsmith/"
+    },
+    {
+      "context": "https://projecteuclid.org/",
+      "kind": "url",
+      "source_line": 42302,
+      "value": "https://projecteuclid.org/"
+    },
+    {
+      "context": "https://web.archive.org/web/",
+      "kind": "url",
+      "source_line": 42309,
+      "value": "https://web.archive.org/web/"
+    },
+    {
+      "context": "20110808093537/http://valdostamuseum.org/hamsmith/FTsquare.html",
+      "kind": "url",
+      "source_line": 42310,
+      "value": "http://valdostamuseum.org/hamsmith/FTsquare.html"
+    },
+    {
+      "context": "http://www.ams.org/",
+      "kind": "url",
+      "source_line": 42925,
+      "value": "http://www.ams.org/"
+    },
+    {
+      "context": "https://www.physics.upenn.edu/",
+      "kind": "url",
+      "source_line": 43098,
+      "value": "https://www.physics.upenn.edu/"
+    },
+    {
+      "context": "http://math.ucr.edu/home/",
+      "kind": "url",
+      "source_line": 43175,
+      "value": "http://math.ucr.edu/home/"
+    },
+    {
+      "context": "http://math.ucr.edu/home/baez/",
+      "kind": "url",
+      "source_line": 43471,
+      "value": "http://math.ucr.edu/home/baez/"
+    },
+    {
+      "context": "https://math.berkeley.edu/",
+      "kind": "url",
+      "source_line": 44065,
+      "value": "https://math.berkeley.edu/"
+    },
+    {
+      "context": "https://math.berkeley.edu/",
+      "kind": "url",
+      "source_line": 44070,
+      "value": "https://math.berkeley.edu/"
+    },
+    {
+      "context": "http://atomcool.rice.edu/",
+      "kind": "url",
+      "source_line": 44246,
+      "value": "http://atomcool.rice.edu/"
+    },
+    {
+      "context": "https://web.archive.org/web/",
+      "kind": "url",
+      "source_line": 44248,
+      "value": "https://web.archive.org/web/"
+    },
+    {
+      "context": "19990203201237/http://amo.mit.edu/%7Ebec/news/news.html",
+      "kind": "url",
+      "source_line": 44249,
+      "value": "http://amo.mit.edu/%7Ebec/news/news.html"
+    },
+    {
+      "context": "http://www.phys.lsu.edu//mog/mog9/",
+      "kind": "url",
+      "source_line": 44886,
+      "value": "http://www.phys.lsu.edu//mog/mog9/"
+    },
+    {
+      "context": "https://math.ucr.edu/home/baez/penrose/",
+      "kind": "url",
+      "source_line": 45218,
+      "value": "https://math.ucr.edu/home/baez/penrose/"
+    },
+    {
+      "context": "https://ncatlab.org/nlab/files/Abstract-Homotopy.pdf",
+      "kind": "url",
+      "source_line": 47550,
+      "value": "https://ncatlab.org/nlab/files/Abstract-Homotopy.pdf"
+    },
+    {
+      "context": "https://citeseer.ist.psu.",
+      "kind": "url",
+      "source_line": 48040,
+      "value": "https://citeseer.ist.psu"
+    },
+    {
+      "context": "http://math.ucr.edu/home/baez/",
+      "kind": "url",
+      "source_line": 49371,
+      "value": "http://math.ucr.edu/home/baez/"
+    },
+    {
+      "context": "http://math.ucr.edu/home/baez/yetter.ps",
+      "kind": "url",
+      "source_line": 49374,
+      "value": "http://math.ucr.edu/home/baez/yetter.ps"
+    },
+    {
+      "context": "http://math.ucr.edu/home/baez/",
+      "kind": "url",
+      "source_line": 50285,
+      "value": "http://math.ucr.edu/home/baez/"
+    },
+    {
+      "context": "http://math.ucr.",
+      "kind": "url",
+      "source_line": 52369,
+      "value": "http://math.ucr"
+    },
+    {
+      "context": "https://ir.cwi.nl/pub/10039/",
+      "kind": "url",
+      "source_line": 52440,
+      "value": "https://ir.cwi.nl/pub/10039/"
+    },
+    {
+      "context": "https://projecteuclid.org/ebooks/books-by-",
+      "kind": "url",
+      "source_line": 53137,
+      "value": "https://projecteuclid.org/ebooks/books-by-"
+    },
+    {
+      "context": "http://www.tac.mta.ca/tac/reprints/articles/12/",
+      "kind": "url",
+      "source_line": 53180,
+      "value": "http://www.tac.mta.ca/tac/reprints/articles/12/"
+    },
+    {
+      "context": "https://www.hpl.hp.com/techreports/96/HPL-BRIMS-96-02.pdf",
+      "kind": "url",
+      "source_line": 53568,
+      "value": "https://www.hpl.hp.com/techreports/96/HPL-BRIMS-96-02.pdf"
+    },
+    {
+      "context": "http://www.paultaylor.eu/stable/Proofs+Types.",
+      "kind": "url",
+      "source_line": 53634,
+      "value": "http://www.paultaylor.eu/stable/Proofs+Types"
+    },
+    {
+      "context": "/dl.acm.org/doi/abs/10.1145/215465.215577",
+      "kind": "arxiv",
+      "source_line": 53732,
+      "value": "5465.21557"
+    },
+    {
+      "context": "http://www.lix.polytechnique.fr/",
+      "kind": "url",
+      "source_line": 53741,
+      "value": "http://www.lix.polytechnique.fr/"
+    },
+    {
+      "context": "http://boole.stanford.edu/pub/tppp.pdf",
+      "kind": "url",
+      "source_line": 53752,
+      "value": "http://boole.stanford.edu/pub/tppp.pdf"
+    },
+    {
+      "context": "https://link.",
+      "kind": "url",
+      "source_line": 53885,
+      "value": "https://link"
+    },
+    {
+      "context": "https://link.springer.com/content/pdf/",
+      "kind": "url",
+      "source_line": 53901,
+      "value": "https://link.springer.com/content/pdf/"
+    },
+    {
+      "context": "http://iml.univ-mrs.fr/",
+      "kind": "url",
+      "source_line": 54046,
+      "value": "http://iml.univ-mrs.fr/"
+    },
+    {
+      "context": "http://iml.univ-mrs.fr/",
+      "kind": "url",
+      "source_line": 54055,
+      "value": "http://iml.univ-mrs.fr/"
+    },
+    {
+      "context": "http://math.ucr.edu/home/baez/ncat.def.html",
+      "kind": "url",
+      "source_line": 54108,
+      "value": "http://math.ucr.edu/home/baez/ncat.def.html"
+    },
+    {
+      "context": "http://www.numdam.org/item/AST_1994_",
+      "kind": "url",
+      "source_line": 54349,
+      "value": "http://www.numdam.org/item/AST_1994_"
+    },
+    {
+      "context": "http://www.ams.org/notices/199607/weinstein.pdf",
+      "kind": "url",
+      "source_line": 55722,
+      "value": "http://www.ams.org/notices/199607/weinstein.pdf"
+    },
+    {
+      "context": "https://en.wikipedia.org/wiki/Quark-gluon",
+      "kind": "url",
+      "source_line": 56695,
+      "value": "https://en.wikipedia.org/wiki/Quark-gluon"
+    },
+    {
+      "context": "http://www.bnl.gov/RHIC/",
+      "kind": "url",
+      "source_line": 56699,
+      "value": "http://www.bnl.gov/RHIC/"
+    },
+    {
+      "context": "http://www.ams.org/notices/199509/199509-toc.html",
+      "kind": "url",
+      "source_line": 58025,
+      "value": "http://www.ams.org/notices/199509/199509-toc.html"
+    },
+    {
+      "context": "http://math.ucr.edu/home/baez/six.html",
+      "kind": "url",
+      "source_line": 58063,
+      "value": "http://math.ucr.edu/home/baez/six.html"
+    },
+    {
+      "context": "https://web.archive.org/web/19970506010314/",
+      "kind": "url",
+      "source_line": 58996,
+      "value": "https://web.archive.org/web/19970506010314/"
+    },
+    {
+      "context": "http://stugyro.stanford.edu/RELATIVITY/GPB/GPB.html",
+      "kind": "url",
+      "source_line": 58997,
+      "value": "http://stugyro.stanford.edu/RELATIVITY/GPB/GPB.html"
+    },
+    {
+      "context": "http://einstein.stanford.",
+      "kind": "url",
+      "source_line": 59002,
+      "value": "http://einstein.stanford"
+    },
+    {
+      "context": "http://www.ligo.caltech.edu/",
+      "kind": "url",
+      "source_line": 59021,
+      "value": "http://www.ligo.caltech.edu/"
+    },
+    {
+      "context": "http://www.altavista.digital.com/",
+      "kind": "url",
+      "source_line": 61425,
+      "value": "http://www.altavista.digital.com/"
+    },
+    {
+      "context": "http://www.cyc.com/",
+      "kind": "url",
+      "source_line": 61438,
+      "value": "http://www.cyc.com/"
+    },
+    {
+      "context": "http://boole.stanford.edu/pub/cyc.report",
+      "kind": "url",
+      "source_line": 61455,
+      "value": "http://boole.stanford.edu/pub/cyc.report"
+    },
+    {
+      "context": "http://xanadu.net/the.project",
+      "kind": "url",
+      "source_line": 61463,
+      "value": "http://xanadu.net/the.project"
+    },
+    {
+      "context": "http://www.foresight.org/backlinks1.3.1.",
+      "kind": "url",
+      "source_line": 61479,
+      "value": "http://www.foresight.org/backlinks1.3.1"
+    },
+    {
+      "context": "http://www.foresight.org/backlinks.",
+      "kind": "url",
+      "source_line": 61490,
+      "value": "http://www.foresight.org/backlinks"
+    },
+    {
+      "context": "http://www.hss.caltech.edu/~hanson/",
+      "kind": "url",
+      "source_line": 61493,
+      "value": "http://www.hss.caltech.edu/~hanson/"
+    },
+    {
+      "context": "http://math.ucr.edu/home/baez/hamiltonian/",
+      "kind": "url",
+      "source_line": 62887,
+      "value": "http://math.ucr.edu/home/baez/hamiltonian/"
+    },
+    {
+      "context": "http://www.phys.lsu.edu//mog/mog8/node7.html",
+      "kind": "url",
+      "source_line": 62893,
+      "value": "http://www.phys.lsu.edu//mog/mog8/node7.html"
+    },
+    {
+      "context": "http://valdostamuseum.org/hamsmith/",
+      "kind": "url",
+      "source_line": 64333,
+      "value": "http://valdostamuseum.org/hamsmith/"
+    },
+    {
+      "context": "https://projecteuclid.org/",
+      "kind": "url",
+      "source_line": 64488,
+      "value": "https://projecteuclid.org/"
+    },
+    {
+      "context": "https://web.archive.org/web/",
+      "kind": "url",
+      "source_line": 64495,
+      "value": "https://web.archive.org/web/"
+    },
+    {
+      "context": "20110808093537/http://valdostamuseum.org/hamsmith/FTsquare.html",
+      "kind": "url",
+      "source_line": 64496,
+      "value": "http://valdostamuseum.org/hamsmith/FTsquare.html"
+    },
+    {
+      "context": "http://www.ams.org/",
+      "kind": "url",
+      "source_line": 65111,
+      "value": "http://www.ams.org/"
+    },
+    {
+      "context": "https://www.physics.upenn.edu/",
+      "kind": "url",
+      "source_line": 65284,
+      "value": "https://www.physics.upenn.edu/"
+    },
+    {
+      "context": "http://math.ucr.edu/home/",
+      "kind": "url",
+      "source_line": 65361,
+      "value": "http://math.ucr.edu/home/"
+    },
+    {
+      "context": "http://math.ucr.edu/home/baez/",
+      "kind": "url",
+      "source_line": 65657,
+      "value": "http://math.ucr.edu/home/baez/"
+    },
+    {
+      "context": "https://math.berkeley.edu/",
+      "kind": "url",
+      "source_line": 66251,
+      "value": "https://math.berkeley.edu/"
+    },
+    {
+      "context": "https://math.berkeley.edu/",
+      "kind": "url",
+      "source_line": 66256,
+      "value": "https://math.berkeley.edu/"
+    },
+    {
+      "context": "http://atomcool.rice.edu/",
+      "kind": "url",
+      "source_line": 66432,
+      "value": "http://atomcool.rice.edu/"
+    },
+    {
+      "context": "https://web.archive.org/web/",
+      "kind": "url",
+      "source_line": 66434,
+      "value": "https://web.archive.org/web/"
+    },
+    {
+      "context": "19990203201237/http://amo.mit.edu/%7Ebec/news/news.html",
+      "kind": "url",
+      "source_line": 66435,
+      "value": "http://amo.mit.edu/%7Ebec/news/news.html"
+    },
+    {
+      "context": "http://www.phys.lsu.edu//mog/mog9/",
+      "kind": "url",
+      "source_line": 67072,
+      "value": "http://www.phys.lsu.edu//mog/mog9/"
+    },
+    {
+      "context": "https://math.ucr.edu/home/baez/penrose/",
+      "kind": "url",
+      "source_line": 67404,
+      "value": "https://math.ucr.edu/home/baez/penrose/"
+    },
+    {
+      "context": "https://ncatlab.org/nlab/files/Abstract-Homotopy.pdf",
+      "kind": "url",
+      "source_line": 71021,
+      "value": "https://ncatlab.org/nlab/files/Abstract-Homotopy.pdf"
+    },
+    {
+      "context": "https://citeseer.ist.psu.",
+      "kind": "url",
+      "source_line": 71511,
+      "value": "https://citeseer.ist.psu"
+    },
+    {
+      "context": "http://math.ucr.edu/home/baez/",
+      "kind": "url",
+      "source_line": 72842,
+      "value": "http://math.ucr.edu/home/baez/"
+    },
+    {
+      "context": "http://math.ucr.edu/home/baez/yetter.ps",
+      "kind": "url",
+      "source_line": 72845,
+      "value": "http://math.ucr.edu/home/baez/yetter.ps"
+    },
+    {
+      "context": "http://math.ucr.edu/home/baez/",
+      "kind": "url",
+      "source_line": 73756,
+      "value": "http://math.ucr.edu/home/baez/"
+    },
+    {
+      "context": "http://math.ucr.",
+      "kind": "url",
+      "source_line": 75840,
+      "value": "http://math.ucr"
+    },
+    {
+      "context": "https://ir.cwi.nl/pub/10039/",
+      "kind": "url",
+      "source_line": 75911,
+      "value": "https://ir.cwi.nl/pub/10039/"
+    },
+    {
+      "context": "https://projecteuclid.org/ebooks/books-by-",
+      "kind": "url",
+      "source_line": 76608,
+      "value": "https://projecteuclid.org/ebooks/books-by-"
+    },
+    {
+      "context": "http://www.tac.mta.ca/tac/reprints/articles/12/",
+      "kind": "url",
+      "source_line": 76651,
+      "value": "http://www.tac.mta.ca/tac/reprints/articles/12/"
+    },
+    {
+      "context": "https://www.hpl.hp.com/techreports/96/HPL-BRIMS-96-02.pdf",
+      "kind": "url",
+      "source_line": 77039,
+      "value": "https://www.hpl.hp.com/techreports/96/HPL-BRIMS-96-02.pdf"
+    },
+    {
+      "context": "http://www.paultaylor.eu/stable/Proofs+Types.",
+      "kind": "url",
+      "source_line": 77105,
+      "value": "http://www.paultaylor.eu/stable/Proofs+Types"
+    },
+    {
+      "context": "/dl.acm.org/doi/abs/10.1145/215465.215577",
+      "kind": "arxiv",
+      "source_line": 77203,
+      "value": "5465.21557"
+    },
+    {
+      "context": "http://www.lix.polytechnique.fr/",
+      "kind": "url",
+      "source_line": 77212,
+      "value": "http://www.lix.polytechnique.fr/"
+    },
+    {
+      "context": "http://boole.stanford.edu/pub/tppp.pdf",
+      "kind": "url",
+      "source_line": 77223,
+      "value": "http://boole.stanford.edu/pub/tppp.pdf"
+    },
+    {
+      "context": "https://link.",
+      "kind": "url",
+      "source_line": 77356,
+      "value": "https://link"
+    },
+    {
+      "context": "https://link.springer.com/content/pdf/",
+      "kind": "url",
+      "source_line": 77372,
+      "value": "https://link.springer.com/content/pdf/"
+    },
+    {
+      "context": "http://iml.univ-mrs.fr/",
+      "kind": "url",
+      "source_line": 77517,
+      "value": "http://iml.univ-mrs.fr/"
+    },
+    {
+      "context": "http://iml.univ-mrs.fr/",
+      "kind": "url",
+      "source_line": 77526,
+      "value": "http://iml.univ-mrs.fr/"
+    },
+    {
+      "context": "http://math.ucr.edu/home/baez/ncat.def.html",
+      "kind": "url",
+      "source_line": 77579,
+      "value": "http://math.ucr.edu/home/baez/ncat.def.html"
+    },
+    {
+      "context": "http://www.numdam.org/item/AST_1994_",
+      "kind": "url",
+      "source_line": 77820,
+      "value": "http://www.numdam.org/item/AST_1994_"
+    },
+    {
+      "context": "http://www.ams.org/notices/199607/weinstein.pdf",
+      "kind": "url",
+      "source_line": 79193,
+      "value": "http://www.ams.org/notices/199607/weinstein.pdf"
+    },
+    {
+      "context": "https://en.wikipedia.org/wiki/Quark-gluon",
+      "kind": "url",
+      "source_line": 80166,
+      "value": "https://en.wikipedia.org/wiki/Quark-gluon"
+    },
+    {
+      "context": "http://www.bnl.gov/RHIC/",
+      "kind": "url",
+      "source_line": 80170,
+      "value": "http://www.bnl.gov/RHIC/"
+    },
+    {
+      "context": "http://www.ams.org/notices/199509/199509-toc.html",
+      "kind": "url",
+      "source_line": 81496,
+      "value": "http://www.ams.org/notices/199509/199509-toc.html"
+    },
+    {
+      "context": "http://math.ucr.edu/home/baez/six.html",
+      "kind": "url",
+      "source_line": 81534,
+      "value": "http://math.ucr.edu/home/baez/six.html"
+    },
+    {
+      "context": "https://web.archive.org/web/19970506010314/",
+      "kind": "url",
+      "source_line": 82467,
+      "value": "https://web.archive.org/web/19970506010314/"
+    },
+    {
+      "context": "http://stugyro.stanford.edu/RELATIVITY/GPB/GPB.html",
+      "kind": "url",
+      "source_line": 82468,
+      "value": "http://stugyro.stanford.edu/RELATIVITY/GPB/GPB.html"
+    },
+    {
+      "context": "http://einstein.stanford.",
+      "kind": "url",
+      "source_line": 82473,
+      "value": "http://einstein.stanford"
+    },
+    {
+      "context": "http://www.ligo.caltech.edu/",
+      "kind": "url",
+      "source_line": 82492,
+      "value": "http://www.ligo.caltech.edu/"
+    },
+    {
+      "context": "http://www.altavista.digital.com/",
+      "kind": "url",
+      "source_line": 84896,
+      "value": "http://www.altavista.digital.com/"
+    },
+    {
+      "context": "http://www.cyc.com/",
+      "kind": "url",
+      "source_line": 84909,
+      "value": "http://www.cyc.com/"
+    },
+    {
+      "context": "http://boole.stanford.edu/pub/cyc.report",
+      "kind": "url",
+      "source_line": 84926,
+      "value": "http://boole.stanford.edu/pub/cyc.report"
+    },
+    {
+      "context": "http://xanadu.net/the.project",
+      "kind": "url",
+      "source_line": 84934,
+      "value": "http://xanadu.net/the.project"
+    },
+    {
+      "context": "http://www.foresight.org/backlinks1.3.1.",
+      "kind": "url",
+      "source_line": 84950,
+      "value": "http://www.foresight.org/backlinks1.3.1"
+    },
+    {
+      "context": "http://www.foresight.org/backlinks.",
+      "kind": "url",
+      "source_line": 84961,
+      "value": "http://www.foresight.org/backlinks"
+    },
+    {
+      "context": "http://www.hss.caltech.edu/~hanson/",
+      "kind": "url",
+      "source_line": 84964,
+      "value": "http://www.hss.caltech.edu/~hanson/"
+    },
+    {
+      "context": "http://math.ucr.edu/home/baez/hamiltonian/",
+      "kind": "url",
+      "source_line": 86358,
+      "value": "http://math.ucr.edu/home/baez/hamiltonian/"
+    },
+    {
+      "context": "http://www.phys.lsu.edu//mog/mog8/node7.html",
+      "kind": "url",
+      "source_line": 86364,
+      "value": "http://www.phys.lsu.edu//mog/mog8/node7.html"
+    },
+    {
+      "context": "http://valdostamuseum.org/hamsmith/",
+      "kind": "url",
+      "source_line": 87804,
+      "value": "http://valdostamuseum.org/hamsmith/"
+    },
+    {
+      "context": "https://projecteuclid.org/",
+      "kind": "url",
+      "source_line": 87959,
+      "value": "https://projecteuclid.org/"
+    },
+    {
+      "context": "https://web.archive.org/web/",
+      "kind": "url",
+      "source_line": 87966,
+      "value": "https://web.archive.org/web/"
+    },
+    {
+      "context": "20110808093537/http://valdostamuseum.org/hamsmith/FTsquare.html",
+      "kind": "url",
+      "source_line": 87967,
+      "value": "http://valdostamuseum.org/hamsmith/FTsquare.html"
+    },
+    {
+      "context": "http://www.ams.org/",
+      "kind": "url",
+      "source_line": 88582,
+      "value": "http://www.ams.org/"
+    },
+    {
+      "context": "https://www.physics.upenn.edu/",
+      "kind": "url",
+      "source_line": 88755,
+      "value": "https://www.physics.upenn.edu/"
+    },
+    {
+      "context": "http://math.ucr.edu/home/",
+      "kind": "url",
+      "source_line": 88832,
+      "value": "http://math.ucr.edu/home/"
+    },
+    {
+      "context": "http://math.ucr.edu/home/baez/",
+      "kind": "url",
+      "source_line": 89128,
+      "value": "http://math.ucr.edu/home/baez/"
+    },
+    {
+      "context": "https://math.berkeley.edu/",
+      "kind": "url",
+      "source_line": 89722,
+      "value": "https://math.berkeley.edu/"
+    },
+    {
+      "context": "https://math.berkeley.edu/",
+      "kind": "url",
+      "source_line": 89727,
+      "value": "https://math.berkeley.edu/"
+    },
+    {
+      "context": "http://atomcool.rice.edu/",
+      "kind": "url",
+      "source_line": 89903,
+      "value": "http://atomcool.rice.edu/"
+    },
+    {
+      "context": "https://web.archive.org/web/",
+      "kind": "url",
+      "source_line": 89905,
+      "value": "https://web.archive.org/web/"
+    },
+    {
+      "context": "19990203201237/http://amo.mit.edu/%7Ebec/news/news.html",
+      "kind": "url",
+      "source_line": 89906,
+      "value": "http://amo.mit.edu/%7Ebec/news/news.html"
+    },
+    {
+      "context": "http://www.phys.lsu.edu//mog/mog9/",
+      "kind": "url",
+      "source_line": 90543,
+      "value": "http://www.phys.lsu.edu//mog/mog9/"
+    },
+    {
+      "context": "https://math.ucr.edu/home/baez/penrose/",
+      "kind": "url",
+      "source_line": 90875,
+      "value": "https://math.ucr.edu/home/baez/penrose/"
+    },
+    {
+      "context": "https://ncatlab.org/nlab/files/Abstract-Homotopy.pdf",
+      "kind": "url",
+      "source_line": 96940,
+      "value": "https://ncatlab.org/nlab/files/Abstract-Homotopy.pdf"
+    },
+    {
+      "context": "https://citeseer.ist.psu.",
+      "kind": "url",
+      "source_line": 97430,
+      "value": "https://citeseer.ist.psu"
+    },
+    {
+      "context": "http://math.ucr.edu/home/baez/",
+      "kind": "url",
+      "source_line": 98761,
+      "value": "http://math.ucr.edu/home/baez/"
+    },
+    {
+      "context": "http://math.ucr.edu/home/baez/yetter.ps",
+      "kind": "url",
+      "source_line": 98764,
+      "value": "http://math.ucr.edu/home/baez/yetter.ps"
+    },
+    {
+      "context": "http://math.ucr.edu/home/baez/",
+      "kind": "url",
+      "source_line": 99675,
+      "value": "http://math.ucr.edu/home/baez/"
+    },
+    {
+      "context": "http://math.ucr.",
+      "kind": "url",
+      "source_line": 101759,
+      "value": "http://math.ucr"
+    },
+    {
+      "context": "https://ir.cwi.nl/pub/10039/",
+      "kind": "url",
+      "source_line": 101830,
+      "value": "https://ir.cwi.nl/pub/10039/"
+    },
+    {
+      "context": "https://projecteuclid.org/ebooks/books-by-",
+      "kind": "url",
+      "source_line": 102527,
+      "value": "https://projecteuclid.org/ebooks/books-by-"
+    },
+    {
+      "context": "http://www.tac.mta.ca/tac/reprints/articles/12/",
+      "kind": "url",
+      "source_line": 102570,
+      "value": "http://www.tac.mta.ca/tac/reprints/articles/12/"
+    },
+    {
+      "context": "https://www.hpl.hp.com/techreports/96/HPL-BRIMS-96-02.pdf",
+      "kind": "url",
+      "source_line": 102958,
+      "value": "https://www.hpl.hp.com/techreports/96/HPL-BRIMS-96-02.pdf"
+    },
+    {
+      "context": "http://www.paultaylor.eu/stable/Proofs+Types.",
+      "kind": "url",
+      "source_line": 103024,
+      "value": "http://www.paultaylor.eu/stable/Proofs+Types"
+    },
+    {
+      "context": "/dl.acm.org/doi/abs/10.1145/215465.215577",
+      "kind": "arxiv",
+      "source_line": 103122,
+      "value": "5465.21557"
+    },
+    {
+      "context": "http://www.lix.polytechnique.fr/",
+      "kind": "url",
+      "source_line": 103131,
+      "value": "http://www.lix.polytechnique.fr/"
+    },
+    {
+      "context": "http://boole.stanford.edu/pub/tppp.pdf",
+      "kind": "url",
+      "source_line": 103142,
+      "value": "http://boole.stanford.edu/pub/tppp.pdf"
+    },
+    {
+      "context": "https://link.",
+      "kind": "url",
+      "source_line": 103275,
+      "value": "https://link"
+    },
+    {
+      "context": "https://link.springer.com/content/pdf/",
+      "kind": "url",
+      "source_line": 103291,
+      "value": "https://link.springer.com/content/pdf/"
+    },
+    {
+      "context": "http://iml.univ-mrs.fr/",
+      "kind": "url",
+      "source_line": 103436,
+      "value": "http://iml.univ-mrs.fr/"
+    },
+    {
+      "context": "http://iml.univ-mrs.fr/",
+      "kind": "url",
+      "source_line": 103445,
+      "value": "http://iml.univ-mrs.fr/"
+    },
+    {
+      "context": "http://math.ucr.edu/home/baez/ncat.def.html",
+      "kind": "url",
+      "source_line": 103498,
+      "value": "http://math.ucr.edu/home/baez/ncat.def.html"
+    },
+    {
+      "context": "http://www.numdam.org/item/AST_1994_",
+      "kind": "url",
+      "source_line": 103739,
+      "value": "http://www.numdam.org/item/AST_1994_"
+    },
+    {
+      "context": "http://www.ams.org/notices/199607/weinstein.pdf",
+      "kind": "url",
+      "source_line": 105112,
+      "value": "http://www.ams.org/notices/199607/weinstein.pdf"
+    },
+    {
+      "context": "https://en.wikipedia.org/wiki/Quark-gluon",
+      "kind": "url",
+      "source_line": 106085,
+      "value": "https://en.wikipedia.org/wiki/Quark-gluon"
+    },
+    {
+      "context": "http://www.bnl.gov/RHIC/",
+      "kind": "url",
+      "source_line": 106089,
+      "value": "http://www.bnl.gov/RHIC/"
+    },
+    {
+      "context": "http://www.ams.org/notices/199509/199509-toc.html",
+      "kind": "url",
+      "source_line": 107415,
+      "value": "http://www.ams.org/notices/199509/199509-toc.html"
+    },
+    {
+      "context": "http://math.ucr.edu/home/baez/six.html",
+      "kind": "url",
+      "source_line": 107453,
+      "value": "http://math.ucr.edu/home/baez/six.html"
+    },
+    {
+      "context": "https://web.archive.org/web/19970506010314/",
+      "kind": "url",
+      "source_line": 108386,
+      "value": "https://web.archive.org/web/19970506010314/"
+    },
+    {
+      "context": "http://stugyro.stanford.edu/RELATIVITY/GPB/GPB.html",
+      "kind": "url",
+      "source_line": 108387,
+      "value": "http://stugyro.stanford.edu/RELATIVITY/GPB/GPB.html"
+    },
+    {
+      "context": "http://einstein.stanford.",
+      "kind": "url",
+      "source_line": 108392,
+      "value": "http://einstein.stanford"
+    },
+    {
+      "context": "http://www.ligo.caltech.edu/",
+      "kind": "url",
+      "source_line": 108411,
+      "value": "http://www.ligo.caltech.edu/"
+    },
+    {
+      "context": "http://www.altavista.digital.com/",
+      "kind": "url",
+      "source_line": 110815,
+      "value": "http://www.altavista.digital.com/"
+    },
+    {
+      "context": "http://www.cyc.com/",
+      "kind": "url",
+      "source_line": 110828,
+      "value": "http://www.cyc.com/"
+    },
+    {
+      "context": "http://boole.stanford.edu/pub/cyc.report",
+      "kind": "url",
+      "source_line": 110845,
+      "value": "http://boole.stanford.edu/pub/cyc.report"
+    },
+    {
+      "context": "http://xanadu.net/the.project",
+      "kind": "url",
+      "source_line": 110853,
+      "value": "http://xanadu.net/the.project"
+    },
+    {
+      "context": "http://www.foresight.org/backlinks1.3.1.",
+      "kind": "url",
+      "source_line": 110869,
+      "value": "http://www.foresight.org/backlinks1.3.1"
+    },
+    {
+      "context": "http://www.foresight.org/backlinks.",
+      "kind": "url",
+      "source_line": 110880,
+      "value": "http://www.foresight.org/backlinks"
+    },
+    {
+      "context": "http://www.hss.caltech.edu/~hanson/",
+      "kind": "url",
+      "source_line": 110883,
+      "value": "http://www.hss.caltech.edu/~hanson/"
+    },
+    {
+      "context": "http://math.ucr.edu/home/baez/hamiltonian/",
+      "kind": "url",
+      "source_line": 112277,
+      "value": "http://math.ucr.edu/home/baez/hamiltonian/"
+    },
+    {
+      "context": "http://www.phys.lsu.edu//mog/mog8/node7.html",
+      "kind": "url",
+      "source_line": 112283,
+      "value": "http://www.phys.lsu.edu//mog/mog8/node7.html"
+    },
+    {
+      "context": "http://valdostamuseum.org/hamsmith/",
+      "kind": "url",
+      "source_line": 113723,
+      "value": "http://valdostamuseum.org/hamsmith/"
+    },
+    {
+      "context": "https://projecteuclid.org/",
+      "kind": "url",
+      "source_line": 113878,
+      "value": "https://projecteuclid.org/"
+    },
+    {
+      "context": "https://web.archive.org/web/",
+      "kind": "url",
+      "source_line": 113885,
+      "value": "https://web.archive.org/web/"
+    },
+    {
+      "context": "20110808093537/http://valdostamuseum.org/hamsmith/FTsquare.html",
+      "kind": "url",
+      "source_line": 113886,
+      "value": "http://valdostamuseum.org/hamsmith/FTsquare.html"
+    },
+    {
+      "context": "http://www.ams.org/",
+      "kind": "url",
+      "source_line": 114501,
+      "value": "http://www.ams.org/"
+    },
+    {
+      "context": "https://www.physics.upenn.edu/",
+      "kind": "url",
+      "source_line": 114674,
+      "value": "https://www.physics.upenn.edu/"
+    },
+    {
+      "context": "http://math.ucr.edu/home/",
+      "kind": "url",
+      "source_line": 114751,
+      "value": "http://math.ucr.edu/home/"
+    },
+    {
+      "context": "http://math.ucr.edu/home/baez/",
+      "kind": "url",
+      "source_line": 115047,
+      "value": "http://math.ucr.edu/home/baez/"
+    },
+    {
+      "context": "https://math.berkeley.edu/",
+      "kind": "url",
+      "source_line": 115641,
+      "value": "https://math.berkeley.edu/"
+    },
+    {
+      "context": "https://math.berkeley.edu/",
+      "kind": "url",
+      "source_line": 115646,
+      "value": "https://math.berkeley.edu/"
+    },
+    {
+      "context": "http://atomcool.rice.edu/",
+      "kind": "url",
+      "source_line": 115822,
+      "value": "http://atomcool.rice.edu/"
+    },
+    {
+      "context": "https://web.archive.org/web/",
+      "kind": "url",
+      "source_line": 115824,
+      "value": "https://web.archive.org/web/"
+    },
+    {
+      "context": "19990203201237/http://amo.mit.edu/%7Ebec/news/news.html",
+      "kind": "url",
+      "source_line": 115825,
+      "value": "http://amo.mit.edu/%7Ebec/news/news.html"
+    },
+    {
+      "context": "http://www.phys.lsu.edu//mog/mog9/",
+      "kind": "url",
+      "source_line": 116462,
+      "value": "http://www.phys.lsu.edu//mog/mog9/"
+    },
+    {
+      "context": "https://math.ucr.edu/home/baez/penrose/",
+      "kind": "url",
+      "source_line": 116794,
+      "value": "https://math.ucr.edu/home/baez/penrose/"
+    },
+    {
+      "context": "https://ncatlab.org/nlab/files/Abstract-Homotopy.pdf",
+      "kind": "url",
+      "source_line": 122746,
+      "value": "https://ncatlab.org/nlab/files/Abstract-Homotopy.pdf"
+    },
+    {
+      "context": "https://citeseer.ist.psu.",
+      "kind": "url",
+      "source_line": 123236,
+      "value": "https://citeseer.ist.psu"
+    },
+    {
+      "context": "http://math.ucr.edu/home/baez/",
+      "kind": "url",
+      "source_line": 124567,
+      "value": "http://math.ucr.edu/home/baez/"
+    },
+    {
+      "context": "http://math.ucr.edu/home/baez/yetter.ps",
+      "kind": "url",
+      "source_line": 124570,
+      "value": "http://math.ucr.edu/home/baez/yetter.ps"
+    },
+    {
+      "context": "http://math.ucr.edu/home/baez/",
+      "kind": "url",
+      "source_line": 125481,
+      "value": "http://math.ucr.edu/home/baez/"
+    },
+    {
+      "context": "http://math.ucr.",
+      "kind": "url",
+      "source_line": 127565,
+      "value": "http://math.ucr"
+    },
+    {
+      "context": "https://ir.cwi.nl/pub/10039/",
+      "kind": "url",
+      "source_line": 127636,
+      "value": "https://ir.cwi.nl/pub/10039/"
+    },
+    {
+      "context": "https://projecteuclid.org/ebooks/books-by-",
+      "kind": "url",
+      "source_line": 128333,
+      "value": "https://projecteuclid.org/ebooks/books-by-"
+    },
+    {
+      "context": "http://www.tac.mta.ca/tac/reprints/articles/12/",
+      "kind": "url",
+      "source_line": 128376,
+      "value": "http://www.tac.mta.ca/tac/reprints/articles/12/"
+    },
+    {
+      "context": "https://www.hpl.hp.com/techreports/96/HPL-BRIMS-96-02.pdf",
+      "kind": "url",
+      "source_line": 128764,
+      "value": "https://www.hpl.hp.com/techreports/96/HPL-BRIMS-96-02.pdf"
+    },
+    {
+      "context": "http://www.paultaylor.eu/stable/Proofs+Types.",
+      "kind": "url",
+      "source_line": 128830,
+      "value": "http://www.paultaylor.eu/stable/Proofs+Types"
+    },
+    {
+      "context": "/dl.acm.org/doi/abs/10.1145/215465.215577",
+      "kind": "arxiv",
+      "source_line": 128928,
+      "value": "5465.21557"
+    },
+    {
+      "context": "http://www.lix.polytechnique.fr/",
+      "kind": "url",
+      "source_line": 128937,
+      "value": "http://www.lix.polytechnique.fr/"
+    },
+    {
+      "context": "http://boole.stanford.edu/pub/tppp.pdf",
+      "kind": "url",
+      "source_line": 128948,
+      "value": "http://boole.stanford.edu/pub/tppp.pdf"
+    },
+    {
+      "context": "https://link.",
+      "kind": "url",
+      "source_line": 129081,
+      "value": "https://link"
+    },
+    {
+      "context": "https://link.springer.com/content/pdf/",
+      "kind": "url",
+      "source_line": 129097,
+      "value": "https://link.springer.com/content/pdf/"
+    },
+    {
+      "context": "http://iml.univ-mrs.fr/",
+      "kind": "url",
+      "source_line": 129242,
+      "value": "http://iml.univ-mrs.fr/"
+    },
+    {
+      "context": "http://iml.univ-mrs.fr/",
+      "kind": "url",
+      "source_line": 129251,
+      "value": "http://iml.univ-mrs.fr/"
+    },
+    {
+      "context": "http://math.ucr.edu/home/baez/ncat.def.html",
+      "kind": "url",
+      "source_line": 129304,
+      "value": "http://math.ucr.edu/home/baez/ncat.def.html"
+    },
+    {
+      "context": "http://www.numdam.org/item/AST_1994_",
+      "kind": "url",
+      "source_line": 129545,
+      "value": "http://www.numdam.org/item/AST_1994_"
+    },
+    {
+      "context": "http://www.ams.org/notices/199607/weinstein.pdf",
+      "kind": "url",
+      "source_line": 130918,
+      "value": "http://www.ams.org/notices/199607/weinstein.pdf"
+    },
+    {
+      "context": "https://en.wikipedia.org/wiki/Quark-gluon",
+      "kind": "url",
+      "source_line": 131891,
+      "value": "https://en.wikipedia.org/wiki/Quark-gluon"
+    },
+    {
+      "context": "http://www.bnl.gov/RHIC/",
+      "kind": "url",
+      "source_line": 131895,
+      "value": "http://www.bnl.gov/RHIC/"
+    },
+    {
+      "context": "http://www.ams.org/notices/199509/199509-toc.html",
+      "kind": "url",
+      "source_line": 133221,
+      "value": "http://www.ams.org/notices/199509/199509-toc.html"
+    },
+    {
+      "context": "http://math.ucr.edu/home/baez/six.html",
+      "kind": "url",
+      "source_line": 133259,
+      "value": "http://math.ucr.edu/home/baez/six.html"
+    },
+    {
+      "context": "https://web.archive.org/web/19970506010314/",
+      "kind": "url",
+      "source_line": 134192,
+      "value": "https://web.archive.org/web/19970506010314/"
+    },
+    {
+      "context": "http://stugyro.stanford.edu/RELATIVITY/GPB/GPB.html",
+      "kind": "url",
+      "source_line": 134193,
+      "value": "http://stugyro.stanford.edu/RELATIVITY/GPB/GPB.html"
+    },
+    {
+      "context": "http://einstein.stanford.",
+      "kind": "url",
+      "source_line": 134198,
+      "value": "http://einstein.stanford"
+    },
+    {
+      "context": "http://www.ligo.caltech.edu/",
+      "kind": "url",
+      "source_line": 134217,
+      "value": "http://www.ligo.caltech.edu/"
+    },
+    {
+      "context": "http://www.altavista.digital.com/",
+      "kind": "url",
+      "source_line": 136621,
+      "value": "http://www.altavista.digital.com/"
+    },
+    {
+      "context": "http://www.cyc.com/",
+      "kind": "url",
+      "source_line": 136634,
+      "value": "http://www.cyc.com/"
+    },
+    {
+      "context": "http://boole.stanford.edu/pub/cyc.report",
+      "kind": "url",
+      "source_line": 136651,
+      "value": "http://boole.stanford.edu/pub/cyc.report"
+    },
+    {
+      "context": "http://xanadu.net/the.project",
+      "kind": "url",
+      "source_line": 136659,
+      "value": "http://xanadu.net/the.project"
+    },
+    {
+      "context": "http://www.foresight.org/backlinks1.3.1.",
+      "kind": "url",
+      "source_line": 136675,
+      "value": "http://www.foresight.org/backlinks1.3.1"
+    },
+    {
+      "context": "http://www.foresight.org/backlinks.",
+      "kind": "url",
+      "source_line": 136686,
+      "value": "http://www.foresight.org/backlinks"
+    },
+    {
+      "context": "http://www.hss.caltech.edu/~hanson/",
+      "kind": "url",
+      "source_line": 136689,
+      "value": "http://www.hss.caltech.edu/~hanson/"
+    },
+    {
+      "context": "http://math.ucr.edu/home/baez/hamiltonian/",
+      "kind": "url",
+      "source_line": 138083,
+      "value": "http://math.ucr.edu/home/baez/hamiltonian/"
+    },
+    {
+      "context": "http://www.phys.lsu.edu//mog/mog8/node7.html",
+      "kind": "url",
+      "source_line": 138089,
+      "value": "http://www.phys.lsu.edu//mog/mog8/node7.html"
+    },
+    {
+      "context": "http://valdostamuseum.org/hamsmith/",
+      "kind": "url",
+      "source_line": 139529,
+      "value": "http://valdostamuseum.org/hamsmith/"
+    },
+    {
+      "context": "https://projecteuclid.org/",
+      "kind": "url",
+      "source_line": 139684,
+      "value": "https://projecteuclid.org/"
+    },
+    {
+      "context": "https://web.archive.org/web/",
+      "kind": "url",
+      "source_line": 139691,
+      "value": "https://web.archive.org/web/"
+    },
+    {
+      "context": "20110808093537/http://valdostamuseum.org/hamsmith/FTsquare.html",
+      "kind": "url",
+      "source_line": 139692,
+      "value": "http://valdostamuseum.org/hamsmith/FTsquare.html"
+    },
+    {
+      "context": "http://www.ams.org/",
+      "kind": "url",
+      "source_line": 140307,
+      "value": "http://www.ams.org/"
+    },
+    {
+      "context": "https://www.physics.upenn.edu/",
+      "kind": "url",
+      "source_line": 140480,
+      "value": "https://www.physics.upenn.edu/"
+    },
+    {
+      "context": "http://math.ucr.edu/home/",
+      "kind": "url",
+      "source_line": 140557,
+      "value": "http://math.ucr.edu/home/"
+    },
+    {
+      "context": "http://math.ucr.edu/home/baez/",
+      "kind": "url",
+      "source_line": 140853,
+      "value": "http://math.ucr.edu/home/baez/"
+    },
+    {
+      "context": "https://math.berkeley.edu/",
+      "kind": "url",
+      "source_line": 141447,
+      "value": "https://math.berkeley.edu/"
+    },
+    {
+      "context": "https://math.berkeley.edu/",
+      "kind": "url",
+      "source_line": 141452,
+      "value": "https://math.berkeley.edu/"
+    },
+    {
+      "context": "http://atomcool.rice.edu/",
+      "kind": "url",
+      "source_line": 141628,
+      "value": "http://atomcool.rice.edu/"
+    },
+    {
+      "context": "https://web.archive.org/web/",
+      "kind": "url",
+      "source_line": 141630,
+      "value": "https://web.archive.org/web/"
+    },
+    {
+      "context": "19990203201237/http://amo.mit.edu/%7Ebec/news/news.html",
+      "kind": "url",
+      "source_line": 141631,
+      "value": "http://amo.mit.edu/%7Ebec/news/news.html"
+    },
+    {
+      "context": "http://www.phys.lsu.edu//mog/mog9/",
+      "kind": "url",
+      "source_line": 142268,
+      "value": "http://www.phys.lsu.edu//mog/mog9/"
+    },
+    {
+      "context": "https://math.ucr.edu/home/baez/penrose/",
+      "kind": "url",
+      "source_line": 142600,
+      "value": "https://math.ucr.edu/home/baez/penrose/"
+    },
+    {
+      "context": "https://ncatlab.org/nlab/files/Abstract-Homotopy.pdf",
+      "kind": "url",
+      "source_line": 145088,
+      "value": "https://ncatlab.org/nlab/files/Abstract-Homotopy.pdf"
+    },
+    {
+      "context": "https://citeseer.ist.psu.",
+      "kind": "url",
+      "source_line": 145578,
+      "value": "https://citeseer.ist.psu"
+    },
+    {
+      "context": "http://math.ucr.edu/home/baez/",
+      "kind": "url",
+      "source_line": 146909,
+      "value": "http://math.ucr.edu/home/baez/"
+    },
+    {
+      "context": "http://math.ucr.edu/home/baez/yetter.ps",
+      "kind": "url",
+      "source_line": 146912,
+      "value": "http://math.ucr.edu/home/baez/yetter.ps"
+    },
+    {
+      "context": "http://math.ucr.edu/home/baez/",
+      "kind": "url",
+      "source_line": 147823,
+      "value": "http://math.ucr.edu/home/baez/"
+    },
+    {
+      "context": "http://math.ucr.",
+      "kind": "url",
+      "source_line": 149907,
+      "value": "http://math.ucr"
+    },
+    {
+      "context": "https://ir.cwi.nl/pub/10039/",
+      "kind": "url",
+      "source_line": 149978,
+      "value": "https://ir.cwi.nl/pub/10039/"
+    },
+    {
+      "context": "https://projecteuclid.org/ebooks/books-by-",
+      "kind": "url",
+      "source_line": 150675,
+      "value": "https://projecteuclid.org/ebooks/books-by-"
+    },
+    {
+      "context": "http://www.tac.mta.ca/tac/reprints/articles/12/",
+      "kind": "url",
+      "source_line": 150718,
+      "value": "http://www.tac.mta.ca/tac/reprints/articles/12/"
+    },
+    {
+      "context": "https://www.hpl.hp.com/techreports/96/HPL-BRIMS-96-02.pdf",
+      "kind": "url",
+      "source_line": 151106,
+      "value": "https://www.hpl.hp.com/techreports/96/HPL-BRIMS-96-02.pdf"
+    },
+    {
+      "context": "http://www.paultaylor.eu/stable/Proofs+Types.",
+      "kind": "url",
+      "source_line": 151172,
+      "value": "http://www.paultaylor.eu/stable/Proofs+Types"
+    },
+    {
+      "context": "/dl.acm.org/doi/abs/10.1145/215465.215577",
+      "kind": "arxiv",
+      "source_line": 151270,
+      "value": "5465.21557"
+    },
+    {
+      "context": "http://www.lix.polytechnique.fr/",
+      "kind": "url",
+      "source_line": 151279,
+      "value": "http://www.lix.polytechnique.fr/"
+    },
+    {
+      "context": "http://boole.stanford.edu/pub/tppp.pdf",
+      "kind": "url",
+      "source_line": 151290,
+      "value": "http://boole.stanford.edu/pub/tppp.pdf"
+    },
+    {
+      "context": "https://link.",
+      "kind": "url",
+      "source_line": 151423,
+      "value": "https://link"
+    },
+    {
+      "context": "https://link.springer.com/content/pdf/",
+      "kind": "url",
+      "source_line": 151439,
+      "value": "https://link.springer.com/content/pdf/"
+    },
+    {
+      "context": "http://iml.univ-mrs.fr/",
+      "kind": "url",
+      "source_line": 151584,
+      "value": "http://iml.univ-mrs.fr/"
+    },
+    {
+      "context": "http://iml.univ-mrs.fr/",
+      "kind": "url",
+      "source_line": 151593,
+      "value": "http://iml.univ-mrs.fr/"
+    },
+    {
+      "context": "http://math.ucr.edu/home/baez/ncat.def.html",
+      "kind": "url",
+      "source_line": 151646,
+      "value": "http://math.ucr.edu/home/baez/ncat.def.html"
+    },
+    {
+      "context": "http://www.numdam.org/item/AST_1994_",
+      "kind": "url",
+      "source_line": 151887,
+      "value": "http://www.numdam.org/item/AST_1994_"
+    },
+    {
+      "context": "http://www.ams.org/notices/199607/weinstein.pdf",
+      "kind": "url",
+      "source_line": 153260,
+      "value": "http://www.ams.org/notices/199607/weinstein.pdf"
+    },
+    {
+      "context": "https://en.wikipedia.org/wiki/Quark-gluon",
+      "kind": "url",
+      "source_line": 154233,
+      "value": "https://en.wikipedia.org/wiki/Quark-gluon"
+    },
+    {
+      "context": "http://www.bnl.gov/RHIC/",
+      "kind": "url",
+      "source_line": 154237,
+      "value": "http://www.bnl.gov/RHIC/"
+    },
+    {
+      "context": "http://www.ams.org/notices/199509/199509-toc.html",
+      "kind": "url",
+      "source_line": 155563,
+      "value": "http://www.ams.org/notices/199509/199509-toc.html"
+    },
+    {
+      "context": "http://math.ucr.edu/home/baez/six.html",
+      "kind": "url",
+      "source_line": 155601,
+      "value": "http://math.ucr.edu/home/baez/six.html"
+    },
+    {
+      "context": "https://web.archive.org/web/19970506010314/",
+      "kind": "url",
+      "source_line": 156534,
+      "value": "https://web.archive.org/web/19970506010314/"
+    },
+    {
+      "context": "http://stugyro.stanford.edu/RELATIVITY/GPB/GPB.html",
+      "kind": "url",
+      "source_line": 156535,
+      "value": "http://stugyro.stanford.edu/RELATIVITY/GPB/GPB.html"
+    },
+    {
+      "context": "http://einstein.stanford.",
+      "kind": "url",
+      "source_line": 156540,
+      "value": "http://einstein.stanford"
+    },
+    {
+      "context": "http://www.ligo.caltech.edu/",
+      "kind": "url",
+      "source_line": 156559,
+      "value": "http://www.ligo.caltech.edu/"
+    },
+    {
+      "context": "http://www.altavista.digital.com/",
+      "kind": "url",
+      "source_line": 158963,
+      "value": "http://www.altavista.digital.com/"
+    },
+    {
+      "context": "http://www.cyc.com/",
+      "kind": "url",
+      "source_line": 158976,
+      "value": "http://www.cyc.com/"
+    },
+    {
+      "context": "http://boole.stanford.edu/pub/cyc.report",
+      "kind": "url",
+      "source_line": 158993,
+      "value": "http://boole.stanford.edu/pub/cyc.report"
+    },
+    {
+      "context": "http://xanadu.net/the.project",
+      "kind": "url",
+      "source_line": 159001,
+      "value": "http://xanadu.net/the.project"
+    },
+    {
+      "context": "http://www.foresight.org/backlinks1.3.1.",
+      "kind": "url",
+      "source_line": 159017,
+      "value": "http://www.foresight.org/backlinks1.3.1"
+    },
+    {
+      "context": "http://www.foresight.org/backlinks.",
+      "kind": "url",
+      "source_line": 159028,
+      "value": "http://www.foresight.org/backlinks"
+    },
+    {
+      "context": "http://www.hss.caltech.edu/~hanson/",
+      "kind": "url",
+      "source_line": 159031,
+      "value": "http://www.hss.caltech.edu/~hanson/"
+    },
+    {
+      "context": "http://math.ucr.edu/home/baez/hamiltonian/",
+      "kind": "url",
+      "source_line": 160425,
+      "value": "http://math.ucr.edu/home/baez/hamiltonian/"
+    },
+    {
+      "context": "http://www.phys.lsu.edu//mog/mog8/node7.html",
+      "kind": "url",
+      "source_line": 160431,
+      "value": "http://www.phys.lsu.edu//mog/mog8/node7.html"
+    },
+    {
+      "context": "http://valdostamuseum.org/hamsmith/",
+      "kind": "url",
+      "source_line": 161871,
+      "value": "http://valdostamuseum.org/hamsmith/"
+    },
+    {
+      "context": "https://projecteuclid.org/",
+      "kind": "url",
+      "source_line": 162026,
+      "value": "https://projecteuclid.org/"
+    },
+    {
+      "context": "https://web.archive.org/web/",
+      "kind": "url",
+      "source_line": 162033,
+      "value": "https://web.archive.org/web/"
+    },
+    {
+      "context": "20110808093537/http://valdostamuseum.org/hamsmith/FTsquare.html",
+      "kind": "url",
+      "source_line": 162034,
+      "value": "http://valdostamuseum.org/hamsmith/FTsquare.html"
+    },
+    {
+      "context": "http://www.ams.org/",
+      "kind": "url",
+      "source_line": 162649,
+      "value": "http://www.ams.org/"
+    },
+    {
+      "context": "https://www.physics.upenn.edu/",
+      "kind": "url",
+      "source_line": 162822,
+      "value": "https://www.physics.upenn.edu/"
+    },
+    {
+      "context": "http://math.ucr.edu/home/",
+      "kind": "url",
+      "source_line": 162899,
+      "value": "http://math.ucr.edu/home/"
+    },
+    {
+      "context": "http://math.ucr.edu/home/baez/",
+      "kind": "url",
+      "source_line": 163195,
+      "value": "http://math.ucr.edu/home/baez/"
+    },
+    {
+      "context": "https://math.berkeley.edu/",
+      "kind": "url",
+      "source_line": 163789,
+      "value": "https://math.berkeley.edu/"
+    },
+    {
+      "context": "https://math.berkeley.edu/",
+      "kind": "url",
+      "source_line": 163794,
+      "value": "https://math.berkeley.edu/"
+    },
+    {
+      "context": "http://atomcool.rice.edu/",
+      "kind": "url",
+      "source_line": 163970,
+      "value": "http://atomcool.rice.edu/"
+    },
+    {
+      "context": "https://web.archive.org/web/",
+      "kind": "url",
+      "source_line": 163972,
+      "value": "https://web.archive.org/web/"
+    },
+    {
+      "context": "19990203201237/http://amo.mit.edu/%7Ebec/news/news.html",
+      "kind": "url",
+      "source_line": 163973,
+      "value": "http://amo.mit.edu/%7Ebec/news/news.html"
+    },
+    {
+      "context": "http://www.phys.lsu.edu//mog/mog9/",
+      "kind": "url",
+      "source_line": 164610,
+      "value": "http://www.phys.lsu.edu//mog/mog9/"
+    },
+    {
+      "context": "https://math.ucr.edu/home/baez/penrose/",
+      "kind": "url",
+      "source_line": 164942,
+      "value": "https://math.ucr.edu/home/baez/penrose/"
+    }
+  ],
+  "schema_version": 1,
+  "source_relpath": "source_materials/frameworks/Alpha001.06_DRAFT_Aether_Framework.txt",
+  "source_sha256": "7f159b044b976fa7ac298360d282c0a480679cecf5e1a040b6c999ee5b26bbe6"
+}

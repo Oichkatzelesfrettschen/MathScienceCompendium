@@ -3,19 +3,37 @@
 
 from __future__ import annotations
 
+import hashlib
 import json
 import re
-import tomllib
+import subprocess
 from collections import defaultdict
 from pathlib import Path
+from typing import TYPE_CHECKING
+
+import tomllib
+
+
+if TYPE_CHECKING:
+    from collections.abc import Iterable, Iterator
 
 
 REPO_ROOT = Path(__file__).resolve().parent.parent
 
 TEXT_EXTENSIONS = {".md", ".txt", ".tex", ".py", ".toml", ".yml", ".yaml", ".ini", ".json"}
+GENERATED_CACHE_DIRECTORIES = {
+    ".mypy_cache",
+    ".pytest_cache",
+    ".ruff_cache",
+    "__pycache__",
+}
 ABSOLUTE_PATH_PATTERNS = [
     re.compile(r"(?<![A-Za-z0-9_./:-])(/home/[^\s`\"']+)"),
-    re.compile(r"(?<![A-Za-z0-9_./:-])([A-Za-z]:\\\\[^\s`\"']+)"),
+    re.compile(
+        r"(?<![A-Za-z0-9_./:-])"
+        r"([A-Za-z]:\\(?:(?:[^\\\s`\"']+\\)+[^\\\s`\"']+|"
+        r"[^\\\s`\"']+\.[A-Za-z0-9]{1,8}))"
+    ),
     re.compile(r"file://[^\s`\"']+"),
 ]
 
@@ -25,13 +43,58 @@ STUB_FILES = [
     "papers/sections/appendix_data.tex",
 ]
 
+LATEX_INTERMEDIATE_SUFFIXES = {
+    ".aux",
+    ".bbl",
+    ".blg",
+    ".lof",
+    ".lot",
+    ".toc",
+}
+
+
+def classify_tracked_latex_intermediates(paths: Iterable[str]) -> list[str]:
+    """Return tracked LaTeX build products that must remain regenerable."""
+    return sorted(
+        path
+        for path in paths
+        if path.startswith("papers/")
+        and (
+            Path(path).suffix in LATEX_INTERMEDIATE_SUFFIXES
+            or path.endswith(".run.xml")
+            or path.endswith("-blx.bib")
+        )
+    )
+
+
+def check_no_tracked_latex_intermediates() -> list[str]:
+    """Reject ignored LaTeX intermediates that leaked into Git history."""
+    try:
+        result = subprocess.run(
+            ["git", "ls-files", "--", "papers"],
+            cwd=REPO_ROOT,
+            check=True,
+            capture_output=True,
+            text=True,
+        )
+    except (OSError, subprocess.CalledProcessError) as exc:
+        return [f"unable to enumerate tracked paper files: {exc}"]
+
+    tracked_intermediates = classify_tracked_latex_intermediates(
+        result.stdout.splitlines()
+    )
+    return [
+        f"tracked LaTeX intermediate must be removed from Git: {path}"
+        for path in tracked_intermediates
+    ]
+
 
 def check_no_absolute_local_paths() -> list[str]:
     failures: list[str] = []
     for path in REPO_ROOT.rglob("*"):
         if not path.is_file():
             continue
-        if ".git" in path.parts:
+        if ".git" in path.parts or GENERATED_CACHE_DIRECTORIES.intersection(path.parts):
             continue
         if path.suffix.lower() not in TEXT_EXTENSIONS:
             continue
@@ -39,12 +102,40 @@ def check_no_absolute_local_paths() -> list[str]:
         if rel == "scripts/verify_offline_integrity.py":
             continue
         text = path.read_text(encoding="utf-8", errors="replace")
-        for pattern in ABSOLUTE_PATH_PATTERNS:
-            match = pattern.search(text)
-            if match:
-                failures.append(f"absolute local path '{match.group(0)}' found in {rel}")
+        searchable_values = [text]
+        if path.suffix.lower() == ".json":
+            try:
+                payload = json.loads(text)
+            except json.JSONDecodeError:
+                pass
+            else:
+                searchable_values = list(iter_json_strings(payload))
+        path_found = False
+        for searchable_value in searchable_values:
+            for pattern in ABSOLUTE_PATH_PATTERNS:
+                match = pattern.search(searchable_value)
+                if match:
+                    failures.append(
+                        f"absolute local path '{match.group(0)}' found in {rel}"
+                    )
+                    path_found = True
+                    break
+            if path_found:
                 break
     return failures
+
+
+def iter_json_strings(value: object) -> Iterator[str]:
+    """Yield decoded string leaves from a JSON-compatible value."""
+    if isinstance(value, str):
+        yield value
+    elif isinstance(value, dict):
+        for key, item in value.items():
+            yield from iter_json_strings(key)
+            yield from iter_json_strings(item)
+    elif isinstance(value, list):
+        for item in value:
+            yield from iter_json_strings(item)
 
 
 def check_stub_files_resolved() -> list[str]:
@@ -77,8 +168,103 @@ def check_corpus_registry() -> list[str]:
         normalized = REPO_ROOT / str(doc["normalized_relpath"])
         if not source.exists():
             failures.append(f"missing source file in corpus registry: {doc['source_relpath']}")
+        else:
+            source_bytes = source.read_bytes()
+            source_text = source_bytes.decode("utf-8", errors="strict")
+            actual_sha256 = hashlib.sha256(source_bytes).hexdigest()
+            actual_line_count = source_text.count("\n") + (0 if source_text == "" else 1)
+            if str(doc.get("source_relpath", "")).startswith("build/"):
+                failures.append(
+                    f"generated build file admitted to corpus registry: {doc['source_relpath']}"
+                )
+            if doc.get("sha256") != actual_sha256:
+                failures.append(
+                    f"corpus source SHA-256 mismatch for {doc['source_relpath']}: "
+                    f"registry={doc.get('sha256')} live={actual_sha256}"
+                )
+            if doc.get("size_bytes") != len(source_bytes):
+                failures.append(
+                    f"corpus source size mismatch for {doc['source_relpath']}: "
+                    f"registry={doc.get('size_bytes')} live={len(source_bytes)}"
+                )
+            if doc.get("line_count") != actual_line_count:
+                failures.append(
+                    f"corpus source line-count mismatch for {doc['source_relpath']}: "
+                    f"registry={doc.get('line_count')} live={actual_line_count}"
+                )
         if not normalized.exists():
-            failures.append(f"missing normalized file in corpus registry: {doc['normalized_relpath']}")
+            failures.append(
+                f"missing normalized file in corpus registry: {doc['normalized_relpath']}"
+            )
+        else:
+            try:
+                normalized_record = json.loads(normalized.read_text(encoding="utf-8"))
+            except json.JSONDecodeError as exc:
+                failures.append(
+                    f"invalid normalized corpus JSON {doc['normalized_relpath']}: {exc}"
+                )
+                continue
+            for field_name in ("source_relpath", "sha256", "size_bytes", "line_count"):
+                if normalized_record.get(field_name) != doc.get(field_name):
+                    failures.append(
+                        f"normalized corpus metadata mismatch for {doc['normalized_relpath']}: "
+                        f"field={field_name} registry={doc.get(field_name)!r} "
+                        f"normalized={normalized_record.get(field_name)!r}"
+                    )
+
+    return failures
+
+
+def sha256_file(path: Path) -> str:
+    digest = hashlib.sha256()
+    with path.open("rb") as file_handle:
+        while chunk := file_handle.read(1024 * 1024):
+            digest.update(chunk)
+    return digest.hexdigest()
+
+
+def check_artifact_registry_contents() -> list[str]:
+    """Verify that identity registries describe the live repository bytes."""
+    failures: list[str] = []
+    registry_specs = (
+        ("data/registry/artifacts_index.toml", "artifacts"),
+        ("data/registry/experiments_index.toml", "experiments"),
+    )
+
+    for registry_relpath, table_name in registry_specs:
+        registry_path = REPO_ROOT / registry_relpath
+        if not registry_path.exists():
+            failures.append(f"missing registry: {registry_relpath}")
+            continue
+        registry = tomllib.loads(registry_path.read_text(encoding="utf-8"))
+        entries = registry.get(table_name, [])
+        if not isinstance(entries, list):
+            failures.append(f"invalid {registry_relpath}: {table_name} must be a list")
+            continue
+
+        for entry in entries:
+            relpath = str(entry.get("relpath", "")).strip()
+            if not relpath:
+                failures.append(f"{registry_relpath}: entry missing relpath")
+                continue
+            artifact_path = REPO_ROOT / relpath
+            if not artifact_path.is_file():
+                failures.append(f"{registry_relpath}: missing indexed file: {relpath}")
+                continue
+            expected_size = entry.get("size_bytes")
+            actual_size = artifact_path.stat().st_size
+            if expected_size != actual_size:
+                failures.append(
+                    f"{registry_relpath}: size mismatch for {relpath}: "
+                    f"registry={expected_size} live={actual_size}"
+                )
+            expected_sha256 = str(entry.get("sha256", "")).strip()
+            actual_sha256 = sha256_file(artifact_path)
+            if expected_sha256 != actual_sha256:
+                failures.append(
+                    f"{registry_relpath}: SHA-256 mismatch for {relpath}: "
+                    f"registry={expected_sha256} live={actual_sha256}"
+                )
 
     return failures
 
@@ -98,7 +284,9 @@ def check_external_manifest_targets() -> list[str]:
         # Target file may legitimately be absent before fetch; only validate parent directory exists.
         parent = (REPO_ROOT / rel).parent
         if not parent.exists():
-            failures.append(f"target parent directory missing for {source.get('id')}: {parent.relative_to(REPO_ROOT).as_posix()}")
+            failures.append(
+                f"target parent directory missing for {source.get('id')}: {parent.relative_to(REPO_ROOT).as_posix()}"
+            )
     return failures
 
 
@@ -160,7 +348,9 @@ def check_external_source_index_coverage() -> list[str]:
     for index_name in sorted(expected_indexes):
         index_path = docs_dir / index_name
         if not index_path.exists():
-            failures.append(f"missing external source index doc: docs/external_sources/{index_name}")
+            failures.append(
+                f"missing external source index doc: docs/external_sources/{index_name}"
+            )
     return failures
 
 
@@ -190,23 +380,31 @@ def check_external_provenance_completeness() -> list[str]:
                 status = str(result.get("status", "")).strip()
                 fetched_at = str(result.get("fetched_at_utc", "")).strip()
                 if not fetched_at:
-                    failures.append(f"{rel_provenance}: missing fetched_at_utc for source {result_id}")
+                    failures.append(
+                        f"{rel_provenance}: missing fetched_at_utc for source {result_id}"
+                    )
                 if status in {"downloaded", "exists"}:
                     sha = str(result.get("sha256", "")).strip()
                     size = result.get("size_bytes")
                     if not sha:
                         failures.append(f"{rel_provenance}: missing sha256 for source {result_id}")
                     if not isinstance(size, int) or size <= 0:
-                        failures.append(f"{rel_provenance}: invalid size_bytes for source {result_id}")
+                        failures.append(
+                            f"{rel_provenance}: invalid size_bytes for source {result_id}"
+                        )
                 if status == "downloaded":
                     source_url = str(result.get("source_url", "")).strip()
                     if not source_url:
-                        failures.append(f"{rel_provenance}: missing source_url for downloaded source {result_id}")
+                        failures.append(
+                            f"{rel_provenance}: missing source_url for downloaded source {result_id}"
+                        )
                 target_relpath = str(result.get("target_relpath", "")).strip()
                 if target_relpath and status in {"downloaded", "exists"}:
                     target_path = REPO_ROOT / target_relpath
                     if not target_path.exists():
-                        failures.append(f"{rel_provenance}: missing target file for {result_id}: {target_relpath}")
+                        failures.append(
+                            f"{rel_provenance}: missing target file for {result_id}: {target_relpath}"
+                        )
 
         if "assets" in data:
             assets = data.get("assets")
@@ -223,14 +421,20 @@ def check_external_provenance_completeness() -> list[str]:
                 sha = str(asset.get("sha256", "")).strip()
                 size = asset.get("size_bytes")
                 if not local_relpath:
-                    failures.append(f"{rel_provenance}: missing local_relpath for upstream asset {upstream_path}")
+                    failures.append(
+                        f"{rel_provenance}: missing local_relpath for upstream asset {upstream_path}"
+                    )
                     continue
                 if not source_url:
-                    failures.append(f"{rel_provenance}: missing source_url for asset {local_relpath}")
+                    failures.append(
+                        f"{rel_provenance}: missing source_url for asset {local_relpath}"
+                    )
                 if not sha:
                     failures.append(f"{rel_provenance}: missing sha256 for asset {local_relpath}")
                 if not isinstance(size, int) or size <= 0:
-                    failures.append(f"{rel_provenance}: invalid size_bytes for asset {local_relpath}")
+                    failures.append(
+                        f"{rel_provenance}: invalid size_bytes for asset {local_relpath}"
+                    )
                 local_path = REPO_ROOT / local_relpath
                 if not local_path.exists():
                     failures.append(f"{rel_provenance}: local asset missing: {local_relpath}")
@@ -251,6 +455,17 @@ def check_claim_source_crosswalk() -> list[str]:
     crosswalk = tomllib.loads(crosswalk_path.read_text(encoding="utf-8"))
     manifest = tomllib.loads(manifest_path.read_text(encoding="utf-8"))
     known_source_ids = {str(item.get("id", "")).strip() for item in manifest.get("sources", [])}
+
+    main_tex_path = REPO_ROOT / "papers" / "main.tex"
+    if not main_tex_path.exists():
+        failures.append("missing active paper assembly: papers/main.tex")
+        active_sections: set[str] = set()
+    else:
+        main_tex = main_tex_path.read_text(encoding="utf-8", errors="replace")
+        active_sections = {
+            f"papers/{section_relpath}.tex"
+            for section_relpath in re.findall(r"\\input\{([^}]+)\}", main_tex)
+        }
 
     coverage_policy = crosswalk.get("coverage_policy", {})
     if not isinstance(coverage_policy, dict):
@@ -313,7 +528,14 @@ def check_claim_source_crosswalk() -> list[str]:
         else:
             chapter_path = REPO_ROOT / chapter_relpath
             if not chapter_path.exists():
-                failures.append(f"claim {claim_id} references missing chapter file: {chapter_relpath}")
+                failures.append(
+                    f"claim {claim_id} references missing chapter file: {chapter_relpath}"
+                )
+            elif chapter_relpath not in active_sections:
+                failures.append(
+                    f"claim {claim_id} references a section outside papers/main.tex: "
+                    f"{chapter_relpath}"
+                )
 
         if not isinstance(source_ids, list) or not source_ids:
             failures.append(f"claim {claim_id} must define non-empty source_ids list")
@@ -350,7 +572,9 @@ def check_claim_source_crosswalk() -> list[str]:
             )
 
     for prefix in group_prefixes:
-        matched_chapters = [chapter for chapter in chapter_claim_counts if chapter.startswith(prefix)]
+        matched_chapters = [
+            chapter for chapter in chapter_claim_counts if chapter.startswith(prefix)
+        ]
         if not matched_chapters:
             failures.append(
                 f"no chapter coverage found for required chapter group prefix: {prefix}"
@@ -426,9 +650,11 @@ def check_docs_index() -> list[str]:
 
 def main() -> int:
     checks = [
+        check_no_tracked_latex_intermediates,
         check_no_absolute_local_paths,
         check_stub_files_resolved,
         check_corpus_registry,
+        check_artifact_registry_contents,
         check_external_manifest_targets,
         check_external_source_index_coverage,
         check_external_provenance_completeness,

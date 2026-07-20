@@ -66,7 +66,8 @@ of dimension 2^n for any natural number n. However:
   * Dimension 4 (Quaternions): Loses commutativity
   * Dimension 8 (Octonions): Loses associativity
   * Dimension 16 (Sedenions): Loses alternativity, gains zero divisors
-  * Dimension 32+ (Pathological algebras): Lose power-associativity for some elements
+  * Dimension 32+: Remain power-associative and flexible, but retain zero divisors
+    and fail alternativity and norm composition
 
 Properties Lost Beyond Octonions:
 - Sedenions (16D) and beyond have zero divisors

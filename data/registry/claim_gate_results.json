@@ -1,0 +1,469 @@
+{
+  "all_gates_passed": true,
+  "claim_count": 23,
+  "failed_count": 0,
+  "gate_count": 23,
+  "generator": "scripts/run_claim_gates.py",
+  "passed_count": 23,
+  "results": [
+    {
+      "actual_claim_status": "established",
+      "actual_gate_outcome": "accepted",
+      "checker": "cayley_dickson_boundary",
+      "claim_id": "octonion_normed_division_boundary",
+      "expected_claim_status": "established",
+      "expected_gate_outcome": "accepted",
+      "gate_kind": "algebraic_proof",
+      "metrics": {
+        "declared_division_properties": {
+          "Complex": true,
+          "Octonion": true,
+          "Quaternion": true,
+          "Real": true,
+          "Sedenion": false
+        },
+        "zero_divisor_left_norm_squared": 2.0,
+        "zero_divisor_product_norm_squared": 0.0,
+        "zero_divisor_right_norm_squared": 2.0
+      },
+      "missing_evidence_paths": [],
+      "passed": true,
+      "summary": "Normed division stops at dimension eight; an exact sedenion zero divisor is reproduced."
+    },
+    {
+      "actual_claim_status": "unsupported",
+      "actual_gate_outcome": "rejected",
+      "checker": "physical_mapping_admission",
+      "claim_id": "higher_cayley_dickson_physical_mapping",
+      "expected_claim_status": "unsupported",
+      "expected_gate_outcome": "rejected",
+      "gate_kind": "experimental_admission",
+      "metrics": {
+        "audited_algebra_count": 6,
+        "highest_audited_dimension": 32,
+        "present_experimental_fields": [],
+        "validation_report_bounds_physical_scope": true
+      },
+      "missing_evidence_paths": [],
+      "passed": true,
+      "summary": "The retained audit reaches higher Cayley-Dickson algebras algebraically but defines no state map, observable, raw dataset, or matched algebra-free control."
+    },
+    {
+      "actual_claim_status": "corrected",
+      "actual_gate_outcome": "corrected",
+      "checker": "albert_group_scope",
+      "claim_id": "albert_exceptional_group_ladder",
+      "expected_claim_status": "corrected",
+      "expected_gate_outcome": "corrected",
+      "gate_kind": "scope_boundary",
+      "metrics": {
+        "commutativity_residual_maximum_absolute": 0.0,
+        "coordinate_dimension": 27,
+        "identity_residual_maximum_absolute": 0.0,
+        "jordan_identity_residual_maximum_absolute": 2.384185791015625e-07,
+        "nonzero_product_norm": 2.2384519577026367,
+        "rejected_source_ladder": "rejected"
+      },
+      "missing_evidence_paths": [],
+      "passed": true,
+      "summary": "The executable Albert product is nontrivial and unital; F4, E6(-26), and E7(-25) occupy automorphism, reduced-structure, and conformal roles."
+    },
+    {
+      "actual_claim_status": "established",
+      "actual_gate_outcome": "accepted",
+      "checker": "spin8_triality",
+      "claim_id": "spin8_triality",
+      "expected_claim_status": "established",
+      "expected_gate_outcome": "accepted",
+      "gate_kind": "algebraic_proof",
+      "metrics": {
+        "automorphism_count": 6,
+        "outer_permutation_count": 6
+      },
+      "missing_evidence_paths": [],
+      "passed": true,
+      "summary": "The D4 diagram has six automorphisms permuting its three outer nodes."
+    },
+    {
+      "actual_claim_status": "corrected",
+      "actual_gate_outcome": "corrected",
+      "checker": "kac_moody_classification",
+      "claim_id": "e9_e10_e11_classification",
+      "expected_claim_status": "corrected",
+      "expected_gate_outcome": "corrected",
+      "gate_kind": "algebraic_proof",
+      "metrics": {
+        "E10": {
+          "determinant": -1,
+          "negative_eigenvalue_count": 1,
+          "null_eigenvalue_count": 0
+        },
+        "E11": {
+          "determinant": -2,
+          "negative_eigenvalue_count": 1,
+          "null_eigenvalue_count": 0
+        },
+        "E9": {
+          "determinant": 0,
+          "negative_eigenvalue_count": 0,
+          "null_eigenvalue_count": 1
+        }
+      },
+      "missing_evidence_paths": [],
+      "passed": true,
+      "summary": "The matrices classify E9 as affine and E10-E11 as indefinite Kac-Moody extensions."
+    },
+    {
+      "actual_claim_status": "bounded",
+      "actual_gate_outcome": "bounded",
+      "checker": "bounded_correspondence_scope",
+      "claim_id": "e10_e11_supergravity_scope",
+      "expected_claim_status": "bounded",
+      "expected_gate_outcome": "bounded",
+      "gate_kind": "scope_boundary",
+      "metrics": {
+        "e10_finite_height_match": true,
+        "e10_first_four_rungs": true,
+        "e10_formal_expansion": true,
+        "e11_is_conjectural": true,
+        "not_full_quantum_m_theory": true,
+        "specific_truncations": true
+      },
+      "missing_evidence_paths": [],
+      "passed": true,
+      "summary": "The retained E10 result is a finite-height formal supergravity correspondence, while the E11 source states a conjectural nonlinear realization; neither establishes complete M-theory unification."
+    },
+    {
+      "actual_claim_status": "unsupported",
+      "actual_gate_outcome": "rejected",
+      "checker": "moonshine_stability_scope",
+      "claim_id": "monstrous_moonshine_stability",
+      "expected_claim_status": "unsupported",
+      "expected_gate_outcome": "rejected",
+      "gate_kind": "scope_rejection",
+      "metrics": {
+        "monster_order": 808017424794512875886459904961710757005754368000000000,
+        "physical_stability_claim_status": "rejected",
+        "source_count": 3,
+        "source_files_present": true
+      },
+      "missing_evidence_paths": [],
+      "passed": true,
+      "summary": "The retained code has neither a Monster representation nor a physical evolution operator, so moonshine cannot supply a stability theorem here."
+    },
+    {
+      "actual_claim_status": "corrected",
+      "actual_gate_outcome": "corrected",
+      "checker": "dimension_definition_scope",
+      "claim_id": "fractional_and_negative_dimension_scope",
+      "expected_claim_status": "corrected",
+      "expected_gate_outcome": "corrected",
+      "gate_kind": "scope_boundary",
+      "metrics": {
+        "implemented_estimators": [
+          "box_counting_dimension",
+          "hausdorff_dimension",
+          "correlation_dimension",
+          "information_dimension"
+        ],
+        "negative_dimension_is_multifractal": true,
+        "rejects_literal_spatial_dimension": true
+      },
+      "missing_evidence_paths": [],
+      "passed": true,
+      "summary": "The implementation exposes named nonnegative fractal estimators, while the retained review confines negative values to multifractal spectra rather than spatial axes."
+    },
+    {
+      "actual_claim_status": "bounded",
+      "actual_gate_outcome": "bounded",
+      "checker": "fractal_convergence",
+      "claim_id": "fractal_estimator_convergence",
+      "expected_claim_status": "bounded",
+      "expected_gate_outcome": "bounded",
+      "gate_kind": "numerical_convergence",
+      "metrics": {
+        "absolute_control_errors": {
+          "cantor_set": 0.0436587687215505,
+          "koch_snowflake": 0.07536360687628507,
+          "sierpinski_triangle": 0.09041157940430855
+        },
+        "has_refinement_series": false,
+        "maximum_absolute_control_error": 0.09041157940430855
+      },
+      "missing_evidence_paths": [],
+      "passed": true,
+      "summary": "Exact controls have visible error and no retained multi-resolution convergence series."
+    },
+    {
+      "actual_claim_status": "unsupported",
+      "actual_gate_outcome": "rejected",
+      "checker": "scalar_gravity_admission",
+      "claim_id": "scalar_field_curvature_mechanism",
+      "expected_claim_status": "unsupported",
+      "expected_gate_outcome": "rejected",
+      "gate_kind": "experimental_admission",
+      "metrics": {
+        "admission_ready": false,
+        "control_count": 3,
+        "energy_channel_count": 6,
+        "measurable": true,
+        "missing_evidence_count": 4,
+        "observable_count": 3,
+        "structurally_complete": true
+      },
+      "missing_evidence_paths": [],
+      "passed": true,
+      "summary": "The admission package defines the measurement boundary and preserves the present rejection or scope result until its missing evidence exists."
+    },
+    {
+      "actual_claim_status": "unsupported",
+      "actual_gate_outcome": "rejected",
+      "checker": "zpe_energy_admission",
+      "claim_id": "zpe_energy_harvesting",
+      "expected_claim_status": "unsupported",
+      "expected_gate_outcome": "rejected",
+      "gate_kind": "energy_accounting",
+      "metrics": {
+        "admission_ready": false,
+        "control_count": 3,
+        "energy_channel_count": 8,
+        "measurable": true,
+        "missing_evidence_count": 4,
+        "observable_count": 3,
+        "structurally_complete": true
+      },
+      "missing_evidence_paths": [],
+      "passed": true,
+      "summary": "The admission package defines the measurement boundary and preserves the present rejection or scope result until its missing evidence exists."
+    },
+    {
+      "actual_claim_status": "unsupported",
+      "actual_gate_outcome": "rejected",
+      "checker": "time_crystal_energy_admission",
+      "claim_id": "time_crystal_energy_amplification",
+      "expected_claim_status": "unsupported",
+      "expected_gate_outcome": "rejected",
+      "gate_kind": "energy_accounting",
+      "metrics": {
+        "admission_ready": false,
+        "control_count": 3,
+        "energy_channel_count": 9,
+        "measurable": true,
+        "missing_evidence_count": 4,
+        "observable_count": 3,
+        "structurally_complete": true
+      },
+      "missing_evidence_paths": [],
+      "passed": true,
+      "summary": "The admission package defines the measurement boundary and preserves the present rejection or scope result until its missing evidence exists."
+    },
+    {
+      "actual_claim_status": "unsupported",
+      "actual_gate_outcome": "rejected",
+      "checker": "planck_force_identity",
+      "claim_id": "planck_force_unification",
+      "expected_claim_status": "unsupported",
+      "expected_gate_outcome": "rejected",
+      "gate_kind": "algebraic_proof",
+      "metrics": {
+        "hbar_exponent_after_simplification": 0,
+        "result": "c^4/G"
+      },
+      "missing_evidence_paths": [],
+      "passed": true,
+      "summary": "Dividing Planck energy by Planck length cancels hbar algebraically and yields c^4/G; this is not a field-theory unification gate."
+    },
+    {
+      "actual_claim_status": "excluded",
+      "actual_gate_outcome": "excluded",
+      "checker": "operator_measurability",
+      "claim_id": "origami_fold_merge_operator",
+      "expected_claim_status": "excluded",
+      "expected_gate_outcome": "excluded",
+      "gate_kind": "measurability_rejection",
+      "metrics": {
+        "admission_ready": false,
+        "control_count": 0,
+        "energy_channel_count": 0,
+        "measurable": false,
+        "missing_evidence_count": 4,
+        "observable_count": 0,
+        "structurally_complete": true
+      },
+      "missing_evidence_paths": [],
+      "passed": true,
+      "summary": "The admission package defines the measurement boundary and preserves the present rejection or scope result until its missing evidence exists."
+    },
+    {
+      "actual_claim_status": "falsified",
+      "actual_gate_outcome": "falsified",
+      "checker": "e7_root_quotient",
+      "claim_id": "e7_root_quotient_charge",
+      "expected_claim_status": "falsified",
+      "expected_gate_outcome": "falsified",
+      "gate_kind": "algebraic_proof",
+      "metrics": {
+        "maximum_basis_residual": 4.413049240337539e-15,
+        "maximum_integrality_error": 5.329070518200751e-15,
+        "root_count": 126
+      },
+      "missing_evidence_paths": [],
+      "passed": true,
+      "summary": "Every generated E7 root is an integral combination of simple roots and has zero P/Q class."
+    },
+    {
+      "actual_claim_status": "falsified",
+      "actual_gate_outcome": "falsified",
+      "checker": "fourier_quotient_filter",
+      "claim_id": "external_fourier_quotient_map",
+      "expected_claim_status": "falsified",
+      "expected_gate_outcome": "falsified",
+      "gate_kind": "algebraic_proof",
+      "metrics": {
+        "maximum_rejected_exact_triad_count": 0,
+        "mode_count": 81,
+        "nontrivial_square_symmetry_map_exists": true,
+        "ordered_exact_triad_count": 3721
+      },
+      "missing_evidence_paths": [],
+      "passed": true,
+      "summary": "The nontrivial D4-invariant map h(kx,ky)=(kx+ky) mod 2 exists. For every exact triad k+p+q=0, homomorphism additivity gives h(k)+h(p)+h(q)=h(0)=0, so no exact triad is rejected."
+    },
+    {
+      "actual_claim_status": "unsupported",
+      "actual_gate_outcome": "rejected",
+      "checker": "kac_moody_fluid_scope",
+      "claim_id": "kac_moody_fluid_transfer",
+      "expected_claim_status": "unsupported",
+      "expected_gate_outcome": "rejected",
+      "gate_kind": "scope_rejection",
+      "metrics": {
+        "algebraic_surface_present": true,
+        "missing_bridge_terms": [
+          "ward_identity",
+          "fluid_variable",
+          "vorticity",
+          "dispersion_relation"
+        ],
+        "not_implemented_method_count": 4
+      },
+      "missing_evidence_paths": [],
+      "passed": true,
+      "summary": "The retained module exposes an incomplete affine-algebra surface and no Ward-identity, fluid-variable, vorticity, or dispersion bridge."
+    },
+    {
+      "actual_claim_status": "falsified",
+      "actual_gate_outcome": "falsified",
+      "checker": "retained_lbm_beta_jets",
+      "claim_id": "lbm_beta_plane_and_jets",
+      "expected_claim_status": "falsified",
+      "expected_gate_outcome": "falsified",
+      "gate_kind": "numerical_convergence",
+      "metrics": {
+        "beta_enters_source": false,
+        "final_vorticity_anisotropy_ratio": 0.9923391166140818,
+        "final_zonal_to_total_rms_ratio": 0.0012233722508221802
+      },
+      "missing_evidence_paths": [],
+      "passed": true,
+      "summary": "The retained solver has no beta term and the final state is nearly isotropic with negligible zonal mean energy."
+    },
+    {
+      "actual_claim_status": "falsified",
+      "actual_gate_outcome": "falsified",
+      "checker": "matched_beta_ablation",
+      "claim_id": "matched_beta_plane_algebraic_ablation",
+      "expected_claim_status": "falsified",
+      "expected_gate_outcome": "falsified",
+      "gate_kind": "dynamical_ablation",
+      "metrics": {
+        "arm_run_count": 36,
+        "jet_claim_admitted": false,
+        "maximum_filter_to_identity_error": 0.0,
+        "minimum_beta_to_f_plane_relative_l2": 0.34971521584942117
+      },
+      "missing_evidence_paths": [],
+      "passed": true,
+      "summary": "Beta changes every matched trajectory while the homomorphic quotient filter remains exactly identical to its control."
+    },
+    {
+      "actual_claim_status": "repaired",
+      "actual_gate_outcome": "repaired",
+      "checker": "lbm_conservation",
+      "claim_id": "lbm_equilibrium_conservation",
+      "expected_claim_status": "repaired",
+      "expected_gate_outcome": "repaired",
+      "gate_kind": "implementation_regression",
+      "metrics": {
+        "maximum_equilibrium_density_error": 3.3306690738754696e-16,
+        "periodic_relative_mass_error": 1.887379141862766e-15
+      },
+      "missing_evidence_paths": [],
+      "passed": true,
+      "summary": "The corrected D2Q9 equilibrium and periodic evolution pass mass-conservation regressions."
+    },
+    {
+      "actual_claim_status": "bounded",
+      "actual_gate_outcome": "bounded",
+      "checker": "tourmaline_admission",
+      "claim_id": "tourmaline_novel_energy_effect",
+      "expected_claim_status": "bounded",
+      "expected_gate_outcome": "bounded",
+      "gate_kind": "experimental_admission",
+      "metrics": {
+        "admission_ready": false,
+        "control_count": 3,
+        "energy_channel_count": 9,
+        "measurable": true,
+        "missing_evidence_count": 4,
+        "observable_count": 3,
+        "structurally_complete": true
+      },
+      "missing_evidence_paths": [],
+      "passed": true,
+      "summary": "The admission package defines the measurement boundary and preserves the present rejection or scope result until its missing evidence exists."
+    },
+    {
+      "actual_claim_status": "corrected",
+      "actual_gate_outcome": "corrected",
+      "checker": "gravitoelectromagnetism_scope",
+      "claim_id": "gravitoelectromagnetism_scope",
+      "expected_claim_status": "corrected",
+      "expected_gate_outcome": "corrected",
+      "gate_kind": "scope_boundary",
+      "metrics": {
+        "linear_order": true,
+        "linear_perturbation_approach": true,
+        "minkowski_background": true,
+        "paper_preserves_nonlinear_gr": true,
+        "paper_rejects_new_coupling": true,
+        "transverse_gauge": true
+      },
+      "missing_evidence_paths": [],
+      "passed": true,
+      "summary": "The primary source derives GEM as a gauge-fixed linear perturbation of general relativity, and the paper rejects a new coupling or replacement for nonlinear Einstein dynamics."
+    },
+    {
+      "actual_claim_status": "excluded",
+      "actual_gate_outcome": "excluded",
+      "checker": "consciousness_measurability",
+      "claim_id": "consciousness_resonance",
+      "expected_claim_status": "excluded",
+      "expected_gate_outcome": "excluded",
+      "gate_kind": "measurability_rejection",
+      "metrics": {
+        "admission_ready": false,
+        "control_count": 0,
+        "energy_channel_count": 0,
+        "measurable": false,
+        "missing_evidence_count": 4,
+        "observable_count": 0,
+        "structurally_complete": true
+      },
+      "missing_evidence_paths": [],
+      "passed": true,
+      "summary": "The admission package defines the measurement boundary and preserves the present rejection or scope result until its missing evidence exists."
+    }
+  ],
+  "schema_version": 1
+}

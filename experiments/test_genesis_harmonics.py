@@ -7,7 +7,7 @@ from pathlib import Path
 import matplotlib.pyplot as plt
 import numpy as np
 
-from src.genesis_harmonics import MATERIALS, PHI, GenesisHarmonics, HarmonicLayer, MaterialType
+from src.genesis_harmonics import MATERIALS, GenesisHarmonics, HarmonicLayer, MaterialType
 
 
 def test_harmonic_layers():
@@ -37,7 +37,7 @@ def test_harmonic_layers():
     times = np.linspace(0, 1e-12, 100)  # 1 picosecond
     values = [layer.harmonic_value(t) for t in times]
 
-    print(f"\n2. Harmonic oscillation:")
+    print("\n2. Harmonic oscillation:")
     print(f"   Max value: {np.max(values):.4f}")
     print(f"   Min value: {np.min(values):.4f}")
     print(f"   RMS value: {np.sqrt(np.mean(np.array(values) ** 2)):.4f}")
@@ -46,7 +46,7 @@ def test_harmonic_layers():
     initial_amplitude = layer.amplitude
     layer.evolve(dt=1e-15)  # 1 femtosecond
 
-    print(f"\n3. Evolution test (1 fs):")
+    print("\n3. Evolution test (1 fs):")
     print(
         f"   Amplitude decay: {(initial_amplitude - layer.amplitude) / initial_amplitude * 100:.2f}%"
     )
@@ -272,24 +272,24 @@ def test_data_export_import():
 
     # Check file exists and load
     if export_path.exists():
-        with open(export_path) as f:
+        with export_path.open(encoding="utf-8") as f:
             data = json.load(f)
 
-        print(f"\n2. Exported data structure:")
+        print("\n2. Exported data structure:")
         print(f"   Configuration keys: {list(data['configuration'].keys())}")
         print(f"   Number of layers: {len(data['layers'])}")
         print(f"   Evolution history entries: {len(data['evolution_history'])}")
         print(f"   Spectral analysis keys: {list(data['spectral_analysis'].keys())}")
 
         # Validate some values
-        print(f"\n3. Data validation:")
+        print("\n3. Data validation:")
         print(f"   Base frequency: {data['configuration']['base_frequency']:.2e}")
         print(f"   Current time: {data['configuration']['current_time']:.2e}")
         print(f"   First layer frequency: {data['layers'][0]['frequency']:.2e}")
 
         # Clean up
         export_path.unlink()
-        print(f"\n4. Test file cleaned up.")
+        print("\n4. Test file cleaned up.")
 
     return True
 
