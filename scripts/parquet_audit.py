@@ -5,17 +5,24 @@ from __future__ import annotations
 
 import hashlib
 import json
-from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any
 
 
+try:
+    import pyarrow.parquet as pq  # type: ignore
+except Exception:
+    pq = None  # type: ignore
+
+
+if __package__:
+    from .reproducible_time import generated_at_utc
+else:
+    from reproducible_time import generated_at_utc
+
+
 REPO_ROOT = Path(__file__).resolve().parent.parent
 OUT_PATH = REPO_ROOT / "data" / "registry" / "parquet_audit.json"
-
-
-def now_utc_iso() -> str:
-    return datetime.now(timezone.utc).isoformat()
 
 
 def sha256_file(path: Path) -> str:
@@ -30,10 +37,7 @@ def sha256_file(path: Path) -> str:
 
 
 def parquet_schema_info(path: Path) -> dict[str, Any]:
-    # Optional dependency: pyarrow. Fall back gracefully.
-    try:
-        import pyarrow.parquet as pq  # type: ignore
-    except Exception:
+    if pq is None:
         return {
             "schema_available": False,
             "reason": "pyarrow_unavailable",
@@ -77,7 +81,7 @@ def main() -> int:
 
     payload = {
         "generated_by": "scripts/parquet_audit.py",
-        "generated_at_utc": now_utc_iso(),
+        "generated_at_utc": generated_at_utc(),
         "parquet_count": len(records),
         "records": records,
     }

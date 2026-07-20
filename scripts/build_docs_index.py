@@ -5,9 +5,14 @@ from __future__ import annotations
 
 import hashlib
 import re
-from datetime import datetime, timezone
 from pathlib import Path
 from typing import NamedTuple
+
+
+if __package__:
+    from .reproducible_time import generated_at_utc
+else:
+    from reproducible_time import generated_at_utc
 
 
 REPO_ROOT = Path(__file__).resolve().parent.parent
@@ -44,10 +49,6 @@ INDEX_SCOPES = (
 )
 
 
-def now_utc_iso() -> str:
-    return datetime.now(timezone.utc).isoformat()
-
-
 def sha256_text(text: str) -> str:
     return hashlib.sha256(text.encode("utf-8")).hexdigest()
 
@@ -74,9 +75,11 @@ def title_for(relpath: str, text: str) -> str:
         stripped = value.strip()
         if not stripped:
             return True
-        if len(stripped) >= 5 and len(set(stripped)) == 1 and stripped[0] in {"=", "-", "_", "*", "~"}:
-            return True
-        return False
+        return (
+            len(stripped) >= 5
+            and len(set(stripped)) == 1
+            and stripped[0] in {"=", "-", "_", "*", "~"}
+        )
 
     if relpath.endswith(".md"):
         for line in text.splitlines():
@@ -126,7 +129,8 @@ def to_toml(rows: list[dict[str, str | int]], generated_at_utc: str) -> str:
         lines.append(f'id = "{row["id"]}"')
         lines.append(f'relpath = "{row["relpath"]}"')
         lines.append(f'category = "{row["category"]}"')
-        lines.append(f'title = "{str(row["title"]).replace("\\\\", "\\\\\\\\").replace("\"", "\\\"")}"')
+        escaped_title = str(row["title"]).replace("\\", "\\\\").replace('"', '\\"')
+        lines.append(f'title = "{escaped_title}"')
         lines.append(f'sha256 = "{row["sha256"]}"')
         lines.append(f"line_count = {row['line_count']}")
         lines.append(f"size_bytes = {row['size_bytes']}")
@@ -164,7 +168,7 @@ def to_markdown(rows: list[dict[str, str | int]], generated_at_utc: str) -> str:
 def main() -> int:
     DOCS_INDEX_TOML.parent.mkdir(parents=True, exist_ok=True)
     DOCS_INDEX_MD.parent.mkdir(parents=True, exist_ok=True)
-    generated_at_utc = now_utc_iso()
+    generated_timestamp = generated_at_utc()
 
     rows: list[dict[str, str | int]] = []
     seen_relpaths: set[str] = set()
@@ -194,8 +198,8 @@ def main() -> int:
             }
             rows.append(row)
 
-    DOCS_INDEX_TOML.write_text(to_toml(rows, generated_at_utc), encoding="utf-8")
-    DOCS_INDEX_MD.write_text(to_markdown(rows, generated_at_utc), encoding="utf-8")
+    DOCS_INDEX_TOML.write_text(to_toml(rows, generated_timestamp), encoding="utf-8")
+    DOCS_INDEX_MD.write_text(to_markdown(rows, generated_timestamp), encoding="utf-8")
 
     print(f"Wrote docs registry: {DOCS_INDEX_TOML.relative_to(REPO_ROOT).as_posix()}")
     print(f"Wrote docs index: {DOCS_INDEX_MD.relative_to(REPO_ROOT).as_posix()}")

@@ -114,7 +114,9 @@ def write_provenance(repo: str, ref: str, assets: list[SyncedAsset]) -> None:
             for asset in assets
         ],
     }
-    PROVENANCE_PATH.write_text(json.dumps(payload, indent=2, sort_keys=True) + "\n", encoding="utf-8")
+    PROVENANCE_PATH.write_text(
+        json.dumps(payload, indent=2, sort_keys=True) + "\n", encoding="utf-8"
+    )
     print(f"Wrote provenance: {PROVENANCE_PATH.relative_to(REPO_ROOT).as_posix()}")
 
 

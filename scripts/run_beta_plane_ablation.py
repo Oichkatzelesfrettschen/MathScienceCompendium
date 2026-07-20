@@ -27,9 +27,7 @@ from mathphysics.beta_plane import (  # noqa: E402
 )
 
 
-PREREGISTRATION_PATH = (
-    REPO_ROOT / "data" / "registry" / "beta_plane_ablation_preregistration.json"
-)
+PREREGISTRATION_PATH = REPO_ROOT / "data" / "registry" / "beta_plane_ablation_preregistration.json"
 DEFAULT_OUTPUT = REPO_ROOT / "data" / "registry" / "beta_plane_ablation_results.json"
 
 
@@ -110,8 +108,7 @@ def execute_ablation() -> dict[str, Any]:
                     ),
                 }
                 runs = {
-                    arm_name: BarotropicBetaPlane(config).run()
-                    for arm_name, config in arms.items()
+                    arm_name: BarotropicBetaPlane(config).run() for arm_name, config in arms.items()
                 }
                 run_lookup[(seed, grid_size, time_step)] = runs
                 beta_run = runs["beta_plane_identity"]
@@ -121,11 +118,7 @@ def execute_ablation() -> dict[str, Any]:
                     beta_run.final_vorticity, f_plane_run.final_vorticity
                 )
                 filter_difference = float(
-                    np.max(
-                        np.abs(
-                            quotient_run.final_vorticity - beta_run.final_vorticity
-                        )
-                    )
+                    np.max(np.abs(quotient_run.final_vorticity - beta_run.final_vorticity))
                 )
                 maximum_budget_residual = max(
                     *(abs(run.energy_budget_residual) for run in runs.values()),
@@ -137,9 +130,7 @@ def execute_ablation() -> dict[str, Any]:
                         "grid_size": grid_size,
                         "time_step": time_step,
                         "steps": base_config.steps,
-                        "arms": {
-                            arm_name: run_metrics(run) for arm_name, run in runs.items()
-                        },
+                        "arms": {arm_name: run_metrics(run) for arm_name, run in runs.items()},
                         "comparisons": {
                             "beta_to_f_plane_relative_vorticity_l2": beta_difference,
                             "quotient_to_identity_maximum_vorticity_error": filter_difference,
@@ -161,9 +152,7 @@ def execute_ablation() -> dict[str, Any]:
             fine = run_lookup[(seed, grid_size, fine_time_step)]["beta_plane_identity"]
             changes = {
                 "final_energy": relative_change(coarse.final_energy, fine.final_energy),
-                "final_enstrophy": relative_change(
-                    coarse.final_enstrophy, fine.final_enstrophy
-                ),
+                "final_enstrophy": relative_change(coarse.final_enstrophy, fine.final_enstrophy),
                 "zonal_kinetic_energy_fraction": relative_change(
                     coarse.zonal_kinetic_energy_fraction,
                     fine.zonal_kinetic_energy_fraction,
@@ -183,8 +172,7 @@ def execute_ablation() -> dict[str, Any]:
     record_criteria = [criterion for record in records for criterion in record["criteria"].values()]
     time_step_passed = all(record["passed"] for record in time_step_refinements)
     jet_claim_admitted = all(
-        record["arms"]["beta_plane_identity"]["jet_claim_admitted"]
-        for record in records
+        record["arms"]["beta_plane_identity"]["jet_claim_admitted"] for record in records
     )
     all_criteria_passed = all(record_criteria) and time_step_passed
     return {
@@ -196,9 +184,7 @@ def execute_ablation() -> dict[str, Any]:
         "records": records,
         "time_step_refinements": time_step_refinements,
         "aggregate_criteria": {
-            "all_budgets_passed": all(
-                record["criteria"]["budget_passed"] for record in records
-            ),
+            "all_budgets_passed": all(record["criteria"]["budget_passed"] for record in records),
             "all_beta_sensitivity_checks_passed": all(
                 record["criteria"]["beta_sensitivity_passed"] for record in records
             ),
@@ -230,9 +216,7 @@ def main() -> int:
         json.dumps(payload, indent=2, sort_keys=True, allow_nan=False) + "\n",
         encoding="ascii",
     )
-    passed = payload["aggregate_criteria"][
-        "all_preregistered_implementation_criteria_passed"
-    ]
+    passed = payload["aggregate_criteria"]["all_preregistered_implementation_criteria_passed"]
     print(
         f"Wrote {output_path.relative_to(REPO_ROOT)}: "
         f"{payload['arm_run_count']} arm runs; criteria_passed={passed}"

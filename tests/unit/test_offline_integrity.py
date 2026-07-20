@@ -186,18 +186,14 @@ def test_absolute_path_check_ignores_generated_caches(tmp_path: Path, monkeypatc
     fixture_absolute_path = "/" + "home/example/typeshed/file.pyi"
     cache_path = tmp_path / ".mypy_cache" / "entry.json"
     cache_path.parent.mkdir(parents=True)
-    cache_path.write_text(
-        json.dumps({"path": fixture_absolute_path}) + "\n", encoding="utf-8"
-    )
+    cache_path.write_text(json.dumps({"path": fixture_absolute_path}) + "\n", encoding="utf-8")
     monkeypatch.setattr(verify_offline_integrity, "REPO_ROOT", tmp_path)
 
     assert verify_offline_integrity.check_no_absolute_local_paths() == []
 
     document_path = tmp_path / "docs" / "bad.json"
     document_path.parent.mkdir(parents=True)
-    document_path.write_text(
-        json.dumps({"path": fixture_absolute_path}) + "\n", encoding="utf-8"
-    )
+    document_path.write_text(json.dumps({"path": fixture_absolute_path}) + "\n", encoding="utf-8")
     failures = verify_offline_integrity.check_no_absolute_local_paths()
     assert any("docs/bad.json" in failure for failure in failures)
 
@@ -234,9 +230,7 @@ def test_tracked_latex_intermediate_classification() -> None:
         "docs/example.aux",
     ]
 
-    assert verify_offline_integrity.classify_tracked_latex_intermediates(
-        tracked_paths
-    ) == [
+    assert verify_offline_integrity.classify_tracked_latex_intermediates(tracked_paths) == [
         "papers/main-blx.bib",
         "papers/main.aux",
         "papers/main.bbl",

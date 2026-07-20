@@ -67,9 +67,7 @@ def albert_implementation_metrics() -> dict[str, Any]:
         "coordinate_dimension": 27,
         "identity_residual_maximum_absolute": float(np.max(np.abs(unit_residual))),
         "commutativity_residual_maximum_absolute": float(np.max(np.abs(commutator))),
-        "jordan_identity_residual_maximum_absolute": float(
-            np.max(np.abs(jordan_residual))
-        ),
+        "jordan_identity_residual_maximum_absolute": float(np.max(np.abs(jordan_residual))),
         "nonzero_product_norm": float(np.linalg.norm(np.asarray(product.data))),
         "inputs_are_hermitian": left.is_hermitian() and right.is_hermitian(),
     }
@@ -85,12 +83,8 @@ def kac_moody_metrics() -> list[dict[str, Any]]:
                 "name": root_system.name,
                 "rank": root_system.rank,
                 "determinant": round(float(np.linalg.det(matrix))),
-                "negative_eigenvalue_count": int(
-                    np.count_nonzero(eigenvalues < -1e-10)
-                ),
-                "null_eigenvalue_count": int(
-                    np.count_nonzero(np.abs(eigenvalues) <= 1e-10)
-                ),
+                "negative_eigenvalue_count": int(np.count_nonzero(eigenvalues < -1e-10)),
+                "null_eigenvalue_count": int(np.count_nonzero(np.abs(eigenvalues) <= 1e-10)),
             }
         )
     return records
@@ -99,14 +93,9 @@ def kac_moody_metrics() -> list[dict[str, Any]]:
 def build_audit() -> dict[str, Any]:
     baez_path = REPO_ROOT / "source_materials" / "pdfs" / "math_0105155.pdf"
     borcherds_path = (
-        REPO_ROOT
-        / "source_materials"
-        / "pdfs"
-        / "borcherds_monstrous_moonshine_1992.pdf"
+        REPO_ROOT / "source_materials" / "pdfs" / "borcherds_monstrous_moonshine_1992.pdf"
     )
-    moonshine_survey_path = (
-        REPO_ROOT / "source_materials" / "pdfs" / "arxiv_1411.6571.pdf"
-    )
+    moonshine_survey_path = REPO_ROOT / "source_materials" / "pdfs" / "arxiv_1411.6571.pdf"
     return {
         "schema_version": 1,
         "generator": "scripts/audit_exceptional_group_scope.py",

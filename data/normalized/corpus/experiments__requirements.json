@@ -1,7 +1,7 @@
 {
   "category": "experiments",
   "content": "numpy>=1.24.0\nscipy>=1.11.0\nmatplotlib>=3.7.0\nsympy>=1.12\njupyter>=1.0.0\nipykernel>=6.25.0\npytest>=7.4.0\npytest-cov>=4.1.0\nnumba>=0.58.0\npillow>=10.0.0\nnetworkx>=3.1\npandas>=2.0.0\nseaborn>=0.12.0\nplotly>=5.15.0\nscikit-learn>=1.3.0\nqiskit>=1.0.0\nqiskit-aer>=0.13.0\nqiskit-ibm-runtime>=0.15.0\nqiskit-experiments>=0.5.0",
-  "generated_at_utc": "2026-07-20T08:59:33.724699+00:00",
+  "generated_at_utc": "1970-01-01T00:00:00+00:00",
   "id": "experiments__requirements",
   "line_count": 19,
   "sha256": "117ee543fd8bf291b840c6a363996c0fbc267c1de140c21bd363b6d8d05bcc30",

@@ -121,9 +121,7 @@ def build_fourier_quotient_audit(radius: int = 4) -> dict[str, Any]:
     triads = enumerate_exact_triads(radius)
     homomorphism_records: list[dict[str, Any]] = []
     for homomorphism in all_z2_fourier_homomorphisms():
-        rejected_count = sum(
-            not homomorphism.admits_exact_triad(triad) for triad in triads
-        )
+        rejected_count = sum(not homomorphism.admits_exact_triad(triad) for triad in triads)
         homomorphism_records.append(
             {
                 "coefficients": [
@@ -131,9 +129,7 @@ def build_fourier_quotient_audit(radius: int = 4) -> dict[str, Any]:
                     homomorphism.coefficient_y,
                 ],
                 "nontrivial": homomorphism.is_nontrivial,
-                "square_symmetry_invariant": (
-                    homomorphism.is_square_symmetry_invariant
-                ),
+                "square_symmetry_invariant": (homomorphism.is_square_symmetry_invariant),
                 "rejected_exact_triad_count": rejected_count,
             }
         )
@@ -144,8 +140,7 @@ def build_fourier_quotient_audit(radius: int = 4) -> dict[str, Any]:
         if record["nontrivial"] and record["square_symmetry_invariant"]
     ]
     maximum_rejected_count = max(
-        int(record["rejected_exact_triad_count"])
-        for record in symmetry_compatible_nontrivial
+        int(record["rejected_exact_triad_count"]) for record in symmetry_compatible_nontrivial
     )
     return {
         "schema_version": 1,

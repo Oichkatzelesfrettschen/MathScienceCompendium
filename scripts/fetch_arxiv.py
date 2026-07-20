@@ -23,6 +23,7 @@ from dataclasses import asdict, dataclass
 from datetime import datetime, timezone
 from pathlib import Path
 
+
 try:
     import tomllib
 except ImportError:
@@ -136,9 +137,7 @@ def update_provenance(results: list[ArxivResult]) -> None:
 
 
 def main() -> int:
-    parser = argparse.ArgumentParser(
-        description="Batch download arXiv PDFs with rate limiting"
-    )
+    parser = argparse.ArgumentParser(description="Batch download arXiv PDFs with rate limiting")
     parser.add_argument(
         "--dry-run",
         action="store_true",
@@ -169,7 +168,7 @@ def main() -> int:
         filename = f"arxiv_{arxiv_id.replace('/', '_')}.pdf"
         target = PDF_DIR / filename
 
-        print(f"[{i+1}/{len(sources)}] arXiv:{arxiv_id} -> {target.name}", end=" ")
+        print(f"[{i + 1}/{len(sources)}] arXiv:{arxiv_id} -> {target.name}", end=" ")
 
         if args.dry_run:
             print("(dry-run)")
@@ -196,7 +195,7 @@ def main() -> int:
         if ok:
             sha = sha256_file(target)
             size = target.stat().st_size
-            print(f"[downloaded] {size/1024:.0f} KB sha256={sha[:16]}...")
+            print(f"[downloaded] {size / 1024:.0f} KB sha256={sha[:16]}...")
             results.append(
                 ArxivResult(
                     arxiv_id=arxiv_id,

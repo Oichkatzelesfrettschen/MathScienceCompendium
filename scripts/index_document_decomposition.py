@@ -16,9 +16,7 @@ REPO_ROOT = Path(__file__).resolve().parent.parent
 DEFAULT_PDF_ROOT = REPO_ROOT / "source_materials" / "pdfs"
 DEFAULT_DECOMPOSITION_ROOT = REPO_ROOT / "build" / "document_ocr" / "mineru_corpus"
 DEFAULT_OUTPUT = REPO_ROOT / "data" / "registry" / "document_decomposition_audit.json"
-DEFAULT_RUN_MANIFEST = (
-    REPO_ROOT / "data" / "registry" / "aligned_research_mineru_run.json"
-)
+DEFAULT_RUN_MANIFEST = REPO_ROOT / "data" / "registry" / "aligned_research_mineru_run.json"
 
 
 def sha256_file(path: Path) -> str:
@@ -47,9 +45,7 @@ def pdf_page_count(path: Path) -> int:
 def document_record(pdf_path: Path, decomposition_root: Path) -> dict[str, Any]:
     document_root = decomposition_root / pdf_path.stem
     markdown_candidates = sorted(document_root.glob(f"*/{pdf_path.stem}.md"))
-    content_list_candidates = sorted(
-        document_root.glob(f"*/{pdf_path.stem}_content_list.json")
-    )
+    content_list_candidates = sorted(document_root.glob(f"*/{pdf_path.stem}_content_list.json"))
     if len(markdown_candidates) != 1:
         raise ValueError(
             f"expected one MinerU Markdown output for {pdf_path.name}, "

@@ -5,19 +5,20 @@ from __future__ import annotations
 
 import json
 from collections import defaultdict
-from datetime import datetime, timezone
 from pathlib import Path
 
 import tomllib
 
 
+if __package__:
+    from .reproducible_time import generated_at_utc
+else:
+    from reproducible_time import generated_at_utc
+
+
 REPO_ROOT = Path(__file__).resolve().parent.parent
 REGISTRY_PATH = REPO_ROOT / "data" / "registry" / "corpus_index.toml"
 REPORT_PATH = REPO_ROOT / "data" / "registry" / "corpus_dedupe_report.toml"
-
-
-def now_utc_iso() -> str:
-    return datetime.now(timezone.utc).isoformat()
 
 
 def toml_escape(value: str) -> str:
@@ -34,7 +35,7 @@ def write_report(
 
     lines: list[str] = []
     lines.append('generated_by = "scripts/corpus_dedupe_report.py"')
-    lines.append(f'generated_at_utc = "{now_utc_iso()}"')
+    lines.append(f'generated_at_utc = "{generated_at_utc()}"')
     lines.append(f'registry_relpath = "{REGISTRY_PATH.relative_to(REPO_ROOT).as_posix()}"')
     lines.append(f"documents_total = {len(docs)}")
     lines.append(f"exact_duplicate_groups = {len(duplicate_groups)}")

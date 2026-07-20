@@ -38,9 +38,7 @@ def test_overlap_blocks_retain_source_line_ranges():
 
 def test_live_overlap_audit_proves_alpha001_maximal_containment():
     audit = json.loads(
-        (REPO_ROOT / "data/registry/framework_overlap_audit.json").read_text(
-            encoding="ascii"
-        )
+        (REPO_ROOT / "data/registry/framework_overlap_audit.json").read_text(encoding="ascii")
     )
     match = next(
         record
@@ -61,9 +59,7 @@ def test_live_overlap_audit_proves_alpha001_maximal_containment():
 
 def test_live_claim_ledger_has_valid_anchors_sources_and_evidence_paths():
     claims = json.loads(
-        (REPO_ROOT / "data/registry/unified_framework_claims.json").read_text(
-            encoding="ascii"
-        )
+        (REPO_ROOT / "data/registry/unified_framework_claims.json").read_text(encoding="ascii")
     )
     decomposition = json.loads(
         (REPO_ROOT / "data/registry/framework_document_decomposition.json").read_text(
@@ -71,9 +67,7 @@ def test_live_claim_ledger_has_valid_anchors_sources_and_evidence_paths():
         )
     )
     documents = {document["id"]: document for document in decomposition["documents"]}
-    manifest = tomllib.loads(
-        (REPO_ROOT / "data/external/sources.toml").read_text(encoding="utf-8")
-    )
+    manifest = tomllib.loads((REPO_ROOT / "data/external/sources.toml").read_text(encoding="utf-8"))
     external_ids = {source["id"] for source in manifest["sources"]}
     claim_ids = [claim["id"] for claim in claims["claims"]]
     assert len(claim_ids) == len(set(claim_ids))

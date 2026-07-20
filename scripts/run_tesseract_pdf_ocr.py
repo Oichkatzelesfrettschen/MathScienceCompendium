@@ -86,9 +86,7 @@ def ocr_pdf(
     if not selected_pages:
         raise ValueError("at least one page must be selected")
     if any(page_number > source_page_count for page_number in selected_pages):
-        raise ValueError(
-            f"selected page exceeds {source_page_count}-page source: {selected_pages}"
-        )
+        raise ValueError(f"selected page exceeds {source_page_count}-page source: {selected_pages}")
 
     with tempfile.TemporaryDirectory(prefix="mathscience-tesseract-") as temporary_directory:
         temporary_root = Path(temporary_directory)

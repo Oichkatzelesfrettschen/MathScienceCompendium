@@ -77,9 +77,7 @@ def algebra_record(algebra_class: Any) -> dict[str, Any]:
     if dimension >= 4:
         basis_one = algebra_class.basis_element(1)
         basis_two = algebra_class.basis_element(2)
-        commutator_residual = maximum_absolute(
-            basis_one * basis_two - basis_two * basis_one
-        )
+        commutator_residual = maximum_absolute(basis_one * basis_two - basis_two * basis_one)
     else:
         commutator_residual = maximum_absolute(left * right - right * left)
     if dimension >= 8:
@@ -87,13 +85,10 @@ def algebra_record(algebra_class: Any) -> dict[str, Any]:
         basis_two = algebra_class.basis_element(2)
         basis_four = algebra_class.basis_element(4)
         associator_residual = maximum_absolute(
-            (basis_one * basis_two) * basis_four
-            - basis_one * (basis_two * basis_four)
+            (basis_one * basis_two) * basis_four - basis_one * (basis_two * basis_four)
         )
     else:
-        associator_residual = maximum_absolute(
-            (left * right) * left - left * (right * left)
-        )
+        associator_residual = maximum_absolute((left * right) * left - left * (right * left))
     return {
         "name": properties.name,
         "dimension": dimension,
@@ -107,12 +102,8 @@ def algebra_record(algebra_class: Any) -> dict[str, Any]:
             "right_alternative_residual_maximum_absolute": maximum_absolute(
                 right_alternative_residual
             ),
-            "flexibility_residual_maximum_absolute": maximum_absolute(
-                flexibility_residual
-            ),
-            "quadratic_identity_residual_maximum_absolute": maximum_absolute(
-                quadratic_residual
-            ),
+            "flexibility_residual_maximum_absolute": maximum_absolute(flexibility_residual),
+            "quadratic_identity_residual_maximum_absolute": maximum_absolute(quadratic_residual),
             "norm_composition_absolute_residual": norm_composition_residual,
             "zero_divisor": zero_divisor_witness(algebra_class),
         },

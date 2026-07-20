@@ -400,9 +400,7 @@ def check_e10_e11_supergravity_scope() -> CheckResult:
         "e10_formal_expansion": "A formal" in e10_source and "small tension" in e10_source,
         "e10_finite_height_match": "at least up to 30th order in height" in e10_source,
         "e10_first_four_rungs": "first four rungs" in e10_source,
-        "e11_is_conjectural": re.search(
-            r"\bwe\s+conjecture\b", e11_source, flags=re.IGNORECASE
-        )
+        "e11_is_conjectural": re.search(r"\bwe\s+conjecture\b", e11_source, flags=re.IGNORECASE)
         is not None,
         "specific_truncations": "specific truncations" in scope_audit,
         "not_full_quantum_m_theory": "not full quantum M-theory" in scope_audit,
@@ -416,9 +414,9 @@ def check_e10_e11_supergravity_scope() -> CheckResult:
 
 
 def check_dimension_definition_scope() -> CheckResult:
-    implementation = (
-        REPO_ROOT / "src" / "mathphysics" / "fractal_analysis.py"
-    ).read_text(encoding="utf-8")
+    implementation = (REPO_ROOT / "src" / "mathphysics" / "fractal_analysis.py").read_text(
+        encoding="utf-8"
+    )
     validation_report = (
         REPO_ROOT / "research" / "fact_checks" / "mathematical_validation_report.txt"
     ).read_text(encoding="utf-8")
@@ -436,9 +434,7 @@ def check_dimension_definition_scope() -> CheckResult:
     negative_dimension_is_multifractal = (
         "Negative dimensions appear only in multifractal formalism" in validation_report
     )
-    rejects_literal_spatial_dimension = (
-        "not literal spatial dimensions" in validation_report
-    )
+    rejects_literal_spatial_dimension = "not literal spatial dimensions" in validation_report
     passed = (
         len(implemented_estimators) == len(estimator_names)
         and negative_dimension_is_multifractal
@@ -470,9 +466,7 @@ def check_kac_moody_fluid_scope() -> CheckResult:
         for term in ("class AffineLieAlgebra", "level", "get_generalized_cartan_matrix")
     )
     passed = (
-        algebraic_surface_present
-        and not_implemented_count >= 4
-        and len(missing_bridge_terms) == 4
+        algebraic_surface_present and not_implemented_count >= 4 and len(missing_bridge_terms) == 4
     )
     return CheckResult(
         "rejected" if passed else "open",
@@ -489,9 +483,9 @@ def check_gravitoelectromagnetism_scope() -> CheckResult:
     primary_source = (
         REPO_ROOT / "source_materials" / "pdfs" / "extracted" / "gr-qc_0311030.txt"
     ).read_text(encoding="utf-8")
-    paper_section = (
-        REPO_ROOT / "papers" / "sections" / "review_physical_claims.tex"
-    ).read_text(encoding="utf-8")
+    paper_section = (REPO_ROOT / "papers" / "sections" / "review_physical_claims.tex").read_text(
+        encoding="utf-8"
+    )
     evidence_flags = {
         "linear_perturbation_approach": "Linear Perturbation Approach to GEM" in primary_source,
         "minkowski_background": "Minkowski metric" in primary_source,

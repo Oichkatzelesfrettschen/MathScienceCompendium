@@ -78,9 +78,7 @@ class CliffordEngine:
         return res
 
     @partial(jax.jit, static_argnums=(0,))
-    def exterior_product(
-        self, a_coeffs: jnp.ndarray, b_coeffs: jnp.ndarray
-    ) -> jnp.ndarray:
+    def exterior_product(self, a_coeffs: jnp.ndarray, b_coeffs: jnp.ndarray) -> jnp.ndarray:
         """Exterior product using only disjoint basis blades."""
         terms = a_coeffs[:, None] * b_coeffs[None, :] * self.wedge_sign
         result = jnp.zeros(self.size)
@@ -107,9 +105,7 @@ class Multivector(CliffordAlgebra):
 
     def _require_matching_signature(self, other: Multivector) -> None:
         if self.signature != other.signature:
-            raise ValueError(
-                f"Clifford signatures differ: {self.signature} and {other.signature}"
-            )
+            raise ValueError(f"Clifford signatures differ: {self.signature} and {other.signature}")
 
     def geometric_product(self, other: Multivector) -> Multivector:
         self._require_matching_signature(other)

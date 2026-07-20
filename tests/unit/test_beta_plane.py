@@ -37,9 +37,7 @@ def test_beta_term_changes_tendency():
 
 
 def test_homomorphic_filter_is_exact_identity_control():
-    identity_solver = BarotropicBetaPlane(
-        compact_config(nonlinear_filter=NonlinearFilter.IDENTITY)
-    )
+    identity_solver = BarotropicBetaPlane(compact_config(nonlinear_filter=NonlinearFilter.IDENTITY))
     quotient_solver = BarotropicBetaPlane(
         compact_config(nonlinear_filter=NonlinearFilter.E7_PQ_HOMOMORPHISM)
     )

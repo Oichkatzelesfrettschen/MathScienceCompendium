@@ -5,8 +5,13 @@ from __future__ import annotations
 
 import hashlib
 import json
-from datetime import datetime, timezone
 from pathlib import Path
+
+
+if __package__:
+    from .reproducible_time import generated_at_utc
+else:
+    from reproducible_time import generated_at_utc
 
 
 REPO_ROOT = Path(__file__).resolve().parent.parent
@@ -24,10 +29,6 @@ EXCLUDED_PREFIXES = {
 EXCLUDED_SUBSTRINGS = {
     ".egg-info/",
 }
-
-
-def now_utc_iso() -> str:
-    return datetime.now(timezone.utc).isoformat()
 
 
 def sha256_text(text: str) -> str:
@@ -67,7 +68,7 @@ def should_include(relpath: str) -> bool:
 def to_toml(entries: list[dict[str, str | int]]) -> str:
     lines: list[str] = []
     lines.append('generated_by = "scripts/normalize_txt_to_json.py"')
-    lines.append(f'generated_at_utc = "{now_utc_iso()}"')
+    lines.append(f'generated_at_utc = "{generated_at_utc()}"')
     lines.append("")
     for entry in entries:
         lines.append("[[documents]]")
@@ -118,7 +119,7 @@ def main() -> int:
             "source_relpath": rel,
             "category": category_for(rel),
             "title": first_nonempty_line(text),
-            "generated_at_utc": now_utc_iso(),
+            "generated_at_utc": generated_at_utc(),
             "sha256": sha256_text(text),
             "size_bytes": len(text.encode("utf-8")),
             "line_count": line_count,

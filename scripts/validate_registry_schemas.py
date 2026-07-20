@@ -284,9 +284,7 @@ def semantic_checks(registry_name: str, payload: dict[str, Any]) -> list[str]:
                 if isinstance(source, dict)
             )
             expected_failed = sum(
-                source.get("status") == "failed"
-                for source in sources
-                if isinstance(source, dict)
+                source.get("status") == "failed" for source in sources if isinstance(source, dict)
             )
             if payload.get("source_count") != len(sources):
                 errors.append("$.source_count: source list length mismatch")
@@ -320,7 +318,10 @@ def semantic_checks(registry_name: str, payload: dict[str, Any]) -> list[str]:
                     source.get("source_sha256"),
                 )
                 source_path = REPO_ROOT / str(source.get("source_relpath"))
-                if source_path.is_file() and source.get("source_size_bytes") != source_path.stat().st_size:
+                if (
+                    source_path.is_file()
+                    and source.get("source_size_bytes") != source_path.stat().st_size
+                ):
                     errors.append(f"{prefix}.source_size_bytes: live size mismatch")
                 outputs = source.get("outputs", [])
                 output_roles: set[str] = set()
@@ -340,9 +341,15 @@ def semantic_checks(registry_name: str, payload: dict[str, Any]) -> list[str]:
                             output.get("sha256"),
                         )
                         output_path = REPO_ROOT / str(output.get("relpath"))
-                        if output_path.is_file() and output.get("size_bytes") != output_path.stat().st_size:
+                        if (
+                            output_path.is_file()
+                            and output.get("size_bytes") != output_path.stat().st_size
+                        ):
                             errors.append(f"{output_prefix}.size_bytes: live size mismatch")
-                if source.get("status") in {"complete", "generated"} and output_roles != expected_roles:
+                if (
+                    source.get("status") in {"complete", "generated"}
+                    and output_roles != expected_roles
+                ):
                     errors.append(
                         f"{prefix}.outputs: complete source must contain all primary roles"
                     )
@@ -389,17 +396,11 @@ def semantic_checks(registry_name: str, payload: dict[str, Any]) -> list[str]:
                     errors.append(f"{prefix}.manifest_relpath: source digest mismatch")
                 if manifest.get("dpi") != payload.get("dpi"):
                     errors.append(f"{prefix}.manifest_relpath: DPI mismatch")
-                if manifest.get("page_segmentation_mode") != payload.get(
-                    "page_segmentation_mode"
-                ):
-                    errors.append(
-                        f"{prefix}.manifest_relpath: page segmentation mode mismatch"
-                    )
+                if manifest.get("page_segmentation_mode") != payload.get("page_segmentation_mode"):
+                    errors.append(f"{prefix}.manifest_relpath: page segmentation mode mismatch")
                 page_records = manifest.get("pages", [])
                 manifest_pages = [
-                    page.get("page")
-                    for page in page_records
-                    if isinstance(page, dict)
+                    page.get("page") for page in page_records if isinstance(page, dict)
                 ]
                 if manifest_pages != document.get("selected_pages"):
                     errors.append(f"{prefix}.manifest_relpath: selected pages mismatch")
@@ -414,9 +415,10 @@ def semantic_checks(registry_name: str, payload: dict[str, Any]) -> list[str]:
                         page.get("output_sha256"),
                     )
                     output_path = REPO_ROOT / str(page.get("output_relpath"))
-                    if output_path.is_file() and page.get(
-                        "output_bytes"
-                    ) != output_path.stat().st_size:
+                    if (
+                        output_path.is_file()
+                        and page.get("output_bytes") != output_path.stat().st_size
+                    ):
                         errors.append(f"{page_prefix}.output_bytes: live size mismatch")
 
     if registry_name == "critique_evidence_ledger.json":
@@ -541,24 +543,16 @@ def semantic_checks(registry_name: str, payload: dict[str, Any]) -> list[str]:
                 )
                 markdown_path = REPO_ROOT / str(document.get("markdown_relpath"))
                 if markdown_path.is_file():
-                    markdown_text = markdown_path.read_text(
-                        encoding="utf-8", errors="replace"
-                    )
+                    markdown_text = markdown_path.read_text(encoding="utf-8", errors="replace")
                     if document.get("markdown_bytes") != markdown_path.stat().st_size:
                         errors.append(f"{prefix}.markdown_bytes: live size mismatch")
                     if document.get("markdown_nonspace_characters") != len(
                         re.sub(r"\s", "", markdown_text)
                     ):
-                        errors.append(
-                            f"{prefix}.markdown_nonspace_characters: live count mismatch"
-                        )
-                content_list_path = REPO_ROOT / str(
-                    document.get("content_list_relpath")
-                )
+                        errors.append(f"{prefix}.markdown_nonspace_characters: live count mismatch")
+                content_list_path = REPO_ROOT / str(document.get("content_list_relpath"))
                 if content_list_path.is_file():
-                    content_list = json.loads(
-                        content_list_path.read_text(encoding="utf-8")
-                    )
+                    content_list = json.loads(content_list_path.read_text(encoding="utf-8"))
                     if not isinstance(content_list, list):
                         errors.append(f"{prefix}.content_list_relpath: expected array")
                         continue
@@ -786,9 +780,8 @@ def semantic_checks(registry_name: str, payload: dict[str, Any]) -> list[str]:
         duplicate_groups = payload.get("duplicate_groups", [])
         if isinstance(documents, list) and payload.get("document_count") != len(documents):
             errors.append("$.document_count: document list length mismatch")
-        if (
-            isinstance(duplicate_groups, list)
-            and payload.get("duplicate_group_count") != len(duplicate_groups)
+        if isinstance(duplicate_groups, list) and payload.get("duplicate_group_count") != len(
+            duplicate_groups
         ):
             errors.append("$.duplicate_group_count: duplicate group list length mismatch")
         if isinstance(duplicate_groups, list):
@@ -965,12 +958,8 @@ def semantic_checks(registry_name: str, payload: dict[str, Any]) -> list[str]:
                             expected_type_counts[str(item_type)] = (
                                 expected_type_counts.get(str(item_type), 0) + count
                             )
-                if payload.get("content_type_counts") != dict(
-                    sorted(expected_type_counts.items())
-                ):
-                    errors.append(
-                        "$.content_type_counts: expected aggregate of document tallies"
-                    )
+                if payload.get("content_type_counts") != dict(sorted(expected_type_counts.items())):
+                    errors.append("$.content_type_counts: expected aggregate of document tallies")
 
     if registry_name == "lbm_evidence_audit.json":
         snapshots = payload.get("snapshots", [])

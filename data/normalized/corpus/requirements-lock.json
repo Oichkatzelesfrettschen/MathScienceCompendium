@@ -1,7 +1,7 @@
 {
   "category": "requirements-lock.txt",
   "content": "bandit==1.9.3\nblack==26.1.0\ncoverage==7.13.4\nhypothesis==6.151.6\nisort==7.0.0\nmatplotlib==3.10.8\nmypy==1.19.1\nnetworkx==3.6.1\nnumba==0.64.0\nnumpy==2.4.2\npackaging==26.0\npandas==2.3.3\npillow==12.1.1\nplotly==6.5.2\npluggy==1.6.0\npyarrow==23.0.1\npylint==4.0.5\npytest-cov==6.1.1\npytest-timeout==2.4.0\npytest-xdist==3.8.0\npytest==8.4.2\nruff==0.15.2\nscikit-learn==1.8.0\nscipy==1.17.1\nsympy==1.14.0\ntomli==2.4.0\n",
-  "generated_at_utc": "2026-07-20T08:59:33.724857+00:00",
+  "generated_at_utc": "1970-01-01T00:00:00+00:00",
   "id": "requirements-lock",
   "line_count": 27,
   "sha256": "89f9a02b7c8c3171c77fb8cb249db349f207a5cf32f5c3fbd423785a24af5c94",

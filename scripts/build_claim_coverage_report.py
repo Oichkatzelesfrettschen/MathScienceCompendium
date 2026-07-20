@@ -3,20 +3,22 @@
 
 from __future__ import annotations
 
-import tomllib
 from collections import defaultdict
-from datetime import datetime, timezone
 from pathlib import Path
+
+import tomllib
+
+
+if __package__:
+    from .reproducible_time import generated_at_utc
+else:
+    from reproducible_time import generated_at_utc
 
 
 REPO_ROOT = Path(__file__).resolve().parent.parent
 CROSSWALK_PATH = REPO_ROOT / "data" / "registry" / "claim_source_crosswalk.toml"
 SOURCES_PATH = REPO_ROOT / "data" / "external" / "sources.toml"
 OUT_PATH = REPO_ROOT / "data" / "registry" / "claim_coverage_report.toml"
-
-
-def now_utc_iso() -> str:
-    return datetime.now(timezone.utc).isoformat()
 
 
 def toml_escape(value: str) -> str:
@@ -129,7 +131,9 @@ def main() -> int:
 
     group_rows: list[dict[str, object]] = []
     for prefix in group_prefixes:
-        matching_chapters = [row for row in chapter_rows if str(row["chapter_relpath"]).startswith(prefix)]
+        matching_chapters = [
+            row for row in chapter_rows if str(row["chapter_relpath"]).startswith(prefix)
+        ]
         group_claims_count = sum(int(row["claims_count"]) for row in matching_chapters)
 
         group_sources: set[str] = set()
@@ -165,7 +169,7 @@ def main() -> int:
 
     lines: list[str] = []
     lines.append('generated_by = "scripts/build_claim_coverage_report.py"')
-    lines.append(f'generated_at_utc = "{now_utc_iso()}"')
+    lines.append(f'generated_at_utc = "{generated_at_utc()}"')
     lines.append(f'crosswalk_relpath = "{CROSSWALK_PATH.relative_to(REPO_ROOT).as_posix()}"')
     lines.append(f'sources_manifest_relpath = "{SOURCES_PATH.relative_to(REPO_ROOT).as_posix()}"')
     lines.append(f"claims_total = {len(claims)}")

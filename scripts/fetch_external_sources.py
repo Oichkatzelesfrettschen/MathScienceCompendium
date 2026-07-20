@@ -7,18 +7,20 @@ This script is intentionally script-only (not test) to keep test runs offline.
 from __future__ import annotations
 
 import argparse
+import contextlib
 import hashlib
 import json
 import shutil
 import subprocess
 import sys
-import tomllib
 import urllib.error
 import urllib.request
 from dataclasses import dataclass
 from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any
+
+import tomllib
 
 
 REPO_ROOT = Path(__file__).resolve().parent.parent
@@ -92,10 +94,8 @@ def download_url(url: str, target: Path, timeout: int) -> tuple[bool, str]:
             with target.open("wb") as out:
                 shutil.copyfileobj(resp, out)
         if target.suffix.lower() == ".pdf" and not is_pdf_file(target):
-            try:
+            with contextlib.suppress(OSError):
                 target.unlink()
-            except OSError:
-                pass
             return False, "not_pdf_payload"
         return True, "ok"
     except urllib.error.HTTPError as exc:

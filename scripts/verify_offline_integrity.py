@@ -84,9 +84,7 @@ def check_no_tracked_latex_intermediates() -> list[str]:
     except (OSError, subprocess.CalledProcessError) as exc:
         return [f"unable to enumerate tracked paper files: {exc}"]
 
-    tracked_intermediates = classify_tracked_latex_intermediates(
-        result.stdout.splitlines()
-    )
+    tracked_intermediates = classify_tracked_latex_intermediates(result.stdout.splitlines())
     return [
         f"tracked LaTeX intermediate must be removed from Git: {path}"
         for path in tracked_intermediates
@@ -134,9 +132,7 @@ def check_no_absolute_local_paths() -> list[str]:
             for pattern in ABSOLUTE_PATH_PATTERNS:
                 match = pattern.search(searchable_value)
                 if match:
-                    failures.append(
-                        f"absolute local path '{match.group(0)}' found in {rel}"
-                    )
+                    failures.append(f"absolute local path '{match.group(0)}' found in {rel}")
                     path_found = True
                     break
             if path_found:

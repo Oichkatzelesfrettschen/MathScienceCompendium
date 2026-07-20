@@ -10,6 +10,13 @@ from pathlib import Path
 from typing import Any
 
 
+try:
+    from jsonschema import Draft202012Validator, FormatChecker
+except ImportError:
+    Draft202012Validator = None  # type: ignore[misc,assignment]
+    FormatChecker = None  # type: ignore[misc,assignment]
+
+
 REPO_ROOT = Path(__file__).resolve().parent.parent
 DATA_EXTERNAL = REPO_ROOT / "data" / "external"
 SCHEMA_DIR = REPO_ROOT / "schemas" / "external"
@@ -23,21 +30,22 @@ def load_json(path: Path) -> dict[str, Any]:
 
 
 def type_matches(value: Any, expected: str) -> bool:
+    matches = False
     if expected == "object":
-        return isinstance(value, dict)
-    if expected == "array":
-        return isinstance(value, list)
-    if expected == "string":
-        return isinstance(value, str)
-    if expected == "integer":
-        return isinstance(value, int) and not isinstance(value, bool)
-    if expected == "number":
-        return (isinstance(value, int) or isinstance(value, float)) and not isinstance(value, bool)
-    if expected == "boolean":
-        return isinstance(value, bool)
-    if expected == "null":
-        return value is None
-    return False
+        matches = isinstance(value, dict)
+    elif expected == "array":
+        matches = isinstance(value, list)
+    elif expected == "string":
+        matches = isinstance(value, str)
+    elif expected == "integer":
+        matches = isinstance(value, int) and not isinstance(value, bool)
+    elif expected == "number":
+        matches = isinstance(value, (int, float)) and not isinstance(value, bool)
+    elif expected == "boolean":
+        matches = isinstance(value, bool)
+    elif expected == "null":
+        matches = value is None
+    return matches
 
 
 def validate_datetime(value: str) -> bool:
@@ -56,9 +64,7 @@ def validate_minimal_schema(instance: Any, schema: dict[str, Any], path: str = "
     if expected_type is not None:
         expected_types = expected_type if isinstance(expected_type, list) else [expected_type]
         if not any(type_matches(instance, item) for item in expected_types):
-            errors.append(
-                f"{path}: expected type {expected_types}, got {type(instance).__name__}"
-            )
+            errors.append(f"{path}: expected type {expected_types}, got {type(instance).__name__}")
             return errors
 
     if "enum" in schema and instance not in schema["enum"]:
@@ -110,9 +116,7 @@ def validate_minimal_schema(instance: Any, schema: dict[str, Any], path: str = "
 
 
 def validate_with_jsonschema(instance: Any, schema: dict[str, Any]) -> list[str]:
-    try:
-        from jsonschema import Draft202012Validator, FormatChecker
-    except Exception:
+    if Draft202012Validator is None or FormatChecker is None:
         return validate_minimal_schema(instance, schema)
 
     validator = Draft202012Validator(schema, format_checker=FormatChecker())
@@ -130,7 +134,7 @@ def validate_with_jsonschema(instance: Any, schema: dict[str, Any]) -> list[str]
     return formatted
 
 
-def semantic_checks(path: Path, payload: dict[str, Any]) -> list[str]:
+def semantic_checks(payload: dict[str, Any]) -> list[str]:
     errors: list[str] = []
 
     results = payload.get("results")
@@ -173,7 +177,9 @@ def main() -> int:
     failures: list[str] = []
 
     if not TOP_LEVEL_SCHEMA.exists():
-        failures.append(f"missing schema file: {TOP_LEVEL_SCHEMA.relative_to(REPO_ROOT).as_posix()}")
+        failures.append(
+            f"missing schema file: {TOP_LEVEL_SCHEMA.relative_to(REPO_ROOT).as_posix()}"
+        )
     if not LANE_SCHEMA.exists():
         failures.append(f"missing schema file: {LANE_SCHEMA.relative_to(REPO_ROOT).as_posix()}")
 
@@ -221,7 +227,7 @@ def main() -> int:
         for error in schema_errors:
             failures.append(f"{relpath}: {error}")
 
-        for error in semantic_checks(path, payload):
+        for error in semantic_checks(payload):
             failures.append(f"{relpath}: {error}")
 
     if failures:

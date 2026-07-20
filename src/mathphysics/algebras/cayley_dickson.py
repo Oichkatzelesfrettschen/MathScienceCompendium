@@ -685,9 +685,7 @@ class Chingon(Pathion):
         if isinstance(other, (int, float)):
             return self.__class__(self.coeffs * other)
         if isinstance(other, self.__class__):
-            return self.__class__(
-                _recursive_cayley_dickson_product(self.coeffs, other.coeffs)
-            )
+            return self.__class__(_recursive_cayley_dickson_product(self.coeffs, other.coeffs))
         return NotImplemented
 
     @classmethod
@@ -814,9 +812,7 @@ class CayleyDicksonValidator:
 
         return max_relative_error < tolerance, max_relative_error
 
-    def find_zero_divisors(
-        self, trials: int = 1000
-    ) -> list[tuple[CayleyDickson, CayleyDickson]]:
+    def find_zero_divisors(self, trials: int = 1000) -> list[tuple[CayleyDickson, CayleyDickson]]:
         """Return the canonical embedded sedenion zero-divisor witness."""
         zero_divisors: list[tuple[CayleyDickson, CayleyDickson]] = []
 

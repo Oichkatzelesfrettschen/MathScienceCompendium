@@ -4,8 +4,13 @@
 from __future__ import annotations
 
 import hashlib
-from datetime import datetime, timezone
 from pathlib import Path
+
+
+if __package__:
+    from .reproducible_time import generated_at_utc
+else:
+    from reproducible_time import generated_at_utc
 
 
 REPO_ROOT = Path(__file__).resolve().parent.parent
@@ -29,10 +34,6 @@ EXPERIMENT_SCAN_PATTERNS = [
     "experiments/results/*.json",
     "experiments/data/*.json",
 ]
-
-
-def now_utc_iso() -> str:
-    return datetime.now(timezone.utc).isoformat()
 
 
 def sha256_file(path: Path) -> str:
@@ -72,7 +73,7 @@ def include_artifact(relpath: str) -> bool:
 def to_toml_table(name: str, rows: list[dict[str, str | int]]) -> str:
     out: list[str] = []
     out.append('generated_by = "scripts/build_registries.py"')
-    out.append(f'generated_at_utc = "{now_utc_iso()}"')
+    out.append(f'generated_at_utc = "{generated_at_utc()}"')
     out.append("")
     for row in rows:
         out.append(f"[[{name}]]")

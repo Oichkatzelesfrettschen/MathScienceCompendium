@@ -30,8 +30,7 @@ def test_nontrivial_square_symmetry_invariant_map_is_unique():
     maps = [
         homomorphism
         for homomorphism in all_z2_fourier_homomorphisms()
-        if homomorphism.is_nontrivial
-        and homomorphism.is_square_symmetry_invariant
+        if homomorphism.is_nontrivial and homomorphism.is_square_symmetry_invariant
     ]
     assert maps == [Z2FourierHomomorphism(1, 1)]
 

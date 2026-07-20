@@ -9,7 +9,11 @@ import json
 import shutil
 from dataclasses import dataclass
 from pathlib import Path
-from typing import Iterable
+from typing import TYPE_CHECKING
+
+
+if TYPE_CHECKING:
+    from collections.abc import Iterable
 
 
 REPO_ROOT = Path(__file__).resolve().parent.parent
@@ -118,7 +122,9 @@ def parse_args() -> argparse.Namespace:
         default=Path("~/Documents/MathScienceCompendium/pdfs"),
         help="Destination directory (default: ~/Documents/MathScienceCompendium/pdfs)",
     )
-    parser.add_argument("--dry-run", action="store_true", help="Show planned actions without copying files.")
+    parser.add_argument(
+        "--dry-run", action="store_true", help="Show planned actions without copying files."
+    )
     return parser.parse_args()
 
 

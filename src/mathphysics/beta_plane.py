@@ -82,9 +82,7 @@ class BarotropicBetaPlane:
         grid_size = config.grid_size
         domain_spacing = 2.0 * np.pi / grid_size
         wavenumbers = 2.0 * np.pi * np.fft.fftfreq(grid_size, d=domain_spacing)
-        self.wavenumber_x, self.wavenumber_y = np.meshgrid(
-            wavenumbers, wavenumbers, indexing="ij"
-        )
+        self.wavenumber_x, self.wavenumber_y = np.meshgrid(wavenumbers, wavenumbers, indexing="ij")
         self.wavenumber_squared = self.wavenumber_x**2 + self.wavenumber_y**2
         self.inverse_wavenumber_squared = np.zeros_like(self.wavenumber_squared)
         nonzero_modes = self.wavenumber_squared > 0.0
@@ -92,17 +90,14 @@ class BarotropicBetaPlane:
             1.0 / self.wavenumber_squared[nonzero_modes]
         )
         cutoff = grid_size // 3
-        self.dealias_mask = (
-            (np.abs(self.wavenumber_x) <= cutoff)
-            & (np.abs(self.wavenumber_y) <= cutoff)
+        self.dealias_mask = (np.abs(self.wavenumber_x) <= cutoff) & (
+            np.abs(self.wavenumber_y) <= cutoff
         )
 
     def initial_vorticity(self) -> NDArray[np.complex128]:
         """Create a seeded, band-limited field normalized by kinetic energy."""
         generator = np.random.default_rng(self.config.seed)
-        physical_noise = generator.standard_normal(
-            (self.config.grid_size, self.config.grid_size)
-        )
+        physical_noise = generator.standard_normal((self.config.grid_size, self.config.grid_size))
         vorticity_hat = np.fft.fft2(physical_noise)
         radial_wavenumber = np.sqrt(self.wavenumber_squared)
         shell = (
@@ -118,9 +113,7 @@ class BarotropicBetaPlane:
         vorticity_hat *= np.sqrt(self.config.initial_energy / current_energy)
         return np.asarray(vorticity_hat, dtype=np.complex128)
 
-    def streamfunction_hat(
-        self, vorticity_hat: NDArray[np.complex128]
-    ) -> NDArray[np.complex128]:
+    def streamfunction_hat(self, vorticity_hat: NDArray[np.complex128]) -> NDArray[np.complex128]:
         return -vorticity_hat * self.inverse_wavenumber_squared
 
     def physical_fields(
@@ -154,13 +147,9 @@ class BarotropicBetaPlane:
             return tendency_hat
         return tendency_hat
 
-    def tendency_hat(
-        self, vorticity_hat: NDArray[np.complex128]
-    ) -> NDArray[np.complex128]:
+    def tendency_hat(self, vorticity_hat: NDArray[np.complex128]) -> NDArray[np.complex128]:
         streamfunction_hat = self.streamfunction_hat(vorticity_hat)
-        beta_tendency = -self.config.beta * (
-            1j * self.wavenumber_x * streamfunction_hat
-        )
+        beta_tendency = -self.config.beta * (1j * self.wavenumber_x * streamfunction_hat)
         drag_tendency = -self.config.linear_drag * vorticity_hat
         viscous_tendency = -self.config.viscosity * self.wavenumber_squared * vorticity_hat
         tendency = (
@@ -173,17 +162,13 @@ class BarotropicBetaPlane:
         tendency[0, 0] = 0.0
         return np.asarray(tendency, dtype=np.complex128)
 
-    def step(
-        self, vorticity_hat: NDArray[np.complex128]
-    ) -> NDArray[np.complex128]:
+    def step(self, vorticity_hat: NDArray[np.complex128]) -> NDArray[np.complex128]:
         time_step = self.config.time_step
         first = self.tendency_hat(vorticity_hat)
         second = self.tendency_hat(vorticity_hat + 0.5 * time_step * first)
         third = self.tendency_hat(vorticity_hat + 0.5 * time_step * second)
         fourth = self.tendency_hat(vorticity_hat + time_step * third)
-        updated = vorticity_hat + time_step * (
-            first + 2.0 * second + 2.0 * third + fourth
-        ) / 6.0
+        updated = vorticity_hat + time_step * (first + 2.0 * second + 2.0 * third + fourth) / 6.0
         updated *= self.dealias_mask
         updated[0, 0] = 0.0
         return np.asarray(updated, dtype=np.complex128)
@@ -196,9 +181,7 @@ class BarotropicBetaPlane:
         vorticity = np.fft.ifft2(vorticity_hat).real
         return float(0.5 * np.mean(vorticity**2))
 
-    def budget_rates(
-        self, vorticity_hat: NDArray[np.complex128]
-    ) -> tuple[float, float]:
+    def budget_rates(self, vorticity_hat: NDArray[np.complex128]) -> tuple[float, float]:
         streamfunction = np.fft.ifft2(self.streamfunction_hat(vorticity_hat)).real
         vorticity = np.fft.ifft2(vorticity_hat).real
         tendency = np.fft.ifft2(self.tendency_hat(vorticity_hat)).real
@@ -282,9 +265,7 @@ class BarotropicBetaPlane:
             final_energy=final_energy,
             initial_enstrophy=initial_enstrophy,
             final_enstrophy=final_enstrophy,
-            energy_budget_residual=(
-                final_energy - initial_energy - integrated_energy_rate
-            ),
+            energy_budget_residual=(final_energy - initial_energy - integrated_energy_rate),
             enstrophy_budget_residual=(
                 final_enstrophy - initial_enstrophy - integrated_enstrophy_rate
             ),

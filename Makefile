@@ -86,9 +86,9 @@ install:
 lint:
 	@echo "[LINT] Running ruff checks..."
 	@if [ -x "$(RUFF)" ]; then \
-	  $(RUFF) check src tests benchmarks experiments; \
+	  $(RUFF) check src tests benchmarks experiments scripts; \
 	elif command -v ruff > /dev/null; then \
-	  ruff check src tests benchmarks experiments; \
+	  ruff check src tests benchmarks experiments scripts; \
 	else \
 	  echo "ruff is required; run make install" >&2; \
 	  exit 1; \

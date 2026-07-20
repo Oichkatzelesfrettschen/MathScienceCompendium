@@ -101,8 +101,7 @@ def main() -> int:
         else:
             mismatch_count += 1
             errors.append(
-                f"MISMATCH {entry_id}: recorded={recorded_sha[:16]}... "
-                f"actual={actual_sha[:16]}..."
+                f"MISMATCH {entry_id}: recorded={recorded_sha[:16]}... actual={actual_sha[:16]}..."
             )
 
     print(

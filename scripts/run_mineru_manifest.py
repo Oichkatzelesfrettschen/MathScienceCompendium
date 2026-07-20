@@ -88,9 +88,7 @@ def command_for(pdf_path: Path, output_root: Path) -> list[str]:
     ]
 
 
-def process_source(
-    source: dict[str, Any], output_root: Path, force: bool
-) -> dict[str, Any]:
+def process_source(source: dict[str, Any], output_root: Path, force: bool) -> dict[str, Any]:
     source_id = str(source["id"])
     pdf_path = REPO_ROOT / str(source["target_relpath"])
     outputs = expected_outputs(pdf_path, output_root)
@@ -167,9 +165,7 @@ def main() -> int:
             "execution": "sequential docker compose containers",
         },
         "source_count": len(records),
-        "complete_count": sum(
-            record["status"] in {"complete", "generated"} for record in records
-        ),
+        "complete_count": sum(record["status"] in {"complete", "generated"} for record in records),
         "failed_count": sum(record["status"] == "failed" for record in records),
         "sources": records,
     }
