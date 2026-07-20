@@ -9,7 +9,7 @@ from __future__ import annotations
 from abc import ABC, abstractmethod
 from dataclasses import dataclass
 from itertools import product
-from typing import Any
+from typing import Any, cast
 
 import networkx as nx
 import numpy as np
@@ -96,7 +96,7 @@ class BaseRootSystem(ABC):
             return self._cartan_matrix
         simple_roots = self.generate_simple_roots()
         n = len(simple_roots)
-        cartan = np.zeros((n, n), dtype=np.float64)
+        cartan: np.ndarray = np.zeros((n, n), dtype=np.float64)
         for i in range(n):
             for j in range(n):
                 inner_product = np.dot(simple_roots[i], simple_roots[j])
@@ -175,10 +175,16 @@ class E4RootSystem(BaseRootSystem):
                     v = np.zeros(5)
                     v[i], v[j] = 1, -1
                     roots.append(v)
-        return np.array(roots)
+        return cast("np.ndarray", np.asarray(roots, dtype=np.float64))
 
     def generate_simple_roots(self) -> np.ndarray:
-        return np.array([[1, -1, 0, 0, 0], [0, 1, -1, 0, 0], [0, 0, 1, -1, 0], [0, 0, 0, 1, -1]])
+        return cast(
+            "np.ndarray",
+            np.asarray(
+                [[1, -1, 0, 0, 0], [0, 1, -1, 0, 0], [0, 0, 1, -1, 0], [0, 0, 0, 1, -1]],
+                dtype=np.float64,
+            ),
+        )
 
 
 class E5RootSystem(BaseRootSystem):
@@ -195,17 +201,21 @@ class E5RootSystem(BaseRootSystem):
                         v = np.zeros(5)
                         v[i], v[j] = s1, s2
                         roots.append(v)
-        return np.array(roots)
+        return cast("np.ndarray", np.asarray(roots, dtype=np.float64))
 
     def generate_simple_roots(self) -> np.ndarray:
-        return np.array(
-            [
-                [1, -1, 0, 0, 0],
-                [0, 1, -1, 0, 0],
-                [0, 0, 1, -1, 0],
-                [0, 0, 0, 1, -1],
-                [0, 0, 0, 1, 1],
-            ]
+        return cast(
+            "np.ndarray",
+            np.asarray(
+                [
+                    [1, -1, 0, 0, 0],
+                    [0, 1, -1, 0, 0],
+                    [0, 0, 1, -1, 0],
+                    [0, 0, 0, 1, -1],
+                    [0, 0, 0, 1, 1],
+                ],
+                dtype=np.float64,
+            ),
         )
 
 
@@ -215,15 +225,19 @@ class E6RootSystem(BaseRootSystem):
         super().__init__(props)
 
     def generate_simple_roots(self) -> np.ndarray:
-        return np.array(
-            [
-                [0.5, -0.5, -0.5, -0.5, -0.5, -0.5, -0.5, 0.5],
-                [1.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0],
-                [-1.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0],
-                [0.0, -1.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0],
-                [0.0, 0.0, -1.0, 1.0, 0.0, 0.0, 0.0, 0.0],
-                [0.0, 0.0, 0.0, -1.0, 1.0, 0.0, 0.0, 0.0],
-            ]
+        return cast(
+            "np.ndarray",
+            np.asarray(
+                [
+                    [0.5, -0.5, -0.5, -0.5, -0.5, -0.5, -0.5, 0.5],
+                    [1.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0],
+                    [-1.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0],
+                    [0.0, -1.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0],
+                    [0.0, 0.0, -1.0, 1.0, 0.0, 0.0, 0.0, 0.0],
+                    [0.0, 0.0, 0.0, -1.0, 1.0, 0.0, 0.0, 0.0],
+                ],
+                dtype=np.float64,
+            ),
         )
 
 
@@ -253,10 +267,16 @@ class F4RootSystem(BaseRootSystem):
         # Type 3: (+/-1/2, +/-1/2, +/-1/2, +/-1/2) - 16 roots
         for signs in product([-0.5, 0.5], repeat=4):
             roots.append(np.array(signs))
-        return np.array(roots)
+        return cast("np.ndarray", np.asarray(roots, dtype=np.float64))
 
     def generate_simple_roots(self) -> np.ndarray:
-        return np.array([[0, 1, -1, 0], [0, 0, 1, -1], [0, 0, 0, 1], [0.5, -0.5, -0.5, -0.5]])
+        return cast(
+            "np.ndarray",
+            np.asarray(
+                [[0, 1, -1, 0], [0, 0, 1, -1], [0, 0, 0, 1], [0.5, -0.5, -0.5, -0.5]],
+                dtype=np.float64,
+            ),
+        )
 
 
 class E7RootSystem(BaseRootSystem):
@@ -267,20 +287,24 @@ class E7RootSystem(BaseRootSystem):
     def generate_roots(self, include_zero: bool = False) -> np.ndarray:
         roots = super().generate_roots()
         if include_zero:
-            return np.vstack([roots, np.zeros((1, roots.shape[1]))])
+            return cast("np.ndarray", np.vstack([roots, np.zeros((1, roots.shape[1]))]))
         return roots
 
     def generate_simple_roots(self) -> np.ndarray:
-        return np.array(
-            [
-                [0.5, -0.5, -0.5, -0.5, -0.5, -0.5, -0.5, 0.5],
-                [1.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0],
-                [-1.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0],
-                [0.0, -1.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0],
-                [0.0, 0.0, -1.0, 1.0, 0.0, 0.0, 0.0, 0.0],
-                [0.0, 0.0, 0.0, -1.0, 1.0, 0.0, 0.0, 0.0],
-                [0.0, 0.0, 0.0, 0.0, -1.0, 1.0, 0.0, 0.0],
-            ]
+        return cast(
+            "np.ndarray",
+            np.asarray(
+                [
+                    [0.5, -0.5, -0.5, -0.5, -0.5, -0.5, -0.5, 0.5],
+                    [1.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0],
+                    [-1.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0],
+                    [0.0, -1.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0],
+                    [0.0, 0.0, -1.0, 1.0, 0.0, 0.0, 0.0, 0.0],
+                    [0.0, 0.0, 0.0, -1.0, 1.0, 0.0, 0.0, 0.0],
+                    [0.0, 0.0, 0.0, 0.0, -1.0, 1.0, 0.0, 0.0],
+                ],
+                dtype=np.float64,
+            ),
         )
 
     def get_127_state_system(self) -> np.ndarray:
@@ -324,20 +348,24 @@ class E8RootSystem(BaseRootSystem):
             root = np.array(s)
             if np.sum(root < 0) % 2 == 0:
                 roots.append(root)
-        return np.array(roots)
+        return cast("np.ndarray", np.asarray(roots, dtype=np.float64))
 
     def generate_simple_roots(self) -> np.ndarray:
-        return np.array(
-            [
-                [1, -1, 0, 0, 0, 0, 0, 0],
-                [0, 1, -1, 0, 0, 0, 0, 0],
-                [0, 0, 1, -1, 0, 0, 0, 0],
-                [0, 0, 0, 1, -1, 0, 0, 0],
-                [0, 0, 0, 0, 1, -1, 0, 0],
-                [0, 0, 0, 0, 0, 1, -1, 0],
-                [0, 0, 0, 0, 0, 1, 1, 0],
-                [-0.5, -0.5, -0.5, -0.5, -0.5, -0.5, -0.5, -0.5],
-            ]
+        return cast(
+            "np.ndarray",
+            np.asarray(
+                [
+                    [1, -1, 0, 0, 0, 0, 0, 0],
+                    [0, 1, -1, 0, 0, 0, 0, 0],
+                    [0, 0, 1, -1, 0, 0, 0, 0],
+                    [0, 0, 0, 1, -1, 0, 0, 0],
+                    [0, 0, 0, 0, 1, -1, 0, 0],
+                    [0, 0, 0, 0, 0, 1, -1, 0],
+                    [0, 0, 0, 0, 0, 1, 1, 0],
+                    [-0.5, -0.5, -0.5, -0.5, -0.5, -0.5, -0.5, -0.5],
+                ],
+                dtype=np.float64,
+            ),
         )
 
 
@@ -360,7 +388,7 @@ class E9RootSystem(KacMoodyAlgebra):
         # In this E8 node ordering the affine root attaches to node zero.
         # Attaching it to node seven produces an indefinite matrix, not E8^(1).
         res[8, 0] = res[0, 8] = -1
-        return res
+        return cast("np.ndarray", res)
 
 
 class E10RootSystem(KacMoodyAlgebra):
@@ -371,7 +399,7 @@ class E10RootSystem(KacMoodyAlgebra):
         res = np.eye(10) * 2
         res[:9, :9] = E9RootSystem().generalized_cartan_matrix()
         res[9, 8] = res[8, 9] = -1
-        return res
+        return cast("np.ndarray", res)
 
 
 class E11RootSystem(KacMoodyAlgebra):
@@ -382,7 +410,7 @@ class E11RootSystem(KacMoodyAlgebra):
         res = np.eye(11) * 2
         res[:10, :10] = E10RootSystem().generalized_cartan_matrix()
         res[10, 9] = res[9, 10] = -1
-        return res
+        return cast("np.ndarray", res)
 
 
 class LieAlgebraCalculator:

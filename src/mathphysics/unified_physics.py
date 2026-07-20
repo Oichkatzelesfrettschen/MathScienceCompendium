@@ -84,6 +84,6 @@ def run_e11_analysis():
     print(f"[E11] Cartan Matrix Shape: {cartan.shape}")
     # Check for Lorentz signature or other hyperbolic properties
     eigvals = np.linalg.eigvals(cartan)
-    num_neg = np.sum(eigvals < -1e-10)
+    num_neg = int(np.count_nonzero(eigvals < -1e-10))
     print(f"[E11] Hyperbolic rank: {num_neg}")
     return cartan

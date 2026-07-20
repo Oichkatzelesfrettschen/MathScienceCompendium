@@ -35,7 +35,7 @@ import sys
 from abc import ABC, abstractmethod
 from dataclasses import dataclass
 from pathlib import Path
-from typing import Any
+from typing import Any, TypedDict, cast
 
 import networkx as nx
 import numpy as np
@@ -67,6 +67,22 @@ class AQGMConfig:
             raise ValueError("Graph vertices must be positive")
         if self.spectral_dimension < 1:
             raise ValueError("Spectral dimension must be positive")
+
+
+class _ModularFlowChecks(TypedDict):
+    """Per-operator modular-flow validation outcomes."""
+
+    kms_satisfied: list[bool]
+    flow_hermiticity: list[bool]
+    flow_norm_preservation: list[bool]
+
+
+class _ModularFlowSummary(TypedDict):
+    """Aggregate modular-flow validation rates."""
+
+    kms_pass_rate: float
+    hermiticity_pass_rate: float
+    norm_preservation_rate: float
 
 
 class AlgebraicGraph:
@@ -128,11 +144,11 @@ class AlgebraicGraph:
 
     def adjacency_matrix(self) -> np.ndarray:
         """Get adjacency matrix of graph."""
-        return nx.adjacency_matrix(self.graph).toarray()
+        return cast("np.ndarray", nx.adjacency_matrix(self.graph).toarray())
 
     def laplacian_matrix(self) -> np.ndarray:
         """Get Laplacian matrix of graph."""
-        return nx.laplacian_matrix(self.graph).toarray()
+        return cast("np.ndarray", nx.laplacian_matrix(self.graph).toarray())
 
     def connectivity_structure(self) -> dict[str, Any]:
         """Analyze graph connectivity structure."""
@@ -186,11 +202,11 @@ class MatrixStarAlgebra(StarAlgebra):
 
     def multiply(self, a: np.ndarray, b: np.ndarray) -> np.ndarray:
         """Matrix multiplication."""
-        return a @ b
+        return cast("np.ndarray", a @ b)
 
     def star(self, a: np.ndarray) -> np.ndarray:
         """Hermitian conjugate."""
-        return np.conj(a.T)
+        return cast("np.ndarray", np.conj(a.T))
 
     def norm(self, a: np.ndarray) -> float:
         """Operator norm (largest singular value)."""
@@ -198,11 +214,11 @@ class MatrixStarAlgebra(StarAlgebra):
 
     def commutator(self, a: np.ndarray, b: np.ndarray) -> np.ndarray:
         """Commutator [a, b] = ab - ba."""
-        return a @ b - b @ a
+        return cast("np.ndarray", a @ b - b @ a)
 
     def anti_commutator(self, a: np.ndarray, b: np.ndarray) -> np.ndarray:
         """Anti-commutator {a, b} = ab + ba."""
-        return a @ b + b @ a
+        return cast("np.ndarray", a @ b + b @ a)
 
     def is_self_adjoint(self, a: np.ndarray, tolerance: float = 1e-10) -> bool:
         """Check if element is self-adjoint (a = a*)."""
@@ -236,7 +252,7 @@ class QuantumGeometricOperator:
             Position operator matrix
         """
         n = self.graph.n_vertices
-        operator = np.zeros((n, n), dtype=complex)
+        operator: np.ndarray = np.zeros((n, n), dtype=complex)
 
         # Position operator projects onto vertex
         operator[vertex, vertex] = 1.0
@@ -258,7 +274,7 @@ class QuantumGeometricOperator:
         operator = -1j * laplacian
 
         self._operator_matrix = operator
-        return operator
+        return cast("np.ndarray", operator)
 
     def build_hamiltonian(self, potential: np.ndarray | None = None) -> np.ndarray:
         """Build Hamiltonian operator.
@@ -281,16 +297,17 @@ class QuantumGeometricOperator:
         hamiltonian = kinetic + potential
 
         self._operator_matrix = hamiltonian
-        return hamiltonian
+        return cast("np.ndarray", hamiltonian)
 
     def commutator(self, other: QuantumGeometricOperator) -> np.ndarray:
         """Compute commutator with another operator."""
         if self._operator_matrix is None or other._operator_matrix is None:
             raise ValueError("Operators must be built before commutator")
 
-        return (
+        return cast(
+            "np.ndarray",
             self._operator_matrix @ other._operator_matrix
-            - other._operator_matrix @ self._operator_matrix
+            - other._operator_matrix @ self._operator_matrix,
         )
 
     def expectation_value(self, state: np.ndarray) -> complex:
@@ -374,7 +391,7 @@ class ModularAutomorphismGroup:
         # Conjugation
         evolved = delta_it @ operator @ np.conj(delta_it.T)
 
-        return evolved
+        return cast("np.ndarray", evolved)
 
     def kms_condition(
         self,
@@ -458,7 +475,7 @@ class SpectralTriple:
         dirac = eigenvectors @ np.diag(sqrt_eigenvalues) @ eigenvectors.T.conj()
 
         self.dirac_operator = dirac
-        return dirac
+        return cast("np.ndarray", dirac)
 
     def spectral_action(self, cutoff: float) -> float:
         """Compute spectral action functional.
@@ -484,9 +501,9 @@ class SpectralTriple:
         cutoff_values = np.exp(-(scaled_eigenvalues**2))
 
         # Spectral action
-        action = np.real(np.sum(cutoff_values))
+        action = float(np.real(np.sum(cutoff_values)))
 
-        return float(action)
+        return action
 
     def heat_kernel_trace(self, time: float) -> float:
         """Compute heat kernel trace Tr(exp(-tD^2)).
@@ -666,7 +683,7 @@ class AQGMFramework:
 
         return properties
 
-    def test_modular_flow_properties(self, test_operators: int = 5) -> dict[str, Any]:
+    def test_modular_flow_properties(self, test_operators: int = 5) -> _ModularFlowSummary:
         """Test modular flow and KMS properties.
 
         Args:
@@ -677,7 +694,7 @@ class AQGMFramework:
         """
         modular_group = self.modular_group or self.initialize_modular_theory()
 
-        results: dict[str, list[bool]] = {
+        results: _ModularFlowChecks = {
             "kms_satisfied": [],
             "flow_hermiticity": [],
             "flow_norm_preservation": [],
@@ -712,7 +729,7 @@ class AQGMFramework:
             results["flow_norm_preservation"].append(norm_preserved)
 
         # Summarize
-        summary = {
+        summary: _ModularFlowSummary = {
             "kms_pass_rate": float(np.mean(results["kms_satisfied"])),
             "hermiticity_pass_rate": float(np.mean(results["flow_hermiticity"])),
             "norm_preservation_rate": float(np.mean(results["flow_norm_preservation"])),

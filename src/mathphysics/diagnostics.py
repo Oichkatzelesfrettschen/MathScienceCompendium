@@ -2,6 +2,8 @@
 
 from __future__ import annotations
 
+from typing import cast
+
 import numpy as np
 
 
@@ -14,7 +16,11 @@ def calculate_vorticity(velocity: np.ndarray) -> np.ndarray:
     """
     if velocity.ndim != 3 or velocity.shape[-1] != 2:
         raise ValueError("velocity must have shape (x, y, 2)")
-    return np.gradient(velocity[..., 1], axis=0) - np.gradient(
-        velocity[..., 0],
-        axis=1,
+    return cast(
+        "np.ndarray",
+        np.gradient(velocity[..., 1], axis=0)
+        - np.gradient(
+            velocity[..., 0],
+            axis=1,
+        ),
     )

@@ -16,7 +16,7 @@ from __future__ import annotations
 
 import json
 from dataclasses import dataclass
-from typing import TYPE_CHECKING, Any
+from typing import TYPE_CHECKING, Any, cast
 
 import numpy as np
 from typing_extensions import Self
@@ -46,7 +46,7 @@ def _recursive_cayley_dickson_product(left: np.ndarray, right: np.ndarray) -> np
     if left.shape != right.shape or left.ndim != 1:
         raise ValueError("Cayley-Dickson operands must be equal one-dimensional vectors")
     if len(left) == 1:
-        return left * right
+        return cast("np.ndarray", left * right)
     if len(left) % 2 != 0:
         raise ValueError("Cayley-Dickson coefficient count must be a power of two")
 
@@ -63,7 +63,7 @@ def _recursive_cayley_dickson_product(left: np.ndarray, right: np.ndarray) -> np
     product_right = _recursive_cayley_dickson_product(
         right_b, left_a
     ) + _recursive_cayley_dickson_product(left_b, conjugate_right_a)
-    return np.concatenate((product_left, product_right))
+    return cast("np.ndarray", np.concatenate((product_left, product_right)))
 
 
 @dataclass
@@ -401,19 +401,23 @@ class Quaternion(CayleyDickson):
     @property
     def vector(self) -> np.ndarray:
         """Vector (imaginary) part."""
-        return self.coeffs[1:4]
+        return cast("np.ndarray", self.coeffs[1:4])
 
     def to_rotation_matrix(self) -> np.ndarray:
         """Convert unit quaternion to 3x3 rotation matrix."""
         q = self.normalized()
         w, x, y, z = q.coeffs
 
-        return np.array(
-            [
-                [1 - 2 * (y * y + z * z), 2 * (x * y - w * z), 2 * (x * z + w * y)],
-                [2 * (x * y + w * z), 1 - 2 * (x * x + z * z), 2 * (y * z - w * x)],
-                [2 * (x * z - w * y), 2 * (y * z + w * x), 1 - 2 * (x * x + y * y)],
-            ]
+        return cast(
+            "np.ndarray",
+            np.asarray(
+                [
+                    [1 - 2 * (y * y + z * z), 2 * (x * y - w * z), 2 * (x * z + w * y)],
+                    [2 * (x * y + w * z), 1 - 2 * (x * x + z * z), 2 * (y * z - w * x)],
+                    [2 * (x * z - w * y), 2 * (y * z + w * x), 1 - 2 * (x * x + y * y)],
+                ],
+                dtype=np.float64,
+            ),
         )
 
     @classmethod
@@ -528,7 +532,7 @@ class Octonion(CayleyDickson):
                 [8, -7, 6, 5, -4, -3, 2, -1],  # e7
             ]
         )
-        return table
+        return cast("np.ndarray", table)
 
 
 class Sedenion(CayleyDickson):
@@ -749,7 +753,7 @@ class CayleyDicksonValidator:
             left = (a * b) * c
             right = a * (b * c)
 
-            error = np.linalg.norm(left.coeffs - right.coeffs)
+            error = float(np.linalg.norm(left.coeffs - right.coeffs))
             max_error = max(max_error, error)
 
         return max_error < tolerance, max_error
@@ -766,7 +770,7 @@ class CayleyDicksonValidator:
             left = a * b
             right = b * a
 
-            error = np.linalg.norm(left.coeffs - right.coeffs)
+            error = float(np.linalg.norm(left.coeffs - right.coeffs))
             max_error = max(max_error, error)
 
         return max_error < tolerance, max_error
@@ -783,12 +787,12 @@ class CayleyDicksonValidator:
             # Left alternativity: (aa)b = a(ab)
             left1 = (a * a) * b
             right1 = a * (a * b)
-            error1 = np.linalg.norm(left1.coeffs - right1.coeffs)
+            error1 = float(np.linalg.norm(left1.coeffs - right1.coeffs))
 
             # Right alternativity: (ab)b = a(bb)
             left2 = (a * b) * b
             right2 = a * (b * b)
-            error2 = np.linalg.norm(left2.coeffs - right2.coeffs)
+            error2 = float(np.linalg.norm(left2.coeffs - right2.coeffs))
 
             max_error = max(max_error, error1, error2)
 
@@ -841,7 +845,7 @@ class CayleyDicksonValidator:
                 product = ei * ej
                 table[i, j, :] = product.coeffs
 
-        return table
+        return cast("np.ndarray", table)
 
     def verify_all_properties(self) -> dict[str, Any]:
         """Run all verification tests."""

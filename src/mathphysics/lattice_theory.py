@@ -6,7 +6,7 @@ and theta series for modular form connections.
 
 from __future__ import annotations
 
-from typing import TYPE_CHECKING, Any
+from typing import TYPE_CHECKING, Any, cast
 
 import numpy as np
 
@@ -27,7 +27,7 @@ class E8Lattice:
         basis = np.eye(8)
         basis[0, 0] = 2.0
         # This is a simplified representation
-        return basis
+        return cast("np.ndarray", basis)
 
     def minimal_vectors(self) -> np.ndarray:
         """The 240 minimal vectors of norm 2 (roots of E8)."""
@@ -46,7 +46,7 @@ class E8Lattice:
         for n in range(1, max_n + 1):
             sigma3 = sum(d**3 for d in range(1, n + 1) if n % d == 0)
             coeffs[n] = 240 * sigma3
-        return coeffs
+        return cast("np.ndarray", coeffs)
 
     def packing_density(self) -> float:
         """Density delta_8 = pi^4 / 384."""

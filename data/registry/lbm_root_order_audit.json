@@ -8,7 +8,7 @@
       "reference_density_maximum": 1.0168224451630792,
       "reference_density_minimum": 0.9831775548369206,
       "reference_order_sha256": "6f8929830cc1e6f318e41bedfb7e5922fff447018d5b7eecc21062cbd7e41f93",
-      "relative_perturbation_l2_difference": 0.5938954733014199
+      "relative_perturbation_l2_difference": 0.59389547330142
     },
     "reverse_order": {
       "comparison_density_maximum": 1.0168224451630792,

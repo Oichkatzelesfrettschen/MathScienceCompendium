@@ -5,7 +5,7 @@ Provides high-performance storage using Parquet and TFRecords.
 
 from __future__ import annotations
 
-from typing import Any
+from typing import Any, cast
 
 import numpy as np
 import pandas as pd
@@ -87,4 +87,4 @@ class SimulationDataHandler:
         if not path.exists():
             return None
         df = pd.read_parquet(path)
-        return np.array(df["density"].iloc[0])
+        return cast("np.ndarray", np.asarray(df["density"].iloc[0]))

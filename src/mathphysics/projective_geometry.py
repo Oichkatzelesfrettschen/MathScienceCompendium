@@ -32,7 +32,7 @@ import sys
 from collections import defaultdict
 from dataclasses import dataclass
 from pathlib import Path
-from typing import Any
+from typing import Any, cast
 
 import numpy as np
 
@@ -141,7 +141,7 @@ class ProjectivePoint:
 
     def coordinates(self) -> np.ndarray:
         """Get homogeneous coordinates."""
-        return self.canonical.components
+        return cast("np.ndarray", self.canonical.components)
 
     def __hash__(self) -> int:
         return hash(self.canonical)
@@ -345,7 +345,7 @@ class ProjectiveSpace:
         points = self.generate_points()
         lines = self.generate_lines()
 
-        matrix = np.zeros((len(points), len(lines)), dtype=int)
+        matrix: np.ndarray = np.zeros((len(points), len(lines)), dtype=int)
 
         for j, line in enumerate(lines):
             line_points = line.get_all_points(self.dimension)

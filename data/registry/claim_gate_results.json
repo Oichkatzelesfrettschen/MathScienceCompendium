@@ -303,8 +303,8 @@
       "expected_gate_outcome": "falsified",
       "gate_kind": "algebraic_proof",
       "metrics": {
-        "maximum_basis_residual": 4.413049240337539e-15,
-        "maximum_integrality_error": 5.329070518200751e-15,
+        "maximum_basis_residual": 4.811251104190995e-15,
+        "maximum_integrality_error": 5.773159728050814e-15,
         "root_count": 126
       },
       "missing_evidence_paths": [],

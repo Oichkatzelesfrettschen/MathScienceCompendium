@@ -3,7 +3,11 @@
 from __future__ import annotations
 
 import importlib
-from typing import Any
+from typing import TYPE_CHECKING, Any
+
+
+if TYPE_CHECKING:
+    from types import ModuleType
 
 
 # Track available optional dependencies
@@ -15,9 +19,11 @@ HAS_JAXLIE = False
 HAS_PLOTLY = False
 
 # Try importing JAX
+jax: ModuleType | None
+jnp: ModuleType | None
 try:
-    import jax
-    import jax.numpy as jnp
+    jax = importlib.import_module("jax")
+    jnp = importlib.import_module("jax.numpy")
 
     HAS_JAX = True
 except ImportError:
@@ -25,40 +31,45 @@ except ImportError:
     jnp = None
 
 # Try importing Qiskit
+qiskit: ModuleType | None
 try:
-    import qiskit
+    qiskit = importlib.import_module("qiskit")
 
     HAS_QISKIT = True
 except ImportError:
     qiskit = None
 
 # Try importing liesym
+liesym: ModuleType | None
 try:
-    import liesym
+    liesym = importlib.import_module("liesym")
 
     HAS_LIESYM = True
 except ImportError:
     liesym = None
 
 # Try importing gudhi
+gudhi: ModuleType | None
 try:
-    import gudhi
+    gudhi = importlib.import_module("gudhi")
 
     HAS_GUDHI = True
 except ImportError:
     gudhi = None
 
 # Try importing jaxlie
+jaxlie: ModuleType | None
 try:
-    import jaxlie
+    jaxlie = importlib.import_module("jaxlie")
 
     HAS_JAXLIE = True
 except ImportError:
     jaxlie = None
 
 # Try importing plotly
+plotly: ModuleType | None
 try:
-    import plotly
+    plotly = importlib.import_module("plotly")
 
     HAS_PLOTLY = True
 except ImportError:

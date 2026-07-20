@@ -6,6 +6,8 @@ root lattices, with a fallback to simplified cluster analysis.
 
 from __future__ import annotations
 
+from typing import cast
+
 import numpy as np
 
 
@@ -30,15 +32,18 @@ class TopologyBridge:
             # st.persistence() returns [(dim, (birth, death)), ...]
             persistence = simplex_tree.persistence()
 
-            res = []
+            res: list[list[float]] = []
             for dim, (birth, death) in persistence:
                 # Handle infinite death
                 d = death if np.isfinite(death) else birth + 1.0
                 res.append([dim, birth, d])
-            return np.array(res)
+            return cast("np.ndarray", np.asarray(res, dtype=np.float64))
 
         # Fallback: return dummy persistence data for build stability
-        return np.array([[0, 0.0, 1.0], [0, 0.0, 0.8], [1, 0.2, 0.7]])
+        return cast(
+            "np.ndarray",
+            np.asarray([[0, 0.0, 1.0], [0, 0.0, 0.8], [1, 0.2, 0.7]], dtype=np.float64),
+        )
 
     @staticmethod
     def get_betti_numbers(points: np.ndarray, threshold: float = 0.5) -> list[int]:

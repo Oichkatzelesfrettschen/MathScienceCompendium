@@ -8,7 +8,7 @@ from __future__ import annotations
 
 from dataclasses import dataclass
 from enum import Enum
-from typing import Callable
+from typing import Callable, cast
 
 import numpy as np
 
@@ -59,19 +59,25 @@ class GenesisHarmonics:
 
     def _initialize_layers(self) -> np.ndarray:
         phi = (1 + np.sqrt(5)) / 2
-        return self.base_frequency * (phi ** np.arange(self.num_layers))
+        return cast(
+            "np.ndarray",
+            self.base_frequency * (phi ** np.arange(self.num_layers)),
+        )
 
-    def evolve(self, t: float) -> dict[str, np.ndarray]:
+    def evolve(self, t: float) -> dict[str, np.ndarray | float]:
         """Evolve the harmonic state to time t."""
         phases = 2 * np.pi * self.layer_frequencies * t
         amplitudes = np.exp(1j * phases)
         return {
             "harmonic_amplitudes": amplitudes,
-            "zpe_modulation": self.zpe_beta * np.sin(phases.mean()),
+            "zpe_modulation": float(self.zpe_beta * np.sin(phases.mean())),
         }
 
     def calculate_zpe_envelope(self, frequencies: np.ndarray) -> np.ndarray:
         """Calculate the zero-point energy envelope for a given spectrum."""
         # E = 0.5 * h_bar * omega  # noqa: ERA001
         h_bar = 1.054e-34
-        return 0.5 * h_bar * frequencies * np.exp(-frequencies / (10 * self.base_frequency))
+        return cast(
+            "np.ndarray",
+            0.5 * h_bar * frequencies * np.exp(-frequencies / (10 * self.base_frequency)),
+        )

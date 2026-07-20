@@ -8,7 +8,7 @@ from __future__ import annotations
 
 import json
 from dataclasses import dataclass
-from typing import TYPE_CHECKING, Any
+from typing import TYPE_CHECKING, Any, cast
 
 import numpy as np
 from scipy.spatial.distance import cdist
@@ -98,7 +98,7 @@ class FractalGenerator:
         X, Y = np.meshgrid(x, y)
 
         # Use vectorized computation
-        mandelbrot = np.zeros((height, width), dtype=np.int32)
+        mandelbrot: np.ndarray = np.zeros((height, width), dtype=np.int32)
         for i in prange(height):
             for j in range(width):
                 mandelbrot[i, j] = FractalGenerator.mandelbrot_point(X[i, j], Y[i, j], max_iter)
@@ -145,7 +145,7 @@ class FractalGenerator:
                     if is_boundary:
                         boundary_points.append([x[i], y[j]])
 
-        return np.array(boundary_points)
+        return cast("np.ndarray", np.asarray(boundary_points, dtype=np.float64))
 
     @staticmethod
     @jit(nopython=True)
@@ -179,7 +179,7 @@ class FractalGenerator:
         y = np.linspace(ymin, ymax, height)
         X, Y = np.meshgrid(x, y)
 
-        julia = np.zeros((height, width), dtype=np.int32)
+        julia: np.ndarray = np.zeros((height, width), dtype=np.int32)
         for i in prange(height):
             for j in range(width):
                 julia[i, j] = FractalGenerator.julia_point(
@@ -213,7 +213,7 @@ class FractalGenerator:
             if 0 <= x < size and 0 <= y < size:
                 image[y, x] = 1
 
-        return image
+        return cast("np.ndarray", image)
 
     @staticmethod
     def cantor_set(iterations: int = 7) -> list[tuple[float, float]]:
@@ -273,7 +273,7 @@ class FractalGenerator:
         # Combine all points
         all_points = side1 + side2 + side3
 
-        return np.array(all_points)
+        return cast("np.ndarray", np.asarray(all_points, dtype=np.float64))
 
     @staticmethod
     def lorenz_attractor(
@@ -310,7 +310,7 @@ class FractalGenerator:
 
             points.append([x, y, z])
 
-        return np.array(points)
+        return cast("np.ndarray", np.asarray(points, dtype=np.float64))
 
     @staticmethod
     def henon_map(num_points: int = 10000, a: float = 1.4, b: float = 0.3) -> np.ndarray:
@@ -330,7 +330,7 @@ class FractalGenerator:
             x, y = x_new, y_new
             points.append([x, y])
 
-        return np.array(points)
+        return cast("np.ndarray", np.asarray(points, dtype=np.float64))
 
 
 class FractalDimensionCalculator:
@@ -429,7 +429,7 @@ class FractalDimensionCalculator:
         for radius in scales:
             if method == "covering":
                 # Estimate minimum covering
-                covered = np.zeros(len(normalized), dtype=bool)
+                covered: np.ndarray = np.zeros(len(normalized), dtype=bool)
                 num_balls = 0
 
                 while not np.all(covered):
@@ -531,8 +531,8 @@ class FractalDimensionCalculator:
         np.fill_diagonal(distances, np.inf)  # Exclude self-distances
 
         # Determine scale range
-        min_dist = np.min(distances[distances > 0])
-        max_dist = np.max(distances[distances < np.inf])
+        min_dist: float = float(np.min(distances[distances > 0]))
+        max_dist: float = float(np.max(distances[distances < np.inf]))
 
         if min_scale is None:
             min_scale = min_dist * 2
@@ -544,7 +544,7 @@ class FractalDimensionCalculator:
 
         for radius in scales:
             # Count pairs within radius
-            count = np.sum(distances < radius)
+            count: int = int(np.count_nonzero(distances < radius))
             # Correlation integral
             C_r = count / (n_points * (n_points - 1))
             correlations.append(C_r)
@@ -635,7 +635,7 @@ class FractalDimensionCalculator:
 
             # Calculate Shannon entropy
             probabilities = counts / len(points)
-            entropy = -np.sum(probabilities * np.log(probabilities + 1e-10))
+            entropy: float = float(-np.sum(probabilities * np.log(probabilities + 1e-10)))
             information.append(entropy)
 
         information = np.array(information)
@@ -678,7 +678,7 @@ class SelfSimilarityAnalyzer:
         if test_scales is None:
             test_scales = [2.0, 3.0, 4.0, 5.0, 7.0, 10.0]
 
-        results = {}
+        results: dict[float, dict[str, Any]] = {}
         points = np.array(points)
 
         # Normalize points
@@ -690,8 +690,8 @@ class SelfSimilarityAnalyzer:
             scaled = centered / scale
 
             # Find best match by translation
-            min_error = np.inf
-            best_translation = None
+            min_error: float = float("inf")
+            best_translation: np.ndarray | None = None
 
             # Try different translations
             for _ in range(100):
@@ -706,7 +706,7 @@ class SelfSimilarityAnalyzer:
 
                 tree = KDTree(centered)
                 distances, _ = tree.query(translated)
-                error = np.mean(distances)
+                error = float(np.mean(distances))
 
                 if error < min_error:
                     min_error = error
@@ -730,23 +730,23 @@ class SelfSimilarityAnalyzer:
             max_size = min(image.shape) // 4
             box_sizes = [2**i for i in range(1, int(np.log2(max_size)) + 1)]
 
-        lacunarities = []
+        lacunarities: list[float] = []
 
         for box_size in box_sizes:
             # Sliding box algorithm
-            masses = []
+            masses: list[float] = []
 
             for i in range(0, image.shape[0] - box_size + 1):
                 for j in range(0, image.shape[1] - box_size + 1):
                     box = image[i : i + box_size, j : j + box_size]
-                    mass = np.sum(box)
+                    mass: float = float(np.sum(box))
                     masses.append(mass)
 
             masses = np.array(masses)
 
             if len(masses) > 0 and np.mean(masses) > 0:
                 # Lacunarity = variance/mean^2 + 1  # noqa: ERA001
-                lac = np.var(masses) / (np.mean(masses) ** 2) + 1
+                lac = float(np.var(masses) / (np.mean(masses) ** 2) + 1)
                 lacunarities.append(lac)
             else:
                 lacunarities.append(np.nan)

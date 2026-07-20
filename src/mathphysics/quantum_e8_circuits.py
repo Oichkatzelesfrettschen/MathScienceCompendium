@@ -111,7 +111,6 @@ class E8RootStructure:
         self.positive_roots = self.e8_system.positive_roots()
         self.simple_roots = self.e8_system.generate_simple_roots()
         self.cartan_matrix = self.e8_system.compute_cartan_matrix()
-        self._root_cache: dict[str, Any] = {}
         self._initialize_root_mappings()
 
     def _initialize_root_mappings(self) -> None:
@@ -718,7 +717,7 @@ class E8StatePreparation:
 
         # Prepare quantum state
         # Map 8D eigenstate to 256D Hilbert space
-        amplitudes = np.zeros(256, dtype=complex)
+        amplitudes: np.ndarray = np.zeros(256, dtype=complex)
 
         # Encode eigenstate in first 8 amplitudes
         for i in range(min(8, len(eigenstate))):

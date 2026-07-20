@@ -17,7 +17,7 @@ from __future__ import annotations
 
 from dataclasses import dataclass
 from math import ceil, log2, sqrt
-from typing import Any, TypedDict
+from typing import Any, TypedDict, cast
 
 import numpy as np
 
@@ -70,7 +70,7 @@ class QuantumEncoder:
         """Initialize quantum encoder with configuration."""
         self.config = config
         self.config.validate()
-        self._cache: dict[str, Any] = {}
+        self._cache: dict[str, object] = {}
 
     def clear_cache(self) -> None:
         """Clear encoding cache."""
@@ -393,7 +393,7 @@ class BinaryEncoder(QuantumEncoder):
             if len(component_bits) == self.precision:
                 root[i] = self.binary_to_float(component_bits[::-1], signed=True)
 
-        return root
+        return cast("np.ndarray", root)
 
     def encode_e7_binary_oracle(self) -> QuantumCircuit:
         """Create oracle circuit for E7 root validation in binary encoding.
@@ -692,7 +692,7 @@ class EncodingValidator:
         # Pad classical data to match quantum state size
         quantum_dim = len(quantum_state)
         if len(classical_normalized) < quantum_dim:
-            padded = np.zeros(quantum_dim, dtype=complex)
+            padded: np.ndarray = np.zeros(quantum_dim, dtype=complex)
             padded[: len(classical_normalized)] = classical_normalized
             classical_normalized = padded
 

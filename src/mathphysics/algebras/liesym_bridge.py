@@ -6,7 +6,7 @@ calculations, with a fallback to native NumPy implementation.
 
 from __future__ import annotations
 
-from typing import TYPE_CHECKING
+from typing import TYPE_CHECKING, cast
 
 import numpy as np
 
@@ -46,7 +46,10 @@ class LiesymBridge:
                 if g:
                     pos_roots = g.positive_roots()
                     neg_roots = [-r for r in pos_roots]
-                    return np.array(pos_roots + neg_roots)
+                    return cast(
+                        "np.ndarray",
+                        np.asarray(pos_roots + neg_roots, dtype=np.float64),
+                    )
             except Exception as e:
                 print(f"[LIESYM] Root generation failed: {e}")
 

@@ -64,13 +64,13 @@ size_bytes = 133952
 [[artifacts]]
 kind = "figure"
 relpath = "figures/vorticity_map_highres.png"
-sha256 = "24536e589fd3188a9f9048783097b7f7b2159369686980db76c9bb6af8477954"
+sha256 = "1ab372c512bb87e4cff1d625f97f1901d14ed638db908a8b1eebf623da8be859"
 size_bytes = 2901327
 
 [[artifacts]]
 kind = "figure"
 relpath = "figures/vorticity_psd_highres.png"
-sha256 = "bdc3d7185af1185080094049ce53d3cf2fc64e2d58304a0f4d5b61052a9525ac"
+sha256 = "bd098dab9bc0c92991816b7e9cc376ece7da234c6eb80656613cca983db126d3"
 size_bytes = 2113242
 
 [[artifacts]]
@@ -124,7 +124,7 @@ size_bytes = 2260
 [[artifacts]]
 kind = "paper_or_source_pdf"
 relpath = "papers/main.pdf"
-sha256 = "2f51cffc41ca2ee381ceddd3f89a49229d221b27da556347a692181f4fc46c93"
+sha256 = "1e4646be403b1b99932f0a5b7eba85dde9a56a8f825ae9ca23ecea5997732af4"
 size_bytes = 711963
 
 [[artifacts]]

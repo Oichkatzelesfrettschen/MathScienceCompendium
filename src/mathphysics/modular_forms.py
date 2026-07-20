@@ -6,19 +6,22 @@ characters of affine Lie algebra representations. Optimized via JAX when availab
 
 from __future__ import annotations
 
-from typing import TYPE_CHECKING
+import importlib
+from typing import TYPE_CHECKING, cast
 
 import numpy as np
 
 
+jnp: ModuleType
 try:
-    import jax.numpy as jnp
+    jnp = importlib.import_module("jax.numpy")
 except ImportError:
     jnp = np  # Fallback to numpy
 
 
 if TYPE_CHECKING:
     from pathlib import Path
+    from types import ModuleType
 
 
 class ModularForms:
@@ -71,13 +74,13 @@ class ModularForms:
     def klein_j_q_expansion(num_coeffs: int = 10) -> np.ndarray:
         """The j-function q-expansion coefficients."""
         coeffs = [1, 744, 196884, 21493760, 864299970, 20245856256]
-        return np.array(coeffs[:num_coeffs])
+        return cast("np.ndarray", np.asarray(coeffs[:num_coeffs], dtype=np.int64))
 
     @staticmethod
     def ramanujan_tau(num_terms: int = 10) -> np.ndarray:
         """Ramanujan tau function values τ(n)."""
         vals = [1, -24, 252, -1472, 4830, -6048, -16744, 84480, -113643, -115920]
-        return np.array(vals[:num_terms])
+        return cast("np.ndarray", np.asarray(vals[:num_terms], dtype=np.int64))
 
     @staticmethod
     def dedekind_eta(tau_or_q: complex, num_terms: int = 100) -> complex:
@@ -87,7 +90,7 @@ class ModularForms:
         else:
             q = tau_or_q
         k = np.arange(-num_terms, num_terms + 1)
-        res = np.sum(((-1.0) ** k) * (q ** (k * (3 * k - 1) / 2.0)))
+        res: complex = complex(np.sum(((-1.0) ** k) * (q ** (k * (3 * k - 1) / 2.0))))
         return complex((q ** (1.0 / 24.0)) * res)
 
     @staticmethod

@@ -6,15 +6,27 @@ JAX operations for GPU offload.
 
 from __future__ import annotations
 
-from typing import Any
+import importlib
+from typing import TYPE_CHECKING, Any
 
 import numpy as np
+from typing_extensions import TypeAlias
+
+from ..algebra import JordanAlgebra
+from .cayley_dickson import Octonion
 
 
+if TYPE_CHECKING:
+    from types import ModuleType
+
+
+Array: TypeAlias = Any
+
+jnp: ModuleType
 try:
-    import jax.numpy as jnp
     from jax import jit
 
+    jnp = importlib.import_module("jax.numpy")
     HAS_JAX = True
 except ImportError:
     jnp = np  # Fallback to numpy
@@ -27,13 +39,9 @@ except ImportError:
         return func
 
 
-from ..algebra import JordanAlgebra
-from .cayley_dickson import Octonion
-
-
 def _build_octonion_multiplication_tensor() -> np.ndarray:
     """Return structure constants matching the canonical Octonion product."""
-    tensor = np.zeros((8, 8, 8), dtype=np.float64)
+    tensor: np.ndarray = np.zeros((8, 8, 8), dtype=np.float64)
     for left_index in range(8):
         left = Octonion.basis_element(left_index)
         for right_index in range(8):
@@ -48,7 +56,7 @@ OCTONION_MULTIPLICATION_TENSOR = jnp.asarray(_build_octonion_multiplication_tens
 class AlbertAlgebraElement(JordanAlgebra):
     """An element of the 27-dimensional Albert algebra h3(O)."""
 
-    def __init__(self, data: jnp.ndarray | np.ndarray | list) -> None:
+    def __init__(self, data: Array | list[Any]) -> None:
         """Initialize with a (3, 3, 8) tensor representing 3x3 Octonions."""
         if isinstance(data, list):
             # Check if it's a list of Octonions
@@ -61,7 +69,7 @@ class AlbertAlgebraElement(JordanAlgebra):
             else:
                 self.data = jnp.array(data)
         else:
-            self.data = jnp.array(data) if not isinstance(data, jnp.ndarray) else data
+            self.data = jnp.array(data)
         if self.data.shape != (3, 3, 8):
             raise ValueError("Albert algebra data must have shape (3, 3, 8)")
         if not self.is_hermitian(tolerance=1e-6):
@@ -84,7 +92,7 @@ class AlbertAlgebraElement(JordanAlgebra):
 
     @staticmethod
     @jit
-    def _jordan_product_kernel(A: jnp.ndarray, B: jnp.ndarray) -> jnp.ndarray:
+    def _jordan_product_kernel(A: Array, B: Array) -> Array:
         """The core JAX-accelerated Jordan product kernel."""
         # Jordan product is (A*B + B*A) / 2
         # For CI, we ensure the kernel logic is valid for all tracers
@@ -94,7 +102,7 @@ class AlbertAlgebraElement(JordanAlgebra):
 
     @staticmethod
     @jit
-    def _mat_mul_oct(A: jnp.ndarray, B: jnp.ndarray) -> jnp.ndarray:
+    def _mat_mul_oct(A: Array, B: Array) -> Array:
         """Compute 3x3 matrix multiplication with octonion entries."""
         return jnp.einsum("ika,kjb,abc->ijc", A, B, OCTONION_MULTIPLICATION_TENSOR)
 
@@ -125,7 +133,7 @@ class AlbertAlgebraElement(JordanAlgebra):
                     return False
         return True
 
-    def trace(self) -> jnp.ndarray:
+    def trace(self) -> Array:
         # Return the (8,) sum of diagonal octonions
         return jnp.sum(jnp.diagonal(self.data, axis1=0, axis2=1), axis=1)
 
@@ -139,6 +147,6 @@ class AlbertAlgebraElement(JordanAlgebra):
         return AlbertAlgebraElement(self.data - other.data)
 
     def __mul__(self, other: Any) -> AlbertAlgebraElement:
-        if isinstance(other, (int, float, jnp.ndarray)):
+        if isinstance(other, (int, float, np.ndarray)) or type(other).__module__.startswith("jax"):
             return AlbertAlgebraElement(self.data * other)
         raise NotImplementedError("Use jordan_product")
