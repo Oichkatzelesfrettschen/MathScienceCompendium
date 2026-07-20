@@ -17,7 +17,7 @@ BENCH_DIR = benchmarks
 RESULTS_DIR = results
 FIGURES_DIR = figures
 
-.PHONY: all clean help install test lint check-types benchmark run-highres run-unified run-jordan run-clifford docs papers cleanbuild lint-latex figures paper-evidence-artifacts fetch-external sync-super-force-analysis normalize-corpus framework-decomposition framework-overlap corpus-dedupe build-registries docs-index claim-coverage critique-evidence validate-external-provenance validate-registry-schemas parquet-audit evidence-audits pdf-text-quality-audit document-ocr-mineru document-ocr-tesseract document-ocr-generate document-decomposition-index verify-offline repro-refresh check-pdf-deps archive-pdfs notebooks fetch-arxiv resolve-dois fetch-all verify-checksums check-deps
+.PHONY: all clean help install test lint check-types benchmark run-highres run-unified run-jordan run-clifford docs papers cleanbuild lint-latex figures paper-evidence-artifacts fetch-external sync-super-force-analysis normalize-corpus framework-decomposition framework-overlap corpus-dedupe build-registries docs-index claim-coverage critique-evidence validate-external-provenance validate-registry-schemas parquet-audit evidence-audits lbm-evidence-figures pdf-text-quality-audit document-ocr-mineru document-ocr-tesseract document-ocr-generate document-decomposition-index verify-offline repro-refresh check-pdf-deps archive-pdfs notebooks fetch-arxiv resolve-dois fetch-all verify-checksums check-deps
 
 # Default target
 all: lint check-types test benchmark figures papers
@@ -226,9 +226,13 @@ evidence-audits:
 	@echo "[DATA] Regenerating computational evidence audits..."
 	PYTHONPATH=src python3 scripts/generate_core_validation_results.py
 	PYTHONPATH=src python3 experiments/quantum_lbm_stable_demo.py
-	PYTHONPATH=src python3 scripts/analyze_retained_lbm.py --figure-root figures
+	PYTHONPATH=src python3 scripts/analyze_retained_lbm.py
 	PYTHONPATH=src python3 scripts/audit_lbm_root_order.py
 	python3 scripts/parquet_audit.py
+
+lbm-evidence-figures:
+	@echo "[FIGURES] Rendering LBM evidence with the local Matplotlib and font stack..."
+	PYTHONPATH=src python3 scripts/analyze_retained_lbm.py --figure-root figures
 
 pdf-text-quality-audit: check-pdf-deps
 	@echo "[DATA] Auditing native PDF text with the local Poppler build..."
@@ -366,6 +370,7 @@ help:
 	@echo "  make validate-registry-schemas - Validate data/registry/*.toml and selected *.json against schemas"
 	@echo "  make parquet-audit    - Audit parquet files and emit JSON summary"
 	@echo "  make evidence-audits  - Regenerate core, LBM, root-order, and parquet audits"
+	@echo "  make lbm-evidence-figures - Regenerate local-toolchain LBM publication figures"
 	@echo "  make pdf-text-quality-audit - Regenerate the local Poppler text-quality audit"
 	@echo "  make document-ocr-generate - Generate pinned MinerU and Tesseract OCR outputs"
 	@echo "  make document-decomposition-index - Index completed MinerU and Tesseract outputs"

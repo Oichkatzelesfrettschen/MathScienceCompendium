@@ -49,16 +49,19 @@ This repository is organized for deterministic offline checks and regeneration.
 ## Regeneration Commands
 
 Run `make repro-refresh` for the platform-independent corpus, registry, audit,
-and integrity refresh used by CI. The native PDF text-quality audit is a
-separate evidence-generation lane because Poppler extraction can differ across
-platform builds:
+and integrity refresh used by CI. Native PDF extraction and raster publication
+figures are separate evidence-generation lanes because Poppler, Matplotlib, and
+font-stack results can differ across platform builds:
 
+- `make lbm-evidence-figures`
 - `make pdf-text-quality-audit`
 - `make document-decomposition-index`
 
 Both PDF evidence targets fail fast unless `pdfinfo` and `pdftotext` are
-available. Review and commit their regenerated ledgers from the same declared
-Poppler toolchain; do not use cross-platform byte equality as a quality test.
+available. Review and commit regenerated PDF ledgers from the same declared
+Poppler toolchain. Regenerate LBM figures with a declared Python, Matplotlib,
+and font stack. Review raster figures visually and against the deterministic
+JSON diagnostics; do not use cross-platform byte equality as a quality test.
 
 The underlying commands are:
 
@@ -115,7 +118,7 @@ Use `make archive-pdfs` (or `python3 scripts/archive_pdfs_to_documents.py`) to p
 | `data/external/` and `data/registry/` manifests | hash manifest | Retain and validate against live source and result bytes. |
 | `scripts/`, `schemas/registry/`, and `tools/document_ocr/` | canonical generator or schema | Retain the executable regeneration and validation path. |
 | `docs/framework/`, `papers/sections/`, and `papers/main.pdf` | synthesized truth surface | Retain the reviewed human-facing result and its source. |
-| `data/normalized/corpus/`, `data/normalized/frameworks/`, extracted text, and paper figures | derived regenerable evidence view | Retain when it provides bounded offline review, with source hashes and generators. |
+| `data/normalized/corpus/`, `data/normalized/frameworks/`, extracted text, and paper figures | derived regenerable evidence view | Retain when it provides bounded offline review, with source hashes and generators; regenerate platform-sensitive views with a declared local toolchain. |
 | `build/document_ocr/`, Python caches, and LaTeX intermediates | transient noise | Keep out of Git; regenerate from the canonical commands. |
 
 The offline verifier rejects tracked LaTeX intermediates under `papers/`.
