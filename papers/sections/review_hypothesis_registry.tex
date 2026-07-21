@@ -20,17 +20,19 @@ from silently restoring a claim that the evidence review has already bounded.
 
 \section{Promotion rule}
 
-A positive computational or empirical result enters the paper only after all
-of the following conditions hold:
+A supported or negative computational or empirical result enters the paper
+only after all of the following conditions hold:
 
 \begin{enumerate}
   \item the hypothesis and its controls are registered before the production
     run;
   \item the implementation passes its numerical and structural gates;
-  \item the preregistered acceptance thresholds pass without an unregistered
-    endpoint substitution;
-  \item a fresh environment reproduces the result without reusing the primary
-    run cache;
+  \item the locked decision rule is evaluated without endpoint substitution;
+  \item a supported claim passes every registered acceptance threshold, while
+    a negative claim reports exactly which component or conjunction fails and
+    does not convert non-support into component-wise exclusion;
+  \item a cache-isolated pinned environment repeats the decision without
+    reusing the primary run cache;
   \item the reproduction record retains the source commit, environment image
     digest, preregistration digest, primary and reproduction result digests,
     command, reviewer, and evidence paths; and
@@ -38,9 +40,10 @@ of the following conditions hold:
 \end{enumerate}
 
 The same evidence may support a negative conclusion without supporting the
-proposed mechanism. For example, an exact calculation can establish that a
-selector is nontrivial while leaving its proposed fluid interpretation wholly
-unadmitted.
+proposed mechanism. Exact checkerboard equality falsifies the registered
+$E_7$-specificity statement. The beta-plane evidence instead rejects the
+registered conjunction as not supported; it does not exclude every component
+effect in isolation.
 
 \section{Bounded research programs}
 
@@ -51,15 +54,13 @@ unadmitted.
     \toprule
     Program & Present state & Promotion boundary \\
     \midrule
-    Fourier triad selectors & $E_7$ specificity falsified & The failed $P/Q$
+    Fourier triad selectors & Specificity falsified; reproduced & The failed $P/Q$
       homomorphism remains a negative control. The quadratic-defect mask is the
       generic even-checkerboard kernel. Any parity-kernel experiment still
       requires conservation, matched-mask, and reproduction gates. \\
-    Decaying beta-plane flow & Production complete; decision withheld & The
-      registered claim is transient beta-dependent zonalization, not sustained
-      jets. The 540-run paired matrix and numerical controls are retained in
-      the registry; independent reproduction remains required before its
-      scientific decision enters the manuscript. \\
+    Decaying beta-plane flow & Repeated negative result & The 540-run matrix,
+      controls, and clean rerun agree on the not-supported decision. The result
+      is limited to the registered freely decaying model. \\
     Physical admission & Four operator packages specified & Every physical
       claim remains blocked by calibration, raw measurements, energy or
       constraint closure, blinded controls, and independent replication. \\
@@ -82,7 +83,14 @@ $E_7$ discriminant form is established mathematics, whereas imposing its
 quadratic defect as a fluid interaction law is a new conjecture that must beat
 generic matched masks before any $E_7$ attribution is possible.
 
-At this revision, every new program remains prohibited from positive paper
-promotion. The manuscript therefore retains only the previously audited
-mathematical corrections, exact counterexamples, implementation repairs, and
-explicit physical-evidence boundaries.
+No program passes a positive mechanism claim at this revision. The two
+cache-isolated negative decisions enter the paper with distinct scopes: exact
+equality falsifies $E_7$ specificity, while the beta-plane conjunction is not
+supported. Neither result becomes evidence for an alternative exceptional-
+algebra mechanism or for beta-plane behavior outside the registered freely
+decaying domain. The manuscript otherwise retains the audited mathematical
+corrections, exact counterexamples, implementation repairs, and explicit
+physical-evidence boundaries.
+
+\registeredresult{hyp_e7_nonhomomorphic_fourier_selector}
+\registeredresult{hyp_beta_plane_transient_zonalization}

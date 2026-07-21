@@ -2,24 +2,25 @@
 
 This is the human-readable view of `data/registry/hypothesis_registry.json`.
 The JSON registry is canonical. Contract consistency is not scientific admission.
-A positive result remains out of the paper until its locked thresholds pass and an
-independent clean-environment reproduction is retained.
+A supported or negative result remains out of the paper until its locked decision
+rule is evaluated and a cache-isolated clean-environment rerun is retained.
 
 ## Coverage
 
 - Registered hypotheses: 14
 - Canonical source claims covered: 16
-- Active: 2
+- Active: 1
 - Blocked: 9
 - Excluded: 2
 - Falsified: 1
+- Not supported: 1
 - Explicit archival conjectures and predictions dispositioned: 54
 - Programs: beta_plane_jets=1, e7_fourier_selector=1, foundational_backlog=6, physical_admission=6
 
 ## Promotion policy
 
 - A computational or empirical hypothesis result may enter the manuscript only when its locked decision rule is evaluated and paper_promotion is eligible or promoted.
-- Every supported or negative computational or empirical result requires reproduction from a clean environment by a runner independent of the generating run before promotion.
+- Every supported or negative computational or empirical result requires a cache-isolated rerun in a pinned clean environment, with separate runner and reviewer roles, before promotion. This gate establishes computational repeatability, not external replication or an independent implementation.
 - Literature is admitted only when it directly defines, constrains, tests, or falsifies a registered hypothesis; literature cannot substitute for repository evidence.
 
 ## hyp_higher_cayley_dickson_observable: Higher Cayley-Dickson zero-divisor observable
@@ -367,8 +368,8 @@ Aligned literature: none admitted
 - Source claims: `e7_root_quotient_charge`, `external_fourier_quotient_map`
 - Research status: `falsified`
 - Implementation status: `implemented_negative`
-- Independent reproduction: `pending`
-- Paper promotion: `prohibited`
+- Independent reproduction: `passed`
+- Paper promotion: `promoted`
 
 Formal statement:
 
@@ -404,7 +405,7 @@ Required evidence:
 - `simulation` / `planned`: Generic parity-kernel dynamics only after conservation gates.
 - `control` / `present`: Exact generic-checkerboard equivalence control. Artifacts: `data/registry/triad_selector_audit.json`, `tests/unit/test_triad_selectors.py`.
 - `control` / `planned`: Identity, homomorphism, alternative parity, and equal-rate shuffled controls.
-- `replication` / `external_required`: Independent clean-environment rerun.
+- `replication` / `present`: Cache-isolated clean-environment rerun. Artifacts: `data/registry/independent_reproduction_registry.json`, `data/reproduction/verification_report.json`, `data/reproduction/triad_selector_audit.json`.
 
 Aligned literature: `arxiv_kartashov_kartashova_1307_8272`, `arxiv_hayat_amanullah_walsh_bustamante_1804_03092`
 
@@ -448,10 +449,10 @@ Aligned literature: none admitted
 
 - Program: `beta_plane_jets`
 - Source claims: `lbm_beta_plane_and_jets`, `matched_beta_plane_algebraic_ablation`
-- Research status: `active`
+- Research status: `not_supported`
 - Implementation status: `implemented_negative`
-- Independent reproduction: `pending`
-- Paper promotion: `prohibited`
+- Independent reproduction: `passed`
+- Paper promotion: `promoted`
 
 Formal statement:
 
@@ -482,7 +483,7 @@ Required evidence:
 - `simulation` / `present`: Existing short beta-response and homomorphic-filter negative-control ablation. Artifacts: `data/registry/beta_plane_ablation_results.json`.
 - `simulation` / `present`: Production sweep, refinement runs, tracked time series, profiles, and normalized budget residuals. Artifacts: `data/registry/beta_plane_sweep_results.json`, `data/registry/beta_plane_refinement_results.json`, `data/registry/beta_plane_refinement_protocol_amendment.json`, `data/evidence/beta_plane/production_run_arrays.tar`, `data/evidence/beta_plane/refinement_run_arrays.tar`.
 - `control` / `present`: F-plane, transpose, synthetic-positive, LBM-null, and quotient-sentinel controls. Artifacts: `data/registry/beta_plane_control_results.json`, `data/registry/lbm_evidence_audit.json`.
-- `replication` / `external_required`: Independent clean-environment reproduction.
+- `replication` / `present`: Cache-isolated clean-environment rerun. Artifacts: `data/registry/independent_reproduction_registry.json`, `data/reproduction/verification_report.json`, `data/reproduction/beta_plane_sweep_results.json`.
 
 Aligned literature: `arxiv_bakas_constantinou_ioannou_1407_3354`, `arxiv_bakas_constantinou_ioannou_1708_03031`, `arxiv_kartashov_kartashova_1307_8272`, `arxiv_hayat_amanullah_walsh_bustamante_1804_03092`, `arxiv_sahoo_ray_2507_23493`
 

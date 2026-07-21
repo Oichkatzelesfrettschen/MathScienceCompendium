@@ -1,5 +1,28 @@
 {
   "description": "Computational or empirical result claims admitted into the manuscript after hypothesis promotion.",
-  "records": [],
+  "records": [
+    {
+      "hypothesis_id": "hyp_e7_nonhomomorphic_fourier_selector",
+      "result_relpath": "data/registry/triad_selector_audit.json",
+      "section_relpaths": [
+        "papers/main.tex",
+        "papers/sections/review_computational_evidence.tex",
+        "papers/sections/review_conclusions.tex",
+        "papers/sections/review_hypothesis_registry.tex",
+        "papers/sections/review_reproducibility.tex"
+      ]
+    },
+    {
+      "hypothesis_id": "hyp_beta_plane_transient_zonalization",
+      "result_relpath": "data/registry/beta_plane_sweep_results.json",
+      "section_relpaths": [
+        "papers/main.tex",
+        "papers/sections/review_computational_evidence.tex",
+        "papers/sections/review_conclusions.tex",
+        "papers/sections/review_hypothesis_registry.tex",
+        "papers/sections/review_reproducibility.tex"
+      ]
+    }
+  ],
   "schema_version": 1
 }

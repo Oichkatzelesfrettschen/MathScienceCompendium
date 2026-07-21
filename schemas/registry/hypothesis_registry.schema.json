@@ -142,7 +142,9 @@
               "excluded_undefined"
             ]
           },
-          "research_status": {"enum": ["active", "blocked", "excluded", "falsified"]},
+          "research_status": {
+            "enum": ["active", "blocked", "excluded", "falsified", "not_supported"]
+          },
           "literature_source_ids": {
             "type": "array",
             "uniqueItems": true,

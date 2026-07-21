@@ -3,12 +3,33 @@
   "$id": "https://mathsciencecompendium.local/schemas/registry/clean_reproduction_verification.schema.json",
   "title": "CleanReproductionVerification",
   "type": "object",
-  "required": ["schema_version", "source_commit", "image_reference", "image_digest", "all_checks_passed", "environment_report", "image_identity", "source_identity", "source_tree_contract", "input_identity", "environment_outputs", "cache_isolation", "json_comparisons", "archive_comparisons"],
+  "required": ["schema_version", "source_commit", "image_reference", "image_digest", "all_checks_passed", "environment_report", "image_identity", "verification_harness", "source_identity", "source_tree_contract", "input_identity", "environment_outputs", "cache_isolation", "json_comparisons", "archive_comparisons"],
   "additionalProperties": false,
   "$defs": {
     "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
     "image_digest": {"type": "string", "pattern": "^sha256:[0-9a-f]{64}$"},
-    "relpath": {"type": "string", "pattern": "^(?!/)(?!.*(?:^|/)\\.\\.(?:/|$))[A-Za-z0-9._/-]+$"},
+    "relpath": {"type": "string", "pattern": "^(?!/)(?!.*(?:^|/)\\.\\.(?:/|$))[^\\u0000-\\u001F\\u007F]+$"},
+    "execution_receipt": {
+      "type": "object",
+      "required": ["fresh_execution_required", "work_root_existed_before", "resumed_count", "pending_count", "total_count"],
+      "additionalProperties": false,
+      "properties": {
+        "fresh_execution_required": {"const": true},
+        "work_root_existed_before": {"const": false},
+        "resumed_count": {"const": 0},
+        "pending_count": {"type": "integer", "minimum": 1},
+        "total_count": {"type": "integer", "minimum": 1}
+      }
+    },
+    "execution_receipts": {
+      "type": "object",
+      "required": ["production", "refinement"],
+      "additionalProperties": false,
+      "properties": {
+        "production": {"$ref": "#/$defs/execution_receipt"},
+        "refinement": {"$ref": "#/$defs/execution_receipt"}
+      }
+    },
     "evidence": {
       "type": "object",
       "required": ["relpath", "sha256"],
@@ -27,12 +48,18 @@
     "all_checks_passed": {"type": "boolean"},
     "environment_report": {"$ref": "#/$defs/evidence"},
     "image_identity": {"$ref": "#/$defs/evidence"},
+    "verification_harness": {
+      "type": "array",
+      "minItems": 3,
+      "maxItems": 3,
+      "items": {"$ref": "#/$defs/evidence"}
+    },
     "source_identity": {
       "type": "array",
       "minItems": 1,
       "items": {
         "type": "object",
-        "required": ["relpath", "match"],
+        "required": ["relpath", "committed_sha256", "image_sha256", "match"],
         "properties": {
           "relpath": {"$ref": "#/$defs/relpath"},
           "committed_sha256": {"$ref": "#/$defs/sha256"},
@@ -60,7 +87,7 @@
       "maxItems": 1,
       "items": {
         "type": "object",
-        "required": ["relpath", "match"],
+        "required": ["relpath", "host_sha256", "image_sha256", "primary_declared_sha256", "reproduction_declared_sha256", "match"],
         "properties": {
           "relpath": {"$ref": "#/$defs/relpath"},
           "host_sha256": {"$ref": "#/$defs/sha256"},
@@ -78,7 +105,7 @@
       "maxItems": 7,
       "items": {
         "type": "object",
-        "required": ["relpath", "match"],
+        "required": ["relpath", "declared_sha256", "actual_sha256", "declared_size_bytes", "actual_size_bytes", "match"],
         "properties": {
           "relpath": {"$ref": "#/$defs/relpath"},
           "declared_sha256": {"$ref": "#/$defs/sha256"},
@@ -92,12 +119,12 @@
     },
     "cache_isolation": {
       "type": "object",
-      "required": ["relpath", "sha256", "match"],
+      "required": ["relpath", "sha256", "execution_receipts", "expected_execution_receipts", "match"],
       "properties": {
         "relpath": {"$ref": "#/$defs/relpath"},
         "sha256": {"$ref": "#/$defs/sha256"},
-        "execution_receipts": {"type": "object"},
-        "expected_execution_receipts": {"type": "object"},
+        "execution_receipts": {"$ref": "#/$defs/execution_receipts"},
+        "expected_execution_receipts": {"$ref": "#/$defs/execution_receipts"},
         "match": {"type": "boolean"}
       },
       "additionalProperties": false
@@ -108,7 +135,7 @@
       "maxItems": 4,
       "items": {
         "type": "object",
-        "required": ["comparison_id", "normalized_json_identical"],
+        "required": ["comparison_id", "primary_relpath", "reproduction_relpath", "primary_sha256", "reproduction_sha256", "primary_source_commit", "reproduction_source_commit", "byte_identical", "normalized_json_identical"],
         "properties": {
           "comparison_id": {"enum": ["triad_selector_audit", "beta_plane_production", "beta_plane_refinement", "beta_plane_controls"]},
           "primary_relpath": {"$ref": "#/$defs/relpath"},
@@ -129,7 +156,7 @@
       "maxItems": 3,
       "items": {
         "type": "object",
-        "required": ["comparison_id", "byte_identical"],
+        "required": ["comparison_id", "primary_relpath", "reproduction_relpath", "primary_sha256", "reproduction_sha256", "byte_identical"],
         "properties": {
           "comparison_id": {"enum": ["beta_plane_production_arrays", "beta_plane_refinement_arrays", "beta_plane_control_arrays"]},
           "primary_relpath": {"$ref": "#/$defs/relpath"},

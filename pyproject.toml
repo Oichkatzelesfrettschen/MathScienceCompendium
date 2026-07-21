@@ -11,7 +11,7 @@ requires-python = ">=3.9"
 license = "MIT"
 license-files = ["LICENSE"]
 authors = [
-    {name = "Mathematical Physics Research"}
+    {name = "Eirikr Hinngart"}
 ]
 keywords = ["mathematics", "physics", "lie-algebras", "quantum-computing", "exceptional-algebras"]
 classifiers = [

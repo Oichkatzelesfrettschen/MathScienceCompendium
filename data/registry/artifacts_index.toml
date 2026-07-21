@@ -124,8 +124,8 @@ size_bytes = 2260
 [[artifacts]]
 kind = "paper_or_source_pdf"
 relpath = "papers/main.pdf"
-sha256 = "edb7cf8bbac59218750265c79fb42d996aede68a5f682e7ed494f2618ec41b41"
-size_bytes = 723425
+sha256 = "0cc5e41eeec261befceb7a2b29d32388cf4f784a8d98da78a5780f30e55a264d"
+size_bytes = 727725
 
 [[artifacts]]
 kind = "paper_or_source_pdf"
@@ -442,7 +442,7 @@ size_bytes = 1607680
 [[artifacts]]
 kind = "experiment_json"
 relpath = "data/reproduction/beta_plane_control_results.json"
-sha256 = "e3f11a5c2a75c828e0c783ea828e1e2c81a88a6e53bc526ecf143a9327c01f5d"
+sha256 = "35f36f4dda198b72c366babda282eb99888b29571c6dce799d15cb907d74e18b"
 size_bytes = 14564
 
 [[artifacts]]
@@ -460,32 +460,32 @@ size_bytes = 2580480
 [[artifacts]]
 kind = "experiment_json"
 relpath = "data/reproduction/beta_plane_refinement_results.json"
-sha256 = "74cb34073729f0a142bc40406e9ddce5ceee024056748d071eddffa55938422d"
+sha256 = "133e4db19614f1b3d6ca3239f711663eff9cd6a12a4a59c3d4cb610b456656df"
 size_bytes = 106255
 
 [[artifacts]]
 kind = "experiment_json"
 relpath = "data/reproduction/beta_plane_sweep_results.json"
-sha256 = "ab81c95ef2c0f5006520e2efe244bd28ca4d4a5550051d58939b5f17d02f2c06"
+sha256 = "2d1c402862b41909900dc566d4ae2c37c5ec7eb2206d85720aaa99f43793f2a8"
 size_bytes = 1066759
 
 [[artifacts]]
 kind = "artifact"
 relpath = "data/reproduction/docker_compose_run.log"
-sha256 = "f9bcc588117cf5a2864ebd3059b619303383462535bede0decec1a010d868d8f"
+sha256 = "64e271a9281f9a387e207e07e1fc8ff71d3a15c52a4f0b862322af517f5e1437"
 size_bytes = 50915
 
 [[artifacts]]
 kind = "experiment_json"
 relpath = "data/reproduction/environment_report.json"
-sha256 = "099385f0c935e78e7aea7cf361c3116303a49b5f9ad0dd44405c2175004fc2da"
+sha256 = "6316703c749793807d779673b6cfb93d1d354586f1f3c50190c78722ab305cda"
 size_bytes = 3265
 
 [[artifacts]]
 kind = "experiment_json"
 relpath = "data/reproduction/image_identity.json"
-sha256 = "1f4d90841ecf5a2710fc8a9df61cc2ac3143849a5251f144529d0f198fc6a03e"
-size_bytes = 842
+sha256 = "3071777f49685a8be000675ec33653e40e0590cf8a69c634e523b642a727f0ec"
+size_bytes = 843
 
 [[artifacts]]
 kind = "experiment_json"
@@ -496,5 +496,5 @@ size_bytes = 2797
 [[artifacts]]
 kind = "experiment_json"
 relpath = "data/reproduction/verification_report.json"
-sha256 = "fae4d76addae451204a0b3a9fd514441f625322e5a82d1e2f22a5063ae70c72e"
-size_bytes = 365312
+sha256 = "68fadbace1c688fb96a3a9ed48fa2c7b9e220bd260f4498a8d350bd65d59816e"
+size_bytes = 365830

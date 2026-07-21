@@ -13,10 +13,20 @@ import tarfile
 from pathlib import Path
 from typing import Any, cast
 
+from jsonschema import Draft202012Validator
+
 
 REPO_ROOT = Path(__file__).resolve().parent.parent
 REPRODUCTION_ROOT = REPO_ROOT / "data" / "reproduction"
 RUN_LOG_RELPATH = "data/reproduction/docker_compose_run.log"
+VERIFICATION_SCHEMA_PATH = (
+    REPO_ROOT / "schemas" / "registry" / "clean_reproduction_verification.schema.json"
+)
+VERIFICATION_HARNESS_PATHS = (
+    "scripts/verify_clean_reproduction.py",
+    "scripts/validate_hypothesis_promotions.py",
+    "schemas/registry/clean_reproduction_verification.schema.json",
+)
 REQUIRED_SOURCE_PATHS = (
     "requirements-lock.txt",
     "pyproject.toml",
@@ -110,6 +120,24 @@ def load_json(relpath: str) -> dict[str, Any]:
         "dict[str, Any]",
         json.loads((REPO_ROOT / relpath).read_text(encoding="ascii")),
     )
+
+
+def validate_report_schema(report: dict[str, Any]) -> None:
+    """Reject a verification report that does not satisfy its committed schema."""
+    schema = cast(
+        "dict[str, Any]",
+        json.loads(VERIFICATION_SCHEMA_PATH.read_text(encoding="ascii")),
+    )
+    errors = sorted(
+        Draft202012Validator(schema).iter_errors(report),
+        key=lambda item: list(item.absolute_path),
+    )
+    if errors:
+        messages = []
+        for error in errors:
+            location = ".".join(str(part) for part in error.absolute_path) or "$"
+            messages.append(f"{location}: {error.message}")
+        raise ValueError("verification report schema failure: " + "; ".join(messages))
 
 
 def normalized_result(payload: dict[str, Any]) -> dict[str, Any]:
@@ -348,6 +376,13 @@ def main() -> int:
             "relpath": str(image_identity_path.relative_to(REPO_ROOT)),
             "sha256": sha256_file(image_identity_path),
         },
+        "verification_harness": [
+            {
+                "relpath": relpath,
+                "sha256": sha256_file(REPO_ROOT / relpath),
+            }
+            for relpath in VERIFICATION_HARNESS_PATHS
+        ],
         "source_identity": source_records,
         "source_tree_contract": {
             "image_file_count": len(image_digests),
@@ -362,6 +397,7 @@ def main() -> int:
         "json_comparisons": json_records,
         "archive_comparisons": archive_records,
     }
+    validate_report_schema(report)
     report_path = REPRODUCTION_ROOT / "verification_report.json"
     report_path.write_text(
         json.dumps(report, indent=2, sort_keys=True, allow_nan=False) + "\n",

@@ -1,0 +1,22 @@
+{
+  "architecture": "amd64",
+  "created": "2026-07-21T02:28:04.152446362-07:00",
+  "environment": [
+    "PATH=/usr/local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin",
+    "LANG=C.UTF-8",
+    "GPG_KEY=A035C8C19219BA821ECEA86B64E628F8D684696D",
+    "PYTHON_VERSION=3.11.13",
+    "PYTHON_SHA256=8fb5f9fbc7609fa822cb31549884575db7fd9657cbffb89510b5d7975963a83a",
+    "PYTHONHASHSEED=0",
+    "PYTHONPATH=/workspace/src",
+    "JAX_PLATFORMS=cpu",
+    "XLA_PYTHON_CLIENT_PREALLOCATE=false"
+  ],
+  "image_id": "sha256:597fa56700cfde08cf4d08a4e2ff4b386918418844decae6ccc2fb7ef710a9c5",
+  "image_reference": "reproduction-evidence-reproduction:latest",
+  "os": "linux",
+  "repo_digests": [
+    "reproduction-evidence-reproduction@sha256:597fa56700cfde08cf4d08a4e2ff4b386918418844decae6ccc2fb7ef710a9c5"
+  ],
+  "schema_version": 1
+}

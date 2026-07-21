@@ -51,6 +51,16 @@ manifest, and compares normalized results and raw archives with the primary
 run. Promotion validation recomputes every declared digest and rejects a
 reproduction whose runner and reviewer identities match.
 
+The retained clean run executes all 540 production cells, 48 refinement cells,
+and declared controls with zero resumed cells. Its normalized selector,
+production, refinement, and control JSON records match the primary outcomes;
+the three raw-array archives are byte-identical. The verification report binds
+the exact source tree, image digest, environment, preregistrations, results,
+archives, run log, and verification harness before either result is admitted.
+
+\registeredresult{hyp_e7_nonhomomorphic_fourier_selector}
+\registeredresult{hyp_beta_plane_transient_zonalization}
+
 \section{Decompose the source documents}
 
 The source corpus contains 42 PDFs and 1,076 pages. Embedded text is retained as
@@ -125,7 +135,7 @@ remain separate so a missing optional runtime cannot masquerade as success.
     \path{data/registry/lbm_evidence_audit.json} & Generated conservation, velocity, zonal, and anisotropy diagnostics. \\
     \path{data/registry/lbm_root_order_audit.json} & Controlled sensitivity of the root-indexed initializer to ordering. \\
     \path{data/evidence/beta_plane/} & Deterministic primary production, refinement, and control-array archives. \\
-    \path{data/reproduction/} & Independent clean-container results, raw arrays, environment record, and logs. \\
+    \path{data/reproduction/} & Cache-isolated clean-container results, raw arrays, environment record, and logs. \\
     \path{data/registry/independent_reproduction_registry.json} & Digest-bound promotion decisions for supported and negative results. \\
     \path{data/registry/critique_evidence_ledger.json} & Canonical status, falsification attempt, verdict, and evidence paths for all 21 critiques. \\
     \path{data/registry/pdf_text_quality_audit.json} & Page-level embedded-text quality and OCR routing. \\
@@ -172,9 +182,9 @@ The remaining scientific blockers are:
   \item the high-resolution states lack a complete retained parameter and
     software-version manifest;
   \item the reported four-jet and $-5/3$ conclusions have no traceable analysis;
-    and
   \item the 540-run freely decaying beta-plane matrix does not support its
-    registered transient-zonalization effect outside the tested domain; and
+    registered transient-zonalization effect within the tested domain and does
+    not license inference outside it; and
   \item scalar gravity, ZPE harvesting, time-crystal amplification, and
     tourmaline novelty lack the raw measurements required by their operational
     admission packages.

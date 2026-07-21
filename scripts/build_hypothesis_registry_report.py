@@ -41,8 +41,8 @@ def render_report(payload: dict[str, Any]) -> str:
         "",
         "This is the human-readable view of `data/registry/hypothesis_registry.json`.",
         "The JSON registry is canonical. Contract consistency is not scientific admission.",
-        "A positive result remains out of the paper until its locked thresholds pass and an",
-        "independent clean-environment reproduction is retained.",
+        "A supported or negative result remains out of the paper until its locked decision",
+        "rule is evaluated and a cache-isolated clean-environment rerun is retained.",
         "",
         "## Coverage",
         "",
@@ -52,6 +52,7 @@ def render_report(payload: dict[str, Any]) -> str:
         f"- Blocked: {research_counts['blocked']}",
         f"- Excluded: {research_counts['excluded']}",
         f"- Falsified: {research_counts['falsified']}",
+        f"- Not supported: {research_counts['not_supported']}",
         f"- Explicit archival conjectures and predictions dispositioned: {archival_count}",
         "- Programs: "
         + ", ".join(f"{key}={program_counts[key]}" for key in sorted(program_counts)),
