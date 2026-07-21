@@ -124,17 +124,22 @@ def normalized_result(payload: dict[str, Any]) -> dict[str, Any]:
     return normalized
 
 
+def parse_sha256_manifest(content: bytes, container_prefix: str) -> dict[str, str]:
+    """Parse checksum output while preserving repository paths encoded as UTF-8."""
+    records: dict[str, str] = {}
+    for line in content.decode("utf-8").splitlines():
+        digest, container_path = line.split(maxsplit=1)
+        records[container_path.removeprefix(container_prefix)] = digest
+    return records
+
+
 def image_file_digests(image: str, relpaths: tuple[str, ...]) -> dict[str, str]:
     """Hash selected files retained inside the reproduction image."""
     container_paths = [f"/workspace/{relpath}" for relpath in relpaths]
     output = run_bytes(
         ["docker", "run", "--rm", "--entrypoint", "sha256sum", image, *container_paths]
-    ).decode("ascii")
-    records: dict[str, str] = {}
-    for line in output.splitlines():
-        digest, container_path = line.split(maxsplit=1)
-        records[container_path.removeprefix("/workspace/")] = digest
-    return records
+    )
+    return parse_sha256_manifest(output, "/workspace/")
 
 
 def committed_tree_digests(source_commit: str) -> dict[str, str]:
@@ -164,12 +169,8 @@ def image_tree_digests(image: str) -> dict[str, str]:
             image,
             "/evidence_source_tree.sha256",
         ]
-    ).decode("ascii")
-    records: dict[str, str] = {}
-    for line in output.splitlines():
-        digest, container_path = line.split(maxsplit=1)
-        records[container_path.removeprefix("/workspace/")] = digest
-    return records
+    )
+    return parse_sha256_manifest(output, "/workspace/")
 
 
 def verify_environment_outputs(report: dict[str, Any]) -> list[dict[str, Any]]:
