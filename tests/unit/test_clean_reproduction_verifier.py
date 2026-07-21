@@ -52,8 +52,9 @@ def test_checksum_manifest_accepts_existing_utf8_repository_paths():
 
 def test_clean_report_schema_accepts_safe_committed_path_names():
     schema = json.loads(
-        (REPO_ROOT / "schemas/registry/clean_reproduction_verification.schema.json")
-        .read_text(encoding="ascii")
+        (REPO_ROOT / "schemas/registry/clean_reproduction_verification.schema.json").read_text(
+            encoding="ascii"
+        )
     )
     validator = Draft202012Validator(schema["$defs"]["relpath"])
     assert validator.is_valid("source_materials/frameworks/draft reply to pais.txt")

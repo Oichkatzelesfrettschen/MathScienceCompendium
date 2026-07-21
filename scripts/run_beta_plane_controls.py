@@ -40,7 +40,9 @@ PREREGISTRATION_PATH = REPO_ROOT / "data" / "registry" / "beta_plane_sweep_prere
 DEFAULT_OUTPUT = REPO_ROOT / "data" / "registry" / "beta_plane_control_results.json"
 LBM_AUDIT_PATH = REPO_ROOT / "data" / "registry" / "lbm_evidence_audit.json"
 ENVIRONMENT_LOCK_PATH = REPO_ROOT / "requirements-lock.txt"
-DEFAULT_EVIDENCE_ARCHIVE = REPO_ROOT / "data" / "evidence" / "beta_plane" / "control_final_states.tar"
+DEFAULT_EVIDENCE_ARCHIVE = (
+    REPO_ROOT / "data" / "evidence" / "beta_plane" / "control_final_states.tar"
+)
 
 
 def array_sha256(values: np.ndarray) -> str:

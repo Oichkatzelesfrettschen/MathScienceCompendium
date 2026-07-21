@@ -19,7 +19,7 @@ BENCH_DIR = benchmarks
 RESULTS_DIR = results
 FIGURES_DIR = figures
 
-.PHONY: all clean help install test lint check-types benchmark run-highres run-unified run-jordan run-clifford docs papers cleanbuild lint-latex figures paper-evidence-artifacts fetch-external sync-super-force-analysis normalize-corpus framework-decomposition framework-overlap corpus-dedupe build-registries docs-index claim-coverage critique-evidence hypothesis-registry validate-clean-reproduction validate-hypothesis-promotions validate-external-provenance validate-registry-schemas parquet-audit evidence-audits beta-plane-sweep beta-plane-refinement beta-plane-controls lbm-evidence-figures pdf-text-quality-audit document-ocr-mineru document-ocr-tesseract document-ocr-generate document-decomposition-index verify-offline repro-refresh check-pdf-deps archive-pdfs notebooks fetch-arxiv resolve-dois fetch-all verify-checksums check-deps
+.PHONY: all clean help install test lint check-types benchmark run-highres run-unified run-jordan run-clifford docs papers cleanbuild lint-latex figures paper-evidence-artifacts fetch-external sync-super-force-analysis normalize-corpus framework-decomposition framework-overlap corpus-dedupe build-registries docs-index claim-coverage critique-evidence hypothesis-registry validate-clean-reproduction validate-hypothesis-promotions validate-external-provenance validate-registry-schemas parquet-audit evidence-audits beta-plane-sweep beta-plane-refinement beta-plane-controls lbm-evidence-figures pdf-text-quality-audit document-ocr-mineru document-ocr-tesseract document-ocr-generate document-decomposition-index verify-offline reproducibility-indexes repro-refresh check-pdf-deps archive-pdfs notebooks fetch-arxiv resolve-dois fetch-all verify-checksums check-deps
 
 # Default target
 all: lint check-types test benchmark figures papers
@@ -316,6 +316,19 @@ repro-refresh:
 	@$(MAKE) verify-offline
 	@echo "[SUCCESS] Offline reproducibility indexes refreshed."
 
+reproducibility-indexes:
+	@$(MAKE) normalize-corpus
+	@$(MAKE) framework-decomposition
+	@$(MAKE) framework-overlap
+	@$(MAKE) corpus-dedupe
+	@$(MAKE) critique-evidence
+	@$(MAKE) hypothesis-registry
+	@$(MAKE) build-registries
+	@$(MAKE) docs-index
+	@$(MAKE) claim-coverage
+	@$(MAKE) verify-offline
+	@echo "[SUCCESS] Deterministic reproducibility indexes refreshed."
+
 archive-pdfs:
 	@echo "[DATA] Archiving repository PDFs to ~/Documents/MathScienceCompendium/pdfs..."
 	python3 scripts/archive_pdfs_to_documents.py
@@ -408,6 +421,7 @@ help:
 	@echo "  make document-ocr-generate - Generate pinned MinerU and Tesseract OCR outputs"
 	@echo "  make document-decomposition-index - Index completed MinerU and Tesseract outputs"
 	@echo "  make verify-offline   - Run offline integrity checks"
+	@echo "  make reproducibility-indexes - Refresh deterministic indexes without rerunning evidence"
 	@echo "  make repro-refresh    - Run normalize + registries + audit + verification"
 	@echo "  make archive-pdfs     - Copy all repo PDFs to ~/Documents before cleanup"
 	@echo ""

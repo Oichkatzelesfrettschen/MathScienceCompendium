@@ -63,8 +63,7 @@ def test_e7_discriminant_form_is_derived_from_repository_cartan_matrix():
 def test_quadratic_defect_is_exactly_the_generic_checkerboard_kernel(radius):
     triads = tuple(triad for triad in enumerate_exact_triads(radius) if is_nonzero_triad(triad))
     assert all(
-        e7_quadratic_defect_admits(triad) == checkerboard_kernel_admits(triad)
-        for triad in triads
+        e7_quadratic_defect_admits(triad) == checkerboard_kernel_admits(triad) for triad in triads
     )
 
 

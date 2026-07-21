@@ -40,9 +40,7 @@ def main() -> int:
     payload["evaluation_domains"] = [
         {
             "square_domain_radius": radius,
-            "ordered_nonzero_exact_triad_count": domain[
-                "ordered_nonzero_exact_triad_count"
-            ],
+            "ordered_nonzero_exact_triad_count": domain["ordered_nonzero_exact_triad_count"],
             "barotropic_active_channel_count": domain["barotropic_active_channel_count"],
             "quadratic_defect_admitted_triad_count": domain[
                 "e7_quadratic_defect_admitted_triad_count"

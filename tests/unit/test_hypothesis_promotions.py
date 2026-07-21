@@ -54,9 +54,7 @@ def build_validation_fixture(tmp_path: Path, monkeypatch: Any) -> dict[str, Any]
     runner_sha256 = write_text(tmp_path / runner_relpath, "VALUE = 1\n")
     environment_relpath = "Dockerfile"
     environment_sha256 = write_text(tmp_path / environment_relpath, "FROM scratch\n")
-    primary_relpath = promotion_validator.EXPECTED_JSON_COMPARISONS[
-        "triad_selector_audit"
-    ][0]
+    primary_relpath = promotion_validator.EXPECTED_JSON_COMPARISONS["triad_selector_audit"][0]
     primary_sha256 = write_json(
         tmp_path / primary_relpath,
         {"schema_version": 1, "scientific_outcome": "falsified"},
@@ -88,17 +86,13 @@ def build_validation_fixture(tmp_path: Path, monkeypatch: Any) -> dict[str, Any]
             "schema_version": 1,
             "source_commit": source_commit,
             "aggregate_decision": "not_supported",
-            "execution_receipt": promotion_validator.EXPECTED_EXECUTION_RECEIPTS[
-                "production"
-            ],
+            "execution_receipt": promotion_validator.EXPECTED_EXECUTION_RECEIPTS["production"],
         },
         "beta_plane_refinement": {
             "schema_version": 1,
             "source_commit": source_commit,
             "aggregate_decision": "refinement_complete",
-            "execution_receipt": promotion_validator.EXPECTED_EXECUTION_RECEIPTS[
-                "refinement"
-            ],
+            "execution_receipt": promotion_validator.EXPECTED_EXECUTION_RECEIPTS["refinement"],
         },
         "beta_plane_controls": {
             "schema_version": 1,
@@ -204,7 +198,7 @@ def build_validation_fixture(tmp_path: Path, monkeypatch: Any) -> dict[str, Any]
                 "committed_sha256": primary_sha256,
                 "image_sha256": primary_sha256,
                 "match": True,
-            }
+            },
         ],
         "source_tree_contract": {
             "image_file_count": 4,
@@ -249,9 +243,7 @@ def build_validation_fixture(tmp_path: Path, monkeypatch: Any) -> dict[str, Any]
                 "primary_sha256": json_digests[comparison_id][0],
                 "reproduction_sha256": json_digests[comparison_id][1],
                 "primary_source_commit": json_payloads[comparison_id].get("source_commit"),
-                "reproduction_source_commit": json_payloads[comparison_id].get(
-                    "source_commit"
-                ),
+                "reproduction_source_commit": json_payloads[comparison_id].get("source_commit"),
                 "byte_identical": True,
                 "normalized_json_identical": True,
             }
@@ -507,9 +499,9 @@ def test_comparison_path_substitution_is_rejected(tmp_path, monkeypatch):
     fixture = build_validation_fixture(tmp_path, monkeypatch)
     verification = deepcopy(fixture["verification_payload"])
     first_path = verification["json_comparisons"][0]["primary_relpath"]
-    verification["json_comparisons"][0]["primary_relpath"] = verification[
-        "json_comparisons"
-    ][1]["primary_relpath"]
+    verification["json_comparisons"][0]["primary_relpath"] = verification["json_comparisons"][1][
+        "primary_relpath"
+    ]
     verification["json_comparisons"][1]["primary_relpath"] = first_path
     rebind_verification_report(fixture, verification)
     errors = promotion_validator.validate_promotions()
@@ -539,9 +531,7 @@ def test_outer_record_path_substitution_is_rejected(tmp_path, monkeypatch):
     unrelated_reproduction = "unrelated_reproduction.json"
     payload = {"schema_version": 1, "scientific_outcome": "falsified"}
     fixture["record"]["primary_result_relpath"] = unrelated_primary
-    fixture["record"]["primary_result_sha256"] = write_json(
-        tmp_path / unrelated_primary, payload
-    )
+    fixture["record"]["primary_result_sha256"] = write_json(tmp_path / unrelated_primary, payload)
     fixture["record"]["reproduction_result_relpath"] = unrelated_reproduction
     fixture["record"]["reproduction_result_sha256"] = write_json(
         tmp_path / unrelated_reproduction, payload
@@ -551,7 +541,9 @@ def test_outer_record_path_substitution_is_rejected(tmp_path, monkeypatch):
         {"schema_version": 1, "records": [fixture["record"]]},
     )
     errors = promotion_validator.validate_promotions()
-    assert any("primary_result_relpath violates exact evidence binding" in error for error in errors)
+    assert any(
+        "primary_result_relpath violates exact evidence binding" in error for error in errors
+    )
     assert any(
         "reproduction_result_relpath violates exact evidence binding" in error for error in errors
     )
@@ -574,9 +566,7 @@ def test_primary_result_must_match_its_source_commit(tmp_path, monkeypatch):
 
 def test_live_result_receipt_cannot_be_rewritten_as_fresh(tmp_path, monkeypatch):
     fixture = build_validation_fixture(tmp_path, monkeypatch)
-    reproduction_relpath = promotion_validator.EXPECTED_JSON_COMPARISONS[
-        "beta_plane_production"
-    ][1]
+    reproduction_relpath = promotion_validator.EXPECTED_JSON_COMPARISONS["beta_plane_production"][1]
     reproduction_path = tmp_path / reproduction_relpath
     reproduction = json.loads(reproduction_path.read_text(encoding="ascii"))
     reproduction["execution_receipt"] = {

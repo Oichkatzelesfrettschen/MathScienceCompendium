@@ -93,7 +93,9 @@ def e7_discriminant_form_audit() -> dict[str, Any]:
     generator_norm = inverse[generator_index][generator_index]
     quadratic_value = generator_norm / 2 % 1
     cartan_determinant = exact_determinant(E7_CARTAN_MATRIX)
-    doubled_coordinates_integral = all((2 * value).denominator == 1 for value in generator_coordinates)
+    doubled_coordinates_integral = all(
+        (2 * value).denominator == 1 for value in generator_coordinates
+    )
     return {
         "cartan_determinant": int(cartan_determinant),
         "discriminant_group_order": abs(int(cartan_determinant)),
@@ -101,7 +103,9 @@ def e7_discriminant_form_audit() -> dict[str, Any]:
         "generator_coordinates": [str(value) for value in generator_coordinates],
         "generator_norm_squared": str(generator_norm),
         "half_normalized_quadratic_value_mod_one": str(quadratic_value),
-        "generator_is_outside_root_lattice": any(value.denominator != 1 for value in generator_coordinates),
+        "generator_is_outside_root_lattice": any(
+            value.denominator != 1 for value in generator_coordinates
+        ),
         "doubled_generator_is_in_root_lattice": doubled_coordinates_integral,
         "quadratic_form_is_nonadditive": (2 * quadratic_value) % 1 != 0,
     }
@@ -225,8 +229,7 @@ def build_triad_selector_audit(radius: int = 4) -> dict[str, Any]:
         for triad in triads
     )
     checkerboard_equivalence_pass = all(
-        e7_quadratic_defect_admits(triad) == checkerboard_kernel_admits(triad)
-        for triad in triads
+        e7_quadratic_defect_admits(triad) == checkerboard_kernel_admits(triad) for triad in triads
     )
     return {
         "schema_version": 1,

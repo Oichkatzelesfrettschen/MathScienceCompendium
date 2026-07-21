@@ -7219,7 +7219,7 @@
     },
     {
       "relpath": "scripts/validate_hypothesis_promotions.py",
-      "sha256": "c77ad7a42cdc0894bef298fd840986280e02daf95dbe2f9fa7516e6c508da680"
+      "sha256": "adece677875d61113bf7f35565473100d0512cc08f719b4e3c7f4d6de1f197cb"
     },
     {
       "relpath": "schemas/registry/clean_reproduction_verification.schema.json",

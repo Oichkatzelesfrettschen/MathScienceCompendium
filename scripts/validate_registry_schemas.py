@@ -1201,8 +1201,7 @@ def semantic_checks(registry_name: str, payload: dict[str, Any]) -> list[str]:
         hypothesis_payload = load_json(REGISTRY_DIR / "hypothesis_registry.json")
         claim_ids = {str(claim.get("id")) for claim in claim_payload.get("claims", [])}
         hypothesis_ids = {
-            str(hypothesis.get("id"))
-            for hypothesis in hypothesis_payload.get("hypotheses", [])
+            str(hypothesis.get("id")) for hypothesis in hypothesis_payload.get("hypotheses", [])
         }
         for package_index, package in enumerate(payload.get("packages", [])):
             if not isinstance(package, dict):
@@ -1216,7 +1215,9 @@ def semantic_checks(registry_name: str, payload: dict[str, Any]) -> list[str]:
             next_state = package.get("next_required_state")
             if current_state in states:
                 current_index = states.index(current_state)
-                expected_next = states[current_index + 1] if current_index + 1 < len(states) else "none"
+                expected_next = (
+                    states[current_index + 1] if current_index + 1 < len(states) else "none"
+                )
                 if next_state != expected_next:
                     errors.append(f"{prefix}.next_required_state: expected {expected_next!r}")
                 state_evidence = package.get("state_evidence", {})
@@ -1293,9 +1294,13 @@ def semantic_checks(registry_name: str, payload: dict[str, Any]) -> list[str]:
                 if not isinstance(record, dict):
                     continue
                 if "arrays_relpath" in record:
-                    errors.append(f"$.records[{record_index}].arrays_relpath: ignored path forbidden")
+                    errors.append(
+                        f"$.records[{record_index}].arrays_relpath: ignored path forbidden"
+                    )
                 if record.get("cluster_count") is not None:
-                    errors.append(f"$.records[{record_index}].cluster_count: misplaced contrast field")
+                    errors.append(
+                        f"$.records[{record_index}].cluster_count: misplaced contrast field"
+                    )
             check_beta_evidence_archive(errors, payload, records)
         for contrast_index, contrast in enumerate(payload.get("primary_contrasts", [])):
             if not isinstance(contrast, dict):
@@ -1307,9 +1312,7 @@ def semantic_checks(registry_name: str, payload: dict[str, Any]) -> list[str]:
                     f"$.primary_contrasts[{contrast_index}].cell_pair_count: expected 108"
                 )
             if "paired_count" in contrast or "holm_corrected_ci_lower" in contrast:
-                errors.append(
-                    f"$.primary_contrasts[{contrast_index}]: obsolete statistical field"
-                )
+                errors.append(f"$.primary_contrasts[{contrast_index}]: obsolete statistical field")
         numerical_pass = payload.get("numerical_gate_passed") is True
         primary_pass = payload.get("primary_hypothesis_passed") is True
         expected_decision = (
@@ -1392,7 +1395,9 @@ def semantic_checks(registry_name: str, payload: dict[str, Any]) -> list[str]:
                 try:
                     with tarfile.open(archive_path, mode="r") as archive:
                         members = {
-                            member.name: member for member in archive.getmembers() if member.isfile()
+                            member.name: member
+                            for member in archive.getmembers()
+                            if member.isfile()
                         }
                         digest_fields = {
                             "identity": "identity_final_sha256",

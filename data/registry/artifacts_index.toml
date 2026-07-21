@@ -496,5 +496,5 @@ size_bytes = 2797
 [[artifacts]]
 kind = "experiment_json"
 relpath = "data/reproduction/verification_report.json"
-sha256 = "68fadbace1c688fb96a3a9ed48fa2c7b9e220bd260f4498a8d350bd65d59816e"
+sha256 = "abca9f1cca5e96663a117c2866fad59dd6bcd8d790ca1ffc18ddd7cca6548d87"
 size_bytes = 365830

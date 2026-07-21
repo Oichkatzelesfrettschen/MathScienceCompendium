@@ -151,11 +151,7 @@ def committed_paths(commit: str) -> set[str] | None:
     )
     if completed.returncode != 0:
         return None
-    return {
-        path.decode("utf-8")
-        for path in completed.stdout.split(b"\0")
-        if path
-    }
+    return {path.decode("utf-8") for path in completed.stdout.split(b"\0") if path}
 
 
 def check_file_digest(errors: list[str], prefix: str, relpath: str, digest: str) -> None:
@@ -251,12 +247,8 @@ def recompute_verification(verification: dict[str, Any]) -> bool:
         if all_committed_paths is None:
             raise ValueError("verification evidence mismatch")
         omitted_image_paths = all_committed_paths.difference(source_identity)
-        exact_source_set_matches = (
-            set(source_identity).issubset(all_committed_paths)
-            and all(
-                relpath.startswith(ALLOWED_IMAGE_EXCLUDED_PREFIXES)
-                for relpath in omitted_image_paths
-            )
+        exact_source_set_matches = set(source_identity).issubset(all_committed_paths) and all(
+            relpath.startswith(ALLOWED_IMAGE_EXCLUDED_PREFIXES) for relpath in omitted_image_paths
         )
         source_contract_matches = (
             source_contract["all_image_files_match_commit"] is True
@@ -287,9 +279,7 @@ def recompute_verification(verification: dict[str, Any]) -> bool:
                 record["host_sha256"] == host_digest
                 and record["image_sha256"] == host_digest
                 and record["primary_declared_sha256"] == primary_declared == host_digest
-                and record["reproduction_declared_sha256"]
-                == reproduction_declared
-                == host_digest
+                and record["reproduction_declared_sha256"] == reproduction_declared == host_digest
                 and record["match"] is True
             )
 
@@ -370,9 +360,7 @@ def recompute_verification(verification: dict[str, Any]) -> bool:
             )
             if comparison_id in {"beta_plane_production", "beta_plane_refinement"}:
                 receipt_id = (
-                    "production"
-                    if comparison_id == "beta_plane_production"
-                    else "refinement"
+                    "production" if comparison_id == "beta_plane_production" else "refinement"
                 )
                 expected_receipt = EXPECTED_EXECUTION_RECEIPTS[receipt_id]
                 if (
@@ -391,9 +379,7 @@ def recompute_verification(verification: dict[str, Any]) -> bool:
                 and normalized_identical
             )
 
-        archive_comparisons = records_by_key(
-            verification["archive_comparisons"], "comparison_id"
-        )
+        archive_comparisons = records_by_key(verification["archive_comparisons"], "comparison_id")
         if archive_comparisons is None or set(archive_comparisons) != set(
             EXPECTED_ARCHIVE_COMPARISONS
         ):
@@ -497,10 +483,7 @@ def validate_promotions() -> list[str]:
             ):
                 if record[binding_field] != expected_binding[binding_field]:
                     errors.append(f"{prefix}: {binding_field} violates exact evidence binding")
-        if (
-            record["environment_definition_relpath"]
-            != EXPECTED_ENVIRONMENT_DEFINITION_RELPATH
-        ):
+        if record["environment_definition_relpath"] != EXPECTED_ENVIRONMENT_DEFINITION_RELPATH:
             errors.append(f"{prefix}: environment definition path is not canonical")
         if record["verification_report_relpath"] != EXPECTED_VERIFICATION_REPORT_RELPATH:
             errors.append(f"{prefix}: verification report path is not canonical")
@@ -520,9 +503,7 @@ def validate_promotions() -> list[str]:
                 record[source_role], record["environment_definition_relpath"]
             )
             if environment_digest != record["environment_definition_sha256"]:
-                errors.append(
-                    f"{prefix}: {source_role} does not bind the environment definition"
-                )
+                errors.append(f"{prefix}: {source_role} does not bind the environment definition")
         primary_committed_digest = committed_digest(
             record["primary_artifact_commit"], record["primary_result_relpath"]
         )
@@ -645,8 +626,7 @@ def validate_promotions() -> list[str]:
                     or comparison.get("reproduction_relpath")
                     != record["reproduction_result_relpath"]
                     or comparison.get("primary_sha256") != record["primary_result_sha256"]
-                    or comparison.get("reproduction_sha256")
-                    != record["reproduction_result_sha256"]
+                    or comparison.get("reproduction_sha256") != record["reproduction_result_sha256"]
                 ):
                     errors.append(f"{prefix}: outer record is not bound to verified comparison")
             for nested_label in ("environment_report", "image_identity"):
