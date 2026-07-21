@@ -15,9 +15,7 @@ RUN python -m pip install --no-cache-dir --disable-pip-version-check \
     -r requirements-lock.txt
 
 COPY . .
-RUN python -m pip install --no-cache-dir --disable-pip-version-check \
-    --no-deps . && \
-    printf '%s' "${EVIDENCE_SOURCE_COMMIT}" | grep -Eq '^[0-9a-f]{40}$' && \
+RUN printf '%s' "${EVIDENCE_SOURCE_COMMIT}" | grep -Eq '^[0-9a-f]{40}$' && \
     find /workspace -type f -print0 | sort -z | xargs -0 sha256sum \
       > /evidence_source_tree.sha256
 
