@@ -124,7 +124,7 @@ size_bytes = 2260
 [[artifacts]]
 kind = "paper_or_source_pdf"
 relpath = "papers/main.pdf"
-sha256 = "45f290e5393c5a0565128b44336b8bc965358f4d723b7ea93c3f8d9d67bf02f4"
+sha256 = "03a12ba1005a3ef4f2ee07d13a782c32dc6b8b2d853064b7b54c41bb3efed651"
 size_bytes = 723425
 
 [[artifacts]]
@@ -381,24 +381,114 @@ size_bytes = 134930
 
 [[artifacts]]
 kind = "artifact"
+relpath = "data/evidence/beta_plane/README.md"
+sha256 = "9fc8ffaae3317d8414a6011faf37e3157a6473806e5df1a3e4c0096b3803ab76"
+size_bytes = 1842
+
+[[artifacts]]
+kind = "artifact"
 relpath = "data/evidence/beta_plane/control_final_states.tar"
-sha256 = "d32b7400d45d90106cf6c956a2653346f483d074ba34d8d0911d25bd800d5bbb"
+sha256 = "2e6dfe14f80ca19529a910ebcc52582418fa799561ae3127118a4a3c22c95d66"
 size_bytes = 1607680
+
+[[artifacts]]
+kind = "experiment_json"
+relpath = "data/evidence/beta_plane/host_primary_rejection_report.json"
+sha256 = "bbb708e9bf25c140533af9c81c32b78de17929da9e1917d5f6b5e2069fa668ee"
+size_bytes = 365317
+
+[[artifacts]]
+kind = "artifact"
+relpath = "data/evidence/beta_plane/locked_primary_docker_compose_run.tar"
+sha256 = "ee363430a366aad689cf2877dde4a703e07f04b77fec939f3c58c1d2a58ceb36"
+size_bytes = 61440
+
+[[artifacts]]
+kind = "experiment_json"
+relpath = "data/evidence/beta_plane/locked_primary_environment_report.json"
+sha256 = "b8a0047b9ddf53c4b2eca29073b8ff1c4b1ebff87dfc7145b0dc17c3f140f4e3"
+size_bytes = 3265
+
+[[artifacts]]
+kind = "experiment_json"
+relpath = "data/evidence/beta_plane/locked_primary_image_identity.json"
+sha256 = "2e24529847c8a5b6d27174f04c085905a45d4d1bc9fba9511642e134f0145d50"
+size_bytes = 842
 
 [[artifacts]]
 kind = "artifact"
 relpath = "data/evidence/beta_plane/production_run_arrays.tar"
-sha256 = "2cb2361c2a3b89e9f4d01a02962ac6530371c90368720f69e5dc33c127fb66d4"
-size_bytes = 18165760
+sha256 = "b96bb6ac46a823c5a74d25a895406a8b9b6d78db5a3f49d01262ce44e9f3d61b"
+size_bytes = 18227200
 
 [[artifacts]]
 kind = "artifact"
 relpath = "data/evidence/beta_plane/refinement_run_arrays.tar"
-sha256 = "96479e68e94282d1204a0dba9585127ce29f02a763619d60549fa43ed45e9664"
-size_bytes = 2570240
+sha256 = "6714b6a581b259d96aa9633fbbe1fd016c26459753f6f643a9783868a2bd322d"
+size_bytes = 2580480
+
+[[artifacts]]
+kind = "artifact"
+relpath = "data/reproduction/beta_plane_control_arrays.tar"
+sha256 = "2e6dfe14f80ca19529a910ebcc52582418fa799561ae3127118a4a3c22c95d66"
+size_bytes = 1607680
+
+[[artifacts]]
+kind = "experiment_json"
+relpath = "data/reproduction/beta_plane_control_results.json"
+sha256 = "6e530259b3125183b520a5229cd0c825130695296c0c02792304639aa4e4c77b"
+size_bytes = 14564
+
+[[artifacts]]
+kind = "artifact"
+relpath = "data/reproduction/beta_plane_production_arrays.tar"
+sha256 = "b96bb6ac46a823c5a74d25a895406a8b9b6d78db5a3f49d01262ce44e9f3d61b"
+size_bytes = 18227200
+
+[[artifacts]]
+kind = "artifact"
+relpath = "data/reproduction/beta_plane_refinement_arrays.tar"
+sha256 = "6714b6a581b259d96aa9633fbbe1fd016c26459753f6f643a9783868a2bd322d"
+size_bytes = 2580480
+
+[[artifacts]]
+kind = "experiment_json"
+relpath = "data/reproduction/beta_plane_refinement_results.json"
+sha256 = "ac80b22260be5f7bdf1130186ceeb594ec49b137e2532384ed7f4301b2ab128e"
+size_bytes = 106255
+
+[[artifacts]]
+kind = "experiment_json"
+relpath = "data/reproduction/beta_plane_sweep_results.json"
+sha256 = "6445c6a0032715c71d8ac81ce4c12ac642cb70e079b09ebe5cb9a8214bd21c3a"
+size_bytes = 1066759
+
+[[artifacts]]
+kind = "artifact"
+relpath = "data/reproduction/docker_compose_run.log"
+sha256 = "fea0d8bc691ea87d0e7ddcfee9219c1b486c0a825ed2a90a5b89de7c07c37084"
+size_bytes = 50915
+
+[[artifacts]]
+kind = "experiment_json"
+relpath = "data/reproduction/environment_report.json"
+sha256 = "b8a0047b9ddf53c4b2eca29073b8ff1c4b1ebff87dfc7145b0dc17c3f140f4e3"
+size_bytes = 3265
+
+[[artifacts]]
+kind = "experiment_json"
+relpath = "data/reproduction/image_identity.json"
+sha256 = "2e24529847c8a5b6d27174f04c085905a45d4d1bc9fba9511642e134f0145d50"
+size_bytes = 842
 
 [[artifacts]]
 kind = "experiment_json"
 relpath = "data/reproduction/triad_selector_audit.json"
 sha256 = "e5f0c025e724a996db89dab813d60ec33666c586be32c16b441dcbb821806707"
 size_bytes = 2797
+
+[[artifacts]]
+kind = "experiment_json"
+relpath = "data/reproduction/verification_report.json"
+sha256 = "bbb708e9bf25c140533af9c81c32b78de17929da9e1917d5f6b5e2069fa668ee"
+size_bytes = 365317
