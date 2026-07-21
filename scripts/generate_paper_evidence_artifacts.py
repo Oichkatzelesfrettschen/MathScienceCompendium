@@ -316,7 +316,9 @@ def generate_beta_ablation_figure(beta_results: dict[str, Any]) -> None:
         ("final_window_mean_zonal_fraction", "Zonal-energy fraction effect", "#3A7CA5"),
         ("persistent_jet", "Persistent-jet prevalence effect", "#8C2F39"),
     )
-    for axis, (metric, title, color) in zip(axes, metric_specs, strict=True):
+    if len(axes) != len(metric_specs):
+        raise ValueError("beta-ablation axes and metric specifications must have equal length")
+    for axis, (metric, title, color) in zip(axes, metric_specs):
         selected = [record for record in contrasts if record["metric"] == metric]
         beta_values = np.asarray([record["beta"] for record in selected])
         effects = np.asarray([record["effect_estimate"] for record in selected])

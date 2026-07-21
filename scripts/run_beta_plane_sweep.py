@@ -550,7 +550,7 @@ def aggregate_payload(
         all(
             np.isfinite(value)
             for value in record.values()
-            if isinstance(value, int | float) and not isinstance(value, bool)
+            if isinstance(value, (int, float)) and not isinstance(value, bool)
         )
         and abs(record["normalized_energy_budget_residual"]) <= 1e-6
         and abs(record["normalized_enstrophy_budget_residual"]) <= 1e-6
