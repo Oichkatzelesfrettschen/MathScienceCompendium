@@ -1,0 +1,17 @@
+.git
+.mypy_cache
+.pytest_cache
+.ruff_cache
+build
+data/evidence
+data/reproduction
+papers/*.aux
+papers/*.bbl
+papers/*.blg
+papers/*.fdb_latexmk
+papers/*.fls
+papers/*.log
+papers/*.out
+papers/*.toc
+**/__pycache__
+**/*.pyc

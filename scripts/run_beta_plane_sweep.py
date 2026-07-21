@@ -59,6 +59,13 @@ def sha256_file(path: Path) -> str:
 
 def source_commit() -> str:
     """Return the committed protocol and implementation revision."""
+    declared_commit = os.environ.get("EVIDENCE_SOURCE_COMMIT")
+    if declared_commit is not None:
+        if len(declared_commit) != 40 or any(
+            character not in "0123456789abcdef" for character in declared_commit
+        ):
+            raise ValueError("EVIDENCE_SOURCE_COMMIT must be a lowercase Git digest")
+        return declared_commit
     return subprocess.run(
         ["git", "rev-parse", "HEAD"],
         cwd=REPO_ROOT,
