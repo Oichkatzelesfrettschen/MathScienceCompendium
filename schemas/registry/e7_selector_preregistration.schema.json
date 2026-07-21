@@ -1,0 +1,35 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://mathsciencecompendium.local/schemas/registry/e7_selector_preregistration.schema.json",
+  "title": "E7SelectorPreregistration",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "program_id",
+    "hypothesis_id",
+    "status",
+    "scope",
+    "evaluation_square_domain_radii",
+    "locked_selector_families",
+    "structural_gates",
+    "dynamical_controls",
+    "falsification_thresholds",
+    "interpretation_boundary"
+  ],
+  "properties": {
+    "schema_version": {"const": 1},
+    "program_id": {"const": "e7_fourier_selector"},
+    "hypothesis_id": {"const": "hyp_e7_nonhomomorphic_fourier_selector"},
+    "status": {"const": "locked"},
+    "scope": {"type": "string", "minLength": 1},
+    "evaluation_square_domain_radii": {
+      "const": [2, 4, 8]
+    },
+    "locked_selector_families": {"type": "array", "minItems": 5, "uniqueItems": true, "items": {"type": "string", "minLength": 1}},
+    "structural_gates": {"type": "array", "minItems": 4, "items": {"type": "string", "minLength": 1}},
+    "dynamical_controls": {"type": "array", "minItems": 5, "uniqueItems": true, "items": {"type": "string", "minLength": 1}},
+    "falsification_thresholds": {"type": "array", "minItems": 3, "items": {"type": "string", "minLength": 1}},
+    "interpretation_boundary": {"type": "string", "minLength": 1}
+  },
+  "additionalProperties": false
+}

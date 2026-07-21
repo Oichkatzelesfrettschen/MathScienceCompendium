@@ -17,7 +17,7 @@ BENCH_DIR = benchmarks
 RESULTS_DIR = results
 FIGURES_DIR = figures
 
-.PHONY: all clean help install test lint check-types benchmark run-highres run-unified run-jordan run-clifford docs papers cleanbuild lint-latex figures paper-evidence-artifacts fetch-external sync-super-force-analysis normalize-corpus framework-decomposition framework-overlap corpus-dedupe build-registries docs-index claim-coverage critique-evidence validate-external-provenance validate-registry-schemas parquet-audit evidence-audits lbm-evidence-figures pdf-text-quality-audit document-ocr-mineru document-ocr-tesseract document-ocr-generate document-decomposition-index verify-offline repro-refresh check-pdf-deps archive-pdfs notebooks fetch-arxiv resolve-dois fetch-all verify-checksums check-deps
+.PHONY: all clean help install test lint check-types benchmark run-highres run-unified run-jordan run-clifford docs papers cleanbuild lint-latex figures paper-evidence-artifacts fetch-external sync-super-force-analysis normalize-corpus framework-decomposition framework-overlap corpus-dedupe build-registries docs-index claim-coverage critique-evidence hypothesis-registry validate-hypothesis-promotions validate-external-provenance validate-registry-schemas parquet-audit evidence-audits beta-plane-sweep beta-plane-refinement beta-plane-controls lbm-evidence-figures pdf-text-quality-audit document-ocr-mineru document-ocr-tesseract document-ocr-generate document-decomposition-index verify-offline repro-refresh check-pdf-deps archive-pdfs notebooks fetch-arxiv resolve-dois fetch-all verify-checksums check-deps
 
 # Default target
 all: lint check-types test benchmark figures papers
@@ -210,6 +210,14 @@ critique-evidence:
 	@echo "[DATA] Generating critique table from the evidence ledger..."
 	python3 scripts/generate_critique_evidence_table.py
 
+hypothesis-registry:
+	@echo "[DOCS] Rendering the canonical hypothesis registry..."
+	python3 scripts/build_hypothesis_registry_report.py
+
+validate-hypothesis-promotions:
+	@echo "[VERIFY] Enforcing independent reproduction before paper promotion..."
+	python3 scripts/validate_hypothesis_promotions.py
+
 validate-external-provenance:
 	@echo "[VERIFY] Validating external provenance JSON files against schemas..."
 	python3 scripts/validate_external_provenance_schemas.py
@@ -225,10 +233,23 @@ parquet-audit:
 evidence-audits:
 	@echo "[DATA] Regenerating computational evidence audits..."
 	PYTHONPATH=src python3 scripts/generate_core_validation_results.py
+	PYTHONPATH=src python3 scripts/audit_triad_selectors.py
 	PYTHONPATH=src python3 experiments/quantum_lbm_stable_demo.py
 	PYTHONPATH=src python3 scripts/analyze_retained_lbm.py
 	PYTHONPATH=src python3 scripts/audit_lbm_root_order.py
 	python3 scripts/parquet_audit.py
+
+beta-plane-sweep:
+	@echo "[EXPERIMENT] Running the preregistered decaying beta-plane sweep..."
+	PYTHONPATH=src JAX_PLATFORMS=cpu python3 scripts/run_beta_plane_sweep.py --profile production
+
+beta-plane-refinement:
+	@echo "[EXPERIMENT] Running the amended shared-initial-condition refinement matrix..."
+	PYTHONPATH=src JAX_PLATFORMS=cpu python3 scripts/run_beta_plane_sweep.py --profile refinement
+
+beta-plane-controls:
+	@echo "[EXPERIMENT] Running the preregistered beta-plane control package..."
+	PYTHONPATH=src JAX_PLATFORMS=cpu python3 scripts/run_beta_plane_controls.py
 
 lbm-evidence-figures:
 	@echo "[FIGURES] Rendering LBM evidence with the local Matplotlib and font stack..."
@@ -264,6 +285,7 @@ verify-offline:
 	@echo "[VERIFY] Running offline integrity checks..."
 	python3 scripts/validate_external_provenance_schemas.py
 	python3 scripts/validate_registry_schemas.py
+	python3 scripts/validate_hypothesis_promotions.py
 	python3 scripts/verify_offline_integrity.py
 
 check-pdf-deps:
@@ -278,6 +300,7 @@ repro-refresh:
 	@$(MAKE) corpus-dedupe
 	@$(MAKE) evidence-audits
 	@$(MAKE) critique-evidence
+	@$(MAKE) hypothesis-registry
 	@$(MAKE) build-registries
 	@$(MAKE) docs-index
 	@$(MAKE) claim-coverage

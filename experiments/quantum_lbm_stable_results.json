@@ -6,7 +6,8 @@
     "reynolds": 1.0,
     "timesteps": 50,
     "num_harmonics": 3,
-    "harmonic_amplitude": 0.0001
+    "harmonic_amplitude": 0.0001,
+    "random_seed": 0
   },
   "conservation": {
     "mass_error": 1.887379141862766e-15,

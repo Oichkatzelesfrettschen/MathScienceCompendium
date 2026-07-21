@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "program_id": "e7_fourier_selector",
+  "hypothesis_id": "hyp_e7_nonhomomorphic_fourier_selector",
+  "status": "locked",
+  "scope": "Compare equation-derived and E7-targeted nonhomomorphic selectors before any dynamical claim.",
+  "evaluation_square_domain_radii": [2, 4, 8],
+  "locked_selector_families": [
+    "identity",
+    "barotropic_zero_support",
+    "rossby_exact_resonance",
+    "rossby_broadened_resonance",
+    "e7_discriminant_quadratic_defect",
+    "equal_density_orbit_closed_random"
+  ],
+  "structural_gates": [
+    "Enumerate nonzero exact triads separately from zero modes.",
+    "Enumerate nonzero barotropic interaction channels separately from PDE-zero support.",
+    "Require source-exchange, sign-inversion, and cyclic-triad closure.",
+    "Require exact selector counts at square-domain radii 2, 4, and 8.",
+    "Require instantaneous inviscid energy and enstrophy conservation before dynamics."
+  ],
+  "dynamical_controls": [
+    "identity",
+    "failed_e7_pq_homomorphism",
+    "generic_checkerboard_sublattice",
+    "alternative_parity_maps",
+    "label_shuffles_preserving_class_counts",
+    "equal_density_orbit_closed_random_masks",
+    "matched_radial_spectrum_power_and_anisotropy"
+  ],
+  "falsification_thresholds": [
+    "Reject a selector that accepts all or no active channels.",
+    "Reject a selector that violates its declared symmetry or conservation gates.",
+    "Reject E7 specificity if the mask is exactly equivalent to the generic checkerboard-sublattice control.",
+    "Reject physical promotion until grid, bandwidth, and independent clean-environment reproduction gates pass."
+  ],
+  "interpretation_boundary": "The E7 discriminant quadratic form is established mathematics. Using its defect as a barotropic interaction law is a new conjecture, not P/Q charge conservation."
+}
