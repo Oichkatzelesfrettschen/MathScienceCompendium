@@ -34,8 +34,8 @@ size_bytes = 97943
 [[artifacts]]
 kind = "figure"
 relpath = "figures/review_beta_ablation.png"
-sha256 = "fd4e6992101dc9e17afe41e5b0289e62fe9ff00ef32f267bf306c819a9fed4e9"
-size_bytes = 90685
+sha256 = "77b63b365039e3c0d4cc83cfd7d906e5ce1abe340694827bab02a7ff00715de8"
+size_bytes = 82597
 
 [[artifacts]]
 kind = "figure"
@@ -46,8 +46,8 @@ size_bytes = 50558
 [[artifacts]]
 kind = "figure"
 relpath = "figures/review_evidence_flow.png"
-sha256 = "c44ae3dcfe5b9d281f1324871609116698df09a5e2aae26f9d0cdfd287db8678"
-size_bytes = 99787
+sha256 = "d92e749ef01c4a2324f63f79eb9bd92b65a36bbae4a30bbca69fb514886ba2ca"
+size_bytes = 100427
 
 [[artifacts]]
 kind = "figure"
@@ -124,8 +124,8 @@ size_bytes = 2260
 [[artifacts]]
 kind = "paper_or_source_pdf"
 relpath = "papers/main.pdf"
-sha256 = "1e4646be403b1b99932f0a5b7eba85dde9a56a8f825ae9ca23ecea5997732af4"
-size_bytes = 711963
+sha256 = "128a26801ee46f48ef971ef1b6bd3b758596bfee5cb31e8b5532c93db7f45468"
+size_bytes = 727713
 
 [[artifacts]]
 kind = "paper_or_source_pdf"
@@ -219,6 +219,18 @@ size_bytes = 693220
 
 [[artifacts]]
 kind = "paper_or_source_pdf"
+relpath = "source_materials/pdfs/arxiv_1307.8272.pdf"
+sha256 = "249406912ab02d0bad309e8eb0a80d331286763c9b92ff5a36d220980ae3cdcf"
+size_bytes = 336068
+
+[[artifacts]]
+kind = "paper_or_source_pdf"
+relpath = "source_materials/pdfs/arxiv_1407.3354.pdf"
+sha256 = "79ad3444428d3903c78d016544f9ba124a15183a0e52e7ba9579eae92471353c"
+size_bytes = 2560966
+
+[[artifacts]]
+kind = "paper_or_source_pdf"
 relpath = "source_materials/pdfs/arxiv_1410.2143.pdf"
 sha256 = "811115214615646f066c698935741d5a2ac44b6de9c41598fb3b0f56e167d285"
 size_bytes = 806627
@@ -243,9 +255,27 @@ size_bytes = 4057858
 
 [[artifacts]]
 kind = "paper_or_source_pdf"
+relpath = "source_materials/pdfs/arxiv_1708.03031.pdf"
+sha256 = "4fe77e95a89d9cd9b7613860dc7a25dca5c5b1d3f8514a3587aee75a45125d5a"
+size_bytes = 4417290
+
+[[artifacts]]
+kind = "paper_or_source_pdf"
+relpath = "source_materials/pdfs/arxiv_1804.03092.pdf"
+sha256 = "90bbd8d0b79cd581907bbac86677b52d3f1027ca12f377f31a9a69a54b57451c"
+size_bytes = 712264
+
+[[artifacts]]
+kind = "paper_or_source_pdf"
 relpath = "source_materials/pdfs/arxiv_2505.11747.pdf"
 sha256 = "b26567a0c598e6ba2ffa7757509c2b0fb627b8264eba3c1470d8e044b932fb47"
 size_bytes = 376660
+
+[[artifacts]]
+kind = "paper_or_source_pdf"
+relpath = "source_materials/pdfs/arxiv_2507.23493.pdf"
+sha256 = "f2be51ddc5b810a7d31462ab6d37826290d232285627da359d96494555fed704"
+size_bytes = 7498594
 
 [[artifacts]]
 kind = "paper_or_source_pdf"
@@ -348,3 +378,123 @@ kind = "paper_or_source_pdf"
 relpath = "source_materials/pdfs/quant-ph_0609227.pdf"
 sha256 = "a9c41f3d79cf61ac36c256db82efd36ee2eafe2cadefeec0644bc94270bfd393"
 size_bytes = 134930
+
+[[artifacts]]
+kind = "artifact"
+relpath = "data/evidence/beta_plane/README.md"
+sha256 = "6e308845aa0a56a2c0c8b00610cfb6c17709510096a4d5a14c7c9f4bded4c1b4"
+size_bytes = 2844
+
+[[artifacts]]
+kind = "experiment_json"
+relpath = "data/evidence/beta_plane/completion_order_rejection_report.json"
+sha256 = "fae4d76addae451204a0b3a9fd514441f625322e5a82d1e2f22a5063ae70c72e"
+size_bytes = 365312
+
+[[artifacts]]
+kind = "artifact"
+relpath = "data/evidence/beta_plane/control_final_states.tar"
+sha256 = "2e6dfe14f80ca19529a910ebcc52582418fa799561ae3127118a4a3c22c95d66"
+size_bytes = 1607680
+
+[[artifacts]]
+kind = "experiment_json"
+relpath = "data/evidence/beta_plane/host_primary_rejection_report.json"
+sha256 = "bbb708e9bf25c140533af9c81c32b78de17929da9e1917d5f6b5e2069fa668ee"
+size_bytes = 365317
+
+[[artifacts]]
+kind = "artifact"
+relpath = "data/evidence/beta_plane/locked_primary_docker_compose_run.tar"
+sha256 = "e399e6b240a865b273474778f4051a6054a2accd2caeebc9a443a437242a5b71"
+size_bytes = 61440
+
+[[artifacts]]
+kind = "experiment_json"
+relpath = "data/evidence/beta_plane/locked_primary_environment_report.json"
+sha256 = "099385f0c935e78e7aea7cf361c3116303a49b5f9ad0dd44405c2175004fc2da"
+size_bytes = 3265
+
+[[artifacts]]
+kind = "experiment_json"
+relpath = "data/evidence/beta_plane/locked_primary_image_identity.json"
+sha256 = "1f4d90841ecf5a2710fc8a9df61cc2ac3143849a5251f144529d0f198fc6a03e"
+size_bytes = 842
+
+[[artifacts]]
+kind = "artifact"
+relpath = "data/evidence/beta_plane/production_run_arrays.tar"
+sha256 = "b96bb6ac46a823c5a74d25a895406a8b9b6d78db5a3f49d01262ce44e9f3d61b"
+size_bytes = 18227200
+
+[[artifacts]]
+kind = "artifact"
+relpath = "data/evidence/beta_plane/refinement_run_arrays.tar"
+sha256 = "6714b6a581b259d96aa9633fbbe1fd016c26459753f6f643a9783868a2bd322d"
+size_bytes = 2580480
+
+[[artifacts]]
+kind = "artifact"
+relpath = "data/reproduction/beta_plane_control_arrays.tar"
+sha256 = "2e6dfe14f80ca19529a910ebcc52582418fa799561ae3127118a4a3c22c95d66"
+size_bytes = 1607680
+
+[[artifacts]]
+kind = "experiment_json"
+relpath = "data/reproduction/beta_plane_control_results.json"
+sha256 = "35f36f4dda198b72c366babda282eb99888b29571c6dce799d15cb907d74e18b"
+size_bytes = 14564
+
+[[artifacts]]
+kind = "artifact"
+relpath = "data/reproduction/beta_plane_production_arrays.tar"
+sha256 = "b96bb6ac46a823c5a74d25a895406a8b9b6d78db5a3f49d01262ce44e9f3d61b"
+size_bytes = 18227200
+
+[[artifacts]]
+kind = "artifact"
+relpath = "data/reproduction/beta_plane_refinement_arrays.tar"
+sha256 = "6714b6a581b259d96aa9633fbbe1fd016c26459753f6f643a9783868a2bd322d"
+size_bytes = 2580480
+
+[[artifacts]]
+kind = "experiment_json"
+relpath = "data/reproduction/beta_plane_refinement_results.json"
+sha256 = "133e4db19614f1b3d6ca3239f711663eff9cd6a12a4a59c3d4cb610b456656df"
+size_bytes = 106255
+
+[[artifacts]]
+kind = "experiment_json"
+relpath = "data/reproduction/beta_plane_sweep_results.json"
+sha256 = "2d1c402862b41909900dc566d4ae2c37c5ec7eb2206d85720aaa99f43793f2a8"
+size_bytes = 1066759
+
+[[artifacts]]
+kind = "artifact"
+relpath = "data/reproduction/docker_compose_run.log"
+sha256 = "64e271a9281f9a387e207e07e1fc8ff71d3a15c52a4f0b862322af517f5e1437"
+size_bytes = 50915
+
+[[artifacts]]
+kind = "experiment_json"
+relpath = "data/reproduction/environment_report.json"
+sha256 = "6316703c749793807d779673b6cfb93d1d354586f1f3c50190c78722ab305cda"
+size_bytes = 3265
+
+[[artifacts]]
+kind = "experiment_json"
+relpath = "data/reproduction/image_identity.json"
+sha256 = "3071777f49685a8be000675ec33653e40e0590cf8a69c634e523b642a727f0ec"
+size_bytes = 843
+
+[[artifacts]]
+kind = "experiment_json"
+relpath = "data/reproduction/triad_selector_audit.json"
+sha256 = "e5f0c025e724a996db89dab813d60ec33666c586be32c16b441dcbb821806707"
+size_bytes = 2797
+
+[[artifacts]]
+kind = "experiment_json"
+relpath = "data/reproduction/verification_report.json"
+sha256 = "abca9f1cca5e96663a117c2866fad59dd6bcd8d790ca1ffc18ddd7cca6548d87"
+size_bytes = 365830

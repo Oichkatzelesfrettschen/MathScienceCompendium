@@ -1,0 +1,172 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://mathsciencecompendium.local/schemas/registry/clean_reproduction_verification.schema.json",
+  "title": "CleanReproductionVerification",
+  "type": "object",
+  "required": ["schema_version", "source_commit", "image_reference", "image_digest", "all_checks_passed", "environment_report", "image_identity", "verification_harness", "source_identity", "source_tree_contract", "input_identity", "environment_outputs", "cache_isolation", "json_comparisons", "archive_comparisons"],
+  "additionalProperties": false,
+  "$defs": {
+    "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "image_digest": {"type": "string", "pattern": "^sha256:[0-9a-f]{64}$"},
+    "relpath": {"type": "string", "pattern": "^(?!/)(?!.*(?:^|/)\\.\\.(?:/|$))[^\\u0000-\\u001F\\u007F]+$"},
+    "execution_receipt": {
+      "type": "object",
+      "required": ["fresh_execution_required", "work_root_existed_before", "resumed_count", "pending_count", "total_count"],
+      "additionalProperties": false,
+      "properties": {
+        "fresh_execution_required": {"const": true},
+        "work_root_existed_before": {"const": false},
+        "resumed_count": {"const": 0},
+        "pending_count": {"type": "integer", "minimum": 1},
+        "total_count": {"type": "integer", "minimum": 1}
+      }
+    },
+    "execution_receipts": {
+      "type": "object",
+      "required": ["production", "refinement"],
+      "additionalProperties": false,
+      "properties": {
+        "production": {"$ref": "#/$defs/execution_receipt"},
+        "refinement": {"$ref": "#/$defs/execution_receipt"}
+      }
+    },
+    "evidence": {
+      "type": "object",
+      "required": ["relpath", "sha256"],
+      "additionalProperties": false,
+      "properties": {
+        "relpath": {"$ref": "#/$defs/relpath"},
+        "sha256": {"$ref": "#/$defs/sha256"}
+      }
+    }
+  },
+  "properties": {
+    "schema_version": {"const": 1},
+    "source_commit": {"type": "string", "pattern": "^[0-9a-f]{40}$"},
+    "image_reference": {"type": "string", "minLength": 1},
+    "image_digest": {"$ref": "#/$defs/image_digest"},
+    "all_checks_passed": {"type": "boolean"},
+    "environment_report": {"$ref": "#/$defs/evidence"},
+    "image_identity": {"$ref": "#/$defs/evidence"},
+    "verification_harness": {
+      "type": "array",
+      "minItems": 3,
+      "maxItems": 3,
+      "items": {"$ref": "#/$defs/evidence"}
+    },
+    "source_identity": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": ["relpath", "committed_sha256", "image_sha256", "match"],
+        "properties": {
+          "relpath": {"$ref": "#/$defs/relpath"},
+          "committed_sha256": {"$ref": "#/$defs/sha256"},
+          "image_sha256": {"$ref": "#/$defs/sha256"},
+          "match": {"type": "boolean"}
+        },
+        "additionalProperties": false
+      }
+    },
+    "source_tree_contract": {
+      "type": "object",
+      "required": ["image_file_count", "committed_file_count", "missing_required_source_paths", "unexpected_image_paths", "all_image_files_match_commit"],
+      "additionalProperties": false,
+      "properties": {
+        "image_file_count": {"type": "integer", "minimum": 1},
+        "committed_file_count": {"type": "integer", "minimum": 1},
+        "missing_required_source_paths": {"type": "array", "items": {"$ref": "#/$defs/relpath"}},
+        "unexpected_image_paths": {"type": "array", "items": {"$ref": "#/$defs/relpath"}},
+        "all_image_files_match_commit": {"type": "boolean"}
+      }
+    },
+    "input_identity": {
+      "type": "array",
+      "minItems": 1,
+      "maxItems": 1,
+      "items": {
+        "type": "object",
+        "required": ["relpath", "host_sha256", "image_sha256", "primary_declared_sha256", "reproduction_declared_sha256", "match"],
+        "properties": {
+          "relpath": {"$ref": "#/$defs/relpath"},
+          "host_sha256": {"$ref": "#/$defs/sha256"},
+          "image_sha256": {"$ref": "#/$defs/sha256"},
+          "primary_declared_sha256": {"$ref": "#/$defs/sha256"},
+          "reproduction_declared_sha256": {"$ref": "#/$defs/sha256"},
+          "match": {"type": "boolean"}
+        },
+        "additionalProperties": false
+      }
+    },
+    "environment_outputs": {
+      "type": "array",
+      "minItems": 7,
+      "maxItems": 7,
+      "items": {
+        "type": "object",
+        "required": ["relpath", "declared_sha256", "actual_sha256", "declared_size_bytes", "actual_size_bytes", "match"],
+        "properties": {
+          "relpath": {"$ref": "#/$defs/relpath"},
+          "declared_sha256": {"$ref": "#/$defs/sha256"},
+          "actual_sha256": {"$ref": "#/$defs/sha256"},
+          "declared_size_bytes": {"type": "integer", "minimum": 0},
+          "actual_size_bytes": {"type": "integer", "minimum": 0},
+          "match": {"type": "boolean"}
+        },
+        "additionalProperties": false
+      }
+    },
+    "cache_isolation": {
+      "type": "object",
+      "required": ["relpath", "sha256", "execution_receipts", "expected_execution_receipts", "match"],
+      "properties": {
+        "relpath": {"$ref": "#/$defs/relpath"},
+        "sha256": {"$ref": "#/$defs/sha256"},
+        "execution_receipts": {"$ref": "#/$defs/execution_receipts"},
+        "expected_execution_receipts": {"$ref": "#/$defs/execution_receipts"},
+        "match": {"type": "boolean"}
+      },
+      "additionalProperties": false
+    },
+    "json_comparisons": {
+      "type": "array",
+      "minItems": 4,
+      "maxItems": 4,
+      "items": {
+        "type": "object",
+        "required": ["comparison_id", "primary_relpath", "reproduction_relpath", "primary_sha256", "reproduction_sha256", "primary_source_commit", "reproduction_source_commit", "byte_identical", "normalized_json_identical"],
+        "properties": {
+          "comparison_id": {"enum": ["triad_selector_audit", "beta_plane_production", "beta_plane_refinement", "beta_plane_controls"]},
+          "primary_relpath": {"$ref": "#/$defs/relpath"},
+          "reproduction_relpath": {"$ref": "#/$defs/relpath"},
+          "primary_sha256": {"$ref": "#/$defs/sha256"},
+          "reproduction_sha256": {"$ref": "#/$defs/sha256"},
+          "primary_source_commit": {"type": ["string", "null"], "pattern": "^[0-9a-f]{40}$"},
+          "reproduction_source_commit": {"type": ["string", "null"], "pattern": "^[0-9a-f]{40}$"},
+          "byte_identical": {"type": "boolean"},
+          "normalized_json_identical": {"type": "boolean"}
+        },
+        "additionalProperties": false
+      }
+    },
+    "archive_comparisons": {
+      "type": "array",
+      "minItems": 3,
+      "maxItems": 3,
+      "items": {
+        "type": "object",
+        "required": ["comparison_id", "primary_relpath", "reproduction_relpath", "primary_sha256", "reproduction_sha256", "byte_identical"],
+        "properties": {
+          "comparison_id": {"enum": ["beta_plane_production_arrays", "beta_plane_refinement_arrays", "beta_plane_control_arrays"]},
+          "primary_relpath": {"$ref": "#/$defs/relpath"},
+          "reproduction_relpath": {"$ref": "#/$defs/relpath"},
+          "primary_sha256": {"$ref": "#/$defs/sha256"},
+          "reproduction_sha256": {"$ref": "#/$defs/sha256"},
+          "byte_identical": {"type": "boolean"}
+        },
+        "additionalProperties": false
+      }
+    }
+  }
+}

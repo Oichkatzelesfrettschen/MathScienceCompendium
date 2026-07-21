@@ -1,0 +1,104 @@
+{
+  "beta_plane_outcome": "not_supported",
+  "commands": [
+    [
+      "/usr/local/bin/python",
+      "scripts/audit_triad_selectors.py",
+      "--output",
+      "data/reproduction/triad_selector_audit.json"
+    ],
+    [
+      "/usr/local/bin/python",
+      "scripts/run_beta_plane_sweep.py",
+      "--profile",
+      "production",
+      "--work-root",
+      "/tmp/beta_plane_reproduction",
+      "--require-empty-work-root",
+      "--output",
+      "data/reproduction/beta_plane_sweep_results.json",
+      "--evidence-archive",
+      "data/reproduction/beta_plane_production_arrays.tar"
+    ],
+    [
+      "/usr/local/bin/python",
+      "scripts/run_beta_plane_sweep.py",
+      "--profile",
+      "refinement",
+      "--work-root",
+      "/tmp/beta_plane_reproduction",
+      "--require-empty-work-root",
+      "--output",
+      "data/reproduction/beta_plane_refinement_results.json",
+      "--evidence-archive",
+      "data/reproduction/beta_plane_refinement_arrays.tar"
+    ],
+    [
+      "/usr/local/bin/python",
+      "scripts/run_beta_plane_controls.py",
+      "--output",
+      "data/reproduction/beta_plane_control_results.json",
+      "--evidence-archive",
+      "data/reproduction/beta_plane_control_arrays.tar"
+    ]
+  ],
+  "execution_receipts": {
+    "production": {
+      "fresh_execution_required": true,
+      "pending_count": 540,
+      "resumed_count": 0,
+      "total_count": 540,
+      "work_root_existed_before": false
+    },
+    "refinement": {
+      "fresh_execution_required": true,
+      "pending_count": 48,
+      "resumed_count": 0,
+      "total_count": 48,
+      "work_root_existed_before": false
+    }
+  },
+  "numpy_version": "2.4.2",
+  "outputs": [
+    {
+      "relpath": "data/reproduction/beta_plane_control_arrays.tar",
+      "sha256": "2e6dfe14f80ca19529a910ebcc52582418fa799561ae3127118a4a3c22c95d66",
+      "size_bytes": 1607680
+    },
+    {
+      "relpath": "data/reproduction/beta_plane_control_results.json",
+      "sha256": "35f36f4dda198b72c366babda282eb99888b29571c6dce799d15cb907d74e18b",
+      "size_bytes": 14564
+    },
+    {
+      "relpath": "data/reproduction/beta_plane_production_arrays.tar",
+      "sha256": "b96bb6ac46a823c5a74d25a895406a8b9b6d78db5a3f49d01262ce44e9f3d61b",
+      "size_bytes": 18227200
+    },
+    {
+      "relpath": "data/reproduction/beta_plane_refinement_arrays.tar",
+      "sha256": "6714b6a581b259d96aa9633fbbe1fd016c26459753f6f643a9783868a2bd322d",
+      "size_bytes": 2580480
+    },
+    {
+      "relpath": "data/reproduction/beta_plane_refinement_results.json",
+      "sha256": "133e4db19614f1b3d6ca3239f711663eff9cd6a12a4a59c3d4cb610b456656df",
+      "size_bytes": 106255
+    },
+    {
+      "relpath": "data/reproduction/beta_plane_sweep_results.json",
+      "sha256": "2d1c402862b41909900dc566d4ae2c37c5ec7eb2206d85720aaa99f43793f2a8",
+      "size_bytes": 1066759
+    },
+    {
+      "relpath": "data/reproduction/triad_selector_audit.json",
+      "sha256": "e5f0c025e724a996db89dab813d60ec33666c586be32c16b441dcbb821806707",
+      "size_bytes": 2797
+    }
+  ],
+  "python_version": "3.11.13",
+  "schema_version": 1,
+  "scipy_version": "1.17.1",
+  "selector_outcome": "e7_specificity_falsified_generic_parity_kernel_retained",
+  "source_commit": "fec29233fc9fa89bb77a52436e63ae003d671586"
+}

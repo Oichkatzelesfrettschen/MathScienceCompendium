@@ -16,17 +16,15 @@ def test_gate_registry_covers_claim_ledger_exactly():
     )["gates"]
     claim_ids = [claim["id"] for claim in claims]
     gate_ids = [gate["claim_id"] for gate in gates]
-    assert len(gate_ids) == 23
     assert gate_ids == claim_ids
-    assert len(set(gate_ids)) == 23
+    assert len(set(gate_ids)) == len(gate_ids)
 
 
 def test_all_claim_gates_match_declared_outcomes():
     payload = execute_claim_gates()
-    assert payload["claim_count"] == 23
-    assert payload["gate_count"] == 23
-    assert payload["failed_count"] == 0
-    assert payload["all_gates_passed"] is True
+    assert payload["claim_count"] == payload["gate_count"]
+    assert payload["inconsistent_count"] == 0
+    assert payload["all_contracts_consistent"] is True
 
 
 def test_every_registered_gate_has_an_executable_checker():

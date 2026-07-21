@@ -39,6 +39,8 @@ class BetaPlaneConfig:
     initial_energy: float = 0.01
     seed: int = 11
     nonlinear_filter: NonlinearFilter = NonlinearFilter.IDENTITY
+    sample_interval_steps: int = 1
+    analysis_window_fraction: float = 0.2
 
     def __post_init__(self) -> None:
         if self.grid_size < 8 or self.grid_size % 2 != 0:
@@ -51,6 +53,10 @@ class BetaPlaneConfig:
             raise ValueError("initial wavenumber bounds must be positive and ordered")
         if self.initial_energy <= 0.0:
             raise ValueError("initial_energy must be positive")
+        if self.sample_interval_steps < 1:
+            raise ValueError("sample_interval_steps must be positive")
+        if not 0.0 < self.analysis_window_fraction <= 1.0:
+            raise ValueError("analysis_window_fraction must be in (0, 1]")
 
 
 @dataclass(frozen=True)
@@ -69,9 +75,59 @@ class BetaPlaneRun:
     jet_count: int
     jet_prominence_threshold: float
     final_window_sample_count: int
+    final_window_mean_zonal_fraction: float
+    final_window_tenth_percentile_zonal_fraction: float
     final_window_minimum_zonal_fraction: float
+    final_window_zonal_fractions: tuple[float, ...]
     final_window_jet_counts: tuple[int, ...]
+    final_window_modal_jet_count: int
+    final_window_modal_jet_count_occupancy: float
     jet_claim_admitted: bool
+
+
+def circular_peak_indices(
+    values: NDArray[np.float64], prominence: float, distance: int
+) -> NDArray[np.int64]:
+    """Find peaks on a periodic one-dimensional grid."""
+    if values.ndim != 1 or values.size == 0:
+        raise ValueError("values must be a nonempty one-dimensional array")
+    if prominence <= 0.0 or distance < 1:
+        raise ValueError("prominence and distance must be positive")
+    point_count = values.size
+    tiled_values = np.tile(values, 3)
+    tiled_peaks, _ = find_peaks(tiled_values, prominence=prominence, distance=distance)
+    central_peaks = tiled_peaks[(tiled_peaks >= point_count) & (tiled_peaks < 2 * point_count)]
+    return np.asarray(central_peaks - point_count, dtype=np.int64)
+
+
+def classify_final_window(
+    zonal_fractions: list[float] | tuple[float, ...],
+    jet_counts: list[int] | tuple[int, ...],
+) -> dict[str, float | int | bool]:
+    """Apply the locked persistent-jet rule to a sampled final window."""
+    if not zonal_fractions or len(zonal_fractions) != len(jet_counts):
+        raise ValueError("final-window diagnostics must be nonempty and aligned")
+    if not np.isfinite(zonal_fractions).all():
+        raise ValueError("final-window zonal fractions must be finite")
+    unique_counts, count_frequencies = np.unique(jet_counts, return_counts=True)
+    modal_index = int(np.argmax(count_frequencies))
+    modal_jet_count = int(unique_counts[modal_index])
+    modal_jet_count_occupancy = float(count_frequencies[modal_index] / len(jet_counts))
+    mean_zonal_fraction = float(np.mean(zonal_fractions))
+    tenth_percentile_zonal_fraction = float(np.percentile(zonal_fractions, 10.0))
+    return {
+        "mean_zonal_fraction": mean_zonal_fraction,
+        "tenth_percentile_zonal_fraction": tenth_percentile_zonal_fraction,
+        "minimum_zonal_fraction": float(min(zonal_fractions)),
+        "modal_jet_count": modal_jet_count,
+        "modal_jet_count_occupancy": modal_jet_count_occupancy,
+        "persistent_jet": (
+            mean_zonal_fraction >= 0.1
+            and tenth_percentile_zonal_fraction >= 0.1
+            and modal_jet_count >= 2
+            and modal_jet_count_occupancy >= 0.8
+        ),
+    }
 
 
 class BarotropicBetaPlane:
@@ -208,25 +264,35 @@ class BarotropicBetaPlane:
         spectral_total = float(np.sum(spectral_energy))
         spectral_zonal = float(np.sum(spectral_energy[self.wavenumber_x == 0.0]))
         spectral_fraction = spectral_zonal / spectral_total if spectral_total > 0.0 else 0.0
-        zonal_rms = float(np.sqrt(np.mean(zonal_profile**2)))
-        prominence = 0.05 * zonal_rms
-        if prominence == 0.0:
-            jet_count = 0
-        else:
-            eastward, _ = find_peaks(zonal_profile, prominence=prominence)
-            westward, _ = find_peaks(-zonal_profile, prominence=prominence)
-            jet_count = len(eastward) + len(westward)
+        prominence = 0.05 * np.sqrt(2.0 * self.config.initial_energy)
+        minimum_separation = int(
+            np.ceil(self.config.grid_size / (2.0 * self.config.initial_wavenumber_maximum))
+        )
+        eastward = circular_peak_indices(zonal_profile, prominence, minimum_separation)
+        westward = circular_peak_indices(-zonal_profile, prominence, minimum_separation)
+        jet_count = len(eastward) + len(westward)
         return zonal_fraction, spectral_fraction, jet_count, prominence
 
-    def run(self) -> BetaPlaneRun:
-        vorticity_hat = self.initial_vorticity()
+    def run(self, initial_vorticity_hat: NDArray[np.complex128] | None = None) -> BetaPlaneRun:
+        if initial_vorticity_hat is None:
+            vorticity_hat = self.initial_vorticity()
+        else:
+            expected_shape = (self.config.grid_size, self.config.grid_size)
+            if initial_vorticity_hat.shape != expected_shape:
+                raise ValueError(f"initial_vorticity_hat must have shape {expected_shape}")
+            vorticity_hat = np.asarray(initial_vorticity_hat, dtype=np.complex128).copy()
+            vorticity_hat *= self.dealias_mask
+            vorticity_hat[0, 0] = 0.0
         initial_vorticity = np.fft.ifft2(vorticity_hat).real
         initial_energy = self.kinetic_energy(vorticity_hat)
         initial_enstrophy = self.enstrophy(vorticity_hat)
         prior_energy_rate, prior_enstrophy_rate = self.budget_rates(vorticity_hat)
         integrated_energy_rate = 0.0
         integrated_enstrophy_rate = 0.0
-        final_window_start = max(1, int(np.ceil(0.8 * self.config.steps)))
+        final_window_start = max(
+            1,
+            int(np.ceil((1.0 - self.config.analysis_window_fraction) * self.config.steps)),
+        )
         final_window_zonal_fractions: list[float] = []
         final_window_jet_counts: list[int] = []
         for step_index in range(1, self.config.steps + 1):
@@ -240,7 +306,11 @@ class BarotropicBetaPlane:
             )
             prior_energy_rate = energy_rate
             prior_enstrophy_rate = enstrophy_rate
-            if step_index >= final_window_start:
+            should_sample = step_index >= final_window_start and (
+                step_index % self.config.sample_interval_steps == 0
+                or step_index == self.config.steps
+            )
+            if should_sample:
                 window_zonal_fraction, _, window_jet_count, _ = self.zonal_diagnostics(
                     vorticity_hat
                 )
@@ -251,11 +321,8 @@ class BarotropicBetaPlane:
         zonal_fraction, spectral_fraction, jet_count, prominence = self.zonal_diagnostics(
             vorticity_hat
         )
-        minimum_window_zonal_fraction = min(final_window_zonal_fractions)
-        jet_claim_admitted = (
-            minimum_window_zonal_fraction > 0.1
-            and jet_count > 0
-            and set(final_window_jet_counts) == {jet_count}
+        window_classification = classify_final_window(
+            final_window_zonal_fractions, final_window_jet_counts
         )
         return BetaPlaneRun(
             config=self.config,
@@ -274,7 +341,18 @@ class BarotropicBetaPlane:
             jet_count=jet_count,
             jet_prominence_threshold=prominence,
             final_window_sample_count=len(final_window_zonal_fractions),
-            final_window_minimum_zonal_fraction=minimum_window_zonal_fraction,
+            final_window_mean_zonal_fraction=float(window_classification["mean_zonal_fraction"]),
+            final_window_tenth_percentile_zonal_fraction=float(
+                window_classification["tenth_percentile_zonal_fraction"]
+            ),
+            final_window_minimum_zonal_fraction=float(
+                window_classification["minimum_zonal_fraction"]
+            ),
+            final_window_zonal_fractions=tuple(final_window_zonal_fractions),
             final_window_jet_counts=tuple(final_window_jet_counts),
-            jet_claim_admitted=jet_claim_admitted,
+            final_window_modal_jet_count=int(window_classification["modal_jet_count"]),
+            final_window_modal_jet_count_occupancy=float(
+                window_classification["modal_jet_count_occupancy"]
+            ),
+            jet_claim_admitted=bool(window_classification["persistent_jet"]),
         )

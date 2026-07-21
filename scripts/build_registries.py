@@ -24,6 +24,8 @@ ARTIFACT_SCAN_ROOTS = [
     "results",
     "papers",
     "source_materials/pdfs",
+    "data/evidence",
+    "data/reproduction",
 ]
 
 PAPER_ARTIFACTS = {"papers/main.pdf"}

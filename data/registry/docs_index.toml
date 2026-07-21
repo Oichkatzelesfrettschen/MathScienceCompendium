@@ -1,6 +1,6 @@
 generated_by = "scripts/build_docs_index.py"
 generated_at_utc = "1970-01-01T00:00:00+00:00"
-documents_total = 67
+documents_total = 70
 
 [[documents]]
 id = "docs_architecture_md"
@@ -88,9 +88,18 @@ id = "docs_framework__aligned_research_corpus_md"
 relpath = "docs/framework/ALIGNED_RESEARCH_CORPUS.md"
 category = "docs/root"
 title = "Aligned Research Corpus"
-sha256 = "c05fce8ce1e046b926e2e9aa90eb81e5e42df885049b6acf411d50f2ee903fcb"
-line_count = 117
-size_bytes = 6784
+sha256 = "c0ca459cacafaa1d82a7529fc4b552d7be9af9d84287df6f76c71b4ee7ef4bf6"
+line_count = 132
+size_bytes = 7899
+
+[[documents]]
+id = "docs_framework__authority_surfaces_md"
+relpath = "docs/framework/AUTHORITY_SURFACES.md"
+category = "docs/root"
+title = "Authority Surfaces"
+sha256 = "c5ea79daa52cb01428d1e2e41573350174281f85627d18a62971c40ace8392bc"
+line_count = 27
+size_bytes = 1391
 
 [[documents]]
 id = "docs_framework__framework_document_inventory_md"
@@ -118,6 +127,15 @@ title = "Genesis Revision Reconciliation"
 sha256 = "b2ff8db25a026ecabeef8c752284761526173264539aad606b85996893794dbd"
 line_count = 79
 size_bytes = 4577
+
+[[documents]]
+id = "docs_framework__hypothesis_registry_md"
+relpath = "docs/framework/HYPOTHESIS_REGISTRY.md"
+category = "docs/root"
+title = "Hypothesis Registry"
+sha256 = "0b1a312520c7a1cb9f963aa3c45ecd380a0ab464114d7fe7964564681f1ae8fc"
+line_count = 642
+size_bytes = 40157
 
 [[documents]]
 id = "docs_framework__unified_evidence_framework_md"
@@ -223,18 +241,18 @@ id = "papers_review_computational_evidence_tex"
 relpath = "papers/sections/review_computational_evidence.tex"
 category = "papers/sections"
 title = "Computational Evidence Portfolio"
-sha256 = "5c9dda84cabd5bed9cb6698de3695f8df87532adc02d0401483e39f9b5a51508"
-line_count = 216
-size_bytes = 10464
+sha256 = "5f71dedb8660f50211e744fb8c1a28bbc324ef64b8f5b715859b30d599ecbbfe"
+line_count = 234
+size_bytes = 11665
 
 [[documents]]
 id = "papers_review_conclusions_tex"
 relpath = "papers/sections/review_conclusions.tex"
 category = "papers/sections"
 title = "Conclusions and Decision Record"
-sha256 = "b4e04f9f6fd0a858331851ab90e421e387186964891bb53c44bd1b8f3ff832ac"
-line_count = 115
-size_bytes = 5547
+sha256 = "ff4440690b5ed42df481ceb202df5526bc508d7f383b14309fb641a4a1eacea7"
+line_count = 128
+size_bytes = 6415
 
 [[documents]]
 id = "papers_review_critique_reassessment_tex"
@@ -250,9 +268,18 @@ id = "papers_review_framework_reconciliation_tex"
 relpath = "papers/sections/review_framework_reconciliation.tex"
 category = "papers/sections"
 title = "Reconciled Framework Architecture"
-sha256 = "26ca402438cf94035a4bf4ba404e8b5eda9c4dbf460e565b6520bb48aab4aaeb"
-line_count = 141
-size_bytes = 7061
+sha256 = "e9f8aca0c17a6553007b6862a31ef2fafac77988bbe210b3721d4519981eb842"
+line_count = 144
+size_bytes = 7265
+
+[[documents]]
+id = "papers_review_hypothesis_registry_tex"
+relpath = "papers/sections/review_hypothesis_registry.tex"
+category = "papers/sections"
+title = "Hypothesis Registry and Promotion Gates"
+sha256 = "0a71a24016221b9b7f7b2b122a148dae36059aad42d11e29019094342233861e"
+line_count = 97
+size_bytes = 5118
 
 [[documents]]
 id = "papers_review_mathematical_baseline_tex"
@@ -277,9 +304,9 @@ id = "papers_review_reproducibility_tex"
 relpath = "papers/sections/review_reproducibility.tex"
 category = "papers/sections"
 title = "Reproducibility and Artifact Inventory"
-sha256 = "32bf96fdc615cc3299ea58f9de18ce5dce84d2f510c1e8f7df3089f2d0c885de"
-line_count = 156
-size_bytes = 6976
+sha256 = "7283713d6b01b35aa51bf4e911a7168ae9d90c4a008c5af1be65d3603bd489be"
+line_count = 195
+size_bytes = 9341
 
 [[documents]]
 id = "papers_review_scope_method_tex"

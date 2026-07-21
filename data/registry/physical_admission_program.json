@@ -1,0 +1,148 @@
+{
+  "schema_version": 1,
+  "program_id": "physical_admission",
+  "description": "Promotion state and evidence contract for physical hypotheses with measurable operators. Structural package completeness never counts as empirical admission.",
+  "promotion_states": [
+    "specified",
+    "calibrated",
+    "blind_controls_complete",
+    "energy_or_constraint_closure_passed",
+    "multiplicity_corrected_effect_passed",
+    "independently_replicated",
+    "admitted"
+  ],
+  "raw_evidence_contract": [
+    "raw_data_relpaths_and_sha256",
+    "calibration_records_and_sha256",
+    "uncertainty_covariance",
+    "blind_allocation_commitment_sha256",
+    "complete_channel_ledger",
+    "locked_analysis_code_commit",
+    "environment_lock_sha256",
+    "independent_replication_record"
+  ],
+  "packages": [
+    {
+      "rank": 1,
+      "claim_id": "tourmaline_novel_energy_effect",
+      "hypothesis_id": "hyp_tourmaline_excess_cycle_energy",
+      "current_state": "specified",
+      "next_required_state": "calibrated",
+      "operator_set": [
+        "stress history in Pa",
+        "specimen and fixture temperature fields in K",
+        "electrode charge in C",
+        "voltage in V",
+        "current in A",
+        "vibration spectrum in m/s^2/Hz",
+        "net cycle energy in J"
+      ],
+      "locked_controls": [
+        "rotated crystal axis",
+        "composition-matched nonpolar material",
+        "conventional pyroelectric or piezoelectric reference",
+        "dummy fixture"
+      ],
+      "advance_rule": "Calibrate every operator, fit the conventional constitutive model only on calibration data, commit the blind allocation, close all nine energy channels within three propagated standard uncertainties, pass Holm-corrected tests for the three registered observables, and replicate independently.",
+      "state_evidence": {"calibrated": [], "blind_controls_complete": [], "energy_or_constraint_closure_passed": [], "multiplicity_corrected_effect_passed": [], "independently_replicated": [], "admitted": []},
+      "blockers": [
+        "No specimen composition, orientation, geometry, or electrode record",
+        "No calibration files or raw blinded cycles",
+        "No uncertainty covariance or complete measured energy ledger"
+      ]
+    },
+    {
+      "rank": 2,
+      "claim_id": "time_crystal_energy_amplification",
+      "hypothesis_id": "hyp_time_crystal_net_period_work",
+      "current_state": "specified",
+      "next_required_state": "calibrated",
+      "operator_set": [
+        "subharmonic order parameter",
+        "order lifetime in drive periods",
+        "drive work in J",
+        "preparation work in J",
+        "control work in J",
+        "cooling and readout work in J",
+        "system energy change and bath heat in J",
+        "net useful period work in J"
+      ],
+      "locked_controls": [
+        "noninteracting system",
+        "localization-disabled system",
+        "off-resonant drive",
+        "sham drive"
+      ],
+      "advance_rule": "First admit subharmonic order and lifetime against phase-destroying controls. Open the energy claim separately only after all period-resolved channels close within three propagated standard uncertainties; require a multiplicity-corrected positive lower confidence bound and independent replication.",
+      "state_evidence": {"calibrated": [], "blind_controls_complete": [], "energy_or_constraint_closure_passed": [], "multiplicity_corrected_effect_passed": [], "independently_replicated": [], "admitted": []},
+      "blockers": [
+        "No Hamiltonian or open-system generator",
+        "No raw order-parameter series",
+        "No period-resolved work, heat, storage, or loss ledger"
+      ]
+    },
+    {
+      "rank": 3,
+      "claim_id": "scalar_field_curvature_mechanism",
+      "hypothesis_id": "hyp_scalar_curvature_action",
+      "current_state": "specified",
+      "next_required_state": "calibrated",
+      "operator_set": [
+        "normalized Hamiltonian constraint residual",
+        "normalized momentum constraint residual",
+        "physical perturbation growth rates in 1/s",
+        "named dimensioned held-out distinguishing observable"
+      ],
+      "locked_controls": [
+        "general relativity with matched matter and boundaries",
+        "minimally coupled scalar with matched energy and spectrum",
+        "null-source evolution"
+      ],
+      "advance_rule": "Freeze a covariant action, derive field equations and stress tensor, reject ghosts and physical instabilities, require normalized constraints <= 1e-8 under refinement, then pass a Holm-corrected held-out distinguishing test and independent reproduction.",
+      "state_evidence": {"calibrated": [], "blind_controls_complete": [], "energy_or_constraint_closure_passed": [], "multiplicity_corrected_effect_passed": [], "independently_replicated": [], "admitted": []},
+      "blockers": [
+        "No covariant action, units, gauge, background, or boundary data",
+        "No derived equations or perturbation spectrum",
+        "No held-out dimensioned measurement"
+      ]
+    },
+    {
+      "rank": 4,
+      "claim_id": "zpe_energy_harvesting",
+      "hypothesis_id": "hyp_zpe_closed_cycle_work",
+      "current_state": "specified",
+      "next_required_state": "calibrated",
+      "operator_set": [
+        "electrical input in J",
+        "pump work in J",
+        "boundary-control work in J",
+        "environmental heat in J",
+        "useful output work in J",
+        "radiated and dissipated energy in J",
+        "stored energy change in J"
+      ],
+      "locked_controls": [
+        "modulation-disabled cycle",
+        "matched classical parametric source",
+        "blind sham cycle"
+      ],
+      "advance_rule": "Require a physical device and complete return cycle, calibrated measurements for every channel, three-sigma closure, a multiplicity-corrected positive lower confidence bound for net work, and independent replication.",
+      "state_evidence": {"calibrated": [], "blind_controls_complete": [], "energy_or_constraint_closure_passed": [], "multiplicity_corrected_effect_passed": [], "independently_replicated": [], "admitted": []},
+      "blockers": [
+        "No physical device or declared complete cycle",
+        "No calibrated channel measurements",
+        "No blinded controls or independent replication"
+      ]
+    }
+  ],
+  "excluded_until_redefined": [
+    {
+      "claim_id": "origami_fold_merge_operator",
+      "missing_definition": "Domain, codomain, operator law, topology, state map, and observable"
+    },
+    {
+      "claim_id": "consciousness_resonance",
+      "missing_definition": "Intervention, dose, causal model, operational endpoint, comparator, and replication protocol"
+    }
+  ]
+}

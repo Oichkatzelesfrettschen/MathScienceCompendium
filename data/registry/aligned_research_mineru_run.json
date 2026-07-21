@@ -1,5 +1,5 @@
 {
-  "complete_count": 37,
+  "complete_count": 42,
   "engine": {
     "backend": "hybrid-engine",
     "effort": "high",
@@ -12,12 +12,12 @@
     "version": "3.4.4"
   },
   "failed_count": 0,
-  "generated_at_utc": "2026-07-20T08:20:15.828542+00:00",
+  "generated_at_utc": "2026-07-21T00:06:31.958986+00:00",
   "generator": "scripts/run_mineru_manifest.py",
   "manifest_relpath": "data/external/sources.toml",
-  "manifest_sha256": "0d3f4e5c6497993988a6682f4387e8437e59186ce7fa71a34225d9bb2b870b23",
+  "manifest_sha256": "3b300f6ce411fd4cf14d9fc6d19c9d8b6d6985a3c58eb73953ccda811302b1a9",
   "schema_version": 1,
-  "source_count": 37,
+  "source_count": 42,
   "sources": [
     {
       "outputs": [
@@ -1492,12 +1492,11 @@
           "size_bytes": 281054
         }
       ],
-      "returncode": 0,
       "source_id": "borcherds_monstrous_moonshine_1992",
       "source_relpath": "source_materials/pdfs/borcherds_monstrous_moonshine_1992.pdf",
       "source_sha256": "dee2cb9c3121cf1bf8bddce952d952e0f478a39e497df8946e220e9ceffab501",
       "source_size_bytes": 297549,
-      "status": "generated"
+      "status": "complete"
     },
     {
       "outputs": [
@@ -1544,12 +1543,11 @@
           "size_bytes": 771024
         }
       ],
-      "returncode": 0,
       "source_id": "arxiv_duncan_griffin_ono_1411_6571",
       "source_relpath": "source_materials/pdfs/arxiv_1411.6571.pdf",
       "source_sha256": "80566abbbc2f0fd4c36851c38d6fd9348452f636b62234e0d339e2d180fde82f",
       "source_size_bytes": 805409,
-      "status": "generated"
+      "status": "complete"
     },
     {
       "outputs": [
@@ -1906,6 +1904,261 @@
       "source_relpath": "source_materials/pdfs/hep-th_9606001.pdf",
       "source_sha256": "2c5cdd1bd8da1dcc65d90cb2d28d17e8d4cddd9697af1eb7387128f15d47b756",
       "source_size_bytes": 196251,
+      "status": "complete"
+    },
+    {
+      "outputs": [
+        {
+          "relpath": "build/document_ocr/mineru_corpus/arxiv_1407.3354/hybrid_auto/arxiv_1407.3354_content_list.json",
+          "role": "content_list",
+          "sha256": "6b816056c2a8191d63015b3d33ad9a98374d7833cafb13c4c8433e4ebc026387",
+          "size_bytes": 202320
+        },
+        {
+          "relpath": "build/document_ocr/mineru_corpus/arxiv_1407.3354/hybrid_auto/arxiv_1407.3354_content_list_v2.json",
+          "role": "content_list_v2",
+          "sha256": "192d1afe3377265750ce988b9f64d3ab9f9676524e9eb1d1df412eefbf88f0d1",
+          "size_bytes": 477558
+        },
+        {
+          "relpath": "build/document_ocr/mineru_corpus/arxiv_1407.3354/hybrid_auto/arxiv_1407.3354_layout.pdf",
+          "role": "layout_pdf",
+          "sha256": "0faf312783571a666539bb63807516e109eaa10b1b4a79da1de5fbbb1210032c",
+          "size_bytes": 3004032
+        },
+        {
+          "relpath": "build/document_ocr/mineru_corpus/arxiv_1407.3354/hybrid_auto/arxiv_1407.3354.md",
+          "role": "markdown",
+          "sha256": "64e53a2c9162f75563d3098427bffd747aaa3290c80a137df4261f827e97a792",
+          "size_bytes": 128302
+        },
+        {
+          "relpath": "build/document_ocr/mineru_corpus/arxiv_1407.3354/hybrid_auto/arxiv_1407.3354_middle.json",
+          "role": "middle",
+          "sha256": "3c93c00eadba26c835729ef6997839f85c7466178e86bd492c1b67f1525e5ced",
+          "size_bytes": 4742339
+        },
+        {
+          "relpath": "build/document_ocr/mineru_corpus/arxiv_1407.3354/hybrid_auto/arxiv_1407.3354_model.json",
+          "role": "model",
+          "sha256": "324fa5f396f620657208188550bc9775c74b32d85d4fae4625b0ba379d2cedf0",
+          "size_bytes": 824748
+        },
+        {
+          "relpath": "build/document_ocr/mineru_corpus/arxiv_1407.3354/hybrid_auto/arxiv_1407.3354_origin.pdf",
+          "role": "origin_pdf",
+          "sha256": "f1253f2ff0e31cd2a7efaa76226018b6a61a77b612224824bf6fc7d7b147c1e5",
+          "size_bytes": 2491204
+        }
+      ],
+      "source_id": "arxiv_bakas_constantinou_ioannou_1407_3354",
+      "source_relpath": "source_materials/pdfs/arxiv_1407.3354.pdf",
+      "source_sha256": "79ad3444428d3903c78d016544f9ba124a15183a0e52e7ba9579eae92471353c",
+      "source_size_bytes": 2560966,
+      "status": "complete"
+    },
+    {
+      "outputs": [
+        {
+          "relpath": "build/document_ocr/mineru_corpus/arxiv_1708.03031/hybrid_auto/arxiv_1708.03031_content_list.json",
+          "role": "content_list",
+          "sha256": "98374530f17df846aa92d42ad1bf6d06e7d9d037865b65c3d3a76274145fd003",
+          "size_bytes": 231029
+        },
+        {
+          "relpath": "build/document_ocr/mineru_corpus/arxiv_1708.03031/hybrid_auto/arxiv_1708.03031_content_list_v2.json",
+          "role": "content_list_v2",
+          "sha256": "46dc6b710ae3e6af3d771599c49524d9e2f5fda8e65340ad5c72f8860ec943b2",
+          "size_bytes": 537642
+        },
+        {
+          "relpath": "build/document_ocr/mineru_corpus/arxiv_1708.03031/hybrid_auto/arxiv_1708.03031_layout.pdf",
+          "role": "layout_pdf",
+          "sha256": "fdd66213e9167e2b9eea285c26192ff02977ccd746c83b058a31a03719686a49",
+          "size_bytes": 4722819
+        },
+        {
+          "relpath": "build/document_ocr/mineru_corpus/arxiv_1708.03031/hybrid_auto/arxiv_1708.03031.md",
+          "role": "markdown",
+          "sha256": "8e44aaaf161487f5f47d0c41b279bfe732e8953ded2f607260f8686143ea2a72",
+          "size_bytes": 141926
+        },
+        {
+          "relpath": "build/document_ocr/mineru_corpus/arxiv_1708.03031/hybrid_auto/arxiv_1708.03031_middle.json",
+          "role": "middle",
+          "sha256": "d6574e863071dd7d544c53b820cd44cce666122d26284737573b0a911cbf99c7",
+          "size_bytes": 5278811
+        },
+        {
+          "relpath": "build/document_ocr/mineru_corpus/arxiv_1708.03031/hybrid_auto/arxiv_1708.03031_model.json",
+          "role": "model",
+          "sha256": "1c645aacd893a58cf2e695029f6b75aa70136365c8387944c7d80f8181d97339",
+          "size_bytes": 917261
+        },
+        {
+          "relpath": "build/document_ocr/mineru_corpus/arxiv_1708.03031/hybrid_auto/arxiv_1708.03031_origin.pdf",
+          "role": "origin_pdf",
+          "sha256": "6186d7d821208f779db1ee2edace589665567d85df3e2c466bdbc9f2dad32b14",
+          "size_bytes": 4177605
+        }
+      ],
+      "source_id": "arxiv_bakas_constantinou_ioannou_1708_03031",
+      "source_relpath": "source_materials/pdfs/arxiv_1708.03031.pdf",
+      "source_sha256": "4fe77e95a89d9cd9b7613860dc7a25dca5c5b1d3f8514a3587aee75a45125d5a",
+      "source_size_bytes": 4417290,
+      "status": "complete"
+    },
+    {
+      "outputs": [
+        {
+          "relpath": "build/document_ocr/mineru_corpus/arxiv_1307.8272/hybrid_auto/arxiv_1307.8272_content_list.json",
+          "role": "content_list",
+          "sha256": "3ddccfbddd5b0329bf502832f346220ff7dc45be7d8ee100a29c82dbe9d024fb",
+          "size_bytes": 76158
+        },
+        {
+          "relpath": "build/document_ocr/mineru_corpus/arxiv_1307.8272/hybrid_auto/arxiv_1307.8272_content_list_v2.json",
+          "role": "content_list_v2",
+          "sha256": "22642b16cbb7ce0fb1bddd8c6aabface25b7cf237e838ca7cd0ab23873cb6085",
+          "size_bytes": 145306
+        },
+        {
+          "relpath": "build/document_ocr/mineru_corpus/arxiv_1307.8272/hybrid_auto/arxiv_1307.8272_layout.pdf",
+          "role": "layout_pdf",
+          "sha256": "41fdd016314ead6a29d1588a30dd1fc855514719fdc4623cf6e2d2bf017965c1",
+          "size_bytes": 661858
+        },
+        {
+          "relpath": "build/document_ocr/mineru_corpus/arxiv_1307.8272/hybrid_auto/arxiv_1307.8272.md",
+          "role": "markdown",
+          "sha256": "c37a0c110bcc64db6335e3aa694ee777531a227c25c387370c03c157777b3730",
+          "size_bytes": 47642
+        },
+        {
+          "relpath": "build/document_ocr/mineru_corpus/arxiv_1307.8272/hybrid_auto/arxiv_1307.8272_middle.json",
+          "role": "middle",
+          "sha256": "53296c0f20632f52e4e35d5440e169aafb9f13db0c1e2a9c617b1144b9b553f1",
+          "size_bytes": 1399937
+        },
+        {
+          "relpath": "build/document_ocr/mineru_corpus/arxiv_1307.8272/hybrid_auto/arxiv_1307.8272_model.json",
+          "role": "model",
+          "sha256": "dbcf1d9ff212f6c97ddbf10c3e20f2f6e2e31d48629085709acbf6e566895c3a",
+          "size_bytes": 226397
+        },
+        {
+          "relpath": "build/document_ocr/mineru_corpus/arxiv_1307.8272/hybrid_auto/arxiv_1307.8272_origin.pdf",
+          "role": "origin_pdf",
+          "sha256": "a0c515f1710b39d2ee05dc60bb84ce21433c88544314ec894236f6fce1f1233f",
+          "size_bytes": 334069
+        }
+      ],
+      "source_id": "arxiv_kartashov_kartashova_1307_8272",
+      "source_relpath": "source_materials/pdfs/arxiv_1307.8272.pdf",
+      "source_sha256": "249406912ab02d0bad309e8eb0a80d331286763c9b92ff5a36d220980ae3cdcf",
+      "source_size_bytes": 336068,
+      "status": "complete"
+    },
+    {
+      "outputs": [
+        {
+          "relpath": "build/document_ocr/mineru_corpus/arxiv_1804.03092/hybrid_auto/arxiv_1804.03092_content_list.json",
+          "role": "content_list",
+          "sha256": "60c6e740580d166903cb6d9af92e051c733ae49adcf80119c09226fd4e6da411",
+          "size_bytes": 87147
+        },
+        {
+          "relpath": "build/document_ocr/mineru_corpus/arxiv_1804.03092/hybrid_auto/arxiv_1804.03092_content_list_v2.json",
+          "role": "content_list_v2",
+          "sha256": "3d5554429ef6e936447233a50555e890bfa1c4cf855473ed373a810bda2166b1",
+          "size_bytes": 160452
+        },
+        {
+          "relpath": "build/document_ocr/mineru_corpus/arxiv_1804.03092/hybrid_auto/arxiv_1804.03092_layout.pdf",
+          "role": "layout_pdf",
+          "sha256": "5d7f69ab3f64a445d2a161c7803900db4ca61ac070ae39491dc0a4aca18b40c5",
+          "size_bytes": 1093399
+        },
+        {
+          "relpath": "build/document_ocr/mineru_corpus/arxiv_1804.03092/hybrid_auto/arxiv_1804.03092.md",
+          "role": "markdown",
+          "sha256": "9830681e61de94b08c6f6d446bc1c4e1873737fab4734537be45eee512e861b3",
+          "size_bytes": 52759
+        },
+        {
+          "relpath": "build/document_ocr/mineru_corpus/arxiv_1804.03092/hybrid_auto/arxiv_1804.03092_middle.json",
+          "role": "middle",
+          "sha256": "1d044809b19bbf1fe6565c77a0504bfcafc1efe3a2e9c93b9b18951b6c7ea73a",
+          "size_bytes": 756143
+        },
+        {
+          "relpath": "build/document_ocr/mineru_corpus/arxiv_1804.03092/hybrid_auto/arxiv_1804.03092_model.json",
+          "role": "model",
+          "sha256": "fffa867838f9ce474cc9e9102cd785f4dae7d513fe318dd3e7089491ccf3eba3",
+          "size_bytes": 190300
+        },
+        {
+          "relpath": "build/document_ocr/mineru_corpus/arxiv_1804.03092/hybrid_auto/arxiv_1804.03092_origin.pdf",
+          "role": "origin_pdf",
+          "sha256": "a3855d4d1f4675c579bba389025d7c062c853e53de6e86fd183bd2b6c9a412cb",
+          "size_bytes": 698087
+        }
+      ],
+      "source_id": "arxiv_hayat_amanullah_walsh_bustamante_1804_03092",
+      "source_relpath": "source_materials/pdfs/arxiv_1804.03092.pdf",
+      "source_sha256": "90bbd8d0b79cd581907bbac86677b52d3f1027ca12f377f31a9a69a54b57451c",
+      "source_size_bytes": 712264,
+      "status": "complete"
+    },
+    {
+      "outputs": [
+        {
+          "relpath": "build/document_ocr/mineru_corpus/arxiv_2507.23493/hybrid_auto/arxiv_2507.23493_content_list.json",
+          "role": "content_list",
+          "sha256": "e1c30fa037e6af7603a33755d9a07efe116aca789ca093947c82a808a39fecaa",
+          "size_bytes": 60446
+        },
+        {
+          "relpath": "build/document_ocr/mineru_corpus/arxiv_2507.23493/hybrid_auto/arxiv_2507.23493_content_list_v2.json",
+          "role": "content_list_v2",
+          "sha256": "9ccee5dfd589cf02a359ba14ba79184e684cf863013da18d219c8dbcea59170b",
+          "size_bytes": 139152
+        },
+        {
+          "relpath": "build/document_ocr/mineru_corpus/arxiv_2507.23493/hybrid_auto/arxiv_2507.23493_layout.pdf",
+          "role": "layout_pdf",
+          "sha256": "f421653c28392a059adac53decb222c801e3880f160ddcb6c254ca4d8299a002",
+          "size_bytes": 7612710
+        },
+        {
+          "relpath": "build/document_ocr/mineru_corpus/arxiv_2507.23493/hybrid_auto/arxiv_2507.23493.md",
+          "role": "markdown",
+          "sha256": "7f2eab85970847366b5207208c388c4af8e4079677e0a642342a7d2b5060def9",
+          "size_bytes": 44729
+        },
+        {
+          "relpath": "build/document_ocr/mineru_corpus/arxiv_2507.23493/hybrid_auto/arxiv_2507.23493_middle.json",
+          "role": "middle",
+          "sha256": "678f7814d171e6ec171ab644c7fadfe42167c31f4a604e7f13cf7e1f14a10ad1",
+          "size_bytes": 1839202
+        },
+        {
+          "relpath": "build/document_ocr/mineru_corpus/arxiv_2507.23493/hybrid_auto/arxiv_2507.23493_model.json",
+          "role": "model",
+          "sha256": "26a6288945cbf3770a93bb791e313c3598423d031ab166dfbcf545fb8ba920ad",
+          "size_bytes": 282487
+        },
+        {
+          "relpath": "build/document_ocr/mineru_corpus/arxiv_2507.23493/hybrid_auto/arxiv_2507.23493_origin.pdf",
+          "role": "origin_pdf",
+          "sha256": "de99021fd6ae58b25d12f4fb26e643d8bb04c76f6811ddd3cd87dbefe03749c3",
+          "size_bytes": 7500754
+        }
+      ],
+      "source_id": "arxiv_sahoo_ray_2507_23493",
+      "source_relpath": "source_materials/pdfs/arxiv_2507.23493.pdf",
+      "source_sha256": "f2be51ddc5b810a7d31462ab6d37826290d232285627da359d96494555fed704",
+      "source_size_bytes": 7498594,
       "status": "complete"
     }
   ]

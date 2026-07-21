@@ -2,16 +2,16 @@
   "generator": "scripts/compare_pdf_ocr_outputs.py",
   "outputs": {
     "mineru_high_effort_hybrid_forced_ocr": {
-      "bytes_utf8": 5232,
-      "characters": 5206,
+      "bytes_utf8": 5245,
+      "characters": 5219,
       "engine": "MinerU 3.4.4 hybrid-engine, effort high, mode ocr",
-      "line_count": 216,
+      "line_count": 219,
       "markdown_display_math_blocks": 14,
       "markdown_image_references": 7,
-      "nonspace_characters": 4350,
+      "nonspace_characters": 4354,
       "source_relpath": "build/document_ocr/mineru/Comment_on_the_Pais_Superforce_Theory/hybrid_ocr/Comment_on_the_Pais_Superforce_Theory.md",
-      "source_sha256": "620fcf51e85f8bc97bf9315a1a67eb31f5f2bed7f914e900d151831481c148ee",
-      "word_tokens": 733
+      "source_sha256": "c9434a70f1e71131e58cc8d16f1c6a390e7972f20ecc177008148376fbfefc71",
+      "word_tokens": 736
     },
     "native_pdftotext_layout": {
       "bytes_utf8": 3611,
@@ -27,7 +27,7 @@
       "engine": "tesseract 5.5.2",
       "line_count": 203,
       "manifest_relpath": "build/document_ocr/tesseract/Comment_on_the_Pais_Superforce_Theory/manifest.json",
-      "manifest_sha256": "edfed9d0940e0cef3d1acd9d14de36e9296f9049abaf7a9d0ff98753bcc4db1f",
+      "manifest_sha256": "a93cb3a1e45cb77c81c01c412b55ffa3729a2115ce7e6cbb39a1ec0d3bcee4c0",
       "nonspace_characters": 2080,
       "page_count": 13,
       "word_tokens": 414
@@ -35,7 +35,7 @@
   },
   "provenance": {
     "run_manifest_relpath": "data/registry/document_ocr_run_manifest.json",
-    "run_manifest_sha256": "fbe5a991129e7e054a476eca1f38f13fae92ef980882688ebe2614485f153dd7",
+    "run_manifest_sha256": "bff319e4d6d576eb7d2503bb49c99fc765ed3b772973a7bc9ec4ec92312b29ea",
     "visual_review_relpath": "data/registry/pdf_ocr_visual_review.json",
     "visual_review_sha256": "7ad9f0ab09bfa5f94467f82fe732cac0d8767c599ac932fcd35108ea70ae5122"
   },

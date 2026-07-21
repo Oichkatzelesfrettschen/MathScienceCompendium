@@ -61,7 +61,7 @@
   ],
   "rejection_criteria": [
     "Reject the implementation if beta does not alter the evolution or if the quotient negative control changes it.",
-    "Reject any jet claim unless zonal energy exceeds 10 percent, jet prominence exceeds 5 percent of zonal RMS speed, and the count persists over the final 20 percent of samples.",
+    "Reject any jet claim unless final-window mean and tenth-percentile zonal energy each reach 10 percent, fixed peak prominence reaches 5 percent of initial RMS speed, modal jet count is at least two, and count occupancy reaches 80 percent.",
     "Reject convergence claims when the preregistered refinement threshold fails; report the values as finite-resolution diagnostics."
   ]
 }

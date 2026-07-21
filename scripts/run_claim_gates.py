@@ -642,7 +642,7 @@ def execute_claim_gates() -> dict[str, Any]:
         check_result = SPECIAL_CHECKERS[checker_name]()
         status_matches = claim["status"] == gate["expected_claim_status"]
         outcome_matches = check_result.outcome == gate["expected_gate_outcome"]
-        gate_passed = status_matches and outcome_matches and not missing_evidence
+        registry_consistent = status_matches and outcome_matches and not missing_evidence
         results.append(
             {
                 "claim_id": claim_id,
@@ -652,7 +652,8 @@ def execute_claim_gates() -> dict[str, Any]:
                 "actual_claim_status": claim["status"],
                 "expected_gate_outcome": gate["expected_gate_outcome"],
                 "actual_gate_outcome": check_result.outcome,
-                "passed": gate_passed,
+                "registry_consistent": registry_consistent,
+                "scientific_outcome": check_result.outcome,
                 "missing_evidence_paths": missing_evidence,
                 "summary": check_result.summary,
                 "metrics": check_result.metrics,
@@ -663,9 +664,9 @@ def execute_claim_gates() -> dict[str, Any]:
         "generator": "scripts/run_claim_gates.py",
         "claim_count": len(claims),
         "gate_count": len(results),
-        "passed_count": sum(result["passed"] for result in results),
-        "failed_count": sum(not result["passed"] for result in results),
-        "all_gates_passed": all(result["passed"] for result in results),
+        "consistent_count": sum(result["registry_consistent"] for result in results),
+        "inconsistent_count": sum(not result["registry_consistent"] for result in results),
+        "all_contracts_consistent": all(result["registry_consistent"] for result in results),
         "results": results,
     }
 
@@ -685,9 +686,9 @@ def main() -> int:
     )
     print(
         f"Wrote {output_path.relative_to(REPO_ROOT)}: "
-        f"{payload['passed_count']}/{payload['gate_count']} gates passed"
+        f"{payload['consistent_count']}/{payload['gate_count']} contracts consistent"
     )
-    return 0 if payload["all_gates_passed"] else 1
+    return 0 if payload["all_contracts_consistent"] else 1
 
 
 if __name__ == "__main__":

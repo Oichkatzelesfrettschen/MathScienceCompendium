@@ -1,5 +1,5 @@
 {
-  "document_count": 13,
+  "document_count": 14,
   "documents": [
     {
       "manifest_relpath": "build/document_ocr/tesseract_fallbacks/094101_1_accepted_manuscript/manifest.json",
@@ -81,6 +81,15 @@
       "source_sha256": "181ea7ee0c58c57c4d1fd987e9acb210d1dcf71a0d7e5dab10f12a7467c00477"
     },
     {
+      "manifest_relpath": "build/document_ocr/tesseract_fallbacks/arxiv_1804.03092/manifest.json",
+      "manifest_sha256": "4c142338db7101f100e3c6a27e662f24badaea8030554fd86aad27214a575096",
+      "selected_pages": [
+        5
+      ],
+      "source_relpath": "source_materials/pdfs/arxiv_1804.03092.pdf",
+      "source_sha256": "90bbd8d0b79cd581907bbac86677b52d3f1027ca12f377f31a9a69a54b57451c"
+    },
+    {
       "manifest_relpath": "build/document_ocr/tesseract_fallbacks/hep-th_0503158/manifest.json",
       "manifest_sha256": "f4672574630d17cdc40e949022f7dd49ed043eb9d93510bfa655ca8e31bcb1b4",
       "selected_pages": [
@@ -138,9 +147,9 @@
   "dpi": 400,
   "engine_version": "tesseract 5.5.2",
   "generator": "scripts/run_tesseract_fallbacks.py",
-  "page_count": 29,
+  "page_count": 30,
   "page_segmentation_mode": 1,
   "quality_audit_relpath": "data/registry/pdf_text_quality_audit.json",
-  "quality_audit_sha256": "c3363f8f877d0445d13c4cdea199777a3b966db21134b594dee82dac363e25b9",
+  "quality_audit_sha256": "d8197b849e15f66f273be241793d1645ff497506ca2ff834b1f2aba53118ae6a",
   "schema_version": 1
 }

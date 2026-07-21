@@ -1,0 +1,774 @@
+Discrete exact and quasi-resonances of Rossby/drift waves on
+β-plane with periodic boundary conditions
+A. Kartashov♯ , E. Kartashova∗
+
+arXiv:1307.8272v1 [physics.flu-dyn] 31 Jul 2013
+
+♯
+∗
+
+AMS, Waidhofen an Ibbs, Austria and
+
+Johannes Kepler University, Linz, Austria
+
+Abstract
+Analysis of resonance clustering in weakly nonlinear dispersive wave systems, also called discrete
+wave turbulent systems, is a new methodology successfully used in the last years for characterizing
+energy transport due to exact and quasi-resonances. Quite recently this methodology has been
+used in the paper by M. D. Bustamante, U. Hayat ”Complete classification of discrete resonant
+Rossby/drift wave triads on periodic domains”, [1], in order to show that resonance clustering
+is very sparse and quasi-resonances (that is, resonances with small enough detuning) play major
+role in the energy transport in this specific wave system. On the other hand, in the paper by M.
+Yamada, T. Yoneda ”Resonant interaction of Rossby waves in two-dimensional flow on β-plane”,
+[2], the same physical system is studied and a mathematically rigorous theorem is proven: at high
+β, the flow dynamics is governed exclusively by resonant interactions. In our present paper we
+demonstrate that this seeming contradiction between numerical results [1] and analytical results
+[2] are due to some pitfalls in numerical studies of exact and quasi-resonances presented in [1]. We
+also demonstrate that resonance clustering of drift waves on periodic β-plane differs substantially
+from characteristic resonance clustering in other 3-wave systems: instead of a usual set of isolated
+triads and a few bigger clusters, there exists no isolated triads in this case. Resonant triads are
+interconnected in a complicated way and the smallest cluster consists of 6 connected triads and
+is formed by 6 distinct modes only. This specific clustering is due to the form of the dispersion
+function which allows in the general case 12 symmetries; this yields a special mechanism of energy
+confinement by exact resonant modes which is lacking in other presently known three wave systems
+and even in the system of drift waves with other boundary conditions.
+
+∗
+
+Electronic address: alexkart1@gmx.at,Elena.Kartaschova@jku.at
+
+1
+
+I.
+
+INTRODUCTION
+
+Importance of studying resonances and quasi-resonances in weakly nonlinear dispersive
+wave systems is due to the fact that, if nonlinearity is small enough, they describe complete
+dynamics of a wave system. Mathematical formalism in this case can be presented as follows
+(in this paper we restrict ourselves to three wave systems, for more details and four wave
+systems see [3]).
+Regard a wave system governed by an evolutionary nonlinear partial differential equation
+with a small nonlinearity
+L(ϕ) = −εN(ϕ)
+
+(1)
+
+where L is a linear operator such that
+L(ψ) = 0, ψ = A exp [i(x · k − ω · t)], A = const,
+
+(2)
+
+N is an arbitrary nonlinearity and 0 < ε ≪ 1 is a small parameter. Then three wave
+resonance conditions have the form
+ω1 ± ω2 ± ω3 = 0, k1 ± k2 ± k3 = 0,
+
+(3)
+
+and amplitudes of the resonantly interacting waves Aj , j = 1, 2, 3, are not constant anymore
+but are slowly changing functions of a new variable - the so-called slow time T = t/ε.
+Dispersion relation ω = ω(k) is defined by (2) and the form of boundary conditions.
+The use of any multi-scale method, [4], allows us to deduce dynamical equations for
+amplitudes Aj (T ) of three resonantly interacting waves which have a simple form in canonical
+variables Bj (T )
+Ḃ1 = V123 B3 B2∗ , Ḃ2 = V123 B1∗ B3 , Ḃ3 = −V123 B1 B2 ,
+
+(4)
+
+for an arbitrary three wave system encountered in fluid mechanics, geophysics, plasma
+physics, astronomy, etc. Here the notation Ḃj is used for dBj /dT.
+The difference between all these physically different phenomena is hidden in the form
+of the interaction coefficient V123 depending on the initial equation (1), chosen solution of
+resonance conditions (3) and form of dispersion function ω(k). If the interaction coefficient
+ivanishes, V123 = 0 for a chosen solution of (3), this solution is dynamically not relevant and
+
+2
+
+can be omitted. Accordingly, resonance conditions should be supplemented by the condition
+of non-vanishing interaction coefficient,
+V123 6= 0.
+
+(5)
+
+The choice of canonical variables Bj (T ) allows to characterize dynamics in terms of one
+coefficient V123 but the Bj (T ) are some functions of physical wave amplitudes Aj . Dynamical
+system on amplitudes Aj has three different interaction coefficients satisfying some additional
+condition (examples are given in [3]).
+Study of nonlinear PDEs with periodic boundary conditions makes it necessary to look
+for the solutions of (3),(5) in integers. Since centuries the search for integer or rational points
+of manifolds or elliptic curves was and still is an open mathematical problem. Accordingly
+in early 1960s two mathematical objects have been mainly studied in weakly nonlinear
+wave systems: (a) an isolated resonant triad, and (b) an infinite number of interconnected
+resonant triads. The approach (b) allows to smooth out dynamics of distinct modes and to
+obtain - instead instead of an infinite number interconnected dynamical systems - one wave
+kinetic equation at the time scale t/ε2 ; the kinetic equation is studied in the frame of kinetic
+wave turbulence theory, [5], which is outside the scope of present paper.
+The approach(a) allows to describe dynamics of distinct resonantly interacting modes on
+time scale t/ε. In this case, for a chosen wave vector its resonance curve has been usually
+constructed which is the locus of pairs of wavevectors interacting resonantly with a given
+wavevector ko . For instance, resonance curves for two dimensional drift waves on the β-plane
+can be found in [6] where it has been shown that depending on the choice of ko the locus
+might be an ellipse, might be shaped like an hour-glass or degenerate into two intersecting
+lines. However, there is no general method for finding integer points of a resonance curve
+or manifold (3), or at least to establish whether they exist. Example is given in [8] of a
+three wave system - capillary water waves with periodic boundary conditions - where exact
+resonances are absent. To prove this fact analytically, the frequency resonance condition
+for this case has been reduced to the Last Fermat theorem xp + y p = z p with p = 3 which
+demonstrates variety of problems which might be accounted for while looking for integer
+points on resonant manifolds.
+A novel method of representing the complete set of resonant triads in a finite spectral
+domain as a set of resonant clusters consisting of one isolated triad or a few triads having
+3
+
+common modes has been developed and applied in early 1990s, [7–10], though the notion
+of ”resonance cluster” has been first introduced in 2007, [11]. Complete methodology used
+to compute a set of resonance clusters, the corresponding set of dynamical systems and to
+describe energy percolation in the Fourier space via resonance triads can be found in [3]. This
+methodology has been successfully used to clarify numerous results of numerical simulations
+and laboratory experiments, and also to model real physical phenomenon - intra-seasonal
+oscillations in the Earth atmosphere, [11].
+In the present paper we apply these methods to construct and to study resonance clustering based on data kindly provided to us by M. D. Bustamante and U. Hayat, [1], and by
+M. Yamada and T. Yoneda, [2], and results of our own simulations.
+Our paper has the following structure. In Sec.II we give a brief overview of results on
+resonance clustering available for the Charney-Hasegawa-Mima equation (CHME) in various
+bounded domains. In particular we demonstrate that ”complete classification of resonant
+triads” constructed in [1] is not only incomplete but in fact misleading. Indeed, it can easily
+be shown analytically that the smallest resonance cluster in the CHME on the β-plane with
+periodic boundary conditions is not an isolated triad as it is stated in [1] but a cluster of 6
+connected triads which suggests completely different physical implications.
+In Sec.III we explicate the construction of quasi-resonant triads given in [1] and show
+why this is grossly incomplete and statistically biased.
+In Sec.IV we propose another approach to the problem of constructing resonance clustering and give an outline of our algorithm, based on the notion of resonant curves, introduced
+for this case as early as in 1967 in [6]. This algorithm has cubic computational complexity, T = O(L3 ), which results in quite realistic computation time (according to preliminary
+tests on a computer comparable to one used in [1] estimated as a few hours to a few days,
+depending on implementation details) and has the evident advantage of finding all exact
+solutions of the three wave kinematic resonant conditions. We also show how a modification
+of this algorithm can be used to find all quasi-resonant solutions for a given detuning level.
+Brief discussion in Sec.V concludes the paper.
+
+4
+
+II.
+
+RESONANT TRIADS
+
+The CHME on a sphere with rigid lid (also called barotropic vorticity equation) describes
+large-scale processes in the Earth’s atmosphere and has been studied by many researchers
+starting with [12]; other classical geophysical references can be found in the monograph [13].
+Hamiltonian formalism for atmospheric Rossby waves has been first presented in [14].
+In the context of resonance clustering a few main points of reference on spherical
+drift/Rossby waves are: [15] (conditions for non-vanishing of the interaction coefficient),
+[7] (the first resonance clustering found in the spectral domain |m|, |n| ≤ 50), [21] (a fast
+
+numerical algorithm which allows to compute exact resonances in domains of |m|, |n| ∼ 106 ),
+
+[22] (study of energy percolation in the domain |m|, |n| ≤ 106 ), [11] (a phenomenon of intra-
+
+seasonal oscillations in the Earth atmosphere is interpreted via dynamics of isolated resonant
+triads of spherical Rossby modes). Dispersion function in this case has the form
+ω(m, n)atm = −2m/[n(n + 1)].
+
+(6)
+
+The CHME on the β-plane used in geophysics to describe large-scale quasi-geostrophic
+motions in a barotropic rectangular ocean [0, Lx ] × [0, Ly ] of constant depth with a rigid lid.
+In this case the CHME takes the form
+∂ψ
+∂ 2
+▽ ψ + J(ψ, ▽2 ψ) + β
+= 0,
+∂t
+∂x
+
+(7)
+
+and should be solved with non-flow boundary conditions: ψ = 0 for x = 0, Lx and y = 0, Ly .
+Here β is the derivative of the Coriolis parameter with respect to latitude, in geophysics
+β ≈ 0.127. Computation of nteraction coefficients, an algorithm for computing resonance
+clustering in large spectral domains, and examples of clustering are given in [23], [24] and
+[25] correspondingly. Dispersion function in this case has the form
+√
+ω(m, n)ocean = −β/[2π m2 + n2 ].
+
+(8)
+
+In both cases - the CHME on a sphere and on the β-plane with zero boundary conditions
+- the characteristic properties of resonance clustering are similar to every other three wave
+system studied before: not more than 20÷30%% of all modes participate in exact resonances
+and most resonant clusters are isolated triads. As dynamical system for an isolated triad
+is integrable, this means that at the time scale t/ε corresponding resonant modes evolve
+5
+
+periodically while non-resonant modes just keep their energy (see e.g. Fig.1 and Fig.2, [10],
+spherical modes in full numerical spectral model of the CHME).
+The CHME with periodic boundary conditions on the β-plane is one of the most famous
+equations in plasma physics describing drift waves in tokamak. It was first written out
+in the pioneering paper of Hasegawa and Mima, [16], in 1978, and later generalized by
+Wacatani and Hasegawa in [17]. Further developments are recently reviewed in [18, 19] and
+in monograph [20].
+The resonance clustering presented in [1] for this case and dispersion function of the form
+ω(m, n)plasma = −βm/(m2 + n2 )
+
+(9)
+
+has the same characteristic structure as in the geophysical examples given above. However,
+for this specific case it is rigorously proven that at high β, flow dynamics is governed exclusively by resonant interactions, [2]. This result suggests that resonance clustering can not
+be so sparse as in the other three wave system, and this was our motivation to study more
+closely the method of computing resonances is given in [1].
+Finding (exact) resonant triads (which are described by a Diophantine equation) has
+been reduced in [1] to finding rational points on a certain class of elliptic curves. Elliptic
+curves and, specifically, their rational points, have at least for a century been one of the
+favorite objects of study in algebra and number theory, and a vast literature on them exists.
+However, finding all rational points of an elliptic curve is still an open question and the
+results of the paper fall short of the claim of ”complete classification” suggested by the title.
+To estimate the number of omitted triads in the resonance set computed by this method,
+we used the complete set of resonant modes in the spectral domain |m|, |n| ≤ 1000, kindly
+provided by Michio Yamada and Tsuyoshi Yoned, [2].
+The set includes all the modes with both coordinates within square box of size L = 1000,
+i.e. |m|, |n| ≤ 1000 which participate in some resonance triad (their triad partners probably
+lying outside the L-box). As we are interested in the study of resonant triads, the first
+task was to convert the list of resonant modes into a list of resonant triads, all three modes
+of which lie within a given L-box. In the present study we limit ourselves to the domain
+L = 200. This is enough to draw well-founded conclusions on the frequency of resonance
+occurrence and structure of more common resonance clusters; we also wanted to enable
+comparability to the results of [1], where the same problem has been dealt with by other
+6
+
+methods.
+Having a list of all resonant modes in some domain, the method of reconstruction triads
+in that domain is quite straightforward, though some implementation details are a little
+tricky. Truncation of modes’ list to L = 200 is trivial. Now consider the set of all pairs
+of modes from the truncated list and treat them as the first two modes m1 , n1 , n2 , m2 of
+a (possible) resonant triad. The third mode of each triad is uniquely constructed via the
+linear conditions, i.e. m3 = m1 + m2 , n3 = n1 + n2 . First we discard those triads whose third
+mode lies outside of our box, |m3 | ≥ 200 or |n3 | ≥ 200. For all other triads the resonance
+condition should be checked. This can be computed either in integers or in floating-point
+numbers (called ”real” everywhere below). Calculation in integers always gives the precise
+answer, while dealing with real numbers can produce a small computational error. However
+the problem with integers is, that direct calculation leads to dealing with numbers up to the
+order of 3 × 1010 , which lies outside the ”long integer” range of usual computers.
+This being the case, we chose the following reasonable compromise. We compute the
+resonance condition ω1 + ω2 − ω3 = 0 in reals. For most resonant triples it holds exactly,
+while some show a small deviation (computation error artefact ). Also for some non-resonant
+triples this condition holds up to a very small deviation (quasi-resonant triads). Now we
+order the list of triads by their deviation ascending and truncate the list at some deviation
+ǫ large enough not to discard any resonant triad, say ǫ = 10−8 . Triads with zero deviation
+are immediately placed into resonant triads’ list, while the rest must be checked precisely,
+i.e. in integers. We have developed techniques for dealing with ”oversized” integers before,
+[21], and it can be used here with some minor alterations.
+This method is, however, rather cumbersome, involving computation of quite a few GCDs
+(greatest common divisors) of large numbers so for efficiency reasons we did not apply it to
+the whole set of candidate triads.
+We obtain a set of N = 828 (versus 133 shown in Fig.2, [1], for the same spectral domain
+|m|, |n| ≤ 200) resonant triads and our next goal is to study its structure. (Here and below
+all results are given for triads with non-zero interaction coefficient.) The bulk data is shown
+in the Table I and it can be seen immediately that unlike the examples discussed above,
+resonant triads in this case are densely entangled: there are no isolated triads at all. The
+total number of clusters is 72, including 40 clusters consisting of 6 interconnected triads.
+An example of a cluster of six triads which is the smallest cluster size in the whole set is
+7
+
+Number of triads in a cluster 6 12 18 24 30
+Number of clusters
+
+40 12 12 2 6
+
+TABLE I: Overall data on the form and number of resonance clusters in the domain |m|, |n| ≤ 200.
+
+given below:
+
+
+
+(−18, 46), (2, 22), (−16, 68),
+
+
+
+
+
+
+
+(−18, 46), (16, −68), (−2, −22),
+
+
+
+
+
+
+(−16, 68), (−2, −22), (−18, 46),
+
+(10)
+
+
+
+(−16, 68), (18, −46), (2, 22),
+
+
+
+
+
+
+
+(−2, −22), (18, −46), (16, −68),
+
+
+
+
+
+
+(2, 22), (16, −68), (18, −46).
+
+Each triad of this cluster is connected to four others, having one common mode with two
+triads and two common modes (an edge) with two others. The standard (plane) topological
+representation of this cluster is shown in Fig.1; it allows to reconstruct the corresponding
+dynamical system, [29], and to characterize the type of energy percolation within the cluster,
+[30].
+It can be checked by direct substitution into resonance conditions (3) with dispersion
+function (9) that
+Any resonant triad (m1 , n1 ), (m2 , n2 ), (m3 , n3 ) participates in a cluster of 6 connected
+triads. There also exists a conjugate cluster of 6 triads, generically not connected with the
+first but consisting of modes with same coordinates, up to some sign changes.
+In particular, the 6-triad cluster which is conjugate to (10) consists of:
+
+
+
+(−18, −46), (2, −22), (−16, −68),
+
+
+
+
+
+
+
+(−18, −46), (16, 68), (−2, 22),
+
+
+
+
+
+
+(−16, −68), (−2, 22), (−18, −46),
+
+
+(−16, −68), (18, 46), (2, −22),
+
+
+
+
+
+
+
+(−2, 22), (18, 46), (16, 68),
+
+
+
+
+
+
+(2, −22), (16, 68), (18, 46).
+8
+
+(11)
+
+FIG. 1: Color online. Topological structure of a 6-triad cluster (10); resonant triads are shown as
+colored triangles, the white triangle in the middle does not represent a resonant triad.
+
+This means that a sixtuple of triads - and not an isolated triad - is the primary building block of the cluster structure for drift/Rossby waves with periodic nonzero boundary
+conditions on the β-plane.
+Symmetries demonstarated above are best understood in terms of group action on a set.
+Our triads lie in the Z6 = {m1 , n1 , m2 , n2 , m3 , n3 } space on the 4-dimensional hyperplane
+defined by linear conditions
+k1 ± k2 ± k3 = 0.
+
+(12)
+
+On this hyperplane a finite symmetry group of order 12 maps every generic triad on twelve
+triads with equal detuning δ. In particular, a triad with detuning zero (resonant) is mapped
+on twelve resonant triads which are combined into two clusters of six triads each.
+
+III.
+
+QUASI-RESONANT TRIADS
+
+Conditions for a quasi-resonance read
+|ω1 ± ω2 ± ω3 | = δ, k1 ± k2 ± k3 = 0,
+9
+
+(13)
+
+with some small 0 < δ ≪ 1 which is called resonance width or frequency mismatch or
+detuning etc.
+Quasi-resonances take place at some later time-scale than exact resonances and if they are
+relevant for the dynamics of a specific wave system depends on the system. As it was mentioned before, in the CHM equation with big enough β quasi-resonances can be disregarded.
+On the other hand, in [27] Rossby waves with forcing are regarded and it is shown that for
+moderate Rossby number β ≈ 0.1, a reduced numerical model including near-resonances
+enables efficient energy transfer from three-dimensional forced modes to two-dimensional
+large-scale modes. Another example can be found in [28] where three classes of resonances
+between surface and interfacial waves are regarded in a two-layer density-stratified fluid. It
+is shown that resonances of the class III (two surface waves and one interfacial wave travel
+in the same direction, and the interfacial wave has typically a much longer wavelength compared to the two surface waves) ”undergoes a cascade of (near-)resonance interaction that
+spreads the energy of initial waves to a number of lower and higher harmonics”. Resonance
+conditions in this case are written in terms of two different dispersion functions - one for
+surface waves, ωS , and one for interfacial waves, ωI (see also resonant curves in Fig.1, [28]).
+The importance of quasi-resonances is shown then analytically and numerically by studying
+the corresponding dynamical equations.
+Not going into more detail about the role of quasi-resonances in three wave systems,
+we would like to stress once more a very important point: whether quasi-resonances are
+important in some specific physical problem, can not be decided from pure kinematic considerations or by analogy. This problem can only be investigated in the frame of reduced
+dynamical models, e.g. [27, 28], or by studying an initial NPDE, e.g. [2].
+As in some problem settings depending on the choices of NPDE(s), boundary conditions,
+number of space dimensions, choice of parameters, etc., it may happen that quasi-resonances’
+play an important part in the energy transport in a three-wave system, and a good numerical
+algorithm for studying quasi-resonances would be welcome.
+However, the algorithm presented in [1] for computing quasi-resonances will not generate
+a representative set of quasi-resonances for a very simple reason. This algorithm is looking
+for quasi-resonances which are formed in the δ-vicinity of an exact resonant triad, while
+conditions (13) are more general and can be satisfied by three wave vectors such that none
+of them is a resonant mode and the triad lies far away from any resonant triad. More
+10
+
+FIG. 2: Color online. Histograms of quasi-resonances, number of triads for detuning order, for
+triads in the nearest vicinity of exact resonant triads (left panel) and for the same number of
+randomly chosen triads (right panel)
+
+precisely, we introduce distance between two triads in the usual way, i.e. as Euclidean
+distance between 6-vectors:
+D([(m1 , n1 )(m2 , n2 )(m3 , n3 )], [(m′1 , n′1 )(m′2 , n′2 )(m′3 , n′3 )]) =
+p
+(m1 − m′1 )2 + (n1 − n′1 )2 + ... + (n3 − n′3 )2 .
+
+(14)
+
+It is evident that for adjacent triads T1 , T2 , i.e. such triads, whose corresponding nodes lie
+√
+on the same or adjacent nodes of the 2D integer grid Z2 , D(T1 , T2 ) ≤ 6. Let us compare
+short-range and long-range search of quasi-resonances.
+For short-range search, we take each exact resonance triad and vary the coordinates of
+its three modes, either leaving a coordinate as it is or changing it by ±1. This (taking
+into account linear conditions) gives us up to 20 adjacent near-resonant triads for each
+11
+
+FIG. 3: Color online. Left panel: Histogram for quasi-resonances found via full search in the
+domain L = 200. Right panel: Quasi-resonant triads with very small detunings (horizontal axis),
+and their Euclidean distance (vertical axis) from the nearest exactly resonant triad.
+
+exact resonance triad (a few less for triads with coordinates on the border of the L-box).
+Altogether 65576 triads have been tested. The smallest detuning value found is εs ≈ 6 · 10−7
+and histogram of detuning distribution is shown in Fig.2 (left panel). For each triad T of
+√
+this set the distance to the nearest resonant triad Dres (T ) is ≤ 6 ∼ 2.45.
+We perform long-range search taking two first points at random and constructing the
+third according to linear conditions. The triad is accepted in the test pool if the third point
+lies within the L-box and non of the six coordinates is equal to zero.
+We take as many random triads as have been tested for the short-range search (this
+number is fixed). Results of a typical run (these vary slightly from run to run, of course,
+due to random choice of triads) are presented in the same figure (right panel).
+We immediately see that seeking for quasi-resonances in the vicinity of exact resonances
+has hardly any advantage over random choice.
+Now to the full search. Testing all triads in the domain L = 200, we find much better
+quasi-resonances (triads with much smaller detunings) than either through short-range or
+random search. Their histogram is shown in the next figure (left pane). A striking peculiarity of these quasi-resonances is, that none of them lie anywhere near a precise resonant
+12
+
+triad. The scatter graph of distances to the nearest exact triad (in the sense of (14) against
+detunings (same figure, right panel) shows that triads with smallest detunings lie no nearer
+to precise resonances than D = 15, and sometimes over 70 (each point of the scatter graph
+corresponds to multiple triads due to symmetries discussed above).
+One may argue that the search for quasi-resonances in some small vicinity of an exact
+resonance might work for a special initial distribution of the energy in the wave field - energy
+should be initially distributed only among exact resonant modes and at least in some triad(s)
+high-frequency modes have to be excited, but this should be explicitly discussed as it is done
+e.g. in [10, 30].
+However, even under suitable assumptions about initial energy distribution, the algorithm for seeking quasi-resonances presented in [1] has a few critical flaws demonstrated and
+discussed below.
+The
+
+construction
+
+starts
+
+with
+
+some
+
+irreducible
+
+(exact)
+
+resonant
+
+triad
+
+(m1 , m1 ), (m2 , n2 )(m3 , n3 ) having at least one wavevector outside the L-box, |mi | > L or
+|mi | > L, say the greatest wave number m1 = cL, c > 1 and rational. This triad is then
+scaled to fit into the box. In plain words, we consider the triad
+(m1 /c, n1 /c)(m2 /c, n2 /c)(m3 /c, n3 /c)
+
+(15)
+
+for which the resonance equations hold precisely, all wavenumbers lie within the L-box - but
+some of them are not integer any more.
+Now consider all the triads with integer wavenumbers which lie in the 1-vicinity of the
+scaled triad: we just round mi , li to the next integer value, up or down. In the general
+case we obtain 64 triads, some of them probably sufficing the linear conditions m1 + m2 =
+m3 , n1 + n2 = n3 . From the latter we choose the triad with the smallest detuning and call
+it quasi-resonant.
+In this way, starting with a single irreducible triad outside the box, we construct up to
+L quasi-resonant triads. (For some values of L it can happen that none of the 64 candidate
+triads suffice the linear constraints.) This process is repeated for every irreducible triad
+outside the box, and it is assumed that ”the higher the box norm the smaller the size of the
+corresponding detuning level ”. (p.2409, [1]).
+This implies no less than that detuning value grows monotonously as the box size declines.
+However, this statement is not only unjustified, it is simply not true. Closely following the
+13
+
+FIG. 4:
+
+Color online.
+
+Detuning as a function of the box-size L.
+
+For the triad
+
+[{2, −49}{190, 155}{192, 106}] detuning in shown for box sizes L = 100, 99...1 (on the left) and
+for L = 100, 99...80 (on the right)
+
+construction of the authors, we wrote a program which calculates detuning as a function
+of the shrinked box size and presents it graphically (available online, [26]). Example of the
+detuning function is shown in the Fig.4. Indeed, we could not find a single triad for which
+the assumption cited would hold.
+The consequences of this error are near disastrous for the study of quasi-resonant triads
+presented in the [1]. As an example, let us consider the triad
+(2, −49)(190, 155)(192, 106)
+
+(16)
+
+taken from Fig.1, [1]. Choosing detuning level of 1.0 × 10−4, we obtain quasi-resonant triads
+for box sizes L = 100, 99...91. For L = 90 detunig is approximately 1.07 × 10−4 , so under
+the assumption of monotonous growth of detuning here we break off. But as detuning is not
+monotonous, there are four box sizes L = 89, 88, 87, 83 which fall into the chosen detuning
+range but are ignored by the construction proposed. This does not only reduce the number
+of near-resonant triads constructed but also introduces a systematical bias - triads with
+smaller wave numbers are ignored more often than those with larger ones - rendering further
+considerations on them (both statistical and structural) virtually worthless.
+14
+
+FIG. 5: Color online. Graphical presentation of using resonant curves for fast computing exact
+and quasi-resonances (see Sec.IV).
+IV.
+
+AN ALTERNATIVE APPROACH
+
+For every mode m1 , n1 within the box we should find all ”partner” modes (m2 , n2 ) which
+would give rise to a resonant triad. A brute force approach - testing all modes within the
+box - would give computational complexity O(L4 ) which is unreasonably large. However
+we make use of the fact that partner modes lie on a continuous smooth curve without selfintersections, called resonance curve and constructed in [6] (and some properties of such
+curves used below can be found there), and our task is reduced to finding integer points on
+this curve (if any). (For some special cases this curve degenerates into a couple of intersecting
+straight lines and finding integer points on them is quite easy.)
+Step 1.
+
+Initial choice of (m1 , n1 ) and (m2 , n2 ).
+
+We start with some triad T =
+
+[(m1 , n1 )(m2 , n2 )(m3 , n3 )] within the box which gives an exact resonance. We insert the
+triad as the first member of the list of solutions. If we regard the wavevector m1 , n1 as fixed
+and k2 , l2 as variable with (m2 , n2 ) real and within the box (|m2 |, |n2 | ≤ L), exact resonances
+will lie on the resonance curve of (m1 , n1 ), from which parts may be cut off by the box sides.
+It is of crucial importance that detunings on two sides of the curve (in the real space) have
+different signs.
+
+15
+
+Step 2. Check the resonance curve for integer points starting from a given integer point.
+By construction, the curve has at least one integer point (m2 , n2 ). We calculate detunings
+for the point’s neighbors in clockwise order:
+p0 = (m2 + 1, n2 ), p1 = (m2 + 1, n2 + 1), ..., p7 = (m2 + 1, n2 − 1)
+
+(17)
+
+and encounter one of the following possibilies:
+2.0. We encounter a point with detuning zero, i.e. another resonant triad. We add it to
+the solution list and perform Step 2 for this point.
+2.1. (The general case.) Detunings of two consequtive points (pi , pi+1 ), i = 1...7 checked
+have different signs. (Here the index i lies in Z8 , so that the pair p7 , p0 does not fall out
+of consideration.) There lies a point of the resonance curve on the interval [pi , pi+1 ]. One
+coordinate of this point is the common coordinate of the pair (every pair has one coordinate
+in common, of course) and the other coordinate is not integer.
+2.2. Some neighbor points fall outside the L-box. Follow the border of the box until the
+next sign change (wchich signals the retun of the curve into the box), then follow the curve
+into the box in the manner described above.
+These steps are iterated until we reach a point already visited before. For each vector {m1 , n1 } its resonant curve is treated in O(L) steps, which amounts to O(L3 ) overall
+computation time. Moreover, the point couples constructed above, between which the detuning function changes its sign, produce a set of quasi-resonances much larger than just
+the immediate neighbors of exact resonant triads usually used.
+In terms of resonant curves, quasi-resonances with detuning values under some limit ε
+are integer box points belonging to some vicinity of the curve. Let us introduce the notion
+of detuning surface, considering detuning as function of (m2 , n2 ) for fixed (m1 , n1 ) with
+(m2 , n2 ) ∈ R. The algorithm outlined above actually does somewhat more than just find all
+integer solutions of the equations in question: for every resonant curve it also lists all integer
+points of the box that are its 1-neighbors. A subset of them represents quasi-resonances. If
+this subset is not empty, we should check their immediate neighbors on the grid, and if some
+of them suffice quasi-resonance conditions, check their neighbors etc., until at some step no
+new quasi-resonance points are found. Simple properties of resonance curves and detuning
+surfaces allow us to prove that this search is exhaustive, i.e. all quasi-resonances will be
+found through this procedure. Moreover, as for each new quasi-resonance point found at
+16
+
+some intermediate step we check only O(1) ≤ 8 its neighbors, computational complexity is
+linear with respect to the number of quasi-resonances.
+
+V.
+
+CONCLUDING REMARKS
+
+In this paper we have studied exact and quasi-resonances of two-dimensional Rossby/drift
+waves on the b-plane with periodic boundary conditions. This problem has been recently
+investigated by two group of researchers and the results obtained proved to be in a drastic
+contradiction.
+Theoretical investigation presented in [2] in the form of a strict mathematical theorem
+results in the statement that for big enough β flow dynamics is governed exclusively by
+resonant interactions, while quasi-resonances can be omitted. On the other hand, numerical
+study of exact and quasi-resonances of two-dimensional Rossby/drift waves on the b-plane
+with periodic boundary conditions performed on the base of ”complete classification of
+discrete resonant Rossby/drift wave triads”, [1], states something very different. Namely,
+the resonance clustering is sparse, most of resonance clusters consist of one isolated triad or
+two connected triads, and the role of quasi-resonances in the energy transfer is crucial.
+Being thus motivated to resolve this mystery, we performed a new study of resonance
+clustering for this case. Our results can be briefly formulated as follows.
+We performed comparative study of the data sets (resonance triads, [1], and resonant
+modes, [2]) kindly provided by the authors of both papers. Comparison have been performed
+in the spectral domain |m|, |n| ≤ 200 while corresponding resonant clustering is presented in
+the Fig.2, [1]. It turned out that algorithm developed in [1] for computing exact resonances
+produces only a small part of all solutions - about 15% of all solutions in the chosen domain
+- and gives completely wrong resonance clustering. Instead of sparse clustering consisting
+mostly of isolated triads, we have established that no isolated resonant triads exist for this
+case. The smallest resonance cluster consists of 6 triads connected in a complicated way
+(shown in Fig.1). This sixtuple of triads plays the role of a basic building block for resonance
+clustering in this case which is quite different from the other three wave systems studied
+previously, where indeed isolated triads play this role, [3]. We assume that specifics of
+this resonance clustering yields a special mechanism of energy confinement by clusters of
+exact resonant modes which lacks in the other three wave systems presently known and
+17
+
+even in the system of drift waves with other boundary conditions. Discussion of possible
+physical implications and analytical study of the dynamical system for a sixtuple of triads
+is forthcoming.
+We have also established that an algorithm for computing quasi-resonances presented in
+[1] is grossly incomplete and statistically biased while based on the incorrect assumption that
+detuning value grows monotonously as the box size declines. This algorithm does not only
+reduce the number of near-resonant triads constructed but also introduces a systematical
+bias - triads with smaller wave numbers are ignored more often than those with larger
+ones - rendering further considerations on them (both statistical and structural) virtually
+worthless.
+We programmed this algorithm and checked this assumption for a few dozen arbitrary
+triads. We could not find a single triad for which this assumption holds, example of computation presented in Fig.4. Our software is free available for on-line computation, [26].
+Another problem with this algorithm is that it looks for the triads with a small frequency
+detuning in a vicinity of an exact discrete resonant triad. However, as it follows from the
+Thue-Siegel-Roth theorem and has also been demonstrated for other wave systems, [31],
+in this case the frequency detuning has a lower boundary and can not be arbitrary small.
+Accordingly, the smallest detuning found in [1] in the vicinity of an exact resonance is of
+the order of 10−5 .
+However, one has to realize that the definition of a quasi-resonance (13) does not require
+that one or two modes were part of some exact resonant triad. Full search in the domain
+L = 200 renders detunings of the order of 10−11 . In accordance with the Thue-Siegel-Roth
+theorem, the smallest detunings are found in the quasi-resonant triads whose distance to
+the nearest exact resonant is very big (the smallest detuning ∼ 8.95 · 10−12, distance ∼ 21.7,
+second best detuning ∼ 9 · 10−12 , distance ∼ 44 etc.).
+We presented a detailed sketch of an algorithm for computing exact resonances for periodic Rossby/drift waves on the β-plane based on the notion of resonant curves introduced in
+[6]. This algorithm has cubic computational complexity, T = O(L3 ), which results in quite
+realistic computation time (according to preliminary tests on a computer comparable to one
+used in [1] estimated as a few hours to a few days, depending on implementation details)
+and has the evident advantage of finding all exact solutions of the three wave kinematic
+resonant conditions. We also showed how a modification of this algorithm can be used to
+18
+
+find all quasi-resonant solutions lying in a close vicinity of exact resonances.
+It is a pity the authors of [1] did not give details about the laptop they used for their
+numerical studies. For some reason the authors performed full search only in the region
+L = 100, considering full search in larger regions (including one of the main objects of the
+study - the L = 200 domain) unfeasible. For the sake of fair play we performed full search
+(”brute force”) on the oldest laptop at hand and still running (1.66 GHz single processor, 2
+GB RAM, 32 bit system). The region L = 200 was ready in 22 minutes (the list of solutions
+coincides with data of M. Yamada and T. Yoneda, [2]), and we see no reason to apply the
+heuristic algorithm developed in [1], losing some 84% of exact solutions (695 from 828) and
+seven magnitudes of quasi-resonance detuning (10−5 versus 10−12 ) to this domain, or at least
+perform a comparison between the algorithm proposed and full search.
+Remark. Of course we performed full search with a few evident shortcuts, like computing
+all ω-s and storing them in a 200 × 200 array, as well as taking into account the symmetry
+group of order 12 mentioned above.
+Acknowledgements. The authors are very much obliged to M. D. Bustamante and
+U. Hayat, and to M. Yamada and T. Yoneda, for supplying their data sets for our study.
+AK acknowledges support of AMS, Waidhofen an Ibbs, Austria. EK acknowledges P. Diamond, Ö. Gurcan, A. Smolyakov and other participants of the 7th Festival de The`’orie
+”Reduced models of complex plasma dynamics” (8–26 July 2013, Aix-en-Provence, France)
+for interesting discussions and most useful comments. This research has been supported by
+the Austrian Science Foundation (FWF) under projects P22943-N18 and and P24671.
+
+[1] M. Bustamante, U. Hayat. Complete classification of discrete resonant Rossby/drift wave
+triads on periodic domains. Commun. Nonlinear Sci. Numer. Simulat, 18 (2013): 2402–2419.
+[2] Michio Yamada, Tsuyoshi Yoned. Resonant interaction of Rossby waves in two-dimensional
+flow on a β-plane Physica D 245 (2013): 1-7.
+[3] E. Kartashova. Nonlinear Resonance Analysis (Cambridge University Press, 2010)
+[4] A. H. Nayfeh. Introduction to Perturbation Techniques (Wiley-Interscience, NY, 1981).
+[5] V. E. Zakharov, V. S. L’vov and G. Falkovich. Kolmogorov Spectra of Turbulence (Series in
+Nonlinear Dynamics, Springer-Verlag, New York, 1992).
+
+19
+
+[6] M. S. Longuet-Higgins, and A. E. Gill. Resonant interactions between planetary waves. Proc.
+Roy. Soc. Lond., A299 (1967): 120–40.
+[7] E. A. Kartashova, L. I. Piterbarg and G. M. Reznik. Weakly nonlinear interactions between
+Rossby waves on a sphere. Oceanology, 29 (1990): 405–11.
+[8] E. Kartashova. Partitioning of ensembles of weakly interacting dispersing waves in resonators
+into disjoint classes. Physica D, 46 (1990): 43–56.
+[9] E. Kartashova. On properties of weakly nonlinear wave interactions in resonators. Physica D,
+54 (1991): 125–34.
+[10] E. Kartashova. Weakly nonlinear theory of finite-size effects in resonators. Phys. Rev. Lett.,
+72 (1994): 2013–16.
+[11] E. Kartashova and V. S. L’vov. A model of intra-seasonal oscillations in the Earth atmosphere.
+Phys. Rev. Lett., 98 (2007): 198501-1–4.
+[12] J. G. Charney. The dynamics of long waves in a baroclinic westerly current J. Metheorology,
+4 (1947): 135–162.
+[13] J. Pedlosky. Geophysical Fluid Dynamics (Springer-Verlag, New York, 1987).
+[14] L. I. Piterbarg. Hamiltonian formalism for Rossby waves. In Nonlinear Waves and Weak
+Turbulence, ed. V.E. Zakharov (AMS Trans. 2, 1998), 131–66.
+[15] I. Silberman. Planetary waves in atmosphere. Meteorology 11 (1954): 27–34.
+[16] A. Hasegawa, K. Mima. Pseudo-three-dimensional turbulence in magnatized nonuniform
+plasma. Phys. Fluids 21 (1) (1978): 87–92.
+[17] M. Wakatani, A. Hasegawa. A collisional drift wave description of plasma edge turbulence.
+Phys. Fluids 27 (3) (1984): 611–18.
+[18] P. H. Diamond, S.-I. Itoh, K. Itoh, T.S. Hahm. Zonal flows in plasma - a review. Plasms
+Phys. Control Fusion 47 (2005), R35–R161.
+[19] P. H. Diamond, A. Hasegawa, K. Mima. Vorticity dynamics, drift wave turbulence and zonal
+flows: a look back and a look ahead. Plasms Phys. Control Fusion 53 (2011), 124001.
+[20] P. H. Diamond, S.-I. Itoh, K. Itoh. Modern Plasma Physics (Cambridge University Press,
+2010).
+[21] E. Kartashova and A. Kartashov. Laminated wave turbulence: generic algorithms III. Physica
+A: Stat. Mech. Appl., 380 (2007), 66-74.
+[22] L’vov, V. S. , A. Pomyalov, I. Procaccia, and O. Rudenko. Finite-Dimensional Turbulence of
+
+20
+
+Planetary Waves. Phys. Rev. E. 80 (2009): 066319.
+[23] E. A. Kartashova and G. M. Reznik. Interactions between Rossby waves in bounded regions.
+Oceanology, 31 (1992): 385–89.
+[24] E. Kartashova and A. Kartashov. Laminated wave turbulence: generic algorithms I. Int. J.
+Mod. Phys. C, 17 (2006): 1579–96.
+[25] E. Kartashova, C. Raab, Ch. Feurer, G. Mayrhofer and W. Schreiner. Symbolic computations
+for nonlinear wave resonances. In Extreme Ocean Waves, ed. E. Pelinovsky and Ch. Kharif
+(Springer, 2008), pp. 97–128.
+[26] A. Kartashov. Software for computing quasi-resonances according to the algorithm given in
+[1]: http : //www.dynamics − approx.jku.at/portal/?q = node/144 (30 July, 2013)
+[27] Smith LM, Lee Y. On near resonances and symmetry breaking in forced rotating flows at
+moderate Rossby number. J. Fluid. Mech. 535 (2005): 111—42.
+[28] Alam M-R. A new triad resonance between co-propagating surface and interfacial waves. J.
+Fluid. Mech. 691 (2012): 267—78.
+[29] E. Kartashova and G. Mayrhofer. Cluster formation in mesoscopic systems. Physica A: Stat.
+Mech. Appl., 385 (2007): 527–42.
+[30] E. Kartashova and V. S. L’vov. Cluster dynamics of planetary waves. Europhys. Lett., 83
+(2008): 50012-1–6.
+[31] E. Kartashova. Exact and quasi-resonances in discrete water-wave turbulence. Phys. Rev.
+Lett., 98 (2007): 214502-1–4.
+
+21
+
+

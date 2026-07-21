@@ -379,7 +379,9 @@ This compendium is a critical synthesis of publicly available research materials
 
 ## Contact and Contributions
 
-For issues, corrections, or contributions to the mathematical analysis, please refer to the validation reports in `research/fact_checks/`.
+Eirikr Hinngart maintains the repository. Report issues, corrections, and
+contributions through the project issue tracker:
+<https://github.com/Oichkatzelesfrettschen/MathScienceCompendium/issues>.
 
 ---
 

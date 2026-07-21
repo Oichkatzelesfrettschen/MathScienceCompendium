@@ -178,6 +178,15 @@ def test_qlbm_state_density_positive(small_lbm: QuantumLatticeBoltzmann):
     assert np.all(small_lbm.state.density > 0)
 
 
+def test_qlbm_auxiliary_initialization_is_seed_reproducible():
+    first = QuantumLatticeBoltzmann(LBMParameters(nx=8, ny=8, random_seed=17))
+    second = QuantumLatticeBoltzmann(LBMParameters(nx=8, ny=8, random_seed=17))
+    distinct = QuantumLatticeBoltzmann(LBMParameters(nx=8, ny=8, random_seed=18))
+
+    np.testing.assert_array_equal(first.state.zpe_field, second.state.zpe_field)
+    assert not np.array_equal(first.state.zpe_field, distinct.state.zpe_field)
+
+
 def test_qlbm_step_runs_without_error():
     params = LBMParameters(nx=8, ny=8)
     lbm = QuantumLatticeBoltzmann(params)

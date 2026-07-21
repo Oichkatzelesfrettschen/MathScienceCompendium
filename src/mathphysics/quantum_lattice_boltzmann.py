@@ -75,6 +75,7 @@ class LBMParameters:
     num_harmonics: int = 127
     harmonic_amplitude: float = 0.01
     golden_ratio_scaling: bool = True
+    random_seed: int = 0
     timesteps: int = 1000
     snapshot_interval: int = 250
     boundary_type: BoundaryType = BoundaryType.SYMMETRY_PRESERVING
@@ -191,7 +192,9 @@ class QuantumLatticeBoltzmann:
 
     def _initialize_quantum_fields(self) -> None:
         self.state.coherence[:] = 1.0
-        self.state.zpe_field[:] = 1.0 + self.params.zpe_coupling * np.sin(PHI * np.random.rand())
+        generator = np.random.default_rng(self.params.random_seed)
+        phase = generator.random()
+        self.state.zpe_field[:] = 1.0 + self.params.zpe_coupling * np.sin(PHI * phase)
 
     def _compute_equilibrium(self) -> None:
         rho, u = self.state.density, self.state.velocity

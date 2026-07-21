@@ -1,0 +1,3409 @@
+Submitted on 12 July 2014. Revised on 23 November 2014.
+JOURNAL OF THE ATMOSPHERIC SCIENCES
+
+S3T stability of the homogeneous state of barotropic beta-plane turbulence
+
+arXiv:1407.3354v3 [physics.ao-ph] 24 Nov 2014
+
+N IKOLAOS A. BAKAS , NAVID C. C ONSTANTINOU∗ AND P ETROS J. I OANNOU
+Department of Physics, National and Kapodistrian University of Athens, Athens, Greece
+
+ABSTRACT
+Zonal jets and non-zonal large-scale flows are often present in forced-dissipative barotropic turbulence
+on a beta-plane. The dynamics underlying the formation of both zonal and non-zonal coherent structures
+is investigated in this work within the statistical framework of Stochastic Structural Stability Theory (S3T).
+Previous S3T studies have shown that the homogeneous turbulent state undergoes a bifurcation at a critical
+parameter and becomes inhomogeneous with the emergence of zonal and/or large-scale non-zonal flows and
+that these statistical predictions of S3T are reflected in direct numerical simulations. In this paper, we study
+the dynamics underlying the S3T statistical instability of the homogeneous state as a function of parameters.
+It is shown that for weak planetary vorticity gradient, β , both zonal jets and non-zonal large-scale structures
+form from upgradient momentum fluxes due to shearing of the eddies by the emerging infinitesimal flow. For
+large β , the dynamics of the S3T instability differs for zonal and non-zonal flows but in both the destabilizing
+vorticity fluxes decrease with increasing β . Shearing of the eddies by the mean flow continues to be the
+mechanism for the emergence of zonal jets while non-zonal large-scale flows emerge from resonant and near
+resonant triad interactions between the large-scale flow and the stochastically forced eddies. The relation
+between the formation of large-scale structure through modulational instability and the S3T instability of the
+homogeneous state is also investigated and it is shown that the modulational instability results are subsumed
+by the S3T results.
+
+1. Introduction
+
+form non-dispersive packets that are referred to as satellite
+modes (Danilov and Gurarie 2004) or zonons (Sukoriansky
+et al. 2008). In addition, the formation of these coherent
+structures was shown to be a bifurcation phenomenon. As
+the energy input of the stochastic forcing is increased, the
+flow bifurcates from a turbulent, spatially homogeneous
+state to a state in which zonal jets and/or non-zonal coherent structures emerge and are maintained by turbulence
+(Bakas and Ioannou 2013a; Constantinou et al. 2014). In
+this work, we will address the eddy–mean flow dynamics underlying the emergence of both zonal and non-zonal
+structures.
+Since organization of turbulence into coherent structures involves complex nonlinear interactions among a
+large number of degrees of freedom, which erratically contribute to the maintenance of the large-scale structure, an
+attractive approach is to study the statistical state dynamics
+(SSD) of the turbulent flow, rather than single realizations
+of the turbulent field. Recently, the SSD of barotropic
+and baroclinic atmospheres has been studied by truncating
+the infinite hierarchy of cumulant equations to second order. Stochastic Structural Stability Theory (S3T) is such a
+second order Gaussian approximation of the full SSD, in
+which the third cumulant is parameterized as the sum of a
+known correlation function and a dissipation term (Farrell
+and Ioannou 2003). This is equivalent to a parametrization
+
+Atmospheric turbulence is commonly observed to be
+organized into slowly varying large-scale structures such
+as zonal jets and coherent vortices. Prominent examples
+are the banded jets and the Great Red Spot in the Jovian
+atmosphere (Ingersoll 1990; Vasavada and Showman 2005).
+Laboratory experiments as well as direct numerical simulations of turbulent flows have shown that these coherent
+structures appear and persist for a very long time despite the
+presence of eddy mixing (Vallis and Maltrud 1993; Weeks
+et al. 1997; Read et al. 2004; Espa et al. 2010; Di Nitto
+et al. 2013).
+A model that exhibits many aspects of turbulent selforganization into coherent structures yet is simple enough
+to extensively investigate, is a barotropic flow on the surface of a rotating planet or on a beta-plane with turbulence
+sustained by random stirring. Numerical simulations of
+this model have shown that robust zonal jets coexist with
+large-scale westward propagating coherent waves (Sukoriansky et al. 2008; Galperin et al. 2010). These waves
+were found to either obey a Rossby wave dispersion, or
+
+∗ Corresponding author address: Navid Constantinou, University of
+Athens, Department of Physics, Section of Astrophysics, Astronomy
+and Mechanics, Build IV, Office 32, Panepistimiopolis, 15784 Zografos,
+Athens, Greece.
+E-mail: navidcon@phys.uoa.gr
+
+Generated using v4.3.1 (5-19-2014) of the AMS LATEX template
+
+1
+
+2
+
+JOURNAL OF THE ATMOSPHERIC SCIENCES
+
+of the eddy–eddy nonlinearity as random forcing with the
+required dissipation to remove the energy injected by the
+forcing. Such a representation is strongly supported by the
+results of previous studies. Linear inverse modeling studies
+showed that this parametrization is the best linear representation of the eddy–eddy nonlinear interactions in planetary
+turbulence (DelSole and Farrell 1996; DelSole 1996; DelSole and Hou 1999; DelSole 2004), while earlier studies
+have shown that the turbulent transport properties (heat and
+momentum fluxes) of the midlatitude transient climatology
+are accurately obtained as the stochastic response of the
+large-scale flow to stochastic forcing (Farrell and Ioannou
+1994, 1995; Whitaker and Sardeshmukh 1998; Zhang and
+Held 1999). In addition, Bouchet et al. (2013) have shown
+that in the limit of weak forcing and dissipation, the formal
+asymptotic expansion of the probability density function of
+the Euler equations around a mean flow that is assumed to
+only have a singular spectrum of modes, comprises of the
+second order S3T closure with an additional stochastic term
+forcing the mean flow. Therefore, S3T formally describes
+the statistical equilibrium mean flow and the eddy statistics
+in this case, as the additional stochastic term only produces
+fluctuations around this statistical equilibrium. Similar to
+the S3T closure of the full SSD is the CE2 closure in which
+the third order cumulant is neglected without parameterization (Marston et al. 2008; Marston 2010, 2012; Tobias
+and Marston 2013). It has been shown that the predictions
+of S3T (or CE2) simulations are reflected in corresponding nonlinear simulations (O’Gorman and Schneider 2007;
+Srinivasan and Young 2012; Tobias and Marston 2013;
+Constantinou et al. 2014).
+The second order closure results in a nonlinear, autonomous dynamical system that governs the evolution
+of the mean flow and its consistent second order perturbation statistics. Its fixed points define statistical equilibria,
+whose instability brings about structural reconfiguration
+of the mean flow and of the turbulent statistics. Previous
+studies employing S3T addressed the bifurcation from a
+homogeneous turbulent regime to a jet forming regime in
+barotropic beta-plane turbulence and identified the emerging jet structures as linearly unstable modes to the homogeneous turbulent state equilibrium (Farrell and Ioannou 2003,
+2007; Bakas and Ioannou 2011; Srinivasan and Young
+2012; Parker and Krommes 2013, 2014). The stability analysis of the homogeneous equilibrium was further advanced
+with the introduction of the continuum formulation in S3T
+theory by Srinivasan and Young (2012) who derived a compact analytic expression for the growth rate and frequency
+of the unstable structures. Interestingly, Carnevale and
+Martin (1982) using field theoretic techniques have arrived
+at the same stability equation for the statistical description
+of fluctuations about a homogeneous state.
+Comparisons of the jet structure predicted by S3T theory with direct numerical simulations have shown that the
+
+structure of zonal flows that emerge in the nonlinear simulations can be predicted by S3T (Srinivasan and Young
+2012; Tobias and Marston 2013; Constantinou et al. 2014).
+However, Srinivasan and Young (2012) found quantitative differences between the predictions of S3T regarding
+the bifurcation diagram for the emergence of jets and the
+corresponding diagram obtained from the nonlinear simulations, calling into question the validity of the S3T (or CE2)
+approximations when the mean flow is very weak. Constantinou et al. (2014) demonstrated that this discrepancy
+was due to the prior emergence of non-zonal coherent structures that modified the background equilibrium spectrum
+and showed that S3T predictions were accurate when this
+modification in the background spectrum was accounted
+for.
+The non-zonal structures were treated in these studies
+as incoherent due to the assumption that the ensemble average over the forcing realizations is equivalent to a zonal
+average and therefore their emergence and effect on the
+jet dynamics could not be directly addressed. By making
+the alternative interpretation of the ensemble mean as a
+Reynolds average over the fast turbulent motions that was
+introduced in earlier studies of atmospheric blocking (Bernstein 2009; Bernstein and Farrell 2010), Bakas and Ioannou
+(2013a, 2014) addressed the emergence of the non-zonal
+coherent structures in barotropic beta-plane turbulence in
+∗
+3 2
+terms of the parameters β ∗ = β /(rL−1
+f ) and ε = ε/(r L f ),
+where β is the gradient of the planetary vorticity, L f the
+length-scale of the forcing, ε the energy input rate of the
+forcing and 1/r the dissipation time-scale. Characteristic
+values of these parameters for the Earth’s midlatitude atmosphere and oceans and the Jovian atmosphere are given in
+Table 1. It was found that for isotropic forcing the homogeneous statistical equilibrium becomes unstable when the
+energy input rate exceeds a critical value εc∗ that depends
+on β ∗ as shown in the stability regime diagram in Fig. 1.
+In marginally unstable flows with β ∗  1 zonal jets first
+emerge, while for β ∗  1 westward propagating non-zonal
+structures first emerge and equilibrate to finite-amplitude
+traveling waves. At larger energy input rates, the finiteamplitude non-zonal traveling states are unstable and the
+flow equilibrates to mixed zonal jet–traveling wave states
+that consist of strong zonal jets with weaker traveling nonzonal structures embedded in them. These predictions of
+the S3T stability analysis were verified by direct numerical simulations of turbulent barotropic flow (Bakas and
+Ioannou 2014).
+The S3T dynamics that underlie the formation of largescale structure cannot depend on turbulent anisotropic inverse cascade processes because local in wavenumber space
+eddy–eddy interactions are absent in S3T. In S3T, largescale structure emerges from a cooperative instability arising from the non-local in wavenumber space interaction
+between the large-scale mean flow and the forced, smallscale turbulent eddies. The eddy–mean flow dynamics of
+
+3
+
+JOURNAL OF THE ATMOSPHERIC SCIENCES
+
+TABLE 1. Typical parameter values for geophysical flows. The typical forcing length scale is taken as the deformation radius in each geophysical
+setting.
+
+1/k f [km]
+
+1/r [day(= 24h)]
+
+Urms [m s−1 ]
+
+β [10−11 m−1 s−1 ]
+
+ε [m−2 s−3 ]
+
+β∗
+
+ε∗
+
+1000
+20
+1000
+
+10
+100
+1500
+
+15
+0.1
+50
+
+1.6
+1.6
+0.35
+
+2 × 10−3
+10−9
+0.5 × 10−5
+
+15
+3
+450
+
+1300
+1600
+4 × 107
+
+Earth’s atmosphere
+Earth’s ocean
+Jovian atmosphere
+
+8
+
+10
+
+J upit e r
+
+7
+
+10
+
+non- z onal
+s t r uc t ur e s m or e
+uns t able
+
+z onal je t s m or e
+uns t able
+
+6
+
+10
+
+5
+
+ε ∗c
+
+10
+
+4
+
+10
+
+at mos phe r e
+
+β ∗− 2
+
+β ∗2
+
+o c e an
+
+3
+
+10
+
+2
+
+10
+
+β ∗1 / 2
+
+1
+
+10
+
+−2
+
+10
+
+−1
+
+10
+
+0
+
+1
+
+10
+
+10
+
+2
+
+10
+
+3
+
+10
+
+β∗
+
+F IG . 1. The critical energy input rate εc∗ for the emergence of either
+zonal or non-zonal large-scale structure (thick solid line) and the critical
+ε ∗ for the emergence of zonal jets (solid line) as a function of the nondimensional planetary vorticity gradient, β ∗ , when the stochastic forcing
+is isotropic. Jets or non-zonal structures emerge with the least energy
+∗ ≈ 3.5. For β ∗  1 the critical input rate for the emergence
+input for βmin
+of jets increases as εc∗ ∼ β ∗2 and as εc∗ ∼ β ∗ 1/2 for the emergence of
+non-zonal structures. In the light shaded region only non-zonal coherent
+structures emerge, while in the dark shaded region both zonal jets and
+∗ (the
+non-zonal coherent structures emerge. In the region β ∗ < βmin
+shaded region to the left of the dashed line) zonal jets have larger growth
+∗ non-zonal structures have the larger growth rate.
+rate, while in β ∗ > βmin
+Parameter values for the Earth’s atmosphere, Earth’s ocean and Jupiter’s
+atmosphere are marked with stars.
+
+this cooperative instability has been investigated by Bakas
+and Ioannou (2013b) for the case of zonal jet emergence
+in the limit of β ∗  1. It was shown that shear straining
+of the small-scale eddies by the local shear of an infinitesimal sinusoidal zonal jet, as described by Orr dynamics
+in a beta-plane, produces upgradient fluxes that intensify
+the zonal jet. In this work we will extend the study of
+this cooperative eddy–mean flow instability to address not
+only zonal jet formation but also formation of non-zonal
+coherent structures and also we will address the formation
+of coherent structures for a wide range of values of β ∗ . We
+will show that for β ∗  1 the eddy–mean flow dynamics
+of non-zonal structures is also dominated by shearing of
+the eddies, whereas for β ∗  1 resonant and near resonant interactions play an important role in the dynamics.
+The importance of near-resonant interactions in the formation of large-scale flows has been previously discussed
+by Lee and Smith (2007). However, this effect is rigorously
+
+quantified in this work. Finally, we will discuss the connection between the modulational instability of plane Rossby
+waves (Lorenz 1972; Gill 1974) and the S3T stability of
+the homogeneous turbulent equilibrium.
+This paper is organized as follows: In section 2 we derive the S3T system for a barotropic flow and the resulting
+eigenvalue problem addressing the stability of the homogeneous statistical equilibrium. In section 3 we transform
+the eigenvalue problem in a rotated frame of reference, so
+that the formation of zonal jets and non-zonal structures
+can be studied under a uniform framework. In section 4 we
+identify the eddy–mean flow dynamics underlying the S3T
+instability for isotropic stochastic forcing and in section 5
+we study the effect of the forcing anisotropy to the S3T
+instability. The results are summarized in sections 6 and 7.
+2. Formulation of S3T dynamics and emergence of
+non-zonal coherent structures
+Consider a barotropic flow on an infinite beta-plane with
+x and y Cartesian coordinates along the zonal and the meridional direction respectively and with planetary vorticity
+gradient, β = (0, β ). The non-divergent velocity field with
+(x, y) components (u, v) is expressed in terms of the streamfunction, ψ, as u = ẑ × ∇ψ, where ẑ is the unit vector
+normal to the plane of the flow. The vorticity of the fluid
+2 + ∂ 2 , evolves as:
+ζ = ∂x v − ∂y u = ∆ψ, with ∆ ≡ ∂xx
+yy
+√
+∂t ζ + J (ψ, ζ + β · x) = −rζ + ε ξ ,
+
+(1)
+
+where x = (x, y) and J is the two dimensional Jacobian,
+J(A, B) ≡ (∂x A)(∂y B) − (∂y A)(∂x B). The flow is dissipated
+with linear damping at a rate r, which typically models
+Ekman drag in planetary atmospheres. Turbulence is maintained by the external stochastic forcing, ξ , which models
+exogenous processes, such as turbulent convection or energy
+√ injected by baroclinic instability. We assume that
+ε ξ (x,t) is a temporally delta-correlated and spatially homogeneous random stirring that injects energy at a rate
+ε. We non-dimensionalize (1) using the dissipation timescale 1/r and the typical length-scale of the stochastic
+excitation, L f . In these units ζ ∗ = ζ /r, ψ ∗ = ψ/(rL2f ),
+∗
+3 2
+∗
+1/2 L−1 ) and
+β ∗ = β /(rL−1
+f ), ε = ε/(r L f ), ξ = ξ /(r
+f
+∗
+r = 1 where the asterisks denote non-dimensional variables and we hereafter drop the asterisks for simplicity.
+
+4
+
+JOURNAL OF THE ATMOSPHERIC SCIENCES
+
+In order to construct the S3T dynamical system in the
+continuous formulation of Srinivasan and Young (2012) we
+proceed as follows:
+1. The averaged fields, denoted with upper case letters,
+are calculated by taking a time average, denoted with
+T [ • ], over an intermediate time scale, larger than the
+time scale of the turbulent motions but smaller than
+the time scale of the large-scale motions. Deviations
+from the mean (eddies) are denoted with dashes and
+lower case letters. For example the vorticity field is
+split as ζ = Z + ζ 0 , where Z = T [ ζ ]. The equations
+for the mean and the eddies that derive from (1) are:
+
+
+∂t Z + J (Ψ, Z + β · x) = −T J ψ 0 , ζ 0 − Z ,
+(2a)
+√
+0
+0
+∂t ζ = A (U) ζ + fNL + ε ξ ,
+(2b)
+where
+
+
+A (U) ≡ −U· ∇ + (∆U) · ∇ + ẑ · (β × ∇) ∆−1 −1 ,
+(3)
+is the linear perturbation operator about the instantaneous mean flow U = ẑ × ∇Ψ and fNL ≡
+T [ J (ψ 0 , ζ 0 ) ] − J (ψ 0 , ζ 0 ). Neglecting the nonlinear
+term fNL in (2b) we obtain the quasi-linear system:
+
+
+∂t Z + J (Ψ, Z + β · x) = −T J ψ 0 , ζ 0 − Z ,
+(4a)
+√
+0
+0
+∂t ζ = A (U) ζ + ε ξ .
+(4b)
+
+2. The quasi-linear system (4) under the ergodic assumption that the time average over the intermediate time
+scale is equal to an ensemble average produces the
+S3T system:
+∂t Z + J (Ψ, Z + β · x) = R(C) − Z ,
+
+
+∂t C = Aa (U) + Ab (U) C + ε Q ,
+
+(5a)
+(5b)
+
+with C the ensemble mean eddy-vorticity spatial covariance between points xa and xb ,
+C(xa , xb ,t) = ζ 0 (xa ,t)ζ 0 (xb ,t) ,
+
+(6)
+
+Q the spatial covariance of the delta-correlated and
+spatially homogeneous forcing, defined by
+hξ (xa ,t1 )ξ (xb ,t2 )i = Q(xa − xb )δ (t1 − t2 ) ,
+
+(7)
+
+and R(C) ≡ h J(ψ 0 , ζ 0 ) i = T [ J(ψ 0 , ζ 0 ) ] the ensemble mean vorticity forcing of the large scales by the
+eddy field, given by:
+
+
+ẑ
+−1
+−1
+R(C) ≡ −∇ ·
+× (∇a ∆a + ∇b ∆b )C
+.
+2
+xa =xb
+(8)
+
+The subscript a (or b) in the operators indicates that
+the coefficients of the operator are evaluated on a (or
+b) and that the operator acts only on the variable xa (or
+xb ). The subscript xa = xb indicates that any function
+of xa and xb is evaluated at the same point, xa = xb .
+The S3T system (5) is a closure of the statistical dynamics of (2) at second order. Being autonomous it may posses
+statistical equilibria (Z e ,Ce ), the stability of which is addressed by considering small perturbations (δ Z, δC) and
+performing an eigenanalysis of the linearized S3T equations about these equilibria.
+For any spatially homogeneous forcing, Q, there is always the homogeneous S3T equilibrium
+ε
+Z e = 0 , Ce = Q ,
+(9)
+2
+with no mean flow and a homogeneous eddy field, i.e., with
+a translationally invariant covariance, Ce (xa − xb ). The
+stability of the homogeneous equilibrium (9) is determined
+from eigenalysis of the linearized S3T equations about this
+equilibrium:
+∂t δ Z + J (δ Ψ, β · x) = R(δC) − δ Z ,
+
+
+∂t δC = Aae + Abe δC + δ Aa + δ Ab Ce ,
+
+(10a)
+(10b)
+
+with A e ≡ ẑ · (β × ∇) ∆−1 − 1 (obtained by setting Ue = 0
+in (3)) and δ A ≡ A (δ U) − A e . It can be shown from (10)
+that the homogeneous equilibrium is S3T stable for 0 ≤
+ε < εc and becomes unstable when ε exceeds the critical
+value εc that depends on β and on the structure of Q. In this
+work we focus our analysis close to the instability threshold
+ε ≈ εc and identify the physical processes underlying the
+S3T instability. We follow Srinivasan and Young (2014)
+and consider a ring stochastic forcing of waves of total
+wavenumber k = |k|=1, with power spectrum1 :
+Q̂(k) = 4π δ (k − 1) G (γ) ,
+
+(11)
+
+G (γ) = 1 + µ cos(2γ) ,
+
+(12)
+
+where
+with γ = arctan (ky /kx ) and k = (kx , ky ). The parameter
+µ modulates the anisotropy of the spectrum of the forcing and takes values |µ| ≤ 1 in order that the spectrum
+is everywhere positive and therefore physically realizable.
+Example realizations of the spatial structure of stochastic
+excitations at different µ are shown in Fig. 2. When µ = 0,
+the forcing is isotropic and could model the forcing of the
+Jovian atmosphere at cloud level from turbulent convection. When µ > 0, the stochastic excitation favors small
+
+1 The power spectrum of a spatially homogeneous covariance is the
+Fourier transform of the covariance:
++∞
+ZZ
+
+Q̂(k) =
+−∞
+
+Q(xa − xb ) e−ik·(xa −xb ) d2 (xa − xb ) .
+
+5
+
+JOURNAL OF THE ATMOSPHERIC SCIENCES
+
+(a)
+
+(b)
+
+µ=1
+
+1.5
+
+(c)
+
+µ=0
+
+1.5
+
+1.5
+
+0
+−0.5
+
+ky
+
+1
+0.5
+
+ky
+
+1
+0.5
+
+ky
+
+1
+0.5
+
+0
+−0.5
+
+−1
+0
+
+0.5
+
+1
+
+1.5
+
+−1
+
+−1.5
+−1.5 −1 −0.5
+
+kx
+
+0
+
+0.5
+
+1
+
+1.5
+
+−1.5
+−1.5 −1 −0.5
+
+kx
+
+(d)
+
+(e)
+
+60
+
+(f )
+
+60
+
+x
+
+40
+
+60
+
+1
+
+1.5
+
+60
+
+y
+20
+
+20
+
+0.5
+
+40
+
+y
+20
+
+0
+
+kx
+
+40
+
+y
+
+40
+
+0
+0
+
+0
+−0.5
+
+−1
+
+−1.5
+−1.5 −1 −0.5
+
+µ = −1
+
+0
+0
+
+20
+
+20
+
+x
+
+40
+
+60
+
+0
+0
+
+20
+
+x
+
+40
+
+60
+
+F IG . 2. Top panels: the forcing covariance spectrum, Q̂(k) = 4π δ (k − 1) [1 + µ cos(2γ)], for (a) µ = 1, (b) µ = 0 and (c) µ = −1 (the support
+of the delta function is represented as a thin ring). Bottom panels: contours of the vorticity field induced by a realization of the stochastic forcing for
+(d) µ = 1, (e) µ = 0 and (f) µ = −1.
+
+|ky | Fourier components as the baroclinic forcing of the
+upper-level jet in the midlatitude atmosphere. When µ < 0,
+the forcing favors the almost zonal Fourier components
+around kx = 0.
+3. Emergence of non-zonal structures as zonal flows in
+a rotated frame
+The eigenfunctions of the S3T stability equations (10)
+are specified by their two components: the mean flow component δ Z̃ eσt , and the covariance component δ C̃ eσt . Because the stability equations (10) are linearized about the
+homogeneous equilibrium (9), the eigenfunction structure
+simplifies significantly and assumes the form:
+δ Z̃(x) = ein·x ,
+(h)
+δ C̃(xa , xb ) = C̃n (xa − xb ) ein·(xa +xb )/2 ,
+
+(13a)
+(13b)
+
+where n = (nx , ny ) is the wavevector that characterizes the
+(h)
+eigenfunction and C̃n (xa − xb ) is the homogeneous component of the covariance eigenfunction. The mean flow
+component of each eigenfunction has the form of a zonal
+flow when nx = 0 and of a non-zonal flow when nx 6= 0.
+However, non-zonal mean flow perturbations can be rendered zonal through a rotation of the frame of reference.
+For an eigenfunction with wavenumber n, clockwise rotation of the axes by an angle ϕ = arctan(nx /ny ) transforms
+the components of n to:
+n0x = nx cos ϕ −ny sin ϕ = 0 , n0y = nx sin ϕ +ny cos ϕ = n ,
+(14)
+with n = |n| and the components of the planetary vorticity
+gradient to β = (−β sin ϕ, β cos ϕ). Correspondingly, in
+
+the rotated frame the eigenfunction has only the mean flow
+component δ Ũ(y0 ), which is of the form of a zonal jet in the
+x0 direction (i.e. the wavevector n has zero x0 component,
+cf. Fig. 3), and δ Z̃ = −∂y0 δ Ũ. The eigenvalue problem (10)
+about the homogeneous equilibrium transforms to:
+
+σ ∂y0 δ Ũ = −β sin ϕ δ Ũ − ∂y0 δ Ũ + ∂y0 δ v0 ζ 0 ,
+(15a)
+
+ e0
+e0
+e0
+0
+0
+σ δ C̃ = Aa + Ab δ C̃ + δ Aa + δ Ab C , (15b)
+
+with A e0 ≡ − β sin ϕ ∂y0 + β cos ϕ ∂x0 ∆−1 − 1 and
+δ A 0 = −δ Ũ ∂x0 + (∂y20 y0 δ Ũ) ∂x0 ∆−1 . Ce0 is the equilibrium
+covariance in the rotated frame defined as Ce0 (xa0 − xb0 , y0a −
+y0b ) = Ce (xa − xb , ya − yb ), where (xa0 , y0a ) are the components of xa in the rotated frame. The perturbation vorticity
+flux δ hv0 ζ 0 i is given in terms of δ C̃ as:
+
+
+1
+−1
+0
+0
+δ v0 ζ 0 = (∆−1
+∂
++∆
+∂
+)
+δ
+C̃
+.
+(16)
+x
+xb
+b
+2 a a
+xa =xb
+In writing the S3T eigenvalue problem in the rotated frame
+and by transforming a non-zonal perturbation into a zonal
+jet perturbation there is a twofold gain. The first is that
+we can use the methods that were previously developed
+by Bakas and Ioannou (2013b) in the context of the emergence of zonal jets in order to understand the mechanisms
+responsible for the emergence of non-zonal structures. The
+second is that we can directly address the eddy–mean flow
+dynamics that give rise to zonal jets with constant topographic vorticity gradient but in a direction other than the
+meridional (Boland et al. 2012).
+From here on we will study the S3T instability of the
+homogeneous equilibrium (9) in the rotated frame. While
+
+6
+
+JOURNAL OF THE ATMOSPHERIC SCIENCES
+ky
+
+k y′
+
+k = kf
+
+β
+ϕ
+
+n
+θ
+
+k
+γ
+
+kx
+
+−k
+k x′
+
+F IG . 3. A non-zonal plane wave perturbation with wavevector n at
+an angle ϕ to the northward direction (the direction of β) becomes a
+zonal perturbation when the coordinate frame is rotated clockwise by ϕ.
+Under this rotation the components of the wavevector k = (cos γ, sin γ)
+are transformed to k = (cos ϑ , sin ϑ ), with ϑ = γ + ϕ. F (n, ϑ ) in (22)
+is the mean momentum flux convergence from plane wave perturbations
+that arise from excitations with wavevectors k and −k.
+
+in the rotated frame all eigenfunctions have the form of
+a zonal jet, we will distinguish the perturbations as zonal
+when ϕ = 0◦ and non-zonal when ϕ 6= 0◦ , i.e., as they manifest in the unrotated frame. A direct implication of (15a) is
+that that the vorticity flux, δ hv0 ζ 0 i, induced by eigenfunction δ Ũ, δ C̃ must be proportional to δ Ũ and it therefore
+can be written as:
+δ v0 ζ 0 = ε f (σ ) δ Ũ ,
+
+(17)
+
+For ϕ = 0◦ , (20) reduces to the eigenvalue relation of Srinivasan and Young (2012) that governs the stability of the homogeneous equilibrium (9) to zonal jet perturbations in the
+unrotated frame. For mirror symmetric forcing (i.e. with covariance satisfying Q(xa −xb , ya −yb ) = Q(xb −xa , ya −yb )
+or Q(xa − xb , ya − yb ) = Q(xa − xb , yb − ya )), like (11),
+and for n < 1 we find numerically2 that the eigenvalue
+corresponding to unstable zonal jet eigenfunctions have
+σi ≡ Im(σ ) = 0, that is the unstable zonal jets grow in situ.
+For ϕ 6= 0◦ the above expression produces the eigenvalue
+relation obtained by Bakas and Ioannou (2014) for the
+growth rate of non-zonal perturbations with wavenumbers
+(nx , ny ) = (n sin ϕ, n cos ϕ) in the unrotated frame. The
+growing eigenfunctions in this case are numerically found
+to be propagating (σi 6= 0) and at marginal stability for
+β  1 their frequency σi becomes the Rossby wave frequency
+ẑ · (β × n)
+,
+(21)
+ωn ≡
+n2
+for a plane wave with wavevector n.
+From (20), we obtain that a necessary condition for
+S3T instability is that the real part of the vorticity flux
+feedback factor, Re( f ), must be positive. In order to illuminate the eddy–mean flow dynamics underlying the
+S3T instability, we study the behavior of Re( f ) for energy input rates close to εc . Near the stability boundary
+σr ≡ Re(σ ) ≈ 0 and under the assumption that at marginal
+stability3 σi ≈ −ωn = β sin ϕ/n, the feedback on the mean
+flow for the delta function forcing (19) can be written as:
+π
+
+with f determining the amplitude and relative phase of the
+vorticity flux feedback induced by the mean flow eigenfunction δ Ũ with eigenvalue σ . When the real part of
+f is positive the induced vorticity flux is upgradient, and
+when it is negative the flux is downgradient. It is shown in
+Appendix A that
+
+ Z
+fr ≡ Re f (−iωn ) = F (ϑ , n) dϑ ,
+
+
+(22)
+
+0
+
+where F (ϑ , n) (cf. Appendix A) is the contribution to fr
+from Fourier components of the forcing with wavevectors
+k and −k (see Fig. 3). When fr > 0 the induced vorticity
+fluxes are upgradient and the critical energy input rate is
++∞
+ZZ
+εc = 1/ fr . The integrand F (ϑ , n) can be alternatively
+0
+0
+h
+i
+
+dkx dky
+2
+interpreted as the contribution of the stochastically forced
+2nkx0 (ky0 + n/2) k2 − n2 ×
+f (σ ) =
+2
+(2π)
+waves
+or eddies to the vorticity fluxes. These forced waves
+−∞
+
+have a total wavenumber k = 1 and are characterized only
+2 2
+0 0
+× (σ + 2)ks k + 2inβ cos ϕ kx (ky + n/2)
+by the angle ϑ between their phase lines and the y0 axis.
+
+i−1 Q̂0 (k0 , k0 )
+We can isolate the dependence of the feedback factor on β
+x
+y
+2
+2
+− inβ sin ϕ kx0 − ky0 − nk0 y
+×
+,
+by writing F (ϑ , n) = F(ϑ , n) + F(180◦ + ϑ , n) with
+2
+(18)
+N D0
+F(ϑ , n) = 2
+,
+(23)
+2 2
+0
+0
+D
+with ks = k + n, ks = |ks | and (kx , ky ) = k(cos ϑ , sin ϑ ).
+0 + β D2
+The power spectrum of the stochastic forcing, (11), in the
+rotated frame takes the form:
+Q̂0 (kx0 , ky0 ) = 4π δ (k − 1) G (ϑ − ϕ) .
+
+(19)
+
+With this notation the eigenvalues σ of (15) satisfy the
+equation:
+σ + 1 − iβ sin ϕ/n = ε f (σ ) .
+
+(20)
+
+2 We have been unable to find a counterexample to these assertions or
+to prove them when n < 1. For n > 1 there exist unstable jet eigenfunctions that have σi 6= 0 for mirror symmetric forcing.
+3 While the phase speed of the marginally unstable non-zonal structures almost matches the corresponding Rossby phase speed for β  1
+it overestimates the Rossby phase speed by almost by a factor of 2 when
+β ∼ O(1) or smaller. However, at these values of β we have found that
+the results presented in this work are not sensitive to the value of the
+frequency.
+
+7
+
+JOURNAL OF THE ATMOSPHERIC SCIENCES
+
+and, as shown in Appendix A, functions N , D0 , D2 independent of β .
+In the following sections we will determine the contribution of the various waves to the vorticity flux feedback
+and identify the angle ϑ that produces the most significant
+contribution to this feedback. We will also calculate the
+feedback factor fr as a function of the mean flow wavenumber n for 0 ≤ ϕ ≤ 90◦ . We will limit our discussion to the
+emergence of mean flows with n < 1, i.e., with scale larger
+than the scale of the forcing. In section 4 the analysis is
+mostly focused to isotropic forcing (G = 1) while the effect
+of anisotropy is discussed in section 5.
+
+(a)
+
+90
+120
+
+60
+
+150
+
+30
+
+180
+
+(b)
+
+0
+90
+120
+
+60
+
+150
+
+30
+
+180
+
+0
+
+ϕ = 0◦
+
+(c)
+
+90
+120
+
+60
+
+150
+
+30
+
+180
+
+0
+
+ϕ = 15 ◦
+F IG . 4. (a) Contours of F0 (ϑ , n) in a (ϑ , n) polar plot (n radial
+and ϑ azimuthal). This figure shows the magnitude and sign of the
+vorticity flux induced by waves with phase lines oriented at an angle ϑ
+to the y axis in the presence of an infinitesimal mean flow perturbation of
+total wavenumber n when β = 0. The contour interval is 3 × 10−3 and
+note that F0 (ϑ , n) is independent of ϕ. (b) Contours of the normalized
+F2 (ϑ , n)/n4 show the O(β 2 ) correction to F0 (ϑ , n) for the case of
+zonal jet perturbations (ϕ = 0◦ ). The contour interval is 0.02. (c) Same
+as (b) but for non-zonal perturbations with ϕ = 15◦ . The contour interval
+is 0.04. In all panels the forcing is isotropic (µ = 0), solid (dashed) lines
+indicate contours with positive (negative) values, the thick line is the
+zero contour, the radial grid interval is ∆n = 0.25 and the 30◦ wedge is
+marked (dashed-dot). In panels (a) and (b) the zero contour is the curve
+4 sin2 ϑ = 1 + n2 (see Appendix B).
+
+4. Eddy–mean flow dynamics leading to formation of
+zonal and non-zonal structures for isotropic forcing
+a. Induced vorticity fluxes for β  1
+We expand the integrand F of (22) in powers of β :
+F = F0 + β 2 F2 + O(β 4 ) ,
+with F2 = 21 ∂β2β F
+
+β =0
+
+(24)
+
+. The leading order term, F0 ,
+
+is the contribution of each wave with wavevector k =
+(cos ϑ , sin ϑ ) to the vorticity flux feedback in the absence
+of β and is shown in Fig. 4a. For β = 0, the dynamics are
+rotationally symmetric and for isotropic forcing fr is independent of ϕ. Therefore all zonal and non-zonal eigenfunctions with the same wavenumber, n, grow at the same rate.
+Upgradient fluxes (F0 > 0) to a mean flow with wavenumber n are induced by waves with phase lines inclined at
+angles satisfying 4 sin2 ϑ < 1 + n2 (cf. Appendix B). This
+implies that all waves with |ϑ | < 30◦ necessarily produce
+upgradient vorticity fluxes to any mean flow with wavenumber n < 1, while waves with 30◦ < |ϑ | < 45◦ produce
+upgradient fluxes for any mean flow with large enough
+wavenumber (cf. Fig. 4a). The eddy–mean flow dynamics was investigated in the limit of n  1 by Bakas and
+Ioannou (2013b). It was shown that the vorticity fluxes
+can be calculated from time averaging the fluxes over the
+life cycle of an ensemble of localized stochastically forced
+wavepackets initially located at different latitudes. For
+n  1, the wavepackets evolve in the region of their excitation under the influence of the infinitesimal local shear of
+δU and are rapidly dissipated before they shear over. As
+a result, their effect on the mean flow is dictated by the
+instantaneous (with respect to the shear time scale) change
+in their momentum fluxes. Any pair of wavepackets having a central wavevector with phase lines forming angles
+|ϑ | < 30◦ with the y axis surrender instantaneously momentum to the mean flow and reinforce it, whereas pairs
+with |ϑ | > 30◦ gain instantaneously momentum from the
+mean flow and oppose jet formation. Therefore, anisotropic
+forcing that injects significant power into Fourier components with |ϑ | < 30◦ (such as the forcing from baroclinic
+instability that primarily excites Fourier components with
+ϑ = 0◦ ) produces robustly upgradient fluxes that asymptotically behave anti-diffusively. That is, for aRsinusoidal mean
+flow perturbation δ Ũ = sin (ny) we have 0π F0 dϑ = Kn2
+with K positive and proportional to the anisotropy factor µ
+(cf. Appendix B and Bakas and Ioannou (2013b)).
+For isotropic forcing the net vorticity fluxR produced by
+shearing of the perturbations vanishes, i.e., 0π F0 dϑ = 0,
+given that the upgradient fluxes produced by waves with
+|ϑ | < 30◦ exactly balance the downgradient fluxes produced by the waves with |ϑ | > 30◦ . However, a net vorticity flux feedback is produced and asymptotically behaves
+as a negative fourth order hyperdiffusion with coefficient
+O(β 2 ) for β  1 (cf. (25) and Bakas and Ioannou (2013b)).
+
+8
+
+JOURNAL OF THE ATMOSPHERIC SCIENCES
+−4
+
+x 10
+
+90
+
+(a)
+
+4
+
+120
+
+60
+
+fr
+
+3
+150
+
+ϕ = 0◦
+
+2
+
+30
+
+ϕ = 60 ◦
+
+1
+
+180
+
+0
+0
+
+0
+
+ϕ = 15 ◦
+
+0.2
+
+0.4
+
+n
+
+0.6
+
+0.8
+
+1
+
+(b)
+
+F IG . 5. Vorticity flux feedback factor fr as a function of n for β = 0.1
+and isotropic forcing. Note that the fluxes are upgradient (i.e fr > 0)
+for all mean flow wavenumbers n. Shown is fr for ϕ = 0◦ and ϕ = 60◦
+(solid lines), as well as the asymptotic expression (25) (dash-dot) derived
+for the feedback factor in the limit β  1 and β /n  1.
+
+In Appendix B it is shown that the feedback factor fr for
+isotropic forcing in the limit β  1 with β /n  1 is:
+fr = β 2
+
+
+n4 
+2 + cos(2ϕ) + O(β 4 ) ,
+64
+
+90
+120
+
+60
+
+150
+
+30
+
+180
+
+0
+
+ϕ = 15 ◦
+
+(25)
+
+which is accurate even up to n ≈ 1, as shown in Fig. 5. In
+order to understand the contribution of β to the vorticity
+flux feedback, we plot F2 /n4 for a zonal (Fig. 4b) and a
+non-zonal perturbation (Fig. 4c) as a function of the mean
+flow wavenumber n and wave angle ϑ . We choose to scale
+F2 by n4 because in (25) fr increases as n4 . Consider
+first the case of a zonal jet. It can be seen that at every
+point, F2 has the opposite sign to F0 , implying that β
+tempers both the upgradient (for roughly |ϑ | < 30◦ ) and
+the downgradient (for |ϑ | > 30◦ ) fluxes of F0 . However,
+in the sector |ϑ | > 30◦ the values of F2 are much larger
+than in the sector |ϑ | < 30◦ and the net fluxes integrated
+over all angles are upgradient, as in (25) for the isotropic
+case.
+The asymptotic analysis of Bakas and Ioannou (2013b),
+which is formally valid for n  1, offers understanding
+of the dynamics that lead to the inequality F2RF0 < 0 and
+to the positive net contribution of F2 , i.e., to 0π F2 dϑ >
+0. Any pair of wavepackets with wavevectors at angles
+|ϑ | > 30◦ instantaneously gain momentum from the mean
+flow as described above (i.e. F0 < 0 for |ϑ | > 30◦ ), but
+their group velocity is also increased (decreased) while
+propagating northward (southward). This occurs due to the
+fact that shearing changes their meridional wavenumber
+and consequently their group velocity. The instantaneous
+change in the momentum fluxes resulting from this speed
+up (slowing down) of the wavepackets is positive in the
+region of excitation leading to upgradient fluxes (F2 > 0).
+The opposite happens for pairs with |ϑ | < 30◦ (cf. Fig. 3
+in Bakas and Ioannou (2013b)), however the downgradient
+fluxes produced are smaller than the upgradient fluxes,
+
+F IG . 6. (a) Contours of F (ϑ , n) in a (ϑ , n) polar plot (n radial and
+ϑ azimuthal) for isotropic forcing and β = 200. This panel shows the
+vorticity fluxes induced by waves with phase lines oriented at an angle ϑ
+to the y0 axis in the presence of a non-zonal perturbation with mean flow
+wavenumber n and ϕ = 15◦ . Solid (dashed) lines indicate contours with
+positive (negative) values, the contour interval is 2.5 × 10−3 and the thick
+line is the zero contour. (b) Locus of the roots of D2 (ϑ , n) on the (ϑ , n)
+plane for non-zonal perturbations with ϕ = 15◦ . The roots correspond
+to resonant interaction between waves with phase lines oriented at an
+angle ϑ with the y0 axis and non-zonal perturbations with mean flow
+wavenumber n. Thick solid (dashed) lines indicate whether the vorticity
+fluxes produced by the resonant waves are upgradient (downgradient).
+The radial grid interval in both panels is ∆n = 0.25.
+
+leading to a net positive contribution when integrated over
+all angles. Figure 4b, shows that this result is valid for
+larger mean flow wavenumbers as well.
+Consider now the case of a non-zonal perturbation
+(Fig. 4c). We observe that the angles for which the waves
+have significant positive or negative contributions to the
+vorticity flux feedback are roughly the same as in the case
+of zonal jets. In addition, the vorticity flux feedback factor
+decreases with the angle ϕ of the non-zonal perturbations
+(cf. (25)). As a result, zonal jet perturbations always produce larger vorticity fluxes compared to non-zonal perturbations and are therefore the most unstable in the limit
+β  1. Additionally, these results show that for β  1, the
+mechanism for structural instability of the non-zonal structures is the same as the mechanism for zonal jet formation,
+which is shearing of the eddies by the infinitesimal mean
+flow.
+
+9
+
+JOURNAL OF THE ATMOSPHERIC SCIENCES
+
+(a) 1
+
+A
+
+0.6
+
+d
+
+n
+
+0.8
+
+C
+B
+
+e
+c
+
+0.4
+
+(b) x 10−6
+
+0.2
+
+b
+
+0
+0
+
+15
+
+D
+30
+
+n = 0.25
+
+5
+
+45
+
+60
+
+ϕ
+
+n = 0.5
+
+0.01
+
+0
+
+F
+
+F
+
+90
+
+0.02
+
+2.5
+
+−2.5
+−5
+0
+
+75
+
+(c)
+
+0
+−0.01
+
+30
+
+60
+
+90
+
+120
+
+150
+
+−0.02
+0
+
+180
+
+ϑ
+
+(d)
+
+30
+
+60
+
+90
+
+120
+
+150
+
+180
+
+150
+
+180
+
+ϑ
+
+(e)
+
+n = 0.592
+
+n = 0.75
+
+0.02
+
+0.02
+
+F
+
+F
+
+0.01
+0
+
+0
+−0.01
+
+−0.02
+0
+
+30
+
+60
+
+90
+
+120
+
+150
+
+180
+
+ϑ
+
+−0.02
+0
+
+30
+
+60
+
+90
+
+120
+
+ϑ
+
+F IG . 7. (a) The curves separating the regions in the (n, ϕ) plane for which D2 has no roots (region D), 2 roots (region B) and four roots (regions
+A and C). Waves with ϑ corresponding to two out of the four roots of D2 found in region A produce upgradient fluxes. (b)-(d) The vorticity fluxes
+F as a function of the angle ϑ subtended by the phase lines of the waves and the y axis in the presence of a non-zonal perturbation with ϕ = 15◦
+at β = 200. The mean flow wavenumber is (b) n = 0.25 (in region D), (c) n = 0.5 (in region B), (d) n = 0.592 (in region A) and (e) n = 0.75 (in
+region A). The resonant angles (i.e. the roots of D2 ) are marked by upper (lower) triangles when the waves induce upgradient (downgradient) fluxes.
+Note that the scale in (b) is much smaller.
+
+b. Induced vorticity fluxes for β  1
+Consider first the emergence of non-zonal structures in
+the limit β  1. The contribution of each Fourier component of the forcing to the vorticity flux feedback F for the
+case of non-zonal structures at β = 200 is shown in Fig. 6a.
+In contrast to the cases with β  1 (or β = O(1), discussed
+in section 4c), there is only a small band of Fourier components that contribute significantly to the vorticity flux
+feedback, as indicated with the narrow tongues in Fig. 6a.
+The reason for this selectivity in the response is that for
+β  1 the components that produce appreciable fluxes, as
+seen from (23), are concentrated on the (ϑ , n) curves that
+satisfy D2 = 0 (shown in Fig. 6b) or equivalently for the
+(ϑ , n) that satisfy the resonant condition ωk + ωn = ωk+n
+(cf. (A9)). This is the resonant condition satisfied when a
+Rossby wave with wavevector k and frequency ωk forms a
+resonant triad with the non-zonal structure with wavevector
+n and frequency ωn . We concentrate our analysis to these
+‘resonant contributions’ because they dominate the vorticity
+flux feedback of non-zonal perturbations for β  1.
+Resonant triads do not occur for all mean flow perturbations n. For (n, ϕ) in region D of Fig. 7a, D2 has no
+roots and therefore there are no Fourier components with
+k = (cos ϑ , sin ϑ ) that form a resonant triad with the mean
+flow perturbation n and the vorticity flux feedback is deter-
+
+mined by the sum over the non-resonant contributions as
+illustrated in Fig. 7b. In region B of Fig. 7a, there are only
+two resonant angles ϑ . The resonant and non-resonant contribution for a typical case in region B is shown in Fig. 7c.
+Note that it is the resonant contributions that determine the
+vorticity flux feedback. However, they produce a negative
+vorticity flux feedback (a downgradient tendency), which
+is stabilizing, a result that holds for all (n, ϕ) in region B.
+In regions A and C, there exist four resonant angles ϑ
+which dominate the vorticity flux. In C all resonant contributions are stabilizing and therefore C is also a stable
+region. In region A, which at most extends to ϕ = 60◦
+(cf. Appendix B), two of the four resonances give positive contributions to fr (cf. Figs. 7d,e). Therefore only for
+(n, ϕ) in region A, does a destabilizing vorticity flux feedback occur. The largest destabilizing feedback occurs when
+the positively contributing resonances are near coalescence
+(i.e. as in Fig. 7d), which occurs for (n, ϕ) close to the
+curve separating regions A and B. The reason is that when
+the resonances are apart, as in Figs. 7c,e, the significant
+contributions come from near-resonant waves with angles
+within a band of O(1/β ) around the resonant angles and
+the integrated resonant contributions to the vorticity flux
+are O(1/β ). However, when the resonances are near coalescence, as for the case shown in Fig. 7d, the band of
+near-resonant waves contributing significantly increases
+
+10
+
+JOURNAL OF THE ATMOSPHERIC SCIENCES
+
+as the integrand assumes a double humped shape and, as
+shown in Appendix B,
+pthe destabilizing vorticity flux feedback becomes O(1/ β ). Note that as β → ∞, the width
+over which we have significant contributions diminishes
+and therefore fr → 0 unless an infinite amount of energy
+is injected exactly at the resonant angles (as is assumed in
+modulational instability studies).
+It can be shown (cf. Appendix B) that the resonant contribution for β  1 asymptotically approaches
+(R)
+
+fr
+
+π Nj ηj
+1 Nr
+,
+=p ∑
+1/2
+β j=1 2 D0,1/2
+j |λ j |
+
+(26)
+
+where the subscript j functions at the j-th out of the Nr
+roots of D2 and λ = ∂ϑ2 ϑ D2 . The values N j , D0, j , λ j are
+all O(1), whereas η j is always positive and the only quantity that has dependence on β . It is O(1) only for (n, ϕ)
+just above the separating boundaries of regions A and B
+p
+(R)
+and regions B and D in Fig. 7a yielding fr ∼ 1/ β and
+p
+(R)
+is O(1/ β ) elsewhere yielding fr ∼ 1/β , as also qualitatively described above. The sign of the j-th resonant
+contribution to the total vorticity flux feedback depends
+only on the sign of N j . For (n, ϕ) just above the boundary
+separating regions B and D, N j < 0 and fr attains its minimum value, which corresponds to the largest stabilizing
+tendency. This is illustrated in Fig. 8, showing the flux
+feedback fr as a function of n. For (n, ϕ) just above the
+boundary separating regions A and B, coalescence of the
+two positive contributing resonances occurs and fr attains
+its maximum value, which corresponds to the largest destabilizing tendency. For small mean flow wavenumbers n
+(corresponding to region D) the feedback factor is negative
+and O(β −2 ) due to the absence of resonant contributions.
+An interesting exception to the results discussed above
+occurs for the important case of zonal jet perturbations
+(ϕ = 0◦ ). In that case, N j = 0 in (26) as the roots of
+D2 and N coincide and the resonant contribution (26) is
+exactly zero. As shown in Fig. 9, positive vorticity flux
+feedback is obtained from a broad band of the non-resonant
+Fourier components with γ = ϑ ≈ 0◦ , corresponding to
+waves with lines of constant phase nearly aligned with
+the y axis (remember that for smaller β the region that
+produces destabilizing fluxes extends up to |ϑ | ≈ 30◦ ). For
+large β the vorticity flux fr is always destabilizing for all
+zonal jet perturbations with n < 1, as shown by (B18) and
+Fig. 8, and the largest destabilizing vorticity flux, fr,max =
+(2 + µ)β −2 , is obtained for jets with the largest allowed
+scale. The reason for the weak fluxes and the preference
+for the emergence of jets of the largest scale in this limit is
+understood by noting that the stochastically forced eddies
+for β  1 propagate with O(β ) group velocities. Therefore
+in contrast to the limit of β  1 in which they evolve
+according to their local shear, the forced waves will respond
+to the integrated shear of the sinusoidal perturbation over
+their large propagation extend, which will be very weak.
+
+2
+1.5
+1
+
+β 2 f r for ϕ = 0 ◦
+
+0.5
+0
+
+β f r for ϕ = 15 ◦
+
+−0.5
+−1
+0
+
+0.2
+
+0.4
+
+n
+
+0.6
+
+0.8
+
+1
+
+F IG . 8. Vorticity flux feedback fr as a function of n for β = 200. Positive (negative) values correspond to upgradient (downgradient) fluxes.
+Shown is fr for ϕ = 0◦ (multiplied by β 2 ) and for ϕ = 15◦ (multiplied by
+β ). Also shown are the asymptotic expressions (B18) for ϕ = 0◦ and (26)
+for ϕ = 15◦ (dash-dot). The crosses mark the mean flow wavenumbers
+n = 0.43 and n = 0.59 that separate regions A, B and D in Fig. 7a for
+ϕ = 15◦ .
+
+90
+120
+
+60
+
+150
+
+30
+
+180
+
+0
+
+ϕ = 0◦
+F IG . 9. Contours of F (ϑ , n) in a (ϑ , n) polar plot (n radial and
+ϑ azimuthal) for zonal jet perturbations (ϕ = 0◦ ) and β = 100. Solid
+(dashed) lines indicate contours with positive (negative) values, the
+contour interval is 2 × 10−4 , the thick line is the zero contour and the
+radial grid interval is ∆n = 0.25.
+
+To summarize: Although zonal jets and most non-zonal
+perturbations induce fluxes that decay as 1/β 2 for large
+β , resonant and near resonant interactions arrest the decay rate of certain non-zonal perturbations
+p by a factor of
+O(β 3/2 ) leading to fluxes that decay as 1/ β . This makes
+the non-zonal perturbations to be the most S3T unstable
+perturbations for β  1. Also in contrast to β  1 when fr
+is positive for all n and ϕ (cf. Fig. 5), the vorticity flux feedback is negative for (n, ϕ) in regions B and D of Fig. 7a.
+As a result, the mean flows that produce negative fluxes and
+are by necessity S3T stable are interestingly in the interior
+of the dumbbell shown in Fig. 10. The largest destabilizing fluxes occur in the narrow region adjacent to the outer
+boundaries of the dumbbell shape, which demarcates the
+boundary separating regions A and B. Because of the selectivity of the resonances these results do not depend on
+the forcing anisotropy as we will see in the next section.
+
+JOURNAL OF THE ATMOSPHERIC SCIENCES
+
+0
+30
+
+30
+
+60
+
+60
+
+90
+
+90
+
+60
+
+60
+
+30
+
+30
+0
+
+F IG . 10. Contours of the feedback factor fr in a (ϕ, n) polar plot
+(n radial and ϕ azimuthal) for the case β = 200. Shown are contours
+of positive values, so the white area corresponds to negative values
+indicating downgradient vorticity fluxes. The contour interval is 10−3
+and the radial grid interval is ∆n = 0.25. Note that the feedback factor is
+always negative (downgradient fluxes) for ϕ ≥ 60◦ (cf. Appendix B).
+
+c. Induced vorticity fluxes for β ∼ O(1)
+We have seen that in the singular case of isotropic forcing the only process available for the emergence of mean
+flows is the fourth order antidiffusive vorticity feedback
+induced by the variation of the group velocity of the forced
+eddies due to the mean flow shear. For β  1, the waves interact with the local shear producing fluxes proportional to
+β 2 d4 δU/dy4 . As β increases this growth is reduced since
+the waves interact with an effective integral shear within
+their propagation extent which is weak and eventually, as
+we have seen in the previous section, for β  1 the fluxes
+decay as β −2 . Therefore, the fluxes attain their maximum
+at an intermediate value of β . This occurs for β ≈ 3.5, as
+can be seen in Fig. 11a where the maximum fr over all
+(n, ϕ) is shown. It will be demonstrated in the next section
+that this intermediate β maximizes the S3T instability for
+all forcing spectra.
+While the eddy–mean flow interaction of both zonal
+and non-zonal perturbations is dominated by the same dynamics when β  1, for β  1 the eddy–non-zonal flow
+interaction is dominated by resonances which do not occur
+for zonal flow perturbations. The resonant interactions lead
+to the possibility of arrested decay of the vorticity flux at
+the rates of β −1/2 and β −1 , instead of the β −2 decay in
+the absence of resonances. The vorticity flux attains its
+maximum at an intermediate value β ∼ O(1) for non-zonal
+mean flows as well, which is nonetheless large enough
+for the resonant contributions to reinforce the contribution from the shearing mechanism. Figure 12 shows the
+contribution to the vorticity flux feedback induced by the
+
+11
+
+various wave components that are excited for two values
+of β (β = 2 and β = 12) in the case of zonal jets (ϕ = 0◦ )
+and non-zonal perturbations (ϕ = 15◦ ). As β increases,
+the resonant contributions start playing an important role
+for non-zonal perturbations as there is enhanced contribution to the vorticity flux feedback in the vicinity of the
+D2 = 0 curves, indicated by the white dashed lines. These
+resonant contributions enhance the vorticity fluxes relative to the fluxes obtained for zonal jets and render the
+non-zonal structures more unstable compared to zonal jets
+when β & 3.5 (Bakas and Ioannou 2014).
+5. Effect of anisotropic forcing on S3T instability
+In this section we investigate the effect of the anisotropy
+of the excitation on the S3T instability. The maximum
+vorticity flux feedback fr for three cases of anisotropy (µ =
+±1 and µ = 1/4) and for isotropic forcing (µ = 0) is shown
+in Fig. 11a. For β  1, the main contribution to fr for zonal
+jet perturbations, comes from forced waves with nearly
+meridional constant phase lines (angles near ϑ = γ = 0◦ ,
+cf. Fig. 9). Therefore, the vorticity flux feedback fr , attains
+larger (smaller) values for a stochastic forcing that injects
+more (less) power in waves with angles near γ = 0◦ , that is
+for positive (negative) anisotropicity factor µ (cf. Fig. 2).
+The maximum value of fr over all wavenumbers n depends
+in this case linearly on µ (cf. Appendix B),
+fr,max = (2 + µ)β −2 + O(β −4 ) .
+
+(27)
+
+For non-zonal perturbations, the main contribution comes
+from forced waves satisfying the resonant condition ωk +
+ωn = ωk+n and fr depends only on the sum of the resonant
+contributions. The sign of N j that determines whether
+the resonant contribution is positive or negative (cf. (26)),
+depends only on the sign of sin ϑ j + n/2 and not on the
+anisotropicity factor µ (cf. (A7c)). The anisotropicity affects only the magnitude of N j . For any 0 < ϕ < 90◦
+it is found that the resonances giving positive contribution occur at angles ϑ j for which |γ j | = |ϑ j − ϕ| < 45◦ . A
+stochastic excitation, which injects more power near γ = 0◦
+(µ > 0) will give larger positive resonant contributions and
+therefore fr increases with µ. However, the effect on the
+maximum vorticity feedback is weak, as the spectral selectivity of the resonances renders the characteristics of the
+most unstable non-zonal structure independent of the spectrum of the forcing. That is, the (n, ϕ) that correspond to
+the maximum fr asymptotes to n ≈ 0.5, ϕ ≈ 10◦ (marked
+with star in Fig. 7a) as β → ∞, a result that is very weakly
+dependent on µ (cf. Figs. 11b,c).
+For β  1, the characteristics of the S3T instability are
+dependent on the anisotropy of the stochastic forcing. The
+vorticity flux feedback is at leading order proportional to
+µ:
+
+1
+fr = µ n2 1 − n2 cos(2ϕ) + O(β 2 ) .
+(28)
+8
+
+12
+
+JOURNAL OF THE ATMOSPHERIC SCIENCES
+
+(a)
+−1
+
+10
+
+µ=1
+
+β −1/2
+
+−2
+
+fr
+
+10
+
+µ = −1
+
+µ = 1/4
+
+−3
+
+10
+
+β2
+
+β−2
+
+−4
+
+µ=0
+
+10
+
+−2
+
+−1
+
+10
+
+0
+
+10
+
+1
+
+10
+
+2
+
+10
+
+(c) 90
+µ = −1
+
+0.75
+
+ϕ
+
+60
+
+n
+
+10
+
+β
+
+(b) 1
+0.5
+
+µ=0
+30
+
+0.25
+
+3
+
+10
+
+µ = 0 µ = 1/4 µ = 1
+
+0 −2
+10
+
+−1
+
+10
+
+0
+
+10
+
+1
+
+10
+
+µ = 1/4
+µ=1
+
+µ = −1
+2
+
+10
+
+0 −2
+10
+
+3
+
+10
+
+−1
+
+10
+
+0
+
+10
+
+β
+
+1
+
+10
+
+2
+
+10
+
+3
+
+10
+
+β
+
+F IG . 11. The maximum value of fr over all wavenumbers n for zonal jets (solid), and the maximum value of fr over all wavenumbers n and
+angles ϕ 6= 0◦ for non-zonal perturbations (dashed) as a function of the planetary vorticity, β for the three forcing covariance spectra seen in Fig. 2
+and for µ = 1/4. Also shown are the asymptotic expressions (B4), (B6) and (B19) (dash-dot) and the β −1/2 slope (dotted). For µ = −1 zonal jet
+perturbations are stable for β < √
+1.67. (b) The mean flow wavenumber n and (c) the angle ϕ for which the maximum value of fr (shown in (a)) is
+attained. The asymptotes n = 1/ 2 (for β  1) and n = 0.5 (for β  1) are shown in (b) (dash-dot) as well as the asymptote ϕ = 10◦ (for β  1)
+is also shown in (c) (dash-dot).
+
+(a)
+
+90
+120
+
+(b)
+
+60
+
+150
+
+30
+
+180
+
+0
+
+180
+
+(d)
+
+60
+
+150
+
+30
+
+180
+
+0
+90
+120
+
+60
+
+150
+
+0
+
+β = 2 , ϕ = 15 ◦
+
+30
+
+β = 12 , ϕ = 0 ◦
+
+90
+120
+
+60
+
+150
+
+β = 2 , ϕ = 0◦
+
+(c)
+
+90
+120
+
+30
+
+180
+
+0
+
+β = 12 , ϕ = 15 ◦
+
+F IG . 12. Contours of the F (ϑ , n) in a (ϑ , n) polar plot (n radial and ϑ azimuthal). Shown is (a) F for a zonal jet perturbation (ϕ = 0◦ ) and (c)
+a non-zonal perturbation with ϕ = 15◦ when β = 2. Panels (b) and (d) are the same as (a) and (c) for the case β = 12. In all panels, solid (dashed)
+lines indicate contours with positive (negative) values, the contour interval is 2 × 10−3 , the thick lines indicate the zero contour and the radial grid
+interval is ∆n = 0.25. White dashed lines in (c), (d) correspond to the locus of the roots of D2 (ϑ , n) on the (ϑ , n) plane.
+
+JOURNAL OF THE ATMOSPHERIC SCIENCES
+
+13
+
+This shows that there can be upgradient vorticity fluxes
+leading to S3T instability for β = 0 as long as µ cos(2ϕ) >
+0. For µ > 0, the maximum fr = µ/32 is achieved by zonal
+jets (ϕ = 0◦ ), while for µ < 0 any non-zonal perturbation
+with ϕ > 45◦ can grow, with the maximum fr = |µ|/32
+achieved for ϕ = 90◦ when the non-zonal perturbations
+assume the form of jets in the y direction (meridional jets)
+(cf. Fig. 11c).
+It is worth noting that Srinivasan and Young (2014) also
+find that that the eddy momentum fluxes are proportional
+to µ when a constant shear flow is stochastically forced
+with power spectrum (11). This result is intriguing as the
+two studies address two different physical regimes. This
+work treats the limit appropriate for emerging structures
+in which the shear time is far larger than the dissipation
+time-scale with the fluxes determined by the instantaneous
+response of the eddies on the shear. Srinivasan and Young
+(2014) study the opposite limit in which the mean flow
+shear is finite and the shear time is much shorter than the
+dissipation time-scale with the fluxes determined by the
+integrated influence of the shear on the eddies over their
+whole life cycle, which may include complex effects such
+as reflection and absorption at critical levels.
+In summary:
+
+marginal stability and the jet scale predicted at marginal
+stability does not characterize the scale of the actual jets.
+S3T theory predicts that the emergent jets through a series
+of mergers usually equilibrate at a much larger scale (Farrell and Ioannou 2007; Parker and Krommes 2014). These
+predictions of the S3T theory have been shown to be accurately reflected in sample nonlinear simulations (Srinivasan
+and Young 2012; Constantinou et al. 2014).
+Although in this work we examined the statistical dynamical instability of a homogeneous state of turbulence in
+the presence of forcing and dissipation, the results bear a
+relation to the deterministic barotropic hydrodynamic instability of non-zonal flows on a β -plane in the absence of
+forcing and dissipation. Parker and Krommes (2015) have
+recently shown that in the inviscid limit the modulational instability of a Rossby wave ψp = A cos(p · x − ωpt) (Lorenz
+1972; Gill 1974; Connaughton et al. 2010) and the S3T
+instability of a homogeneous turbulent state with equilibrium vorticity power spectrum corresponding to the
+Rossby wave: Ĉe (k) = (2π)2 p4 |A|2 [δ (k − p) + δ (k + p)]
+obey the same stability condition. This equivalence is
+formal because physically the two problems are very different. In the problem of Lorenz (1972), the stability of a
+basic state in the form of a coherent Rossby plane wave
+a. The S3T instability of the homogeneous state is a is studied, while S3T addresses the statistical stability of
+an incoherent homogeneous state with the power spectrum
+monotonically increasing function of µ for all β .
+of the Rossby wave. In that sense, as noted also by Parker
+b. The forced waves that contribute most to the instabil- and Krommes (2015), S3T stability analysis embeds the
+ity are structures with small γ, i.e., waves with phase modulational instability results into a more general physlines nearly aligned with the y axis, as in Fig. 2a.
+ical framework. In Appendix C we extend the result of
+c. The anisotropy of the excitation affects prominently Parker and Krommes (2015) and show the formal equivathe S3T stability of the homogeneous state only for lence between the modulational instability of any solution
+of the barotropic equation, which may be in general time
+β . 3.5.
+dependent but has stationary power spectrum, with the
+S3T instability of the homogeneous state with the same
+6. Discussion
+power spectrum. Such a nonlinear solution of the inviscid
+In this work we addressed the dynamics underlying the barotropic vorticity equations is for example a superposionset of the S3T instability leading to the formation of tion of any number of Rossby waves:
+large scale structure but not the nonlinear development
+N
+and equilibration of the instability. The emergent strucψ = ∑ A j cos(p j · x − ωp j t) ,
+(29)
+ture may be susceptible to either hydrodynamic or struc|
+{z
+}
+j=1
+tural secondary instabilities as it reaches finite amplitude
+ψp j
+|p j |=p
+(cf. Farrell and Ioannou (2003, 2007); Parker and Krommes
+(2014) for zonal jets and Bakas and Ioannou (2014) for all with the same total wavenumber, |p j | = p, that forms
+non-zonal flows). For example, the most unstable jet struc- a non-dispersive structure moving westwards (cf. Apture for marginally unstable parameters is at the scale of pendix C). If we assume a zonal jet perturbation superthe forcing L f (for small β maximum instability occurs imposed on this nonlinear solution, then the results in this
+at a scale slightly larger than√the forcing scale L f , for work show further that the dynamics underlying the instaisotropic forcing, and close to 2 L f , for anisotropic forc- bility of this structure can be interpreted in the limit of
+ing4 while for larger β maximum instability occurs at about β  1 as shearing of the finite amplitude solution by the
+2L f (cf. Fig. 11b)). Most geophysical flows are far from weak shear of the jet perturbation.
+7. Conclusions
+4 The n that produces maximum instability has a non-uniform limit as
+µ → 0 , β → 0 because isotropic forcing (µ = 0) is singular in that the
+S3T homogeneous equilibrium is always stable for β = 0.
+
+The mechanism for formation of coherent structures
+in a barotropic beta-plane under a spatially homogeneous
+
+14
+
+JOURNAL OF THE ATMOSPHERIC SCIENCES
+
+and temporally delta correlated stochastic forcing was examined in this work within the framework of Stochastic
+Structural Stability Theory (S3T). Within this framework, a
+second order closure for the dynamics of the flow statistics
+is obtained by ignoring or parameterizing the eddy–eddy
+nonlinearity. The resulting deterministic system for the
+joint evolution of the coherent flow and of the second order
+turbulent eddy covariance admits statistical equilibria.
+For a spatially homogeneous forcing covariance, a homogeneous state with no mean coherent structures is such an
+equilibrium solution of the S3T dynamical system. When
+a critical energy input rate of the forcing is exceeded,
+this homogeneous equilibrium is unstable and propagating non-zonal coherent structures and/or stationary zonal
+jets emerge in agreement with direct numerical simulations.
+In order to identify the processes that lead to the formation
+of coherent structures, the vorticity fluxes induced by a
+plane wave mean flow, which is the eigenfunction of the
+linearized S3T system around the homogeneous equilibrium, were calculated close to the bifurcation point and
+closed form asymptotic expressions for these fluxes were
+obtained. Upgradient fluxes in this limit are consistent with
+S3T instability and coherent structure formation.
+The induced fluxes were calculated in a rotated frame of
+reference, in which the plane wave mean flow corresponds
+to a zonal jet evolving in a beta-plane with a non-meridional
+planetary vorticity gradient. This was done because in this
+rotated frame of reference the intuition gained by previous studies for the eddy–mean flow dynamics underlying
+zonal jet formation can be utilized to clarify the dynamics underlying non-zonal wave formation, or formation of
+zonal jets when the effect of topography is equivalent to a
+non-meridional planetary vorticity gradient.
+In the limit of a weak planetary vorticity gradient (β 
+1), the eddy–mean flow dynamics are similar for both zonal
+jets and non-zonal structures. The stochastically forced eddies that propagate with low small group velocities in this
+limit, are rapidly dissipated as they are sheared over by the
+infinitesimal mean flow. Their effect on the mean flow is
+therefore determined at leading order by the instantaneous,
+with respect to the shear time scale, change in their momentum fluxes and to second order by the instantaneous change
+in their group velocity. The waves with constant phase lines
+that form angles |ϑ | < 30◦ with the meridional direction
+instantaneously surrender momentum to the mean flow and
+lead to upgradient fluxes that reinforce the mean flow for
+an anisotropic forcing. For an isotropic forcing this leading
+order effect produces no net fluxes when integrated over all
+forced waves and the instability is controlled by the second
+order effect that the instantaneous change of the waves’s
+group velocity has on the momentum fluxes. In this case,
+the group velocity of waves that form angles |ϑ | > 30◦
+with the meridional direction is instantaneously increased
+(decreased) for waves propagating northward (southward)
+
+due to refraction. The difference in momentum fluxes resulting from this change in group velocity is positive in
+the region of their excitation leading to upgradient fluxes.
+As a result, the anisotropy of the forcing has a significant
+effect on the induced fluxes and the S3T instability in this
+limit. In any case, the effect of the eddies on the mean
+flow due to shearing is larger for zonal jets compared to
+non-zonal perturbations and consequently zonal jets are
+more unstable in this limit.
+In the limit of strong planetary vorticity gradient β  1,
+the eddy–mean flow dynamics producing upgradient vorticity fluxes are different for zonal and non-zonal perturbations, but in both cases the fluxes decrease with β . Zonal
+jets continue to induce upgradient vorticity fluxes through
+wave shearing which decrease as O(β −2 )  1. The reason is that in this limit the waves that can propagate in
+the meridional direction are influenced by the integrated
+shear over the sinusoidal flow, which is very small. However, the non-zonal mean flow perturbations can sustain
+fluxes that decrease only as O(β −1/2 ). The reason for
+these larger fluxes is that resonant and near resonant interactions dominate the dynamics in this limit (cf. section
+3.26 in Pedlosky (1992)). Resonance occurs between the
+emerging structure, which close to the stability boundary
+satisfies the Rossby wave dispersion, and the stochastically
+forced waves satisfying the Rossby wave frequency resonant condition. The resonant interactions which occur
+for non-zonal structures may produce upgradient or downgradient net fluxes and it was found that upgradient fluxes
+cannot be induced by non-zonal flows with wavenumbers
+in a region of wavenumber space in the shape of a dumbbell.
+Maximum upgradient fluxes occur for both zonal and nonzonal flows for β ∼ O(1). In this regime, shearing of the
+forced waves by the infinitesimal non-zonal flows is reinforced by fluxes from the resonant interactions, enhancing
+the vorticity fluxes and rendering the non-zonal structures
+more unstable compared to zonal jets when β & 3.5. In
+contrast to the limit β  1, these results were found to be
+insensitive to the anisotropy of the forcing.
+Finally, the relation of the S3T instability and modulational instability of finite-amplitude Rossby waves was
+discussed. Parker and Krommes (2015) showed that the
+growth rates obtained when three Rossby waves interact
+with the primary finite-amplitude Rossby wave, match exactly in the inviscid limit the growth rates obtained by
+the S3T stability analysis for the homogeneous equilibrium with the vorticity covariance produced by the primary
+Rossby wave. It was shown in this work that this agreement
+can be found for more general cases (for example when
+the covariance is produced by any linear combination of
+Rossby waves with the same total wavenumber). Such an
+agreement occurs because retaining only the interaction between four waves in modulational instability is equivalent
+to neglecting the eddy–eddy nonlinearity in S3T. The equivalence of the dynamics underlying modulational and S3T
+
+15
+
+JOURNAL OF THE ATMOSPHERIC SCIENCES
+
+instability in this case, shows that S3T stability analysis
+generalizes modulational instability analysis in a stochastically forced and dissipated flow. However, contrary to
+modulational instability, the underlying S3T dynamics can
+capture both the emergence of large-scale structure and its
+equilibration. In addition, the dynamics underlying modulational instability can be interpreted under the alternative
+eddy–mean flow view adopted in this work.
+
+eigenfunction is
+0 0
+
+δ vζ
+
+
+
+
+1 −1
+−1
+0
+0
+= (∆a ∂xa +∆b ∂x )δ C̃
+b
+2
+xa =xb
+h
+i
+in(y0a +y0b )/2
+= in e
+×
+xa =xb
+
+×
+
++∞
+ZZ
+
+−∞
++∞
+ZZ
+
+= δ Ũ
+
+Acknowledgments. Nikolaos Bakas is supported by the
+AXA Research Fund and Navid Constantinou acknowledges the support of the Alexander S. Onassis Public Benefit Foundation. Nikolaos Bakas would also like to thank
+Izumi Saito for fruitful discussions on the results of this
+work.
+
+−∞
+
+
+(h)
+ik·(xa −xb )
+Ĉ
+(k)
+e
+2 k2 n
+k+
+−
+xa =x
+
+b
+
+d2 k in kx0 ky0 (h)
+Ĉn (k) ≡ ε f (σ ) δ Ũ ,
+2 k2
+(2π)2 k+
+−
+
++∞
+ZZ
+
+Eddy vorticity flux response to a mean flow
+perturbation
+In this appendix we study the eigenvalue problem (15)
+which determines the S3T stability of jet perturbations to
+the homogeneous turbulent equilibrium (9) in the rotated
+frame of reference. The eigenfunction corresponding to
+eigenvalue σ has the spatial structure:
+δ Ũ = einy ,
+
+(A1a)
+
+0
+0
+(h)
+δ C̃ = C̃n (xa − xb ) ein(ya +yb )/2 .
+
+(A1b)
+
+The power spectrum of the homogeneous part of the covari(h)
+ance eigenfunction, C̃n (xa −xb ), is determined from (15b)
+to be:
+
+(h)
+
+kx0 ky0
+
+which is proportional to δ Ũ. By using the symmetry Ce (xa , xb ) = Ce (xb , xa ), which implies that Ĉe (k) =
+Ĉe (−k), and by changing the integration variable in (A3)
+to k − n/2, we obtain the following expression for the
+feedback factor, f :
+
+f (σ ) =
+
+Ĉn (k) =
+
+d k
+(2π)2
+
+
+
+(A3)
+
+APPENDIX A
+
+0
+
+2
+
+
+ 
+i ε kx0  2 2
+2
+2
+k− k+ − n2 Q̂+ − k+
+k−
+− n2 Q̂− ×
+2
+
+2 2
+× (σ + 2)k+
+k− + 2inβ cos ϕ kx0 ky0 −
+i−1
+
+2
+2
+− inβ sin ϕ k0 x − k0 y + n2 /4
+,
+(A2)
+
+with k± = k ± n/2, n = (0, n), k = |k|, k± = |k± |, Q̂0± =
+Q̂0 (k± ) and Q̂0 the Fourier transform of the forcing covariance (19). The vorticity flux, δ hv0 ζ 0 i, induced by this
+
+i
+dkx0 dky0 h 0 2 0
+2nkx (ky + n/2) k2 − n2 ×
+2
+(2π)
+−∞
+
+× (σ + 2)ks2 k2 + 2inβ cos ϕ kx0 (ky0 + n/2)
+i−1 Q̂0 (k0 , k0 )
+
+x y
+2
+2
+×
+− inβ sin ϕ kx0 − ky0 − nky0
+,
+2
+(A4)
+
+with ks = k + n and ks = |ks |.
+Introducing (A3) into (15a) we obtain the stability equation (20) that determines the eigenvalue σ , which can
+be shown to be exactly the stability equation obtained
+by Bakas and Ioannou (2014). The stability equation can
+be written in terms of the real and imaginary part of σ as:
+σr = −1 + ε Re[ f (σ )] ,
+σi = β sin ϕ/n + ε Im[ f (σ )] .
+
+(A5a)
+(A5b)
+
+The real part of the vorticity flux feedback Re[ f (σ )] contributes to the growth rate of the mean flow and the imaginary part Im[ f (σ )] determines the departure of the phase
+speed of the mean flow from the Rossby wave frequency
+−β sin ϕ/n. For β  1 the first term in (A5b) is O(β )
+while for marginally unstable eigenfunctions Im( f ) is at
+most of O(1/β ). As it will be shown, the critical ε increases as β 1/2 or as β and therefore the frequency of the
+marginally unstable waves is approximately equal to the
+Rossby phase frequency.
+We focus on the real part of the feedback gain, Re( f ),
+near marginal stability (σr ≈ 0). Setting σ = −iωn =
+β sin ϕ/n in (A5a) for the marginally unstable structures
+and for the ring forcing in the rotated frame, Q̂0 (kx0 , ky0 ) =
+
+16
+
+JOURNAL OF THE ATMOSPHERIC SCIENCES
+
+4π δ (k − 1) G (ϑ − ϕ), fr ≡ Re [ f (−iωn )] takes the form:
+ Z2π
+fr = Re
+0
+
+N
+dϑ
+D0 + iβ D2
+
+Z2π
+
+
+=
+
+0
+
+N D0
+dϑ ,
+D02 + β 2 D22
+
+a. Case β  1
+When β  1 and for n satisfying β /n  1, we expand
+F (ϑ , n) = F(ϑ , n) + F(180◦ + ϑ , n) in (22) in powers of
+β . Since F is a function of β 2 we have the expansion:
+
+(A6)
+with
+D0 (ϑ , n) = 2(1 + n + 2n sin ϑ ) ,
+2
+
+with F2 = 12 ∂β2β F
+(A7a)
+
+D2 (ϑ , n) = (1 + n2 + 2n sin ϑ ) sin ϕ/n+
++ n2 cos (ϑ − ϕ) + n sin (2ϑ − ϕ) , (A7b)
+
+1
+N (ϑ , n) = n 1 − n2 cos2 ϑ (sin ϑ + n/2) G (ϑ − ϕ) .
+π
+(A7c)
+Positive values of fr indicate that the vorticity flux induced
+by the stochastic forcing at marginal stability on the mean
+flow with wavenumber n and non-zonality parameter ϕ is
+upgradient, and the marginal energy input rate is εc = 1/ fr .
+Note that F(ϑ , n), which is defined in (23) as the r.h.s.
+of (A6), is unchanged when the angle ϕ is shifted by 180◦
+(ϕ → 180◦ + ϕ) or when there is a simultaneous shift of
+ϕ → 180◦ − ϕ and ϑ → 180◦ − ϑ . As a result, it suffices
+to only consider cases with 0 ≤ ϕ ≤ 90◦ .
+As Parker and Krommes (2015) noted, the stability equation (20) can be written in coordinate independent form
+as:
+σ + 1 + iωn =
++∞
+ZZ
+
+=ε
+−∞
+
+F = F0 + β 2 F2 + O(β 4 ) ,
+
+Q̂(k)
+|k × n|2 (ks2 − k2 )(k2 − n2 )
+d2 k
+
+
+,
+2
+4
+2
+(2π) k ks n2 (σ + 2) − i (ωk − ωk+n )
+2
+(A8)
+
+(A9)
+
+and the roots of D2 on the (ϑ , n) plane satisfy the resonant
+condition:
+ωn + ωk = ωk+n .
+(A10)
+
+APPENDIX B
+Asymptotic expressions for the induced vorticity flux
+feedback
+In this Appendix we calculate in closed form asymptotic
+expressions for the vorticity flux feedback induced by a
+mean flow perturbation in the form of a zonal jet in the
+rotated frame of reference with wavenumber n, for β  1
+and β  1.
+
+. The leading order term is:
+
+
+n2 1 − n2
+1 + n2 − 4 sin2 ϑ
+cos2 ϑ ,
+G (ϑ − ϕ)
+F0 =
+π
+(1 + n2 )2 − 4n2 sin2 ϑ
+(B2)
+due to the property G (180◦ + ϑ ) = G (ϑ ). Positive values
+of F0 indicate that the stochastically forced waves with
+phase lines inclined at angle ϑ with respect to the y0 direction, induce upgradient vorticity fluxes to a mean flow
+with wavenumber n when β = 0. Given that n < 1 and
+G > 0, F0 is positive for any forcing distribution, only
+in the sector shown in Fig. 4a in which 4 sin2 ϑ < 1 + n2 .
+Specifically, in the absence of β all waves with |ϑ | ≤ 30◦
+reinforce mean flows with n < 1. Note that the condition 4 sin2 ϑ < 1 + n2 is also the necessary condition for
+modulational instability of a Rossby wave with wavevector components (cos ϑ , sin ϑ ) to any mean flow (zonal or
+non-zonal) of total wavenumber n for β  1 (Gill 1974).
+The total vorticity flux feedback fr for G (ϑ − ϕ) =
+1 + µ cos [2(ϑ − ϕ)] is at leading order:
+fr =
+
+
+µ 2
+n 1 − n2 cos(2ϕ) + O(β 2 ) ,
+8
+
+(B3)
+
+which is proportional to the anisotropy factor, µ. The
+maximum feedback factor is in this case
+
+where ωk is the Rossby frequency of a wave with wavenumber k (defined in (21)). As a result, in coordinate free form
+β D2 (ϑ , n) = ks2 (−ωn − ωk + ωk+n ) ,
+
+β =0
+
+(B1)
+
+fr,max =
+
+|µ|
+,
+32
+
+(B4)
+
+√
+and is achieved for mean flows with n = 1/ 2. This maximum is achieved for zonal jets (ϕ = 0◦ ) if µ > 0 and for
+meridional jets (ϕ = 90◦ ) if µ < 0. This implies that for
+β  1 the first structures to become unstable are zonal jets
+if µ > 0 and meridional jets if µ < 0, as shown in Fig. 11c.
+For isotropic forcing (µ = 0), the leading order term is
+zero and fr depends quadratically on β :
+fr = β 2
+
+
+n4 
+2 + cos(2ϕ) + O(β 4 ) for n < 1,
+64
+
+(B5)
+
+producing upgradient fluxes for n < 1. Note that for the
+R
+delta function ring forcing 02π F2 dϑ is discontinuous at
+n = 1, with positive values for n = 1− and negative values
+for n = 1+ . The accuracy of these asymptotic expressions
+is shown in Fig. B13.
+
+17
+
+JOURNAL OF THE ATMOSPHERIC SCIENCES
+
+µ=0
+
+(a) 10
+
+−1
+
+µ = 1/4
+
+(b) 10
+
+−1
+
+β−1
+
+β −1/2
+
+β−1
+
+β −1/2
+−2
+
+−2
+
+10
+
+10
+
+fr
+
+fr
+
+β2
+−3
+
+10
+
+−4
+
+−3
+
+10
+
+−4
+
+10
+
+10
+
+−1
+
+0
+
+10
+
+1
+
+10
+
+2
+
+10
+
+10
+
+3
+
+10
+
+4
+
+−1
+
+10
+
+10
+
+0
+
+10
+
+β
+
+1
+
+2
+
+10
+
+3
+
+10
+
+10
+
+4
+
+10
+
+β
+
+F IG . B13. Feedback factor fr for a non-zonal perturbation with n = 0.4751 and ϕ = 10◦ (which belongs in region A of Fig. 7a) (solid lines) in
+the case of a forcing covariance with (a) µ = 0 and (b) µ = 1/4. Also shown are asymptotic expressions for β  1 ((B6) in (a) and (B4) in (b)) and
+the resonant contribution (26) for β  1 (dash-dot). For β  1, expression (B12) is also plotted (dashed). It can be seen that only (26) can captures
+the β −1/2 decrease of fr .
+
+The maximum feedback factor, shown in Fig. 11a, is
+fr,max =
+
+3β 2
+
+,
+(B6)
+64
+and is attained by zonal jets (ϕ = 0◦ ) with wavenumber
+n → 1− as β → 0, a result that was previously derived
+by Srinivasan and Young (2012). The accuracy of (B4)
+and (B6) extends to β ≈ 0.1, as shown in Fig. 11a.
+b. Case β  1
+When β  1, we write (A6) in the form:
+I
+fr = 2 , with I =
+β
+
+Z2π
+
+Fχ (ϑ , n) dϑ ,
+
+(B7)
+
+0
+
+1
+(R)
+Ij =
+
+where
+Fχ (ϑ , n) =
+
+χ
+
+N D0
+,
+χ 2 D02 + D22
+
+(B8)
+
+and χ ≡ 1/β . When D2 ∼ O(1) for all angles ϑ , then the
+feedback factor is fr ∼ O(β −2 ). However, if D2 ∼ O(β −1 )
+for some angle ϑ , then as we will show in this Appendix,
+fr decays as O(β −1 ) or as O(β −1/2 ). This is illustrated in
+Fig. B13 showing the feedback factor fr as a function of β
+in cases in which D2 vanishes.
+D2 can have at most 4 roots, 0◦ ≤ ϑ j ≤ 360◦ ( j =
+1, 2, 3, 4), for any given (n, ϕ). At these angles the resonance condition (A10) is satisfied. To calculate asymptotic
+approximations to the integral I, we split the range of integration to a small range close to the roots of D2 for which
+we have resonance, I (R) , and to a range away from the roots
+of D2 , I (NR) :
+
+
+ϑ j −δ ϑ
+
+Nr
+j=1
+
+ϑ j +δ ϑ
+
+Z
+
+
+I= ∑
+
+Z
+
+Fχ (ϑ , n) dϑ +
+|
+
+
+Fχ (ϑ , n) dϑ  ,
+
+ϑ j −δ ϑ
+
+ϑ j−1 +δ ϑ
+
+{z
+
+(NR)
+
+Ij
+
+where Nr is the total number of the roots of D2 and
+ϑ0 ≡ ϑNr . Asymptotic approximations to the integral over
+the two ranges are then found separately using a proper
+rescaling for the regions close to the roots of D2 (cf. Hinch
+(1991)).
+When the distance between two consecutive roots is
+√
+|ϑ j − ϑ j−1 | > χ, as in the examples shown in Figs. 7c,e,
+then the dominant contribution to the integral comes from
+the O(χ) regions close to the roots ϑ j , since Fχ (ϑ , n) close
+to ϑ j is approximately a Lorentzian of half-width O(χ).
+Therefore, choosing the range δ ϑ close to the roots to be
+√
+χ  δ ϑ  1, Taylor expanding Fχ (ϑ , n) close to ϑ j and
+rescaling ϑ = ϑ j + χu we obtain:
+
+} |
+
+{z
+
+(R)
+
+}
+
+Ij
+
+(B9)
+
+δZϑ /χ
+−δ ϑ /χ
+
+N j D0, j du
++ O(χ −3 ) ,
+D0,2 j + D2,0 2j u2
+
+(B10)
+
+where D20 ≡ ∂ϑ D2 and the subscript j denotes the value at
+ϑ j . In the limit δ ϑ /χ → ∞ we obtain:
+(R)
+
+Ij
+
+=
+
+1 π Nj
+,
+χ |D2,0 j |
+
+(B11)
+
+and as a result, the resonant contribution produces the
+asymptotic approximation:
+(R)
+
+fr
+
+=
+
+1 Nr π N j
+∑ |D 0 | .
+β j=1
+2, j
+
+(B12)
+
+However, special attention should be given to the case in
+which two consecutive roots are close to each other. When
+√
+√
+(R)
+|ϑ j − ϑ j−1 | ∼ O( χ) then D2,0 j ∼ O( χ) and fr scales
+p
+as 1/ β instead of 1/β for β  1. Indeed, when Fχ is
+double peaked, as in Fig. 7d, the dominant contribution
+comes from the whole range between the two resonant
+√
+angles which are a distance O( χ) apart. The proper
+scaling for the angles close to ϑ j is therefore ϑ = ϑ j +
+
+18
+
+JOURNAL OF THE ATMOSPHERIC SCIENCES
+
+√
+
+χu. Taylor expanding the denominator under this scaling
+we obtain:
+
+1.2
+
+η
+
+χ 2 D02 + D22 = χ 2 D0,2 j + χD2,0 2j u2 + χ 3/2 D2,0 j D2,00 j u3 +
+
+
+1 0
+2 1 00 2
+000
++χ
+D + D D
+u4 + O(χ 5/2 ) ,
+4 2, j 3 2, j 2, j
+(B13)
+
+1.4
+
+1
+0.8
+0.6
+
+where D200 ≡ ∂ϑ2 ϑ D2 and D2000 ≡ ∂ϑ3 ϑ ϑ D2 .
+
+When D2,0 j ∼
+
+√
+O( χ) all the terms in (B13) are O(χ 2 ) and writing
+√
+√
+D2,0 j = χ d(n, ϑ j ) ≡ χ d j , where d is of O(1), the leading order resonant contribution is:
+(R)
+
+Ij
+
+=
+√
+δ ϑZ/ χ
+
+= χ −3/2
+
+√
+−δ ϑ / χ
+
+N j D0, j du
++ O(χ −1 ),
+2
+2
+D0, j + d j u2 + d j λ j u3 + 41 λ j2 u4
+(B14)
+
+√
+where λ j ≡ D2,00 j . In the limit δ ϑ / χ → ∞ the integral
+can be evaluated from the residues from two of the four
+poles of the integrand. The poles are at u = −d j /λ j ±
+|z j |1/2 sgn (λ j ) e±iw j /2 , where |z j | = D0, j |λ j |−1 (κ 2j + 4)1/2 ,
+w j = arctan(2/κ j ) and κ j ≡ d 2j D0,−1j |λ j |−1 is an increasing
+function of the distance between the two roots of D2 . Therefore:
+(R)
+
+Ij
+
+= χ −3/2
+
+π Nj ηj
+1/2
+
+D0, j |λ j |1/2
+
++ O(χ −1 ) ,
+
+(B15)
+
+2
+
+6
+
+8
+
+
+
+F IG . B14. The factor η = 2 (κ 2 + 4)−3/4 csc 12 arctan (2/κ) as a
+function of κ that is a measure of the distance between two consecutive
+resonant angles. The maximum value of η marked with an open circle
+(and consequently of the feedback gain that is
+√ proportional to η) is
+η = 33/4 /2 ≈ 1.14 and it√
+is achieved at κ = 2/ 3 ≈ 1.16. Also shown
+is the asymptote η = 2/ κ that η follows for κ  1 (dashed). This
+suggests that the resonant contribution is maximum when the two roots
+are very close to each other (κ ≈ 1) but not on top of each other (κ  1).
+
+and (B16) in comparison with the numerically obtained
+integral is shown in Fig. B13.
+The sign of the resonant contribution depends only on the
+sign of N . From (A7c) we see that N > 0 when sin ϑ >
+−n/2 for n < 1; this region is highlighted with light shading
+in Fig. B15. It should be noted that for the important case of
+zonal jet perturbations (ϕ = 0◦ ) the resonant contribution
+is exactly zero because N j = 0, as shown in Fig. B15a.
+The asymptotic behavior of the feedback factor for this
+case is found from the non-resonant part of the integral.
+Expanding in this case the integrand for χ  1, we obtain
+to leading order:
+(NR)
+
+π Nj ηj
+1 Nr
+1 Nr 1 (R)
+p
+I
+,
+=
+∑
+∑
+j
+2
+β j=1 2
+β j=1 2 D 1/2 |λ j |1/2
+
+4
+
+κ
+
+fr ≈ fr
+
+and
+fr(R) =
+
+0
+
+= (1 − n2 )(2 + µ)β −2 + O(β −4 ) ,
+
+(B18)
+
+with the maximum feedback gain
+(B16)
+
+0, j
+
+which is exactly (26). The factor 1/2 in (B16) arises because the range of integration includes both resonant angles
+and (B15) must be divided by 2, in order to avoid double
+counting. The resonant response is proportional to
+
+
+1
+2
+−3/4
+η = 2 (κ + 4)
+csc arctan (2/κ) ,
+(B17)
+2
+which is always positive, because κ > 0 as D0 > 0. The
+factor η is shown as a function of κ (which is a rough
+measure of the distance between the roots) in Fig. B14.
+√ We
+observe that the maximum value is attained at κ = 2/ 3 ≈
+1.16, that is when the roots are at a distance O(χ 1/2 ) apart.
+Note also that by taking the limit of the resonant angles
+being away
+√from each other, that is by taking the limit κ 
+1, η ∼ 2/ κ and (B16) reduces to (B12). Consequently,
+(B16) is a valid asymptotic expression regardless of the
+distance between the roots ϑ j . The accuracy of (B12)
+
+fr,max = (2 + µ)β −2 + O(β −4 ) ,
+
+(B19)
+
+occurring for n → 0. (For the special case of isotropic forcing, µ = 0, this reduces to the result found by Srinivasan
+and Young (2012).)
+Consider now non-zonal perturbations (ϕ 6= 0◦ ). There
+is a large region in the (n, ϕ) plane (region D in Fig. 7a) in
+which D2 has no roots and fr = O(β −2 ). For larger values
+of n (region B in Fig. 7a), and for any given ϕ, D2 = 0 for
+exactly two ϑ j that satisfy the inequality sin ϑ j < −n/2.
+Consequently, N j < 0 and the resonant contribution from
+these roots is negative. For even larger values of n (regions
+A and C in Fig. 7a), D2 has exactly 4 roots. Only two of the
+roots in region A produce positive resonant contributions.
+Note also that region A extends to ϕ < 60◦ and ϕ > 120◦ .5
+The maximum response, which is O(β −1/2 ), arises in region A close to the curve separating regions A and C where
+
+5 It can be shown that fluxes from the resonant contributions for n < 1
+are necessarily downgradient (negative) for 60◦ ≤ ϕ ≤ 120◦ . Proof: A
+positive contribution is produced when the D2 = 0 curve enters into the
+
+19
+
+JOURNAL OF THE ATMOSPHERIC SCIENCES
+
+(a)
+
+120
+
+150
+
+90
+
+(b)
+
+60
+D
+N > 0
+
+150
+
+30
+
+210
+240
+
+0
+A
+
+330
+300
+
+30
+n=1
+
+180
+
+C
+
+B
+
+60
+
+150
+
+30
+
+D
+
+90
+120
+
+n=1
+0
+
+N < 0
+
+(c)
+
+60
+
+n=1
+
+180
+A
+
+90
+120
+
+180
+
+C
+
+210
+
+A
+
+330
+
+B
+
+240
+
+0
+
+300
+
+C
+D
+
+210
+
+330
+
+B
+
+240
+
+300
+
+270
+
+270
+
+270
+
+ϕ = 0◦
+
+ϕ = 15 ◦
+
+ϕ = 75 ◦
+
+F IG . B15. Locus of the roots of D2 (ϑ , n) in a (ϑ , n) polar plot for (a) zonal jet perturbations (ϕ = 0◦ ), (b) non-zonal perturbations with
+ϕ = 15◦ and (c) non-zonal perturbations with ϕ = 75◦ . Shaded areas indicate the region n ≤ 1. Light (dark) shade corresponds to (ϑ , n) satisfying
+sin ϑ > −n/2 (sin ϑ < −n/2) for which we have N > 0 (N < 0), i.e., positive (negative) resonant contributions. Points of intersection of the
+D2 = 0 curve with the unit circle are marked with A, B, C, D. The radial grid interval is ∆n = 0.25. Note that the curve D2 = 0 does not enter the
+N > 0 area for 60◦ ≤ ϕ ≤ 120◦ , that is there are no positive contributions when ϕ ≥ 60◦ .
+
+κ ≈ 1.16. While the roots of D2 are independent of β , the
+location and the size of the region of maximum response
+depends on β through the dependence of κ on β . However,
+as β increases this dependence is weak and as β → ∞ the
+maximum response occurs in a narrow region near n ≈ 0.5
+and ϕ ≈ 10◦ , marked with a star in Fig. 7a. The width of
+this region decreases with β , making it exceedingly hard
+to locate for large β , and the asymptotic approach of (n, ϕ)
+to (0.5, 10◦ ) is shown in Fig. 11b,c.
+
+with L (h) = ẑ · (β × ∇) ∆−1 . Linear perturbations δ ζ to
+this solution evolve according to the equation:
+
+APPENDIX C
+
+L = −uG · ∇ + (∆uG ) · ∇∆−1 + ẑ · (β × ∇) ∆−1
+|
+{z
+} |
+{z
+}
+
+Formal equivalence between S3T instability of a
+homogeneous equilibrium with modulational
+instability of a corresponding basic flow
+In this Appendix we demonstrate the formal equivalence
+between the modulational instability (MI) of any solution
+of the barotropic equation, which may be in general time
+dependent but has stationary power spectrum, with the S3T
+instability of the homogeneous state with the same power
+spectrum.
+Consider a solution ψG (x,t), with vorticity ζG = ∆ψG ,
+of the inviscid and unforced nonlinear barotropic equation (1) with time-independent power spectrum. Because
+
+N > 0, highlighted with light grey in Fig. B15. There are 4 roots of D2
+on the unit circle n = 1 (on which also N = 0), at angles: ϑ = 210◦ ,
+270◦ , 330◦ and ϑ = 90◦ + 2ϕ (marked with A, B, C and D respectively).
+The D2 = 0 curve can cross the curve AOC, which separates positive
+from negative N , only at points A and C, since D2 = 0 only at these
+points on AOC. Therefore, the D2 = 0 curve can enter the N > 0
+region i) through D, if it lies outside the arc ABC, and/or ii) through A,
+C. However, for 60◦ ≤ ϕ ≤ 120◦ point D lies within the arc ABC and
+moreover, the gradient ∇D2 at points A and C is oriented in such way
+that does not allow the D2 = 0 curve to enter N > 0, as ∂n D2 < 0 and
+∂ϑ D2 ≤ 0 (∂ϑ D2 ≥ 0) at point A (point C).
+
+J(ψG , ζG ) = 0, ζG satisfies the equation
+∂t ζG = L (h) ζG ,
+
+(C1)
+
+∂t δ ζ = L δ ζ ,
+
+(C2)
+
+where
+
+LG0
+
+= LG0 + L (h) ,
+
+L (h)
+
+(C3)
+
+is the time-dependent linear operator about ζG that has
+been decomposed into a spatially homogeneous operator,
+L (h) , that governs the evolution of ζG and the inhomogeneous operator LG0 that depends on ζG . The hydrodynamic
+instability of ζG is ascertained when the largest Lyapunov
+exponent of (C2) is positive.
+We proceed with the study of the modulational instability
+by decomposing the perturbation into a mean δ Z = hδ ζ i
+and deviations from the mean δ ζ 0 = δ ζ − δ Z, where h • i
+is an averaging operation. The averaging operation in
+modulational instability is projection to the eigenstructure with wavenumber n, which is orthogonal to ζG , because only orthogonal eigenstructures to ζG could become unstable. With this averaging operator hζG i = 0,
+and therefore ζG = ζG0 , whereas the perturbations has a
+non-zero mean, δ Z, and a deviation and is expressed as
+δ ζ = δ Z + δ ζ 0 . For example, if ψG is a sum of Rossby
+waves as in (29) the perturbation field from Bloch’s theorem comprises of Fourier components with wavenumbers
+n, n ± p j , n ± 2p j , n ± 3p j , . . . for all the p j . In this case
+δ Z is a plane wave with wavenumber n and δ ζ 0 comprises
+
+20
+
+JOURNAL OF THE ATMOSPHERIC SCIENCES
+
+of the remaining Fourier components. With these definitions (C2) is equivalently written as:
+
+∂t δ Z + δ ζ 0 = LG0 δ Z + L (h) δ ζ 0 + LG0 δ ζ 0 + L (h) δ Z ,
+(C4)
+where LG0 is primed in order to stress that the operator linearly depends on the deviation quantity ζG0 . Equation (C4)
+is then separated to form an equivalent system of equations
+for the evolution of the mean perturbation, δ Z, and the
+deviation perturbation, δ ζ 0 :
+∂t δ Z = L (h) δ Z + LG0 δ ζ 0 ,
+
+D
+E
+0 ζ0
+where CG = ζG,a
+G,b . Returning now to (C6a) we note
+that LG0 δ ζ 0 = R(δC), where R(δC) is defined in (8),
+as:
+R(δC) =
+
+= −∇ ·
+
+0
+0
+ζG,a
+δ ζb0 + ζG,b
+δ ζa0
+
+= −∇ · ẑ × (∇ψG0 )δ ζ 0 + (∇δ ψ 0 )ζG0
+
+∂t δ ζ 0 = L (h) δ ζ 0 + LG0 δ Z + LG0 δ ζ 0 − LG0 δ ζ 0 .
+(C5b)
+
+∂t δ Z = L (h) δ Z + LG0 δ ζ 0 ,
+
+(C6a)
+
+∂t δ ζ 0 = L (h) δ ζ 0 + LG0 δ Z .
+
+(C6b)
+
+
+xa =xb
+
+
+
+(C5a)
+
+The stability equation (C2) and the stability equations (C5)
+for δ Z and δ ζ 0 are equivalent. In modulational instability
+studies the term LG0 δ ζ 0 − LG0 δ ζ 0 in (C5b) is neglected
+and the stability of the following simpler system is studied:
+
+ẑ
+−1
+× (∇a ∆−1
+a + ∇b ∆b )
+2
+
+
+
+= −∇ · u0G δ ζ 0 + δ u0 ζG0
+= − u0G · ∇ δ ζ 0 + (∆u0G ) · ∇δ ψ 0 = LG0 δ ζ 0 .
+(C10)
+Consequently, the MI of ζG0 is equivalently determined
+from the stability of the system:
+∂t δ Z = L (h) δ Z + R(δC) ,
+(C11a)
+ G
+(h) 
+(h)
+∂t δC = La + Lb
+δC + δ Aa + δ Ab C ,
+(C11b)
+
+For example, if ψG is in the form of (29) the neglected term which is identical to equations (10) that determine the S3T
+comprises waves with wavevectors n ± 2p j , n ± 3p j , . . . stability of the homogeneous equilibrium with zero mean
+and the truncated system (C6) allows only interaction be- flow, Ue = 0, and equilibrium covariance Ce = CG under
+tween the primary finite amplitude waves p j , the perturba- the ergodic assumption that ensemble averages are equal
+tion n and the waves n ± p j . If ζG is a single wave p (as in to averages under operation h • i.
+MI studies), (C6) is referred to as the 4 mode truncation or
+For example, consider the nonlinear solution
+‘4MT’ system.
+Z2π
+However, instead of studying the MI stability of δ Z
+0
+ψ(x,t)
+=
+a(ϑ ) cos(p · x − ωpt) dϑ ,
+(C12)
+and δ ζ using the approximate (C6) equations, we can
+equivalently study the stability of δ Z and δC(xa , xb ,t) =
+0
+0 δζ0 +
+ζG0 (xa ,t) δ ζ 0 (xb ,t)+ζG0 (xb ,t) δ ζ 0 (xa ,t) ≡ ζG,a
+b
+with wavevectors p = (cos ϑ , sin ϑ ) on the unit circle (p =
+0 δ ζ 0 . With these definitions we obtain from (C1) and
+ζG,b
+a
+1). Expanding the plane waves into cylindrical waves:
+(C6b) the evolution equation for δC:
+ei[(x+βt) cos ϑ +y sin ϑ ] =
+
+0
+0
+∂t δC = (∂t ζG,a
+) δ ζb0 + (∂t ζG,b
+) δ ζa0 +
+
+∑ im Jm (ρ)eim(φ −ϑ ) ,
+
+(C13)
+
+m=−∞
+
+0
+0
++ζG,a
+(∂t δ ζb0 ) + ζG,b
+(∂t δ ζa0 )
+
+
+
+= La(h) + Lb(h) δC+
+0
+0
+0
+0
++ ζG,a
+LG,b
+δ Zb + ζG,b
+LG,a
+δ Za .
+
++∞
+
+(C7)
+
+We note from the definition of LG0 (cf. (C3)) that:
+
+
+LG0 δ Z = − ẑ × ∇ψG0 · ∇δ Z + ẑ × ∇ζG0 · ∇δ Ψ
+
+
+= ẑ × ∇δ Z · ∇ψG0 − ẑ × ∇δ Ψ · ∇ζG0
+= (∆ δ U) · (∇ψG0 ) − (δ U) · (∇ζG0 ) = δ A ζG0 ,
+(C8)
+where δ U = ẑ × ∇δ Ψ is the velocity field associated with
+δ Z and δ A = −δ U· ∇ + (∆ δ U)· ∇∆−1 is the operator
+that also appears in (10b). As a result (C7) becomes:
+
+
+
+∂t δC = La(h) + Lb(h) δC + δ Aa + δ Ab CG , (C9)
+
+
+
+with ρ 2 = (x + βt)2 + y2 , φ = arctan y/(x + βt) and Jm
+the m-th Bessel function of the first kind, this can be shown
+to be the non-dispersive structure
+"
+#
++∞
+
+ψ(x + βt, y) = Re
+
+∑ γm Jm (ρ)eimφ
+
+,
+
+(C14)
+
+m=−∞
+
+propagating westward with velocity β , where γm =
+−imϑ dϑ . The results in this Appendix show that
+0 a(ϑ ) e
+the modulational instability of the propagating structure
+(C12) is equivalent to the S3T instability of the homogeneous equilibrium with covariance Ce prescribed by power
+spectrum Ĉe (k) = (2π)2 |a(ϑ )|2 δ (k − 1). Note that this
+S3T equilibrium is also an exact homogeneous statistical
+equilibrium of the nonlinear barotropic equations without
+approximation.
+R 2π
+
+JOURNAL OF THE ATMOSPHERIC SCIENCES
+
+References
+Bakas, N. A., and P. J. Ioannou, 2011: Structural stability theory of
+two-dimensional fluid flow under stochastic forcing. J. Fluid Mech.,
+682, 332–361, doi:10.1017/jfm.2011.228.
+Bakas, N. A., and P. J. Ioannou, 2013a: Emergence of large scale structure in barotropic β -plane turbulence. Phys. Rev. Lett., 110, 224 501,
+doi:10.1103/PhysRevLett.110.224501.
+
+21
+
+Di Nitto, G., S. Espa, and A. Cenedese, 2013: Simulating zonation in
+geophysical flows by laboratory experiments. Phys. Fluids, 25 (8),
+086 602, doi:10.1063/1.4817540.
+Espa, S., G. Di Nitto, and A. Cenedese, 2010: The emergence of zonal
+jets in forced rotating shallow water turbulence: A laboratory study.
+EPL, 92, 34 006, doi:10.1209/0295-5075/92/34006.
+
+Bakas, N. A., and P. J. Ioannou, 2013b: On the mechanism underlying
+the spontaneous emergence of barotropic zonal jets. J. Atmos. Sci.,
+70 (7), 2251–2271, doi:10.1175/JAS-D-12-0102.1.
+
+Farrell, B. F., and P. J. Ioannou, 1994: A theory for the statistical equilibrium energy spectrum and heat flux produced by transient baroclinic waves. J. Atmos. Sci., 51 (19), 2685–2698, doi:10.1175/15200469(1994)051<2685:ATFTSE>2.0.CO;2.
+
+Bakas, N. A., and P. J. Ioannou, 2014: A theory for the emergence of
+coherent structures in beta-plane turbulence. J. Fluid Mech., 740,
+312–341, doi:10.1017/jfm.2013.663.
+
+Farrell, B. F., and P. J. Ioannou, 1995: Stochastic dynamics of the
+midlatitude atmospheric jet. J. Atmos. Sci., 52 (10), 1642–1656,
+doi:10.1175/1520-0469(1995)052<1642:SDOTMA>2.0.CO;2.
+
+Bernstein, J., 2009: Dynamics of turbulent jets in the atmosphere
+and ocean. Ph.D. thesis, Harvard University, Publication Number:
+AAT 3365198.
+
+Farrell, B. F., and P. J. Ioannou, 2003: Structural stability of turbulent jets. J. Atmos. Sci., 60, 2101–2118, doi:10.1175/15200469(2003)060<2101:SSOTJ>2.0.CO;2.
+
+Bernstein, J., and B. F. Farrell, 2010: Low frequency variability in a
+turbulent baroclinic jet: Eddy–mean flow interactions in a two-level
+model. J. Atmos. Sci., 67 (2), 452–467, doi:10.1175/2009JAS3170.1.
+
+Farrell, B. F., and P. J. Ioannou, 2007: Structure and spacing
+of jets in barotropic turbulence. J. Atmos. Sci., 64, 3652–3665,
+doi:10.1175/JAS4016.1.
+
+Boland, E. J. D., A. F. Thompson, E. Shuckburgh, and P. H. Haynes,
+2012: The formation of nonzonal jets over sloped topography. J. Phys.
+Oceanogr., 42, 1635–1651, doi:10.1175/JPO-D-11-0152.1.
+
+Galperin, B. H., S. Sukoriansky, and N. Dikovskaya, 2010: Geophysical
+flows with anisotropic turbulence and dispersive waves: flows with a
+β -effect. Ocean Dyn., 60, 427–441, doi:10.1007/s10236-010-0278-2.
+
+Bouchet, F., C. Nardini, and T. Tangarife, 2013: Kinetic theory of jet
+dynamics in the stochastic barotropic and 2D Navier-Stokes equations.
+J. Stat. Phys., 153 (4), 572–625, doi:10.1007/s10955-013-0828-3.
+
+Gill, A. E., 1974: The stability of planetary waves on an infinite beta-plane. Geophys. Astrophys. Fluid Dyn., 6, 29–47,
+doi:10.1080/03091927409365786.
+
+Carnevale, G. F., and P. C. Martin, 1982: Field theoretic techniques in statistical fluid dynamics: with application to nonlinear wave dynamics. Geophys. Astrophys. Fluid Dyn., 20, 131–164,
+doi:10.1080/03091928208209002.
+
+Hinch, E. J., 1991: Perturbation Methods. Cambridge University Press.
+
+Connaughton, C. P., B. T. Nadiga, S. V. Nazarenko, and B. E.
+Quinn, 2010: Modulational instability of Rossby and drift waves
+and generation of zonal jets. J. Fluid Mech., 645, 207–231,
+doi:10.1017/S0022112010000510.
+
+Lee, Y., and L. M. Smith, 2007: On the formation of geophysical and
+planetary zonal flows by near-resonant wave interactions. J. Fluid
+Mech., 576, 405–424, doi:10.1017/S0022112006004381.
+
+Constantinou, N. C., B. F. Farrell, and P. J. Ioannou, 2014: Emergence
+and equilibration of jets in beta-plane turbulence: applications of
+stochastic structural stability theory. J. Atmos. Sci., 71 (5), 1818–
+1842, doi:10.1175/JAS-D-13-076.1.
+Danilov, S., and D. Gurarie, 2004: Scaling, spectra and zonal
+jets in beta-plane turbulence. Phys. Fluids, 16, 2592–2603,
+doi:10.1063/1.1752928.
+DelSole, T., 1996: Can quasigeostrophic turbulence be modeled
+stochastically? J. Atmos. Sci., 53, 1617–1633, doi:10.1175/15200469(1996)053<1617:CQTBMS>2.0.CO;2.
+DelSole, T., 2004:
+Stochastic models of quasigeostrophic
+turbulence.
+Surveys
+in
+Geophysics,
+25,
+107–194,
+doi:10.1023/B:GEOP.0000028160.75549.0d.
+DelSole, T., and B. F. Farrell, 1996: The quasi-linear equilibration
+of a thermally mantained stochastically excited jet in a quasigeostrophic model. J. Atmos. Sci., 53, 1781–1797, doi:10.1175/15200469(1996)053<1781:TQLEOA>2.0.CO;2.
+DelSole, T., and A. Y. Hou, 1999: Empirical stochastic models for the dominant climate statistics of a general circulation model. J. Atmos. Sci., 56, 3436–3456, doi:10.1175/15200469(1999)056<3436:ESMFTD>2.0.CO;2.
+
+Ingersoll, A. P., 1990: Atmospheric dynamics of the outer planets. Science, 248, 308–315, doi:10.1126/science.248.4953.308.
+
+Lorenz, E. N., 1972: Barotropic instability of Rossby wave
+motion. J. Atmos. Sci., 29, 258–269, doi:10.1175/15200469(1972)029<0258:BIORWM>2.0.CO;2.
+Marston, J. B., 2010: Statistics of the general circulation from cumulant
+expansions. Chaos, 20, 041 107, doi:10.1063/1.3490719.
+Marston, J. B., 2012: Atmospheres as nonequilibrium condensed matter.
+Annu. Rev. Condens. Matter Phys., 3, 285–310, doi:10.1146/annurevconmatphys-020911-125114.
+Marston, J. B., E. Conover, and T. Schneider, 2008: Statistics of an
+unstable barotropic jet from a cumulant expansion. J. Atmos. Sci.,
+65 (6), 1955–1966, doi:10.1175/2007JAS2510.1.
+O’Gorman, P. A., and T. Schneider, 2007: Recovery of atmospheric flow statistics in a general circulation model without nonlinear eddy-eddy interactions. Geophys. Res. Lett., 34, L22 801,
+doi:10.1029/2007GL031779.
+Parker, J. B., and J. A. Krommes, 2013: Zonal flow as pattern formation.
+Phys. Plasmas, 20, 100 703, doi:10.1063/1.4828717.
+Parker, J. B., and J. A. Krommes, 2014: Generation of zonal flows
+through symmetry breaking of statistical homogeneity. New J. Phys.,
+16 (3), 035 006, doi:10.1088/1367-2630/16/3/035006.
+
+22
+
+JOURNAL OF THE ATMOSPHERIC SCIENCES
+
+Parker, J. B., and J. A. Krommes, 2015: Zonal flow as pattern formation.
+Zonal jets, B. Galperin, and P. L. Read, Eds., Cambridge University
+Press, chap. 5.
+Pedlosky, J., 1992: Geophysical Fluid Dynamics. 2nd ed., Springer.
+Read, P. L., Y. H. Yamazaki, S. R. Lewis, P. D. Williams, K. MikiYamazaki, J. Sommeria, H. Didelle, and A. Fincham, 2004: Jupiter’s
+and Saturn’s convectively driven banded jets in the laboratory. Geophys. Res. Lett., 87, 1961–1967, doi:10.1029/2004GL020106.
+Srinivasan, K., and W. R. Young, 2012: Zonostrophic instability. J.
+Atmos. Sci., 69 (5), 1633–1656, doi:10.1175/JAS-D-11-0200.1.
+Srinivasan, K., and W. R. Young, 2014: Reynold stress and eddy difusivity of β -plane shear flows. J. Atmos. Sci., 71 (6), 2169–2185,
+doi:10.1175/JAS-D-13-0246.1.
+Sukoriansky, S., N. Dikovskaya, and B. Galperin, 2008: Nonlinear
+waves in zonostrophic turbulence. Phys. Rev. Lett., 101 (1), 178 501,
+doi:10.1103/PhysRevLett.101.178501.
+Tobias, S. M., and J. B. Marston, 2013: Direct statistical simulation of out-of-equilibrium jets. Phys. Rev. Lett., 110 (10), 104 502,
+doi:10.1103/PhysRevLett.110.104502.
+Vallis, G. K., and M. E. Maltrud, 1993: Generation of mean flows and jets
+on a beta-plane and over topography. J. Phys. Oceanogr., 23, 1346–
+1362, doi:10.1175/1520-0485(1993)023<1346:GOMFAJ>2.0.CO;2.
+Vasavada, A. R., and A. P. Showman, 2005: Jovian atmospheric dynamics: an update after Galileo and Cassini. Rep. Prog. Phys., 68,
+1935–1996, doi:10.1088/0034-4885/68/8/R06.
+Weeks, W. R., Y. Trian, J. S. Urbach, K. Ide, H. L. Swinney,
+and M. Ghil, 1997: Transitions between blocked and zonal
+flows in a rotating annulus. Science, 278 (5343), 1598–1601,
+doi:10.1126/science.278.5343.1598.
+Whitaker, J. S., and P. D. Sardeshmukh, 1998: A linear theory of
+extratropical synoptic eddy statistics. J. Atmos. Sci., 55, 237–258,
+doi:10.1175/1520-0469(1998)055<0237:ALTOES>2.0.CO;2.
+Zhang, Y., and I. M. Held, 1999: A linear stochastic model of a
+GCM’s midlatitude storm tracks. J. Atmos. Sci., 56, 3416–3435,
+doi:10.1175/1520-0469(1999)056<3416:ALSMOA>2.0.CO;2.
+
+

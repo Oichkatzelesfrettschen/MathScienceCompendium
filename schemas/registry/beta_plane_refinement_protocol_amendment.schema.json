@@ -1,0 +1,19 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://mathsciencecompendium.local/schemas/registry/beta_plane_refinement_protocol_amendment.schema.json",
+  "title": "BetaPlaneRefinementProtocolAmendment",
+  "type": "object",
+  "required": ["schema_version", "program_id", "applies_to", "recorded_date", "trigger", "confound", "resolution", "scope", "falsification_condition"],
+  "properties": {
+    "schema_version": {"const": 1},
+    "program_id": {"const": "beta_plane_jets"},
+    "applies_to": {"const": "data/registry/beta_plane_sweep_preregistration.json"},
+    "recorded_date": {"type": "string", "format": "date"},
+    "trigger": {"type": "string", "minLength": 1},
+    "confound": {"type": "string", "minLength": 1},
+    "resolution": {"type": "string", "minLength": 1},
+    "scope": {"type": "string", "minLength": 1},
+    "falsification_condition": {"type": "string", "minLength": 1}
+  },
+  "additionalProperties": false
+}

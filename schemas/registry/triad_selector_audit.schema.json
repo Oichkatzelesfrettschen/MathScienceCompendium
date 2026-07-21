@@ -1,0 +1,91 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://mathsciencecompendium.local/schemas/registry/triad_selector_audit.schema.json",
+  "title": "TriadSelectorAudit",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "generator",
+    "preregistration_relpath",
+    "preregistration_sha256",
+    "evaluation_domains",
+    "square_shell_radius",
+    "ordered_exact_triad_count_including_zero_modes",
+    "ordered_nonzero_exact_triad_count",
+    "barotropic_active_channel_count",
+    "barotropic_zero_support_channel_count",
+    "rossby_exact_resonant_triad_count",
+    "rossby_active_exact_resonant_channel_count",
+    "e7_quadratic_defect_admitted_triad_count",
+    "e7_quadratic_defect_rejected_triad_count",
+    "e7_quadratic_defect_active_admitted_count",
+    "e7_quadratic_defect_active_rejected_count",
+    "e7_square_symmetry_pass",
+    "e7_permutation_closure_pass",
+    "e7_selector_nontrivial",
+    "e7_discriminant_form",
+    "checkerboard_kernel_exact_equivalence_pass",
+    "e7_specificity_falsified",
+    "scientific_outcome",
+    "interpretation_boundary"
+  ],
+  "properties": {
+    "schema_version": {"const": 1},
+    "generator": {"const": "scripts/audit_triad_selectors.py"},
+    "preregistration_relpath": {"const": "data/registry/e7_selector_preregistration.json"},
+    "preregistration_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "evaluation_domains": {
+      "type": "array",
+      "minItems": 3,
+      "maxItems": 3,
+      "items": {
+        "type": "object",
+        "required": ["square_domain_radius", "ordered_nonzero_exact_triad_count", "barotropic_active_channel_count", "quadratic_defect_admitted_triad_count", "quadratic_defect_active_admitted_count", "checkerboard_kernel_exact_equivalence_pass"],
+        "properties": {
+          "square_domain_radius": {"enum": [2, 4, 8]},
+          "ordered_nonzero_exact_triad_count": {"type": "integer", "minimum": 1},
+          "barotropic_active_channel_count": {"type": "integer", "minimum": 1},
+          "quadratic_defect_admitted_triad_count": {"type": "integer", "minimum": 1},
+          "quadratic_defect_active_admitted_count": {"type": "integer", "minimum": 1},
+          "checkerboard_kernel_exact_equivalence_pass": {"const": true}
+        },
+        "additionalProperties": false
+      }
+    },
+    "square_shell_radius": {"type": "integer", "minimum": 1},
+    "ordered_exact_triad_count_including_zero_modes": {"type": "integer", "minimum": 1},
+    "ordered_nonzero_exact_triad_count": {"type": "integer", "minimum": 1},
+    "barotropic_active_channel_count": {"type": "integer", "minimum": 0},
+    "barotropic_zero_support_channel_count": {"type": "integer", "minimum": 0},
+    "rossby_exact_resonant_triad_count": {"type": "integer", "minimum": 0},
+    "rossby_active_exact_resonant_channel_count": {"type": "integer", "minimum": 0},
+    "e7_quadratic_defect_admitted_triad_count": {"type": "integer", "minimum": 0},
+    "e7_quadratic_defect_rejected_triad_count": {"type": "integer", "minimum": 0},
+    "e7_quadratic_defect_active_admitted_count": {"type": "integer", "minimum": 0},
+    "e7_quadratic_defect_active_rejected_count": {"type": "integer", "minimum": 0},
+    "e7_square_symmetry_pass": {"const": true},
+    "e7_permutation_closure_pass": {"const": true},
+    "e7_selector_nontrivial": {"const": true},
+    "e7_discriminant_form": {
+      "type": "object",
+      "required": ["cartan_determinant", "discriminant_group_order", "generator_fundamental_weight_index", "generator_coordinates", "generator_norm_squared", "half_normalized_quadratic_value_mod_one", "generator_is_outside_root_lattice", "doubled_generator_is_in_root_lattice", "quadratic_form_is_nonadditive"],
+      "properties": {
+        "cartan_determinant": {"const": 2},
+        "discriminant_group_order": {"const": 2},
+        "generator_fundamental_weight_index": {"const": 7},
+        "generator_coordinates": {"type": "array", "minItems": 7, "maxItems": 7, "items": {"type": "string"}},
+        "generator_norm_squared": {"const": "3/2"},
+        "half_normalized_quadratic_value_mod_one": {"const": "3/4"},
+        "generator_is_outside_root_lattice": {"const": true},
+        "doubled_generator_is_in_root_lattice": {"const": true},
+        "quadratic_form_is_nonadditive": {"const": true}
+      },
+      "additionalProperties": false
+    },
+    "checkerboard_kernel_exact_equivalence_pass": {"const": true},
+    "e7_specificity_falsified": {"const": true},
+    "scientific_outcome": {"const": "e7_specificity_falsified_generic_parity_kernel_retained"},
+    "interpretation_boundary": {"type": "string", "minLength": 1}
+  },
+  "additionalProperties": false
+}

@@ -39,7 +39,7 @@
 
 \hypersetup{
   pdftitle={Claim, Evidence, and Falsification in a Mathematical-Physics Compendium},
-  pdfauthor={MathScienceCompendium contributors},
+  pdfauthor={Eirikr Hinngart},
   pdfsubject={Critical review of mathematical, computational, and physical claims},
   pdfkeywords={mathematical physics, evidence audit, reproducibility, falsification},
   pdfdisplaydoctitle=true
@@ -52,6 +52,7 @@
 \captionsetup{font=small,labelfont={bf,color=navy},margin=1.5em}
 \renewcommand{\arraystretch}{1.16}
 \newcolumntype{Y}{>{\raggedright\arraybackslash}X}
+\newcommand{\registeredresult}[1]{}
 
 \pagestyle{fancy}
 \fancyhf{}
@@ -109,12 +110,16 @@
   \vspace{1.4em}
   {\color{rulegray}\rule{0.62\textwidth}{0.7pt}}\par
   \vfill
-  {\large MathScienceCompendium contributors\par}
+  {\large Eirikr Hinngart\par}
+  \vspace{0.3em}
+  {\small Independent researcher; MathScienceCompendium project\par}
+  {\small Correspondence:
+   \url{https://github.com/Oichkatzelesfrettschen/MathScienceCompendium/issues}\par}
   \vspace{0.5em}
   {\color{muted}\today\par}
   \vspace{1.2em}
   {\small\color{muted}
-   Critical review edition. Source claims are not endorsements.\par}
+   Repository-backed review monograph. Source claims are not endorsements.\par}
 \end{titlepage}
 
 \frontmatter
@@ -135,17 +140,28 @@ The audit therefore separates identity from mechanism and computation from
 experiment. In particular, the identity $c^4/G$ defines a force scale but does
 not by itself unify interactions. Likewise, the determinant of a Cartan matrix
 does not induce a beta-plane parameter unless a mode map, dynamical equation,
-and controlled comparison establish that mechanism. The review converts all 23
-canonical claims into executable acceptance, scope, falsification, or exclusion
-contracts. It repairs the $E_7$ and extended Cartan constructions, implements a
-nontrivial Albert-algebra product, exhibits exact higher Cayley--Dickson failure
-witnesses, and closes the external Fourier-to-$P/Q$ filter negatively. A
-preregistered barotropic beta-plane ablation changes under beta in every
-configuration while the proposed homomorphic quotient filter remains exactly
-identical to its control. Physical admission packages retain conventional
-tourmaline and time-crystal phenomena but reject excess-energy conclusions
-without complete energy accounting. The resulting manuscript is a claim audit,
-negative-result record, and reproducibility map, not a unified-field theory.
+and controlled comparison establish that mechanism. The review converts every
+claim on the bounded canonical ledger into an executable consistency contract
+and every bounded open claim into a separate hypothesis record. Contract
+consistency is not scientific admission. The review repairs the $E_7$ and
+extended Cartan constructions, implements a nontrivial Albert-algebra product,
+exhibits exact higher Cayley--Dickson failure witnesses, and closes the external
+Fourier-to-$P/Q$ filter negatively. The proposed quadratic-defect replacement
+is exactly a generic checkerboard kernel at radii 2, 4, and 8, so the registered
+$E_7$-specificity hypothesis fails. A preregistered 540-run barotropic
+beta-plane program likewise does not support its locked transient-zonalization
+hypothesis: all four required $\beta=5,10$ contrasts miss their simultaneous
+confidence and minimum-effect gates. A cache-isolated rerun in a clean pinned
+container reproduces both negative decisions without primary-cache reuse.
+These results apply to the declared freely decaying model and selector, not to
+forced--dissipative jet formation or to every parity-kernel mechanism.
+Physical admission packages retain conventional tourmaline and time-crystal
+phenomena but reject excess-energy conclusions without complete energy
+accounting. The resulting manuscript is a claim audit, negative-result record,
+and reproducibility map, not a unified-field theory.
+
+\registeredresult{hyp_e7_nonhomomorphic_fourier_selector}
+\registeredresult{hyp_beta_plane_transient_zonalization}
 
 \tableofcontents
 
@@ -157,12 +173,39 @@ negative-result record, and reproducibility map, not a unified-field theory.
 \input{sections/review_physical_claims}
 \input{sections/review_computational_evidence}
 \input{sections/review_framework_reconciliation}
+\input{sections/review_hypothesis_registry}
 \input{sections/review_conclusions}
 
 \appendix
 \input{sections/review_reproducibility}
 
 \backmatter
+\chapter*{Declarations}
+\addcontentsline{toc}{chapter}{Declarations}
+
+\textbf{Document type.} This work is a repository-backed review monograph. A
+venue-specific journal template is outside the evidence claim and must not
+change the registered results.
+
+\textbf{Author contributions.} Eirikr Hinngart curated the source corpus,
+implemented the audits and experiments, reviewed the evidence, and prepared
+the manuscript. Automated tools assisted code generation, OCR, testing, and
+adversarial review; their activity remains attributable through the repository
+history and does not constitute authorship.
+
+\textbf{Data and code availability.} Source, code, registries, and retained
+evidence are available at
+\url{https://github.com/Oichkatzelesfrettschen/MathScienceCompendium}. The
+pre-experiment evidence baseline is tag \texttt{v0.1.0-evidence}. Exact source,
+container, protocol, result, archive, and verification digests for the promoted
+negative results are recorded in
+\path{data/registry/independent_reproduction_registry.json}.
+
+\textbf{Competing interests.} The author declares no competing interests in
+the claims evaluated in this review.
+
+\textbf{Ethics.} This review reports no new human-participant or animal study.
+
 \bibliographystyle{plainnat}
 \bibliography{references}
 

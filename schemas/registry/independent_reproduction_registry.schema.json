@@ -1,0 +1,68 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://mathsciencecompendium.local/schemas/registry/independent_reproduction_registry.schema.json",
+  "title": "IndependentReproductionRegistry",
+  "$defs": {
+    "relpath": {
+      "type": "string",
+      "minLength": 1,
+      "pattern": "^(?!/)(?!.*(?:^|/)\\.\\.(?:/|$))[A-Za-z0-9._/-]+$"
+    }
+  },
+  "type": "object",
+  "required": ["schema_version", "description", "records"],
+  "properties": {
+    "schema_version": {"const": 1},
+    "description": {"type": "string", "minLength": 1},
+    "records": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["reproduction_id", "hypothesis_id", "runner_id", "reviewed_by", "primary_source_commit", "primary_artifact_commit", "reproduction_source_commit", "environment_image_digest", "environment_definition_relpath", "environment_definition_sha256", "verification_report_relpath", "verification_report_sha256", "preregistration_relpath", "preregistration_sha256", "primary_result_relpath", "primary_result_sha256", "reproduction_result_relpath", "reproduction_result_sha256", "primary_outcome", "reproduction_outcome", "command", "status", "independent_execution", "primary_cache_reused", "clean_environment", "outcome_match", "evidence_paths"],
+        "additionalProperties": false,
+        "properties": {
+          "reproduction_id": {"type": "string", "pattern": "^repro_[a-z0-9_]+$"},
+          "hypothesis_id": {"type": "string", "pattern": "^hyp_[a-z0-9_]+$"},
+          "runner_id": {"type": "string", "minLength": 1},
+          "primary_source_commit": {"type": "string", "pattern": "^[0-9a-f]{40}$"},
+          "primary_artifact_commit": {"type": "string", "pattern": "^[0-9a-f]{40}$"},
+          "reproduction_source_commit": {"type": "string", "pattern": "^[0-9a-f]{40}$"},
+          "environment_image_digest": {"type": "string", "pattern": "^sha256:[0-9a-f]{64}$"},
+          "environment_definition_relpath": {"$ref": "#/$defs/relpath"},
+          "environment_definition_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+          "verification_report_relpath": {"$ref": "#/$defs/relpath"},
+          "verification_report_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+          "preregistration_relpath": {"$ref": "#/$defs/relpath"},
+          "preregistration_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+          "primary_result_relpath": {"$ref": "#/$defs/relpath"},
+          "primary_result_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+          "reproduction_result_relpath": {"$ref": "#/$defs/relpath"},
+          "reproduction_result_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+          "primary_outcome": {"type": "string", "minLength": 1},
+          "reproduction_outcome": {"type": "string", "minLength": 1},
+          "command": {"type": "string", "minLength": 1},
+          "status": {"enum": ["passed", "failed"]},
+          "independent_execution": {"type": "boolean"},
+          "primary_cache_reused": {"const": false},
+          "clean_environment": {"type": "boolean"},
+          "outcome_match": {"type": "boolean"},
+          "reviewed_by": {"type": "string", "minLength": 1},
+          "evidence_paths": {
+            "type": "array",
+            "minItems": 1,
+            "items": {
+              "type": "object",
+              "required": ["relpath", "sha256"],
+              "properties": {
+                "relpath": {"$ref": "#/$defs/relpath"},
+                "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+              },
+              "additionalProperties": false
+            }
+          }
+        }
+      }
+    }
+  },
+  "additionalProperties": false
+}

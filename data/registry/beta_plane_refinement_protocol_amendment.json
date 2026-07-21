@@ -1,0 +1,11 @@
+{
+  "schema_version": 1,
+  "program_id": "beta_plane_jets",
+  "applies_to": "data/registry/beta_plane_sweep_preregistration.json",
+  "recorded_date": "2026-07-20",
+  "trigger": "The first 48-arm refinement run revealed that equal random seeds on unequal grid shapes did not generate the same initial Fourier realization.",
+  "confound": "Grid-size comparisons changed both the numerical resolution and the initial condition, so their endpoint differences could not measure grid convergence.",
+  "resolution": "Generate the seeded realization once on the production N=64 Fourier grid, embed the active shell modes into each refinement grid with discrete-transform normalization, and renormalize to the locked initial kinetic energy.",
+  "scope": "This amendment changes only refinement initial-condition coupling. It does not change the completed 540-arm production matrix, diagnostics, thresholds, or statistical decision.",
+  "falsification_condition": "The amended grid comparison is invalid if embedded initial fields disagree on any active Fourier coefficient after transform normalization or if initial kinetic energies differ beyond 1e-12 relative error."
+}

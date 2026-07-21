@@ -9,6 +9,9 @@ services:
     working_dir: /workspace
     volumes:
       - ../..:/workspace
+    environment:
+      MINERU_HYBRID_BATCH_RATIO: "1"
+      PYTORCH_CUDA_ALLOC_CONF: "expandable_segments:True"
     shm_size: "16gb"
     ipc: host
     deploy:

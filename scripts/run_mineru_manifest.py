@@ -118,7 +118,9 @@ def process_source(source: dict[str, Any], output_root: Path, force: bool) -> di
     }
 
 
-def load_pdf_sources(manifest_path: Path) -> list[dict[str, Any]]:
+def load_pdf_sources(
+    manifest_path: Path, selected_source_ids: set[str] | None = None
+) -> list[dict[str, Any]]:
     manifest = tomllib.loads(manifest_path.read_text(encoding="utf-8"))
     sources: list[dict[str, Any]] = []
     seen_ids: set[str] = set()
@@ -127,6 +129,8 @@ def load_pdf_sources(manifest_path: Path) -> list[dict[str, Any]]:
         if source_id in seen_ids:
             raise ValueError(f"duplicate source id: {source_id}")
         seen_ids.add(source_id)
+        if selected_source_ids is not None and source_id not in selected_source_ids:
+            continue
         target_path = REPO_ROOT / str(source["target_relpath"])
         if target_path.suffix.lower() != ".pdf":
             continue
@@ -142,14 +146,31 @@ def main() -> int:
     parser.add_argument("--output-root", type=Path, default=DEFAULT_OUTPUT_ROOT)
     parser.add_argument("--run-registry", type=Path, default=DEFAULT_RUN_REGISTRY)
     parser.add_argument("--force", action="store_true")
+    parser.add_argument(
+        "--source-id",
+        action="append",
+        default=[],
+        help="Process only a named manifest source; repeat for multiple sources",
+    )
     arguments = parser.parse_args()
 
     manifest_path = arguments.manifest.resolve()
     output_root = arguments.output_root.resolve()
     run_registry = arguments.run_registry.resolve()
+    selected_source_ids = set(arguments.source_id) if arguments.source_id else None
+    if selected_source_ids is not None:
+        manifest_source_ids = {
+            str(source["id"])
+            for source in tomllib.loads(manifest_path.read_text(encoding="utf-8")).get(
+                "sources", []
+            )
+        }
+        unknown_source_ids = sorted(selected_source_ids - manifest_source_ids)
+        if unknown_source_ids:
+            parser.error("unknown --source-id values: " + ", ".join(unknown_source_ids))
     records = [
         process_source(source, output_root, arguments.force)
-        for source in load_pdf_sources(manifest_path)
+        for source in load_pdf_sources(manifest_path, selected_source_ids)
     ]
     payload = {
         "schema_version": 1,

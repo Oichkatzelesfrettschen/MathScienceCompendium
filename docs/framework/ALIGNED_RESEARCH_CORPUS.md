@@ -20,13 +20,13 @@ or a failed energy balance.
 
 ## Retained decomposition result
 
-The manifest contains 35 PDFs totaling 878 pages. MinerU 3.4.4 completed all 35
+The manifest contains 42 PDFs totaling 1,076 pages. MinerU 3.4.4 completed all 42
 with zero failed sources using the high-effort CUDA hybrid engine. The retained
-primary outputs contain 2,246 detected equation regions, 49 tables, 126 images,
-43 charts, 277 lists, and 5,564 text regions. These are layout-model categories,
+primary outputs contain 2,774 detected equation regions, 65 tables, 161 images,
+56 charts, 329 lists, and 6,996 text regions. These are layout-model categories,
 not automatically validated mathematical claims.
 
-The native-text audit routes 29 sparse pages from 13 mixed-text documents to a
+The native-text audit routes 30 sparse pages from 14 mixed-text documents to a
 400 DPI Tesseract comparison. Tesseract remains a page-selective fallback; it
 does not overwrite native text or MinerU decomposition. Source, output,
 content-list, manifest, and fallback-page hashes are registry-validated.
@@ -93,6 +93,21 @@ spacetime-engineering mechanism.
 These sources require a complete energy balance for every extraction or
 amplification claim. Boundary-drive work, pump work, control work, dissipation,
 and stored-energy changes remain in that balance.
+
+## Beta-plane jets and Rossby-wave triads
+
+| Source ID | Role | Framework boundary |
+|---|---|---|
+| arxiv_bakas_constantinou_ioannou_1407_3354 | Foundational primary theory | Jet emergence in forced-dissipative barotropic beta-plane statistical state dynamics |
+| arxiv_bakas_constantinou_ioannou_1708_03031 | Primary theory | Weak-jet structure and nonlinear equilibration in statistical state dynamics |
+| arxiv_kartashov_kartashova_1307_8272 | Primary mathematical analysis | Exact and quasi-resonant Rossby triads on periodic domains |
+| arxiv_hayat_amanullah_walsh_bustamante_1804_03092 | Primary computational mathematics | Exact parameterization and search for discrete Rossby resonant triads |
+| arxiv_sahoo_ray_2507_23493 | Current preprint | Fluctuating interfaces in barotropic beta-plane jets; retained as boundary research |
+
+The jet papers do not transfer a forced-dissipative or statistically stationary
+result to the repository's freely decaying solver. The triad papers motivate
+exact arithmetic and resonance-aware controls; they do not validate the E7
+interpretation of any Fourier selector.
 
 ## Existing aligned materials and force sources
 

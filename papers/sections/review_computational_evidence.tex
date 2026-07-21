@@ -174,41 +174,59 @@ $P/Q\simeq\mathbb{Z}/2$ is $h(k_x,k_y)=k_x+k_y\pmod 2$. It admits every exact
 triad by additivity, so the proposed filter equals its identity control before
 any dynamics are run.
 
-The matched beta-plane experiment tests the fluid implementation and records
-the algebraic filter as a prespecified negative control:
+The short matched beta-plane ablation tests implementation sensitivity and
+records the algebraic filter as a prespecified negative control. It is not the
+scientific jet test. The production program separately executes 540 paired
+runs across five beta values, three drag values, three viscosities, and twelve
+independent seed clusters:
 
 \begin{enumerate}
   \item implement the beta-dependent evolution independently of quotient labels;
   \item compare the homomorphic filter with its bit-identical identity control;
   \item specify mass, energy, enstrophy, anisotropy, and jet diagnostics before
     running;
-  \item execute a resolution and time-step refinement study with multiple seeds;
-  \item report effect sizes and uncertainty, including null results; and
+  \item execute a committed-before-rerun resolution and time-step refinement study;
+  \item report seed-clustered effect sizes and simultaneous uncertainty bounds;
   \item require zero filter effect to numerical precision and reject any claimed
     algebraic effect if the trajectories differ.
 \end{enumerate}
 
-This experiment cannot rehabilitate the root-lattice interpretation. A
-nonhomomorphic filter would define a different mechanism and requires a new
-derivation and admission gate.
+The numerical, refinement, and control gates pass. The registered scientific
+hypothesis does not. At $\beta=5$, the zonal-fraction effect is $-0.0030$ and
+the persistent-jet-prevalence effect is $0.1019$. At $\beta=10$, the effects
+are $-0.0200$ and $0.0000$. Every required simultaneous interval crosses zero,
+and every required effect estimate misses its locked minimum. A cache-isolated
+clean-container rerun reproduces the negative aggregate decision. The result is evidence
+against the declared transient-zonalization effect in this freely decaying
+model; it is not evidence against beta-plane jet formation under other forcing
+or dissipation regimes.
+
+This experiment cannot rehabilitate the root-lattice interpretation. The first
+nonhomomorphic candidate also fails specificity: its $E_7$ quadratic-defect
+mask is exactly the generic even-checkerboard kernel at every enumerated triad.
+Generic parity-kernel dynamics would define a different mechanism and still
+requires conservation and matched-control gates.
+
+\registeredresult{hyp_e7_nonhomomorphic_fourier_selector}
+\registeredresult{hyp_beta_plane_transient_zonalization}
 
 \begin{figure}[htbp]
   \centering
   \includegraphics[width=\textwidth]{figures/review_beta_ablation.png}
-  \caption{Matched beta-plane ablation across three seeds, two grids, and two
-  time steps. Beta changes every trajectory; the homomorphic quotient filter
-  remains exactly identical to the identity control.}
+  \caption{Primary effects from the locked 540-run beta-plane matrix. Error
+  bars are simultaneous familywise 95 percent bootstrap intervals over twelve
+  seed clusters. None of the four required $\beta=5,10$ contrasts passes.}
   \label{fig:beta-ablation}
 \end{figure}
 
 \begin{table}[htbp]
   \centering
-  \caption{Quantitative range across the preregistered beta-plane matrix.}
+  \caption{Required contrasts from the locked beta-plane production matrix.}
   \label{tab:beta-ablation-results}
   \small
-  \begin{tabularx}{\textwidth}{>{\raggedright\arraybackslash}p{0.34\textwidth}YYY}
+  \begin{tabularx}{\textwidth}{>{\raggedright\arraybackslash}p{0.29\textwidth}YYYY}
     \toprule
-    Metric & Minimum & Maximum & Interpretation \\
+    Metric & Effect & Lower bound & Upper bound & Decision \\
     \midrule
     \input{generated/review_beta_result_rows.tex}
   \end{tabularx}

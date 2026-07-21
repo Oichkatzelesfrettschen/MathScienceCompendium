@@ -1,0 +1,22 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://mathsciencecompendium.local/schemas/registry/beta_plane_sweep_preregistration.schema.json",
+  "title": "BetaPlaneSweepPreregistration",
+  "type": "object",
+  "required": ["schema_version", "program_id", "hypothesis_id", "claim_scope", "model", "production_matrix", "refinement_matrix", "locked_diagnostics", "controls", "numerical_gates", "statistical_plan", "independent_reproduction"],
+  "properties": {
+    "schema_version": {"const": 1},
+    "program_id": {"const": "beta_plane_jets"},
+    "hypothesis_id": {"const": "hyp_beta_plane_transient_zonalization"},
+    "claim_scope": {"type": "string", "minLength": 1},
+    "model": {"type": "object"},
+    "production_matrix": {"type": "object"},
+    "refinement_matrix": {"type": "object"},
+    "locked_diagnostics": {"type": "object"},
+    "controls": {"type": "array", "minItems": 5, "uniqueItems": true, "items": {"type": "string", "minLength": 1}},
+    "numerical_gates": {"type": "array", "minItems": 6, "items": {"type": "string", "minLength": 1}},
+    "statistical_plan": {"type": "object"},
+    "independent_reproduction": {"type": "object"}
+  },
+  "additionalProperties": false
+}

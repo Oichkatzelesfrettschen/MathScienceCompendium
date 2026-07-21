@@ -9,6 +9,8 @@ RUFF = ./venv/bin/ruff
 MYPY = ./venv/bin/mypy
 PYTEST = ./venv/bin/pytest
 SPHINX = sphinx-build
+SOURCE_DATE_EPOCH ?= 0
+export SOURCE_DATE_EPOCH
 
 # Project Directories
 SRC_DIR = src/mathphysics
@@ -17,7 +19,7 @@ BENCH_DIR = benchmarks
 RESULTS_DIR = results
 FIGURES_DIR = figures
 
-.PHONY: all clean help install test lint check-types benchmark run-highres run-unified run-jordan run-clifford docs papers cleanbuild lint-latex figures paper-evidence-artifacts fetch-external sync-super-force-analysis normalize-corpus framework-decomposition framework-overlap corpus-dedupe build-registries docs-index claim-coverage critique-evidence validate-external-provenance validate-registry-schemas parquet-audit evidence-audits lbm-evidence-figures pdf-text-quality-audit document-ocr-mineru document-ocr-tesseract document-ocr-generate document-decomposition-index verify-offline repro-refresh check-pdf-deps archive-pdfs notebooks fetch-arxiv resolve-dois fetch-all verify-checksums check-deps
+.PHONY: all clean help install test lint check-types benchmark run-highres run-unified run-jordan run-clifford docs papers cleanbuild lint-latex figures paper-evidence-artifacts fetch-external sync-super-force-analysis normalize-corpus framework-decomposition framework-overlap corpus-dedupe build-registries docs-index claim-coverage critique-evidence hypothesis-registry validate-clean-reproduction validate-hypothesis-promotions validate-external-provenance validate-registry-schemas parquet-audit evidence-audits beta-plane-sweep beta-plane-refinement beta-plane-controls lbm-evidence-figures pdf-text-quality-audit document-ocr-mineru document-ocr-tesseract document-ocr-generate document-decomposition-index verify-offline reproducibility-indexes repro-refresh check-pdf-deps archive-pdfs notebooks fetch-arxiv resolve-dois fetch-all verify-checksums check-deps
 
 # Default target
 all: lint check-types test benchmark figures papers
@@ -210,6 +212,21 @@ critique-evidence:
 	@echo "[DATA] Generating critique table from the evidence ledger..."
 	python3 scripts/generate_critique_evidence_table.py
 
+hypothesis-registry:
+	@echo "[DOCS] Rendering the canonical hypothesis registry..."
+	python3 scripts/build_hypothesis_registry_report.py
+
+validate-clean-reproduction:
+	@test -n "$(EVIDENCE_SOURCE_COMMIT)" || (echo "EVIDENCE_SOURCE_COMMIT is required" && exit 2)
+	@echo "[VERIFY] Comparing clean-container outputs, source identity, and primary evidence..."
+	python3 scripts/verify_clean_reproduction.py \
+		--image reproduction-evidence-reproduction:latest \
+		--source-commit "$(EVIDENCE_SOURCE_COMMIT)"
+
+validate-hypothesis-promotions:
+	@echo "[VERIFY] Enforcing independent reproduction before paper promotion..."
+	python3 scripts/validate_hypothesis_promotions.py
+
 validate-external-provenance:
 	@echo "[VERIFY] Validating external provenance JSON files against schemas..."
 	python3 scripts/validate_external_provenance_schemas.py
@@ -225,10 +242,23 @@ parquet-audit:
 evidence-audits:
 	@echo "[DATA] Regenerating computational evidence audits..."
 	PYTHONPATH=src python3 scripts/generate_core_validation_results.py
+	PYTHONPATH=src python3 scripts/audit_triad_selectors.py
 	PYTHONPATH=src python3 experiments/quantum_lbm_stable_demo.py
 	PYTHONPATH=src python3 scripts/analyze_retained_lbm.py
 	PYTHONPATH=src python3 scripts/audit_lbm_root_order.py
 	python3 scripts/parquet_audit.py
+
+beta-plane-sweep:
+	@echo "[EXPERIMENT] Running the preregistered decaying beta-plane sweep..."
+	PYTHONPATH=src JAX_PLATFORMS=cpu python3 scripts/run_beta_plane_sweep.py --profile production
+
+beta-plane-refinement:
+	@echo "[EXPERIMENT] Running the amended shared-initial-condition refinement matrix..."
+	PYTHONPATH=src JAX_PLATFORMS=cpu python3 scripts/run_beta_plane_sweep.py --profile refinement
+
+beta-plane-controls:
+	@echo "[EXPERIMENT] Running the preregistered beta-plane control package..."
+	PYTHONPATH=src JAX_PLATFORMS=cpu python3 scripts/run_beta_plane_controls.py
 
 lbm-evidence-figures:
 	@echo "[FIGURES] Rendering LBM evidence with the local Matplotlib and font stack..."
@@ -264,6 +294,7 @@ verify-offline:
 	@echo "[VERIFY] Running offline integrity checks..."
 	python3 scripts/validate_external_provenance_schemas.py
 	python3 scripts/validate_registry_schemas.py
+	python3 scripts/validate_hypothesis_promotions.py
 	python3 scripts/verify_offline_integrity.py
 
 check-pdf-deps:
@@ -278,11 +309,25 @@ repro-refresh:
 	@$(MAKE) corpus-dedupe
 	@$(MAKE) evidence-audits
 	@$(MAKE) critique-evidence
+	@$(MAKE) hypothesis-registry
 	@$(MAKE) build-registries
 	@$(MAKE) docs-index
 	@$(MAKE) claim-coverage
 	@$(MAKE) verify-offline
 	@echo "[SUCCESS] Offline reproducibility indexes refreshed."
+
+reproducibility-indexes:
+	@$(MAKE) normalize-corpus
+	@$(MAKE) framework-decomposition
+	@$(MAKE) framework-overlap
+	@$(MAKE) corpus-dedupe
+	@$(MAKE) critique-evidence
+	@$(MAKE) hypothesis-registry
+	@$(MAKE) build-registries
+	@$(MAKE) docs-index
+	@$(MAKE) claim-coverage
+	@$(MAKE) verify-offline
+	@echo "[SUCCESS] Deterministic reproducibility indexes refreshed."
 
 archive-pdfs:
 	@echo "[DATA] Archiving repository PDFs to ~/Documents/MathScienceCompendium/pdfs..."
@@ -366,6 +411,7 @@ help:
 	@echo "  make docs-index       - Build docs registry and docs index markdown"
 	@echo "  make claim-coverage   - Build claim/source coverage report from crosswalk policy"
 	@echo "  make critique-evidence - Generate the paper critique table from its evidence ledger"
+	@echo "  make validate-clean-reproduction - Verify clean results against source and primary evidence"
 	@echo "  make validate-external-provenance - Validate data/external provenance JSON against schemas"
 	@echo "  make validate-registry-schemas - Validate data/registry/*.toml and selected *.json against schemas"
 	@echo "  make parquet-audit    - Audit parquet files and emit JSON summary"
@@ -375,6 +421,7 @@ help:
 	@echo "  make document-ocr-generate - Generate pinned MinerU and Tesseract OCR outputs"
 	@echo "  make document-decomposition-index - Index completed MinerU and Tesseract outputs"
 	@echo "  make verify-offline   - Run offline integrity checks"
+	@echo "  make reproducibility-indexes - Refresh deterministic indexes without rerunning evidence"
 	@echo "  make repro-refresh    - Run normalize + registries + audit + verification"
 	@echo "  make archive-pdfs     - Copy all repo PDFs to ~/Documents before cleanup"
 	@echo ""

@@ -1,0 +1,12 @@
+services:
+  evidence-reproduction:
+    build:
+      context: ../..
+      dockerfile: tools/reproduction/Dockerfile
+      args:
+        EVIDENCE_SOURCE_COMMIT: ${EVIDENCE_SOURCE_COMMIT:?set EVIDENCE_SOURCE_COMMIT}
+    environment:
+      EVIDENCE_SOURCE_COMMIT: ${EVIDENCE_SOURCE_COMMIT:?set EVIDENCE_SOURCE_COMMIT}
+    volumes:
+      - ../../data/reproduction:/workspace/data/reproduction
+    command: ["python", "tools/reproduction/run_independent_reproduction.py"]

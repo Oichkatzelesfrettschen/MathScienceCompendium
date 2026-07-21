@@ -44,6 +44,7 @@ def run_stable_demo():
         num_harmonics=3,  # Just first 3 E7 harmonics
         harmonic_amplitude=0.0001,  # Tiny perturbations
         golden_ratio_scaling=True,
+        random_seed=0,
         # Simulation parameters
         timesteps=50,
         snapshot_interval=10,
@@ -172,6 +173,7 @@ def run_stable_demo():
             "timesteps": params.timesteps,
             "num_harmonics": params.num_harmonics,
             "harmonic_amplitude": params.harmonic_amplitude,
+            "random_seed": params.random_seed,
         },
         "conservation": {
             "mass_error": mass_error,

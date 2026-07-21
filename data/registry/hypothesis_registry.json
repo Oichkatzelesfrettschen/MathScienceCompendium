@@ -1,0 +1,613 @@
+{
+  "schema_version": 1,
+  "description": "Complete active registry for every bounded, unsupported, excluded, or falsified claim in data/registry/unified_framework_claims.json. It does not claim automatic coverage of arbitrary prose outside that bounded canonical ledger. Falsified claims remain as lineage for explicitly new replacement hypotheses.",
+  "source_claim_statuses": ["bounded", "excluded", "falsified", "unsupported"],
+  "promotion_policy": {
+    "paper_admission_rule": "A computational or empirical hypothesis result may enter the manuscript only when its locked decision rule is evaluated and paper_promotion is eligible or promoted.",
+    "independent_reproduction_rule": "Every supported or negative computational or empirical result requires a cache-isolated rerun in a pinned clean environment, with separate runner and reviewer roles, before promotion. This gate establishes computational repeatability, not external replication or an independent implementation.",
+    "literature_rule": "Literature is admitted only when it directly defines, constrains, tests, or falsifies a registered hypothesis; literature cannot substitute for repository evidence."
+  },
+  "hypotheses": [
+    {
+      "id": "hyp_higher_cayley_dickson_observable",
+      "title": "Higher Cayley-Dickson zero-divisor observable",
+      "program_id": "foundational_backlog",
+      "source_claim_ids": ["higher_cayley_dickson_physical_mapping"],
+      "formal_statement": "For declared state spaces X_ZD and X_0, dynamics Phi_t, and measurement Y, an intervention that changes only zero-divisor structure produces a nonzero preregistered contrast E[Y(Phi_t(X_ZD)) - Y(Phi_t(X_0))].",
+      "observable_predictions": [
+        {
+          "id": "zero_divisor_contrast",
+          "observable": "Matched difference in the declared response Y",
+          "expected_relation": "The confidence interval excludes zero and exceeds the preregistered minimum effect.",
+          "measurement_method": "Run identical dynamics on algebraic and algebra-free states matched for spectrum, energy, dimension, parameter count, and conditioning."
+        }
+      ],
+      "controls": [
+        "Algebra-free state with matched spectrum and energy",
+        "Basis-scrambled multiplication table",
+        "Parameter-count- and conditioning-matched surrogate"
+      ],
+      "falsification_thresholds": [
+        "Falsify the physical mapping if the corrected 95 percent confidence interval contains zero.",
+        "Falsify specificity if any matched surrogate reproduces the effect within the preregistered equivalence margin."
+      ],
+      "required_evidence": [
+        {
+          "kind": "definition",
+          "description": "Typed physical state map, intervention, dynamics, observable, units, and nuisance parameters",
+          "status": "missing",
+          "artifact_paths": []
+        },
+        {
+          "kind": "derivation",
+          "description": "Algebra-to-observable mechanism with dimensional consistency",
+          "status": "missing",
+          "artifact_paths": []
+        },
+        {
+          "kind": "control",
+          "description": "Matched algebra-free and scrambled-label controls",
+          "status": "planned",
+          "artifact_paths": []
+        },
+        {
+          "kind": "literature",
+          "description": "Algebraic boundary and zero-divisor foundations",
+          "status": "present",
+          "artifact_paths": ["data/external/sources.toml"]
+        },
+        {
+          "kind": "replication",
+          "description": "Independent reproduction after a primary result exists",
+          "status": "external_required",
+          "artifact_paths": []
+        }
+      ],
+      "implementation_status": "design_only",
+      "research_status": "blocked",
+      "literature_source_ids": ["arxiv_baez_math_0105155", "arxiv_moreno_math_0512517"],
+      "independent_reproduction": {"required": true, "status": "pending", "evidence_paths": []},
+      "paper_promotion": "prohibited"
+    },
+    {
+      "id": "hyp_e10_e11_truncation_dictionary",
+      "title": "Finite E10 or E11 supergravity dictionary",
+      "program_id": "foundational_backlog",
+      "source_claim_ids": ["e10_e11_supergravity_scope"],
+      "formal_statement": "For a fixed algebra, level or height cutoff L, and explicit dictionary phi_L, every declared algebraic equation maps to the named supergravity equation through L, with the first unmatched term recorded.",
+      "observable_predictions": [
+        {
+          "id": "truncation_residual",
+          "observable": "Symbolic residual of each mapped equation through cutoff L",
+          "expected_relation": "Every in-scope residual simplifies exactly to zero and the first out-of-scope mismatch is identified.",
+          "measurement_method": "Evaluate the locked dictionary symbolically and compare term-by-term with the declared supergravity truncation."
+        }
+      ],
+      "controls": ["Label-shuffled dictionary", "Competing dictionary with the same number of free correspondences"],
+      "falsification_thresholds": [
+        "One nonzero exact residual within the declared cutoff falsifies the stated dictionary.",
+        "Instability of previously matched terms when L is increased falsifies truncation stability."
+      ],
+      "required_evidence": [
+        {"kind": "definition", "description": "Explicit algebra, real form, truncation, variables, and typed dictionary", "status": "missing", "artifact_paths": []},
+        {"kind": "derivation", "description": "Term-by-term symbolic equation map", "status": "missing", "artifact_paths": []},
+        {"kind": "literature", "description": "Foundational E10 and E11 supergravity proposals", "status": "present", "artifact_paths": ["data/external/sources.toml"]},
+        {"kind": "control", "description": "Dictionary specificity controls", "status": "planned", "artifact_paths": []},
+        {"kind": "replication", "description": "Independent symbolic reproduction", "status": "external_required", "artifact_paths": []}
+      ],
+      "implementation_status": "design_only",
+      "research_status": "blocked",
+      "literature_source_ids": ["arxiv_damour_e10_0207267", "arxiv_west_e11_0104081"],
+      "independent_reproduction": {"required": true, "status": "pending", "evidence_paths": []},
+      "paper_promotion": "prohibited"
+    },
+    {
+      "id": "hyp_moonshine_stability_operator",
+      "title": "Moonshine-specific stability operator",
+      "program_id": "foundational_backlog",
+      "source_claim_ids": ["monstrous_moonshine_stability"],
+      "formal_statement": "A declared Monster representation rho and evolution U_t preserve a named invariant and improve a preregistered stability functional relative to equal-dimensional non-Monster controls.",
+      "observable_predictions": [
+        {
+          "id": "stability_margin",
+          "observable": "Difference in the declared Lyapunov or norm-growth bound",
+          "expected_relation": "The Monster construction improves the bound beyond the locked minimum margin.",
+          "measurement_method": "Evaluate the same evolution and perturbation ensemble under Monster, non-Monster, and label-shuffled representations."
+        }
+      ],
+      "controls": ["Equal-dimensional non-Monster representation", "Label-shuffled representation", "Invariant-disabled ablation"],
+      "falsification_thresholds": [
+        "Failure of the claimed commutation or invariant relation falsifies the mechanism.",
+        "A corrected confidence interval overlapping the locked equivalence margin falsifies a stability advantage."
+      ],
+      "required_evidence": [
+        {"kind": "definition", "description": "Representation, evolution, invariant, perturbation ensemble, and stability functional", "status": "missing", "artifact_paths": []},
+        {"kind": "derivation", "description": "Proof linking the representation to the stability inequality", "status": "missing", "artifact_paths": []},
+        {"kind": "literature", "description": "Moonshine theorem and modern representation foundations", "status": "present", "artifact_paths": ["data/external/sources.toml"]},
+        {"kind": "control", "description": "Equal-capacity alternative representation controls", "status": "planned", "artifact_paths": []},
+        {"kind": "replication", "description": "Independent computational reproduction", "status": "external_required", "artifact_paths": []}
+      ],
+      "implementation_status": "design_only",
+      "research_status": "blocked",
+      "literature_source_ids": ["borcherds_monstrous_moonshine_1992", "arxiv_duncan_griffin_ono_1411_6571"],
+      "independent_reproduction": {"required": true, "status": "pending", "evidence_paths": []},
+      "paper_promotion": "prohibited"
+    },
+    {
+      "id": "hyp_fractal_estimator_convergence",
+      "title": "Fractal estimator convergence under refinement",
+      "program_id": "foundational_backlog",
+      "source_claim_ids": ["fractal_estimator_convergence"],
+      "formal_statement": "For exact-dimension controls and declared estimators, absolute error decreases under resolution refinement and remains stable under adjacent scale-window choices.",
+      "observable_predictions": [
+        {
+          "id": "maximum_dimension_error",
+          "observable": "Maximum absolute dimension error across locked exact controls",
+          "expected_relation": "The retained refinement series reaches error below 0.02 without a worsening terminal trend.",
+          "measurement_method": "Run box-counting and comparison estimators on Cantor, Sierpinski, Koch, and nonfractal controls at preregistered resolutions and scale windows."
+        }
+      ],
+      "controls": ["Cantor set", "Sierpinski triangle", "Koch curve", "Nonfractal line and plane"],
+      "falsification_thresholds": [
+        "Falsify convergence if maximum absolute error remains at or above 0.02 at the terminal preregistered resolution.",
+        "Falsify scale stability if adjacent admissible windows shift the estimate by 0.02 or more."
+      ],
+      "required_evidence": [
+        {"kind": "simulation", "description": "Retained baseline estimator outputs", "status": "present", "artifact_paths": ["experiments/results/fractal_dimensions.json"]},
+        {"kind": "control", "description": "Exact-dimension refinement series and scale-window sensitivity", "status": "missing", "artifact_paths": []},
+        {"kind": "replication", "description": "Independent clean-environment estimator run", "status": "external_required", "artifact_paths": []}
+      ],
+      "implementation_status": "implemented_inconclusive",
+      "research_status": "active",
+      "literature_source_ids": [],
+      "independent_reproduction": {"required": true, "status": "pending", "evidence_paths": []},
+      "paper_promotion": "prohibited"
+    },
+    {
+      "id": "hyp_scalar_curvature_action",
+      "title": "Covariant scalar-curvature mechanism",
+      "program_id": "physical_admission",
+      "source_claim_ids": ["scalar_field_curvature_mechanism"],
+      "formal_statement": "A frozen covariant action with declared fields, units, gauge, background, and boundary data yields ghost-free field equations and a dimensioned observable that differs from GR and minimally coupled scalar controls.",
+      "observable_predictions": [
+        {
+          "id": "held_out_curvature_observable",
+          "observable": "Named dimensioned curvature or propagation observable on held-out data",
+          "expected_relation": "The corrected 95 percent confidence interval excludes both matched controls by the preregistered minimum effect.",
+          "measurement_method": "Derive and solve all arms at matched resolution, then evaluate the locked observable on held-out cases."
+        }
+      ],
+      "controls": ["General relativity", "Minimally coupled scalar field", "Null-source evolution"],
+      "falsification_thresholds": [
+        "Reject if a ghost, gradient instability, or tachyonic physical mode exists in the declared regime.",
+        "Reject if normalized constraints exceed 1e-8 or fail refinement.",
+        "Reject if the multiplicity-corrected distinguishing test fails at alpha 0.05."
+      ],
+      "required_evidence": [
+        {"kind": "definition", "description": "Covariant action, units, fields, gauge, background, and boundaries", "status": "missing", "artifact_paths": []},
+        {"kind": "derivation", "description": "Field equations, stress tensor, constraints, and perturbation spectrum", "status": "missing", "artifact_paths": []},
+        {"kind": "control", "description": "Matched GR, minimal-scalar, and null-source simulations", "status": "planned", "artifact_paths": []},
+        {"kind": "measurement", "description": "Held-out dimensioned observable with uncertainty", "status": "external_required", "artifact_paths": []},
+        {"kind": "replication", "description": "Independent reproduction of derivation and observable", "status": "external_required", "artifact_paths": []}
+      ],
+      "implementation_status": "blocked_external_evidence",
+      "research_status": "blocked",
+      "literature_source_ids": [],
+      "independent_reproduction": {"required": true, "status": "pending", "evidence_paths": []},
+      "paper_promotion": "prohibited"
+    },
+    {
+      "id": "hyp_zpe_closed_cycle_work",
+      "title": "Positive closed-cycle vacuum-device work",
+      "program_id": "physical_admission",
+      "source_claim_ids": ["zpe_energy_harvesting"],
+      "formal_statement": "A physical device produces positive net useful work over a complete return cycle after electrical, pump, boundary-control, environmental heat, radiative, dissipative, and stored-energy channels are included.",
+      "observable_predictions": [
+        {
+          "id": "net_cycle_work",
+          "observable": "Net useful cycle work with propagated uncertainty",
+          "expected_relation": "The multiplicity-corrected lower 95 percent confidence bound is above zero after three-sigma energy closure.",
+          "measurement_method": "Calibrate and integrate every energy channel over blinded complete cycles and compare with disabled, classical, and sham controls."
+        }
+      ],
+      "controls": ["Modulation-disabled cycles", "Matched classical parametric source", "Blind sham cycles"],
+      "falsification_thresholds": [
+        "Reject if any declared energy channel is omitted.",
+        "Reject if the closure residual exceeds three propagated standard uncertainties.",
+        "Reject if the corrected lower 95 percent confidence bound for net work is not above zero in either primary or independent replication."
+      ],
+      "required_evidence": [
+        {"kind": "definition", "description": "Physical device, return cycle, measurement operators, and complete energy ledger", "status": "missing", "artifact_paths": []},
+        {"kind": "measurement", "description": "Calibrated blinded raw cycle data and uncertainty covariance", "status": "external_required", "artifact_paths": []},
+        {"kind": "control", "description": "Disabled, classical, and sham control cycles", "status": "external_required", "artifact_paths": []},
+        {"kind": "literature", "description": "Casimir, dynamical-Casimir, and quantum inequality constraints", "status": "present", "artifact_paths": ["data/external/sources.toml"]},
+        {"kind": "replication", "description": "Independent device and analysis replication", "status": "external_required", "artifact_paths": []}
+      ],
+      "implementation_status": "blocked_external_evidence",
+      "research_status": "blocked",
+      "literature_source_ids": ["arxiv_jaffe_hep_th_0503158", "arxiv_wilson_1105_4714", "arxiv_fewster_1208_5399"],
+      "independent_reproduction": {"required": true, "status": "pending", "evidence_paths": []},
+      "paper_promotion": "prohibited"
+    },
+    {
+      "id": "hyp_time_crystal_net_period_work",
+      "title": "Time-crystalline order separated from net energy gain",
+      "program_id": "physical_admission",
+      "source_claim_ids": ["time_crystal_energy_amplification"],
+      "formal_statement": "A specified driven many-body system exhibits locked subharmonic order, while a separate complete period-resolved ledger determines whether net useful work remains positive after drive, heat, storage, and loss terms.",
+      "observable_predictions": [
+        {
+          "id": "subharmonic_order",
+          "observable": "Subharmonic order parameter and lifetime",
+          "expected_relation": "The response remains locked over the preregistered perturbation range and exceeds all phase-destroying controls.",
+          "measurement_method": "Measure the locked Fourier component and lifetime for interacting, noninteracting, localization-disabled, off-resonant, and sham-drive arms."
+        },
+        {
+          "id": "net_period_work",
+          "observable": "Net useful work over integer drive periods",
+          "expected_relation": "The corrected lower 95 percent confidence bound is above zero after three-sigma energy closure.",
+          "measurement_method": "Integrate all work, heat, storage, and loss channels over complete periods."
+        }
+      ],
+      "controls": ["Noninteracting system", "Localization-disabled system", "Off-resonant drive", "Sham drive"],
+      "falsification_thresholds": [
+        "Reject time-crystalline order if the subharmonic response is not locked or is reproduced by phase-destroying controls.",
+        "Reject energy amplification if closure exceeds three uncertainties or the corrected lower bound for net period work is not positive."
+      ],
+      "required_evidence": [
+        {"kind": "definition", "description": "Hamiltonian or open-system generator and period-resolved energy operators", "status": "missing", "artifact_paths": []},
+        {"kind": "measurement", "description": "Raw order-parameter and complete energy-channel time series", "status": "external_required", "artifact_paths": []},
+        {"kind": "control", "description": "Interacting and phase-destroying control arms", "status": "external_required", "artifact_paths": []},
+        {"kind": "literature", "description": "No-go theorem and discrete time-crystal foundations", "status": "present", "artifact_paths": ["data/external/sources.toml"]},
+        {"kind": "replication", "description": "Independent order and energy replication", "status": "external_required", "artifact_paths": []}
+      ],
+      "implementation_status": "blocked_external_evidence",
+      "research_status": "blocked",
+      "literature_source_ids": ["arxiv_watanabe_oshikawa_1410_2143", "arxiv_else_bauer_nayak_1603_08001", "arxiv_zhang_1609_08684", "arxiv_camacho_fauseweh_2605_27211"],
+      "independent_reproduction": {"required": true, "status": "pending", "evidence_paths": []},
+      "paper_promotion": "prohibited"
+    },
+    {
+      "id": "hyp_planck_force_unification_action",
+      "title": "Planck-force unification action",
+      "program_id": "foundational_backlog",
+      "source_claim_ids": ["planck_force_unification"],
+      "formal_statement": "A common action containing explicit field content reproduces declared Standard Model and general-relativistic low-energy limits and predicts an observable not implied by their uncoupled combination.",
+      "observable_predictions": [
+        {
+          "id": "distinguishing_low_energy_observable",
+          "observable": "Preregistered low-energy observable unique to the common action",
+          "expected_relation": "The result differs from Standard Model plus general relativity and equal-parameter effective-field-theory controls by the locked minimum effect.",
+          "measurement_method": "Derive all limits and evaluate the observable under the common action and matched alternatives."
+        }
+      ],
+      "controls": ["Standard Model plus general relativity", "Equal-parameter effective field theories"],
+      "falsification_thresholds": [
+        "Failure to recover any declared low-energy limit falsifies the model.",
+        "Absence of a distinguishing observable leaves c^4/G as dimensional analysis rather than unification evidence."
+      ],
+      "required_evidence": [
+        {"kind": "definition", "description": "Common action, fields, symmetries, units, and coupling constants", "status": "missing", "artifact_paths": []},
+        {"kind": "derivation", "description": "Standard Model and general-relativistic limits plus distinguishing prediction", "status": "missing", "artifact_paths": []},
+        {"kind": "control", "description": "Equal-capacity alternative theories", "status": "planned", "artifact_paths": []},
+        {"kind": "replication", "description": "Independent analytic and numerical reproduction", "status": "external_required", "artifact_paths": []}
+      ],
+      "implementation_status": "design_only",
+      "research_status": "blocked",
+      "literature_source_ids": ["pais_superforce_2023", "brandenburg_comment_superforce"],
+      "independent_reproduction": {"required": true, "status": "pending", "evidence_paths": []},
+      "paper_promotion": "prohibited"
+    },
+    {
+      "id": "hyp_origami_typed_operator",
+      "title": "Typed fold-merge operator",
+      "program_id": "physical_admission",
+      "source_claim_ids": ["origami_fold_merge_operator"],
+      "formal_statement": "A declared operator F from state space X to state space Y is closed on its domain, has stated regularity and invariants, and produces an observable not equivalent to a coordinate transformation.",
+      "observable_predictions": [
+        {
+          "id": "noncoordinate_effect",
+          "observable": "Invariant physical contrast between F and an equivalent coordinate transformation",
+          "expected_relation": "The contrast exceeds a preregistered nonzero minimum effect.",
+          "measurement_method": "Evaluate the same states under F and the matched coordinate-only control."
+        }
+      ],
+      "controls": ["Equivalent coordinate transformation", "Identity operator"],
+      "falsification_thresholds": [
+        "An undefined domain, codomain, operator law, or observable excludes the claim from testing.",
+        "Observational equivalence to the coordinate control falsifies the proposed physical effect."
+      ],
+      "required_evidence": [
+        {"kind": "definition", "description": "Domain, codomain, topology, measure, operator law, regularity, and invariants", "status": "missing", "artifact_paths": []},
+        {"kind": "measurement", "description": "Operational physical state map and observable", "status": "missing", "artifact_paths": []},
+        {"kind": "control", "description": "Coordinate-equivalence control", "status": "planned", "artifact_paths": []}
+      ],
+      "implementation_status": "excluded_undefined",
+      "research_status": "excluded",
+      "literature_source_ids": [],
+      "independent_reproduction": {"required": false, "status": "not_applicable", "evidence_paths": []},
+      "paper_promotion": "prohibited"
+    },
+    {
+      "id": "hyp_e7_nonhomomorphic_fourier_selector",
+      "title": "E7 specificity of a nonhomomorphic Fourier triad selector",
+      "program_id": "e7_fourier_selector",
+      "source_claim_ids": ["e7_root_quotient_charge", "external_fourier_quotient_map"],
+      "formal_statement": "The E7 discriminant quadratic-defect mask uses epsilon(k)=(kx+ky) mod 2 and D4=3*(epsilon(k)+epsilon(p)+epsilon(q)) mod 4. E7 specificity requires this mask to differ on at least one locked exact triad from the generic even-checkerboard kernel.",
+      "observable_predictions": [
+        {
+          "id": "checkerboard_specificity_difference",
+          "observable": "Mismatch count between the quadratic-defect and generic checkerboard masks",
+          "expected_relation": "At least one exact triad differs on each locked square Fourier domain.",
+          "measurement_method": "Exhaustively enumerate integer triads k+p+q=0 at radii 2, 4, and 8 and compare both masks exactly."
+        },
+        {
+          "id": "controlled_dynamical_effect",
+          "observable": "Paired change in locked flow diagnostics",
+          "expected_relation": "Only a selector that survives the exact checkerboard control may proceed to matched dynamical controls.",
+          "measurement_method": "Run paired simulations with identical initial fields and matched triad-retention rates."
+        }
+      ],
+      "controls": [
+        "Identity selector",
+        "Failed homomorphic parity selector",
+        "Generic even-checkerboard sublattice",
+        "Alternative parity maps",
+        "Label-shuffled selector with identical triad-retention rate",
+        "Equal-density orbit-closed random masks",
+        "Matched radial-spectrum, power, and anisotropy controls",
+        "Square-symmetry-breaking selector ablation"
+      ],
+      "falsification_thresholds": [
+        "Reject E7 specificity if the quadratic-defect mask is exactly the generic checkerboard kernel.",
+        "Reject the replacement if it accepts all or no exact triads on any locked evaluation domain.",
+        "Reject the claimed symmetry if any exact rotation or reflection test fails.",
+        "Reject a dynamical advantage unless corrected paired confidence bounds exceed the preregistered minimum effect against every matched control."
+      ],
+      "required_evidence": [
+        {"kind": "definition", "description": "Typed nonhomomorphic selector and explicit statement that it is not an E7 root charge", "status": "present", "artifact_paths": ["src/mathphysics/triad_selectors.py", "data/registry/e7_selector_preregistration.json"]},
+        {"kind": "derivation", "description": "Exact Cartan inverse, discriminant value, selector counts, and declared lattice symmetries", "status": "present", "artifact_paths": ["data/registry/triad_selector_audit.json", "tests/unit/test_triad_selectors.py"]},
+        {"kind": "simulation", "description": "Generic parity-kernel dynamics only after conservation gates", "status": "planned", "artifact_paths": []},
+        {"kind": "control", "description": "Exact generic-checkerboard equivalence control", "status": "present", "artifact_paths": ["data/registry/triad_selector_audit.json", "tests/unit/test_triad_selectors.py"]},
+        {"kind": "control", "description": "Identity, homomorphism, alternative parity, and equal-rate shuffled controls", "status": "planned", "artifact_paths": []},
+        {"kind": "replication", "description": "Cache-isolated clean-environment rerun", "status": "present", "artifact_paths": ["data/registry/independent_reproduction_registry.json", "data/reproduction/verification_report.json", "data/reproduction/triad_selector_audit.json"]}
+      ],
+      "implementation_status": "implemented_negative",
+      "research_status": "falsified",
+      "literature_source_ids": ["arxiv_kartashov_kartashova_1307_8272", "arxiv_hayat_amanullah_walsh_bustamante_1804_03092"],
+      "independent_reproduction": {"required": true, "status": "passed", "evidence_paths": ["data/registry/independent_reproduction_registry.json", "data/reproduction/verification_report.json", "data/reproduction/triad_selector_audit.json"]},
+      "paper_promotion": "promoted"
+    },
+    {
+      "id": "hyp_kac_moody_fluid_dictionary",
+      "title": "Kac-Moody current-to-fluid dictionary",
+      "program_id": "foundational_backlog",
+      "source_claim_ids": ["kac_moody_fluid_transfer"],
+      "formal_statement": "A typed map from declared Kac-Moody currents and a Sugawara stress tensor to dimensioned fluid variables satisfies the Ward identities and yields a dispersion relation that outperforms a spectrum- and power-matched label-shuffled forcing control.",
+      "observable_predictions": [
+        {
+          "id": "dispersion_residual",
+          "observable": "Residual of the derived dispersion relation and paired flow diagnostic effect",
+          "expected_relation": "Ward and dispersion residuals pass exact or locked numerical tolerances and the flow effect exceeds the matched control.",
+          "measurement_method": "Evaluate the typed dictionary symbolically, then run paired forcing with identical spectra and injected power."
+        }
+      ],
+      "controls": ["Label-shuffled forcing with identical spectrum and power", "Current-disabled evolution"],
+      "falsification_thresholds": [
+        "Any failed type, unit, or Ward-identity check falsifies the declared dictionary.",
+        "A paired effect interval overlapping the equivalence margin falsifies transfer specificity."
+      ],
+      "required_evidence": [
+        {"kind": "definition", "description": "Currents, representation level, stress tensor, fluid variables, units, and map", "status": "missing", "artifact_paths": []},
+        {"kind": "derivation", "description": "Ward identities and fluid dispersion relation", "status": "missing", "artifact_paths": []},
+        {"kind": "simulation", "description": "Matched forcing experiment", "status": "missing", "artifact_paths": []},
+        {"kind": "replication", "description": "Independent symbolic and numerical reproduction", "status": "external_required", "artifact_paths": []}
+      ],
+      "implementation_status": "design_only",
+      "research_status": "blocked",
+      "literature_source_ids": [],
+      "independent_reproduction": {"required": true, "status": "pending", "evidence_paths": []},
+      "paper_promotion": "prohibited"
+    },
+    {
+      "id": "hyp_beta_plane_transient_zonalization",
+      "title": "Transient beta-dependent zonalization of freely decaying turbulence",
+      "program_id": "beta_plane_jets",
+      "source_claim_ids": ["lbm_beta_plane_and_jets", "matched_beta_plane_algebraic_ablation"],
+      "formal_statement": "In the declared dealiased barotropic beta-plane solver without sustained forcing, beta equal to 5 and 10 increases final-window zonal energy fraction and persistent-jet prevalence relative to paired beta-zero controls across preregistered drag, viscosity, and seed cells.",
+      "observable_predictions": [
+        {
+          "id": "zonal_fraction_contrast",
+          "observable": "Paired final-window mean zonal energy fraction difference versus beta zero",
+          "expected_relation": "For beta 5 and 10, the Holm-adjusted exact sign-flip p-value is below 0.05, the simultaneous lower 95 percent confidence bound is above zero, and the estimated difference is at least 0.05.",
+          "measurement_method": "Use seed-paired, drag-paired, and viscosity-paired production runs with exact seed-cluster sign flips and Bonferroni-simultaneous bootstrap intervals."
+        },
+        {
+          "id": "persistent_jet_prevalence",
+          "observable": "Paired persistent-jet prevalence difference versus beta zero",
+          "expected_relation": "For beta 5 and 10, the Holm-adjusted exact sign-flip p-value is below 0.05, the simultaneous lower 95 percent confidence bound is above zero, and the estimated difference is at least 0.50.",
+          "measurement_method": "Apply fixed circular peak diagnostics over the final 25 percent of every run."
+        }
+      ],
+      "controls": [
+        "Paired beta-zero f-plane runs",
+        "Transposed-initial-field f-plane runs",
+        "Failed E7 homomorphic-selector sentinels",
+        "Synthetic prescribed-zonal positive controls",
+        "Retained high-resolution LBM null corpus"
+      ],
+      "falsification_thresholds": [
+        "A run is persistent only when final-window mean and 10th-percentile zonal fractions are at least 0.10, modal jet count is at least 2, and modal-count occupancy is at least 0.80.",
+        "Reject numerical admission if normalized energy or enstrophy residual exceeds 1e-6, time-step change is at least 2 percent, grid change is at least 5 percent, or refined jet count differs by more than one.",
+        "Reject the primary claim unless both beta 5 and beta 10 pass the Holm-adjusted sign-flip tests, simultaneous confidence bounds, and minimum effects for both endpoints."
+      ],
+      "required_evidence": [
+        {"kind": "definition", "description": "Locked decaying-turbulence protocol, parameter matrix, diagnostics, and multiplicity plan", "status": "present", "artifact_paths": ["data/registry/beta_plane_sweep_preregistration.json", "scripts/run_beta_plane_sweep.py"]},
+        {"kind": "simulation", "description": "Existing short beta-response and homomorphic-filter negative-control ablation", "status": "present", "artifact_paths": ["data/registry/beta_plane_ablation_results.json"]},
+        {"kind": "simulation", "description": "Production sweep, refinement runs, tracked time series, profiles, and normalized budget residuals", "status": "present", "artifact_paths": ["data/registry/beta_plane_sweep_results.json", "data/registry/beta_plane_refinement_results.json", "data/registry/beta_plane_refinement_protocol_amendment.json", "data/evidence/beta_plane/production_run_arrays.tar", "data/evidence/beta_plane/refinement_run_arrays.tar"]},
+        {"kind": "control", "description": "F-plane, transpose, synthetic-positive, LBM-null, and quotient-sentinel controls", "status": "present", "artifact_paths": ["data/registry/beta_plane_control_results.json", "data/registry/lbm_evidence_audit.json"]},
+        {"kind": "replication", "description": "Cache-isolated clean-environment rerun", "status": "present", "artifact_paths": ["data/registry/independent_reproduction_registry.json", "data/reproduction/verification_report.json", "data/reproduction/beta_plane_sweep_results.json"]}
+      ],
+      "implementation_status": "implemented_negative",
+      "research_status": "not_supported",
+      "literature_source_ids": ["arxiv_bakas_constantinou_ioannou_1407_3354", "arxiv_bakas_constantinou_ioannou_1708_03031", "arxiv_kartashov_kartashova_1307_8272", "arxiv_hayat_amanullah_walsh_bustamante_1804_03092", "arxiv_sahoo_ray_2507_23493"],
+      "independent_reproduction": {"required": true, "status": "passed", "evidence_paths": ["data/registry/independent_reproduction_registry.json", "data/reproduction/verification_report.json", "data/reproduction/beta_plane_sweep_results.json"]},
+      "paper_promotion": "promoted"
+    },
+    {
+      "id": "hyp_tourmaline_excess_cycle_energy",
+      "title": "Tourmaline response beyond conventional constitutive models",
+      "program_id": "physical_admission",
+      "source_claim_ids": ["tourmaline_novel_energy_effect"],
+      "formal_statement": "After fitting conventional pyroelectric, piezoelectric, dielectric, thermal, triboelectric, vibrational, and electromagnetic responses on calibration data, blinded tourmaline cycles retain a positive novelty residual and closed excess-energy balance.",
+      "observable_predictions": [
+        {
+          "id": "novelty_residual",
+          "observable": "Held-out residual charge, voltage, current, or work beyond the conventional constitutive model",
+          "expected_relation": "The Holm-corrected lower 95 percent confidence bound exceeds the preregistered minimum effect while energy closure remains within three uncertainties.",
+          "measurement_method": "Calibrate stress, temperature, charge, voltage, current, and vibration; lock the model; then evaluate blind material and orientation arms."
+        }
+      ],
+      "controls": ["Rotated crystal axis", "Nonpolar matched material", "Conventional reference material", "Dummy fixture"],
+      "falsification_thresholds": [
+        "Reject novelty if the conventional model explains the held-out response within the locked equivalence margin.",
+        "Reject an energy claim if any channel is omitted or closure exceeds three propagated standard uncertainties.",
+        "Reject promotion unless the corrected effect survives independent replication."
+      ],
+      "required_evidence": [
+        {"kind": "definition", "description": "Composition, orientation, geometry, electrodes, cycle, operators, and conventional constitutive model", "status": "missing", "artifact_paths": []},
+        {"kind": "measurement", "description": "Calibrated blinded raw cycles and complete energy ledger", "status": "external_required", "artifact_paths": []},
+        {"kind": "control", "description": "Axis, nonpolar, reference-material, and dummy-fixture arms", "status": "external_required", "artifact_paths": []},
+        {"kind": "replication", "description": "Independent material, apparatus, and analysis replication", "status": "external_required", "artifact_paths": []}
+      ],
+      "implementation_status": "blocked_external_evidence",
+      "research_status": "blocked",
+      "literature_source_ids": [],
+      "independent_reproduction": {"required": true, "status": "pending", "evidence_paths": []},
+      "paper_promotion": "prohibited"
+    },
+    {
+      "id": "hyp_consciousness_operational_endpoint",
+      "title": "Operational biological endpoint for consciousness resonance",
+      "program_id": "physical_admission",
+      "source_claim_ids": ["consciousness_resonance"],
+      "formal_statement": "A declared intervention and dose produce a preregistered change in an operational biological endpoint under a causal model and blinded matched comparator.",
+      "observable_predictions": [
+        {
+          "id": "blinded_biological_effect",
+          "observable": "Preregistered operational biological endpoint",
+          "expected_relation": "The corrected effect exceeds the locked minimum effect and replicates independently.",
+          "measurement_method": "Apply randomized blinded intervention and comparator assignments under a declared causal model."
+        }
+      ],
+      "controls": ["Blinded sham intervention", "Dose-zero arm", "Matched nonspecific stimulation"],
+      "falsification_thresholds": [
+        "An undefined intervention, dose, endpoint, or causal model excludes the claim from testing.",
+        "A preregistered null or control-equivalent response falsifies the declared effect."
+      ],
+      "required_evidence": [
+        {"kind": "definition", "description": "Intervention, dose, endpoint, causal model, comparator, and minimum effect", "status": "missing", "artifact_paths": []},
+        {"kind": "measurement", "description": "Ethically approved blinded raw data", "status": "external_required", "artifact_paths": []},
+        {"kind": "control", "description": "Sham, dose-zero, and nonspecific controls", "status": "external_required", "artifact_paths": []},
+        {"kind": "replication", "description": "Independent preregistered replication", "status": "external_required", "artifact_paths": []}
+      ],
+      "implementation_status": "excluded_undefined",
+      "research_status": "excluded",
+      "literature_source_ids": [],
+      "independent_reproduction": {"required": false, "status": "not_applicable", "evidence_paths": []},
+      "paper_promotion": "prohibited"
+    }
+  ],
+  "archival_conjecture_dispositions": [
+    {
+      "source_relpath": "papers/sections/vol4_ch12_unresolved.tex",
+      "authority": "archival_only",
+      "items": [
+        {"id": "legacy_op_12_1", "locator": "12.1", "title": "Physical Relevance of Sedenions", "disposition": "mapped", "mapped_hypothesis_ids": ["hyp_higher_cayley_dickson_observable"], "rationale": "The active hypothesis replaces false algebraic premises with a typed observable contrast."},
+        {"id": "legacy_op_12_2", "locator": "12.2", "title": "Alternativity Beyond Octonions", "disposition": "superseded", "mapped_hypothesis_ids": [], "rationale": "The retained Cayley-Dickson audit supplies exact counterexamples beyond octonions."},
+        {"id": "legacy_op_12_3", "locator": "12.3", "title": "Cayley-Dickson to 2048 Dimensions", "disposition": "mapped", "mapped_hypothesis_ids": ["hyp_higher_cayley_dickson_observable"], "rationale": "Dimension alone is not a physical hypothesis; only the typed observable replacement remains active."},
+        {"id": "legacy_op_12_4", "locator": "12.4", "title": "E10 Role in M-Theory", "disposition": "mapped", "mapped_hypothesis_ids": ["hyp_e10_e11_truncation_dictionary"], "rationale": "The active record requires a finite truncation and exact dictionary."},
+        {"id": "legacy_op_12_5", "locator": "12.5", "title": "E11 Mathematical Consistency", "disposition": "mapped", "mapped_hypothesis_ids": ["hyp_e10_e11_truncation_dictionary"], "rationale": "The active record bounds the claim to an explicit truncation and first mismatch."},
+        {"id": "legacy_op_12_6", "locator": "12.6", "title": "Umbral Moonshine Classification", "disposition": "field_open_problem", "mapped_hypothesis_ids": [], "rationale": "This literature-level classification problem is not a claim contributed by the framework."},
+        {"id": "legacy_op_12_7", "locator": "12.7", "title": "Physical Meaning of Negative Dimensions", "disposition": "superseded", "mapped_hypothesis_ids": [], "rationale": "The active review distinguishes formal dimension estimators from literal negative spatial axes."},
+        {"id": "legacy_op_12_8", "locator": "12.8", "title": "Correct Quantum Gravity Theory", "disposition": "field_open_problem", "mapped_hypothesis_ids": [], "rationale": "This is a field-wide question rather than a testable framework claim."},
+        {"id": "legacy_op_12_9", "locator": "12.9", "title": "Planck Force Physical Meaning", "disposition": "mapped", "mapped_hypothesis_ids": ["hyp_planck_force_unification_action"], "rationale": "The active record requires a common action and distinguishing observable."},
+        {"id": "legacy_op_12_10", "locator": "12.10", "title": "GUT Scale Unification", "disposition": "field_open_problem", "mapped_hypothesis_ids": [], "rationale": "The broad field problem is not a specific framework prediction."},
+        {"id": "legacy_op_12_11", "locator": "12.11", "title": "Role of Exceptional Groups in Unification", "disposition": "mapped", "mapped_hypothesis_ids": ["hyp_planck_force_unification_action"], "rationale": "A physical role requires an explicit common action and low-energy limits."},
+        {"id": "legacy_op_12_12", "locator": "12.12", "title": "Vacuum Energy Catastrophe", "disposition": "field_open_problem", "mapped_hypothesis_ids": [], "rationale": "The cosmological-constant problem is not solved or newly posed by this framework."},
+        {"id": "legacy_op_12_13", "locator": "12.13", "title": "Casimir Effect Engineering", "disposition": "mapped", "mapped_hypothesis_ids": ["hyp_zpe_closed_cycle_work"], "rationale": "Any extraction extension is governed by the complete-cycle energy ledger."},
+        {"id": "legacy_op_12_14", "locator": "12.14", "title": "String Landscape vs. Swampland", "disposition": "field_open_problem", "mapped_hypothesis_ids": [], "rationale": "This is a literature-level problem outside the framework's admitted contributions."},
+        {"id": "legacy_op_12_15", "locator": "12.15", "title": "Fractal String Theory", "disposition": "excluded_undefined", "mapped_hypothesis_ids": [], "rationale": "No action, state space, or observable is defined."},
+        {"id": "legacy_op_12_16", "locator": "12.16", "title": "Lorentz Invariance Violation", "disposition": "field_open_problem", "mapped_hypothesis_ids": [], "rationale": "No framework-specific coefficient or dispersion relation is declared."},
+        {"id": "legacy_op_12_17", "locator": "12.17", "title": "Gravitational Wave Modifications", "disposition": "mapped", "mapped_hypothesis_ids": ["hyp_scalar_curvature_action"], "rationale": "A distinguishing propagation observable belongs under the covariant scalar-curvature model."},
+        {"id": "legacy_op_12_18", "locator": "12.18", "title": "Tourmaline Zero-Point Energy Extraction", "disposition": "mapped", "mapped_hypothesis_ids": ["hyp_tourmaline_excess_cycle_energy", "hyp_zpe_closed_cycle_work"], "rationale": "Material novelty and closed-cycle vacuum work are tested separately."},
+        {"id": "legacy_op_12_19", "locator": "12.19", "title": "Metamaterial Applications", "disposition": "field_open_problem", "mapped_hypothesis_ids": [], "rationale": "Applications require device-specific operators and are not one scientific claim."},
+        {"id": "legacy_op_12_20", "locator": "12.20", "title": "Framework Mathematical Consistency", "disposition": "superseded", "mapped_hypothesis_ids": [], "rationale": "The active claim ledger replaces the monolithic consistency prompt with atomic checks."},
+        {"id": "legacy_op_12_21", "locator": "12.21", "title": "Framework Completeness", "disposition": "excluded_undefined", "mapped_hypothesis_ids": [], "rationale": "Completeness is undefined without a target theory class and adequacy criterion."},
+        {"id": "legacy_op_12_22", "locator": "12.22", "title": "Pre-paradigmatic vs. Paradigmatic Science", "disposition": "excluded_undefined", "mapped_hypothesis_ids": [], "rationale": "This is an epistemic classification prompt, not an observable scientific hypothesis."}
+      ]
+    },
+    {
+      "source_relpath": "papers/sections/vol2_ch6_string_theory.tex",
+      "authority": "archival_only",
+      "items": [
+        {"id": "legacy_op_6_1", "locator": "OP-6.1", "title": "Landscape Selection", "disposition": "field_open_problem", "mapped_hypothesis_ids": [], "rationale": "The string landscape is a field-wide issue rather than a framework result."},
+        {"id": "legacy_op_6_2", "locator": "OP-6.2", "title": "Moduli Stabilisation", "disposition": "field_open_problem", "mapped_hypothesis_ids": [], "rationale": "No framework-specific compactification or moduli potential is supplied."},
+        {"id": "legacy_op_6_3", "locator": "OP-6.3", "title": "E11 Full Proof", "disposition": "mapped", "mapped_hypothesis_ids": ["hyp_e10_e11_truncation_dictionary"], "rationale": "The active record tests finite declared correspondences without claiming a full proof."},
+        {"id": "legacy_op_6_4", "locator": "OP-6.4", "title": "Experimental Testability", "disposition": "field_open_problem", "mapped_hypothesis_ids": [], "rationale": "Planck-scale access is a broad field constraint, not a repository hypothesis."}
+      ]
+    },
+    {
+      "source_relpath": "papers/sections/vol2_ch7_quantum_gravity.tex",
+      "authority": "archival_only",
+      "items": [
+        {"id": "legacy_op_7_1", "locator": "OP-7.1", "title": "Semiclassical Limit of LQG", "disposition": "field_open_problem", "mapped_hypothesis_ids": [], "rationale": "This is a field-wide LQG question and not a framework contribution."},
+        {"id": "legacy_op_7_2", "locator": "OP-7.2", "title": "Truncation Convergence in Asymptotic Safety", "disposition": "field_open_problem", "mapped_hypothesis_ids": [], "rationale": "This is a field-wide asymptotic-safety question."},
+        {"id": "legacy_op_7_3", "locator": "OP-7.3", "title": "Experimental Signatures", "disposition": "field_open_problem", "mapped_hypothesis_ids": [], "rationale": "No framework-specific signature or minimum effect is supplied."},
+        {"id": "legacy_op_7_4", "locator": "OP-7.4", "title": "Unification of Approaches", "disposition": "field_open_problem", "mapped_hypothesis_ids": [], "rationale": "Shared dimensional reduction is not itself a typed unification mechanism."}
+      ]
+    },
+    {
+      "source_relpath": "papers/sections/vol2_ch6_quantum_encoding.tex",
+      "authority": "archival_only",
+      "items": [
+        {"id": "legacy_quantum_encoding_optimality", "locator": "Open Problems item 1", "title": "Universal optimal E7 encoding", "disposition": "excluded_undefined", "mapped_hypothesis_ids": [], "rationale": "Optimality lacks a workload, cost model, hardware target, and comparison class."},
+        {"id": "legacy_quantum_encoding_error_correction", "locator": "Open Problems item 2", "title": "E7-native error-correcting codes", "disposition": "excluded_undefined", "mapped_hypothesis_ids": [], "rationale": "No code family, noise model, distance, or decoder is defined."},
+        {"id": "legacy_quantum_encoding_advantage", "locator": "Open Problems item 3", "title": "E7 quantum advantage", "disposition": "excluded_undefined", "mapped_hypothesis_ids": [], "rationale": "No problem family, oracle model, complexity bound, or classical baseline is defined."}
+      ]
+    },
+    {
+      "source_relpath": "papers/sections/vol3_ch10_predictions.tex",
+      "authority": "archival_only",
+      "items": [
+        {"id": "legacy_prediction_2048d_planck", "locator": "Alpha table row 1", "title": "2048D structure affects Planck-scale physics", "disposition": "mapped", "mapped_hypothesis_ids": ["hyp_higher_cayley_dickson_observable"], "rationale": "Only a typed zero-divisor observable remains testable."},
+        {"id": "legacy_prediction_kac_moody_scattering", "locator": "Alpha table row 2", "title": "Kac-Moody symmetries detectable in scattering", "disposition": "mapped", "mapped_hypothesis_ids": ["hyp_e10_e11_truncation_dictionary"], "rationale": "A specific algebra, dictionary, amplitude, and energy range are required."},
+        {"id": "legacy_prediction_fractal_gr", "locator": "Alpha table row 3", "title": "Fractal dimensions modify general relativity", "disposition": "mapped", "mapped_hypothesis_ids": ["hyp_scalar_curvature_action", "hyp_fractal_estimator_convergence"], "rationale": "The estimator and covariant action burdens are separate."},
+        {"id": "legacy_prediction_monster_compactification", "locator": "Alpha table row 4", "title": "Monster group constrains compactification", "disposition": "mapped", "mapped_hypothesis_ids": ["hyp_moonshine_stability_operator"], "rationale": "A representation, operator, and matched control are missing."},
+        {"id": "legacy_prediction_triality_interactions", "locator": "Alpha table row 5", "title": "Octonion triality in particle interactions", "disposition": "excluded_undefined", "mapped_hypothesis_ids": [], "rationale": "No process, representation action, energy scale, or observable is specified."},
+        {"id": "legacy_prediction_nodespace_transitions", "locator": "Unified Model table row 1", "title": "Nodespace transitions at phase boundaries", "disposition": "excluded_undefined", "mapped_hypothesis_ids": [], "rationale": "Nodespace and the transition operator are undefined."},
+        {"id": "legacy_prediction_fractal_cosmology", "locator": "Unified Model table row 2", "title": "Fractal structure in cosmological evolution", "disposition": "excluded_undefined", "mapped_hypothesis_ids": [], "rationale": "No estimator-to-cosmological-observable map is supplied."},
+        {"id": "legacy_prediction_metaprinciple_symmetry", "locator": "Unified Model table row 3", "title": "Meta-principle governs symmetry breaking", "disposition": "excluded_undefined", "mapped_hypothesis_ids": [], "rationale": "The meta-principle has no mathematical operator or quantitative prediction."},
+        {"id": "legacy_prediction_nodespace_susy", "locator": "Unified Model table row 4", "title": "Supersymmetry broken by a nodespace mechanism", "disposition": "excluded_undefined", "mapped_hypothesis_ids": [], "rationale": "No supermultiplet, breaking operator, scale, or spectrum is defined."},
+        {"id": "legacy_prediction_planck_force_fundamental", "locator": "Metaprinciple table row 1", "title": "Planck force is fundamental", "disposition": "mapped", "mapped_hypothesis_ids": ["hyp_planck_force_unification_action"], "rationale": "The dimensional identity is not a mechanism; the active hypothesis requires an action."},
+        {"id": "legacy_prediction_macroscopic_planck_quantum", "locator": "Metaprinciple table row 2", "title": "Macroscopic quantum phenomena at Planck force", "disposition": "mapped", "mapped_hypothesis_ids": ["hyp_planck_force_unification_action"], "rationale": "No dimensioned deviation exists outside the common-action hypothesis."},
+        {"id": "legacy_prediction_subplanck_quantum_gravity", "locator": "Metaprinciple table row 3", "title": "Quantum-gravity effects below the Planck scale", "disposition": "excluded_undefined", "mapped_hypothesis_ids": [], "rationale": "No model-specific deviation, energy range, or observable is declared."},
+        {"id": "legacy_prediction_superforce_unification", "locator": "Metaprinciple table row 4", "title": "Unification of forces by superforce", "disposition": "mapped", "mapped_hypothesis_ids": ["hyp_planck_force_unification_action"], "rationale": "The active hypothesis demands field content and low-energy limits."},
+        {"id": "legacy_prediction_tourmaline_piezoelectric", "locator": "Tourmaline table row 1", "title": "Tourmaline piezoelectric coefficient", "disposition": "superseded", "mapped_hypothesis_ids": [], "rationale": "This conventional measurable property is a baseline, not a novel hypothesis."},
+        {"id": "legacy_prediction_tourmaline_shg", "locator": "Tourmaline table row 2", "title": "Tourmaline second-harmonic generation", "disposition": "superseded", "mapped_hypothesis_ids": [], "rationale": "This conventional optical response is a baseline and control variable."},
+        {"id": "legacy_prediction_tourmaline_thermal", "locator": "Tourmaline table row 3", "title": "Tourmaline thermal-conductivity anisotropy", "disposition": "superseded", "mapped_hypothesis_ids": [], "rationale": "This conventional response belongs in the constitutive baseline."},
+        {"id": "legacy_prediction_tourmaline_zpe", "locator": "Tourmaline table row 4", "title": "Zero-point energy couples to the tourmaline lattice", "disposition": "mapped", "mapped_hypothesis_ids": ["hyp_tourmaline_excess_cycle_energy", "hyp_zpe_closed_cycle_work"], "rationale": "Novel material residuals and complete-cycle net work are tested separately."},
+        {"id": "legacy_prediction_biological_coherence", "locator": "Tourmaline table row 5", "title": "Quantum coherence in biological systems", "disposition": "mapped", "mapped_hypothesis_ids": ["hyp_consciousness_operational_endpoint"], "rationale": "The claim remains excluded until intervention and endpoint are operational."}
+      ]
+    },
+    {
+      "source_relpath": "papers/sections/vol2_ch5_superforce.tex",
+      "authority": "archival_only",
+      "items": [
+        {"id": "legacy_superforce_vacuum_bernoulli", "locator": "Prediction 1", "title": "Vacuum Bernoulli gravitational perturbation", "disposition": "mapped", "mapped_hypothesis_ids": ["hyp_scalar_curvature_action", "hyp_zpe_closed_cycle_work"], "rationale": "The relation lacks a covariant action and complete apparatus energy ledger."},
+        {"id": "legacy_superforce_inertial_mass", "locator": "Prediction 2", "title": "Electromagnetic-field inertial mass reduction", "disposition": "mapped", "mapped_hypothesis_ids": ["hyp_scalar_curvature_action"], "rationale": "A covariant mechanism and matched GR control are required."},
+        {"id": "legacy_superforce_material_g", "locator": "Prediction 3", "title": "Material-dependent gravitational constant", "disposition": "mapped", "mapped_hypothesis_ids": ["hyp_scalar_curvature_action"], "rationale": "Changing permittivity does not alter G without a derived coupling and distinguishing measurement."}
+      ]
+    }
+  ]
+}

@@ -1,0 +1,89 @@
+{
+  "schema_version": 1,
+  "program_id": "beta_plane_jets",
+  "hypothesis_id": "hyp_beta_plane_transient_zonalization",
+  "claim_scope": "Transient beta-dependent zonalization of freely decaying turbulence; no sustained-jet claim is made because the solver has no forcing operator or injection budget.",
+  "model": {
+    "equation": "d(zeta)/dt + J(psi,zeta) + beta*d(psi)/dx = -drag*zeta + viscosity*laplacian(zeta)",
+    "domain": "doubly periodic square [0,2*pi)^2",
+    "spatial_method": "Fourier pseudospectral with two-thirds dealiasing",
+    "time_method": "classical fourth-order Runge-Kutta",
+    "initial_shell": [4.0, 6.0],
+    "initial_kinetic_energy": 0.01,
+    "duration": 20.0,
+    "production_grid_size": 64,
+    "production_time_step": 0.005,
+    "sample_interval_steps": 10,
+    "analysis_window_fraction": 0.25
+  },
+  "production_matrix": {
+    "beta": [0.0, 1.25, 2.5, 5.0, 10.0],
+    "linear_drag": [0.01, 0.02, 0.05],
+    "viscosity": [0.00025, 0.0005, 0.001],
+    "seeds": [11, 29, 47, 71, 89, 107, 131, 149, 167, 191, 211, 229],
+    "run_count": 540
+  },
+  "refinement_matrix": {
+    "beta": [0.0, 5.0, 10.0],
+    "linear_drag": [0.02],
+    "viscosity": [0.0005],
+    "seeds": [11, 29, 47, 71],
+    "grid_sizes": [64, 96],
+    "time_steps": [0.005, 0.0025],
+    "run_count": 48
+  },
+  "locked_diagnostics": {
+    "minimum_peak_prominence": "0.05*sqrt(2*initial_kinetic_energy)",
+    "minimum_peak_separation": "ceil(grid_size/(2*initial_wavenumber_maximum))",
+    "periodic_peak_detection": true,
+    "run_persistence_rule": [
+      "final-window mean zonal fraction >= 0.10",
+      "final-window tenth-percentile zonal fraction >= 0.10",
+      "modal total jet count >= 2",
+      "modal jet-count occupancy >= 0.80"
+    ],
+    "secondary_diagnostics": [
+      "spectral zonal fraction as a Parseval cross-check",
+      "zonal RMS divided by initial speed",
+      "RMS speed",
+      "Rhines wavenumber sqrt(beta/U_rms)",
+      "dominant zonal wavenumber",
+      "energy budget residual",
+      "enstrophy budget residual"
+    ]
+  },
+  "controls": [
+    "paired beta-zero runs",
+    "twelve transposed-initial-field f-plane runs",
+    "twelve failed E7 quotient-filter sentinel runs",
+    "synthetic prescribed-zonal diagnostic controls",
+    "retained high-resolution LBM null corpus"
+  ],
+  "numerical_gates": [
+    "All states and metrics are finite.",
+    "Absolute normalized energy and enstrophy residuals are each <= 1e-6.",
+    "Quotient-sentinel maximum field error is <= 1e-12.",
+    "Time-step halving changes continuous endpoints by < 2 percent.",
+    "Grid refinement changes continuous endpoints by < 5 percent.",
+    "Refined modal jet count differs by at most one."
+  ],
+  "statistical_plan": {
+    "pairing": "Each nonzero-beta run is paired with beta zero at identical seed, drag, and viscosity.",
+    "test": "Exact two-sided sign-flip randomization test over twelve independent seed-cluster means.",
+    "interval": "Seed-clustered deterministic bootstrap interval with Bonferroni simultaneous 95 percent family coverage across eight primary contrasts.",
+    "primary_tests": 8,
+    "multiplicity": "Holm familywise correction at alpha 0.05 for four beta levels and two endpoints.",
+    "secondary_multiplicity": "Benjamini-Hochberg at q=0.10; secondary results cannot rescue a failed primary family.",
+    "admission_rule": [
+      "For beta 5 and 10, Holm-adjusted sign-flip p < 0.05 and simultaneous lower 95 percent confidence bound for zonal-fraction difference > 0.",
+      "For beta 5 and 10, estimated zonal-fraction difference >= 0.05.",
+      "For beta 5 and 10, Holm-adjusted sign-flip p < 0.05 and simultaneous lower 95 percent confidence bound for persistent-jet prevalence difference > 0.",
+      "For beta 5 and 10, estimated persistent-jet prevalence difference >= 0.50."
+    ]
+  },
+  "independent_reproduction": {
+    "required": true,
+    "environment": "fresh source checkout with pinned Python dependencies and no retained run cache",
+    "promotion_rule": "A production result cannot enter the paper until the clean-environment digest and aggregate decision match."
+  }
+}

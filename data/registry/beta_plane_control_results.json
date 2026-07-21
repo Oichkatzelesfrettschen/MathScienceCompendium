@@ -1,0 +1,332 @@
+{
+  "all_controls_passed": true,
+  "arm_run_count": 48,
+  "environment_lock_relpath": "requirements-lock.txt",
+  "environment_lock_sha256": "89f9a02b7c8c3171c77fb8cb249db349f207a5cf32f5c3fbd423785a24af5c94",
+  "evidence_archive": {
+    "format": "deterministic_uncompressed_tar_of_float64_arrays",
+    "relpath": "data/evidence/beta_plane/control_final_states.tar",
+    "sha256": "2e6dfe14f80ca19529a910ebcc52582418fa799561ae3127118a4a3c22c95d66"
+  },
+  "generator": "scripts/run_beta_plane_controls.py",
+  "preregistration_relpath": "data/registry/beta_plane_sweep_preregistration.json",
+  "preregistration_sha256": "babd518f60bbfece217632411536cfeae81b4715b6de0401d1798822602ac0b5",
+  "prescribed_zonal_diagnostic_control": {
+    "expected_total_jet_count": 8,
+    "full_window_classification": {
+      "mean_zonal_fraction": 0.9999999999999979,
+      "minimum_zonal_fraction": 0.9999999999999979,
+      "modal_jet_count": 8,
+      "modal_jet_count_occupancy": 1.0,
+      "persistent_jet": true,
+      "tenth_percentile_zonal_fraction": 0.9999999999999979
+    },
+    "observed_total_jet_count": 8,
+    "passed": true,
+    "prescribed_zonal_wavenumber": 4,
+    "prominence_threshold": 0.007071067811865475,
+    "spectral_zonal_energy_fraction": 1.0,
+    "zonal_kinetic_energy_fraction": 0.9999999999999979
+  },
+  "records": [
+    {
+      "archive_members": {
+        "f_plane": "seed_011/f_plane.f64",
+        "identity": "seed_011/identity.f64",
+        "quotient": "seed_011/quotient.f64",
+        "rotated_f_plane": "seed_011/rotated_f_plane.f64"
+      },
+      "array_dtype": "float64_row_major",
+      "array_shape": [
+        64,
+        64
+      ],
+      "budget_passed": true,
+      "f_plane_final_sha256": "a9f2512b08afe26684247cd0afb53fd28838550e7d01c63f951ebd8c24eac3a3",
+      "f_plane_rotation_relative_vorticity_error": 1.1200837872187093e-14,
+      "identity_final_sha256": "05451fcc7b237f09e453b77be1eb737dc608ce2d5fb7e55c6ec86382cd162cd4",
+      "maximum_absolute_budget_residual": 1.5124642371855401e-09,
+      "quotient_final_sha256": "05451fcc7b237f09e453b77be1eb737dc608ce2d5fb7e55c6ec86382cd162cd4",
+      "quotient_sentinel_passed": true,
+      "quotient_to_identity_maximum_vorticity_error": 0.0,
+      "rotated_f_plane_final_sha256": "669cb827de20b2c22d23460ff455b6a1773dd1e46a7209bdd7813212e7d8b3c2",
+      "rotation_covariance_passed": true,
+      "seed": 11
+    },
+    {
+      "archive_members": {
+        "f_plane": "seed_029/f_plane.f64",
+        "identity": "seed_029/identity.f64",
+        "quotient": "seed_029/quotient.f64",
+        "rotated_f_plane": "seed_029/rotated_f_plane.f64"
+      },
+      "array_dtype": "float64_row_major",
+      "array_shape": [
+        64,
+        64
+      ],
+      "budget_passed": true,
+      "f_plane_final_sha256": "ca93bc4315b3197213ab80f65b6da2cfd61859d93cdaa911d65461651ecd53dc",
+      "f_plane_rotation_relative_vorticity_error": 9.46711575359756e-15,
+      "identity_final_sha256": "23e22bcd0f09a33b0d572721f604792f329225378602a8d1e201ce28599a9052",
+      "maximum_absolute_budget_residual": 1.4081344146266161e-09,
+      "quotient_final_sha256": "23e22bcd0f09a33b0d572721f604792f329225378602a8d1e201ce28599a9052",
+      "quotient_sentinel_passed": true,
+      "quotient_to_identity_maximum_vorticity_error": 0.0,
+      "rotated_f_plane_final_sha256": "22256c8ce7e8aa11f4ad7aae60824471021fdb469e165cc60673abce23ed6425",
+      "rotation_covariance_passed": true,
+      "seed": 29
+    },
+    {
+      "archive_members": {
+        "f_plane": "seed_047/f_plane.f64",
+        "identity": "seed_047/identity.f64",
+        "quotient": "seed_047/quotient.f64",
+        "rotated_f_plane": "seed_047/rotated_f_plane.f64"
+      },
+      "array_dtype": "float64_row_major",
+      "array_shape": [
+        64,
+        64
+      ],
+      "budget_passed": true,
+      "f_plane_final_sha256": "9b338c43be99b9dbfb643f18d1647da3c63b28a65258225d9be9238856dd5565",
+      "f_plane_rotation_relative_vorticity_error": 1.106106516823755e-14,
+      "identity_final_sha256": "86b72d0ede29ced5112d90fb59e10214307df7ce23766b2765a51d2c0d72d22b",
+      "maximum_absolute_budget_residual": 1.413008626771628e-09,
+      "quotient_final_sha256": "86b72d0ede29ced5112d90fb59e10214307df7ce23766b2765a51d2c0d72d22b",
+      "quotient_sentinel_passed": true,
+      "quotient_to_identity_maximum_vorticity_error": 0.0,
+      "rotated_f_plane_final_sha256": "b060777f7c6da865add7e952204736486d6a3dcd0105034a62c98b950d6985b3",
+      "rotation_covariance_passed": true,
+      "seed": 47
+    },
+    {
+      "archive_members": {
+        "f_plane": "seed_071/f_plane.f64",
+        "identity": "seed_071/identity.f64",
+        "quotient": "seed_071/quotient.f64",
+        "rotated_f_plane": "seed_071/rotated_f_plane.f64"
+      },
+      "array_dtype": "float64_row_major",
+      "array_shape": [
+        64,
+        64
+      ],
+      "budget_passed": true,
+      "f_plane_final_sha256": "3f0dc1b7627c01d8dd656371832df4c163cac527315cc3784244ec9146d6d9dc",
+      "f_plane_rotation_relative_vorticity_error": 1.487758892896354e-14,
+      "identity_final_sha256": "056972af5b8e78f04ffe0a000cc2ab2c08e952b27505a8631a0a1c8468e63567",
+      "maximum_absolute_budget_residual": 1.5995296753779087e-09,
+      "quotient_final_sha256": "056972af5b8e78f04ffe0a000cc2ab2c08e952b27505a8631a0a1c8468e63567",
+      "quotient_sentinel_passed": true,
+      "quotient_to_identity_maximum_vorticity_error": 0.0,
+      "rotated_f_plane_final_sha256": "06c860b8b47ce57abf1662138ac140aa01611867b454162cf51d8effd4e7b51f",
+      "rotation_covariance_passed": true,
+      "seed": 71
+    },
+    {
+      "archive_members": {
+        "f_plane": "seed_089/f_plane.f64",
+        "identity": "seed_089/identity.f64",
+        "quotient": "seed_089/quotient.f64",
+        "rotated_f_plane": "seed_089/rotated_f_plane.f64"
+      },
+      "array_dtype": "float64_row_major",
+      "array_shape": [
+        64,
+        64
+      ],
+      "budget_passed": true,
+      "f_plane_final_sha256": "9bd9fb268cb617a09bcb98266430a767c6d9feb2bd6ae6e473d6f8cb0a6a5730",
+      "f_plane_rotation_relative_vorticity_error": 1.0742622542721117e-14,
+      "identity_final_sha256": "451c182cb8fb998c627361ef4cf57c6b9f63bf229ce93858d1dcb345ac4da3c3",
+      "maximum_absolute_budget_residual": 1.437761687483885e-09,
+      "quotient_final_sha256": "451c182cb8fb998c627361ef4cf57c6b9f63bf229ce93858d1dcb345ac4da3c3",
+      "quotient_sentinel_passed": true,
+      "quotient_to_identity_maximum_vorticity_error": 0.0,
+      "rotated_f_plane_final_sha256": "1972bd32159e705fa7ad98f90c80d37ece62eb3f53314becef892c987495c946",
+      "rotation_covariance_passed": true,
+      "seed": 89
+    },
+    {
+      "archive_members": {
+        "f_plane": "seed_107/f_plane.f64",
+        "identity": "seed_107/identity.f64",
+        "quotient": "seed_107/quotient.f64",
+        "rotated_f_plane": "seed_107/rotated_f_plane.f64"
+      },
+      "array_dtype": "float64_row_major",
+      "array_shape": [
+        64,
+        64
+      ],
+      "budget_passed": true,
+      "f_plane_final_sha256": "d7c005b3b57ec28b445b990196324aa3acea506fbc1d2afe7a7c0fb935bff0ee",
+      "f_plane_rotation_relative_vorticity_error": 1.0174011330668726e-14,
+      "identity_final_sha256": "69a62f0375b4239459f7b03d2b2c9a6bac2594899eb596c55af2ef87af9cc38d",
+      "maximum_absolute_budget_residual": 1.864767784631738e-09,
+      "quotient_final_sha256": "69a62f0375b4239459f7b03d2b2c9a6bac2594899eb596c55af2ef87af9cc38d",
+      "quotient_sentinel_passed": true,
+      "quotient_to_identity_maximum_vorticity_error": 0.0,
+      "rotated_f_plane_final_sha256": "416eab028f526a02fb6428aef15a8a34762e9fdc51c00c98b7a0aa62d2f8bd3c",
+      "rotation_covariance_passed": true,
+      "seed": 107
+    },
+    {
+      "archive_members": {
+        "f_plane": "seed_131/f_plane.f64",
+        "identity": "seed_131/identity.f64",
+        "quotient": "seed_131/quotient.f64",
+        "rotated_f_plane": "seed_131/rotated_f_plane.f64"
+      },
+      "array_dtype": "float64_row_major",
+      "array_shape": [
+        64,
+        64
+      ],
+      "budget_passed": true,
+      "f_plane_final_sha256": "cae37605c963263d558cdeabf40644a59f2bfbe94b3ac3651334090b614ceaca",
+      "f_plane_rotation_relative_vorticity_error": 1.0377315150091233e-14,
+      "identity_final_sha256": "9442e0e600a26a2a52cd2516a18c99c18fdf46dafd992d8b9ca410fc36ba7859",
+      "maximum_absolute_budget_residual": 1.555483936099833e-09,
+      "quotient_final_sha256": "9442e0e600a26a2a52cd2516a18c99c18fdf46dafd992d8b9ca410fc36ba7859",
+      "quotient_sentinel_passed": true,
+      "quotient_to_identity_maximum_vorticity_error": 0.0,
+      "rotated_f_plane_final_sha256": "bcd20cdfc650d3f6ae4c908fb45a08c9cc8f79804a452327aab176c65f3750ac",
+      "rotation_covariance_passed": true,
+      "seed": 131
+    },
+    {
+      "archive_members": {
+        "f_plane": "seed_149/f_plane.f64",
+        "identity": "seed_149/identity.f64",
+        "quotient": "seed_149/quotient.f64",
+        "rotated_f_plane": "seed_149/rotated_f_plane.f64"
+      },
+      "array_dtype": "float64_row_major",
+      "array_shape": [
+        64,
+        64
+      ],
+      "budget_passed": true,
+      "f_plane_final_sha256": "f0234be47af9b82a779e77a55e98542c475905fbd4f9f7041d117cc504092f4a",
+      "f_plane_rotation_relative_vorticity_error": 1.0111750423981177e-14,
+      "identity_final_sha256": "e51c05da9339a3d3655d741dace786e29c59ed9ac542ede6622c728077e9b19e",
+      "maximum_absolute_budget_residual": 1.5874093428625002e-09,
+      "quotient_final_sha256": "e51c05da9339a3d3655d741dace786e29c59ed9ac542ede6622c728077e9b19e",
+      "quotient_sentinel_passed": true,
+      "quotient_to_identity_maximum_vorticity_error": 0.0,
+      "rotated_f_plane_final_sha256": "deecc5b800acb8dd5aed01b82a0ee38e91ed15e7c542fef08767871f55910776",
+      "rotation_covariance_passed": true,
+      "seed": 149
+    },
+    {
+      "archive_members": {
+        "f_plane": "seed_167/f_plane.f64",
+        "identity": "seed_167/identity.f64",
+        "quotient": "seed_167/quotient.f64",
+        "rotated_f_plane": "seed_167/rotated_f_plane.f64"
+      },
+      "array_dtype": "float64_row_major",
+      "array_shape": [
+        64,
+        64
+      ],
+      "budget_passed": true,
+      "f_plane_final_sha256": "8e5d5905fc03f7fe6aacba287003ab0340b5e817c1759100a4e5a66f4dafcf65",
+      "f_plane_rotation_relative_vorticity_error": 8.634945404280184e-15,
+      "identity_final_sha256": "05a01ab940eec13939baaf0c58b14fa666f6c5f0dbae7249dfabbde8a2d1e8ae",
+      "maximum_absolute_budget_residual": 1.392912840625371e-09,
+      "quotient_final_sha256": "05a01ab940eec13939baaf0c58b14fa666f6c5f0dbae7249dfabbde8a2d1e8ae",
+      "quotient_sentinel_passed": true,
+      "quotient_to_identity_maximum_vorticity_error": 0.0,
+      "rotated_f_plane_final_sha256": "ebd85417f4358fa8494ad5339b1ed8ddc6f67ada7c0d6e0af4325bdea368a415",
+      "rotation_covariance_passed": true,
+      "seed": 167
+    },
+    {
+      "archive_members": {
+        "f_plane": "seed_191/f_plane.f64",
+        "identity": "seed_191/identity.f64",
+        "quotient": "seed_191/quotient.f64",
+        "rotated_f_plane": "seed_191/rotated_f_plane.f64"
+      },
+      "array_dtype": "float64_row_major",
+      "array_shape": [
+        64,
+        64
+      ],
+      "budget_passed": true,
+      "f_plane_final_sha256": "ec3a7c1a6a7b823a97ced4646ed2ae7393856e734f6becb42e7cd434a70fbd50",
+      "f_plane_rotation_relative_vorticity_error": 1.3675949794203485e-14,
+      "identity_final_sha256": "3ddf3b59e3a92b63fd6e92f1306a587781577cee55bff9ca2d7420a1688dcfb9",
+      "maximum_absolute_budget_residual": 1.5329960911802942e-09,
+      "quotient_final_sha256": "3ddf3b59e3a92b63fd6e92f1306a587781577cee55bff9ca2d7420a1688dcfb9",
+      "quotient_sentinel_passed": true,
+      "quotient_to_identity_maximum_vorticity_error": 0.0,
+      "rotated_f_plane_final_sha256": "c5db2492b21f1f88fc52f90684747640e8687c678a1afb9b7aef33d10f236277",
+      "rotation_covariance_passed": true,
+      "seed": 191
+    },
+    {
+      "archive_members": {
+        "f_plane": "seed_211/f_plane.f64",
+        "identity": "seed_211/identity.f64",
+        "quotient": "seed_211/quotient.f64",
+        "rotated_f_plane": "seed_211/rotated_f_plane.f64"
+      },
+      "array_dtype": "float64_row_major",
+      "array_shape": [
+        64,
+        64
+      ],
+      "budget_passed": true,
+      "f_plane_final_sha256": "96caebabd5473eec1e3a7f4c9f1f29f0e1cda9796f886012e7e87feb7f9f69a2",
+      "f_plane_rotation_relative_vorticity_error": 1.5597232541380274e-14,
+      "identity_final_sha256": "efcb837061285f725286c83d2b4c02308e700a58bb71f37e6c3d09cd86bc69af",
+      "maximum_absolute_budget_residual": 1.632480539637271e-09,
+      "quotient_final_sha256": "efcb837061285f725286c83d2b4c02308e700a58bb71f37e6c3d09cd86bc69af",
+      "quotient_sentinel_passed": true,
+      "quotient_to_identity_maximum_vorticity_error": 0.0,
+      "rotated_f_plane_final_sha256": "4639df48beafb8efffaca853dd1300e96ddcc4d84384813526699d1a49bd9338",
+      "rotation_covariance_passed": true,
+      "seed": 211
+    },
+    {
+      "archive_members": {
+        "f_plane": "seed_229/f_plane.f64",
+        "identity": "seed_229/identity.f64",
+        "quotient": "seed_229/quotient.f64",
+        "rotated_f_plane": "seed_229/rotated_f_plane.f64"
+      },
+      "array_dtype": "float64_row_major",
+      "array_shape": [
+        64,
+        64
+      ],
+      "budget_passed": true,
+      "f_plane_final_sha256": "1ef409849c934e591f715e3e0ad51ac7c9c91419aca32b1dbe064842e0a1221a",
+      "f_plane_rotation_relative_vorticity_error": 7.639753157132244e-15,
+      "identity_final_sha256": "1dfb87dbe9e19e497774f71904ea1d05ecd25f54f585b5e00e15657c384abef7",
+      "maximum_absolute_budget_residual": 1.4897904576649523e-09,
+      "quotient_final_sha256": "1dfb87dbe9e19e497774f71904ea1d05ecd25f54f585b5e00e15657c384abef7",
+      "quotient_sentinel_passed": true,
+      "quotient_to_identity_maximum_vorticity_error": 0.0,
+      "rotated_f_plane_final_sha256": "658a5f6e8d81fcd1b1f678d30110c97fe9cd58f65a03a0fe7a5c378d22fa3132",
+      "rotation_covariance_passed": true,
+      "seed": 229
+    }
+  ],
+  "retained_lbm_null_control": {
+    "audit_relpath": "data/registry/lbm_evidence_audit.json",
+    "audit_sha256": "33a89110e47bb770d961a364ff788718b161cf0a5bb3e5c242e57d979e55cd84",
+    "maximum_allowed_ratio": 0.01,
+    "maximum_zonal_to_total_rms_ratio": 0.003656970859575664,
+    "passed": true,
+    "snapshot_count": 5
+  },
+  "schema_version": 1,
+  "seed_count": 12,
+  "source_commit": "144de09947f20a07c4a4da1dd0d649c41d8ba151"
+}
