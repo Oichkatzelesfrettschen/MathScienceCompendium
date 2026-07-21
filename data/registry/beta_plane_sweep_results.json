@@ -55,7 +55,7 @@
       "cell_pair_count": 108,
       "cluster_count": 12,
       "control_beta": 0.0,
-      "effect_estimate": 0.022029439181974007,
+      "effect_estimate": 0.022029439181974014,
       "familywise_ci_lower": -0.027000710443582505,
       "familywise_ci_upper": 0.06199920720076012,
       "holm_adjusted_p": 1.0,
@@ -22828,5 +22828,5 @@
   "run_count": 540,
   "schema_version": 1,
   "scientifically_admissible_profile": true,
-  "source_commit": "ea42a163487dcee01b6e2c785c21ffd65ab4d99c"
+  "source_commit": "144de09947f20a07c4a4da1dd0d649c41d8ba151"
 }

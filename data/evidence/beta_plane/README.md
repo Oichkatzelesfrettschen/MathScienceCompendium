@@ -1,9 +1,10 @@
 # Locked beta-plane primary execution
 
 The primary beta-plane evidence is the first fresh execution of the pinned
-container at source commit `ea42a163487dcee01b6e2c785c21ffd65ab4d99c`.
+container after canonicalizing every seed reduction. The execution is bound to
+source commit `144de09947f20a07c4a4da1dd0d649c41d8ba151`.
 The image identity is
-`sha256:a2afc408cf5d1320a8501bbaa564cdfac4f53d2f6c5e6a9e442c073e041e36ba`.
+`sha256:e8689f8912510d5f1f93b1966b89a4e854177d1e474193eb598ff20de6631a6b`.
 Its environment report records Python 3.11.13, NumPy 2.4.2, and SciPy 1.17.1.
 The production receipt records 540 pending runs and zero resumed runs. The
 refinement receipt records 48 pending runs and zero resumed runs.
@@ -17,14 +18,27 @@ therefore rejected those artifacts instead of applying a numerical tolerance.
 They remain recoverable from Git history and are summarized by
 `host_primary_rejection_report.json`.
 
+The next clean execution exposed a separate aggregation defect in the primary
+at source commit `ea42a163487dcee01b6e2c785c21ffd65ab4d99c`. All three raw
+array archives were byte-identical, the refinement and control JSON outputs
+were identical after source-commit normalization, and the scientific decision
+remained `not_supported`. One production `effect_estimate` nevertheless
+changed by approximately 7e-18 because completed seed records entered a
+floating-point mean in worker completion order. The verifier rejected that
+primary without a numerical tolerance. Commit `144de09947f20a07c4a4da1dd0d649c41d8ba151`
+sorts the reduction by drag, viscosity, and seed before aggregation and adds an
+adversarial permutation-invariance test. The complete failed comparison is
+retained in `completion_order_rejection_report.json`.
+
 The locked primary artifacts are:
 
 - `production_run_arrays.tar`: `b96bb6ac46a823c5a74d25a895406a8b9b6d78db5a3f49d01262ce44e9f3d61b`
 - `refinement_run_arrays.tar`: `6714b6a581b259d96aa9633fbbe1fd016c26459753f6f643a9783868a2bd322d`
 - `control_final_states.tar`: `2e6dfe14f80ca19529a910ebcc52582418fa799561ae3127118a4a3c22c95d66`
-- `locked_primary_environment_report.json`: `b8a0047b9ddf53c4b2eca29073b8ff1c4b1ebff87dfc7145b0dc17c3f140f4e3`
-- `locked_primary_docker_compose_run.tar`: `ee363430a366aad689cf2877dde4a703e07f04b77fec939f3c58c1d2a58ceb36`
-- `locked_primary_image_identity.json`: `2e24529847c8a5b6d27174f04c085905a45d4d1bc9fba9511642e134f0145d50`
+- `locked_primary_environment_report.json`: `099385f0c935e78e7aea7cf361c3116303a49b5f9ad0dd44405c2175004fc2da`
+- `locked_primary_docker_compose_run.tar`: `e399e6b240a865b273474778f4051a6054a2accd2caeebc9a443a437242a5b71`
+- `locked_primary_image_identity.json`: `1f4d90841ecf5a2710fc8a9df61cc2ac3143849a5251f144529d0f198fc6a03e`
+- `completion_order_rejection_report.json`: `fae4d76addae451204a0b3a9fd514441f625322e5a82d1e2f22a5063ae70c72e`
 
 A second fresh execution from the next committed source tree is required before
 any beta result can enter the manuscript result registry.

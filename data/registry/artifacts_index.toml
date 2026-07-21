@@ -124,7 +124,7 @@ size_bytes = 2260
 [[artifacts]]
 kind = "paper_or_source_pdf"
 relpath = "papers/main.pdf"
-sha256 = "03a12ba1005a3ef4f2ee07d13a782c32dc6b8b2d853064b7b54c41bb3efed651"
+sha256 = "edb7cf8bbac59218750265c79fb42d996aede68a5f682e7ed494f2618ec41b41"
 size_bytes = 723425
 
 [[artifacts]]
@@ -382,8 +382,14 @@ size_bytes = 134930
 [[artifacts]]
 kind = "artifact"
 relpath = "data/evidence/beta_plane/README.md"
-sha256 = "9fc8ffaae3317d8414a6011faf37e3157a6473806e5df1a3e4c0096b3803ab76"
-size_bytes = 1842
+sha256 = "6e308845aa0a56a2c0c8b00610cfb6c17709510096a4d5a14c7c9f4bded4c1b4"
+size_bytes = 2844
+
+[[artifacts]]
+kind = "experiment_json"
+relpath = "data/evidence/beta_plane/completion_order_rejection_report.json"
+sha256 = "fae4d76addae451204a0b3a9fd514441f625322e5a82d1e2f22a5063ae70c72e"
+size_bytes = 365312
 
 [[artifacts]]
 kind = "artifact"
@@ -400,19 +406,19 @@ size_bytes = 365317
 [[artifacts]]
 kind = "artifact"
 relpath = "data/evidence/beta_plane/locked_primary_docker_compose_run.tar"
-sha256 = "ee363430a366aad689cf2877dde4a703e07f04b77fec939f3c58c1d2a58ceb36"
+sha256 = "e399e6b240a865b273474778f4051a6054a2accd2caeebc9a443a437242a5b71"
 size_bytes = 61440
 
 [[artifacts]]
 kind = "experiment_json"
 relpath = "data/evidence/beta_plane/locked_primary_environment_report.json"
-sha256 = "b8a0047b9ddf53c4b2eca29073b8ff1c4b1ebff87dfc7145b0dc17c3f140f4e3"
+sha256 = "099385f0c935e78e7aea7cf361c3116303a49b5f9ad0dd44405c2175004fc2da"
 size_bytes = 3265
 
 [[artifacts]]
 kind = "experiment_json"
 relpath = "data/evidence/beta_plane/locked_primary_image_identity.json"
-sha256 = "2e24529847c8a5b6d27174f04c085905a45d4d1bc9fba9511642e134f0145d50"
+sha256 = "1f4d90841ecf5a2710fc8a9df61cc2ac3143849a5251f144529d0f198fc6a03e"
 size_bytes = 842
 
 [[artifacts]]
@@ -436,7 +442,7 @@ size_bytes = 1607680
 [[artifacts]]
 kind = "experiment_json"
 relpath = "data/reproduction/beta_plane_control_results.json"
-sha256 = "6e530259b3125183b520a5229cd0c825130695296c0c02792304639aa4e4c77b"
+sha256 = "e3f11a5c2a75c828e0c783ea828e1e2c81a88a6e53bc526ecf143a9327c01f5d"
 size_bytes = 14564
 
 [[artifacts]]
@@ -454,31 +460,31 @@ size_bytes = 2580480
 [[artifacts]]
 kind = "experiment_json"
 relpath = "data/reproduction/beta_plane_refinement_results.json"
-sha256 = "ac80b22260be5f7bdf1130186ceeb594ec49b137e2532384ed7f4301b2ab128e"
+sha256 = "74cb34073729f0a142bc40406e9ddce5ceee024056748d071eddffa55938422d"
 size_bytes = 106255
 
 [[artifacts]]
 kind = "experiment_json"
 relpath = "data/reproduction/beta_plane_sweep_results.json"
-sha256 = "6445c6a0032715c71d8ac81ce4c12ac642cb70e079b09ebe5cb9a8214bd21c3a"
+sha256 = "ab81c95ef2c0f5006520e2efe244bd28ca4d4a5550051d58939b5f17d02f2c06"
 size_bytes = 1066759
 
 [[artifacts]]
 kind = "artifact"
 relpath = "data/reproduction/docker_compose_run.log"
-sha256 = "fea0d8bc691ea87d0e7ddcfee9219c1b486c0a825ed2a90a5b89de7c07c37084"
+sha256 = "f9bcc588117cf5a2864ebd3059b619303383462535bede0decec1a010d868d8f"
 size_bytes = 50915
 
 [[artifacts]]
 kind = "experiment_json"
 relpath = "data/reproduction/environment_report.json"
-sha256 = "b8a0047b9ddf53c4b2eca29073b8ff1c4b1ebff87dfc7145b0dc17c3f140f4e3"
+sha256 = "099385f0c935e78e7aea7cf361c3116303a49b5f9ad0dd44405c2175004fc2da"
 size_bytes = 3265
 
 [[artifacts]]
 kind = "experiment_json"
 relpath = "data/reproduction/image_identity.json"
-sha256 = "2e24529847c8a5b6d27174f04c085905a45d4d1bc9fba9511642e134f0145d50"
+sha256 = "1f4d90841ecf5a2710fc8a9df61cc2ac3143849a5251f144529d0f198fc6a03e"
 size_bytes = 842
 
 [[artifacts]]
@@ -490,5 +496,5 @@ size_bytes = 2797
 [[artifacts]]
 kind = "experiment_json"
 relpath = "data/reproduction/verification_report.json"
-sha256 = "bbb708e9bf25c140533af9c81c32b78de17929da9e1917d5f6b5e2069fa668ee"
-size_bytes = 365317
+sha256 = "fae4d76addae451204a0b3a9fd514441f625322e5a82d1e2f22a5063ae70c72e"
+size_bytes = 365312

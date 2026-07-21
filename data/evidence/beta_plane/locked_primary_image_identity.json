@@ -1,6 +1,6 @@
 {
   "architecture": "amd64",
-  "created": "2026-07-21T00:55:46.86417436-07:00",
+  "created": "2026-07-21T01:57:34.02438803-07:00",
   "environment": [
     "PATH=/usr/local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin",
     "LANG=C.UTF-8",
@@ -12,11 +12,11 @@
     "JAX_PLATFORMS=cpu",
     "XLA_PYTHON_CLIENT_PREALLOCATE=false"
   ],
-  "image_id": "sha256:a2afc408cf5d1320a8501bbaa564cdfac4f53d2f6c5e6a9e442c073e041e36ba",
+  "image_id": "sha256:e8689f8912510d5f1f93b1966b89a4e854177d1e474193eb598ff20de6631a6b",
   "image_reference": "reproduction-evidence-reproduction:latest",
   "os": "linux",
   "repo_digests": [
-    "reproduction-evidence-reproduction@sha256:a2afc408cf5d1320a8501bbaa564cdfac4f53d2f6c5e6a9e442c073e041e36ba"
+    "reproduction-evidence-reproduction@sha256:e8689f8912510d5f1f93b1966b89a4e854177d1e474193eb598ff20de6631a6b"
   ],
   "schema_version": 1
 }

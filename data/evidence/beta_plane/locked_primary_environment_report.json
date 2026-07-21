@@ -67,7 +67,7 @@
     },
     {
       "relpath": "data/reproduction/beta_plane_control_results.json",
-      "sha256": "6e530259b3125183b520a5229cd0c825130695296c0c02792304639aa4e4c77b",
+      "sha256": "e3f11a5c2a75c828e0c783ea828e1e2c81a88a6e53bc526ecf143a9327c01f5d",
       "size_bytes": 14564
     },
     {
@@ -82,12 +82,12 @@
     },
     {
       "relpath": "data/reproduction/beta_plane_refinement_results.json",
-      "sha256": "ac80b22260be5f7bdf1130186ceeb594ec49b137e2532384ed7f4301b2ab128e",
+      "sha256": "74cb34073729f0a142bc40406e9ddce5ceee024056748d071eddffa55938422d",
       "size_bytes": 106255
     },
     {
       "relpath": "data/reproduction/beta_plane_sweep_results.json",
-      "sha256": "6445c6a0032715c71d8ac81ce4c12ac642cb70e079b09ebe5cb9a8214bd21c3a",
+      "sha256": "ab81c95ef2c0f5006520e2efe244bd28ca4d4a5550051d58939b5f17d02f2c06",
       "size_bytes": 1066759
     },
     {
@@ -100,5 +100,5 @@
   "schema_version": 1,
   "scipy_version": "1.17.1",
   "selector_outcome": "e7_specificity_falsified_generic_parity_kernel_retained",
-  "source_commit": "ea42a163487dcee01b6e2c785c21ffd65ab4d99c"
+  "source_commit": "144de09947f20a07c4a4da1dd0d649c41d8ba151"
 }
