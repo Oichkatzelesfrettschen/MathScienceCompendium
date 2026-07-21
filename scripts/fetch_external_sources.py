@@ -13,6 +13,7 @@ import json
 import shutil
 import subprocess
 import sys
+import time
 import urllib.error
 import urllib.request
 from dataclasses import dataclass
@@ -220,6 +221,18 @@ def main() -> int:
     parser.add_argument("--timeout", type=int, default=60)
     parser.add_argument("--force", action="store_true", help="Re-download even if target exists")
     parser.add_argument("--extract-text", action="store_true", help="Run pdftotext for PDFs")
+    parser.add_argument(
+        "--source-id",
+        action="append",
+        default=[],
+        help="Fetch only a named manifest source; repeat for multiple sources",
+    )
+    parser.add_argument(
+        "--delay-seconds",
+        type=float,
+        default=3.0,
+        help="Delay after each successful network download",
+    )
     args = parser.parse_args()
 
     manifest_path = args.manifest
@@ -230,11 +243,21 @@ def main() -> int:
         provenance_path = REPO_ROOT / provenance_path
 
     manifest = load_manifest(manifest_path)
+    sources = manifest["sources"]
+    if args.source_id:
+        requested_ids = set(args.source_id)
+        known_ids = {str(source["id"]) for source in sources}
+        unknown_ids = sorted(requested_ids - known_ids)
+        if unknown_ids:
+            parser.error("unknown --source-id values: " + ", ".join(unknown_ids))
+        sources = [source for source in sources if str(source["id"]) in requested_ids]
     results: list[dict[str, Any]] = []
-    for source in manifest["sources"]:
+    for source in sources:
         result = process_source(source, args.force, args.timeout, args.extract_text)
         results.append(result.__dict__)
         print(f"[{result.status}] {result.id} -> {result.target_relpath}")
+        if result.status == "downloaded" and args.delay_seconds > 0.0:
+            time.sleep(args.delay_seconds)
 
     ensure_parent(provenance_path)
     payload = {

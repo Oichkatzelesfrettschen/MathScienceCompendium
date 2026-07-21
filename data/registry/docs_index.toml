@@ -1,6 +1,6 @@
 generated_by = "scripts/build_docs_index.py"
 generated_at_utc = "1970-01-01T00:00:00+00:00"
-documents_total = 67
+documents_total = 70
 
 [[documents]]
 id = "docs_architecture_md"
@@ -88,9 +88,18 @@ id = "docs_framework__aligned_research_corpus_md"
 relpath = "docs/framework/ALIGNED_RESEARCH_CORPUS.md"
 category = "docs/root"
 title = "Aligned Research Corpus"
-sha256 = "c05fce8ce1e046b926e2e9aa90eb81e5e42df885049b6acf411d50f2ee903fcb"
-line_count = 117
-size_bytes = 6784
+sha256 = "c0ca459cacafaa1d82a7529fc4b552d7be9af9d84287df6f76c71b4ee7ef4bf6"
+line_count = 132
+size_bytes = 7899
+
+[[documents]]
+id = "docs_framework__authority_surfaces_md"
+relpath = "docs/framework/AUTHORITY_SURFACES.md"
+category = "docs/root"
+title = "Authority Surfaces"
+sha256 = "828b207f1e96a106d1c90d33a0b683d7e207e262c1c8ad67478b5ea3a7b5e6b0"
+line_count = 21
+size_bytes = 1085
 
 [[documents]]
 id = "docs_framework__framework_document_inventory_md"
@@ -118,6 +127,15 @@ title = "Genesis Revision Reconciliation"
 sha256 = "b2ff8db25a026ecabeef8c752284761526173264539aad606b85996893794dbd"
 line_count = 79
 size_bytes = 4577
+
+[[documents]]
+id = "docs_framework__hypothesis_registry_md"
+relpath = "docs/framework/HYPOTHESIS_REGISTRY.md"
+category = "docs/root"
+title = "Hypothesis Registry"
+sha256 = "15337fee969909474b59943675ac63a78dd7be58b2389885ce2ef8552ae0d936"
+line_count = 635
+size_bytes = 39011
 
 [[documents]]
 id = "docs_framework__unified_evidence_framework_md"
@@ -255,6 +273,15 @@ line_count = 141
 size_bytes = 7061
 
 [[documents]]
+id = "papers_review_hypothesis_registry_tex"
+relpath = "papers/sections/review_hypothesis_registry.tex"
+category = "papers/sections"
+title = "Hypothesis Registry and Promotion Gates"
+sha256 = "e8c636785686c9a1519420f89550c0b4adf2784fab320e81ca78c3047ef03284"
+line_count = 87
+size_bytes = 4352
+
+[[documents]]
 id = "papers_review_mathematical_baseline_tex"
 relpath = "papers/sections/review_mathematical_baseline.tex"
 category = "papers/sections"
@@ -277,9 +304,9 @@ id = "papers_review_reproducibility_tex"
 relpath = "papers/sections/review_reproducibility.tex"
 category = "papers/sections"
 title = "Reproducibility and Artifact Inventory"
-sha256 = "32bf96fdc615cc3299ea58f9de18ce5dce84d2f510c1e8f7df3089f2d0c885de"
+sha256 = "6fb23bcd03fbe080d57f75f544bf5de3ba1957c5587f01e298a72c13e7594e65"
 line_count = 156
-size_bytes = 6976
+size_bytes = 6980
 
 [[documents]]
 id = "papers_review_scope_method_tex"

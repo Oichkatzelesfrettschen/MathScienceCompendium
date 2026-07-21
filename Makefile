@@ -17,7 +17,7 @@ BENCH_DIR = benchmarks
 RESULTS_DIR = results
 FIGURES_DIR = figures
 
-.PHONY: all clean help install test lint check-types benchmark run-highres run-unified run-jordan run-clifford docs papers cleanbuild lint-latex figures paper-evidence-artifacts fetch-external sync-super-force-analysis normalize-corpus framework-decomposition framework-overlap corpus-dedupe build-registries docs-index claim-coverage critique-evidence hypothesis-registry validate-hypothesis-promotions validate-external-provenance validate-registry-schemas parquet-audit evidence-audits beta-plane-sweep beta-plane-refinement beta-plane-controls lbm-evidence-figures pdf-text-quality-audit document-ocr-mineru document-ocr-tesseract document-ocr-generate document-decomposition-index verify-offline repro-refresh check-pdf-deps archive-pdfs notebooks fetch-arxiv resolve-dois fetch-all verify-checksums check-deps
+.PHONY: all clean help install test lint check-types benchmark run-highres run-unified run-jordan run-clifford docs papers cleanbuild lint-latex figures paper-evidence-artifacts fetch-external sync-super-force-analysis normalize-corpus framework-decomposition framework-overlap corpus-dedupe build-registries docs-index claim-coverage critique-evidence hypothesis-registry validate-clean-reproduction validate-hypothesis-promotions validate-external-provenance validate-registry-schemas parquet-audit evidence-audits beta-plane-sweep beta-plane-refinement beta-plane-controls lbm-evidence-figures pdf-text-quality-audit document-ocr-mineru document-ocr-tesseract document-ocr-generate document-decomposition-index verify-offline repro-refresh check-pdf-deps archive-pdfs notebooks fetch-arxiv resolve-dois fetch-all verify-checksums check-deps
 
 # Default target
 all: lint check-types test benchmark figures papers
@@ -214,6 +214,13 @@ hypothesis-registry:
 	@echo "[DOCS] Rendering the canonical hypothesis registry..."
 	python3 scripts/build_hypothesis_registry_report.py
 
+validate-clean-reproduction:
+	@test -n "$(EVIDENCE_SOURCE_COMMIT)" || (echo "EVIDENCE_SOURCE_COMMIT is required" && exit 2)
+	@echo "[VERIFY] Comparing clean-container outputs, source identity, and primary evidence..."
+	python3 scripts/verify_clean_reproduction.py \
+		--image reproduction-evidence-reproduction:latest \
+		--source-commit "$(EVIDENCE_SOURCE_COMMIT)"
+
 validate-hypothesis-promotions:
 	@echo "[VERIFY] Enforcing independent reproduction before paper promotion..."
 	python3 scripts/validate_hypothesis_promotions.py
@@ -389,6 +396,7 @@ help:
 	@echo "  make docs-index       - Build docs registry and docs index markdown"
 	@echo "  make claim-coverage   - Build claim/source coverage report from crosswalk policy"
 	@echo "  make critique-evidence - Generate the paper critique table from its evidence ledger"
+	@echo "  make validate-clean-reproduction - Verify clean results against source and primary evidence"
 	@echo "  make validate-external-provenance - Validate data/external provenance JSON against schemas"
 	@echo "  make validate-registry-schemas - Validate data/registry/*.toml and selected *.json against schemas"
 	@echo "  make parquet-audit    - Audit parquet files and emit JSON summary"

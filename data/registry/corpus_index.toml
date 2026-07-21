@@ -434,6 +434,24 @@ line_count = 2967
 size_bytes = 107917
 
 [[documents]]
+id = "source_materials__pdfs__extracted__arxiv_1307_8272"
+source_relpath = "source_materials/pdfs/extracted/arxiv_1307.8272.txt"
+normalized_relpath = "data/normalized/corpus/source_materials__pdfs__extracted__arxiv_1307_8272.json"
+category = "source_materials"
+sha256 = "f1fe0fe011a2fd42913a129c8b1b20907db08d0e667f7698b95acd0fc1c1b5e8"
+line_count = 774
+size_bytes = 44018
+
+[[documents]]
+id = "source_materials__pdfs__extracted__arxiv_1407_3354"
+source_relpath = "source_materials/pdfs/extracted/arxiv_1407.3354.txt"
+normalized_relpath = "data/normalized/corpus/source_materials__pdfs__extracted__arxiv_1407_3354.json"
+category = "source_materials"
+sha256 = "22874a885649cfd1951f11c698ecfe8e39ba3aca66d0e047aa79c7306a864204"
+line_count = 3409
+size_bytes = 100267
+
+[[documents]]
 id = "source_materials__pdfs__extracted__arxiv_1410_2143"
 source_relpath = "source_materials/pdfs/extracted/arxiv_1410.2143.txt"
 normalized_relpath = "data/normalized/corpus/source_materials__pdfs__extracted__arxiv_1410_2143.json"
@@ -470,6 +488,24 @@ line_count = 1626
 size_bytes = 37776
 
 [[documents]]
+id = "source_materials__pdfs__extracted__arxiv_1708_03031"
+source_relpath = "source_materials/pdfs/extracted/arxiv_1708.03031.txt"
+normalized_relpath = "data/normalized/corpus/source_materials__pdfs__extracted__arxiv_1708_03031.json"
+category = "source_materials"
+sha256 = "83964e98f95536a026d2dfd933fc4ad82ffd023804e561df324fdf4407b242f3"
+line_count = 2601
+size_bytes = 111800
+
+[[documents]]
+id = "source_materials__pdfs__extracted__arxiv_1804_03092"
+source_relpath = "source_materials/pdfs/extracted/arxiv_1804.03092.txt"
+normalized_relpath = "data/normalized/corpus/source_materials__pdfs__extracted__arxiv_1804_03092.json"
+category = "source_materials"
+sha256 = "97012bb71a48b75e08609d222c386a744fe7bcd7f0fbb8ccdf3615e4254c73c7"
+line_count = 2714
+size_bytes = 47842
+
+[[documents]]
 id = "source_materials__pdfs__extracted__arxiv_2505_11747"
 source_relpath = "source_materials/pdfs/extracted/arxiv_2505.11747.txt"
 normalized_relpath = "data/normalized/corpus/source_materials__pdfs__extracted__arxiv_2505_11747.json"
@@ -477,6 +513,15 @@ category = "source_materials"
 sha256 = "9aae866a3bb52940bb8db4ffa0fe2b9f7787ba4f385c2b795dbbe3e0ff3adc19"
 line_count = 2384
 size_bytes = 89165
+
+[[documents]]
+id = "source_materials__pdfs__extracted__arxiv_2507_23493"
+source_relpath = "source_materials/pdfs/extracted/arxiv_2507.23493.txt"
+normalized_relpath = "data/normalized/corpus/source_materials__pdfs__extracted__arxiv_2507_23493.json"
+category = "source_materials"
+sha256 = "1e2239fac9eb973a4b9a888e7d36d5f29e37048bc6f8c543717551163f284ccb"
+line_count = 686
+size_bytes = 40170
 
 [[documents]]
 id = "source_materials__pdfs__extracted__arxiv_2605_27211"

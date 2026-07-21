@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "recorded_at_utc": "2026-07-19T06:12:03Z",
+  "recorded_at_utc": "2026-07-21T00:17:12Z",
   "mineru": {
     "name": "MinerU",
     "version": "3.4.4",
@@ -11,12 +11,12 @@
     "image_analysis": true,
     "container": {
       "image": "mathscience-mineru:3.4.4",
-      "image_id": "sha256:9b9d25839556cf9d23ae03d4f71dbef80c80a1884dd9fa35c5394f9dd22d90d9",
+      "image_id": "sha256:df732edaa6e6c6e18d1737c7f974a9a70e786a5aec7b2222d327877c77506a28",
       "base_image": "vllm/vllm-openai:v0.21.0@sha256:4ac9b7c6dabc3ec762c0edef4e9245abe98373844da91cc53ee42e5c58280c5b",
       "dockerfile_relpath": "tools/document_ocr/Dockerfile",
       "dockerfile_sha256": "74a8b4686e72bd93cf53cd5fc2b0785ae8587c8ac9bcda9d66052f1cea08072d",
       "compose_relpath": "tools/document_ocr/compose.yaml",
-      "compose_sha256": "7a155e3588ebd26c7847c2fce87bc5ff444f9c8762ab38a8b9b38aa57eb6504b"
+      "compose_sha256": "f8bb35481ec237c039b65bfb78bfc52e18add8597ff0b837b83ccfdacd2ceab0"
     },
     "full_corpus": {
       "mode": "auto",
@@ -37,7 +37,7 @@
     "page_segmentation_mode": 1,
     "input_relpath": "source_materials/pdfs/Comment_on_the_Pais_Superforce_Theory.pdf",
     "manifest_relpath": "build/document_ocr/tesseract/Comment_on_the_Pais_Superforce_Theory/manifest.json",
-    "manifest_sha256": "edfed9d0940e0cef3d1acd9d14de36e9296f9049abaf7a9d0ff98753bcc4db1f",
+    "manifest_sha256": "a93cb3a1e45cb77c81c01c412b55ffa3729a2115ce7e6cbb39a1ec0d3bcee4c0",
     "command": "python3 scripts/run_tesseract_pdf_ocr.py source_materials/pdfs/Comment_on_the_Pais_Superforce_Theory.pdf --dpi 400 --page-segmentation-mode 1"
   }
 }

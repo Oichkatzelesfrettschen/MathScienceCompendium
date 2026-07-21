@@ -31,7 +31,9 @@ def run(command: list[str]) -> None:
 
 def main() -> int:
     source_commit = os.environ.get("EVIDENCE_SOURCE_COMMIT", "")
-    if len(source_commit) != 40 or any(character not in "0123456789abcdef" for character in source_commit):
+    if len(source_commit) != 40 or any(
+        character not in "0123456789abcdef" for character in source_commit
+    ):
         raise ValueError("EVIDENCE_SOURCE_COMMIT must be a lowercase 40-character Git digest")
     OUTPUT_ROOT.mkdir(parents=True, exist_ok=True)
     commands = [
@@ -48,6 +50,7 @@ def main() -> int:
             "production",
             "--work-root",
             "/tmp/beta_plane_reproduction",
+            "--require-empty-work-root",
             "--output",
             "data/reproduction/beta_plane_sweep_results.json",
             "--evidence-archive",
@@ -60,6 +63,7 @@ def main() -> int:
             "refinement",
             "--work-root",
             "/tmp/beta_plane_reproduction",
+            "--require-empty-work-root",
             "--output",
             "data/reproduction/beta_plane_refinement_results.json",
             "--evidence-archive",
@@ -82,9 +86,7 @@ def main() -> int:
     production = json.loads(
         (OUTPUT_ROOT / "beta_plane_sweep_results.json").read_text(encoding="ascii")
     )
-    selector = json.loads(
-        (OUTPUT_ROOT / "triad_selector_audit.json").read_text(encoding="ascii")
-    )
+    selector = json.loads((OUTPUT_ROOT / "triad_selector_audit.json").read_text(encoding="ascii"))
     report = {
         "schema_version": 1,
         "source_commit": source_commit,
@@ -94,6 +96,12 @@ def main() -> int:
         "commands": commands,
         "beta_plane_outcome": production["aggregate_decision"],
         "selector_outcome": selector["scientific_outcome"],
+        "execution_receipts": {
+            "production": production["execution_receipt"],
+            "refinement": json.loads(
+                (OUTPUT_ROOT / "beta_plane_refinement_results.json").read_text(encoding="ascii")
+            )["execution_receipt"],
+        },
         "outputs": [
             {
                 "relpath": str(path.relative_to(REPO_ROOT)),

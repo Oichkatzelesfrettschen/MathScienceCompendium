@@ -52,8 +52,8 @@ size_bytes = 5646639
 [[experiments]]
 kind = "experiment_json"
 relpath = "experiments/quantum_lbm_stable_results.json"
-sha256 = "0a4d17e489eebc14008bb1e09556c2b829864cd834eb20461f7351ef8bde4c02"
-size_bytes = 1782
+sha256 = "b38464bfc75a9998f924c6740c3144fe580eaedc35142fc08898c1b99b02a0e8"
+size_bytes = 1804
 
 [[experiments]]
 kind = "experiment_json"

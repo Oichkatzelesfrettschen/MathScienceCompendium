@@ -48,8 +48,15 @@ def run_metrics(run: BetaPlaneRun) -> dict[str, Any]:
         "jet_count": run.jet_count,
         "jet_prominence_threshold": run.jet_prominence_threshold,
         "final_window_sample_count": run.final_window_sample_count,
+        "final_window_mean_zonal_fraction": run.final_window_mean_zonal_fraction,
+        "final_window_tenth_percentile_zonal_fraction": (
+            run.final_window_tenth_percentile_zonal_fraction
+        ),
         "final_window_minimum_zonal_fraction": run.final_window_minimum_zonal_fraction,
+        "final_window_zonal_fractions": list(run.final_window_zonal_fractions),
         "final_window_jet_counts": list(run.final_window_jet_counts),
+        "final_window_modal_jet_count": run.final_window_modal_jet_count,
+        "final_window_modal_jet_count_occupancy": (run.final_window_modal_jet_count_occupancy),
         "jet_claim_admitted": run.jet_claim_admitted,
         "final_vorticity_sha256": array_sha256(run.final_vorticity),
     }

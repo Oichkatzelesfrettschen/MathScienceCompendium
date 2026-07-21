@@ -1,0 +1,48 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://mathsciencecompendium.local/schemas/registry/beta_plane_control_results.schema.json",
+  "title": "BetaPlaneControlResults",
+  "type": "object",
+  "required": ["schema_version", "generator", "preregistration_relpath", "preregistration_sha256", "source_commit", "environment_lock_relpath", "environment_lock_sha256", "evidence_archive", "seed_count", "arm_run_count", "records", "prescribed_zonal_diagnostic_control", "retained_lbm_null_control", "all_controls_passed"],
+  "properties": {
+    "schema_version": {"const": 1},
+    "generator": {"const": "scripts/run_beta_plane_controls.py"},
+    "preregistration_relpath": {"const": "data/registry/beta_plane_sweep_preregistration.json"},
+    "preregistration_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "source_commit": {"type": "string", "pattern": "^[0-9a-f]{40}$"},
+    "environment_lock_relpath": {"const": "requirements-lock.txt"},
+    "environment_lock_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "evidence_archive": {
+      "type": "object",
+      "required": ["relpath", "sha256", "format"],
+      "properties": {
+        "relpath": {"const": "data/evidence/beta_plane/control_final_states.tar"},
+        "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+        "format": {"const": "deterministic_uncompressed_tar_of_float64_arrays"}
+      },
+      "additionalProperties": false
+    },
+    "seed_count": {"const": 12},
+    "arm_run_count": {"const": 48},
+    "records": {"type": "array", "minItems": 12, "maxItems": 12, "items": {"type": "object"}},
+    "prescribed_zonal_diagnostic_control": {
+      "type": "object",
+      "required": ["passed", "full_window_classification"],
+      "properties": {
+        "passed": {"const": true},
+        "full_window_classification": {
+          "type": "object",
+          "required": ["persistent_jet"],
+          "properties": {"persistent_jet": {"const": true}}
+        }
+      }
+    },
+    "retained_lbm_null_control": {
+      "type": "object",
+      "required": ["passed"],
+      "properties": {"passed": {"const": true}}
+    },
+    "all_controls_passed": {"type": "boolean"}
+  },
+  "additionalProperties": false
+}

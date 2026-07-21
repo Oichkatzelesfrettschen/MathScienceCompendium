@@ -3,6 +3,10 @@
 from __future__ import annotations
 
 import json
+import subprocess
+import sys
+import tarfile
+from pathlib import Path
 
 import numpy as np
 from scripts.run_beta_plane_sweep import (
@@ -10,6 +14,7 @@ from scripts.run_beta_plane_sweep import (
     aggregate_payload,
     build_refinement_checks,
     build_run_specs,
+    checkpoint_binding,
     display_path,
     exact_cluster_sign_flip_p,
     load_checkpoint,
@@ -19,6 +24,9 @@ from scripts.run_beta_plane_sweep import (
 )
 
 from mathphysics.beta_plane import BarotropicBetaPlane, BetaPlaneConfig
+
+
+REPO_ROOT = Path(__file__).resolve().parents[2]
 
 
 def test_production_matrix_has_preregistered_cardinality():
@@ -44,10 +52,50 @@ def test_checkpoint_supports_work_root_outside_repository(tmp_path):
         "final_window_zonal_fractions": [0.1, 0.2],
         "final_window_jet_counts": [2, 2],
     }
+    binding = checkpoint_binding("smoke")
+    record["checkpoint_binding"] = binding
     checkpoint = write_checkpoint(record, tmp_path)
     assert "arrays_relpath" not in checkpoint
-    assert load_checkpoint(specification, tmp_path) == checkpoint
+    assert load_checkpoint(specification, tmp_path, binding) == checkpoint
+    stale_binding = {**binding, "source_commit": "0" * 40}
+    assert load_checkpoint(specification, tmp_path, stale_binding) is None
     assert display_path(tmp_path / "result.json") == tmp_path / "result.json"
+
+
+def test_smoke_cli_enforces_fresh_external_work_root(tmp_path):
+    work_root = tmp_path / "checkpoints"
+    result_path = tmp_path / "smoke_results.json"
+    archive_path = tmp_path / "smoke_arrays.tar"
+    command = [
+        sys.executable,
+        "scripts/run_beta_plane_sweep.py",
+        "--profile",
+        "smoke",
+        "--workers",
+        "2",
+        "--work-root",
+        str(work_root),
+        "--require-empty-work-root",
+        "--output",
+        str(result_path),
+        "--evidence-archive",
+        str(archive_path),
+    ]
+    completed = subprocess.run(command, cwd=REPO_ROOT, check=False, capture_output=True)
+    assert completed.returncode == 0, completed.stderr.decode("utf-8", errors="replace")
+    payload = json.loads(result_path.read_text(encoding="ascii"))
+    assert payload["execution_receipt"] == {
+        "fresh_execution_required": True,
+        "work_root_existed_before": False,
+        "resumed_count": 0,
+        "pending_count": 4,
+        "total_count": 4,
+    }
+    with tarfile.open(archive_path, mode="r:") as archive:
+        assert len(archive.getmembers()) == 4
+    repeated = subprocess.run(command, cwd=REPO_ROOT, check=False, capture_output=True)
+    assert repeated.returncode != 0
+    assert b"required empty work root already exists" in repeated.stderr
 
 
 def test_refinement_matrix_has_preregistered_cardinality():

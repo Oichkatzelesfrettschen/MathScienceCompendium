@@ -3,6 +3,8 @@ services:
     build:
       context: ../..
       dockerfile: tools/reproduction/Dockerfile
+      args:
+        EVIDENCE_SOURCE_COMMIT: ${EVIDENCE_SOURCE_COMMIT:?set EVIDENCE_SOURCE_COMMIT}
     environment:
       EVIDENCE_SOURCE_COMMIT: ${EVIDENCE_SOURCE_COMMIT:?set EVIDENCE_SOURCE_COMMIT}
     volumes:

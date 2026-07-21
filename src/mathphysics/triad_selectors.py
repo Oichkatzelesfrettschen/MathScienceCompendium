@@ -79,10 +79,8 @@ def exact_inverse(matrix: tuple[tuple[int, ...], ...]) -> tuple[tuple[Fraction, 
                 continue
             factor = augmented[row_index][column_index]
             augmented[row_index] = [
-                value - factor * pivot_value
-                for value, pivot_value in zip(
-                    augmented[row_index], augmented[column_index], strict=True
-                )
+                value - factor * augmented[column_index][value_index]
+                for value_index, value in enumerate(augmented[row_index])
             ]
     return tuple(tuple(row[size:]) for row in augmented)
 

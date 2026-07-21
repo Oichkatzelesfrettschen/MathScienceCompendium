@@ -26,9 +26,34 @@ registry-driven evidence figures and result tables. The broader scientific and
 interactive figure suite remains a separate target because it requires the full
 Python environment and may alter unrelated generated artifacts.
 
+The beta-plane and selector results use a separate pinned clean-room image:
+
+\begin{verbatim}
+EVIDENCE_SOURCE_COMMIT=$(git rev-parse HEAD)
+tools/reproduction/build_exact_source_image.sh \
+  "$EVIDENCE_SOURCE_COMMIT"
+EVIDENCE_SOURCE_COMMIT="$EVIDENCE_SOURCE_COMMIT" \
+  docker compose -f tools/reproduction/compose.yaml run --rm
+EVIDENCE_SOURCE_COMMIT="$EVIDENCE_SOURCE_COMMIT" \
+  make validate-clean-reproduction
+\end{verbatim}
+
+The builder exports the declared commit with \texttt{git archive}; uncommitted
+host files never enter the build context. The image pins its base by OCI digest,
+installs the repository lock file, and records a digest manifest for every
+source-tree file after installation.
+The reproduction service receives no primary build cache. It writes a separate
+production result, refinement result, control result, selector audit, raw-array
+archives, run log, environment report, and host-side image identity under
+\path{data/reproduction/}. The clean-reproduction verifier compares the source
+files inside the image with the declared Git tree, validates the environment
+manifest, and compares normalized results and raw archives with the primary
+run. Promotion validation recomputes every declared digest and rejects a
+reproduction whose runner and reviewer identities match.
+
 \section{Decompose the source documents}
 
-The source corpus contains 37 PDFs and 986 pages. Embedded text is retained as
+The source corpus contains 42 PDFs and 1,076 pages. Embedded text is retained as
 one evidence layer, not assumed to be correct. The page-level audit routes
 sparse pages for OCR:
 
@@ -99,9 +124,12 @@ remain separate so a missing optional runtime cannot masquerade as success.
     \path{data/registry/parquet_audit.json} & Schema-inspection status for retained snapshots. \\
     \path{data/registry/lbm_evidence_audit.json} & Generated conservation, velocity, zonal, and anisotropy diagnostics. \\
     \path{data/registry/lbm_root_order_audit.json} & Controlled sensitivity of the root-indexed initializer to ordering. \\
+    \path{data/evidence/beta_plane/} & Deterministic primary production, refinement, and control-array archives. \\
+    \path{data/reproduction/} & Independent clean-container results, raw arrays, environment record, and logs. \\
+    \path{data/registry/independent_reproduction_registry.json} & Digest-bound promotion decisions for supported and negative results. \\
     \path{data/registry/critique_evidence_ledger.json} & Canonical status, falsification attempt, verdict, and evidence paths for all 21 critiques. \\
     \path{data/registry/pdf_text_quality_audit.json} & Page-level embedded-text quality and OCR routing. \\
-    \path{data/registry/document_decomposition_audit.json} & MinerU output hashes and artifact counts for all 37 PDFs and 986 pages. \\
+    \path{data/registry/document_decomposition_audit.json} & MinerU output hashes and artifact counts for all 42 PDFs and 1,076 pages. \\
     \path{data/registry/document_ocr_run_manifest.json} & MinerU container identity, exact modes and commands, and Tesseract manifest identity. \\
     \path{data/registry/pdf_ocr_comparison.json} & Native, MinerU, and Tesseract comparison for the sparsest document. \\
     \path{data/registry/pdf_ocr_visual_review.json} & Retained page-level equation, layout, diagram, and prose comparison rubric. \\
@@ -139,13 +167,14 @@ The remaining scientific blockers are:
 \begin{itemize}
   \item the historical high-resolution LBM driver has no beta-plane parameter
     or term and remains evidence only for its own nearly isotropic trajectory;
-  \item the homomorphic Fourier-to-$P/Q$ mechanism is closed negatively; any
-    nonhomomorphic replacement requires a new derivation and claim identifier;
+  \item the homomorphic Fourier-to-$P/Q$ mechanism is closed negatively, and
+    the first nonhomomorphic candidate is exactly a generic checkerboard kernel;
   \item the high-resolution states lack a complete retained parameter and
     software-version manifest;
   \item the reported four-jet and $-5/3$ conclusions have no traceable analysis;
     and
-  \item the short decaying beta-plane runs do not admit persistent jets; and
+  \item the 540-run freely decaying beta-plane matrix does not support its
+    registered transient-zonalization effect outside the tested domain; and
   \item scalar gravity, ZPE harvesting, time-crystal amplification, and
     tourmaline novelty lack the raw measurements required by their operational
     admission packages.

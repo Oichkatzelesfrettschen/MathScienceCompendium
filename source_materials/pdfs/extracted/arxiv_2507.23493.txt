@@ -1,0 +1,686 @@
+Fluctuating interfaces in barotropic beta-plane turbulence
+Sandip Sahoo∗ and Samriddhi Sankar Ray†
+
+arXiv:2507.23493v1 [physics.flu-dyn] 31 Jul 2025
+
+International Centre for Theoretical Sciences, Tata Institute of Fundamental Research, Bangalore 560089, India
+(Dated: August 1, 2025)
+Zonal jets manifest themselves as bands with sharp interfaces in the vorticity configuration. We
+develop an algorithm to track these fluctuating vorticity interfaces and systematically investigate
+their characteristic spatio-temporal behavior. While the interfacial height fluctuations are typically
+sub-Gaussian, the corresponding fluctuation speeds exhibit wider, heavy-tailed distributions reflecting the influence of lateral dispersion induced by the zonal velocity profile along the interfacial
+contours. The temporal evolution of these fluctuations is further characterized through their power
+spectrum displaying scale invariance in the frequency domain. The sharp, dense, shock-like features
+present in the time series of the height field suggest a possible lacking of differentiability. We confirm this by calculating the moments of the time-increments of the interfacial height fluctuations.
+Finally, the fractal nature of these boundaries is investigated systematically through a multifractal
+approach, revealing the non-trivial, complex statistics of interfaces in such geophysical, turbulent
+flows.
+
+Fully developed turbulent flows are commonly seen in
+nature and industry. Quite often, studies in turbulence
+rely on assumptions of homogeneity and isotropy, which
+is still a valid approximation for a large number of phenomena. Importantly, the framework of fully developed,
+statistically homogeneous and isotropic turbulence—
+starting with the seminal work of Kolmogorov in 1941—
+remains the cornerstone in our understanding of the
+mathematical and statistical physics structure of high
+Reynolds number flows [1]. This is especially true as
+many of the tools of statistical physics, used to address
+such fundamental questions as the universality of intermittency and anomalous scaling, rest on such notions of
+(statistical) isotropy and homogeneity [2].
+Nevertheless, there are several instances of turbulent
+flows in nature where the lack of statistical isotropy or
+homogeneity is apparent. The most striking natural examples of such turbulence are zonal flows, commonly observed in several planetary atmospheres as well as in terrestrial oceans [3–5]. They are also a common feature
+of strongly magnetised plasmas in tokamaks and solar
+tachocline [6–8]. Zonal flows—with characteristic, distinct, banded, jet-like structures (see Fig. 1(b) for a representative plot)—in geophysical systems emerge from an
+interplay of the Coriolis force and the inherent turbulence
+driven by the high Reynolds numbers typical of these systems [9, 10]. Perhaps the most striking manifestations of
+such flows and their characteristic banded structure are
+observed in the Jovian atmosphere as well as in most
+of the outer planets such as Saturn, Uranus and Neptune [5, 11–13].
+On Earth, such zonal turbulent flows have immediate consequences. The Coriolis force acting on atmospheric circulation gives rise to alternating jets of easterlies and westerlies moving anti-parallel to each other [14–
+16], which become apparent only after time-averaging.
+
+∗ sandipsahoo09902@gmail.com
+† samriddhisankarray@gmail.com
+
+The number and width of such jets depend, in a nontrivial way, on the strength of the Coriolis force and the
+degree of turbulence as measured through its Reynolds
+number. While similar zonal jets are present in the
+oceans, they tend to be less prominent than their atmospheric counterparts due to the relatively lower levels
+of turbulence [17–23].
+All of this suggests not just the ubiquity of zonal turbulence in nature, but significantly its importance in
+the context of geophysics—particularly in understanding
+large scale phenomena related to the oceans and the atmosphere. Therefore, rightly, the focus over the past few
+decades has been in both understanding and modeling
+the barotropic quasi-geostrophic turbulence — the associated instabilities and formation of jets — and what it
+implies for atmospheric and oceanic patterns and circulation [24–26]. A statistical mechanical approach serves
+as a powerful framework for analyzing such flows, and
+provides deep insight into the underlying flow behaviors [27]. Interestingly, fluctuations in zonal jets—an
+intriguing aspect of these flows—can also be characterized from the viewpoint of statistical physics. These jets
+manifest as bands with sharp interfaces in the vorticity
+configuration. Observations, both from several numerical simulations and, for example, in images of planetary
+flows, indicate that these interfaces—delineating regions
+of contrasting vorticity—also undergo significant dynamical fluctuations reminiscent of various physical phenomena. An efficient contour-tracking algorithm developed
+below to capture these interfaces suggests that they correspond to the velocity maxima of eastward jets—thus
+exhibiting the same characteristic dynamical features as
+the jets themselves. Indeed, even within the more limited
+context of turbulent or turbulent-like flows, the study of
+such fluctuating interfaces have been the subject of a
+large body of work in recent times [28–43].
+In this paper, we focus on characterising these vorticity interfaces and show, from detailed direct numerical
+simulations (DNSs) and an interface tracking algorithm,
+how such interfaces are actually multifractactal with non-
+
+2
+
+FIG. 1. Pseudocolor plots of the vorticity fields with the zonostrophy parameter (a) Rβ = 6.3 (β = 10) and (b) Rβ = 7.5
+(β = 50). Distinct jets, a key signature of zonal turbulence, are clearly seen which become more prominent for the case of
+larger Rβ . A time evolution of these flows, seen in an animation [44], reveal the rich spatio-temporal dynamics of the vorticity
+interfaces.
+
+trivial dynamics, non-Gaussian fluctuations while having
+fat-tailed distributions in the fluctuations speeds. We also
+calculate the moments of the time-increments of the interfacial height, measured from their mean contour, to
+find that the temporal evolution is indeed rough. Furthermore, we underline the universal aspects of such interfaces while highlighting their sensitivity to the latitude
+at which these observations are made.
+Planetary atmospheres and oceans can be considered
+as shallow fluid layers which is a consequence of very
+large aspect ratio: they have a large horizontal spread
+compared to their vertical depth. Hence to unearth the
+large-scale dynamics in such systems where spontaneous
+jet formation becomes apparent, a useful approximation
+is modeling them as a homogeneous layer of fluid on a
+sphere [10, 45]. Thus, ignoring stratification, such thin
+fluids, at a given latitude θ, lend themselves to a mathematical description in terms of the two-dimensional (2D)
+Navier-Stokes equation for the velocity field u subject to
+a Coriolis force 2Ω × u with Ω being the angular velocity
+of the rotating planet [46–48]. The effect of the Coriolis
+force at latitude θ is thus felt only through the vertical
+component of planetary vorticity f = 2Ω sin θ.
+Two-dimensional fluid layers typically straddle a
+meridional distance y around a given latitude θ0 . We
+account for this spread, within the so-called β-plane approximation [9], by assuming y to be small. Thus, the
+net Coriolis parameter, up to a first-order correction,
+is given by f = f0 + βy, where f0 = 2Ω sin θ0 and
+0)
+β = ∂f
+= 2Ω cos(θ
+with a being the radius of the
+∂y
+a
+θ0
+
+planet.
+
+With this β plane approximation in place, the simplest model for zonal flows would be a two-dimensional,
+barotropic (depth-independent), incompressible NavierStokes equation augmented by the Coriolis parameter [10, 46–48]. Hence, we obtain the equation of motion
+for the vorticity ω = ∇2 ψ (where ψ is the stream function) field for such incompressible, 2D planetary flows:
+∂ψ
+∂ω
++ J(ψ, ω) + β
+= ξ − µω + ν∇2 ω;
+∂t
+∂x
+
+(1)
+
+with the Jacobian J(ψ, ω) ≡ ∂x ψ∂y ω − ∂y ψ∂x ω. Like
+for the usual two-dimensional turbulence problem [49–
+52], we introduce dissipative terms through the kinematic
+viscosity ν and the coefficient of an Ekmann friction µ.
+Turbulence is generated and sustained through a large
+scale, zero mean but delta-correlated in time, drive ξ
+which maintains the flow in a non-equilibrium statistically steady state [45, 53, 54].
+We perform direct numerical simulations (DNSs) of
+Eq. (1) by using a standard 2/3 de-aliased pseudospectral algorithm on a square periodic domain of length
+L = 2π with N 2 collocation points. We use N = 1024
+and 2048; our results are consistent across the two system sizes and the results presented are from the larger
+simulation. The time evolution is carried out by using a
+second-order, exponential Runge-Kutta method [56] with
+a time-stepping δt = 0.001. We use a coefficient of friction µ = 10−3 and, in the DNSs for numerical stability,
+use a hyperviscous term (instead of the viscous dissipation term in Eq. (1)) (−1)n+1 ν∇2n ω with n = 4 and ν =
+10−17 . The zero mean, delta-correlated in time forcing
+ξ, applied on narrow-band of wavenumbers [53, 57, 58]
+
+3
+
+FIG. 2. (a) A representative snapshot of the zonal velocity field u(x, y), (b) the corresponding zonally averaged mean vorticity
+ω(y) and velocity U (y), and (c) the vorticity field ω(x, y) (like in Fig. 1) for β = 50 (Rβ = 7.5) with the interfacial contours
+overlaid on it. The contours C, drawn in red, separating successive shear zones suggest the fluctuating nature of the interfaces
+whose rich dynamics is best seen in an animation of the time evolution of the vorticity field [55].
+
+around kf = 32, is chosen to ensure an energy injection
+rate ϵ = −⟨ξψ⟩ = 10−4 . Care is also taken to ensure that
+no modes are forced which are strictly zonal kf = (0, kf )
+or only meridional kf = (kf , 0).
+The most critical element in this study is of course
+β. The zonal flows, which emerge from solutions of this
+two-dimensional, forced-dissipative β-plane system, are
+distinct in their pattern which are characterised by alternating bands of thin and thick jets — the easterlies and
+westerlies — with alternating signs of velocity. In the
+vorticity configuration, these manifest as banded structures with differing vorticities. The number, sharpness,
+and indeed the visual representation of such jets depend
+on the latitude—with increasing β they proliferate with
+sharper interfaces. One useful measure in this context is
+the zonostrophy parameter [10]
+LRh
+1
+= √ U 1/2 β 1/10 ϵ−1/5
+(2)
+Lϵ
+2
+p
+where the Rhines length scale LRh = 2U/β sets the
+typical meridional widths of the zonal jets and Lϵ =
+1/5
+2 ϵ/β 3
+marks the scale where transition from the
+homogeneous and isotropic turbulence to the one dominated by the Coriolis parameter takes place; U is the
+root-mean-square velocity. In our DNSs, we vary β ∈
+{10, 20, 30, 40, 50} and cover a range of the zonostrophy
+parameter, 6.3 ≤ Rβ ≤ 7.5. Our choice of the zonostrophy parameters is consistent with observations in the gas
+giant planets [5].
+As an illustrative example of the sensitive dependence
+of zonal turbulence on Rβ , in Fig. 1 we present snapshots
+of the vorticity field for (a) Rβ = 6.3 (β = 10) and (b)
+Rβ = 7.5 (β = 50). Clearly, more distinct interfaces between vorticity shear zones—and hence prominent jets—
+form for the flow with the larger Rβ . This is because,
+Rβ ≡
+
+as is known from several studies in the past [10, 58–60],
+with increasing Rβ a large fraction of the turbulent kinetic energy gets organized within the mean flow which,
+in turn makes them stronger compared to the less coherent eddies and ultimately leads to steady jets. Conversely, when Rβ is small, the influence of the eddies
+prevail, leading to weaker, highly fluctuating, and often
+indistinct zonal jets. This framework accounts for the
+pronounced variability of jets in the Earth’s atmosphere
+and oceans [61] (where Rβ tends to be small) compared
+to the more persistent and robust jets observed in the
+atmosphere of gas giant planets [12, 62]. As a result,
+the zonostrophy parameter is often used as a measure of
+the strength, variability, and fluctuations of the emergent
+zonal jets [10, 59].
+The spatio-temporal evolution of these banded structures, as shown in our animation of these systems [44]
+and already suggestive in Fig. 1, underlines a richness in
+the dynamics and fluctuations of the interface between
+vorticity shear zones. While the boundaries separating
+regions of differing vorticity, as seen in Fig. 1, are visually apparent, identifying them by means of some suitable
+measure requires additional effort. Hence we develop an
+algorithm, as outlined below, to track the contour C(x, t)
+— the interface — marking the boundary between successive shear zones.
+The vorticity profile (Fig. 1) consists of banded structures dominated by either positive or negative vortices.
+This makes the flow vorticity field ω(x, y, t) a natural choice for identifying the jet boundaries since sharp
+transitions are expected at these locations. However,
+we find that ω(x, y, t) is not a particularly useful measure because strong fluctuations inherent in the turbulent flow ensure that jumps are hardly discrete. Alternatively, one can examine the zonal velocity profile,
+
+4
+
+FIG. 3. Representative space-time plots (kymograph) of the height field h(x, t) of a particular interface for (a) Rβ = 6.3
+(β = 10) and (b) Rβ = 7.5 (β = 50). Clear diagonal banding, more prominent for smaller Rβ show the conjectured lateral
+spilling of the height field. (c) The probability density functions (PDF) P of (normalised) h/hσ for different values of Rβ
+(= 6.3, 6.9, 7.5) (see legend), while having a Gaussian core (black dashed line), show clear sub-Gaussian tails which become less
+pronounced with increasing Rβ .
+
+seen in Fig. 2(a), where these banded structures are also
+clearly evident. By plotting the zonally averaged vorRL
+ticity ω(y, t) = L1 0 dxω(x, y, t) and zonal mean zonal
+RL
+velocity U (y, t) = L1 0 dx u(x, y, t) as functions of y at
+a fixed time, we observe that near the jet boundaries the
+sharp jumps in ω(y, t = t0 ) tend to coincide with the local maxima of U (y, t = t0 ), as illustrated in Fig. 2(b).
+This observation motivates the use of the zonal velocity
+field u(x, y, t) to identify and analyze the jet interfaces.
+It appears that the vorticity interfaces correspond to
+the local maxima of u(x, y, t), when plotted as a function
+of y at a fixed value of x = X and a given time t = t0 . By
+repeating this process over the domain and across different snapshots, we can systematically trace the interfacial
+contour C(x, t) spatio-temporally. It is quite remarkable
+to notice from an animation [63], how well the contours
+obtained by identifying the velocity maxima of eastward
+jets tracks the vorticity interfaces spatio-temporally. A
+snapshot of the vorticity field with the interfacial contours overlaid as red lines is shown in Fig. 2(c). We refer
+the reader to an animation of the vorticity field [55], overlaid with the contours C, which show the intricate details
+in the dynamical evolution of vorticity interfaces and how
+well our algorithm tracks these fluctuating interfaces.
+One of the defining characteristics of these contours is
+that they exhibit spatio-temporal oscillations while maintaining their geometric structure. The simplest way to
+quantify such fluctuations is by introducing a height field
+
+h(x, t), defined as the deviation of a contour C(x, t) from
+its time-averaged profile C(x), i.e.,
+h(x, t) = C(x, t) − C(x),
+
+with C(x) =
+
+1
+T
+
+Z T
+dt C(x, t)
+0
+
+(3)
+What, then, is the statistics of these interfaces as captured by the height field h(x, t)? The strong east-west
+orientation of the zonal velocity field allows the fluctuations to have a tangential component. This is indeed confirmed in our measurements of the height field
+and brought out succinctly in the representative kymograph plots for (a)Rβ = 6.3 and (b) Rβ = 7.5 in Fig. 3.
+The diagonal bandings, indicative of lateral spreading of
+the jet fluctuations, emerge quite convincingly from such
+plots. Furthermore, as Rβ increases and the jets become
+stronger, this lateral spreading becomes less pronounced,
+as is evident from the reduced thickness of the banding
+patterns when comparing panels (a) and (b) in Fig. 3.
+This lateral spread also hints at the emergence of possible non-Gaussian tails in the probability density function
+(PDF) P (h/hσ ), where the height field h is normalised
+by its standard deviation hσ . By using 1000 temporally
+well-separated and statistically independent snapshots of
+the vorticity field, we compute this PDF, as shown in
+Fig. 3(c), and observe a Gaussian core accompanied by
+clear sub-Gaussian tails which become less pronounced
+as Rβ increases. While the numerical evidence for these
+
+5
+
+FIG. 4. (a) Probability density functions (PDF) P of the speed vC of the height field for various Rβ (see legend). The dashedcurves are separate Gaussian fits to each PDF. A representative time-series of the sectoral (b) mean height Mh and (c) variance
+Vh fluctuations, for a random sector of an interface, have been shown. Loglog plots of the power spectrum of the (d) mean
+dh |2 and (e) variance |V
+ch |2 , averaged over all sectors, show clear power-law behaviour indicated by the black lines,
+height |M
+which seem robust within the range of Rβ considered in this study.
+
+sub-Gaussian tails is compelling, it is hard to understand
+from the equations of motion what could be the possible
+reasons for such a behaviour.
+
+Such sub-Gaussian tails are less common in measurements in fully developed turbulence. Nevertheless, we
+would still expect signatures of fat tails and intermittency
+in the velocity of the interface — vC (x, t) = limδt→0 δh/δt
+– which ought to be pegged to the underlying zonal
+turbulence that result in such dynamics. We begin by
+measuring the PDF P (vC ) of the speeds and find that
+(Fig. 4(a)), contrary to the height distribution, fluctuations in speed are indeed fat-tailed and reminiscent of
+fully developed turbulence. For smaller values of the
+zonostrophy parameter, the eddies and the mean flow
+compete as discussed earlier resulting in strongly intermittent interfacial velocities. However, as the zonostrophy parameter becomes large, the mean flow dominates
+and hence it seems likely that intermittency ought to
+weaken. In Fig. 4(a), we find this heuristic argument
+to be reasonably accurate with a limiting Gaussian behaviour for the larger Rβ .
+
+We now look at the spatiotemporal properties of h(x, t)
+and quantify the timescales of fluctuations. We find it
+convenient to address this issue by understanding the sectorial mean and variance of the interface. These sectors
+are obtained by segmenting the interfacial contour C(x, t)
+into Ns (= 32 for our analysis) bins. Thus the sectoral
+mean interfacial height Mh,s (t) and variance Vh,s (t) are
+defined as
+
+Mh,s (t) =
+Vh,s (t) =
+
+1 X
+h(x, t),
+Np x∈s
+
+1 X
+(h(x, t) − Mh,s (t))2
+Np x∈s
+
+(4)
+
+where Np (= N/Ns ) is the number of points in each sector. The temporal statistics is performed on 1000 evenlyspaced time snapshots obtained in the statistically steady
+state.
+The time series of Mh,s and Vh,s , shown in Fig. 4(b)
+and (c) for a representative, random segment, exhibits
+large fluctuations which seem to depend, in magnitude,
+on the value of Rβ . The time series of Mh,s is strongly
+reminiscent of the saw-tooth solutions of the Burgers
+equation and suggests that the spectrum of the mean
+dh |2 decaying as f −2 at high frequencies f . To
+height |M
+confirm a possible Burgers-like dynamics, we measure
+this spectrum averaged over all Ns sectors and indeed
+find a clear f −2 , as shown in Fig 4(d).
+The time series of Vh,s , a second-order quantity modelling the interfacial energy, on the other hand, is more
+intermittent. Indeed, it is reasonable to expect that the
+corresponding frequency spectrum ought to reflect the
+energy spectrum, especially for large Rβ , of the underlying turbulent zonal flow which triggers such interfaces.
+In Fig 4(e), we show plots of the spectra of the height
+ch |2 and find comvariance (averaged over all sectors) |V
+pelling evidence of the distinct power law regimes — f −5 ,
+f −5/3 , and f −7/2 — characteristic of β-plane turbulence.
+Furthermore, this contrasts effectively with the variance
+of height fluctuations seen in the arrested growth of in-
+
+6
+
+FIG. 5. (a) A loglog plot of the second-order structure function S2 versus the normalised time τ /τw showing a power-law
+regime with an exponent ξ2 , for ττw ≲ 1, as indicated by the dashed line. At short times, the function shows a non-ballistic
+behaviour with a Rβ -dependent exponent ζ2 ̸= 2 as shown by the dashed-dotted line. (b) Plots of the generalised dimensions
+Dq vs q and (inset) the singularity spectrum f (α) vs α for different values of Rβ .
+
+terfaces marking the separation of binary active fluids
+reported recently [37] where the interface provides an effective two-dimensional turbulent annular shell separating the more active fluid from the less active one.
+The time-series of the height fluctuations — Mh and
+Vh — are suggestive. While they appear self-similar —
+confirmed by the power-laws in the corresponding spectrum — the sharp, dense, shock -like features suggest a
+possible lacking of differentiability. In particular, while
+the intermediate, inertial range statistics may be Hölder
+continuous with h < 1, it is not obvious that the height
+field h(t) (integrated over space) is smooth and differentiable. In order to test these ideas, we calculate the
+second-order structure function of the height field, with
+time increments τ conveniently normalised by the Rossby
+time-scale τw = 1/Lϵ β ,
+ 
+ζ2
+
+ τ
+,
+for ττw ≪ 1
+τw
+2
+S2 (τ ) = ⟨[h(t + τ ) − h(t)] ⟩ ∼  ξ2
+
+ τ
+,
+for ττw ≲ 1
+τw
+(5)
+with the scaling exponent ζ2 = 2 for differentiable,
+smooth functions and S2 saturating for τ /τw > 1.
+In Fig. 5(a), we plot this second-order temporal structure function, on a log-log scale, for three different values
+of Rβ . Clearly there does seem to be an inertial range,
+shaded in beige with the dashed black line as a guide to
+the eye, with ξ2 ≈ 1.1. Furthermore, the dependence of
+this exponent ξ2 on Rβ seems to be mild and the variation insignificant within error bars. At times of the order
+of the Rossby time, the second-order structure function
+saturates.
+But what stands out in Fig. 5(a) is the scaling behaviour when τ /τw ≪ 1. Remarkably, and as anticipated
+earlier, ζ2 ̸= 2 underlining the roughness of the tempo-
+
+ral fluctuations of the height field. Furthermore, ζ2 → 2
+as Rβ increases. This numerical observation must serve
+as a crucial ingredient in future mathematical modelling
+through possible stochastic differential equations of the
+contour C.
+Before we conclude, we make a final characterisation
+of the nature of fluctuations to complete our study. A
+wide range of numerical and experimental studies has
+pointed out that several aspects of fully developed turbulence, such as the turbulent energy dissipation field,
+are fractals and are best characterized by a broad range
+of self-similar scales [64–66]. As another quantification
+of the interface fluctuations, we carry out a multifractal
+analysis of the height field [37]. In doing so, we define
+the function H(x, y, t) = |h(x, y, t)| + 0.001 (here, 0.001
+is added to the absolute value of the height field to make
+H(x, y, t) positive definite). Then we follow the same procedure in constructing the partition function of H(x, y, t)
+as discussed in many earlier studies [1, 2, 67]. We divide
+the interfacial contour into Nl segments of size l (where
+Nl = L/l, with L being the domain length in the simulation and l ∈ {20 , 21 , 22 , ..., 211 } points), and find the
+coarse-grained height at this scale for each partition, like
+Pl(i+1)
+for the i–th partition it is given by Hl,i = x=li H(x, y)
+where i ∈ [0, Nl − 1]. Then we add powers of different
+order q (real) of Hl,i over all segments to get the parPNl −1 q
+tition function Zq (l) (≡ i=0
+Hl,i ), and the process is
+repeated for different values of l. If the height field is
+multifractal, we expect Zq (l) to scale with the size of the
+partitions l according to some power law. In this context,
+the so-called generalized dimensions Dq are defined, such
+1
+
+that Zq (l) ∼ l(q−1)Dq . The plots of ln Zqq−1 vs ln l will
+have a linear region in the inertial range, whose slope
+gives the Dq . For different values of q, we get a distri-
+
+7
+bution of Dq vs q. Numerically we obtain the Dq vs q
+curve by ensemble averaging Dq over 1000 snapshots of
+the interfacial height. From this we arrive at the singularity spectrum fα − α via the Legendre transform of
+d
+(q − 1)Dq , as α = dq
+(q − 1)Dq and fα = αq − (q − 1)Dq .
+The distribution of Dq vs q for different values of the
+zonostrophy parameter are shown in Fig. 5(a); we see
+a more pronounced behavior towards the negative values of q and has a distinctive feature for different Rβ s.
+The positive q part of the distribution is almost flat, and
+doesn’t vary as Rβ changes. This indicates that lower
+magnitudes of the height profile exhibit more of the multiscale fluctuations, while larger deviations are smoother.
+Also, as Rβ increases, the fluctuations get smoother resulting in the downward trend of the distribution curve.
+The associated fα − α spectrum of singularity strengths
+α, shown in Fig. 5(b), exhibits a positively skewed profile with a broad range of α values, indicating that the
+fluctuations are characterized by a spectrum of scaling
+exponents. Interestingly, as Rβ increases, the degree of
+multifractality diminishes. This is also an outcome of the
+fact that interface fluctuations are reduced with increasing Rβ . As a result, the interfacial profile gets smoother,
+resulting in an overall reduction in the range of α.
+In this work, we make a systematic characterization
+of the vorticity interfaces which emerge spontaneously
+in two-dimensional, barotropic, β-plane turbulence. In
+particular, we find that the dynamics of such interfaces
+are complex and exhibit multifractal statistics. Given
+the importance of zonal flows in particle-laden atmo-
+
+spheric and marine systems, the statistics of such interfaces, which induce a distinctive lateral shear, must
+play an important role in the stretching and subsequent
+transport of elastic, filamentary pollutants — such as
+microplastics — which have been shown to have a preferential (Lagrangian) sampling of the flow [68, 69]. Furthermore, such interfaces may play an important role in
+determining coalescence, orientation and aggregation of
+sub-Kolmogorov particles [70–72], essentially because we
+know how fluid structures determine the fate of collision and coalescence mechanisms in fully developed turbulence [73]. Finally, how such jets influence Lagrangian
+intermittency and chaos [74] is left for future work.
+
+[1] U. Frisch, Turbulence: The Legacy of A. N. Kolmogorov
+(Cambridge University Press, 1995).
+[2] S. Mukherjee, S. D. Murugan, R. Mukherjee, and S. S.
+Ray, Turbulent flows are not uniformly multifractal,
+Phys. Rev. Lett. 132, 184002 (2024).
+[3] K. Kondratyev and G. Hunt, Weather and Climate on
+Planets (1st ed. Oxford; Pergamon Press, 1982).
+[4] I. de Pater and J. J. Lissauer, Planetary Sciences, 2nd
+ed. (Cambridge University Press, 2015).
+[5] B. Galperin and P. L. Read, Zonal Jets: Phenomenology, Genesis, and Physics (Cambridge University Press,
+2019).
+[6] T. E. Stringer, Diffusion in toroidal plasmas with radial
+electric field, Phys. Rev. Lett. 22, 770 (1969).
+[7] Y. Rozhansky and M. Tendler, Plasma rotation in tokamaks, in Review of Plasma Physics, Vol. 19, edited by
+B. B. Kadomtsev (Consultants Bureau, New York, 1996)
+p. 147.
+[8] P. H. Diamond, S.-I. Itoh, K. Itoh, and T. S. Hahm,
+Zonal flows in plasma—a review, Plasma Physics and
+Controlled Fusion 47, R35 (2005).
+[9] P. B. Rhines, Waves and turbulence on a beta-plane,
+Journal of Fluid Mechanics 69, 417–443 (1975).
+[10] B. Galperin, S. Sukoriansky, N. Dikovskaya, P. Read,
+Y. Yamazaki, and R. Wordsworth, Anisotropic turbulence and zonal jets in rotating flows with a β-effect,
+
+Nonlinear Processes in Geophysics 13, 83 (2006).
+[11] S. Bolton, A. Adriani, V. Adumitroaie, M. Allison, J. Anderson, S. Atreya, J. Bloxham, S. Brown, J. Connerney,
+E. Dejong, W. Folkner, D. Gautier, D. Grassi, S. Gulkis,
+T. Guillot, C. Hansen, W. Hubbard, L. Iess, A. Ingersoll,
+and R. Wilson, Jupiter’s interior and deep atmosphere:
+The initial pole-to-pole passes with the juno spacecraft,
+Science 356, 821 (2017).
+[12] P. L. Read, The dynamics of jupiter’s and saturn’s
+weather layers: A synthesis after cassini and juno, Annual Review of Fluid Mechanics 56, 271 (2024).
+[13] T. E. Dowling, Jets in planetary atmospheres (2019).
+[14] G. Hadley, Concerning the cause of the general tradewinds, Philosophical Transactions of the Royal Society
+of London 39, 58 (1735).
+[15] J. M. Lewis, Clarifying the Dynamics of the General
+Circulation: Phillips’s 1956 Experiment., Bulletin of the
+American Meteorological Society 79, 39 (1998).
+[16] S. M. Uppala, P. W. KÅllberg, A. J. Simmons, U. Andrae, V. D. C. Bechtold, M. Fiorino, J. K. Gibson,
+J. Haseler, A. Hernandez, G. A. Kelly, X. Li, K. Onogi,
+S. Saarinen, N. Sokka, R. P. Allan, E. Andersson,
+K. Arpe, M. A. Balmaseda, A. C. M. Beljaars, L. V. D.
+Berg, J. Bidlot, N. Bormann, S. Caires, F. Chevallier, A. Dethof, M. Dragosavac, M. Fisher, M. Fuentes,
+S. Hagemann, E. Hólm, B. J. Hoskins, L. Isaksen, P. A.
+
+We are very grateful to S. Mukherjee and V.
+Vasan for several useful discussions and suggestions. S.S.R. acknowledges SERB-DST (India) projects
+STR/2021/000023, CRG/2021/002766, and the CEFIPRA Project No 6704-1 for support. This research
+was supported in part by the International Centre for
+Theoretical Sciences (ICTS) for the programs - Field
+Theory and Turbulence (code:ICTS/ftt2023/12), IndoFrench workshop on Classical and quantum dynamics in
+out of equilibrium systems (code: ICTS/ifwcqm2024/12)
+and 10th Indian Statistical Physics Community Meeting (code: ICTS/10thISPCM2025/04). The simulations
+were performed on the ICTS clusters Mario, Tetris, and
+Contra. The authors acknowledge the support of the
+DAE, Government of India, under projects nos. 12-R&DTFR-5.10-1100 and RTI4001.
+
+8
+E. M. Janssen, R. Jenne, A. P. Mcnally, J.-F. Mahfouf,
+J.-J. Morcrette, N. A. Rayner, R. W. Saunders, P. Simon, A. Sterl, K. E. Trenberth, A. Untch, D. Vasiljevic,
+P. Viterbo, and J. Woollen, The era-40 re-analysis, Quarterly Journal of the Royal Meteorological Society 131,
+2961 (2005).
+[17] S. Sokolov and S. R. Rintoul, Multiple jets of the antarctic circumpolar current south of australia, Journal of
+Physical Oceanography 37, 1394 (2007).
+[18] P. Berloff, S. Karabasov, J. T. Farrar, and I. Kamenkovich, On latency of multiple zonal jets in the
+oceans, Journal of Fluid Mechanics 686, 534–567 (2011).
+[19] B. Galperin, H. Nakano, H.-P. Huang, and S. Sukoriansky, The ubiquitous zonal jets in the atmospheres of giant
+planets and earth’s oceans, Geophysical Research Letters
+31 (2004).
+[20] P. Berloff, I. Kamenkovich, and J. Pedlosky, A model of
+multiple zonal jets in the oceans: Dynamical and kinematical analysis, Journal of Physical Oceanography 39,
+2711 (2009).
+[21] N. A. Maximenko, B. Bang, and H. Sasaki, Observational
+evidence of alternating zonal jets in the world ocean, Geophysical Research Letters 32 (2005).
+[22] N. A. Maximenko, O. V. Melnichenko, P. P. Niiler, and
+H. Sasaki, Stationary mesoscale jet-like features in the
+ocean, Geophysical Research Letters 35 (2008).
+[23] S. Cravatte, E. Kestenare, F. Marin, P. Dutrieux, and
+E. Firing, Subthermocline and intermediate zonal currents in the tropical pacific ocean: Paths and vertical
+structure, Journal of Physical Oceanography 47, 2305
+(2017).
+[24] D. Gürcan and P. H. Diamond, Zonal flows and pattern
+formation, Journal of Physics A: Mathematical and Theoretical 48, 293001 (2015).
+[25] F. Bouchet, C. Nardini, and T. Tangarife, Kinetic theory of jet dynamics in the stochastic barotropic and 2d
+navier-stokes equations, Journal of Statistical Physics
+153, 572 (2013).
+[26] F. Bouchet, J. B. Marston, and T. Tangarife, Fluctuations and large deviations of reynolds stresses in zonal
+jet dynamics, Physics of Fluids 30, 015110 (2018).
+[27] F. Bouchet and A. Venaille, Statistical mechanics of twodimensional and geophysical flows, Physics Reports 515,
+227 (2012), statistical mechanics of two-dimensional and
+geophysical flows.
+[28] T. Heus and H. J. J. Jonker, Subsiding shells around shallow cumulus clouds, Journal of the Atmospheric Sciences
+65, 1003 (2008).
+[29] J. Westerweel, C. Fukushima, J. M. Pedersen, and
+J. C. R. Hunt, Momentum and scalar transport at the
+turbulent/non-turbulent interface of a jet, Journal of
+Fluid Mechanics 631, 199 (2009).
+[30] K. Chauhan, J. Philip, C. M. De Silva, N. Hutchins, and
+I. Marusic, The turbulent/non-turbulent interface and
+entrainment in a boundary layer, Journal of Fluid Mechanics 742, 119 (2014).
+[31] T. Watanabe, Y. Sakai, K. Nagata, Y. Ito, and T. Hayase,
+Turbulent mixing of passive scalar near turbulent and
+non-turbulent interface in mixing layers, Physics of Fluids 27 (2015).
+[32] G. Borrell and J. Jiménez, Properties of the
+turbulent/non-turbulent interface in boundary layers, Journal of Fluid Mechanics 801, 554 (2016).
+[33] G. E. Elsinga and C. B. Da Silva, How the turbulent/non-
+
+turbulent interface is different from internal turbulence,
+Journal of Fluid Mechanics 866, 216 (2019).
+[34] V. Nair, T. Heus, and M. van Reeuwijk, A lagrangian
+study of interfaces at the edges of cumulus clouds, Journal of the Atmospheric Sciences 78, 2397 (2021).
+[35] N. Pal, P. Perlekar, A. Gupta, and R. Pandit, Binaryfluid turbulence: Signatures of multifractal droplet dynamics and dissipation reduction, Physical Review E 93,
+063115 (2016).
+[36] N. B. Padhan and R. Pandit, Activity-induced droplet
+propulsion and multifractality, Physical Review Research
+5, L032013 (2023).
+[37] S. Mukherjee, K. Kumar, and S. S. Ray, Turbulenceinduced fluctuating interfaces in heterogeneously-active
+suspensions (2025), arXiv:2502.16443 [cond-mat.soft].
+[38] A. Pocheau, Scale invariance in turbulent front propagation, Physical Review E 49, 1109 (1994).
+[39] J. Xin, Front propagation in heterogeneous media, SIAM
+review 42, 161 (2000).
+[40] C. R. Koudella and Z. Neufeld, Reaction front propagation in a turbulent flow, Physical Review E—Statistical,
+Nonlinear, and Soft Matter Physics 70, 026307 (2004).
+[41] I. Corwin, The kardar–parisi–zhang equation and universality class, Random matrices: Theory and applications
+1, 1130001 (2012).
+[42] L. Bentkamp, T. D. Drivas, C. C. Lalescu, and
+M. Wilczek, The statistical geometry of material loops
+in turbulence, Nature Communications 13, 2088 (2022).
+[43] A. Roy, J. R. Picardo, B. Emerson, T. C. Lieuwen, and
+R. I. Sujith, Small-scale intermittency of premixed turbulent flames, Journal of Fluid Mechanics 957, A21 (2023).
+[44] https://www.youtube.com/watch?v=End6Kq4WXn0,
+spatio-temporal evolution of interfaces between successive jets.
+[45] R. K. Scott and L. M. Polvani, Forced-dissipative
+shallow-water turbulence on the sphere and the atmospheric circulation of the giant planets, Journal of the
+Atmospheric Sciences 64, 3158 (2007).
+[46] G. P. Williams, Planetary circulations: 1. barotropic representation of jovian and terrestrial turbulence, Journal
+of Atmospheric Sciences 35, 1399 (1978).
+[47] G. K. Vallis and M. E. Maltrud, Generation of mean flows
+and jets on a beta plane and over topography, Journal of
+Physical Oceanography 23, 1346 (1993).
+[48] S. Danilov and D. Gurarie, Scaling, spectra and zonal
+jets in beta-plane turbulence, Physics of Fluids 16, 2592
+(2004).
+[49] D. K. Lilly, Numerical simulation of two-dimensional turbulence, The Physics of Fluids 12, II (1969).
+[50] S. Chen, R. E. Ecke, G. L. Eyink, M. Rivera, M. Wan,
+and Z. Xiao, Physical mechanism of the two-dimensional
+inverse energy cascade, Phys. Rev. Lett. 96, 084502
+(2006).
+[51] G. Boffetta and R. E. Ecke, Two-dimensional turbulence,
+Annual Review of Fluid Mechanics 44, 427 (2012).
+[52] S. S. Ray, D. Mitra, P. Perlekar, and R. Pandit, Dynamic
+multiscaling in two-dimensional fluid turbulence, Phys.
+Rev. Lett. 107, 184503 (2011).
+[53] M. E. Maltrud and G. K. Vallis, Energy spectra and coherent structures in forced two-dimensional and betaplane turbulence, Journal of Fluid Mechanics 228,
+321–342 (1991).
+[54] R. K. Scott and A.-S. Tissier, The generation of zonal
+jets by large-scale mixing, Physics of Fluids 24, 126601
+
+9
+(2012).
+[55] https://www.youtube.com/watch?v=2245yIifaFY,
+spatio-temporal evolution of the contour marking the
+interfaces between successive jets.
+[56] S. M. Cox and P. C. Matthews, Exponential time differencing for stiff systems, Journal of Computational
+Physics 176, 430 (2002).
+[57] K. Srinivasan and W. Young, Zonostrophic instability,
+Journal of Atmospheric Sciences 69, 1633 (2012).
+[58] L. Cope, The Dynamics of Geophysical and Astrophysical Turbulence, Ph.D. thesis, Apollo - University of Cambridge Repository (2020).
+[59] S. Sukoriansky, N. Dikovskaya, and B. Galperin, On the
+arrest of inverse energy cascade and the rhines scale,
+Journal of the Atmospheric Sciences 64, 3312 (2007).
+[60] R. K. Scott and D. G. Dritschel, The structure of zonal
+jets in geostrophic turbulence, Journal of Fluid Mechanics 711, 576–598 (2012).
+[61] I. Kamenkovich, P. Berloff, and J. Pedlosky, Role of eddy
+forcing in the dynamics of multiple zonal jets in a model
+of the north atlantic, Journal of Physical Oceanography
+39, 1361 (2009).
+[62] B. Galperin, R. Young, S. Sukoriansky, N. Dikovskaya,
+P. Read, A. Lancaster, and D. Armstrong, Cassini observations reveal a regime of zonostrophic macroturbulence
+on jupiter, Icarus 229, 295–320 (2014).
+[63] https://www.youtube.com/watch?v=UN2rWx1r4Yk,
+spatio-temporal evolution of the contours obtained by
+identifying the velocity maxima of eastward jets tracks
+the vorticity interfaces.
+[64] K. R. Sreenivasan and C. Meneveau, The fractal facets
+of turbulence, Journal of Fluid Mechanics 173, 357–386
+
+(1986).
+[65] C. Meneveau and K. R. Sreenivasan, Simple multifractal
+cascade model for fully developed turbulence, Phys. Rev.
+Lett. 59, 1424 (1987).
+[66] C. Meneveau and K. R. Sreenivasan, The multifractal
+nature of turbulent energy dissipation, Journal of Fluid
+Mechanics 224, 429–484 (1991).
+[67] C. Meneveau and K. R. Sreenivasan, The multifractal
+spectrum of the dissipation field in turbulent flows, Nuclear Physics B - Proceedings Supplements 2, 49 (1987).
+[68] J. R. Picardo, D. Vincenzi, N. Pal, and S. S. Ray, Preferential sampling of elastic chains in turbulent flows, Phys.
+Rev. Lett. 121, 244501 (2018).
+[69] J. R. Picardo, R. Singh, S. S. Ray, and D. Vincenzi, Dynamics of a long chain in turbulent flows: impact of vortices, Philosophical Transactions of the Royal Society A:
+Mathematical, Physical and Engineering Sciences 378,
+20190405 (2020).
+[70] J. Bec, S. Musacchio, and S. S. Ray, Sticky elastic collisions, Phys. Rev. E 87, 063013 (2013).
+[71] J. Bec, S. S. Ray, E. W. Saw, and H. Homann, Abrupt
+growth of large aggregates by correlated coalescences in
+turbulent flow, Phys. Rev. E 93, 031102 (2016).
+[72] P. Anand, S. S. Ray, and G. Subramanian, Orientation
+dynamics of sedimenting anisotropic particles in turbulence, Phys. Rev. Lett. 125, 034501 (2020).
+[73] J. R. Picardo, L. Agasthya, R. Govindarajan, and S. S.
+Ray, Flow structures govern particle collisions in turbulence, Phys. Rev. Fluids 4, 032601 (2019).
+[74] S. S. Ray, Non-intermittent turbulence: Lagrangian
+chaos and irreversibility, Phys. Rev. Fluids 3, 072601
+(2018).
+
+

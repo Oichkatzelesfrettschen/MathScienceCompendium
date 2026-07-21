@@ -6,6 +6,8 @@ from __future__ import annotations
 import hashlib
 import json
 import re
+import subprocess
+import tarfile
 from datetime import datetime
 from pathlib import Path
 from typing import Any
@@ -51,6 +53,26 @@ JSON_SCHEMA_BY_REGISTRY: dict[str, dict[str, object]] = {
         "schema": "beta_plane_ablation_results.schema.json",
         "required": True,
     },
+    "beta_plane_control_results.json": {
+        "schema": "beta_plane_control_results.schema.json",
+        "required": True,
+    },
+    "beta_plane_refinement_results.json": {
+        "schema": "beta_plane_refinement_results.schema.json",
+        "required": True,
+    },
+    "beta_plane_refinement_protocol_amendment.json": {
+        "schema": "beta_plane_refinement_protocol_amendment.schema.json",
+        "required": True,
+    },
+    "beta_plane_sweep_preregistration.json": {
+        "schema": "beta_plane_sweep_preregistration.schema.json",
+        "required": True,
+    },
+    "beta_plane_sweep_results.json": {
+        "schema": "beta_plane_sweep_results.schema.json",
+        "required": True,
+    },
     "cayley_dickson_property_audit.json": {
         "schema": "cayley_dickson_property_audit.schema.json",
         "required": True,
@@ -61,6 +83,10 @@ JSON_SCHEMA_BY_REGISTRY: dict[str, dict[str, object]] = {
     },
     "experimental_admission_packages.json": {
         "schema": "experimental_admission_packages.schema.json",
+        "required": True,
+    },
+    "e7_selector_preregistration.json": {
+        "schema": "e7_selector_preregistration.schema.json",
         "required": True,
     },
     "claim_gate_registry.json": {
@@ -99,12 +125,28 @@ JSON_SCHEMA_BY_REGISTRY: dict[str, dict[str, object]] = {
         "schema": "fourier_quotient_audit.schema.json",
         "required": True,
     },
+    "hypothesis_registry.json": {
+        "schema": "hypothesis_registry.schema.json",
+        "required": True,
+    },
+    "independent_reproduction_registry.json": {
+        "schema": "independent_reproduction_registry.schema.json",
+        "required": True,
+    },
+    "manuscript_result_claims.json": {
+        "schema": "manuscript_result_claims.schema.json",
+        "required": True,
+    },
     "lbm_root_order_audit.json": {
         "schema": "lbm_root_order_audit.schema.json",
         "required": True,
     },
     "parquet_audit.json": {
         "schema": "parquet_audit.schema.json",
+        "required": True,
+    },
+    "physical_admission_program.json": {
+        "schema": "physical_admission_program.schema.json",
         "required": True,
     },
     "pdf_archive_index.json": {
@@ -125,6 +167,10 @@ JSON_SCHEMA_BY_REGISTRY: dict[str, dict[str, object]] = {
     },
     "tesseract_fallback_run.json": {
         "schema": "tesseract_fallback_run.schema.json",
+        "required": True,
+    },
+    "triad_selector_audit.json": {
+        "schema": "triad_selector_audit.schema.json",
         "required": True,
     },
     "unified_framework_claims.json": {
@@ -177,6 +223,65 @@ def check_retained_digest(
         check_live_digest(errors, field_path, relpath_text, expected_sha256)
     elif not relpath_text.startswith("build/document_ocr/"):
         errors.append(f"{field_path}: missing repository file {relpath!r}")
+
+
+def check_committed_digest(
+    errors: list[str], field_path: str, commit: object, relpath: object, expected_sha256: object
+) -> None:
+    """Verify that a result's source commit already contains the locked input."""
+    completed = subprocess.run(
+        ["git", "show", f"{commit}:{relpath}"],
+        cwd=REPO_ROOT,
+        capture_output=True,
+        check=False,
+    )
+    if completed.returncode != 0:
+        errors.append(f"{field_path}: cannot read {relpath!r} from commit {commit!r}")
+        return
+    if hashlib.sha256(completed.stdout).hexdigest() != expected_sha256:
+        errors.append(f"{field_path}: committed input digest mismatch")
+
+
+def check_beta_evidence_archive(
+    errors: list[str], payload: dict[str, Any], records: list[object]
+) -> None:
+    """Require every beta record's raw arrays inside one tracked archive."""
+    archive_record = payload.get("evidence_archive", {})
+    if not isinstance(archive_record, dict):
+        return
+    relpath = archive_record.get("relpath")
+    check_live_digest(errors, "$.evidence_archive.sha256", relpath, archive_record.get("sha256"))
+    archive_path = REPO_ROOT / str(relpath)
+    if not archive_path.is_file():
+        return
+    try:
+        with tarfile.open(archive_path, mode="r") as archive:
+            members = {member.name: member for member in archive.getmembers() if member.isfile()}
+            expected_members: set[str] = set()
+            for record_index, record in enumerate(records):
+                if not isinstance(record, dict):
+                    continue
+                member_name = str(record.get("arrays_archive_member", ""))
+                expected_members.add(member_name)
+                member = members.get(member_name)
+                if member is None:
+                    errors.append(
+                        f"$.records[{record_index}].arrays_archive_member: missing archive member"
+                    )
+                    continue
+                extracted = archive.extractfile(member)
+                if extracted is None:
+                    errors.append(
+                        f"$.records[{record_index}].arrays_archive_member: unreadable member"
+                    )
+                    continue
+                if hashlib.sha256(extracted.read()).hexdigest() != record.get("arrays_sha256"):
+                    errors.append(f"$.records[{record_index}].arrays_sha256: archive mismatch")
+            extra_members = sorted(set(members) - expected_members)
+            if extra_members:
+                errors.append(f"$.evidence_archive: unreferenced members {extra_members[:3]!r}")
+    except tarfile.TarError as error:
+        errors.append(f"$.evidence_archive: invalid tar archive: {error}")
 
 
 def validate_decomposition_manifest_contract(
@@ -946,6 +1051,390 @@ def semantic_checks(registry_name: str, payload: dict[str, Any]) -> list[str]:
                         errors.append(
                             f"{prefix}.repo_evidence_paths: missing path {evidence_relpath!r}"
                         )
+
+    if registry_name == "hypothesis_registry.json":
+        claim_payload = load_json(REGISTRY_DIR / "unified_framework_claims.json")
+        claims = {
+            str(claim["id"]): claim
+            for claim in claim_payload.get("claims", [])
+            if isinstance(claim, dict) and isinstance(claim.get("id"), str)
+        }
+        source_statuses = payload.get("source_claim_statuses", [])
+        expected_statuses = {"bounded", "excluded", "falsified", "unsupported"}
+        if set(source_statuses) != expected_statuses:
+            errors.append(
+                "$.source_claim_statuses: expected bounded, excluded, falsified, and unsupported"
+            )
+        expected_claim_ids = {
+            claim_id
+            for claim_id, claim in claims.items()
+            if claim.get("status") in expected_statuses
+        }
+        external_manifest = tomllib.loads(
+            (REPO_ROOT / "data/external/sources.toml").read_text(encoding="utf-8")
+        )
+        external_source_ids = {
+            str(source.get("id"))
+            for source in external_manifest.get("sources", [])
+            if isinstance(source, dict)
+        }
+        seen_hypothesis_ids: set[str] = set()
+        covered_claim_ids: list[str] = []
+        hypotheses = payload.get("hypotheses", [])
+        if isinstance(hypotheses, list):
+            for hypothesis_index, hypothesis in enumerate(hypotheses):
+                if not isinstance(hypothesis, dict):
+                    continue
+                prefix = f"$.hypotheses[{hypothesis_index}]"
+                hypothesis_id = str(hypothesis.get("id", ""))
+                if hypothesis_id in seen_hypothesis_ids:
+                    errors.append(f"{prefix}.id: duplicate id {hypothesis_id!r}")
+                seen_hypothesis_ids.add(hypothesis_id)
+                for claim_id in hypothesis.get("source_claim_ids", []):
+                    claim = claims.get(str(claim_id))
+                    if claim is None:
+                        errors.append(f"{prefix}.source_claim_ids: unknown claim {claim_id!r}")
+                        continue
+                    if claim.get("status") not in expected_statuses:
+                        errors.append(
+                            f"{prefix}.source_claim_ids: claim {claim_id!r} is not open, "
+                            "excluded, or a falsified replacement target"
+                        )
+                    covered_claim_ids.append(str(claim_id))
+                for source_id in hypothesis.get("literature_source_ids", []):
+                    if source_id not in external_source_ids:
+                        errors.append(
+                            f"{prefix}.literature_source_ids: unknown source id {source_id!r}"
+                        )
+                for evidence_index, evidence in enumerate(hypothesis.get("required_evidence", [])):
+                    if not isinstance(evidence, dict) or evidence.get("status") != "present":
+                        continue
+                    for artifact_path in evidence.get("artifact_paths", []):
+                        if not (REPO_ROOT / str(artifact_path)).exists():
+                            errors.append(
+                                f"{prefix}.required_evidence[{evidence_index}].artifact_paths: "
+                                f"missing present artifact {artifact_path!r}"
+                            )
+                reproduction = hypothesis.get("independent_reproduction", {})
+                if isinstance(reproduction, dict):
+                    for evidence_path in reproduction.get("evidence_paths", []):
+                        if not (REPO_ROOT / str(evidence_path)).exists():
+                            errors.append(
+                                f"{prefix}.independent_reproduction.evidence_paths: "
+                                f"missing path {evidence_path!r}"
+                            )
+        duplicate_claim_ids = sorted(
+            claim_id for claim_id in set(covered_claim_ids) if covered_claim_ids.count(claim_id) > 1
+        )
+        if duplicate_claim_ids:
+            errors.append(
+                "$.hypotheses.source_claim_ids: claims assigned more than once: "
+                + ", ".join(duplicate_claim_ids)
+            )
+        covered_set = set(covered_claim_ids)
+        if covered_set != expected_claim_ids:
+            missing = sorted(expected_claim_ids - covered_set)
+            extra = sorted(covered_set - expected_claim_ids)
+            if missing:
+                errors.append(
+                    "$.hypotheses.source_claim_ids: missing claim coverage: " + ", ".join(missing)
+                )
+            if extra:
+                errors.append(
+                    "$.hypotheses.source_claim_ids: unexpected claim coverage: " + ", ".join(extra)
+                )
+        archival_groups = payload.get("archival_conjecture_dispositions", [])
+        expected_group_counts = {
+            "papers/sections/vol4_ch12_unresolved.tex": 22,
+            "papers/sections/vol2_ch6_string_theory.tex": 4,
+            "papers/sections/vol2_ch7_quantum_gravity.tex": 4,
+            "papers/sections/vol2_ch6_quantum_encoding.tex": 3,
+            "papers/sections/vol3_ch10_predictions.tex": 18,
+            "papers/sections/vol2_ch5_superforce.tex": 3,
+        }
+        seen_archival_ids: set[str] = set()
+        seen_archival_paths: set[str] = set()
+        if isinstance(archival_groups, list):
+            for group_index, group in enumerate(archival_groups):
+                if not isinstance(group, dict):
+                    continue
+                prefix = f"$.archival_conjecture_dispositions[{group_index}]"
+                source_relpath = str(group.get("source_relpath", ""))
+                seen_archival_paths.add(source_relpath)
+                source_path = REPO_ROOT / source_relpath
+                if not source_path.is_file():
+                    errors.append(f"{prefix}.source_relpath: missing source")
+                items = group.get("items", [])
+                expected_count = expected_group_counts.get(source_relpath)
+                if expected_count is None:
+                    errors.append(f"{prefix}.source_relpath: unbounded archival surface")
+                elif not isinstance(items, list) or len(items) != expected_count:
+                    errors.append(
+                        f"{prefix}.items: expected {expected_count} explicit items, "
+                        f"got {len(items) if isinstance(items, list) else 'non-array'}"
+                    )
+                for item_index, item in enumerate(items if isinstance(items, list) else []):
+                    if not isinstance(item, dict):
+                        continue
+                    item_prefix = f"{prefix}.items[{item_index}]"
+                    archival_id = str(item.get("id", ""))
+                    if archival_id in seen_archival_ids:
+                        errors.append(f"{item_prefix}.id: duplicate archival id")
+                    seen_archival_ids.add(archival_id)
+                    for hypothesis_id in item.get("mapped_hypothesis_ids", []):
+                        if hypothesis_id not in seen_hypothesis_ids:
+                            errors.append(
+                                f"{item_prefix}.mapped_hypothesis_ids: unknown hypothesis "
+                                f"{hypothesis_id!r}"
+                            )
+        if seen_archival_paths != set(expected_group_counts):
+            missing_paths = sorted(set(expected_group_counts) - seen_archival_paths)
+            extra_paths = sorted(seen_archival_paths - set(expected_group_counts))
+            errors.append(
+                "$.archival_conjecture_dispositions: source coverage mismatch "
+                f"missing={missing_paths}, extra={extra_paths}"
+            )
+
+    if registry_name == "physical_admission_program.json":
+        states = payload.get("promotion_states", [])
+        claim_payload = load_json(REGISTRY_DIR / "unified_framework_claims.json")
+        hypothesis_payload = load_json(REGISTRY_DIR / "hypothesis_registry.json")
+        claim_ids = {str(claim.get("id")) for claim in claim_payload.get("claims", [])}
+        hypothesis_ids = {
+            str(hypothesis.get("id"))
+            for hypothesis in hypothesis_payload.get("hypotheses", [])
+        }
+        for package_index, package in enumerate(payload.get("packages", [])):
+            if not isinstance(package, dict):
+                continue
+            prefix = f"$.packages[{package_index}]"
+            if package.get("claim_id") not in claim_ids:
+                errors.append(f"{prefix}.claim_id: unknown canonical claim")
+            if package.get("hypothesis_id") not in hypothesis_ids:
+                errors.append(f"{prefix}.hypothesis_id: unknown canonical hypothesis")
+            current_state = package.get("current_state")
+            next_state = package.get("next_required_state")
+            if current_state in states:
+                current_index = states.index(current_state)
+                expected_next = states[current_index + 1] if current_index + 1 < len(states) else "none"
+                if next_state != expected_next:
+                    errors.append(f"{prefix}.next_required_state: expected {expected_next!r}")
+                state_evidence = package.get("state_evidence", {})
+                if isinstance(state_evidence, dict):
+                    for completed_state in states[1 : current_index + 1]:
+                        evidence_records = state_evidence.get(completed_state, [])
+                        if not evidence_records:
+                            errors.append(
+                                f"{prefix}.state_evidence.{completed_state}: required for state"
+                            )
+                        for evidence_index, evidence in enumerate(evidence_records):
+                            if isinstance(evidence, dict):
+                                check_live_digest(
+                                    errors,
+                                    f"{prefix}.state_evidence.{completed_state}"
+                                    f"[{evidence_index}].sha256",
+                                    evidence.get("relpath"),
+                                    evidence.get("sha256"),
+                                )
+            if current_state == "admitted" and package.get("blockers"):
+                errors.append(f"{prefix}.blockers: admitted package cannot retain blockers")
+
+    if registry_name == "triad_selector_audit.json":
+        check_live_digest(
+            errors,
+            "$.preregistration_sha256",
+            payload.get("preregistration_relpath"),
+            payload.get("preregistration_sha256"),
+        )
+        if payload.get("e7_quadratic_defect_admitted_triad_count", 0) + payload.get(
+            "e7_quadratic_defect_rejected_triad_count", 0
+        ) != payload.get("ordered_nonzero_exact_triad_count"):
+            errors.append("$.e7_quadratic_defect_*: admitted and rejected counts do not close")
+        if payload.get("e7_quadratic_defect_active_admitted_count", 0) + payload.get(
+            "e7_quadratic_defect_active_rejected_count", 0
+        ) != payload.get("barotropic_active_channel_count"):
+            errors.append("$.e7_quadratic_defect_active_*: active counts do not close")
+        domains = payload.get("evaluation_domains", [])
+        if isinstance(domains, list) and [
+            domain.get("square_domain_radius") for domain in domains if isinstance(domain, dict)
+        ] != [2, 4, 8]:
+            errors.append("$.evaluation_domains: expected locked radii [2, 4, 8]")
+
+    if registry_name == "beta_plane_sweep_results.json":
+        check_live_digest(
+            errors,
+            "$.preregistration_sha256",
+            payload.get("preregistration_relpath"),
+            payload.get("preregistration_sha256"),
+        )
+        check_live_digest(
+            errors,
+            "$.environment_lock_sha256",
+            payload.get("environment_lock_relpath"),
+            payload.get("environment_lock_sha256"),
+        )
+        check_committed_digest(
+            errors,
+            "$.preregistration_sha256",
+            payload.get("source_commit"),
+            payload.get("preregistration_relpath"),
+            payload.get("preregistration_sha256"),
+        )
+        records = payload.get("records", [])
+        if isinstance(records, list):
+            if payload.get("run_count") != len(records):
+                errors.append("$.run_count: does not match records length")
+            run_ids = [
+                str(record.get("run_id", "")) for record in records if isinstance(record, dict)
+            ]
+            if len(run_ids) != len(set(run_ids)):
+                errors.append("$.records: duplicate run_id")
+            for record_index, record in enumerate(records):
+                if not isinstance(record, dict):
+                    continue
+                if "arrays_relpath" in record:
+                    errors.append(f"$.records[{record_index}].arrays_relpath: ignored path forbidden")
+                if record.get("cluster_count") is not None:
+                    errors.append(f"$.records[{record_index}].cluster_count: misplaced contrast field")
+            check_beta_evidence_archive(errors, payload, records)
+        for contrast_index, contrast in enumerate(payload.get("primary_contrasts", [])):
+            if not isinstance(contrast, dict):
+                continue
+            if contrast.get("cluster_count") != 12:
+                errors.append(f"$.primary_contrasts[{contrast_index}].cluster_count: expected 12")
+            if contrast.get("cell_pair_count") != 108:
+                errors.append(
+                    f"$.primary_contrasts[{contrast_index}].cell_pair_count: expected 108"
+                )
+            if "paired_count" in contrast or "holm_corrected_ci_lower" in contrast:
+                errors.append(
+                    f"$.primary_contrasts[{contrast_index}]: obsolete statistical field"
+                )
+        numerical_pass = payload.get("numerical_gate_passed") is True
+        primary_pass = payload.get("primary_hypothesis_passed") is True
+        expected_decision = (
+            "primary_supported_pending_refinement_and_reproduction"
+            if numerical_pass and primary_pass
+            else "not_supported"
+        )
+        if payload.get("aggregate_decision") != expected_decision:
+            errors.append(f"$.aggregate_decision: expected {expected_decision!r} from gate states")
+
+    if registry_name == "beta_plane_refinement_results.json":
+        check_live_digest(
+            errors,
+            "$.preregistration_sha256",
+            payload.get("preregistration_relpath"),
+            payload.get("preregistration_sha256"),
+        )
+        check_live_digest(
+            errors,
+            "$.protocol_amendment_sha256",
+            payload.get("protocol_amendment_relpath"),
+            payload.get("protocol_amendment_sha256"),
+        )
+        check_live_digest(
+            errors,
+            "$.environment_lock_sha256",
+            payload.get("environment_lock_relpath"),
+            payload.get("environment_lock_sha256"),
+        )
+        check_committed_digest(
+            errors,
+            "$.preregistration_sha256",
+            payload.get("source_commit"),
+            payload.get("preregistration_relpath"),
+            payload.get("preregistration_sha256"),
+        )
+        check_committed_digest(
+            errors,
+            "$.protocol_amendment_sha256",
+            payload.get("source_commit"),
+            payload.get("protocol_amendment_relpath"),
+            payload.get("protocol_amendment_sha256"),
+        )
+        records = payload.get("records", [])
+        if isinstance(records, list):
+            if payload.get("run_count") != len(records):
+                errors.append("$.run_count: does not match refinement records length")
+            check_beta_evidence_archive(errors, payload, records)
+
+    if registry_name == "beta_plane_control_results.json":
+        check_live_digest(
+            errors,
+            "$.preregistration_sha256",
+            payload.get("preregistration_relpath"),
+            payload.get("preregistration_sha256"),
+        )
+        check_committed_digest(
+            errors,
+            "$.preregistration_sha256",
+            payload.get("source_commit"),
+            payload.get("preregistration_relpath"),
+            payload.get("preregistration_sha256"),
+        )
+        check_live_digest(
+            errors,
+            "$.environment_lock_sha256",
+            payload.get("environment_lock_relpath"),
+            payload.get("environment_lock_sha256"),
+        )
+        archive_record = payload.get("evidence_archive", {})
+        if isinstance(archive_record, dict):
+            check_live_digest(
+                errors,
+                "$.evidence_archive.sha256",
+                archive_record.get("relpath"),
+                archive_record.get("sha256"),
+            )
+            archive_path = REPO_ROOT / str(archive_record.get("relpath"))
+            if archive_path.is_file():
+                try:
+                    with tarfile.open(archive_path, mode="r") as archive:
+                        members = {
+                            member.name: member for member in archive.getmembers() if member.isfile()
+                        }
+                        digest_fields = {
+                            "identity": "identity_final_sha256",
+                            "quotient": "quotient_final_sha256",
+                            "f_plane": "f_plane_final_sha256",
+                            "rotated_f_plane": "rotated_f_plane_final_sha256",
+                        }
+                        for record_index, record in enumerate(payload.get("records", [])):
+                            if not isinstance(record, dict):
+                                continue
+                            archive_members = record.get("archive_members", {})
+                            for arm_name, digest_field in digest_fields.items():
+                                member_name = (
+                                    archive_members.get(arm_name)
+                                    if isinstance(archive_members, dict)
+                                    else None
+                                )
+                                member = members.get(str(member_name))
+                                if member is None:
+                                    errors.append(
+                                        f"$.records[{record_index}].archive_members.{arm_name}: "
+                                        "missing archive member"
+                                    )
+                                    continue
+                                extracted = archive.extractfile(member)
+                                if extracted is None or hashlib.sha256(
+                                    extracted.read()
+                                ).hexdigest() != record.get(digest_field):
+                                    errors.append(
+                                        f"$.records[{record_index}].{digest_field}: "
+                                        "archive mismatch"
+                                    )
+                except tarfile.TarError as error:
+                    errors.append(f"$.evidence_archive: invalid tar archive: {error}")
+        retained_lbm = payload.get("retained_lbm_null_control", {})
+        if isinstance(retained_lbm, dict):
+            check_live_digest(
+                errors,
+                "$.retained_lbm_null_control.audit_sha256",
+                retained_lbm.get("audit_relpath"),
+                retained_lbm.get("audit_sha256"),
+            )
 
     if registry_name == "docs_index.toml":
         documents = payload.get("documents", [])

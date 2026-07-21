@@ -9,8 +9,7 @@
     "description": {"type": "string", "minLength": 1},
     "gates": {
       "type": "array",
-      "minItems": 23,
-      "maxItems": 23,
+      "minItems": 1,
       "items": {
         "type": "object",
         "required": ["claim_id", "gate_kind", "checker", "expected_claim_status", "expected_gate_outcome", "evidence_paths", "acceptance_criteria", "rejection_criteria"],

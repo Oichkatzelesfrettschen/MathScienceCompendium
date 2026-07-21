@@ -1,0 +1,69 @@
+{
+  "barotropic_active_channel_count": 3120,
+  "barotropic_zero_support_channel_count": 360,
+  "checkerboard_kernel_exact_equivalence_pass": true,
+  "e7_discriminant_form": {
+    "cartan_determinant": 2,
+    "discriminant_group_order": 2,
+    "doubled_generator_is_in_root_lattice": true,
+    "generator_coordinates": [
+      "1",
+      "3/2",
+      "2",
+      "3",
+      "5/2",
+      "2",
+      "3/2"
+    ],
+    "generator_fundamental_weight_index": 7,
+    "generator_is_outside_root_lattice": true,
+    "generator_norm_squared": "3/2",
+    "half_normalized_quadratic_value_mod_one": "3/4",
+    "quadratic_form_is_nonadditive": true
+  },
+  "e7_permutation_closure_pass": true,
+  "e7_quadratic_defect_active_admitted_count": 656,
+  "e7_quadratic_defect_active_rejected_count": 2464,
+  "e7_quadratic_defect_admitted_triad_count": 828,
+  "e7_quadratic_defect_rejected_triad_count": 2652,
+  "e7_selector_nontrivial": true,
+  "e7_specificity_falsified": true,
+  "e7_square_symmetry_pass": true,
+  "evaluation_domains": [
+    {
+      "barotropic_active_channel_count": 224,
+      "checkerboard_kernel_exact_equivalence_pass": true,
+      "ordered_nonzero_exact_triad_count": 288,
+      "quadratic_defect_active_admitted_count": 32,
+      "quadratic_defect_admitted_triad_count": 60,
+      "square_domain_radius": 2
+    },
+    {
+      "barotropic_active_channel_count": 3120,
+      "checkerboard_kernel_exact_equivalence_pass": true,
+      "ordered_nonzero_exact_triad_count": 3480,
+      "quadratic_defect_active_admitted_count": 656,
+      "quadratic_defect_admitted_triad_count": 828,
+      "square_domain_radius": 4
+    },
+    {
+      "barotropic_active_channel_count": 44336,
+      "checkerboard_kernel_exact_equivalence_pass": true,
+      "ordered_nonzero_exact_triad_count": 46224,
+      "quadratic_defect_active_admitted_count": 10512,
+      "quadratic_defect_admitted_triad_count": 11400,
+      "square_domain_radius": 8
+    }
+  ],
+  "generator": "scripts/audit_triad_selectors.py",
+  "interpretation_boundary": "The quadratic-defect mask is exactly the generic even-checkerboard kernel. The arithmetic is valid, but it supplies no E7-specific selector. Generic parity-kernel dynamics remains a separate conjecture with conservation and independent-reproduction gates still pending.",
+  "ordered_exact_triad_count_including_zero_modes": 3721,
+  "ordered_nonzero_exact_triad_count": 3480,
+  "preregistration_relpath": "data/registry/e7_selector_preregistration.json",
+  "preregistration_sha256": "3d3279a0e6e7440c28243a7d59ceaa9aba58f79dde55a31d7ae98bf431f0badf",
+  "rossby_active_exact_resonant_channel_count": 64,
+  "rossby_exact_resonant_triad_count": 132,
+  "schema_version": 1,
+  "scientific_outcome": "e7_specificity_falsified_generic_parity_kernel_retained",
+  "square_shell_radius": 4
+}

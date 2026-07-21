@@ -356,3 +356,48 @@ target_relpath = "source_materials/pdfs/hep-th_9606001.pdf"
 extract_text_relpath = "source_materials/pdfs/extracted/hep-th_9606001.txt"
 urls = ["https://arxiv.org/pdf/hep-th/9606001"]
 notes = "Chamseddine-Connes spectral action principle; foundational primary source for noncommutative-geometry claims."
+
+[[sources]]
+id = "arxiv_bakas_constantinou_ioannou_1407_3354"
+arxiv_id = "1407.3354"
+filename = "arxiv_1407.3354.pdf"
+target_relpath = "source_materials/pdfs/arxiv_1407.3354.pdf"
+extract_text_relpath = "source_materials/pdfs/extracted/arxiv_1407.3354.txt"
+urls = ["https://arxiv.org/pdf/1407.3354"]
+notes = "Foundational forced-dissipative barotropic beta-plane S3T analysis; constrains the present decaying-flow claim boundary."
+
+[[sources]]
+id = "arxiv_bakas_constantinou_ioannou_1708_03031"
+arxiv_id = "1708.03031"
+filename = "arxiv_1708.03031.pdf"
+target_relpath = "source_materials/pdfs/arxiv_1708.03031.pdf"
+extract_text_relpath = "source_materials/pdfs/extracted/arxiv_1708.03031.txt"
+urls = ["https://arxiv.org/pdf/1708.03031"]
+notes = "Weak-jet statistical state dynamics; directly informs jet persistence and nonlinear equilibration diagnostics."
+
+[[sources]]
+id = "arxiv_kartashov_kartashova_1307_8272"
+arxiv_id = "1307.8272"
+filename = "arxiv_1307.8272.pdf"
+target_relpath = "source_materials/pdfs/arxiv_1307.8272.pdf"
+extract_text_relpath = "source_materials/pdfs/extracted/arxiv_1307.8272.txt"
+urls = ["https://arxiv.org/pdf/1307.8272"]
+notes = "Exact and quasi-resonant Rossby triads on a periodic beta-plane; directly constrains resonance-selector controls."
+
+[[sources]]
+id = "arxiv_hayat_amanullah_walsh_bustamante_1804_03092"
+arxiv_id = "1804.03092"
+filename = "arxiv_1804.03092.pdf"
+target_relpath = "source_materials/pdfs/arxiv_1804.03092.pdf"
+extract_text_relpath = "source_materials/pdfs/extracted/arxiv_1804.03092.txt"
+urls = ["https://arxiv.org/pdf/1804.03092"]
+notes = "Explicit parameterization and exact search for discrete Rossby resonant triads; validates exact-arithmetic selector enumeration."
+
+[[sources]]
+id = "arxiv_sahoo_ray_2507_23493"
+arxiv_id = "2507.23493"
+filename = "arxiv_2507.23493.pdf"
+target_relpath = "source_materials/pdfs/arxiv_2507.23493.pdf"
+extract_text_relpath = "source_materials/pdfs/extracted/arxiv_2507.23493.txt"
+urls = ["https://arxiv.org/pdf/2507.23493"]
+notes = "Current 2025 barotropic beta-plane jet-interface analysis; adds interface diagnostics without changing the preregistered primary endpoints."

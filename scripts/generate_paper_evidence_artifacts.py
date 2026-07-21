@@ -226,7 +226,10 @@ def draw_flow_box(
 
 
 def generate_evidence_flow_figure(
-    claim_count: int, source_count: int, gate_count: int, passed_count: int
+    claim_count: int,
+    source_count: int,
+    gate_count: int,
+    consistent_count: int,
 ) -> None:
     figure, axis = plt.subplots(figsize=(9.2, 3.3))
     axis.set_xlim(0.0, 1.0)
@@ -269,8 +272,8 @@ def generate_evidence_flow_figure(
         0.5,
         0.19,
         0.38,
-        "Admitted conclusions",
-        f"{passed_count}/{gate_count} contracts match\nnegative results retained",
+        "Audited outcomes",
+        f"{consistent_count}/{gate_count} contracts consistent\nscientific outcomes remain explicit",
         "#2F6B4F",
     )
     for left_center, right_center in zip(centers[:-1], centers[1:]):
@@ -307,55 +310,33 @@ def generate_evidence_flow_figure(
 
 
 def generate_beta_ablation_figure(beta_results: dict[str, Any]) -> None:
-    records = beta_results["records"]
-    beta_effects = [
-        float(record["comparisons"]["beta_to_f_plane_relative_vorticity_l2"]) for record in records
-    ]
-    quotient_effects = [
-        float(record["comparisons"]["quotient_to_identity_maximum_vorticity_error"])
-        for record in records
-    ]
-    configuration_indices = np.arange(1, len(records) + 1)
+    contrasts = beta_results["primary_contrasts"]
     figure, axes = plt.subplots(1, 2, figsize=(9.0, 3.7))
-    axes[0].scatter(
-        configuration_indices,
-        beta_effects,
-        color="#3A7CA5",
-        edgecolor="white",
-        s=46,
-        zorder=3,
+    metric_specs = (
+        ("final_window_mean_zonal_fraction", "Zonal-energy fraction effect", "#3A7CA5"),
+        ("persistent_jet", "Persistent-jet prevalence effect", "#8C2F39"),
     )
-    axes[0].axhline(0.0, color="#CBD2D9", linewidth=1.0)
-    axes[0].set_xlabel("Seed-grid-time-step configuration")
-    axes[0].set_ylabel("Relative final-vorticity L2 difference")
-    axes[0].set_title("Beta plane versus f plane")
-    axes[0].set_ylim(0.0, max(beta_effects) * 1.18)
-    axes[0].grid(axis="y", color="#E5E9ED", linewidth=0.7)
-
-    axes[1].scatter(
-        configuration_indices,
-        quotient_effects,
-        color="#8C2F39",
-        edgecolor="white",
-        s=46,
-        zorder=3,
-    )
-    axes[1].axhline(0.0, color="#8C2F39", linewidth=1.0)
-    axes[1].set_xlabel("Seed-grid-time-step configuration")
-    axes[1].set_ylabel("Maximum absolute vorticity error")
-    axes[1].set_title("E7 quotient filter versus identity")
-    axes[1].set_ylim(-0.05, 0.05)
-    axes[1].text(
-        0.5,
-        0.82,
-        "All configurations: exact zero",
-        transform=axes[1].transAxes,
-        ha="center",
-        color="#8C2F39",
-        fontweight="bold",
-    )
-    axes[1].grid(axis="y", color="#E5E9ED", linewidth=0.7)
-    figure.suptitle("Preregistered matched beta-plane ablation", fontweight="bold")
+    for axis, (metric, title, color) in zip(axes, metric_specs, strict=True):
+        selected = [record for record in contrasts if record["metric"] == metric]
+        beta_values = np.asarray([record["beta"] for record in selected])
+        effects = np.asarray([record["effect_estimate"] for record in selected])
+        lower = np.asarray([record["familywise_ci_lower"] for record in selected])
+        upper = np.asarray([record["familywise_ci_upper"] for record in selected])
+        axis.errorbar(
+            beta_values,
+            effects,
+            yerr=np.vstack((effects - lower, upper - effects)),
+            fmt="o",
+            color=color,
+            capsize=4,
+            linewidth=1.5,
+        )
+        axis.axhline(0.0, color="#5B6770", linewidth=1.0)
+        axis.set_xlabel(r"$\beta$")
+        axis.set_ylabel("Paired effect versus beta zero")
+        axis.set_title(title)
+        axis.grid(axis="y", color="#E5E9ED", linewidth=0.7)
+    figure.suptitle("Locked 540-run beta-plane primary contrasts", fontweight="bold")
     figure.tight_layout()
     save_figure(figure, "review_beta_ablation.png")
 
@@ -445,6 +426,26 @@ def generate_beta_result_rows(beta_results: dict[str, Any]) -> None:
     )
 
 
+def generate_beta_production_rows(beta_results: dict[str, Any]) -> None:
+    """Render the four locked beta-five and beta-ten primary contrasts."""
+    metric_labels = {
+        "final_window_mean_zonal_fraction": "Zonal-energy fraction",
+        "persistent_jet": "Persistent-jet prevalence",
+    }
+    rows = []
+    for record in beta_results["primary_contrasts"]:
+        if record["beta"] not in {5.0, 10.0}:
+            continue
+        rows.append(
+            f"{metric_labels[record['metric']]} at $\\beta={record['beta']:g}$ & "
+            f"{record['effect_estimate']:.4f} & {record['familywise_ci_lower']:.4f} & "
+            f"{record['familywise_ci_upper']:.4f} & Not supported \\\\"
+        )
+    (GENERATED_ROOT / "review_beta_result_rows.tex").write_text(
+        "\n".join(rows) + "\n\\bottomrule\n", encoding="ascii"
+    )
+
+
 def main() -> int:
     configure_plots()
     FIGURE_ROOT.mkdir(parents=True, exist_ok=True)
@@ -454,7 +455,7 @@ def main() -> int:
     gate_results = load_json("claim_gate_results.json")
     overlap = load_json("framework_overlap_audit.json")
     decomposition = load_json("document_decomposition_audit.json")
-    beta_results = load_json("beta_plane_ablation_results.json")
+    beta_results = load_json("beta_plane_sweep_results.json")
     cayley_audit = load_json("cayley_dickson_property_audit.json")
     admission = load_json("experimental_admission_packages.json")
     claims = cast("list[dict[str, Any]]", claims_payload["claims"])
@@ -465,13 +466,13 @@ def main() -> int:
         len(claims),
         int(decomposition["document_count"]),
         int(gate_results["gate_count"]),
-        int(gate_results["passed_count"]),
+        int(gate_results["consistent_count"]),
     )
     generate_beta_ablation_figure(beta_results)
     generate_claim_status_rows(claims, gate_results)
     generate_cayley_property_rows(cayley_audit)
     generate_admission_rows(admission)
-    generate_beta_result_rows(beta_results)
+    generate_beta_production_rows(beta_results)
     print("Generated 4 evidence figures and 4 paper tables.")
     return 0
 

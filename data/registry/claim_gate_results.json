@@ -1,10 +1,10 @@
 {
-  "all_gates_passed": true,
+  "all_contracts_consistent": true,
   "claim_count": 23,
-  "failed_count": 0,
+  "consistent_count": 23,
   "gate_count": 23,
   "generator": "scripts/run_claim_gates.py",
-  "passed_count": 23,
+  "inconsistent_count": 0,
   "results": [
     {
       "actual_claim_status": "established",
@@ -27,7 +27,8 @@
         "zero_divisor_right_norm_squared": 2.0
       },
       "missing_evidence_paths": [],
-      "passed": true,
+      "registry_consistent": true,
+      "scientific_outcome": "accepted",
       "summary": "Normed division stops at dimension eight; an exact sedenion zero divisor is reproduced."
     },
     {
@@ -45,7 +46,8 @@
         "validation_report_bounds_physical_scope": true
       },
       "missing_evidence_paths": [],
-      "passed": true,
+      "registry_consistent": true,
+      "scientific_outcome": "rejected",
       "summary": "The retained audit reaches higher Cayley-Dickson algebras algebraically but defines no state map, observable, raw dataset, or matched algebra-free control."
     },
     {
@@ -65,7 +67,8 @@
         "rejected_source_ladder": "rejected"
       },
       "missing_evidence_paths": [],
-      "passed": true,
+      "registry_consistent": true,
+      "scientific_outcome": "corrected",
       "summary": "The executable Albert product is nontrivial and unital; F4, E6(-26), and E7(-25) occupy automorphism, reduced-structure, and conformal roles."
     },
     {
@@ -81,7 +84,8 @@
         "outer_permutation_count": 6
       },
       "missing_evidence_paths": [],
-      "passed": true,
+      "registry_consistent": true,
+      "scientific_outcome": "accepted",
       "summary": "The D4 diagram has six automorphisms permuting its three outer nodes."
     },
     {
@@ -110,7 +114,8 @@
         }
       },
       "missing_evidence_paths": [],
-      "passed": true,
+      "registry_consistent": true,
+      "scientific_outcome": "corrected",
       "summary": "The matrices classify E9 as affine and E10-E11 as indefinite Kac-Moody extensions."
     },
     {
@@ -130,7 +135,8 @@
         "specific_truncations": true
       },
       "missing_evidence_paths": [],
-      "passed": true,
+      "registry_consistent": true,
+      "scientific_outcome": "bounded",
       "summary": "The retained E10 result is a finite-height formal supergravity correspondence, while the E11 source states a conjectural nonlinear realization; neither establishes complete M-theory unification."
     },
     {
@@ -148,7 +154,8 @@
         "source_files_present": true
       },
       "missing_evidence_paths": [],
-      "passed": true,
+      "registry_consistent": true,
+      "scientific_outcome": "rejected",
       "summary": "The retained code has neither a Monster representation nor a physical evolution operator, so moonshine cannot supply a stability theorem here."
     },
     {
@@ -170,7 +177,8 @@
         "rejects_literal_spatial_dimension": true
       },
       "missing_evidence_paths": [],
-      "passed": true,
+      "registry_consistent": true,
+      "scientific_outcome": "corrected",
       "summary": "The implementation exposes named nonnegative fractal estimators, while the retained review confines negative values to multifractal spectra rather than spatial axes."
     },
     {
@@ -191,7 +199,8 @@
         "maximum_absolute_control_error": 0.09041157940430855
       },
       "missing_evidence_paths": [],
-      "passed": true,
+      "registry_consistent": true,
+      "scientific_outcome": "bounded",
       "summary": "Exact controls have visible error and no retained multi-resolution convergence series."
     },
     {
@@ -212,7 +221,8 @@
         "structurally_complete": true
       },
       "missing_evidence_paths": [],
-      "passed": true,
+      "registry_consistent": true,
+      "scientific_outcome": "rejected",
       "summary": "The admission package defines the measurement boundary and preserves the present rejection or scope result until its missing evidence exists."
     },
     {
@@ -233,7 +243,8 @@
         "structurally_complete": true
       },
       "missing_evidence_paths": [],
-      "passed": true,
+      "registry_consistent": true,
+      "scientific_outcome": "rejected",
       "summary": "The admission package defines the measurement boundary and preserves the present rejection or scope result until its missing evidence exists."
     },
     {
@@ -254,7 +265,8 @@
         "structurally_complete": true
       },
       "missing_evidence_paths": [],
-      "passed": true,
+      "registry_consistent": true,
+      "scientific_outcome": "rejected",
       "summary": "The admission package defines the measurement boundary and preserves the present rejection or scope result until its missing evidence exists."
     },
     {
@@ -270,7 +282,8 @@
         "result": "c^4/G"
       },
       "missing_evidence_paths": [],
-      "passed": true,
+      "registry_consistent": true,
+      "scientific_outcome": "rejected",
       "summary": "Dividing Planck energy by Planck length cancels hbar algebraically and yields c^4/G; this is not a field-theory unification gate."
     },
     {
@@ -291,7 +304,8 @@
         "structurally_complete": true
       },
       "missing_evidence_paths": [],
-      "passed": true,
+      "registry_consistent": true,
+      "scientific_outcome": "excluded",
       "summary": "The admission package defines the measurement boundary and preserves the present rejection or scope result until its missing evidence exists."
     },
     {
@@ -308,7 +322,8 @@
         "root_count": 126
       },
       "missing_evidence_paths": [],
-      "passed": true,
+      "registry_consistent": true,
+      "scientific_outcome": "falsified",
       "summary": "Every generated E7 root is an integral combination of simple roots and has zero P/Q class."
     },
     {
@@ -326,7 +341,8 @@
         "ordered_exact_triad_count": 3721
       },
       "missing_evidence_paths": [],
-      "passed": true,
+      "registry_consistent": true,
+      "scientific_outcome": "falsified",
       "summary": "The nontrivial D4-invariant map h(kx,ky)=(kx+ky) mod 2 exists. For every exact triad k+p+q=0, homomorphism additivity gives h(k)+h(p)+h(q)=h(0)=0, so no exact triad is rejected."
     },
     {
@@ -348,7 +364,8 @@
         "not_implemented_method_count": 4
       },
       "missing_evidence_paths": [],
-      "passed": true,
+      "registry_consistent": true,
+      "scientific_outcome": "rejected",
       "summary": "The retained module exposes an incomplete affine-algebra surface and no Ward-identity, fluid-variable, vorticity, or dispersion bridge."
     },
     {
@@ -365,7 +382,8 @@
         "final_zonal_to_total_rms_ratio": 0.0012233722508221802
       },
       "missing_evidence_paths": [],
-      "passed": true,
+      "registry_consistent": true,
+      "scientific_outcome": "falsified",
       "summary": "The retained solver has no beta term and the final state is nearly isotropic with negligible zonal mean energy."
     },
     {
@@ -383,7 +401,8 @@
         "minimum_beta_to_f_plane_relative_l2": 0.34971521584942117
       },
       "missing_evidence_paths": [],
-      "passed": true,
+      "registry_consistent": true,
+      "scientific_outcome": "falsified",
       "summary": "Beta changes every matched trajectory while the homomorphic quotient filter remains exactly identical to its control."
     },
     {
@@ -399,7 +418,8 @@
         "periodic_relative_mass_error": 1.887379141862766e-15
       },
       "missing_evidence_paths": [],
-      "passed": true,
+      "registry_consistent": true,
+      "scientific_outcome": "repaired",
       "summary": "The corrected D2Q9 equilibrium and periodic evolution pass mass-conservation regressions."
     },
     {
@@ -420,7 +440,8 @@
         "structurally_complete": true
       },
       "missing_evidence_paths": [],
-      "passed": true,
+      "registry_consistent": true,
+      "scientific_outcome": "bounded",
       "summary": "The admission package defines the measurement boundary and preserves the present rejection or scope result until its missing evidence exists."
     },
     {
@@ -440,7 +461,8 @@
         "transverse_gauge": true
       },
       "missing_evidence_paths": [],
-      "passed": true,
+      "registry_consistent": true,
+      "scientific_outcome": "corrected",
       "summary": "The primary source derives GEM as a gauge-fixed linear perturbation of general relativity, and the paper rejects a new coupling or replacement for nonlinear Einstein dynamics."
     },
     {
@@ -461,7 +483,8 @@
         "structurally_complete": true
       },
       "missing_evidence_paths": [],
-      "passed": true,
+      "registry_consistent": true,
+      "scientific_outcome": "excluded",
       "summary": "The admission package defines the measurement boundary and preserves the present rejection or scope result until its missing evidence exists."
     }
   ],

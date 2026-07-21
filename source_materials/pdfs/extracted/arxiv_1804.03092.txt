@@ -1,0 +1,2714 @@
+Discrete resonant Rossby/drift wave triads: an explicit parameterisation and a
+fast direct numerical search algorithm
+Umar Hayata , Shahid Amanullaha , Shane Walshb , Miguel D. Bustamanteb,∗
+a Department of Mathematics, Quaid-i-Azam University, Islamabad, Pakistan
+b School of Mathematics and Statistics, University College Dublin, Belfield, Dublin 4, Ireland
+
+arXiv:1804.03092v1 [physics.flu-dyn] 9 Apr 2018
+
+Abstract
+We report results on the explicit parameterisation of discrete Rossby-wave resonant triads of the CharneyHasegawa-Mima equation in the small-scale limit (i.e. large Rossby deformation radius), following up from our
+previous solution in terms of elliptic curves (Bustamante and Hayat, 2013). We find an explicit parameterisation
+of the discrete resonant wavevectors in terms of two rational variables. We show that these new variables are
+restricted to a bounded region and find this region explicitly. We argue that this can be used to reduce the
+complexity of a direct numerical search for discrete triad resonances. Also, we introduce a new direct numerical
+method to search for discrete resonances. This numerical method has complexity O(N 3 ), where N is the largest
+wavenumber in the search. We apply this new method to find all discrete irreducible resonant triads in the
+wavevector box of size 5000, in a calculation that took about 10.5 days on a 16-core machine. Finally, based
+on our method of mapping to elliptic curves, we discuss some dynamical implications regarding the spread of
+quadratic invariants across scales via resonant triad interactions, in the form of sharp bounds on the size of the
+interacting wavevectors.
+Keywords: Rossby waves, Charney–Hasegawa–Mima equation, Discrete resonant triads, Elliptic curves,
+Diophantine equations
+
+1. Governing equations
+We shall consider a shallow layer of incompressible fluid, on a rotating planet like the Earth. We may reduce
+the complications of spherical geometry by using the so-called β-plane approximation. Under the consideration
+of quasigeostropic theory, the dynamics reduce to an equation expressing the conservation of potential vorticity.
+It is a single partial differential equation for the streamfunction ψ = ψ(x, y, t) (a real scalar field), reading
+∂
+∂ψ ∂ψ ∂∇2 ψ ∂ψ ∂∇2 ψ
+(∇2 ψ − F ψ) + β
++
+−
+= 0,
+∂t
+∂x
+∂x ∂y
+∂y ∂x
+
+(1)
+
+where the value of β is constant which shows the speed of rotation of the given system, and (0 ≤)F = 1/LR2 ,
+where LR is the Rossby deformation radius. The above equation is also known nowadays as Charney-HasegawaMima equation (CHM) because it was independently proposed (several years after the atmospheric context) in
+the context of plasma physics.
+
+It is easy to find linear wave-like solutions of the CHM equation, of the form ψ(x, y, t) = ψ0 cos φ0 + kx + ly − ω(k,l) t ,
+where we introduce the wavevector (k, l) ∈ R2 and the frequency ω(k,l) , satisfying the dispersion relation
+βk
+ω(k,l) = − 2
+.
+k + l2 + F
+This is the well-known Rossby wave formula. In this paper we will consider periodic boundary conditions on
+the spatial variables x and y. Setting (x, y) ∈ [0, 2π)2 leads to the following restriction on the wavevectors:
+(k, l) ∈ Z2 , which we assume from now on.
+When the nonlinear terms in the CHM equation are considered, it is possible to obtain a multi-scale solution
+in the limit of small amplitudes (i.e. small nonlinearity), of the form:
+X
+
+ψ(x, y; t, T ) = <
+Ψ(k,l) (T ) exp i kx + ly − ω(k,l) t ,
+(2)
+(k,l)∈C
+
+∗ Corresponding author
+
+Email addresses: umar.hayat@qau.edu.pk (Umar Hayat), miguel.bustamante@ucd.ie (Miguel D. Bustamante)
+
+Preprint submitted to ArXiv
+
+May 29, 2021
+
+where the set C is the so-called resonant set, defined as the set of all wavevectors that belong to at least one
+resonant triad, and the functions Ψ(k,l) (T ) satisfy a system of nonlinear differential equations in terms of the
+slow time T .
+A resonant triad is, by definition, a triad of wavevectors with integer components:
+(k1 , l1 ), (k2 , l2 ), (k3 , l3 ) ∈ Z2
+that solve the so-called triad resonance equations:
+k1 + k2 = k3 ,
+
+l1 + l2 = l3 ,
+
+ω1 + ω2 = ω3 ,
+
+(3)
+
+βk
+
+where ωj ≡ ω(kj ,lj ) = − k2 +l2j+F . We remark that the resonance equations are to be satisfied by integers, which
+j
+
+j
+
+makes the problem a Diophantine equation. Solutions exist only if (0 ≤)F ∈ Q. If we set F = 0 (the so-called
+small-scale limit) then a mapping to an elliptic surface (and a subsequent mapping to quadratic forms) allows us
+to parameterise the solutions, as shown for the first time by Bustamante and Hayat (2013) and further developed
+by Kopp (2017). See also a particular case discussed independently by Kishimoto and Yoneda (2017).
+We take from here on the small-scale limit case F = 0 and follow the calculations done in Bustamante and
+Hayat (2013). We can simplify the system of equations (3) by eliminating one of the wavevectors: k2 = k3 − k1 ,
+l2 = l3 − l1 , and writing the equation involving frequencies as a polynomial, which leads to one Diophantine
+equation for 4 unknowns:
+
+k3 (k12 + l12 )2 − k1 (k32 + l32 )2 = 2 k3 (k12 + l12 ) − k1 (k32 + l32 ) (k3 k1 + l3 l1 ) .
+
+(4)
+
+Notice that this equation is invariant under re-scaling of the wavevectors, which implies the solutions to this
+equation belong to a projective space. An explicit transformation from the wavevectors to a new set of variables
+(X, Y, D) ∈ Q3 was done in detail in Bustamante and Hayat (2013):
+
+
+k1
+l1
+D
+X
+X
+l3
+D−1
+,
+1− 2
+= 2
+=
+,
+=
+2
+2
+k3
+D +Y
+k3
+Y
+D +Y
+k3
+Y
+with k3 6= 0 (which can be assumed in general). This transformation’s inverse is
+X=
+
+k3
+k 2 + l12
+,
+× 12
+k1
+k3 + l32
+
+Y =
+
+k3
+l1 k3 − l3 k1
+,
+×
+k1
+k32 + l32
+
+D=
+
+k3
+k1 k3 − l1 l3
+.
+×
+k1
+k32 + l32
+
+Under this transformation, the resonance equation (4) becomes an equation defining an elliptic surface:
+Y 2 = X 3 − 2DX 2 + 2DX − D2 ,
+
+(5)
+
+and this can be simplified further to
+
+
+Y
+X
+
+2
+
+
++
+
+D
++X −1
+X
+
+2
+
+= X2 − X + 1 .
+
+(6)
+
+The LHS of the above equation is a sum of two squares. Similarly, the RHS can be written in diagonal form by
+introducing the transformation
+m+n
+.
+X=−
+m−n
+We get
+
+2 
+2
+Y (m − n)2
+D(m − n)2
++
++ 2m = 3m2 + n2 .
+(7)
+m+n
+m+n
+In summary, we have moved from the 4 variables (k1 , k3 , l1 , l3 ) satisfying the quintic Diophantine equation (4)
+to the 4 variables (m, n, Y, D) satisfying the quadratic equation (7). In (Bustamante and Hayat, 2013), we used
+this quadratic equation to construct resonant triads via Fermat’s Xmas theorem about sums of squares. In the
+next section, we avoid using this theorem by producing an explicit parameterisation of the quadratic equation.
+2. An explicit new parameterisation for resonant triads
+Consider equation (7) and define the obvious quantities
+p=
+
+Y (m − n)2
+,
+m+n
+
+q=
+2
+
+D(m − n)2
++ 2m .
+m+n
+
+We obtain
+p2 + q 2 = 3m2 + n2 .
+We can always assume that one of the variables is non zero. Take n 6= 0, so this quadratic equation becomes
+(p/n)2 + (q/n)2 = 3(m/n)2 + 1.
+We introduce auxiliary parameters R, A, B via the formulas p/n = 1 + R, q/n = AR and m/n = BR. By
+substituting these values in the last equation we get
+(1 + R)2 + (AR)2 = 3(BR)2 + 1).
+After simplification we get
+
+R 2 + R(1 + A2 − 3B 2 ) = 0.
+The case R = 0 gives the trivial solution (p = n, q = 0, m = 0) corresponding to resonant triad interactions
+involving zonal modes. We assume thus R 6= 0 and obtain
+R=
+
+−2
+.
+1 + A2 − 3B 2
+
+By plugging this value of R in p/n = 1 + R, q/n = AR and m/n = BR, we get
+p/n =
+
+A2 − 3B 2 − 1
+,
+1 + A2 − 3B 2
+
+q/n =
+
+−2A
+,
+1 + A2 − 3B 2
+
+m/n =
+
+−2B
+.
+1 + A2 − 3B 2
+
+Finally we recover the general case by identifying numerators and denominator, obtaining
+p = A2 − 3B 2 − 1,
+
+q = −2A,
+
+m = −2B
+
+and
+
+n = 1 + A2 − 3B 2 .
+
+(8)
+
+Our task is to write X, Y and D in terms of A and B. From equations (8) we obtain
+m + n = −2B + 1 + A2 − 3B 2 ,
+so
+X=
+
+m − n = −2B − 1 − A2 + 3B 2 ,
+
+m+n
+−2B + 1 + A2 − 3B 2
+=−
+.
+m−n
+−2B − 1 − A2 + 3B 2
+
+The equation for q reads now
+D(m − n)2
++ 2m = −2A
+m+n
+so
+D=2
+
+(−A + 2B)(−2B + 1 + A2 − 3B 2 )
+(−2B − 1 − A2 + 3B 2 )2
+
+and finally we get Y in terms of A and B from
+Y (m − n)2
+= A2 − 3B 2 − 1
+m+n
+so
+Y =
+
+(A2 − 3B 2 − 1)(−2B + 1 + A2 − 3B 2 )
+.
+(−2B − 1 − A2 + 3B 2 )2
+
+In summary we get the explicit parameterisation
+X
+Y
+D
+
+−2B + 1 + A2 − 3B 2
+,
+−2B − 1 − A2 + 3B 2
+(A2 − 3B 2 − 1)(−2B + 1 + A2 − 3B 2 )
+=
+,
+(−2B − 1 − A2 + 3B 2 )2
+(−A + 2B)(−2B + 1 + A2 − 3B 2 )
+= 2
+.
+(−2B − 1 − A2 + 3B 2 )2
+= −
+
+We can find an inverse of these relations, obtaining for A, B :
+
+2 D2 − DX + X 2 − Y 2
+D2 − X 2 + Y 2
+A= 2
+,
+B
+=
+−
+.
+D + 4D(Y − X) + (X − Y )2
+D2 + 4D(Y − X) + (X − Y )2
+3
+
+(9)
+(10)
+(11)
+
+Notice that this inverse is not unique. One way to see this is to notice that the resonance condition D2 =
+−2DX 2 + 2DX + X 3 − Y 2 can be used to obtain a different inverse.
+Using the above values of (X, Y, D) in terms of A and B, we may get the values of kk13 , kl33 and kl13 . Explicitly
+we find
+
+k1
+k3
+l3
+k3
+l1
+k3
+
+A2 + B(2 − 3B) + 1
+
+3
+
+,
+
+2
+(A2 − 3B 2 − 2B + 1) 2 (11 − 3A2 ) B 2 + (A2 + 1) − 16AB + 9B 4
+
+
+6 A2 + A − 1 B 2 − (A + 1)2 A2 + 1 + 4AB − 9B 4
+=
+,
+(A2 − 3B 2 − 1) (A2 − 3B 2 − 2B + 1)
+
+A2 + B(2 − 3B) + 1
+×
+
+=
+2
+(A2 − 3B 2 − 1) (A2 − 3B 2 − 2B + 1) 2 (11 − 3A2 ) B 2 + (A2 + 1) − 16AB + 9B 4
+
+
+
+2
+A6 + 2A5 + A4 −9B 2 − 6B + 3 − 4A3 3B 2 + 2B − 1 + 3A2 3B 2 + 2B − 1
+
+
+2
+
++2A 9B 4 + 12B 3 + 14B 2 − 4B + 1 − 3B 2 + 1
+3B 2 + 6B − 1 .
+(12)
+=
+
+The inverse of these, as explained above, is not unique. One inverse reads
+
+
+
+
+2 k14 k3 − k1 3 k32 + l32 + k12 k3 k32 + 2l12 + l32 − k1 l1 k32 + l32 (l1 − l3 ) + k3 l14
+
+A = − 4
+,
+k1 k3 + k1 3 (k32 + l32 ) + 2k12 k32 l3 + k3 l12 + l3 3 − k1 l1 (2k3 − l1 ) (k32 + l32 ) + k3 l14
+
+
+
+− k12 + l12 k12 l1 − k1 l12 + l32 + l1 l12
+
+.
+B =
+3 2
+4
+2
+k1 l1 + k1 (l1 + l3 ) + 2k12 l12 l3 + l1 l12 + l3 3 − k1 l1 (2l1 − l1 ) (l12 + l32 ) + l1 l14
+
+(13)
+
+Equations (12) and (13) summarise our explicit parameterisation of the resonant triads’ wavevector ratios
+(k1 /k3 , l3 /k3 , l1 /k3 ) ∈ Q3 in terms of the new parameters (A, B) ∈ Q2 . In this context it is worth referring the
+interested reader to the work by Kopp (2017), who found another parameterisation independently.
+2.1. Finding a bounded domain in (A, B) plane
+In Bustamante and Hayat (2013) we established that a direct search for resonant triads (using e.g. brute-force
+methods or more clever methods via parameterisations) could be simplified quite a bit by imposing some ordering
+convention on the wavevectors:
+• The first idea is that the streamfunction is real, therefore if a wavevector (k, l) appears in the sum in
+equation (2), then its negative (−k, −l) must also appear, and in fact both contribute with exactly the
+same energy to the system. In other words, the wavevectors (k, l) and (−k, −l) are indistinguishable.
+Therefore, it is enough to consider a half plane, and we choose the convention 0 < k ∈ Z, l ∈ Z. Notice
+that the case k = 0 is important physically because it corresponds to the so-called zonal modes, but in the
+context of finding solutions to the resonant equation one can discard this case (solutions with k = 0 are
+easy to find).
+• The second idea is that, in a resonant triad, the roles of (k1 , l1 ) and (k2 , l2 ) are interchangeable, so one
+can introduce a convention to avoid counting twice the same physical triad. Such a convention is, for
+example, k1 ≤ k2 , which was used in Bustamante and Hayat (2013).
+• The third idea is that the governing equation (1) is invariant under the mirror symmetry y → −y of the
+zonal coordinate, which implies that, given a resonant triad, the mirror image obtained by the mapping
+lj → −lj , j = 1, 2, 3 is another resonant triad (physically different). Therefore, in the direct search for
+triads, one can introduce a convention in order to pick only one resonant-triad representative of the mirror
+symmetry (and get its mirror image in post-processing). Such a convention is, for example, to impose
+l1 < 0.
+We have found, using the Mathematica command Reduce, that applying the simple ordering convention
+{0 < k1 ≤ k2 < k3 , l1 < 0} to the wavevector components given by our parameterisation in equation (12) is
+equivalent to the following conditions for the new (A, B) parameters:
+
+
+1 1p
+−
+4 + 3A2 < B < Bmax (A) ,
+Ω = (A, B) ∈ Q2 | − 2 ≤ A ≤ 2,
+3 3
+4
+
+where we have introduced the piecewise-differentiable continuous function Bmax (A), defined by
+ √A2 −1
+ − √3 , if − 2 < A ≤ A1 or A2 < A < 2 ,
+Bmax (A) =
+
+B0 (A) , if A1 < A ≤ A2 ,
+where A1 , A2 are the two real roots of the polynomial P (A) = 11A4 + 20A3 − 16A − 16, with A1 < 0 < A2 ,
+and B0 (A) is
+for A ∈ [A1 , A2 ] as the negative real root of the
+QA (B) = 27B 6 − 126B 5 −
+ defined
+ polynomial
+2
+4
+2
+3
+4
+2
+2
+4
+3 9A + 13 B +12 7A + 4A + 1 B + 9A + 22A + 32A + 13 B −2 7A + 8A3 + 14A2 + 8A + 7 B−
+A6 − 3A4 − 3A2 − 1 .
+Figure 1 shows a plot of the region Ω where the parameters (A, B) must lie. The importance of this result is
+that it establishes that the parameters (A, B) are within a bounded open region, and this can be used to improve
+direct brute-force searches of resonant triads, with less than O(N 4 ) complexity, where N is the size of the box
+in wavevector space. In practice, if we produce grids within the region Ω having a small enough resolution ∆N ,
+the resonant triads obtained via equations (12) should be close enough to resonant triads located within a given
+box of size N , and could thus be found by rounding to nearest integers. The question is whether or not we can
+bound ∆N from below, so that the complexity of the calculation can be kept smaller than O(N 4 ). One would
+hope to obtain O(N 3 ) complexity or even lower, but we will leave this discussion to a forthcoming paper.
+
+�
+
+�
+
+�
+
+�
+Figure 1: Colour online. Open dots denote the values of (A, B) corresponding to all 472 irreducible resonant triads of CHM equation
+whose wavevectors (k, l) lie within the domain {0 < k ≤ 5000, −5000 ≤ l ≤ 5000}, and where we have used the following
+convention to avoid repeated counting of triads: 0 < k1 ≤ k2 < k3 , and we have selected one representative of the mirror-image
+symmetry l → −l by imposing the condition l1 < 0 (thus, there are 944 irreducible triads in reality). The bounded domain in the
+figure corresponds to these two conditions mapped to the (A, B) plane. The density plot is a smoothed probability density function
+obtained from the discrete set of points, using a least-squares cross validation method.
+
+3. Improved brute-force numerical search algorithm
+We present the results of our successful attempt to reduce the complexity of a brute-force direct numerical
+search for triad resonances of the CHM equation. The method uses the resonance equation (4) to reduce the
+complexity to O(N 3 ) where N is the wavevector box size. We implement the code as follows:
+• Perform 3 nested loops: an outer loop over wavevector component k1 from 1 to bN/2c, a middle loop over
+k3 from 2k1 to N and an inner loop over l1 from 1 to N .
+• Use real numbers whenever possible and parallelise the loops to optimise the code.
+5
+
+• Within the loop, solve numerically the resonance equation (4) for the wavevector component l3 in terms
+of the components k1 , k3 , l1 . There is usually only one real solution. A (quasi-)resonant triad is signalled
+when the real solution is close enough to an integer, within some tolerance.
+An example code in Mathematica reads as follows:
+Nreso=5001; soluTemp={}; SetSharedVariable[soluTemp]; Clear[l3];
+ParallelDo[sq1=1.*(k1^2+l1^2); k3sq1ovk1=k3 sq1/k1;
+uTemp=(l3/.NSolve[k3sq1ovk1 sq1-(k3^2+l3^2)^2+2((k3^2+l3^2)-k3sq1ovk1)(k3 k1+l3 l1)==0,
+l3,Reals]);
+If[NumberQ[Quiet[uTemp[[1]]]], uTemp=Select[uTemp,(Abs[Round[#]-#]<1.*10^(-8))&];
+Do[AppendTo[soluTemp,{{k1,l1},{k3,Round[uTemp[[jj]]]}}],{jj,Length[uTemp]}]],
+{k1,1,Floor[Nreso/2]},{k3,2k1,Nreso},{l1,1,Nreso}];
+soluTemp=Sort[soluTemp];
+Save["file_CHM_triads_compl_N_cube",{Nreso,soluTemp}]
+Post-processing work is required on the set of triads obtained:
+• A selection process is easily applied to ensure that exact resonance is satisfied.
+• Irreducible triads (defined by the condition that the components (k1 , k3 , l1 , l3 ) are coprime) can be easily
+selected; in view of the projective character of the transformations (12), this is desirable when looking for
+a unique representative in the (A, B) plane.
+• As remarked earlier, this method gives rise to exactly half of the total set of resonant triads in a given
+wavevector box. The remaining half is obtained in post-processing by applying the mirror symmetry l → −l
+to these triads.
+• Finally, notice that this method controls (by construction) the size of the components k1 , k2 , k3 , l1 to within
+the box of length N , but the size of the l2 , l3 components is not a priori controlled, so an extra selection
+in post-processing is needed to ensure |l2 |, |l3 | ≤ N .
+As an example, for the box of size N = 5000 we find all irreducible resonant triads whose wavevectors satisfy
+0 < k ≤ 5000, −5000 ≤ l ≤ 5000 and the conventions 0 < k1 ≤ k2 < k3 , l1 < 0. This gives a total of 472
+triads (after mirror symmetry is applied, the number of irreducible triads doubles to 944). The calculation took
+about 10.5 days on a 16-core machine. These triads are shown explicitly in the Appendix, using the notation
+{k1 , l1 } {k2 , l2 } {k3 , l3 } and sorting the triads in terms of smallest k1 and |l1 |. We remark the fact that, with
+such an ordering for the resonant triads, the inequality l2 > 0 follows necessarily, as can be demonstrated using
+the explicit parameterisation (12). Physically this implies that resonant interactions always involve positive and
+negative zonal components, leading to zig-zag patterns.
+It is worth mentioning that our search method finds all irreducible resonant triads in a given wavevector box.
+This shows that there is room for improvement regarding the methods that use explicit parameterisations: Kopp
+(2017) found 463 triads (so just 9 triads missing) using his parameterisation and a simple algorithm to scan over
+the parameter space.
+4. Dynamical issues and spread of quadratic invariants across scales
+We have seen we can assume without loss of generality k3 > k1 > 0 and k3 > k2 > 0 but, in contrast to
+the convention used in the previous section, we will not assume the ordering k1 ≤ k2 . Rather, in this
+√ Section we
+will order the wavevectors according to their L2 norm: kk1 k ≤ kk2 k , where k ≡ (k, l) and kkk ≡ k 2 + l2 . By
+looking at the frequency resonance condition (12), we see it can be re-written as follows:
+kk2 k2 k1 (kk3 k2 − kk1 k2 ) + kk1 k2 k2 (kk3 k2 − kk2 k2 ) = 0 ,
+which implies
+kk1 k ≤ kk3 k ≤ kk2 k.
+At this point it is worth recalling a well-known physical implication stemming from this latter inequality.
+Regarding the Charney-Hasegawa-Mima partial differential equation, this inequality means that k3 , the wavevector
+in the resonant triad with the largest meridional component, has a modulus that is in between the moduli of
+the other two wavevectors in the triad. In physical terms: this wavevector’s scale is in between the other two
+wavevectors’ scales. Moreover, a direct inspection of the triad interaction coefficients leads to the conclusion
+
+6
+
+that this mid-scale wavevector is active in the sense that the interaction conserves locally the positive-definite
+quadratic terms of the form
+|Ψk1 |2 + |Ψk3 |2 ,
+|Ψk2 |2 + |Ψk3 |2 ,
+where Ψk is a Fourier component of the original streamfunction field at wavenumber k:
+Z 2π Z 2π
+1
+ψ(x, t) exp(−ik · x) dx dy .
+Ψk (t) =
+4π 2 0
+0
+Let us go deeper into the scale relations between the wavevectors in a resonant triad. Motivated by our
+direct search method to find whether a given wavevector belongs to one (or more) resonant triads, we have
+studied upper bounds for the largest wavevector modulus, kk2 k, and also for the largest wavevector meridional
+component, k3 . We have established the following sharp bounds:
+Theorem 4.1. Consider a resonant triad k1 , k2 , k3 with the ordering convention 0 < k1 < k3 ,
+k3 , kk1 k ≤ kk3 k ≤ kk2 k. Then
+
+0 < k2 <
+
+1. k3 ≤ kk3 k ≤ kk1 k U (rr 2 ) , where r ≡ kkk11 k (≥ 1) and U (s) is the function determined by the unique real
+root of the sixth-order polynomial defined by the conditions
+s2 − 2 s(2 U 2 − 3 U 3 + 2 U 4 ) + U 6 = 0, U ≥ 1, s ≥ 1 .
+ 2 
+r
+2. kk2 k ≤ kk1 kV U (r
+2 ) , where r and U (s) are defined in the previous point, and V (σ) is the function
+determined by the unique real root of the fourth-order polynomial defined by the conditions
+(σ − 1)(1 − 2 V ) − 2 V 3 + V 4 = 0,
+
+V ≥ 2,
+
+σ ≥ 1.
+
+Corollary 4.2. Under the same conditions of the above theorem, the following practical bounds hold:
+s
+kk1 k
+k3 ≤ kk3 k ≤ kk1 k 2
+k1
+and
+
+
+
+
+
+s
+
+kk2 k ≤ kk1 k 1 +
+
+1+2
+
+kk1 k 
+.
+k1
+
+These practical bounds provide an understanding of the maximum scale spread across wavevectors in a
+resonant triad, leading to the scalings
+
+kk1 k
+ kk1 k3/2
+if
+1/2
+k1  1 ,
+k1
+(k3 , kk3 k, kk2 k) ∝
+kk
+1k
+kk1 k
+' 1.
+if
+k1
+
+In a forthcoming revision we will provide a full proof of the above Theorem and Corollary, along with a direct
+numerical assessment of the sharpness of the bounds found.
+References
+Bustamante, M. D. and Hayat, U. (2013). Complete classification of discrete resonant Rossby/drift wave triads
+on periodic domains. Communications in Nonlinear Science and Numerical Simulation, 18(9):2402–2419.
+Kishimoto, N. and Yoneda, T. (2017). A number theoretical observation of a resonant interaction of Rossby
+waves. Kodai Mathematical Journal, 40(1):16–20.
+Kopp, G. S. (2017). The arithmetic geometry of resonant Rossby wave triads. SIAM Journal on Applied Algebra
+and Geometry, 1(1):352–373.
+
+7
+
+Appendix: 472 Irreducible Triads in the box of size 5000. Notation:
+
+
+{1, −8}
+ {1, −11}
+
+ {1, −27}
+
+ {1, −47}
+
+ {1, −59}
+
+ {1, −64}
+
+ {1, −83}
+
+ {1, −125}
+
+ {1, −172}
+
+ {1, −216}
+
+ {1, −343}
+
+ {1, −463}
+
+ {1, −512}
+
+ {2, −49}
+
+ {2, −131}
+
+ {3, −11}
+
+ {3, −11}
+
+ {3, −19}
+
+ {3, −41}
+
+ {3, −89}
+
+ {3, −91}
+
+ {3, −241}
+
+ {3, −262}
+
+ {3, −284}
+
+ {3, −389}
+
+ {3, −505}
+
+ {3, −869}
+
+ {4, −403}
+
+ {5, −25}
+
+ {5, −25}
+
+ {5, −53}
+
+ {5, −77}
+
+ {5, −325}
+
+ {5, −433}
+
+ {6, −163}
+
+ {7, −134}
+
+ {7, −151}
+
+ {7, −181}
+
+ {7, −199}
+
+ {7, −386}
+
+ {7, −394}
+
+ {7, −719}
+
+ {8, −26}
+
+ {8, −166}
+
+ {8, −194}
+
+ {8, −402}
+
+ {8, −554}
+
+ {9, −127}
+
+ {9, −253}
+
+ {9, −287}
+
+ {9, −298}
+
+ {9, −329}
+
+ {9, −409}
+
+ {9, −461}
+
+ {9, −497}
+
+ {9, −526}
+
+ {9, −682}
+
+ {9, −683}
+{9, −733}
+
+
+{15, 10}
+{16, 2}
+
+
+{11, −28}
+{8, 34}
+{9, 23}
+
+  {11, −368}
+{80, 30}
+{81, 3}
+
+
+{135, 285}
+{136, 238} 
+  {11, −413}
+
+{351, 183}
+{352, 124}  
+ {11, −523}
+  {11, −532}
+{255, 68}
+{256, 4}
+
+
+{159, 583}
+{160, 500} 
+  {11, −593}
+
+
+{624, 130}
+{625, 5}
+  {11, −611}
+
+{335, 1550}
+{336, 1378}  
+ {11, −731}
+
+{1295, 222}
+{1296, 6} 
+  {13, −111}
+
+{2400, 350}
+{2401, 7}  
+ {15, −245}
+
+{3104, 388}
+{3105, −75} 
+  {15, −275}
+
+{4095, 520}
+{4096, 8}  
+ {15, −295}
+
+{190, 155}
+{192, 106} 
+  {15, −325}
+
+{510, 925}
+{512, 794}  
+ {15, −365}
+  {15, −400}
+{5, 25}
+{8, 14}
+
+  {15, −731}
+{13, 13}
+{16, 2}
+
+  {16, −38}
+{32, 44}
+{35, 25}
+
+
+{117, 91}
+{120, 50} 
+  {16, −54}
+
+{325, 403}
+{328, 314}  
+ {16, −106}
+
+{96, 404}
+{99, 313} 
+  {16, −158}
+
+{1440, 500}
+{1443, 259}  
+ {16, −158}
+
+{1024, 2108} {1027, 1846} 
+  {16, −166}
+
+{1680, 2290} {1683, 2006}  
+ {16, −250}
+
+{3480, 2750} {3483, 2361} 
+  {16, −310}
+
+{4536, 1542} {4539, 1037}  
+ {16, −310}
+
+{4864, 712} {4867, −157} 
+  {16, −562}
+
+{3200, 2450} {3204, 2047}  
+ {16, −686}
+  {16, −782}
+{24, 62}
+{29, 37}
+
+  {17, −289}
+{27, 21}
+{32, −4}
+
+
+{91, 169}
+{96, 116} 
+  {17, −319}
+
+{216, 246}
+{221, 169}  
+ {17, −323}
+
+{48, 1106}
+{53, 781} 
+  {17, −476}
+
+{3016, 1334} {3021, 901}  
+ {17, −527}
+
+{640, 350}
+{646, 187} 
+  {19, −373}
+
+{240, 550}
+{247, 416}  
+ {21, −148}
+
+{425, 625}
+{432, 474} 
+  {21, −727}
+
+{153, 731}
+{160, 550}  
+ {23, −401}
+
+{768, 824}
+{775, 625} 
+  {24, −346}
+
+{2288, 1586} {2295, 1200}  
+ {24, −374}
+
+{9, 176}
+{16, −218} 
+  {24, −514}
+
+{2009, 451} {2016, −268}  
+ {24, −718}
+  {24, −1207}
+{27, 51}
+{35, 25}
+
+
+{343, 133}
+{351, −33} 
+  {25, −967}
+
+{667, 319}
+{675, 125}  
+ {26, −247}
+
+{559, 2223}
+{567, 1821} 
+  {27, −141}
+
+{135, 2163}
+{143, 1609}  
+ {27, −141}
+
+{343, 203}
+{352, 76} 
+  {27, −174}
+
+{535, 185}
+{544, −68}  
+ {27, −273}
+
+{816, 1462}
+{825, 1175} 
+  {27, −356}
+
+{551, 1508}
+{560, 1210}  
+ {27, −471}
+
+{1271, 1681} {1280, 1352} 
+  {27, −736}
+
+{2000, 2090} {2009, 1681} 
+  {27, −924}
+
+{416, 2314}
+{425, 1853} 
+  {27, −939}
+
+{2664, 1142} {2673, 645} 
+  {27, −1149}
+
+{3111, 2684} {3120, 2158} 
+  {27, −1716}
+ {28, −101}
+{2448, 578} {2457, −104} 
+
+{28, −289}
+{4736, 3478} {4745, 2795} 
+{3799, 1073} {3808, 340}
+8
+
+{k1 , l1 }
+
+{16, 58}
+{1573, 1594}
+{1717, 707}
+{1144, 338}
+{2277, 3134}
+{1120, 3580}
+{2989, 3721}
+{4320, 4452}
+{243, 231}
+{81, 123}
+{328, 1066}
+{17, 131}
+{768, 296}
+{648, 246}
+{1377, 1734}
+{3625, 1537}
+{35, 55}
+{65, 78}
+{119, 289}
+{39, 403}
+{189, 498}
+{375, 455}
+{609, 290}
+{327, 1199}
+{1037, 986}
+{71, 272}
+{2385, 742}
+{1859, 4732}
+{928, 754}
+{408, 194}
+{783, 327}
+{48, 226}
+{160, 1774}
+{29, 899}
+{123, 410}
+{2592, 948}
+{96, 1132}
+{435, 1247}
+{851, 1369}
+{1715, 1883}
+{275, 2525}
+{2304, 722}
+{4760, 3026}
+{64, 122}
+{61, 343}
+{229, 229}
+{53, 424}
+{565, 791}
+{768, 1204}
+{85, 1265}
+{208, 2366}
+{4240, 2590}
+{2173, 689}
+{64, 538}
+{2960, 962}
+{128, 166}
+{512, 274}
+
+{k2 , l2 }
+
+{k3 , l3 }.
+
+
+{27, 30}
+{1584, 1226} 
+
+{1728, 294} 
+
+{1155, −185} 
+
+{2288, 2602} 
+
+{1131, 2987} 
+
+{3000, 3110} 
+
+{4331, 3721} 
+
+{256, 120} 
+
+{96, −122} 
+
+{343, 791} 
+
+{32, −164} 
+
+{783, −29} 
+
+{663, −119} 
+
+{1392, 1334} 
+
+{3640, 806} 
+
+
+{51, 17}
+
+
+{81, 24}
+
+{135, 183} 
+
+{55, 245} 
+
+{205, 340} 
+
+{391, 289} 
+
+{625, 40} 
+
+{343, 889} 
+
+{1053, 676} 
+
+{87, −290} 
+
+{2401, 56} 
+
+{1875, 3950} 
+
+{945, 465} 
+
+{425, −125} 
+
+
+{800, 4}
+
+{65, −250} 
+
+{177, 1247} 
+
+{48, 526} 
+
+{144, 262} 
+
+{2613, 221} 
+
+{119, 731} 
+
+{459, 901} 
+
+{875, 995} 
+
+{1739, 1369} 
+
+{299, 1807} 
+
+{2328, −485} 
+
+{4785, 2059} 
+
+{90, −125} 
+
+{88, 202} 
+
+{256, 88} 
+
+{80, 250} 
+
+{592, 518} 
+
+{795, 848} 
+
+{112, 794} 
+
+{235, 1630} 
+
+{4267, 1666} 
+
+{2200, −250} 
+
+{91, −611} 
+
+{2987, −754} 
+
+{156, 65} 
+{540, −15}
+
+
+
+{29, −418}
+ {29, −522}
+
+ {29, −812}
+
+ {29, −841}
+
+ {29, −841}
+
+ {29, −847}
+
+ {30, −175}
+
+ {31, −467}
+
+ {32, −596}
+
+ {32, −844}
+
+ {32, −906}
+
+ {32, −914}
+
+ {32, −1436}
+
+ {35, −125}
+
+ {35, −305}
+
+ {35, −423}
+
+ {37, −796}
+
+ {37, −1036}
+
+ {37, −3219}
+
+ {39, −143}
+
+ {40, −398}
+
+ {40, −610}
+
+ {42, −661}
+
+ {45, −95}
+
+ {45, −1075}
+
+ {46, −507}
+
+ {47, −337}
+
+ {47, −968}
+
+ {48, −214}
+
+ {48, −3466}
+
+ {49, −127}
+
+ {49, −1963}
+
+ {51, −148}
+
+ {51, −527}
+
+ {51, −1513}
+
+ {51, −1717}
+
+ {54, −267}
+
+ {54, −699}
+
+ {54, −1083}
+
+ {55, −223}
+
+ {55, −401}
+
+ {55, −700}
+
+ {55, −1076}
+
+ {55, −1289}
+
+ {57, −391}
+
+ {57, −704}
+
+ {58, −667}
+
+ {58, −1189}
+
+ {60, −805}
+
+ {61, −397}
+
+ {61, −487}
+
+ {63, −491}
+
+ {64, −1022}
+
+ {65, −403}
+
+ {65, −505}
+
+ {68, −371}
+
+ {69, −659}
+
+ {70, −755}
+
+ {75, −448}
+
+ {75, −968}
+{76, −1177}
+
+{403, 1456}
+{1296, 2022}
+{3315, 2950}
+{160, 412}
+{1000, 470}
+{3000, 1250}
+{256, 188}
+{729, 1737}
+{625, 2275}
+{513, 3189}
+{1215, 4125}
+{3055, 4225}
+{255, 4675}
+{112, 274}
+{429, 247}
+{1053, 1209}
+{1755, 3432}
+{2160, 750}
+{243, 1569}
+{81, 93}
+{935, 697}
+{303, 1919}
+{2006, 1853}
+{51, 187}
+{3699, 4247}
+{1088, 1530}
+{73, 803}
+{3328, 1988}
+{225, 500}
+{357, 1696}
+{119, 221}
+{96, 908}
+{144, 278}
+{1280, 1000}
+{120, 710}
+{165, 4655}
+{320, 250}
+{1792, 1076}
+{1802, 4505}
+{297, 419}
+{288, 1108}
+{1872, 1274}
+{2000, 802}
+{4913, 3587}
+{567, 1041}
+{1520, 790}
+{1664, 1118}
+{320, 3550}
+{1604, 2807}
+{584, 1022}
+{920, 1250}
+{720, 1390}
+{2970, 1725}
+{544, 374}
+{799, 493}
+{444, 925}
+{851, 481}
+{1728, 1074}
+{720, 554}
+{592, 3034}
+{3584, 3068}
+
+
+
+{432, 1038}
+{78, −533}
+
+{1325, 1500}  
+{78,
+−1859}
+
+{3344, 2138} 
+  {80, −1102}
+
+{189, −429} 
+  {80, −1442}
+
+{1029, −371}  
+ {81, −192}
+
+{3029, 403} 
+  {81, −375}
+
+{286, 13}  
+ {81, −708}
+
+{760, 1270} 
+  {81, −732}
+
+{657, 1679}  
+ {81, −951}
+
+{545, 2345} 
+  {81, −1029}
+
+{1247, 3219} 
+  {81, −1047}
+
+{3087, 3311} 
+  {81, −1155}
+
+{287, 3239} 
+  {81, −1536}
+
+{147, 149} 
+  {81, −1707}
+
+{464, −58} 
+  {82, −205}
+
+{1088, 786} 
+  {85, −485}
+
+{1792, 2636} 
+  {85, −875}
+
+{2197, −286} 
+  {87, −1151}
+
+{280, −1650} 
+  {87, −1711}
+
+{120, −50} 
+  {90, −655}
+
+{975, 299} 
+  {91, −169}
+
+{343, 1309} 
+  {93, −614}
+
+{2048, 1192} 
+  {95, −550}
+
+{96, 92}
+  {95, −605}
+
+{3744, 3172} 
+  {95, −1150}
+
+{1134, 1023} 
+  {96, −196}
+
+{120, 466} 
+  {96, −428}
+
+{3375, 1020} 
+  {96, −716}
+
+{273, 286} 
+  {96, −1588}
+
+{405, −1770} 
+  {96, −2012}
+
+{168, 94} 
+  {97, −1067}
+
+{145, −1055} 
+  {99, −335}
+
+{195, 130} 
+  {99, −743}
+
+{1331, 473} 
+  {100, −875}
+
+{171, −803} 
+  {101, −404}
+
+{216, 2938} 
+  {102, −1739}
+
+{374, −17} 
+  {102, −2057}
+
+{1846, 377} 
+  {104, −442}
+
+{1856, 3422} 
+  {105, −850}
+
+{352, 196} 
+  {106, −477}
+
+{343, 707} 
+  {109, −1199}
+
+{1927, 574} 
+  {111, −259}
+
+{2055, −274} 
+  {115, −965}
+
+{4968, 2298} 
+  {115, −1425}
+
+{624, 650} 
+  {117, −299}
+
+{1577, 86} 
+  {117, −871}
+
+{1722, 451} 
+  {117, −1027}
+
+{378, 2361}  
+ {119, −289}
+
+{1664, 2002} 
+  {119, −4267}
+
+{645, 625}  
+ {121, −1457}
+
+{981, 763} 
+  {125, −385}
+
+{783, 899}  
+ {125, −390}
+
+{3034, 703} 
+  {125, −1065}
+
+{609, −29}  
+ {128, −406}
+
+{864, −12} 
+  {128, −746}
+
+{512, 554}  
+ {128, −842}
+
+{920, −178} 
+  {128, −874}
+
+{1798, 319}  
+ {128, −2914}
+
+{795, 106} 
+  {129, −1487}
+
+{667, 2066}
+{130, −545}
+{3660, 1891}
+9
+
+
+{1010, 1111}
+{1088, 578}
+{306, 901}
+{384, −958} 
+
+{175, 524}
+{255, −578} 
+
+{481, 4366}
+{561, 2924} 
+
+{175, 300}
+{256, 108} 
+
+{544, 510}
+{625, 135} 
+
+{1200, 2050} {1281, 1342} 
+
+{255, 374}
+{336, −358} 
+
+{1976, 3042} {2057, 2091} 
+
+{2320, 1218}
+{2401, 189} 
+
+{1824, 3652} {1905, 2605} 
+
+{527, 3519}
+{608, 2364} 
+
+{4015, 1752}
+{4096, 216} 
+
+{3360, 1300} {3441, −407} 
+
+{174, 377}
+{256, 172} 
+
+{104, 1118}
+{189, 633} 
+
+{2088, 2146} {2173, 1271} 
+
+{1776, 4070} {1863, 2919} 
+
+{4913, 2261}
+{5000, 550} 
+
+{448, 386}
+{538, −269} 
+
+
+{125, 235}
+{216, 66}
+
+{403, 364}
+{496, −250} 
+
+{432, 1434}
+{527, 884} 
+
+{256, 1528}
+{351, 923} 
+
+{2992, 3026} {3087, 1876} 
+
+{125, 365}
+{221, 169} 
+
+{629, 703}
+{725, 275} 
+
+{1443, 1469}
+{1539, 753} 
+
+{2091, 1003} {2187, −585} 
+
+{4455, 1725} {4551, −287} 
+
+{416, 548}
+{513, −519} 
+
+{253, 739}
+{352, 404} 
+
+{1496, 1258}
+{1595, 515} 
+
+{512, 484}
+{612, −391} 
+
+{256, 268}
+{357, −136} 
+
+{4698, 2289}
+{4800, 550} 
+
+{3328, 1378} {3430, −679} 
+
+{625, 775}
+{729, 333} 
+
+{407, 2294}
+{512, 1444} 
+
+{704, 822}
+{810, 345} 
+
+{1971, 1011} {2080, −188} 
+
+{145, 203}
+{256, −56} 
+
+{1029, 2863} {1144, 1898} 
+
+{533, 4059}
+{648, 2634} 
+
+{288, 484}
+{405, 185} 
+
+{315, 2225}
+{432, 1354} 
+
+{1827, 2929} {1944, 1902} 
+
+
+{256, 344}
+{375, 55}
+
+{2401, 2177} {2520, −2090} 
+
+{3815, 2725} {3936, 1268} 
+
+{339, 791}
+{464, 406} 
+
+{243, 852}
+{368, 462} 
+
+{928, 3132}
+{1053, 2067} 
+
+{246, 287}
+{374, −119} 
+
+{1300, 1375}
+{1428, 629} 
+
+{522, 2233}
+{650, 1391} 
+
+{1458, 1017}
+{1586, 143} 
+
+{412, 1399} {540, −1515} 
+
+{3840, 3560} {3969, 2073} 
+{638, 1189}
+{768, 644}
+
+
+
+{132, −679}
+ {132, −2311}
+
+ {135, −300}
+
+ {135, −327}
+
+ {135, −625}
+
+ {135, −1533}
+
+ {135, −1650}
+
+ {135, −1715}
+
+ {135, −1959}
+
+ {139, −617}
+
+ {143, −589}
+
+ {146, −1077}
+
+ {147, −1151}
+
+ {149, −512}
+
+ {149, −4023}
+
+ {152, −1306}
+
+ {153, −1649}
+
+ {157, −1727}
+
+ {159, −583}
+
+ {160, −436}
+
+ {160, −748}
+
+ {160, −1060}
+
+ {160, −2100}
+
+ {160, −2675}
+
+ {161, −1877}
+
+ {162, −1239}
+
+ {164, −4141}
+
+ {165, −775}
+
+ {169, −1717}
+
+ {170, −1525}
+
+ {173, −692}
+
+ {176, −602}
+
+ {178, −1691}
+
+ {183, −671}
+
+ {183, −3416}
+
+ {186, −1007}
+
+ {187, −1734}
+
+ {187, −1819}
+
+ {189, −789}
+
+ {189, −1002}
+
+ {189, −1707}
+
+ {189, −2973}
+
+ {195, −767}
+
+ {205, −910}
+
+ {205, −3235}
+
+ {205, −3239}
+
+ {216, −898}
+
+ {216, −1162}
+
+ {218, −2071}
+
+ {221, −559}
+
+ {221, −697}
+
+ {221, −1469}
+
+ {224, −1124}
+
+ {224, −1212}
+
+ {224, −1562}
+
+ {224, −1844}
+
+ {224, −2068}
+
+ {232, −1914}
+
+ {232, −2407}
+
+ {240, −1550}
+{241, −1928}
+
+
+{243, −429}
+{1020, 1445}
+{1152, 766}
+
+{4476, 1865} {4608, −446} 
+  {245, −1264}
+
+{208, 286}
+{343, −14} 
+  {247, −1274}
+
+{256, 616}
+{391, 289}  
+ {247, −1924}
+
+{936, 1118}
+{1071, 493} 
+  {255, −415}
+
+{2465, 1247} {2600, −286}  
+ {255, −493}
+
+{377, 806}
+{512, −844} 
+  {256, −462}
+
+{648, 874}
+{783, −841}  
+ {256, −500}
+
+{208, 902}
+{343, −1057} 
+  {256, −748}
+
+{864, 1212}
+{1003, 595}  
+ {256, −956}
+
+{208, 322}
+{351, −267} 
+  {256, −968}
+
+{1134, 3057} {1280, 1980} 
+  {256, −1112}
+
+{2040, 3050} {2187, 1899} 
+  {256, −1144}
+
+{315, 1150}
+{464, 638} 
+  {256, −1364}
+
+{256, 1848}
+{405, −2175} 
+  {256, −1372}
+
+{2071, 3815} {2223, 2509} 
+  {256, −1388}
+
+{2520, 1310} {2673, −339} 
+  {256, −1942}
+
+{3843, 2257}
+{4000, 530} 
+  {256, −4892}
+
+{736, 1028}
+{895, 445} 
+  {257, −509}
+  {259, −1147}
+{425, 527}
+{585, 91}
+
+
+{1029, 1589}
+{1189, 841} 
+  {261, −928}
+
+{299, 533}
+{459, −527} 
+  {264, −1954}
+
+{243, 969}
+{403, −1131} 
+  {267, −890}
+
+{3936, 1783} {4096, −892} 
+  {270, −2055}
+
+{4807, 4799} {4968, 2922} 
+  {272, −1734}
+
+{1920, 1190}
+{2082, −49} 
+  {272, −1994}
+
+{1536, 2084} {1700, −2057} 
+  {273, −676}
+
+{1131, 1537}
+{1296, 762} 
+  {275, −925}
+
+{4160, 3530} {4329, 1813} 
+  {279, −953}
+
+{3286, 3763} {3456, 2238} 
+  {280, −1006}
+
+{595, 544}
+{768, −148} 
+  {288, −2948}
+
+{625, 1225}
+{801, 623} 
+  {297, −1641}
+
+{1280, 980}
+{1458, −711} 
+  {304, −1658}
+
+{585, 1495}
+{768, 824} 
+  {306, −833}
+
+{697, 1666}
+{880, −1750} 
+  {320, −1090}
+
+{1606, 1387}
+{1792, 380} 
+  {320, −1450}
+
+{3888, 4134} {4075, 2400} 
+  {320, −1630}
+
+{4272, 4094} {4459, 2275} 
+  {323, −3689}
+
+{1000, 1630}
+{1189, 841} 
+  {324, −2163}
+
+{1331, 1012}
+{1520, 10} 
+  {325, −2431}
+
+{3731, 2717} {3920, 1010} 
+  {328, −1510}
+
+{2275, 1625} {2464, −1348} 
+  {333, −1166}
+
+{1029, 1141}
+{1224, 374} 
+  {333, −1591}
+
+{1331, 1562}
+{1536, 652} 
+  {333, −3589}
+
+{219, 1433}
+{424, −1802} 
+  {336, −1342}
+
+{1875, 1705} {2080, −1534} 
+  {339, −1243}
+
+{579, 2123}
+{795, 1225} 
+  {340, −2363}
+
+{549, 2867}
+{765, 1705}  
+ {343, −791}
+
+{4390, 2825}
+{4608, 754} 
+  {343, −1001}
+
+{408, 1106}
+{629, 547}  
+ {343, −1099}
+
+{259, 407}
+{480, −290} 
+  {343, −1351}
+
+{1360, 4018} {1581, 2549}  
+ {343, −1652}
+
+{901, 2809}
+{1125, 1685} 
+  {343, −1834}
+
+{405, 2895}
+{629, 1683}  
+ {343, −2387}
+
+{2989, 2501}
+{3213, 939} 
+  {349, −2792}
+
+{3645, 4653} {3869, 2809}  
+ {351, −897}
+
+{3451, 1943} {3675, −125} 
+  {351, −1497}
+
+{1955, 1275} {2187, −639}  
+ {351, −2458}
+
+{2840, 1619} {3072, −788} 
+  {352, −1620}
+ {352, −1676}
+
+{2847, 3139} {3087, 1589}
+{361, −1787}
+{3087, 1876}
+{3328, −52}
+10
+
+
+{288, 692}
+{531, 263}
+{1755, 2886} {2000, 1622} 
+
+{2048, 2024}
+{2295, 750} 
+
+{3840, 2900}
+{4087, 976} 
+
+
+{256, 488}
+{511, 73}
+
+{369, 779}
+{624, 286} 
+
+{324, 723}
+{580, 261} 
+
+{369, 820}
+{625, 320} 
+
+
+{729, 828}
+{985, 80}
+
+{986, 2057}
+{1242, 1101} 
+
+{377, 2197}
+{633, 1229} 
+
+{429, 2587}
+{685, 1475} 
+
+{1379, 2561} {1635, 1417} 
+
+{2250, 2395} {2506, 1031} 
+
+{2145, 1820}
+{2401, 448} 
+
+{1890, 1425}
+{2146, 37} 
+
+{344, 917}
+{600, −1025} 
+
+{374, 2227} {630, −2665} 
+
+{351, 897}
+{608, 388} 
+
+{1616, 2222} {1875, 1075} 
+
+{459, 578}
+{720, −350} 
+
+{3861, 4259} {4125, 2305} 
+
+{1029, 1148}
+{1296, 258} 
+
+{2048, 1384} {2318, −671} 
+
+{943, 984}
+{1215, −750} 
+
+{3589, 4958} {3861, 2964} 
+
+
+{560, 710}
+{833, 34}
+
+{768, 776}
+{1043, −149} 
+
+{992, 994}
+{1271, 41} 
+
+{287, 533}
+{567, −473} 
+
+{4625, 2455} {4913, −493} 
+
+{1495, 4225} {1792, 2584} 
+
+{2603, 3562} {2907, 1904} 
+
+{654, 763}
+{960, −70} 
+
+{1246, 2047}
+{1566, 957} 
+
+{343, 3269}
+{663, 1819} 
+
+{2058, 1589} {2378, −41} 
+
+{3952, 2314} {4275, −1375} 
+
+{4096, 4152} {4420, 1989} 
+
+{3515, 2183} {3840, −248} 
+
+{2091, 1853}
+{2419, 343} 
+
+{1443, 1708}
+{1776, 542} 
+
+{1715, 3815} {2048, 2224} 
+
+{720, 1730} {1053, −1859} 
+
+{1539, 1392}
+{1875, 50} 
+
+{480, 710}
+{819, −533} 
+
+{3116, 2009} {3456, −354} 
+
+{656, 902}
+{999, 111} 
+
+{425, 625}
+{768, −376} 
+
+{1280, 1640}
+{1623, 541} 
+
+{432, 726}
+{775, −625} 
+
+{1625, 4030} {1968, 2378} 
+
+{377, 884}
+{720, −950} 
+
+{4625, 4145} {4968, 1758} 
+
+{816, 1402} {1165, −1390} 
+
+{625, 775}
+{976, −122} 
+
+{2080, 2804} {2431, 1307} 
+
+{3825, 2516}
+{4176, 58} 
+
+{2349, 3153} {2701, 1533} 
+
+{2079, 3849} {2431, 2173} 
+{399, 4057}
+{760, 2270}
+
+
+
+{375, −770}
+ {377, −3406}
+
+ {378, −1149}
+
+ {387, −2104}
+
+ {390, −1925}
+
+ {391, −1139}
+
+ {395, −1815}
+
+ {395, −1935}
+
+ {405, −1765}
+
+ {405, −2454}
+
+ {405, −2865}
+
+ {407, −1184}
+
+ {408, −2822}
+
+ {409, −2045}
+
+ {416, −1378}
+
+ {416, −1388}
+
+ {416, −1638}
+
+ {423, −2279}
+
+ {424, −2257}
+
+ {429, −1222}
+
+ {429, −1261}
+
+ {429, −1937}
+
+ {432, −1194}
+
+ {432, −3666}
+
+ {440, −790}
+
+ {456, −1778}
+
+ {459, −1229}
+
+ {468, −2899}
+
+ {477, −1007}
+
+ {480, −820}
+
+ {486, −1977}
+
+ {493, −2059}
+
+ {495, −3875}
+
+ {508, −1301}
+
+ {511, −3139}
+
+ {512, −1364}
+
+ {512, −2004}
+
+ {512, −2236}
+
+ {513, −2019}
+
+ {520, −990}
+
+ {527, −2006}
+
+ {527, −2091}
+
+ {536, −2693}
+
+ {544, −1972}
+
+ {544, −2686}
+
+ {551, −1972}
+
+ {555, −1591}
+
+ {583, −3604}
+
+ {589, −2047}
+
+ {609, −1160}
+
+ {609, −1711}
+
+ {624, −1066}
+
+ {625, −1055}
+
+ {625, −1080}
+
+ {625, −1715}
+
+ {625, −2560}
+{629, −2627}
+
+{624, 1066}
+{3207, 2138}
+{902, 2419}
+{3501, 3890}
+{1088, 4726}
+{920, 2338}
+{1792, 4344}
+{2197, 4641}
+{624, 4082}
+{4368, 4082}
+{1792, 1656}
+{528, 754}
+{567, 1353}
+{2048, 1616}
+{613, 3065}
+{715, 895}
+{475, 3675}
+{2632, 1954}
+{3672, 4335}
+{1296, 1722}
+{696, 2726}
+{2448, 2074}
+{1105, 1300}
+{1387, 1898}
+{561, 1037}
+{2349, 2523}
+{901, 2491}
+{512, 1364}
+{832, 1534}
+{549, 1037}
+{1664, 4602}
+{819, 1157}
+{1017, 1921}
+{512, 2746}
+{1568, 1756}
+{1372, 2149}
+{972, 1209}
+{3145, 4250}
+{760, 1130}
+{533, 861}
+{2560, 3700}
+{1984, 1782}
+{4096, 3658}
+{1331, 1397}
+{3471, 2759}
+{2185, 2150}
+{1632, 2788}
+{1232, 1874}
+{1995, 4325}
+{768, 2036}
+{1776, 2294}
+{671, 1769}
+{680, 1258}
+{671, 1830}
+{1776, 2590}
+{3471, 3560}
+{2091, 1927}
+
+
+
+{999, 296}
+{637, −3341}
+
+{3584, −1268}  
+ {638, −3161}
+{1280, 1270} 
+  {648, −1446}
+
+{3888, 1786} 
+  {667, −2581}
+
+{1478, 2801}  
+ {675, −2631}
+
+{1311, 1199} 
+  {675, −3125}
+
+{2187, 2529}  
+ {686, −2877}
+
+{2592, 2706} 
+  {686, −3703}
+
+{1029, 2317}  
+ {713, −1849}
+
+{4773, 1628} 
+  {715, −2345}
+
+{2197, −1209} 
+  {720, −1730}
+
+{935, −430} 
+  {721, −2143}
+
+{975, −1469} 
+  {725, −1798}
+
+{2457, −429} 
+  {725, −3700}
+
+{1029, 1687} 
+  {729, −2707}
+
+{1131, −493} 
+  {729, −2871}
+
+{891, 2037} 
+  {729, −3609}
+
+{3055, −325} 
+  {742, −1537}
+
+{4096, 2078} 
+  {768, −1336}
+
+{1725, 500} 
+  {768, −2264}
+
+{1125, 1465} 
+  {768, −2348}
+
+{2877, 137} 
+  {775, −1625}
+
+{1537, 106} 
+  {803, −2117}
+
+{1819, −1768} 
+  {832, −3302}
+
+{1001, 247} 
+  {851, −1369}
+
+{2805, 745} 
+  {864, −2964}
+
+{1360, 1262} 
+  {870, −2075}
+
+{980, −1535} 
+  {901, −2809}
+
+{1309, 527} 
+  {902, −1681}
+
+{1029, 217} 
+  {918, −2703}
+
+{2150, 2625} 
+  {925, −4033}
+
+{1312, −902} 
+  {936, −1963}
+
+{1512, −1954} 
+  {945, −2085}
+
+{1020, 1445} 
+  {952, −4981}
+
+{2079, −1383} 
+  {969, −1913}
+
+{1884, 785} 
+  {1026, −3291}
+
+{1484, −795} 
+  {1029, −2291}
+
+{3657, 2014} 
+  {1042, −4689}
+
+{1273, −889} 
+  {1105, −3570}
+
+{1053, −129} 
+  {1107, −3221}
+
+{3087, 1694} 
+  {1156, −2023}
+
+{2511, −309} 
+  {1168, −3942}
+
+{4632, 965} 
+  {1184, −3580}
+
+{1875, −575} 
+  {1215, −2310}
+
+{4015, 73} 
+  {1241, −4307}
+
+{2736, 178} 
+  {1250, −2075}
+
+{2187, 1197} 
+  {1280, −3410}
+
+{1815, −1730}  
+ {1280, −3896}
+
+{2584, 2278} 
+  {1296, −3198}
+
+{1377, 876}  
+ {1309, −2363}
+
+{2385, 583} 
+  {1360, −2482}
+
+{1295, 703}  
+ {1445, −3500}
+
+{1305, 203} 
+  {1512, −2634}
+
+{1296, 750}  
+ {1631, −3029}
+
+{2401, 875} 
+  {1981, −4213}
+
+{4096, 1000}
+{1984, −3394}
+{2720, −700}
+
+End of Appendix.
+11
+
+{1155, 1765}
+{4290, 3475}
+{715, 2925}
+{1725, 1775}
+{3485, 4633}
+{2997, 2479}
+{4050, 4875}
+{3840, 2900}
+{1495, 3575}
+{2552, 2726}
+{1241, 3358}
+{1295, 4625}
+{1435, 1804}
+{1392, 1994}
+{2592, 2420}
+{1271, 1681}
+{1280, 1928}
+{1088, 1598}
+{861, 1517}
+{2067, 2279}
+{2562, 4087}
+{992, 3106}
+{2109, 2923}
+{918, 1717}
+{864, 2076}
+{875, 1595}
+{1792, 3604}
+{2744, 2926}
+{1210, 2075}
+{2410, 2651}
+{1235, 2119}
+{1624, 2813}
+{959, 1507}
+{2376, 2823}
+{1496, 2638}
+{3838, 4949}
+{1960, 2962}
+{1134, 2343}
+{1296, 2058}
+{3485, 4675}
+{1404, 3003}
+{3773, 3759}
+{1443, 2171}
+{1233, 4384}
+{1479, 2407}
+{1374, 2977}
+{1372, 2149}
+{3157, 3403}
+{2697, 3451}
+{1616, 3838}
+{1715, 2933}
+{3051, 4062}
+{1813, 3959}
+{1744, 2834}
+{2264, 3398}
+{2294, 4403}
+
+
+{1792, −1576}
+{4928, 314} 
+
+{1363, 1479} 
+
+{2392, −806} 
+
+{4160, 2002} 
+
+{3672, −646} 
+
+{4736, 1998} 
+
+{4526, −803} 
+
+{2208, 1726} 
+
+{3267, 381} 
+
+{1961, 1628} 
+
+{2016, 2482} 
+
+
+{2160, 6}
+
+{2117, −1706} 
+
+{3321, −287} 
+
+{2000, −1190} 
+
+{2009, −1681} 
+
+{1830, 61} 
+
+{1629, 181} 
+
+{2835, 15} 
+
+{3330, 1739} 
+
+{1767, 1481} 
+
+{2912, 806} 
+
+{1750, −1585} 
+
+{1715, 707} 
+
+{1739, −1369} 
+
+{2662, 1529} 
+
+{3645, 117} 
+
+{2112, 394} 
+
+{3328, −52} 
+
+{2160, −1914} 
+
+{2560, 850} 
+
+{1904, −578} 
+
+{3328, −2158} 
+
+{2465, 725} 
+
+{4864, 1658} 
+
+{2989, 671} 
+
+{2176, −2346} 
+
+{2401, −1512} 
+
+{4592, 1454} 
+
+{2560, 980} 
+
+{4941, −183} 
+
+{2627, −1409} 
+
+{2448, 2074} 
+
+{2720, −1900} 
+
+{2624, 902} 
+
+{2652, −1261} 
+
+{4437, −493} 
+
+{3993, 253} 
+
+{2925, 1475} 
+
+{3075, 451} 
+
+{4496, 562} 
+
+{3325, 1325} 
+
+{3375, −195} 
+
+{4245, −815} 
+{4278, 1009}
+
+

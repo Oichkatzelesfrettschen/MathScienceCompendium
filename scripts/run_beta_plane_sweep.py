@@ -80,6 +80,16 @@ def source_commit() -> str:
     ).stdout.strip()
 
 
+def checkpoint_binding(profile: str) -> dict[str, str]:
+    """Bind resumable checkpoints to code, protocol, environment, and profile."""
+    return {
+        "source_commit": source_commit(),
+        "preregistration_sha256": sha256_file(PREREGISTRATION_PATH),
+        "environment_lock_sha256": sha256_file(ENVIRONMENT_LOCK_PATH),
+        "profile": profile,
+    }
+
+
 def write_deterministic_npz(path: Path, arrays: dict[str, np.ndarray]) -> None:
     """Write a compressed NumPy archive without wall-clock ZIP metadata."""
     with zipfile.ZipFile(path, mode="w", compression=zipfile.ZIP_DEFLATED) as archive:
@@ -349,20 +359,27 @@ def write_evidence_archive(
             member.gname = ""
             archive.addfile(member, io.BytesIO(data))
             record["arrays_archive_member"] = member_name
+            record.pop("checkpoint_binding", None)
     return {
-        "relpath": str(archive_path.relative_to(REPO_ROOT)),
+        "relpath": str(display_path(archive_path)),
         "sha256": sha256_file(archive_path),
         "format": "deterministic_uncompressed_tar_of_npz",
     }
 
 
-def load_checkpoint(specification: dict[str, Any], work_root: Path) -> dict[str, Any] | None:
+def load_checkpoint(
+    specification: dict[str, Any],
+    work_root: Path,
+    expected_binding: dict[str, str],
+) -> dict[str, Any] | None:
     """Load a completed run only when its locked specification and arrays match."""
     summary_path = work_root / "runs" / f"{run_id(specification)}.json"
     if not summary_path.is_file():
         return None
     record = json.loads(summary_path.read_text(encoding="ascii"))
     if record.get("specification") != specification:
+        return None
+    if record.get("checkpoint_binding") != expected_binding:
         return None
     arrays_path = work_root / "runs" / f"{run_id(specification)}.npz"
     if not arrays_path.is_file() or sha256_file(arrays_path) != record["arrays_sha256"]:
@@ -592,6 +609,7 @@ def main() -> int:
     parser.add_argument("--output", type=Path)
     parser.add_argument("--work-root", type=Path, default=DEFAULT_WORK_ROOT)
     parser.add_argument("--evidence-archive", type=Path)
+    parser.add_argument("--require-empty-work-root", action="store_true")
     arguments = parser.parse_args()
     if arguments.workers < 1:
         parser.error("--workers must be positive")
@@ -612,10 +630,14 @@ def main() -> int:
     if not work_root.is_absolute():
         work_root = REPO_ROOT / work_root
     work_root = work_root / arguments.profile
+    work_root_existed_before = work_root.exists()
+    if arguments.require_empty_work_root and work_root_existed_before:
+        raise FileExistsError(f"required empty work root already exists: {work_root}")
+    binding = checkpoint_binding(arguments.profile)
     records: list[dict[str, Any]] = []
     pending: list[dict[str, Any]] = []
     for specification in specifications:
-        checkpoint = load_checkpoint(specification, work_root)
+        checkpoint = load_checkpoint(specification, work_root, binding)
         if checkpoint is None:
             pending.append(specification)
         else:
@@ -633,13 +655,22 @@ def main() -> int:
             executor.submit(execute_run, specification): specification for specification in pending
         }
         for future in as_completed(future_to_specification):
-            record = write_checkpoint(future.result(), work_root)
+            completed_record = future.result()
+            completed_record["checkpoint_binding"] = binding
+            record = write_checkpoint(completed_record, work_root)
             records.append(record)
             print(
                 f"completed={len(records)}/{len(specifications)} run_id={record['run_id']}",
                 flush=True,
             )
     payload = aggregate_payload(preregistration, arguments.profile, records)
+    payload["execution_receipt"] = {
+        "fresh_execution_required": arguments.require_empty_work_root,
+        "work_root_existed_before": work_root_existed_before,
+        "resumed_count": len(records) - len(pending),
+        "pending_count": len(pending),
+        "total_count": len(specifications),
+    }
     evidence_archive = arguments.evidence_archive
     if evidence_archive is None:
         evidence_archive = (

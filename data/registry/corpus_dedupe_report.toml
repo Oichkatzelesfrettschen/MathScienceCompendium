@@ -1,7 +1,7 @@
 generated_by = "scripts/corpus_dedupe_report.py"
 generated_at_utc = "1970-01-01T00:00:00+00:00"
 registry_relpath = "data/registry/corpus_index.toml"
-documents_total = 70
+documents_total = 75
 exact_duplicate_groups = 0
 exact_duplicate_documents = 0
 hash_mismatch_count = 0
