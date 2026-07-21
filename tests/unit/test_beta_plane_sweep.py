@@ -10,6 +10,7 @@ from scripts.run_beta_plane_sweep import (
     aggregate_payload,
     build_refinement_checks,
     build_run_specs,
+    display_path,
     exact_cluster_sign_flip_p,
     load_checkpoint,
     run_id,
@@ -46,6 +47,7 @@ def test_checkpoint_supports_work_root_outside_repository(tmp_path):
     checkpoint = write_checkpoint(record, tmp_path)
     assert "arrays_relpath" not in checkpoint
     assert load_checkpoint(specification, tmp_path) == checkpoint
+    assert display_path(tmp_path / "result.json") == tmp_path / "result.json"
 
 
 def test_refinement_matrix_has_preregistered_cardinality():

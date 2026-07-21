@@ -57,6 +57,11 @@ def sha256_file(path: Path) -> str:
     return digest.hexdigest()
 
 
+def display_path(path: Path) -> Path:
+    """Render repository paths relatively and preserve external absolute paths."""
+    return path.relative_to(REPO_ROOT) if path.is_relative_to(REPO_ROOT) else path
+
+
 def source_commit() -> str:
     """Return the committed protocol and implementation revision."""
     declared_commit = os.environ.get("EVIDENCE_SOURCE_COMMIT")
@@ -664,7 +669,7 @@ def main() -> int:
         encoding="ascii",
     )
     print(
-        f"Wrote {output_path.relative_to(REPO_ROOT)}: decision={payload['aggregate_decision']}",
+        f"Wrote {display_path(output_path)}: decision={payload['aggregate_decision']}",
         flush=True,
     )
     return 0 if payload["numerical_gate_passed"] else 1
