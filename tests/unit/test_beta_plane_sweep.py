@@ -12,6 +12,7 @@ import numpy as np
 from scripts.run_beta_plane_sweep import (
     PREREGISTRATION_PATH,
     aggregate_payload,
+    build_primary_contrasts,
     build_refinement_checks,
     build_run_specs,
     checkpoint_binding,
@@ -148,6 +149,28 @@ def test_exact_cluster_sign_flip_p_uses_seed_clusters():
     balanced = {seed: [1.0 if seed % 2 == 0 else -1.0] for seed in range(12)}
     assert exact_cluster_sign_flip_p(all_positive) == 2.0 / (2**12)
     assert exact_cluster_sign_flip_p(balanced) == 1.0
+
+
+def test_primary_contrasts_are_exactly_invariant_to_completion_order():
+    records = []
+    contrast_values = {0.01: 1e16, 0.02: -1e16, 0.05: 1.0}
+    for beta in (0.0, 1.25, 2.5, 5.0, 10.0):
+        for linear_drag in sorted(contrast_values):
+            for seed in (11, 29):
+                value = 0.0 if beta == 0.0 else contrast_values[linear_drag]
+                records.append(
+                    {
+                        "specification": {
+                            "beta": beta,
+                            "linear_drag": linear_drag,
+                            "viscosity": 0.0005,
+                            "seed": seed,
+                        },
+                        "final_window_mean_zonal_fraction": value,
+                        "persistent_jet": value,
+                    }
+                )
+    assert build_primary_contrasts(records) == build_primary_contrasts(list(reversed(records)))
 
 
 def test_refinement_check_enforces_locked_thresholds():

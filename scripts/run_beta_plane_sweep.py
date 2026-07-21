@@ -434,13 +434,17 @@ def build_primary_contrasts(records: list[dict[str, Any]]) -> list[dict[str, Any
     for beta in (1.25, 2.5, 5.0, 10.0):
         for metric, minimum_effect in metric_specs:
             paired_by_seed: dict[int, list[float]] = {}
-            for (_, drag, viscosity, seed), beta_record in record_lookup.items():
-                if beta_record["specification"]["beta"] != beta:
-                    continue
+            beta_cells = sorted(
+                (drag, viscosity, seed)
+                for beta_value, drag, viscosity, seed in record_lookup
+                if beta_value == beta
+            )
+            for drag, viscosity, seed in beta_cells:
+                beta_record = record_lookup[(beta, drag, viscosity, seed)]
                 control = record_lookup[(0.0, drag, viscosity, seed)]
                 difference = float(beta_record[metric]) - float(control[metric])
                 paired_by_seed.setdefault(int(seed), []).append(difference)
-            values = [value for seed_values in paired_by_seed.values() for value in seed_values]
+            values = [value for seed in sorted(paired_by_seed) for value in paired_by_seed[seed]]
             distribution = bootstrap_differences(
                 paired_by_seed,
                 seed=20260720 + round(100 * beta) + (1 if metric == "persistent_jet" else 0),
