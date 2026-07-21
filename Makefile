@@ -9,6 +9,8 @@ RUFF = ./venv/bin/ruff
 MYPY = ./venv/bin/mypy
 PYTEST = ./venv/bin/pytest
 SPHINX = sphinx-build
+SOURCE_DATE_EPOCH ?= 0
+export SOURCE_DATE_EPOCH
 
 # Project Directories
 SRC_DIR = src/mathphysics

@@ -124,8 +124,8 @@ size_bytes = 2260
 [[artifacts]]
 kind = "paper_or_source_pdf"
 relpath = "papers/main.pdf"
-sha256 = "0cc5e41eeec261befceb7a2b29d32388cf4f784a8d98da78a5780f30e55a264d"
-size_bytes = 727725
+sha256 = "128a26801ee46f48ef971ef1b6bd3b758596bfee5cb31e8b5532c93db7f45468"
+size_bytes = 727713
 
 [[artifacts]]
 kind = "paper_or_source_pdf"
