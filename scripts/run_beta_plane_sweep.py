@@ -296,9 +296,7 @@ def write_checkpoint(record: dict[str, Any], work_root: Path) -> dict[str, Any]:
     final_window_zonal_fractions = np.asarray(
         record.pop("final_window_zonal_fractions"), dtype=np.float64
     )
-    final_window_jet_counts = np.asarray(
-        record.pop("final_window_jet_counts"), dtype=np.int64
-    )
+    final_window_jet_counts = np.asarray(record.pop("final_window_jet_counts"), dtype=np.int64)
     if not (
         np.isfinite(final_vorticity).all()
         and np.isfinite(final_window_zonal_fractions).all()
@@ -313,7 +311,6 @@ def write_checkpoint(record: dict[str, Any], work_root: Path) -> dict[str, Any]:
             "final_window_zonal_fractions": final_window_zonal_fractions,
         },
     )
-    record["arrays_relpath"] = str(array_path.relative_to(REPO_ROOT))
     record["arrays_sha256"] = sha256_file(array_path)
     summary_path = run_root / f"{run_name}.json"
     temporary_path = summary_path.with_suffix(".json.tmp")
@@ -326,13 +323,13 @@ def write_checkpoint(record: dict[str, Any], work_root: Path) -> dict[str, Any]:
 
 
 def write_evidence_archive(
-    records: list[dict[str, Any]], profile: str, archive_path: Path
+    records: list[dict[str, Any]], profile: str, archive_path: Path, work_root: Path
 ) -> dict[str, str]:
     """Write deterministic tracked evidence and bind each record to its member."""
     archive_path.parent.mkdir(parents=True, exist_ok=True)
     with tarfile.open(archive_path, mode="w", format=tarfile.PAX_FORMAT) as archive:
         for record in sorted(records, key=lambda item: item["run_id"]):
-            arrays_path = REPO_ROOT / record["arrays_relpath"]
+            arrays_path = work_root / "runs" / f"{record['run_id']}.npz"
             data = arrays_path.read_bytes()
             if sha256_bytes(data) != record["arrays_sha256"]:
                 raise ValueError(f"checkpoint digest mismatch for {record['run_id']}")
@@ -347,7 +344,6 @@ def write_evidence_archive(
             member.gname = ""
             archive.addfile(member, io.BytesIO(data))
             record["arrays_archive_member"] = member_name
-            del record["arrays_relpath"]
     return {
         "relpath": str(archive_path.relative_to(REPO_ROOT)),
         "sha256": sha256_file(archive_path),
@@ -363,7 +359,7 @@ def load_checkpoint(specification: dict[str, Any], work_root: Path) -> dict[str,
     record = json.loads(summary_path.read_text(encoding="ascii"))
     if record.get("specification") != specification:
         return None
-    arrays_path = REPO_ROOT / record["arrays_relpath"]
+    arrays_path = work_root / "runs" / f"{run_id(specification)}.npz"
     if not arrays_path.is_file() or sha256_file(arrays_path) != record["arrays_sha256"]:
         return None
     return record
@@ -453,9 +449,7 @@ def build_primary_contrasts(records: list[dict[str, Any]]) -> list[dict[str, Any
         running_adjusted_p = max(running_adjusted_p, min(1.0, remaining * record["raw_p"]))
         record["holm_adjusted_p"] = running_adjusted_p
         simultaneous_alpha = 0.05 / len(contrast_work)
-        record["familywise_ci_lower"] = float(
-            np.quantile(distribution, simultaneous_alpha / 2.0)
-        )
+        record["familywise_ci_lower"] = float(np.quantile(distribution, simultaneous_alpha / 2.0))
         record["familywise_ci_upper"] = float(
             np.quantile(distribution, 1.0 - simultaneous_alpha / 2.0)
         )
@@ -651,7 +645,7 @@ def main() -> int:
     if not evidence_archive.is_absolute():
         evidence_archive = REPO_ROOT / evidence_archive
     payload["evidence_archive"] = write_evidence_archive(
-        records, arguments.profile, evidence_archive
+        records, arguments.profile, evidence_archive, work_root
     )
     output_path = arguments.output
     if output_path is None:

@@ -82,7 +82,7 @@
       "rms_speed": 0.006436307432699542,
       "source_relpath": "results/highres_lbm_000400.parquet",
       "source_sha256": "693336f6c9cd285b102f52703993e1e7fee8c700fbadf16befadea8b45298157",
-      "vorticity_spectral_second_moment_ratio_x_to_y": 0.9985463638702007,
+      "vorticity_spectral_second_moment_ratio_x_to_y": 0.9985463638702005,
       "zonal_mean_rms": 9.305962177553649e-06,
       "zonal_to_total_rms_ratio": 0.0014458542067575702
     },

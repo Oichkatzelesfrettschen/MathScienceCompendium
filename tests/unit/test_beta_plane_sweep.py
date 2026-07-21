@@ -4,14 +4,17 @@ from __future__ import annotations
 
 import json
 
+import numpy as np
 from scripts.run_beta_plane_sweep import (
     PREREGISTRATION_PATH,
     aggregate_payload,
     build_refinement_checks,
     build_run_specs,
     exact_cluster_sign_flip_p,
+    load_checkpoint,
     run_id,
     shared_refinement_initial_vorticity,
+    write_checkpoint,
 )
 
 from mathphysics.beta_plane import BarotropicBetaPlane, BetaPlaneConfig
@@ -28,6 +31,21 @@ def test_smoke_matrix_is_explicitly_nonadmissible():
     preregistration = json.loads(PREREGISTRATION_PATH.read_text(encoding="ascii"))
     specifications = build_run_specs(preregistration, "smoke")
     assert len(specifications) == 4
+
+
+def test_checkpoint_supports_work_root_outside_repository(tmp_path):
+    preregistration = json.loads(PREREGISTRATION_PATH.read_text(encoding="ascii"))
+    specification = build_run_specs(preregistration, "smoke")[0]
+    record = {
+        "run_id": run_id(specification),
+        "specification": specification,
+        "final_vorticity": np.asarray([[0.0, 1.0], [1.0, 0.0]], dtype=np.float64),
+        "final_window_zonal_fractions": [0.1, 0.2],
+        "final_window_jet_counts": [2, 2],
+    }
+    checkpoint = write_checkpoint(record, tmp_path)
+    assert "arrays_relpath" not in checkpoint
+    assert load_checkpoint(specification, tmp_path) == checkpoint
 
 
 def test_refinement_matrix_has_preregistered_cardinality():
