@@ -434,3 +434,23 @@ help:
 	@echo "  make status       - Display framework health and telemetry"
 	@echo "  make clean        - Remove build artifacts"
 	@echo "  make clean-all    - Deep clean (artifacts + data + figures)"
+
+# Connected learning books retain separate source ownership and build contracts.
+ALBUM_PYTHON ?= .venv/bin/python
+PRECALC_ROOT ?= $(HOME)/Github/precalc_paper
+
+.PHONY: learning-check learning album
+learning-check:
+	python3 scripts/render_learning_routes.py --check
+	python3 scripts/validate_learning_library.py
+	python3 scripts/verify_learning_examples.py --output build/learning/examples.json
+
+learning: learning-check
+	mkdir -p build/learning
+	latexmk -pdf -interaction=nonstopmode -halt-on-error -outdir=build/learning papers/learning/main.tex
+	@! rg -n '(Warning:|warning:|Overfull|Underfull|Missing character:)' build/learning/main.log
+	@! rg -n 'Warning--' build/learning/main.blg
+
+album: learning papers
+	$(MAKE) -C "$(PRECALC_ROOT)" pdf verify figure-lint-strict chronology-lint-strict layout-lint-strict texlint-strict source-text-lint
+	$(ALBUM_PYTHON) scripts/assemble_learning_album.py --precalc-root "$(PRECALC_ROOT)"

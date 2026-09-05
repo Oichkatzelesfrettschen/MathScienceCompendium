@@ -1,0 +1,22 @@
+\begin{tikzpicture}[x=1cm,y=1cm,>=Stealth,font=\small,line width=0.8pt]
+  \node[align=center] (population) at (0,0) {Population};
+  \node (condition) at (3.5,1.8) {$D$};
+  \node (other) at (3.5,-1.8) {$D^c$};
+  \node[anchor=west] (truepositive) at (7,2.7) {$+$: $P(D\cap+)=99/10000$};
+  \node[anchor=west] (falsenegative) at (7,0.9) {$-$: $P(D\cap-)=1/10000$};
+  \node[anchor=west] (falsepositive) at (7,-0.9) {$+$: $P(D^c\cap+)=495/10000$};
+  \node[anchor=west] (truenegative) at (7,-2.7) {$-$: $P(D^c\cap-)=9405/10000$};
+  \draw[->] (population)--(condition) node[midway,above,sloped] {$P(D)=1/100$};
+  \draw[->] (population)--(other) node[midway,below,sloped] {$P(D^c)=99/100$};
+  \draw[->,line width=1.2pt] (condition)--(truepositive.west)
+    node[midway,above,sloped] {$P(+\mid D)=99/100$};
+  \draw[->,dashed] (condition)--(falsenegative.west)
+    node[midway,below,sloped] {$P(-\mid D)=1/100$};
+  \draw[->,line width=1.2pt] (other)--(falsepositive.west)
+    node[midway,above,sloped] {$P(+\mid D^c)=5/100$};
+  \draw[->,dashed] (other)--(truenegative.west)
+    node[midway,below,sloped] {$P(-\mid D^c)=95/100$};
+  \node[align=center] at (5.8,-3.7)
+    {Keep the two positive leaves, then normalize:\\[3pt]
+     $\displaystyle P(D\mid+)=\frac{99/10000}{(99+495)/10000}=\frac16$.};
+\end{tikzpicture}

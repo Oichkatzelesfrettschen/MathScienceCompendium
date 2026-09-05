@@ -20,6 +20,15 @@ line_count = 232
 size_bytes = 8595
 
 [[documents]]
+id = "docs__learning__requirements"
+source_relpath = "docs/learning/requirements.txt"
+normalized_relpath = "data/normalized/corpus/docs__learning__requirements.json"
+category = "docs"
+sha256 = "3645f52dcb91338f4f8544079381eaed1ad3aa86e6d06e22dc9d235a78fd4c37"
+line_count = 6
+size_bytes = 90
+
+[[documents]]
 id = "experiments__requirements"
 source_relpath = "experiments/requirements.txt"
 normalized_relpath = "data/normalized/corpus/experiments__requirements.json"

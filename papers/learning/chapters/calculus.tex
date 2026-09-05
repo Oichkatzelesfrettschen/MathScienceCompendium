@@ -1,0 +1,171 @@
+\chapter{Calculus: local change and accumulated change}
+\label{learn:calculus}
+
+\begin{learningcard}{Prerequisites and motivating problem}
+Bring functions, inequalities, finite geometric sums, and the informal limits
+from precalculus; Chapter~\ref{learn:proof} supplies quantifiers. A speedometer
+reports local motion, while an odometer reports accumulated distance. What
+mathematics connects a rate measured near one instant to a total over an
+interval? Signed displacement, rather than total distance, will be our first
+quantity; total distance integrates the magnitude of velocity.
+\end{learningcard}
+
+\section{A limit is a controlled error statement}
+For a function defined near $a$, except possibly at $a$, the assertion
+$\lim_{x\to a}f(x)=L$ means: for every $\epsilon>0$ there exists
+$\delta>0$ such that $0<|x-a|<\delta$ implies $|f(x)-L|<\epsilon$.
+Inputs are restricted to the function's domain, and $a$ must be an
+accumulation point of that domain. The requested output tolerance comes
+first; our input tolerance may depend on it. A function is continuous at
+$a$ when its limit there equals $f(a)$.
+
+For $f(x)=3x+1$ at $a=2$, the expected limit is seven. Given
+$\epsilon>0$, choose $\delta=\epsilon/3$. Then
+$|f(x)-7|=3|x-2|<3\delta=\epsilon$. The proof produces a rule
+for every requested tolerance, rather than a finite list of nearby values.
+For a sequence, $a_n\to L$ means that for every $\epsilon>0$ there is
+an integer $N$ such that $n\geq N$ implies $|a_n-L|<\epsilon$.
+The input control is now a sufficiently late index.
+
+\section{Worked example: derive a rate before memorizing a rule}
+The derivative is
+\[
+ f'(a)=\lim_{h\to0}\frac{f(a+h)-f(a)}h
+\]
+when that finite two-sided limit exists. For $f(x)=x^2$, expand first:
+\[
+ \frac{(a+h)^2-a^2}{h}=2a+h\quad(h\ne0).
+\]
+Taking the limit gives $f'(a)=2a$. The corresponding tangent line is
+$y=a^2+2a(x-a)$. Its error is exactly $(x-a)^2$, so the error divided
+by $|x-a|$ tends to zero. Differentiability says precisely that a linear
+approximation has an error smaller than first order.
+
+Using the derivative definition, adding and subtracting
+$f(a+h)g(a)$ inside the difference quotient proves the product rule
+$(fg)'=f'g+fg'$. The limit uses continuity of differentiable functions.
+The chain rule is $(f\circ g)'(a)=f'(g(a))g'(a)$ when both relevant
+derivatives exist. These rules preserve assumptions: $|x|$ is continuous
+at zero but its left and right slopes are $-1$ and $1$, so its derivative
+there fails to exist.
+
+The trigonometric rules used later are $(\sin x)'=\cos x$ and
+$(\cos x)'=-\sin x$, with angles in radians. The unit-circle area
+comparison gives $\sin h<h<\tan h$ for $0<h<\pi/2$, hence
+$\sin h/h\to1$ by squeezing; symmetry handles negative $h$.
+Also $(\cos h-1)/h=-\sin^2h/[h(1+\cos h)]\to0$.
+Substitution into the angle-addition formulas proves the two derivative
+rules. After the fundamental theorem below, one may define
+$\log x=\int_1^x dt/t$ for $x>0$. Its derivative is $1/x$;
+the derivative rule for an inverse function then gives
+$(e^x)'=e^x$ for its inverse exponential. These identities support the
+rates and Taylor examples used throughout the album.
+
+\begin{learningcard}{Historical situation: motion as a mathematical problem}
+In his preface to the first edition of the \emph{Principia}, Newton
+connects mathematical principles with the investigation of forces from
+motions and motions from forces. Book I develops mathematical propositions
+about motion through a geometrical presentation. The published text supports
+that methodological description; it does not make our modern epsilon--delta
+notation Newton's own.\footnote{Isaac Newton, \emph{Philosophiae Naturalis
+Principia Mathematica} (1687), author's preface and Book I; Cambridge
+University Library digitization of Newton's copy:
+\url{https://cudl.lib.cam.ac.uk/view/PR-ADV-B-00039-00001/1}.}
+A history of calculus also requires Leibniz and earlier traditions; this
+single source establishes the stated Newtonian context only.
+\end{learningcard}
+
+\section{Worked example: accumulated change as a limit of sums}
+For a bounded function on $[a,b]$, divide the interval into pieces with
+endpoints $a=x_0<\cdots<x_N=b$. Choose a sample $\xi_j$ in each piece.
+The Riemann sum is $\sum_j f(\xi_j)(x_j-x_{j-1})$. The Riemann integral
+is the common limit of these sums as the maximum piece width tends to zero,
+independently of the partitions and samples. Continuous functions on a closed
+bounded interval have such an integral. A signed integral allows negative
+contributions below the horizontal axis.
+
+For $f(x)=x$ on $[0,1]$, equal pieces and right endpoints give
+\[
+ \frac1N\sum_{j=1}^N\frac jN
+ =\frac{N(N+1)}{2N^2}=\frac12+\frac1{2N}\longrightarrow\frac12.
+\]
+Continuity guarantees sample independence. More directly, the left sum is
+$1/2-1/(2N)$, and monotonicity traps any sampled sum between those two
+values. The limit reproduces the triangle's area while exposing the error.
+
+\section{Why accumulation and differentiation meet}
+Let $f$ be continuous on $[a,b]$ and define
+$F(x)=\int_a^x f(t)\,dt$. For an interior point $x$ and small nonzero $h$,
+\[
+ \frac{F(x+h)-F(x)}h-f(x)
+ =\frac1h\int_x^{x+h}\bigl(f(t)-f(x)\bigr)\,dt.
+\]
+The magnitude is at most the largest value of $|f(t)-f(x)|$ between
+$x$ and $x+h$, which tends to zero by continuity. Thus $F'(x)=f(x)$.
+If $G$ is any antiderivative of $f$, the derivative of $G-F$ vanishes.
+The mean value theorem makes $G-F$ constant, giving the fundamental theorem
+of calculus:
+\[
+ \int_a^b f(x)\,dx=G(b)-G(a).
+\]
+The mean value theorem used here states that a continuous function on a
+closed interval, differentiable in its interior, has a point whose derivative
+equals the interval's secant slope.
+
+If velocity is $v(t)=3t^2$ in metres per second with time measured in seconds,
+the displacement from $t=0$ to $t=2$ is $[t^3]_0^2=8$ metres.
+The units explain why multiplying a rate by a time interval is necessary.
+
+\section{Taylor polynomials need remainder control}
+For $f$ with $n+1$ continuous derivatives on the interval joining $a$ and $x$,
+Taylor's theorem gives
+\[
+ f(x)=\sum_{k=0}^n\frac{f^{(k)}(a)}{k!}(x-a)^k+R_n(x),\qquad
+ |R_n(x)|\leq\frac{M|x-a|^{n+1}}{(n+1)!},
+\]
+where $M$ bounds $|f^{(n+1)}|$ on that interval. Here $k!$ is the
+product of the positive integers through $k$, with $0!=1$.
+Repeated integration of the fundamental theorem gives an integral remainder
+$R_n(x)=\frac1{n!}\int_a^x f^{(n+1)}(t)(x-t)^n\,dt$;
+its absolute-value bound yields the displayed estimate.
+
+At $a=0$, the degree-three Taylor polynomial of sine is $x-x^3/6$.
+Since the fourth derivative is sine and has magnitude at most one, at
+$x=0.1$ radians the error is at most $0.1^4/24$.
+For equality with an infinite Taylor series we need $R_n(x)\to0$.
+Infinitely many derivatives alone are insufficient. The function equal to
+$e^{-1/x^2}$ for $x\ne0$ and zero at zero is smooth with every derivative
+zero at zero, yet is positive elsewhere. Its derivative expressions are
+finite sums of inverse powers of $x$ times $e^{-1/x^2}$; exponential decay
+beats every such power as $x\to0$. This proves the asserted zero derivatives
+inductively. A function equal to its Taylor series locally is called analytic.
+
+\section{Exercises with full solutions}
+\paragraph{1. Supply a tolerance rule.}
+Prove $\lim_{x\to2}x^2=4$ using the definition.
+
+\paragraph{Solution.}
+Factor $|x^2-4|=|x-2||x+2|$. Restrict $|x-2|<1$, which implies
+$1<x<3$ and $|x+2|<5$. Given $\epsilon>0$, choose
+$\delta=\min(1,\epsilon/5)$. Then $0<|x-2|<\delta$ gives
+$|x^2-4|<5\delta\leq\epsilon$. The auxiliary restriction controls
+the factor that was initially variable.
+
+\paragraph{2. Distinguish displacement and distance.}
+A particle has velocity $v(t)=2t-2$ for $0\leq t\leq2$. Find both totals.
+
+\paragraph{Solution.}
+Displacement is $[t^2-2t]_0^2=0$. Velocity changes sign at $t=1$.
+Distance is $\int_0^1(2-2t)\,dt+\int_1^2(2t-2)\,dt=1+1=2$.
+The particle returns to its starting position after traveling two length units.
+
+\paragraph{3. Give an explicit truncation guarantee.}
+Approximate $1/(1-x)$ at $x=1/2$ by $\sum_{k=0}^n x^k$. How large
+must $n$ be to make the error strictly below $10^{-3}$?
+
+\paragraph{Solution.}
+The finite geometric identity gives remainder $x^{n+1}/(1-x)$, hence error
+$2^{-n}$ at $x=1/2$. Since $2^{-9}=1/512>10^{-3}$ and
+$2^{-10}=1/1024<10^{-3}$, $n=10$ suffices and is minimal.
+The approximation uses eleven terms. Continue to
+Chapter~\ref{learn:multivariable} to replace a scalar derivative by a linear map.

@@ -26,6 +26,8 @@ REPO_ROOT = Path(__file__).resolve().parent.parent
 
 TEXT_EXTENSIONS = {".md", ".txt", ".tex", ".py", ".toml", ".yml", ".yaml", ".ini", ".json"}
 GENERATED_CACHE_DIRECTORIES = {
+    ".venv",
+    "venv",
     ".mypy_cache",
     ".pytest_cache",
     ".ruff_cache",

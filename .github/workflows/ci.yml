@@ -20,6 +20,24 @@ env:
   PYTHONHASHSEED: "0"
 
 jobs:
+  learning:
+    name: Learning routes and PDF assembly fixtures
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-python@v7
+        with:
+          python-version: "3.11"
+      - name: Install album test dependencies
+        run: python -m pip install -r docs/learning/requirements.txt "pytest>=7.4,<9"
+      - name: Validate routes and mathematical examples
+        run: make learning-check
+      - name: Exercise PDF links and source admission
+        run: >-
+          python -m pytest --noconftest -q -o addopts=''
+          tests/unit/test_learning_album.py tests/unit/test_learning_library.py
+
   lint:
     name: Lint, format, types, and security
     runs-on: ubuntu-latest

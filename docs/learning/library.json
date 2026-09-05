@@ -1,0 +1,275 @@
+{
+  "schema_version": 1,
+  "books": [
+    {
+      "id": "precalculus",
+      "title": "A Precalculus Compendium",
+      "repository": "https://github.com/Oichkatzelesfrettschen/precalc_paper",
+      "revision": "7b4c9af67bd13b1c93f7443ff84022c64e894275",
+      "entry": "main.tex",
+      "pdf": "build/main.pdf",
+      "role": "Independently maintained foundation book"
+    },
+    {
+      "id": "bridge",
+      "title": "From Precalculus to Mathematical Physics",
+      "entry": "papers/learning/main.tex",
+      "pdf": "build/learning/main.pdf",
+      "role": "Explicit prerequisite lessons and solved assessments"
+    },
+    {
+      "id": "review",
+      "title": "Claim, Evidence, and Falsification",
+      "entry": "papers/main.tex",
+      "pdf": "papers/main.pdf",
+      "role": "Existing advanced evidence review"
+    }
+  ],
+  "nodes": [
+    {
+      "id": "precalc",
+      "title": "Precalculus",
+      "book": "precalculus",
+      "source": "main.tex",
+      "pdf_title": null,
+      "requires": [],
+      "assessment": "Solve the entry check in the bridge introduction; explain the operations."
+    },
+    {
+      "id": "proof",
+      "title": "From convincing examples to proof",
+      "book": "bridge",
+      "source": "papers/learning/chapters/proof.tex",
+      "pdf_title": "From convincing examples to proof",
+      "requires": [
+        "precalc"
+      ],
+      "assessment": "Attempt all three chapter exercises before reading their full solutions."
+    },
+    {
+      "id": "linear_algebra",
+      "title": "Linear algebra: coordinates, maps, and modes",
+      "book": "bridge",
+      "source": "papers/learning/chapters/linear_algebra.tex",
+      "pdf_title": "Linear algebra: coordinates, maps, and modes",
+      "requires": [
+        "proof"
+      ],
+      "assessment": "Attempt all three chapter exercises before reading their full solutions."
+    },
+    {
+      "id": "calculus",
+      "title": "Calculus: local change and accumulated change",
+      "book": "bridge",
+      "source": "papers/learning/chapters/calculus.tex",
+      "pdf_title": "Calculus: local change and accumulated change",
+      "requires": [
+        "proof"
+      ],
+      "assessment": "Attempt all three chapter exercises before reading their full solutions."
+    },
+    {
+      "id": "multivariable",
+      "title": "Several variables: local maps and conservation",
+      "book": "bridge",
+      "source": "papers/learning/chapters/multivariable.tex",
+      "pdf_title": "Several variables: local maps and conservation",
+      "requires": [
+        "linear_algebra",
+        "calculus"
+      ],
+      "assessment": "Attempt all three chapter exercises before reading their full solutions."
+    },
+    {
+      "id": "dynamics",
+      "title": "Dynamics: equations, modes, and trustworthy computation",
+      "book": "bridge",
+      "source": "papers/learning/chapters/dynamics.tex",
+      "pdf_title": "Dynamics: equations, modes, and trustworthy computation",
+      "requires": [
+        "multivariable"
+      ],
+      "assessment": "Attempt all three chapter exercises before reading their full solutions."
+    },
+    {
+      "id": "probability",
+      "title": "Probability: uncertainty, evidence, and comparison",
+      "book": "bridge",
+      "source": "papers/learning/chapters/probability.tex",
+      "pdf_title": "Probability: uncertainty, evidence, and comparison",
+      "requires": [
+        "proof"
+      ],
+      "assessment": "Attempt all three chapter exercises before reading their full solutions."
+    },
+    {
+      "id": "numerical",
+      "title": "Numerical reasoning: approximation with an error budget",
+      "book": "bridge",
+      "source": "papers/learning/chapters/numerical.tex",
+      "pdf_title": "Numerical reasoning: approximation with an error budget",
+      "requires": [
+        "dynamics"
+      ],
+      "assessment": "Attempt all three chapter exercises before reading their full solutions."
+    },
+    {
+      "id": "algebra",
+      "title": "Algebraic structure: symmetry, brackets, and roots",
+      "book": "bridge",
+      "source": "papers/learning/chapters/algebra.tex",
+      "pdf_title": "Algebraic structure: symmetry, brackets, and roots",
+      "requires": [
+        "linear_algebra"
+      ],
+      "assessment": "Attempt all three chapter exercises before reading their full solutions."
+    },
+    {
+      "id": "geometry",
+      "title": "Geometry and analysis: distance, dimension, and complex structure",
+      "book": "bridge",
+      "source": "papers/learning/chapters/geometry.tex",
+      "pdf_title": "Geometry and analysis: distance, dimension, and complex structure",
+      "requires": [
+        "multivariable",
+        "algebra"
+      ],
+      "assessment": "Attempt all three chapter exercises before reading their full solutions."
+    },
+    {
+      "id": "hypercomplex",
+      "title": "Doubling changes multiplication as well as dimension",
+      "book": "bridge",
+      "source": "papers/learning/chapters/advanced.tex",
+      "pdf_title": "Doubling changes multiplication as well as dimension",
+      "requires": [
+        "algebra"
+      ],
+      "assessment": "Reproduce the quaternion product and explain why the sedenion witness blocks division."
+    },
+    {
+      "id": "quantum",
+      "title": "Worked example: probabilities from a complex state",
+      "book": "bridge",
+      "source": "papers/learning/chapters/advanced.tex",
+      "pdf_title": "Worked example: probabilities from a complex state",
+      "requires": [
+        "linear_algebra",
+        "probability"
+      ],
+      "assessment": "Compute the two measurement probabilities and check normalization after the unitary map."
+    },
+    {
+      "id": "fluids",
+      "title": "A lattice-Boltzmann step has exact moment obligations",
+      "book": "bridge",
+      "source": "papers/learning/chapters/advanced.tex",
+      "pdf_title": "A lattice-Boltzmann step has exact moment obligations",
+      "requires": [
+        "numerical"
+      ],
+      "assessment": "Check the D2Q9 zeroth and first moments; distinguish conservation from convergence."
+    },
+    {
+      "id": "review_algebra",
+      "title": "Mathematical Baseline",
+      "book": "review",
+      "source": "papers/sections/review_mathematical_baseline.tex",
+      "pdf_title": "Mathematical Baseline",
+      "requires": [
+        "hypercomplex"
+      ],
+      "assessment": "Identify one established result, one computational check, and the extra evidence needed for a physical claim."
+    },
+    {
+      "id": "review_geometry",
+      "title": "Modular forms and moonshine",
+      "book": "review",
+      "source": "papers/sections/review_mathematical_baseline.tex",
+      "pdf_title": "Modular forms and moonshine",
+      "requires": [
+        "geometry"
+      ],
+      "assessment": "Identify one established result, one computational check, and the extra evidence needed for a physical claim."
+    },
+    {
+      "id": "review_computation",
+      "title": "Computational Evidence Portfolio",
+      "book": "review",
+      "source": "papers/sections/review_computational_evidence.tex",
+      "pdf_title": "Computational Evidence Portfolio",
+      "requires": [
+        "fluids",
+        "probability"
+      ],
+      "assessment": "Identify one established result, one computational check, and the extra evidence needed for a physical claim."
+    },
+    {
+      "id": "review_evidence",
+      "title": "Scope, Questions, and Review Method",
+      "book": "review",
+      "source": "papers/sections/review_scope_method.tex",
+      "pdf_title": "Scope, Questions, and Review Method",
+      "requires": [
+        "probability"
+      ],
+      "assessment": "Identify one established result, one computational check, and the extra evidence needed for a physical claim."
+    }
+  ],
+  "routes": [
+    {
+      "id": "symmetry",
+      "title": "Symmetry and algebra",
+      "nodes": [
+        "precalc",
+        "proof",
+        "linear_algebra",
+        "algebra",
+        "hypercomplex",
+        "review_algebra"
+      ]
+    },
+    {
+      "id": "simulation",
+      "title": "Change and simulation",
+      "nodes": [
+        "precalc",
+        "proof",
+        "linear_algebra",
+        "calculus",
+        "multivariable",
+        "dynamics",
+        "probability",
+        "numerical",
+        "fluids",
+        "review_computation"
+      ]
+    },
+    {
+      "id": "shape",
+      "title": "Shape and complex functions",
+      "nodes": [
+        "precalc",
+        "proof",
+        "linear_algebra",
+        "calculus",
+        "multivariable",
+        "algebra",
+        "geometry",
+        "review_geometry"
+      ]
+    },
+    {
+      "id": "uncertainty",
+      "title": "Quantum states and evidence",
+      "nodes": [
+        "precalc",
+        "proof",
+        "linear_algebra",
+        "probability",
+        "quantum",
+        "review_evidence"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,24 @@
+\begin{tikzpicture}[x=1.65cm,y=1.65cm,>=Stealth,font=\small,line width=0.8pt]
+  \coordinate (first) at ({sqrt(2)},0);
+  \coordinate (sum) at ({sqrt(2)/2},{sqrt(6)/2});
+  \coordinate (second) at ({-sqrt(2)/2},{sqrt(6)/2});
+  \coordinate (minusfirst) at ({-sqrt(2)},0);
+  \coordinate (minussum) at ({-sqrt(2)/2},{-sqrt(6)/2});
+  \coordinate (minussecond) at ({sqrt(2)/2},{-sqrt(6)/2});
+  \draw[dashed] (first)--(sum)--(second)--(minusfirst)--(minussum)--(minussecond)--cycle;
+  \foreach \point in {first,sum,second,minusfirst,minussum,minussecond} {
+    \draw[->,line width=1.1pt] (0,0)--(\point);
+  }
+  \node[right] at (first) {$\alpha_1$};
+  \node[above right] at (sum) {$\alpha_1+\alpha_2$};
+  \node[above left] at (second) {$\alpha_2$};
+  \node[left] at (minusfirst) {$-\alpha_1$};
+  \node[below left] at (minussum) {$-(\alpha_1+\alpha_2)$};
+  \node[below right] at (minussecond) {$-\alpha_2$};
+  \draw[->] (0.45,0) arc[start angle=0,end angle=120,radius=0.45];
+  \node[fill=white,inner sep=1pt] at (0.54,0.3) {$120^\circ$};
+  \node[below] at (0,-0.1) {$0$};
+  \node[align=center] at (0,-2)
+    {All six arrows have length $\sqrt2$.\\
+     $\alpha_1\cdot\alpha_2=-1$; $\cos120^\circ=-1/2$.};
+\end{tikzpicture}

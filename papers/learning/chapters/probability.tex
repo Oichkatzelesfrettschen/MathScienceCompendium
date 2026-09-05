@@ -1,0 +1,167 @@
+\chapter{Probability: uncertainty, evidence, and comparison}
+\label{learn:probability}
+
+\begin{learningcard}{Prerequisites and question}
+Bring fractions, sums, functions, and the logic of Chapter~\ref{learn:proof}.
+Calculus becomes useful for continuous distributions, but our main examples
+have finite sample spaces. A positive diagnostic result sounds decisive.
+How should its meaning depend on the condition's prevalence and the test's
+errors? The same reasoning helps interpret a simulation's apparent success.
+\end{learningcard}
+
+\section{Specify the experiment before counting}
+A sample space $\Omega$ is the set of possible outcomes. An event is a
+subset of outcomes whose occurrence we can ask about. On a finite space,
+assign probabilities $p(\omega)\geq0$ with
+$\sum_{\omega\in\Omega}p(\omega)=1$; the probability of an event is the
+sum over its outcomes. Equal probabilities require a modeling assumption,
+such as an ideal fair die. Counting favorable outcomes divided by all outcomes
+works only under that assumption.
+
+A random variable $X$ is a real-valued function of the outcome. Its expectation
+and variance are
+\[
+ \mathbb E[X]=\sum_{\omega}p(\omega)X(\omega),\qquad
+ \operatorname{Var}(X)=\mathbb E[(X-\mathbb E[X])^2].
+\]
+Expectation is a probability-weighted mean, and variance measures squared
+spread about that mean. Expanding the square gives
+$\operatorname{Var}(X)=\mathbb E[X^2]-(\mathbb E[X])^2$.
+Standard deviation is the nonnegative square root of variance and has the
+same units as $X$.
+
+\section{Worked example: a Bernoulli observation}
+Let $X$ equal one when a trial succeeds and zero otherwise, with success
+probability $p$. Then $\mathbb E[X]=p$, and $X^2=X$ gives
+$\operatorname{Var}(X)=p-p^2=p(1-p)$. For independent identically
+distributed trials $X_1,\ldots,X_n$, their sample mean
+$\overline X=n^{-1}\sum_jX_j$ has expectation $p$. Independence makes
+cross covariances zero, so
+\[
+ \operatorname{Var}(\overline X)=\frac{p(1-p)}n.
+\]
+The standard deviation of the mean therefore scales as $1/\sqrt n$.
+Four times as many independent observations halve it. Repeating the same
+stored observation four times creates dependence and supplies no such gain.
+
+More generally, covariance is
+$\operatorname{Cov}(X,Y)=\mathbb E[(X-\mathbb E[X])(Y-\mathbb E[Y])]$.
+The variance of a sum includes twice the pairwise covariances. Correlation
+normalizes covariance by the two positive standard deviations. Independence
+implies zero covariance when the moments exist; the converse can fail.
+For a uniformly distributed $X$ on $\{-1,0,1\}$, set $Y=X^2$.
+Then $\mathbb E[X]=\mathbb E[X^3]=0$, so covariance vanishes, although
+$Y$ is determined by $X$.
+
+\section{Worked example: condition on the result you observed}
+For events $A,B$ with $P(B)>0$, conditional probability is
+$P(A\mid B)=P(A\cap B)/P(B)$. Applying this definition in both orders
+yields Bayes's rule:
+\[
+ P(A\mid B)=\frac{P(B\mid A)P(A)}{P(B)}.
+\]
+Let $D$ mean a condition is present, and $+$ a positive test. Assume a
+population prevalence $P(D)=0.01$, sensitivity $P(+\mid D)=0.99$,
+and false-positive probability $P(+\mid D^c)=0.05$. These are hypothetical
+teaching parameters, rather than clinical advice about a real test.
+Partitioning by condition status gives
+\[
+ P(+)=0.99(0.01)+0.05(0.99)=0.0594,
+ \qquad P(D\mid+)=\frac{0.0099}{0.0594}=\frac16.
+\]
+A hypothetical population of 10,000 makes the denominator visible: among
+100 people with the condition we expect 99 positive results; among 9,900
+others we expect 495. Only 99 of the expected 594 positives come from the
+condition group. Expected counts may be nonintegers in other examples;
+they describe averages under the model rather than guaranteed outcomes.
+
+\begin{figure}[htbp]
+  \centering
+  \input{papers/learning/figures/bayes_tree.tex}
+  \caption{Read each path from left to right and multiply its conditional branch probabilities to obtain the joint probability at the leaf. Restrict attention to the two solid positive-result branches, add their leaf probabilities, and normalize the condition-positive leaf by that total.}
+  \label{fig:learn:bayes_tree}
+\end{figure}
+
+\begin{learningcard}{Historical situation: a paper communicated by another reader}
+Thomas Bayes's essay appeared in 1763 after his death, communicated by
+Richard Price to the Royal Society. The publication's introductory letter
+makes Price's role in presenting the work part of the surviving evidence.
+The essay investigates inverse-probability reasoning; our diagnostic example
+is a modern application rather than a historical episode from the essay.
+\footnote{Thomas Bayes, ``An Essay towards solving a Problem in the
+Doctrine of Chances,'' communicated by Richard Price,
+\emph{Philosophical Transactions} 53 (1763), pp.~370--418, introductory
+letter and propositions:
+\url{https://doi.org/10.1098/rstl.1763.0053}.}
+A named theorem can conceal the editorial and institutional work through
+which a mathematical argument reaches its readers.
+\end{learningcard}
+
+\section{An interval is a procedure with assumptions}
+Suppose observations are independent normal random variables with unknown
+mean $\mu$ and known positive standard deviation $\sigma$. Their mean is
+normal with standard deviation $\sigma/\sqrt n$. If $z_{0.975}$ denotes
+the 97.5th percentile of the standard normal distribution, approximately
+$1.96$, then the interval
+\[
+ \left[\overline X-z_{0.975}\frac{\sigma}{\sqrt n},\,
+       \overline X+z_{0.975}\frac{\sigma}{\sqrt n}\right]
+\]
+has 95 percent coverage: over repeated samples under these assumptions,
+95 percent of intervals contain the fixed $\mu$. A particular observed
+interval either contains that fixed value or misses it. A Bayesian credible
+interval instead assigns posterior probability to parameter values under a
+specified prior and likelihood.
+
+Unknown variance, nonnormal small samples, dependence, selection, and repeated
+comparisons change the calculation or its interpretation. For independent
+normal observations with unknown variance, a Student $t$ interval uses the
+sample standard deviation and $n-1$ degrees of freedom. Large-sample normal
+approximations require justification. Running many tests and reporting only
+the most striking interval changes the procedure's coverage claims.
+
+\section{A control separates explanations}
+Association is a property of a joint distribution. A causal claim asks what
+would change under an intervention. Both temperature and ice-cream sales
+can correlate with swimming incidents; a shared seasonal cause can generate
+association without the proposed direct mechanism. A randomized comparison
+balances causes in expectation under its design assumptions. Observational
+causal inference needs additional assumptions about confounding and selection.
+
+For simulations, matched initial conditions and recorded parameter changes
+help isolate the mechanism being compared. Independent seed clusters matter
+when outputs within one run share a trajectory. Report the difference between
+models with uncertainty, rather than interpreting one model's attractive
+picture as evidence of a specific cause. Chapter~\ref{learn:numerical}
+adds implementation error to these statistical questions.
+
+\section{Exercises with full solutions}
+\paragraph{1. Change the population.}
+Keep the diagnostic sensitivity and false-positive probability above, but
+set prevalence to $0.10$. Find $P(D\mid+)$.
+
+\paragraph{Solution.}
+The positive probability is $0.99(0.10)+0.05(0.90)=0.144$.
+The joint probability of the condition and a positive result is $0.099$,
+so $P(D\mid+)=0.099/0.144=11/16=0.6875$.
+The same test characteristics give a different posterior probability because
+the population entering the calculation changed.
+
+\paragraph{2. Compute an uncertainty scale.}
+Independent Bernoulli trials have $p=1/2$. Find the standard deviation of
+the sample mean for $n=100$ and $n=400$.
+
+\paragraph{Solution.}
+The formula gives $\sqrt{(1/2)(1/2)/100}=0.05$ and
+$\sqrt{(1/2)(1/2)/400}=0.025$. Both numbers describe the sampling
+spread under known $p=1/2$; estimating an unknown $p$ adds an inferential
+step. Fourfold sample size halves the standard deviation.
+
+\paragraph{3. Check whether two events are independent.}
+For a fair die, let $A$ be an even result and $B$ a result at least four.
+
+\paragraph{Solution.}
+$P(A)=3/6=1/2$ and $P(B)=3/6=1/2$. Their intersection is
+$\{4,6\}$, so $P(A\cap B)=1/3$, which differs from $P(A)P(B)=1/4$.
+The events are dependent. Equivalently,
+$P(A\mid B)=2/3\ne1/2=P(A)$.

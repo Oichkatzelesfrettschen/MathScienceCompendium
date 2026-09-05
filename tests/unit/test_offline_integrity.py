@@ -251,3 +251,17 @@ def test_shadow_experiment_package_is_rejected(tmp_path: Path, monkeypatch) -> N
         "shadow experiment package must be reconciled into src/mathphysics: "
         "experiments/src/duplicate.py"
     ]
+
+
+def test_absolute_path_check_excludes_virtual_environment_dependencies(
+    tmp_path: Path, monkeypatch
+) -> None:
+    external_path = "/" + "home/dependency/example"
+    for name in (".venv", "venv"):
+        dependency = tmp_path / name / "lib" / "dependency.py"
+        dependency.parent.mkdir(parents=True)
+        dependency.write_text(repr(external_path))
+    monkeypatch.setattr(verify_offline_integrity, "REPO_ROOT", tmp_path)
+    assert verify_offline_integrity.check_no_absolute_local_paths() == []
+    (tmp_path / "owned.py").write_text(repr(external_path))
+    assert len(verify_offline_integrity.check_no_absolute_local_paths()) == 1
