@@ -1,0 +1,175 @@
+\chapter{Algebraic structure: symmetry, brackets, and roots}
+\label{learn:algebra}
+
+\begin{learningcard}{Prerequisites and destination}
+Use proof, vector spaces, matrices, and eigenvectors from
+Chapters~\ref{learn:proof} and~\ref{learn:linear_algebra}. The aim is to
+recognize what an algebraic classification classifies before attaching a
+physical interpretation to it. We move from rotations of a triangle to a
+small root system, then identify concrete features of the exceptional
+$E_8$ endpoint.
+\end{learningcard}
+
+\section{A group records reversible composition}
+A group is a set $G$ with an associative operation, an identity element,
+and an inverse for every element; the operation stays in $G$. If the
+operation also commutes, the group is abelian. The rotations of an
+equilateral triangle by multiples of $120$ degrees form a three-element
+group. Label them $0,1,2$ and compose by addition modulo three: two
+successive $120$-degree turns give label two, and three give the identity.
+Rotations by arbitrary angles about one fixed axis similarly compose by
+angle addition modulo a full turn.
+
+A permutation is a bijection from a set to itself. For three labeled
+vertices, the six permutations form the symmetric group $S_3$ under
+composition. Write $(12)$ for swapping labels one and two. With the rightmost
+permutation acting first, $(12)(23)$ sends one to two, two to three, and
+three to one. Reversing the order gives the inverse cycle. Therefore $S_3$
+is nonabelian even though its subgroup of three rotations is abelian.
+
+A group action on a set assigns each group element a transformation so that
+identity and composition agree. Specifying an action matters: naming a group
+beside a physical system does not define how that group's elements transform
+the system's states or observations.
+
+\section{Structures supply different operations}
+A field has addition and multiplication satisfying the familiar distributive
+and associative laws, commutative multiplication, distinct zero and one, and
+a multiplicative inverse for every nonzero element. The real and complex
+numbers are fields. A vector space over a field has vector addition and
+scalar multiplication; it need not multiply its vectors together. An algebra
+over a field is a vector space with an additional bilinear product, meaning
+a product linear in each argument separately. Extra adjectives specify
+whether that product is associative, commutative, or has an identity.
+
+Real square matrices form an associative algebra under multiplication and a
+vector space under addition, but they form a multiplicative group only after
+restricting to invertible matrices. All matrices together fail that group
+condition because singular matrices have no inverse. Keeping these operations
+separate prevents a dimension count from substituting for a structural proof.
+
+\section{Worked example: a bracket measures failure to commute}
+For matrices define $[A,B]=AB-BA$. This bracket is bilinear,
+$[A,A]=0$, and satisfies the Jacobi identity
+\[
+ [A,[B,C]]+[B,[C,A]]+[C,[A,B]]=0.
+\]
+To verify Jacobi, expand each nested bracket: the resulting twelve terms
+cancel in pairs using associativity. A vector space with a bilinear bracket
+satisfying these identities is a Lie algebra.
+
+Consider the trace-zero matrices
+\[
+ E=\begin{pmatrix}0&1\\0&0\end{pmatrix},\quad
+ F=\begin{pmatrix}0&0\\1&0\end{pmatrix},\quad
+ H=\begin{pmatrix}1&0\\0&-1\end{pmatrix}.
+\]
+Multiplication gives $EF=\operatorname{diag}(1,0)$ and
+$FE=\operatorname{diag}(0,1)$, hence $[E,F]=H$. Computing the other
+products gives $[H,E]=2E$ and $[H,F]=-2F$. These three matrices span
+the trace-zero two-by-two matrices, conventionally denoted
+$\mathfrak{sl}_2$ over the chosen real or complex field. The eigenvector
+language from linear algebra reappears: under the linear map
+$X\mapsto[H,X]$, the vectors $E,F$ have eigenvalues two and minus two.
+
+\begin{learningcard}{Historical situation: classification requires definitions}
+Cartan's 1894 dissertation investigates the structure of finite continuous
+transformation groups. The historical object is a published structural
+investigation, not a claim that every later application was contained in that
+work. The dissertation belongs to the development from continuous
+transformations toward the Lie-algebra classifications used in the advanced
+review \citep{cartan1894}. Our matrix brackets provide a small calculation
+through which a reader can see what such structural questions ask.
+\end{learningcard}
+
+\section{Worked example: the six roots of \texorpdfstring{$A_2$}{A2}}
+Let $e_1,e_2,e_3$ be the standard unit vectors in $\RR^3$. The six vectors
+$e_i-e_j$ with $i\ne j$ lie in the plane $x_1+x_2+x_3=0$.
+They form the root system called $A_2$. Choose simple roots
+$\alpha_1=e_1-e_2$ and $\alpha_2=e_2-e_3$; the remaining positive root
+is $\alpha_1+\alpha_2=e_1-e_3$, with negatives supplying the other three.
+Both simple roots have squared length two and their dot product is minus one.
+The angle between them therefore has cosine $-1/2$.
+
+\begin{figure}[htbp]
+  \centering
+  \input{papers/learning/figures/root_hexagon.tex}
+  \caption{Read the two simple-root arrows first: their angle is 120 degrees. Their vector sum supplies the upper-right root, and negation supplies the opposite arrows. The picture uses orthonormal coordinates in the root plane; the simple roots themselves are not orthogonal.}
+  \label{fig:learn:root_hexagon}
+\end{figure}
+
+For nonzero roots, reflection perpendicular to $\alpha$ is
+$s_\alpha(v)=v-2(v\cdot\alpha)\alpha/(\alpha\cdot\alpha)$.
+Reflection in $\alpha_1=e_1-e_2$ swaps the first two coordinates, so it
+permutes the six-root set. The Cartan matrix records relative inner products,
+$C_{ij}=2(\alpha_i\cdot\alpha_j)/(\alpha_j\cdot\alpha_j)$; here
+\[
+ C=\begin{pmatrix}2&-1\\-1&2\end{pmatrix},\qquad\det C=3.
+\]
+The root lattice $Q$ consists of integer combinations of the simple roots.
+The weight lattice $P$ consists of vectors pairing integrally with each
+coroot $2\alpha_j/(\alpha_j\cdot\alpha_j)$. Solving those pairings
+introduces thirds because
+\[
+ C^{-1}=\frac13\begin{pmatrix}2&1\\1&2\end{pmatrix}.
+\]
+For this full-rank finite root system, $P/Q$ has three elements. It is a
+lattice quotient rather than an automatic selection rule for a fluid.
+
+\section{A concrete endpoint: the \texorpdfstring{$E_8$}{E8} count and lengths}
+A standard coordinate construction in $\RR^8$ has two kinds of roots:
+\[
+ (\pm1,\pm1,0,0,0,0,0,0)\text{ with all position choices},
+ \qquad \tfrac12(\pm1,\ldots,\pm1)\text{ with even minus parity}.
+\]
+There are $\binom82\cdot4=112$ roots of the first kind. Of the $2^8$
+sign patterns of the second kind, exactly half have even minus parity,
+giving 128. The total is 240. Every first-kind root has squared length
+$1+1=2$; every second-kind root has squared length $8/4=2$.
+The two families therefore share the same length $\sqrt2$.
+
+The $E_8$ Cartan diagram is a tree with one central vertex and three arms
+of lengths one, two, and four. Its matrix has diagonal entries two and
+entries minus one along edges. An arm of length $m$ has determinant $m+1$;
+this follows from the tridiagonal recurrence $D_m=2D_{m-1}-D_{m-2}$,
+$D_0=1,D_1=2$. The inverse entry at its attaching end is $m/(m+1)$,
+by the cofactor formula. Eliminating the arms thus gives
+\[
+ \det C=2\cdot3\cdot5
+ \left(2-\frac12-\frac23-\frac45\right)=1.
+\]
+The corresponding root and weight lattices coincide. Classification identifies
+this root system with the rank-eight complex simple Lie algebra $E_8$,
+whose dimension is eight Cartan directions plus 240 one-dimensional root
+spaces, totaling 248. Proving that classification and constructing all
+representations belong to further Lie theory. The finite calculations here
+verify the stated count, lengths, and determinant, rather than that entire
+classification theorem \citep{kac1990infinite}.
+
+\section{Exercises with full solutions}
+\paragraph{1. Compute an inverse in the triangle rotation group.}
+Find the inverse of label two under addition modulo three.
+
+\paragraph{Solution.}
+An inverse label $a$ satisfies $2+a=0$ modulo three. The label one works
+because $2+1=3$, congruent to zero. Geometrically a $120$-degree turn
+undoes a $240$-degree turn up to one full revolution.
+
+\paragraph{2. Check a bracket combination.}
+Compute $[H,E+F]$ for the matrices above.
+
+\paragraph{Solution.}
+Bilinearity and the computed relations give
+$[H,E+F]=[H,E]+[H,F]=2E-2F$.
+Thus $E+F$ is not an eigenvector of this map: its two components acquire
+opposite factors, and $2E-2F$ is not a scalar multiple of $E+F$.
+
+\paragraph{3. Reflect an $A_2$ root.}
+Find $s_{\alpha_1}(\alpha_2)$ and check its squared length.
+
+\paragraph{Solution.}
+Because $\alpha_2\cdot\alpha_1=-1$ and $\alpha_1^2=2$,
+$s_{\alpha_1}(\alpha_2)=\alpha_2+\alpha_1=e_1-e_3$.
+Its squared length is two, so the result is another root of the same length.
+Chapter~\ref{learn:advanced} extends the distinction between algebraic
+structure and physical interpretation.

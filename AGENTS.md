@@ -6,13 +6,15 @@
 
 ## Overview
 
-4-volume LaTeX mathematical physics compendium + Python computational framework.
-Synthesizes exceptional Lie algebras (E6/E7/E8/F4), Kac-Moody extensions,
-quantum encoding schemes, and turbulence simulation (LBM).
+A connected learning album and Python mathematical-physics framework.
+The album joins an independently maintained precalculus book, ten prerequisite
+chapters, and a critical review of algebraic, quantum, and simulation claims.
 
 Source: `src/mathphysics/` (38 modules).
 Tests: `tests/` (500+ tests, 60%+ coverage).
-Papers: `papers/main.tex` (4 volumes + 2 appendices).
+Review: `papers/main.tex`. Bridges: `papers/learning/main.tex`.
+Album routes and external-book pins: `docs/learning/library.json`.
+Legacy volume sources remain separate from the active review.
 
 Full module map: `docs/ARCHITECTURE.md`.
 
@@ -26,6 +28,8 @@ make test           # pytest tests -q with PYTHONHASHSEED=0
 make benchmark      # NumPy vs JAX LBM benchmark
 make figures        # generate PNG + interactive HTML
 make papers         # pdflatex + bibtex + pdflatex (x2) -> papers/main.pdf
+make learning       # validate routes and examples; build prerequisite chapters
+make album          # assemble pinned precalculus + bridges + review
 make repro-refresh  # normalize + registries + audit + verify pipeline
 make cleanbuild     # full clean + install + all quality gates + papers
 ```

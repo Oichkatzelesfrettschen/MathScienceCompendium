@@ -1,0 +1,11 @@
+{
+  "category": "docs",
+  "content": "pypdf==6.8.0\nreportlab==4.4.10\nPyMuPDF==1.27.2.3\npillow==12.3.0\ncharset-normalizer==3.5.1\n",
+  "generated_at_utc": "1970-01-01T00:00:00+00:00",
+  "id": "docs__learning__requirements",
+  "line_count": 6,
+  "sha256": "3645f52dcb91338f4f8544079381eaed1ad3aa86e6d06e22dc9d235a78fd4c37",
+  "size_bytes": 90,
+  "source_relpath": "docs/learning/requirements.txt",
+  "title": "pypdf==6.8.0"
+}

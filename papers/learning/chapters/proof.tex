@@ -1,0 +1,143 @@
+\chapter{From convincing examples to proof}
+\label{learn:proof}
+
+\begin{learningcard}{Your starting equipment}
+Bring integer arithmetic, algebraic identities, inequalities, functions, and
+finite sums from the precalculus book. The new skill is to specify exactly
+which objects a statement covers and why the reasoning covers every one of
+them. The question guiding the chapter is: when does a pattern become a theorem?
+\end{learningcard}
+
+\section{A statement needs a universe}
+A proposition is a statement with a truth value once its terms and domain are
+fixed. ``Every number has a square root'' changes meaning when ``number''
+means a nonnegative real, an arbitrary real, or a complex number. We write
+$\RR$ for the real numbers and $\ZZ$ for the integers. The symbols
+$\forall$ and $\exists$ mean ``for every'' and ``there exists.'' Thus
+\[
+ \forall x\in\RR\;\exists y\in\RR:\quad y>x
+\]
+says that each real number has a larger real number. The choice $y=x+1$
+proves the assertion. Reversing the quantifiers asks for one real number
+larger than every real number. Any proposed $y$ fails at $x=y+1$.
+The order records which choices may depend on earlier choices.
+
+An implication $P\Rightarrow Q$ says that whenever the hypothesis $P$ holds,
+the conclusion $Q$ holds. Its converse $Q\Rightarrow P$ is a separate claim.
+For integers, divisibility by four implies evenness; the even integer six
+refutes the converse. An equivalence $P\Leftrightarrow Q$ requires both
+implications. A theorem is a proved proposition within stated assumptions;
+a conjecture is a proposition offered for investigation.
+
+\begin{learningcard}{Historical situation: a diagram and its obligations}
+Euclid's \emph{Elements}, Book I, Proposition 47 proves the square relation
+for a right triangle through constructions and earlier propositions. The
+surviving text gives a structured chain of dependencies rather than a table
+of measured triangles. Its transmission, translation, and editorial history
+are separate historical questions. We use the proposition as evidence of
+an organized deductive presentation, rather than as evidence that one person
+invented every result in the collection. David Joyce's mathematical edition
+provides the proposition, diagram, and commentary.\footnote{Euclid,
+\emph{Elements}, I.47, edition and commentary by David E. Joyce, Clark
+University: \url{https://mathcs.clarku.edu/~djoyce/elements/bookI/propI47.html}.}
+The modern logical notation in this chapter is our teaching apparatus.
+\end{learningcard}
+
+\section{Worked example: move from a definition to a conclusion}
+An integer $m$ is even when $m=2a$ for some $a\in\ZZ$, and odd when
+$m=2a+1$ for some $a\in\ZZ$. Prove that the product of two odd integers
+is odd. Start with arbitrary odd integers, writing $m=2a+1$, $n=2b+1$.
+Then
+\[
+ mn=(2a+1)(2b+1)=4ab+2a+2b+1=2(2ab+a+b)+1.
+\]
+The expression $2ab+a+b$ is an integer because integers are closed under
+addition and multiplication. The final expression therefore satisfies the
+definition of oddness. The proof's decisive move is the extraction of an
+integer witness, rather than the expansion alone.
+
+A proof by contrapositive establishes $P\Rightarrow Q$ by proving
+$\neg Q\Rightarrow\neg P$. For example, if $m^2$ is even, then $m$ is even:
+if $m$ were odd, the product result would make $m^2$ odd. Every integer
+is either even or odd, which completes the implication. A proof by
+contradiction instead assumes the desired conclusion false together with
+the hypotheses and derives an impossibility. These are related logical
+strategies, but the argument should state which assumption it introduces.
+
+\section{Worked example: induction is a dependency chain}
+To prove a statement $P(n)$ for every integer $n\geq1$, mathematical
+induction requires a base case $P(1)$ and an implication
+$P(k)\Rightarrow P(k+1)$ for every integer $k\geq1$. The implication
+propagates truth from the base through the positive integers.
+Consider
+\[
+ 1+2+\cdots+n=\frac{n(n+1)}2.
+\]
+At $n=1$, both sides equal one. Assume the formula for an arbitrary
+$k\geq1$. Add the next term to obtain
+\[
+ \sum_{j=1}^{k+1}j=\frac{k(k+1)}2+(k+1)
+ =\frac{(k+1)(k+2)}2.
+\]
+The right side is precisely the formula at $k+1$. The assumption covers
+one unspecified preceding case; induction then supplies all cases.
+Checking the first thousand cases alone would leave every later integer
+outside the checked set.
+
+The base case carries real information. The implication
+``if $2^k$ is odd, then $2^{k+1}$ is odd'' holds for $k\geq1$ because
+its hypothesis always fails, yet $2^n$ is even for every positive $n$.
+A chain of implications needs a true starting point.
+
+\section{A counterexample has a small job}
+A universal claim fails when one admissible object violates its conclusion.
+For ``every prime is odd,'' two is sufficient: it is prime and even.
+A counterexample must satisfy the hypotheses. The number one fails as a
+counterexample because a prime is an integer greater than one whose only
+positive divisors are one and itself.
+
+An existential statement needs one witness. A universal statement over a
+finite, completely enumerated domain can be proved by exact exhaustive
+calculation. The same calculation over a sample from an infinite domain
+establishes only the sampled cases. Floating-point computations introduce
+a further boundary: a small residual measures agreement to a tolerance,
+whereas exact equality requires an exact argument or exact arithmetic.
+
+\begin{learningcard}{Choose a useful next question}
+Before calculating, write the domain, quantifiers, and assumptions. After
+calculating, identify the witness or implication that makes the result
+apply to its claimed domain. Continue to Chapter~\ref{learn:linear_algebra}
+for structural proofs or Chapter~\ref{learn:calculus} for quantified limits.
+\end{learningcard}
+
+\section{Exercises with full solutions}
+\paragraph{1. Negate a quantified statement.}
+Negate: ``For every real $x$ there exists a real $y$ such that $y^2=x$.''
+Determine the truth of the original and its negation.
+
+\paragraph{Solution.}
+The negation is ``There exists a real $x$ such that for every real $y$,
+$y^2\ne x$.'' Choose $x=-1$. Every real square is nonnegative, so every
+real $y$ satisfies $y^2\ne-1$. The negation is true and the original is
+false. The witness refutes a universal statement; checking positive
+values of $x$ would leave the negative part of the domain unresolved.
+
+\paragraph{2. Prove an inequality by induction.}
+Prove $2^n\geq n+1$ for every integer $n\geq0$.
+
+\paragraph{Solution.}
+At zero, $2^0=1=0+1$. Assuming $2^k\geq k+1$ for an arbitrary
+$k\geq0$, multiplication by the positive number two gives
+$2^{k+1}\geq2k+2$. Since $2k+2-(k+2)=k\geq0$, we obtain
+$2^{k+1}\geq k+2$. Induction completes the proof, including the stated
+zero endpoint.
+
+\paragraph{3. Separate an implication and its converse.}
+For a real number $x$, analyze ``$x>2$ implies $x^2>4$'' and its converse.
+
+\paragraph{Solution.}
+If $x>2$, then both $x-2$ and $x+2$ are positive, so
+$x^2-4=(x-2)(x+2)>0$. The converse fails at $x=-3$, whose square is
+nine. A corrected equivalence is $x^2>4$ if and only if $|x|>2$:
+the factors show the quadratic is positive on $(-\infty,-2)$ and
+$(2,\infty)$, exactly the domain described by the absolute-value inequality.

@@ -1,0 +1,103 @@
+\documentclass[11pt,oneside]{book}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern,microtype}
+\usepackage[a4paper,margin=27mm,headheight=15pt]{geometry}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage[most]{tcolorbox}
+\usepackage{booktabs,tabularx,enumitem,tikz}
+\usetikzlibrary{arrows.meta,calc}
+\usepackage{natbib,xurl,fancyhdr}
+\usepackage[hidelinks,unicode]{hyperref}
+\definecolor{learnink}{HTML}{18212B}
+\definecolor{learnnavy}{HTML}{17365D}
+\definecolor{learnpaper}{HTML}{F2F5F8}
+\tcbset{colback=learnpaper,colframe=learnnavy,boxrule=0.6pt,
+  arc=1.5mm,left=2mm,right=2mm,top=1.5mm,bottom=1.5mm,
+  fonttitle=\bfseries,before skip=10pt,after skip=10pt}
+\newtcolorbox{learningcard}[1]{title={#1}}
+\newtheorem{theorem}{Theorem}[chapter]
+\newtheorem{proposition}[theorem]{Proposition}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{example}[theorem]{Example}
+\newcommand{\RR}{\mathbb{R}}
+\newcommand{\CC}{\mathbb{C}}
+\newcommand{\ZZ}{\mathbb{Z}}
+\newcommand{\HH}{\mathbb{H}}
+\newcommand{\OO}{\mathbb{O}}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0.45em plus 0.1em minus 0.1em}
+\setlist{itemsep=0.25em,topsep=0.4em}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\small\nouppercase{\leftmark}}
+\fancyhead[R]{\small\thepage}
+\raggedbottom
+\hypersetup{pdftitle={From Precalculus to Mathematical Physics: A Learning Album},
+ pdfauthor={Eirikr Hinngart},pdfsubject={Prerequisites, derivations, historical sources, and branching reading routes}}
+\begin{document}
+\frontmatter
+\begin{titlepage}
+\color{learnink}
+\vspace*{0.12\textheight}
+{\color{learnnavy}\rule{\linewidth}{1.2pt}}\par
+\vspace{1em}
+{\Huge\bfseries From Precalculus to\\[0.3em]Mathematical Physics\par}
+\vspace{1em}
+{\Large A learning album of connected mathematical journeys\par}
+\vspace{1em}
+{\large Derivations, historical sources, worked examples, and choices\par}
+\vfill
+{\large Eirikr Hinngart\par}
+\medskip
+A companion to \emph{A Precalculus Compendium} and
+\emph{Claim, Evidence, and Falsification in a Mathematical-Physics Compendium}.
+\end{titlepage}
+\chapter*{How to choose a route}
+\addcontentsline{toc}{chapter}{How to choose a route}
+The precalculus book supplies functions, algebra, trigonometry, vectors, and
+elementary limits. These bridge chapters develop selected undergraduate
+operations through definitions, examples, and solved exercises. The advanced
+review then asks what mathematical, computational, and empirical evidence
+establish. Its negative results teach why an appealing connection fails and
+what evidence a stronger claim would require.
+
+\begin{learningcard}{Choose the question you want to answer}
+\input{papers/learning/generated_routes}
+\end{learningcard}
+
+Choose the route matching your question and use its solved exercises as
+checkpoints. Each chapter teaches bounded objectives; specialist topics
+identify further theory and remain subjects for longer companion books.
+
+\section*{An entry check}
+Before beginning, solve $x^2-5x+6=0$, compute $\sin(\pi/6)$, and multiply
+$\begin{pmatrix}1&2\\0&1\end{pmatrix}\begin{pmatrix}3\\4\end{pmatrix}$.
+The answers are $x=2,3$, $1/2$, and $(11,4)^T$. Explain each operation,
+including why the quadratic factorization gives both roots. If an answer
+requires a guess, use the precalculus sections on polynomials, the unit
+circle, or matrices before following the corresponding branch.
+
+\section*{How history and evidence appear}
+Historical cards identify documented contexts and distinguish sources from
+modern teaching interpretations. Modern notation and constructed exercises
+belong to the exposition. The audit record identifies inaccessible sources;
+a citation alone establishes neither access nor factual verification.
+
+\tableofcontents
+\mainmatter
+\input{papers/learning/chapters/proof}
+\input{papers/learning/chapters/linear_algebra}
+\input{papers/learning/chapters/calculus}
+\input{papers/learning/chapters/multivariable}
+\input{papers/learning/chapters/dynamics}
+\input{papers/learning/chapters/probability}
+\input{papers/learning/chapters/numerical}
+\input{papers/learning/chapters/algebra}
+\input{papers/learning/chapters/geometry}
+\input{papers/learning/chapters/advanced}
+\backmatter
+\bibliographystyle{plainnat}
+\bibliography{papers/references}
+\end{document}

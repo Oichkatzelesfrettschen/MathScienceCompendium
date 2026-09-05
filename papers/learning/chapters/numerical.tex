@@ -1,0 +1,166 @@
+\chapter{Numerical reasoning: approximation with an error budget}
+\label{learn:numerical}
+
+\begin{learningcard}{Prerequisites and task}
+Use Taylor bounds from Chapter~\ref{learn:calculus}, matrix maps from
+Chapter~\ref{learn:linear_algebra}, and stability from
+Chapter~\ref{learn:dynamics}. A numerical answer is useful when its precision
+matches the question and its errors are understood. We ask how to distinguish
+an accurate-looking output from an approximation that survives refinement
+and independent checks.
+\end{learningcard}
+
+\section{Three errors can coexist}
+Modeling error measures the difference between a chosen mathematical model
+and the target phenomenon. Discretization or truncation error comes from
+replacing an infinite or continuous operation by a finite one. Roundoff error
+comes from representing and manipulating numbers with finite precision.
+Changing the mesh can reduce discretization error while leaving a wrong model
+unchanged. Exact rational arithmetic can remove roundoff for some calculations
+while leaving truncation error intact.
+
+A problem is well-conditioned when small perturbations of its input produce
+small relative changes in the requested output, with scales specified.
+For a differentiable scalar function away from zero input and output, the
+relative condition number is $|xf'(x)/f(x)|$. An algorithm's stability
+instead concerns how its errors behave while solving the problem. A stable
+algorithm can still produce an uncertain answer for an ill-conditioned input.
+
+\section{Worked example: a smaller difference can lose information}
+Approximate $f'(x)$ by
+$D_hf(x)=[f(x+h)-f(x)]/h$ for $h\ne0$. Taylor's theorem gives
+$D_hf(x)=f'(x)+hf''(\xi)/2$ for a suitable intermediate point when the
+required smoothness holds. If $|f''|\leq M$, truncation error is at most
+$M|h|/2$.
+
+Suppose each function evaluation has absolute error at most $\eta$.
+Subtracting the evaluations and dividing by $h$ adds an error at most
+$2\eta/|h|$, before accounting for the arithmetic operations themselves.
+The combined illustrative bound is
+\[
+ |D_h^{\mathrm{computed}}f(x)-f'(x)|
+ \leq \frac{M|h|}{2}+\frac{2\eta}{|h|}.
+\]
+For $M,\eta>0$, balancing these two terms suggests
+$|h|=2\sqrt{\eta/M}$. Arbitrarily shrinking $h$ amplifies evaluation
+error. This formula depends on the absolute-error model; a real program
+must account for scales and the actual evaluation routine.
+
+For $f(x)=x^2$ at $x=1$, exact algebra gives $D_hf(1)=2+h$.
+At $h=0.01$, the error is exactly $0.01$. A floating-point implementation
+may eventually round $1+h$ to one, producing a zero numerator despite the
+true derivative two. An exact symbolic identity provides a better oracle
+than merely comparing two nearby floating-point outputs.
+
+\section{Worked example: integration with a computable remainder}
+The composite trapezoidal rule on $[a,b]$ with $n$ equal pieces of width
+$h=(b-a)/n$ is
+\[
+ T_n=h\left(\frac{f(a)+f(b)}2+\sum_{j=1}^{n-1}f(a+jh)\right).
+\]
+For $f$ with continuous second derivative bounded by $M$, its error obeys
+$|T_n-\int_a^bf(x)\,dx|\leq(b-a)Mh^2/12$.
+One obtains the order by integrating the local linear-interpolation error
+on each piece: a local error of order $h^3$ accumulated across $n$ pieces
+gives a global error of order $h^2$.
+
+For $f(x)=x^2$ on $[0,1]$, use
+$\sum_{j=1}^{n-1}j^2=(n-1)n(2n-1)/6$ to derive
+\[
+ T_n=\frac1{2n}+\frac{(n-1)n(2n-1)}{6n^3}
+ =\frac13+\frac1{6n^2}.
+\]
+The exact integral is $1/3$, so the error is positive and equals
+$1/(6n^2)$. Since $M=2$, the general bound is attained. Doubling $n$
+reduces the error by four. The extrapolated quantity
+$(4T_{2n}-T_n)/3$ equals $1/3$ exactly for this quadratic because the
+leading error formula is exact. For other smooth functions, extrapolation
+requires the appropriate error expansion.
+
+\begin{learningcard}{Historical situation: reliable matrix computation}
+Turing's 1948 paper ``Rounding-off Errors in Matrix Processes'' studies
+error in numerical matrix operations. The paper's subject is a concrete
+reminder that computation requires analysis of the procedure as well as
+algebraic correctness of the equations. Its publication documents an early
+analysis of such errors; it supplies neither the origin story of all
+numerical analysis nor a guarantee for a modern implementation.
+\footnote{Alan M. Turing, ``Rounding-off Errors in Matrix Processes,''
+\emph{Quarterly Journal of Mechanics and Applied Mathematics} 1 (1948),
+pp.~287--308: \url{https://doi.org/10.1093/qjmam/1.1.287}.}
+The finite-difference experiment above uses a modern explicit error budget.
+\end{learningcard}
+
+\section{Iteration: a residual and an error answer different questions}
+To solve $Ax=b$, consider $x_{m+1}=Bx_m+c$. If a fixed point $x_*$
+exists, its error obeys $e_{m+1}=Be_m$. Any induced norm with $\|B\|<1$
+gives $\|e_m\|\leq\|B\|^m\|e_0\|$, proving convergence. In finite
+dimensions, spectral radius below one is the general constant-matrix criterion
+for convergence from every initial error, although the chosen norm can show
+transient growth before decay.
+
+For the system $2x+y=3$, $x+2y=3$, simultaneous updates give
+$x_{m+1}=(3-y_m)/2$, $y_{m+1}=(3-x_m)/2$. The error matrix is
+\[
+ B=\begin{pmatrix}0&-1/2\\-1/2&0\end{pmatrix}.
+\]
+Its Euclidean operator norm is $1/2$. Starting at $(0,0)$ produces
+$(1.5,1.5)$, $(0.75,0.75)$, $(1.125,1.125)$, approaching $(1,1)$.
+The residual is $r=b-A\widehat x$. If $A$ is invertible, the actual
+error satisfies $\widehat x-x_*=-A^{-1}r$, so
+$\|\widehat x-x_*\|\leq\|A^{-1}\|\|r\|$. A small residual establishes
+a small solution error only when the inverse scale is controlled.
+
+\section{A convergence study needs an oracle and a regime}
+For a time-dependent scheme, consistency asks whether the discrete equation
+approximates the differential equation as the spacings shrink. Stability
+controls growth of perturbations. Convergence asks whether the computed
+solution approaches the desired exact solution. The familiar equivalence
+between consistency plus stability and convergence has specified hypotheses
+for linear well-posed problems; it is not a universal statement about every
+nonlinear simulation.
+
+Conservation gives another independent test. As
+Chapter~\ref{learn:dynamics} shows, the periodic explicit heat scheme
+conserves its discrete sum even at an unstable time step. A mass check can
+pass while oscillating errors grow. Conversely, a nonconserving boundary
+condition can legitimately change total mass.
+
+Record a normed error against a known solution on successive grids, estimate
+the ratio, and verify that boundary and time-step conventions refine together.
+A ratio near the expected value supports the observed regime. Roundoff,
+singularities, or unresolved scales can prevent that regime from appearing.
+Chapter~\ref{learn:probability} supplies uncertainty analysis when random
+samples enter the computation; that uncertainty differs from deterministic
+mesh error.
+
+\section{Exercises with full solutions}
+\paragraph{1. Choose an integration resolution.}
+For the quadratic trapezoidal example, find the smallest positive integer
+$n$ guaranteeing error at most $10^{-4}$.
+
+\paragraph{Solution.}
+The exact error is $1/(6n^2)$. The condition requires
+$n^2\geq10000/6$, hence $n\geq41$. At $n=40$ the error is
+$1/9600>10^{-4}$, whereas at $n=41$ it is $1/10086<10^{-4}$.
+Thus 41 pieces suffice and are minimal for this specified rule and integrand.
+
+\paragraph{2. Bound an iteration count.}
+In the two-variable example, how many updates guarantee Euclidean error
+below $0.01$ from $(0,0)$?
+
+\paragraph{Solution.}
+The initial error norm is $\sqrt2$ and the bound is $2^{-m}\sqrt2$.
+At $m=7$ this is approximately $0.01105$; at $m=8$ it is approximately
+$0.00552$. Eight updates suffice. The initial error lies in an eigenvector
+direction of magnitude-one-half eigenvalue, so the bound is exact here.
+
+\paragraph{3. Interpret a refinement table.}
+Errors at spacings $h,h/2,h/4$ are $0.04,0.01,0.0025$. Estimate the
+observed order and state the conclusion's boundary.
+
+\paragraph{Solution.}
+For $E(h)\approx Ch^p$, the ratio $E(h)/E(h/2)\approx2^p$.
+Both measured ratios are four, giving $p=\log_2 4=2$.
+The three measurements support second-order behavior on those spacings for
+the specified test. They alone establish neither every-grid convergence
+nor correctness of the physical model.

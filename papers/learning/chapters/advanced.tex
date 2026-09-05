@@ -1,0 +1,195 @@
+\chapter{Entering the advanced album: algebra, quantum states, and fluids}
+\label{learn:advanced}
+
+\begin{learningcard}{Prerequisites and three destinations}
+Use vector spaces and inner products, probability, algebraic structure, and
+numerical conservation from the preceding chapters. We now construct one
+bounded entry example for each of three advanced routes: Cayley--Dickson
+algebras, quantum states, and lattice-Boltzmann computation. The examples
+supply enough vocabulary and checks to read the advanced review critically;
+they leave specialized classification, quantum information, and fluid
+analysis as further coursework.
+\end{learningcard}
+
+\section{Doubling changes multiplication as well as dimension}
+\label{learn:hypercomplex}
+Starting with $\RR$ and its identity conjugation, the Cayley--Dickson
+construction replaces an algebra by ordered pairs. Fix the convention
+\[
+ (a,b)(c,d)=(ac-\overline d\,b,\;da+b\overline c),
+ \qquad \overline{(a,b)}=(\overline a,-b).
+\]
+The real vector-space dimension doubles at each step. Basis vectors are
+ordered recursively: the old basis occupies the first half, followed by
+pairs with zero first component and old basis in the second half. With
+$e_0=1$, this fixes every multiplication sign used below.
+Successive dimensions one, two, four, and eight give
+$\RR,\CC,\HH,\OO$. The product loses commutativity at quaternions and
+associativity at octonions. Norm multiplicativity survives through octonions
+but fails for sedenions in dimension sixteen \citep{baez2001octonions}.
+
+\section{Worked example: quaternion arithmetic and a boundary}
+Write a quaternion as $q=a+bi+cj+dk$, with
+$i^2=j^2=k^2=-1$, $ij=k$, $jk=i$, $ki=j$, and reversed distinct products
+having the opposite sign. Then
+\[
+ (1+i)(1+j)=1+i+j+k,\qquad
+ (1+j)(1+i)=1+i+j-k.
+\]
+Conjugation sends $q$ to $\overline q=a-bi-cj-dk$, and
+$q\overline q=a^2+b^2+c^2+d^2=\|q\|^2$. For $q\ne0$,
+$q^{-1}=\overline q/\|q\|^2$. Associativity and
+$\overline{pq}=\overline q\,\overline p$ give
+\[
+ \|pq\|^2=pq\overline q\,\overline p
+ =\|q\|^2p\overline p=\|p\|^2\|q\|^2.
+\]
+The scalar interpretation of the products justifies the norm equation.
+For the displayed example, each factor has norm $\sqrt2$ and the product
+has norm two. Noncommutativity coexists with a multiplicative norm.
+
+A zero divisor is a nonzero element whose product with another nonzero
+element is zero. Under the fixed doubling convention, the sedenion vectors
+$a=e_3+e_{10}$ and $b=e_6-e_{15}$ satisfy
+\[
+ e_3e_6=e_5,\quad e_3e_{15}=e_{12},\quad
+ e_{10}e_6=e_{12},\quad e_{10}e_{15}=e_5,
+ \qquad ab=e_5-e_{12}+e_{12}-e_5=0.
+\]
+Each factor has Euclidean norm $\sqrt2$, demonstrating norm failure as well
+as zero divisors. The coordinate convention is essential to replaying this
+witness. It also explains why extending a successful quaternion construction
+to every doubled algebra requires fresh proofs of the properties used.
+
+\begin{learningcard}{Historical situation: reconstruct a mathematical route}
+Baez's survey of the octonions describes the progression through normed
+division algebras and their historical development \citep{baez2001octonions}.
+It is a modern scholarly account rather than a contemporaneous record of
+an inventor's thoughts. Our doubling sequence is an instructional
+reconstruction: it makes the algebraic dependencies visible without
+asserting that every historical participant followed this exact path.
+\end{learningcard}
+
+\section{Worked example: probabilities from a complex state}
+\label{learn:quantum}
+A pure qubit is represented by a unit vector
+$\psi=\alpha|0\rangle+\beta|1\rangle$ in $\CC^2$, with
+$|0\rangle=(1,0)^T$, $|1\rangle=(0,1)^T$ and
+$|\alpha|^2+|\beta|^2=1$. Vectors differing by a common phase
+$e^{i\theta}$ represent the same pure state. The complex inner product is
+$\langle\phi,\psi\rangle=\sum_j\overline{\phi_j}\psi_j$.
+The Born rule assigns computational-basis outcome probabilities
+$P(0)=|\alpha|^2$ and $P(1)=|\beta|^2$.
+
+A unitary matrix $U$ satisfies $U^\dagger U=I$, where the dagger denotes
+conjugate transpose. It preserves inner products and normalization because
+$\langle U\phi,U\psi\rangle=\phi^\dagger U^\dagger U\psi
+=\langle\phi,\psi\rangle$. For the Hadamard matrix
+\[
+ H=\frac1{\sqrt2}\begin{pmatrix}1&1\\1&-1\end{pmatrix},\qquad
+ H|0\rangle=\frac{|0\rangle+|1\rangle}{\sqrt2},
+\]
+the two measurement probabilities are $1/2$. Applying $H$ again gives
+$H^2|0\rangle=|0\rangle$, so the final probability of zero is one.
+Amplitudes combine before their magnitudes are squared. Replacing the
+intermediate state by a classical random bit would erase relative-phase
+information relevant to later operations.
+
+The state-space postulates and Born rule are physical modeling rules, while
+normalization preservation is a mathematical consequence of unitarity.
+Connecting either to an experiment requires a specified preparation, operation,
+and measurement. A classical program holding complex arrays does not by
+itself demonstrate a quantum device. For the formal introductory framework,
+see Nielsen and Chuang, Chapter 2.\footnote{Michael A. Nielsen and Isaac L.
+Chuang, \emph{Quantum Computation and Quantum Information}, 10th anniversary
+edition (2010), Chapter 2, especially the postulates of quantum mechanics:
+\url{https://doi.org/10.1017/CBO9780511976667}.}
+
+\section{A lattice-Boltzmann step has exact moment obligations}
+\label{learn:fluids}
+A lattice-Boltzmann method evolves populations $f_i$ associated with a finite
+set of velocities $c_i$. In lattice units, define density and momentum by
+$\rho=\sum_i f_i$ and $\rho u=\sum_i c_i f_i$ for $\rho>0$.
+For the square D2Q9 stencil, velocities are $(0,0)$, the four axial unit
+vectors, and the four diagonal vectors $(\pm1,\pm1)$. Their weights are
+$4/9$, $1/9$ per axial vector, and $1/36$ per diagonal vector.
+The weights sum to one; symmetry gives
+\[
+ \sum_iw_ic_i=0,\qquad
+ \sum_iw_i c_{i\alpha}c_{i\beta}=\frac13\delta_{\alpha\beta},
+\]
+where $\delta_{\alpha\beta}$ is one for equal indices and zero otherwise.
+Odd third moments vanish by opposite-velocity pairing.
+
+The common low-velocity equilibrium is
+\[
+ f_i^{\mathrm{eq}}=w_i\rho\left[
+ 1+3c_i\cdot u+\frac92(c_i\cdot u)^2-\frac32|u|^2\right].
+\]
+Summing the polynomial with the weight identities gives
+$\sum_i f_i^{\mathrm{eq}}=\rho[1+(9/2)(|u|^2/3)-(3/2)|u|^2]=\rho$.
+Multiplying by $c_i$ and summing gives $\sum_i c_if_i^{\mathrm{eq}}=\rho u$:
+the linear term contributes $3\rho u/3$, and the other vector sums vanish.
+Thus the collision step
+$f_i^*=f_i-\omega(f_i-f_i^{\mathrm{eq}})$ preserves both moments in exact
+arithmetic. Streaming $f_i(x+c_i,t+1)=f_i^*(x,t)$ permutes populations on a
+periodic lattice, so global mass is preserved as well.
+
+Deriving incompressible Navier--Stokes behavior requires further assumptions:
+low Mach number, suitable scale separation, the appropriate higher stencil
+moments, and compatible boundary and forcing rules. In the standard BGK
+hydrodynamic limit, lattice-unit kinematic viscosity is
+$\nu=(1/3)(1/\omega-1/2)$; $0<\omega<2$ makes that coefficient positive,
+but is insufficient alone to guarantee every simulation's stability.
+Diffusion equations can use related scalar-population constructions, with
+different equilibrium and moment targets. Naming both approaches
+``lattice-Boltzmann'' leaves their modeled quantities distinct.
+For a derivation and its assumptions, consult the method review by Chen and
+Doolen.\footnote{Shiyi Chen and Gary D. Doolen, ``Lattice Boltzmann Method
+for Fluid Flows,'' \emph{Annual Review of Fluid Mechanics} 30 (1998),
+pp.~329--364: \url{https://doi.org/10.1146/annurev.fluid.30.1.329}.}
+
+\section{Exercises with full solutions}
+\paragraph{1. Invert a quaternion.}
+Find the inverse of $q=1+2i$ and check the product.
+
+\paragraph{Solution.}
+The squared norm is five, so $q^{-1}=(1-2i)/5$.
+Multiplication gives $(1+2i)(1-2i)/5=(1-4i^2)/5=1$.
+The reversed product also equals one. This calculation uses the quaternion
+relations and proves an inverse for the specified element.
+
+\paragraph{2. Keep relative phase until the measurement.}
+Apply $H$ to $(|0\rangle-|1\rangle)/\sqrt2$ and find the outcome probabilities.
+
+\paragraph{Solution.}
+Matrix multiplication gives
+$\frac12(1-1,1+1)^T=(0,1)^T=|1\rangle$.
+The probabilities are zero for outcome zero and one for outcome one.
+Before the transformation, both probabilities were $1/2$. The relative
+minus sign changes the subsequent interference.
+
+\paragraph{3. Detect a population defect.}
+Suppose a faulty equilibrium sums to $\rho+\varepsilon$ at one lattice
+site. What does collision do to that site's density?
+
+\paragraph{Solution.}
+Summing the update gives
+$\sum_i f_i^*=\rho-\omega[\rho-(\rho+\varepsilon)]
+=\rho+\omega\varepsilon$.
+The defect injects density in proportion to the relaxation factor. Periodic
+streaming redistributes that injected amount and preserves its global sum;
+it cannot repair the collision defect. This is why moment identities should
+be checked before interpreting pictures of a flow.
+
+\section{Read the existing advanced review by its evidence contract}
+The advanced mathematical baseline studies exceptional Lie algebras,
+Cayley--Dickson properties, modular forms, and fractal dimensions. The
+computational portfolio then asks what retained artifacts establish about
+implementations and proposed physical mechanisms. Carry three questions into
+each entry: which mathematical statement has a proof, which finite calculation
+has been reproduced, and which physical inference needs an independently
+specified model and observation? Subsequent courses can deepen representation
+theory, complex analysis, functional analysis, quantum information, and
+continuum mechanics along separate paths. These chapters establish a shared
+entry language and worked checks, rather than completion of those subjects.

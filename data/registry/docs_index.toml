@@ -1,6 +1,6 @@
 generated_by = "scripts/build_docs_index.py"
 generated_at_utc = "1970-01-01T00:00:00+00:00"
-documents_total = 70
+documents_total = 74
 
 [[documents]]
 id = "docs_architecture_md"
@@ -147,6 +147,42 @@ line_count = 313
 size_bytes = 14831
 
 [[documents]]
+id = "docs_learning__audit_md"
+relpath = "docs/learning/AUDIT.md"
+category = "docs/root"
+title = "Bridge content and visual audit"
+sha256 = "01cdc4ec340f44e353e1362d2eb8f02654e9380ebf9d1a498c2e51aede519cff"
+line_count = 221
+size_bytes = 14570
+
+[[documents]]
+id = "docs_learning__readme_md"
+relpath = "docs/learning/README.md"
+category = "docs/root"
+title = "Start with a question"
+sha256 = "e0774cd91ec01dae510a5607f740470bc095bace9f793294a6b19af68a65b5df"
+line_count = 110
+size_bytes = 5824
+
+[[documents]]
+id = "docs_learning__work_log_md"
+relpath = "docs/learning/WORK_LOG.md"
+category = "docs/root"
+title = "Learning album work log"
+sha256 = "c14ad61d0af916ce2e90a7ba057716ed391c41106f268b916be0715b98f251ec"
+line_count = 56
+size_bytes = 3024
+
+[[documents]]
+id = "docs_learning__requirements_txt"
+relpath = "docs/learning/requirements.txt"
+category = "docs/root"
+title = "pypdf==6.8.0"
+sha256 = "3645f52dcb91338f4f8544079381eaed1ad3aa86e6d06e22dc9d235a78fd4c37"
+line_count = 6
+size_bytes = 90
+
+[[documents]]
 id = "docs_reports__architectural_analysis_report_md"
 relpath = "docs/reports/ARCHITECTURAL_ANALYSIS_REPORT.md"
 category = "docs/root"
@@ -286,9 +322,9 @@ id = "papers_review_mathematical_baseline_tex"
 relpath = "papers/sections/review_mathematical_baseline.tex"
 category = "papers/sections"
 title = "Mathematical Baseline"
-sha256 = "17ff0c0872d2985a9889b1b4e7df80fa01c05e98e1683f92573b90f46432cbf6"
-line_count = 164
-size_bytes = 6387
+sha256 = "6d95940e807c137d1f08decc9211ca4059639a8e3e60e09feeb50d33a649795e"
+line_count = 167
+size_bytes = 6623
 
 [[documents]]
 id = "papers_review_physical_claims_tex"
@@ -322,7 +358,7 @@ id = "papers_vol1_ch1_lie_algebras_tex"
 relpath = "papers/sections/vol1_ch1_lie_algebras.tex"
 category = "papers/sections"
 title = "Exceptional Lie Algebras and Their Extensions"
-sha256 = "157d0fc8353cc8dd58e40ad6f191d34264b7bfe3c9cbc0baad2e91c880c027b5"
+sha256 = "795180bbaf8e684ec2dd3dd70d02cc0f27fd77dbaea68766166343833a5b80b9"
 line_count = 279
 size_bytes = 11679
 

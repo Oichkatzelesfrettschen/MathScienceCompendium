@@ -1,0 +1,178 @@
+\chapter{Several variables: local maps and conservation}
+\label{learn:multivariable}
+
+\begin{learningcard}{Prerequisites and question}
+Use derivatives and integrals from Chapter~\ref{learn:calculus}, and matrix
+maps and dot products from Chapter~\ref{learn:linear_algebra}. A temperature
+field depends on position, while a moving fluid carries a direction at every
+position. How can local rates describe a changing quantity spread across a
+region? We work first in Euclidean space with smooth functions and regular
+boundaries; singular fields require additional analysis.
+\end{learningcard}
+
+\section{A partial derivative controls one input}
+A scalar field assigns one real value to each point in a region of $\RR^n$.
+For $f(x,y)$, the partial derivative with respect to $x$ is
+\[
+ f_x(a,b)=\lim_{h\to0}\frac{f(a+h,b)-f(a,b)}h,
+\]
+when the limit exists. The second input stays fixed. The derivative $f_y$
+is defined by varying only the second input. For
+$f(x,y)=x^2+3xy+y^2$, ordinary differentiation gives
+$f_x=2x+3y$ and $f_y=3x+2y$.
+
+The gradient is the vector $\nabla f=(f_x,f_y)$ in Cartesian coordinates.
+If $f$ is differentiable at a point $p$, then
+\[
+ f(p+h)=f(p)+\nabla f(p)\cdot h+r(h),\qquad
+ \frac{|r(h)|}{\|h\|}\longrightarrow0\quad(h\to0).
+\]
+This condition controls all directions together. The existence of partial
+derivatives at one point alone provides weaker information. For example,
+set $g(x,y)=xy/(x^2+y^2)$ away from the origin and $g(0,0)=0$.
+Both coordinate-axis restrictions vanish, so both partials at the origin
+are zero. Along $y=x\ne0$, however, $g=1/2$, so $g$ is discontinuous
+at the origin and therefore fails to be differentiable. Continuous first
+partials in a neighborhood are a sufficient condition for differentiability.
+
+\section{Worked example: choose a direction of change}
+For the polynomial above, $\nabla f(1,0)=(2,3)$. Along a unit direction
+$u$, the directional derivative is $\nabla f(1,0)\cdot u$.
+The Cauchy--Schwarz inequality bounds its magnitude by $\sqrt{13}$.
+For a unit vector $u$, the needed bound follows directly from
+$0\leq\|v-(v\cdot u)u\|^2=\|v\|^2-(v\cdot u)^2$;
+therefore $|v\cdot u|\leq\|v\|$.
+The largest increase occurs at $u=(2,3)/\sqrt{13}$ and equals
+$\sqrt{13}$. The direction $(3,-2)/\sqrt{13}$ has zero first-order
+change because its dot product with the gradient vanishes.
+
+For an actual displacement $h=(0.01,-0.02)$, the linear prediction is
+$2(0.01)+3(-0.02)=-0.04$. Expanding the polynomial shows an exact
+additional term $h_x^2+3h_xh_y+h_y^2=-0.0001$, so
+$f(1.01,-0.02)-f(1,0)=-0.0401$. The calculation measures the error
+instead of treating a local approximation as an identity.
+
+\section{The Jacobian organizes several outputs}
+For $F\colon\RR^n\to\RR^m$, its Jacobian matrix has entries
+$(DF)_{ij}=\partial F_i/\partial x_j$. Differentiability means
+$F(p+h)=F(p)+DF(p)h+r(h)$ with $\|r(h)\|/\|h\|\to0$.
+The chain rule becomes matrix multiplication:
+\[
+ D(G\circ F)(p)=DG(F(p))\,DF(p).
+\]
+The dimensions enforce the order: an $n$-component displacement enters
+$DF$ first, producing an $m$-component displacement for $DG$.
+
+Polar coordinates provide a concrete example:
+$F(r,\theta)=(r\cos\theta,r\sin\theta)$. Then
+\[
+ DF=\begin{pmatrix}\cos\theta&-r\sin\theta\\
+ \sin\theta&r\cos\theta\end{pmatrix},\qquad \det DF=r.
+\]
+The determinant measures signed local area scaling; its absolute value
+enters an area integral. Away from $r=0$, a small coordinate rectangle
+with sides $dr,d\theta$ therefore has area approximately $r\,dr\,d\theta$.
+Coordinate degeneracy at the origin explains why a single global inverse
+polar chart requires care.
+
+\begin{learningcard}{Historical situation: notation as shared equipment}
+Edwin Bidwell Wilson's 1901 \emph{Vector Analysis}, based on J. Willard
+Gibbs's lectures, explicitly presents a textbook for students of mathematics
+and physics. Its chapters on differentiation and integration show vector
+methods being organized for instruction. The title page documents the
+collaboration and pedagogical setting; the chapter organization supplies
+evidence of a teachable framework rather than a claim of sole invention.
+\footnote{E. B. Wilson, \emph{Vector Analysis: A Text-Book for the Use of
+Students of Mathematics and Physics, Founded upon the Lectures of
+J. Willard Gibbs} (1901), title page and chapters on differentiation and
+integration; digitized text:
+\url{https://archive.org/details/vectoranalysiste00gibbiala}.}
+Gibbs's preface describes a privately circulated pamphlet printed in
+1881--1884 and requests for a fuller public treatment. He then identifies
+Wilson as a listener to his 1899--1900 course who undertook the textbook.
+Wilson's preface explains his decision to distribute applications through
+the exposition as the necessary mathematics became available. These
+documented choices show how lectures, limited circulation, and student
+needs shaped the published teaching form. Our Jacobian notation and
+examples give a modern route through that subject.
+\end{learningcard}
+
+\section{Worked example: integration needs the area factor}
+The double integral $\iint_D f\,dA$ accumulates values times small areas
+and is defined by a limiting sum under suitable integrability assumptions.
+For a continuous function on a rectangle, iterated one-variable integration
+computes the double integral. Changing variables by a continuously
+differentiable one-to-one map with a nonzero Jacobian determinant on the
+interior introduces $|\det DF|$.
+
+Compute the integral of $x^2+y^2$ over the unit disk. Polar coordinates
+cover the interior apart from the origin and a seam of area zero, which
+leave the integral unchanged. The result is
+\[
+ \iint_{x^2+y^2\leq1}(x^2+y^2)\,dA
+ =\int_0^{2\pi}\int_0^1r^2r\,dr\,d\theta
+ =2\pi\left[\frac{r^4}{4}\right]_0^1=\frac\pi2.
+\]
+Dividing by the disk's area $\pi$ gives the mean squared distance from
+the center, $1/2$. Omitting the Jacobian factor would count equal radial
+widths as equal areas despite their different circumferences.
+
+\section{Divergence turns flux into a local balance}
+A vector field $J=(J_1,J_2,J_3)$ assigns a vector to each point. Its
+divergence is $\nabla\cdot J=\partial_xJ_1+\partial_yJ_2+\partial_zJ_3$.
+For a continuously differentiable field on a neighborhood of a bounded region
+$V$ with piecewise smooth boundary, the divergence theorem states
+\[
+ \int_V\nabla\cdot J\,dV=\int_{\partial V}J\cdot n\,dS,
+\]
+where $n$ is the outward unit normal and $dS$ is surface area. The right
+side is outward flux. On a small rectangular box, opposite-face differences
+in each component produce the corresponding partial derivative times volume;
+summing boxes cancels shared interior faces. This cancellation explains the
+theorem's structure; taking the limit rigorously requires the stated regularity.
+
+Let $\rho(x,t)$ be density, $J(x,t)$ its outward transport flux, and
+$s(x,t)$ a local production rate per volume. For a fixed region,
+\[
+ \frac{d}{dt}\int_V\rho\,dV=-\int_{\partial V}J\cdot n\,dS+\int_Vs\,dV.
+\]
+Assuming sufficient smoothness to move the derivative inside the integral
+and applying the divergence theorem gives
+$\int_V(\partial_t\rho+\nabla\cdot J-s)\,dV=0$.
+If the continuous integrand integrates to zero on every sufficiently small
+region, it vanishes pointwise; otherwise a neighborhood of a strictly
+positive or negative value would have a nonzero integral. Hence
+$\partial_t\rho+\nabla\cdot J=s$. With $s=0$ and zero boundary flux,
+total mass is constant. Chapter~\ref{learn:dynamics} uses this balance to
+derive a heat equation and a numerical conservation check.
+
+\section{Exercises with full solutions}
+\paragraph{1. Differentiate along a trajectory.}
+For $f(x,y)=x^2+y^2$ and $(x(t),y(t))=(\cos t,\sin t)$, find $df/dt$.
+
+\paragraph{Solution.}
+The chain rule gives $df/dt=2x x'+2y y'=2\cos t(-\sin t)+
+2\sin t\cos t=0$. Direct substitution gives $f=1$, confirming the
+result independently. The gradient is radial and the trajectory's velocity
+is tangent to the circle, so their dot product vanishes.
+
+\paragraph{2. Verify a divergence theorem example.}
+For $J=(x,y,z)$ on the unit cube $[0,1]^3$, compute both sides.
+
+\paragraph{Solution.}
+The divergence is three, so its volume integral is three. On each face
+$x=0$, $y=0$, or $z=0$, the normal component is zero. On each opposite
+face the outward normal component is one and the area is one. The total
+outward flux is therefore $1+1+1=3$, matching the volume integral.
+
+\paragraph{3. Identify the conservation boundary.}
+In a one-dimensional interval $[0,L]$, suppose $\rho_t+J_x=0$.
+Express the mass derivative and identify a sufficient boundary condition.
+
+\paragraph{Solution.}
+Integrating and using the fundamental theorem yields
+$M'(t)=-[J]_0^L=J(0,t)-J(L,t)$, where $M=\int_0^L\rho\,dx$.
+Equal endpoint fluxes guarantee $M'=0$; zero flux at both endpoints is one
+such condition. Periodic flux is another. The local equation alone allows
+mass to leave through the boundary, so the boundary convention belongs in
+any global conservation claim.

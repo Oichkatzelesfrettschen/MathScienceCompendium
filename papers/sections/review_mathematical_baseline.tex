@@ -109,8 +109,11 @@ sedenion witness is $(e_3+e_{10})(e_6-e_{15})=0$.
 
 \section{Modular forms and moonshine}
 
-A modular form is defined by holomorphy and a transformation law under a
-specified subgroup of $\mathrm{SL}(2,\ZZ)$. The classical modular invariant has
+A holomorphic modular form of integer weight $k$ for $\mathrm{SL}(2,\ZZ)$
+is holomorphic on the upper half-plane, satisfies
+$f((a\tau+b)/(c\tau+d))=(c\tau+d)^k f(\tau)$, and is holomorphic
+at the cusp. For subgroups, every cusp requires its own boundary condition.
+The modular invariant $j$ is a modular function: it has a pole at the cusp. The classical modular invariant has
 the expansion
 
 \begin{equation}
@@ -119,8 +122,8 @@ the expansion
 \end{equation}
 
 The appearance of Monster-group representation dimensions in coefficients of
-$j$ led to monstrous moonshine, proved through the construction of a monstrous
-Lie superalgebra \citep{conway1979monstrous,borcherds1992monstrous}.
+$j$ led to monstrous moonshine, proved using the Monster
+Lie algebra and its twisted denominator identities \citep{conway1979monstrous,borcherds1992monstrous}.
 
 \begin{evidence}{Established result}
 Recomputing a few coefficients or special values checks an implementation.

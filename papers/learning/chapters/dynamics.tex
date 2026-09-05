@@ -1,0 +1,183 @@
+\chapter{Dynamics: equations, modes, and trustworthy computation}
+\label{learn:dynamics}
+
+\begin{learningcard}{Prerequisites and guiding experiment}
+Use derivatives and integrals from Chapter~\ref{learn:calculus}, eigenvectors
+from Chapter~\ref{learn:linear_algebra}, and conservation from
+Chapter~\ref{learn:multivariable}. Imagine a warm bar cooling toward a
+uniform temperature. We need an evolution equation, initial and boundary
+data, a way to solve a controlled example, and a check that a computer's
+approximation respects the mechanism.
+\end{learningcard}
+
+\section{An equation of motion needs initial data}
+An ordinary differential equation (ODE) relates an unknown function of one
+variable to its derivatives. For $y'=f(t,y)$, an initial condition
+$y(t_0)=y_0$ chooses a trajectory when an existence and uniqueness theorem
+applies. Continuity in $t$ and local Lipschitz continuity in $y$ near the
+initial point provide a standard local guarantee. Lipschitz continuity means
+$|f(t,u)-f(t,v)|\leq L|u-v|$ locally for a fixed finite constant $L$.
+The guarantee is local: solutions can grow without bound in finite time,
+as $y'=y^2$, $y(0)=1$, with $y=1/(1-t)$ illustrates.
+
+\section{Worked example: exponential relaxation}
+Suppose excess temperature $y$ obeys $y'=-ky$, where $k>0$ has units of
+inverse time. Multiplying by $e^{kt}$ gives
+$(e^{kt}y)'=e^{kt}(y'+ky)=0$. Therefore
+\[
+ y(t)=y_0e^{-kt}.
+\]
+This integrating-factor argument includes $y_0=0$, a case division by $y$
+would have excluded temporarily. The time to reduce a positive excess by
+half is $t_{1/2}=\log2/k$. With $k=0.2$ per minute and $y_0=10$ degrees,
+the excess after five minutes is $10/e$ degrees, about $3.679$.
+The exponential law is a model assumption. Its success in one regime does
+not establish the same coefficient for every material or temperature range.
+
+An equilibrium of an autonomous equation $y'=f(y)$ is a value $y_*$ with
+$f(y_*)=0$. It is stable when sufficiently small initial perturbations stay
+small for all forward time for which the comparison is made; it is
+asymptotically stable when nearby trajectories also approach it. In the
+relaxation model, the exact factor $e^{-kt}$ proves both properties at zero.
+
+\section{Worked example: linear stability has directional content}
+For a constant matrix system $z'=Az$, an eigenvector $v$ with eigenvalue
+$\lambda$ produces the solution $z(t)=ce^{\lambda t}v$. If a basis of
+eigenvectors exists, expand the initial vector in that basis and evolve
+each coefficient. Consider
+\[
+ A=\begin{pmatrix}-2&1\\1&-2\end{pmatrix}.
+\]
+The vectors $(1,1)^T$ and $(1,-1)^T$ have eigenvalues $-1$ and $-3$.
+For $z(0)=(2,0)^T$, the decomposition gives
+\[
+ z(t)=e^{-t}(1,1)^T+e^{-3t}(1,-1)^T.
+\]
+Both modes decay, and the slower symmetric mode dominates at late times.
+A matrix with an eigenvalue of positive real part instead has a growing
+mode. In finite dimensions, every eigenvalue having negative real part
+ensures asymptotic stability even when generalized eigenvectors are needed.
+Eigenvalues on the imaginary axis require more information.
+
+For a smooth nonlinear system, write $z=z_*+\eta$ near an equilibrium.
+Differentiability gives $\eta'=Df(z_*)\eta+o(\|\eta\|)$.
+Strictly negative real parts imply local asymptotic stability under the
+standard linearization theorem. A zero eigenvalue makes that test
+inconclusive: $y'=-y^3$ attracts nearby trajectories, while $y'=y^3$
+repels them, and both derivatives at zero vanish.
+
+\begin{learningcard}{Historical situation: heat and a research program}
+Fourier's \emph{Th\'eorie analytique de la chaleur} (1822) opens with a
+preliminary discourse placing heat among mathematical investigations of
+natural phenomena. The text develops equations and trigonometric expansions
+for thermal problems. Its introductory account also describes the submission
+of work to the Institut. That setting makes scientific institutions part of
+the documented story of circulation and assessment.\footnote{Joseph Fourier,
+\emph{The Analytical Theory of Heat}, translated by Alexander Freeman
+(1878), Preliminary Discourse and Chapter I; University of Michigan
+Historical Mathematics Collection:
+\url{https://quod.lib.umich.edu/u/umhistmath/abr1558.0001.001}.}
+The source documents a program and its presentation. Modern convergence and
+solution theorems specify which Fourier manipulations are justified.
+\end{learningcard}
+
+\section{From a conservation law to the heat equation}
+A partial differential equation (PDE) involves an unknown function of several
+variables and its partial derivatives. In one space dimension let $u(x,t)$
+be temperature, $c>0$ constant volumetric heat capacity, and $J$ heat flux.
+Local energy conservation without sources says $cu_t+J_x=0$. Fourier's
+constitutive law $J=-K u_x$ assumes a constant conductivity $K>0$ and flux
+opposite the temperature gradient. Combining the two gives
+\[
+ u_t=\kappa u_{xx},\qquad\kappa=K/c>0.
+\]
+Here $\kappa$ has units of length squared per time. Conservation supplies
+a balance; the constitutive law supplies material behavior. They are separate
+assumptions that experiments can examine.
+
+On $0\leq x\leq L$, impose zero endpoint temperature and initial profile
+$u(x,0)=\sin(\pi x/L)$. Direct differentiation verifies the exact solution
+\[
+ u(x,t)=e^{-\kappa(\pi/L)^2t}\sin(\pi x/L).
+\]
+More generally, a finite linear combination of sine modes evolves by
+multiplying mode $n$ by $e^{-\kappa(n\pi/L)^2t}$. Higher spatial frequencies
+decay faster. Infinite expansions require convergence and regularity
+conditions; an arbitrary interchange of a sum and a derivative needs proof.
+For sufficiently smooth solutions with zero endpoint temperatures,
+integration by parts gives
+\[
+ \frac{d}{dt}\frac12\int_0^L u^2\,dx
+ =\kappa\int_0^Luu_{xx}\,dx=-\kappa\int_0^L u_x^2\,dx\leq0.
+\]
+The boundary term vanishes because $u$ vanishes there. This squared-norm
+quantity supplies a stability check; total heat may leave through the ends.
+
+\section{Stable dynamics and unstable time steps}
+Forward Euler replaces $y'$ by a forward difference. For $y'=-ky$,
+\[
+ y_{m+1}=(1-k\Delta t)y_m.
+\]
+The exact solution decays for every positive time step, but the numerical
+factor has magnitude at most one only when $0\leq k\Delta t\leq2$.
+Strict decay requires $0<k\Delta t<2$; the endpoint two gives undamped
+sign alternation. Nonnegativity for positive initial data requires the stronger
+condition $k\Delta t\leq1$. At equality the iterate is zero; strict positivity requires $k\Delta t<1$.
+Accuracy, stability, and sign preservation are distinct.
+
+With equally spaced spatial points and time levels, the centered-space,
+forward-time heat scheme is
+\[
+ u_j^{m+1}=u_j^m+r(u_{j+1}^m-2u_j^m+u_{j-1}^m),\qquad
+ r=\frac{\kappa\Delta t}{\Delta x^2}.
+\]
+For periodic data, insert a mode $e^{ij\theta}$, where $i^2=-1$.
+Its amplification factor is
+$G(\theta)=1-4r\sin^2(\theta/2)$. The condition $0\leq r\leq1/2$
+guarantees $|G|\leq1$ for every frequency; frequencies near $\pi$ expose
+failure beyond that bound. Spatial refinement by a factor two therefore
+requires a time step at most one quarter as large under this sufficient
+stability rule.
+
+A computation should record initial data, boundary rules, coefficients,
+mesh widths, and time steps. Compare a known mode with its exact solution,
+repeat on refined grids, and measure conservation under a boundary condition
+that actually conserves the quantity. These checks test the discretization
+and implementation; establishing a physical model additionally needs
+observations and uncertainty estimates.
+
+\section{Exercises with full solutions}
+\paragraph{1. Test two Euler time steps.}
+For $y'=-2y$, compare $\Delta t=0.4$ and $\Delta t=1.1$.
+
+\paragraph{Solution.}
+The amplification factors are $1-2(0.4)=0.2$ and
+$1-2(1.1)=-1.2$. The first gives $y_m=0.2^my_0$, decaying with
+preserved sign. The second gives $y_m=(-1.2)^my_0$, alternating and
+growing in magnitude for nonzero initial data. The exact solution
+$y_0e^{-2t}$ decays in both comparisons, identifying the growth as numerical.
+
+\paragraph{2. Follow two heat modes.}
+On $[0,\pi]$ with zero endpoints and $\kappa=1$, evolve
+$u(x,0)=\sin x+2\sin3x$.
+
+\paragraph{Solution.}
+Each mode solves the equation separately, and linearity gives
+$u(x,t)=e^{-t}\sin x+2e^{-9t}\sin3x$. Substituting $t=0$ verifies
+the initial condition; both sines vanish at the endpoints. Two spatial
+derivatives multiply the modes by $-1$ and $-9$, matching the time
+derivatives. The coefficient ratio is $2e^{-8t}$, so the higher-frequency
+contribution decays faster.
+
+\paragraph{3. Prove discrete mass conservation.}
+For the periodic heat scheme with $N$ points, prove preservation of
+$M^m=\Delta x\sum_{j=0}^{N-1}u_j^m$ in exact arithmetic.
+
+\paragraph{Solution.}
+Summing the update gives
+$M^{m+1}-M^m=r\Delta x\sum_j(u_{j+1}^m-2u_j^m+u_{j-1}^m)$.
+Periodic indexing makes each shifted sum equal to $\sum_j u_j^m$,
+so the difference is zero. Floating-point addition can introduce rounding
+drift, which a program should measure. Conservation alone also leaves the
+stability question open: the sum cancellation holds even for a time step
+that amplifies oscillating modes.

@@ -1,0 +1,158 @@
+\chapter{Linear algebra: coordinates, maps, and modes}
+\label{learn:linear_algebra}
+
+\begin{learningcard}{Prerequisites and destination}
+Bring precalculus vectors, dot products, matrix multiplication, and systems
+of equations; use Chapter~\ref{learn:proof} for quantified statements.
+We ask how a coupled problem can be expressed in coordinates that expose
+independent directions. Eigenvectors will later become the modes of
+Chapter~\ref{learn:dynamics}.
+\end{learningcard}
+
+\section{Vectors extend beyond arrows}
+A real vector space is a set $V$ with addition and multiplication by real
+scalars satisfying the following rules: addition is associative and
+commutative, a zero vector and additive inverses exist, scalar multiplication
+is associative with scalar products, one acts as the identity, and the two
+distributive laws hold. The operations stay inside $V$.
+The familiar space $\RR^n$ satisfies these rules component by component.
+Polynomials of degree at most two form another example: adding two such
+polynomials and scaling one preserves that degree bound.
+
+A linear combination of vectors $v_1,\ldots,v_k$ is a sum
+$\sum_{j=1}^k a_jv_j$ with real coefficients. Their span is the set of all
+such combinations. They are linearly independent when
+$\sum a_jv_j=0$ forces every $a_j=0$. A basis is an independent spanning
+list. Every vector has unique coefficients in a basis: subtracting two
+representations would give a vanishing linear combination, so independence
+forces the coefficients to agree. The number of vectors in a basis of a
+finite-dimensional space is its dimension.
+
+For degree-at-most-two polynomials, $(1,x,x^2)$ is a basis. Coordinates
+$(3,-2,5)$ represent $3-2x+5x^2$. Calling a polynomial a vector identifies
+its algebraic operations; magnitude and spatial direction require additional
+structure and interpretation.
+
+\section{Worked example: a map becomes a matrix}
+A map $T:V\to W$ is linear if
+$T(au+bv)=aT(u)+bT(v)$ for all vectors and real scalars. Define
+$T(a+bx+cx^2)=b+2cx$ on degree-at-most-two polynomials. This coefficient
+rule defines a linear map using only algebra. Chapter~\ref{learn:calculus}
+identifies the same rule as polynomial differentiation, $T(p)=p'$. Regard
+the output as another polynomial of degree at most two. Since
+$T(1)=0$, $T(x)=1$, and $T(x^2)=2x$, its matrix in the basis above is
+\[
+ A=\begin{pmatrix}0&1&0\\0&0&2\\0&0&0\end{pmatrix}.
+\]
+Each column is the coordinate vector of a basis image. Multiplication gives
+$A(3,-2,5)^T=(-2,10,0)^T$, representing $-2+10x$ as required.
+The kernel is the set of vectors mapped to zero, here the constant
+polynomials. The image is the set of outputs, here polynomials of degree
+at most one. Their dimensions are one and two.
+
+The rank--nullity theorem states
+$\dim\ker T+\dim\operatorname{im}T=\dim V$ for finite-dimensional $V$.
+To see the mechanism, take a basis of the kernel and extend it to a basis
+of $V$. The images of the added basis vectors span the image. Any linear
+relation among those images would put a combination of the added vectors
+inside the kernel, contradicting independence of the extended basis.
+Thus the added images form a basis of the image.
+
+\begin{learningcard}{Historical situation: an algebra of transformations}
+Arthur Cayley's 1858 ``A Memoir on the Theory of Matrices'' treats matrices
+as objects with operations and develops their algebra. The memoir is a
+specific document in the nineteenth-century development of the subject;
+methods for solving linear systems have much older histories. The Royal
+Society publication context shows mathematical communication through a
+learned institution, rather than a solitary discovery detached from readers
+and prior techniques.\footnote{Arthur Cayley, ``A Memoir on the Theory of
+Matrices,'' \emph{Philosophical Transactions of the Royal Society of London}
+148 (1858), pp.~17--37, especially the opening definitions:
+\url{https://doi.org/10.1098/rstl.1858.0002}.}
+The polynomial example is a modern instructional construction.
+\end{learningcard}
+
+\section{Worked example: independent stretching directions}
+An eigenvector of a square matrix $A$ is a nonzero vector $v$ satisfying
+$Av=\lambda v$; its eigenvalue $\lambda$ is the stretching factor,
+including a reversal when negative. For
+\[
+ A=\begin{pmatrix}2&1\\1&2\end{pmatrix},\qquad
+ v_+=(1,1)^T,\qquad v_-=(1,-1)^T,
+\]
+direct multiplication gives $Av_+=3v_+$ and $Av_-=v_-$. These
+independent vectors form a basis. Since
+$(4,2)^T=3v_++v_-$, repeated application gives
+$A^m(4,2)^T=3\cdot3^m v_++v_-$ for integers $m\geq0$.
+A coupled recurrence becomes two scalar recurrences.
+
+Normalize the vectors to obtain $q_+=v_+/\sqrt2$ and
+$q_-=v_-/\sqrt2$. The matrix $Q$ with those columns obeys
+$Q^TQ=I$, where $I$ is the identity matrix. Such a matrix is orthogonal;
+its columns form an orthonormal basis, meaning unit lengths and pairwise
+zero dot products. In these coordinates,
+$Q^TAQ=\operatorname{diag}(3,1)$ and
+$A=Q\operatorname{diag}(3,1)Q^T$.
+
+\begin{figure}[htbp]
+  \centering
+  \input{papers/learning/figures/linear_map.tex}
+  \caption{Read the input arrows at left, then the corresponding arrows at right on the same coordinate scale. The solid eigenvector grows by a factor of three; the dashed eigenvector keeps its length and direction. A general input splits into these two directions.}
+  \label{fig:learn:linear_map}
+\end{figure}
+
+\section{Why symmetry guarantees enough eigenvectors}
+The real symmetric spectral theorem states that every real matrix satisfying
+$A^T=A$ has an orthonormal basis of real eigenvectors. Here is a proof
+outline, with its analysis input made explicit. The continuous function
+$q(v)=v^TAv$ attains a maximum on the unit sphere because that sphere is
+compact in finite-dimensional Euclidean space. Let $u$ be a maximizer.
+For any unit $w$ perpendicular to $u$, the curve
+$u\cos t+w\sin t$ stays on the sphere. Differentiating $q$ along the
+curve at $t=0$ gives $2w^TAu=0$. Consequently $Au$ has zero component
+perpendicular to $u$, so $Au=\lambda u$.
+
+For $w\perp u$, symmetry gives $u^TAw=(Au)^Tw=\lambda u^Tw=0$.
+Thus the orthogonal complement of $u$ is preserved by $A$, and the
+restriction there is again symmetric. Induction on dimension supplies an
+orthonormal eigenbasis of that complement, which together with $u$ proves
+the theorem. The compactness and derivative facts belong to real analysis;
+the remainder is linear algebra.
+
+A general real matrix need not have real eigenvectors: rotation by ninety
+degrees sends every nonzero vector to a perpendicular vector. Even over
+$\CC$, the matrix
+\[J=\begin{pmatrix}1&1\\0&1\end{pmatrix}\]
+has only a one-dimensional eigenspace and lacks an eigenbasis. These examples
+explain why the theorem explicitly requires real symmetry.
+
+\section{Exercises with full solutions}
+\paragraph{1. Test a candidate vector space.}
+Is $S=\{(x,y)\in\RR^2:x+y=1\}$ a subspace with ordinary operations?
+
+\paragraph{Solution.}
+A subspace must contain the zero vector, but $0+0\ne1$. Also $(1,0)$
+belongs to $S$ while twice that vector does not. Therefore $S$ is an affine
+line rather than a vector subspace. The parallel set $x+y=0$ is a subspace:
+it equals the span of $(1,-1)$ and has dimension one.
+
+\paragraph{2. Find a projection matrix and its modes.}
+Find the orthogonal projection onto the line spanned by $(1,1)$.
+
+\paragraph{Solution.}
+A unit direction is $q=(1,1)^T/\sqrt2$. The projected vector is
+$q(q^Tv)$, so
+\[P=qq^T=\frac12\begin{pmatrix}1&1\\1&1\end{pmatrix}.\]
+Multiplication gives $P(1,1)^T=(1,1)^T$ and $P(1,-1)^T=0$.
+The eigenvalues are one along the line and zero perpendicular to it.
+Applying the projection again preserves each component, so $P^2=P$.
+
+\paragraph{3. Check an energy claim.}
+For the symmetric example above, show $v^TAv>0$ for every nonzero real $v$.
+
+\paragraph{Solution.}
+Write $v=aq_++bq_-$. Orthonormality and the eigenvalue equations give
+$v^TAv=3a^2+b^2$. A nonzero vector has at least one nonzero coefficient,
+so the expression is positive. This property is called positive definiteness.
+For a real symmetric matrix it holds exactly when every eigenvalue is
+positive, since the same orthonormal expansion works in every dimension.
