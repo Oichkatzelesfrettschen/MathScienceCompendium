@@ -10,6 +10,18 @@ import pytest
 CHAPTERS = Path(__file__).resolve().parents[2] / "papers/learning/chapters"
 
 
+def _zip_exact(*sequences):
+    """Pair sequences, refusing a length mismatch.
+
+    The zip strict keyword says this in one word and arrived in 3.10; the
+    quality workflow still tests 3.9, where the keyword is a TypeError raised
+    at the call rather than a length report.
+    """
+    lengths = {len(sequence) for sequence in sequences}
+    assert len(lengths) == 1, f"length mismatch: {sorted(lengths)}"
+    return zip(*sequences)
+
+
 def _matrix(source: str, name: str) -> list[list[int]]:
     match = re.search(rf"{name}=\\begin\{{pmatrix\}}(.*?)\\end\{{pmatrix\}}", source)
     assert match is not None, f"Missing displayed matrix {name}"
@@ -18,20 +30,20 @@ def _matrix(source: str, name: str) -> list[list[int]]:
 
 def _apply(matrix: list[list[int]], vector: list[int]) -> list[int]:
     return [
-        sum(entry * coordinate for entry, coordinate in zip(row, vector, strict=True))
+        sum(entry * coordinate for entry, coordinate in _zip_exact(row, vector))
         for row in matrix
     ]
 
 
 def _inner(first: list[complex], second: list[complex]) -> complex:
-    return sum(left.conjugate() * right for left, right in zip(first, second, strict=True))
+    return sum(left.conjugate() * right for left, right in _zip_exact(first, second))
 
 
 def _check_account_example(source: str) -> None:
     account_matrix = _matrix(source, "A")
     assert _apply(account_matrix, [4, 3]) == [11, 10]
     assert r"=\begin{pmatrix}11\\10\end{pmatrix}" in source
-    assert [first - second for first, second in zip(*account_matrix, strict=True)] == [1, -1]
+    assert [first - second for first, second in _zip_exact(*account_matrix)] == [1, -1]
 
 
 def test_displayed_account_map_and_composition() -> None:
