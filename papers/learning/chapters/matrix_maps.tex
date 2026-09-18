@@ -1,0 +1,140 @@
+\chapter{From balanced equations to matrix maps}
+\label{learn:matrix_maps}
+\input{papers/learning/generated/matrix_maps_entry}
+
+\section{How can two accounts become one operation?}
+The companion's balanced-equation lesson recovers two yields from two
+accounts. Keep that question, and change the representation. Suppose two
+bundles of one grade and one of another yield eleven measures, while one
+of the first and two of the second yield ten. These are modern teaching
+accounts. Each grade has a fixed yield in measures per bundle.
+\lessoncue{Notice}{The same two yields occur in both accounts.}
+Write their numerical values in an ordered column
+\[
+ v=\begin{pmatrix}x\\y\end{pmatrix},\qquad
+ A=\begin{pmatrix}2&1\\1&2\end{pmatrix},\qquad
+ Av=\begin{pmatrix}2x+y\\x+2y\end{pmatrix}.
+\]
+The entries of $A$ count bundles; multiplying bundle counts by yields
+produces measures. An ordered column of real numbers is a coordinate
+vector. Order carries meaning: exchanging $x$ and $y$ exchanges the grades.
+A matrix is a rectangular array; here its two rows describe the accounts.
+
+\section{Combine corresponding coordinates}
+For columns of equal length, add corresponding entries and multiply every
+entry by a scalar:
+\[
+ \begin{pmatrix}4\\3\end{pmatrix}+\begin{pmatrix}1\\-1\end{pmatrix}
+ =\begin{pmatrix}5\\2\end{pmatrix},\qquad
+ 2\begin{pmatrix}4\\3\end{pmatrix}=\begin{pmatrix}8\\6\end{pmatrix}.
+\]
+Subtraction adds the negative column. The zero column leaves every entry
+unchanged under addition. A linear combination such as $2v-w$ means scale
+$v$, then subtract corresponding coordinates of $w$. In a physical model,
+corresponding quantities must have compatible units before addition.
+
+\section{Multiply a row by a column}
+For a matrix with $m$ rows and $n$ columns, an input column must have $n$
+entries. Multiply matching entries of a row and the input, then add; repeat
+for each row. The output has $m$ entries. In symbols,
+$(Av)_r=\sum_{s=1}^n A_{rs}v_s$: the summation sign asks you to add the
+products as $s$ runs from one to $n$.
+\lessoncue{Worked example}{Check the recovered yields in both accounts.}
+Substitute $x=4,y=3$:
+\[
+ A\begin{pmatrix}4\\3\end{pmatrix}
+ =\begin{pmatrix}2\cdot4+1\cdot3\\1\cdot4+2\cdot3\end{pmatrix}
+ =\begin{pmatrix}11\\10\end{pmatrix}.
+\]
+Solving $Av=(11,10)^T$ asks which input gives that output. The superscript
+$T$ transposes an array: rows become columns. Thus $(11,10)^T$ is a column.
+For a rectangular example,
+\[
+ \begin{pmatrix}1&2&3\\4&5&6\end{pmatrix}^{T}
+ =\begin{pmatrix}1&4\\2&5\\3&6\end{pmatrix}.
+\]
+Transpose changes positions, while applying a matrix computes new values.
+
+\begin{figure}[htbp]
+\centering
+\input{papers/learning/figures/matrix_accounts.tex}
+\caption{Read each arrow as an operation. The first produces two account
+amounts; the second takes their difference. The composite row computes
+that difference directly from the yields. Units travel through the arrows.}
+\end{figure}
+
+\section{Compose operations in their application order}
+Take the first account minus the second with the row $B=(1,-1)$.
+Then $B(Av)=11-10=1$ measure. Distribute the subtraction before inserting
+numbers: $(2x+y)-(x+2y)=x-y$. Therefore
+\[
+ BA=\begin{pmatrix}1&-1\end{pmatrix}
+     \begin{pmatrix}2&1\\1&2\end{pmatrix}
+   =\begin{pmatrix}1&-1\end{pmatrix},\qquad B(Av)=(BA)v.
+\]
+The rightmost matrix acts first. In general, if $A$ has size $m\times n$
+and $B$ has size $p\times m$, then $BA$ has size $p\times n$.
+Its entry in row $r$, column $s$ is the row $r$ of $B$ multiplied by
+column $s$ of $A$. The inner sizes must agree. Here $AB$ is undefined:
+$A$ expects two input coordinates, while $B$ produces one.
+
+Even when both products exist, their order can matter. Let
+\[
+ C=\begin{pmatrix}1&1\\0&1\end{pmatrix},\quad
+ D=\begin{pmatrix}2&0\\0&1\end{pmatrix}.
+\]
+Row-column multiplication gives $CD=\begin{pmatrix}2&1\\0&1\end{pmatrix}$
+and $DC=\begin{pmatrix}2&2\\0&1\end{pmatrix}$.
+Doubling the first coordinate before adding the second differs from doubling
+after the addition. The identity matrix $I$, with ones on its diagonal and
+zeros elsewhere, satisfies $Iv=v$.
+
+\section{Measure length only after choosing a meaning}
+For real columns of equal length define the Euclidean dot product and norm:
+\[
+ u\mathbin{\cdot}v=u^Tv=\sum_{s=1}^n u_sv_s,\qquad
+ \|v\|=\sqrt{v^Tv}=\sqrt{\sum_{s=1}^n v_s^2}.
+\]
+For displacement coordinates on perpendicular axes in the same length unit,
+the Pythagorean theorem identifies this norm as length. For unrelated
+quantities, choose scales and a physical interpretation before calling a
+coordinate norm a measured distance.
+\lessoncue{Worked example}{Find a unit direction and a perpendicular one.}
+For $v=(3,4)^T$, the squared norm is $9+16=25$, so $\|v\|=5$.
+Divide each coordinate by five to obtain $q=(3/5,4/5)^T$ with norm one.
+For $w=(-4,3)^T$, $v^Tw=-12+12=0$: the directions are perpendicular.
+A zero vector has norm zero; division by its norm is undefined.
+
+\section{Try and check}
+\paragraph{1. Transfer the account rule.}
+For $M=\begin{pmatrix}3&1\\1&2\end{pmatrix}$ and $v=(2,5)^T$,
+find $Mv$ and check the difference of its accounts directly.
+\paragraph{Solution.}
+Multiply each row: $Mv=(3\cdot2+5,2+2\cdot5)^T=(11,12)^T$.
+Subtract the outputs to get $-1$. Subtract the rows first to obtain
+$(2,-1)$, then compute $2\cdot2-5=-1$. Both orders give the same difference.
+
+\paragraph{2. Check dimensions and order.}
+Using $C,D$ above and $u=(1,2)^T$, calculate $C(Du)$ and $D(Cu)$.
+\paragraph{Solution.}
+First $Du=(2,2)^T$, then $C(Du)=(4,2)^T$.
+First $Cu=(3,2)^T$, then $D(Cu)=(6,2)^T$. The intermediate columns
+have two entries, so both operations are defined, but their outputs differ.
+
+\paragraph{3. Normalize and test perpendicularity.}
+Find the norm of $u=(5,12)^T$ and a perpendicular unit vector.
+\paragraph{Solution.}
+The squared norm is $25+144=169$, giving norm thirteen.
+The vector $w=(-12/13,5/13)^T$ has squared norm
+$(144+25)/169=1$ and $u^Tw=(-60+60)/13=0$.
+
+\input{papers/learning/generated/matrix_maps_ready}
+\lessonreference
+{Match row and column sizes; multiply corresponding entries and add.
+Apply $A$ before $B$ in $BA$. For real coordinates, $\|v\|^2=v^Tv$.}
+{Coordinate order and units carry meaning. Transpose swaps rows and columns.
+Matrix multiplication can depend on order; normalization requires $v\ne0$.}
+{Chapter~\ref{learn:linear_algebra} uses these operations to find independent
+coordinates and eigenvectors. Chapter~\ref{learn:complex_numbers} extends
+length calculations to complex coordinates.}
+

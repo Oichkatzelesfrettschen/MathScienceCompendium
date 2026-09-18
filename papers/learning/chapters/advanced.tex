@@ -13,6 +13,7 @@ analysis as further coursework.
 
 \section{Doubling changes multiplication as well as dimension}
 \label{learn:hypercomplex}
+\input{papers/learning/generated/hypercomplex_entry}
 Starting with $\RR$ and its identity conjugation, the Cayley--Dickson
 construction replaces an algebra by ordered pairs. Fix the convention
 \[
@@ -52,16 +53,18 @@ A zero divisor is a nonzero element whose product with another nonzero
 element is zero. Under the fixed doubling convention, the sedenion vectors
 $a=e_3+e_{10}$ and $b=e_6-e_{15}$ satisfy
 \[
- e_3e_6=e_5,\quad e_3e_{15}=e_{12},\quad
- e_{10}e_6=e_{12},\quad e_{10}e_{15}=e_5,
- \qquad ab=e_5-e_{12}+e_{12}-e_5=0.
+ \begin{gathered}
+ e_3e_6=e_5,\quad e_3e_{15}=e_{12},\\
+ e_{10}e_6=e_{12},\quad e_{10}e_{15}=e_5,\\
+ ab=e_5-e_{12}+e_{12}-e_5=0.
+ \end{gathered}
 \]
 Each factor has Euclidean norm $\sqrt2$, demonstrating norm failure as well
 as zero divisors. The coordinate convention is essential to replaying this
 witness. It also explains why extending a successful quaternion construction
 to every doubled algebra requires fresh proofs of the properties used.
 
-\begin{learningcard}{Historical situation: reconstruct a mathematical route}
+\begin{learningcard}[breakable=false]{Historical situation: reconstruct a mathematical route}
 Baez's survey of the octonions describes the progression through normed
 division algebras and their historical development \citep{baez2001octonions}.
 It is a modern scholarly account rather than a contemporaneous record of
@@ -70,8 +73,12 @@ reconstruction: it makes the algebraic dependencies visible without
 asserting that every historical participant followed this exact path.
 \end{learningcard}
 
+\input{papers/learning/generated/hypercomplex_ready}
+
+\clearpage
 \section{Worked example: probabilities from a complex state}
 \label{learn:quantum}
+\input{papers/learning/generated/quantum_entry}
 A pure qubit is represented by a unit vector
 $\psi=\alpha|0\rangle+\beta|1\rangle$ in $\CC^2$, with
 $|0\rangle=(1,0)^T$, $|1\rangle=(0,1)^T$ and
@@ -105,8 +112,13 @@ Chuang, \emph{Quantum Computation and Quantum Information}, 10th anniversary
 edition (2010), Chapter 2, especially the postulates of quantum mechanics:
 \url{https://doi.org/10.1017/CBO9780511976667}.}
 
+\needspace{14\baselineskip}
+\input{papers/learning/generated/quantum_ready}
+
+\needspace{22\baselineskip}
 \section{A lattice-Boltzmann step has exact moment obligations}
 \label{learn:fluids}
+\input{papers/learning/generated/fluids_entry}
 A lattice-Boltzmann method evolves populations $f_i$ associated with a finite
 set of velocities $c_i$. In lattice units, define density and momentum by
 $\rho=\sum_i f_i$ and $\rho u=\sum_i c_i f_i$ for $\rho>0$.
@@ -193,3 +205,5 @@ specified model and observation? Subsequent courses can deepen representation
 theory, complex analysis, functional analysis, quantum information, and
 continuum mechanics along separate paths. These chapters establish a shared
 entry language and worked checks, rather than completion of those subjects.
+
+\input{papers/learning/generated/fluids_ready}

@@ -1,14 +1,17 @@
 \chapter{Dynamics: equations, modes, and trustworthy computation}
 \label{learn:dynamics}
 
-\begin{learningcard}{Prerequisites and guiding experiment}
+\input{papers/learning/generated/dynamics_entry}
+
 Use derivatives and integrals from Chapter~\ref{learn:calculus}, eigenvectors
 from Chapter~\ref{learn:linear_algebra}, and conservation from
 Chapter~\ref{learn:multivariable}. Imagine a warm bar cooling toward a
 uniform temperature. We need an evolution equation, initial and boundary
 data, a way to solve a controlled example, and a check that a computer's
 approximation respects the mechanism.
-\end{learningcard}
+
+\lessoncue{Notice}{Compare decay in the differential equation with the amplification factor of one numerical step.}
+
 
 \section{An equation of motion needs initial data}
 An ordinary differential equation (ODE) relates an unknown function of one
@@ -66,7 +69,7 @@ standard linearization theorem. A zero eigenvalue makes that test
 inconclusive: $y'=-y^3$ attracts nearby trajectories, while $y'=y^3$
 repels them, and both derivatives at zero vanish.
 
-\begin{learningcard}{Historical situation: heat and a research program}
+\begin{learningcard}[breakable=false]{Historical situation: heat and a research program}
 Fourier's \emph{Th\'eorie analytique de la chaleur} (1822) opens with a
 preliminary discourse placing heat among mathematical investigations of
 natural phenomena. The text develops equations and trigonometric expansions
@@ -181,3 +184,5 @@ so the difference is zero. Floating-point addition can introduce rounding
 drift, which a program should measure. Conservation alone also leaves the
 stability question open: the sum cancellation holds even for a time step
 that amplifies oscillating modes.
+
+\input{papers/learning/generated/dynamics_ready}

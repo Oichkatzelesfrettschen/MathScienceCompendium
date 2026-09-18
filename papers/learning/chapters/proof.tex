@@ -1,12 +1,10 @@
 \chapter{From convincing examples to proof}
 \label{learn:proof}
 
-\begin{learningcard}{Your starting equipment}
-Bring integer arithmetic, algebraic identities, inequalities, functions, and
-finite sums from the precalculus book. The new skill is to specify exactly
-which objects a statement covers and why the reasoning covers every one of
-them. The question guiding the chapter is: when does a pattern become a theorem?
-\end{learningcard}
+\input{papers/learning/generated/proof_entry}
+
+\lessoncue{Notice}{Choose the domain before deciding whether an example covers the statement.}
+
 
 \section{A statement needs a universe}
 A proposition is a statement with a truth value once its terms and domain are
@@ -29,7 +27,7 @@ refutes the converse. An equivalence $P\Leftrightarrow Q$ requires both
 implications. A theorem is a proved proposition within stated assumptions;
 a conjecture is a proposition offered for investigation.
 
-\begin{learningcard}{Historical situation: a diagram and its obligations}
+\begin{learningcard}[breakable=false]{Historical situation: a diagram and its obligations}
 Euclid's \emph{Elements}, Book I, Proposition 47 proves the square relation
 for a right triangle through constructions and earlier propositions. The
 surviving text gives a structured chain of dependencies rather than a table
@@ -103,12 +101,6 @@ establishes only the sampled cases. Floating-point computations introduce
 a further boundary: a small residual measures agreement to a tolerance,
 whereas exact equality requires an exact argument or exact arithmetic.
 
-\begin{learningcard}{Choose a useful next question}
-Before calculating, write the domain, quantifiers, and assumptions. After
-calculating, identify the witness or implication that makes the result
-apply to its claimed domain. Continue to Chapter~\ref{learn:linear_algebra}
-for structural proofs or Chapter~\ref{learn:calculus} for quantified limits.
-\end{learningcard}
 
 \section{Exercises with full solutions}
 \paragraph{1. Negate a quantified statement.}
@@ -141,3 +133,5 @@ $x^2-4=(x-2)(x+2)>0$. The converse fails at $x=-3$, whose square is
 nine. A corrected equivalence is $x^2>4$ if and only if $|x|>2$:
 the factors show the quadratic is positive on $(-\infty,-2)$ and
 $(2,\infty)$, exactly the domain described by the absolute-value inequality.
+
+\input{papers/learning/generated/proof_ready}

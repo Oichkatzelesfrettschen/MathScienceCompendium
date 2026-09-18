@@ -1,14 +1,17 @@
 \chapter{Several variables: local maps and conservation}
 \label{learn:multivariable}
 
-\begin{learningcard}{Prerequisites and question}
+\input{papers/learning/generated/multivariable_entry}
+
 Use derivatives and integrals from Chapter~\ref{learn:calculus}, and matrix
 maps and dot products from Chapter~\ref{learn:linear_algebra}. A temperature
 field depends on position, while a moving fluid carries a direction at every
 position. How can local rates describe a changing quantity spread across a
 region? We work first in Euclidean space with smooth functions and regular
 boundaries; singular fields require additional analysis.
-\end{learningcard}
+
+\lessoncue{Notice}{Hold the other inputs fixed for a partial derivative, then ask whether the full local map exists.}
+
 
 \section{A partial derivative controls one input}
 A scalar field assigns one real value to each point in a region of $\RR^n$.
@@ -75,7 +78,7 @@ with sides $dr,d\theta$ therefore has area approximately $r\,dr\,d\theta$.
 Coordinate degeneracy at the origin explains why a single global inverse
 polar chart requires care.
 
-\begin{learningcard}{Historical situation: notation as shared equipment}
+\begin{learningcard}[breakable=false]{Historical situation: notation as shared equipment}
 Edwin Bidwell Wilson's 1901 \emph{Vector Analysis}, based on J. Willard
 Gibbs's lectures, explicitly presents a textbook for students of mathematics
 and physics. Its chapters on differentiation and integration show vector
@@ -171,8 +174,11 @@ Express the mass derivative and identify a sufficient boundary condition.
 
 \paragraph{Solution.}
 Integrating and using the fundamental theorem yields
-$M'(t)=-[J]_0^L=J(0,t)-J(L,t)$, where $M=\int_0^L\rho\,dx$.
+\[M'(t)=-[J]_0^L=J(0,t)-J(L,t),\]
+where $M=\int_0^L\rho\,dx$.
 Equal endpoint fluxes guarantee $M'=0$; zero flux at both endpoints is one
 such condition. Periodic flux is another. The local equation alone allows
 mass to leave through the boundary, so the boundary convention belongs in
 any global conservation claim.
+
+\input{papers/learning/generated/multivariable_ready}

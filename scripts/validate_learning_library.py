@@ -19,9 +19,46 @@ def validate_library(
     external_roots: dict[str, Path] | None = None,
 ) -> list[str]:
     errors: list[str] = []
+    if not isinstance(data, dict):
+        return ["Library must be an object"]
+    for collection in ("books", "nodes", "routes"):
+        records = data.get(collection)
+        if not isinstance(records, list) or not records:
+            errors.append(f"{collection}: expected a nonempty record list")
+            continue
+        for record in records:
+            if not isinstance(record, dict) or not isinstance(record.get("id"), str):
+                errors.append(f"{collection}: record needs a string id")
+                continue
+            if collection == "nodes":
+                for field in ("requires", "outcomes", "helpful"):
+                    if not isinstance(record.get(field), list) or any(
+                        not isinstance(value, str) for value in record[field]
+                    ):
+                        errors.append(f"{record['id']}: {field} must be a string list")
+                for field in ("entry_check", "readiness", "reference"):
+                    if not isinstance(record.get(field), dict):
+                        errors.append(f"{record['id']}: {field} must be an object")
+                if not isinstance(record.get("next"), list) or any(
+                    not isinstance(step, dict)
+                    or not isinstance(step.get("node"), str)
+                    or not isinstance(step.get("why"), str)
+                    for step in record.get("next", [])
+                ):
+                    errors.append(f"{record['id']}: next must contain destinations and reasons")
+                for field in ("source", "book"):
+                    if not isinstance(record.get(field), str):
+                        errors.append(f"{record['id']}: {field} must be a string")
+            elif collection == "routes":
+                if not isinstance(record.get("nodes"), list) or any(
+                    not isinstance(value, str) for value in record["nodes"]
+                ):
+                    errors.append(f"{record['id']}: nodes must be a string list")
+    if errors:
+        return errors
     root = root.resolve()
     external_roots = external_roots or {}
-    if data.get("schema_version") != 1:
+    if data.get("schema_version") != 2:
         errors.append("Unsupported library schema")
     books = data.get("books", [])
     nodes = data.get("nodes", [])
@@ -42,6 +79,37 @@ def validate_library(
             errors.append(f"{book['id']}: external book needs exact commit")
     for node in nodes:
         identifier = node["id"]
+        for field in ("question", "role"):
+            if not isinstance(node.get(field), str) or not node[field].strip():
+                errors.append(f"{identifier}: missing {field}")
+        for field in ("outcomes", "helpful"):
+            values = node.get(field)
+            if (
+                not isinstance(values, list)
+                or not values
+                or any(not isinstance(value, str) or not value.strip() for value in values)
+            ):
+                errors.append(f"{identifier}: missing {field}")
+        for field in ("entry_check", "readiness"):
+            check = node.get(field, {})
+            if not isinstance(check, dict) or any(
+                not isinstance(check.get(key), str) or not check[key].strip()
+                for key in ("prompt", "answer")
+            ):
+                errors.append(f"{identifier}: incomplete {field}")
+        if node.get("entry_check", {}).get("repair") not in node_map:
+            errors.append(f"{identifier}: unknown repair lesson")
+        reference = node.get("reference", {})
+        if any(
+            not isinstance(reference.get(key), str) or not reference[key].strip()
+            for key in ("use", "watch")
+        ):
+            errors.append(f"{identifier}: incomplete reference")
+        if not node.get("next"):
+            errors.append(f"{identifier}: missing next destination")
+        for step in node.get("next", []):
+            if step.get("node") not in node_map or not step.get("why", "").strip():
+                errors.append(f"{identifier}: invalid next destination or reason")
         if node.get("book") not in book_map:
             errors.append(f"{identifier}: unknown book")
             continue
@@ -84,6 +152,9 @@ def validate_library(
         visit(identifier)
     used: set[str] = set()
     for route in routes:
+        for field in ("purpose", "question", "starting_knowledge"):
+            if not isinstance(route.get(field), str) or not route[field].strip():
+                errors.append(f"{route['id']}: missing {field}")
         if not route.get("nodes"):
             errors.append(f"{route['id']}: empty route")
         seen: set[str] = set()

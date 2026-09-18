@@ -1,14 +1,17 @@
 \chapter{Algebraic structure: symmetry, brackets, and roots}
 \label{learn:algebra}
 
-\begin{learningcard}{Prerequisites and destination}
+\input{papers/learning/generated/algebra_entry}
+
 Use proof, vector spaces, matrices, and eigenvectors from
 Chapters~\ref{learn:proof} and~\ref{learn:linear_algebra}. The aim is to
 recognize what an algebraic classification classifies before attaching a
 physical interpretation to it. We move from rotations of a triangle to a
 small root system, then identify concrete features of the exceptional
 $E_8$ endpoint.
-\end{learningcard}
+
+\lessoncue{Notice}{Apply two operations in both orders before computing their commutator.}
+
 
 \section{A group records reversible composition}
 A group is a set $G$ with an associative operation, an identity element,
@@ -72,7 +75,7 @@ $\mathfrak{sl}_2$ over the chosen real or complex field. The eigenvector
 language from linear algebra reappears: under the linear map
 $X\mapsto[H,X]$, the vectors $E,F$ have eigenvalues two and minus two.
 
-\begin{learningcard}{Historical situation: classification requires definitions}
+\begin{learningcard}[breakable=false]{Historical situation: classification requires definitions}
 Cartan's 1894 dissertation investigates the structure of finite continuous
 transformation groups. The historical object is a published structural
 investigation, not a claim that every later application was contained in that
@@ -119,8 +122,10 @@ lattice quotient rather than an automatic selection rule for a fluid.
 \section{A concrete endpoint: the \texorpdfstring{$E_8$}{E8} count and lengths}
 A standard coordinate construction in $\RR^8$ has two kinds of roots:
 \[
- (\pm1,\pm1,0,0,0,0,0,0)\text{ with all position choices},
- \qquad \tfrac12(\pm1,\ldots,\pm1)\text{ with even minus parity}.
+ \begin{gathered}
+ (\pm1,\pm1,0,0,0,0,0,0)\text{ with all position choices},\\
+ \tfrac12(\pm1,\ldots,\pm1)\text{ with even minus parity}.
+ \end{gathered}
 \]
 There are $\binom82\cdot4=112$ roots of the first kind. Of the $2^8$
 sign patterns of the second kind, exactly half have even minus parity,
@@ -173,3 +178,5 @@ $s_{\alpha_1}(\alpha_2)=\alpha_2+\alpha_1=e_1-e_3$.
 Its squared length is two, so the result is another root of the same length.
 Chapter~\ref{learn:advanced} extends the distinction between algebraic
 structure and physical interpretation.
+
+\input{papers/learning/generated/algebra_ready}

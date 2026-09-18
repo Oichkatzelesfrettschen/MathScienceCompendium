@@ -1,18 +1,22 @@
 \chapter{Calculus: local change and accumulated change}
 \label{learn:calculus}
 
-\begin{learningcard}{Prerequisites and motivating problem}
+\input{papers/learning/generated/calculus_entry}
+
 Bring functions, inequalities, finite geometric sums, and the informal limits
 from precalculus; Chapter~\ref{learn:proof} supplies quantifiers. A speedometer
 reports local motion, while an odometer reports accumulated distance. What
 mathematics connects a rate measured near one instant to a total over an
 interval? Signed displacement, rather than total distance, will be our first
 quantity; total distance integrates the magnitude of velocity.
-\end{learningcard}
+
+\lessoncue{Notice}{The increment appears in both a numerator and a denominator before the limit is taken.}
+
 
 \section{A limit is a controlled error statement}
-For a function defined near $a$, except possibly at $a$, the assertion
-$\lim_{x\to a}f(x)=L$ means: for every $\epsilon>0$ there exists
+For a function defined near $a$, except possibly at $a$, write the limit assertion as
+\[\lim_{x\to a}f(x)=L.\]
+The assertion means: for every $\epsilon>0$ there exists
 $\delta>0$ such that $0<|x-a|<\delta$ implies $|f(x)-L|<\epsilon$.
 Inputs are restricted to the function's domain, and $a$ must be an
 accumulation point of that domain. The requested output tolerance comes
@@ -61,7 +65,7 @@ the derivative rule for an inverse function then gives
 $(e^x)'=e^x$ for its inverse exponential. These identities support the
 rates and Taylor examples used throughout the album.
 
-\begin{learningcard}{Historical situation: motion as a mathematical problem}
+\begin{learningcard}[breakable=false]{Historical situation: motion as a mathematical problem}
 In his preface to the first edition of the \emph{Principia}, Newton
 connects mathematical principles with the investigation of forces from
 motions and motions from forces. Book I develops mathematical propositions
@@ -169,3 +173,5 @@ $2^{-n}$ at $x=1/2$. Since $2^{-9}=1/512>10^{-3}$ and
 $2^{-10}=1/1024<10^{-3}$, $n=10$ suffices and is minimal.
 The approximation uses eleven terms. Continue to
 Chapter~\ref{learn:multivariable} to replace a scalar derivative by a linear map.
+
+\input{papers/learning/generated/calculus_ready}

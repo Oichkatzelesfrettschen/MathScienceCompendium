@@ -1,109 +1,136 @@
-# Start with a question
+# What should I learn next, and why?
 
-The album combines three complete PDFs: the independently maintained
-precalculus compendium, ten prerequisite chapters, and the advanced critical
-review. Begin with the route matching your question. Each chapter includes
-worked examples and three exercises with full solutions; try the exercise
-before uncovering its solution.
+Choose your purpose first. The independent **Precalculus Through Problems of the
+Past** teaches the foundations through compact historical problems. The bridge
+book continues from its final **Choose a Method** section. The critical review
+asks what mathematical arguments, computations, and measurements establish.
 
-## Reading routes
-
-| Question | Reading order | Advanced destination |
+| Your purpose | Your starting point | Why start there? |
 |---|---|---|
-| What does a symmetry preserve? | Precalculus -> proof -> linear algebra -> algebra -> hypercomplex construction | Mathematical Baseline: exceptional and Cayley-Dickson algebras |
-| How do local rules produce changing fields? | Precalculus -> proof -> linear algebra -> calculus -> multivariable -> dynamics -> probability -> numerical reasoning -> fluid moments | Computational Evidence Portfolio |
-| How do shape and complex structure constrain a function? | Precalculus -> proof -> linear algebra -> calculus -> multivariable -> algebra -> geometry/complex analysis | Modular forms and fractal dimensions |
-| What does a probability or successful check establish? | Precalculus -> proof -> linear algebra -> probability -> quantum states | Scope, Questions, and Review Method |
+| Build foundations | [Foundation route](routes/foundations.md) | Find the needed operation in the companion, then explain why the reasoning works |
+| Study mathematical physics | [Choose a topic below](#learn-a-topic) | Follow only the prerequisite operations needed for your question |
+| Evaluate research claims | [Claim-evaluation route](routes/claims.md) | Learn the evidence method first; repair mathematical gaps at the point of use |
 
-The combined PDF supplies actual links at each route step. The full chapter
-on advanced entry points contains three independently usable sections:
-hypercomplex algebras, quantum states, and fluid moments. Read the section
-selected by your route; the chapter's opening card lists the prerequisites
-for reading all three together.
+For a quick return, [look up a method](METHOD_FINDER.md) or
+[locate a claim's evidence](EVIDENCE_GUIDE.md). Reading the books requires a PDF
+reader. Python setup belongs to a chosen computational or build task.
 
-## What the bridges teach
+## Continue from the companion
 
-1. **Proof:** domains, quantifiers, direct arguments, contrapositive, induction,
-   and the difference between examples and universal reasoning.
-2. **Linear algebra:** spaces, maps, bases, eigenvectors, rank-nullity, and the
-   assumptions behind the symmetric spectral theorem.
-3. **Calculus:** controlled limits, derivatives, integration, the fundamental
-   theorem, and Taylor remainders.
-4. **Multivariable calculus:** gradients, Jacobians, coordinate integration,
-   divergence, and conservation.
-5. **Dynamics:** linear ODEs, stability, heat flow, Fourier modes, and discrete
-   time-step restrictions.
-6. **Probability:** conditional experiments, Bayes's rule, variance, interval
-   assumptions, and controls.
-7. **Numerical reasoning:** conditioning, roundoff, truncation, iteration,
-   refinement, and error bounds.
-8. **Algebra:** groups and actions, matrix commutators, A2 roots, and exact E8
-   enumeration and Cartan determinant.
-9. **Geometry and analysis:** metrics, compactness, Cantor dimension, complex
-   differentiability, modular transformations, and cusp conditions.
-10. **Advanced entry points:** Cayley-Dickson multiplication, quantum-state
-    normalization, unitary evolution, and lattice-Boltzmann moment obligations.
+The companion's transfer problems ask you to name a quantity, state its domain,
+choose an operation, and check the answer. Try one handoff check: a rectangle has
+perimeter 28 and area 45. Find its sides and check both measurements.
 
-These are introductory, explicit bridges into the review's vocabulary and
-selected derivations. Complete real analysis, measure theory, representation
-theory, quantum mechanics, and fluid mechanics require further study. A new
-book can develop any of those branches with its own assessment and evidence
-contract.
+<details><summary>Check your handoff answer</summary>
+
+If one side is x, the other is 14-x, with 0<x<14. Solve x(14-x)=45 by
+factoring x^2-14x+45=(x-5)(x-9). The sides are 5 and 9. Their perimeter
+is 28 and their product is 45. Return to **Equations and Balance** or **Choose
+a Method** in the companion if setting up the relationship needs practice.
+
+</details>
+
+[Open the independently maintained companion](https://github.com/Oichkatzelesfrettschen/precalc_paper).
+The local album references an explicitly recorded working edition: 34 standard
+pages, identified by [PDF and source hashes](precalculus_edition.json). The
+upstream repository link can advance independently; the album manifest identifies
+the exact bundled PDF. The companion owns its manuscript.
+
+Matrix and vector notation start here in
+[From balanced equations to matrix maps](lessons/matrix_maps.md).
+[Complex multiplication, length, and conjugation](lessons/complex_numbers.md)
+prepare the quantum and geometry routes. The companion's geometric-tail examples
+lead into [controlled limits](lessons/calculus.md).
+
+## Learn a topic
+
+| Question | Route | What you can do at its destination |
+|---|---|---|
+| What does a symmetry preserve? | [Symmetry and algebra](routes/symmetry.md) | Separate an algebraic construction from a proposed physical interpretation |
+| How do local rules produce changing fields? | [Change and simulation](routes/simulation.md) | Distinguish conservation, numerical convergence, and a controlled comparison |
+| How do shape and complex structure constrain a function? | [Shape and complex functions](routes/shape.md) | Check the assumptions behind a dimension or modular-form claim |
+| How do complex states give probabilities? | [Quantum states and probabilities](routes/quantum.md) | Compute normalization and identify the physical postulate |
+
+Every lesson page states a question, required lessons, helpful background,
+observable outcomes, an entry check with a repair link, a readiness check with
+solution, and a reason for the next useful lesson. Pass the entry check when
+using prior knowledge; follow the required lessons when an operation is unfamiliar.
+A readiness result covers the named task rather than an entire university course.
+
+## Keep the books beside one another
+
+The album publishes a directory and **separate PDFs**. Open `build/album/index.html`
+for the local directory, or `build/album/navigation.pdf` for a printable route
+book. Each destination names its book, section, and physical PDF page. PDF viewers
+vary in support for cross-file actions; the visible locator and book outline
+provide a second way to reach the section. Use the browser's back action to
+return to the directory; the local bridge and review also have online return links.
+
+| Work | Role | Local album file |
+|---|---|---|
+| Precalculus Through Problems of the Past | Independent foundations, practice, historical sources, quick reference | `precalculus.pdf` |
+| From Precalculus to Mathematical Physics | Twelve bridge chapters, solved practice, readiness solutions | `bridge.pdf` |
+| Claim, Evidence, and Falsification | Mathematical reference and research-evidence review | `review.pdf` |
+| Reader directory | Purpose chooser, routes, locators, and solutions | `index.html`, `navigation.pdf` |
+
+The [executable framework](../ARCHITECTURE.md) supports selected investigations.
+The [evidence guide](EVIDENCE_GUIDE.md#choose-a-bounded-computation) gives a small
+first task and its expected result. Retained legacy manuscripts stay outside the
+active reading sequence.
 
 ## Build and provenance
 
-The root README gives dependency installation. The standalone book checks are:
+The root README gives dependency installation. Prepare the companion in a local
+snapshot, then build the album:
 
 ```sh
+make companion-prepare
 make learning-check
-make learning
-make papers
-make album PRECALC_ROOT="$HOME/Github/precalc_paper"
+make album
 ```
 
-`library.json` pins the reviewed precalculus commit. The assembler rejects a
-different commit, dirty tracked precalculus sources, missing compiled PDFs,
-missing input recorders, and PDFs older than their recorded source inputs.
-Use a separate checkout at the pinned commit when the precalculus main branch
-has advanced; preserve a working checkout's edits.
+`companion-prepare` reads `~/Github/precalc_paper`, copies its declared working
+sources into `build/companion-working-edition`, and builds only in that local
+snapshot. It checks the external source hashes, index, HEAD, refs, and status
+before and after preparation. An existing snapshot must match its recorded source
+and remain unedited; a changed edition needs a fresh output path and an explicit
+edition review. `PRECALC_SOURCE_ROOT` selects the read-only original and
+`PRECALC_ROOT` selects the admitted local snapshot.
 
-`build/album/manifest.json` records PDF hashes, recorded TeX input hashes,
-source commits, page counts, and every lesson's actual destination. Included
-PDFs retain their internal links and outlines. The assembler checks every
-added route link after reopening the written album. Source claims remain
-subject to the separate content audit.
+The assembler checks `precalculus_edition.json`, the source recorder, PDF freshness,
+and exact outline destinations. It copies each book's PDF bytes intact, creates
+cross-file navigation, and records hashes and page locators in
+`build/album/manifest.json`. Passing those checks establishes identity and
+navigation contracts; mathematical, historical, and visual evidence have their
+own records. The companion working edition uses source hashes as well as HEAD,
+since HEAD alone omits its local edits.
 
-Review records:
+To review a new companion edition, prepare a fresh snapshot, review its teaching
+and rendered changes, then run `scripts/record_learning_companion.py` with that
+snapshot root. Commit its changed edition record and book revision together.
+The command records the specific PDF; it does not silently refresh admission
+during ordinary assembly.
 
-- [Precalculus mathematics](https://github.com/Oichkatzelesfrettschen/precalc_paper/blob/main/docs/mathematical_factcheck.md)
-- [Precalculus history](https://github.com/Oichkatzelesfrettschen/precalc_paper/blob/main/docs/history_factcheck.md)
-- [Precalculus figures](https://github.com/Oichkatzelesfrettschen/precalc_paper/blob/main/docs/figure_factcheck.md)
-- [Bridge audit](AUDIT.md)
+## Maintain a route or add a book
 
-## Add another book
-
-Keep a book's manuscript in its owning repository or a clearly named local
-book directory. Add its title, entry point, compiled PDF location, and role
-to `library.json`. External books require an immutable 40-character commit
-and a local checkout supplied to the assembler. Retain attribution and
-confirm the license permits including the work.
-
-Add lesson nodes with existing source files, exact PDF outline headings,
-prerequisite IDs, and an assessment. Add a route listing lessons in a valid
-prerequisite order. Each lesson must occur in at least one route. The validator
-rejects cycles, duplicate IDs, unwritten local lessons, escaped source paths,
-and routes that skip their prerequisites. A proposed unwritten book belongs
-in planning prose until it has real source and assessment artifacts.
-
-Build each external book with its own checks, then supply additional roots:
+`library.json` schema version 2 owns the learner metadata. After an edit, run:
 
 ```sh
-.venv/bin/python scripts/assemble_learning_album.py \
-  --precalc-root "$HOME/Github/precalc_paper" \
-  --book-root another_book=/path/to/its/pinned/checkout
+python3 scripts/render_learning_routes.py
+make learning-check
 ```
 
-The existing `make album` target builds the three initial books. A new external
-book also needs its own build command before assembly; the assembler verifies
-its revision and PDF inputs. The number of branches is a content choice,
-with source ownership and prerequisite checks applying to each addition.
+The generator writes route pages, lesson pages, the method finder, PDF lesson
+cards, and the readiness solution appendix. Edit the manifest rather than those
+generated files. Each node needs real source and an exact PDF heading, required
+lesson IDs, helpful background, outcomes, entry and readiness answers, repair
+links, reference cautions, and next-step reasons. Each route needs purpose,
+question, starting knowledge, and a prerequisite-valid order. A new external
+book also needs a revision and an admitted prebuilt edition; the assembler accepts
+`--book-root ID=PATH` and keeps its PDF separate.
+
+Design and verification records:
+
+- [Content inventory and original reader-journey map](CONTENT_INVENTORY_AND_READER_JOURNEYS.md)
+- [Information architecture implementation and verification](INFORMATION_ARCHITECTURE.md)
+- [Bridge mathematical and historical audit](AUDIT.md)

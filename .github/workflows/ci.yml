@@ -21,7 +21,7 @@ env:
 
 jobs:
   learning:
-    name: Learning routes and PDF assembly fixtures
+    name: Learning journeys and separate PDF navigation
     runs-on: ubuntu-latest
     timeout-minutes: 10
     steps:
@@ -37,6 +37,8 @@ jobs:
         run: >-
           python -m pytest --noconftest -q -o addopts=''
           tests/unit/test_learning_album.py tests/unit/test_learning_library.py
+          tests/unit/test_learning_entry_examples.py tests/unit/test_learning_companion.py
+          tests/unit/test_learning_navigation.py
 
   lint:
     name: Lint, format, types, and security
