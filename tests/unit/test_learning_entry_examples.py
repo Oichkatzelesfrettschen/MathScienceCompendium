@@ -30,8 +30,7 @@ def _matrix(source: str, name: str) -> list[list[int]]:
 
 def _apply(matrix: list[list[int]], vector: list[int]) -> list[int]:
     return [
-        sum(entry * coordinate for entry, coordinate in _zip_exact(row, vector))
-        for row in matrix
+        sum(entry * coordinate for entry, coordinate in _zip_exact(row, vector)) for row in matrix
     ]
 
 
