@@ -1,14 +1,17 @@
 \chapter{Geometry and analysis: distance, dimension, and complex structure}
 \label{learn:geometry}
 
-\begin{learningcard}{Prerequisites and scope}
+\input{papers/learning/generated/geometry_entry}
+
 Bring real limits and derivatives from Chapter~\ref{learn:calculus}, partial
 derivatives from Chapter~\ref{learn:multivariable}, and complex arithmetic
-from precalculus. Three questions guide this chapter: what does ``nearby''
+from Chapter~\ref{learn:complex_numbers}. Three questions guide this chapter: what does ``nearby''
 mean, how can a set have fractional dimension, and what extra structure makes
 a complex function modular? These are entrances to topology, fractal geometry,
 and complex analysis, with a worked example at each entrance.
-\end{learningcard}
+
+\lessoncue{Notice}{Count the intervals and measure their lengths at the same construction stage.}
+
 
 \section{Distance comes with axioms}
 A metric on a set $X$ is a function $d:X\times X\to\RR$ satisfying
@@ -90,7 +93,7 @@ set in an interval of its diameter. The Hausdorff $s$-measure is positive,
 proving the lower bound. The two dimensions agree for this set; other sets
 can separate them \citep{falconer2004fractal}.
 
-\begin{learningcard}{Historical situation: a measurement question changes with scale}
+\begin{learningcard}[breakable=false]{Historical situation: a measurement question changes with scale}
 Mandelbrot's 1967 paper asks how long Britain's coast is and relates
 scale-dependent length measurements to statistical self-similarity and
 fractional dimension \citep{mandelbrot1967long}. The publication supplies a
@@ -171,3 +174,5 @@ The transformation law for $S$ gives $f(-1/\tau)=\tau^2 f(\tau)$.
 At $i$, it becomes $f(i)=i^2f(i)=-f(i)$, hence $f(i)=0$.
 This is a necessary consequence of the transformation law; it alone
 constructs neither a nonzero form nor its coefficients.
+
+\input{papers/learning/generated/geometry_ready}

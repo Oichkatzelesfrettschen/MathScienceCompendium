@@ -1,0 +1,125 @@
+\chapter{Complex numbers: multiplication, length, and conjugation}
+\label{learn:complex_numbers}
+\input{papers/learning/generated/complex_numbers_entry}
+
+\section{How can arithmetic beyond real roots retain a positive length?}
+The companion's completing-the-square lesson introduces $i^2=-1$ to solve
+an equation such as $x^2+4=0$. Carry that arithmetic forward: a complex
+number $z=a+bi$ has real coordinates $a,b$. Equality means equality of
+both coordinates. A real number embeds as $a+0i$.
+Our question now concerns measurement. Squaring $i$ gives $-1$, yet a
+squared length should be nonnegative. Which product measures length?
+
+\section{Distribute, then replace the square of \texorpdfstring{$i$}{i}}
+Add and subtract corresponding real and imaginary parts. For multiplication,
+use distribution before collecting terms:
+\[
+ (a+bi)(c+di)=ac+adi+bci+bdi^2=(ac-bd)+(ad+bc)i.
+\]
+\lessoncue{Worked example}{Separate the arithmetic operations.}
+For $z=2+i$ and $w=1-3i$, addition gives $z+w=3-2i$.
+Multiplication gives
+\[
+ zw=2-6i+i-3i^2=5-5i.
+\]
+The second equality replaces $i^2$ by $-1$ and combines imaginary terms.
+Multiplying a general number by $i$ gives $i(a+bi)=-b+ai$: its plane
+coordinates change from $(a,b)$ to $(-b,a)$, a quarter-turn counterclockwise.
+
+\begin{figure}[htbp]
+\centering
+\input{papers/learning/figures/complex_product.tex}
+\caption{The solid arrow represents $z=2+i$. Multiplication by $i$ gives
+the dashed arrow $iz=-1+2i$, a quarter-turn of equal length. Reflection
+across the real axis gives the dotted arrow $\overline z=2-i$. Line styles
+and endpoint labels distinguish the three operations in grayscale.}
+\end{figure}
+
+\section{Conjugate to measure length and divide}
+The conjugate of $z=a+bi$ is $\overline z=a-bi$. Multiply the pair:
+\[
+ \overline z z=(a-bi)(a+bi)=a^2+b^2.
+\]
+The cross terms cancel. Define the modulus $|z|=\sqrt{a^2+b^2}$,
+the distance from the origin in the complex plane. Therefore
+$|z|^2=\overline z z$, and $|z|=0$ exactly when $z=0$.
+For $z=2+i$, $|z|=\sqrt5$, while $z^2=3+4i$ is a different quantity.
+
+\lessoncue{Worked example}{Make a denominator real before dividing.}
+For $w\ne0$, multiply numerator and denominator by $\overline w$.
+The denominator becomes the positive real number $|w|^2$:
+\[
+ \frac{2+i}{1-3i}
+ =\frac{(2+i)(1+3i)}{(1-3i)(1+3i)}
+ =\frac{-1+7i}{10}=-\frac1{10}+\frac7{10}i.
+\]
+Check by multiplying the answer by $1-3i$:
+$(-1+7i)(1-3i)/10=(20+10i)/10=2+i$.
+Distribution also verifies $\overline{zw}=\overline z\,\overline w$.
+Consequently $|zw|^2=|z|^2|w|^2$, so $|zw|=|z||w|$ because
+moduli are nonnegative. Multiplication by $i$ preserves length since $|i|=1$.
+
+\section{Extend the dot product with conjugation}
+A complex coordinate vector is a column whose entries are complex numbers.
+Add columns component by component and scale each entry as before. For
+equal-length columns define
+\[
+ \langle u,v\rangle=\sum_{s=1}^n\overline{u_s}v_s,
+ \qquad \|v\|=\sqrt{\langle v,v\rangle}
+ =\sqrt{\sum_{s=1}^n |v_s|^2}.
+\]
+We conjugate the first argument, the convention used in the quantum bridge.
+Thus $\langle u,cv\rangle=c\langle u,v\rangle$, while
+$\langle cu,v\rangle=\overline c\langle u,v\rangle$.
+Exchanging the arguments conjugates the result:
+$\langle v,u\rangle=\overline{\langle u,v\rangle}$.
+The conjugate transpose $u^*$ means transpose the column and conjugate
+its entries, so $\langle u,v\rangle=u^*v$; $u^\dagger$ is another common
+notation. For real columns the formula reduces to the ordinary dot product.
+
+\lessoncue{Worked example}{Test two complex directions.}
+Take $u=(1,i)^T$ and $v=(i,1)^T$. Then
+\[
+ \langle u,v\rangle=1\cdot i+(-i)\cdot1=0,\qquad
+ \|u\|^2=1+(-i)i=2.
+\]
+The columns are orthogonal, meaning their inner product is zero.
+Dividing either column by $\sqrt2$ gives a unit vector. Omitting conjugation
+would give $u^Tu=1+i^2=0$ for a nonzero column, so that expression fails
+as a squared norm. In quantum mechanics the normalized column
+$u/\sqrt2$ has squared component moduli $1/2,1/2$. Their interpretation as
+measurement probabilities requires the state and measurement assumptions
+introduced in Chapter~\ref{learn:quantum}.
+
+\section{Try and check}
+\paragraph{1. Multiply and check the length rule.}
+For $z=3-2i$ and $w=-1+i$, find $zw$ and verify $|zw|^2=|z|^2|w|^2$.
+\paragraph{Solution.}
+Distribution gives $zw=-3+3i+2i-2i^2=-1+5i$.
+Its squared modulus is $1+25=26$. The separate squared moduli are
+$9+4=13$ and $1+1=2$, whose product is twenty-six.
+
+\paragraph{2. Divide and reconstruct the numerator.}
+Compute $(3+i)/(1+i)$.
+\paragraph{Solution.}
+Multiply both numerator and denominator by $1-i$:
+$(3+i)(1-i)/2=(4-2i)/2=2-i$.
+Multiplication checks $(2-i)(1+i)=3+i$.
+
+\paragraph{3. Normalize a complex column.}
+For $v=(1+i,2)^T$, find a unit vector and verify its squared norm.
+\paragraph{Solution.}
+The squared norm is $|1+i|^2+|2|^2=2+4=6$.
+Set $q=v/\sqrt6$. Its squared norm is $2/6+4/6=1$.
+Each component uses its modulus squared; squaring the complex component
+itself would give $(1+i)^2=2i$ and lose the length interpretation.
+
+\input{papers/learning/generated/complex_numbers_ready}
+\lessonreference
+{Distribute products using $i^2=-1$; use $\overline z z=|z|^2$ for
+length. Divide by $w\ne0$ by multiplying by $\overline w/\overline w$.}
+{The complex inner product conjugates its first argument here.
+Normalization divides a nonzero vector by its positive real norm.}
+{Chapter~\ref{learn:quantum} uses complex amplitudes and inner products;
+Chapter~\ref{learn:geometry} uses lengths and products as geometric data.}
+

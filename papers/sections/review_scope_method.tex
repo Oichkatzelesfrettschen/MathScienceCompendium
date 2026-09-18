@@ -50,15 +50,25 @@ uses the following controlled vocabulary.
     \toprule
     Class & Required support \\
     \midrule
+    Definition & An object, domain, and declared convention. \\
     Established result & A theorem or standard result with a suitable source. \\
     Source claim & A statement found in the reviewed corpus, with no implied endorsement. \\
     Computational check & A program and retained output that test a specified finite case. \\
+    Falsified within scope & A counterexample or rejecting result for the stated claim and regime. \\
     Hypothesis & A proposed relation with a stated test and possible failure outcome. \\
     Unsupported extrapolation & A conclusion for which the repository supplies no valid derivation or discriminating evidence. \\
     Invalid artifact & An output that is malformed or fails a prerequisite numerical check. \\
     \bottomrule
   \end{tabularx}
 \end{table}
+
+\paragraph{Follow the specific record.}
+Read a disposition in the \evidencerecord{unified_framework_claims.json}{canonical
+claim ledger}, then follow its named hypothesis in the
+\evidencerecord{hypothesis_registry.json}{hypothesis registry}. The
+\evidencerecord{independent_reproduction_registry.json}{reproduction registry}
+records repeated computational decisions. A failed positive decision rule can
+leave component effects unresolved; read the exact rejection contract.
 
 \section{Evidence surfaces}
 

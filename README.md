@@ -1,64 +1,67 @@
 # MathScienceCompendium
 
-A connected mathematics learning album: start with precalculus, learn the
-prerequisites for an advanced question, then examine what the mathematics and
-evidence establish.
+**What should I learn next, and why?**
 
-**[Start with the reading routes](docs/learning/README.md).**
+A learning album that continues from the independent
+[Precalculus Through Problems of the Past](https://github.com/Oichkatzelesfrettschen/precalc_paper)
+into mathematical physics and the evaluation of research claims. Keep the books
+beside one another; the album supplies their handoff and reading routes.
 
-## The three books
+| Your purpose | Start here |
+|---|---|
+| Build foundations | [Find an operation and check your readiness](docs/learning/routes/foundations.md) |
+| Study mathematical physics | [Choose a topic and its prerequisites](docs/learning/README.md#learn-a-topic) |
+| Evaluate research claims | [Follow the evidence method](docs/learning/routes/claims.md) |
 
-| Book | Purpose | Canonical source |
+[Look up a method](docs/learning/METHOD_FINDER.md) ·
+[Examine a claim's evidence](docs/learning/EVIDENCE_GUIDE.md) ·
+[Companion handoff](docs/learning/README.md#continue-from-the-companion)
+
+## The books and the workbench
+
+| Work | Purpose | Source |
 |---|---|---|
-| A Precalculus Compendium | Historical context, visual constructions, functions, and foundational operations | [precalc_paper](https://github.com/Oichkatzelesfrettschen/precalc_paper) |
-| From Precalculus to Mathematical Physics | Ten bridge chapters with worked examples and solved exercises | [papers/learning/main.tex](papers/learning/main.tex) |
-| Claim, Evidence, and Falsification | Advanced mathematical baseline, computational evidence, and physical-claim audit | [papers/main.tex](papers/main.tex) |
+| Precalculus Through Problems of the Past | Compact foundations through historical problems, worked practice, and reference strips | [Independent companion](https://github.com/Oichkatzelesfrettschen/precalc_paper) |
+| From Precalculus to Mathematical Physics | Twelve bridge chapters with explicit prerequisites, solved practice, and next-step checks | [Bridge book](papers/learning/main.tex) |
+| Claim, Evidence, and Falsification | Established mathematics, computational observations, hypotheses, and bounded negative results | [Critical review](papers/main.tex) |
+| Executable mathematical-physics framework | Reproduce selected calculations with declared inputs and evidence boundaries | [Architecture](docs/ARCHITECTURE.md) |
 
-The combined PDF includes the complete pinned precalculus book, the bridge
-book, and the existing critical review. Clickable reading routes and preserved
-book outlines support independent paths through symmetry, simulation, shape,
-and quantum states/evidence. Each book retains its source ownership; the album
-assembles their PDFs rather than maintaining duplicate manuscript text.
+The companion owns its text and supplies the teaching and visual reference.
+The bridge begins where the compact companion ends, including new preparation
+in matrix maps and complex arithmetic. The review evaluates what claims can
+support. A passing computation establishes its declared contract; physical
+admission needs the separate evidence specified for the claim.
 
-The bridge chapters introduce selected undergraduate tools. Their solved
-assessments establish bounded learning objectives, not completion of entire
-graduate courses. The advanced review distinguishes theorem support,
-computational checks, hypotheses, and empirical evidence. A passing artifact
-check establishes its declared contract, not a physical theory.
-
-## Build the learning album
-
-The precalculus checkout belongs at `~/Github/precalc_paper`. The library
-manifest records its exact reviewed commit. Setup and revision instructions
-are in the [learning guide](docs/learning/README.md).
+## Build the separate-book album
 
 ```sh
 python3 -m venv .venv
-.venv/bin/python -m pip install -r docs/learning/requirements.txt
-make learning-check
-make album PRECALC_ROOT="$HOME/Github/precalc_paper"
+.venv/bin/python -m pip install -r docs/learning/requirements.txt 'pytest>=7.4,<9'
+make companion-prepare
+make album
 ```
 
-Outputs:
+The external checkout belongs at `~/Github/precalc_paper`. Preparation reads that
+checkout and builds a local working-edition snapshot; the source checkout remains
+read-only. The [learning guide](docs/learning/README.md#build-and-provenance)
+explains revision and source-hash admission.
 
-- `build/album/album.pdf`: complete album with navigation.
-- `build/album/manifest.json`: input hashes, source dependencies, and destinations.
-- `build/learning/main.pdf`: standalone bridge book.
-- `papers/main.pdf`: standalone critical review.
+Open `build/album/index.html` or `build/album/navigation.pdf`. The album folder
+contains separate `precalculus.pdf`, `bridge.pdf`, and `review.pdf`, plus
+`manifest.json` with input hashes and verified book/page destinations. The bridge
+also builds independently as `build/learning/main.pdf`; the review builds as
+`papers/main.pdf`.
 
-The TeX builds require TeX Live, `latexmk`, BibTeX, and makeindex. Precalculus
-uses LuaLaTeX and its own font checks; the other books use pdfLaTeX. The full
-album target also runs the precalculus source and equation checks. Python
-requirements for the advanced repository's evidence generators are declared
-in `pyproject.toml`; use `make install` when those dependencies are absent.
+TeX builds require TeX Live, LuaLaTeX, pdfLaTeX, `latexmk`, BibTeX, and makeindex.
+The companion checks its own fonts. Research evidence generators use dependencies
+in `pyproject.toml`; run `make install` when that environment needs installation.
 
 ## Research and computation
 
-`src/mathphysics/` contains the reusable Python package; `experiments/`
-contains experiment drivers; `data/registry/` and retained evidence document
-provenance and scientific admission boundaries. See the
-[architecture](docs/ARCHITECTURE.md), [framework authority surfaces](docs/framework/AUTHORITY_SURFACES.md),
-and [offline reproducibility guide](docs/OFFLINE_REPRODUCIBILITY.md).
+Start with [a bounded learning computation](docs/learning/EVIDENCE_GUIDE.md#choose-a-bounded-computation)
+or a particular claim's reproduction record. Then use the
+[framework authority surfaces](docs/framework/AUTHORITY_SURFACES.md) and
+[offline reproducibility guide](docs/OFFLINE_REPRODUCIBILITY.md).
 
 ```sh
 make install
@@ -67,14 +70,7 @@ make test
 make papers
 ```
 
-The files `papers/sections/vol*_*.tex` retain an earlier manuscript. The active
-review and learning album exclude those files. Their historical status and
-remaining claims should be assessed before reuse.
-
-## Add another book
-
-The [library manifest](docs/learning/library.json) separates books, lessons,
-prerequisites, and reading routes. A new book can branch from the precalculus
-foundation without turning MathScienceCompendium into the owner of its text.
-Follow the [extension contract](docs/learning/README.md#add-another-book) and
-run `make learning-check` before publishing a new route.
+`src/mathphysics/` owns reusable implementations, `experiments/` owns experiment
+drivers, and `data/registry/` owns scientific records. The retained
+`papers/sections/vol*_*.tex` manuscript sources and archived reports are historical
+inputs; active review sections begin with `review_`.

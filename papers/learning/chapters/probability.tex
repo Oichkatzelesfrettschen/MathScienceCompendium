@@ -1,13 +1,16 @@
 \chapter{Probability: uncertainty, evidence, and comparison}
 \label{learn:probability}
 
-\begin{learningcard}{Prerequisites and question}
+\input{papers/learning/generated/probability_entry}
+
 Bring fractions, sums, functions, and the logic of Chapter~\ref{learn:proof}.
 Calculus becomes useful for continuous distributions, but our main examples
 have finite sample spaces. A positive diagnostic result sounds decisive.
 How should its meaning depend on the condition's prevalence and the test's
 errors? The same reasoning helps interpret a simulation's apparent success.
-\end{learningcard}
+
+\lessoncue{Notice}{Count the observed positives before choosing the denominator.}
+
 
 \section{Specify the experiment before counting}
 A sample space $\Omega$ is the set of possible outcomes. An event is a
@@ -82,7 +85,7 @@ they describe averages under the model rather than guaranteed outcomes.
   \label{fig:learn:bayes_tree}
 \end{figure}
 
-\begin{learningcard}{Historical situation: a paper communicated by another reader}
+\begin{learningcard}[breakable=false]{Historical situation: a paper communicated by another reader}
 Thomas Bayes's essay appeared in 1763 after his death, communicated by
 Richard Price to the Royal Society. The publication's introductory letter
 makes Price's role in presenting the work part of the surviving evidence.
@@ -152,8 +155,10 @@ Independent Bernoulli trials have $p=1/2$. Find the standard deviation of
 the sample mean for $n=100$ and $n=400$.
 
 \paragraph{Solution.}
-The formula gives $\sqrt{(1/2)(1/2)/100}=0.05$ and
-$\sqrt{(1/2)(1/2)/400}=0.025$. Both numbers describe the sampling
+The formula gives
+\[\sqrt{(1/2)(1/2)/100}=0.05,\qquad
+\sqrt{(1/2)(1/2)/400}=0.025.\]
+Both numbers describe the sampling
 spread under known $p=1/2$; estimating an unknown $p$ adds an inferential
 step. Fourfold sample size halves the standard deviation.
 
@@ -165,3 +170,5 @@ $P(A)=3/6=1/2$ and $P(B)=3/6=1/2$. Their intersection is
 $\{4,6\}$, so $P(A\cap B)=1/3$, which differs from $P(A)P(B)=1/4$.
 The events are dependent. Equivalently,
 $P(A\mid B)=2/3\ne1/2=P(A)$.
+
+\input{papers/learning/generated/probability_ready}

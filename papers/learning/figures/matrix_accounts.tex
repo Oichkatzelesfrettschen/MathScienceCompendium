@@ -1,0 +1,12 @@
+\begin{tikzpicture}[>=Stealth,font=\small]
+\node[draw,align=center,text width=2.8cm] (input) at (0,0)
+ {$v=(4,3)^T$\\yields\\measures per bundle};
+\node[draw,align=center,text width=2.8cm] (accounts) at (4.5,0)
+ {$Av=(11,10)^T$\\account amounts\\measures};
+\node[draw,align=center,text width=2.3cm] (difference) at (8.8,0)
+ {$BAv=1$\\difference\\measure};
+\draw[->] (input)--node[above] {$A$} (accounts);
+\draw[->] (accounts)--node[above] {$B$} (difference);
+\draw[->] (input.south) -- ++(0,-0.7) -|
+ node[pos=0.25,below] {$BA$: subtract rows, then multiply} (difference.south);
+\end{tikzpicture}

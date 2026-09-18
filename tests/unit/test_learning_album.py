@@ -44,6 +44,30 @@ def create_pdf(root: Path, title: str) -> None:
     (root / "book.fls").write_text(f"PWD {root}\nINPUT source.tex\n")
 
 
+def add_metadata(library):
+    library["schema_version"] = 2
+    for node in library["nodes"]:
+        node.update(
+            {
+                "question": "How can the operation be checked?",
+                "role": "teaching",
+                "outcomes": ["Check the operation."],
+                "helpful": ["Familiarity with examples."],
+                "entry_check": {
+                    "prompt": "Compute one plus one.",
+                    "answer": "Two.",
+                    "repair": "precalc",
+                },
+                "readiness": {"prompt": "Explain the check.", "answer": "Compare both sides."},
+                "next": [{"node": "proof", "why": "Justify the operation."}],
+                "reference": {"use": "Check an operation.", "watch": "State assumptions."},
+            }
+        )
+    for route in library["routes"]:
+        route.update({"purpose": "Learn", "question": "Why?", "starting_knowledge": "Arithmetic"})
+    return library
+
+
 @pytest.fixture
 def fixture_album(tmp_path, monkeypatch):
     root = tmp_path / "album"
@@ -125,6 +149,7 @@ def fixture_album(tmp_path, monkeypatch):
             }
         ],
     }
+    add_metadata(library)
     manifest = root / "docs/learning/library.json"
     manifest.parent.mkdir(parents=True)
     manifest.write_text(json.dumps(library))
@@ -135,20 +160,21 @@ def fixture_album(tmp_path, monkeypatch):
 def test_roundtrip_preserves_links_and_routes(fixture_album):
     root, external, library = fixture_album
     result = MODULE.assemble(library, external, root / "output")
-    reader = PdfReader(root / "output/album.pdf")
-    assert len(reader.pages) == result["pages"] == 7
-    assert result["navigation_links_checked"] == 9
-    assert result["destinations"]["proof"] == 6
-    assert reader.pages[-2]["/Annots"][0].get_object()["/A"]["/URI"] == "https://example.org/source"
+    reader = PdfReader(root / "output/navigation.pdf")
+    assert len(reader.pages) == result["pages"] == MODULE.navigation_page_count(library)
+    assert result["navigation_links_checked"] >= 9
+    assert result["destinations"]["proof"]["page"] == 1
+    assert (root / "output/index.html").is_file()
+    assert MODULE.sha256(root / "output/precalculus.pdf") == MODULE.sha256(external / "book.pdf")
 
 
 def test_internal_links_stay_with_their_source_book(fixture_album):
     root, external, library = fixture_album
     MODULE.assemble(library, external, root / "output")
-    reader = PdfReader(root / "output/album.pdf")
-    for source_page, expected_destination in ((4, 3), (6, 5)):
-        destination = reader.pages[source_page]["/Annots"][0].get_object()["/Dest"]
-        assert reader.get_page_number(destination[0].get_object()) == expected_destination
+    for filename in ("precalculus.pdf", "bridge.pdf"):
+        reader = PdfReader(root / "output" / filename)
+        destination = reader.pages[1]["/Annots"][0].get_object()["/Dest"]
+        assert reader.get_page_number(destination[0].get_object()) == 0
 
 
 def test_wrong_revision_and_dirty_source_fail(fixture_album):
@@ -158,7 +184,7 @@ def test_wrong_revision_and_dirty_source_fail(fixture_album):
     with pytest.raises(ValueError, match="revision differs"):
         MODULE.assemble(library, external, root / "output")
     library["books"][0]["revision"] = revision
-    (external / "source.tex").write_text("modified")
+    create_pdf(external, "Modified external book")
     with pytest.raises(ValueError, match="uncommitted"):
         MODULE.assemble(library, external, root / "output")
 
@@ -227,13 +253,20 @@ def test_missing_external_lesson_source_is_rejected(fixture_album):
 def test_assessments_paginate_by_measured_height(fixture_album):
     root, external, library = fixture_album
     for node in library["nodes"]:
-        node["assessment"] = "Explain each assumption and justify the complete calculation. " * 180
+        node["readiness"]["prompt"] = (
+            "Explain each assumption and justify the complete calculation. " * 180
+        )
     node_map = {node["id"]: node for node in library["nodes"]}
     pages = MODULE.route_page_layout(library["routes"][0], node_map)
     assert len(pages) > 3
     for page in pages:
         for item in page:
-            assert item["y"] - 17 - (len(item["lines"]) - 1) * 9 * 1.45 >= 60
+            assert (
+                item["y"]
+                - MODULE.ROUTE_HEADING_GAP
+                - (len(item["lines"]) - 1) * MODULE.ROUTE_LINE_HEIGHT
+                >= 60
+            )
     for node in library["nodes"]:
         actual_lines = [
             line
@@ -242,12 +275,12 @@ def test_assessments_paginate_by_measured_height(fixture_album):
             if item["identifier"] == node["id"]
             for line in item["lines"]
         ]
-        expected_lines = MODULE.simpleSplit(node["assessment"], "Helvetica", 9, MODULE.A4[0] - 104)
+        expected_lines = MODULE.lesson_lines(node, node_map)
         assert actual_lines == expected_lines
     result = MODULE.assemble(library, external, root / "output")
-    reader = PdfReader(root / "output/album.pdf")
-    assert len(reader.pages) == MODULE.navigation_page_count(library) + 4
-    assert result["destinations"]["precalc"] == MODULE.navigation_page_count(library) + 1
+    reader = PdfReader(root / "output/navigation.pdf")
+    assert len(reader.pages) == MODULE.navigation_page_count(library)
+    assert result["destinations"]["precalc"]["page"] == 1
     for page in reader.pages[: MODULE.navigation_page_count(library)]:
         for annotation in page.get("/Annots", []):
             assert float(annotation.get_object()["/Rect"][1]) >= 0
@@ -293,13 +326,14 @@ def test_additional_external_book_keeps_source_and_internal_destination(fixture_
         }
     )
     library["routes"][0]["nodes"].append("another_lesson")
+    add_metadata(library)
     result = MODULE.assemble(
         library, external, root / "output", additional_roots={"another_book": external}
     )
-    reader = PdfReader(root / "output/album.pdf")
+    reader = PdfReader(root / "output/another_book.pdf")
     destination = reader.pages[-1]["/Annots"][0].get_object()["/Dest"]
     assert reader.get_page_number(destination[0].get_object()) == len(reader.pages) - 2
-    assert result["destinations"]["another_lesson"] == len(reader.pages) - 1
+    assert result["destinations"]["another_lesson"]["page"] == 1
     assert result["books"][-1]["source_dependencies"] == {
         "source.tex": MODULE.sha256(external / "source.tex")
     }
@@ -329,3 +363,162 @@ def test_duplicate_pdf_dictionary_keys_fail_source_admission(fixture_album):
     (root / "book.pdf").write_bytes(document)
     with pytest.raises(PdfReadError, match="Multiple definitions"):
         MODULE.assemble(library, external, root / "output")
+
+
+def test_external_output_is_rejected(fixture_album):
+    _root, external, library = fixture_album
+    with pytest.raises(ValueError, match="inside an external"):
+        MODULE.assemble(library, external, external / "output")
+
+
+def test_working_edition_hashes_admit_only_recorded_inputs(fixture_album):
+    root, external, library = fixture_album
+    create_pdf(external, "Dirty working edition")
+    edition = {
+        "revision": MODULE.git(external, "rev-parse", "HEAD"),
+        "working_tree": True,
+        "pdf_sha256": MODULE.sha256(external / "book.pdf"),
+        "source_dependencies": MODULE.source_dependencies(external, external / "book.pdf"),
+    }
+    (root / "edition.json").write_text(json.dumps(edition))
+    library["books"][0]["edition_manifest"] = "edition.json"
+    MODULE.assemble(library, external, root / "output")
+    edition["source_dependencies"]["source.tex"] = "0" * 64
+    (root / "edition.json").write_text(json.dumps(edition))
+    with pytest.raises(ValueError, match="source hashes differ"):
+        MODULE.assemble(library, external, root / "output")
+    edition["pdf_sha256"] = "0" * 64
+    (root / "edition.json").write_text(json.dumps(edition))
+    with pytest.raises(ValueError, match="PDF hash differs"):
+        MODULE.assemble(library, external, root / "output")
+
+
+def test_navigation_actions_reference_separate_files(fixture_album):
+    root, external, library = fixture_album
+    result = MODULE.assemble(library, external, root / "output")
+    reader = PdfReader(root / "output/navigation.pdf")
+    actions = [
+        annotation.get_object()["/A"]
+        for page in reader.pages
+        for annotation in page.get("/Annots", [])
+    ]
+    assert len(actions) == result["navigation_links_checked"]
+    for action in actions:
+        if action["/S"] == "/GoTo":
+            assert action["/D"] in reader.named_destinations
+            continue
+        assert action["/S"] == "/GoToR"
+        target_reader = PdfReader(root / "output" / action["/F"])
+        assert 0 <= int(action["/D"][0]) < len(target_reader.pages)
+    assert not (root / "output/album.pdf").exists()
+
+
+def test_reader_metadata_reaches_html_and_pdf(fixture_album):
+    root, external, library = fixture_album
+    MODULE.assemble(library, external, root / "output")
+    html = (root / "output/index.html").read_text()
+    assert '<section id="proof">' in html
+    assert "Entry solution and repair" in html
+    assert 'href="#precalc"' in html
+    assert "Justify the operation." in html
+    for detail in (
+        "Helpful background",
+        "Entry solution and repair",
+        "Readiness solution",
+        "Two.",
+        "Compare both sides.",
+        "Quick reference",
+    ):
+        assert detail in html
+    text = "\n".join(
+        page.extract_text() for page in PdfReader(root / "output/navigation.pdf").pages
+    )
+    assert "Entry solution:" not in text
+    assert "Readiness solution:" not in text
+    for phrase in (
+        "Starting knowledge:",
+        "Outcomes:",
+        "Required:",
+        "Readiness check:",
+        "index.html",
+    ):
+        assert phrase in text
+
+
+@pytest.mark.parametrize(
+    "filename",
+    [
+        "precalculus.pdf",
+        "bridge.pdf",
+        "navigation.pending.pdf",
+        "navigation.pdf",
+        "index.html",
+        "manifest.json",
+    ],
+)
+def test_managed_output_symlink_cannot_write_external_source(fixture_album, filename):
+    root, external, library = fixture_album
+    output = root / "output"
+    output.mkdir()
+    source = external / "source.tex"
+    original = source.read_bytes()
+    (output / filename).symlink_to(source)
+    with pytest.raises(ValueError, match="regular file"):
+        MODULE.assemble(library, external, output)
+    assert source.read_bytes() == original
+    assert sorted(path.name for path in output.iterdir()) == [filename]
+
+
+def test_managed_output_directory_is_rejected(fixture_album):
+    root, external, library = fixture_album
+    (root / "output/index.html").mkdir(parents=True)
+    with pytest.raises(ValueError, match="regular file"):
+        MODULE.assemble(library, external, root / "output")
+
+
+def test_failed_navigation_keeps_published_bundle(fixture_album, monkeypatch):
+    root, external, library = fixture_album
+    output = root / "output"
+    MODULE.assemble(library, external, output)
+    before = {path.name: path.read_bytes() for path in output.iterdir()}
+
+    def fail_navigation(*arguments):
+        raise ValueError("Injected layout failure")
+
+    monkeypatch.setattr(MODULE, "navigation_pdf", fail_navigation)
+    with pytest.raises(ValueError, match="Injected layout"):
+        MODULE.assemble(library, external, output)
+    assert {path.name: path.read_bytes() for path in output.iterdir()} == before
+
+
+def test_named_route_cover_and_directory_returns(fixture_album):
+    root, external, library = fixture_album
+    result = MODULE.assemble(library, external, root / "output")
+    reader = PdfReader(root / "output/navigation.pdf")
+    name = "route:" + library["routes"][0]["id"]
+    destination = result["destinations"][name]["page"] - 1
+    assert reader.get_destination_page_number(reader.named_destinations[name]) == destination
+    assert MODULE.outline_pages(reader)[library["routes"][0]["title"]] == [destination]
+    cover_actions = [item.get_object()["/A"] for item in reader.pages[0]["/Annots"]]
+    assert any(action["/S"] == "/GoTo" and action["/D"] == name for action in cover_actions)
+    for page in reader.pages[destination:]:
+        actions = [item.get_object()["/A"] for item in page["/Annots"]]
+        assert any(action["/S"] == "/GoTo" and action["/D"] == "directory" for action in actions)
+        assert "navigation PDF p. 2" in page.extract_text()
+
+
+def test_short_lessons_stay_together_and_duplicate_practice_is_removed(fixture_album):
+    _root, _external, library = fixture_album
+    nodes = {node["id"]: node for node in library["nodes"]}
+    for node in nodes.values():
+        node["assessment"] = node["readiness"]["prompt"]
+        lines = MODULE.lesson_lines(node, nodes)
+        assert "" in lines
+        assert not any(line.startswith("Practice:") for line in lines)
+    pages = MODULE.route_page_layout(library["routes"][0], nodes)
+    for node in nodes.values():
+        occurrences = [item for page in pages for item in page if item["identifier"] == node["id"]]
+        assert len(occurrences) == 1
+        assert occurrences[0]["continuation"] is False
+    assert MODULE.ROUTE_BODY_SIZE == 11
+    assert MODULE.ROUTE_HEADING_SIZE == 12

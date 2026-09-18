@@ -7,7 +7,7 @@
 ## Overview
 
 A connected learning album and Python mathematical-physics framework.
-The album joins an independently maintained precalculus book, ten prerequisite
+The album joins an independently maintained precalculus book, twelve prerequisite
 chapters, and a critical review of algebraic, quantum, and simulation claims.
 
 Source: `src/mathphysics/` (38 modules).
@@ -29,7 +29,7 @@ make benchmark      # NumPy vs JAX LBM benchmark
 make figures        # generate PNG + interactive HTML
 make papers         # pdflatex + bibtex + pdflatex (x2) -> papers/main.pdf
 make learning       # validate routes and examples; build prerequisite chapters
-make album          # assemble pinned precalculus + bridges + review
+make album          # link separate companion, bridge, and review PDFs
 make repro-refresh  # normalize + registries + audit + verify pipeline
 make cleanbuild     # full clean + install + all quality gates + papers
 ```

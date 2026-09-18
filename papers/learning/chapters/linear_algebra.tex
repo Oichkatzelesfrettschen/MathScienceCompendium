@@ -1,13 +1,16 @@
 \chapter{Linear algebra: coordinates, maps, and modes}
 \label{learn:linear_algebra}
 
-\begin{learningcard}{Prerequisites and destination}
-Bring precalculus vectors, dot products, matrix multiplication, and systems
-of equations; use Chapter~\ref{learn:proof} for quantified statements.
+\input{papers/learning/generated/linear_algebra_entry}
+
+Bring coordinate vectors, dot products, matrix multiplication, and systems
+of equations from Chapter~\ref{learn:matrix_maps}; use Chapter~\ref{learn:proof} for quantified statements.
 We ask how a coupled problem can be expressed in coordinates that expose
 independent directions. Eigenvectors will later become the modes of
 Chapter~\ref{learn:dynamics}.
-\end{learningcard}
+
+\lessoncue{Notice}{A column records the image of one basis vector; compare the map with its coordinates.}
+
 
 \section{Vectors extend beyond arrows}
 A real vector space is a set $V$ with addition and multiplication by real
@@ -58,7 +61,7 @@ relation among those images would put a combination of the added vectors
 inside the kernel, contradicting independence of the extended basis.
 Thus the added images form a basis of the image.
 
-\begin{learningcard}{Historical situation: an algebra of transformations}
+\begin{learningcard}[breakable=false]{Historical situation: an algebra of transformations}
 Arthur Cayley's 1858 ``A Memoir on the Theory of Matrices'' treats matrices
 as objects with operations and develops their algebra. The memoir is a
 specific document in the nineteenth-century development of the subject;
@@ -102,6 +105,7 @@ $A=Q\operatorname{diag}(3,1)Q^T$.
 \end{figure}
 
 \section{Why symmetry guarantees enough eigenvectors}
+\lessoncue{Helpful analysis for this proof}{The argument imports compactness and differentiation. Read the calculation examples first; return after Chapters~\ref{learn:calculus} and~\ref{learn:geometry} to examine those inputs.}
 The real symmetric spectral theorem states that every real matrix satisfying
 $A^T=A$ has an orthonormal basis of real eigenvectors. Here is a proof
 outline, with its analysis input made explicit. The continuous function
@@ -156,3 +160,5 @@ $v^TAv=3a^2+b^2$. A nonzero vector has at least one nonzero coefficient,
 so the expression is positive. This property is called positive definiteness.
 For a real symmetric matrix it holds exactly when every eigenvalue is
 positive, since the same orthonormal expansion works in every dimension.
+
+\input{papers/learning/generated/linear_algebra_ready}

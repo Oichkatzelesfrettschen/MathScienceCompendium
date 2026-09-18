@@ -1,14 +1,15 @@
 {
-  "schema_version": 1,
+  "schema_version": 2,
   "books": [
     {
       "id": "precalculus",
-      "title": "A Precalculus Compendium",
+      "title": "Precalculus Through Problems of the Past",
       "repository": "https://github.com/Oichkatzelesfrettschen/precalc_paper",
-      "revision": "7b4c9af67bd13b1c93f7443ff84022c64e894275",
+      "revision": "1438539ab556c8343e281b690c314f6a1fd4b184",
       "entry": "main.tex",
       "pdf": "build/main.pdf",
-      "role": "Independently maintained foundation book"
+      "role": "Independently maintained foundation book",
+      "edition_manifest": "docs/learning/precalculus_edition.json"
     },
     {
       "id": "bridge",
@@ -33,7 +34,34 @@
       "source": "main.tex",
       "pdf_title": null,
       "requires": [],
-      "assessment": "Solve the entry check in the bridge introduction; explain the operations."
+      "assessment": "A rectangle has perimeter 28 and area 45. Find its sides.",
+      "question": "Which operation fits the quantities?",
+      "role": "teaching",
+      "outcomes": [
+        "Choose an equation or function and check its domain and units."
+      ],
+      "helpful": [
+        "Familiarity with school algebra helps; the companion teaches the operations."
+      ],
+      "entry_check": {
+        "prompt": "Compute three shares of four units.",
+        "answer": "Multiplication gives 12 units.",
+        "repair": "precalc"
+      },
+      "readiness": {
+        "prompt": "A rectangle has perimeter 28 and area 45. Find its sides.",
+        "answer": "Write x(14-x)=45. Factoring gives sides 5 and 9; both are positive and satisfy both measurements."
+      },
+      "next": [
+        {
+          "node": "proof",
+          "why": "Explain why a valid operation covers every stated input."
+        }
+      ],
+      "reference": {
+        "use": "Choose an equation or function and check its domain and units.",
+        "watch": "Separate a quantity from its numerical value and attach units."
+      }
     },
     {
       "id": "proof",
@@ -44,7 +72,122 @@
       "requires": [
         "precalc"
       ],
-      "assessment": "Attempt all three chapter exercises before reading their full solutions."
+      "assessment": "Prove that the sum of two odd integers is even.",
+      "question": "When does a pattern become a theorem?",
+      "role": "teaching",
+      "outcomes": [
+        "State domains and distinguish a universal argument from a finite observation."
+      ],
+      "helpful": [
+        "Historical proof examples supply context."
+      ],
+      "entry_check": {
+        "prompt": "Expand (x+1)^2 and name the operation.",
+        "answer": "Distribute multiplication to obtain x^2+2x+1.",
+        "repair": "precalc"
+      },
+      "readiness": {
+        "prompt": "Prove that the sum of two odd integers is even.",
+        "answer": "Write the integers as 2m+1 and 2n+1 with integer m,n. Their sum is 2(m+n+1), twice an integer."
+      },
+      "next": [
+        {
+          "node": "matrix_maps",
+          "why": "Express coupled equations as one operation."
+        },
+        {
+          "node": "calculus",
+          "why": "Turn an informal limit into controlled error."
+        },
+        {
+          "node": "probability",
+          "why": "Describe uncertainty in a declared experiment."
+        }
+      ],
+      "reference": {
+        "use": "State domains and distinguish a universal argument from a finite observation.",
+        "watch": "A counterexample must satisfy the hypotheses."
+      }
+    },
+    {
+      "id": "matrix_maps",
+      "title": "From balanced equations to matrix maps",
+      "book": "bridge",
+      "source": "papers/learning/chapters/matrix_maps.tex",
+      "pdf_title": "From balanced equations to matrix maps",
+      "requires": [
+        "proof"
+      ],
+      "question": "How can two accounts become one operation?",
+      "role": "teaching",
+      "outcomes": [
+        "Compute matrix actions, compositions, and real dot products with compatible dimensions."
+      ],
+      "helpful": [
+        "Spatial arrows help interpret a vector; units determine whether a norm is a physical length."
+      ],
+      "entry_check": {
+        "prompt": "Solve x+y=7 and 2x+y=11.",
+        "answer": "Subtract the first equation from the second: x=4. Substitute to get y=3.",
+        "repair": "precalc"
+      },
+      "readiness": {
+        "prompt": "Apply the matrix with rows (3,1) and (1,2) to (2,5), then subtract the second output from the first.",
+        "answer": "The outputs are 11 and 12. Their difference is -1, also obtained from the composite row (2,-1) applied to (2,5)."
+      },
+      "assessment": "Apply the matrix with rows (3,1) and (1,2) to (2,5), then subtract the second output from the first.",
+      "next": [
+        {
+          "node": "linear_algebra",
+          "why": "Find coordinates that expose independent directions."
+        }
+      ],
+      "reference": {
+        "use": "Compute matrix actions, compositions, and real dot products with compatible dimensions.",
+        "watch": "Match inner dimensions; the rightmost matrix acts first."
+      }
+    },
+    {
+      "id": "complex_numbers",
+      "title": "Complex numbers: multiplication, length, and conjugation",
+      "book": "bridge",
+      "source": "papers/learning/chapters/complex_numbers.tex",
+      "pdf_title": "Complex numbers: multiplication, length, and conjugation",
+      "requires": [
+        "proof"
+      ],
+      "question": "How does multiplication change a complex number?",
+      "role": "teaching",
+      "outcomes": [
+        "Compute conjugates, lengths, division, and normalized complex columns."
+      ],
+      "helpful": [
+        "A coordinate-plane sketch helps interpret multiplication."
+      ],
+      "entry_check": {
+        "prompt": "Expand (a+b)(c+d).",
+        "answer": "Distribution gives ac+ad+bc+bd; complex multiplication also uses i^2=-1.",
+        "repair": "precalc"
+      },
+      "readiness": {
+        "prompt": "Find the conjugate and squared modulus of 3+4i, then its reciprocal.",
+        "answer": "The conjugate is 3-4i, squared modulus is 25, and reciprocal is (3-4i)/25. Multiplication checks a product of one."
+      },
+      "assessment": "Find the conjugate and squared modulus of 3+4i, then its reciprocal.",
+      "next": [
+        {
+          "node": "quantum",
+          "why": "Interpret normalized complex columns after linear algebra and probability."
+        },
+        {
+          "node": "geometry",
+          "why": "Study complex differentiability after the analysis prerequisites."
+        }
+      ],
+      "reference": {
+        "use": "Compute conjugates, lengths, division, and normalized complex columns.",
+        "watch": "Conjugate the first input of the complex inner product."
+      }
     },
     {
       "id": "linear_algebra",
@@ -53,9 +196,40 @@
       "source": "papers/learning/chapters/linear_algebra.tex",
       "pdf_title": "Linear algebra: coordinates, maps, and modes",
       "requires": [
-        "proof"
+        "matrix_maps"
       ],
-      "assessment": "Attempt all three chapter exercises before reading their full solutions."
+      "assessment": "For A with rows (2,1),(1,2), verify two independent eigenvectors.",
+      "question": "Which coordinates expose independent directions?",
+      "role": "teaching",
+      "outcomes": [
+        "Verify a basis image, eigenpair, and projection."
+      ],
+      "helpful": [
+        "Calculus and compactness support the optional spectral-proof discussion."
+      ],
+      "entry_check": {
+        "prompt": "Multiply rows (2,1),(1,2) by the column (1,-1).",
+        "answer": "The output is (1,-1).",
+        "repair": "matrix_maps"
+      },
+      "readiness": {
+        "prompt": "For A with rows (2,1),(1,2), verify two independent eigenvectors.",
+        "answer": "A(1,1)=3(1,1) and A(1,-1)=(1,-1). The two vectors are independent because neither is a scalar multiple of the other."
+      },
+      "next": [
+        {
+          "node": "algebra",
+          "why": "Study reversible composition and symmetry."
+        },
+        {
+          "node": "multivariable",
+          "why": "Organize local changes with matrices after calculus."
+        }
+      ],
+      "reference": {
+        "use": "Verify a basis image, eigenpair, and projection.",
+        "watch": "The symmetric spectral theorem requires real symmetry; general matrices can lack an eigenbasis."
+      }
     },
     {
       "id": "calculus",
@@ -66,7 +240,34 @@
       "requires": [
         "proof"
       ],
-      "assessment": "Attempt all three chapter exercises before reading their full solutions."
+      "assessment": "Derive the derivative of x^2 using a nonzero increment h.",
+      "question": "How do local rates connect to accumulated change?",
+      "role": "teaching",
+      "outcomes": [
+        "Derive a local rate and interpret a controlled approximation."
+      ],
+      "helpful": [
+        "Motion supplies an interpretation of rates."
+      ],
+      "entry_check": {
+        "prompt": "For 1+1/2+... with n terms, state the distance from 2.",
+        "answer": "The geometric tail is 2^(1-n), tending to zero as n increases.",
+        "repair": "precalc"
+      },
+      "readiness": {
+        "prompt": "Derive the derivative of x^2 using a nonzero increment h.",
+        "answer": "Subtract x^2 from (x+h)^2 and divide by h to obtain 2x+h. Let h approach zero to obtain 2x."
+      },
+      "next": [
+        {
+          "node": "multivariable",
+          "why": "Allow several inputs to change together."
+        }
+      ],
+      "reference": {
+        "use": "Derive a local rate and interpret a controlled approximation.",
+        "watch": "A Taylor approximation needs a remainder bound; smoothness alone does not establish equality with its infinite series."
+      }
     },
     {
       "id": "multivariable",
@@ -78,7 +279,34 @@
         "linear_algebra",
         "calculus"
       ],
-      "assessment": "Attempt all three chapter exercises before reading their full solutions."
+      "assessment": "For f(x,y)=x^2+3y^2, find its gradient at (1,2).",
+      "question": "How can several inputs describe a local change?",
+      "role": "teaching",
+      "outcomes": [
+        "Compute gradients and Jacobian factors on a stated domain."
+      ],
+      "helpful": [
+        "Field diagrams help connect formulas to spatial quantities."
+      ],
+      "entry_check": {
+        "prompt": "Differentiate x^2 and compute the dot product of (1,2) with (3,4).",
+        "answer": "The derivative is 2x; the dot product is 11.",
+        "repair": "calculus"
+      },
+      "readiness": {
+        "prompt": "For f(x,y)=x^2+3y^2, find its gradient at (1,2).",
+        "answer": "The partial derivatives are 2x and 6y, giving gradient (2,12). Its dot product with a unit direction gives the directional rate."
+      },
+      "next": [
+        {
+          "node": "dynamics",
+          "why": "Describe conservation through time."
+        }
+      ],
+      "reference": {
+        "use": "Compute gradients and Jacobian factors on a stated domain.",
+        "watch": "Partial derivatives alone do not guarantee differentiability."
+      }
     },
     {
       "id": "dynamics",
@@ -89,7 +317,34 @@
       "requires": [
         "multivariable"
       ],
-      "assessment": "Attempt all three chapter exercises before reading their full solutions."
+      "assessment": "Euler stepping for y'= -2y uses factor 1-2h. For which positive h does its magnitude remain below one?",
+      "question": "When does a numerical step respect decay?",
+      "role": "teaching",
+      "outcomes": [
+        "Solve exponential relaxation and distinguish model stability from step stability."
+      ],
+      "helpful": [
+        "Heat flow gives a physical model; boundary conditions remain essential."
+      ],
+      "entry_check": {
+        "prompt": "Differentiate exp(-2t).",
+        "answer": "The chain rule gives -2 exp(-2t).",
+        "repair": "calculus"
+      },
+      "readiness": {
+        "prompt": "Euler stepping for y'= -2y uses factor 1-2h. For which positive h does its magnitude remain below one?",
+        "answer": "Solve -1<1-2h<1 to obtain 0<h<1. At h=1 the factor is -1 and the numerical solution does not decay."
+      },
+      "next": [
+        {
+          "node": "numerical",
+          "why": "Check the errors introduced by a finite update."
+        }
+      ],
+      "reference": {
+        "use": "Solve exponential relaxation and distinguish model stability from step stability.",
+        "watch": "State initial data and boundary conditions before interpreting a solution."
+      }
     },
     {
       "id": "probability",
@@ -100,7 +355,38 @@
       "requires": [
         "proof"
       ],
-      "assessment": "Attempt all three chapter exercises before reading their full solutions."
+      "assessment": "Among 10000 people, 100 have a condition. A test detects 90 of them and flags 495 of the rest. What fraction of positive results have the condition?",
+      "question": "What does a positive observation establish?",
+      "role": "teaching",
+      "outcomes": [
+        "Compute a conditional probability and name the experiment behind it."
+      ],
+      "helpful": [
+        "Calculus is helpful for later continuous distributions."
+      ],
+      "entry_check": {
+        "prompt": "Among 100 cases, 4 meet a condition. Express its fraction.",
+        "answer": "The fraction is 4/100=1/25.",
+        "repair": "precalc"
+      },
+      "readiness": {
+        "prompt": "Among 10000 people, 100 have a condition. A test detects 90 of them and flags 495 of the rest. What fraction of positive results have the condition?",
+        "answer": "There are 90+495=585 positives. The posterior is 90/585=2/13. The denominator counts observed positives, rather than the whole population."
+      },
+      "next": [
+        {
+          "node": "review_evidence",
+          "why": "Evaluate support without a quantum detour."
+        },
+        {
+          "node": "quantum",
+          "why": "Connect probabilities to complex states after its other prerequisites."
+        }
+      ],
+      "reference": {
+        "use": "Compute a conditional probability and name the experiment behind it.",
+        "watch": "Dependence and selection can change the sample space and invalidate an interval interpretation."
+      }
     },
     {
       "id": "numerical",
@@ -111,7 +397,34 @@
       "requires": [
         "dynamics"
       ],
-      "assessment": "Attempt all three chapter exercises before reading their full solutions."
+      "assessment": "For trapezoidal integration of x^2 on [0,1], compare one and two equal panels against 1/3.",
+      "question": "How can an approximation justify its precision?",
+      "role": "teaching",
+      "outcomes": [
+        "Separate truncation, roundoff, conditioning, and refinement evidence."
+      ],
+      "helpful": [
+        "Probability helps interpret an ensemble of runs."
+      ],
+      "entry_check": {
+        "prompt": "For Euler decay, explain why decreasing h changes the approximation.",
+        "answer": "The discrete factor changes with h; its repeated product approximates the exponential only in a controlled limit.",
+        "repair": "dynamics"
+      },
+      "readiness": {
+        "prompt": "For trapezoidal integration of x^2 on [0,1], compare one and two equal panels against 1/3.",
+        "answer": "One panel gives 1/2 with error 1/6. Two give 3/8 with error 1/24, a factor-four reduction for this exact example."
+      },
+      "next": [
+        {
+          "node": "fluids",
+          "why": "Inspect a concrete discrete conservation rule."
+        }
+      ],
+      "reference": {
+        "use": "Separate truncation, roundoff, conditioning, and refinement evidence.",
+        "watch": "A small residual establishes a small error only with a conditioning bound."
+      }
     },
     {
       "id": "algebra",
@@ -122,7 +435,38 @@
       "requires": [
         "linear_algebra"
       ],
-      "assessment": "Attempt all three chapter exercises before reading their full solutions."
+      "assessment": "Let A have rows (0,1),(0,0), and B rows (0,0),(1,0). Compute AB-BA.",
+      "question": "What does an algebraic classification classify?",
+      "role": "teaching",
+      "outcomes": [
+        "Compute a commutator and distinguish structure from a physical interpretation."
+      ],
+      "helpful": [
+        "History explains why classification questions arose."
+      ],
+      "entry_check": {
+        "prompt": "Apply a matrix to each basis vector to recover its columns.",
+        "answer": "The first basis vector selects the first column and the second selects the second.",
+        "repair": "matrix_maps"
+      },
+      "readiness": {
+        "prompt": "Let A have rows (0,1),(0,0), and B rows (0,0),(1,0). Compute AB-BA.",
+        "answer": "AB is diag(1,0), BA is diag(0,1), so the commutator is diag(1,-1). The nonzero result records order dependence."
+      },
+      "next": [
+        {
+          "node": "hypercomplex",
+          "why": "Test which arithmetic properties survive a construction."
+        },
+        {
+          "node": "geometry",
+          "why": "Connect symmetry with functions after analysis preparation."
+        }
+      ],
+      "reference": {
+        "use": "Compute a commutator and distinguish structure from a physical interpretation.",
+        "watch": "A root count or Cartan determinant alone supplies neither a dynamical equation nor a physical mode map."
+      }
     },
     {
       "id": "geometry",
@@ -132,9 +476,37 @@
       "pdf_title": "Geometry and analysis: distance, dimension, and complex structure",
       "requires": [
         "multivariable",
-        "algebra"
+        "algebra",
+        "complex_numbers"
       ],
-      "assessment": "Attempt all three chapter exercises before reading their full solutions."
+      "assessment": "At Cantor stage n, state the number and length of intervals and the scaling dimension.",
+      "question": "What changes when distance or scale changes?",
+      "role": "teaching",
+      "outcomes": [
+        "Explain Cantor scaling and the assumptions behind complex differentiability."
+      ],
+      "helpful": [
+        "Topology supplies a broader treatment of compactness."
+      ],
+      "entry_check": {
+        "prompt": "Compute the modulus of 3+4i.",
+        "answer": "The modulus is 5, obtained from the square root of 3^2+4^2.",
+        "repair": "complex_numbers"
+      },
+      "readiness": {
+        "prompt": "At Cantor stage n, state the number and length of intervals and the scaling dimension.",
+        "answer": "There are 2^n intervals of length 3^(-n). The self-similar dimension solves 2*(1/3)^d=1, so d=log(2)/log(3). The chapter explains the additional dimension argument."
+      },
+      "next": [
+        {
+          "node": "review_geometry",
+          "why": "Examine the assumptions behind the advanced claims."
+        }
+      ],
+      "reference": {
+        "use": "Explain Cantor scaling and the assumptions behind complex differentiability.",
+        "watch": "A covering count suggests a dimension; the lower bound and assumptions still need proof."
+      }
     },
     {
       "id": "hypercomplex",
@@ -143,9 +515,37 @@
       "source": "papers/learning/chapters/advanced.tex",
       "pdf_title": "Doubling changes multiplication as well as dimension",
       "requires": [
-        "algebra"
+        "algebra",
+        "complex_numbers"
       ],
-      "assessment": "Reproduce the quaternion product and explain why the sedenion witness blocks division."
+      "assessment": "Why does one nonzero pair with product zero rule out a division algebra?",
+      "question": "Which arithmetic properties survive doubling?",
+      "role": "teaching",
+      "outcomes": [
+        "Reproduce a product under a declared convention and interpret a zero divisor."
+      ],
+      "helpful": [
+        "The complex arithmetic chapter supplies conjugation."
+      ],
+      "entry_check": {
+        "prompt": "Multiply (1+i)(1-i) in the complex numbers.",
+        "answer": "The cross terms cancel and i^2=-1, giving 2.",
+        "repair": "complex_numbers"
+      },
+      "readiness": {
+        "prompt": "Why does one nonzero pair with product zero rule out a division algebra?",
+        "answer": "In a division algebra, left multiplication by any nonzero element is invertible and hence injective. A nonzero element mapped to zero violates injectivity."
+      },
+      "next": [
+        {
+          "node": "review_algebra",
+          "why": "Separate an algebraic fact from its physical interpretation."
+        }
+      ],
+      "reference": {
+        "use": "Reproduce a product under a declared convention and interpret a zero divisor.",
+        "watch": "Declare the recursive multiplication convention before comparing basis products."
+      }
     },
     {
       "id": "quantum",
@@ -155,9 +555,37 @@
       "pdf_title": "Worked example: probabilities from a complex state",
       "requires": [
         "linear_algebra",
-        "probability"
+        "probability",
+        "complex_numbers"
       ],
-      "assessment": "Compute the two measurement probabilities and check normalization after the unitary map."
+      "assessment": "Normalize (1,i) and state its two computational-basis probabilities.",
+      "question": "How do complex amplitudes give normalized probabilities?",
+      "role": "teaching",
+      "outcomes": [
+        "Compute probabilities and separate a physical postulate from unitary arithmetic."
+      ],
+      "helpful": [
+        "Quantum mechanics supplies the physical interpretation."
+      ],
+      "entry_check": {
+        "prompt": "Find the squared norm of the column (1,i).",
+        "answer": "Conjugate-first multiplication gives 1+1=2.",
+        "repair": "complex_numbers"
+      },
+      "readiness": {
+        "prompt": "Normalize (1,i) and state its two computational-basis probabilities.",
+        "answer": "Divide by sqrt(2). Each squared modulus is 1/2, summing to one. Interpreting those numbers as measurement probabilities uses the Born postulate."
+      },
+      "next": [
+        {
+          "node": "review_evidence",
+          "why": "Separate a postulate from a computational check."
+        }
+      ],
+      "reference": {
+        "use": "Compute probabilities and separate a physical postulate from unitary arithmetic.",
+        "watch": "Normalization is a mathematical check; evidence for a physical model requires experiments."
+      }
     },
     {
       "id": "fluids",
@@ -168,7 +596,78 @@
       "requires": [
         "numerical"
       ],
-      "assessment": "Check the D2Q9 zeroth and first moments; distinguish conservation from convergence."
+      "assessment": "At rest, D2Q9 weights are 4/9, four copies of 1/9, and four copies of 1/36. Check their sum and first moment.",
+      "question": "Which moments must a lattice rule conserve?",
+      "role": "teaching",
+      "outcomes": [
+        "Check discrete moments and distinguish conservation from convergence."
+      ],
+      "helpful": [
+        "Continuum mechanics helps interpret a hydrodynamic limit."
+      ],
+      "entry_check": {
+        "prompt": "Explain the difference between roundoff and truncation.",
+        "answer": "Roundoff comes from finite arithmetic; truncation comes from replacing a limiting operation by a finite approximation.",
+        "repair": "numerical"
+      },
+      "readiness": {
+        "prompt": "At rest, D2Q9 weights are 4/9, four copies of 1/9, and four copies of 1/36. Check their sum and first moment.",
+        "answer": "The sum is 4/9+4/9+1/9=1. Opposite velocities have equal weights, so each component of the first moment cancels."
+      },
+      "next": [
+        {
+          "node": "review_computation",
+          "why": "Compare a model with its oracle and controls after probability."
+        }
+      ],
+      "reference": {
+        "use": "Check discrete moments and distinguish conservation from convergence.",
+        "watch": "Exact moments alone do not establish convergence, stability, or physical validation."
+      }
+    },
+    {
+      "id": "review_evidence",
+      "title": "Scope, Questions, and Review Method",
+      "book": "review",
+      "source": "papers/sections/review_scope_method.tex",
+      "pdf_title": "Scope, Questions, and Review Method",
+      "requires": [],
+      "assessment": "Does an exact root count establish force unification?",
+      "question": "What kind of support does a claim need?",
+      "role": "research evidence",
+      "outcomes": [
+        "Classify evidence before reading a technical derivation."
+      ],
+      "helpful": [
+        "Use proof and probability to repair reasoning gaps; specialist mathematics follows the selected claim."
+      ],
+      "entry_check": {
+        "prompt": "A program checks ten inputs. What domain did it observe?",
+        "answer": "The ten declared inputs; a universal statement needs a separate argument.",
+        "repair": "proof"
+      },
+      "readiness": {
+        "prompt": "Does an exact root count establish force unification?",
+        "answer": "The count establishes a bounded mathematical fact. Force unification additionally needs a physical mechanism and discriminating empirical support."
+      },
+      "next": [
+        {
+          "node": "review_physical",
+          "why": "Find the extra inference in a physical claim."
+        },
+        {
+          "node": "proof",
+          "why": "Repair a gap in universal reasoning."
+        },
+        {
+          "node": "probability",
+          "why": "Repair a gap in interpreting uncertainty."
+        }
+      ],
+      "reference": {
+        "use": "Classify evidence before reading a technical derivation.",
+        "watch": "Keep consistency, reproduction, and physical admission distinct."
+      }
     },
     {
       "id": "review_algebra",
@@ -179,7 +678,34 @@
       "requires": [
         "hypercomplex"
       ],
-      "assessment": "Identify one established result, one computational check, and the extra evidence needed for a physical claim."
+      "assessment": "What does an exact Cartan determinant establish?",
+      "question": "Where does the mathematical result end?",
+      "role": "research evidence",
+      "outcomes": [
+        "Separate algebraic structure from the proposed physical map."
+      ],
+      "helpful": [
+        "Use proof and probability to repair reasoning gaps; specialist mathematics follows the selected claim."
+      ],
+      "entry_check": {
+        "prompt": "Explain why a zero divisor blocks division.",
+        "answer": "A nonzero multiplication map has a nontrivial kernel and cannot be invertible.",
+        "repair": "hypercomplex"
+      },
+      "readiness": {
+        "prompt": "What does an exact Cartan determinant establish?",
+        "answer": "It establishes that determinant for the specified matrix. A relation to a fluid parameter requires a separately defined map and dynamics."
+      },
+      "next": [
+        {
+          "node": "review_physical",
+          "why": "Test the proposed transition into physics."
+        }
+      ],
+      "reference": {
+        "use": "Separate algebraic structure from the proposed physical map.",
+        "watch": "Keep consistency, reproduction, and physical admission distinct."
+      }
     },
     {
       "id": "review_geometry",
@@ -190,7 +716,34 @@
       "requires": [
         "geometry"
       ],
-      "assessment": "Identify one established result, one computational check, and the extra evidence needed for a physical claim."
+      "assessment": "Can one sampled fractal estimate prove an exact dimension?",
+      "question": "Which assumptions make a modular or dimension claim meaningful?",
+      "role": "research evidence",
+      "outcomes": [
+        "Locate a mathematical condition before interpreting a numerical value."
+      ],
+      "helpful": [
+        "Use proof and probability to repair reasoning gaps; specialist mathematics follows the selected claim."
+      ],
+      "entry_check": {
+        "prompt": "State one condition needed beyond a modular transformation rule.",
+        "answer": "Holomorphy and suitable behavior at the cusp are part of the specified modular-form definition.",
+        "repair": "geometry"
+      },
+      "readiness": {
+        "prompt": "Can one sampled fractal estimate prove an exact dimension?",
+        "answer": "The estimate is a computational observation with a resolution and method. The exact dimension requires a mathematical argument under stated assumptions."
+      },
+      "next": [
+        {
+          "node": "review_evidence",
+          "why": "Classify the support for the selected claim."
+        }
+      ],
+      "reference": {
+        "use": "Locate a mathematical condition before interpreting a numerical value.",
+        "watch": "Keep consistency, reproduction, and physical admission distinct."
+      }
     },
     {
       "id": "review_computation",
@@ -202,18 +755,262 @@
         "fluids",
         "probability"
       ],
-      "assessment": "Identify one established result, one computational check, and the extra evidence needed for a physical claim."
+      "assessment": "What should accompany a successful simulation check?",
+      "question": "Which comparisons support a computational conclusion?",
+      "role": "research evidence",
+      "outcomes": [
+        "Trace a reported result to its inputs, controls, and scope."
+      ],
+      "helpful": [
+        "Use proof and probability to repair reasoning gaps; specialist mathematics follows the selected claim."
+      ],
+      "entry_check": {
+        "prompt": "What separates conservation from convergence?",
+        "answer": "Conservation is an invariant of the update; convergence compares an approximation to its limiting target.",
+        "repair": "fluids"
+      },
+      "readiness": {
+        "prompt": "What should accompany a successful simulation check?",
+        "answer": "The exact configuration, oracle or control, tolerances, output, and interpretation limits. A pass certifies only the declared check."
+      },
+      "next": [
+        {
+          "node": "review_reproduction",
+          "why": "Trace the result to a repeatable execution."
+        }
+      ],
+      "reference": {
+        "use": "Trace a reported result to its inputs, controls, and scope.",
+        "watch": "Keep consistency, reproduction, and physical admission distinct."
+      }
     },
     {
-      "id": "review_evidence",
-      "title": "Scope, Questions, and Review Method",
+      "id": "review_physical",
+      "title": "Audit of the Physical Claims",
       "book": "review",
-      "source": "papers/sections/review_scope_method.tex",
-      "pdf_title": "Scope, Questions, and Review Method",
+      "source": "papers/sections/review_physical_claims.tex",
+      "pdf_title": "Audit of the Physical Claims",
       "requires": [
-        "probability"
+        "review_evidence"
       ],
-      "assessment": "Identify one established result, one computational check, and the extra evidence needed for a physical claim."
+      "question": "Which extra inference turns mathematics into a physical claim?",
+      "role": "research evidence",
+      "outcomes": [
+        "Locate the missing mechanism or measurement in a proposed physical map."
+      ],
+      "helpful": [
+        "Use proof and probability to repair reasoning gaps; specialist mathematics follows the selected claim."
+      ],
+      "entry_check": {
+        "prompt": "Distinguish a dimensional identity from an experimental result.",
+        "answer": "Units constrain possible equations; measurements test a specified mechanism.",
+        "repair": "review_evidence"
+      },
+      "readiness": {
+        "prompt": "Does c^4/G by itself unify forces?",
+        "answer": "It defines a force scale. A unification claim needs a common dynamical mechanism and empirical predictions beyond the dimensional identity."
+      },
+      "assessment": "Does c^4/G by itself unify forces?",
+      "next": [
+        {
+          "node": "review_hypotheses",
+          "why": "Find the test that could change the disposition."
+        }
+      ],
+      "reference": {
+        "use": "Locate the missing mechanism or measurement in a proposed physical map.",
+        "watch": "Keep consistency, reproduction, and physical admission distinct."
+      }
+    },
+    {
+      "id": "review_hypotheses",
+      "title": "Hypothesis Registry and Promotion Gates",
+      "book": "review",
+      "source": "papers/sections/review_hypothesis_registry.tex",
+      "pdf_title": "Hypothesis Registry and Promotion Gates",
+      "requires": [
+        "review_evidence"
+      ],
+      "question": "What observation would change the disposition?",
+      "role": "research evidence",
+      "outcomes": [
+        "Find a hypothesis and explain its locked decision rule."
+      ],
+      "helpful": [
+        "Use proof and probability to repair reasoning gaps; specialist mathematics follows the selected claim."
+      ],
+      "entry_check": {
+        "prompt": "What makes a conjecture testable?",
+        "answer": "A defined statement, declared inputs or regime, and a possible rejecting outcome.",
+        "repair": "review_evidence"
+      },
+      "readiness": {
+        "prompt": "What does failure of a registered effect-size gate establish?",
+        "answer": "The registered positive decision was not supported in its tested regime. A global impossibility claim would require broader evidence."
+      },
+      "assessment": "What does failure of a registered effect-size gate establish?",
+      "next": [
+        {
+          "node": "review_conclusions",
+          "why": "Read the bounded decision record."
+        }
+      ],
+      "reference": {
+        "use": "Find a hypothesis and explain its locked decision rule.",
+        "watch": "Keep consistency, reproduction, and physical admission distinct."
+      }
+    },
+    {
+      "id": "review_conclusions",
+      "title": "Conclusions and Decision Record",
+      "book": "review",
+      "source": "papers/sections/review_conclusions.tex",
+      "pdf_title": "Conclusions and Decision Record",
+      "requires": [
+        "review_evidence"
+      ],
+      "question": "What survives the audit?",
+      "role": "research evidence",
+      "outcomes": [
+        "State the strongest supported conclusion with its boundary."
+      ],
+      "helpful": [
+        "Use proof and probability to repair reasoning gaps; specialist mathematics follows the selected claim."
+      ],
+      "entry_check": {
+        "prompt": "Explain the difference between a claim and its support.",
+        "answer": "A claim states a proposition; its support supplies an argument, observation, or measurement that bears on it.",
+        "repair": "review_evidence"
+      },
+      "readiness": {
+        "prompt": "How should a negative result be summarized?",
+        "answer": "Name the tested claim, the declared regime and decision rule, the observed failure, and the boundaries on generalization."
+      },
+      "assessment": "How should a negative result be summarized?",
+      "next": [
+        {
+          "node": "review_reproduction",
+          "why": "Inspect how the retained result can be checked."
+        }
+      ],
+      "reference": {
+        "use": "State the strongest supported conclusion with its boundary.",
+        "watch": "Keep consistency, reproduction, and physical admission distinct."
+      }
+    },
+    {
+      "id": "review_reproduction",
+      "title": "Reproducibility and Artifact Inventory",
+      "book": "review",
+      "source": "papers/sections/review_reproducibility.tex",
+      "pdf_title": "Reproducibility and Artifact Inventory",
+      "requires": [
+        "review_evidence"
+      ],
+      "question": "How can another reader check the retained result?",
+      "role": "research evidence",
+      "outcomes": [
+        "Locate an exact input and expected output before running code."
+      ],
+      "helpful": [
+        "Use proof and probability to repair reasoning gaps; specialist mathematics follows the selected claim."
+      ],
+      "entry_check": {
+        "prompt": "What does a file hash identify?",
+        "answer": "A particular byte sequence; it establishes identity rather than scientific validity.",
+        "repair": "review_evidence"
+      },
+      "readiness": {
+        "prompt": "What distinguishes an independent reproduction from opening a cached result?",
+        "answer": "The computation reruns from declared inputs in the required independent environment and retains provenance and outputs for comparison."
+      },
+      "assessment": "What distinguishes an independent reproduction from opening a cached result?",
+      "next": [
+        {
+          "node": "review_framework",
+          "why": "Locate the canonical owners of the evidence."
+        }
+      ],
+      "reference": {
+        "use": "Locate an exact input and expected output before running code.",
+        "watch": "Keep consistency, reproduction, and physical admission distinct."
+      }
+    },
+    {
+      "id": "review_framework",
+      "title": "Reconciled Framework Architecture",
+      "book": "review",
+      "source": "papers/sections/review_framework_reconciliation.tex",
+      "pdf_title": "Reconciled Framework Architecture",
+      "requires": [
+        "review_evidence"
+      ],
+      "question": "Which record owns the scientific disposition?",
+      "role": "research evidence",
+      "outcomes": [
+        "Use the canonical authority surfaces instead of archival speculation."
+      ],
+      "helpful": [
+        "Use proof and probability to repair reasoning gaps; specialist mathematics follows the selected claim."
+      ],
+      "entry_check": {
+        "prompt": "Does a passing consistency contract admit a physical theory?",
+        "answer": "It checks its declared contract. Scientific admission requires the separate evidence rules.",
+        "repair": "review_evidence"
+      },
+      "readiness": {
+        "prompt": "Where should a claim-status lookup begin?",
+        "answer": "The canonical claim and hypothesis registries named in Authority Surfaces, followed by their referenced gate and reproduction records."
+      },
+      "assessment": "Where should a claim-status lookup begin?",
+      "next": [
+        {
+          "node": "review_critique",
+          "why": "Evaluate the criticisms against those sources."
+        }
+      ],
+      "reference": {
+        "use": "Use the canonical authority surfaces instead of archival speculation.",
+        "watch": "Keep consistency, reproduction, and physical admission distinct."
+      }
+    },
+    {
+      "id": "review_critique",
+      "title": "Falsification of the Critiques",
+      "book": "review",
+      "source": "papers/sections/review_critique_reassessment.tex",
+      "pdf_title": "Falsification of the Critiques",
+      "requires": [
+        "review_evidence"
+      ],
+      "question": "How should a criticism itself be checked?",
+      "role": "research evidence",
+      "outcomes": [
+        "Compare a criticism with the exact source and the bounded evidence."
+      ],
+      "helpful": [
+        "Use proof and probability to repair reasoning gaps; specialist mathematics follows the selected claim."
+      ],
+      "entry_check": {
+        "prompt": "What should accompany a criticism of a computation?",
+        "answer": "The target computation, a reproducible discrepancy, and the scope of the resulting objection.",
+        "repair": "review_evidence"
+      },
+      "readiness": {
+        "prompt": "Does refuting one criticism validate every claim in the manuscript?",
+        "answer": "Each claim still requires its own support. Refuting a particular criticism establishes only the failure of that objection."
+      },
+      "assessment": "Does refuting one criticism validate every claim in the manuscript?",
+      "next": [
+        {
+          "node": "review_evidence",
+          "why": "Apply the same evidence rules to another claim."
+        }
+      ],
+      "reference": {
+        "use": "Compare a criticism with the exact source and the bounded evidence.",
+        "watch": "Keep consistency, reproduction, and physical admission distinct."
+      }
     }
   ],
   "routes": [
@@ -223,11 +1020,16 @@
       "nodes": [
         "precalc",
         "proof",
+        "matrix_maps",
+        "complex_numbers",
         "linear_algebra",
         "algebra",
         "hypercomplex",
         "review_algebra"
-      ]
+      ],
+      "purpose": "Study mathematical physics",
+      "question": "What does a symmetry preserve?",
+      "starting_knowledge": "Explain the companion transfer problems, or begin with its method finder."
     },
     {
       "id": "simulation",
@@ -235,6 +1037,7 @@
       "nodes": [
         "precalc",
         "proof",
+        "matrix_maps",
         "linear_algebra",
         "calculus",
         "multivariable",
@@ -243,7 +1046,10 @@
         "numerical",
         "fluids",
         "review_computation"
-      ]
+      ],
+      "purpose": "Study mathematical physics",
+      "question": "How do local rules produce changing fields?",
+      "starting_knowledge": "Explain the companion transfer problems, or begin with its method finder."
     },
     {
       "id": "shape",
@@ -251,24 +1057,61 @@
       "nodes": [
         "precalc",
         "proof",
+        "matrix_maps",
+        "complex_numbers",
         "linear_algebra",
         "calculus",
         "multivariable",
         "algebra",
         "geometry",
         "review_geometry"
-      ]
+      ],
+      "purpose": "Study mathematical physics",
+      "question": "How do shape and complex structure constrain a function?",
+      "starting_knowledge": "Explain the companion transfer problems, or begin with its method finder."
     },
     {
-      "id": "uncertainty",
-      "title": "Quantum states and evidence",
+      "id": "quantum",
+      "title": "Quantum states and probabilities",
       "nodes": [
         "precalc",
         "proof",
+        "matrix_maps",
+        "complex_numbers",
         "linear_algebra",
         "probability",
         "quantum",
         "review_evidence"
+      ],
+      "purpose": "Study mathematical physics",
+      "question": "How do complex states give probabilities?",
+      "starting_knowledge": "Explain the companion transfer problems, or begin with its method finder."
+    },
+    {
+      "id": "foundations",
+      "title": "Build foundations",
+      "purpose": "Build foundations",
+      "question": "Which operation should I learn next?",
+      "starting_knowledge": "Begin with arithmetic; the companion teaches the remaining entry operations.",
+      "nodes": [
+        "precalc",
+        "proof"
+      ]
+    },
+    {
+      "id": "claims",
+      "title": "Evaluate a research claim",
+      "purpose": "Evaluate research claims",
+      "question": "What does the evidence establish?",
+      "starting_knowledge": "Begin with the review method as orientation. Use linked proof, probability, and topic lessons when a technical argument needs repair.",
+      "nodes": [
+        "review_evidence",
+        "review_physical",
+        "review_hypotheses",
+        "review_conclusions",
+        "review_reproduction",
+        "review_framework",
+        "review_critique"
       ]
     }
   ]

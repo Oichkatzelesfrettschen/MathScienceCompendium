@@ -437,9 +437,10 @@ help:
 
 # Connected learning books retain separate source ownership and build contracts.
 ALBUM_PYTHON ?= .venv/bin/python
-PRECALC_ROOT ?= $(HOME)/Github/precalc_paper
+PRECALC_SOURCE_ROOT ?= $(HOME)/Github/precalc_paper
+PRECALC_ROOT ?= $(CURDIR)/build/companion-working-edition
 
-.PHONY: learning-check learning album
+.PHONY: learning-check learning learning-largeprint learning-grayscale album companion-prepare
 learning-check:
 	python3 scripts/render_learning_routes.py --check
 	python3 scripts/validate_learning_library.py
@@ -451,6 +452,17 @@ learning: learning-check
 	@! rg -n '(Warning:|warning:|Overfull|Underfull|Missing character:)' build/learning/main.log
 	@! rg -n 'Warning--' build/learning/main.blg
 
+learning-largeprint: learning-check
+	mkdir -p build/learning/largeprint
+	latexmk -pdf -interaction=nonstopmode -halt-on-error -outdir=build/learning/largeprint papers/learning/largeprint.tex
+	@! rg -n '(Warning:|warning:|Overfull|Underfull|Missing character:)' build/learning/largeprint/largeprint.log
+	@! rg -n 'Warning--' build/learning/largeprint/largeprint.blg
+
+learning-grayscale: learning
+	gs -q -dSAFER -dBATCH -dNOPAUSE -sDEVICE=pdfwrite -sColorConversionStrategy=Gray -dProcessColorModel=/DeviceGray -sOutputFile=build/learning/main-grayscale.pdf build/learning/main.pdf
+
+companion-prepare:
+	python3 scripts/prepare_learning_companion.py --source-root "$(PRECALC_SOURCE_ROOT)" --output "$(PRECALC_ROOT)"
+
 album: learning papers
-	$(MAKE) -C "$(PRECALC_ROOT)" pdf verify figure-lint-strict chronology-lint-strict layout-lint-strict texlint-strict source-text-lint
 	$(ALBUM_PYTHON) scripts/assemble_learning_album.py --precalc-root "$(PRECALC_ROOT)"

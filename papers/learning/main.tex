@@ -1,21 +1,34 @@
-\documentclass[11pt,oneside]{book}
+\ifdefined\learninglargeprint
+  \documentclass[14pt,oneside]{extbook}
+\else
+  \documentclass[11pt,oneside]{book}
+\fi
 \usepackage[T1]{fontenc}
 \usepackage[utf8]{inputenc}
 \usepackage{lmodern,microtype}
 \usepackage[a4paper,margin=27mm,headheight=15pt]{geometry}
 \usepackage{amsmath,amssymb,amsthm,mathtools}
 \usepackage[most]{tcolorbox}
-\usepackage{booktabs,tabularx,enumitem,tikz}
-\usetikzlibrary{arrows.meta,calc}
+\usepackage{booktabs,tabularx,enumitem,tikz,needspace,titlesec}
+\usetikzlibrary{arrows.meta,calc,positioning}
 \usepackage{natbib,xurl,fancyhdr}
 \usepackage[hidelinks,unicode]{hyperref}
 \definecolor{learnink}{HTML}{18212B}
 \definecolor{learnnavy}{HTML}{17365D}
 \definecolor{learnpaper}{HTML}{F2F5F8}
-\tcbset{colback=learnpaper,colframe=learnnavy,boxrule=0.6pt,
-  arc=1.5mm,left=2mm,right=2mm,top=1.5mm,bottom=1.5mm,
-  fonttitle=\bfseries,before skip=10pt,after skip=10pt}
-\newtcolorbox{learningcard}[1]{title={#1}}
+\tcbset{colback=learnpaper,colframe=learnnavy,boxrule=0pt,leftrule=1pt,
+  sharp corners,breakable,left=3mm,right=2mm,top=2mm,bottom=2mm,
+  fonttitle=\sffamily\bfseries,before skip=10pt,after skip=10pt}
+\newtcolorbox{learningcard}[2][]{title={#2},#1}
+\newcommand{\lessoncue}[2]{\par\needspace{4\baselineskip}\smallskip\noindent\textsf{\textbf{#1.}} #2\par}
+\newcommand{\lessonreference}[3]{\begin{tcolorbox}[colback=white,breakable=false,
+  colframe=learnink,leftrule=0pt,toprule=0.7pt,bottomrule=0.7pt,
+  title={Quick reference}]
+  \textbf{Use.} #1\par\textbf{Watch.} #2\par\textbf{Link.} #3
+  \end{tcolorbox}}
+\newcommand{\claimstatus}[2]{\par\noindent\textsf{\textbf{#1.}} #2\par}
+\tikzset{every picture/.append style={line width=1pt}}
+
 \newtheorem{theorem}{Theorem}[chapter]
 \newtheorem{proposition}[theorem]{Proposition}
 \theoremstyle{definition}
@@ -26,13 +39,18 @@
 \newcommand{\ZZ}{\mathbb{Z}}
 \newcommand{\HH}{\mathbb{H}}
 \newcommand{\OO}{\mathbb{O}}
+\titleformat{\chapter}[display]{\normalfont\bfseries\raggedright}{\small\sffamily\chaptertitlename\ \thechapter}{0.5em}{\huge}
+\titlespacing*{\chapter}{0pt}{0pt}{18pt}
+\titleformat{\section}{\normalfont\Large\bfseries\raggedright}{\thesection}{0.7em}{}
 \setlength{\parindent}{0pt}
 \setlength{\parskip}{0.45em plus 0.1em minus 0.1em}
 \setlist{itemsep=0.25em,topsep=0.4em}
 \pagestyle{fancy}
 \fancyhf{}
-\fancyhead[L]{\small\nouppercase{\leftmark}}
+\fancyhead[L]{\small Mathematical physics / learning routes}
 \fancyhead[R]{\small\thepage}
+\fancyfoot[L]{\small\hyperref[learn:routes]{Routes} / \hyperref[learn:solutions]{Solutions}}
+\fancyfoot[R]{\small\href{https://github.com/Oichkatzelesfrettschen/MathScienceCompendium/blob/main/docs/learning/README.md}{Companion directory}}
 \raggedbottom
 \hypersetup{pdftitle={From Precalculus to Mathematical Physics: A Learning Album},
  pdfauthor={Eirikr Hinngart},pdfsubject={Prerequisites, derivations, historical sources, and branching reading routes}}
@@ -51,43 +69,74 @@
 \vfill
 {\large Eirikr Hinngart\par}
 \medskip
-A companion to \emph{A Precalculus Compendium} and
+A companion to \emph{Precalculus Through Problems of the Past} and
 \emph{Claim, Evidence, and Falsification in a Mathematical-Physics Compendium}.
 \end{titlepage}
-\chapter*{How to choose a route}
-\addcontentsline{toc}{chapter}{How to choose a route}
-The precalculus book supplies functions, algebra, trigonometry, vectors, and
-elementary limits. These bridge chapters develop selected undergraduate
-operations through definitions, examples, and solved exercises. The advanced
-review then asks what mathematical, computational, and empirical evidence
-establish. Its negative results teach why an appealing connection fails and
-what evidence a stronger claim would require.
+\chapter*{What should I learn next, and why?}
+\label{learn:routes}
+\addcontentsline{toc}{chapter}{What should I learn next, and why?}
+Begin with the question you want to answer. The independent companion,
+\emph{Precalculus Through Problems of the Past}, teaches arithmetic, equations,
+functions, angles, growth, and finite sums through historical problems.
+Its final \emph{Choose a Method} section asks you to select an operation,
+state a domain, and check units. These chapters pick up from that work.
+Coordinate vectors, matrix operations, and complex arithmetic receive their
+own entry lessons here.
 
-\begin{learningcard}{Choose the question you want to answer}
+\section*{Choose a purpose}
+\textbf{Build foundations.} Open the companion's method finder and work toward
+\emph{Choose a Method}. Use the entry check below to identify a useful return.
+\par\textbf{Study mathematical physics.} Begin with proof, then choose a topic.
+A passed entry check lets you use skills you already have. Required lessons
+supply operations; helpful background supplies context.
+\par\textbf{Evaluate research claims.} Start with \emph{Scope, Questions, and
+Review Method} in the separate critical review. Read an overview first, then
+use proof, probability, or a topic lesson to repair a specific reasoning gap.
+Quantum states are a topic choice, rather than an entrance requirement for
+reading the evidence method.
+
+\section*{The companion handoff}
+A rectangle has perimeter 28 and area 45. Name a side $x$, state its domain,
+and find the other side. Try the operation before reading the next paragraph.
+\par\textbf{Check.} The other side is $14-x$, with $0<x<14$.
+The area equation gives $x^2-14x+45=(x-5)(x-9)=0$, so the sides are
+5 and 9. Both measurements check. If setting up the equation is unfamiliar,
+return to \emph{Equations and Balance} or \emph{Choose a Method} in the
+companion. If the algebra is clear, the proof chapter asks why the argument
+covers the stated domain.
+
+\section*{Keep the books beside one another}
+The album directory links separate PDFs and names each destination by book,
+section, and physical PDF page. Use \emph{index.html} in the built album folder
+for an offline directory, or the repository's learning guide online.
+PDF viewers differ in their handling of cross-file links; the visible book and
+section names remain usable with each book's outline. A browser back action
+returns to the directory. The running footer supplies an online return route.
+The framework is an optional workbench: choose a bounded example before
+installing dependencies or interpreting a computation.
+
 \input{papers/learning/generated_routes}
-\end{learningcard}
 
-Choose the route matching your question and use its solved exercises as
-checkpoints. Each chapter teaches bounded objectives; specialist topics
-identify further theory and remain subjects for longer companion books.
-
-\section*{An entry check}
-Before beginning, solve $x^2-5x+6=0$, compute $\sin(\pi/6)$, and multiply
-$\begin{pmatrix}1&2\\0&1\end{pmatrix}\begin{pmatrix}3\\4\end{pmatrix}$.
-The answers are $x=2,3$, $1/2$, and $(11,4)^T$. Explain each operation,
-including why the quadratic factorization gives both roots. If an answer
-requires a guess, use the precalculus sections on polynomials, the unit
-circle, or matrices before following the corresponding branch.
-
-\section*{How history and evidence appear}
-Historical cards identify documented contexts and distinguish sources from
-modern teaching interpretations. Modern notation and constructed exercises
-belong to the exposition. The audit record identifies inaccessible sources;
-a citation alone establishes neither access nor factual verification.
+\section*{Read an evidence label before accepting a claim}
+\claimstatus{Definition}{A convention introduces an object and its domain.}
+\claimstatus{Established result}{A proof or precise source supports a conclusion
+under stated assumptions.}
+\claimstatus{Computational observation}{A program checks specified inputs with
+an exact or approximate method. A finite sample has a finite scope.}
+\claimstatus{Conjecture or open hypothesis}{A testable statement still needs its
+declared support.}
+\claimstatus{Falsified within the stated scope}{A counterexample or registered
+negative decision rejects the tested statement in the named regime.}
+Historical cards distinguish documented sources from modern teaching examples.
+The chapter bibliography and the separate evidence guide provide deeper locators.
+A citation identifies a source to check; its presence alone certifies neither
+access nor the historical claim.
 
 \tableofcontents
 \mainmatter
 \input{papers/learning/chapters/proof}
+\input{papers/learning/chapters/matrix_maps}
+\input{papers/learning/chapters/complex_numbers}
 \input{papers/learning/chapters/linear_algebra}
 \input{papers/learning/chapters/calculus}
 \input{papers/learning/chapters/multivariable}
@@ -97,6 +146,8 @@ a citation alone establishes neither access nor factual verification.
 \input{papers/learning/chapters/algebra}
 \input{papers/learning/chapters/geometry}
 \input{papers/learning/chapters/advanced}
+\appendix
+\input{papers/learning/generated_solutions}
 \backmatter
 \bibliographystyle{plainnat}
 \bibliography{papers/references}

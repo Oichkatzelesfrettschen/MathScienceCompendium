@@ -1,25 +1,40 @@
 #!/usr/bin/env python3
-"""Assemble pinned books with preserved links and executable reading routes."""
+"""Publish separate admitted books with a cross-PDF route directory."""
 
 from __future__ import annotations
 
 import argparse
 import hashlib
+import html
 import json
 import re
+import shutil
 import subprocess
+import tempfile
 import unicodedata
 from pathlib import Path
 from typing import Any
 
 from pypdf import PdfReader, PdfWriter
-from pypdf.annotations import Link
-from pypdf.generic import NameObject
+from pypdf.generic import (
+    ArrayObject,
+    DictionaryObject,
+    FloatObject,
+    NameObject,
+    NumberObject,
+    TextStringObject,
+)
 from reportlab.lib.colors import HexColor
 from reportlab.lib.pagesizes import A4
 from reportlab.lib.utils import simpleSplit
 from reportlab.pdfgen import canvas
 from validate_learning_library import ROOT, validate_library
+
+
+ROUTE_BODY_SIZE = 11
+ROUTE_HEADING_SIZE = 12
+ROUTE_LINE_HEIGHT = ROUTE_BODY_SIZE * 1.45
+ROUTE_HEADING_GAP = 20
 
 
 def heading_end_y(title: str, subtitle: str) -> float:
@@ -29,24 +44,57 @@ def heading_end_y(title: str, subtitle: str) -> float:
     return height - 66 - (len(title_lines) - 1) * 28 - 28 - len(subtitle_lines) * 15.95 - 18
 
 
+def route_subtitle(route: dict[str, Any]) -> str:
+    return (
+        f"Purpose: {route['purpose']} Question: {route['question']} "
+        f"Starting knowledge: {route['starting_knowledge']}"
+    )
+
+
+def lesson_lines(node: dict[str, Any], nodes: dict[str, Any]) -> list[str]:
+    """Summarize the next learning decision and locate the deeper preparation."""
+    required = ", ".join(nodes[item]["title"] for item in node["requires"]) or "Start here"
+    paragraphs = [
+        f"Question: {node['question']}",
+        "Outcomes: " + "; ".join(node["outcomes"]),
+        f"Required: {required}.",
+        "",
+        f"Readiness check: {node['readiness']['prompt']}",
+        "Open the linked lesson for entry preparation, worked solutions, and next-step guidance. "
+        "The matching lesson in index.html also supplies these details for every book.",
+    ]
+    return [
+        line
+        for paragraph in paragraphs
+        for line in (
+            simpleSplit(paragraph, "Helvetica", ROUTE_BODY_SIZE, A4[0] - 104) if paragraph else [""]
+        )
+    ]
+
+
 def route_page_layout(route: dict[str, Any], nodes: dict[str, Any]) -> list[list[dict[str, Any]]]:
     """Measure wrapped assessments, splitting long lessons across readable pages."""
-    width, _ = A4
-    subtitle = "Follow the prerequisites. Attempt each assessment before moving onward."
+    subtitle = route_subtitle(route)
     top = heading_end_y(route["title"], subtitle)
     bottom = 60
-    line_height = 9 * 1.45
-    if top - 17 - line_height < bottom:
+    line_height = ROUTE_LINE_HEIGHT
+    if top - ROUTE_HEADING_GAP - line_height < bottom:
         raise ValueError(f"Route heading leaves no room for a lesson: {route['id']}")
     pages: list[list[dict[str, Any]]] = []
     page: list[dict[str, Any]] = []
     y = top
     for index, identifier in enumerate(route["nodes"], start=1):
         node = nodes[identifier]
-        remaining = simpleSplit(node["assessment"], "Helvetica", 9, width - 104)
+        remaining = lesson_lines(node, nodes)
         continuation = False
+        fresh_capacity = int((top - ROUTE_HEADING_GAP - bottom) // line_height)
+        available_capacity = int((y - ROUTE_HEADING_GAP - bottom) // line_height)
+        if page and available_capacity < len(remaining) <= fresh_capacity:
+            pages.append(page)
+            page = []
+            y = top
         while remaining:
-            capacity = int((y - 17 - bottom) // line_height)
+            capacity = int((y - ROUTE_HEADING_GAP - bottom) // line_height)
             if capacity < 1:
                 pages.append(page)
                 page = []
@@ -62,7 +110,7 @@ def route_page_layout(route: dict[str, Any], nodes: dict[str, Any]) -> list[list
                     "lines": portion,
                 }
             )
-            y -= 17 + len(portion) * line_height + 13
+            y -= ROUTE_HEADING_GAP + len(portion) * line_height + 16
             continuation = True
     if page:
         pages.append(page)
@@ -77,7 +125,9 @@ def navigation_page_count(library: dict[str, Any]) -> int:
 
 
 def git(root: Path, *arguments: str) -> str:
-    return subprocess.check_output(["git", "-C", str(root), *arguments], text=True).strip()
+    return subprocess.check_output(
+        ["git", "-c", "core.fsmonitor=false", "-C", str(root), *arguments], text=True
+    ).strip()
 
 
 def sha256(path: Path) -> str:
@@ -181,7 +231,7 @@ def source_dependencies(root: Path, pdf: Path) -> dict[str, str]:
     return dict(sorted(dependencies.items()))
 
 
-def navigation_pdf(path: Path, library: dict[str, Any], targets: dict[str, int]) -> list[tuple]:
+def navigation_pdf(path: Path, library: dict[str, Any], targets: dict[str, Any]) -> list[tuple]:
     document = canvas.Canvas(str(path), pagesize=A4, invariant=1)
     document.setTitle("Mathematics learning album: choose a route")
     document.setAuthor("Eirikr Hinngart")
@@ -216,14 +266,14 @@ def navigation_pdf(path: Path, library: dict[str, Any], targets: dict[str, int])
         links.append((page, (x - 2, y - 3, x + extent + 2, y + size + 2), identifier))
 
     y = heading(
-        "A mathematics learning album",
-        "Start with precalculus. Choose a question. Follow the prerequisites.",
+        "What should I learn next?",
+        "Choose a purpose, check your starting skills, and follow a question.",
     )
     y = (
         paragraph(
             "Three connected books carry one journey from basic operations to "
             "careful advanced reasoning. Each keeps its own purpose and authorship. "
-            "The directory and reading-route links jump into the assembled books; "
+            "The directory and reading-route links open separate PDF books; "
             "their original tables of contents and PDF bookmarks remain available.",
             42,
             y,
@@ -231,16 +281,17 @@ def navigation_pdf(path: Path, library: dict[str, Any], targets: dict[str, int])
         )
         - 24
     )
+    book_map = {book["id"]: book for book in library["books"]}
     for identifier, title, explanation in [
         (
             "precalc",
-            "1. A Precalculus Compendium",
+            "1. " + book_map[node_map["precalc"]["book"]]["title"],
             "Functions and their histories, visual constructions, guided operations, and exercises.",
         ),
         (
             "proof",
             "2. From Precalculus to Mathematical Physics",
-            "Ten bridge chapters with definitions, worked derivations, historical sources, "
+            "Bridge lessons with definitions, worked derivations, historical sources, "
             "and three fully solved exercises per chapter.",
         ),
         (
@@ -251,10 +302,18 @@ def navigation_pdf(path: Path, library: dict[str, Any], targets: dict[str, int])
         ),
     ]:
         document.setFillColor(paper)
-        document.roundRect(36, y - 89, width - 72, 108, 7, fill=1, stroke=0)
+        document.roundRect(36, y - 69, width - 72, 88, 7, fill=1, stroke=0)
         jump(title, f"book:{node_map[identifier]['book']}", 48, y, 0, 12)
         paragraph(explanation, 48, y - 24, width - 96)
-        y -= 128
+        y -= 102
+    for route in library["routes"]:
+        identifier = "route:" + route["id"]
+        label = f"{route['purpose']}: {route['title']} (p. {targets[identifier]['page']})"
+        for line in simpleSplit(label, "Helvetica-Bold", 9, width - 84):
+            jump(line, identifier, 42, y, 0, 9)
+            y -= 14
+        y -= 4
+    y -= 8
     paragraph(
         "A route is an invitation, not a claim of full-course mastery. Try the "
         "stated assessment before moving onward. Return to a worked example "
@@ -267,7 +326,7 @@ def navigation_pdf(path: Path, library: dict[str, Any], targets: dict[str, int])
     page_number = 1
     for start in range(0, len(library["nodes"]), 18):
         y = heading(
-            "Lesson directory", "Click a lesson title. Page numbers refer to this combined PDF."
+            "Lesson directory", "Open a separate book. The directory lists its PDF page number."
         )
         for node in library["nodes"][start : start + 18]:
             title = node["title"]
@@ -276,7 +335,9 @@ def navigation_pdf(path: Path, library: dict[str, Any], targets: dict[str, int])
             jump(title, node["id"], 42, y, page_number, 10)
             document.setFont("Helvetica", 10)
             document.setFillColor(ink)
-            document.drawRightString(width - 42, y, str(targets[node["id"]] + 1))
+            document.drawRightString(
+                width - 42, y, f"{node['book']}: {targets[node['id']]['page']}"
+            )
             y -= 32
         paragraph(
             "Use the PDF outline to return to the directory or reading routes. "
@@ -291,7 +352,7 @@ def navigation_pdf(path: Path, library: dict[str, Any], targets: dict[str, int])
         for route_page in route_page_layout(route, node_map):
             heading(
                 route["title"],
-                "Follow the prerequisites. Attempt each assessment before moving onward.",
+                route_subtitle(route),
             )
             for item in route_page:
                 identifier = item["identifier"]
@@ -299,14 +360,26 @@ def navigation_pdf(path: Path, library: dict[str, Any], targets: dict[str, int])
                 title = f"{item['index']}. {node['title']}"
                 if item["continuation"]:
                     title += " (continued)"
-                while document.stringWidth(title, "Helvetica-Bold", 10) > width - 104:
+                while (
+                    document.stringWidth(title, "Helvetica-Bold", ROUTE_HEADING_SIZE) > width - 104
+                ):
                     title = title[:-4] + "..."
                 y = item["y"]
-                jump(title, identifier, 42, y, page_number, 10)
+                jump(title, identifier, 42, y, page_number, ROUTE_HEADING_SIZE)
                 document.setFillColor(ink)
-                document.setFont("Helvetica", 9)
+                document.setFont("Helvetica", ROUTE_BODY_SIZE)
                 for line_number, line in enumerate(item["lines"]):
-                    document.drawString(52, y - 17 - line_number * 9 * 1.45, line)
+                    document.drawString(
+                        52, y - ROUTE_HEADING_GAP - line_number * ROUTE_LINE_HEIGHT, line
+                    )
+            jump(
+                "Return to lesson directory (navigation PDF p. 2)",
+                "directory",
+                42,
+                34,
+                page_number,
+                9,
+            )
             document.showPage()
             page_number += 1
     document.save()
@@ -326,116 +399,286 @@ def assemble(
     errors = validate_library(library, root=ROOT, external_roots=source_roots)
     if errors:
         raise ValueError("; ".join(errors))
+    output = output.resolve()
+    for source_root in source_roots.values():
+        if output.is_relative_to(source_root):
+            raise ValueError("Bundle output lies inside an external source checkout")
     revisions: dict[str, str] = {}
-    for book in library["books"]:
-        if not book.get("repository"):
-            continue
-        root = source_roots.get(book["id"])
-        if root is None:
-            raise ValueError(f"Missing external checkout: {book['id']}")
-        actual = git(root, "rev-parse", "HEAD")
-        if actual != book["revision"]:
-            raise ValueError(
-                f"{book['id']} revision differs: expected {book['revision']}, got {actual}"
-            )
-        if git(root, "status", "--porcelain", "--untracked-files=no"):
-            raise ValueError(f"{book['id']}: tracked source has uncommitted changes")
-        revisions[book["id"]] = actual
-    output.mkdir(parents=True, exist_ok=True)
     readers: dict[str, PdfReader] = {}
     source_paths: dict[str, Path] = {}
-    offsets: dict[str, int] = {}
-    titles: dict[str, dict[str, list[int]]] = {}
     dependencies: dict[str, dict[str, str]] = {}
-    offset = navigation_page_count(library)
+    targets: dict[str, Any] = {}
+    books: list[dict[str, Any]] = []
     for book in library["books"]:
-        root = source_roots[book["id"]] if book.get("repository") else ROOT
-        path = root / book["pdf"]
+        identifier = book["id"]
+        root = source_roots[identifier] if book.get("repository") else ROOT
+        path = (root / book["pdf"]).resolve()
+        if not path.is_relative_to(root.resolve()):
+            raise ValueError(f"Book PDF escapes source checkout: {identifier}")
+        if path.is_relative_to(output):
+            raise ValueError("Bundle output overlaps an input PDF")
         if not path.is_file():
             raise ValueError(f"Missing built book: {path}")
-        source_paths[book["id"]] = path
-        dependencies[book["id"]] = source_dependencies(root, path)
+        actual = git(root, "rev-parse", "HEAD")
+        source_dependencies_map = source_dependencies(root, path)
+        if book.get("repository"):
+            if book.get("edition_manifest"):
+                edition_path = (ROOT / book["edition_manifest"]).resolve()
+                if not edition_path.is_relative_to(ROOT.resolve()):
+                    raise ValueError("Edition manifest escapes repository")
+                edition = json.loads(edition_path.read_text())
+                if actual != edition["revision"]:
+                    raise ValueError(f"{identifier}: revision differs from edition")
+                if sha256(path) != edition["pdf_sha256"]:
+                    raise ValueError(f"{identifier}: edition PDF hash differs")
+                if source_dependencies_map != edition["source_dependencies"]:
+                    raise ValueError(f"{identifier}: edition source hashes differ")
+                if not edition.get("working_tree") and git(
+                    root, "status", "--porcelain", "--untracked-files=no"
+                ):
+                    raise ValueError(f"{identifier}: tracked source has uncommitted changes")
+            else:
+                if actual != book["revision"]:
+                    raise ValueError(f"{identifier} revision differs")
+                if git(root, "status", "--porcelain", "--untracked-files=no"):
+                    raise ValueError(f"{identifier}: tracked source has uncommitted changes")
+        revisions[identifier] = actual
+        dependencies[identifier] = source_dependencies_map
+        source_paths[identifier] = path
         reader = PdfReader(path, strict=True)
         if not reader.pages:
             raise ValueError(f"Empty book: {path}")
-        readers[book["id"]] = reader
-        offsets[book["id"]] = offset
-        titles[book["id"]] = outline_pages(reader)
-        offset += len(reader.pages)
-    targets: dict[str, int] = {}
-    for node in library["nodes"]:
-        title = node.get("pdf_title")
-        pages = [0] if title is None else titles[node["book"]].get(normalize_title(title), [])
-        if not pages:
-            raise ValueError(f"Missing PDF destination for {node['id']}: {title}")
-        if len(pages) != 1:
-            raise ValueError(f"Ambiguous PDF destination for {node['id']}: {title}")
-        targets[node["id"]] = offsets[node["book"]] + pages[0]
-    targets.update({f"book:{identifier}": page for identifier, page in offsets.items()})
-    navigation = output / "navigation.pdf"
-    links = navigation_pdf(navigation, library, targets)
-    writer = PdfWriter()
-    writer.append(navigation, import_outline=True)
-    if len(writer.pages) != navigation_page_count(library):
-        raise ValueError("Navigation page count drifted")
-    writer.add_outline_item("Album directory", 1)
-    writer.add_outline_item("Reading routes", 1 + (len(library["nodes"]) + 17) // 18)
-    for book in library["books"]:
-        writer.append(readers[book["id"]], outline_item=book["title"], import_outline=True)
-    for page, rectangle, identifier in links:
-        added = writer.add_annotation(
-            page, Link(rect=rectangle, target_page_index=targets[identifier])
-        )
-        # Local explicit destinations require a page object, not a remote page number.
-        added[NameObject("/Dest")][0] = writer.pages[targets[identifier]].indirect_reference
-    writer.add_metadata({"/Title": "Mathematics Learning Album", "/Author": "Eirikr Hinngart"})
-    destination = output / "album.pdf"
-    temporary = output / "album.pending.pdf"
-    writer.write(temporary)
-    check = PdfReader(temporary, strict=True)
-    if len(check.pages) != offset:
-        raise ValueError("Assembled page count differs from input total")
-    for page, rectangle, identifier in links:
-        annotations = check.pages[page].get("/Annots", [])
-        expected = targets[identifier]
-        matched = [
-            item.get_object()
-            for item in annotations
-            if len(item.get_object().get("/Rect", [])) == 4
-            and all(
-                abs(float(actual) - expected_coordinate) < 0.001
-                for actual, expected_coordinate in zip(item.get_object()["/Rect"], rectangle)
-            )
-        ]
-        if (
-            len(matched) != 1
-            or check.get_page_number(matched[0]["/Dest"][0].get_object()) != expected
-        ):
-            raise ValueError(f"Navigation destination failed: {identifier}")
-    temporary.replace(destination)
-    manifest = {
-        "schema_version": 1,
-        "library_sha256": sha256(ROOT / "docs/learning/library.json"),
-        "album_sha256": sha256(destination),
-        "pages": offset,
-        "navigation_links_checked": len(links),
-        "destinations": {key: value + 1 for key, value in targets.items()},
-        "books": [
-            {
-                "id": book["id"],
-                "pages": len(readers[book["id"]].pages),
-                "pdf_sha256": sha256(source_paths[book["id"]]),
-                "source_dependencies": dependencies[book["id"]],
-                "revision": revisions[book["id"]]
-                if book.get("repository")
-                else git(ROOT, "rev-parse", "HEAD"),
+        readers[identifier] = reader
+        titles = outline_pages(reader)
+        filename = identifier + ".pdf"
+        targets[f"book:{identifier}"] = {
+            "book": identifier,
+            "file": filename,
+            "page": 1,
+            "title": book["title"],
+        }
+        for node in library["nodes"]:
+            if node["book"] != identifier:
+                continue
+            title = node.get("pdf_title")
+            pages = [0] if title is None else titles.get(normalize_title(title), [])
+            if not pages:
+                raise ValueError(f"Missing PDF destination for {node['id']}: {title}")
+            if len(pages) != 1:
+                raise ValueError(f"Ambiguous PDF destination for {node['id']}: {title}")
+            targets[node["id"]] = {
+                "book": identifier,
+                "file": filename,
+                "page": pages[0] + 1,
+                "title": title or book["title"],
             }
-            for book in library["books"]
-        ],
-        "scope": "Assembly identity and navigation checks; factual audits are separate records.",
-    }
-    (output / "manifest.json").write_text(json.dumps(manifest, indent=2) + "\n")
-    return manifest
+        books.append(
+            {
+                "id": identifier,
+                "file": filename,
+                "pages": len(reader.pages),
+                "pdf_sha256": sha256(path),
+                "source_dependencies": source_dependencies_map,
+                "revision": actual,
+                "edition_manifest": book.get("edition_manifest"),
+            }
+        )
+    targets["directory"] = {"file": "navigation.pdf", "page": 2, "title": "Album directory"}
+    route_offset = 1 + (len(library["nodes"]) + 17) // 18
+    node_map = {node["id"]: node for node in library["nodes"]}
+    for route in library["routes"]:
+        targets["route:" + route["id"]] = {
+            "file": "navigation.pdf",
+            "page": route_offset + 1,
+            "title": route["title"],
+        }
+        route_offset += len(route_page_layout(route, node_map))
+    managed_files = [book["file"] for book in books] + [
+        "navigation.pending.pdf",
+        "navigation.pdf",
+        "index.html",
+        "manifest.json",
+    ]
+    for filename in managed_files:
+        candidate = output / filename
+        if candidate.is_symlink() or (candidate.exists() and not candidate.is_file()):
+            raise ValueError(f"Managed output must be a regular file: {candidate}")
+    output.mkdir(parents=True, exist_ok=True)
+    destination_root = output
+    with tempfile.TemporaryDirectory(prefix=".album-stage-", dir=output) as staging:
+        output = Path(staging)
+        for book in books:
+            shutil.copyfile(source_paths[book["id"]], output / book["file"])
+            if sha256(output / book["file"]) != book["pdf_sha256"]:
+                raise ValueError("Copied book hash differs")
+        navigation = output / "navigation.pending.pdf"
+        links = navigation_pdf(navigation, library, targets)
+        writer = PdfWriter()
+        writer.append(navigation, import_outline=True)
+        if len(writer.pages) != navigation_page_count(library):
+            raise ValueError("Navigation page count drifted")
+        writer.add_outline_item("Album directory", 1)
+        writer.add_outline_item("Reading routes", 1 + (len(library["nodes"]) + 17) // 18)
+        for identifier, target in targets.items():
+            if target["file"] == "navigation.pdf":
+                writer.add_named_destination(identifier, target["page"] - 1)
+                if identifier.startswith("route:"):
+                    writer.add_outline_item(target["title"], target["page"] - 1)
+        for page, rectangle, identifier in links:
+            target = targets[identifier]
+            if target["file"] == "navigation.pdf":
+                action = DictionaryObject(
+                    {
+                        NameObject("/S"): NameObject("/GoTo"),
+                        NameObject("/D"): TextStringObject(identifier),
+                    }
+                )
+            else:
+                action = DictionaryObject(
+                    {
+                        NameObject("/S"): NameObject("/GoToR"),
+                        NameObject("/F"): TextStringObject(target["file"]),
+                        NameObject("/D"): ArrayObject(
+                            [NumberObject(target["page"] - 1), NameObject("/Fit")]
+                        ),
+                    }
+                )
+            writer.add_annotation(
+                page,
+                DictionaryObject(
+                    {
+                        NameObject("/Type"): NameObject("/Annot"),
+                        NameObject("/Subtype"): NameObject("/Link"),
+                        NameObject("/Rect"): ArrayObject(
+                            [FloatObject(value) for value in rectangle]
+                        ),
+                        NameObject("/Border"): ArrayObject([NumberObject(0)] * 3),
+                        NameObject("/A"): action,
+                    }
+                ),
+            )
+        destination = output / "navigation.pdf"
+        writer.write(destination)
+        check = PdfReader(destination, strict=True)
+        for page, rectangle, identifier in links:
+            matched = [
+                annotation.get_object()
+                for annotation in check.pages[page].get("/Annots", [])
+                if all(
+                    abs(float(value) - expected) < 0.001
+                    for value, expected in zip(annotation.get_object()["/Rect"], rectangle)
+                )
+            ]
+            target = targets[identifier]
+            if len(matched) != 1:
+                raise ValueError(f"Navigation destination failed: {identifier}")
+            action = matched[0]["/A"]
+            if target["file"] == "navigation.pdf":
+                valid = (
+                    action["/S"] == "/GoTo"
+                    and action["/D"] == identifier
+                    and check.get_destination_page_number(check.named_destinations[identifier])
+                    == target["page"] - 1
+                )
+            else:
+                valid = (
+                    action["/S"] == "/GoToR"
+                    and action["/F"] == target["file"]
+                    and int(action["/D"][0]) == target["page"] - 1
+                )
+            if not valid:
+                raise ValueError(f"Navigation destination failed: {identifier}")
+        navigation.unlink()
+
+        def escape(value: str) -> str:
+            return html.escape(value, quote=True)
+
+        node_map = {node["id"]: node for node in library["nodes"]}
+
+        def node_link(identifier: str) -> str:
+            return f'<a href="#{escape(identifier)}">{escape(node_map[identifier]["title"])}</a>'
+
+        routes_html = []
+        for route in library["routes"]:
+            routes_html.append(
+                f'<section id="route-{escape(route["id"])}"><h3>{escape(route["title"])}</h3>'
+                f"<p><strong>Purpose:</strong> {escape(route['purpose'])}</p>"
+                f"<p><strong>Question:</strong> {escape(route['question'])}</p>"
+                f"<p><strong>Starting knowledge:</strong> {escape(route['starting_knowledge'])}</p>"
+                "<ol>"
+                + "".join(f"<li>{node_link(identifier)}</li>" for identifier in route["nodes"])
+                + "</ol></section>"
+            )
+        lessons_html = []
+        for node in library["nodes"]:
+            target = targets[node["id"]]
+            required = (
+                ", ".join(node_link(identifier) for identifier in node["requires"]) or "Start here"
+            )
+            lessons_html.append(
+                f'<section id="{escape(node["id"])}"><h3>{escape(node["title"])}</h3>'
+                f"<p><strong>Question:</strong> {escape(node['question'])}</p>"
+                f"<p><strong>Role:</strong> {escape(node['role'])}</p>"
+                f'<p><a href="{escape(target["file"])}#page={target["page"]}">Open lesson PDF</a>'
+                f" — {escape(target['book'])}, {escape(target['title'])}, PDF page {target['page']}.</p>"
+                f"<p><strong>Required:</strong> {required}</p>"
+                "<p><strong>Helpful background:</strong> "
+                + escape("; ".join(node["helpful"]))
+                + "</p>"
+                "<h4>Learning outcomes</h4><ul>"
+                + "".join(f"<li>{escape(outcome)}</li>" for outcome in node["outcomes"])
+                + "</ul>"
+                f"<h4>Entry check</h4><p>{escape(node['entry_check']['prompt'])}</p>"
+                f"<details><summary>Entry solution and repair</summary>"
+                f"<p>{escape(node['entry_check']['answer'])}</p>"
+                f"<p>Repair: {node_link(node['entry_check']['repair'])}</p></details>"
+                f"<h4>Practice</h4><p>{escape(node['assessment'])}</p>"
+                f"<h4>Readiness check</h4><p>{escape(node['readiness']['prompt'])}</p>"
+                f"<details><summary>Readiness solution</summary>"
+                f"<p>{escape(node['readiness']['answer'])}</p></details>"
+                f"<h4>Quick reference</h4><p><strong>Use:</strong> {escape(node['reference']['use'])}</p>"
+                f"<p><strong>Watch:</strong> {escape(node['reference']['watch'])}</p>"
+                "<h4>Next and why</h4><ul>"
+                + "".join(
+                    f"<li>{node_link(item['node'])}: {escape(item['why'])}</li>"
+                    for item in node["next"]
+                )
+                + '</ul><p><a href="#routes">Return to routes</a></p></section>'
+            )
+        (output / "index.html").write_text(
+            '<!doctype html><html lang="en"><head><meta charset="utf-8">'
+            '<meta name="viewport" content="width=device-width, initial-scale=1">'
+            "<title>What should I learn next?</title>"
+            "<style>body{font:1.1rem/1.6 system-ui,sans-serif;max-width:70ch;margin:auto;padding:2rem;"
+            "color:#18212b;background:white}a{color:#17365d}section{border-top:1px solid #667;"
+            "margin-top:2rem;padding-top:1rem}details{padding:.5rem;border-left:3px solid #667}"
+            "</style></head><body><main><h1>What should I learn next?</h1>"
+            '<p>These books remain separate. Open <a href="navigation.pdf">the route guide PDF</a> '
+            "to choose a journey. Return with your reader Back command or reopen index.html. "
+            "When a reader ignores a PDF link, open the named file and use its printed PDF page locator.</p>"
+            '<h2 id="routes">Choose a reading route</h2>'
+            + "".join(routes_html)
+            + "<h2>Lesson directory</h2>"
+            + "".join(lessons_html)
+            + "</main></body></html>\n"
+        )
+        manifest = {
+            "schema_version": 2,
+            "library_sha256": sha256(ROOT / "docs/learning/library.json"),
+            "navigation_sha256": sha256(destination),
+            "index_sha256": sha256(output / "index.html"),
+            "pages": len(check.pages),
+            "navigation_links_checked": len(links),
+            "destinations": targets,
+            "books": books,
+            "scope": "Separate PDF identity and cross-file destination checks; reader support and factual audits are separate observations.",
+        }
+        (output / "manifest.json").write_text(json.dumps(manifest, indent=2) + "\n")
+        for filename in managed_files:
+            staged = output / filename
+            if staged.is_file():
+                staged.replace(destination_root / filename)
+        return manifest
 
 
 def main() -> int:

@@ -1,6 +1,6 @@
 generated_by = "scripts/build_docs_index.py"
 generated_at_utc = "1970-01-01T00:00:00+00:00"
-documents_total = 74
+documents_total = 109
 
 [[documents]]
 id = "docs_architecture_md"
@@ -156,13 +156,49 @@ line_count = 221
 size_bytes = 14570
 
 [[documents]]
+id = "docs_learning__content_inventory_and_reader_journeys_md"
+relpath = "docs/learning/CONTENT_INVENTORY_AND_READER_JOURNEYS.md"
+category = "docs/root"
+title = "What should I learn next, and why?"
+sha256 = "fc6be1b5315581f5acc96786d45360ca3446ca0ddbc71f390337679b4ebcc44b"
+line_count = 306
+size_bytes = 24796
+
+[[documents]]
+id = "docs_learning__evidence_guide_md"
+relpath = "docs/learning/EVIDENCE_GUIDE.md"
+category = "docs/root"
+title = "Examine a claim"
+sha256 = "8dc4e7cf9d376bd7cc1c0572951ce3f98dda8e0bea2691e9e4596ed355e1a737"
+line_count = 86
+size_bytes = 4794
+
+[[documents]]
+id = "docs_learning__information_architecture_md"
+relpath = "docs/learning/INFORMATION_ARCHITECTURE.md"
+category = "docs/root"
+title = "Reader journeys and companion navigation"
+sha256 = "50277724267af54c53aad877896027439cf82f794998c99aa600dd2cb8ea08e4"
+line_count = 155
+size_bytes = 9769
+
+[[documents]]
+id = "docs_learning__method_finder_md"
+relpath = "docs/learning/METHOD_FINDER.md"
+category = "docs/root"
+title = "Look up a method"
+sha256 = "3e854c0c22b9e7232874b9e451809c16948f0395549920029d05809514461963"
+line_count = 34
+size_bytes = 3658
+
+[[documents]]
 id = "docs_learning__readme_md"
 relpath = "docs/learning/README.md"
 category = "docs/root"
-title = "Start with a question"
-sha256 = "e0774cd91ec01dae510a5607f740470bc095bace9f793294a6b19af68a65b5df"
-line_count = 110
-size_bytes = 5824
+title = "What should I learn next, and why?"
+sha256 = "70dfae15ece3d77b6677a5704da4272c02ff4c000163ce473356f8636a0f82b1"
+line_count = 137
+size_bytes = 7543
 
 [[documents]]
 id = "docs_learning__work_log_md"
@@ -174,6 +210,231 @@ line_count = 56
 size_bytes = 3024
 
 [[documents]]
+id = "docs_learning__lessons__algebra_md"
+relpath = "docs/learning/lessons/algebra.md"
+category = "docs/root"
+title = "Algebraic structure: symmetry, brackets, and roots"
+sha256 = "59aecfe2fb712cc6de545ab2b59b9c4900a6bd434fa59973e28a9a13cebaea28"
+line_count = 57
+size_bytes = 2346
+
+[[documents]]
+id = "docs_learning__lessons__calculus_md"
+relpath = "docs/learning/lessons/calculus.md"
+category = "docs/root"
+title = "Calculus: local change and accumulated change"
+sha256 = "c11b13d37917dcac104abd5c5e63ff0ac3e5bb506b5ad9d7aa5471dac094de54"
+line_count = 59
+size_bytes = 2351
+
+[[documents]]
+id = "docs_learning__lessons__complex_numbers_md"
+relpath = "docs/learning/lessons/complex_numbers.md"
+category = "docs/root"
+title = "Complex numbers: multiplication, length, and conjugation"
+sha256 = "9415d7c8c7f1aa4f2f4411d4f8bc6a87518d7127c6e722979394ff1e60bc0102"
+line_count = 60
+size_bytes = 2601
+
+[[documents]]
+id = "docs_learning__lessons__dynamics_md"
+relpath = "docs/learning/lessons/dynamics.md"
+category = "docs/root"
+title = "Dynamics: equations, modes, and trustworthy computation"
+sha256 = "3083030de77db045dbedca644e19a1b58107608445fdfbc62a2f4cbb0d9e11f7"
+line_count = 56
+size_bytes = 2074
+
+[[documents]]
+id = "docs_learning__lessons__fluids_md"
+relpath = "docs/learning/lessons/fluids.md"
+category = "docs/root"
+title = "A lattice-Boltzmann step has exact moment obligations"
+sha256 = "ad892b994cac10459114a8ccde3df1627b582979056b366c9e5765d6fe814cff"
+line_count = 56
+size_bytes = 2199
+
+[[documents]]
+id = "docs_learning__lessons__geometry_md"
+relpath = "docs/learning/lessons/geometry.md"
+category = "docs/root"
+title = "Geometry and analysis: distance, dimension, and complex structure"
+sha256 = "8ae3ce64065e08ea90aa6e6bb8155575cf45285f95c3b67777ca72f311187133"
+line_count = 56
+size_bytes = 2309
+
+[[documents]]
+id = "docs_learning__lessons__hypercomplex_md"
+relpath = "docs/learning/lessons/hypercomplex.md"
+category = "docs/root"
+title = "Doubling changes multiplication as well as dimension"
+sha256 = "a8173179db48500f0f55305f373e2f49ef8b6c8db01632199ebdf3c14c55d2fc"
+line_count = 56
+size_bytes = 2188
+
+[[documents]]
+id = "docs_learning__lessons__linear_algebra_md"
+relpath = "docs/learning/lessons/linear_algebra.md"
+category = "docs/root"
+title = "Linear algebra: coordinates, maps, and modes"
+sha256 = "c7c426a63b9505639b322f490a5e1f5595812d1deb668c34bfa57d0e6e1a7a69"
+line_count = 57
+size_bytes = 2173
+
+[[documents]]
+id = "docs_learning__lessons__matrix_maps_md"
+relpath = "docs/learning/lessons/matrix_maps.md"
+category = "docs/root"
+title = "From balanced equations to matrix maps"
+sha256 = "017b60d89d3b20e5640aa54956d859fcac754666f064a0978830ef9fcfba8f4e"
+line_count = 59
+size_bytes = 2427
+
+[[documents]]
+id = "docs_learning__lessons__multivariable_md"
+relpath = "docs/learning/lessons/multivariable.md"
+category = "docs/root"
+title = "Several variables: local maps and conservation"
+sha256 = "38b6f9edbec9f48de62b4d0358166a7f85f2bcfa2641c9b332d5fd825f694f46"
+line_count = 56
+size_bytes = 2073
+
+[[documents]]
+id = "docs_learning__lessons__numerical_md"
+relpath = "docs/learning/lessons/numerical.md"
+category = "docs/root"
+title = "Numerical reasoning: approximation with an error budget"
+sha256 = "f86fa277feb599d821eda0f79f1147abfad87f48e32b652d893de69898cae6b6"
+line_count = 56
+size_bytes = 2169
+
+[[documents]]
+id = "docs_learning__lessons__precalc_md"
+relpath = "docs/learning/lessons/precalc.md"
+category = "docs/root"
+title = "Precalculus"
+sha256 = "cee223cb647b5982c97676eadcb72ba250ab161f52076a5eeee1a7911777ee1c"
+line_count = 59
+size_bytes = 2268
+
+[[documents]]
+id = "docs_learning__lessons__probability_md"
+relpath = "docs/learning/lessons/probability.md"
+category = "docs/root"
+title = "Probability: uncertainty, evidence, and comparison"
+sha256 = "69d67e2887e5c5c5386eb084b610ddae6c22e2e6959df1c7dbd8b4deaa37b798"
+line_count = 60
+size_bytes = 2663
+
+[[documents]]
+id = "docs_learning__lessons__proof_md"
+relpath = "docs/learning/lessons/proof.md"
+category = "docs/root"
+title = "From convincing examples to proof"
+sha256 = "4b32a5ed20f73c2a759cd0a5b1062a8d3cd3c698fddce08ea19ab26ab43ef047"
+line_count = 61
+size_bytes = 2557
+
+[[documents]]
+id = "docs_learning__lessons__quantum_md"
+relpath = "docs/learning/lessons/quantum.md"
+category = "docs/root"
+title = "Worked example: probabilities from a complex state"
+sha256 = "c55fa41b8e02c2df7fbd43bc22f7ec5c5306992d121112ba4212e75f56dbb1d5"
+line_count = 56
+size_bytes = 2271
+
+[[documents]]
+id = "docs_learning__lessons__review_algebra_md"
+relpath = "docs/learning/lessons/review_algebra.md"
+category = "docs/root"
+title = "Mathematical Baseline"
+sha256 = "755b5258af116adb59c47d407ebf3070d9fb7e9c704e5b04a79667037bd70d0d"
+line_count = 56
+size_bytes = 2030
+
+[[documents]]
+id = "docs_learning__lessons__review_computation_md"
+relpath = "docs/learning/lessons/review_computation.md"
+category = "docs/root"
+title = "Computational Evidence Portfolio"
+sha256 = "77bd71ae92449ce9d8cb5201ca5de35eb88da85fb60edd536cfb542a92b57c2c"
+line_count = 56
+size_bytes = 2168
+
+[[documents]]
+id = "docs_learning__lessons__review_conclusions_md"
+relpath = "docs/learning/lessons/review_conclusions.md"
+category = "docs/root"
+title = "Conclusions and Decision Record"
+sha256 = "962b4ab21603cb71cd38184003667123ba267208226d69f35d9399fa886ba255"
+line_count = 56
+size_bytes = 2036
+
+[[documents]]
+id = "docs_learning__lessons__review_critique_md"
+relpath = "docs/learning/lessons/review_critique.md"
+category = "docs/root"
+title = "Falsification of the Critiques"
+sha256 = "ef8e1309297118630a39c9959aae4acad31cdc02272206a8688dac2b3f091d12"
+line_count = 56
+size_bytes = 2075
+
+[[documents]]
+id = "docs_learning__lessons__review_evidence_md"
+relpath = "docs/learning/lessons/review_evidence.md"
+category = "docs/root"
+title = "Scope, Questions, and Review Method"
+sha256 = "c27579f5e28407e8d31853409ad5bd717938a2a39a978cc766c94d8bf6318149"
+line_count = 58
+size_bytes = 2372
+
+[[documents]]
+id = "docs_learning__lessons__review_framework_md"
+relpath = "docs/learning/lessons/review_framework.md"
+category = "docs/root"
+title = "Reconciled Framework Architecture"
+sha256 = "de140967a6e687e7710282b77c3ca0084934e9d781a0952ada2b4014f82f9075"
+line_count = 56
+size_bytes = 2079
+
+[[documents]]
+id = "docs_learning__lessons__review_geometry_md"
+relpath = "docs/learning/lessons/review_geometry.md"
+category = "docs/root"
+title = "Modular forms and moonshine"
+sha256 = "2f6275036e13d98857b84db1cb69c1403c8360abeb1d140fea26de996061813b"
+line_count = 56
+size_bytes = 2176
+
+[[documents]]
+id = "docs_learning__lessons__review_hypotheses_md"
+relpath = "docs/learning/lessons/review_hypotheses.md"
+category = "docs/root"
+title = "Hypothesis Registry and Promotion Gates"
+sha256 = "d9f230abdbbae7a967a0e1c867972fa0f96fcda508b04af7331e5068c45d14a6"
+line_count = 56
+size_bytes = 2032
+
+[[documents]]
+id = "docs_learning__lessons__review_physical_md"
+relpath = "docs/learning/lessons/review_physical.md"
+category = "docs/root"
+title = "Audit of the Physical Claims"
+sha256 = "c11eff3d6cee46f3e9f76c00da15e8fff1b96f0c46f0840fa311c33b25b6afe7"
+line_count = 56
+size_bytes = 2080
+
+[[documents]]
+id = "docs_learning__lessons__review_reproduction_md"
+relpath = "docs/learning/lessons/review_reproduction.md"
+category = "docs/root"
+title = "Reproducibility and Artifact Inventory"
+sha256 = "9e5eef06cf1a16a757c63f6166f0ed3f3ee307aa03a6a9e0956b1a50eff9e64c"
+line_count = 56
+size_bytes = 2071
+
+[[documents]]
 id = "docs_learning__requirements_txt"
 relpath = "docs/learning/requirements.txt"
 category = "docs/root"
@@ -181,6 +442,60 @@ title = "pypdf==6.8.0"
 sha256 = "3645f52dcb91338f4f8544079381eaed1ad3aa86e6d06e22dc9d235a78fd4c37"
 line_count = 6
 size_bytes = 90
+
+[[documents]]
+id = "docs_learning__routes__claims_md"
+relpath = "docs/learning/routes/claims.md"
+category = "docs/root"
+title = "What does the evidence establish?"
+sha256 = "45beb770cea00dd1ac1ea1a5b242b3174f3f7178b8c7bb74aa9968b2026e9802"
+line_count = 108
+size_bytes = 4723
+
+[[documents]]
+id = "docs_learning__routes__foundations_md"
+relpath = "docs/learning/routes/foundations.md"
+category = "docs/root"
+title = "Which operation should I learn next?"
+sha256 = "a68b805a317546786c9d05972eb9b453f45c5e0b40b9c096a871c734a1700982"
+line_count = 38
+size_bytes = 1441
+
+[[documents]]
+id = "docs_learning__routes__quantum_md"
+relpath = "docs/learning/routes/quantum.md"
+category = "docs/root"
+title = "How do complex states give probabilities?"
+sha256 = "d32cf7a2e8170c5e594d452b6e01e74bb4db5e45f293ceecea88bfae31e49179"
+line_count = 122
+size_bytes = 5360
+
+[[documents]]
+id = "docs_learning__routes__shape_md"
+relpath = "docs/learning/routes/shape.md"
+category = "docs/root"
+title = "How do shape and complex structure constrain a function?"
+sha256 = "2e95b2ca20b53bf12d8b936fef1e29c41238c84d0cbf799dec66b5587c8727ad"
+line_count = 150
+size_bytes = 6656
+
+[[documents]]
+id = "docs_learning__routes__simulation_md"
+relpath = "docs/learning/routes/simulation.md"
+category = "docs/root"
+title = "How do local rules produce changing fields?"
+sha256 = "28580cd1efe3ca1d758395ac340e08d6799fabc9430b1591322be7535544189b"
+line_count = 164
+size_bytes = 7292
+
+[[documents]]
+id = "docs_learning__routes__symmetry_md"
+relpath = "docs/learning/routes/symmetry.md"
+category = "docs/root"
+title = "What does a symmetry preserve?"
+sha256 = "efeb72f38897550070d948ce3fd7492ae0f3496d3672b95a7909845ffe51633c"
+line_count = 122
+size_bytes = 5233
 
 [[documents]]
 id = "docs_reports__architectural_analysis_report_md"
@@ -313,9 +628,9 @@ id = "papers_review_hypothesis_registry_tex"
 relpath = "papers/sections/review_hypothesis_registry.tex"
 category = "papers/sections"
 title = "Hypothesis Registry and Promotion Gates"
-sha256 = "0a71a24016221b9b7f7b2b122a148dae36059aad42d11e29019094342233861e"
-line_count = 97
-size_bytes = 5118
+sha256 = "7aa03d3b0ddec3b9eeed8f497a18d51d1d992d3f26e414a2816974a2cff0acb9"
+line_count = 107
+size_bytes = 5730
 
 [[documents]]
 id = "papers_review_mathematical_baseline_tex"
@@ -349,9 +664,9 @@ id = "papers_review_scope_method_tex"
 relpath = "papers/sections/review_scope_method.tex"
 category = "papers/sections"
 title = "Scope, Questions, and Review Method"
-sha256 = "f52ed10b570ddcdbf99ec1e73ce4e36fb7619b093f81774e967face556c347e8"
-line_count = 157
-size_bytes = 6660
+sha256 = "b97c4a4bca9ac2658b5dbac29940f0822e106529165703a22ac306422503d262"
+line_count = 167
+size_bytes = 7301
 
 [[documents]]
 id = "papers_vol1_ch1_lie_algebras_tex"
